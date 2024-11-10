@@ -44,7 +44,6 @@ jobs:
       - name: Run Command
         run: |
           git rev-list --max-parents=0 HEAD
-          rm DarkChaos-Dev.vpx
           ./vpxtool assemble DarkChaos-Dev
           mv ./DarkChaos-Dev.vpx ./DarkChaos${{steps.version.outputs.build_number}}.vpx
           
