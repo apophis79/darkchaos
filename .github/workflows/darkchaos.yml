@@ -29,7 +29,7 @@ jobs:
           fetch-depth: 0
       - id: version
         run: |
-          echo "build_number=$(git rev-list 1295e43d69488b1a9d128bde0edc14347097e1f1..HEAD --count)"  >> $GITHUB_OUTPUT
+          echo "build_number=$(git rev-list d5dc63720abb4a5a4ca3c6724c7497e593e14eb3..HEAD --count)"  >> $GITHUB_OUTPUT
 
       - name: Modify locked property
         run: |
