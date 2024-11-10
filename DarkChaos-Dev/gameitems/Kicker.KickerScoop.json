@@ -1,0 +1,22 @@
+{
+  "Kicker": {
+    "center": {
+      "x": 591.10345,
+      "y": 460.2161
+    },
+    "radius": 25.0,
+    "is_timer_enabled": false,
+    "timer_interval": 1000,
+    "material": "",
+    "surface": "ScoopFloor",
+    "is_enabled": true,
+    "name": "KickerScoop",
+    "kicker_type": "invisible",
+    "scatter": 0.0,
+    "hit_accuracy": 0.5,
+    "hit_height": 40.0,
+    "orientation": 0.0,
+    "fall_through": false,
+    "legacy_mode": true
+  }
+}

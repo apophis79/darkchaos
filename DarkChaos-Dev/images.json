@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Scratches",
+    "path": "C:\\Models\\Scratches.png",
+    "width": 256,
+    "height": 256,
+    "alpha_test_value": 128.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Models\\Scratches.png",
+      "name": "Scratches"
+    },
+    "bits": false
+  },
+  {
+    "name": "CustomBlackTip",
+    "path": "D:\\temp\\CustomBlackTip.png",
+    "width": 256,
+    "height": 341,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "D:\\temp\\CustomBlackTip.png",
+      "name": "CustomBlackTip"
+    },
+    "bits": false
+  },
+  {
+    "name": "CustomWhiteTip",
+    "path": "D:\\temp\\CustomWhiteTip.png",
+    "width": 256,
+    "height": 341,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "D:\\temp\\CustomWhiteTip.png",
+      "name": "CustomWhiteTip"
+    },
+    "bits": false
+  },
+  {
+    "name": "ballshadow",
+    "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\ballshadow.png",
+    "width": 249,
+    "height": 252,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\ballshadow.png",
+      "name": "ballshadow"
+    },
+    "bits": false
+  },
+  {
+    "name": "flippers_shadow",
+    "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\flippers_shadow.png",
+    "width": 256,
+    "height": 512,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\flippers_shadow.png",
+      "name": "flippers_shadow"
+    },
+    "bits": false
+  },
+  {
+    "name": "ball_HDR",
+    "path": "C:\\ball_HDR.hdr",
+    "width": 256,
+    "height": 256,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\ball_HDR.hdr",
+      "name": "ball_HDR"
+    },
+    "bits": false
+  },
+  {
+    "name": "flipper_williams_logo_Left",
+    "path": "C:\\VPX4\\tables\\makeover stuff\\flipper_williams_logo_Left.png",
+    "width": 1024,
+    "height": 1024,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\VPX4\\tables\\makeover stuff\\flipper_williams_logo_Left.png",
+      "name": "flipper_williams_logo_Left"
+    },
+    "bits": false
+  },
+  {
+    "name": "Colour_Dark",
+    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Colours\\Colour_Dark.png",
+    "width": 100,
+    "height": 100,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Colours\\Colour_Dark.png",
+      "name": "Colour_Dark"
+    },
+    "bits": false
+  },
+  {
+    "name": "VR_Floor",
+    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Floor.png",
+    "width": 2000,
+    "height": 2000,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Floor.png",
+      "name": "VR_Floor"
+    },
+    "bits": false
+  },
+  {
+    "name": "VR_Roof",
+    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Roof.jpg",
+    "width": 1000,
+    "height": 1000,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Roof.jpg",
+      "name": "VR_Roof"
+    },
+    "bits": false
+  },
+  {
+    "name": "Backglassimage",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Pincab_Backglass.png",
+    "width": 1566,
+    "height": 1080,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Pincab_Backglass.png",
+      "name": "Pincab_Backglass"
+    },
+    "bits": false
+  },
+  {
+    "name": "environment_shiny3blur4",
+    "path": "C:\\VPX4\\tables\\makeover stuff\\environment_shiny3blur4.hdr",
+    "width": 1024,
+    "height": 512,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\VPX4\\tables\\makeover stuff\\environment_shiny3blur4.hdr",
+      "name": "environment_shiny3blur4"
+    },
+    "bits": false
+  },
+  {
+    "name": "Pincab_Cabinet",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Eample_Pincab_Cabinet.png",
+    "width": 2048,
+    "height": 2048,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Eample_Pincab_Cabinet.png",
+      "name": "Eample_Pincab_Cabinet"
+    },
+    "bits": false
+  },
+  {
+    "name": "VR_Wall_Right",
+    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Right.jpg",
+    "width": 2000,
+    "height": 2000,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Right.jpg",
+      "name": "VR_Wall_Right"
+    },
+    "bits": false
+  },
+  {
+    "name": "Pincab_Backbox",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Example_Pincab_Backbox.png",
+    "width": 2048,
+    "height": 4096,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Example_Pincab_Backbox.png",
+      "name": "Example_Pincab_Backbox"
+    },
+    "bits": false
+  },
+  {
+    "name": "VR_Wall_Left",
+    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Left.jpg",
+    "width": 2000,
+    "height": 2000,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Left.jpg",
+      "name": "VR_Wall_Left"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap0",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 0.webp",
+    "width": 1792,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 0.webp",
+      "name": "VLM.Nestmap0"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 1.exr",
+    "width": 7936,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 1.exr",
+      "name": "VLM.Nestmap1"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 2.exr",
+    "width": 1344,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 2.exr",
+      "name": "VLM.Nestmap2"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap3",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 3.webp",
+    "width": 192,
+    "height": 1536,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 3.webp",
+      "name": "VLM.Nestmap3"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap3 - NM",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 3 - NM.webp",
+    "width": 192,
+    "height": 1536,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_21 - Bakes/Export/Nestmap 3 - NM.webp",
+      "name": "VLM.Nestmap3 - NM"
+    },
+    "bits": false
+  }
+]

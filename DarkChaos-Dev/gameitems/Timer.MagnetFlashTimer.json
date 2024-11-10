@@ -1,0 +1,12 @@
+{
+  "Timer": {
+    "center": {
+      "x": -399.20154,
+      "y": 1063.8806
+    },
+    "is_timer_enabled": false,
+    "timer_interval": 2000,
+    "name": "MagnetFlashTimer",
+    "backglass": false
+  }
+}

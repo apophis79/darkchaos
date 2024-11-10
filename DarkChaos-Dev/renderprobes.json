@@ -1,0 +1,54 @@
+[
+  {
+    "type_": "plane_reflection",
+    "name": "Playfield Reflections",
+    "roughness": 0,
+    "reflection_plane": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "w": 0.0
+    },
+    "reflection_mode": "dynamic",
+    "disable_light_reflection": true
+  },
+  {
+    "type_": "screen_space_transparency",
+    "name": "Refraction Pass 1",
+    "roughness": 0,
+    "reflection_plane": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "w": 0.0
+    },
+    "reflection_mode": "dynamic",
+    "disable_light_reflection": false
+  },
+  {
+    "type_": "screen_space_transparency",
+    "name": "Refraction Pass 2",
+    "roughness": 0,
+    "reflection_plane": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "w": 0.0
+    },
+    "reflection_mode": "dynamic",
+    "disable_light_reflection": false
+  },
+  {
+    "type_": "screen_space_transparency",
+    "name": "Refraction Pass 3",
+    "roughness": 0,
+    "reflection_plane": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "w": 0.0
+    },
+    "reflection_mode": "dynamic",
+    "disable_light_reflection": false
+  }
+]

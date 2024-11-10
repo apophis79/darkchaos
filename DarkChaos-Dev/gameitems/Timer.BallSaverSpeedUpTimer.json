@@ -1,0 +1,12 @@
+{
+  "Timer": {
+    "center": {
+      "x": -524.0,
+      "y": 1186.0
+    },
+    "is_timer_enabled": false,
+    "timer_interval": 15000,
+    "name": "BallSaverSpeedUpTimer",
+    "backglass": false
+  }
+}

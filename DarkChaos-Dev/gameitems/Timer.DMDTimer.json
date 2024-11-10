@@ -1,0 +1,12 @@
+{
+  "Timer": {
+    "center": {
+      "x": -525.55634,
+      "y": 1023.17706
+    },
+    "is_timer_enabled": true,
+    "timer_interval": 17,
+    "name": "DMDTimer",
+    "backglass": false
+  }
+}

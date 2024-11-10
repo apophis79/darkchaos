@@ -1,0 +1,12 @@
+{
+  "Timer": {
+    "center": {
+      "x": -363.02728,
+      "y": 1180.5469
+    },
+    "is_timer_enabled": false,
+    "timer_interval": 3000,
+    "name": "ComboTimer",
+    "backglass": false
+  }
+}

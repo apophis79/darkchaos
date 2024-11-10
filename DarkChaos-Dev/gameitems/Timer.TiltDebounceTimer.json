@@ -1,0 +1,12 @@
+{
+  "Timer": {
+    "center": {
+      "x": -484.4445,
+      "y": 1259.7778
+    },
+    "is_timer_enabled": false,
+    "timer_interval": 3000,
+    "name": "TiltDebounceTimer",
+    "backglass": false
+  }
+}

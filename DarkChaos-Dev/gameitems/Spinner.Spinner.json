@@ -1,0 +1,24 @@
+{
+  "Spinner": {
+    "center": {
+      "x": 251.2593,
+      "y": 249.14815
+    },
+    "rotation": 10.0,
+    "is_timer_enabled": false,
+    "timer_interval": 100,
+    "height": 55.0,
+    "length": 90.0,
+    "damping": 0.98,
+    "angle_max": 0.0,
+    "angle_min": 0.0,
+    "elasticity": 0.3,
+    "is_visible": false,
+    "show_bracket": false,
+    "material": "Plastic",
+    "image": "",
+    "surface": "",
+    "name": "Spinner",
+    "is_reflection_enabled": false
+  }
+}

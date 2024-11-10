@@ -1,0 +1,120 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    outputs:
+      build_number: ${{ steps.version.outputs.build_number }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: version
+        run: |
+          echo "build_number=$(git rev-list 1295e43d69488b1a9d128bde0edc14347097e1f1..HEAD --count)"  >> $GITHUB_OUTPUT
+
+      - name: Modify locked property
+        run: |
+          jq '.locked = 1' DarkChaos-Dev/gamedata.json > temp.json && mv temp.json DarkChaos-Dev/gamedata.json
+        working-directory: ${{ github.workspace }}
+
+      - name: Download vpxtool
+        run: |
+          wget https://github.com/francisdb/vpxtool/releases/download/v0.13.0/vpxtool-Linux-x86_64-musl-v0.13.0.tar.gz
+          tar -xzf vpxtool-Linux-x86_64-musl-v0.13.0.tar.gz
+        
+      - name: Run Command
+        run: |
+          git rev-list --max-parents=0 HEAD
+          rm DarkChaos-Dev.vpx
+          ./vpxtool assemble DarkChaos-Dev
+          mv ./DarkChaos-Dev.vpx ./DarkChaos${{steps.version.outputs.build_number}}.vpx
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DarkChaos_${{ steps.version.outputs.build_number }}
+          path: ./DarkChaos${{steps.version.outputs.build_number}}.vpx
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: DarkChaos_${{ needs.build.outputs.build_number }}
+          path: .
+
+      - name: Get Release ID
+        id: get_release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: releases } = await github.rest.repos.listReleases({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            const nightlyRelease = releases.find(release => release.tag_name === 'nightly');
+
+            if (nightlyRelease) {
+              core.setOutput('release_id', nightlyRelease.id);
+            } else {
+              core.setOutput('release_id', null);
+            }
+
+      - name: Delete old artifacts
+        if: ${{ steps.get_release.outputs.release_id != null }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const release_id = ${{ steps.get_release.outputs.release_id }};
+            const { data: assets } = await github.rest.repos.listReleaseAssets({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id
+            });
+
+            for (const asset of assets) {
+              await github.rest.repos.deleteReleaseAsset({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                asset_id: asset.id
+              });
+            }
+
+      - name: Release nightly
+        uses: softprops/action-gh-release@v1
+        with:
+          prerelease: true
+          name: Nightly Build ${{ needs.build.outputs.build_number }}
+          tag_name: nightly
+          files: ./DarkChaos${{ needs.build.outputs.build_number }}.vpx
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

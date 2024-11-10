@@ -1,0 +1,16 @@
+node_modules
+gifs
+.vscode
+mpf/logs
+*_debug_log.txt
+*.dmp
+crash.txt
+mpf-vpcom-bridge.txt
+*.vpx
+*.ini
+mpf080
+*.exe
+*.pck
+*.log
+bcplog.txt
+log.txt

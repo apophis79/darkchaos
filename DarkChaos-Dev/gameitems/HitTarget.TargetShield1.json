@@ -1,0 +1,40 @@
+{
+  "HitTarget": {
+    "position": {
+      "x": 783.26135,
+      "y": 1068.6683,
+      "z": 0.0
+    },
+    "size": {
+      "x": 40.0,
+      "y": 32.0,
+      "z": 32.0
+    },
+    "rot_z": 90.0,
+    "image": "",
+    "target_type": "hit_target_round",
+    "name": "TargetShield1",
+    "material": "Plastic",
+    "is_visible": false,
+    "is_legacy": false,
+    "use_hit_event": true,
+    "threshold": 1.5,
+    "elasticity": 0.3,
+    "elasticity_falloff": 0.5,
+    "friction": 0.2,
+    "scatter": 5.0,
+    "is_collidable": true,
+    "disable_lighting_top_old": null,
+    "disable_lighting_top": 0.0,
+    "disable_lighting_below": 0.0,
+    "depth_bias": 0.0,
+    "is_reflection_enabled": false,
+    "is_dropped": false,
+    "drop_speed": 0.2,
+    "is_timer_enabled": false,
+    "timer_interval": 100,
+    "raise_delay": 100,
+    "physics_material": "zCol_Targets",
+    "overwrite_physics": false
+  }
+}
