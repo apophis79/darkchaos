@@ -188,6 +188,7 @@ Sub swRightOutlane_Animate
 End Sub
 
 
+' Standup Targets
 Sub UpdateStandupTargets
 	dim BP, ty
 
@@ -221,6 +222,7 @@ Sub UpdateStandupTargets
 End Sub
 
 
+' Drop Targets
 Sub UpdateDropTargets
 	dim BP, tz, rx, ry
 
@@ -247,6 +249,55 @@ End Sub
 
 
 
+' Spinner
+Dim LMs_Spin, LMs_SpinU
+
+InitSpinner
+Sub InitSpinner 
+	Dim i, LM
+	BM_Spin.Visible = 1
+	BM_SpinU.Visible = 0
+	' Create LM arrays
+	ReDim LMs_Spin(UBound(BP_Spin)-1)
+	ReDim LMs_SpinU(UBound(BP_SpinU)-1)
+	For i = 0 to (UBound(BP_Spin)-1): Set LMs_Spin(i) = BP_Spin(i+1): Next
+	For i = 0 to (UBound(BP_SpinU)-1): Set LMs_SpinU(i) = BP_SpinU(i+1): Next
+	'Scale down the inner spinner a little more in y-dir
+'	Dim BP
+'	For Each BP in BP_Spin
+'		BP.Size_X = BP.Size_X * 0.99
+'		BP.Size_Y = BP.Size_Y * 0.99
+'		BP.Size_Z = BP.Size_Z * 0.99
+'	Next
+	Spinner_animate
+End Sub
+
+Sub Spinner_animate
+	Dim LM, a, b, offset
+	a = Spinner.currentangle
+	If a >= 0 And a < 60 Then
+        b = 0
+    ElseIf a >= 60 And a < 120 Then
+        b = (a - 60) / 60
+    ElseIf a >= 120 And a < 240 Then
+        b = 1
+    ElseIf a >= 240 And a < 300 Then
+        b = 1 + (240 - a) / 60
+    Else
+        b = 0
+    End If
+
+	BM_Spin.RotX = a
+	For Each LM in LMs_Spin
+		LM.RotX = a
+		LM.Opacity = 100 * (1 - b)
+	Next
+	For Each LM in LMs_SpinU
+		LM.RotX = a
+		LM.Opacity = 100 * b
+	Next
+	For Each LM in BP_SpinWire: LM.RotX = a: Next
+End Sub
 
 
 
@@ -254,11 +305,10 @@ End Sub
 '	ZAST: Asteroid Animation
 '******************************************************
 
-' FIXME
 
 Const AstVel = 0.01
 Dim AstAngle, SpinAst, AstDelta
-Dim LMs_Asteroid1, LMs_Asteroid2, LMs_Asteroid3, LMs_Asteroid4
+Dim LMs_Asteroid1 ', LMs_Asteroid2, LMs_Asteroid3, LMs_Asteroid4
 
 InitAsteroid
 Sub InitAsteroid
@@ -268,18 +318,18 @@ Sub InitAsteroid
 	AstDelta = 0
 	SpinAst = False
 	BM_Asteroid1.Visible = 1
-	BM_Asteroid2.Visible = 0
-	BM_Asteroid3.Visible = 0
-	BM_Asteroid4.Visible = 0
+	'BM_Asteroid2.Visible = 0
+	'BM_Asteroid3.Visible = 0
+	'BM_Asteroid4.Visible = 0
 	' Create LM arrays
 	ReDim LMs_Asteroid1(UBound(BP_Asteroid1)-1)
-	ReDim LMs_Asteroid2(UBound(BP_Asteroid2)-1)
-	ReDim LMs_Asteroid3(UBound(BP_Asteroid3)-1)
-	ReDim LMs_Asteroid4(UBound(BP_Asteroid4)-1)
+'	ReDim LMs_Asteroid2(UBound(BP_Asteroid2)-1)
+'	ReDim LMs_Asteroid3(UBound(BP_Asteroid3)-1)
+'	ReDim LMs_Asteroid4(UBound(BP_Asteroid4)-1)
 	For i = 0 to (UBound(BP_Asteroid1)-1): Set LMs_Asteroid1(i) = BP_Asteroid1(i+1): Next
-	For i = 0 to (UBound(BP_Asteroid2)-1): Set LMs_Asteroid2(i) = BP_Asteroid2(i+1): Next
-	For i = 0 to (UBound(BP_Asteroid3)-1): Set LMs_Asteroid3(i) = BP_Asteroid3(i+1): Next
-	For i = 0 to (UBound(BP_Asteroid4)-1): Set LMs_Asteroid4(i) = BP_Asteroid4(i+1): Next
+'	For i = 0 to (UBound(BP_Asteroid2)-1): Set LMs_Asteroid2(i) = BP_Asteroid2(i+1): Next
+'	For i = 0 to (UBound(BP_Asteroid3)-1): Set LMs_Asteroid3(i) = BP_Asteroid3(i+1): Next
+'	For i = 0 to (UBound(BP_Asteroid4)-1): Set LMs_Asteroid4(i) = BP_Asteroid4(i+1): Next
 	' Adjust size to eliminate zfighting
 	BM_Asteroid1.Size_X = BM_Asteroid1.Size_X*0.999 '0.998
 	BM_Asteroid1.Size_Y = BM_Asteroid1.Size_Y*0.999 '0.998
@@ -325,6 +375,7 @@ Sub DrawAsteroid(a)
 	v4 = ((a > 0) and (a < 180))
 	op13 = abs(100*dCos(a))
 	op24 = abs(100*dSin(a))
+	op24 = abs(100*dSin(a))
 
 	BM_Asteroid1.RotZ = a
 '	BM_Asteroid3.RotZ = a
@@ -336,17 +387,17 @@ Sub DrawAsteroid(a)
 		LM.Opacity = op13
 		LM.RotZ = a
 	Next
-	For each LM in LMs_Asteroid2
+	For each LM in BP_Asteroid2
 		LM.Visible = v2
 		LM.Opacity = op24
 		LM.RotZ = a
 	Next
-	For each LM in LMs_Asteroid3
+	For each LM in BP_Asteroid3
 		LM.Visible = v3
 		LM.Opacity = op13
 		LM.RotZ = a
 	Next
-	For each LM in LMs_Asteroid4
+	For each LM in BP_Asteroid4
 		LM.Visible = v4
 		LM.Opacity = op24
 		LM.RotZ = a
@@ -527,3 +578,6 @@ End Function
 Function TimeF(displacement, acceleration)
 	TimeF = 1000*2*SQR(Abs(displacement)*acceleration*2)/acceleration
 End Function
+
+
+

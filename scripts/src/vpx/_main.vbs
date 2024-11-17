@@ -45,7 +45,8 @@
 ' ZANI : Misc Animations
 ' ZAST : Asteroid Animation
 ' ZSHP :  Ship Wobble Animations
-
+' ZGCF :  GLF Configurations
+' ZGLF :  Game Logic Framework (GLF)
 
 
 

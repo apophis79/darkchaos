@@ -26,7 +26,9 @@ Dim glf_modes : Set glf_modes = CreateObject("Scripting.Dictionary")
 Dim glf_timers : Set glf_timers = CreateObject("Scripting.Dictionary")
 
 Dim glf_ball_devices : Set glf_ball_devices = CreateObject("Scripting.Dictionary")
+Dim glf_flippers : Set glf_flippers = CreateObject("Scripting.Dictionary")
 Dim glf_ball_holds : Set glf_ball_holds = CreateObject("Scripting.Dictionary")
+Dim glf_magnets : Set glf_magnets = CreateObject("Scripting.Dictionary")
 Dim glf_segment_displays : Set glf_segment_displays = CreateObject("Scripting.Dictionary")
 
 
@@ -70,6 +72,20 @@ Public Sub Glf_Init()
 		switchHitSubs = switchHitSubs & "Sub " & switch.Name & "_UnHit() : DispatchPinEvent """ & switch.Name & "_inactive"", ActiveBall : End Sub" & vbCrLf
 	Next
 	ExecuteGlobal switchHitSubs
+
+	Dim slingshot, slingshotHitSubs
+	slingshotHitSubs = ""
+	For Each slingshot in Glf_Slingshots
+		slingshotHitSubs = slingshotHitSubs & "Sub " & slingshot.Name & "_Slingshot() : DispatchPinEvent """ & slingshot.Name & "_active"", ActiveBall : End Sub" & vbCrLf
+	Next
+	ExecuteGlobal slingshotHitSubs
+
+	Dim spinner, spinnerHitSubs
+	spinnerHitSubs = ""
+	For Each spinner in Glf_Spinners
+		spinnerHitSubs = spinnerHitSubs & "Sub " & spinner.Name & "_Spin() : DispatchPinEvent """ & spinner.Name & "_active"", ActiveBall : End Sub" & vbCrLf
+	Next
+	ExecuteGlobal spinnerHitSubs
 
 	If glf_debugEnabled = True Then
 
@@ -273,6 +289,23 @@ Public Sub Glf_KeyDown(ByVal keycode)
 		If KeyCode = PlungerKey Then
 			DispatchPinEvent "s_plunger_key_active", Null
 		End If
+
+		If KeyCode = LeftMagnaSave Then
+			DispatchPinEvent "s_left_magna_key_active", Null
+		End If
+
+		If KeyCode = RightMagnaSave Then
+			DispatchPinEvent "s_right_magna_key_active", Null
+		End If
+
+		If KeyCode = StagedRightFlipperKey Then
+			DispatchPinEvent "s_right_staged_flipper_key_active", Null
+		End If
+
+		If KeyCode = StagedLeftFlipperKey Then
+			DispatchPinEvent "s_left_staged_flipper_key_active", Null
+		End If
+		
 		
 		If keycode = StartGameKey Then
 			If glf_canAddPlayers = True Then
@@ -292,7 +325,6 @@ End Sub
 Public Sub Glf_KeyUp(ByVal keycode)
 	If glf_gameStarted = True Then
 		If KeyCode = PlungerKey Then
-			Plunger.Fire
 			DispatchPinEvent "s_plunger_key_inactive", Null
 		End If
 
@@ -307,6 +339,23 @@ Public Sub Glf_KeyUp(ByVal keycode)
 		If keycode = LockbarKey Then
 			DispatchPinEvent "s_lockbar_key_inactive", Null
 		End If
+
+		If KeyCode = LeftMagnaSave Then
+			DispatchPinEvent "s_left_magna_key_inactive", Null
+		End If
+
+		If KeyCode = RightMagnaSave Then
+			DispatchPinEvent "s_right_magna_key_inactive", Null
+		End If
+
+		If KeyCode = StagedRightFlipperKey Then
+			DispatchPinEvent "s_right_staged_flipper_key_inactive", Null
+		End If
+
+		If KeyCode = StagedLeftFlipperKey Then
+			DispatchPinEvent "s_left_staged_flipper_key_inactive", Null
+		End If
+		
 	End If
 End Sub
 
@@ -396,9 +445,10 @@ Public Function Glf_SetLight(light, color)
 	Next
 End Function
 
-Public Function Glf_ParseInput(value, isTime)
+Public Function Glf_ParseInput(value)
 	Dim templateCode : templateCode = ""
 	Dim tmp: tmp = value
+	Dim isVariable, parts
     Select Case VarType(value)
         Case 8 ' vbString
 			tmp = Glf_ReplaceCurrentPlayerAttributes(tmp)
@@ -409,17 +459,29 @@ Public Function Glf_ParseInput(value, isTime)
 				templateCode = templateCode & vbTab & Glf_ConvertIf(tmp, "Glf_" & glf_FuncCount) & vbCrLf
 				templateCode = templateCode & "End Function"
 			Else
+				isVariable = Glf_IsCondition(tmp)
+				If Not IsNull(isVariable) Then
+					'The input needs formatting
+					parts = Split(isVariable, ":")
+					If UBound(parts) = 1 Then
+						tmp = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
+					End If
+				End If
 				templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
 				templateCode = templateCode & vbTab & "Glf_" & glf_FuncCount & " = " & tmp & vbCrLf
 				templateCode = templateCode & "End Function"
 			End IF
         Case Else
-			templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
-			If isTime Then
-				templateCode = templateCode & vbTab & "Glf_" & glf_FuncCount & " = " & tmp * 1000 & vbCrLf
-			Else
-				templateCode = templateCode & vbTab & "Glf_" & glf_FuncCount & " = " & tmp & vbCrLf
+			templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf			
+			isVariable = Glf_IsCondition(tmp)
+			If Not IsNull(isVariable) Then
+				'The input needs formatting
+				parts = Split(isVariable, ":")
+				If UBound(parts) = 1 Then
+					tmp = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
+				End If
 			End If
+			templateCode = templateCode & vbTab & "Glf_" & glf_FuncCount & " = " & tmp & vbCrLf
 			templateCode = templateCode & "End Function"
     End Select
 	'msgbox templateCode
@@ -475,13 +537,30 @@ Function Glf_ReplaceDeviceAttributes(inputString)
 End Function
 
 Function Glf_ConvertIf(value, retName)
-    Dim parts, condition, truePart, falsePart
+    Dim parts, condition, truePart, falsePart, isVariable
     parts = Split(value, " if ")
     truePart = Trim(parts(0))
     Dim conditionAndFalsePart
     conditionAndFalsePart = Split(parts(1), " else ")
     condition = Trim(conditionAndFalsePart(0))
     falsePart = Trim(conditionAndFalsePart(1))
+	isVariable = Glf_IsCondition(truePart)
+	If Not IsNull(isVariable) Then
+		'The input needs formatting
+		parts = Split(isVariable, ":")
+		If UBound(parts) = 1 Then
+			truePart = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
+		End If
+	End If
+	isVariable = Glf_IsCondition(falsePartPart)
+	If Not IsNull(isVariable) Then
+		'The input needs formatting
+		parts = Split(isVariable, ":")
+		If UBound(parts) = 1 Then
+			falsePart = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
+		End If
+	End If
+
     Dim vbscriptIfStatement
     vbscriptIfStatement = "If " & condition & " Then" & vbCrLf & _
                           "    "&retName&" = " & truePart & vbCrLf & _
@@ -496,6 +575,49 @@ Function Glf_ConvertCondition(value, retName)
 	value = Replace(value, "!=", "<>")
 	value = Replace(value, "&&", "And")
 	Glf_ConvertCondition = "    "&retName&" = " & value
+End Function
+
+Function Glf_FormatValue(value, formatString)
+    Dim padChar, width, result, align
+
+    ' Default values
+    padChar = " " ' Default padding character is space
+    align = ">"   ' Default alignment is right
+    width = 0     ' Default width is 0 (no padding)
+
+    If Len(formatString) >= 2 Then
+        padChar = Mid(formatString, 1, 1)
+        align = Mid(formatString, 2, 1)
+        width = CInt(Mid(formatString, 3))
+    End If
+
+    Select Case align
+        Case ">" ' Right-align with padding
+            If Len(value) < width Then
+                result = String(width - Len(value), padChar) & value
+            Else
+                result = value
+            End If
+        Case "<" ' Left-align with padding
+            If Len(value) < width Then
+                result = value & String(width - Len(value), padChar)
+            Else
+                result = value
+            End If
+        Case "^" ' Center-align with padding
+            Dim leftPad, rightPad
+            If Len(value) < width Then
+                leftPad = (width - Len(value)) \ 2
+                rightPad = width - Len(value) - leftPad
+                result = String(leftPad, padChar) & value & String(rightPad, padChar)
+            Else
+                result = value
+            End If
+        Case Else ' Default: Return value as is
+            result = value
+    End Select
+
+    Glf_FormatValue = result
 End Function
 
 
@@ -812,6 +934,10 @@ Function Glf_IsInArray(value, arr)
     Next
 End Function
 
+Function CreateGlfInput(value)
+	Set CreateGlfInput = (new GlfInput)(value)
+End Function
+
 Class GlfInput
 	Private m_raw, m_value, m_isGetRef
   
@@ -825,9 +951,9 @@ Class GlfInput
 
     Public Property Get Raw() : Raw = m_raw : End Property
 
-	Public default Function init(input, isTime)
+	Public default Function init(input)
         m_raw = input
-        Dim parsedInput : parsedInput = Glf_ParseInput(input, isTime)
+        Dim parsedInput : parsedInput = Glf_ParseInput(input)
         m_value = parsedInput(0)
         m_isGetRef = parsedInput(2)
 	    Set Init = Me
@@ -1261,6 +1387,7 @@ End With
 Const GLF_GAME_START = "game_start"
 Const GLF_GAME_STARTED = "game_started"
 Const GLF_GAME_OVER = "game_ended"
+Const GLF_BALL_WILL_END = "ball_will_end"
 Const GLF_BALL_ENDING = "ball_ending"
 Const GLF_BALL_ENDED = "ball_ended"
 Const GLF_NEXT_PLAYER = "next_player"
@@ -1809,9 +1936,9 @@ Class BallSave
 
     Public Property Get Name(): Name = m_name: End Property
     Public Property Get AutoLaunch(): AutoLaunch = m_auto_launch: End Property
-    Public Property Let ActiveTime(value) : m_active_time = Glf_ParseInput(value, True) : End Property
-    Public Property Let GracePeriod(value) : m_grace_period = Glf_ParseInput(value, True) : End Property
-    Public Property Let HurryUpTime(value) : m_hurry_up_time = Glf_ParseInput(value, True) : End Property
+    Public Property Let ActiveTime(value) : m_active_time = Glf_ParseInput(value) : End Property
+    Public Property Let GracePeriod(value) : m_grace_period = Glf_ParseInput(value) : End Property
+    Public Property Let HurryUpTime(value) : m_hurry_up_time = Glf_ParseInput(value) : End Property
     Public Property Let EnableEvents(value)
         Dim x
         For x=0 to UBound(value)
@@ -3446,7 +3573,7 @@ Class GlfSegmentPlayerEventItem
         End If
     End Property
     Public Property Let Text(input) 
-        Set m_text = (new GlfInput)(input, False)
+        Set m_text = (new GlfInput)(input)
     End Property
 
     Public Property Get Priority() : Priority = m_priority : End Property
@@ -5088,7 +5215,7 @@ Function GlfShowStepHandler(args)
         LightPlayerCallbackHandler running_show.Key, Array(cached_show_seq(running_show.CurrentStep)), running_show.ShowName, running_show.Priority + running_show.ShowSettings.Priority
     End If
     If nextStep.Duration = -1 Then
-        glf_debugLog.WriteToLog "Running Show", "HOLD"
+        'glf_debugLog.WriteToLog "Running Show", "HOLD"
         Exit Function
     End If
     running_show.CurrentStep = running_show.CurrentStep + 1
@@ -5101,7 +5228,7 @@ Function GlfShowStepHandler(args)
     End If
     If running_show.CurrentStep > running_show.TotalSteps Then
         'End of Show
-        glf_debugLog.WriteToLog "Running Show", "END OF SHOW"
+        'glf_debugLog.WriteToLog "Running Show", "END OF SHOW"
         If running_show.ShowSettings.Loops = -1 Or running_show.ShowSettings.Loops > 1 Then
             If running_show.ShowSettings.Loops > 1 Then
                 running_show.ShowSettings.Loops = running_show.ShowSettings.Loops - 1
@@ -5639,7 +5766,7 @@ Class GlfTimerControlEvent
         Value = m_value
     End Property
     Public Property Let Value(input)
-        m_value = Glf_ParseInput(input, True)
+        m_value = Glf_ParseInput(input)
     End Property
 
 	Public default Function init()
@@ -5756,9 +5883,9 @@ Class GlfVariablePlayerItem
     Public Property Get Block(): Block = m_block End Property
     Public Property Let Block(input): m_block = input End Property
 
-	Public Property Let Float(input): m_float = Glf_ParseInput(input, False): m_type = "float" : End Property
+	Public Property Let Float(input): m_float = Glf_ParseInput(input): m_type = "float" : End Property
   
-	Public Property Let Int(input): m_int = Glf_ParseInput(input, False): m_type = "int" : End Property
+	Public Property Let Int(input): m_int = Glf_ParseInput(input): m_type = "int" : End Property
   
 	Public Property Let String(input): m_string = input: m_type = "string" : End Property
 
@@ -5909,6 +6036,11 @@ Sub DelayTick()
         End If
     Next
 End Sub
+Function CreateGlfBallDevice(name)
+	Dim device : Set device = (new GlfBallDevice)(name)
+	Set CreateGlfBallDevice = device
+End Function
+
 Class GlfBallDevice
 
     Private m_name
@@ -5918,15 +6050,18 @@ Class GlfBallDevice
     Private m_balls
     Private m_balls_in_device
     Private m_eject_angle
+    Private m_eject_angle_rnd
     Private m_eject_pitch
     Private m_eject_strength
+    Private m_eject_strength_rnd
+    Private m_eject_deltaz
     Private m_default_device
     Private m_eject_callback
     Private m_eject_all_events
     Private m_balls_to_eject
     Private m_ejecting_all
     Private m_ejecting
-    Private m_mechcanical_eject
+    Private m_mechanical_eject
     Private m_eject_targets
     Private m_debug
 
@@ -5945,9 +6080,12 @@ Class GlfBallDevice
 
     Public Property Let EjectCallback(value) : m_eject_callback = value : End Property
     
-    Public Property Let EjectAngle(value) : m_eject_angle = glf_PI * (0 - 90) / 180 : End Property
-    Public Property Let EjectPitch(value) : m_eject_pitch = glf_PI * (0 - 90) / 180 : End Property
+    Public Property Let EjectAngle(value) : m_eject_angle = glf_PI * value / 180 : End Property
+    Public Property Let EjectAngleRand(value) : m_eject_angle_rnd = glf_PI * value / 180 : End Property
+    Public Property Let EjectPitch(value) : m_eject_pitch = glf_PI * value / 180 : End Property
     Public Property Let EjectStrength(value) : m_eject_strength = value : End Property
+    Public Property Let EjectStrengthRand(value) : m_eject_strength_rnd = value : End Property
+    Public Property Let EjectDeltaZ(value) : m_eject_deltaz = value : End Property
     
     Public Property Let EjectTimeout(value) : m_eject_timeout = value * 1000 : End Property
     Public Property Let EjectAllEvents(value)
@@ -5964,16 +6102,13 @@ Class GlfBallDevice
             AddPinEventListener evt & "_active", m_name & "_eject_target", "BallDeviceEventHandler", 1000, Array("eject_timeout", Me)
         Next
     End Property
-    Public Property Let PlayerControlledEjectEvents(value)
+    Public Property Let PlayerControlledEjectEvent(value)
         m_player_controlled_eject_event = value
-        Dim evt
-        For Each evt in m_player_controlled_eject_event
-            AddPinEventListener evt, m_name & "_eject_attempt", "BallDeviceEventHandler", 1000, Array("ball_eject", Me)
-        Next
+        AddPinEventListener m_player_controlled_eject_event, m_name & "_eject_attempt", "BallDeviceEventHandler", 1000, Array("ball_eject", Me)
     End Property
     Public Property Let BallSwitches(value)
         m_ball_switches = value
-        m_balls = Array(Ubound(m_ball_switches))
+        ReDim m_balls(Ubound(m_ball_switches))
         Dim x
         For x=0 to UBound(m_ball_switches)
             m_balls(x) = Null
@@ -5981,7 +6116,7 @@ Class GlfBallDevice
             AddPinEventListener m_ball_switches(x)&"_inactive", m_name & "_ball_exiting", "BallDeviceEventHandler", 1000, Array("ball_exiting", Me, x)
         Next
     End Property
-    Public Property Let MechcanicalEject(value) : m_mechcanical_eject = value : End Property
+    Public Property Let MechanicalEject(value) : m_mechanical_eject = value : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
         
 	Public default Function init(name)
@@ -5994,13 +6129,16 @@ Class GlfBallDevice
         m_default_device = False
         m_eject_pitch = 0
         m_eject_angle = 0
+        m_eject_angle_rnd = 0
         m_eject_strength = 0
+        m_eject_strength_rnd = 0
+        m_eject_deltaz = 0
         m_ejecting = False
         m_eject_callback = Null
         m_ejecting_all = False
         m_balls_to_eject = 0
         m_balls_in_device = 0
-        m_mechcanical_eject = False
+        m_mechanical_eject = False
         m_eject_timeout = 1000
         glf_ball_devices.Add name, Me
 	    Set Init = Me
@@ -6024,7 +6162,7 @@ Class GlfBallDevice
         m_balls(switch) = Null
         m_balls_in_device = m_balls_in_device - 1
         DispatchPinEvent m_name & "_ball_exiting", Null
-        If m_mechcanical_eject = True And m_eject_timeout > 0 Then
+        If m_mechanical_eject = True And m_eject_timeout > 0 Then
             SetDelay m_name & "_eject_timeout", "BallDeviceEventHandler", Array(Array("eject_timeout", Me), ball), m_eject_timeout
         End If
         Log "Ball Exiting"
@@ -6055,9 +6193,10 @@ Class GlfBallDevice
         m_ejecting = True
         If m_eject_strength > 0 Then
             If Not IsNull(m_balls(0)) Then
-                m_balls(0).VelX = m_eject_strength * Cos(m_eject_pitch) * Sin(m_eject_angle)
-                m_balls(0).VelY = m_eject_strength * Cos(m_eject_pitch) * Cos(m_eject_angle)
-                m_balls(0).VelZ = m_eject_strength * Sin(m_eject_pitch)
+                m_balls(0).VelX = (m_eject_strength + m_eject_strength_rnd*2*(rnd-0.5)) * Cos(m_eject_pitch) * Sin(m_eject_angle + m_eject_angle_rnd*2*(rnd-0.5))
+                m_balls(0).VelY = (m_eject_strength + m_eject_strength_rnd*2*(rnd-0.5)) * Cos(m_eject_pitch) * Cos(m_eject_angle + m_eject_angle_rnd*2*(rnd-0.5)) * (-1)
+                m_balls(0).VelZ = (m_eject_strength + m_eject_strength_rnd*2*(rnd-0.5)) * Sin(m_eject_pitch)
+                m_balls(0).Z = m_balls(0).Z + m_eject_deltaz
                 Log "VelX: " &  m_balls(0).VelX & ", VelY: " &  m_balls(0).VelY & ", VelZ: " &  m_balls(0).VelZ
             End If
         End If
@@ -6113,6 +6252,10 @@ Function BallDeviceEventHandler(args)
             ballDevice.BallExitSuccess ball
     End Select
 End Function
+Function CreateGlfDiverter(name)
+	Dim diverter : Set diverter = (new GlfDiverter)(name)
+	Set CreateGlfDiverter = diverter
+End Function
 
 Class GlfDiverter
 
@@ -6127,30 +6270,45 @@ Class GlfDiverter
     Private m_debug
 
     Public Property Let ActionCallback(value) : m_action_cb = value : End Property
-    Public Property Let EnableEvents(value) : m_enable_events = value : End Property
-    Public Property Let DisableEvents(value) : m_disable_events = value : End Property
+    Public Property Let EnableEvents(value)
+        Dim evt
+        If IsArray(m_enable_events) Then
+            For Each evt in m_enable_events
+                RemovePinEventListener evt, m_name & "_enable"
+            Next
+        End If
+        m_enable_events = value
+        For Each evt in m_enable_events
+            AddPinEventListener evt, m_name & "_enable", "DiverterEventHandler", 1000, Array("enable", Me)
+        Next
+    End Property
+    Public Property Let DisableEvents(value)
+        Dim evt
+        If IsArray(m_disable_events) Then
+            For Each evt in m_enable_events
+                RemovePinEventListener evt, m_name & "_disable"
+            Next
+        End If
+        m_disable_events = value
+        For Each evt in m_disable_events
+            AddPinEventListener evt, m_name & "_disable", "DiverterEventHandler", 1000, Array("disable", Me)
+        Next
+    End Property
     Public Property Let ActivateEvents(value) : m_activate_events = value : End Property
     Public Property Let DeactivateEvents(value) : m_deactivate_events = value : End Property
     Public Property Let ActivationTime(value) : m_activation_time = value : End Property
     Public Property Let ActivationSwitches(value) : m_activation_switches = value : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
 
-	Public default Function init(name, enable_events, disable_events)
+	Public default Function init(name)
         m_name = "diverter_" & name
-        m_enable_events = enable_events
-        m_disable_events = disable_events
+        m_enable_events = Array()
+        m_disable_events = Array()
         m_activate_events = Array()
         m_deactivate_events = Array()
         m_activation_switches = Array()
         m_activation_time = 0
         m_debug = False
-        Dim evt
-        For Each evt in m_enable_events
-            AddPinEventListener evt, m_name & "_enable", "DiverterEventHandler", 1000, Array("enable", Me)
-        Next
-        For Each evt in m_disable_events
-            AddPinEventListener evt, m_name & "_disable", "DiverterEventHandler", 1000, Array("disable", Me)
-        Next
         Set Init = Me
 	End Function
 
@@ -6274,6 +6432,129 @@ Function DropTargetEventHandler(args)
     End Select
     DropTargetEventHandler = kwargs
 End Function
+
+Function CreateGlfFlipper(name)
+	Dim flipper : Set flipper = (new GlfFlipper)(name)
+	Set CreateGlfFlipper = flipper
+End Function
+
+Class GlfFlipper
+
+    Private m_name
+    Private m_enable_events
+    Private m_disable_events
+    Private m_enabled
+    Private m_switches
+    Private m_action_cb
+    Private m_debug
+
+    Public Property Let Switch(value)
+        m_switches = value
+    End Property
+    Public Property Let ActionCallback(value) : m_action_cb = value : End Property
+    Public Property Let EnableEvents(value)
+        Dim evt
+        If IsArray(m_enable_events) Then
+            For Each evt in m_enable_events
+                RemovePinEventListener evt, m_name & "_enable"
+            Next
+        End If
+        m_enable_events = value
+        For Each evt in m_enable_events
+            AddPinEventListener evt, m_name & "_enable", "FlipperEventHandler", 1000, Array("enable", Me)
+        Next
+    End Property
+    Public Property Let DisableEvents(value)
+        Dim evt
+        If IsArray(m_disable_events) Then
+            For Each evt in m_enable_events
+                RemovePinEventListener evt, m_name & "_disable"
+            Next
+        End If
+        m_disable_events = value
+        For Each evt in m_disable_events
+            AddPinEventListener evt, m_name & "_disable", "FlipperEventHandler", 1000, Array("disable", Me)
+        Next
+    End Property
+    Public Property Let Debug(value) : m_debug = value : End Property
+
+	Public default Function init(name)
+        m_name = "flipper_" & name
+        EnableEvents = Array("ball_started")
+        DisableEvents = Array("ball_will_end", "service_mode_entered")
+        m_enabled = False
+        m_action_cb = Empty
+        m_switches = Array()
+        m_debug = False
+        glf_flippers.Add name, Me
+        Set Init = Me
+	End Function
+
+    Public Sub Enable()
+        Log "Enabling"
+        m_enabled = True
+        Dim evt
+        For Each evt in m_switches
+            AddPinEventListener evt & "_active", m_name & "_active", "FlipperEventHandler", 1000, Array("activate", Me)
+            AddPinEventListener evt & "_inactive", m_name & "_inactive", "FlipperEventHandler", 1000, Array("deactivate", Me)
+        Next
+    End Sub
+
+    Public Sub Disable()
+        Log "Disabling"
+        m_enabled = False
+        Deactivate()
+        Dim evt
+        For Each evt in m_switches
+            RemovePinEventListener evt & "_active", m_name & "_active"
+            RemovePinEventListener evt & "_inactive", m_name & "_inactive"
+        Next
+    End Sub
+
+    Public Sub Activate()
+        Log "Activating"
+        If Not IsEmpty(m_action_cb) Then
+            GetRef(m_action_cb)(1)
+        End If
+        DispatchPinEvent m_name & "_activate", Null
+    End Sub
+
+    Public Sub Deactivate()
+        Log "Activating"
+        If Not IsEmpty(m_action_cb) Then
+            GetRef(m_action_cb)(0)
+        End If
+        DispatchPinEvent m_name & "_deactivate", Null
+    End Sub
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+End Class
+
+Function FlipperEventHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0) : kwargs = args(1) 
+    Dim evt : evt = ownProps(0)
+    Dim flipper : Set flipper = ownProps(1)
+    Select Case evt
+        Case "enable"
+            flipper.Enable
+        Case "disable"
+            flipper.Disable
+        Case "activate"
+            flipper.Activate
+        Case "deactivate"
+            flipper.Deactivate
+    End Select
+    FlipperEventHandler = kwargs
+End Function
+Function CreateGlfLightSegmentDisplay(name)
+	Dim segment_display : Set segment_display = (new GlfLightSegmentDisplay)(name)
+	Set CreateGlfLightSegmentDisplay = segment_display
+End Function
+
 Class GlfLightSegmentDisplay
 
     private m_flash_on
@@ -6360,7 +6641,11 @@ Class GlfLightSegmentDisplay
             If text <> m_display_state Then
                 m_display_state = text
                 'Set text to lights.
-                text = Right(text, m_size)
+                If text="" Then
+                    text = Glf_FormatValue(text, " >" & CStr(m_size))
+                Else
+                    text = Right(text, m_size)
+                End If
                 If text <> m_current_text Then
                     m_current_text = text
                     UpdateText()
@@ -6506,9 +6791,9 @@ FOURTEEN_SEGMENTS.Add 51, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0
 FOURTEEN_SEGMENTS.Add 52, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, "4")
 FOURTEEN_SEGMENTS.Add 53, (New FourteenSegments)(0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, "5")
 FOURTEEN_SEGMENTS.Add 54, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, "6")
-FOURTEEN_SEGMENTS.Add 55, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, "7")
+FOURTEEN_SEGMENTS.Add 55, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, "7")
 FOURTEEN_SEGMENTS.Add 56, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, "8")
-FOURTEEN_SEGMENTS.Add 57, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, "9")
+FOURTEEN_SEGMENTS.Add 57, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, "9")
 FOURTEEN_SEGMENTS.Add 58, (New FourteenSegments)(0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, ":")
 FOURTEEN_SEGMENTS.Add 59, (New FourteenSegments)(0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, ";")
 FOURTEEN_SEGMENTS.Add 60, (New FourteenSegments)(0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, "<")
@@ -6700,6 +6985,227 @@ Function MapSegmentTextToSegments(text, display_width, segment_mapping)
 
     MapSegmentTextToSegments = segments
 End Function
+Function CreateGlfMagnet(name)
+	Dim magnet : Set magnet = (new GlfMagnet)(name)
+	Set CreateGlfMagnet = magnet
+End Function
+
+Class GlfMagnet
+
+    Private m_name
+    Private m_enable_events
+    Private m_disable_events
+    Private m_fling_ball_events
+    Private m_fling_drop_time
+    Private m_fling_regrab_time
+    Private m_grab_ball_events
+    Private m_grab_switch
+    Private m_grab_time
+    Private m_release_ball_events
+    Private m_release_time
+    Private m_reset_events
+    Private m_action_cb
+
+    Private m_active
+    Private m_release_in_progress
+
+    Private m_debug
+
+    Public Property Let EnableEvents(value)
+        Dim evt
+        If IsArray(m_enable_events) Then
+            For Each evt in m_enable_events
+                RemovePinEventListener evt, m_name & "_enable"
+            Next
+        End If
+        m_enable_events = value
+        For Each evt in m_enable_events
+            AddPinEventListener evt, m_name & "_enable", "MagnetEventHandler", 1000, Array("enable", Me)
+        Next
+    End Property
+    Public Property Let DisableEvents(value)
+        Dim evt
+        If IsArray(m_disable_events) Then
+            For Each evt in m_enable_events
+                RemovePinEventListener evt, m_name & "_disable"
+            Next
+        End If
+        m_disable_events = value
+        For Each evt in m_disable_events
+            AddPinEventListener evt, m_name & "_disable", "MagnetEventHandler", 1000, Array("disable", Me)
+        Next
+    End Property
+    Public Property Let ActionCallback(value) : m_action_cb = value : End Property
+    Public Property Let FlingBallEvents(value) : m_fling_ball_events = value : End Property
+    Public Property Let FlingDropTime(value) : Set m_fling_drop_time = CreateGlfInput(value) : End Property
+    Public Property Let FlingRegrabTime(value) : Set m_fling_regrab_time = CreateGlfInput(value) : End Property
+    Public Property Let GrabBallEvents(value) : m_grab_ball_events = value : End Property
+    Public Property Let GrabSwitch(value)
+        m_grab_switch = value
+    End Property
+    Public Property Let GrabTime(value) : Set m_grab_time = CreateGlfInput(value) : End Property
+    Public Property Let ReleaseBallEvents(value) : m_release_ball_events = value : End Property
+    Public Property Let ReleaseTime(value) : Set m_release_time = CreateGlfInput(value) : End Property
+    Public Property Let ResetEvents(value) : m_reset_events = value : End Property
+    Public Property Let Debug(value) : m_debug = value : End Property
+
+	Public default Function init(name)
+        m_name = "magnet_" & name
+        EnableEvents = Array("ball_started")
+        DisableEvents = Array("ball_will_end", "service_mode_entered")
+        m_action_cb = Empty
+        m_fling_ball_events = Array()
+        Set m_fling_drop_time = CreateGlfInput(250)
+        Set m_fling_regrab_time = CreateGlfInput(50)
+        m_grab_ball_events = Array()
+        m_grab_switch = Empty
+        Set m_grab_time = CreateGlfInput(1500)
+        m_release_ball_events = Array()
+        Set m_release_time = CreateGlfInput(500)
+        m_reset_events = Array("machine_reset_phase_3", "ball_starting")
+        m_active = False
+        m_release_in_progress = False
+        m_debug = False
+        glf_magnets.Add name, Me
+        Set Init = Me
+	End Function
+
+    Public Sub Enable()
+        Log "Enabling"
+        Dim evt
+        For Each evt in m_fling_ball_events
+            AddPinEventListener evt, m_name & "_fling", "MagnetEventHandler", 1000, Array("fling", Me)
+        Next
+        For Each evt in m_grab_ball_events
+            AddPinEventListener evt, m_name & "_grab", "MagnetEventHandler", 1000, Array("grab", Me)
+        Next
+        For Each evt in m_release_ball_events
+            AddPinEventListener evt, m_name & "_release", "MagnetEventHandler", 1000, Array("release", Me)
+        Next
+        AddPinEventListener m_grab_switch & "_active", m_name & "_grab_switch", "MagnetEventHandler", 1000, Array("grab", Me)
+    End Sub
+
+    Public Sub Disable()
+        Log "Disabling"
+        Dim evt
+        For Each evt in m_fling_ball_events
+            RemovePinEventListener evt, m_name & "_fling"
+        Next
+        For Each evt in m_grab_ball_events
+            RemovePinEventListener evt, m_name & "_grab"
+        Next
+        For Each evt in m_release_ball_events
+            RemovePinEventListener evt, m_name & "_release"
+        Next
+        RemovePinEventListener m_grab_switch & "_active", m_name & "_grab_switch"
+    End Sub
+
+    Public Sub AddBall(ball)
+        m_magnet.AddBall ball
+    End Sub
+
+    Public Sub RemoveBall(ball)
+        m_magnet.RemoveBall ball
+    End Sub
+
+    Public Sub Fling()
+        If m_active = False or m_release_in_progress = True Then
+            Exit Sub
+        End If
+        m_active = False
+        m_release_in_progress = True
+        Log "Flinging Ball"
+        DispatchPinEvent m_name & "flinging_ball", Null
+        GetRef(m_action_cb)(0)
+        SetDelay m_name & "_fling_reenable", "MagnetEventHandler" , Array(Array("fling_reenable", Me),Null), m_fling_drop_time.Value
+    End Sub
+
+    Public Sub FlingReenable()
+        GetRef(m_action_cb)(1)
+        SetDelay m_name & "_fling_regrab", "MagnetEventHandler" , Array(Array("fling_regrab", Me),Null), m_fling_regrab_time.Value
+    End Sub
+
+    Public Sub FlingRegrab()
+        m_release_in_progress = False
+        GetRef(m_action_cb)(0)
+        DispatchPinEvent m_name & "_flinged_ball", Null
+    End Sub
+
+    Public Sub Grab()
+        If m_active = True Or m_release_in_progress = True Then
+            Exit Sub
+        End If
+        Log "Grabbing Ball"
+        m_active = True
+        GetRef(m_action_cb)(1)
+        DispatchPinEvent m_name & "_grabbing_ball", Null
+        SetDelay m_name & "_grabbing_done", "MagnetEventHandler" , Array(Array("grabbing_done", Me),Null), m_grab_time.Value
+    End Sub
+
+    Public Sub GrabbingDone()
+        DispatchPinEvent m_name & "_grabbed_ball", Null
+    End Sub
+
+    Public Sub Release()
+        If m_active = False or m_release_in_progress = True Then
+            Exit Sub
+        End If
+        m_active = False
+        m_release_in_progress = True
+        Log "Releasing Ball"
+        DispatchPinEvent m_name & "releasing_ball", Null
+        GetRef(m_action_cb)(0)
+        SetDelay m_name & "_release_done", "MagnetEventHandler" , Array(Array("release_done", Me),Null), m_release_time.Value
+    End Sub
+
+    Public Sub ReleaseDone()
+        m_release_in_progress = False
+        DispatchPinEvent m_name & "released_ball", Null
+    End Sub
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+End Class
+
+Function MagnetEventHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1) 
+    Else
+        kwargs = args(1) 
+    End If
+    Dim evt : evt = ownProps(0)
+    Dim magnet : Set magnet = ownProps(1)
+    Select Case evt
+        Case "enable"
+            magnet.Enable
+        Case "disable"
+            magnet.Disable
+        Case "fling"
+            magnet.Fling
+        Case "grab"
+            magnet.Grab
+        Case "release"
+            magnet.Release
+        Case "grabbing_done"
+            magnet.GrabbingDone
+        Case "release_done"
+            magnet.ReleaseDone
+        Case "fling_reenable"
+            magnet.FlingReenable
+        Case "fling_regrab"
+            magnet.FlingRegrab
+    End Select
+    If IsObject(args(1)) Then
+        Set MagnetEventHandler = kwargs
+    Else
+        MagnetEventHandler = kwargs
+    End If
+    
+End Function
 
 Class GlfEvent
 	Private m_raw, m_name, m_event, m_condition
@@ -6810,6 +7316,7 @@ Function Glf_ReleaseBall(args)
     End If
     glf_debugLog.WriteToLog "Release Ball", "swTrough1: " & swTrough1.BallCntOver
     swTrough1.kick 90, 10
+    DispatchPinEvent "trough_eject", Null
     glf_debugLog.WriteToLog "Release Ball", "Just Kicked"
     glf_BIP = glf_BIP + 1
 End Function
@@ -6834,6 +7341,7 @@ Function Glf_Drain(args)
         Exit Function
     End If
     
+    DispatchPinEvent GLF_BALL_WILL_END, Null
     DispatchPinEvent GLF_BALL_ENDING, Null
     DispatchPinEvent GLF_BALL_ENDED, Null
     SetPlayerState GLF_CURRENT_BALL, GetPlayerState(GLF_CURRENT_BALL) + 1
@@ -7013,8 +7521,8 @@ Function DispatchQueuePinEvent(e, kwargs)
     For i=0 to UBound(glf_pinEventsOrder(e))
         k = glf_pinEventsOrder(e)(i)
         'glf_debugLog.WriteToLog "DispatchQueuePinEvent"&e, "key: " & k(1) & ", priority: " & k(0)
-        msgbox "DispatchQueuePinEvent: " & e & " , key: " & k(1) & ", priority: " & k(0)
-        msgbox handlers(k(1))(0)
+        'msgbox "DispatchQueuePinEvent: " & e & " , key: " & k(1) & ", priority: " & k(0)
+        'msgbox handlers(k(1))(0)
         'Call the handlers.
         'The handlers might return a waitfor command.
         'If NO wait for command, continue calling handlers.
@@ -7414,12 +7922,12 @@ Sub UpdateTroughDebounced(args)
 	If glf_troughSize > 4 Then 
 		If swTrough4.BallCntOver = 0 Then swTrough5.kick 57, 10
 	End If
-    If glf_troughSize > 5 Then
-		 If swTrough5.BallCntOver = 0 Then swTrough6.kick 57, 10
+	If glf_troughSize > 5 Then
+		If swTrough5.BallCntOver = 0 Then swTrough6.kick 57, 10
 	End If
-    If glf_troughSize > 6 Then
-		 If swTrough6.BallCntOver = 0 Then swTrough7.kick 57, 10
+	If glf_troughSize > 6 Then
+		If swTrough6.BallCntOver = 0 Then swTrough7.kick 57, 10
 	End If
-    
+
 	If glf_lastTroughSw.BallCntOver = 0 Then Drain.kick 57, 10
 End Sub

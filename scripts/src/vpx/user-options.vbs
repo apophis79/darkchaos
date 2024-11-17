@@ -27,11 +27,13 @@ Sub Table1_OptionEvent(ByVal eventId)
     If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
 	Dim BP 
 
+	Glf_Options(eventId)
+	
     ' Sound volumes
     BackglassVol = Table1.Option("Game Sounds Volume", 0, 1, 0.01, 0.8, 1)
 	CalloutVol = Table1.Option("Callout Volume", 0, 1, 0.01, 0.8, 1)
     MechVol = Table1.Option("Mechanical Sounds Volume", 0, 1, 0.01, 0.8, 1)
-    BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.5, 1)
+    BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.3, 1)
 	RampRollVolume = Table1.Option("Ramp Roll Volume", 0, 1, 0.01, 0.5, 1)
 
 

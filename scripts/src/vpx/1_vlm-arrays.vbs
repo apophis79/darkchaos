@@ -266,13 +266,4 @@ Dim BG_All: BG_All=Array(BM_Asteroid1, BM_BR1, BM_BR2, BM_BR3, BM_BR4, BM_BS1, B
 	LM_L_LWiz_UnderPF, LM_L_LX_Parts, LM_L_LX_Playfield, LM_L_LX_UnderPF, LM_L_Lspot1_Asteroid1, LM_L_Lspot1_Asteroid2, LM_L_Lspot1_Asteroid3, LM_L_Lspot1_Asteroid4, LM_L_Lspot1_BR4, LM_L_Lspot1_BS4, LM_L_Lspot1_BmpTopB, LM_L_Lspot1_Parts, LM_L_Lspot1_Playfield, LM_L_Lspot1_Ramp, LM_L_Lspot1_Spin, LM_L_Lspot1_SpinU, LM_L_Lspot1_SpinWire, LM_L_Lspot1_TM3, LM_L_Lspot1_TM4, LM_L_Lspot1_UnderPF, LM_L_Lspot1_swC1, LM_L_Lspot1_swC2, LM_L_Lspot1_swC3, LM_L_Lspot1_swI2, LM_L_Lspot2_GateL, LM_L_Lspot2_LArm, LM_L_Lspot2_LFlip, LM_L_Lspot2_LFlipU, LM_L_Lspot2_LockPin, LM_L_Lspot2_Lsling1, LM_L_Lspot2_Lsling2, LM_L_Lspot2_Parts, LM_L_Lspot2_Playfield, LM_L_Lspot2_RArm, LM_L_Lspot2_RFlip, LM_L_Lspot2_RFlipU, LM_L_Lspot2_Ramp, LM_L_Lspot2_Rsling1, LM_L_Lspot2_Rsling2, LM_L_Lspot2_UnderPF, LM_L_Lspot2_swLB1, LM_L_Lspot2_swLO, LM_Stars_Parts, LM_Stars_Ramp)
 ' VLM  Arrays - End
 
-' BL array. Must be in same order as AllControlLights collection
-Dim BL_Array: BL_Array = Array(BL_L_LB1,BL_L_LB2,BL_L_LB3,BL_L_LB4,BL_L_LC1,BL_L_LC2,BL_L_LC3,BL_L_LC4,BL_L_LC5,BL_L_LC6,BL_L_LC7,BL_L_LC8,BL_L_LCC1,BL_L_LCC2,BL_L_LCC3,BL_L_LCR1,BL_L_LCR2, _
-	BL_L_LCWiz,BL_L_LEBR,BL_L_LF1,BL_L_LF2,BL_L_LF3,BL_L_LH1,BL_L_LH2,BL_L_LH3,BL_L_LH4,BL_L_LH5,BL_L_LH6,BL_L_LH7,BL_L_LH8,BL_L_LH9,BL_L_LLI,BL_L_LLO,BL_L_LLWiz,BL_L_LM1,BL_L_LM2,BL_L_LM3, _
-	BL_L_LM4,BL_L_LM5,BL_L_LMet1,BL_L_LMet2,BL_L_LMet3,BL_L_LMet4,BL_L_LMLR,BL_L_LMR,BL_L_LMR1,BL_L_LMR2,BL_L_LPC1,BL_L_LPC2,BL_L_LPC3,BL_L_LPC4,BL_L_LPC5,BL_L_LPF,BL_L_LPR1,BL_L_LPR2,BL_L_LPR3, _
-	BL_L_LPR4,BL_L_LPR5,BL_L_LPR6,BL_L_LRI,BL_L_LRO,BL_L_LS1,BL_L_LS2,BL_L_LS3,BL_L_LS4,BL_L_LS5,BL_L_LS6,BL_L_LSA,BL_L_LSC1,BL_L_LSC2,BL_L_LSC3,BL_L_LSC4,BL_L_LSL,BL_L_Lspot1,BL_L_Lspot2, _
-	BL_L_LSR,BL_L_LSwC1,BL_L_LSwC2,BL_L_LSwC3,BL_L_LSwL1,BL_L_LSwL2,BL_L_LTW1,BL_L_LTW2,BL_L_LTW3,BL_L_LTW4,BL_L_LW1,BL_L_LW2,BL_L_LW3,BL_L_LW4,BL_L_LW5,BL_L_LW6,BL_L_LW7,BL_L_LW8, _
-	BL_L_LW9,BL_L_LWiz,BL_L_LX)
-
-Dim LenControlLights: LenControlLights = UBound(BL_Array)
 

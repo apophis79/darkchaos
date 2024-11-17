@@ -3,20 +3,25 @@
 '  ZFLP : Flippers
 '*******************************************
 
+
+' Flipper callbacks
+
 Const ReflipAngle = 20
 
-' Flipper Solenoid Callbacks (these subs mimics how you would handle flippers in ROM based tables)
-Sub SolLFlipper(Enabled)
+Sub LeftFlipperAction(Enabled)
 	If Enabled Then
-		LF.Fire  'leftflipper.rotatetoend
-
+		DOF 101, DOFOn
+		FlipperActivate LeftFlipper, LFPress
+		LF.Fire    
 		If LeftFlipper.currentangle < LeftFlipper.endangle + ReflipAngle Then 
 			RandomSoundReflipUpLeft LeftFlipper
 		Else 
 			SoundFlipperUpAttackLeft LeftFlipper
 			RandomSoundFlipperUpLeft LeftFlipper
-		End If		
+		End If
 	Else
+		DOF 101, DOFOff
+		FlipperDeActivate LeftFlipper, LFPress
 		LeftFlipper.RotateToStart
 		If LeftFlipper.currentangle < LeftFlipper.startAngle - 5 Then
 			RandomSoundFlipperDownLeft LeftFlipper
@@ -25,9 +30,11 @@ Sub SolLFlipper(Enabled)
 	End If
 End Sub
 
-Sub SolRFlipper(Enabled)
+Sub RightFlipperAction(Enabled)
 	If Enabled Then
-		RF.Fire 'RightFlipper.rotatetoend
+		DOF 102, DOFOn
+		FlipperActivate RightFlipper, RFPress
+		RF.Fire 
 		RightFlipper1.rotatetoend
 		If RightFlipper.currentangle > RightFlipper.endangle - ReflipAngle Then
 			RandomSoundReflipUpRight RightFlipper
@@ -36,6 +43,8 @@ Sub SolRFlipper(Enabled)
 			RandomSoundFlipperUpRight RightFlipper
 		End If
 	Else
+		DOF 102, DOFOff
+		FlipperDeActivate RightFlipper, RFPress
 		RightFlipper.RotateToStart
 		RightFlipper1.RotateToStart
 		If RightFlipper.currentangle > RightFlipper.startAngle + 5 Then

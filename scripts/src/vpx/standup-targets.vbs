@@ -160,15 +160,15 @@ Class StandupTarget
   
   Sub STAction(Switch)
       Select Case Switch
-          Case 1: TargetMystery1_Action
-          Case 2: TargetMystery2_Action
-          Case 3: TargetMystery3_Action
-          Case 4: TargetMystery4_Action
-          Case 5: TargetMystery5_Action
-          Case 6: TargetShield1_Action
-          Case 7: TargetShield2_Action
-          Case 8: TargetShield3_Action
-          Case 9: TargetShield4_Action
+          Case 1: 'TargetMystery1_Action
+          Case 2: 'TargetMystery2_Action
+          Case 3: 'TargetMystery3_Action
+          Case 4: 'TargetMystery4_Action
+          Case 5: 'TargetMystery5_Action
+          Case 6: 'TargetShield1_Action
+          Case 7: 'TargetShield2_Action
+          Case 8: 'TargetShield3_Action
+          Case 9: 'TargetShield4_Action 
       End Select
   End Sub
   

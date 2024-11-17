@@ -303,23 +303,11 @@ Class DropTarget
   
   Sub DTAction(switchid)
       Select Case switchid
-          Case 1:
-              SwitchWasHit "DTMeteor1"
-              Meteors(0).Hit
-              'TODO: hit light show
-          Case 2:
-              SwitchWasHit "DTMeteor2"
-              Meteors(1).Hit
-              'TODO: hit light show
-          Case 3:
-              SwitchWasHit "DTMeteor3"
-              Meteors(2).Hit
-              'TODO: hit light show
-          Case 4:
-              SwitchWasHit "DTMeteor4"
-              Meteors(3).Hit
-              'TODO: hit light show
-      End Select
+          Case 1: 'DTMeteor1_Action
+          Case 2: 'DTMeteor2_Action
+          Case 3: 'DTMeteor3_Action
+          Case 4: 'DTMeteor4_Action
+       End Select
   End Sub
   
   

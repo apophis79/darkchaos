@@ -6,6 +6,7 @@
 
 
 Sub AudioCallout(scenario)
+	Exit Sub
 	select case scenario
 		case "boot"
 			select case Int(Rnd * 2) + 1
