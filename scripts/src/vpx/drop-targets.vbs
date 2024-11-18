@@ -331,9 +331,9 @@ End Function
 
 Sub DTAction(switchid, dropped)
     If dropped = 1 Then
-        DispatchPinEvent "DTMeteor" & switchid & "_active", Null
+        DispatchPinEvent DTArray(DTArrayID(switchid)).Primary.Name & "_active", Null
     Else
-        DispatchPinEvent "DTMeteor" & switchid & "_inactive", Null
+        DispatchPinEvent DTArray(DTArrayID(switchid)).Primary.Name & "_inactive", Null
     End If
 End Sub
 
