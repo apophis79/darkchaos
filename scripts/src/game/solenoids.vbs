@@ -36,13 +36,21 @@ Sub ScoopEjectCallback(ball)
 	End If
 End Sub
 
+Sub MoonLockEjectCallback(ball)
+	If Not IsNull(ball) Then
+		DropLockPin 1
+	Else
+		DropLockPin 0
+	End If
+End Sub
+
 
 Sub PlungerEjectCallback(ball)
-	If swPunger1.BallCntOver > 0 Then
+	If swPlunger1.BallCntOver > 0 Then
 		KickBall ball, 0, 60, 0, 0
-		SoundSaucerKick 1, swPunger1
+		SoundSaucerKick 1, swPlunger1
 	Else
-		SoundSaucerKick 0, swPunger1
+		SoundSaucerKick 0, swPlunger1
 	End If
 End Sub
 
