@@ -5,38 +5,12 @@
 
 
 
-' '  Kickers, Saucers
-' '*******************************************
+'  Kickers, Saucers
+'*******************************************
 
-' 'To include some randomness in the Kicker's kick, use the following parmeters
-' Const KickerAngleTol = 0.4   		'Number of degrees the kicker angle varies around its intended direction
-' Const KickerStrengthTol = 3   	'Number of strength units the kicker varies around its intended strength
-
-' Sub SolKickerScoop(Enabled)
-' 	'DebugPrint "SolGrabMagnet " & Enabled
-' 	if Enabled then
-' 		SoundSaucerKick 1, KickerScoop
-' 		KickerScoop.Kick 13.8+RndNum(-KickerAngleTol,KickerAngleTol), 75+RndNum(-KickerStrengthTol,KickerStrengthTol)
-' 	end if
-' End Sub
-
-' Sub KickerScoop_Hit
-' 	Addscore 5000
-' 	SoundSaucerLock
-' 	KickerScoop.timerenabled=True
-' 	CheckMysteryAward
-' 	CheckExtraBallAward
-' End Sub
-
-' Sub KickerScoop_Timer
-' 	' Kick out ball
-' 	If bMysteryActive Then
-' 		bMysteryActive = False
-' 		bWaveTimerPaused = False
-' 	End If
-' 	SolKickerScoop True
-' 	KickerScoop.timerenabled=False
-' End Sub
+'To include some randomness in the Kicker's kick, use the following parmeters
+Const ScoopAngleTol = 1   	 'Number of degrees the kicker angle varies around its intended direction
+Const ScoopStrengthTol = 3   'Number of strength units the kicker varies around its intended strength
 
 
 Sub KickBall(kball, kangle, kvel, kvelz, kzlift)
@@ -53,8 +27,8 @@ End Sub
 Sub ScoopEjectCallback(ball)
 	Dim ang, vel
 	If swScoop.BallCntOver > 0 Then
-		ang = 14.8 + 1*2*(rnd-0.5)
-		vel = 70.0 + 3*2*(rnd-0.5)
+		ang = 14.8 + ScoopAngleTol*2*(rnd-0.5)
+		vel = 70.0 + ScoopStrengthTol*2*(rnd-0.5)
 		KickBall ball, ang, vel, 0, 0
 		SoundSaucerKick 1, swScoop
 	Else
@@ -64,11 +38,8 @@ End Sub
 
 
 Sub PlungerEjectCallback(ball)
-	Dim ang, vel
 	If swPunger1.BallCntOver > 0 Then
-		ang = 14.8 + 1*2*(rnd-0.5)
-		vel = 70.0 + 3*2*(rnd-0.5)
-		KickBall ball, ang, vel, 0, 0
+		KickBall ball, 0, 60, 0, 0
 		SoundSaucerKick 1, swPunger1
 	Else
 		SoundSaucerKick 0, swPunger1
@@ -81,7 +52,6 @@ End Sub
 '******************************************* 
 
 Sub GrabMagnetAction(Enabled)
-	debug.print "---------> GrabMagnetAction "&Enabled
 	GrabMag.MagnetOn = Enabled
 end sub
 
