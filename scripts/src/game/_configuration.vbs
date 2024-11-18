@@ -13,6 +13,7 @@ Sub ConfigureGlfDevices
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"
+        .Debug = True
     End With
 
     ' Scoop
@@ -31,7 +32,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDiverter("lock_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("release_moon_ball")
-        .ActivationTime = 250
+        .ActivationTime = 2000
         .ActionCallback = "DropLockPin"
     End With
 
@@ -42,8 +43,6 @@ Sub ConfigureGlfDevices
         .ActivationTime = 2000
         .ActionCallback = "RaiseDiverterPin"
     End With
-
-
 
     ' Flippers
     With CreateGlfFlipper("left")
@@ -109,7 +108,7 @@ Sub ConfigureGlfDevices
     AddPinEventListener "rightslingshot_active",  "on_rightslingshot_active",  "OnRightSlingshotActive", 1000, Null
 
     ' Modes
-    MonitorMoonLockPin
+    CreateMoonMultiballMode
 
 End Sub
 
@@ -126,16 +125,6 @@ Function BallDrainSound(args)
 End Function 
 
 
-' Modes
-
-Sub MonitorMoonLockPin()
-    With CreateGlfMode("moon_lock_pin", 500)
-        .StartEvents = Array("ball_started")
-        With .EventPlayer()
-            .Add "balldevice_moon_lock_ball_eject_success", Array("release_moon_ball")
-        End With
-    End With
-End Sub
 
 ' With CreateGlfMode("moon_lock_pin", 500)
 '     .StartEvents = Array("ball_started")
