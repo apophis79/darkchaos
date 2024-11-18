@@ -12,7 +12,7 @@ Sub DTMeteor4_Hit: 	DTHit 4 : End Sub
 '  DROP TARGETS INITIALIZATION
 
 Class DropTarget
-    Private m_primary, m_secondary, m_prim, m_sw, m_animate, m_isDropped
+    Private m_primary, m_secondary, m_prim, m_sw, m_animate, m_isDropped, m_keepup
   
     Public Property Get Primary(): Set Primary = m_primary: End Property
     Public Property Let Primary(input): Set m_primary = input: End Property
@@ -28,6 +28,9 @@ Class DropTarget
   
     Public Property Get Animate(): Animate = m_animate: End Property
     Public Property Let Animate(input): m_animate = input: End Property
+
+    Public Property Get Keepup(): Keepup = m_keepup: End Property
+    Public Property Let Keepup(input): m_keepup = input: End Property
   
     Public Property Get IsDropped(): IsDropped = m_isDropped: End Property
     Public Property Let IsDropped(input): m_isDropped = input: End Property
@@ -39,6 +42,7 @@ Class DropTarget
       m_sw = sw
       m_animate = animate
       m_isDropped = isDropped
+      m_keepup = False
   
       Set Init = Me
     End Function
@@ -92,7 +96,11 @@ Sub DTHit(switch)
     i = DTArrayID(switch)
     
     PlayTargetSound
-    DTArray(i).animate = DTCheckBrick(ActiveBall,DTArray(i).prim)
+    If DTArray(i).Keepup = True Then
+        DTArray(i).animate = 3
+    Else
+        DTArray(i).animate = DTCheckBrick(ActiveBall,DTArray(i).prim)
+    End If
     If DTArray(i).animate = 1 Or DTArray(i).animate = 3 Or DTArray(i).animate = 4 Then
         DTBallPhysics ActiveBall, DTArray(i).prim.rotz, DTMass
     End If
@@ -113,6 +121,19 @@ Sub DTDrop(switch)
     
     DTArray(i).animate = 1
     DoDTAnim
+End Sub
+
+Sub DTEnableKeepup(switch)
+    Dim i
+    i = DTArrayID(switch)
+    DTArray(i).Keepup = True
+    DTRaise(switch)
+End Sub
+
+Sub DTDisableKeepup(switch)
+    Dim i
+    i = DTArrayID(switch)
+    DTArray(i).Keepup = False
 End Sub
 
 Function DTArrayID(switch)
@@ -326,8 +347,10 @@ Sub DTMeteor1Callback(state)
             DTDrop 1
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
+            DTEnableKeepup 1
         Case 4
             'Disable Keep up, i.e. allow roth drop to drop when a ball hits
+            DTDisableKeepup 1
     End Select
 End Sub
   
@@ -340,8 +363,10 @@ Sub DTMeteor2Callback(state)
             DTDrop 2
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
+            DTEnableKeepup 2
         Case 4
             'Disable Keep up, i.e. allow roth drop to drop when a ball hits
+            DTDisableKeepup 2
     End Select
 End Sub
   
@@ -354,8 +379,10 @@ Sub DTMeteor3Callback(state)
             DTDrop 3
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
+            DTEnableKeepup 3
         Case 4
             'Disable Keep up, i.e. allow roth drop to drop when a ball hits
+            DTDisableKeepup 3
     End Select
 End Sub
   
@@ -368,8 +395,10 @@ Sub DTMeteor4Callback(state)
             DTDrop 4
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
+            DTEnableKeepup 4
         Case 4
             'Disable Keep up, i.e. allow roth drop to drop when a ball hits
+            DTDisableKeepup 4
     End Select
 End Sub
   

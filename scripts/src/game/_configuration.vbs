@@ -70,6 +70,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDroptarget("drop1")
         .Switch = "DTMeteor1"
         .KnockdownEvents = Array("s_right_magna_key_active")
+        .EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor1Callback"
     End With
@@ -77,6 +78,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDroptarget("drop2")
         .Switch = "DTMeteor2"
         .KnockdownEvents = Array("s_right_magna_key_active")
+        .EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor2Callback"
     End With
@@ -84,6 +86,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDroptarget("drop3")
         .Switch = "DTMeteor3"
         .KnockdownEvents = Array("s_right_magna_key_active")
+        .EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor3Callback"
     End With
@@ -91,6 +94,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDroptarget("drop4")
         .Switch = "DTMeteor4"
         .KnockdownEvents = Array("s_right_magna_key_active")
+        .EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor4Callback"
     End With
