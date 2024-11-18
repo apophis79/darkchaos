@@ -229,7 +229,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
             prim.transz =  - DTDropUnits
             secondary.collidable = 0
             DTArray(ind).isDropped = True 'Mark target as dropped
-            DTAction switchid
+            DTAction switchid, 1
             primary.uservalue = 0
             DTAnimate = 0
             Exit Function
@@ -285,6 +285,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
         primary.collidable = 0
         secondary.collidable = 1
         DTArray(ind).isDropped = False 'Mark target as not dropped
+        DTAction switchid, 0
     End If
     
     If animate =  - 2 And animtime > DTRaiseDelay Then
@@ -307,13 +308,12 @@ Function DTDropped(switchid)
     DTDropped = DTArray(ind).isDropped
 End Function
 
-Sub DTAction(switchid)
-    Select Case switchid
-        Case 1: DispatchPinEvent "DTMeteor1_active", Null
-        Case 2: DispatchPinEvent "DTMeteor2_active", Null
-        Case 3: DispatchPinEvent "DTMeteor3_active", Null
-        Case 4: DispatchPinEvent "DTMeteor4_active", Null
-    End Select
+Sub DTAction(switchid, dropped)
+    If dropped = 1 Then
+        DispatchPinEvent "DTMeteor" & switchid & "_active", Null
+    Else
+        DispatchPinEvent "DTMeteor" & switchid & "_inactive", Null
+    End If
 End Sub
 
   
@@ -322,10 +322,8 @@ Sub DTMeteor1Callback(state)
         Case 0
             DTRaise 1
             SoundDropTargetDrop BM_TMet1
-            DispatchPinEvent "DTMeteor1_inactive", Null 'This should be inside roth code where controller.switch is now
         Case 1
             DTDrop 1
-            DispatchPinEvent "DTMeteor1_active", Null 'This should be inside roth code where controller.switch is now
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
         Case 4
@@ -338,10 +336,8 @@ Sub DTMeteor2Callback(state)
         Case 0
             DTRaise 2
             SoundDropTargetDrop BM_TMet2
-            DispatchPinEvent "DTMeteor2_inactive", Null 'This should be inside roth code where controller.switch is now
         Case 1
             DTDrop 2
-            DispatchPinEvent "DTMeteor2_active", Null 'This should be inside roth code where controller.switch is now
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
         Case 4
@@ -354,10 +350,8 @@ Sub DTMeteor3Callback(state)
         Case 0
             DTRaise 3
             SoundDropTargetDrop BM_TMet3
-            DispatchPinEvent "DTMeteor3_inactive", Null 'This should be inside roth code where controller.switch is now
         Case 1
             DTDrop 3
-            DispatchPinEvent "DTMeteor3_active", Null 'This should be inside roth code where controller.switch is now
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
         Case 4
@@ -370,10 +364,8 @@ Sub DTMeteor4Callback(state)
         Case 0
             DTRaise 4
             SoundDropTargetDrop BM_TMet4
-            DispatchPinEvent "DTMeteor4_inactive", Null 'This should be inside roth code where controller.switch is now
         Case 1
             DTDrop 4
-            DispatchPinEvent "DTMeteor4_active", Null 'This should be inside roth code where controller.switch is now
         Case 3
             'Enable Keep up, i.e. prevent roth drop from dropping when a ball hits
         Case 4
