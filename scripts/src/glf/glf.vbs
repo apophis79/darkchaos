@@ -30,7 +30,7 @@ Dim glf_flippers : Set glf_flippers = CreateObject("Scripting.Dictionary")
 Dim glf_ball_holds : Set glf_ball_holds = CreateObject("Scripting.Dictionary")
 Dim glf_magnets : Set glf_magnets = CreateObject("Scripting.Dictionary")
 Dim glf_segment_displays : Set glf_segment_displays = CreateObject("Scripting.Dictionary")
-
+Dim glf_droptargets : Set glf_droptargets = CreateObject("Scripting.Dictionary")
 
 Dim bcpController : bcpController = Null
 Dim useBCP : useBCP = False
@@ -1554,19 +1554,6 @@ Class GlfBallHold
     Private m_release_all_events
     Private m_release_one_events
     Private m_release_one_if_full_events
-
-    Private m_control_events
-    Private m_running
-    Private m_ticks
-    Private m_ticks_remaining
-    Private m_start_value
-    Private m_end_value
-    Private m_direction
-    Private m_tick_interval
-    Private m_starting_tick_interval
-    Private m_max_value
-    Private restart_on_complete
-    Private m_start_running
 
     Public Property Get Name() : Name = m_name : End Property
 
@@ -3251,23 +3238,29 @@ End Function
 Class GlfMultiballLocks
 
     Private m_name
+    Private m_lock_device
     Private m_priority
     Private m_mode
+    Private m_base_device
     Private m_enable_events
     Private m_disable_events
     Private m_balls_to_lock
     Private m_balls_locked
+    Private m_balls_to_replace
+    Private m_balls_replaced
     Private m_lock_events
     Private m_reset_events
     Private m_debug
 
     Public Property Get Name(): Name = m_name: End Property
-
-    Public Property Let EnableEvents(value) : m_enable_events = value : End Property
-    Public Property Let DisableEvents(value) : m_disable_events = value : End Property
+    Public Property Get LockDevice() : LockDevice = m_lock_device : End Property
+    Public Property Let LockDevice(value) : m_lock_device = value : End Property
+    Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
+    Public Property Let DisableEvents(value) : m_base_device.DisableEvents = value : End Property
     Public Property Let BallsToLock(value) : m_balls_to_lock = value : End Property
     Public Property Let LockEvents(value) : m_lock_events = value : End Property
     Public Property Let ResetEvents(value) : m_reset_events = value : End Property
+    Public Property Let BallsToReplace(value) : m_balls_to_replace = value : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(name, mode)
@@ -3275,33 +3268,30 @@ Class GlfMultiballLocks
         m_mode = mode.Name
         m_lock_events = Array()
         m_reset_events = Array()
+        m_lock_device = Array()
         m_balls_to_lock = 0
-
-        AddPinEventListener m_mode & "_starting", m_name & "_activate", "MultiballLocksHandler", m_priority, Array("activate", Me)
-        AddPinEventListener m_mode & "_stopping", m_name & "_deactivate", "MultiballLocksHandler", m_priority, Array("deactivate", Me)
+        m_balls_to_replace = -1
+        m_balls_replaced = 0
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "multiball_locks", Me)
         Set Init = Me
 	End Function
 
     Public Sub Activate()
-        Dim evt
-        For Each evt in m_enable_events
-            AddPinEventListener evt, m_name & "_enable", "MultiballLocksHandler", m_priority, Array("enable", Me)
-        Next
+        If UBound(m_base_device.EnableEvents.Keys()) = -1 Then
+            Enable()
+        End If
     End Sub
 
     Public Sub Deactivate()
         Disable()
-        Dim evt
-        For Each evt in m_enable_events
-            RemovePinEventListener evt, m_name & "_enable"
-        Next
     End Sub
 
     Public Sub Enable()
-        Log "Enabling"
+        m_base_device.Log "Enabling"
+        AddPinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock", "MultiballLocksHandler", m_priority, Array("lock", me, m_lock_device)
         Dim evt
         For Each evt in m_lock_events
-            AddPinEventListener evt, m_name & "_ball_locked", "MultiballLocksHandler", m_priority, Array("lock", Me)
+            AddPinEventListener evt, m_name & "_ball_locked", "MultiballLocksHandler", m_priority, Array("lock", Me, Null)
         Next
         For Each evt in m_reset_events
             AddPinEventListener evt, m_name & "_reset", "MultiballLocksHandler", m_priority, Array("reset", Me)
@@ -3309,45 +3299,69 @@ Class GlfMultiballLocks
     End Sub
 
     Public Sub Disable()
-        Log "Disabling"
+        m_base_device.Log "Disabling"
+        RemovePinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock"
         Dim evt
         For Each evt in m_lock_events
             RemovePinEventListener evt, m_name & "_ball_locked"
         Next
+        For Each evt in m_reset_events
+            RemovePinEventListener evt, m_name & "_reset"
+        Next
     End Sub
 
-    Public Sub Lock()
+    Public Function Lock(device, unclaimed_balls)
+        
+        If unclaimed_balls <= 0 Then
+            Lock = unclaimed_balls
+            Exit Function
+        End If
+        
         Dim balls_locked
         If IsNull(GetPlayerState(m_name & "_balls_locked")) Then
             balls_locked = 1
         Else
             balls_locked = GetPlayerState(m_name & "_balls_locked") + 1
         End If
+        If balls_locked > m_balls_to_lock Then
+            m_base_device.Log "Cannot lock balls. Lock is full."
+            Lock = unclaimed_balls
+            Exit Function
+        End If
+
         SetPlayerState m_name & "_balls_locked", balls_locked
         DispatchPinEvent m_name & "_locked_ball", balls_locked
-        Log CStr(balls_locked)
-        glf_BIP = glf_BIP - 1
+
+        If Not IsNull(device) Then
+            If m_balls_to_replace = -1 Or m_balls_to_replace < m_balls_replaced Then
+                glf_BIP = glf_BIP - 1
+                m_balls_replaced = m_balls_replaced + 1
+                SetDelay m_name & "_queued_release", "MultiballLocksHandler" , Array(Array("queue_release", Me),Null), 1000
+            End If
+        End If
+
         If balls_locked = m_balls_to_lock Then
             DispatchPinEvent m_name & "_full", balls_locked
-        Else
-            SetDelay m_name & "_queued_release", "MultiballLocksHandler" , Array(Array("queue_release", Me),Null), 1000
         End If
-    End Sub
+
+        Lock = unclaimed_balls - 1
+    End Function
 
     Public Sub Reset
         SetPlayerState m_name & "_balls_locked", 0
+        m_balls_replaced = 0
     End Sub
 
-    Private Sub Log(message)
-        If m_debug = True Then
-            glf_debugLog.WriteToLog m_name, message
-        End If
-    End Sub
 End Class
 
 Function MultiballLocksHandler(args)
     
-    Dim ownProps, kwargs : ownProps = args(0) : kwargs = args(1) 
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
+    Else
+        kwargs = args(1) 
+    End If
     Dim evt : evt = ownProps(0)
     Dim multiball : Set multiball = ownProps(1)
     Select Case evt
@@ -3360,12 +3374,12 @@ Function MultiballLocksHandler(args)
         Case "disable"
             multiball.Disable
         Case "lock"
-            multiball.Lock
+            kwargs = multiball.Lock(ownProps(2), kwargs)
         Case "reset"
             multiball.Reset
         Case "queue_release"
             If glf_plunger.HasBall = False And ballInReleasePostion = True Then
-                ReleaseBall(Null)
+                Glf_ReleaseBall(Null)
                 SetDelay multiball.Name&"_auto_launch", "MultiballLocksHandler" , Array(Array("auto_launch", multiball),Null), 500
             Else
                 SetDelay multiball.Name&"_queued_release", "MultiballLocksHandler" , Array(Array("queue_release", multiball), Null), 1000
@@ -3377,7 +3391,11 @@ Function MultiballLocksHandler(args)
                 SetDelay multiball.Name&"_auto_launch", "MultiballLocksHandler" , Array(Array("auto_launch", multiball), Null), 500
             End If
     End Select
-    MultiballLocksHandler = kwargs
+    If IsObject(args(1)) Then
+        Set MultiballLocksHandler = kwargs
+    Else
+        MultiballLocksHandler = kwargs
+    End If
 End Function
 
 Class GlfMultiball
@@ -6047,14 +6065,9 @@ Class GlfBallDevice
     Private m_ball_switches
     Private m_player_controlled_eject_event
     Private m_eject_timeout
+    Private m_eject_enable_time
     Private m_balls
     Private m_balls_in_device
-    Private m_eject_angle
-    Private m_eject_angle_rnd
-    Private m_eject_pitch
-    Private m_eject_strength
-    Private m_eject_strength_rnd
-    Private m_eject_deltaz
     Private m_default_device
     Private m_eject_callback
     Private m_eject_all_events
@@ -6066,6 +6079,12 @@ Class GlfBallDevice
     Private m_debug
 
     Public Property Get Name(): Name = m_name : End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "balls":
+                GetValue = m_balls_in_device
+        End Select
+    End Property
     Public Property Let DefaultDevice(value)
         m_default_device = value
         If m_default_device = True Then
@@ -6079,15 +6098,9 @@ Class GlfBallDevice
     Public Property Get Balls(): Balls = m_balls_in_device : End Property
 
     Public Property Let EjectCallback(value) : m_eject_callback = value : End Property
-    
-    Public Property Let EjectAngle(value) : m_eject_angle = glf_PI * value / 180 : End Property
-    Public Property Let EjectAngleRand(value) : m_eject_angle_rnd = glf_PI * value / 180 : End Property
-    Public Property Let EjectPitch(value) : m_eject_pitch = glf_PI * value / 180 : End Property
-    Public Property Let EjectStrength(value) : m_eject_strength = value : End Property
-    Public Property Let EjectStrengthRand(value) : m_eject_strength_rnd = value : End Property
-    Public Property Let EjectDeltaZ(value) : m_eject_deltaz = value : End Property
-    
-    Public Property Let EjectTimeout(value) : m_eject_timeout = value * 1000 : End Property
+    Public Property Let EjectEnableTime(value) : m_eject_enable_time = value : End Property
+        
+    Public Property Let EjectTimeout(value) : m_eject_timeout = value : End Property
     Public Property Let EjectAllEvents(value)
         m_eject_all_events = value
         Dim evt
@@ -6117,6 +6130,8 @@ Class GlfBallDevice
         Next
     End Property
     Public Property Let MechanicalEject(value) : m_mechanical_eject = value : End Property
+
+
     Public Property Let Debug(value) : m_debug = value : End Property
         
 	Public default Function init(name)
@@ -6127,12 +6142,6 @@ Class GlfBallDevice
         m_balls = Array()
         m_debug = False
         m_default_device = False
-        m_eject_pitch = 0
-        m_eject_angle = 0
-        m_eject_angle_rnd = 0
-        m_eject_strength = 0
-        m_eject_strength_rnd = 0
-        m_eject_deltaz = 0
         m_ejecting = False
         m_eject_callback = Null
         m_ejecting_all = False
@@ -6140,6 +6149,7 @@ Class GlfBallDevice
         m_balls_in_device = 0
         m_mechanical_eject = False
         m_eject_timeout = 1000
+        m_eject_enable_time = 0
         glf_ball_devices.Add name, Me
 	    Set Init = Me
 	End Function
@@ -6191,18 +6201,18 @@ Class GlfBallDevice
         Log "Ejecting."
         SetDelay m_name & "_eject_timeout", "BallDeviceEventHandler", Array(Array("eject_timeout", Me), m_balls(0)), m_eject_timeout
         m_ejecting = True
-        If m_eject_strength > 0 Then
-            If Not IsNull(m_balls(0)) Then
-                m_balls(0).VelX = (m_eject_strength + m_eject_strength_rnd*2*(rnd-0.5)) * Cos(m_eject_pitch) * Sin(m_eject_angle + m_eject_angle_rnd*2*(rnd-0.5))
-                m_balls(0).VelY = (m_eject_strength + m_eject_strength_rnd*2*(rnd-0.5)) * Cos(m_eject_pitch) * Cos(m_eject_angle + m_eject_angle_rnd*2*(rnd-0.5)) * (-1)
-                m_balls(0).VelZ = (m_eject_strength + m_eject_strength_rnd*2*(rnd-0.5)) * Sin(m_eject_pitch)
-                m_balls(0).Z = m_balls(0).Z + m_eject_deltaz
-                Log "VelX: " &  m_balls(0).VelX & ", VelY: " &  m_balls(0).VelY & ", VelZ: " &  m_balls(0).VelZ
-            End If
-        End If
-
+        
         If Not IsNull(m_eject_callback) Then
             GetRef(m_eject_callback)(m_balls(0))
+            If m_eject_enable_time > 0 Then
+                SetDelay m_name & "_eject_enable_time", "BallDeviceEventHandler", Array(Array("eject_enable_complete", Me), m_balls(0)), m_eject_enable_time
+            End If
+        End If
+    End Sub
+
+    Public Sub EjectEnableComplete
+        If Not IsNull(m_eject_callback) Then
+            GetRef(m_eject_callback)(Null)
         End If
     End Sub
 
@@ -6250,6 +6260,8 @@ Function BallDeviceEventHandler(args)
             End If
         Case "eject_timeout"
             ballDevice.BallExitSuccess ball
+        Case "eject_enable_complete"
+            ballDevice.EjectEnableComplete
     End Select
 End Function
 Function CreateGlfDiverter(name)
@@ -6381,56 +6393,180 @@ Function DiverterEventHandler(args)
     End Select
     DiverterEventHandler = kwargs
 End Function
-Class GlfDropTarget
-	Private m_primary, m_secondary, m_prim, m_sw, m_animate, m_isDropped
-    Private m_reset_events
-  
-	Public Property Get Primary(): Set Primary = m_primary: End Property
-	Public Property Let Primary(input): Set m_primary = input: End Property
-  
-	Public Property Get Secondary(): Set Secondary = m_secondary: End Property
-	Public Property Let Secondary(input): Set m_secondary = input: End Property
-  
-	Public Property Get Prim(): Set Prim = m_prim: End Property
-	Public Property Let Prim(input): Set m_prim = input: End Property
-  
-	Public Property Get Sw(): Sw = m_sw: End Property
-	Public Property Let Sw(input): m_sw = input: End Property
-  
-	Public Property Get Animate(): Animate = m_animate: End Property
-	Public Property Let Animate(input): m_animate = input: End Property
-  
-	Public Property Get IsDropped(): IsDropped = m_isDropped: End Property
-	Public Property Let IsDropped(input): m_isDropped = input: End Property
-  
-	Public default Function init(primary, secondary, prim, sw, animate, isDropped, reset_events)
-	  Set m_primary = primary
-	  Set m_secondary = secondary
-	  Set m_prim = prim
-	  m_sw = sw
-	  m_animate = animate
-	  m_isDropped = isDropped
-      m_reset_events = reset_events
-	  If Not IsNull(reset_events) Then
-	  	Dim evt
-		For Each evt in reset_events
-			AddPinEventListener evt, primary.name & "_droptarget_reset", "DropTargetEventHandler", 1000, Array("droptarget_reset", m_sw)
-		Next      	
-	  End If
-	  Set Init = Me
+Function CreateGlfDroptarget(name)
+	Dim droptarget : Set droptarget = (new GlfDroptarget)(name)
+	Set CreateGlfDroptarget = droptarget
+End Function
+
+Class GlfDroptarget
+
+    Private m_name
+	Private m_switch
+    Private m_enable_keep_up_events
+    Private m_disable_keep_up_events
+	Private m_action_cb
+	Private m_knockdown_events
+	Private m_reset_events
+    Private m_complete
+
+    
+    Private m_debug
+
+	Public Property Let Switch(value)
+		m_switch = value
+		AddPinEventListener m_switch & "_active", m_name & "_switch_active", "DroptargetEventHandler", 1000, Array("switch_active", Me)
+		AddPinEventListener m_switch & "_inactive", m_name & "_switch_inactive", "DroptargetEventHandler", 1000, Array("switch_inactive", Me)
+	End Property
+    Public Property Let EnableKeepUpEvents(value)
+        Dim evt
+        If IsArray(m_enable_keep_up_events) Then
+            For Each evt in m_enable_keep_up_events
+                RemovePinEventListener evt, m_name & "_enable_keepup"
+            Next
+        End If
+        m_enable_keep_up_events = value
+        For Each evt in m_enable_keep_up_events
+            AddPinEventListener evt, m_name & "_enable_keepup", "DroptargetEventHandler", 1000, Array("enable_keepup", Me)
+        Next
+    End Property
+    Public Property Let DisableKeepUpEvents(value)
+        Dim evt
+        If IsArray(m_disable_keep_up_events) Then
+            For Each evt in m_disable_keep_up_events
+                RemovePinEventListener evt, m_name & "_disable_keepup"
+            Next
+        End If
+        m_disable_keep_up_events = value
+        For Each evt in m_disable_keep_up_events
+            AddPinEventListener evt, m_name & "_disable_keepup", "DroptargetEventHandler", 1000, Array("disable_keepup", Me)
+        Next
+    End Property
+
+    Public Property Let ActionCallback(value) : m_action_cb = value : End Property
+	Public Property Let KnockdownEvents(value)
+		Dim evt
+		If IsArray(m_knockdown_events) Then
+			For Each evt in m_knockdown_events
+				RemovePinEventListener evt, m_name & "_knockdown"
+			Next
+		End If
+		m_knockdown_events = value
+		For Each evt in m_knockdown_events
+			AddPinEventListener evt, m_name & "_knockdown", "DroptargetEventHandler", 1000, Array("knockdown", Me)
+		Next
+	End Property
+	Public Property Let ResetEvents(value)
+		Dim evt
+		If IsArray(m_reset_events) Then
+			For Each evt in m_reset_events
+				RemovePinEventListener evt, m_name & "_reset"
+			Next
+		End If
+		m_reset_events = value
+		For Each evt in m_reset_events
+			AddPinEventListener evt, m_name & "_reset", "DroptargetEventHandler", 1000, Array("reset", Me)
+		Next
+	End Property
+    Public Property Let Debug(value) : m_debug = value : End Property
+
+	Public default Function init(name)
+        m_name = "drop_target_" & name
+		m_switch = Empty
+        EnableKeepUpEvents = Array()
+        DisableKeepUpEvents = Array()
+		m_action_cb = Empty
+		KnockdownEvents = Array()
+		ResetEvents = Array()
+        m_complete = 0
+		m_debug = False
+        glf_droptargets.Add name, Me
+        Set Init = Me
 	End Function
+
+    Public Sub UpdateStateFromSwitch(is_complete)
+
+		Log "Drop target " & m_name & " switch " & m_switch & " has active value " & is_complete & " compared to drop complete " & m_complete
+
+		If is_complete <> m_complete Then
+			If is_complete = 1 Then
+				Down()
+			Else
+				Up()
+			End	If
+		End If
+		'UpdateBanks()
+    End Sub
+
+    Public Sub Up()
+        m_complete = 0
+        DispatchPinEvent m_name & "_up", Null
+    End Sub
+
+	Public Sub Down()
+        m_complete = 1
+        DispatchPinEvent m_name & "_down", Null
+    End Sub
+
+	Public Sub EnableKeepup()
+        If Not IsEmpty(m_action_cb) Then
+            GetRef(m_action_cb)(3)
+		End If
+    End Sub
+
+	Public Sub DisableKeepup()
+        If Not IsEmpty(m_action_cb) Then
+            GetRef(m_action_cb)(4)
+		End If
+    End Sub
+
+	Public Sub Knockdown()
+        If Not IsEmpty(m_action_cb) And m_complete = 0 Then
+            GetRef(m_action_cb)(1)
+		End If
+    End Sub
+
+	Public Sub Reset()
+        If Not IsEmpty(m_action_cb) And m_complete = 1 Then
+            GetRef(m_action_cb)(0)
+		End If
+    End Sub
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
 End Class
 
-Function DropTargetEventHandler(args)
-    Dim ownProps : ownProps = args(0)
-    Dim kwargs : kwargs = args(1)
+Function DroptargetEventHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1) 
+    Else
+        kwargs = args(1) 
+    End If
     Dim evt : evt = ownProps(0)
-    Dim switch : switch = ownProps(1)
+    Dim droptarget : Set droptarget = ownProps(1)
     Select Case evt
-        Case "droptarget_reset"
-            DTRaise switch
+        Case "switch_active"
+            droptarget.UpdateStateFromSwitch 1
+        Case "switch_inactive"
+            droptarget.UpdateStateFromSwitch 0
+        Case "enable_keepup"
+            droptarget.EnableKeepup
+        Case "disable_keepup"
+            droptarget.DisableKeepup
+        Case "knockdown"
+            droptarget.Knockdown
+        Case "reset"
+            droptarget.Reset
     End Select
-    DropTargetEventHandler = kwargs
+    If IsObject(args(1)) Then
+        Set DroptargetEventHandler = kwargs
+    Else
+        DroptargetEventHandler = kwargs
+    End If
+    
 End Function
 
 Function CreateGlfFlipper(name)
