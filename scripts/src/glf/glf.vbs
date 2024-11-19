@@ -26,6 +26,7 @@ Dim glf_modes : Set glf_modes = CreateObject("Scripting.Dictionary")
 Dim glf_timers : Set glf_timers = CreateObject("Scripting.Dictionary")
 
 Dim glf_ball_devices : Set glf_ball_devices = CreateObject("Scripting.Dictionary")
+Dim glf_diverters : Set glf_diverters = CreateObject("Scripting.Dictionary")
 Dim glf_flippers : Set glf_flippers = CreateObject("Scripting.Dictionary")
 Dim glf_ball_holds : Set glf_ball_holds = CreateObject("Scripting.Dictionary")
 Dim glf_magnets : Set glf_magnets = CreateObject("Scripting.Dictionary")
@@ -552,7 +553,7 @@ Function Glf_ConvertIf(value, retName)
 			truePart = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
 		End If
 	End If
-	isVariable = Glf_IsCondition(falsePartPart)
+	isVariable = Glf_IsCondition(falsePart)
 	If Not IsNull(isVariable) Then
 		'The input needs formatting
 		parts = Split(isVariable, ":")
@@ -6076,6 +6077,7 @@ Class GlfBallDevice
     Private m_ejecting
     Private m_mechanical_eject
     Private m_eject_targets
+    Private m_entrance_count_delay
     Private m_debug
 
     Public Property Get Name(): Name = m_name : End Property
@@ -6101,6 +6103,7 @@ Class GlfBallDevice
     Public Property Let EjectEnableTime(value) : m_eject_enable_time = value : End Property
         
     Public Property Let EjectTimeout(value) : m_eject_timeout = value : End Property
+    Public Property Let EntranceCountDelay(value) : m_entrance_count_delay = value : End Property
     Public Property Let EjectAllEvents(value)
         m_eject_all_events = value
         Dim evt
@@ -6150,13 +6153,18 @@ Class GlfBallDevice
         m_mechanical_eject = False
         m_eject_timeout = 1000
         m_eject_enable_time = 0
+        m_entrance_count_delay = 500
         glf_ball_devices.Add name, Me
 	    Set Init = Me
 	End Function
 
+    Public Sub BallEntering(ball, switch)
+        Log "Ball Entering" 
+        SetDelay m_name & "_" & switch & "_ball_enter", "BallDeviceEventHandler", Array(Array("ball_enter", Me, switch), ball), m_entrance_count_delay
+    End Sub
+
     Public Sub BallEnter(ball, switch)
         RemoveDelay m_name & "_eject_timeout"
-        'SoundSaucerLockAtBall ball
         Set m_balls(switch) = ball
         m_balls_in_device = m_balls_in_device + 1
         Log "Ball Entered" 
@@ -6169,6 +6177,7 @@ Class GlfBallDevice
     End Sub
 
     Public Sub BallExiting(ball, switch)
+        RemoveDelay m_name & "_" & switch & "_ball_enter"
         m_balls(switch) = Null
         m_balls_in_device = m_balls_in_device - 1
         DispatchPinEvent m_name & "_ball_exiting", Null
@@ -6245,7 +6254,7 @@ Function BallDeviceEventHandler(args)
     Select Case evt
         Case "ball_entering"
             switch = ownProps(2)
-            SetDelay ballDevice.Name & "_" & switch & "_ball_enter", "BallDeviceEventHandler", Array(Array("ball_enter", ballDevice, switch), ball), 500
+            ballDevice.BallEntering ball, switch
         Case "ball_enter"
             switch = ownProps(2)
             ballDevice.BallEnter ball, switch
@@ -6279,7 +6288,19 @@ Class GlfDiverter
     Private m_disable_events
     Private m_activation_switches
     Private m_action_cb
+    Private m_enabled
+    Private m_active
     Private m_debug
+
+    Public Property Get Name(): Name = m_name : End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "enabled":
+                GetValue = m_enabled
+            Case "active":
+                GetValue = m_active
+        End Select
+    End Property
 
     Public Property Let ActionCallback(value) : m_action_cb = value : End Property
     Public Property Let EnableEvents(value)
@@ -6308,7 +6329,7 @@ Class GlfDiverter
     End Property
     Public Property Let ActivateEvents(value) : m_activate_events = value : End Property
     Public Property Let DeactivateEvents(value) : m_deactivate_events = value : End Property
-    Public Property Let ActivationTime(value) : m_activation_time = value : End Property
+    Public Property Let ActivationTime(value) : Set m_activation_time = CreateGlfInput(value) : End Property
     Public Property Let ActivationSwitches(value) : m_activation_switches = value : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
 
@@ -6319,13 +6340,17 @@ Class GlfDiverter
         m_activate_events = Array()
         m_deactivate_events = Array()
         m_activation_switches = Array()
-        m_activation_time = 0
+        Set m_activation_time = CreateGlfInput(0)
         m_debug = False
+        m_enabled = False
+        m_active = False
+        glf_diverters.Add name, Me
         Set Init = Me
 	End Function
 
     Public Sub Enable()
         Log "Enabling"
+        m_enabled = True
         Dim evt
         For Each evt in m_activate_events
             AddPinEventListener evt, m_name & "_activate", "DiverterEventHandler", 1000, Array("activate", Me)
@@ -6340,6 +6365,7 @@ Class GlfDiverter
 
     Public Sub Disable()
         Log "Disabling"
+        m_enabled = False
         Dim evt
         For Each evt in m_activate_events
             RemovePinEventListener evt, m_name & "_activate"
@@ -6356,15 +6382,17 @@ Class GlfDiverter
 
     Public Sub Activate()
         Log "Activating"
+        m_active = True
         GetRef(m_action_cb)(1)
-        If m_activation_time > 0 Then
-            SetDelay m_name & "_deactivate", "DiverterEventHandler", Array(Array("deactivate", Me), Null), m_activation_time
+        If m_activation_time.Value > 0 Then
+            SetDelay m_name & "_deactivate", "DiverterEventHandler", Array(Array("deactivate", Me), Null), m_activation_time.Value
         End If
         DispatchPinEvent m_name & "_activating", Null
     End Sub
 
     Public Sub Deactivate()
         Log "Deactivating"
+        m_active = False
         RemoveDelay m_name & "_deactivate"
         GetRef(m_action_cb)(0)
         DispatchPinEvent m_name & "_deactivating", Null

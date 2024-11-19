@@ -102,8 +102,8 @@ Sub CreateMoonMultiballMode
         End With
 
         With .EventPlayer()
-            .Add "swRamp7_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
-            .Add "swLock3_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
+            .Add "swRamp7_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0 && not devices.diverters.lock_pin.active}", Array("release_moon_ball")
+            .Add "swLock3_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0 && not devices.diverters.lock_pin.active}", Array("release_moon_ball")
             .Add "multiball_locks_moon_launch_locked_ball", Array("reset_qualify_shots")
         End With
 

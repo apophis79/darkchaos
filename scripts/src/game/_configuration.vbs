@@ -27,15 +27,15 @@ Sub ConfigureGlfDevices
     ' Moon Lock
     With CreateGlfBallDevice("moon_lock")
         .BallSwitches = Array("swLock1","swLock2")
-        .PlayerControlledEjectEvent = "eject_moon_ball"
-        .EjectCallback = "MoonLockEjectCallback"
-        .EjectEnableTime = 250
+        '.PlayerControlledEjectEvent = "eject_moon_ball"
+        '.EjectCallback = "MoonLockEjectCallback"
+        '.EjectEnableTime = 250
     End With
 
     With CreateGlfDiverter("lock_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("release_moon_ball")
-        .ActivationTime = 2000
+        .ActivationTime = "250 if devices.ball_devices.moon_lock.balls > 0 else 2000"
         .ActionCallback = "DropLockPin"
     End With
 
