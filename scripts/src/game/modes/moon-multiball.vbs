@@ -33,7 +33,7 @@ Sub CreateMoonMultiballMode
             With .States("on")
                 .Show = glf_ShowOnColor
                 With .Tokens()
-                    .Add "color", "ff0000"
+                    .Add "color", "ffff00"
                 End With
             End With
         End With
