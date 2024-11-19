@@ -8,10 +8,10 @@
 'The right magna is disabled when an outlane switch is hit
 
 
-Sub TTT()
+Sub TTT(Y)
     ActiveBall.Z = 130
     ActiveBall.X = 894.0132
-    ActiveBall.Y = 201.27
+    ActiveBall.Y = Y
     ActiveBall.Velx = 0
     ActiveBall.Vely = 0
     ActiveBall.Velz = 0
@@ -91,26 +91,28 @@ Sub CreateMoonMultiballMode
                 .Events = Array("qualify_lock_on_complete")
                 .State = 1
             End With
-            .ResetEvents = Array("reset_qualify_shots")
+            .RestartEvents = Array("restart_qualify_shots")
         End With
 
         With .ShotGroups("qualify_lock")
             .Shots = Array("left_outlane", "left_inlane", "right_inlane", "right_outlane")
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
-            .ResetEvents = Array("reset_qualify_shots")
+            .RestartEvents = Array("restart_qualify_shots")
+            .DisableEvents = Array("disable_qualify_shots")
         End With
 
         With .EventPlayer()
-            .Add "swRamp7_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0 && not devices.diverters.lock_pin.active}", Array("release_moon_ball")
-            .Add "swLock3_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0 && not devices.diverters.lock_pin.active}", Array("release_moon_ball")
-            .Add "multiball_locks_moon_launch_locked_ball", Array("reset_qualify_shots")
+            .Add "swRamp7_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_entered{current_player.player_shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked}", Array("release_moon_ball")
+            .Add "multiball_locks_moon_launch_locked_ball", Array("restart_qualify_shots")
+            .Add "multiball_locks_moon_launch_full", Array("disable_qualify_shots")
         End With
 
         'Lock the balls
         With .MultiballLocks("moon_launch")
             .EnableEvents = Array("qualify_lock_on_complete")
-            .DisableEvents = Array("reset_qualify_shots")
+            .DisableEvents = Array("restart_qualify_shots")
             .BallsToLock = 2
             .LockDevice = "moon_lock"
          End With

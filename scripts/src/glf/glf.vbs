@@ -32,6 +32,7 @@ Dim glf_ball_holds : Set glf_ball_holds = CreateObject("Scripting.Dictionary")
 Dim glf_magnets : Set glf_magnets = CreateObject("Scripting.Dictionary")
 Dim glf_segment_displays : Set glf_segment_displays = CreateObject("Scripting.Dictionary")
 Dim glf_droptargets : Set glf_droptargets = CreateObject("Scripting.Dictionary")
+Dim glf_multiball_locks : Set glf_multiball_locks = CreateObject("Scripting.Dictionary")
 
 Dim bcpController : bcpController = Null
 Dim useBCP : useBCP = False
@@ -3254,6 +3255,12 @@ Class GlfMultiballLocks
     Private m_debug
 
     Public Property Get Name(): Name = m_name: End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "locked_balls":
+                GetValue = m_balls_locked
+        End Select
+    End Property
     Public Property Get LockDevice() : LockDevice = m_lock_device : End Property
     Public Property Let LockDevice(value) : m_lock_device = value : End Property
     Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
@@ -3274,6 +3281,7 @@ Class GlfMultiballLocks
         m_balls_to_replace = -1
         m_balls_replaced = 0
         Set m_base_device = (new GlfBaseModeDevice)(mode, "multiball_locks", Me)
+        glf_multiball_locks.Add name, Me
         Set Init = Me
 	End Function
 
@@ -3866,6 +3874,8 @@ Class GlfShotGroup
             m_rotate_right_events.Add newEvent.Name, newEvent
         Next
     End Property
+    Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
+    Public Property Let DisableEvents(value) : m_base_device.DisableEvents = value : End Property
  
 	Public default Function init(name, mode)
         m_name = name
@@ -6172,6 +6182,7 @@ Class GlfBallDevice
         unclaimed_balls = DispatchRelayPinEvent(m_name & "_ball_enter", 1)
         Log "Unclaimed Balls: " & unclaimed_balls
         If (m_default_device = False Or m_ejecting = True) And unclaimed_balls > 0 And Not IsNull(m_balls(0)) Then
+            DispatchPinEvent m_name & "_ball_entered", Null
             SetDelay m_name & "_eject_attempt", "BallDeviceEventHandler", Array(Array("ball_eject", Me), ball), 500
         End If
     End Sub
@@ -6207,11 +6218,12 @@ Class GlfBallDevice
     End Sub
 
     Public Sub Eject
-        Log "Ejecting."
-        SetDelay m_name & "_eject_timeout", "BallDeviceEventHandler", Array(Array("eject_timeout", Me), m_balls(0)), m_eject_timeout
-        m_ejecting = True
         
         If Not IsNull(m_eject_callback) Then
+            Log "Ejecting."
+            SetDelay m_name & "_eject_timeout", "BallDeviceEventHandler", Array(Array("eject_timeout", Me), m_balls(0)), m_eject_timeout
+            m_ejecting = True
+        
             GetRef(m_eject_callback)(m_balls(0))
             If m_eject_enable_time > 0 Then
                 SetDelay m_name & "_eject_enable_time", "BallDeviceEventHandler", Array(Array("eject_enable_complete", Me), m_balls(0)), m_eject_enable_time
