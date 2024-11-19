@@ -502,7 +502,9 @@ Public Function Glf_ParseEventInput(value)
 		dim conditionReplaced : conditionReplaced = Glf_ReplaceCurrentPlayerAttributes(condition)
 		conditionReplaced = Glf_ReplaceDeviceAttributes(conditionReplaced)
 		templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
+		templateCode = templateCode & vbTab & "On Error Resume Next" & vbCrLf
 		templateCode = templateCode & vbTab & Glf_ConvertCondition(conditionReplaced, "Glf_" & glf_FuncCount) & vbCrLf
+		templateCode = templateCode & vbTab & "If Err Then Glf_" & glf_FuncCount & " = False" & vbCrLf
 		templateCode = templateCode & "End Function"
 		'msgbox templateCode
 		ExecuteGlobal templateCode
@@ -2215,10 +2217,10 @@ Class GlfCounter
 
     Public Sub Activate()
         If m_persist_state And m_count > -1 Then
-            If Not IsNull(GetPlayerState(m_name & "_state")) Then
-                SetValue GetPlayerState(m_name & "_state")
-            Else
+            If GetPlayerState(m_name & "_state")=False Then
                 SetValue 0
+            Else
+                SetValue GetPlayerState(m_name & "_state")
             End If
         Else
             SetValue 0
@@ -2323,25 +2325,26 @@ Class GlfEventPlayer
     Public Sub Add(key, value)
         Dim newEvent : Set newEvent = (new GlfEvent)(key)
         m_events.Add newEvent.Name, newEvent
-        m_eventValues.Add newEvent.Name, value
+        m_eventValues.Add newEvent.Name, value  
     End Sub
 
     Public Sub Activate()
         Dim evt
         For Each evt In m_events.Keys()
-            AddPinEventListener m_events(evt).EventName, m_mode & "_event_player_play", "EventPlayerEventHandler", m_priority, Array("play", Me, evt)
+            AddPinEventListener m_events(evt).EventName, m_mode & "_event_player_" & m_events(evt).Name & "_play", "EventPlayerEventHandler", m_priority, Array("play", Me, evt)
         Next
     End Sub
 
     Public Sub Deactivate()
         Dim evt
         For Each evt In m_events.Keys()
-            RemovePinEventListener m_events(evt).EventName, m_mode & "_event_player_play"
+            RemovePinEventListener m_events(evt).EventName, m_mode & "_event_player_" & m_events(evt).Name & "_play"
         Next
     End Sub
 
     Public Sub FireEvent(evt)
         If Not IsNull(m_events(evt).Condition) Then
+            'msgbox m_events(evt).Condition
             If GetRef(m_events(evt).Condition)() = False Then
                 Exit Sub
             End If
@@ -3249,7 +3252,6 @@ Class GlfMultiballLocks
     Private m_balls_to_lock
     Private m_balls_locked
     Private m_balls_to_replace
-    Private m_balls_replaced
     Private m_lock_events
     Private m_reset_events
     Private m_debug
@@ -3279,7 +3281,7 @@ Class GlfMultiballLocks
         m_lock_device = Array()
         m_balls_to_lock = 0
         m_balls_to_replace = -1
-        m_balls_replaced = 0
+        m_balls_locked = 0
         Set m_base_device = (new GlfBaseModeDevice)(mode, "multiball_locks", Me)
         glf_multiball_locks.Add name, Me
         Set Init = Me
@@ -3327,7 +3329,7 @@ Class GlfMultiballLocks
         End If
         
         Dim balls_locked
-        If IsNull(GetPlayerState(m_name & "_balls_locked")) Then
+        If GetPlayerState(m_name & "_balls_locked") = False Then
             balls_locked = 1
         Else
             balls_locked = GetPlayerState(m_name & "_balls_locked") + 1
@@ -3339,16 +3341,22 @@ Class GlfMultiballLocks
         End If
 
         SetPlayerState m_name & "_balls_locked", balls_locked
-        DispatchPinEvent m_name & "_locked_ball", balls_locked
+        
 
         If Not IsNull(device) Then
-            If m_balls_to_replace = -1 Or m_balls_to_replace < m_balls_replaced Then
-                glf_BIP = glf_BIP - 1
-                m_balls_replaced = m_balls_replaced + 1
-                SetDelay m_name & "_queued_release", "MultiballLocksHandler" , Array(Array("queue_release", Me),Null), 1000
+            
+            If glf_ball_devices(device).Balls() > balls_locked Then
+                glf_ball_devices(device).Eject()
+            Else
+                If m_balls_to_replace = -1 Or balls_locked <= m_balls_to_replace Then
+                    glf_BIP = glf_BIP - 1
+                    SetDelay m_name & "_queued_release", "MultiballLocksHandler" , Array(Array("queue_release", Me),Null), 1000
+                End If
             End If
         End If
 
+        DispatchPinEvent m_name & "_locked_ball", balls_locked
+        
         If balls_locked = m_balls_to_lock Then
             DispatchPinEvent m_name & "_full", balls_locked
         End If
@@ -3358,7 +3366,6 @@ Class GlfMultiballLocks
 
     Public Sub Reset
         SetPlayerState m_name & "_balls_locked", 0
-        m_balls_replaced = 0
     End Sub
 
 End Class
@@ -4440,7 +4447,7 @@ Class GlfShot
 	End Function
 
     Public Sub Activate()
-        If IsNull(GetPlayerState(m_player_var_name)) Then
+        If GetPlayerState(m_player_var_name) = False Then
             m_state = 0
             If m_persist Then
                 SetPlayerState m_player_var_name, 0
@@ -5904,7 +5911,7 @@ Class GlfVariablePlayerEvent
 End Class
 
 Class GlfVariablePlayerItem
-	Private m_block, m_show, m_flaot, m_int, m_string, m_player, m_action, m_type
+	Private m_block, m_show, m_float, m_int, m_string, m_player, m_action, m_type
   
 	Public Property Get Action(): Action = m_action: End Property
     Public Property Let Action(input): m_action = input: End Property
@@ -7848,7 +7855,7 @@ Function GetPlayerState(key)
     If glf_playerState(glf_currentPlayer).Exists(key)  Then
         GetPlayerState = glf_playerState(glf_currentPlayer)(key)
     Else
-        GetPlayerState = Null
+        GetPlayerState = False
     End If
 End Function
 

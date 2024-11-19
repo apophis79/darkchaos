@@ -17,6 +17,12 @@ Sub TTT(Y)
     ActiveBall.Velz = 0
 End Sub
 
+Function TTY()
+
+    TTY = GetPlayerState("multiball_locks_moon_launch_balls_locked")=2
+    If Err Then TTY = False
+End Function
+
 Sub CreateMoonMultiballMode
 
 
@@ -81,6 +87,30 @@ Sub CreateMoonMultiballMode
             End With
         End With
 
+        With .Shots("moon_missile1")
+            .Profile = "qualify_lock"
+            With .Tokens()
+                .Add "lights", "LMR1"
+            End With
+            With .ControlEvents("missile1_ready")
+                .Events = Array("light_missile1")
+                .State = 1
+            End With
+            .RestartEvents = Array("moon_multiball_started")
+        End With
+
+        With .Shots("moon_missile2")
+            .Profile = "qualify_lock"
+            With .Tokens()
+                .Add "lights", "LMR2"
+            End With
+            With .ControlEvents("missile2_ready")
+                .Events = Array("light_missile2")
+                .State = 1
+            End With
+            .RestartEvents = Array("moon_multiball_started")
+        End With
+
         'Moon Lock Ready
         With .Shots("moon_lock_ready")
             .Profile = "lock_ready"
@@ -104,9 +134,26 @@ Sub CreateMoonMultiballMode
 
         With .EventPlayer()
             .Add "swRamp7_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
-            .Add "balldevice_moon_lock_ball_entered{current_player.player_shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked}", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_entered{current_player.player_shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.balls_in_moon_lock}", Array("release_moon_ball")
             .Add "multiball_locks_moon_launch_locked_ball", Array("restart_qualify_shots")
+            .Add "multiball_locks_moon_launch_locked_ball{devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked}", Array("release_moon_ball")
+            .Add "multiball_locks_moon_launch_locked_ball{current_player.multiball_locks_moon_launch_balls_locked==1}", Array("light_missile1")
+            .Add "multiball_locks_moon_launch_locked_ball{current_player.multiball_locks_moon_launch_balls_locked==2}", Array("light_missile2")
             .Add "multiball_locks_moon_launch_full", Array("disable_qualify_shots")
+            .Add "mode_moon_multiball_started{current_player.multiball_locks_moon_launch_balls_locked==2}", Array("disable_qualify_shots")
+        End With
+
+        With .LightPlayer()
+            With .Events("disable_qualify_shots")
+				With .Lights("MoonLanes")
+					.Color = "ffff00"
+				End With
+			End With
+            With .Events("restart_qualify_shots")
+				With .Lights("MoonLanes")
+					.Color = "000000"
+				End With
+			End With
         End With
 
         'Lock the balls
@@ -116,5 +163,14 @@ Sub CreateMoonMultiballMode
             .BallsToLock = 2
             .LockDevice = "moon_lock"
          End With
+
+         With .VariablePlayer()
+			With .Events("mode_moon_multiball_started")
+				With .Variable("balls_in_moon_lock")
+                    .Action = "set"
+					.Int = "devices.ball_devices.moon_lock.balls"
+				End With
+			End With
+		End With
     End With
 End Sub
