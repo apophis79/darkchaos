@@ -96,7 +96,7 @@ Sub CreateMoonMultiballMode
                 .Events = Array("light_missile1")
                 .State = 1
             End With
-            .RestartEvents = Array("moon_multiball_started")
+            .RestartEvents = Array("multiball_moon_started")
         End With
 
         With .Shots("moon_missile2")
@@ -108,7 +108,7 @@ Sub CreateMoonMultiballMode
                 .Events = Array("light_missile2")
                 .State = 1
             End With
-            .RestartEvents = Array("moon_multiball_started")
+            .RestartEvents = Array("multiball_moon_started")
         End With
 
         'Moon Lock Ready
@@ -141,8 +141,9 @@ Sub CreateMoonMultiballMode
             .Add "multiball_locks_moon_launch_locked_ball{current_player.multiball_locks_moon_launch_balls_locked==2}", Array("light_missile2")
             .Add "multiball_locks_moon_launch_full", Array("disable_qualify_shots")
             .Add "mode_moon_multiball_started{current_player.multiball_locks_moon_launch_balls_locked==2}", Array("disable_qualify_shots")
+            .Add "multiball_moon_started", Array("restart_qualify_shots")
         End With
-
+        
         With .LightPlayer()
             With .Events("disable_qualify_shots")
 				With .Lights("MoonLanes")
@@ -160,12 +161,20 @@ Sub CreateMoonMultiballMode
         With .MultiballLocks("moon_launch")
             .EnableEvents = Array("qualify_lock_on_complete")
             .DisableEvents = Array("restart_qualify_shots")
+            .ResetEvents = Array("multiball_moon_started")
             .BallsToLock = 2
             .LockDevice = "moon_lock"
-         End With
+        End With
 
-         With .VariablePlayer()
-			With .Events("mode_moon_multiball_started")
+        With .Multiballs("moon")
+            .StartEvents = Array("s_right_magna_key_active{current_player.multiball_locks_moon_launch_balls_locked>0}")
+            .BallCount = "current_player.multiball_locks_moon_launch_balls_locked"
+            .BallCountType = "add"
+            .BallLock = "moon_lock"
+        End With
+
+        With .VariablePlayer()
+		    With .Events("mode_moon_multiball_started")
 				With .Variable("balls_in_moon_lock")
                     .Action = "set"
 					.Int = "devices.ball_devices.moon_lock.balls"
