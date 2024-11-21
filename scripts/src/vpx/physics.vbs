@@ -862,7 +862,6 @@ Class Dampener
 		If Abs(aball.velx) < 2 And aball.vely < 0 And aball.vely >  - 3.75 Then
 			aBall.velx = aBall.velx * coef
 			aBall.vely = aBall.vely * coef
-			aBall.velz = aBall.velz * coef
 		End If
 	End Sub
 	

@@ -113,6 +113,7 @@ Sub ConfigureGlfDevices
 
     ' Modes
     CreateMoonMultiballMode
+    CreateShieldsMode
     CreateGIMode
 
 End Sub
@@ -146,7 +147,7 @@ Public Sub CreateGIMode()
             End With
         End With
     End With
-
+    
 End Sub
 
 
