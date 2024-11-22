@@ -975,7 +975,7 @@ End Class
 
 Function CreateGlfShow(name)
 	Dim show : Set show = (new GlfShow)(name)
-	msgbox name
+	'msgbox name
 	glf_shows.Add name, show
 	Set CreateGlfShow = show
 End Function
@@ -1018,19 +1018,19 @@ End With
 
 With GlfShotProfiles("default")
 	With .States("on")
-			.Show = glf_ShowFlash
+			.Show = "flash"
 	End With
 	With .States("off")
-			.Show = glf_ShowOff
+			.Show = "off"
 	End With
 End With
 
 With GlfShotProfiles("flash_color")
 	With .States("off")
-		.Show = glf_ShowOff
+		.Show = "off"
 	End With
 	With .States("on")
-			.Show = glf_ShowFlashColor
+			.Show = "flash_color"
 	End With	
 End With
 
