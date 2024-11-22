@@ -21,8 +21,8 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap3",
-    "normal_map": "VLM.Nestmap3 - NM",
+    "image": "VLM.Nestmap6",
+    "normal_map": "VLM.Nestmap6 - NM",
     "sides": 4,
     "name": "BM_BmpTopB",
     "material": "VLM.Bake.BumperBlue",

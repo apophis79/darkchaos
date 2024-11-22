@@ -35,7 +35,7 @@
     "elasticity_falloff": 0.0,
     "friction": 0.0,
     "scatter": 0.0,
-    "edge_factor_ui": 11.0,
+    "edge_factor_ui": 0.1,
     "collision_reduction_factor": 0.0,
     "is_collidable": false,
     "is_toy": true,

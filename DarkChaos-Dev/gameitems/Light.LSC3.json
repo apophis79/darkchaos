@@ -2,7 +2,7 @@
   "Light": {
     "center": {
       "x": 740.3027,
-      "y": 1151.2202
+      "y": 1173.3439
     },
     "height": 1.0,
     "falloff_radius": 70.0,
@@ -13,17 +13,17 @@
     "color2": "#ff00ffff",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "10",
+    "blink_pattern": "ShieldShots",
     "off_image": "",
     "blink_interval": 300,
-    "intensity": 6.0,
+    "intensity": 5.0,
     "transmission_scale": 0.0,
     "surface": "",
     "name": "LSC3",
     "is_backglass": false,
     "depth_bias": 0.0,
-    "fade_speed_up": 0.075,
-    "fade_speed_down": 0.075,
+    "fade_speed_up": 0.0625,
+    "fade_speed_down": 0.0625,
     "is_bulb_light": true,
     "is_image_mode": false,
     "show_bulb_mesh": false,
@@ -38,7 +38,7 @@
     "drag_points": [
       {
         "x": 740.3027,
-        "y": 1079.4247,
+        "y": 1101.5483,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -51,7 +51,7 @@
       },
       {
         "x": 689.53613,
-        "y": 1100.4532,
+        "y": 1122.5769,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -64,7 +64,7 @@
       },
       {
         "x": 668.50793,
-        "y": 1151.2202,
+        "y": 1173.3439,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -77,7 +77,7 @@
       },
       {
         "x": 689.53613,
-        "y": 1201.9866,
+        "y": 1224.1102,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -90,7 +90,7 @@
       },
       {
         "x": 740.3027,
-        "y": 1223.0151,
+        "y": 1245.1388,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -103,7 +103,7 @@
       },
       {
         "x": 791.0692,
-        "y": 1201.9866,
+        "y": 1224.1102,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -116,7 +116,7 @@
       },
       {
         "x": 812.09717,
-        "y": 1151.2202,
+        "y": 1173.3439,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -129,7 +129,7 @@
       },
       {
         "x": 791.0692,
-        "y": 1100.4532,
+        "y": 1122.5769,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
