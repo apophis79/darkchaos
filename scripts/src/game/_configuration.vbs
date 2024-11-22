@@ -6,6 +6,8 @@
 
 Sub ConfigureGlfDevices
 
+    CreateShows()
+
     ' Plunger
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("swPlunger1")

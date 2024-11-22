@@ -34,10 +34,11 @@ Sub CreateMoonMultiballMode
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_lock")
             With .States("unlit")
-                .Show = glf_ShowOff
+                .Show = "off"
             End With
             With .States("on")
-                .Show = glf_ShowOnColor
+                .Show = "flicker_color_on"
+                .Speed = 4
                 With .Tokens()
                     .Add "color", "ffff00"
                 End With
@@ -46,10 +47,10 @@ Sub CreateMoonMultiballMode
         'Define a shot profile with two states (off/flashing)
         With .ShotProfiles("lock_ready")
             With .States("unlit")
-                .Show = glf_ShowOff
+                .Show = "off"
             End With
             With .States("on")
-                .Show = glf_ShowFlashColor
+                .Show = "flash_color"
                 With .Tokens()
                     .Add "color", "ffff00"
                 End With

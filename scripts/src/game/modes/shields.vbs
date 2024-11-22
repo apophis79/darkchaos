@@ -19,10 +19,11 @@ Sub CreateShieldsMode
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")
             With .States("unlit")
-                .Show = glf_ShowOff
+                .Show = "off"
             End With
             With .States("on")
-                .Show = glf_ShowOnColor
+                .Show = "flicker_color_on"
+                .Speed = 4
                 With .Tokens()
                     .Add "color", "0000ff"
                 End With
@@ -31,10 +32,10 @@ Sub CreateShieldsMode
         'Define a shot profile with two states (off/flashing)
         With .ShotProfiles("shields_ready")
             With .States("unlit")
-                .Show = glf_ShowOff
+                .Show = "off"
             End With
             With .States("on")
-                .Show = glf_ShowOnColor
+                .Show = "led_color"
                 With .Tokens()
                     .Add "color", "0000ff"
                 End With
@@ -107,8 +108,9 @@ Sub CreateShieldsMode
 
         ' Ball Save
         With .BallSaves("shield")
-            .ActiveTime = 5
+            .ActiveTime = 5000
             .EnableEvents = Array("shields_used")
+            .AutoLaunch = True
         End With
 
         ' Players
@@ -153,7 +155,7 @@ Sub CreateShieldsMode
 				End With
 			End With
 		End With
-
+        
     End With
 
 End Sub
