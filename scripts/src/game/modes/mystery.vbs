@@ -104,7 +104,7 @@ Sub CreateMysteryMode
         With .EventPlayer()
             .Add "mode_myster_started", Array("restart_qualify_mystery")
             .Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
-            .Add "swScoop_active", Array("restart_qualify_mystery")  'FIXME should only dispatch event if qualified=True
+            .Add "swScoop_active{current_player.player_shot_mystery_ready==1}", Array("restart_qualify_mystery") 
         End With
 
         With .LightPlayer()

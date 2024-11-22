@@ -117,8 +117,8 @@ Sub CreateShieldsMode
         With .EventPlayer()
             .Add "mode_shields_started", Array("restart_qualify_shields")
             .Add "qualify_shields_on_complete", Array("disable_qualify_shields")
-            .Add "swLeftOutlane_active{current_player.shields_on==1}", Array("shields_used","restart_qualify_shields")
-            .Add "swRightOutlane_active{current_player.shields_on==1}", Array("shields_used","restart_qualify_shields")
+            .Add "swLeftOutlane_active{current_player.player_shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
+            .Add "swRightOutlane_active{current_player.player_shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
         End With
 
         With .LightPlayer()
@@ -133,28 +133,6 @@ Sub CreateShieldsMode
 				End With
 			End With
         End With
-
-
-         With .VariablePlayer()
-			With .Events("mode_shields_started")
-				With .Variable("shields_on")
-                    .Action = "set"
-					.Int = 0
-				End With
-			End With
-            With .Events("qualify_shields_on_complete")
-				With .Variable("shields_on")
-                    .Action = "set"
-					.Int = 1
-				End With
-			End With
-            With .Events("restart_qualify_shields")
-				With .Variable("shields_on")
-                    .Action = "set"
-					.Int = 0
-				End With
-			End With
-		End With
 
     End With
 
