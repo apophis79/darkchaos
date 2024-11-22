@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "extract-vpx": "shx rm -rf ../DarkChaos-Dev && vpxtool extract ../DarkChaos-Dev.vpx && shx cp ./dest/vpx/tablescript.vbs ../DarkChaos-Dev/script.vbs",
-    "assemble-vpx": "vpxtool assemble ../DarkChaos-Dev",
+    "assemble-vpx": "shx cp ./vpx-script-to-load-tablescript.vbs ../DarkChaos-Dev/script.vbs && vpxtool assemble ../DarkChaos-Dev",
     "grunt-vpx": "grunt watch:vpx",
     "update-glf": "curl -o ./src/glf/glf.vbs https://raw.githubusercontent.com/mpcarr/vpx-glf/refs/heads/main/scripts/vpx-glf.vbs"
   },
