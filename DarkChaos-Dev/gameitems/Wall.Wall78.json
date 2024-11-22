@@ -1,6 +1,6 @@
 {
   "Wall": {
-    "hit_event": false,
+    "hit_event": true,
     "is_droppable": false,
     "is_flipbook": false,
     "is_bottom_solid": false,

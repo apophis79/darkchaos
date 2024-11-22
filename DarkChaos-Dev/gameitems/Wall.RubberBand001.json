@@ -47,8 +47,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 174.10136,
-        "y": 1609.9691,
+        "x": 175.13036,
+        "y": 1624.823,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -60,8 +60,34 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 174.03821,
-        "y": 1471.4629,
+        "x": 234.85803,
+        "y": 1663.5779,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 247.35205,
+        "y": 1654.7336,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 180.51253,
+        "y": 1472.5725,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

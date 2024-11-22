@@ -11,7 +11,7 @@
       "z": 1.0
     },
     "rot_and_tra": [
-      89.99999,
+      0.0,
       0.0,
       0.0,
       0.0,
@@ -21,7 +21,7 @@
       -0.0,
       -15.786074
     ],
-    "image": "VLM.Nestmap2",
+    "image": "VLM.Nestmap5",
     "normal_map": "",
     "sides": 4,
     "name": "LM_GI_gi20_GateL",

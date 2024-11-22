@@ -13,9 +13,9 @@
     "side_material": "",
     "top_material": "",
     "slingshot_material": "",
-    "height_bottom": 29.5,
-    "height_top": 29.5,
-    "name": "LeftSlingShot",
+    "height_bottom": 30.0,
+    "height_top": 26.0,
+    "name": "leftslingshot",
     "display_texture": false,
     "slingshot_force": 40.0,
     "slingshot_threshold": 2.5,
@@ -34,8 +34,8 @@
     "overwrite_physics": false,
     "drag_points": [
       {
-        "x": 191.82779,
-        "y": 1481.7733,
+        "x": 180.54422,
+        "y": 1471.9695,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -47,8 +47,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 249.0601,
-        "y": 1639.6788,
+        "x": 247.39532,
+        "y": 1654.8464,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

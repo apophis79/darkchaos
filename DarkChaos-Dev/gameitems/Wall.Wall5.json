@@ -13,7 +13,7 @@
     "side_material": "Metal",
     "top_material": "Metal",
     "slingshot_material": "",
-    "height_bottom": 50.0,
+    "height_bottom": 0.0,
     "height_top": 53.0,
     "name": "Wall5",
     "display_texture": false,
@@ -30,7 +30,7 @@
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 0.0,
     "is_reflection_enabled": false,
-    "physics_material": "zCol_Plastics",
+    "physics_material": "zCol_Metal",
     "overwrite_physics": false,
     "drag_points": [
       {
