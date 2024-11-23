@@ -37,7 +37,7 @@ jobs:
           cd scripts
           npm install
           grunt concat:vpx
-          Move-Item -Path dest/vpx/tablescript.vbs -Destination DarkChaos-Dev/script.vbs -Force
+          Move-Item -Path dest/vpx/tablescript.vbs -Destination ../DarkChaos-Dev/script.vbs -Force
         shell: pwsh
 
       - name: Install jq
