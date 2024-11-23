@@ -40,7 +40,7 @@ jobs:
 
       - name: Download vpxtool
         run: |
-          Invoke-WebRequest -Uri https://github.com/francisdb/vpxtool/releases/download/v0.15.0/vpxtool-Windows-x86_64-v0.15.0.zip -OutFile vpxtool.zip
+          Invoke-WebRequest -Uri https://github.com/francisdb/vpxtool/releases/download/v0.13.0/vpxtool-Windows-x86_64-v0.13.0.zip -OutFile vpxtool.zip
           Expand-Archive vpxtool.zip -DestinationPath .\vpxtool
         shell: pwsh
 
