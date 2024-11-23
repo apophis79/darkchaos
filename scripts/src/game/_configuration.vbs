@@ -116,6 +116,7 @@ Sub ConfigureGlfDevices
     ' Modes
     CreateMoonMultiballMode
     CreateShieldsMode
+    CreateMysteryMode
     CreateGIMode
 
 End Sub

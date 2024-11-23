@@ -7,6 +7,8 @@
 'All locked balls can be released by pressing the right magna.
 'The right magna is disabled when an outlane switch is hit
 
+Const MoonColor = "ccbb00"
+
 
 Sub TTT(Y)
     ActiveBall.Z = 130
@@ -40,7 +42,7 @@ Sub CreateMoonMultiballMode
                 .Show = "flicker_color_on"
                 .Speed = 4
                 With .Tokens()
-                    .Add "color", "ffff00"
+                    .Add "color", MoonColor
                 End With
             End With
         End With
@@ -52,7 +54,7 @@ Sub CreateMoonMultiballMode
             With .States("on")
                 .Show = "flash_color"
                 With .Tokens()
-                    .Add "color", "ffff00"
+                    .Add "color", MoonColor
                 End With
             End With
         End With
@@ -148,7 +150,7 @@ Sub CreateMoonMultiballMode
         With .LightPlayer()
             With .Events("disable_qualify_shots")
 				With .Lights("MoonLanes")
-					.Color = "ffff00"
+					.Color = MoonColor
 				End With
 			End With
             With .Events("restart_qualify_shots")

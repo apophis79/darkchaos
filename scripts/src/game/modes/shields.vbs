@@ -7,6 +7,7 @@
 '  a new ball will be put into the plunger lane and
 '  all the shield lights will be reset to off
 
+Const ShieldsColor = "0010cc"
 
 Sub CreateShieldsMode
 
@@ -14,7 +15,7 @@ Sub CreateShieldsMode
     With CreateGlfMode("shields", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
+        .Debug = False
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")
@@ -25,11 +26,11 @@ Sub CreateShieldsMode
                 .Show = "flicker_color_on"
                 .Speed = 4
                 With .Tokens()
-                    .Add "color", "0000ff"
+                    .Add "color", ShieldsColor
                 End With
             End With
         End With
-        'Define a shot profile with two states (off/flashing)
+        'Define a shot profile with two states (off/on)
         With .ShotProfiles("shields_ready")
             With .States("unlit")
                 .Show = "off"
@@ -37,7 +38,7 @@ Sub CreateShieldsMode
             With .States("on")
                 .Show = "led_color"
                 With .Tokens()
-                    .Add "color", "0000ff"
+                    .Add "color", ShieldsColor
                 End With
             End With
         End With
@@ -117,14 +118,14 @@ Sub CreateShieldsMode
         With .EventPlayer()
             .Add "mode_shields_started", Array("restart_qualify_shields")
             .Add "qualify_shields_on_complete", Array("disable_qualify_shields")
-            .Add "swLeftOutlane_active{current_player.shields_on==1}", Array("shields_used","restart_qualify_shields")
-            .Add "swRightOutlane_active{current_player.shields_on==1}", Array("shields_used","restart_qualify_shields")
+            .Add "swLeftOutlane_active{current_player.player_shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
+            .Add "swRightOutlane_active{current_player.player_shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
         End With
 
         With .LightPlayer()
             With .Events("disable_qualify_shields")
 				With .Lights("ShieldShots")
-					.Color = "0000ff"
+					.Color = ShieldsColor
 				End With
 			End With
             With .Events("restart_qualify_shields")
@@ -134,28 +135,6 @@ Sub CreateShieldsMode
 			End With
         End With
 
-
-         With .VariablePlayer()
-			With .Events("mode_shields_started")
-				With .Variable("shields_on")
-                    .Action = "set"
-					.Int = 0
-				End With
-			End With
-            With .Events("qualify_shields_on_complete")
-				With .Variable("shields_on")
-                    .Action = "set"
-					.Int = 1
-				End With
-			End With
-            With .Events("restart_qualify_shields")
-				With .Variable("shields_on")
-                    .Action = "set"
-					.Int = 0
-				End With
-			End With
-		End With
-        
     End With
 
 End Sub
