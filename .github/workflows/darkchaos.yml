@@ -25,6 +25,21 @@ jobs:
           echo "build_number=$build_number" >> $env:GITHUB_OUTPUT
         shell: pwsh
 
+      - name: Install Node.js and Grunt
+        run: |
+          Invoke-WebRequest -Uri https://nodejs.org/dist/v16.20.0/node-v16.20.0-x64.msi -OutFile nodejs.msi
+          Start-Process msiexec.exe -ArgumentList '/i', 'nodejs.msi', '/quiet', '/norestart' -Wait
+          npm install -g grunt-cli
+        shell: pwsh
+
+      - name: Run Grunt to Concat vpx Files
+        run: |
+          cd scripts
+          npm install
+          grunt concat:vpx
+          Move-Item -Path dest/vpx/tablescript.vbs -Destination DarkChaos-Dev/script.vbs -Force
+        shell: pwsh
+
       - name: Install jq
         run: |
           Invoke-WebRequest -Uri https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe -OutFile jq.exe
