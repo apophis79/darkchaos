@@ -20,10 +20,10 @@ Sub CreateMysteryMode
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_mystery")
             With .States("unlit")
-                .Show = glf_ShowOff
+                .Show = "off"
             End With
             With .States("on")
-                .Show = glf_ShowOnColor
+                .Show = "led_color"
                 With .Tokens()
                     .Add "color", MysteryColor
                 End With
@@ -32,10 +32,10 @@ Sub CreateMysteryMode
         'Define a shot profile with two states (off/flashing)
         With .ShotProfiles("mystery_ready")
             With .States("unlit")
-                .Show = glf_ShowOff
+                .Show = "off"
             End With
             With .States("on")
-                .Show = glf_ShowFlashColor
+                .Show = "flash_color"
                 With .Tokens()
                     .Add "color", MysteryColor
                 End With

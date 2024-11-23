@@ -11,7 +11,7 @@ Sub ConfigureGlfDevices
     ' Plunger
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("swPlunger1")
-        .EjectTimeout = 2000
+        .EjectTimeout = 700
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"
