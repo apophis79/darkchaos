@@ -33,8 +33,9 @@ jobs:
 
       - name: Modify locked property
         run: |
-          jq '.locked = 1' DarkChaos-Dev\gamedata.json > temp.json
-          Move-Item temp.json DarkChaos-Dev\gamedata.json -Force
+          jq '.locked = 1' DarkChaos-Dev/gamedata.json > temp.json
+          mv temp.json DarkChaos-Dev/gamedata.json
+        working-directory: ${{ github.workspace }}
         shell: bash
 
       - name: Download vpxtool
