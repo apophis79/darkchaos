@@ -1,0 +1,109 @@
+#config_version=6
+
+switches:
+  swPlunger1:
+    number: 1
+    tags: 
+  swRightOrb1:
+    number: 2
+    tags: 
+  swRightOrb2:
+    number: 3
+    tags: 
+  swInnerOrb2:
+    number: 4
+    tags: 
+  swInnerOrb1:
+    number: 5
+    tags: 
+  swLeftOrb2:
+    number: 6
+    tags: 
+  swLeftOrb1:
+    number: 7
+    tags: 
+  swLeftOutlane:
+    number: 8
+    tags: 
+  swLeftInlane:
+    number: 9
+    tags: 
+  swRightInlane:
+    number: 10
+    tags: 
+  swRightOutlane:
+    number: 11
+    tags: 
+  swPlunger2:
+    number: 12
+    tags: 
+  swCenterOrb3:
+    number: 13
+    tags: 
+  swCenterOrb2:
+    number: 14
+    tags: 
+  swCenterOrb1:
+    number: 15
+    tags: 
+  swLeftBumper2:
+    number: 16
+    tags: 
+  swLeftBumper1:
+    number: 17
+    tags: 
+  swRamp2:
+    number: 18
+    tags: 
+  swRamp7:
+    number: 19
+    tags: 
+  swLock1:
+    number: 20
+    tags: 
+  swLock2:
+    number: 21
+    tags: 
+  swLock3:
+    number: 22
+    tags: 
+  swGateL:
+    number: 23
+    tags: 
+  swGateR:
+    number: 24
+    tags: 
+  swScoop:
+    number: 25
+    tags: 
+  spinner:
+    number: 26
+    tags: 
+  rightslingshot:
+    number: 27
+    tags: 
+  leftslingshot:
+    number: 28
+    tags: 
+  s_trough1:
+    number: 29
+    tags: 
+  s_trough2:
+    number: 30
+    tags: 
+  s_trough3:
+    number: 31
+    tags: 
+  s_trough4:
+    number: 32
+    tags: 
+  s_trough5:
+    number: 33
+    tags: 
+  s_trough_jam:
+    number: 34
+    tags: 
+  s_start:
+    number: 35
+    tags: start
+

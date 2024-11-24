@@ -1,0 +1,893 @@
+#config_version=6
+
+hardware:
+  platform: opp
+  driverboards: gen2
+  segment_displays: light_segment_displays
+
+bcp:
+  connections:
+    local_display:
+      host: 192.168.86.25
+      port: 5050
+  debug: true
+
+modes:
+  - base
+  - skillshot
+
+opp:
+   ports: /dev/ttyACM0, /dev/ttyACM1
+
+switches:
+  s_left_flipper:
+    number: 0-0-1
+    tags: left_flipper
+  s_right_flipper:
+    number: 0-0-2
+    tags: right_flipper
+  s_upper_flipper:
+    number: 0-0-3
+    tags: upper_flipper
+  s_trough1:
+    number: 0-0-8
+  s_trough2:
+    number: 0-0-9
+  s_trough3:
+    number: 0-0-10
+  s_trough4:
+    number: 0-0-11
+  s_trough5:
+    number: 0-0-27
+  s_trough6:
+    number: 0-0-26
+  s_trough_jam:
+    number: 0-0-25
+  s_plunger:
+    number: 0-0-24
+  s_start:
+    number: 0-0-19
+    tags: start
+  s_launch_button:
+    number: 0-0-18
+  s_race_scoop:
+    number: 1-0-32
+  s_hyper_vuk:
+    number: 1-0-33
+  s_center_scoop:
+    number: 1-0-34
+  s_sw18:
+    number: 1-0-35
+    tags: boost1, boost_targets
+  s_sw19:
+    number: 1-0-36
+    tags: boost2, boost_targets
+  s_sw20:
+    number: 1-0-37
+    tags: boost3, boost_targets   
+  sw01:
+    number: 1-0-38
+    tags: sw01
+  sw02:
+    number: 1-0-39
+    tags: sw02
+  sw03:
+    number: 1-0-40
+    tags: sw03
+  sw04:
+    number: 1-0-41
+    tags: sw04
+  sw05:
+    number: 1-0-42
+    tags: sw05
+  sw06:
+    number: 1-0-43
+    tags: sw06
+  sw07:
+    number: 1-0-44
+    tags: sw07
+  sw08:
+    number: 1-0-45
+    tags: sw08
+  sw13:
+    number: 1-0-46
+    tags: sw13
+  sw14:
+    number: 1-0-47
+    tags: sw14
+coils:
+  c_flipper_left_main:
+    number: 0-0-1
+    default_pulse_ms: 20
+  c_flipper_left_hold:
+    number: 0-0-2
+    allow_enable: true
+  c_flipper_right_main:
+    number: 0-0-3
+    default_pulse_ms: 20
+  c_flipper_right_hold:
+    number: 0-0-4
+    allow_enable: true
+  c_flipper_upper_main:
+    number: 0-0-5
+    default_pulse_ms: 20
+  c_flipper_upper_hold:
+    number: 0-0-6
+    allow_enable: true
+
+  c_trough_eject:
+    number: 0-0-7
+    default_pulse_ms: 20
+  c_plunger:
+    number: 0-0-8
+    default_pulse_ms: 20
+  c_race_scoop:
+    number: 0-0-9
+    default_pulse_ms: 20
+  c_hyper_vuk:
+    number: 0-0-10
+    default_pulse_ms: 20
+  c_center_scoop:
+    number: 0-0-11
+    default_pulse_ms: 20
+
+neoseg_displays:
+  neoSeg_0:
+    start_channel: 1-0-0
+    size: 2digit
+    light_template:
+      type: w
+      subtype: led
+      color_correction_profile: NeoSeg_green
+
+segment_displays:
+  neo_seg_clock:
+    number: 1
+    size: 2
+    integrated_dots: true
+    use_dots_for_commas: true
+    default_transition_update_hz: 30
+    update_method: "replace"
+    platform_settings:
+      light_groups:
+        - neoSeg_0
+      type: 14segment
+
+lights:
+  l73:
+    number: 1-0-30
+    subtype: led
+    type: rgb
+    tags: raceNeon
+  l74:
+    previous: l73
+    subtype: led
+    type: rgb
+    tags: raceNeon
+  l75:
+    previous: l74
+    subtype: led
+    type: rgb
+    tags: raceNeon
+  l76:
+    previous: l75
+    subtype: led
+    type: rgb
+    tags: raceNeon
+  l66:
+    previous: l76
+    subtype: led
+    type: rgb
+    tags: bonusLanes
+  l67:
+    previous: l66
+    subtype: led
+    type: rgb
+    tags: bonusLanes
+  l68:
+    previous: l67
+    subtype: led
+    type: rgb
+    tags: bonusLanes    
+  l97:
+    previous: l68
+    subtype: led
+    type: rgb
+    tags: lockNeonSign
+  l79:
+    previous: l97
+    subtype: led
+    type: rgb
+    tags: pops
+  l78:
+    previous: l79
+    subtype: led
+    type: rgb
+    tags: pops
+  l77:
+    previous: l78
+    subtype: led
+    type: rgb
+    tags: pops
+  l23:
+    previous: l77
+    subtype: led
+    type: rgb
+    tags: spinner2
+  l61:
+    previous: l23
+    subtype: led
+    type: rgb
+    tags: boost3
+  l91:
+    previous: l61
+    subtype: led
+    type: rgb
+    tags: tt2
+  l17:
+    previous: l91
+    subtype: led
+    type: rgb
+    tags: bet1
+  l18:
+    previous: l17
+    subtype: led
+    type: rgb
+    tags: bet2
+  l19:
+    previous: l18
+    subtype: led
+    type: rgb
+    tags: bet3
+  l72:
+    previous: l19
+    subtype: led
+    type: rgb
+    tags: lockNeonL
+  l71:
+    previous: l72
+    subtype: led
+    type: rgb
+    tags: lockNeonO
+  l70:
+    previous: l71
+    subtype: led
+    type: rgb
+    tags: lockNeonC
+  l69:
+    previous: l70
+    subtype: led
+    type: rgb
+    tags: lockNeonK
+  l63:
+    previous: l69
+    subtype: led
+    type: rgb
+    tags: rightOrbit
+  l28:
+    previous: l63
+    subtype: led
+    type: rgb
+    tags: comboRightOrbit
+  l33:
+    previous: l28
+    subtype: led
+    type: rgb
+    tags: cyberR
+  l92:
+    previous: l33
+    subtype: led
+    type: rgb
+    tags: tt4
+  l32:
+    previous: l92
+    subtype: led
+    type: rgb
+    tags: cyberE  
+  l27:
+    previous: l32
+    subtype: led
+    type: rgb
+    tags: comboRightRamp
+  l64:
+    previous: l27
+    subtype: led
+    type: rgb
+    tags: rightRamp
+  l35:
+    previous: l64
+    subtype: led
+    type: rgb
+    tags: raceFinish
+  l62:
+    previous: l35
+    subtype: led
+    type: rgb
+    tags: nodesComplete
+  l34:
+    previous: l62
+    subtype: led
+    type: rgb
+    tags: extraBall
+  l90:
+    previous: l34
+    subtype: led
+    type: rgb
+    tags: tt3
+  l31:
+    previous: l90
+    subtype: led
+    type: rgb
+    tags: cyberB
+  l26:
+    previous: l31
+    subtype: led
+    type: rgb
+    tags: comboLeftRamp
+  l47:
+    previous: l26
+    subtype: led
+    type: rgb
+    tags: leftRamp
+  l46:
+    previous: l47
+    subtype: led
+    type: rgb
+    tags: leftOrbit
+  l25:
+    previous: l46
+    subtype: led
+    type: rgb
+    tags: comboLeftOrbit
+  l30:
+    previous: l25
+    subtype: led
+    type: rgb
+    tags: cyberY
+  l95:
+    previous: l30
+    subtype: led
+    type: rgb
+    tags: tt1
+  l60:
+    previous: l95
+    subtype: led
+    type: rgb
+    tags: boost2
+  l37:
+    previous: l60
+    subtype: led
+    type: rgb
+    tags: hyperH
+  l38:
+    previous: l37
+    subtype: led
+    type: rgb
+    tags: hyperY
+  l39:
+    previous: l38
+    subtype: led
+    type: rgb
+    tags: hyperP    
+  l40:
+    previous: l39
+    subtype: led
+    type: rgb
+    tags: hyperE
+  l41:
+    previous: l40
+    subtype: led
+    type: rgb
+    tags: hyperR    
+  l98:
+    previous: l41
+    subtype: led
+    type: rgb
+    tags: addTime
+  l49:
+    previous: l98
+    subtype: led
+    type: rgb
+    tags: mystery
+  l59:
+    previous: l49
+    subtype: led
+    type: rgb
+    tags: boost1
+  l48:
+    previous: l59
+    subtype: led
+    type: rgb
+    tags: spinner1
+  l24:
+    previous: l48
+    subtype: led
+    type: rgb
+    tags: comboSpinner
+  l29:
+    previous: l24
+    subtype: led
+    type: rgb
+    tags: cyberC
+  l42:
+    previous: l29
+    subtype: led
+    type: rgb
+    tags: inlaneR
+  l43:
+    previous: l42
+    subtype: led
+    type: rgb
+    tags: inlaneA
+  l80:
+    previous: l43
+    subtype: led
+    type: rgb
+    tags: grandSlam1
+  l81:
+    previous: l80
+    subtype: led
+    type: rgb
+    tags: grandSlam2
+  l51:
+    previous: l81
+    subtype: led
+    type: rgb
+    tags: PFX2
+  l50:
+    previous: l51
+    subtype: led
+    type: rgb
+    tags: PFX1
+  l52:
+    previous: l50
+    subtype: led
+    type: rgb
+    tags: PFX3
+  l56:
+    previous: l52
+    subtype: led
+    type: rgb
+    tags: race4
+  l16:
+    previous: l56
+    subtype: led
+    type: rgb
+    tags: ballSave
+  l57:
+    previous: l16
+    subtype: led
+    type: rgb
+    tags: race5
+  l58:
+    previous: l57
+    subtype: led
+    type: rgb
+    tags: race6
+  l55:
+    previous: l58
+    subtype: led
+    type: rgb
+    tags: race3
+  l54:
+    previous: l55
+    subtype: led
+    type: rgb
+    tags: race2
+  l53:
+    previous: l54
+    subtype: led
+    type: rgb
+    tags: race1
+  l22:
+    previous: l53
+    subtype: led
+    type: rgb
+    tags: bonus3
+  l21:
+    previous: l22
+    subtype: led
+    type: rgb
+    tags: bonus2
+  l20:
+    previous: l21
+    subtype: led
+    type: rgb
+    tags: bonus1
+  l82:
+    previous: l20
+    subtype: led
+    type: rgb
+    tags: grandSlam3
+  l83:
+    previous: l82
+    subtype: led
+    type: rgb
+    tags: grandSlam4
+  l84:
+    previous: l83
+    subtype: led
+    type: rgb
+    tags: grandSlam5
+  l44:
+    previous: l84
+    subtype: led
+    type: rgb
+    tags: inlaneC
+  l45:
+    previous: l44
+    subtype: led
+    type: rgb
+    tags: inlaneE
+  l11:
+    previous: l45
+    subtype: led
+    type: rgb
+    tags: nodes11
+  l12:
+    previous: l11
+    subtype: led
+    type: rgb
+    tags: nodes12
+  l13:
+    previous: l12
+    subtype: led
+    type: rgb
+    tags: nodes13
+  l14:
+    previous: l13
+    subtype: led
+    type: rgb
+    tags: nodes14
+  l15:
+    previous: l14
+    subtype: led
+    type: rgb
+    tags: nodes15
+  l10:
+    previous: l15
+    subtype: led
+    type: rgb
+    tags: nodes10
+  l09:
+    previous: l10
+    subtype: led
+    type: rgb
+    tags: nodes9
+  l08:
+    previous: l09
+    subtype: led
+    type: rgb
+    tags: nodes8
+  l07:
+    previous: l08
+    subtype: led
+    type: rgb
+    tags: nodes7
+  l05:
+    previous: l07
+    subtype: led
+    type: rgb
+    tags: nodes6
+  l06:
+    previous: l05
+    subtype: led
+    type: rgb
+    tags: nodes5
+  l04:
+    previous: l06
+    subtype: led
+    type: rgb
+    tags: nodes4
+  l03:
+    previous: l04
+    subtype: led
+    type: rgb
+    tags: nodes3
+  l02:
+    previous: l03
+    subtype: led
+    type: rgb
+    tags: nodes2
+  l01:
+    previous: l02
+    subtype: led
+    type: rgb
+    tags: nodes1
+  l93:
+    previous: l01
+    subtype: led
+    type: rgb
+    tags: tt5
+  l65:
+    previous: l93
+    subtype: led
+    type: rgb
+    tags: shortcut
+  l129:
+    number: 0-0-0
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l127:
+    previous: l129
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l131:
+    previous: l127
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l130:
+    previous: l131
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l139:
+    previous: l130
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l132:
+    previous: l139
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l122:
+    previous: l132
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l123:
+    previous: l122
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l112:
+    previous: l123
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l121:
+    previous: l112
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l111:
+    previous: l121
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l124:
+    previous: l111
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l116:
+    previous: l124
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l125:
+    previous: l116
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l135:
+    previous: l125
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l126:
+    previous: l135
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l137:
+    previous: l126
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l128:
+    previous: l137
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l110:
+    previous: l128
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l115:
+    previous: l110
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l109:
+    previous: l115
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l108:
+    previous: l109
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l107:
+    previous: l108
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l106:
+    previous: l107
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l103:
+    previous: l106
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l100:
+    previous: l103
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l113:
+    previous: l100
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l101:
+    previous: l113
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l102:
+    previous: l101
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l104:
+    previous: l102
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l105:
+    previous: l104
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l118:
+    previous: l105
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l117:
+    previous: l118
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l120:
+    previous: l117
+    subtype: led
+    type: rgb
+    tags: T_GI
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: plunger
+
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_right_flipper
+  upper_flipper:
+    main_coil: c_flipper_upper_main
+    hold_coil: c_flipper_upper_hold
+    activation_switch: s_upper_flipper
+
+keyboard:
+  debug: yes
+  shift+shift:
+    switch: s_left_flipper
+  shift+rshift:
+    switch: s_right_flipper
+  1:
+    switch: s_trough1
+    toggle: true
+  2:
+    switch: s_trough2
+    toggle: true
+  3:
+    switch: s_trough3
+    toggle: true
+  4:
+    switch: s_trough4
+    toggle: true
+  5:
+    switch: s_trough5
+    toggle: true
+  p:
+    switch: s_plunger
+    toggle: true
+  s: 
+    switch: s_start
+  j: 
+    switch: s_right_inlane
+
+virtual_platform_start_active_switches:
+  - s_trough1
+  - s_trough2
+  - s_trough3
+
+ball_devices:
+  trough:
+    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough_jam
+    eject_coil: c_trough_eject
+    tags: trough, home, drain
+    jam_switch: s_trough_jam
+    eject_coil_jam_pulse: 15ms
+    eject_targets: plunger
+    debug: true
+  plunger:
+    ball_switches: s_plunger
+    eject_coil: c_plunger
+    mechanical_eject: true
+    eject_targets: playfield, race_scoop
+    eject_timeouts: 3s
+    debug: true
+  race_scoop:
+    ball_switches: s_race_scoop
+    eject_coil: c_race_scoop
+    mechanical_eject: false
+    eject_timeouts: 2s
+    debug: true
+  hyper_vuk:
+    ball_switches: s_hyper_vuk
+    eject_coil: c_hyper_vuk
+    mechanical_eject: false
+    eject_timeouts: 2s
+    debug: true
+  center_scoop:
+    ball_switches: s_center_scoop
+    eject_coil: c_center_scoop
+    mechanical_eject: false
+    eject_timeouts: 2s
+    debug: true
+
+light_settings:
+  color_correction_profiles:
+    NeoSeg_red:
+      whitepoint: [.8, .8, .8]
+    NeoSeg_white:
+      whitepoint: [.55, .55, .55]
+    NeoSeg_blue:
+      whitepoint: [.5, .5, .5]
+    NeoSeg_orange:
+      whitepoint: [.9, .9, .9]
+    NeoSeg_yellow:
+      whitepoint: [1, 1, 1]
+    NeoSeg_green:
+      whitepoint: [.5, .5, .5]
+
+
+machine_vars:
+  base_points:
+    initial_value: 7500
+    value_type: int
+  mode_points:
+    initial_value: 75000
+    value_type: int
+
+player_vars:
+  boost_activations:
+    initial_value: 1
+    value_type: int

@@ -1,0 +1,13 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended
+  priority: 1000
+
+
+sequence_shots:
+  left_orbit:
+    switch_sequence: 
+      - swLeftOrb1
+      - swLeftOrb2

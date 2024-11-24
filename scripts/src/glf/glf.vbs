@@ -25,6 +25,7 @@ Dim glf_lightNames : Set glf_lightNames = CreateObject("Scripting.Dictionary")
 Dim glf_modes : Set glf_modes = CreateObject("Scripting.Dictionary")
 Dim glf_timers : Set glf_timers = CreateObject("Scripting.Dictionary")
 
+
 Dim glf_ball_devices : Set glf_ball_devices = CreateObject("Scripting.Dictionary")
 Dim glf_diverters : Set glf_diverters = CreateObject("Scripting.Dictionary")
 Dim glf_flippers : Set glf_flippers = CreateObject("Scripting.Dictionary")
@@ -44,6 +45,7 @@ Dim bcpPort : bcpPort = 5050
 Dim bcpExeName : bcpExeName = ""
 Dim glf_BIP : glf_BIP = 0
 Dim glf_FuncCount : glf_FuncCount = 0
+Dim glf_SeqCount : glf_SeqCount = 0
 
 Dim glf_ballsPerGame : glf_ballsPerGame = 3
 Dim glf_troughSize : glf_troughSize = tnob
@@ -100,6 +102,11 @@ Public Sub Glf_Init()
 		scaleFactor = 1080 / tableheight
 
 		Dim light
+		Dim switchNumber : switchNumber = 1
+		Dim lightsNumber : lightsNumber = 1
+		Dim switchesYaml : switchesYaml = "#config_version=6" & vbCrLf & vbCrLf
+		Dim lightsYaml : lightsYaml = "#config_version=6" & vbCrLf & vbCrLf
+		lightsYaml = lightsYaml + "lights:" & vbCrLf
 		Dim monitorYaml : monitorYaml = "light:" & vbCrLf
 		Dim godotLightScene : godotLightScene = ""
 		For Each light in glf_lights
@@ -108,6 +115,12 @@ Public Sub Glf_Init()
 			monitorYaml = monitorYaml + "    x: "& light.x/tablewidth & vbCrLf
 			monitorYaml = monitorYaml + "    y: "& light.y/tableheight & vbCrLf
 
+			lightsYaml = lightsYaml + "  " & light.name & ":"&vbCrLf
+			lightsYaml = lightsYaml + "    number: " & lightsNumber & vbCrLf
+			lightsYaml = lightsYaml + "    subtype: led" & vbCrLf
+			lightsYaml = lightsYaml + "    type: rgb" & vbCrLf
+			lightsYaml = lightsYaml + "    tags: " & light.BlinkPattern & vbCrLf
+			lightsNumber = lightsNumber + 1
 
 			godotLightScene = godotLightScene + "[node name="""&light.name&""" type=""Sprite2D"" parent=""lights""]" & vbCrLf
 			godotLightScene = godotLightScene + "position = Vector2("&light.x*scaleFactor&", "&light.y*scaleFactor&")" & vbCrLf
@@ -118,12 +131,40 @@ Public Sub Glf_Init()
 
 		monitorYaml = monitorYaml + vbCrLf
 		monitorYaml = monitorYaml + "switch:" & vbCrLf
+		switchesYaml = switchesYaml + "switches:" & vbCrLf
+		
 		For Each switch in glf_switches
 			monitorYaml = monitorYaml + "  " & switch.name & ":"&vbCrLf
 			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
 			monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
 			monitorYaml = monitorYaml + "    x: "& switch.x/tablewidth & vbCrLf
 			monitorYaml = monitorYaml + "    y: "& switch.y/tableheight & vbCrLf
+			switchesYaml = switchesYaml + "  " & switch.name & ":"&vbCrLf
+			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchNumber = switchNumber + 1
+		Next
+		For Each switch in glf_spinners
+			monitorYaml = monitorYaml + "  " & switch.name & ":"&vbCrLf
+			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
+			monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
+			monitorYaml = monitorYaml + "    x: "& switch.x/tablewidth & vbCrLf
+			monitorYaml = monitorYaml + "    y: "& switch.y/tableheight & vbCrLf
+			switchesYaml = switchesYaml + "  " & switch.name & ":"&vbCrLf
+			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchNumber = switchNumber + 1
+		Next
+		For Each switch in glf_slingshots
+			monitorYaml = monitorYaml + "  " & switch.name & ":"&vbCrLf
+			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
+			monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
+			monitorYaml = monitorYaml + "    x: "& switch.BlendDisableLighting & vbCrLf
+			monitorYaml = monitorYaml + "    y: "& 1-switch.BlendDisableLightingFromBelow & vbCrLf
+			switchesYaml = switchesYaml + "  " & switch.name & ":"&vbCrLf
+			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchNumber = switchNumber + 1
 		Next
 		Dim troughCount
 		For troughCount=1 to tnob
@@ -132,24 +173,47 @@ Public Sub Glf_Init()
 			monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
 			monitorYaml = monitorYaml + "    x: "& Eval("swTrough"&troughCount).x/tablewidth & vbCrLf
 			monitorYaml = monitorYaml + "    y: "& Eval("swTrough"&troughCount).y/tableheight & vbCrLf
+			switchesYaml = switchesYaml + "  s_trough" & troughCount & ":"&vbCrLf
+			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchNumber = switchNumber + 1
 		Next
+		switchesYaml = switchesYaml + "  s_trough_jam" & ":"&vbCrLf
+		switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+		switchesYaml = switchesYaml + "    tags: " & vbCrLf
+		switchNumber = switchNumber + 1
+
 		monitorYaml = monitorYaml + "  s_start:"&vbCrLf
 		monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
 		monitorYaml = monitorYaml + "    x: 0.95" & vbCrLf
 		monitorYaml = monitorYaml + "    y: 0.95" & vbCrLf
+		switchesYaml = switchesYaml + "  s_start:"&vbCrLf
+		switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+		switchesYaml = switchesYaml + "    tags: start" & vbCrLf
+		switchNumber = switchNumber + 1
 
 
-		Dim fso, modesFolder, TxtFileStream, monitorFolder
+		Dim fso, modesFolder, TxtFileStream, monitorFolder, configFolder
 		Set fso = CreateObject("Scripting.FileSystemObject")
 		monitorFolder = "glf_mpf\monitor\"
+		configFolder = "glf_mpf\config\"
 		If Not fso.FolderExists("glf_mpf") Then
 			fso.CreateFolder "glf_mpf"
 		End If
 		If Not fso.FolderExists("glf_mpf\monitor") Then
 			fso.CreateFolder "glf_mpf\monitor"
 		End If
+		If Not fso.FolderExists("glf_mpf\config") Then
+			fso.CreateFolder "glf_mpf\config"
+		End If
 		Set TxtFileStream = fso.OpenTextFile(monitorFolder & "\monitor.yaml", 2, True)
 		TxtFileStream.WriteLine monitorYaml
+		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\switches.yaml", 2, True)
+		TxtFileStream.WriteLine switchesYaml
+		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\lights.yaml", 2, True)
+		TxtFileStream.WriteLine lightsYaml
 		TxtFileStream.Close
 		Set TxtFileStream = fso.OpenTextFile(monitorFolder & "\gotdotlights.txt", 2, True)
 		TxtFileStream.WriteLine godotLightScene
@@ -499,9 +563,17 @@ End Function
 
 Public Function Glf_ParseEventInput(value)
 	Dim templateCode : templateCode = ""
+	Dim parts : parts = Split(value, ":")
+	Dim event_delay : event_delay = 0
+	If UBound(parts) = 1 Then
+		value = parts(0)
+		event_delay= parts(1)
+	End If
+
+
 	Dim condition : condition = Glf_IsCondition(value)
 	If IsNull(condition) Then
-		Glf_ParseEventInput = Array(value, value, Null)
+		Glf_ParseEventInput = Array(value, value, Null, event_delay)
 	Else
 		dim conditionReplaced : conditionReplaced = Glf_ReplaceCurrentPlayerAttributes(condition)
 		conditionReplaced = Glf_ReplaceDeviceAttributes(conditionReplaced)
@@ -514,7 +586,7 @@ Public Function Glf_ParseEventInput(value)
 		ExecuteGlobal templateCode
 		Dim funcRef : funcRef = "Glf_" & glf_FuncCount
 		glf_FuncCount = glf_FuncCount + 1
-		Glf_ParseEventInput = Array(Replace(value, "{"&condition&"}", funcRef) ,Replace(value, "{"&condition&"}", ""), funcRef)
+		Glf_ParseEventInput = Array(Replace(value, "{"&condition&"}", funcRef) ,Replace(value, "{"&condition&"}", ""), funcRef, event_delay)
 	End If
 End Function
 
@@ -2563,6 +2635,7 @@ Class Mode
     Private m_variableplayer
     Private m_eventplayer
     Private m_shot_profiles
+    Private m_sequence_shots
 
     Public Property Get Name(): Name = m_name: End Property
     Public Property Get Priority(): Priority = m_priority: End Property
@@ -2649,6 +2722,16 @@ Class Mode
         End If
     End Property
 
+    Public Property Get SequenceShots(name)
+        If m_sequence_shots.Exists(name) Then
+            Set SequenceShots = m_sequence_shots(name)
+        Else
+            Dim new_sequence_shot : Set new_sequence_shot = (new GlfSequenceShots)(name, Me)
+            m_sequence_shots.Add name, new_sequence_shot
+            Set SequenceShots = new_sequence_shot
+        End If
+    End Property
+
     Public Property Get ModeShots(): ModeShots = m_shots.Items(): End Property
     Public Property Get Shots(name)
         If m_shots.Exists(name) Then
@@ -2716,6 +2799,7 @@ Class Mode
         Set m_shot_groups = CreateObject("Scripting.Dictionary")
         Set m_ballholds = CreateObject("Scripting.Dictionary")
         Set m_shot_profiles = CreateObject("Scripting.Dictionary")
+        Set m_sequence_shots = CreateObject("Scripting.Dictionary")
         m_lightplayer = Null
         m_showplayer = Null
         m_segment_display_player = Null
@@ -3799,9 +3883,10 @@ Function SegmentPlayerCallbackHandler(evt, segment_item, mode, priority)
 
 End Function
 
-Class GlfSequenceShot
+Class GlfSequenceShots
 
     Private m_name
+    Private m_command_name
     Private m_lock_device
     Private m_priority
     Private m_mode
@@ -3812,15 +3897,19 @@ Class GlfSequenceShot
     Private m_delay_event_list
     Private m_delay_switch_list
     Private m_event_sequence
-    Private m_playfield
     Private m_sequence_timeout
     Private m_switch_sequence
+    Private m_start_event
+    Private m_sequence_count
+    Private m_active_delays
+    Private m_active_sequences
+    Private m_sequence_events
 
     Public Property Get Name(): Name = m_name: End Property
     Public Property Get GetValue(value)
         Select Case value
-            Case "locked_balls":
-                GetValue = m_balls_locked
+            'Case "":
+            '    GetValue = 
         End Select
     End Property
 
@@ -3840,25 +3929,53 @@ Class GlfSequenceShot
         Next
     End Property
     Public Property Let DelaySwitchList(value): m_delay_switch_list = value: End Property
-    Public Property Let EventSequence(value): m_event_sequence = value: End Property
+    Public Property Let EventSequence(value)
+        m_event_sequence = value
+        If m_sequence_count = 0 Then
+            m_sequence_events = value
+        Else
+            Redim Preserve m_sequence_events(m_sequence_count+UBound(value))
+            For i = 0 To UBound(value)
+                m_sequence_events(m_sequence_count + i) = value(i)
+            Next
+        End If
+        m_start_event = value(0)
+        m_sequence_count = m_sequence_count + (UBound(m_sequence_events)+1)
+    End Property
     Public Property Let SequenceTimeout(value): Set m_sequence_timeout = CreateGlfInput(value): End Property
-    Public Property Let SwitchSequence(value): m_switch_sequence = value: End Property
+    Public Property Let SwitchSequence(value)
+        m_switch_sequence = value
+        If m_sequence_count = 0 Then
+            m_start_event = value(0) & "_active"
+        End If
+        Redim Preserve m_sequence_events(m_sequence_count+UBound(value))
+        For i = 0 To UBound(value)
+            m_sequence_events(m_sequence_count + i) = value(i) & "_active"
+        Next
+        m_sequence_count = m_sequence_count + (UBound(m_sequence_events)+1)
+    End Property
 
 	Public default Function init(name, mode)
         m_name = "sequence_shot_" & name
+        m_command_name = name
         m_mode = mode.Name
         m_priority = mode.Priority
         
         Set m_cancel_events = CreateObject("Scripting.Dictionary")
         Set m_delay_event_list = CreateObject("Scripting.Dictionary")
+        Set m_active_sequences = CreateObject("Scripting.Dictionary")
+        Set m_active_delays = CreateObject("Scripting.Dictionary")
         
+        m_sequence_events = Array()
         m_cancel_switches = Array()
-        m_delay_event_list = Array()
+        
         m_event_sequence = Array()
         m_switch_sequence = Array()
-        m_sequence_timeout = CreateGlfInput(0)
+        Set m_sequence_timeout = CreateGlfInput(0)
+        m_sequence_count = 0
+        m_start_event = Empty
 
-        Set m_base_device = (new GlfBaseModeDevice)(mode, "multiball_locks", Me)
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "sequence_shot_", Me)
         
         Set Init = Me
 	End Function
@@ -3874,17 +3991,29 @@ Class GlfSequenceShot
     Public Sub Enable()
         m_base_device.Log "Enabling"
         Dim evt
+        For Each evt in m_event_sequence
+            AddPinEventListener evt, m_name & "_" & evt & "_advance", "SequenceShotsHandler", m_priority, Array("advance", Me, evt)
+        Next
+        For Each evt in m_switch_sequence
+            AddPinEventListener evt & "_active", m_name & "_" & evt & "_advance", "SequenceShotsHandler", m_priority, Array("advance", Me, evt & "_active")
+        Next
         For Each evt in m_cancel_events.Keys
-            AddPinEventListener m_cancel_events(evt).EventName, m_name & "_" & evt & "_cancel", "SequenceShotsHandler", m_priority, Array("cancel", Me)
+            AddPinEventListener m_cancel_events(evt).EventName, m_name & "_" & evt & "_cancel", "SequenceShotsHandler", m_priority, Array("cancel_event", Me, m_cancel_events(evt))
         Next
         For Each evt in m_delay_event_list.Keys
-            AddPinEventListener m_delay_event_list(evt).EventName, m_name & "_" & evt & "_delay", "SequenceShotsHandler", m_priority, Array("delay", Me)
+            AddPinEventListener m_delay_event_list(evt).EventName, m_name & "_" & evt & "_delay", "SequenceShotsHandler", m_priority, Array("delay_event", Me, m_delay_event_list(evt))
         Next
     End Sub
 
     Public Sub Disable()
         m_base_device.Log "Disabling"
         Dim evt
+        For Each evt in m_event_sequence
+            RemovePinEventListener evt, m_name & "_" & evt & "_advance"
+        Next
+        For Each evt in m_switch_sequence
+            RemovePinEventListener evt & "_active", m_name & "_" & evt & "_advance"
+        Next
         For Each evt in m_cancel_events.Keys
             RemovePinEventListener m_cancel_events(evt).EventName, m_name & "_" & evt & "_cancel"
         Next
@@ -3892,6 +4021,141 @@ Class GlfSequenceShot
             RemovePinEventListener m_delay_event_list(evt).EventName, m_name & "_" & evt & "_delay"
         Next
     End Sub
+
+    Sub SequenceAdvance(event_name)
+        ' Since we can track multiple simultaneous sequences (e.g. two balls
+        ' going into an orbit in a row), we first have to see whether this
+        ' switch is starting a new sequence or continuing an existing one
+
+        m_base_device.Log "Sequence advance: " & event_name
+
+        If event_name = m_start_event Then
+            If m_sequence_count > 1 Then
+                ' start a new sequence
+                StartNewSequence()
+            ElseIf UBound(m_active_delays.Keys) = -1 Then
+                ' if it only has one step it will finish right away
+                Completed()
+            End If
+        Else
+            ' Get the seq_id of the first sequence this switch is next for.
+            ' This is not a loop because we only want to advance 1 sequence
+            Dim k, seq
+            seq = Null
+            For Each k In m_active_sequences.Keys
+                m_base_device.Log m_active_sequences(k).NextEvent
+                If m_active_sequences(k).NextEvent = event_name Then
+                    Set seq = m_active_sequences(k)
+                    Exit For
+                End If
+            Next
+
+            If Not IsNull(seq) Then
+                ' advance this sequence
+                AdvanceSequence(seq)
+            End If
+        End If
+    End Sub
+
+    Public Sub StartNewSequence()
+        ' If the sequence hasn't started, make sure we're not within the
+        ' delay_switch hit window
+
+        If UBound(m_active_delays.Keys)>-1 Then
+            m_base_device.Log "There's a delay timer in effect. Sequence will not be started."
+            Exit Sub
+        End If
+
+        'record start time
+        m_start_time = gametime
+
+        ' create a new sequence
+        Dim seq_id : seq_id = "seq_" & glf_SeqCount
+        glf_SeqCount = glf_SeqCount + 1
+
+        Dim next_event : next_event = m_sequence_events(1)
+
+        m_base_device.Log "Setting up a new sequence. Next: " & next_event
+
+        m_active_sequences.Add seq_id, (new GlfActiveSequence)(seq_id, 0, next_event)
+
+        ' if this sequence has a time limit, set that up
+        If m_sequence_timeout.Value > 0 Then
+            m_base_device.Log "Setting up a sequence timer for " & m_sequence_timeout.Value
+            SetDelay seq_id, "SequenceShotsHandler" , Array(Array("seq_timeout", Me, seq_id),Null), m_sequence_timeout.Value
+        End If
+    End Sub
+
+    Public Sub AdvanceSequence(sequence)
+        ' Remove this sequence from the list
+        If sequence.CurrentPositionIndex = (m_sequence_count - 2) Then  ' complete
+            m_base_device.Log "Sequence complete!"
+            RemoveDelay sequence.SeqId
+            m_active_sequences.Remove sequence.SeqId
+            Completed()
+        Else
+            Dim current_position_index : current_position_index = sequence.CurrentPositionIndex + 1
+            Dim next_event : next_event = m_sequence_events(current_position_index + 1)
+            m_base_device.Log "Advancing the sequence. Next: " & next_event
+            sequence.CurrentPositionIndex = current_position_index
+            sequence.NextEvent = next_event
+        End If
+    End Sub
+
+    Public Sub Completed()
+        'measure the elapsed time between start and completion of the sequence
+        If m_start_time > 0 Then
+            elapsed = gametime - m_start_time
+        Else
+            elapsed = 0
+        End If
+
+        'Post sequence complete event including its elapsed time to complete.
+        Dim kwargs : Set kwargs = GlfKwargs()
+        With kwargs
+            .Add "elapsed", elapsed
+        End With
+        DispatchPinEvent m_command_name & "_hit", kwargs
+    End Sub
+
+    Public Sub ResetAllSequences()
+        'Reset all sequences."""
+        Dim k
+        For Each k in m_active_sequences.Keys
+            RemoveDelay m_active_sequences(k).SeqId
+        Next
+
+        m_active_sequences.RemoveAll()
+    End Sub
+
+    Public Sub DelayEvent(delay, name)
+        m_base_device.Log "Delaying sequence by " & delay
+        SetDelay name & "_delay_timer", "SequenceShotsHandler" , Array(Array("release_delay", Me, name),Null), delay
+        m_active_delays.Add name, True
+    End Sub
+
+    Public Sub ReleaseDelay(name)
+        m_active_delays.Remove name
+    End Sub
+
+End Class
+
+Class GlfActiveSequence
+
+    Private m_next_event, m_seq_id, m_idx
+
+    Public Property Get SeqId(): SeqId = m_seq_id: End Property
+    Public Property Get NextEvent(): NextEvent = m_next_event: End Property
+    Public Property Let NextEvent(value): m_next_event = value: End Property
+    Public Property Get CurrentPositionIndex(): CurrentPositionIndex = m_idx: End Property
+    Public Property Let CurrentPositionIndex(value): m_idx = value: End Property
+
+    Public default Function init(seq_id, idx, next_event)
+        m_seq_id = seq_id
+        m_idx = idx
+        m_next_event = next_event
+        Set Init = Me
+    End Function
 
 End Class
 
@@ -3905,10 +4169,28 @@ Function SequenceShotsHandler(args)
     Dim evt : evt = ownProps(0)
     Dim sequence_shot : Set sequence_shot = ownProps(1)
     Select Case evt
+        Case "advance"
+            sequence_shot.SequenceAdvance ownProps(2)
         Case "cancel"
-            sequence_shot.Activate
+            Set glfEvent = ownProps(2)
+            If Not IsNull(glfEvent.Condition) Then
+                If GetRef(glfEvent.Condition)() = False Then
+                    Exit Function
+                End If
+            End If
+            sequence_shot.ResetAllSequences
         Case "delay"
-            sequence_shot.Deactivate
+            Set glfEvent = ownProps(2)
+            If Not IsNull(glfEvent.Condition) Then
+                If GetRef(glfEvent.Condition)() = False Then
+                    Exit Function
+                End If
+            End If
+            sequence_shot.DelayEvent glfEvent.Delay, glfEvent.EventName
+        Case "seq_timeout"
+            sequence_shot.SequenceTimeout ownProps(2)
+        Case "release_delay"
+            sequence_shot.ReleaseDelay ownProps(2)
     End Select
     If IsObject(args(1)) Then
         Set SequenceShotsHandler = kwargs
@@ -7544,11 +7826,12 @@ Function MagnetEventHandler(args)
 End Function
 
 Class GlfEvent
-	Private m_raw, m_name, m_event, m_condition
+	Private m_raw, m_name, m_event, m_condition, m_delay
   
     Public Property Get Name() : Name = m_name : End Property
     Public Property Get EventName() : EventName = m_event : End Property
     Public Property Get Condition() : Condition = m_condition : End Property
+    Public Property Get Delay() : Delay = m_delay : End Property
     Public Property Get Raw() : Raw = m_raw : End Property
 
     Public Function Evaluate()
@@ -7565,6 +7848,7 @@ Class GlfEvent
         m_name = parsedEvent(0)
         m_event = parsedEvent(1)
         m_condition = parsedEvent(2)
+        m_delay = parsedEvent(3)
 	    Set Init = Me
 	End Function
 
