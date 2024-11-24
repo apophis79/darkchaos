@@ -48,12 +48,12 @@ Sub Table1_Init
 	Flash5 False
 	Flash6 False
 
-	'Drop targets Init (all dropped)
-    'InitMeteors
-	SolDT1 False
-	SolDT2 False
-	SolDT3 False
-	SolDT4 False
+	' 'Drop targets Init (all dropped)
+    ' 'InitMeteors
+	' SolDT1 False
+	' SolDT2 False
+	' SolDT3 False
+	' SolDT4 False
 
 	'Segmented Displays
 	'InitSegDisplays

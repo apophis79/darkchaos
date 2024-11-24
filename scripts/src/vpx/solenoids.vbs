@@ -112,39 +112,3 @@ Sub SolKnocker(Enabled)
 End Sub
 
 
-
-'  Drop Targets
-'*******************************************
-
-Sub SolDT1(Enabled)
-	If Enabled Then
-		DTRaise 1
-	Else
-		DTDrop 1
-	End If 
-End Sub
-
-Sub SolDT2(Enabled)
-	If Enabled Then
-		DTRaise 2
-	Else
-		DTDrop 2
-	End If 
-End Sub
-
-Sub SolDT3(Enabled)
-	If Enabled Then
-		DTRaise 3
-	Else
-		DTDrop 3
-	End If 
-End Sub
-
-Sub SolDT4(Enabled)
-	If Enabled Then
-		DTRaise 4
-	Else
-		DTDrop 4
-	End If 
-End Sub
-

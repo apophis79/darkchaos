@@ -222,6 +222,62 @@ End Function
 
 
 
+
+'  Ramp Triggers
+
+Sub swRamp1_hit
+	If activeball.vely<0 Then
+		WireRampOn True 'plastic
+	Else
+		WireRampOff
+	End If
+End Sub
+
+' Sub swRamp2_hit
+' 	WireRampOff
+' 	WireRampOn False 'wire
+' 	CheckTimeWarp
+' 	CheckCombo
+' 	If Player(CurrentPlayer).bInWave Then AudioCallout "jackpot proton" : ReloadProtonRound
+' End Sub
+
+Sub swRamp3_hit
+	WireRampOff
+End Sub
+
+Sub swRamp4_hit
+	If activeball.vely<0 Then
+		WireRampOn True 'plastic
+	Else
+		WireRampOff
+	End If
+End Sub
+
+Sub swRamp5_hit
+	WireRampOff
+End Sub
+
+Sub swRamp6_hit
+	WireRampOn True 'plastic
+End Sub
+
+' Sub swRamp7_hit
+' 	WireRampOff
+' 	WireRampOn False 'wire
+' 	CheckMoonLock
+' 	CheckCombo
+' 	If Player(CurrentPlayer).bInWave Then AudioCallout "jackpot cluster" : ReloadClusterRound 
+' End Sub
+
+Sub swRamp8_hit
+	WireRampOff
+End Sub
+
+Sub swRamp9_hit
+	WireRampOn False 'wire
+End Sub
+
+
 '******************************************************
 '**** END RAMP ROLLING SFX
 '******************************************************

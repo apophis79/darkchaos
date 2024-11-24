@@ -16,7 +16,7 @@ Dim PLGain: PLGain = (1-PLOffset)/(PLTop-PLBottom)
 
 Sub UpdateBallBrightness
 	Dim s, b_base, b_r, b_g, b_b, d_w
-	b_base = 120 * BallBrightness + 135*gilvl	' orig was 120 and 70
+	b_base = 120 * BallBrightness + 135	' orig was 120 and 70
 
 	For s = 0 To UBound(gBOT)
 		' Handle z direction
