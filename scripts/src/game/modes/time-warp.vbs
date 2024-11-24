@@ -91,11 +91,11 @@ Sub CreateTimewarpMode
         End With
 
         With .EventPlayer()
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==0}", Array("light_timewarp1")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==1 && current_player.player_shot_timewarp2==0", Array("light_timewarp2")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==1 && current_player.player_shot_timewarp2==1 && current_player.player_shot_timewarp3==0", Array("light_timewarp3")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==1 && current_player.player_shot_timewarp2==1 && current_player.player_shot_timewarp3==1 && current_player.player_shot_timewarp4==0", Array("light_timewarp4")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp4==1}", Array("disable_timewarp")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==0}", Array("light_timewarp1")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==0}", Array("light_timewarp2")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==1 && current_player.shot_timewarp4==0}", Array("light_timewarp4")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp4==1}", Array("disable_timewarp")
             .Add "ball_ended", Array("restart_timewarp")   'FIXME: needs to restart at end of meteor wave
         End With
         

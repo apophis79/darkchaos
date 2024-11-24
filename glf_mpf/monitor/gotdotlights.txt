@@ -1,0 +1,641 @@
+[node name="gi17" type="Sprite2D" parent="lights"]
+position = Vector2(445.4141, 29.04202)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="giapron" type="Sprite2D" parent="lights"]
+position = Vector2(220.296, 1057.021)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi22" type="Sprite2D" parent="lights"]
+position = Vector2(286.7345, 150.8603)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LStars" type="Sprite2D" parent="lights"]
+position = Vector2(234.7826, -43.45976)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi20" type="Sprite2D" parent="lights"]
+position = Vector2(92.91397, 223.7928)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi21" type="Sprite2D" parent="lights"]
+position = Vector2(76.79748, 145.3379)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi19" type="Sprite2D" parent="lights"]
+position = Vector2(441.2608, 375.8531)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi18" type="Sprite2D" parent="lights"]
+position = Vector2(23.84122, 239.8285)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi16" type="Sprite2D" parent="lights"]
+position = Vector2(32.14809, 33.19542)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi15" type="Sprite2D" parent="lights"]
+position = Vector2(450.6058, 286.5547)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi14" type="Sprite2D" parent="lights"]
+position = Vector2(437.1074, 463.0753)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi13" type="Sprite2D" parent="lights"]
+position = Vector2(375.8444, 267.864)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi12" type="Sprite2D" parent="lights"]
+position = Vector2(29.033, 328.0888)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi11" type="Sprite2D" parent="lights"]
+position = Vector2(36.30153, 409.0806)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi10" type="Sprite2D" parent="lights"]
+position = Vector2(415.3018, 581.9673)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi09" type="Sprite2D" parent="lights"]
+position = Vector2(25.90878, 606.2031)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi08" type="Sprite2D" parent="lights"]
+position = Vector2(344.165, 769.7437)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi07" type="Sprite2D" parent="lights"]
+position = Vector2(328.5896, 811.7974)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi06" type="Sprite2D" parent="lights"]
+position = Vector2(364.9323, 853.3315)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi05" type="Sprite2D" parent="lights"]
+position = Vector2(330.1474, 878.2521)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi04" type="Sprite2D" parent="lights"]
+position = Vector2(94.95949, 769.225)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi03" type="Sprite2D" parent="lights"]
+position = Vector2(107.9389, 808.6823)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi02" type="Sprite2D" parent="lights"]
+position = Vector2(66.40472, 850.7357)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="gi01" type="Sprite2D" parent="lights"]
+position = Vector2(100.6705, 874.0774)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPF" type="Sprite2D" parent="lights"]
+position = Vector2(215.833, 223.6373)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a10" type="Sprite2D" parent="lights"]
+position = Vector2(604.4824, 586.3108)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a00" type="Sprite2D" parent="lights"]
+position = Vector2(573.0677, 586.6523)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a16" type="Sprite2D" parent="lights"]
+position = Vector2(604.3394, 769.7249)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a15" type="Sprite2D" parent="lights"]
+position = Vector2(604.3397, 737.2863)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a14" type="Sprite2D" parent="lights"]
+position = Vector2(604.3397, 706.8964)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a13" type="Sprite2D" parent="lights"]
+position = Vector2(604.1689, 676.5062)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a12" type="Sprite2D" parent="lights"]
+position = Vector2(604.34, 646.3728)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a11" type="Sprite2D" parent="lights"]
+position = Vector2(604.4824, 616.7026)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a06" type="Sprite2D" parent="lights"]
+position = Vector2(572.9248, 770.0665)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a05" type="Sprite2D" parent="lights"]
+position = Vector2(572.925, 737.6279)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a04" type="Sprite2D" parent="lights"]
+position = Vector2(572.925, 707.2379)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a03" type="Sprite2D" parent="lights"]
+position = Vector2(572.7542, 676.8478)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a02" type="Sprite2D" parent="lights"]
+position = Vector2(572.9254, 646.7144)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="a01" type="Sprite2D" parent="lights"]
+position = Vector2(573.0677, 617.0441)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LX" type="Sprite2D" parent="lights"]
+position = Vector2(274.3283, 296.8658)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LS5" type="Sprite2D" parent="lights"]
+position = Vector2(314.2274, 347.9557)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LS1" type="Sprite2D" parent="lights"]
+position = Vector2(75.9297, 609.4357)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSwL1" type="Sprite2D" parent="lights"]
+position = Vector2(42.96022, 562.4792)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSwL2" type="Sprite2D" parent="lights"]
+position = Vector2(48.58464, 465.7539)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LS2" type="Sprite2D" parent="lights"]
+position = Vector2(97.90935, 432.5995)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LS3" type="Sprite2D" parent="lights"]
+position = Vector2(149.8612, 409.6207)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LS4" type="Sprite2D" parent="lights"]
+position = Vector2(238.7789, 333.691)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LS6" type="Sprite2D" parent="lights"]
+position = Vector2(369.6577, 407.6226)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSwC3" type="Sprite2D" parent="lights"]
+position = Vector2(262.7567, 143.8668)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSwC2" type="Sprite2D" parent="lights"]
+position = Vector2(214.8011, 101.9056)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSwC1" type="Sprite2D" parent="lights"]
+position = Vector2(168.8437, 141.8686)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LCWiz" type="Sprite2D" parent="lights"]
+position = Vector2(135.0856, 669.5912)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LLWiz" type="Sprite2D" parent="lights"]
+position = Vector2(294.1663, 670.211)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC1" type="Sprite2D" parent="lights"]
+position = Vector2(157.2733, 848.1071)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC2" type="Sprite2D" parent="lights"]
+position = Vector2(173.503, 847.7594)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC3" type="Sprite2D" parent="lights"]
+position = Vector2(192.5965, 847.9813)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC4" type="Sprite2D" parent="lights"]
+position = Vector2(209.6918, 847.7593)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC5" type="Sprite2D" parent="lights"]
+position = Vector2(226.4171, 848.9435)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC6" type="Sprite2D" parent="lights"]
+position = Vector2(246.2752, 848.5983)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC7" type="Sprite2D" parent="lights"]
+position = Vector2(261.545, 847.5869)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LC8" type="Sprite2D" parent="lights"]
+position = Vector2(279.3063, 848.5242)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LWiz" type="Sprite2D" parent="lights"]
+position = Vector2(215.1732, 652.9244)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW9" type="Sprite2D" parent="lights"]
+position = Vector2(214.635, 608.7337)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW8" type="Sprite2D" parent="lights"]
+position = Vector2(214.5255, 573.3603)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW7" type="Sprite2D" parent="lights"]
+position = Vector2(214.5256, 535.7966)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW6" type="Sprite2D" parent="lights"]
+position = Vector2(214.3064, 496.0433)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW5" type="Sprite2D" parent="lights"]
+position = Vector2(214.1969, 459.7941)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW4" type="Sprite2D" parent="lights"]
+position = Vector2(214.7445, 422.7783)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW3" type="Sprite2D" parent="lights"]
+position = Vector2(214.3064, 388.7197)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW2" type="Sprite2D" parent="lights"]
+position = Vector2(214.9635, 363.0932)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LW1" type="Sprite2D" parent="lights"]
+position = Vector2(214.4506, 337.9547)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMLR" type="Sprite2D" parent="lights"]
+position = Vector2(325.7178, 315.8874)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LEBR" type="Sprite2D" parent="lights"]
+position = Vector2(283.3354, 271.5342)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMR" type="Sprite2D" parent="lights"]
+position = Vector2(289.2493, 247.8794)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPC5" type="Sprite2D" parent="lights"]
+position = Vector2(247.3598, 189.7274)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPC4" type="Sprite2D" parent="lights"]
+position = Vector2(180.3371, 190.713)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSC4" type="Sprite2D" parent="lights"]
+position = Vector2(369.8094, 617.2477)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSC3" type="Sprite2D" parent="lights"]
+position = Vector2(369.8089, 586.1292)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSC2" type="Sprite2D" parent="lights"]
+position = Vector2(370.2035, 557.1802)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSC1" type="Sprite2D" parent="lights"]
+position = Vector2(369.8092, 526.9492)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LF3" type="Sprite2D" parent="lights"]
+position = Vector2(396.9899, 326.3858)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LF2" type="Sprite2D" parent="lights"]
+position = Vector2(405.3678, 299.7738)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LF1" type="Sprite2D" parent="lights"]
+position = Vector2(413.837, 274.8147)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPC3" type="Sprite2D" parent="lights"]
+position = Vector2(204.5556, 295.7505)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPC2" type="Sprite2D" parent="lights"]
+position = Vector2(184.4862, 274.6286)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPC1" type="Sprite2D" parent="lights"]
+position = Vector2(163.101, 253.3539)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LTW4" type="Sprite2D" parent="lights"]
+position = Vector2(125.8728, 383.5261)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LTW3" type="Sprite2D" parent="lights"]
+position = Vector2(154.5055, 375.2806)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LTW2" type="Sprite2D" parent="lights"]
+position = Vector2(143.7655, 346.9117)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LTW1" type="Sprite2D" parent="lights"]
+position = Vector2(117.3356, 355.907)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LCC3" type="Sprite2D" parent="lights"]
+position = Vector2(86.54927, 398.1348)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LCC2" type="Sprite2D" parent="lights"]
+position = Vector2(79.06465, 367.8939)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LCC1" type="Sprite2D" parent="lights"]
+position = Vector2(71.41435, 336.9321)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMet4" type="Sprite2D" parent="lights"]
+position = Vector2(310.4257, 549.7417)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMet3" type="Sprite2D" parent="lights"]
+position = Vector2(266.0146, 480.3877)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMet2" type="Sprite2D" parent="lights"]
+position = Vector2(174.9572, 454.324)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMet1" type="Sprite2D" parent="lights"]
+position = Vector2(140.8928, 531.1654)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LM5" type="Sprite2D" parent="lights"]
+position = Vector2(363.5125, 330.7793)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LM4" type="Sprite2D" parent="lights"]
+position = Vector2(270.9777, 223.4801)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LM3" type="Sprite2D" parent="lights"]
+position = Vector2(214.5217, 192.5185)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LM2" type="Sprite2D" parent="lights"]
+position = Vector2(170.754, 300.7532)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LM1" type="Sprite2D" parent="lights"]
+position = Vector2(81.45731, 566.3004)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSA" type="Sprite2D" parent="lights"]
+position = Vector2(218.5457, 932.2082)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH9" type="Sprite2D" parent="lights"]
+position = Vector2(286.8797, 864.1392)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH8" type="Sprite2D" parent="lights"]
+position = Vector2(270.2283, 864.5092)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH7" type="Sprite2D" parent="lights"]
+position = Vector2(252.467, 863.5718)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH6" type="Sprite2D" parent="lights"]
+position = Vector2(237.1972, 864.5832)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH5" type="Sprite2D" parent="lights"]
+position = Vector2(217.3391, 864.9285)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH4" type="Sprite2D" parent="lights"]
+position = Vector2(200.6138, 863.7443)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH3" type="Sprite2D" parent="lights"]
+position = Vector2(183.5185, 863.9662)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH2" type="Sprite2D" parent="lights"]
+position = Vector2(164.425, 863.7444)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LH1" type="Sprite2D" parent="lights"]
+position = Vector2(148.1953, 864.092)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPR1" type="Sprite2D" parent="lights"]
+position = Vector2(216.6421, 769.0778)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPR3" type="Sprite2D" parent="lights"]
+position = Vector2(230.8512, 798.022)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPR2" type="Sprite2D" parent="lights"]
+position = Vector2(200.328, 796.9695)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPR6" type="Sprite2D" parent="lights"]
+position = Vector2(247.1653, 827.4928)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPR5" type="Sprite2D" parent="lights"]
+position = Vector2(216.379, 827.2297)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LPR4" type="Sprite2D" parent="lights"]
+position = Vector2(185.3296, 826.7034)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMR2" type="Sprite2D" parent="lights"]
+position = Vector2(267.5435, 782.07)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LMR1" type="Sprite2D" parent="lights"]
+position = Vector2(268.0699, 757.8619)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LCR2" type="Sprite2D" parent="lights"]
+position = Vector2(163.3438, 782.0698)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LCR1" type="Sprite2D" parent="lights"]
+position = Vector2(163.3438, 757.8617)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LRI" type="Sprite2D" parent="lights"]
+position = Vector2(370.1646, 744.7049)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LRO" type="Sprite2D" parent="lights"]
+position = Vector2(410.6868, 757.3354)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LLI" type="Sprite2D" parent="lights"]
+position = Vector2(66.24847, 746.0208)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LLO" type="Sprite2D" parent="lights"]
+position = Vector2(26.25259, 756.546)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSR" type="Sprite2D" parent="lights"]
+position = Vector2(409.1469, 848.498)
+script = ExtResource("3_qb2nn")
+tags = []
+
+[node name="LSL" type="Sprite2D" parent="lights"]
+position = Vector2(27.08102, 847.9717)
+script = ExtResource("3_qb2nn")
+tags = []
+
+

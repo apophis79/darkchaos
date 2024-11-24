@@ -638,21 +638,6 @@ switch:
     size: 0.06
     x: 0.0515744
     y: 0.1352809
-  spinner:
-    shape: RECTANGLE
-    size: 0.06
-    x: 0.2639278
-    y: 0.1152397
-  rightslingshot:
-    shape: RECTANGLE
-    size: 0.06
-    x: 0
-    y: 1
-  leftslingshot:
-    shape: RECTANGLE
-    size: 0.06
-    x: 0
-    y: 1
   s_trough1:
     shape: RECTANGLE
     size: 0.06

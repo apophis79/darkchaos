@@ -4733,6 +4733,7 @@ Sub ConfigureGlfDevices
     CreateShieldsMode
     CreateMysteryMode
     CreateGIMode
+    CreateTimewarpMode
 
 End Sub
 
@@ -5197,8 +5198,8 @@ Sub CreateMoonMultiballMode
         End With
 
         With .EventPlayer()
-            .Add "swMoonRamp_active{current_player.player_shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
-            .Add "balldevice_moon_lock_ball_entered{current_player.player_shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.balls_in_moon_lock}", Array("release_moon_ball")
+            .Add "swMoonRamp_active{current_player.shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_entered{current_player.shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.balls_in_moon_lock}", Array("release_moon_ball")
             .Add "multiball_locks_moon_launch_locked_ball", Array("restart_qualify_shots")
             .Add "multiball_locks_moon_launch_locked_ball{devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked}", Array("release_moon_ball")
             .Add "multiball_locks_moon_launch_locked_ball{current_player.multiball_locks_moon_launch_balls_locked==1}", Array("light_missile1")
@@ -5353,7 +5354,7 @@ Sub CreateMysteryMode
         With .EventPlayer()
             .Add "mode_myster_started", Array("restart_qualify_mystery")
             .Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
-            .Add "swScoop_active{current_player.player_shot_mystery_ready==1}", Array("restart_qualify_mystery") 
+            .Add "swScoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
         End With
 
         With .LightPlayer()
@@ -5492,8 +5493,8 @@ Sub CreateShieldsMode
         With .EventPlayer()
             .Add "mode_shields_started", Array("restart_qualify_shields")
             .Add "qualify_shields_on_complete", Array("disable_qualify_shields")
-            .Add "swLeftOutlane_active{current_player.player_shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
-            .Add "swRightOutlane_active{current_player.player_shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
+            .Add "swLeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
+            .Add "swRightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
         End With
 
         With .LightPlayer()
@@ -5605,11 +5606,11 @@ Sub CreateTimewarpMode
         End With
 
         With .EventPlayer()
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==0}", Array("light_timewarp1")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==1 && current_player.player_shot_timewarp2==0", Array("light_timewarp2")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==1 && current_player.player_shot_timewarp2==1 && current_player.player_shot_timewarp3==0", Array("light_timewarp3")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp1==1 && current_player.player_shot_timewarp2==1 && current_player.player_shot_timewarp3==1 && current_player.player_shot_timewarp4==0", Array("light_timewarp4")
-            .Add "swTimewarpRamp_active{current_player.player_shot_timewarp4==1}", Array("disable_timewarp")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==0}", Array("light_timewarp1")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==0}", Array("light_timewarp2")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==1 && current_player.shot_timewarp4==0}", Array("light_timewarp4")
+            .Add "swTimewarpRamp_active{current_player.shot_timewarp4==1}", Array("disable_timewarp")
             .Add "ball_ended", Array("restart_timewarp")   'FIXME: needs to restart at end of meteor wave
         End With
         
@@ -9744,7 +9745,7 @@ Class GlfShotGroup
         Dim shot_name
         For Each shot_name in m_shots
             AddPinEventListener shot_name & "_hit", m_name & "_" & m_mode & "_hit", "ShotGroupEventHandler", m_priority, Array("hit", Me)
-            AddPlayerStateEventListener "player_shot_" & shot_name, m_name & "_" & m_mode & "_complete", "ShotGroupEventHandler", m_priority, Array("complete", Me)
+            AddPlayerStateEventListener "shot_" & shot_name, m_name & "_" & m_mode & "_complete", "ShotGroupEventHandler", m_priority, Array("complete", Me)
         Next
     End Sub
  
@@ -9775,7 +9776,7 @@ Class GlfShotGroup
         Dim shot_name
         For Each shot_name in m_shots
             RemovePinEventListener shot_name & "_hit", m_name & "_" & m_mode & "_hit"
-            RemovePlayerStateEventListener "player_shot_" & shot_name, m_name & "_" & m_mode & "_complete"
+            RemovePlayerStateEventListener "shot_" & shot_name, m_name & "_" & m_mode & "_complete"
         Next
     End Sub
  
