@@ -11,3 +11,18 @@ sequence_shots:
     switch_sequence: 
       - swLeftOrb1
       - swLeftOrb2
+
+shots:
+  timewarp1:
+    control_events:
+      - events: light_timewarp1
+        state: 1
+  timewarp2:
+    control_events:
+      - events: light_timewarp2
+        state: 1
+
+
+event_player:
+  swTimewarpRamp_active{current_player.shot_timewarp1==0}: light_timewarp1
+  swTimewarpRamp_active{current_player.shot_timewarp1==1 and current_player.shot_timewarp2==0}: light_timewarp2

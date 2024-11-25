@@ -13,7 +13,7 @@
     "color2": "#ff000000",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "10",
+    "blink_pattern": "Display",
     "off_image": "",
     "blink_interval": 125,
     "intensity": 1.0,

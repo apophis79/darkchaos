@@ -598,16 +598,6 @@ switch:
     size: 0.06
     x: 9.203319E-02
     y: 0.5202668
-  swRamp2:
-    shape: RECTANGLE
-    size: 0.06
-    x: 5.575652E-02
-    y: 0.0633683
-  swRamp7:
-    shape: RECTANGLE
-    size: 0.06
-    x: 0.9390895
-    y: 9.309434E-02
   swLock1:
     shape: RECTANGLE
     size: 0.06
@@ -638,21 +628,16 @@ switch:
     size: 0.06
     x: 0.6211085
     y: 0.2133084
-  spinner:
+  swMoonRamp:
     shape: RECTANGLE
     size: 0.06
-    x: 0.2639278
-    y: 0.1152397
-  rightslingshot:
+    x: 0.9425382
+    y: 0.1478284
+  swTimewarpRamp:
     shape: RECTANGLE
     size: 0.06
-    x: 0.68
-    y: 0.72
-  leftslingshot:
-    shape: RECTANGLE
-    size: 0.06
-    x: 0.22
-    y: 0.72
+    x: 0.0515744
+    y: 0.1352809
   s_trough1:
     shape: RECTANGLE
     size: 0.06

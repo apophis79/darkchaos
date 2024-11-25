@@ -233,13 +233,13 @@ Sub swRamp1_hit
 	End If
 End Sub
 
-' Sub swRamp2_hit
-' 	WireRampOff
-' 	WireRampOn False 'wire
-' 	CheckTimeWarp
-' 	CheckCombo
-' 	If Player(CurrentPlayer).bInWave Then AudioCallout "jackpot proton" : ReloadProtonRound
-' End Sub
+Sub swRamp2_hit
+	WireRampOff
+	WireRampOn False 'wire
+	' CheckTimeWarp
+	' CheckCombo
+	' If Player(CurrentPlayer).bInWave Then AudioCallout "jackpot proton" : ReloadProtonRound
+End Sub
 
 Sub swRamp3_hit
 	WireRampOff
@@ -261,13 +261,13 @@ Sub swRamp6_hit
 	WireRampOn True 'plastic
 End Sub
 
-' Sub swRamp7_hit
-' 	WireRampOff
-' 	WireRampOn False 'wire
-' 	CheckMoonLock
-' 	CheckCombo
-' 	If Player(CurrentPlayer).bInWave Then AudioCallout "jackpot cluster" : ReloadClusterRound 
-' End Sub
+Sub swRamp7_hit
+	WireRampOff
+	WireRampOn False 'wire
+	' CheckMoonLock
+	' CheckCombo
+	' If Player(CurrentPlayer).bInWave Then AudioCallout "jackpot cluster" : ReloadClusterRound 
+End Sub
 
 Sub swRamp8_hit
 	WireRampOff

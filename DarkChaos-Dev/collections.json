@@ -346,14 +346,14 @@
       "swCenterOrb1",
       "swLeftBumper2",
       "swLeftBumper1",
-      "swRamp2",
-      "swRamp7",
       "swLock1",
       "swLock2",
       "swLock3",
       "swGateL",
       "swGateR",
-      "swScoop"
+      "swScoop",
+      "swMoonRamp",
+      "swTimewarpRamp"
     ],
     "fire_events": false,
     "stop_single_events": false,

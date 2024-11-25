@@ -118,6 +118,7 @@ Sub ConfigureGlfDevices
     CreateShieldsMode
     CreateMysteryMode
     CreateGIMode
+    CreateTimewarpMode
 
 End Sub
 
