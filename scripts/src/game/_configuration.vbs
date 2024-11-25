@@ -104,6 +104,27 @@ Sub ConfigureGlfDevices
         .ActionCallback = "DTMeteor4Callback"
     End With
 
+    Dim segment_display_p1
+    Set segment_display_p1 = (New GlfLightSegmentDisplay)("player1")
+
+    segment_display_p1.SegmentType = "14Segment"
+    segment_display_p1.SegmentSize = 7
+    segment_display_p1.LightGroup = "p1_seg"
+
+    Dim segment_display_ball
+    Set segment_display_ball = (New GlfLightSegmentDisplay)("ball")
+
+    segment_display_ball.SegmentType = "14Segment"
+    segment_display_ball.SegmentSize = 2
+    segment_display_ball.LightGroup = "ball_seg"
+
+    Dim segment_display_pf
+    Set segment_display_pf = (New GlfLightSegmentDisplay)("pf")
+
+    segment_display_pf.SegmentType = "7Segment"
+    segment_display_pf.SegmentSize = 2
+    segment_display_pf.LightGroup = "pf_seg"
+
 
     ' Trough
     AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null

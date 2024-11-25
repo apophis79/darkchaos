@@ -1198,7 +1198,7 @@ Const GLF_BALL_STARTED = "ball_started"
 '******************************************************
 
 Const GLF_SCORE = "score"
-Const GLF_CURRENT_BALL = "current_ball"
+Const GLF_CURRENT_BALL = "ball"
 Const GLF_INITIALS = "initials"
 
 
@@ -3641,7 +3641,7 @@ Class GlfSegmentDisplayPlayer
         If m_events.Exists(name) Then
             Set Events = m_events(name)
         Else
-            Dim new_event : Set new_event = (new GlfSegmentPlayerEventItem)()
+            Dim new_event : Set new_event = (new GlfSegmentDisplayPlayerEvent)()
             m_events.Add name, new_event
             Set Events = new_event
         End If
@@ -3671,19 +3671,26 @@ Class GlfSegmentDisplayPlayer
         Next
     End Sub
 
-    Public Sub Play(evt, segment_item)
-        SegmentPlayerCallbackHandler evt, segment_item, m_mode, m_priority
+    Public Sub Play(evt, segment_event)
+        Dim i
+        For i=0 to UBound(segment_event.Displays())
+            SegmentPlayerCallbackHandler evt, segment_event.Displays()(i), m_mode, m_priority
+        Next
     End Sub
 
-    Public Sub PlayOff(evt, segment_item)
-        Dim key
-        key = m_mode & "." & "segment_player_player." & segment_item.Display
-        If Not IsEmpty(segment_item.Key) Then
-            key = key & segment_item.Key
-        End If
-        Dim display : Set display = glf_segment_displays(segment_item.Display)
-        RemoveDelay key
-        display.RemoveTextByKey key    
+    Public Sub PlayOff(evt, segment_event)
+        Dim i, segment_item
+        For i=0 to UBound(segment_event.Displays())
+            Set segment_item = segment_event.Displays()(i)
+            Dim key
+            key = m_mode & "." & "segment_player_player." & segment_item.Display
+            If Not IsEmpty(segment_item.Key) Then
+                key = key & segment_item.Key
+            End If
+            Dim display : Set display = glf_segment_displays(segment_item.Display)
+            RemoveDelay key
+            display.RemoveTextByKey key    
+        Next
     End Sub
 
     Public Function ToYaml()
@@ -3698,6 +3705,30 @@ Class GlfSegmentDisplayPlayer
         End If
         ToYaml = yaml
     End Function
+
+End Class
+
+Class GlfSegmentDisplayPlayerEvent
+
+    Private m_items
+
+    Public Property Get Displays() : Displays = m_items.Items() : End Property
+
+    Public Property Get Display(value)
+        If m_items.Exists(value) Then
+            Set Display = m_items(value)
+        Else
+            Dim new_item : Set new_item = (new GlfSegmentPlayerEventItem)()
+            new_item.Display = value
+            m_items.add value, new_item
+            Set Display = new_item
+        End If
+    End Property
+
+    Public default Function init()
+        Set m_items = CreateObject("Scripting.Dictionary")
+        Set Init = Me
+	End Function
 
 End Class
 
@@ -3878,7 +3909,6 @@ Function SegmentPlayerCallbackHandler(evt, segment_item, mode, priority)
         'Shot Text on a display
         Dim key
         key = mode & "." & "segment_player_player." & segment_item.Display
-        
         If Not IsEmpty(segment_item.Key) Then
             key = key & segment_item.Key
         End If
@@ -7326,12 +7356,20 @@ Class GlfLightSegmentDisplay
                 Glf_SetLight m_light_group & CStr(segment_idx + 12), SegmentColor(segment.m)
                 Glf_SetLight m_light_group & CStr(segment_idx + 13), SegmentColor(segment.l)
                 Glf_SetLight m_light_group & CStr(segment_idx + 14), SegmentColor(segment.dp)
-
+                segment_idx = segment_idx + 15
             ElseIf m_segment_type = "7Segment" Then
-                
+                Glf_SetLight m_light_group & CStr(segment_idx), SegmentColor(segment.a)
+                Glf_SetLight m_light_group & CStr(segment_idx + 1), SegmentColor(segment.b)
+                Glf_SetLight m_light_group & CStr(segment_idx + 2), SegmentColor(segment.c)
+                Glf_SetLight m_light_group & CStr(segment_idx + 3), SegmentColor(segment.d)
+                Glf_SetLight m_light_group & CStr(segment_idx + 4), SegmentColor(segment.e)
+                Glf_SetLight m_light_group & CStr(segment_idx + 5), SegmentColor(segment.f)
+                Glf_SetLight m_light_group & CStr(segment_idx + 6), SegmentColor(segment.g)
+                Glf_SetLight m_light_group & CStr(segment_idx + 7), SegmentColor(segment.dp)
+                segment_idx = segment_idx + 8
             End If
             
-            segment_idx = segment_idx + 15
+            
         Next
         'for char, lights_for_char in zip(mapped_text, self._lights):
         '    for name, light in lights_for_char.items():
@@ -7620,7 +7658,7 @@ Function MapSegmentTextToSegments(text, display_width, segment_mapping)
     Dim segments()
 	ReDim segments(Len(text)-1)
 
-	Dim charCode, i
+    Dim charCode, char, mapping, i
     For i = 1 To Len(text)
         char = Mid(text, i, 1)
         charCode = Asc(char)
