@@ -8,7 +8,6 @@ Dim RStep : RStep = 0 : RightSlingShot.TimerEnabled = 1
 
 
 Sub OnLeftSlingshotActive(args)
-	Flash5 True
 	LS.VelocityCorrect(ActiveBall)
 	LStep = 0
 	LeftSlingShot_Timer
@@ -34,7 +33,6 @@ End Sub
 
 
 Sub OnRightSlingshotActive(args)
-	Flash6 True
 	RS.VelocityCorrect(ActiveBall)
 	RStep = 0
 	RightSlingShot_Timer

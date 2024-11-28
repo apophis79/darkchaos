@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     concat: {
       vpx: {
-        src: ['src/vpx/**/*.vbs', 'src/game/**/*.vbs', 'src/glf/glf.vbs', '!src/unittests/**/*.vbs', '!src/**/*.test.vbs', '!src/**/*-mpf.vbs','!src/**/*-ignore.vbs'],
+        src: ['src/vpx/**/*.vbs', 'src/game/**/*.vbs', 'src/glf/glf.vbs', 'src/glf/shows/*.vbs', '!src/unittests/**/*.vbs', '!src/**/*.test.vbs', '!src/**/*-mpf.vbs','!src/**/*-ignore.vbs'],
         dest: 'dest/vpx/tablescript.vbs',
       },
     },

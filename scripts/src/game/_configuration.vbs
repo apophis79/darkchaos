@@ -134,13 +134,18 @@ Sub ConfigureGlfDevices
     AddPinEventListener "leftslingshot_active",  "on_leftslingshot_active",  "OnLeftSlingshotActive", 1000, Null
     AddPinEventListener "rightslingshot_active",  "on_rightslingshot_active",  "OnRightSlingshotActive", 1000, Null
 
+    'Shot Profiles
+    CreateSharedShotProfiles
+
     ' Modes
     CreateMoonMultiballMode
     CreateShieldsMode
     CreateMysteryMode
     CreateGIMode
     CreateTimewarpMode
+    CreateShipSaveMode
 
+    
 End Sub
 
 
@@ -155,7 +160,20 @@ Function BallDrainSound(args)
     BallDrainSound = args(1)
 End Function 
 
+Public Sub CreateSharedShotProfiles()
 
+    With GlfShotProfiles("flicker_on")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("on")
+            .Show = "sweep_up"
+            .Speed = 1
+            
+        End With
+    End With
+
+End Sub
 
 Public Sub CreateGIMode()
 

@@ -19,12 +19,6 @@ Sub TTT(Y)
     ActiveBall.Velz = 0
 End Sub
 
-Function TTY()
-
-    TTY = GetPlayerState("multiball_locks_moon_launch_balls_locked")=2
-    If Err Then TTY = False
-End Function
-
 Sub CreateMoonMultiballMode
 
 
@@ -52,67 +46,46 @@ Sub CreateMoonMultiballMode
 			End With
 		End With
 
-        'Define a shot profile with two states (off/on)
-        With .ShotProfiles("qualify_lock")
-            With .States("unlit")
-                .Show = "off"
-            End With
-            With .States("on")
-                .Show = "flicker_color_on"
-                .Speed = 4
-                With .Tokens()
-                    .Add "color", MoonColor
-                End With
-            End With
-        End With
-        'Define a shot profile with two states (off/flashing)
-        With .ShotProfiles("lock_ready")
-            With .States("unlit")
-                .Show = "off"
-            End With
-            With .States("on")
-                .Show = "flash_color"
-                With .Tokens()
-                    .Add "color", MoonColor
-                End With
-            End With
-        End With
-
         'Define our shots
         With .Shots("left_outlane")
             .Switch = "swLeftOutlane"
-            .Profile = "qualify_lock"
+            .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LLO"
+                .Add "color", MoonColor
             End With
         End With
         
         With .Shots("left_inlane")
             .Switch = "swLeftInlane"
-            .Profile = "qualify_lock"
+            .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LLI"
+                .Add "color", MoonColor
             End With
         End With
         With .Shots("right_inlane")
             .Switch = "swRightInlane"
-            .Profile = "qualify_lock"
+            .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LRI"
+                .Add "color", MoonColor
             End With
         End With
         With .Shots("right_outlane")
             .Switch = "swRightOutlane"
-            .Profile = "qualify_lock"
+            .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LRO"
+                .Add "color", MoonColor
             End With
         End With
 
         With .Shots("moon_missile1")
-            .Profile = "qualify_lock"
+            .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LMR1"
+                .Add "color", MoonColor
             End With
             With .ControlEvents("missile1_ready")
                 .Events = Array("light_missile1")
@@ -122,9 +95,10 @@ Sub CreateMoonMultiballMode
         End With
 
         With .Shots("moon_missile2")
-            .Profile = "qualify_lock"
+            .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LMR2"
+                .Add "color", MoonColor
             End With
             With .ControlEvents("missile2_ready")
                 .Events = Array("light_missile2")
@@ -135,9 +109,10 @@ Sub CreateMoonMultiballMode
 
         'Moon Lock Ready
         With .Shots("moon_lock_ready")
-            .Profile = "lock_ready"
+            .Profile = "flash_color"
             With .Tokens()
                 .Add "lights", "LMLR"
+                .Add "color", MoonColor
             End With
             With .ControlEvents("lock_ready")
                 .Events = Array("qualify_lock_on_complete")

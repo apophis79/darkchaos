@@ -40,13 +40,7 @@ Sub Table1_Init
 	InitPolarity
 	InitSlingCorrection
 
-	' Turn off the Flashers
-	Flash1 False
-	Flash2 False
-	Flash3 False
-	Flash4 False
-	Flash5 False
-	Flash6 False
+	
 
 	' 'Drop targets Init (all dropped)
     ' 'InitMeteors
