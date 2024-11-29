@@ -25,26 +25,6 @@ Sub CreateMoonMultiballMode
     With CreateGlfMode("moon_multiball", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
-
-
-        With .SegmentDisplayPlayer()
-			With .Events("mode_moon_multiball_started")
-                With .Display("player1")
-				    .Text = "current_player.score"
-                End With
-			End With
-            With .Events("mode_moon_multiball_started")
-				With .Display("ball")
-				    .Text = "{current_player.ball:0>2}"
-                End With
-			End With
-            With .Events("mode_moon_multiball_started")
-				With .Display("pf")
-				    .Text = "{current_player.ball:0>2}"
-                End With
-			End With
-		End With
 
         'Define our shots
         With .Shots("left_outlane")
