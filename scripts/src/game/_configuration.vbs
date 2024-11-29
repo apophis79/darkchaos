@@ -138,10 +138,10 @@ Sub ConfigureGlfDevices
     CreateSharedShotProfiles
 
     ' Modes
+    CreateBaseMode
     CreateMoonMultiballMode
     CreateShieldsMode
     CreateMysteryMode
-    CreateGIMode
     CreateTimewarpMode
     CreateShipSaveMode
 
@@ -167,30 +167,10 @@ Public Sub CreateSharedShotProfiles()
             .Show = "off"
         End With
         With .States("on")
-            .Show = "sweep_up"
-            .Speed = 1
-            
+            .Show = "flicker_color_on"
+            .Speed = 4
         End With
     End With
 
 End Sub
-
-Public Sub CreateGIMode()
-
-    With CreateGlfMode("gi_control", 1000)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended") 
-        With .LightPlayer()
-            With .Events("mode_gi_control_started")
-                With .Lights("GI")
-                    '.Color = "ffffff"  'white
-                    '.Color = "ffA957"  '2700k
-                    .Color = "ffb46b"  '3000k
-                End With
-            End With
-        End With
-    End With
-    
-End Sub
-
 
