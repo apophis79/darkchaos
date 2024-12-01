@@ -26,13 +26,13 @@ End Sub
 
 Sub ScoopEjectCallback(ball)
 	Dim ang, vel
-	If swScoop.BallCntOver > 0 Then
+	If s_Scoop.BallCntOver > 0 Then
 		ang = 14.8 + ScoopAngleTol*2*(rnd-0.5)
 		vel = 70.0 + ScoopStrengthTol*2*(rnd-0.5)
 		KickBall ball, ang, vel, 0, 0
-		SoundSaucerKick 1, swScoop
+		SoundSaucerKick 1, s_Scoop
 	Else
-		SoundSaucerKick 0, swScoop
+		SoundSaucerKick 0, s_Scoop
 	End If
 End Sub
 
@@ -46,11 +46,11 @@ End Sub
 
 
 Sub PlungerEjectCallback(ball)
-	If swPlunger1.BallCntOver > 0 Then
+	If s_Plunger1.BallCntOver > 0 Then
 		KickBall ball, 0, 60, 0, 0
-		SoundSaucerKick 1, swPlunger1
+		SoundSaucerKick 1, s_Plunger1
 	Else
-		SoundSaucerKick 0, swPlunger1
+		SoundSaucerKick 0, s_Plunger1
 	End If
 End Sub
 
@@ -91,11 +91,11 @@ Sub DropLockPin(enabled)
 	Dim BP
 	If Enabled Then
 		LockPin.isdropped=True
-		SoundSaucerKick 0,swLock1
+		SoundSaucerKick 0,s_Lock1
 		For each BP in BP_LockPin: BP.transz = -50: Next
 	Else		
 		LockPin.isdropped=False
-		SoundSaucerKick 0,swLock1
+		SoundSaucerKick 0,s_Lock1
 		For each BP in BP_LockPin: BP.transz = 0: Next
 	End If
 End Sub 
@@ -112,3 +112,38 @@ Sub SolKnocker(Enabled)
 End Sub
 
 
+
+'  Bumpers
+'*******************************************
+
+Sub Bumper1Action(args)
+	Dim enabled, ball : enabled = args(0)
+    ' If Not IsNull(args(1)) Then
+    '     Set ball = args(1)
+    ' End If
+	If enabled Then RandomSoundBumperMiddle s_Bumper1
+End Sub
+
+Sub Bumper2Action(args)
+	Dim enabled, ball : enabled = args(0)
+    ' If Not IsNull(args(1)) Then
+    '     Set ball = args(1)
+    ' End If
+	If enabled Then RandomSoundBumperTop s_Bumper2
+End Sub
+
+Sub Bumper3Action(args)
+	Dim enabled, ball : enabled = args(0)
+    ' If Not IsNull(args(1)) Then
+    '     Set ball = args(1)
+    ' End If
+	If enabled Then RandomSoundBumperTop s_Bumper3
+End Sub
+
+Sub Bumper4Action(args)
+	Dim enabled, ball : enabled = args(0)
+    ' If Not IsNull(args(1)) Then
+    '     Set ball = args(1)
+    ' End If
+	If enabled Then RandomSoundBumperTop s_Bumper4
+End Sub

@@ -10,7 +10,7 @@ Sub ConfigureGlfDevices
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
-        .BallSwitches = Array("swPlunger1")
+        .BallSwitches = Array("s_Plunger1")
         .EjectTimeout = 700
         .MechanicalEject = True
         .DefaultDevice = True
@@ -18,17 +18,19 @@ Sub ConfigureGlfDevices
         .Debug = True
     End With
 
+
     ' Scoop
     With CreateGlfBallDevice("scoop")
-        .BallSwitches = Array("swScoop")
+        .BallSwitches = Array("s_Scoop")
         .EjectTimeout = 2000
         .MechanicalEject = True
 		.EjectCallback = "ScoopEjectCallback"
     End With
 
+
     ' Moon Lock
     With CreateGlfBallDevice("moon_lock")
-        .BallSwitches = Array("swLock1","swLock2", "swLock3")
+        .BallSwitches = Array("s_Lock1","s_Lock2", "s_Lock3")
         '.PlayerControlledEjectEvent = "eject_moon_ball"
         '.EjectCallback = "MoonLockEjectCallback"
         '.EjectEnableTime = 250
@@ -42,6 +44,7 @@ Sub ConfigureGlfDevices
         .ActionCallback = "DropLockPin"
     End With
 
+
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
@@ -50,21 +53,56 @@ Sub ConfigureGlfDevices
         .ActionCallback = "RaiseDiverterPin"
     End With
 
+
     ' Flippers
     With CreateGlfFlipper("left")
-        .Switch = Array("s_left_flipper")
+        .Switch = "s_left_flipper"
         .ActionCallback = "LeftFlipperAction"
     End With
 
     With CreateGlfFlipper("right")
-        .Switch = Array("s_right_flipper")
+        .Switch = "s_right_flipper"
         .ActionCallback = "RightFlipperAction"
+    End With
+
+
+    ' Slingshots
+    With CreateGlfAutoFireDevice("left_sling")
+        .Switch = "s_LeftSlingshot"
+        .ActionCallback = "LeftSlingshotAction"
+    End With
+
+    With CreateGlfAutoFireDevice("right_sling")
+        .Switch = "s_RightSlingshot"
+        .ActionCallback = "RightSlingshotAction"
+    End With
+
+
+    ' Bumpers
+    With CreateGlfAutoFireDevice("bumper1")
+        .Switch = "s_Bumper1"
+        .ActionCallback = "Bumper1Action"
+    End With
+
+    With CreateGlfAutoFireDevice("bumper2")
+        .Switch = "s_Bumper2"
+        .ActionCallback = "Bumper2Action"
+    End With
+
+    With CreateGlfAutoFireDevice("bumper3")
+        .Switch = "s_Bumper3"
+        .ActionCallback = "Bumper3Action"
+    End With
+
+    With CreateGlfAutoFireDevice("bumper4")
+        .Switch = "s_Bumper4"
+        .ActionCallback = "Bumper4Action"
     End With
 
 
     ' Magnet
     With CreateGlfMagnet("mag1")
-        .GrabSwitch = "TargetMystery5"
+        .GrabSwitch = "s_TargetMystery5"
         .ReleaseBallEvents = Array("magnet_mag1_grabbed_ball")
         .GrabTime = 1000
         .ActionCallback = "GrabMagnetAction"
@@ -73,7 +111,7 @@ Sub ConfigureGlfDevices
 
     ' Drop Targets
     With CreateGlfDroptarget("drop1")
-        .Switch = "DTMeteor1"
+        .Switch = "s_DTMeteor1"
         .KnockdownEvents = Array("s_right_magna_key_active")
         '.EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
@@ -81,7 +119,7 @@ Sub ConfigureGlfDevices
     End With
 
     With CreateGlfDroptarget("drop2")
-        .Switch = "DTMeteor2"
+        .Switch = "s_DTMeteor2"
         .KnockdownEvents = Array("s_right_magna_key_active")
         '.EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
@@ -89,7 +127,7 @@ Sub ConfigureGlfDevices
     End With
 
     With CreateGlfDroptarget("drop3")
-        .Switch = "DTMeteor3"
+        .Switch = "s_DTMeteor3"
         .KnockdownEvents = Array("s_right_magna_key_active")
         '.EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
@@ -97,13 +135,15 @@ Sub ConfigureGlfDevices
     End With
 
     With CreateGlfDroptarget("drop4")
-        .Switch = "DTMeteor4"
+        .Switch = "s_DTMeteor4"
         .KnockdownEvents = Array("s_right_magna_key_active")
         '.EnableKeepUpEvents = Array("ball_started")
         .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor4Callback"
     End With
 
+
+    ' Alphanumeric displays
     Dim segment_display_p1
     Set segment_display_p1 = (New GlfLightSegmentDisplay)("player1")
 
@@ -130,10 +170,6 @@ Sub ConfigureGlfDevices
     AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
     AddPinEventListener GLF_BALL_DRAIN, "ball_drain_sound", "BallDrainSound", 100, Null
 
-    ' Slingshots
-    AddPinEventListener "leftslingshot_active",  "on_leftslingshot_active",  "OnLeftSlingshotActive", 1000, Null
-    AddPinEventListener "rightslingshot_active",  "on_rightslingshot_active",  "OnRightSlingshotActive", 1000, Null
-
     'Shot Profiles
     CreateSharedShotProfiles
 
@@ -144,6 +180,7 @@ Sub ConfigureGlfDevices
     CreateMysteryMode
     CreateTimewarpMode
     CreateShipSaveMode
+    'CreateClusterBombMode
 
     
 End Sub

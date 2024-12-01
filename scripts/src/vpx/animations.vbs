@@ -76,114 +76,114 @@ End Sub
 
 
 ' Bumpers
-Sub Bumper1_Animate
+Sub s_Bumper1_Animate
 	Dim z, BP
-	z = Bumper1.CurrentRingOffset
+	z = s_Bumper1.CurrentRingOffset
 	For Each BP in BP_BR1 : BP.transz = z: Next
 End Sub
 
-Sub Bumper2_Animate
+Sub s_Bumper2_Animate
 	Dim z, BP
-	z = Bumper2.CurrentRingOffset
+	z = s_Bumper2.CurrentRingOffset
 	For Each BP in BP_BR2 : BP.transz = z: Next
 End Sub
 
-Sub Bumper3_Animate
+Sub s_Bumper3_Animate
 	Dim z, BP
-	z = Bumper3.CurrentRingOffset
+	z = s_Bumper3.CurrentRingOffset
 	For Each BP in BP_BR3 : BP.transz = z: Next
 End Sub
 
-Sub Bumper4_Animate
+Sub s_Bumper4_Animate
 	Dim z, BP
-	z = Bumper4.CurrentRingOffset
+	z = s_Bumper4.CurrentRingOffset
 	For Each BP in BP_BR4 : BP.transz = z: Next
 End Sub
 
 
 ' Switches
-Sub swCenterOrb1_Animate
-	Dim z : z = swCenterOrb1.CurrentAnimOffset
+Sub s_CenterOrb1_Animate
+	Dim z : z = s_CenterOrb1.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swC1 : BP.transz = z: Next
 End Sub
 
-Sub swCenterOrb2_Animate
-	Dim z : z = swCenterOrb2.CurrentAnimOffset
+Sub s_CenterOrb2_Animate
+	Dim z : z = s_CenterOrb2.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swC2 : BP.transz = z: Next
 End Sub
 
-Sub swCenterOrb3_Animate
-	Dim z : z = swCenterOrb3.CurrentAnimOffset
+Sub s_CenterOrb3_Animate
+	Dim z : z = s_CenterOrb3.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swC3 : BP.transz = z: Next
 End Sub
 
-Sub swInnerOrb1_Animate
-	Dim z : z = swInnerOrb1.CurrentAnimOffset
+Sub s_InnerOrb1_Animate
+	Dim z : z = s_InnerOrb1.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swI1 : BP.transz = z: Next
 End Sub
 
-Sub swInnerOrb2_Animate
-	Dim z : z = swInnerOrb2.CurrentAnimOffset
+Sub s_InnerOrb2_Animate
+	Dim z : z = s_InnerOrb2.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swI2 : BP.transz = z: Next
 End Sub
 
-Sub swLeftOrb1_Animate
-	Dim z : z = swLeftOrb1.CurrentAnimOffset
+Sub s_LeftOrb1_Animate
+	Dim z : z = s_LeftOrb1.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swL1 : BP.transz = z: Next
 End Sub
 
-Sub swLeftOrb2_Animate
-	Dim z : z = swLeftOrb2.CurrentAnimOffset
+Sub s_LeftOrb2_Animate
+	Dim z : z = s_LeftOrb2.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swL2 : BP.transz = z: Next
 End Sub
 
-Sub swLeftBumper1_Animate
-	Dim z : z = swLeftBumper1.CurrentAnimOffset
+Sub s_LeftBumper1_Animate
+	Dim z : z = s_LeftBumper1.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swLB1 : BP.transz = z: Next
 End Sub
 
-Sub swLeftBumper2_Animate
-	Dim z : z = swLeftBumper2.CurrentAnimOffset
+Sub s_LeftBumper2_Animate
+	Dim z : z = s_LeftBumper2.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swLB2 : BP.transz = z: Next
 End Sub
 
-Sub swLeftInlane_Animate
-	Dim z : z = swLeftInlane.CurrentAnimOffset
+Sub s_LeftInlane_Animate
+	Dim z : z = s_LeftInlane.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swLI : BP.transz = z: Next
 End Sub
 
-Sub swLeftOutlane_Animate
-	Dim z : z = swLeftOutlane.CurrentAnimOffset
+Sub s_LeftOutlane_Animate
+	Dim z : z = s_LeftOutlane.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swLO : BP.transz = z: Next
 End Sub
 
-Sub swPlunger1_Animate
-	Dim z : z = swPlunger1.CurrentAnimOffset
+Sub s_Plunger1_Animate
+	Dim z : z = s_Plunger1.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swP1 : BP.transz = z: Next
 End Sub
 
-Sub swPlunger2_Animate
-	Dim z : z = swPlunger2.CurrentAnimOffset
+Sub s_Plunger2_Animate
+	Dim z : z = s_Plunger2.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swP2 : BP.transz = z: Next
 End Sub
 
-Sub swRightOrb1_Animate
-	Dim z : z = swRightOrb1.CurrentAnimOffset
+Sub s_RightOrb1_Animate
+	Dim z : z = s_RightOrb1.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swR1 : BP.transz = z: Next
 End Sub
 
-Sub swRightOrb2_Animate
-	Dim z : z = swRightOrb2.CurrentAnimOffset
+Sub s_RightOrb2_Animate
+	Dim z : z = s_RightOrb2.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swR2 : BP.transz = z: Next
 End Sub
 
-Sub swRightInlane_Animate
-	Dim z : z = swRightInlane.CurrentAnimOffset
+Sub s_RightInlane_Animate
+	Dim z : z = s_RightInlane.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swRI : BP.transz = z: Next
 End Sub
 
-Sub swRightOutlane_Animate
-	Dim z : z = swRightOutlane.CurrentAnimOffset
+Sub s_RightOutlane_Animate
+	Dim z : z = s_RightOutlane.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swRO : BP.transz = z: Next
 End Sub
 
@@ -269,12 +269,12 @@ Sub InitSpinner
 '		BP.Size_Y = BP.Size_Y * 0.99
 '		BP.Size_Z = BP.Size_Z * 0.99
 '	Next
-	Spinner_animate
+	s_spinner_animate
 End Sub
 
-Sub Spinner_animate
+Sub s_spinner_animate
 	Dim LM, a, b, offset
-	a = Spinner.currentangle
+	a = s_spinner.currentangle
 	If a >= 0 And a < 60 Then
         b = 0
     ElseIf a >= 60 And a < 120 Then

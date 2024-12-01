@@ -1,4 +1,11 @@
-Const ShipSaveColor = "7300ff"
+'Ship Save Mode.
+
+'s_RightOrb2 must be hit right after s_RightOrb1 (by hitting their swtiches).
+'Once this occurs, a ship save light is lit in order (1, 2, 3)
+'Once the third charge light is lit, a the ship save (ball save) will be extended at ths start of next meteor wave.
+
+
+Const ShipSaveColor = "0500ee"
 
 Sub CreateShipSaveMode
 
@@ -42,8 +49,8 @@ Sub CreateShipSaveMode
         End With
         
         With .SequenceShots("right_orbit")
-            .SwitchSequence = Array("swRightOrb1", "swRightOrb2")
-            .SequenceTimeout = 1000
+            .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
+            .SequenceTimeout = 300
         End With
 
         With .StateMachines("ship_save")

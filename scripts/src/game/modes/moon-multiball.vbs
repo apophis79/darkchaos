@@ -28,7 +28,7 @@ Sub CreateMoonMultiballMode
 
         'Define our shots
         With .Shots("left_outlane")
-            .Switch = "swLeftOutlane"
+            .Switch = "s_LeftOutlane"
             .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LLO"
@@ -37,7 +37,7 @@ Sub CreateMoonMultiballMode
         End With
         
         With .Shots("left_inlane")
-            .Switch = "swLeftInlane"
+            .Switch = "s_LeftInlane"
             .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LLI"
@@ -45,7 +45,7 @@ Sub CreateMoonMultiballMode
             End With
         End With
         With .Shots("right_inlane")
-            .Switch = "swRightInlane"
+            .Switch = "s_RightInlane"
             .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LRI"
@@ -53,7 +53,7 @@ Sub CreateMoonMultiballMode
             End With
         End With
         With .Shots("right_outlane")
-            .Switch = "swRightOutlane"
+            .Switch = "s_RightOutlane"
             .Profile = "flicker_on"
             With .Tokens()
                 .Add "lights", "LRO"
@@ -110,7 +110,7 @@ Sub CreateMoonMultiballMode
         End With
 
         With .EventPlayer()
-            .Add "swMoonRamp_active{current_player.shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
+            .Add "s_MoonRamp_active{current_player.shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
             .Add "balldevice_moon_lock_ball_entered{current_player.shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.balls_in_moon_lock}", Array("release_moon_ball")
             .Add "multiball_locks_moon_launch_locked_ball", Array("restart_qualify_shots")
             .Add "multiball_locks_moon_launch_locked_ball{devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked}", Array("release_moon_ball")

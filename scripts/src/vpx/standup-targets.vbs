@@ -5,15 +5,15 @@
 '	ZSUT: STAND-UP TARGETS by Rothbauerw
 '******************************************************
 
-Sub TargetMystery1_Hit: STHit 1 : End Sub
-Sub TargetMystery2_Hit: STHit 2 : End Sub
-Sub TargetMystery3_Hit: STHit 3 : End Sub
-Sub TargetMystery4_Hit: STHit 4 : End Sub
-Sub TargetMystery5_Hit: STHit 5 : End Sub
-Sub TargetShield1_Hit:  STHit 6 : End Sub
-Sub TargetShield2_Hit:  STHit 7 : End Sub
-Sub TargetShield3_Hit:  STHit 8 : End Sub
-Sub TargetShield4_Hit:  STHit 9 : End Sub
+Sub s_TargetMystery1_Hit: STHit 1 : End Sub
+Sub s_TargetMystery2_Hit: STHit 2 : End Sub
+Sub s_TargetMystery3_Hit: STHit 3 : End Sub
+Sub s_TargetMystery4_Hit: STHit 4 : End Sub
+Sub s_TargetMystery5_Hit: STHit 5 : End Sub
+Sub s_TargetShield1_Hit:  STHit 6 : End Sub
+Sub s_TargetShield2_Hit:  STHit 7 : End Sub
+Sub s_TargetShield3_Hit:  STHit 8 : End Sub
+Sub s_TargetShield4_Hit:  STHit 9 : End Sub
 
 Class StandupTarget
     Private m_primary, m_prim, m_sw, m_animate
@@ -57,15 +57,15 @@ Dim ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8, ST9
 'these are inclined primitives to simulate hitting a bent target and should provide so z velocity on high speed impacts
 
 
-Set ST1 = (new StandupTarget)(TargetMystery1, BM_TM1, 1, 0)
-Set ST2 = (new StandupTarget)(TargetMystery2, BM_TM2, 2, 0)
-Set ST3 = (new StandupTarget)(TargetMystery3, BM_TM3, 3, 0)
-Set ST4 = (new StandupTarget)(TargetMystery4, BM_TM4, 4, 0)
-Set ST5 = (new StandupTarget)(TargetMystery5, BM_TM5, 5, 0)
-Set ST6 = (new StandupTarget)(TargetShield1, BM_TS1, 6, 0)
-Set ST7 = (new StandupTarget)(TargetShield2, BM_TS2, 7, 0)
-Set ST8 = (new StandupTarget)(TargetShield3, BM_TS3, 8, 0)
-Set ST9 = (new StandupTarget)(TargetShield4, BM_TS4, 9, 0)
+Set ST1 = (new StandupTarget)(s_TargetMystery1, BM_TM1, 1, 0)
+Set ST2 = (new StandupTarget)(s_TargetMystery2, BM_TM2, 2, 0)
+Set ST3 = (new StandupTarget)(s_TargetMystery3, BM_TM3, 3, 0)
+Set ST4 = (new StandupTarget)(s_TargetMystery4, BM_TM4, 4, 0)
+Set ST5 = (new StandupTarget)(s_TargetMystery5, BM_TM5, 5, 0)
+Set ST6 = (new StandupTarget)(s_TargetShield1, BM_TS1, 6, 0)
+Set ST7 = (new StandupTarget)(s_TargetShield2, BM_TS2, 7, 0)
+Set ST8 = (new StandupTarget)(s_TargetShield3, BM_TS3, 8, 0)
+Set ST9 = (new StandupTarget)(s_TargetShield4, BM_TS4, 9, 0)
 
 'Add all the Stand-up Target Arrays to Stand-up Target Animation Array
 '   STAnimationArray = Array(ST1, ST2, ....)
