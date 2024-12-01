@@ -119,13 +119,6 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.Wall7.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
-  },
-  {
     "file_name": "Trigger.swRightInlane.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -158,105 +151,105 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg001.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post003.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post004.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post005.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post009.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post010.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand005.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Plunger.Plunger.json",
@@ -424,28 +417,28 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.EndPoint2LS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.EndPoint1RS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.EndPoint2RS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall001.json",
@@ -606,28 +599,28 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post012.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post013.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "HitTarget.TargetShield1.json",
@@ -872,35 +865,35 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg009.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "HitTarget.TargetMystery1.json",
@@ -914,7 +907,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall017.json",
@@ -928,7 +921,7 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.LockPin.json",
@@ -942,28 +935,28 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post015.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post016.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.DiverterPin.json",
@@ -1026,476 +1019,476 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LLO.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LLI.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LRO.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LRI.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LCR1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LCR2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMR1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMR2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPR4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPR5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPR6.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPR2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPR3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPR1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH6.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH7.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH8.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LH9.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSA.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LM1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LM2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LM3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LM4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LM5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMet1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMet2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMet3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMet4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LCC1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LCC2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LCC3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LTW1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LTW2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LTW3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LTW4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPC1.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPC2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPC3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LF1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LF2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LF3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSC1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSC2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSC3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSC4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPC4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPC5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LEBR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LMLR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW6.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW7.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW8.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LW9.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LWiz.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Timer.BlinkTimer.json",
@@ -1607,70 +1600,70 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC7.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC6.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LC1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LLWiz.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LCWiz.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swLock3.json",
@@ -1908,21 +1901,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSwC2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSwC3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LB2.json",
@@ -1950,63 +1943,63 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LS4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LS3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LS2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSwL2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSwL1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LS1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LS5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LX.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.gi20.json",
@@ -9643,35 +9636,35 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg011.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.rightslingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.leftslingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand001.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swGateL.json",
@@ -10768,6 +10761,13 @@
   {
     "file_name": "Light.pf_seg15.json",
     "is_locked": false,
+    "editor_layer": 0,
+    "editor_layer_name": "segment lights",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Wall.Wall7.json",
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
     "editor_layer_visibility": true

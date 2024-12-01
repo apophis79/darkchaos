@@ -64,8 +64,8 @@
       "Wall008",
       "Wall011",
       "Wall016",
-      "Wall7",
-      "Wall5"
+      "Wall5",
+      "Wall7"
     ],
     "fire_events": true,
     "stop_single_events": false,
