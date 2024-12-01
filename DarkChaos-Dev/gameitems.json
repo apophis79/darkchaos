@@ -70,14 +70,14 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetMystery5.json",
+    "file_name": "HitTarget.s_TargetMystery5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetMystery2.json",
+    "file_name": "HitTarget.s_TargetMystery2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -112,14 +112,14 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLeftInlane.json",
+    "file_name": "Trigger.s_LeftInlane.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swRightInlane.json",
+    "file_name": "Trigger.s_RightInlane.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -361,14 +361,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp1.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.RampRoll.json",
@@ -385,14 +385,14 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Bumper.Bumper1.json",
+    "file_name": "Bumper.s_Bumper1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Bumper.Bumper2.json",
+    "file_name": "Bumper.s_Bumper2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -508,7 +508,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.FlipperR1Sh.json",
@@ -529,42 +529,42 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp003.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp004.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp005.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall006.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall008.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall009.json",
@@ -574,7 +574,7 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetMystery4.json",
+    "file_name": "HitTarget.s_TargetMystery4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -585,14 +585,14 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall011.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg003.json",
@@ -623,28 +623,28 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetShield1.json",
+    "file_name": "HitTarget.s_TargetShield1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetShield2.json",
+    "file_name": "HitTarget.s_TargetShield2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetShield3.json",
+    "file_name": "HitTarget.s_TargetShield3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetShield4.json",
+    "file_name": "HitTarget.s_TargetShield4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -665,98 +665,98 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLeftOutlane.json",
+    "file_name": "Trigger.s_LeftOutlane.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swRightOutlane.json",
+    "file_name": "Trigger.s_RightOutlane.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLeftBumper1.json",
+    "file_name": "Trigger.s_LeftBumper1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLeftBumper2.json",
+    "file_name": "Trigger.s_LeftBumper2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swCenterOrb1.json",
+    "file_name": "Trigger.s_CenterOrb1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swCenterOrb2.json",
+    "file_name": "Trigger.s_CenterOrb2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swCenterOrb3.json",
+    "file_name": "Trigger.s_CenterOrb3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLeftOrb1.json",
+    "file_name": "Trigger.s_LeftOrb1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLeftOrb2.json",
+    "file_name": "Trigger.s_LeftOrb2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swInnerOrb2.json",
+    "file_name": "Trigger.s_InnerOrb2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swInnerOrb1.json",
+    "file_name": "Trigger.s_InnerOrb1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swRightOrb1.json",
+    "file_name": "Trigger.s_RightOrb1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swPlunger2.json",
+    "file_name": "Trigger.s_Plunger2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Bumper.Bumper4.json",
+    "file_name": "Bumper.s_Bumper4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -774,21 +774,21 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp4.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp5.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.100h.json",
@@ -802,14 +802,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp7.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.GrabMagnet.json",
@@ -833,7 +833,7 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Spinner.spinner.json",
+    "file_name": "Spinner.s_spinner.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -854,7 +854,7 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Trigger.swPlunger1.json",
+    "file_name": "Trigger.s_Plunger1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -896,7 +896,7 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetMystery1.json",
+    "file_name": "HitTarget.s_TargetMystery1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -966,14 +966,14 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.TargetMystery3.json",
+    "file_name": "HitTarget.s_TargetMystery3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swRightOrb2.json",
+    "file_name": "Trigger.s_RightOrb2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -984,7 +984,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.playfield_mesh.json",
@@ -998,21 +998,21 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.ScoopWalls.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.ScoopFloor.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.LSL.json",
@@ -1544,7 +1544,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.RainbowTimer.json",
@@ -1568,18 +1568,18 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Trigger.swLock1.json",
+    "file_name": "Trigger.s_Lock1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swLock2.json",
+    "file_name": "Trigger.s_Lock2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.WaveTimer.json",
@@ -1666,11 +1666,11 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Trigger.swLock3.json",
+    "file_name": "Trigger.s_Lock3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.FallingMeteorAnim.json",
@@ -1684,7 +1684,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall018.json",
@@ -2065,7 +2065,7 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Bumper.Bumper3.json",
+    "file_name": "Bumper.s_Bumper3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -2233,7 +2233,7 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Wall.DTMeteor1.json",
+    "file_name": "Wall.s_DTMeteor1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -2247,7 +2247,7 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.DTMeteor2.json",
+    "file_name": "Wall.s_DTMeteor2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -2261,7 +2261,7 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.DTMeteor3.json",
+    "file_name": "Wall.s_DTMeteor3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -2275,7 +2275,7 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.DTMeteor4.json",
+    "file_name": "Wall.s_DTMeteor4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -2293,28 +2293,28 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp006.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall004.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall013.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.Glf_GameTimer.json",
@@ -9646,14 +9646,14 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.rightslingshot.json",
+    "file_name": "Wall.s_RightSlingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.leftslingshot.json",
+    "file_name": "Wall.s_LeftSlingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
@@ -9667,39 +9667,39 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swGateL.json",
+    "file_name": "Trigger.s_GateL.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swGateR.json",
+    "file_name": "Trigger.s_GateR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swScoop.json",
+    "file_name": "Trigger.s_Scoop.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swMoonRamp.json",
+    "file_name": "Trigger.s_MoonRamp.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
-    "file_name": "Trigger.swTimewarpRamp.json",
+    "file_name": "Trigger.s_TimewarpRamp.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.130h.json",
@@ -10769,7 +10769,7 @@
     "file_name": "Wall.Wall7.json",
     "is_locked": true,
     "editor_layer": 0,
-    "editor_layer_name": "segment lights",
+    "editor_layer_name": "Main",
     "editor_layer_visibility": true
   }
 ]
