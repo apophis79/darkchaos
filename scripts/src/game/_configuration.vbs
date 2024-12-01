@@ -180,7 +180,7 @@ Sub ConfigureGlfDevices
     CreateMysteryMode
     CreateTimewarpMode
     CreateShipSaveMode
-    'CreateClusterBombMode
+    CreateClusterBombMode
 
     
 End Sub
