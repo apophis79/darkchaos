@@ -18,7 +18,6 @@ Sub CreateTimewarpMode
     With CreateGlfMode("timewarp", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("timewarped")

@@ -15,7 +15,6 @@ Sub CreateShieldsMode
     With CreateGlfMode("shields", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = False
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")
