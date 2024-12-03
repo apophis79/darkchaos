@@ -67,7 +67,7 @@ Sub CreateMoonMultiballMode
                 .Add "lights", "LMR1"
                 .Add "color", MoonColor
             End With
-            With .ControlEvents("missile1_ready")
+            With .ControlEvents()
                 .Events = Array("light_missile1")
                 .State = 1
             End With
@@ -80,7 +80,7 @@ Sub CreateMoonMultiballMode
                 .Add "lights", "LMR2"
                 .Add "color", MoonColor
             End With
-            With .ControlEvents("missile2_ready")
+            With .ControlEvents()
                 .Events = Array("light_missile2")
                 .State = 1
             End With
@@ -94,7 +94,7 @@ Sub CreateMoonMultiballMode
                 .Add "lights", "LMLR"
                 .Add "color", MoonColor
             End With
-            With .ControlEvents("lock_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_lock_on_complete")
                 .State = 1
             End With

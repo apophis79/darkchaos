@@ -15,7 +15,6 @@ Sub ConfigureGlfDevices
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"
-        .Debug = True
     End With
 
 
@@ -31,10 +30,6 @@ Sub ConfigureGlfDevices
     ' Moon Lock
     With CreateGlfBallDevice("moon_lock")
         .BallSwitches = Array("s_Lock1","s_Lock2", "s_Lock3")
-        '.PlayerControlledEjectEvent = "eject_moon_ball"
-        '.EjectCallback = "MoonLockEjectCallback"
-        '.EjectEnableTime = 250
-        .Debug = True
     End With
 
     With CreateGlfDiverter("lock_pin")

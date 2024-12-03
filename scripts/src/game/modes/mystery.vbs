@@ -86,7 +86,7 @@ Sub CreateMysteryMode
             With .Tokens()
                 .Add "lights", "LMR"
             End With
-            With .ControlEvents("mystery_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_mystery_on_complete")
                 .State = 1
             End With

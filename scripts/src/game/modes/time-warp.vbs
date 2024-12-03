@@ -40,7 +40,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW1"
             End With
-            With .ControlEvents("timewarped1")
+            With .ControlEvents()
                 .Events = Array("light_timewarp1")
                 .State = 1
             End With
@@ -52,7 +52,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW2"
             End With
-            With .ControlEvents("timewarped2")
+            With .ControlEvents()
                 .Events = Array("light_timewarp2")
                 .State = 1
             End With
@@ -64,7 +64,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW3"
             End With
-            With .ControlEvents("timewarped3")
+            With .ControlEvents()
                 .Events = Array("light_timewarp3")
                 .State = 1
             End With
@@ -76,7 +76,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW4"
             End With
-            With .ControlEvents("timewarped4")
+            With .ControlEvents()
                 .Events = Array("light_timewarp4")
                 .State = 1
             End With

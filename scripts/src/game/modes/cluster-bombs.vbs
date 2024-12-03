@@ -22,7 +22,7 @@ Sub CreateClusterBombMode
                 .Add "lights", "LCC1"
                 .Add "color", ClusterBombColor
             End With
-            With .ControlEvents("left_orbit")
+            With .ControlEvents()
                 .Events = Array("light_cluster_charge1")
                 .State = 1
             End With
@@ -33,7 +33,7 @@ Sub CreateClusterBombMode
                 .Add "lights", "LCC2"
                 .Add "color", ClusterBombColor
             End With
-            With .ControlEvents("left_orbit")
+            With .ControlEvents()
                 .Events = Array("light_cluster_charge2")
                 .State = 1
             End With
@@ -44,7 +44,7 @@ Sub CreateClusterBombMode
                 .Add "lights", "LCC3"
                 .Add "color", ClusterBombColor
             End With
-            With .ControlEvents("left_orbit")
+            With .ControlEvents()
                 .Events = Array("light_cluster_charge3")
                 .State = 1
             End With
@@ -61,7 +61,7 @@ Sub CreateClusterBombMode
                 .Add "lights", "LCR1"
                 .Add "color", ClusterBombColor
             End With
-            With .ControlEvents("bomb1_ready")
+            With .ControlEvents()
                 .Events = Array("light_bomb1")
                 .State = 1
             End With
@@ -73,7 +73,7 @@ Sub CreateClusterBombMode
                 .Add "lights", "LCR2"
                 .Add "color", ClusterBombColor
             End With
-            With .ControlEvents("bomb2_ready")
+            With .ControlEvents()
                 .Events = Array("light_bomb2")
                 .State = 1
             End With
@@ -96,17 +96,17 @@ Sub CreateClusterBombMode
                 .Label = "Step 3"
                 .EventsWhenStarted = Array("light_cluster_charge3")
             End With
-            With .Transitions("advance_step1")
+            With .Transitions()
                 .Source = Array("start")
                 .Target = "step1"
                 .Events = Array("left_orbit_hit")
             End With
-            With .Transitions("advance_step2")
+            With .Transitions()
                 .Source = Array("step1")
                 .Target = "step2"
                 .Events = Array("left_orbit_hit")
             End With
-            With .Transitions("advance_step3")
+            With .Transitions()
                 .Source = Array("step2")
                 .Target = "step3"
                 .Events = Array("left_orbit_hit")

@@ -78,7 +78,7 @@ Sub CreateShieldsMode
             With .Tokens()
                 .Add "lights", "LSL"
             End With
-            With .ControlEvents("shields_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_shields_on_complete")
                 .State = 1
             End With
@@ -90,7 +90,7 @@ Sub CreateShieldsMode
             With .Tokens()
                 .Add "lights", "LSR"
             End With
-            With .ControlEvents("shields_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_shields_on_complete")
                 .State = 1
             End With
