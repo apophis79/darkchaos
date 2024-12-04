@@ -32,6 +32,43 @@ Sub CreateBaseMode()
                 End With
             End With
         End With
+
+        'The main shots sequences
+        With .SequenceShots("left_side_up")
+            .SwitchSequence = Array("s_LeftBumper1", "s_LeftBumper2")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("left_side_down")
+            .SwitchSequence = Array("s_LeftBumper2", "s_LeftBumper1")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("left_orbit")
+            .SwitchSequence = Array("s_LeftOrb1", "s_LeftOrb2")
+            .SequenceTimeout = 400
+        End With
+
+        With .SequenceShots("inner_orbit")
+            .SwitchSequence = Array("s_InnerOrb1", "s_InnerOrb2")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("center_orbit_left")
+            .SwitchSequence = Array("s_CenterOrb1", "s_CenterOrb2", "s_CenterOrb3")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("center_orbit_right")
+            .SwitchSequence = Array("s_CenterOrb3", "s_CenterOrb2", "s_CenterOrb1")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("right_orbit")
+            .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
+            .SequenceTimeout = 400
+        End With
+
     End With
 
 End Sub

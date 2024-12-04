@@ -47,11 +47,6 @@ Sub CreateShipSaveMode
                 .State = 1
             End With
         End With
-        
-        With .SequenceShots("right_orbit")
-            .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
-            .SequenceTimeout = 300
-        End With
 
         With .StateMachines("ship_save")
             .PersistState = True
