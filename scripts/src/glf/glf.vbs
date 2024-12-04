@@ -5182,8 +5182,8 @@ Class GlfShot
         Next
         For Each evt in m_control_events.Keys
             Dim cEvt
-            For Each cEvt in m_control_events(evt).Events
-                RemovePinEventListener cEvt, m_mode & "_" & m_name & "_control"
+            For Each cEvt in m_control_events(evt).Events().Keys
+                RemovePinEventListener m_control_events(evt).Events()(cEvt).EventName, m_mode & "_" & m_name & "_control"
             Next
         Next
         For Each evt in m_reset_events.Keys
@@ -5209,8 +5209,8 @@ Class GlfShot
         Next
         For Each evt in m_control_events.Keys
             Dim cEvt
-            For Each cEvt in m_control_events(evt).Events
-                AddPinEventListener cEvt, m_mode & "_" & m_name & "_control", "ShotEventHandler", m_priority, Array("control", Me, m_control_events(evt))
+            For Each cEvt in m_control_events(evt).Events().Keys
+                AddPinEventListener m_control_events(evt).Events()(cEvt).EventName, m_mode & "_" & m_name & "_control", "ShotEventHandler", m_priority, Array("control", Me, m_control_events(evt), m_control_events(evt).Events()(cEvt))
             Next
         Next
         For Each evt in m_reset_events.Keys
@@ -5501,6 +5501,7 @@ Function ShotEventHandler(args)
     e = args(2)
     Dim evt : evt = ownProps(0)
     Dim shot : Set shot = ownProps(1)
+    dim glfEvent
     Select Case evt
         Case "activate"
             shot.Activate
@@ -5515,6 +5516,12 @@ Function ShotEventHandler(args)
         Case "advance"
             shot.Advance False
         Case "control"
+            Set glfEvent = ownProps(3)
+            If Not IsNull(glfEvent.Condition) Then
+                If GetRef(glfEvent.Condition)() = False Then
+                    Exit Function
+                End If
+            End If
             shot.Jump ownProps(2).State, ownProps(2).Force, ownProps(2).ForceShow
         Case "reset"
             shot.Reset
@@ -5532,8 +5539,14 @@ End Function
 Class GlfShotControlEvent
 	Private m_events, m_state, m_force, m_force_show
   
-	Public Property Get Events(): Events = m_events: End Property
-    Public Property Let Events(input): m_events = input: End Property
+	Public Property Get Events(): Set Events = m_events: End Property
+    Public Property Let Events(value)
+        Dim x
+        For x=0 to UBound(value)
+            Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
+            m_events.Add newEvent.Name, newEvent
+        Next
+    End Property
 
     Public Property Get State(): State = m_state End Property
     Public Property Let State(input): m_state = input End Property
@@ -5545,7 +5558,7 @@ Class GlfShotControlEvent
 	Public Property Let ForceShow(input): m_force_show = input: End Property   
 
 	Public default Function init()
-        m_events = Array()
+        Set m_events = CreateObject("Scripting.Dictionary")
         m_state = 0
         m_force = True
         m_force_show = False
@@ -6447,7 +6460,7 @@ Class GlfTimer
     Private m_tick_interval
     Private m_starting_tick_interval
     Private m_max_value
-    Private restart_on_complete
+    Private m_restart_on_complete
     Private m_start_running
 
     Public Property Get Name() : Name = m_name : End Property
@@ -6469,10 +6482,10 @@ Class GlfTimer
     Public Property Let EndValue(value) : m_end_value = value : End Property
     Public Property Let Direction(value) : m_direction = value : End Property
     Public Property Let MaxValue(value) : m_max_value = value : End Property
-    Public Property Let RestartOnComplete(value) : restart_on_complete = value : End Property
+    Public Property Let RestartOnComplete(value) : m_restart_on_complete = value : End Property
     Public Property Let StartRunning(value) : m_start_running = value : End Property
     Public Property Let TickInterval(value)
-        m_tick_interval = value * 1000
+        m_tick_interval = value
         m_starting_tick_interval = value
     End Property
 
@@ -6492,8 +6505,8 @@ Class GlfTimer
         m_ticks_remaining = 0
         m_tick_interval = 1000
         m_starting_tick_interval = 1
-        restart_on_complete = False
-        start_running = False
+        m_restart_on_complete = False
+        m_start_running = False
 
         Set m_control_events = CreateObject("Scripting.Dictionary")
         m_running = False
@@ -6686,7 +6699,7 @@ Class GlfTimer
     End Sub
 
     Private Sub Jump(timer_value)
-        m_ticks = (timer_value/1000)
+        m_ticks = timer_value
 
         If m_max_value and m_ticks > m_max_value Then
             m_ticks = m_max_value
@@ -6696,7 +6709,7 @@ Class GlfTimer
     End Sub
 
     Public Sub ChangeTickInterval(change)
-        m_tick_interval = m_tick_interval * (change/1000)
+        m_tick_interval = m_tick_interval * change
     End Sub
 
     Public Sub SetTickInterval(timer_value)
@@ -6720,7 +6733,7 @@ Class GlfTimer
     Public Sub Add(timer_value) 
         Dim new_value
 
-        new_value = m_ticks + (timer_value/1000)
+        new_value = m_ticks + timer_value
 
         If Not IsEmpty(m_max_value) And new_value > m_max_value Then
             new_value = m_max_value
@@ -6739,7 +6752,7 @@ Class GlfTimer
     End Sub
 
     Public Sub Subtract(timer_value)
-        m_ticks = m_ticks - (timer_value/1000)
+        m_ticks = m_ticks - timer_value
         Dim kwargs : Set kwargs = GlfKwargs()
         With kwargs
             .Add "ticks", m_ticks

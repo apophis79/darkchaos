@@ -12,6 +12,7 @@ Sub CreateClusterBombMode
 
 
     With CreateGlfMode("cluster_bombs", 510)
+        .Debug = true
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
 
@@ -26,7 +27,12 @@ Sub CreateClusterBombMode
                 .Events = Array("light_cluster_charge1")
                 .State = 1
             End With
+            With .ControlEvents()
+                .Events = Array("reset_cluster_charges")
+                .State = 0
+            End With
         End With
+
         With .Shots("cluster_charge2")
             .Profile = "flicker_on"
             With .Tokens()
@@ -37,7 +43,12 @@ Sub CreateClusterBombMode
                 .Events = Array("light_cluster_charge2")
                 .State = 1
             End With
+            With .ControlEvents()
+                .Events = Array("reset_cluster_charges")
+                .State = 0
+            End With
         End With
+
         With .Shots("cluster_charge3")
             .Profile = "flicker_on"
             With .Tokens()
@@ -48,11 +59,10 @@ Sub CreateClusterBombMode
                 .Events = Array("light_cluster_charge3")
                 .State = 1
             End With
-        End With
-
-        With .SequenceShots("left_orbit")
-            .SwitchSequence = Array("s_LeftOrb1", "s_LeftOrb2")
-            .SequenceTimeout = 400
+            With .ControlEvents()
+                .Events = Array("reset_cluster_charges")
+                .State = 0
+            End With
         End With
 
         With .Shots("cluster_bomb1")
@@ -62,8 +72,12 @@ Sub CreateClusterBombMode
                 .Add "color", ClusterBombColor
             End With
             With .ControlEvents()
-                .Events = Array("light_bomb1")
+                .Events = Array("timer_cluster_bomb_reset_complete{current_player.shot_cluster_bomb1==0}")
                 .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("reset_bomb1")
+                .State = 0
             End With
         End With
 
@@ -74,15 +88,21 @@ Sub CreateClusterBombMode
                 .Add "color", ClusterBombColor
             End With
             With .ControlEvents()
-                .Events = Array("light_bomb2")
+                .Events = Array("light_cluster_charge3{current_player.shot_cluster_bomb1==1 && current_player.shot_cluster_bomb2==0}")
                 .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("reset_bomb2")
+                .State = 0
             End With
         End With
 
         With .StateMachines("cluster_bomb")
             .PersistState = True
+
             With .States("start")
                 .Label = "Start State"
+                .EventsWhenStarted = Array("reset_cluster_charges")
             End With
             With .States("step1")
                 .Label = "Step 1"
@@ -94,8 +114,9 @@ Sub CreateClusterBombMode
             End With
             With .States("step3")
                 .Label = "Step 3"
-                .EventsWhenStarted = Array("light_cluster_charge3")
+                .EventsWhenStarted = Array("light_cluster_charge3","start_cb_reset_timer")
             End With
+ 
             With .Transitions()
                 .Source = Array("start")
                 .Target = "step1"
@@ -110,6 +131,22 @@ Sub CreateClusterBombMode
                 .Source = Array("step2")
                 .Target = "step3"
                 .Events = Array("left_orbit_hit")
+            End With
+            With .Transitions()
+                .Source = Array("step3")
+                .Target = "start"
+                .Events = Array("timer_cluster_bomb_reset_complete{current_player.shot_cluster_bomb2==0}")
+            End With
+
+        End With
+
+        With .Timers("cluster_bomb_reset")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 1000
+            With .ControlEvents()
+                .EventName = "start_cb_reset_timer"
+                .Action = "start"
             End With
         End With
 
