@@ -20,7 +20,7 @@ Sub CreateProtonCannonMode
         .StopEvents = Array("ball_ended")
 
         'Define our shots
-        For x = 1 to 2
+        For x = 1 to 3
             With .Shots("proton_charge"&x)
                 .Profile = "flicker_on"
                 With .Tokens()
@@ -64,7 +64,7 @@ Sub CreateProtonCannonMode
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 3}", Array("fire_proton_round3")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 4}", Array("fire_proton_round4")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 5}", Array("fire_proton_round5")
-            .Add "s_TargetMystery3_active{current_player.cluster_bomb_count == 6}", Array("fire_proton_round6","reset_proton_charges")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 6}", Array("fire_proton_round6","reset_proton_charges")
             .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 0}", Array("light_proton_charge1")
             .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1 && current_player.shot_proton_charge2 == 0}", Array("light_proton_charge2")
             .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 1 && current_player.shot_proton_charge3 == 0}", Array("light_proton_charge3")
@@ -84,18 +84,20 @@ Sub CreateProtonCannonMode
 					.Int = 0
 				End With
 			End With
-            With .Events("fire_proton_round1","fire_proton_round2","fire_proton_round3","fire_proton_round4","fire_proton_round5","fire_proton_round6")
-				With .Variable("proton_round_count")
-                    .Action = "add"
-					.Int = -1
-				End With
-			End With
-            With .Events("add_proton_round1","add_proton_round2","add_proton_round3","add_proton_round4","add_proton_round5","add_proton_round6")
-				With .Variable("proton_round_count")
-                    .Action = "add"
-					.Int = 1
-				End With
-			End With
+            For x = 1 to 6
+                With .Events("fire_proton_round"&x)
+                    With .Variable("proton_round_count")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+                With .Events("add_proton_round"&x)
+                    With .Variable("proton_round_count")
+                        .Action = "add"
+                        .Int = 1
+                    End With
+                End With
+            Next
 		End With
 
         With .Timers("proton_cannon_reset")
@@ -104,7 +106,7 @@ Sub CreateProtonCannonMode
             .EndValue = 500
             With .ControlEvents()
                 .EventName = "start_pc_reset_timer"
-                .Action = "start"
+                .Action = "restart"
             End With
         End With
 

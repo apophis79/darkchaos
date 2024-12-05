@@ -74,30 +74,20 @@ Sub CreateClusterBombMode
 					.Int = 0
 				End With
 			End With
-            With .Events("fire_cluster_bomb1")
-				With .Variable("cluster_bomb_count")
-                    .Action = "set"
-					.Int = 0
-				End With
-			End With
-            With .Events("fire_cluster_bomb2")
-				With .Variable("cluster_bomb_count")
-                    .Action = "set"
-					.Int = 1
-				End With
-			End With
-            With .Events("add_cluster_bomb1")
-				With .Variable("cluster_bomb_count")
-                    .Action = "set"
-					.Int = 1
-				End With
-			End With
-            With .Events("add_cluster_bomb2")
-				With .Variable("cluster_bomb_count")
-                    .Action = "set"
-					.Int = 2
-				End With
-			End With
+            For x = 1 to 2
+                With .Events("fire_cluster_bomb"&x)
+                    With .Variable("cluster_bomb_count")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+                With .Events("add_cluster_bomb"&x)
+                    With .Variable("cluster_bomb_count")
+                        .Action = "add"
+                        .Int = 1
+                    End With
+                End With
+            Next
 		End With
 
         With .Timers("cluster_bomb_reset")
@@ -106,7 +96,7 @@ Sub CreateClusterBombMode
             .EndValue = 500
             With .ControlEvents()
                 .EventName = "start_cb_reset_timer"
-                .Action = "start"
+                .Action = "restart"
             End With
         End With
 

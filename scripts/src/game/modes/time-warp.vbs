@@ -14,7 +14,7 @@ Const TimewarpColor = "ccccdd"
 
 
 Sub CreateTimewarpMode
-
+    Dim x
 
     With CreateGlfMode("timewarp", 510)
         .StartEvents = Array("ball_started")
@@ -36,53 +36,19 @@ Sub CreateTimewarpMode
 
 
         'Define our shots
-        With .Shots("timewarp1")
-            .Profile = "timewarped"
-            With .Tokens()
-                .Add "lights", "LTW1"
+        For x = 1 to 4
+            With .Shots("timewarp"&x)
+                .Profile = "timewarped"
+                With .Tokens()
+                    .Add "lights", "LTW"&x
+                End With
+                With .ControlEvents()
+                    .Events = Array("light_timewarp"&x)
+                    .State = 1
+                End With
+                .RestartEvents = Array("restart_timewarp")
             End With
-            With .ControlEvents()
-                .Events = Array("light_timewarp1")
-                .State = 1
-            End With
-            .RestartEvents = Array("restart_timewarp")
-        End With
-
-        With .Shots("timewarp2")
-            .Profile = "timewarped"
-            With .Tokens()
-                .Add "lights", "LTW2"
-            End With
-            With .ControlEvents()
-                .Events = Array("light_timewarp2")
-                .State = 1
-            End With
-            .RestartEvents = Array("restart_timewarp")
-        End With
-
-        With .Shots("timewarp3")
-            .Profile = "timewarped"
-            With .Tokens()
-                .Add "lights", "LTW3"
-            End With
-            With .ControlEvents()
-                .Events = Array("light_timewarp3")
-                .State = 1
-            End With
-            .RestartEvents = Array("restart_timewarp")
-        End With
-
-        With .Shots("timewarp4")
-            .Profile = "timewarped"
-            With .Tokens()
-                .Add "lights", "LTW4"
-            End With
-            With .ControlEvents()
-                .Events = Array("light_timewarp4")
-                .State = 1
-            End With
-            .RestartEvents = Array("restart_timewarp")
-        End With
+        Next
 
         With .ShotGroups("timewarps_completed")
             .Shots = Array("timewarp1", "timewarp2", "timewarp3", "timewarp4")

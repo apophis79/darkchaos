@@ -10,45 +10,26 @@
 Const ShipSaveColor = "0500ee"
 
 Sub CreateShipSaveMode
+    Dim x
 
     With CreateGlfMode("ship_save", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
        
         'Define our shots
-        With .Shots("ship_save1")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LF1"
-                .Add "color", ShipSaveColor
+        For x = 1 to 3
+            With .Shots("ship_save"&x)
+                .Profile = "flicker_on"
+                With .Tokens()
+                    .Add "lights", "LF"&x
+                    .Add "color", ShipSaveColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("light_ship_save"&x)
+                    .State = 1
+                End With
             End With
-            With .ControlEvents()
-                .Events = Array("light_ship_save1")
-                .State = 1
-            End With
-        End With
-        With .Shots("ship_save2")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LF2"
-                .Add "color", ShipSaveColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_ship_save2")
-                .State = 1
-            End With
-        End With
-        With .Shots("ship_save3")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LF3"
-                .Add "color", ShipSaveColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_ship_save3")
-                .State = 1
-            End With
-        End With
+        Next
 
         With .StateMachines("ship_save")
             .PersistState = True
