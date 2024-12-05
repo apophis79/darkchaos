@@ -1,3 +1,5 @@
+
+
 'Mystery Mode.
 
 'All of the mystery shot lights need to be lit (by hitting their swtiches). 

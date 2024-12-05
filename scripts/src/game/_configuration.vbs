@@ -176,6 +176,7 @@ Sub ConfigureGlfDevices
     CreateTimewarpMode
     CreateShipSaveMode
     CreateClusterBombMode
+    CreateProtonCannonMode
 
     
 End Sub

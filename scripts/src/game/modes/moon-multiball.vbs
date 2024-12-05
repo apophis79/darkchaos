@@ -1,3 +1,5 @@
+
+
 'Moon Multiball Mode.
 
 'All of the in/outlane lights need to be lit (by hitting their swtiches). The lights can be rotated by the flippers.

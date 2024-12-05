@@ -1,3 +1,5 @@
+
+
 'Ship Save Mode.
 
 's_RightOrb2 must be hit right after s_RightOrb1 (by hitting their swtiches).
