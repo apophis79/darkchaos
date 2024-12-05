@@ -97,54 +97,15 @@ Sub CreateClusterBombMode
             End With
         End With
 
-        With .StateMachines("cluster_bomb")
-            .PersistState = True
-
-            With .States("start")
-                .Label = "Start State"
-                .EventsWhenStarted = Array("reset_cluster_charges")
-            End With
-            With .States("step1")
-                .Label = "Step 1"
-                .EventsWhenStarted = Array("light_cluster_charge1")
-            End With
-            With .States("step2")
-                .Label = "Step 2"
-                .EventsWhenStarted = Array("light_cluster_charge2")
-            End With
-            With .States("step3")
-                .Label = "Step 3"
-                .EventsWhenStarted = Array("light_cluster_charge3","start_cb_reset_timer")
-            End With
- 
-            With .Transitions()
-                .Source = Array("start")
-                .Target = "step1"
-                .Events = Array("left_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step1")
-                .Target = "step2"
-                .Events = Array("left_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step2")
-                .Target = "step3"
-                .Events = Array("left_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step3")
-                .Target = "start"
-                .Events = Array("timer_cluster_bomb_reset_complete{current_player.cluster_bomb_count < 2}")
-            End With
-
-        End With
-
         With .EventPlayer()
             .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1")
-            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2")
-            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1")
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2","reset_cluster_charges")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 0}", Array("light_cluster_charge1")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1 && current_player.shot_cluster_charge2 == 0}", Array("light_cluster_charge2")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 1 && current_player.shot_cluster_charge3 == 0}", Array("light_cluster_charge3")
+            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1","start_cb_reset_timer")
             .Add "light_cluster_charge3{current_player.cluster_bomb_count == 1}", Array("add_cluster_bomb2")
+            .Add "timer_cluster_bomb_reset_complete", Array("reset_cluster_charges")
         End With
 
         With .VariablePlayer()
@@ -154,10 +115,16 @@ Sub CreateClusterBombMode
 					.Int = 0
 				End With
 			End With
-            With .Events("fire_cluster_bomb")
+            With .Events("fire_cluster_bomb1")
 				With .Variable("cluster_bomb_count")
-                    .Action = "add"
-					.Int = -1
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            With .Events("fire_cluster_bomb2")
+				With .Variable("cluster_bomb_count")
+                    .Action = "set"
+					.Int = 1
 				End With
 			End With
             With .Events("add_cluster_bomb1")

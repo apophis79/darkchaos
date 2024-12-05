@@ -15,7 +15,7 @@ Sub CreateMysteryMode
     With CreateGlfMode("mystery", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
+        '.Debug = True
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_mystery")
