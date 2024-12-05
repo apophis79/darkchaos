@@ -72,11 +72,11 @@ Sub CreateClusterBombMode
                 .Add "color", ClusterBombColor
             End With
             With .ControlEvents()
-                .Events = Array("timer_cluster_bomb_reset_complete{current_player.shot_cluster_bomb1==0}")
+                .Events = Array("add_cluster_bomb1")
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("reset_bomb1")
+                .Events = Array("fire_cluster_bomb1")
                 .State = 0
             End With
         End With
@@ -88,11 +88,11 @@ Sub CreateClusterBombMode
                 .Add "color", ClusterBombColor
             End With
             With .ControlEvents()
-                .Events = Array("light_cluster_charge3{current_player.shot_cluster_bomb1==1 && current_player.shot_cluster_bomb2==0}")
+                .Events = Array("add_cluster_bomb2")
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("reset_bomb2")
+                .Events = Array("fire_cluster_bomb2")
                 .State = 0
             End With
         End With
@@ -135,15 +135,49 @@ Sub CreateClusterBombMode
             With .Transitions()
                 .Source = Array("step3")
                 .Target = "start"
-                .Events = Array("timer_cluster_bomb_reset_complete{current_player.shot_cluster_bomb2==0}")
+                .Events = Array("timer_cluster_bomb_reset_complete{current_player.cluster_bomb_count < 2}")
             End With
 
         End With
 
+        With .EventPlayer()
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1")
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2")
+            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1")
+            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 1}", Array("add_cluster_bomb2")
+        End With
+
+        With .VariablePlayer()
+		    With .Events("mode_cluster_bombs_started")
+				With .Variable("cluster_bomb_count")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            With .Events("fire_cluster_bomb")
+				With .Variable("cluster_bomb_count")
+                    .Action = "add"
+					.Int = -1
+				End With
+			End With
+            With .Events("add_cluster_bomb1")
+				With .Variable("cluster_bomb_count")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .Events("add_cluster_bomb2")
+				With .Variable("cluster_bomb_count")
+                    .Action = "set"
+					.Int = 2
+				End With
+			End With
+		End With
+
         With .Timers("cluster_bomb_reset")
-            .TickInterval = 1000
+            .TickInterval = 500
             .StartValue = 0
-            .EndValue = 1000
+            .EndValue = 500
             With .ControlEvents()
                 .EventName = "start_cb_reset_timer"
                 .Action = "start"
