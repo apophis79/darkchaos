@@ -62,26 +62,26 @@ Sub CreateClusterBombMode
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 0}", Array("light_cluster_charge1")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1 && current_player.shot_cluster_charge2 == 0}", Array("light_cluster_charge2")
             .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 1 && current_player.shot_cluster_charge3 == 0}", Array("light_cluster_charge3")
-            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1","start_cb_reset_timer")
+            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1","restart_cb_timer")
             .Add "light_cluster_charge3{current_player.cluster_bomb_count == 1}", Array("add_cluster_bomb2")
             .Add "timer_cluster_bomb_reset_complete", Array("reset_cluster_charges")
         End With
 
         With .VariablePlayer()
-		    With .Events("mode_cluster_bombs_started")
+		    With .EventName("mode_cluster_bombs_started")
 				With .Variable("cluster_bomb_count")
                     .Action = "set"
 					.Int = 0
 				End With
 			End With
             For x = 1 to 2
-                With .Events("fire_cluster_bomb"&x)
+                With .EventName("fire_cluster_bomb"&x)
                     With .Variable("cluster_bomb_count")
                         .Action = "add"
                         .Int = -1
                     End With
                 End With
-                With .Events("add_cluster_bomb"&x)
+                With .EventName("add_cluster_bomb"&x)
                     With .Variable("cluster_bomb_count")
                         .Action = "add"
                         .Int = 1
@@ -95,7 +95,7 @@ Sub CreateClusterBombMode
             .StartValue = 0
             .EndValue = 500
             With .ControlEvents()
-                .EventName = "start_cb_reset_timer"
+                .EventName = "restart_cb_timer"
                 .Action = "restart"
             End With
         End With
