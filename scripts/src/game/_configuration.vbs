@@ -107,33 +107,29 @@ Sub ConfigureGlfDevices
     ' Drop Targets
     With CreateGlfDroptarget("drop1")
         .Switch = "s_DTMeteor1"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor1_raise")
         .ActionCallback = "DTMeteor1Callback"
     End With
 
     With CreateGlfDroptarget("drop2")
         .Switch = "s_DTMeteor2"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor2_raise")
         .ActionCallback = "DTMeteor2Callback"
     End With
 
     With CreateGlfDroptarget("drop3")
         .Switch = "s_DTMeteor3"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor3_raise")
         .ActionCallback = "DTMeteor3Callback"
     End With
 
     With CreateGlfDroptarget("drop4")
         .Switch = "s_DTMeteor4"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor4_raise")
         .ActionCallback = "DTMeteor4Callback"
     End With
 
@@ -170,14 +166,14 @@ Sub ConfigureGlfDevices
 
     ' Modes
     CreateBaseMode
-    CreateMoonMultiballMode
     CreateShieldsMode
     CreateMysteryMode
     CreateTimewarpMode
     CreateShipSaveMode
     CreateClusterBombMode
     CreateProtonCannonMode
-
+    CreateMoonMultiballMode
+    CreateMeteorMultiballMode
     
 End Sub
 

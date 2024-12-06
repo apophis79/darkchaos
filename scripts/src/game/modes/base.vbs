@@ -69,6 +69,11 @@ Sub CreateBaseMode()
             .SequenceTimeout = 400
         End With
 
+
+        With .EventPlayer()
+            .Add "s_right_magna_key_active", Array("start_meteor_wave")
+        End With
+
     End With
 
 End Sub
