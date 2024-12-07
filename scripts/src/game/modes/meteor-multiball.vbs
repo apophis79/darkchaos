@@ -25,7 +25,7 @@ Sub CreateMeteorMultiballMode
     With CreateGlfMode("meteor_multiball", 1000)
         .Debug = True
         .StartEvents = Array("start_meteor_wave")
-        .StopEvents = Array("ball_ended")
+        .StopEvents = Array("timer_meteor_wave_complete", "multiball_meteor_ended")
 
 
         'Meteor state machines
@@ -157,22 +157,28 @@ Sub CreateMeteorMultiballMode
 					.Color = "000000"
 				End With
 			End With
-            With .Events("mode_meteor_multiball_stopped")
-            'With .Events("multiball_meteor_stopped")
+            With .Events("mode_meteor_multiball_stopping")
 				With .Lights("GI")
 					.Color = GIColor3000k
 				End With
 			End With
         End With
 
+        With .Timers("meteor_wave")
+            .TickInterval = 20000
+            .StartValue = 0
+            .EndValue = 1
+            .StartRunning = True
+        End With
 
         With .Multiballs("meteor")
             .StartEvents = Array("mode_meteor_multiball_started")
             .BallCount = 3
-            .BallCountType = "total"
+            .BallCountType = "add"
             .ShootAgain = 10000
             .HurryUp = 3000
             .GracePeriod = 2000
+            .Debug = True
         End With
     
     End With
