@@ -93,7 +93,7 @@ Sub CreateClusterBombMode
         With .Timers("cluster_bomb_reset")
             .TickInterval = 500
             .StartValue = 0
-            .EndValue = 500
+            .EndValue = 1
             With .ControlEvents()
                 .EventName = "restart_cb_timer"
                 .Action = "restart"

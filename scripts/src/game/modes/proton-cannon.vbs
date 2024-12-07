@@ -103,7 +103,7 @@ Sub CreateProtonCannonMode
         With .Timers("proton_cannon_reset")
             .TickInterval = 500
             .StartValue = 0
-            .EndValue = 500
+            .EndValue = 1
             With .ControlEvents()
                 .EventName = "restart_pc_timer"
                 .Action = "restart"
