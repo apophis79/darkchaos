@@ -3,25 +3,27 @@
 'Meteor Multiball.
 
 'Meteor multiball occurs at regular intervals. Once it starts, the meteor targets begin to pop up.
+'Meteor targets can be dropped four different ways: 
+'  1) with a normal ball hit, 2) with a proton cannon, 3) with a custer bomb, 4) when time runs out and it hits earth
+'If a meteor hits Earth, one tick is removed from the Healt bar. When Health bar is depleted, then the flippers die (ball ends)
+'Each wave gets successively harder, where more meteors need to be destroyed to end the wave. 
+'Number of meteors per wave, starting from first wave and going to last wave: 4,7,10,13,16,19,22,25,28
 
 Const MeteorWaveDelayTime = 45000
 
-Const MeteorCoolColor = "ffA957"
-Const MeteorWarmColor = "edb600"
-Const MeteorHotColor = "ed1800"
+Const MeteorTimerTickInterval = 4500
+Const MeteorCoolTicks = 1
+Const MeteorWarmTicks = 1
+Const MeteorHotTicks = 1
 
-Const MeteorTimerTickInterval = 500
-Const MeteorCoolTicks = 8
-Const MeteorWarmTicks = 8
-Const MeteorHotTicks = 8
-
-Dim MeteorTotalTime
-MeteorTotalTime = MeteorTimerTickInterval*(MeteorCoolTicks + MeteorWarmTicks + MeteorHotTicks)
+Dim MeteorTotalTicks
+MeteorTotalTicks = MeteorCoolTicks + MeteorWarmTicks + MeteorHotTicks
 
 Sub CreateMeteorMultiballMode
     Dim x
 
     With CreateGlfMode("meteor_multiball", 1000)
+        .Debug = True
         .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("ball_ended")
 
@@ -77,7 +79,7 @@ Sub CreateMeteorMultiballMode
                 With .Transitions()  'normal hit
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
-                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .Events = Array("s_DTMeteor"&x&"_active","multiball_meteor_stopped")
                     .EventsWhenTransitioning = Array("meteor"&x&"_hit","stop_meteor"&x&"_timer")
                 End With
                 With .Transitions()
@@ -99,7 +101,7 @@ Sub CreateMeteorMultiballMode
                     .Source = Array("up_hot")
                     .Target = "down"
                     .Events = Array("timer_meteor"&x&"_complete")
-                    .EventsWhenTransitioning = Array("knockdown_meteor"&x,"earth_hit")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit")
                 End With
             End With
         
@@ -107,7 +109,7 @@ Sub CreateMeteorMultiballMode
             With .Timers("meteor"&x)
                 .TickInterval = MeteorTimerTickInterval
                 .StartValue = 0
-                .EndValue = MeteorTotalTime
+                .EndValue = MeteorTotalTicks
                 With .ControlEvents()
                     .EventName = "restart_meteor"&x&"_timer"
                     .Action = "restart"
@@ -122,6 +124,55 @@ Sub CreateMeteorMultiballMode
 
         With .EventPlayer()
             .Add "mode_meteor_multiball_started", Array("restart_meteor1_timer","restart_meteor2_timer","restart_meteor3_timer","restart_meteor4_timer")
+        End With
+
+        With .ShowPlayer()
+            With .Events("mode_meteor_multiball_started")
+                .Show = "flash_color"
+                .Speed = 1
+				With .Tokens()
+                    .Add "lights", "LSA"
+                    .Add "color", ShipSaveColor
+                End With
+			End With
+            With .Events("multiball_meteor_hurry_up")
+                .Show = "flash_color"
+                .Speed = 5
+				With .Tokens()
+                    .Add "lights", "LSA"
+                    .Add "color", ShipSaveColor
+                End With
+			End With
+            With .Events("multiball_meteor_shoot_again_ended")
+                .Show = "off"
+				With .Tokens()
+                    .Add "lights", "LSA"
+                End With
+			End With
+        End With
+
+        With .LightPlayer()
+            With .Events("mode_meteor_multiball_started")
+				With .Lights("GI")
+					.Color = "000000"
+				End With
+			End With
+            With .Events("mode_meteor_multiball_stopped")
+            'With .Events("multiball_meteor_stopped")
+				With .Lights("GI")
+					.Color = GIColor3000k
+				End With
+			End With
+        End With
+
+
+        With .Multiballs("meteor")
+            .StartEvents = Array("mode_meteor_multiball_started")
+            .BallCount = 3
+            .BallCountType = "total"
+            .ShootAgain = 10000
+            .HurryUp = 3000
+            .GracePeriod = 2000
         End With
     
     End With

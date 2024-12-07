@@ -9,8 +9,6 @@
 'All locked balls can be released by pressing the right magna.
 'The right magna is disabled when an outlane switch is hit
 
-Const MoonColor = "ccbb00"
-
 
 Sub TTT(Y)
     ActiveBall.Z = 130

@@ -7,8 +7,6 @@
 'Once the third charge light is lit, a the ship save (ball save) will be extended at ths start of next meteor wave.
 
 
-Const ShipSaveColor = "0500ee"
-
 Sub CreateShipSaveMode
     Dim x
 

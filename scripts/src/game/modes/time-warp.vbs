@@ -10,9 +10,6 @@
 'Timewarp inserts are reset to unlit at end of a meteor wave.
 
 
-Const TimewarpColor = "ccccdd"
-
-
 Sub CreateTimewarpMode
     Dim x
 

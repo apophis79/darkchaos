@@ -9,7 +9,7 @@
 '  a new ball will be put into the plunger lane and
 '  all the shield lights will be reset to off
 
-Const ShieldsColor = "0010cc"
+
 
 Sub CreateShieldsMode
     Dim x

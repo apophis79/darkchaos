@@ -3,6 +3,23 @@
 '	ZGCF:  GLF Configurations
 '******************************************************
 
+Const GIColorWhite = "ffffff"
+Const GIColor2700k = "ffA957"
+Const GIColor3000k = "ffb46b"
+
+Const TimewarpColor = "ccccdd"
+Const ShipSaveColor = "0500ee"
+Const ShieldsColor = "0010cc"
+Const ProtonColor = "00dddd"
+Const MysteryColor = "d14c00"
+Const MoonColor = "ccbb00"
+Const ClusterBombColor = "dd00dd"
+
+Const MeteorCoolColor = "ffA957"
+Const MeteorWarmColor = "edb600"
+Const MeteorHotColor = "ed1800"
+
+
 
 Sub ConfigureGlfDevices
 

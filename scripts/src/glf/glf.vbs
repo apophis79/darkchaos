@@ -3379,7 +3379,7 @@ Class GlfMultiballLocks
         m_priority = mode.Priority
         m_lock_events = Array()
         m_reset_events = Array()
-        m_lock_device = Array()
+        m_lock_device = Empty
         m_balls_to_lock = 0
         m_balls_to_replace = -1
         m_balls_locked = 0
@@ -3400,10 +3400,12 @@ Class GlfMultiballLocks
 
     Public Sub Enable()
         Log "Enabling"
-        AddPinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock", "MultiballLocksHandler", m_priority, Array("lock", me, m_lock_device)
+        If Not IsEmpty(m_lock_device) Then
+            AddPinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock", "MultiballLocksHandler", m_priority, Array("lock", me, m_lock_device)
+        End If
         Dim evt
         For Each evt in m_lock_events
-            AddPinEventListener evt, m_name & "_ball_locked", "MultiballLocksHandler", m_priority, Array("lock", Me, Null)
+            AddPinEventListener evt, m_name & "_ball_locked", "MultiballLocksHandler", m_priority, Array("virtual_lock", Me, Null)
         Next
         For Each evt in m_reset_events
             AddPinEventListener evt, m_name & "_reset", "MultiballLocksHandler", m_priority, Array("reset", Me)
@@ -3412,7 +3414,9 @@ Class GlfMultiballLocks
 
     Public Sub Disable()
         Log "Disabling"
-        RemovePinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock"
+        If Not IsEmpty(m_lock_device) Then
+            RemovePinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock"
+        End If
         Dim evt
         For Each evt in m_lock_events
             RemovePinEventListener evt, m_name & "_ball_locked"
@@ -3498,6 +3502,8 @@ Function MultiballLocksHandler(args)
             multiball.Disable
         Case "lock"
             kwargs = multiball.Lock(ownProps(2), kwargs)
+        Case "virtual_lock"
+            multiball.Lock Null, 1
         Case "reset"
             multiball.Reset
         Case "queue_release"
@@ -3732,7 +3738,8 @@ Class GlfMultiballs
         'msgbox remaining_balls
         Dim x
         For x=1 to remaining_balls
-            SetDelay m_name&"_queued_release", "MultiballsHandler" , Array(Array("queue_release", Me),Null), 1000
+            Log "Adding Ball: " & x
+            SetDelay m_name&"_queued_release" & "_" & x, "MultiballsHandler" , Array(Array("queue_release", Me, x),Null), x*1000
         Next
 
         If m_shoot_again.Value = 0 Then
@@ -3769,7 +3776,7 @@ Class GlfMultiballs
         End If
         If hurry_up_time_ms > 0 Then
             m_hurry_up_enabled = True
-            SetDelay m_name&"hurry_up", "MultiballsHandler" , Array(Array("hurry_up", Me),Null), shoot_again_ms - hurry_up_time_ms
+            SetDelay m_name&"_hurry_up", "MultiballsHandler" , Array(Array("hurry_up", Me),Null), shoot_again_ms - hurry_up_time_ms
         End If
     End Sub
 
@@ -3912,7 +3919,7 @@ Function MultiballsHandler(args)
                 Glf_ReleaseBall(Null)
                 SetDelay multiball.Name&"_auto_launch", "MultiballsHandler" , Array(Array("auto_launch", multiball),Null), 500
             Else
-                SetDelay multiball.Name&"_queued_release", "MultiballsHandler" , Array(Array("queue_release", multiball), Null), 1000
+                SetDelay multiball.Name&"_queued_release" & "_" & ownProps(2), "MultiballsHandler" , Array(Array("queue_release", multiball), Null), 1000
             End If
         Case "auto_launch"
             If glf_plunger.HasBall = True Then
@@ -6123,7 +6130,7 @@ Function GlfShowStepHandler(args)
     End If
     If running_show.CurrentStep > running_show.TotalSteps Then
         'End of Show
-        glf_debugLog.WriteToLog "Running Show", "END OF SHOW"
+        'glf_debugLog.WriteToLog "Running Show", "END OF SHOW"
         If running_show.ShowSettings.Loops = -1 Or running_show.ShowSettings.Loops > 1 Then
             If running_show.ShowSettings.Loops > 1 Then
                 running_show.ShowSettings.Loops = running_show.ShowSettings.Loops - 1
@@ -6226,7 +6233,6 @@ Class GlfStateMachine
     Private m_state
     Private m_persist_state
     Private m_starting_state
-    Private m_show
  
     Public Property Get Name(): Name = m_name: End Property
     Public Property Let Debug(value)
@@ -6324,11 +6330,8 @@ Class GlfStateMachine
 
     Public Sub Disable()
         RemoveHandlers()
+        StopShowForCurrentState()
         m_state = Null
-        If Not IsEmpty(m_show) Then
-            'm_show.Stop()
-            m_show = Empty
-        End If
     End Sub
 
     Public Sub StartState(start_state)
@@ -6376,26 +6379,29 @@ Class GlfStateMachine
             Next
         End If
 
-        If Not IsEmpty(m_show) Then
-            Log "Stopping show " & m_show
-            m_show.Stop()
-            m_show = Empty
-        End If
+        StopShowForCurrentState()
 
         State() = Null
     End Sub
 
     Public Sub RunShowForCurrentState()
-        If IsNull(m_show) Then
-            Exit Sub
-        End If
         Dim state_config : Set state_config = m_states(state)
         If Not IsNull(state_config.ShowWhenActive().Show) Then
             Dim show : Set show = state_config.ShowWhenActive
             Log "Starting show %s" & m_name & "_" & show.Key
             Dim new_running_show
-            
             Set new_running_show = (new GlfRunningShow)(m_mode & "_" & m_name & "_" & state_config.Name & "_" & show.Key, show.Key, show, m_priority, Null, state_config.InternalCacheId)
+        End If
+    End Sub
+
+    Public Sub StopShowForCurrentState()
+        Dim state_config : Set state_config = m_states(state)
+        If Not IsNull(state_config.ShowWhenActive().Show) Then
+            Dim show : Set show = state_config.ShowWhenActive
+            Log "Stopping show %s" & m_name & "_" & show.Key
+            If glf_running_shows.Exists(m_mode & "_" & m_name & "_" & state_config.Name & "_" & show.Key) Then 
+                glf_running_shows(m_mode & "_" & m_name & "_" & state_config.Name & "_" & show.Key).StopRunningShow()
+            End If
         End If
     End Sub
 
@@ -6554,6 +6560,10 @@ Public Function StateMachineTransitionHandler(args)
             If Not IsNull(glf_event.Condition) Then
                 If GetRef(glf_event.Condition)() = True Then
                     state_machine.MakeTransition ownProps(3)
+                Else
+                    If glf_debug_level = "Debug" Then
+                        glf_debugLog.WriteToLog "State machine transition",  "failed condition: " & glf_event.Raw
+                    End If
                 End If
             Else
                 state_machine.MakeTransition ownProps(3)
@@ -6755,9 +6765,9 @@ Class GlfTimer
 
         Dim newValue
         If m_direction = "down" Then
-            newValue = m_ticks - m_tick_interval
+            newValue = m_ticks - 1
         Else
-            newValue = m_ticks + m_tick_interval
+            newValue = m_ticks + 1
         End If
         
         Log "ticking: old value: "& m_ticks & ", new Value: " & newValue & ", target: "& m_end_value
@@ -7155,7 +7165,7 @@ Sub SetDelay(name, callbackFunc, args, delayInMs)
     Else
         delayQueue.Add executionTime, CreateObject("Scripting.Dictionary")
     End If
-    Glf_WriteDebugLog "Delay", "Adding delay for " & name & ", callback: " & callbackFunc & ", ExecutionTime: " & executionTime
+    'Glf_WriteDebugLog "Delay", "Adding delay for " & name & ", callback: " & callbackFunc & ", ExecutionTime: " & executionTime
     delayQueue(executionTime).Add name, (new DelayObject)(name, callbackFunc, executionTime, args)
     delayQueueMap.Add name, executionTime
     
@@ -7169,12 +7179,12 @@ Function RemoveDelay(name)
     If delayQueueMap.Exists(name) Then
         If delayQueue.Exists(delayQueueMap(name)) Then
             If delayQueue(delayQueueMap(name)).Exists(name) Then
-                Glf_WriteDebugLog "Delay", "Removing delay for " & name & " and  Execution Time: " & delayQueueMap(name)
+                'Glf_WriteDebugLog "Delay", "Removing delay for " & name & " and  Execution Time: " & delayQueueMap(name)
                 delayQueue(delayQueueMap(name)).Remove name
             End If
             delayQueueMap.Remove name
             RemoveDelay = True
-            Glf_WriteDebugLog "Delay", "Removing delay for " & name
+            'Glf_WriteDebugLog "Delay", "Removing delay for " & name
             Exit Function
         End If
     End If
@@ -7188,7 +7198,7 @@ Sub DelayTick()
             For Each key In delayQueue(queueItem).Keys()
                 If IsObject(delayQueue(queueItem)(key)) Then
                     Set delayObject = delayQueue(queueItem)(key)
-                    Glf_WriteDebugLog "Delay", "Executing delay: " & key & ", callback: " & delayObject.Callback
+                    'Glf_WriteDebugLog "Delay", "Executing delay: " & key & ", callback: " & delayObject.Callback
                     GetRef(delayObject.Callback)(delayObject.Args)    
                 End If
             Next

@@ -9,7 +9,7 @@
 'The proton cannon can be fired by hitting s_TargetMystery3 or the center orbit during a metero wave 
 'When the proton cannon is fired it will destroy one random meteor (drop targets) that are currently active on the table
 
-Const ProtonColor = "00dddd"
+
 
 Sub CreateProtonCannonMode
     Dim x

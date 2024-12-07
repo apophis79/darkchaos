@@ -9,7 +9,7 @@
 '  a random mystery award is achieved
 '  all the mystery lights will be reset to off
 
-Const MysteryColor = "d14c00"
+
 
 Sub CreateMysteryMode
     Dim x

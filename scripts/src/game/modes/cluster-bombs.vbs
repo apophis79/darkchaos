@@ -8,7 +8,6 @@
 'If a cluster bomb is available, then when the left magna is pressed the bomb is detonated
 'When a bomb is detonated it will destroy all meteors (drop targets) that are currently active on the table
 
-Const ClusterBombColor = "dd00dd"
 
 Sub CreateClusterBombMode
     Dim x
