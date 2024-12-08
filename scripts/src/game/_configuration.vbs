@@ -3,6 +3,23 @@
 '	ZGCF:  GLF Configurations
 '******************************************************
 
+Const GIColorWhite = "ffffff"
+Const GIColor2700k = "ffA957"
+Const GIColor3000k = "ffb46b"
+
+Const TimewarpColor = "ccccdd"
+Const ShipSaveColor = "0500ee"
+Const ShieldsColor = "0010cc"
+Const ProtonColor = "00dddd"
+Const MysteryColor = "d14c00"
+Const MoonColor = "ccbb00"
+Const ClusterBombColor = "dd00dd"
+
+Const MeteorCoolColor = "ffA957"
+Const MeteorWarmColor = "edb600"
+Const MeteorHotColor = "ed1800"
+
+
 
 Sub ConfigureGlfDevices
 
@@ -10,29 +27,27 @@ Sub ConfigureGlfDevices
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
-        .BallSwitches = Array("swPlunger1")
+        .BallSwitches = Array("s_Plunger1")
         .EjectTimeout = 700
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"
-        .Debug = True
+        .Debug=True
     End With
+
 
     ' Scoop
     With CreateGlfBallDevice("scoop")
-        .BallSwitches = Array("swScoop")
+        .BallSwitches = Array("s_Scoop")
         .EjectTimeout = 2000
         .MechanicalEject = True
 		.EjectCallback = "ScoopEjectCallback"
     End With
 
+
     ' Moon Lock
     With CreateGlfBallDevice("moon_lock")
-        .BallSwitches = Array("swLock1","swLock2", "swLock3")
-        '.PlayerControlledEjectEvent = "eject_moon_ball"
-        '.EjectCallback = "MoonLockEjectCallback"
-        '.EjectEnableTime = 250
-        .Debug = True
+        .BallSwitches = Array("s_Lock1","s_Lock2", "s_Lock3")
     End With
 
     With CreateGlfDiverter("lock_pin")
@@ -42,6 +57,7 @@ Sub ConfigureGlfDevices
         .ActionCallback = "DropLockPin"
     End With
 
+
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
@@ -50,21 +66,56 @@ Sub ConfigureGlfDevices
         .ActionCallback = "RaiseDiverterPin"
     End With
 
+
     ' Flippers
     With CreateGlfFlipper("left")
-        .Switch = Array("s_left_flipper")
+        .Switch = "s_left_flipper"
         .ActionCallback = "LeftFlipperAction"
     End With
 
     With CreateGlfFlipper("right")
-        .Switch = Array("s_right_flipper")
+        .Switch = "s_right_flipper"
         .ActionCallback = "RightFlipperAction"
+    End With
+
+
+    ' Slingshots
+    With CreateGlfAutoFireDevice("left_sling")
+        .Switch = "s_LeftSlingshot"
+        .ActionCallback = "LeftSlingshotAction"
+    End With
+
+    With CreateGlfAutoFireDevice("right_sling")
+        .Switch = "s_RightSlingshot"
+        .ActionCallback = "RightSlingshotAction"
+    End With
+
+
+    ' Bumpers
+    With CreateGlfAutoFireDevice("bumper1")
+        .Switch = "s_Bumper1"
+        .ActionCallback = "Bumper1Action"
+    End With
+
+    With CreateGlfAutoFireDevice("bumper2")
+        .Switch = "s_Bumper2"
+        .ActionCallback = "Bumper2Action"
+    End With
+
+    With CreateGlfAutoFireDevice("bumper3")
+        .Switch = "s_Bumper3"
+        .ActionCallback = "Bumper3Action"
+    End With
+
+    With CreateGlfAutoFireDevice("bumper4")
+        .Switch = "s_Bumper4"
+        .ActionCallback = "Bumper4Action"
     End With
 
 
     ' Magnet
     With CreateGlfMagnet("mag1")
-        .GrabSwitch = "TargetMystery5"
+        .GrabSwitch = "s_TargetMystery5"
         .ReleaseBallEvents = Array("magnet_mag1_grabbed_ball")
         .GrabTime = 1000
         .ActionCallback = "GrabMagnetAction"
@@ -73,37 +124,35 @@ Sub ConfigureGlfDevices
 
     ' Drop Targets
     With CreateGlfDroptarget("drop1")
-        .Switch = "DTMeteor1"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .Switch = "s_DTMeteor1"
+        .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor1_raise")
         .ActionCallback = "DTMeteor1Callback"
     End With
 
     With CreateGlfDroptarget("drop2")
-        .Switch = "DTMeteor2"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .Switch = "s_DTMeteor2"
+        .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor2_raise")
         .ActionCallback = "DTMeteor2Callback"
     End With
 
     With CreateGlfDroptarget("drop3")
-        .Switch = "DTMeteor3"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .Switch = "s_DTMeteor3"
+        .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor3_raise")
         .ActionCallback = "DTMeteor3Callback"
     End With
 
     With CreateGlfDroptarget("drop4")
-        .Switch = "DTMeteor4"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .Switch = "s_DTMeteor4"
+        .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor4_raise")
         .ActionCallback = "DTMeteor4Callback"
     End With
 
+
+    ' Alphanumeric displays
     Dim segment_display_p1
     Set segment_display_p1 = (New GlfLightSegmentDisplay)("player1")
 
@@ -130,21 +179,19 @@ Sub ConfigureGlfDevices
     AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
     AddPinEventListener GLF_BALL_DRAIN, "ball_drain_sound", "BallDrainSound", 100, Null
 
-    ' Slingshots
-    AddPinEventListener "leftslingshot_active",  "on_leftslingshot_active",  "OnLeftSlingshotActive", 1000, Null
-    AddPinEventListener "rightslingshot_active",  "on_rightslingshot_active",  "OnRightSlingshotActive", 1000, Null
-
     'Shot Profiles
     CreateSharedShotProfiles
 
     ' Modes
     CreateBaseMode
-    CreateMoonMultiballMode
     CreateShieldsMode
     CreateMysteryMode
     CreateTimewarpMode
     CreateShipSaveMode
-
+    CreateClusterBombMode
+    CreateProtonCannonMode
+    CreateMoonMultiballMode
+    CreateMeteorMultiballMode
     
 End Sub
 

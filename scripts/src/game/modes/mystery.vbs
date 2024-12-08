@@ -1,3 +1,5 @@
+
+
 'Mystery Mode.
 
 'All of the mystery shot lights need to be lit (by hitting their swtiches). 
@@ -7,15 +9,14 @@
 '  a random mystery award is achieved
 '  all the mystery lights will be reset to off
 
-Const MysteryColor = "d14c00"
+
 
 Sub CreateMysteryMode
-
+    Dim x
 
     With CreateGlfMode("mystery", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_mystery")
@@ -29,6 +30,7 @@ Sub CreateMysteryMode
                 End With
             End With
         End With
+        
         'Define a shot profile with two states (off/flashing)
         With .ShotProfiles("mystery_ready")
             With .States("unlit")
@@ -43,41 +45,15 @@ Sub CreateMysteryMode
         End With
 
         'Define our shots
-        With .Shots("mystery_shot1")
-            .Switch = "TargetMystery1"
-            .Profile = "qualify_mystery"
-            With .Tokens()
-                .Add "lights", "LM1"
+        For x = 1 to 5
+            With .Shots("mystery_shot"&x)
+                .Switch = "s_TargetMystery"&x
+                .Profile = "qualify_mystery"
+                With .Tokens()
+                    .Add "lights", "LM"&x
+                End With
             End With
-        End With
-        With .Shots("mystery_shot2")
-            .Switch = "TargetMystery2"
-            .Profile = "qualify_mystery"
-            With .Tokens()
-                .Add "lights", "LM2"
-            End With
-        End With
-        With .Shots("mystery_shot3")
-            .Switch = "TargetMystery3"
-            .Profile = "qualify_mystery"
-            With .Tokens()
-                .Add "lights", "LM3"
-            End With
-        End With
-        With .Shots("mystery_shot4")
-            .Switch = "TargetMystery4"
-            .Profile = "qualify_mystery"
-            With .Tokens()
-                .Add "lights", "LM4"
-            End With
-        End With
-        With .Shots("mystery_shot5")
-            .Switch = "TargetMystery5"
-            .Profile = "qualify_mystery"
-            With .Tokens()
-                .Add "lights", "LM5"
-            End With
-        End With
+        Next
 
         
         'Mystery Ready
@@ -86,7 +62,7 @@ Sub CreateMysteryMode
             With .Tokens()
                 .Add "lights", "LMR"
             End With
-            With .ControlEvents("mystery_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_mystery_on_complete")
                 .State = 1
             End With
@@ -104,7 +80,7 @@ Sub CreateMysteryMode
         With .EventPlayer()
             .Add "mode_myster_started", Array("restart_qualify_mystery")
             .Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
-            .Add "swScoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
+            .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
         End With
 
         With .LightPlayer()

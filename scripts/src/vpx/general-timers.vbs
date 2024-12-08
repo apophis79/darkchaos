@@ -18,7 +18,7 @@ End Sub
 dim FrameTime, InitFrameTime : InitFrameTime = 0
 Sub FrameTimer_Timer()
 	FrameTime = gametime - InitFrameTime : InitFrameTime = gametime	'Count frametime
-	If FrameTime > 25 Then debug.print "---------- FrameTime = " & FrameTime
+	'If FrameTime > 25 Then debug.print "---------- FrameTime = " & FrameTime
 
 	RollingUpdate					'update rolling sounds
 	DoDTAnim 						'handle drop target animations
