@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -157.16669,
-      "y": 1527.7542
+      "x": 52.241127,
+      "y": 158.95338
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg23",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -153.16287,
-        "y": 1531.2421,
+        "x": 53.367226,
+        "y": 159.93446,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -147.80217,
-        "y": 1527.202,
+        "x": 54.874916,
+        "y": 158.79813,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -151.18001,
-        "y": 1524.1887,
+        "x": 53.924873,
+        "y": 157.95071,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -161.88235,
-        "y": 1523.891,
+        "x": 50.914864,
+        "y": 157.86699,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -89,8 +89,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -165.66174,
-        "y": 1528.3567,
+        "x": 49.851906,
+        "y": 159.12294,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -102,8 +102,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -162.51904,
-        "y": 1531.2473,
+        "x": 50.735786,
+        "y": 159.93593,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -171.56429,
-      "y": 1543.4392
+      "x": 48.19181,
+      "y": 163.36484
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg28",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -165.92181,
-        "y": 1533.6998,
+        "x": 49.778755,
+        "y": 160.62573,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -169.34029,
-        "y": 1529.6599,
+        "x": 48.81733,
+        "y": 159.48952,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -172.96553,
-        "y": 1533.6161,
+        "x": 47.797707,
+        "y": 160.60205,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -177.5173,
-        "y": 1554.3889,
+        "x": 46.517525,
+        "y": 166.44438,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -89,8 +89,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -174.58394,
-        "y": 1557.5095,
+        "x": 47.342537,
+        "y": 167.32207,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -102,8 +102,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -170.19304,
-        "y": 1555.1445,
+        "x": 48.57746,
+        "y": 166.6569,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

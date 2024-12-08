@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -173.0861,
-      "y": 1563.9238
+      "x": 47.7638,
+      "y": 169.12611
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg19",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -191.95587,
-        "y": 1560.0372,
+        "x": 42.456703,
+        "y": 168.03299,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -194.94214,
-        "y": 1562.6364,
+        "x": 41.6168,
+        "y": 168.76395,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -192.62485,
-        "y": 1566.1445,
+        "x": 42.26853,
+        "y": 169.75063,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -154.41083,
-        "y": 1566.4822,
+        "x": 53.016212,
+        "y": 169.8456,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -89,8 +89,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -152.92865,
-        "y": 1562.1442,
+        "x": 53.433083,
+        "y": 168.62552,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -102,8 +102,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -155.41069,
-        "y": 1559.8604,
+        "x": 52.735023,
+        "y": 167.9833,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

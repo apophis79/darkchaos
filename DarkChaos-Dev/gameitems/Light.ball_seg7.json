@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -249.87538,
-      "y": 1528.2224
+      "x": 26.166851,
+      "y": 159.08522
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg7",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -245.87158,
-        "y": 1531.7102,
+        "x": 27.292915,
+        "y": 160.06618,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -240.5109,
-        "y": 1527.6703,
+        "x": 28.800596,
+        "y": 158.92995,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -243.88873,
-        "y": 1524.657,
+        "x": 27.85059,
+        "y": 158.08243,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -254.59105,
-        "y": 1524.3593,
+        "x": 24.840588,
+        "y": 157.99869,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -89,8 +89,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -258.37042,
-        "y": 1528.8248,
+        "x": 23.77763,
+        "y": 159.25465,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -102,8 +102,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -255.22774,
-        "y": 1531.7156,
+        "x": 24.66151,
+        "y": 160.06764,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -142.1709,
-      "y": 1511.717
+      "x": 56.458687,
+      "y": 154.44307
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg17",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -137.47739,
-        "y": 1496.8271,
+        "x": 57.778755,
+        "y": 150.25537,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -140.07646,
-        "y": 1493.8408,
+        "x": 57.047768,
+        "y": 149.41542,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -143.7017,
-        "y": 1497.7969,
+        "x": 56.028175,
+        "y": 150.52809,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -148.48758,
-        "y": 1522.3154,
+        "x": 54.682137,
+        "y": 157.42387,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -89,8 +89,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -145.7883,
-        "y": 1525.3192,
+        "x": 55.441322,
+        "y": 158.26859,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -102,8 +102,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -141.04628,
-        "y": 1521.9008,
+        "x": 56.775,
+        "y": 157.30717,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

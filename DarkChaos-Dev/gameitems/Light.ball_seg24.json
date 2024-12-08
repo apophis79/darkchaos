@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -176.23402,
-      "y": 1509.6102
+      "x": 46.878456,
+      "y": 153.85056
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg24",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -171.6575,
-        "y": 1512.5128,
+        "x": 48.165596,
+        "y": 154.66682,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -178.58772,
-        "y": 1499.9279,
+        "x": 46.21647,
+        "y": 151.12744,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -180.09258,
-        "y": 1508.9712,
+        "x": 45.79325,
+        "y": 153.67075,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -173.47057,
-        "y": 1520.8472,
+        "x": 47.655678,
+        "y": 157.01093,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

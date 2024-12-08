@@ -1,11 +1,11 @@
 {
   "Light": {
     "center": {
-      "x": -232.08292,
-      "y": 1493.3391
+      "x": 31.170942,
+      "y": 149.27443
     },
     "height": 0.0,
-    "falloff_radius": 50.0,
+    "falloff_radius": 20.0,
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
@@ -20,7 +20,7 @@
     "transmission_scale": 0.5,
     "surface": "",
     "name": "ball_seg1",
-    "is_backglass": false,
+    "is_backglass": true,
     "depth_bias": 0.0,
     "fade_speed_up": 2.5,
     "fade_speed_down": 1.0,
@@ -37,8 +37,8 @@
     "visible": true,
     "drag_points": [
       {
-        "x": -249.75832,
-        "y": 1489.2756,
+        "x": 26.19978,
+        "y": 148.1315,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -50,8 +50,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -252.24031,
-        "y": 1491.5594,
+        "x": 25.50172,
+        "y": 148.77383,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -63,8 +63,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -250.75818,
-        "y": 1495.8976,
+        "x": 25.91856,
+        "y": 149.99391,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -76,8 +76,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -215.93881,
-        "y": 1495.911,
+        "x": 35.711464,
+        "y": 149.9977,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -89,8 +89,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -210.22697,
-        "y": 1492.0516,
+        "x": 37.31794,
+        "y": 148.91226,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -102,8 +102,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": -213.21317,
-        "y": 1489.4525,
+        "x": 36.478065,
+        "y": 148.1813,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

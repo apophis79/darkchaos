@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Pincab_Backglass.png",
     "width": 1566,
     "height": 1080,
-    "alpha_test_value": 1.0,
+    "alpha_test_value": -1.0,
     "is_opaque": null,
     "is_signed": false,
     "jpeg": {
