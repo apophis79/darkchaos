@@ -145,6 +145,35 @@ Sub ConfigureGlfDevices
     segment_display_p1.SegmentType = "14Segment"
     segment_display_p1.SegmentSize = 7
     segment_display_p1.LightGroup = "p1_seg"
+    segment_display_p1.UpdateMethod = "stack"
+    segment_display_p1.UseDotsForCommas = True
+
+    Dim segment_display_p2
+    Set segment_display_p2 = (New GlfLightSegmentDisplay)("player2")
+
+    segment_display_p2.SegmentType = "14Segment"
+    segment_display_p2.SegmentSize = 7
+    segment_display_p2.LightGroup = "p2_seg"
+    segment_display_p2.UpdateMethod = "stack"
+    segment_display_p2.UseDotsForCommas = True
+
+    Dim segment_display_p3
+    Set segment_display_p3 = (New GlfLightSegmentDisplay)("player3")
+
+    segment_display_p3.SegmentType = "14Segment"
+    segment_display_p3.SegmentSize = 7
+    segment_display_p3.LightGroup = "p3_seg"
+    segment_display_p3.UpdateMethod = "stack"
+    segment_display_p3.UseDotsForCommas = True
+
+    Dim segment_display_p4
+    Set segment_display_p4 = (New GlfLightSegmentDisplay)("player4")
+
+    segment_display_p4.SegmentType = "14Segment"
+    segment_display_p4.SegmentSize = 7
+    segment_display_p4.LightGroup = "p4_seg"
+    segment_display_p4.UpdateMethod = "stack"
+    segment_display_p4.UseDotsForCommas = True
 
     Dim segment_display_ball
     Set segment_display_ball = (New GlfLightSegmentDisplay)("ball")

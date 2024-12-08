@@ -151,10 +151,15 @@ Sub CreateMoonMultiballMode
         End With
 
         With .VariablePlayer()
-		    With .Events("mode_moon_multiball_started")
+		    With .EventName("mode_moon_multiball_started")
 				With .Variable("balls_in_moon_lock")
                     .Action = "set"
 					.Int = "devices.ball_devices.moon_lock.balls"
+				End With
+			End With
+            With .EventName("qualify_lock_hit")
+				With .Variable("score")
+					.Int = 1250
 				End With
 			End With
 		End With

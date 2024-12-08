@@ -134,6 +134,24 @@ Sub CreateShieldsMode
 			End With
         End With
 
+        With .VariablePlayer()
+            With .EventName("qualify_shields_hit")
+				With .Variable("score")
+					.Int = 750
+				End With
+			End With
+		End With
+
+        With .SegmentDisplayPlayer()
+            With .Events("qualify_shields_hit")
+                With .Display("player1")
+                    .Text = """SHIELDS"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+            End With
+        End With
+
     End With
 
 End Sub

@@ -113,5 +113,14 @@ Sub CreateClusterBombMode
             End With
         End With
 
+        With .VariablePlayer()
+			With .EventName("left_orbit_hit")
+				With .Variable("score")
+					.Int = 1111
+				End With
+			End With
+            .Debug = True
+		End With
+
     End With
 End Sub

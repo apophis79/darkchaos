@@ -91,6 +91,14 @@ Sub CreateShipSaveMode
                 .Events = Array("right_orbit_hit")
             End With
         End With
+
+        With .VariablePlayer()
+            With .EventName("right_orbit_hit")
+				With .Variable("score")
+					.Int = 2750
+				End With
+			End With
+		End With
     
     End With
 End Sub

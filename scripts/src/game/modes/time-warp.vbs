@@ -111,5 +111,14 @@ Sub CreateTimewarpMode
 			End With
         End With
 
+        
+        With .VariablePlayer()
+            With .EventName("timewarps_completed_hit")
+				With .Variable("score")
+					.Int = 1510
+				End With
+			End With
+		End With
+
     End With
 End Sub
