@@ -15,7 +15,6 @@ Sub CreateShieldsMode
     With CreateGlfMode("shields", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = False
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")
@@ -45,28 +44,28 @@ Sub CreateShieldsMode
 
         'Define our shots
         With .Shots("shield_shot1")
-            .Switch = "TargetShield1"
+            .Switch = "s_TargetShield1"
             .Profile = "qualify_shields"
             With .Tokens()
                 .Add "lights", "LSC1"
             End With
         End With
         With .Shots("shield_shot2")
-            .Switch = "TargetShield2"
+            .Switch = "s_TargetShield2"
             .Profile = "qualify_shields"
             With .Tokens()
                 .Add "lights", "LSC2"
             End With
         End With
         With .Shots("shield_shot3")
-            .Switch = "TargetShield3"
+            .Switch = "s_TargetShield3"
             .Profile = "qualify_shields"
             With .Tokens()
                 .Add "lights", "LSC3"
             End With
         End With
         With .Shots("shield_shot4")
-            .Switch = "TargetShield4"
+            .Switch = "s_TargetShield4"
             .Profile = "qualify_shields"
             With .Tokens()
                 .Add "lights", "LSC4"
@@ -79,7 +78,7 @@ Sub CreateShieldsMode
             With .Tokens()
                 .Add "lights", "LSL"
             End With
-            With .ControlEvents("shields_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_shields_on_complete")
                 .State = 1
             End With
@@ -91,7 +90,7 @@ Sub CreateShieldsMode
             With .Tokens()
                 .Add "lights", "LSR"
             End With
-            With .ControlEvents("shields_ready")
+            With .ControlEvents()
                 .Events = Array("qualify_shields_on_complete")
                 .State = 1
             End With
@@ -118,8 +117,8 @@ Sub CreateShieldsMode
         With .EventPlayer()
             .Add "mode_shields_started", Array("restart_qualify_shields")
             .Add "qualify_shields_on_complete", Array("disable_qualify_shields")
-            .Add "swLeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
-            .Add "swRightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
+            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
+            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
         End With
 
         With .LightPlayer()

@@ -3,23 +3,6 @@
 '	ZGCF:  GLF Configurations
 '******************************************************
 
-Const GIColorWhite = "ffffff"
-Const GIColor2700k = "ffA957"
-Const GIColor3000k = "ffb46b"
-
-Const TimewarpColor = "ccccdd"
-Const ShipSaveColor = "0500ee"
-Const ShieldsColor = "0010cc"
-Const ProtonColor = "00dddd"
-Const MysteryColor = "d14c00"
-Const MoonColor = "ccbb00"
-Const ClusterBombColor = "dd00dd"
-
-Const MeteorCoolColor = "ffA957"
-Const MeteorWarmColor = "edb600"
-Const MeteorHotColor = "ed1800"
-
-
 
 Sub ConfigureGlfDevices
 
@@ -32,7 +15,6 @@ Sub ConfigureGlfDevices
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"
-        .Debug=True
     End With
 
 
@@ -125,29 +107,33 @@ Sub ConfigureGlfDevices
     ' Drop Targets
     With CreateGlfDroptarget("drop1")
         .Switch = "s_DTMeteor1"
-        .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor1_raise")
+        .KnockdownEvents = Array("s_right_magna_key_active")
+        '.EnableKeepUpEvents = Array("ball_started")
+        .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor1Callback"
     End With
 
     With CreateGlfDroptarget("drop2")
         .Switch = "s_DTMeteor2"
-        .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor2_raise")
+        .KnockdownEvents = Array("s_right_magna_key_active")
+        '.EnableKeepUpEvents = Array("ball_started")
+        .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor2Callback"
     End With
 
     With CreateGlfDroptarget("drop3")
         .Switch = "s_DTMeteor3"
-        .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor3_raise")
+        .KnockdownEvents = Array("s_right_magna_key_active")
+        '.EnableKeepUpEvents = Array("ball_started")
+        .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor3Callback"
     End With
 
     With CreateGlfDroptarget("drop4")
         .Switch = "s_DTMeteor4"
-        .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor4_raise")
+        .KnockdownEvents = Array("s_right_magna_key_active")
+        '.EnableKeepUpEvents = Array("ball_started")
+        .ResetEvents = Array("s_left_magna_key_active")
         .ActionCallback = "DTMeteor4Callback"
     End With
 
@@ -184,14 +170,13 @@ Sub ConfigureGlfDevices
 
     ' Modes
     CreateBaseMode
+    CreateMoonMultiballMode
     CreateShieldsMode
     CreateMysteryMode
     CreateTimewarpMode
     CreateShipSaveMode
     CreateClusterBombMode
-    CreateProtonCannonMode
-    CreateMoonMultiballMode
-    CreateMeteorMultiballMode
+
     
 End Sub
 

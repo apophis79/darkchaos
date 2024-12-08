@@ -17,11 +17,11 @@ dim RS : Set RS = New SlingshotCorrection
 
 Sub InitSlingCorrection
 
-	LS.Object = LeftSlingshot
+	LS.Object = s_LeftSlingshot
 	LS.EndPoint1 = EndPoint1LS
 	LS.EndPoint2 = EndPoint2LS
 
-	RS.Object = RightSlingshot
+	RS.Object = s_RightSlingshot
 	RS.EndPoint1 = EndPoint1RS
 	RS.EndPoint2 = EndPoint2RS
 
@@ -43,22 +43,6 @@ Sub AddSlingsPt(idx, aX, aY)        'debugger wrapper for adjusting flipper scri
 		x.addpoint idx, aX, aY
 	Next
 End Sub
-
-'' The following sub are needed, however they may exist somewhere else in the script. Uncomment below if needed
-'Dim PI: PI = 4*Atn(1)
-'Function dSin(degrees)
-'	dsin = sin(degrees * Pi/180)
-'End Function
-'Function dCos(degrees)
-'	dcos = cos(degrees * Pi/180)
-'End Function
-'
-'Function RotPoint(x,y,angle)
-'    dim rx, ry
-'    rx = x*dCos(angle) - y*dSin(angle)
-'    ry = x*dSin(angle) + y*dCos(angle)
-'    RotPoint = Array(rx,ry)
-'End Function
 
 Class SlingshotCorrection
 	Public DebugOn, Enabled

@@ -18,7 +18,6 @@ Sub CreateTimewarpMode
     With CreateGlfMode("timewarp", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("timewarped")
@@ -41,7 +40,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW1"
             End With
-            With .ControlEvents("timewarped1")
+            With .ControlEvents()
                 .Events = Array("light_timewarp1")
                 .State = 1
             End With
@@ -53,7 +52,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW2"
             End With
-            With .ControlEvents("timewarped2")
+            With .ControlEvents()
                 .Events = Array("light_timewarp2")
                 .State = 1
             End With
@@ -65,7 +64,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW3"
             End With
-            With .ControlEvents("timewarped3")
+            With .ControlEvents()
                 .Events = Array("light_timewarp3")
                 .State = 1
             End With
@@ -77,7 +76,7 @@ Sub CreateTimewarpMode
             With .Tokens()
                 .Add "lights", "LTW4"
             End With
-            With .ControlEvents("timewarped4")
+            With .ControlEvents()
                 .Events = Array("light_timewarp4")
                 .State = 1
             End With
@@ -91,11 +90,11 @@ Sub CreateTimewarpMode
         End With
 
         With .EventPlayer()
-            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==0}", Array("light_timewarp1")
-            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==0}", Array("light_timewarp2")
-            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")
-            .Add "swTimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==1 && current_player.shot_timewarp4==0}", Array("light_timewarp4")
-            .Add "swTimewarpRamp_active{current_player.shot_timewarp4==1}", Array("disable_timewarp")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==0}", Array("light_timewarp1")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==0}", Array("light_timewarp2")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==1 && current_player.shot_timewarp3==1 && current_player.shot_timewarp4==0}", Array("light_timewarp4")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp4==1}", Array("disable_timewarp")
             .Add "ball_ended", Array("restart_timewarp")   'FIXME: needs to restart at end of meteor wave
         End With
         

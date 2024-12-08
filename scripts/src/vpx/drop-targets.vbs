@@ -3,10 +3,10 @@
 '  ZDRT : DROP TARGETS by Rothbauerw
 '******************************************************
 
-Sub DTMeteor1_Hit: 	DTHit 1 : End Sub
-Sub DTMeteor2_Hit: 	DTHit 2 : End Sub
-Sub DTMeteor3_Hit: 	DTHit 3 : End Sub
-Sub DTMeteor4_Hit: 	DTHit 4 : End Sub
+Sub s_DTMeteor1_Hit: 	DTHit 1 : End Sub
+Sub s_DTMeteor2_Hit: 	DTHit 2 : End Sub
+Sub s_DTMeteor3_Hit: 	DTHit 3 : End Sub
+Sub s_DTMeteor4_Hit: 	DTHit 4 : End Sub
 
 
 '  DROP TARGETS INITIALIZATION
@@ -67,10 +67,10 @@ Dim DT1, DT2, DT3, DT4
 '
 '	Values for annimate: 1 - bend target (hit to primary), 2 - drop target (hit to secondary), 3 - brick target (high velocity hit to secondary), -1 - raise target 
 
-Set DT1 = (new DropTarget)(DTMeteor1, aDTMeteor1, BM_TMet1, 1, 0, False)
-Set DT2 = (new DropTarget)(DTMeteor2, aDTMeteor2, BM_TMet2, 2, 0, False)
-Set DT3 = (new DropTarget)(DTMeteor3, aDTMeteor3, BM_TMet3, 3, 0, False)
-Set DT4 = (new DropTarget)(DTMeteor4, aDTMeteor4, BM_TMet4, 4, 0, False)
+Set DT1 = (new DropTarget)(s_DTMeteor1, aDTMeteor1, BM_TMet1, 1, 0, False)
+Set DT2 = (new DropTarget)(s_DTMeteor2, aDTMeteor2, BM_TMet2, 2, 0, False)
+Set DT3 = (new DropTarget)(s_DTMeteor3, aDTMeteor3, BM_TMet3, 3, 0, False)
+Set DT4 = (new DropTarget)(s_DTMeteor4, aDTMeteor4, BM_TMet4, 4, 0, False)
 
 
 Dim DTArray

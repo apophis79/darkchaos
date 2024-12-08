@@ -1,0 +1,40 @@
+{
+  "HitTarget": {
+    "position": {
+      "x": 158.65605,
+      "y": 1106.4661,
+      "z": 0.0
+    },
+    "size": {
+      "x": 32.0,
+      "y": 32.0,
+      "z": 32.0
+    },
+    "rot_z": -16.0,
+    "image": "",
+    "target_type": "hit_fat_target_slim",
+    "name": "s_TargetMystery1",
+    "material": "",
+    "is_visible": false,
+    "is_legacy": false,
+    "use_hit_event": true,
+    "threshold": 2.0,
+    "elasticity": 0.35,
+    "elasticity_falloff": 0.5,
+    "friction": 0.2,
+    "scatter": 5.0,
+    "is_collidable": true,
+    "disable_lighting_top_old": null,
+    "disable_lighting_top": 0.0,
+    "disable_lighting_below": 0.0,
+    "depth_bias": 0.0,
+    "is_reflection_enabled": true,
+    "is_dropped": false,
+    "drop_speed": 0.5,
+    "is_timer_enabled": false,
+    "timer_interval": 100,
+    "raise_delay": 100,
+    "physics_material": "zCol_Targets",
+    "overwrite_physics": false
+  }
+}
