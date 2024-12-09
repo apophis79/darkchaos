@@ -12,14 +12,15 @@
 ' TODO:
 ' - GI event triggering at end of Wave              DONE
 ' - Reset MB if still going at start of new wave    DONE
-' - include wave meteor counts                      
-' - add proton cannon firing effect
-' - add cluster bomb firing effect
+' - include inital raise randomness                 
+' - include wave meteor counts                       
+' - add proton cannon firing effect                 need randome event player for this
+' - add cluster bomb firing effect                  in progress
 ' - add post diverter up                            DONE
-' - add health bar effects (negative and positive)
-' - kill flippers when health runs out
-' - suppress other modes during meteor MB mode
-' - add shows (first light shows)
+' - add health bar effects (negative and positive)  
+' - kill flippers when health runs out              
+' - suppress other modes during meteor MB mode      
+' - add shows (first light shows)                   
 
 
 
@@ -49,7 +50,8 @@ Sub CreateMeteorWaveMode
         For x = 1 to 4   'for each meteor
 
             With .StateMachines("meteor"&x)
-                .PersistState = True
+                .Debug = True
+                .PersistState = False
                 .StartingState = "init"
                 
                 'States
@@ -63,7 +65,7 @@ Sub CreateMeteorWaveMode
                 End With
                 With .States("up_cool")
                     .Label = "Up Cool"
-                    .EventsWhenStarted = Array("meteor_raised","meteor"&x&"_raise")
+                    .EventsWhenStarted = Array("meteor"&x&"_raise")
                     With .ShowWhenActive()
                         .Show = "flash_color"
                         .Speed = 1
@@ -101,6 +103,7 @@ Sub CreateMeteorWaveMode
                     .Source = Array("init")
                     .Target = "up_cool"
                     .Events = Array("timer_meteor"&x&"_init_complete")
+                    .EventsWhenTransitioning = Array("restart_meteor"&x&"_timer")
                 End With
                 With .Transitions()
                     .Source = Array("down")
@@ -121,19 +124,19 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_hot")
                     .Target = "down"
                     .Events = Array("timer_meteor"&x&"_complete")
-                    .EventsWhenTransitioning = Array("meteor_dropping","meteor"&x&"_knockdown","earth_hit")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor_dropping","meteor"&x&"_hit")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit")
                 End With
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
-                    .Events = Array("stop_meteor_wave",GLF_BALL_ENDED)
-                    .EventsWhenTransitioning = Array("meteor_dropping","meteor"&x&"_knockdown")
+                    .Events = Array("stop_meteor_wave","cluster_bomb_fired",GLF_BALL_ENDED)
+                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown")
                 End With
             End With
         
@@ -162,14 +165,38 @@ Sub CreateMeteorWaveMode
                 End With
             End With
 
+            With .VariablePlayer()
+                .Debug = true
+                With .EventName("meteor"&x&"_raise")
+                    With .Variable("num_meteors_to_raise")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+                With .EventName("meteor"&x&"_hit")
+                    With .Variable("num_meteors_to_drop")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+                With .EventName("meteor"&x&"_knockdown")
+                    With .Variable("num_meteors_to_drop")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+            End With
+
         Next
 
         With .EventPlayer()
             .Add "mode_meteor_wave_started", Array("start_meteor_multiball")
-            .Add "timer_meteor1_init_complete", Array("restart_meteor1_timer")
-            .Add "timer_meteor2_init_complete", Array("restart_meteor2_timer")
-            .Add "timer_meteor3_init_complete", Array("restart_meteor3_timer")
-            .Add "timer_meteor4_init_complete", Array("restart_meteor4_timer")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 1}", Array("fire_proton_round1","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 2}", Array("fire_proton_round2","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 3}", Array("fire_proton_round3","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 4}", Array("fire_proton_round4","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 5}", Array("fire_proton_round5","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.proton_round_count == 6}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
             .Add "meteor_dropped{current_player.num_meteors_to_drop==0}", Array("stop_meteor_wave")
         End With
 
@@ -198,18 +225,6 @@ Sub CreateMeteorWaveMode
 					.Int = 5  'FIXME  num should be based on wave number
 				End With
 			End With
-            With .EventName("meteor_raised")
-                With .Variable("num_meteors_to_raise")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor_dropping")
-                With .Variable("num_meteors_to_drop")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
 		End With
 
     End With

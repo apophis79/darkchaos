@@ -56,8 +56,8 @@ Sub CreateClusterBombMode
 
 
         With .EventPlayer()
-            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1")
-            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2","reset_cluster_charges")
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1","cluster_bomb_fired")
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2","cluster_bomb_fired","reset_cluster_charges")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 0}", Array("light_cluster_charge1")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1 && current_player.shot_cluster_charge2 == 0}", Array("light_cluster_charge2")
             .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 1 && current_player.shot_cluster_charge3 == 0}", Array("light_cluster_charge3")

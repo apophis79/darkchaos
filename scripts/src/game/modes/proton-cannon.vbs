@@ -59,12 +59,6 @@ Sub CreateProtonCannonMode
 
 
         With .EventPlayer()
-            .Add "s_TargetMystery3_active{current_player.proton_round_count == 1}", Array("fire_proton_round1")
-            .Add "s_TargetMystery3_active{current_player.proton_round_count == 2}", Array("fire_proton_round2")
-            .Add "s_TargetMystery3_active{current_player.proton_round_count == 3}", Array("fire_proton_round3")
-            .Add "s_TargetMystery3_active{current_player.proton_round_count == 4}", Array("fire_proton_round4")
-            .Add "s_TargetMystery3_active{current_player.proton_round_count == 5}", Array("fire_proton_round5")
-            .Add "s_TargetMystery3_active{current_player.proton_round_count == 6}", Array("fire_proton_round6","reset_proton_charges")
             .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 0}", Array("light_proton_charge1")
             .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1 && current_player.shot_proton_charge2 == 0}", Array("light_proton_charge2")
             .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 1 && current_player.shot_proton_charge3 == 0}", Array("light_proton_charge3")
