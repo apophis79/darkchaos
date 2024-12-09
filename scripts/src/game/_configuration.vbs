@@ -60,8 +60,8 @@ Sub ConfigureGlfDevices
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
-        .ActivateEvents = Array("release_moon_ball")
-        .ActivationTime = 2000
+        .ActivateEvents = Array("start_meteor_wave")
+        .DeactivateEvents = Array("stop_meteor_wave")
         .ActionCallback = "RaiseDiverterPin"
     End With
 
@@ -189,6 +189,8 @@ Sub ConfigureGlfDevices
     CreateShipSaveMode
     CreateClusterBombMode
     CreateProtonCannonMode
+    CreateMeteorWaveMode
+
     CreateMoonMultiballMode
     CreateMeteorMultiballMode
     
