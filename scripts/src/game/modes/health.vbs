@@ -2,6 +2,13 @@
 
 'Health Mode.
 
+'The health bar has 9 lights. At full health when all are lit. 
+'Health starts at full at the beginning of a new ball.
+'Health can decrease in a couple ways: 1) meteor wave earth hits, 2) UFO attacks
+'Health can increase in a few ways: 1) bumper hits, 2) slingshot hits, 3) mystery awards
+'When health goes to zero, the flippers die and you lose the ball.
+
+
 Const BumperHitsPerRepair = 10
 
 Sub CreateHealthMode
@@ -10,7 +17,6 @@ Sub CreateHealthMode
     With CreateGlfMode("health", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
 
         'Define a shot profile with four states, health meter leves
         With .ShotProfiles("health_meter")
@@ -37,10 +43,9 @@ Sub CreateHealthMode
             End With
         End With
 
-        'Define our shots
+        'Define health meter shots
         For x = 1 to 9
             With .Shots("health"&x&"_light")
-                .Debug = True
                 .Profile = "health_meter"
                 With .Tokens()
                     .Add "lights", "LH"&x
@@ -95,7 +100,6 @@ Sub CreateHealthMode
         End With
 
         With .VariablePlayer()
-            .Debug = True
             'health_value
 		    With .EventName("restart_health")
 				With .Variable("health_value")

@@ -54,6 +54,7 @@ Sub CreateTimewarpMode
         End With
 
         With .EventPlayer()
+            .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==0}", Array("light_timewarp1")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==0}", Array("light_timewarp2")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")

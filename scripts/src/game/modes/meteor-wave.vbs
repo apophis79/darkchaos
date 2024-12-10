@@ -15,9 +15,9 @@
 ' - include inital raise randomness                 
 ' - include wave meteor counts                       
 ' - add proton cannon firing effect                 need randome event player for this
-' - add cluster bomb firing effect                  in progress
+' - add cluster bomb firing effect                  DONE
 ' - add post diverter up                            DONE
-' - add health bar effects (negative and positive)  
+' - add health bar effects (negative and positive)  DONE
 ' - kill flippers when health runs out              
 ' - suppress other modes during meteor MB mode      
 ' - add shows (first light shows)                   
