@@ -14,6 +14,9 @@ Const ProtonColor = "00dddd"
 Const MysteryColor = "d14c00"
 Const MoonColor = "ccbb00"
 Const ClusterBombColor = "dd00dd"
+Const HealthColor1 = "00dd00"
+Const HealthColor2 = "d14c00"
+Const HealthColor3 = "ff0300"
 
 Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
@@ -190,6 +193,7 @@ Sub ConfigureGlfDevices
     CreateClusterBombMode
     CreateProtonCannonMode
     CreateMeteorWaveMode
+    CreateHealthMode
 
     CreateMoonMultiballMode
     CreateMeteorMultiballMode

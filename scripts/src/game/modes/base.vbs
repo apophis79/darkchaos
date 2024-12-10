@@ -27,8 +27,6 @@ Sub CreateBaseMode()
         With .LightPlayer()
             With .Events("mode_base_started")
                 With .Lights("GI")
-                    '.Color = "ffffff"  'white
-                    '.Color = "ffA957"  '2700k
                     .Color = GIColor3000k  '3000k
                 End With
             End With

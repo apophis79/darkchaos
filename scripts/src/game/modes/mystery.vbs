@@ -79,7 +79,7 @@ Sub CreateMysteryMode
 
         ' Players
         With .EventPlayer()
-            .Add "mode_myster_started", Array("restart_qualify_mystery")
+            .Add "mode_mystery_started", Array("restart_qualify_mystery")
             .Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
             .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
         End With
