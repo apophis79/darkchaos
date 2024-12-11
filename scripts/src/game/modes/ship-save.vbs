@@ -26,46 +26,22 @@ Sub CreateShipSaveMode
                     .Events = Array("light_ship_save"&x)
                     .State = 1
                 End With
+                .RestartEvents = Array("restart_ship_save")
             End With
         Next
 
-        With .StateMachines("ship_save")
-            .PersistState = True
-            With .States("start")
-                .Label = "Start State"
-            End With
-            With .States("step1")
-                .Label = "Step 1"
-                With .ShowWhenActive()
-                    .Show = "ship_save_orbit"
-                    .Loops = 1
-                    .Speed = 4
-                End With
-                .EventsWhenStarted = Array("light_ship_save1")
-            End With
-            With .States("step2")
-                .Label = "Step 2"
-                .EventsWhenStarted = Array("light_ship_save2")
-            End With
-            With .States("step3")
-                .Label = "Step 3"
-                .EventsWhenStarted = Array("light_ship_save3")
-            End With
-            With .Transitions()
-                .Source = Array("start")
-                .Target = "step1"
-                .Events = Array("right_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step1")
-                .Target = "step2"
-                .Events = Array("right_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step2")
-                .Target = "step3"
-                .Events = Array("right_orbit_hit")
-            End With
+        With .EventPlayer()
+            .Add "right_orbit_hit{current_player.shot_ship_save1 == 0}", Array("light_ship_save1")
+            .Add "right_orbit_hit{current_player.shot_ship_save1 == 1 && current_player.shot_ship_save2 == 0}", Array("light_ship_save2")
+            .Add "right_orbit_hit{current_player.shot_ship_save2 == 1 && current_player.shot_ship_save3 == 0}", Array("light_ship_save3")
+        End With
+
+        With .ShowPlayer()
+            With .Events("light_ship_save1")
+                .Show = "ship_save_orbit"
+                .Speed = 4
+				.Loops = 1
+			End With
         End With
     
     End With

@@ -60,7 +60,7 @@ Sub CreateTimewarpMode
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==1 && current_player.shot_timewarp4==0}", Array("light_timewarp4")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp4==1}", Array("disable_timewarp")
-            .Add "ball_ended", Array("restart_timewarp")   'FIXME: needs to restart at end of meteor wave
+            .Add "ball_ended", Array("restart_timewarp")   'will also restart at end of meteor wave
         End With
         
         With .LightPlayer()

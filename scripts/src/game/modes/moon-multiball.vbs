@@ -120,6 +120,7 @@ Sub CreateMoonMultiballMode
             .Add "multiball_locks_moon_launch_full", Array("disable_qualify_shots")
             .Add "mode_moon_multiball_started{current_player.multiball_locks_moon_launch_balls_locked==2}", Array("disable_qualify_shots")
             .Add "multiball_moon_started", Array("restart_qualify_shots")
+            .Add GLF_GAME_OVER, Array("release_moon_ball")
         End With
         
         With .LightPlayer()

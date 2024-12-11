@@ -70,7 +70,7 @@ Sub CreateBaseMode()
 
 
         With .EventPlayer()
-            .Add "s_right_magna_key_active", Array("start_meteor_wave")
+            .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")
         End With
 
     End With
