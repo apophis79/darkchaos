@@ -31,14 +31,10 @@ Sub CreateProtonCannonMode
                     .Events = Array("light_proton_charge"&x)
                     .State = 1
                 End With
-                With .ControlEvents()
-                    .Events = Array("reset_proton_charges")
-                    .State = 0
-                End With
+                .RestartEvents = Array("reset_proton_charges")
             End With
         Next
 
-       
         For x = 1 to 6
             With .Shots("proton_round"&x)
                 .Profile = "flicker_on"
@@ -50,10 +46,7 @@ Sub CreateProtonCannonMode
                     .Events = Array("add_proton_round"&x)
                     .State = 1
                 End With
-                With .ControlEvents()
-                    .Events = Array("fire_proton_round"&x)
-                    .State = 0
-                End With
+                .RestartEvents = Array("fire_proton_round"&x)
             End With
         Next
 

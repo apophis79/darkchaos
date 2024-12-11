@@ -197,7 +197,7 @@ Sub CreateMeteorWaveMode
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 4}", Array("fire_proton_round4","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 5}", Array("fire_proton_round5","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 6}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-            .Add "meteor_dropped{current_player.num_meteors_to_drop==0}", Array("stop_meteor_wave")
+            .Add "meteor_dropped{current_player.num_meteors_to_drop==0}", Array("stop_meteor_wave","restart_timewarp","restart_ship_save")
         End With
 
         With .LightPlayer()

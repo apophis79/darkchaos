@@ -29,7 +29,6 @@ Sub CreateCombosMode
             With .States("on")
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 10
                 With .Tokens()
                     .Add "color", CombosColor
                 End With
