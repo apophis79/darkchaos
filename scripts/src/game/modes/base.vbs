@@ -24,6 +24,16 @@ Sub CreateBaseMode()
             End With
         End With
 
+        With .RandomEventPlayer()
+            With .EventName("s_left_magna_key_active")
+                .Add "post_1", 49
+                .Add "post_2", 49
+                .Add "post_3", 2
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+        End With
+
         With .LightPlayer()
             With .Events("mode_base_started")
                 With .Lights("GI")
