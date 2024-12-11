@@ -28,6 +28,7 @@ Sub CreateBaseMode()
             With .Events("mode_base_started")
                 With .Lights("GI")
                     .Color = GIColor3000k  '3000k
+                    .Fade = 200
                 End With
             End With
         End With
