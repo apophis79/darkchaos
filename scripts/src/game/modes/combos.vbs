@@ -36,26 +36,7 @@ Sub CreateCombosMode
             End With
         End With
 
-        'Define combo meter shots
-        For x = 1 to 8
-            With .Shots("combo"&x&"_meter_light")
-                .Profile = "flicker_on"
-                With .Tokens()
-                    .Add "lights", "LC"&x
-                    .Add "color", CombosColor
-                End With
-                With .ControlEvents()
-                    .Events = Array("reset_combos")
-                    .State = 0
-                End With
-                With .ControlEvents()
-                    .Events = Array("combos"&x&"_lit")
-                    .State = 1
-                End With
-            End With
-        Next
-
-        'Define combo shots
+        'Define combo shots and their timers
         For x = 1 to 8
             With .Shots("combo"&x&"_shot_light")
                 .Profile = "combos_shot"
@@ -66,9 +47,36 @@ Sub CreateCombosMode
                     .Events = Array(ComboShotNames(x-1)&"_hit{current_player.combos_value>0}")
                     .State = 1
                 End With
+                .RestartEvents = Array("timer_combo"&x&"_shot_reset_complete")
+            End With
+
+            With .Timers("combo"&x&"_shot_reset")
+                .TickInterval = 500
+                .StartValue = 0
+                .EndValue = 1
+                With .ControlEvents()
+                    .EventName = ComboShotNames(x-1)&"_hit"
+                    .Action = "restart"
+                End With
             End With
         Next
-    
+
+        'Define combo meter shots
+        For x = 1 to 8
+            With .Shots("combo"&x&"_meter_light")
+                .Profile = "flicker_on"
+                With .Tokens()
+                    .Add "lights", "LC"&x
+                    .Add "color", CombosColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("combos"&x&"_lit")
+                    .State = 1
+                End With
+                .RestartEvents = Array("reset_combos")
+            End With
+        Next
+
 
         With .EventPlayer()
             .Add "mode_combos_started", Array("reset_combos")
