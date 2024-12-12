@@ -14,7 +14,7 @@ Sub Table1_Init
     With GrabMag
         .InitMagnet GrabMagnet, 16  
         .GrabCenter = False
-		.strength = 12
+		.strength = 15
         .CreateEvents "GrabMag"
     End With
 
@@ -22,16 +22,6 @@ Sub Table1_Init
 	ConfigureGlfDevices
 	Glf_Init
 
-	' 'Initialize Players
-	' Set Player0 = New PlayerState
-	' Set Player1 = New PlayerState
-	' Set Player2 = New PlayerState
-	' Set Player3 = New PlayerState
-	' Set Player4 = New PlayerState
-	' Player = Array(Player0,Player1,Player2,Player3,Player4)
-
-	' Setup lamp assignments
-	'InitLampStates 
 
 	' Ball rolling sounds
 	InitRolling
@@ -40,33 +30,15 @@ Sub Table1_Init
 	InitPolarity
 	InitSlingCorrection
 
-	
-
-	' 'Drop targets Init (all dropped)
-    ' 'InitMeteors
-	' SolDT1 False
-	' SolDT2 False
-	' SolDT3 False
-	' SolDT4 False
-
-	'Segmented Displays
-	'InitSegDisplays
-
-	' Game variables
-	' GameInit
-
-	' Game
-	' LoadHS
-
 	' StartAttractMode
 	'SetLampState LSpot1,1
-	LStars.state = 1
+	LStars.state = 1       	'FIXME need to do this using GLF
 
 	' Spin the asteroid
-	SolSpinAsteroid true
+	SolSpinAsteroid true	'FIXME need to do this using GLF
 	
-	RaiseDiverterPin false
-	GrabMagnetAction false
+	RaiseDiverterPin false	'FIXME need to do this using GLF
+	GrabMagnetAction false	'FIXME need to do this using GLF
 
 End Sub
 
