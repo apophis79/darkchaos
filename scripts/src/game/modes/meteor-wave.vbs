@@ -45,6 +45,60 @@ Sub CreateMeteorWaveMode
         .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("stop_meteor_wave")
 
+        'Define a shot profile with four states, health meter leves
+        With .ShotProfiles("meteor_temp")
+            With .States("unlit")
+                .Show = "off"
+            End With
+            With .States("cool")
+                .Show = "flash_color"
+                .Speed = 1
+                With .Tokens()
+                    .Add "color", MeteorCoolColor
+                End With
+            End With
+            With .States("warm")
+                .Show = "flash_color"
+                .Speed = 2
+                With .Tokens()
+                    .Add "color", MeteorWarmColor
+                End With
+            End With
+            With .States("hot")
+                .Show = "flash_color"
+                .Speed = 4
+                With .Tokens()
+                    .Add "color", MeteorHotColor
+                End With
+            End With
+        End With
+
+        'Define health meter shots
+        For x = 1 to 4
+            With .Shots("meteor"&x&"_light")
+                .Profile = "meteor_temp"
+                With .Tokens()
+                    .Add "lights", "LMet"&x
+                End With
+                With .ControlEvents()
+                    .Events = Array("meteor"&x&"_down")
+                    .State = 0
+                End With
+                With .ControlEvents()
+                    .Events = Array("meteor"&x&"_cool")
+                    .State = 1
+                End With
+                With .ControlEvents()
+                    .Events = Array("meteor"&x&"_warm")
+                    .State = 2
+                End With
+                With .ControlEvents()
+                    .Events = Array("meteor"&x&"_hot")
+                    .State = 3
+                End With
+            End With
+        Next
+
 
         'Meteor state machines
         For x = 1 to 4   'for each meteor
@@ -61,41 +115,19 @@ Sub CreateMeteorWaveMode
                 End With
                 With .States("down")
                     .Label = "Down State"
-                    .EventsWhenStarted = Array("meteor_dropped","restart_meteor"&x&"_timer") 
+                    .EventsWhenStarted = Array("meteor"&x&"_down","restart_meteor"&x&"_timer","meteor_dropped") 
                 End With
                 With .States("up_cool")
                     .Label = "Up Cool"
-                    .EventsWhenStarted = Array("meteor"&x&"_raise")
-                    With .ShowWhenActive()
-                        .Show = "flash_color"
-                        .Speed = 1
-                        With .Tokens()
-                            .Add "lights", "LMet"&x
-                            .Add "color", MeteorCoolColor
-                        End With
-                    End With
+                    .EventsWhenStarted = Array("meteor"&x&"_cool","meteor"&x&"_raise")
                 End With
                 With .States("up_warm")
                     .Label = "Up Warm"
-                    With .ShowWhenActive()
-                        .Show = "flash_color"
-                        .Speed = 2
-                        With .Tokens()
-                            .Add "lights", "LMet"&x
-                            .Add "color", MeteorWarmColor
-                        End With
-                    End With
+                    .EventsWhenStarted = Array("meteor"&x&"_warm")
                 End With
                 With .States("up_hot")
                     .Label = "Up Hot"
-                    With .ShowWhenActive()
-                        .Show = "flash_color"
-                        .Speed = 4
-                        With .Tokens()
-                            .Add "lights", "LMet"&x
-                            .Add "color", MeteorHotColor
-                        End With
-                    End With
+                    .EventsWhenStarted = Array("meteor"&x&"_hot")
                 End With
 
                 'Transitions
@@ -189,6 +221,9 @@ Sub CreateMeteorWaveMode
 
         Next
 
+
+
+
         With .EventPlayer()
             .Add "mode_meteor_wave_started", Array("start_meteor_multiball")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 1}", Array("fire_proton_round1","proton_fired")
@@ -197,8 +232,34 @@ Sub CreateMeteorWaveMode
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 4}", Array("fire_proton_round4","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 5}", Array("fire_proton_round5","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 6}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            .Add "center_orbit_left_hit{current_player.proton_round_count == 1}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_left_hit{current_player.proton_round_count == 2}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_left_hit{current_player.proton_round_count == 3}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_left_hit{current_player.proton_round_count == 4}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_left_hit{current_player.proton_round_count == 5}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_left_hit{current_player.proton_round_count == 6}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            .Add "center_orbit_right_hit{current_player.proton_round_count == 1}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_right_hit{current_player.proton_round_count == 2}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_right_hit{current_player.proton_round_count == 3}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_right_hit{current_player.proton_round_count == 4}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_right_hit{current_player.proton_round_count == 5}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_right_hit{current_player.proton_round_count == 6}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
             .Add "meteor_dropped{current_player.num_meteors_to_drop==0}", Array("stop_meteor_wave","restart_timewarp","restart_ship_save")
         End With
+
+        With .RandomEventPlayer()
+            .Debug = True
+            With .EventName("proton_fired")
+                .Add "meteor1_knockdown{current_player.shot_meteor1_light > 0}", 25
+                .Add "meteor2_knockdown{current_player.shot_meteor2_light > 0}", 25
+                .Add "meteor3_knockdown{current_player.shot_meteor3_light > 0}", 25
+                .Add "meteor4_knockdown{current_player.shot_meteor4_light > 0}", 25
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+        End With
+
+        
 
         With .LightPlayer()
             With .Events("mode_meteor_wave_started")
