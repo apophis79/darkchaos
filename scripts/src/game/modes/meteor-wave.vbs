@@ -265,11 +265,13 @@ Sub CreateMeteorWaveMode
             With .Events("mode_meteor_wave_started")
 				With .Lights("GI")
 					.Color = "000000"
+                    .Fade = 1000
 				End With
 			End With
             With .Events("stop_meteor_wave")
 				With .Lights("GI")
 					.Color = GIColor3000k
+                    .Fade = 200
 				End With
 			End With
         End With
