@@ -11,7 +11,8 @@ Dim ComboShotNames, ComboLightNames
 ComboShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
 ComboLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
 
-Const CombosResetTime = 6000
+Const CombosTickInterval = 1000
+Const CombosTickLimit = 6
 
 Sub CreateCombosMode
     Dim x
@@ -100,9 +101,9 @@ Sub CreateCombosMode
         End With
 
         With .Timers("combos_reset")
-            .TickInterval = CombosResetTime
+            .TickInterval = CombosTickInterval
             .StartValue = 0
-            .EndValue = 1
+            .EndValue = CombosTickLimit
             With .ControlEvents()
                 .EventName = "restart_c_timer"
                 .Action = "restart"
