@@ -22,44 +22,21 @@ Sub CreateCombosMode
         .StopEvents = Array("ball_ended")
         .Debug = True
 
-        'Define a shot profile
-        With .ShotProfiles("combos_shot")
-            With .States("unlit")
-                .Show = "off"
-            End With
-            With .States("on")
-                .Show = "flash_color"
-                .Speed = 15
-                With .Tokens()
-                    .Add "color", CombosColor
+
+        With .ShowPlayer()
+            For x = 1 to 8
+                With .Events(ComboShotNames(x-1)&"_hit{current_player.combos_value>0}")
+                    .Show = "flash_color"
+                    .Speed = 15
+                    .Loops = 5
+                    With .Tokens()
+                        .Add "lights", ComboLightNames(x-1)
+                        .Add "color", CombosColor
+                    End With
                 End With
-            End With
+            Next
         End With
 
-        'Define combo shots and their timers
-        For x = 1 to 8
-            With .Shots("combo"&x&"_shot_light")
-                .Profile = "combos_shot"
-                With .Tokens()
-                    .Add "lights", ComboLightNames(x-1)
-                End With
-                With .ControlEvents()
-                    .Events = Array(ComboShotNames(x-1)&"_hit{current_player.combos_value>0}")
-                    .State = 1
-                End With
-                .RestartEvents = Array("timer_combo"&x&"_shot_reset_complete")
-            End With
-
-            With .Timers("combo"&x&"_shot_reset")
-                .TickInterval = 500
-                .StartValue = 0
-                .EndValue = 1
-                With .ControlEvents()
-                    .EventName = ComboShotNames(x-1)&"_hit"
-                    .Action = "restart"
-                End With
-            End With
-        Next
 
         'Define combo meter shots
         For x = 1 to 8
