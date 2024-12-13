@@ -1,3 +1,5 @@
+
+
 'Moon Multiball Mode.
 
 'All of the in/outlane lights need to be lit (by hitting their swtiches). The lights can be rotated by the flippers.
@@ -6,8 +8,6 @@
 'A total of 2 balls can be locked. If any more balls go up there, then one will be released to keep the total at 2 max. Also, if a ball goes up there before the "Moon Launch" is lit, then a ball will be released
 'All locked balls can be released by pressing the right magna.
 'The right magna is disabled when an outlane switch is hit
-
-Const MoonColor = "ccbb00"
 
 
 Sub TTT(Y)
@@ -89,7 +89,7 @@ Sub CreateMoonMultiballMode
 
         'Moon Lock Ready
         With .Shots("moon_lock_ready")
-            .Profile = "flash_color"
+            .Profile = "qualified_shot"
             With .Tokens()
                 .Add "lights", "LMLR"
                 .Add "color", MoonColor
@@ -100,6 +100,7 @@ Sub CreateMoonMultiballMode
             End With
             .RestartEvents = Array("restart_qualify_shots")
         End With
+        
 
         With .ShotGroups("qualify_lock")
             .Shots = Array("left_outlane", "left_inlane", "right_inlane", "right_outlane")
@@ -110,6 +111,7 @@ Sub CreateMoonMultiballMode
         End With
 
         With .EventPlayer()
+            .Add "s_MoonRamp_active", Array("right_ramp_hit")
             .Add "s_MoonRamp_active{current_player.shot_moon_lock_ready==0 && devices.ball_devices.moon_lock.balls == 0}", Array("release_moon_ball")
             .Add "balldevice_moon_lock_ball_entered{current_player.shot_moon_lock_ready==0 && not devices.diverters.lock_pin.active && devices.ball_devices.moon_lock.balls > current_player.multiball_locks_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.balls_in_moon_lock}", Array("release_moon_ball")
             .Add "multiball_locks_moon_launch_locked_ball", Array("restart_qualify_shots")
@@ -119,6 +121,7 @@ Sub CreateMoonMultiballMode
             .Add "multiball_locks_moon_launch_full", Array("disable_qualify_shots")
             .Add "mode_moon_multiball_started{current_player.multiball_locks_moon_launch_balls_locked==2}", Array("disable_qualify_shots")
             .Add "multiball_moon_started", Array("restart_qualify_shots")
+            .Add GLF_GAME_OVER, Array("release_moon_ball")
         End With
         
         With .LightPlayer()

@@ -1,3 +1,5 @@
+
+
 'Shields Mode.
 
 'All of the shield shot lights need to be lit (by hitting their swtiches). The lights can be rotated by the flippers.
@@ -7,10 +9,10 @@
 '  a new ball will be put into the plunger lane and
 '  all the shield lights will be reset to off
 
-Const ShieldsColor = "0010cc"
+
 
 Sub CreateShieldsMode
-
+    Dim x
 
     With CreateGlfMode("shields", 510)
         .StartEvents = Array("ball_started")
@@ -29,6 +31,7 @@ Sub CreateShieldsMode
                 End With
             End With
         End With
+        
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("shields_ready")
             With .States("unlit")
@@ -43,34 +46,15 @@ Sub CreateShieldsMode
         End With
 
         'Define our shots
-        With .Shots("shield_shot1")
-            .Switch = "s_TargetShield1"
-            .Profile = "qualify_shields"
-            With .Tokens()
-                .Add "lights", "LSC1"
+        For x = 1 to 4
+            With .Shots("shield_shot"&x)
+                .Switch = "s_TargetShield"&x
+                .Profile = "qualify_shields"
+                With .Tokens()
+                    .Add "lights", "LSC"&x
+                End With
             End With
-        End With
-        With .Shots("shield_shot2")
-            .Switch = "s_TargetShield2"
-            .Profile = "qualify_shields"
-            With .Tokens()
-                .Add "lights", "LSC2"
-            End With
-        End With
-        With .Shots("shield_shot3")
-            .Switch = "s_TargetShield3"
-            .Profile = "qualify_shields"
-            With .Tokens()
-                .Add "lights", "LSC3"
-            End With
-        End With
-        With .Shots("shield_shot4")
-            .Switch = "s_TargetShield4"
-            .Profile = "qualify_shields"
-            With .Tokens()
-                .Add "lights", "LSC4"
-            End With
-        End With
+        Next
         
         'Shields Ready
         With .Shots("shield_left")

@@ -1,5 +1,10 @@
 
+
+
+' Base Mode.
+
 Sub CreateBaseMode()
+    Dim x
 
     With CreateGlfMode("base", 100)
         .StartEvents = Array("ball_started")
@@ -41,11 +46,67 @@ Sub CreateBaseMode()
         With .LightPlayer()
             With .Events("mode_base_started")
                 With .Lights("GI")
-                    '.Color = "ffffff"  'white
-                    '.Color = "ffA957"  '2700k
-                    .Color = "ffb46b"  '3000k
+                    .Color = GIColor3000k  '3000k
+                    .Fade = 200
                 End With
             End With
+        End With
+
+
+        'The main shots sequences
+        With .SequenceShots("left_side_up")
+            .SwitchSequence = Array("s_LeftBumper1", "s_LeftBumper2")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("left_side_down")
+            .SwitchSequence = Array("s_LeftBumper2", "s_LeftBumper1")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("left_orbit")
+            .SwitchSequence = Array("s_LeftOrb1", "s_LeftOrb2")
+            .SequenceTimeout = 400
+        End With
+
+        With .SequenceShots("inner_orbit")
+            .SwitchSequence = Array("s_InnerOrb1", "s_InnerOrb2")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("center_orbit_left")
+            .SwitchSequence = Array("s_CenterOrb1", "s_CenterOrb2", "s_CenterOrb3")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("center_orbit_right")
+            .SwitchSequence = Array("s_CenterOrb3", "s_CenterOrb2", "s_CenterOrb1")
+            .SequenceTimeout = 300
+        End With
+
+        With .SequenceShots("right_orbit")
+            .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
+            .SequenceTimeout = 400
+        End With
+
+        With .ShowPlayer()
+            For x = 1 to 4
+                With .Events("s_Bumper"&x&"_active")
+                    '.Show = "flash_color_with_fade"   'FIXME This is causing an error for some reason
+                    .Show = "flash_color"
+                    .Speed = 15
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", "ffffff"
+                        '.Add "fade", 50
+                    End With
+                End With
+            Next
+        End With
+
+        With .EventPlayer()
+            .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
         End With
 
     End With

@@ -1,3 +1,5 @@
+
+
 'Cluster Bomb Mode.
 
 's_LeftOrb2 must be hit right after s_LeftOrb1 (by hitting their swtiches).
@@ -6,110 +8,109 @@
 'If a cluster bomb is available, then when the left magna is pressed the bomb is detonated
 'When a bomb is detonated it will destroy all meteors (drop targets) that are currently active on the table
 
-Const ClusterBombColor = "dd00dd"
 
 Sub CreateClusterBombMode
-
+    Dim x
 
     With CreateGlfMode("cluster_bombs", 510)
+        .Debug = true
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
 
         'Define our shots
-        With .Shots("cluster_charge1")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LCC1"
-                .Add "color", ClusterBombColor
+        For x = 1 to 3
+            With .Shots("cluster_charge"&x)
+                .Profile = "powerups"
+                With .Tokens()
+                    .Add "lights", "LCC"&x
+                    .Add "color", ClusterBombColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("ready_cluster_charge"&x)
+                    .State = 1
+                End With
+                With .ControlEvents()
+                    .Events = Array("light_cluster_charge"&x)
+                    .State = 2
+                End With
+                .RestartEvents = Array("reset_cluster_charges")
             End With
-            With .ControlEvents()
-                .Events = Array("light_cluster_charge1")
-                .State = 1
+        Next
+
+        For x = 1 to 2
+            With .Shots("cluster_bomb"&x)
+                .Profile = "flicker_on"
+                With .Tokens()
+                    .Add "lights", "LCR"&x
+                    .Add "color", ClusterBombColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("add_cluster_bomb"&x)
+                    .State = 1
+                End With
+                With .ControlEvents()
+                    .Events = Array("fire_cluster_bomb"&x)
+                    .State = 0
+                End With
             End With
+        Next
+
+
+        With .EventPlayer()
+            .Add "mode_cluster_bombs_started{current_player.cluster_bomb_count == 0}", Array("reset_cluster_charges")
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1","cluster_bomb_fired")
+            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2","cluster_bomb_fired","reset_cluster_charges")
+            .Add "reset_cluster_charges", Array("ready_cluster_charge1")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
+            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1","restart_cb_timer")
+            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 1}", Array("add_cluster_bomb2")
+            .Add "timer_cluster_bomb_reset_complete", Array("reset_cluster_charges")
         End With
-        With .Shots("cluster_charge2")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LCC2"
-                .Add "color", ClusterBombColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_cluster_charge2")
-                .State = 1
-            End With
-        End With
-        With .Shots("cluster_charge3")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LCC3"
-                .Add "color", ClusterBombColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_cluster_charge3")
-                .State = 1
+
+        With .ShowPlayer()
+            With .Events("light_cluster_charge3")
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "ClusterBombShot"
+                    .Add "color", ClusterBombColor
+                End With
             End With
         End With
 
-        With .SequenceShots("left_orbit")
-            .SwitchSequence = Array("s_LeftOrb1", "s_LeftOrb2")
-            .SequenceTimeout = 400
-        End With
+        With .VariablePlayer()
+		    With .EventName("mode_cluster_bombs_started")
+				With .Variable("cluster_bomb_count")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            For x = 1 to 2
+                With .EventName("fire_cluster_bomb"&x)
+                    With .Variable("cluster_bomb_count")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+                With .EventName("add_cluster_bomb"&x)
+                    With .Variable("cluster_bomb_count")
+                        .Action = "add"
+                        .Int = 1
+                    End With
+                End With
+            Next
+		End With
 
-        With .Shots("cluster_bomb1")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LCR1"
-                .Add "color", ClusterBombColor
-            End With
+        With .Timers("cluster_bomb_reset")
+            .TickInterval = 500
+            .StartValue = 0
+            .EndValue = 1
             With .ControlEvents()
-                .Events = Array("light_bomb1")
-                .State = 1
-            End With
-        End With
-
-        With .Shots("cluster_bomb2")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LCR2"
-                .Add "color", ClusterBombColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_bomb2")
-                .State = 1
-            End With
-        End With
-
-        With .StateMachines("cluster_bomb")
-            .PersistState = True
-            With .States("start")
-                .Label = "Start State"
-            End With
-            With .States("step1")
-                .Label = "Step 1"
-                .EventsWhenStarted = Array("light_cluster_charge1")
-            End With
-            With .States("step2")
-                .Label = "Step 2"
-                .EventsWhenStarted = Array("light_cluster_charge2")
-            End With
-            With .States("step3")
-                .Label = "Step 3"
-                .EventsWhenStarted = Array("light_cluster_charge3")
-            End With
-            With .Transitions()
-                .Source = Array("start")
-                .Target = "step1"
-                .Events = Array("left_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step1")
-                .Target = "step2"
-                .Events = Array("left_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step2")
-                .Target = "step3"
-                .Events = Array("left_orbit_hit")
+                .EventName = "restart_cb_timer"
+                .Action = "restart"
             End With
         End With
 

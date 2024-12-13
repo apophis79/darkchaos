@@ -3,6 +3,27 @@
 '	ZGCF:  GLF Configurations
 '******************************************************
 
+Const GIColorWhite = "ffffff"
+Const GIColor2700k = "ffA957"
+Const GIColor3000k = "ffb46b"
+
+Const TimewarpColor = "ccccdd"
+Const ShipSaveColor = "0500ee"
+Const ShieldsColor = "0010cc"
+Const ProtonColor = "00dddd"
+Const MysteryColor = "d14c00"
+Const MoonColor = "ccbb00"
+Const ClusterBombColor = "dd00dd"
+Const CombosColor = "ffb46b"
+Const HealthColor1 = "00dd00"
+Const HealthColor2 = "d14c00"
+Const HealthColor3 = "ff0300"
+
+Const MeteorCoolColor = "ffA957"
+Const MeteorWarmColor = "edb600"
+Const MeteorHotColor = "ed1800"
+
+
 
 Sub ConfigureGlfDevices
 
@@ -43,8 +64,8 @@ Sub ConfigureGlfDevices
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
-        .ActivateEvents = Array("release_moon_ball")
-        .ActivationTime = 2000
+        .ActivateEvents = Array("start_meteor_wave")
+        .DeactivateEvents = Array("stop_meteor_wave")
         .ActionCallback = "RaiseDiverterPin"
     End With
 
@@ -107,33 +128,29 @@ Sub ConfigureGlfDevices
     ' Drop Targets
     With CreateGlfDroptarget("drop1")
         .Switch = "s_DTMeteor1"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor1_raise")
         .ActionCallback = "DTMeteor1Callback"
     End With
 
     With CreateGlfDroptarget("drop2")
         .Switch = "s_DTMeteor2"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor2_raise")
         .ActionCallback = "DTMeteor2Callback"
     End With
 
     With CreateGlfDroptarget("drop3")
         .Switch = "s_DTMeteor3"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor3_raise")
         .ActionCallback = "DTMeteor3Callback"
     End With
 
     With CreateGlfDroptarget("drop4")
         .Switch = "s_DTMeteor4"
-        .KnockdownEvents = Array("s_right_magna_key_active")
-        '.EnableKeepUpEvents = Array("ball_started")
-        .ResetEvents = Array("s_left_magna_key_active")
+        .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor4_raise")
         .ActionCallback = "DTMeteor4Callback"
     End With
 
@@ -199,13 +216,18 @@ Sub ConfigureGlfDevices
 
     ' Modes
     CreateBaseMode
-    CreateMoonMultiballMode
     CreateShieldsMode
     CreateMysteryMode
     CreateTimewarpMode
     CreateShipSaveMode
     CreateClusterBombMode
+    CreateProtonCannonMode
+    CreateMeteorWaveMode
+    CreateHealthMode
+    CreateCombosMode
 
+    CreateMoonMultiballMode
+    CreateMeteorMultiballMode
     
 End Sub
 
@@ -221,7 +243,17 @@ Function BallDrainSound(args)
     BallDrainSound = args(1)
 End Function 
 
+
 Public Sub CreateSharedShotProfiles()
+
+    With GlfShotProfiles("off_on_color")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("on")
+            .Show = "led_color"
+        End With
+    End With
 
     With GlfShotProfiles("flicker_on")
         With .States("unlit")
@@ -232,6 +264,36 @@ Public Sub CreateSharedShotProfiles()
             .Speed = 4
         End With
     End With
+
+    With GlfShotProfiles("powerups")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("ready")
+            .Show = "flash_color_with_fade"
+            .Speed = 2
+            With .Tokens()
+                .Add "fade", 100
+            End With
+        End With
+        With .States("collected")
+            .Show = "led_color"
+        End With
+    End With
+
+    With GlfShotProfiles("qualified_shot")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("ready")
+            .Show = "flash_color_with_fade"
+            .Speed = 2
+            With .Tokens()
+                .Add "fade", 100
+            End With
+        End With
+    End With
+
 
 End Sub
 

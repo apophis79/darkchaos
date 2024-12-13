@@ -1,3 +1,5 @@
+
+
 'Ship Save Mode.
 
 's_RightOrb2 must be hit right after s_RightOrb1 (by hitting their swtiches).
@@ -5,90 +7,55 @@
 'Once the third charge light is lit, a the ship save (ball save) will be extended at ths start of next meteor wave.
 
 
-Const ShipSaveColor = "0500ee"
-
 Sub CreateShipSaveMode
+    Dim x
 
     With CreateGlfMode("ship_save", 510)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-       
+
         'Define our shots
-        With .Shots("ship_save1")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LF1"
-                .Add "color", ShipSaveColor
+        For x = 1 to 3
+            With .Shots("ship_save"&x)
+                .Profile = "powerups"
+                With .Tokens()
+                    .Add "lights", "LF"&x
+                    .Add "color", ShipSaveColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("ready_ship_save"&x)
+                    .State = 1
+                End With
+                With .ControlEvents()
+                    .Events = Array("light_ship_save"&x)
+                    .State = 2
+                End With
+                .RestartEvents = Array("restart_ship_save")
             End With
-            With .ControlEvents()
-                .Events = Array("light_ship_save1")
-                .State = 1
-            End With
-        End With
-        With .Shots("ship_save2")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LF2"
-                .Add "color", ShipSaveColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_ship_save2")
-                .State = 1
-            End With
-        End With
-        With .Shots("ship_save3")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LF3"
-                .Add "color", ShipSaveColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_ship_save3")
-                .State = 1
-            End With
-        End With
-        
-        With .SequenceShots("right_orbit")
-            .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
-            .SequenceTimeout = 300
+        Next
+
+        With .EventPlayer()
+            .Add "mode_ship_save_started{current_player.shot_ship_save1==0}", Array("restart_ship_save")
+            .Add "restart_ship_save", Array("ready_ship_save1")
+            .Add "right_orbit_hit{current_player.shot_ship_save1 == 1}", Array("light_ship_save1","ready_ship_save2")
+            .Add "right_orbit_hit{current_player.shot_ship_save1 == 2 && current_player.shot_ship_save2 == 1}", Array("light_ship_save2","ready_ship_save3")
+            .Add "right_orbit_hit{current_player.shot_ship_save2 == 2 && current_player.shot_ship_save3 == 1}", Array("light_ship_save3")
         End With
 
-        With .StateMachines("ship_save")
-            .PersistState = True
-            With .States("start")
-                .Label = "Start State"
-            End With
-            With .States("step1")
-                .Label = "Step 1"
-                With .ShowWhenActive()
-                    .Show = "ship_save_orbit"
-                    .Loops = 1
-                    .Speed = 4
+        With .ShowPlayer()
+            With .Events("light_ship_save1")
+                .Show = "ship_save_orbit"
+                .Speed = 4
+				.Loops = 1
+			End With
+            With .Events("light_ship_save3")
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "ShipSaveShot"
+                    .Add "color", ShipSaveColor
                 End With
-                .EventsWhenStarted = Array("light_ship_save1")
-            End With
-            With .States("step2")
-                .Label = "Step 2"
-                .EventsWhenStarted = Array("light_ship_save2")
-            End With
-            With .States("step3")
-                .Label = "Step 3"
-                .EventsWhenStarted = Array("light_ship_save3")
-            End With
-            With .Transitions()
-                .Source = Array("start")
-                .Target = "step1"
-                .Events = Array("right_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step1")
-                .Target = "step2"
-                .Events = Array("right_orbit_hit")
-            End With
-            With .Transitions()
-                .Source = Array("step2")
-                .Target = "step3"
-                .Events = Array("right_orbit_hit")
             End With
         End With
 
