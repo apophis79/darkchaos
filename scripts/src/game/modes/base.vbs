@@ -36,11 +36,11 @@ Sub CreateBaseMode()
                     .Text = "{current_player.ball:0>2}"
                 End With
             End With
-            With .Events("mode_base_started")
-                With .Display("pf")
-                    .Text = "{00:0>2}"
-                End With
-            End With
+            ' With .Events("mode_base_started")
+            '     With .Display("pf")
+            '         .Text = "{00:0>2}"
+            '     End With
+            ' End With
         End With
 
         With .LightPlayer()
