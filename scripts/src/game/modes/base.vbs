@@ -92,14 +92,13 @@ Sub CreateBaseMode()
         With .ShowPlayer()
             For x = 1 to 4
                 With .Events("s_Bumper"&x&"_active")
-                    '.Show = "flash_color_with_fade"   'FIXME This is causing an error for some reason
-                    .Show = "flash_color"
+                    .Show = "flash_color_with_fade" 
                     .Speed = 15
                     .Loops = 1
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", "ffffff"
-                        '.Add "fade", 50
+                        .Add "fade", 50
                     End With
                 End With
             Next

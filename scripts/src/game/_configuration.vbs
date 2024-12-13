@@ -223,11 +223,11 @@ Sub ConfigureGlfDevices
     CreateShipSaveMode
     CreateClusterBombMode
     CreateProtonCannonMode
-    CreateMeteorWaveMode
     CreateHealthMode
     CreateCombosMode
-
     CreateMoonMultiballMode
+
+    CreateMeteorWaveMode
     CreateMeteorMultiballMode
     
 End Sub

@@ -23,8 +23,7 @@
 ' - add shows (first light shows)                   
 
 
-
-Const MeteorWaveDelayTime = 45000
+Const MeteorWaveDelayTicks = 45  'uses 1000ms interval
 
 Const MeteorTimerInitTickInterval = 500
 
@@ -293,4 +292,33 @@ Sub CreateMeteorWaveMode
 		End With
 
     End With
+
+
+
+    ' Meteor Wave Qualify Timer
+
+    With CreateGlfMode("meteor_wave_qualify", 1000)
+        .StartEvents = Array("ball_started")
+        .StopEvents = Array("ball_ended")
+        
+        With .SegmentDisplayPlayer()
+            With .Events("mode_meteor_wave_qualify_started")
+                With .Display("pf")
+                    .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
+                End With
+            End With
+        End With
+
+        With .Timers("meteor_countdown")
+            .TickInterval = 1000
+            .StartValue = MeteorWaveDelayTicks
+            .Direction = "down"
+            .EndValue = 0
+            .StartRunning = True
+        End With
+        .Debug = True
+    End With
+
+
+
 End Sub
