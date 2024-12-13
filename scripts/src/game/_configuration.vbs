@@ -204,6 +204,7 @@ Sub ConfigureGlfDevices
 
     segment_display_pf.SegmentType = "7Segment"
     segment_display_pf.SegmentSize = 2
+    segment_display_pf.UpdateMethod = "stack"
     segment_display_pf.LightGroup = "pf_seg"
 
 

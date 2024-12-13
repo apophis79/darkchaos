@@ -723,8 +723,34 @@ Function Glf_CheckForGetPlayerState(inputString)
     Glf_CheckForGetPlayerState = Array(hasGetPlayerState, attribute, playerNumber)
 End Function
 
+Function Glf_CheckForDeviceState(inputString)
+    Dim pattern, regex, matches, match, hasDeviceState, attribute, deviceType, deviceName
+	'inputString = Glf_ReplaceDeviceAttributes(inputString)
+    pattern = "devices\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
+    Set regex = New RegExp
+    regex.Pattern = pattern
+    regex.IgnoreCase = True
+    regex.Global = False
+    Set matches = regex.Execute(inputString)
+    If matches.Count > 0 Then
+        hasDeviceState = True
+		deviceType = matches(0).SubMatches(0)
+		deviceType = Left(deviceType, Len(deviceType)-1)
+        deviceName = matches(0).SubMatches(1)
+		attribute = matches(0).SubMatches(2)
+		attribute = Left(attribute, Len(attribute)-1)
+    Else
+        hasDeviceState = False
+        deviceType = Empty
+		deviceName = Empty
+		attribute = Empty
+    End If
 
-
+    Set regex = Nothing
+    Set matches = Nothing
+    
+    Glf_CheckForDeviceState = Array(hasDeviceState, deviceType, deviceName, attribute)
+End Function
 
 Function Glf_ConvertIf(value, retName)
     Dim parts, condition, truePart, falsePart, isVariable
@@ -1214,7 +1240,7 @@ Function CreateGlfInput(value)
 End Function
 
 Class GlfInput
-	Private m_raw, m_value, m_isGetRef, m_isPlayerState, m_playerStateValue, m_playerStatePlayer
+	Private m_raw, m_value, m_isGetRef, m_isPlayerState, m_playerStateValue, m_playerStatePlayer, m_isDeviceState, m_deviceStateDeviceType, m_deviceStateDeviceName, m_deviceStateDeviceAttr
   
     Public Property Get Value() 
 		If m_isGetRef = True Then
@@ -1230,7 +1256,9 @@ Class GlfInput
 	Public Property Get PlayerStateValue() : PlayerStateValue = m_playerStateValue : End Property		
 	Public Property Get PlayerStatePlayer() : PlayerStatePlayer = m_playerStatePlayer : End Property		
 
-
+	Public Property Get IsDeviceState() : IsDeviceState = m_isDeviceState : End Property
+	Public Property Get DeviceStateEvent() : DeviceStateEvent = m_deviceStateDeviceType & "_" & m_deviceStateDeviceName & "_" & m_deviceStateDeviceAttr : End Property
+		
 	Public default Function init(input)
         m_raw = input
         Dim parsedInput : parsedInput = Glf_ParseInput(input)
@@ -1238,6 +1266,12 @@ Class GlfInput
 		m_isPlayerState = playerState(0)
 		m_playerStateValue = playerState(1)
 		m_playerStatePlayer = playerState(2)
+		Dim deviceState : deviceState = Glf_CheckForDeviceState(input)
+		m_isDeviceState = deviceState(0)
+		m_deviceStateDeviceType = deviceState(1)
+		m_deviceStateDeviceName = deviceState(2)
+		m_deviceStateDeviceAttr = deviceState(3)
+		
         m_value = parsedInput(0)
         m_isGetRef = parsedInput(2)
 	    Set Init = Me
@@ -3476,7 +3510,7 @@ Class GlfMultiballLocks
     Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(name, mode)
-        m_name = "multiball_locks_" & name
+        m_name = "multiball_lock_" & name
         m_mode = mode.Name
         m_priority = mode.Priority
         m_lock_events = Array()
@@ -3485,7 +3519,7 @@ Class GlfMultiballLocks
         m_balls_to_lock = 0
         m_balls_to_replace = -1
         m_balls_locked = 0
-        Set m_base_device = (new GlfBaseModeDevice)(mode, "multiball_locks", Me)
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "multiball_lock", Me)
         glf_multiball_locks.Add name, Me
         Set Init = Me
 	End Function
@@ -4034,13 +4068,11 @@ Function MultiballsHandler(args)
         Case "queue_release"
             If glf_plunger.HasBall = False And ballInReleasePostion = True And glf_plunger.IncomingBalls = 0 Then
                 Glf_ReleaseBall(Null)
-                debug.print("RELEASE")
                 SetDelay multiball.Name&"_auto_launch", "MultiballsHandler" , Array(Array("auto_launch", multiball),Null), 500
                 If multiball.ReleaseQueuedBalls() > 0 Then
                     SetDelay multiball.Name&"_queued_release", "MultiballsHandler" , Array(Array("queue_release", multiball), Null), 1000    
                 End If
             Else
-                debug.print("RE QUE")
                 SetDelay multiball.Name&"_queued_release", "MultiballsHandler" , Array(Array("queue_release", multiball), Null), 1000
             End If
         Case "auto_launch"
@@ -6906,7 +6938,7 @@ Class GlfTimer
         Next
         m_ticks = m_start_value
         m_ticks_remaining = m_ticks
-        If m_start_running Then
+        If m_start_running = True Then
             StartTimer()
         End If
     End Sub
@@ -8522,6 +8554,8 @@ Class GlfLightSegmentDisplay
             Set previous_text_stack_entry = m_current_text_stack_entry
             If previous_text_stack_entry.text.IsPlayerState() Then
                 RemovePlayerStateEventListener previous_text_stack_entry.text.PlayerStateValue(), m_name
+            ElseIf previous_text_stack_entry.text.IsDeviceState() Then
+                RemovePinEventListener top_text_stack_entry.text.DeviceStateEvent() , m_name
             End If
         End If
         
@@ -8569,6 +8603,8 @@ Class GlfLightSegmentDisplay
             'no transition - subscribe to text template changes and update display
             If top_text_stack_entry.text.IsPlayerState() Then
                 AddPlayerStateEventListener top_text_stack_entry.text.PlayerStateValue(), m_name, top_text_stack_entry.text.PlayerStatePlayer(), "Glf_SegmentTextStackEventHandler", top_text_stack_entry.priority, Me
+            ElseIf top_text_stack_entry.text.IsDeviceState() Then
+                AddPinEventListener top_text_stack_entry.text.DeviceStateEvent() , m_name, "Glf_SegmentTextStackEventHandler", top_text_stack_entry.priority, Me
             End If
 
             'set any flashing state specified in the entry
@@ -8650,13 +8686,13 @@ Sub Glf_SegmentDisplaySoftwareFlashEventHandler(args)
 End Sub
 
 Sub Glf_SegmentTextStackEventHandler(args)
-    Dim ownProps, kwargs
-    Set ownProps = args(0) 
-    kwargs = args(1) 
-    Dim player_var : player_var = kwargs(0)
-    Dim value : value = kwargs(1)
-    Dim prevValue : prevValue = kwargs(2)
-    ownProps.CurrentPlaceholderChanged()
+    Dim segment
+    Set segment = args(0) 
+    'kwargs = args(1) 
+    'Dim player_var : player_var = kwargs(0)
+    'Dim value : value = kwargs(1)
+    'Dim prevValue : prevValue = kwargs(2)
+    segment.CurrentPlaceholderChanged()
 End Sub
 
 
