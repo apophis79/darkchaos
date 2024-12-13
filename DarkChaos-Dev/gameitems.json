@@ -361,14 +361,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swRamp1.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Timer.RampRoll.json",
@@ -508,7 +508,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.FlipperR1Sh.json",
@@ -529,42 +529,42 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Ramp.Ramp003.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Ramp.Ramp004.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Ramp.Ramp005.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall006.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall008.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall009.json",
@@ -585,14 +585,14 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall011.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg003.json",
@@ -774,21 +774,21 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swRamp4.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swRamp5.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.100h.json",
@@ -802,14 +802,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swRamp7.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.GrabMagnet.json",
@@ -984,7 +984,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.playfield_mesh.json",
@@ -998,21 +998,21 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.ScoopWalls.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.ScoopFloor.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSL.json",
@@ -1310,7 +1310,7 @@
   },
   {
     "file_name": "Light.LPC1.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
     "editor_layer_visibility": false
@@ -1544,7 +1544,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Timer.RainbowTimer.json",
@@ -1572,14 +1572,14 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.s_Lock2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Timer.WaveTimer.json",
@@ -1670,7 +1670,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Timer.FallingMeteorAnim.json",
@@ -1684,7 +1684,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall018.json",
@@ -2293,28 +2293,28 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Ramp.Ramp006.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall004.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall013.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Timer.Glf_GameTimer.json",
@@ -9692,14 +9692,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.s_TimewarpRamp.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.130h.json",
@@ -9713,1057 +9713,1057 @@
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg2.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg3.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg4.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg5.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg6.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg7.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg8.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg9.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg10.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg11.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg12.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg13.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg14.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg15.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg16.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg17.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg18.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg19.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg20.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg21.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg22.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg23.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg24.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg25.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg26.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg27.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg28.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg29.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg30.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg31.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg32.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg33.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg34.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg35.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg36.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg37.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg38.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg39.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg40.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg41.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg42.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg43.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg44.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg45.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg46.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg47.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg48.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg49.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg50.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg51.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg52.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg53.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg54.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg55.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg56.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg57.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg58.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg59.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg60.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg61.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg62.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg63.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg64.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg65.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg66.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg67.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg68.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg69.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg70.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg71.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg72.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg73.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg74.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg75.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg76.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg77.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg78.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg79.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg80.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg81.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg82.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg83.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg84.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg85.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg86.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg87.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg88.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg89.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg90.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg91.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg92.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg93.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg94.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg95.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg96.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg97.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg98.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg99.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg100.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg101.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg102.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg103.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg104.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg105.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg1.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg2.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg3.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg4.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg5.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg6.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg7.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg8.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg9.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg10.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg11.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg12.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg13.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg14.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg15.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg16.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg17.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg18.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg19.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg20.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg21.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg22.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg23.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg24.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg25.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg26.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg27.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg28.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg29.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.ball_seg30.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg1.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg2.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg3.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg4.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg5.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg6.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg7.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg8.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg9.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg10.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg11.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg12.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg13.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg14.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg16.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg15.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall7.json",
@@ -10777,2204 +10777,2204 @@
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg1.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg1.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg2.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg2.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg2.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg3.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg3.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg3.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg4.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg4.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg4.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg5.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg5.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg5.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg6.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg6.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg6.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg7.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg7.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg7.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg8.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg8.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg8.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg9.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg9.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg9.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg10.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg10.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg10.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg11.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg11.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg11.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg12.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg12.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg12.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg13.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg13.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg13.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg14.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg14.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg14.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg15.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg15.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg15.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg16.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg16.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg16.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg17.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg17.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg17.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg18.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg18.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg18.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg19.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg19.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg19.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg20.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg20.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg20.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg21.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg21.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg21.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg22.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg22.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg22.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg23.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg23.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg23.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg24.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg24.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg24.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg25.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg25.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg25.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg26.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg26.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg26.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg27.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg27.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg27.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg28.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg28.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg28.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg29.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg29.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg29.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg30.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg30.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg30.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg31.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg31.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg31.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg32.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg32.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg32.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg33.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg33.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg33.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg34.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg34.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg34.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg35.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg35.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg35.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg36.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg36.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg36.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg37.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg37.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg37.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg38.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg38.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg38.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg39.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg39.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg39.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg40.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg40.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg40.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg41.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg41.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg41.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg42.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg42.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg42.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg43.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg43.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg43.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg44.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg44.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg44.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg45.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg45.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg45.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg46.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg46.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg46.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg47.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg47.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg47.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg48.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg48.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg48.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg49.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg49.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg49.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg50.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg50.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg50.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg51.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg51.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg51.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg52.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg52.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg52.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg53.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg53.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg53.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg54.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg54.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg54.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg55.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg55.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg55.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg56.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg56.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg56.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg57.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg57.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg57.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg58.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg58.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg58.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg59.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg59.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg59.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg60.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg60.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg60.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg61.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg61.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg61.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg62.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg62.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg62.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg63.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg63.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg63.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg64.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg64.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg64.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg65.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg65.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg65.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg66.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg66.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg66.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg67.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg67.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg67.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg68.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg68.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg68.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg69.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg69.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg69.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg70.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg70.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg70.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg71.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg71.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg71.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg72.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg72.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg72.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg73.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg73.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg73.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg74.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg74.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg74.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg75.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg75.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg75.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg76.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg76.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg76.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg77.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg77.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg77.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg78.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg78.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg78.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg79.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg79.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg79.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg80.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg80.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg80.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg81.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg81.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg81.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg82.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg82.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg82.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg83.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg83.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg83.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg84.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg84.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg84.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg85.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg85.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg85.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg86.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg86.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg86.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg87.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg87.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg87.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg88.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg88.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg88.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg89.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg89.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg89.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg90.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg90.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg90.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg91.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg91.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg91.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg92.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg92.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg92.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg93.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg93.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg93.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg94.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg94.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg94.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg95.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg95.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg95.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg96.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg96.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg96.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg97.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg97.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg97.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg98.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg98.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg98.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg99.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg99.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg99.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg100.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg100.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg100.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg101.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg101.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg101.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg102.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg102.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg102.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg103.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg103.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg103.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg104.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg104.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg104.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p2_seg105.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p3_seg105.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p4_seg105.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   }
 ]
