@@ -18,50 +18,25 @@ Sub CreateMysteryMode
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
         '.Debug = True
-
-        'Define a shot profile with two states (off/on)
-        With .ShotProfiles("qualify_mystery")
-            With .States("unlit")
-                .Show = "off"
-            End With
-            With .States("on")
-                .Show = "led_color"
-                With .Tokens()
-                    .Add "color", MysteryColor
-                End With
-            End With
-        End With
-        
-        'Define a shot profile with two states (off/flashing)
-        With .ShotProfiles("mystery_ready")
-            With .States("unlit")
-                .Show = "off"
-            End With
-            With .States("on")
-                .Show = "flash_color"
-                With .Tokens()
-                    .Add "color", MysteryColor
-                End With
-            End With
-        End With
-
+     
         'Define our shots
         For x = 1 to 5
             With .Shots("mystery_shot"&x)
                 .Switch = "s_TargetMystery"&x
-                .Profile = "qualify_mystery"
+                .Profile = "off_on_color"
                 With .Tokens()
                     .Add "lights", "LM"&x
+                    .Add "color", MysteryColor
                 End With
             End With
         Next
 
-        
         'Mystery Ready
         With .Shots("mystery_ready")
-            .Profile = "mystery_ready"
+            .Profile = "qualified_shot"
             With .Tokens()
                 .Add "lights", "LMR"
+                .Add "color", MysteryColor
             End With
             With .ControlEvents()
                 .Events = Array("qualify_mystery_on_complete")
@@ -69,6 +44,8 @@ Sub CreateMysteryMode
             End With
             .RestartEvents = Array("restart_qualify_mystery")
         End With
+
+
         ' Mystery qualifying shot group
         With .ShotGroups("qualify_mystery")
             .Shots = Array("mystery_shot1", "mystery_shot2", "mystery_shot3", "mystery_shot4","mystery_shot5")

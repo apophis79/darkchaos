@@ -22,14 +22,18 @@ Sub CreateProtonCannonMode
         'Define our shots
         For x = 1 to 3
             With .Shots("proton_charge"&x)
-                .Profile = "flicker_on"
+                .Profile = "powerups"
                 With .Tokens()
                     .Add "lights", "LPC"&x
                     .Add "color", ProtonColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_proton_charge"&x)
+                    .Events = Array("ready_proton_charge"&x)
                     .State = 1
+                End With
+                With .ControlEvents()
+                    .Events = Array("light_proton_charge"&x)
+                    .State = 2
                 End With
                 .RestartEvents = Array("reset_proton_charges")
             End With
@@ -52,9 +56,11 @@ Sub CreateProtonCannonMode
 
 
         With .EventPlayer()
-            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 0}", Array("light_proton_charge1")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1 && current_player.shot_proton_charge2 == 0}", Array("light_proton_charge2")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 1 && current_player.shot_proton_charge3 == 0}", Array("light_proton_charge3")
+            .Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", Array("reset_proton_charges")
+            .Add "reset_proton_charges", Array("ready_proton_charge1")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", Array("light_proton_charge1","ready_proton_charge2")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", Array("light_proton_charge2","ready_proton_charge3")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", Array("light_proton_charge3")
             .Add "light_proton_charge3{current_player.proton_round_count == 0}", Array("add_proton_round1","restart_pc_timer")
             .Add "light_proton_charge3{current_player.proton_round_count == 1}", Array("add_proton_round2","restart_pc_timer")
             .Add "light_proton_charge3{current_player.proton_round_count == 2}", Array("add_proton_round3","restart_pc_timer")
@@ -62,6 +68,18 @@ Sub CreateProtonCannonMode
             .Add "light_proton_charge3{current_player.proton_round_count == 4}", Array("add_proton_round5","restart_pc_timer")
             .Add "light_proton_charge3{current_player.proton_round_count == 5}", Array("add_proton_round6")
             .Add "timer_proton_cannon_reset_complete", Array("reset_proton_charges")
+        End With
+
+        With .ShowPlayer()
+            With .Events("light_proton_charge3")
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "ProtonShot"
+                    .Add "color", ProtonColor
+                End With
+            End With
         End With
 
         With .VariablePlayer()

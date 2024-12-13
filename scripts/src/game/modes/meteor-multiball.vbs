@@ -46,7 +46,7 @@ Sub CreateMeteorMultiballMode
             .StartEvents = Array("mode_meteor_multiball_started","start_meteor_multiball")
             .BallCount = 3
             .BallCountType = "total"
-            .ShootAgain = 10000
+            .ShootAgain = 10000  'FIXME this needs to respond to ship save mode result
             .HurryUp = 3000
             .GracePeriod = 2000
             .Debug = True

@@ -89,7 +89,7 @@ Sub CreateMoonMultiballMode
 
         'Moon Lock Ready
         With .Shots("moon_lock_ready")
-            .Profile = "flash_color"
+            .Profile = "qualified_shot"
             With .Tokens()
                 .Add "lights", "LMLR"
                 .Add "color", MoonColor
@@ -100,6 +100,7 @@ Sub CreateMoonMultiballMode
             End With
             .RestartEvents = Array("restart_qualify_shots")
         End With
+        
 
         With .ShotGroups("qualify_lock")
             .Shots = Array("left_outlane", "left_inlane", "right_inlane", "right_outlane")

@@ -1268,6 +1268,7 @@ Function Glf_FadeRGB(light, color1, color2, steps)
 		b = b1 + (b2 - b1) * i / (steps - 1)
 		outputArray(i) = light & "|100|" & Glf_RGBToHex(CInt(r), CInt(g), CInt(b))
 	Next
+	
 	Glf_FadeRGB = outputArray
 End Function
 
@@ -1312,6 +1313,8 @@ With CreateGlfShow("flash")
 		.Lights = Array("(lights)|100|000000")
 	End With
 End With
+
+
 
 With CreateGlfShow("flash_color")
 	With .AddStep(Null, Null, 1)
@@ -2157,7 +2160,7 @@ Function BallSaveEventHandler(args)
         Case "timer_start"
             ballSave.TimerStart
         Case "queue_release"
-            If glf_plunger.HasBall = False And ballInReleasePostion = True Then
+            If glf_plunger.HasBall = False And ballInReleasePostion = True  And glf_plunger.IncomingBalls = 0  Then
                 Glf_ReleaseBall(Null)
                 If ballSave.AutoLaunch = True Then
                     SetDelay ballSave.Name&"_auto_launch", "BallSaveEventHandler" , Array(Array("auto_launch", ballSave),Null), 500
@@ -2629,7 +2632,7 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed)
             lightParts = Split(light,"|")
             Set lightStack = glf_lightStacks(lightParts(0))
             If Not lightStack.IsEmpty() Then
-                glf_debugLog.WriteToLog "LightPlayer", "Removing Light " & lightParts(0)
+                'glf_debugLog.WriteToLog "LightPlayer", "Removing Light " & lightParts(0)
                 lightStack.PopByKey(mode & "_" & key)
                 Dim show_key
                 For Each show_key in glf_running_shows.Keys
@@ -2648,7 +2651,7 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed)
                 End If
             End If
         Next
-        glf_debugLog.WriteToLog "LightPlayer", "Removing Light Seq" & mode & "_" & key
+        'glf_debugLog.WriteToLog "LightPlayer", "Removing Light Seq" & mode & "_" & key
     Else
         If UBound(lights) = -1 Then
             Exit Function
@@ -2656,7 +2659,7 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed)
         If IsArray(lights) Then
             'glf_debugLog.WriteToLog "LightPlayer", "Adding Light Seq" & Join(lights) & ". Key:" & mode & "_" & key    
         Else
-            glf_debugLog.WriteToLog "LightPlayer", "Lights not an array!?"
+            'glf_debugLog.WriteToLog "LightPlayer", "Lights not an array!?"
         End If
         'glf_debugLog.WriteToLog "LightPlayer", "Adding Light Seq" & Join(lights) & ". Key:" & mode & "_" & key
         
@@ -2666,7 +2669,6 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed)
             Set lightStack = glf_lightStacks(lightParts(0))
             Dim oldColor : oldColor = Empty
 
-            
             If lightStack.IsEmpty() Then
                 oldColor = "000000"
                 ' If stack is empty, push the color onto the stack and set the light color
@@ -2695,13 +2697,19 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed)
                         Set show_settings = (new GlfShowPlayerItem)()
                         show_settings.Show = cache_name
                         show_settings.Loops = 1
-                        Set new_running_show = (new GlfRunningShow)(cache_name, show_settings.Key, show_settings, priority, Null, Null)
+                        show_settings.Speed = speed
+                        Set new_running_show = (new GlfRunningShow)(cache_name, show_settings.Key, show_settings, priority+1, Null, Null)
                     Else
                         'Build a show for this transition
                         Dim show : Set show = CreateGlfShow(cache_name)
-                        Dim fadeSeq, i, step_duration
-                        fadeSeq = Glf_FadeRGB(lightParts(0), oldColor, lightParts(2), 10)
-                        step_duration = (lightParts(3) / 10)/1000
+                        Dim fadeSeq, i, step_duration, step_number
+                        step_number = lightParts(3) * 0.01
+                        'If step_number < 10 Then
+                        '    step_number = 10
+                        'End If
+                        step_number = step_number + 2
+                        fadeSeq = Glf_FadeRGB(lightParts(0), oldColor, lightParts(2), step_number)
+                        step_duration = (lightParts(3) / step_number)/1000
                         For i=0 to UBound(fadeSeq)
                             With show
                                 With .AddStep(Null, Null, step_duration)
@@ -2716,7 +2724,7 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed)
                         show_settings.Show = cache_name
                         show_settings.Loops = 1
                         show_settings.Speed = speed
-                        Set new_running_show = (new GlfRunningShow)(cache_name, show_settings.Key, show_settings, priority, Null, Null)
+                        Set new_running_show = (new GlfRunningShow)(cache_name, show_settings.Key, show_settings, priority+1, Null, Null)
                     End If
                 End If
             End If
@@ -3601,7 +3609,7 @@ Function MultiballLocksHandler(args)
         Case "reset"
             multiball.Reset
         Case "queue_release"
-            If glf_plunger.HasBall = False And ballInReleasePostion = True Then
+            If glf_plunger.HasBall = False And ballInReleasePostion = True And glf_plunger.IncomingBalls = 0  Then
                 Glf_ReleaseBall(Null)
                 SetDelay multiball.Name&"_auto_launch", "MultiballLocksHandler" , Array(Array("auto_launch", multiball),Null), 500
             Else
@@ -4026,13 +4034,11 @@ Function MultiballsHandler(args)
         Case "queue_release"
             If glf_plunger.HasBall = False And ballInReleasePostion = True And glf_plunger.IncomingBalls = 0 Then
                 Glf_ReleaseBall(Null)
-                debug.print("RELEASE")
                 SetDelay multiball.Name&"_auto_launch", "MultiballsHandler" , Array(Array("auto_launch", multiball),Null), 500
                 If multiball.ReleaseQueuedBalls() > 0 Then
                     SetDelay multiball.Name&"_queued_release", "MultiballsHandler" , Array(Array("queue_release", multiball), Null), 1000    
                 End If
             Else
-                debug.print("RE QUE")
                 SetDelay multiball.Name&"_queued_release", "MultiballsHandler" , Array(Array("queue_release", multiball), Null), 1000
             End If
         Case "auto_launch"
@@ -6305,7 +6311,6 @@ Class GlfRunningShow
             
             If Not lightStack.IsEmpty() Then
                 ' Set the light to the next color on the stack
-                lightStack.PrintStackOrder
                 Dim nextColor
                 Set nextColor = lightStack.Peek()
                 Glf_SetLight light, nextColor("Color")
@@ -6338,6 +6343,18 @@ Function GlfShowStepHandler(args)
             msgbox running_show.CacheName & " show not cached! Problem with caching"
         End If
 '        glf_debugLog.WriteToLog "Running Show", join(cached_show(running_show.CurrentStep))
+        'At this point, any fades add by this show for the lights in this step need to be remove
+        Dim light, lightParts
+        For Each light in cached_show_seq(running_show.CurrentStep)
+            lightParts = Split(light,"|")
+            Dim show_key
+            For Each show_key in glf_running_shows.Keys
+                If Left(show_key, Len("fade_" & running_show.ShowName & "_" & running_show.Key & "_" & lightParts(0))) = "fade_" & running_show.ShowName & "_" & running_show.Key & "_" & lightParts(0) Then
+                    glf_running_shows(show_key).StopRunningShow()
+                End If
+            Next
+        Next
+        
         LightPlayerCallbackHandler running_show.Key, Array(cached_show_seq(running_show.CurrentStep)), running_show.ShowName, running_show.Priority + running_show.ShowSettings.Priority, True, running_show.ShowSettings.Speed
     End If
     If nextStep.Duration = -1 Then

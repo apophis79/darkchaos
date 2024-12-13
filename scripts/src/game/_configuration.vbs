@@ -214,7 +214,17 @@ Function BallDrainSound(args)
     BallDrainSound = args(1)
 End Function 
 
+
 Public Sub CreateSharedShotProfiles()
+
+    With GlfShotProfiles("off_on_color")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("on")
+            .Show = "led_color"
+        End With
+    End With
 
     With GlfShotProfiles("flicker_on")
         With .States("unlit")
@@ -225,6 +235,36 @@ Public Sub CreateSharedShotProfiles()
             .Speed = 4
         End With
     End With
+
+    With GlfShotProfiles("powerups")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("ready")
+            .Show = "flash_color_with_fade"
+            .Speed = 2
+            With .Tokens()
+                .Add "fade", 100
+            End With
+        End With
+        With .States("collected")
+            .Show = "led_color"
+        End With
+    End With
+
+    With GlfShotProfiles("qualified_shot")
+        With .States("unlit")
+            .Show = "off"
+        End With
+        With .States("ready")
+            .Show = "flash_color_with_fade"
+            .Speed = 2
+            With .Tokens()
+                .Add "fade", 100
+            End With
+        End With
+    End With
+
 
 End Sub
 

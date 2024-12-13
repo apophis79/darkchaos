@@ -20,19 +20,20 @@ Sub CreateClusterBombMode
         'Define our shots
         For x = 1 to 3
             With .Shots("cluster_charge"&x)
-                .Profile = "flicker_on"
+                .Profile = "powerups"
                 With .Tokens()
                     .Add "lights", "LCC"&x
                     .Add "color", ClusterBombColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_cluster_charge"&x)
+                    .Events = Array("ready_cluster_charge"&x)
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("reset_cluster_charges")
-                    .State = 0
+                    .Events = Array("light_cluster_charge"&x)
+                    .State = 2
                 End With
+                .RestartEvents = Array("reset_cluster_charges")
             End With
         Next
 
@@ -56,14 +57,28 @@ Sub CreateClusterBombMode
 
 
         With .EventPlayer()
+            .Add "mode_cluster_bombs_started{current_player.cluster_bomb_count == 0}", Array("reset_cluster_charges")
             .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1","cluster_bomb_fired")
             .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2","cluster_bomb_fired","reset_cluster_charges")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 0}", Array("light_cluster_charge1")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1 && current_player.shot_cluster_charge2 == 0}", Array("light_cluster_charge2")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 1 && current_player.shot_cluster_charge3 == 0}", Array("light_cluster_charge3")
+            .Add "reset_cluster_charges", Array("ready_cluster_charge1")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
             .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1","restart_cb_timer")
             .Add "light_cluster_charge3{current_player.cluster_bomb_count == 1}", Array("add_cluster_bomb2")
             .Add "timer_cluster_bomb_reset_complete", Array("reset_cluster_charges")
+        End With
+
+        With .ShowPlayer()
+            With .Events("light_cluster_charge3")
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "ClusterBombShot"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
         End With
 
         With .VariablePlayer()

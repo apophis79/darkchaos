@@ -12,7 +12,7 @@ ComboShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","ce
 ComboLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
 
 Const CombosTickInterval = 1000
-Const CombosTickLimit = 6
+Const CombosTickLimit = 5
 
 Sub CreateCombosMode
     Dim x

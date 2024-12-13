@@ -17,64 +17,49 @@ Sub CreateTimewarpMode
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
 
-        'Define a shot profile with two states (off/on)
-        With .ShotProfiles("timewarped")
-            With .States("unlit")
-                .Show = "off"
-            End With
-            With .States("on")
-                .Show = "flicker_color_on"
-                .Speed = 4
-                With .Tokens()
-                    .Add "color", TimewarpColor
-                End With
-            End With
-        End With
-
-
         'Define our shots
         For x = 1 to 4
             With .Shots("timewarp"&x)
-                .Profile = "timewarped"
+                .Profile = "powerups"
                 With .Tokens()
                     .Add "lights", "LTW"&x
+                    .Add "color", TimewarpColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("ready_timewarp"&x)
+                    .State = 1
                 End With
                 With .ControlEvents()
                     .Events = Array("light_timewarp"&x)
-                    .State = 1
+                    .State = 2
                 End With
                 .RestartEvents = Array("restart_timewarp")
             End With
         Next
 
-        With .ShotGroups("timewarps_completed")
-            .Shots = Array("timewarp1", "timewarp2", "timewarp3", "timewarp4")
-            .RestartEvents = Array("restart_timewarp")
-            .DisableEvents = Array("disable_timewarp")
-        End With
-
         With .EventPlayer()
+            .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("restart_timewarp")
+            .Add "restart_timewarp", Array("ready_timewarp1")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==0}", Array("light_timewarp1")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1 && current_player.shot_timewarp2==0}", Array("light_timewarp2")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==1 && current_player.shot_timewarp3==0}", Array("light_timewarp3")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==1 && current_player.shot_timewarp4==0}", Array("light_timewarp4")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp4==1}", Array("disable_timewarp")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", Array("light_timewarp2","ready_timewarp3")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==2 && current_player.shot_timewarp3==1}", Array("light_timewarp3","ready_timewarp4")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==2 && current_player.shot_timewarp4==1}", Array("light_timewarp4")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp4==2}", Array("disable_timewarp")
             .Add "ball_ended", Array("restart_timewarp")   'will also restart at end of meteor wave
         End With
-        
-        With .LightPlayer()
-            With .Events("disable_timewarp")
-				With .Lights("TimewarpShot")
-					.Color = TimewarpColor
-				End With
-			End With
-            With .Events("restart_timewarp")
-				With .Lights("TimewarpShot")
-					.Color = "000000"
-				End With
-			End With
-        End With
 
+        With .ShowPlayer()
+            With .Events("light_timewarp4")
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "ShipSaveShot"
+                    .Add "color", TimewarpColor
+                End With
+            End With
+        End With
+        
     End With
 End Sub
