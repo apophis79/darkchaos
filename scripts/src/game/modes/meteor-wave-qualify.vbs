@@ -5,11 +5,10 @@
 
 Sub CreateMeteorWaveQualifyMode
 
-
     With CreateGlfMode("meteor_wave_qualify", 1000)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
-        .Debug = True
+        '.Debug = True
         
         With .SegmentDisplayPlayer()
             With .Events("init_pf_display")
@@ -48,7 +47,7 @@ Sub CreateMeteorWaveQualifyMode
         End With
 
         With .VariablePlayer()
-            .Debug = True
+            '.Debug = True
             With .EventName("timer_meteor_countdown_tick")
                 With .Variable("meteor_countdown_value")
                     .Action = "set"
@@ -62,13 +61,11 @@ Sub CreateMeteorWaveQualifyMode
             .Add "init_mwq_timer", Array("init_pf_display")
             .Add "s_Plunger2_active{devices.timers.timewarp.ticks == 0}", Array("start_mwq_timer")
             .Add "mode_meteor_wave_qualify_stopping", Array("stop_mwq_timer")
-            .Add "timer_meteor_countdown_complete", Array("start_meteor_wave","reset_mwq_timer")
+            .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
             .Add "mode_meteor_wave_stopped", Array("restart_mwq_timer")
             .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown
         End With
 
     End With
-
-
 
 End Sub

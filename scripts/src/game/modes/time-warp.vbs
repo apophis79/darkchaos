@@ -9,8 +9,6 @@
 'If a timewarp is started while timewarp is already in process, the pause timer resets to 10 seconds
 'Timewarp inserts are reset to unlit at end of a meteor wave.
 
-Const TimeWarpPauseTicks = 8
-Const TimeWarpTickInterval = 1000
 
 Sub CreateTimewarpMode
     Dim x

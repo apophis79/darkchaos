@@ -104,9 +104,9 @@ Sub CreateBaseMode()
             Next
         End With
 
-        With .EventPlayer()
-            .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
-        End With
+        ' With .EventPlayer()
+        '     .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
+        ' End With
 
     End With
 

@@ -36,7 +36,7 @@ Sub CreateShipSaveMode
 
         With .EventPlayer()
             .Add "mode_ship_save_started{current_player.shot_ship_save1==0}", Array("restart_ship_save")
-            .Add "restart_ship_save", Array("ready_ship_save1")
+            .Add "restart_ship_save", Array("ready_ship_save1","clear_ship_save")
             .Add "right_orbit_hit{current_player.shot_ship_save1 == 1}", Array("light_ship_save1","ready_ship_save2")
             .Add "right_orbit_hit{current_player.shot_ship_save1 == 2 && current_player.shot_ship_save2 == 1}", Array("light_ship_save2","ready_ship_save3")
             .Add "right_orbit_hit{current_player.shot_ship_save2 == 2 && current_player.shot_ship_save3 == 1}", Array("light_ship_save3")
@@ -60,9 +60,22 @@ Sub CreateShipSaveMode
         End With
 
         With .VariablePlayer()
+            '.Debug = True
             With .EventName("right_orbit_hit")
 				With .Variable("score")
 					.Int = 2750
+				End With
+			End With
+            With .EventName("clear_ship_save")
+				With .Variable("meteor_mb_shootagain")
+                    .Action = "set"
+					.Int = MeteorMBShootAgainTime
+				End With
+			End With
+            With .EventName("light_ship_save3")
+				With .Variable("meteor_mb_shootagain")
+                    .Action = "set"
+					.Int = ShipSaveShootAgainTime
 				End With
 			End With
 		End With

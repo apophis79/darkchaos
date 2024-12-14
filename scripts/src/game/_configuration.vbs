@@ -3,6 +3,7 @@
 '	ZGCF:  GLF Configurations
 '******************************************************
 
+' Light color settings
 Const GIColorWhite = "ffffff"
 Const GIColor2700k = "ffA957"
 Const GIColor3000k = "ffb46b"
@@ -24,10 +25,11 @@ Const MeteorWarmColor = "edb600"
 Const MeteorHotColor = "ed1800"
 
 
+' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
 
+' Meteor wave settings
 Const MeteorTimerInitTickInterval = 1000
-
 Const MeteorTimerTickInterval = 1100
 Const MeteorDropTicks = 1
 Const MeteorCoolTicks = 4
@@ -36,6 +38,16 @@ Const MeteorHotTicks = 4
 
 Dim MeteorTotalTicks
 MeteorTotalTicks = MeteorDropTicks + MeteorCoolTicks + MeteorWarmTicks + MeteorHotTicks
+
+' Meteor wave multiball settings
+Const MeteorMBShootAgainTime = 8000
+
+' Ship save settings (more shoot again time)
+Const ShipSaveShootAgainTime = 16000
+
+' Timewarp settings
+Const TimeWarpPauseTicks = 8
+Const TimeWarpTickInterval = 1000
 
 
 Sub ConfigureGlfDevices
@@ -247,6 +259,7 @@ Sub ConfigureGlfDevices
 
     'Initial Vars
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
+    Glf_SetInitialPlayerVar "meteor_mb_shootagain", MeteorMBShootAgainTime
     
 End Sub
 

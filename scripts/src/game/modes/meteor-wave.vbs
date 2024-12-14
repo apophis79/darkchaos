@@ -18,7 +18,7 @@
 ' - add cluster bomb firing effect                  DONE
 ' - add post diverter up                            DONE
 ' - add health bar effects (negative and positive)  DONE
-' - add timewarp effect                             in progress
+' - add timewarp effect                             DONE
 ' - kill flippers when health runs out              
 ' - suppress other modes during meteor MB mode      
 ' - add shows (first light shows)                   
@@ -34,7 +34,7 @@ Sub CreateMeteorWaveMode
     Dim x
 
     With CreateGlfMode("meteor_wave", 1000)
-        .Debug = True
+        '.Debug = True
         .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("stop_meteor_wave")
 
@@ -99,7 +99,7 @@ Sub CreateMeteorWaveMode
         For x = 1 to 4   'for each meteor
 
             With .StateMachines("meteor"&x)
-                .Debug = True
+                '.Debug = True
                 .PersistState = False
                 .StartingState = "init"
                 
@@ -181,7 +181,7 @@ Sub CreateMeteorWaveMode
             End With
 
             With .VariablePlayer()
-                .Debug = true
+                '.Debug = true
                 With .EventName("meteor"&x&"_raise")
                     With .Variable("num_meteors_to_raise")
                         .Action = "add"
@@ -228,7 +228,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .RandomEventPlayer()
-            .Debug = True
+            '.Debug = True
             With .EventName("proton_fired")
                 .Add "meteor1_knockdown{current_player.shot_meteor1_light > 0}", 25
                 .Add "meteor2_knockdown{current_player.shot_meteor2_light > 0}", 25
@@ -274,7 +274,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .VariablePlayer()
-            .Debug = true
+            '.Debug = true
 		    With .EventName("mode_meteor_wave_started")
 				With .Variable("num_meteors_to_raise")
                     .Action = "set"

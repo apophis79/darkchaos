@@ -13,9 +13,14 @@ Sub CreateMeteorMultiballMode
     Dim x
 
     With CreateGlfMode("meteor_multiball", 1000)
-        .Debug = True
+        '.Debug = True
         .StartEvents = Array("start_meteor_multiball")
         .StopEvents = Array("mode_meteor_multiball_stopped")
+
+        With .EventPlayer()
+            .Add "mode_meteor_multiball_started", Array("clear_ship_save")
+        End With
+                    
 
         With .ShowPlayer()
             With .Events("mode_meteor_multiball_started")
@@ -43,10 +48,10 @@ Sub CreateMeteorMultiballMode
         End With
 
         With .Multiballs("meteor")
-            .StartEvents = Array("mode_meteor_multiball_started","start_meteor_multiball")
+            .StartEvents = Array("mode_meteor_multiball_started")
             .BallCount = 3
             .BallCountType = "total"
-            .ShootAgain = 10000  'FIXME this needs to respond to ship save mode result
+            .ShootAgain = "current_player.meteor_mb_shootagain"
             .HurryUp = 3000
             .GracePeriod = 2000
             .Debug = True
