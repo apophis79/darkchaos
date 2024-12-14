@@ -23,9 +23,7 @@
 ' - add shows (first light shows)                   
 
 
-Const MeteorWaveDelayTicks = 45  'uses 1000ms interval
-
-Const MeteorTimerInitTickInterval = 500
+Const MeteorTimerInitTickInterval = 1000
 
 Const MeteorTimerTickInterval = 1100
 Const MeteorDropTicks = 1
@@ -112,7 +110,6 @@ Sub CreateMeteorWaveMode
                 'States
                 With .States("init")
                     .Label = "Init State"
-                    .EventsWhenStarted = Array("init_meteors","restart_meteor"&x&"_init_timer") 
                 End With
                 With .States("down")
                     .Label = "Down State"
@@ -135,7 +132,7 @@ Sub CreateMeteorWaveMode
                 With .Transitions()
                     .Source = Array("init")
                     .Target = "up_cool"
-                    .Events = Array("timer_meteor"&x&"_init_complete")
+                    .Events = Array("meteor"&x&"_raise")
                     .EventsWhenTransitioning = Array("restart_meteor"&x&"_timer")
                 End With
                 With .Transitions()
@@ -170,17 +167,6 @@ Sub CreateMeteorWaveMode
                     .Target = "down"
                     .Events = Array("stop_meteor_wave","cluster_bomb_fired",GLF_BALL_ENDED)
                     .EventsWhenTransitioning = Array("meteor"&x&"_knockdown")
-                End With
-            End With
-        
-
-            With .Timers("meteor"&x&"_init")
-                .TickInterval = MeteorTimerInitTickInterval
-                .StartValue = 0
-                .EndValue = 1  'FIXME  num should semi-random int from 1 to 4
-                With .ControlEvents()
-                    .EventName = "restart_meteor"&x&"_init_timer"
-                    .Action = "restart"
                 End With
             End With
 
@@ -258,8 +244,25 @@ Sub CreateMeteorWaveMode
                 .ForceAll = False
                 .ForceDifferent = False
             End With
+            With .EventName("timer_meteors_init_tick")
+                .Add "meteor1_raise{current_player.shot_meteor1_light == 0}", 25
+                .Add "meteor2_raise{current_player.shot_meteor2_light == 0}", 25
+                .Add "meteor3_raise{current_player.shot_meteor3_light == 0}", 25
+                .Add "meteor4_raise{current_player.shot_meteor4_light == 0}", 25
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
         End With
 
+        With .Timers("meteors_init")
+            .TickInterval = MeteorTimerInitTickInterval
+            .StartValue = 0
+            .EndValue = 4 
+            With .ControlEvents()
+                .EventName = "mode_meteor_wave_started"
+                .Action = "restart"
+            End With
+        End With
         
 
         With .LightPlayer()
@@ -292,33 +295,5 @@ Sub CreateMeteorWaveMode
 		End With
 
     End With
-
-
-
-    ' Meteor Wave Qualify Timer
-
-    With CreateGlfMode("meteor_wave_qualify", 1000)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
-        
-        With .SegmentDisplayPlayer()
-            With .Events("mode_meteor_wave_qualify_started")
-                With .Display("pf")
-                    .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
-                End With
-            End With
-        End With
-
-        With .Timers("meteor_countdown")
-            .TickInterval = 1000
-            .StartValue = MeteorWaveDelayTicks
-            .Direction = "down"
-            .EndValue = 0
-            .StartRunning = True
-        End With
-        .Debug = True
-    End With
-
-
 
 End Sub

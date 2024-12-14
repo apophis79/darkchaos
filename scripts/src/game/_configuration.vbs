@@ -227,6 +227,7 @@ Sub ConfigureGlfDevices
     CreateCombosMode
     CreateMoonMultiballMode
 
+    CreateMeteorWaveQualifyMode
     CreateMeteorWaveMode
     CreateMeteorMultiballMode
     

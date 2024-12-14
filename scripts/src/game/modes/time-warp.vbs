@@ -9,6 +9,8 @@
 'If a timewarp is started while timewarp is already in process, the pause timer resets to 10 seconds
 'Timewarp inserts are reset to unlit at end of a meteor wave.
 
+Const TimeWarpPauseTicks = 8
+Const TimeWarpTickInterval = 1000
 
 Sub CreateTimewarpMode
     Dim x
@@ -41,12 +43,12 @@ Sub CreateTimewarpMode
             .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("restart_timewarp")
             .Add "restart_timewarp", Array("ready_timewarp1")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", Array("light_timewarp2","ready_timewarp3")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==2 && current_player.shot_timewarp3==1}", Array("light_timewarp3","ready_timewarp4")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==2 && current_player.shot_timewarp4==1}", Array("light_timewarp4")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp4==2}", Array("disable_timewarp")
-            .Add "ball_ended", Array("restart_timewarp")   'will also restart at end of meteor wave
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", Array("light_timewarp2","ready_timewarp3","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==2 && current_player.shot_timewarp3==1}", Array("light_timewarp3","ready_timewarp4","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==2 && current_player.shot_timewarp4==1}", Array("light_timewarp4","restart_tw_timer")
+            .Add "timer_timewarp_complete", Array("start_mwq_timer")
+            .Add "meteor_wave_ended", Array("restart_timewarp") 
         End With
 
         With .ShowPlayer()
@@ -61,14 +63,38 @@ Sub CreateTimewarpMode
             End With
         End With
 
+        With .Timers("timewarp")
+            .TickInterval = TimeWarpTickInterval
+            .StartValue = 0
+            .EndValue = TimeWarpPauseTicks
+            With .ControlEvents()
+                .EventName = "restart_tw_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "restart_timewarp"
+                .Action = "reset"
+            End With
+        End With
+        
         
         With .VariablePlayer()
             With .EventName("timewarps_completed_hit")
 				With .Variable("score")
-					.Int = 1510
+					.Int = 150
 				End With
 			End With
 		End With
+
+        With .SegmentDisplayPlayer()
+            With .Events("restart_tw_timer")   'FIXME  Can I use an event to clear the display instead of using "Expire"?
+                With .Display("pf")
+                    .Text = """00"""
+                    .Flashing = "all"
+                    .Expire = TimeWarpPauseTicks*TimeWarpTickInterval
+                End With
+            End With
+        End With
 
     End With
 End Sub
