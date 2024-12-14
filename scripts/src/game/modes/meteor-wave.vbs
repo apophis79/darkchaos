@@ -274,7 +274,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .VariablePlayer()
-            '.Debug = true
+            .Debug = true
 		    With .EventName("mode_meteor_wave_started")
 				With .Variable("num_meteors_to_raise")
                     .Action = "set"
