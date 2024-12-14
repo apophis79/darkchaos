@@ -2,8 +2,6 @@
 
 'Meteor Wave Qualify Mode.
 
-Const MeteorWaveDelayTicks = 45  'uses 1000ms interval
-
 
 Sub CreateMeteorWaveQualifyMode
 
@@ -14,7 +12,7 @@ Sub CreateMeteorWaveQualifyMode
         .Debug = True
         
         With .SegmentDisplayPlayer()
-            With .Events("mode_meteor_wave_qualify_started")
+            With .Events("init_pf_display")
                 With .Display("pf")
                     .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
                 End With
@@ -23,9 +21,14 @@ Sub CreateMeteorWaveQualifyMode
 
         With .Timers("meteor_countdown")
             .TickInterval = 1000
-            .StartValue = MeteorWaveDelayTicks
+            .StartValue = "current_player.meteor_countdown_value"
             .Direction = "down"
             .EndValue = 0
+            ' With .ControlEvents()
+            '     .EventName = "init_mwq_timer"
+            '     .Action = "jump"
+            '     .Value = "current_player.meteor_countdown_value"
+            ' End With
             With .ControlEvents()
                 .EventName = "start_mwq_timer"
                 .Action = "start"
@@ -49,17 +52,19 @@ Sub CreateMeteorWaveQualifyMode
             With .EventName("timer_meteor_countdown_tick")
                 With .Variable("meteor_countdown_value")
                     .Action = "set"
-					.Int = "devices.timers.meteor_countdown.ticks"   'FIXME  Need to get the last countdown value as the starting value on next ball
+					.Int = "devices.timers.meteor_countdown.ticks" 
 				End With
 			End With
 		End With
         
         With .EventPlayer()
+            .Add "mode_meteor_wave_qualify_started", Array("init_mwq_timer")
+            .Add "init_mwq_timer", Array("init_pf_display")
             .Add "s_Plunger2_active{devices.timers.timewarp.ticks == 0}", Array("start_mwq_timer")
-            .Add "mode_meteor_wave_qualify_stopped", Array("stop_mwq_timer")
+            .Add "mode_meteor_wave_qualify_stopping", Array("stop_mwq_timer")
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave","reset_mwq_timer")
             .Add "mode_meteor_wave_stopped", Array("restart_mwq_timer")
-            .Add "restart_tw_timer", Array("stop_mwq_timer")
+            .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown
         End With
 
     End With

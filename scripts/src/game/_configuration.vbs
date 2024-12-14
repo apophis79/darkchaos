@@ -24,9 +24,23 @@ Const MeteorWarmColor = "edb600"
 Const MeteorHotColor = "ed1800"
 
 
+Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
+
+Const MeteorTimerInitTickInterval = 1000
+
+Const MeteorTimerTickInterval = 1100
+Const MeteorDropTicks = 1
+Const MeteorCoolTicks = 4
+Const MeteorWarmTicks = 4
+Const MeteorHotTicks = 4
+
+Dim MeteorTotalTicks
+MeteorTotalTicks = MeteorDropTicks + MeteorCoolTicks + MeteorWarmTicks + MeteorHotTicks
+
 
 Sub ConfigureGlfDevices
 
+    ' Load up the shows
     CreateShows()
 
     ' Plunger
@@ -208,7 +222,7 @@ Sub ConfigureGlfDevices
     segment_display_pf.LightGroup = "pf_seg"
 
 
-    ' Trough
+    ' Trough sound effects
     AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
     AddPinEventListener GLF_BALL_DRAIN, "ball_drain_sound", "BallDrainSound", 100, Null
 
@@ -230,12 +244,14 @@ Sub ConfigureGlfDevices
     CreateMeteorWaveQualifyMode
     CreateMeteorWaveMode
     CreateMeteorMultiballMode
+
+    'Initial Vars
+    Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     
 End Sub
 
 
 ' Event callbacks
-
 Function OnTroughEject(args)
     RandomSoundBallRelease swTrough1
 End Function
@@ -246,6 +262,8 @@ Function BallDrainSound(args)
 End Function 
 
 
+
+' Shared profiles
 Public Sub CreateSharedShotProfiles()
 
     With GlfShotProfiles("off_on_color")
@@ -295,7 +313,6 @@ Public Sub CreateSharedShotProfiles()
             End With
         End With
     End With
-
 
 End Sub
 

@@ -12,27 +12,23 @@
 ' TODO:
 ' - GI event triggering at end of Wave              DONE
 ' - Reset MB if still going at start of new wave    DONE
-' - include inital raise randomness                 
+' - include inital raise randomness                 DONE         
 ' - include wave meteor counts                       
-' - add proton cannon firing effect                 need randome event player for this
+' - add proton cannon firing effect                 DONE
 ' - add cluster bomb firing effect                  DONE
 ' - add post diverter up                            DONE
 ' - add health bar effects (negative and positive)  DONE
+' - add timewarp effect                             in progress
 ' - kill flippers when health runs out              
 ' - suppress other modes during meteor MB mode      
 ' - add shows (first light shows)                   
 
+' Known issues:
+' - moon mb not releasing all balls. ball count get messed up
+' - shot initializations at start of new ball now working as intended yet
+' - stutter at end of the wave
 
-Const MeteorTimerInitTickInterval = 1000
 
-Const MeteorTimerTickInterval = 1100
-Const MeteorDropTicks = 1
-Const MeteorCoolTicks = 4
-Const MeteorWarmTicks = 4
-Const MeteorHotTicks = 4
-
-Dim MeteorTotalTicks
-MeteorTotalTicks = MeteorDropTicks + MeteorCoolTicks + MeteorWarmTicks + MeteorHotTicks
 
 Sub CreateMeteorWaveMode
     Dim x
@@ -207,9 +203,6 @@ Sub CreateMeteorWaveMode
             End With
 
         Next
-
-
-
 
         With .EventPlayer()
             .Add "mode_meteor_wave_started", Array("start_meteor_multiball")
