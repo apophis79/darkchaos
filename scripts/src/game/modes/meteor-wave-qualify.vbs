@@ -60,8 +60,7 @@ Sub CreateMeteorWaveQualifyMode
         With .EventPlayer()
             .Add "mode_meteor_wave_qualify_started", Array("init_mwq_timer")
             .Add "init_mwq_timer", Array("init_pf_display")
-            .Add "s_Plunger2_active{devices.timers.timewarp.ticks == 0}", Array("start_mwq_timer")
-            '.Add "mode_meteor_wave_qualify_stopping", Array("stop_mwq_timer")
+            .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
             .Add "stop_meteor_wave", Array("restart_mwq_timer")
             .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown

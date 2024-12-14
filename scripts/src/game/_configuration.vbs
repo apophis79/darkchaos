@@ -258,6 +258,7 @@ Sub ConfigureGlfDevices
     CreateMeteorMultiballMode
 
     'Initial Vars
+    Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     Glf_SetInitialPlayerVar "meteor_mb_shootagain", MeteorMBShootAgainTime
     

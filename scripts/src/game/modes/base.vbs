@@ -108,6 +108,22 @@ Sub CreateBaseMode()
             .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
         End With
 
+        With .VariablePlayer()
+            .Debug = true
+		    With .EventName("mode_base_started")
+				With .Variable("ball_just_started")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("s_Plunger2_active")
+				With .Variable("ball_just_started")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+		End With
+
     End With
 
 End Sub
