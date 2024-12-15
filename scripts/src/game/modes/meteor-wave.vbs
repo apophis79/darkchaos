@@ -35,7 +35,8 @@ Sub CreateMeteorWaveMode
 
     With CreateGlfMode("meteor_wave", 1000)
         .Debug = True
-        .StartEvents = Array("start_meteor_wave")
+        .StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 9}")
+        ' .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("stop_meteor_wave")
 
         'Define a shot profile with four states, health meter leves
@@ -184,7 +185,7 @@ Sub CreateMeteorWaveMode
 
         With .EventPlayer()
             .Debug = True
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball")
+            '.Add "mode_meteor_wave_started", Array("start_meteor_multiball")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 1}", Array("fire_proton_round1","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 2}", Array("fire_proton_round2","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 3}", Array("fire_proton_round3","proton_fired")

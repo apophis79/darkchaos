@@ -106,7 +106,20 @@ Sub CreateBaseMode()
 
         With .EventPlayer()
             .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
+            .Add "start_meteor_wave", Array("restart_meteor_wave_init")
         End With
+
+
+        With .Timers("meteor_wave_init")
+            .TickInterval = 100
+            .StartValue = 0
+            .EndValue = 10 
+            With .ControlEvents()
+                .EventName = "restart_meteor_wave_init"
+                .Action = "restart"
+            End With
+        End With
+
 
         With .VariablePlayer()
             .Debug = true

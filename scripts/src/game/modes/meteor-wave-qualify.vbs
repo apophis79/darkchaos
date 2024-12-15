@@ -7,7 +7,9 @@ Sub CreateMeteorWaveQualifyMode
 
     With CreateGlfMode("meteor_wave_qualify", 900)
         .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        .StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 2}")
+        ' .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
+        ' .StopEvents = Array("ball_ended","mode_meteor_wave_started")
         .Debug = True
         
         With .SegmentDisplayPlayer()
