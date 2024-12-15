@@ -14,8 +14,9 @@ Sub CreateTimewarpMode
     Dim x
 
     With CreateGlfMode("timewarp", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
+        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        .Debug = True
 
         'Define our shots
         For x = 1 to 4
@@ -38,6 +39,7 @@ Sub CreateTimewarpMode
         Next
 
         With .EventPlayer()
+            .Debug = True
             .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("restart_timewarp")
             .Add "restart_timewarp", Array("ready_timewarp1")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")

@@ -15,8 +15,8 @@ Sub CreateShieldsMode
     Dim x
 
     With CreateGlfMode("shields", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
+        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")

@@ -15,9 +15,9 @@ Sub CreateMysteryMode
     Dim x
 
     With CreateGlfMode("mystery", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
-        '.Debug = True
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
+        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        .Debug = True
      
         'Define our shots
         For x = 1 to 5

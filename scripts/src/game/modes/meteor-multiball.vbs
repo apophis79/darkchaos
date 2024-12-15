@@ -13,9 +13,9 @@ Sub CreateMeteorMultiballMode
     Dim x
 
     With CreateGlfMode("meteor_multiball", 1000)
-        '.Debug = True
+        .Debug = True
         .StartEvents = Array("start_meteor_multiball")
-        .StopEvents = Array("mode_meteor_multiball_stopped")
+        .StopEvents = Array("ball_ended")
 
         With .EventPlayer()
             .Add "mode_meteor_multiball_started", Array("clear_ship_save")

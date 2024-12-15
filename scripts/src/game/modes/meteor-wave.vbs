@@ -20,8 +20,8 @@
 ' - add health bar effects (negative and positive)  DONE
 ' - add timewarp effect                             DONE
 ' - kill flippers when health runs out              
-' - suppress other modes during meteor MB mode
-'     - health should stay active   
+' - suppress other modes during meteor MB mode      DONE
+'     - health, protons, and cluster bombs should stay active   
 ' - add shows (first light shows)                   
 
 ' Known issues:
@@ -35,7 +35,7 @@ Sub CreateMeteorWaveMode
     Dim x
 
     With CreateGlfMode("meteor_wave", 1000)
-        '.Debug = True
+        .Debug = True
         .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("stop_meteor_wave")
 
@@ -100,7 +100,7 @@ Sub CreateMeteorWaveMode
         For x = 1 to 4   'for each meteor
 
             With .StateMachines("meteor"&x)
-                '.Debug = True
+                .Debug = True
                 .PersistState = False
                 .StartingState = "init"
                 
@@ -182,7 +182,7 @@ Sub CreateMeteorWaveMode
             End With
 
             With .VariablePlayer()
-                '.Debug = true
+                .Debug = true
                 With .EventName("meteor"&x&"_raise")
                     With .Variable("num_meteors_to_raise")
                         .Action = "add"
@@ -206,6 +206,7 @@ Sub CreateMeteorWaveMode
         Next
 
         With .EventPlayer()
+            .Debug = True
             .Add "mode_meteor_wave_started", Array("start_meteor_multiball")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 1}", Array("fire_proton_round1","proton_fired")
             .Add "s_TargetMystery3_active{current_player.proton_round_count == 2}", Array("fire_proton_round2","proton_fired")
@@ -225,7 +226,8 @@ Sub CreateMeteorWaveMode
             .Add "center_orbit_right_hit{current_player.proton_round_count == 4}", Array("fire_proton_round4","proton_fired")
             .Add "center_orbit_right_hit{current_player.proton_round_count == 5}", Array("fire_proton_round5","proton_fired")
             .Add "center_orbit_right_hit{current_player.proton_round_count == 6}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-            .Add "meteor_dropped{current_player.num_meteors_to_drop==0}", Array("stop_meteor_wave","restart_timewarp","restart_ship_save")
+            .Add "meteor_dropped", Array("check_meteor_wave") 'avoids race cond with variableplayer?
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("stop_meteor_wave","restart_timewarp","restart_ship_save")
         End With
 
         With .RandomEventPlayer()
@@ -251,7 +253,7 @@ Sub CreateMeteorWaveMode
         With .Timers("meteors_init")
             .TickInterval = MeteorTimerInitTickInterval
             .StartValue = 0
-            .EndValue = 4 
+            .EndValue = 5 
             With .ControlEvents()
                 .EventName = "mode_meteor_wave_started"
                 .Action = "restart"

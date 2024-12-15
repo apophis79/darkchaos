@@ -7,8 +7,8 @@ Sub CreateBaseMode()
     Dim x
 
     With CreateGlfMode("base", 100)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
+        .StartEvents = Array(GLF_GAME_START)
+        .StopEvents = Array(GLF_GAME_OVER)
 
         With .SegmentDisplayPlayer()
             With .Events("mode_base_started")
@@ -44,7 +44,7 @@ Sub CreateBaseMode()
         End With
 
         With .LightPlayer()
-            With .Events("mode_base_started")
+            With .Events(GLF_BALL_STARTED)
                 With .Lights("GI")
                     .Color = GIColor3000k  '3000k
                     .Fade = 200
@@ -110,7 +110,7 @@ Sub CreateBaseMode()
 
         With .VariablePlayer()
             .Debug = true
-		    With .EventName("mode_base_started")
+		    With .EventName(GLF_BALL_STARTED)
 				With .Variable("ball_just_started")
                     .Action = "set"
 					.Int = 1

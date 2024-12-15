@@ -2372,16 +2372,14 @@ Class GlfEventPlayer
     Private m_eventValues
 
     Public Property Get Name() : Name = "event_player" : End Property
-    Public Property Let Debug(value)
-        m_debug = value
-    End Property
 
     Public Property Get Events() : Set Events = m_events : End Property
+    Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(mode)
         m_mode = mode.Name
         m_priority = mode.Priority
-
+        m_debug = False
         Set m_events = CreateObject("Scripting.Dictionary")
         Set m_eventValues = CreateObject("Scripting.Dictionary")
         Set m_base_device = (new GlfBaseModeDevice)(mode, "event_player", Me)
@@ -2418,13 +2416,14 @@ Class GlfEventPlayer
         End If
         Dim evtValue
         For Each evtValue In m_eventValues(evt)
+            Log "Dispatching Event: " & evtValue
             DispatchPinEvent evtValue, Null
         Next
     End Sub
 
     Private Sub Log(message)
         If m_debug = True Then
-            glf_debugLog.WriteToLog m_name, message
+            glf_debugLog.WriteToLog m_mode & "_event_player", message
         End If
     End Sub
 
@@ -6946,6 +6945,7 @@ Class GlfTimer
         Next
         m_ticks = m_start_value.Value
         m_ticks_remaining = m_ticks
+        Log "Activating Timer"
         If m_start_running = True Then
             StartTimer()
         End If
@@ -7203,7 +7203,7 @@ Function TimerEventHandler(args)
     End If
     Dim evt : evt = ownProps(0)
     Dim timer : Set timer = ownProps(1)
-    
+    'debug.print "TimerEventHandler: " & timer.Name & ": " & evt
     Select Case evt
         Case "action"
             Dim controlEvent : Set controlEvent = ownProps(2)
@@ -8556,7 +8556,7 @@ Class GlfLightSegmentDisplay
         Dim top_text_stack_entry
         If m_text_stack.IsEmpty() Then
             Dim empty_text : Set empty_text = (new GlfInput)("""" & String(m_size, " ") & """")
-            Set top_text_stack_entry = (new GlfTextStackEntry)(empty_text,Null,"no_flash","",Null,Null,-999999,"")
+            Set top_text_stack_entry = (new GlfTextStackEntry)(empty_text,Null,"no_flash","",Null,Null,999999,"")
         Else
             Set top_text_stack_entry = m_text_stack.Peek()
         End If
@@ -8642,6 +8642,7 @@ Class GlfLightSegmentDisplay
 
     Public Sub CurrentPlaceholderChanged()
         Dim text_value : text_value = m_current_text_stack_entry.text.Value()
+        'msgbox text_value
         If text_value = False Then
             text_value = String(m_size, " ")
         End If
@@ -8755,16 +8756,6 @@ Class GlfTextStack
             SortStackByPriority
         End If
     End Sub
-
-    ' Pop the top entry from the stack
-    Public Function Pop()
-        If UBound(stack) >= 0 Then
-            Set Pop = stack(UBound(stack))
-            ReDim Preserve stack(UBound(stack) - 1)
-        Else
-            Set Pop = Nothing
-        End If
-    End Function
 
     ' Pop a specific entry from the stack by key
     Public Function PopByKey(key)
