@@ -20,7 +20,8 @@
 ' - add health bar effects (negative and positive)  DONE
 ' - add timewarp effect                             DONE
 ' - kill flippers when health runs out              
-' - suppress other modes during meteor MB mode      
+' - suppress other modes during meteor MB mode
+'     - health should stay active   
 ' - add shows (first light shows)                   
 
 ' Known issues:
@@ -228,7 +229,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .RandomEventPlayer()
-            '.Debug = True
+            .Debug = True
             With .EventName("proton_fired")
                 .Add "meteor1_knockdown{current_player.shot_meteor1_light > 0}", 25
                 .Add "meteor2_knockdown{current_player.shot_meteor2_light > 0}", 25

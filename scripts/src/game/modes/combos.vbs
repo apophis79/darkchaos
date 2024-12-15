@@ -7,12 +7,6 @@
 'If a combo shot is not hit within a certain time period, the combo meter goes backt zero
 'If the combo meter gets fully lit (all 8 lights), then Combo Command mini wizard mode starts.
 
-Dim ComboShotNames, ComboLightNames
-ComboShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
-ComboLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
-
-Const CombosTickInterval = 1000
-Const CombosTickLimit = 5
 
 Sub CreateCombosMode
     Dim x
@@ -25,12 +19,12 @@ Sub CreateCombosMode
 
         With .ShowPlayer()
             For x = 1 to 8
-                With .Events(ComboShotNames(x-1)&"_hit{current_player.combos_value>0}")
+                With .Events(MainShotNames(x-1)&"_hit{current_player.combos_value>0}")
                     .Show = "flash_color"
                     .Speed = 15
                     .Loops = 5
                     With .Tokens()
-                        .Add "lights", ComboLightNames(x-1)
+                        .Add "lights", MainShotLightNames(x-1)
                         .Add "color", CombosColor
                     End With
                 End With
@@ -58,14 +52,14 @@ Sub CreateCombosMode
         With .EventPlayer()
             .Add "mode_combos_started", Array("reset_combos")
             .Add "timer_combos_reset_complete", Array("reset_combos")
-            .Add ComboShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(2)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(3)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(4)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(5)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
-            .Add ComboShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(2)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(3)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(4)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(5)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
             .Add "check_combos{current_player.combos_value==0}", Array("add_combos")
             .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos")
             .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos")

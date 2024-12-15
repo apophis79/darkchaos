@@ -5,7 +5,7 @@
 
 Sub CreateMeteorWaveQualifyMode
 
-    With CreateGlfMode("meteor_wave_qualify", 1000)
+    With CreateGlfMode("meteor_wave_qualify", 900)
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
         .Debug = True

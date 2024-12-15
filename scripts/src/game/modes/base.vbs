@@ -56,7 +56,7 @@ Sub CreateBaseMode()
         'The main shots sequences
         With .SequenceShots("left_side_up")
             .SwitchSequence = Array("s_LeftBumper1", "s_LeftBumper2")
-            .SequenceTimeout = 300
+            .SequenceTimeout = 400
         End With
 
         With .SequenceShots("left_side_down")

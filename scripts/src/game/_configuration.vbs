@@ -16,6 +16,7 @@ Const MysteryColor = "d14c00"
 Const MoonColor = "ccbb00"
 Const ClusterBombColor = "dd00dd"
 Const CombosColor = "ffb46b"
+Const TrainingColor = "d14c00"
 Const HealthColor1 = "00dd00"
 Const HealthColor2 = "d14c00"
 Const HealthColor3 = "ff0300"
@@ -24,6 +25,11 @@ Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
 Const MeteorHotColor = "ed1800"
 
+
+' Array of main shots and associated light names (used for combos and training modes)
+Dim MainShotNames, MainShotLightNames
+MainShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
+MainShotLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
 
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
@@ -48,6 +54,10 @@ Const ShipSaveShootAgainTime = 16000
 ' Timewarp settings
 Const TimeWarpPauseTicks = 8
 Const TimeWarpTickInterval = 1000
+
+' Combos settings
+Const CombosTickInterval = 1000
+Const CombosTickLimit = 5
 
 
 Sub ConfigureGlfDevices
@@ -250,6 +260,7 @@ Sub ConfigureGlfDevices
     CreateClusterBombMode
     CreateProtonCannonMode
     CreateHealthMode
+    CreateTrainingMode
     CreateCombosMode
     CreateMoonMultiballMode
 
