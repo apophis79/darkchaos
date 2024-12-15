@@ -260,9 +260,11 @@ Sub ConfigureGlfDevices
     CreateClusterBombMode
     CreateProtonCannonMode
     CreateHealthMode
-    CreateTrainingMode
     CreateCombosMode
     CreateMoonMultiballMode
+
+    CreateTrainingQualifyMode
+    'CreateTrainingMode
 
     CreateMeteorWaveQualifyMode
     CreateMeteorWaveMode

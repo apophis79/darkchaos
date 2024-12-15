@@ -26,7 +26,6 @@
 
 ' Known issues:
 ' - moon mb not releasing all balls. ball count get messed up
-' - shot initializations at start of new ball now working as intended yet
 ' - stutter at end of the wave
 
 

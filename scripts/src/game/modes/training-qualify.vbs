@@ -1,17 +1,19 @@
 
 
-'Training Mode.
+'Training Qualify Mode.
 
 'All of the training shots are initially lit. Hit the shots to make them dark.
 'Hit all the shots to qualify training mode in the scoop.
+'Starts with three shots to qualify training.. these are randomly chosen.
+'An additional shot is added to qualify for each successive training round.
+'Once qualified, the scoop is lit to start training.
 
 
 
-
-Sub CreateTrainingMode
+Sub CreateTrainingQualifyMode
     Dim x
 
-    With CreateGlfMode("training", 510)
+    With CreateGlfMode("training_qualify", 510)
         .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
         .StopEvents = Array("ball_ended","mode_meteor_wave_started")
         .Debug = True
@@ -68,7 +70,7 @@ Sub CreateTrainingMode
 
         ' Players
         With .EventPlayer()
-            '.Add "mode_training_started", Array("restart_qualify_training")
+            '.Add "mode_training_qualify_started", Array("restart_qualify_training")
             .Add "qualify_training_on_complete", Array("disable_qualify_training")
             .Add "s_Scoop_active{current_player.shot_training_ready==1}", Array("restart_qualify_training") 
         End With
