@@ -129,7 +129,7 @@ Sub CreateMeteorWaveMode
                 With .Transitions()
                     .Source = Array("init")
                     .Target = "up_cool"
-                    .Events = Array("meteor"&x&"_raise")
+                    .Events = Array("meteor"&x&"_start")
                     .EventsWhenTransitioning = Array("restart_meteor"&x&"_timer")
                 End With
                 With .Transitions()
@@ -239,10 +239,10 @@ Sub CreateMeteorWaveMode
                 .ForceDifferent = False
             End With
             With .EventName("timer_meteors_init_tick")
-                .Add "meteor1_raise{current_player.shot_meteor1_light == 0}", 25
-                .Add "meteor2_raise{current_player.shot_meteor2_light == 0}", 25
-                .Add "meteor3_raise{current_player.shot_meteor3_light == 0}", 25
-                .Add "meteor4_raise{current_player.shot_meteor4_light == 0}", 25
+                .Add "meteor1_start{current_player.shot_meteor1_light == 0}", 25
+                .Add "meteor2_start{current_player.shot_meteor2_light == 0}", 25
+                .Add "meteor3_start{current_player.shot_meteor3_light == 0}", 25
+                .Add "meteor4_start{current_player.shot_meteor4_light == 0}", 25
                 .ForceAll = False
                 .ForceDifferent = False
             End With
