@@ -114,7 +114,7 @@ Sub CreateMeteorWaveMode
                 End With
                 With .States("up_cool")
                     .Label = "Up Cool"
-                    .EventsWhenStarted = Array("meteor"&x&"_cool","meteor"&x&"_raise")
+                    .EventsWhenStarted = Array("meteor"&x&"_cool","meteor"&x&"_raise","meteor_raised")
                 End With
                 With .States("up_warm")
                     .Label = "Up Warm"
@@ -178,28 +178,6 @@ Sub CreateMeteorWaveMode
                 With .ControlEvents()
                     .EventName = "stop_meteor"&x&"_timer"
                     .Action = "stop"
-                End With
-            End With
-
-            With .VariablePlayer()
-                .Debug = true
-                With .EventName("meteor"&x&"_raise")
-                    With .Variable("num_meteors_to_raise")
-                        .Action = "add"
-                        .Int = -1
-                    End With
-                End With
-                With .EventName("meteor"&x&"_hit")
-                    With .Variable("num_meteors_to_drop")
-                        .Action = "add"
-                        .Int = -1
-                    End With
-                End With
-                With .EventName("meteor"&x&"_knockdown")
-                    With .Variable("num_meteors_to_drop")
-                        .Action = "add"
-                        .Int = -1
-                    End With
                 End With
             End With
 
@@ -288,6 +266,18 @@ Sub CreateMeteorWaveMode
 					.Int = 5  'FIXME  num should be based on wave number
 				End With
 			End With
+            With .EventName("meteor_raised")
+                With .Variable("num_meteors_to_raise")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor_dropped")  'gets called after a knockdown too
+                With .Variable("num_meteors_to_drop")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
 		End With
 
     End With
