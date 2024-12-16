@@ -9,6 +9,7 @@ Sub CreateBaseMode()
     With CreateGlfMode("base", 100)
         .StartEvents = Array(GLF_GAME_START)
         .StopEvents = Array(GLF_GAME_OVER)
+        .Debug = True
 
         With .SegmentDisplayPlayer()
             With .Events("mode_base_started")
@@ -105,17 +106,28 @@ Sub CreateBaseMode()
         End With
 
         With .EventPlayer()
-            .Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
+            '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
             .Add "start_meteor_wave", Array("restart_meteor_wave_init")
+            .Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
         End With
 
 
         With .Timers("meteor_wave_init")
-            .TickInterval = 100
+            .TickInterval = 60
             .StartValue = 0
-            .EndValue = 10 
+            .EndValue = 11 
             With .ControlEvents()
                 .EventName = "restart_meteor_wave_init"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("meteor_wave_finish")
+            .TickInterval = 60
+            .StartValue = 0
+            .EndValue = 11 
+            With .ControlEvents()
+                .EventName = "restart_meteor_wave_finish"
                 .Action = "restart"
             End With
         End With
