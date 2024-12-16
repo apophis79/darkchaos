@@ -12,11 +12,11 @@ Const TimewarpColor = "ccccdd"
 Const ShipSaveColor = "0500ee"
 Const ShieldsColor = "0010cc"
 Const ProtonColor = "00dddd"
-Const MysteryColor = "d14c00"
+Const MysteryColor = "aa44aa"
 Const MoonColor = "ccbb00"
 Const ClusterBombColor = "dd00dd"
 Const CombosColor = "ffb46b"
-Const TrainingColor = "d14c00"
+Const TrainingColor = "ff4c00"
 Const HealthColor1 = "00dd00"
 Const HealthColor2 = "d14c00"
 Const HealthColor3 = "ff0300"
@@ -251,30 +251,33 @@ Sub ConfigureGlfDevices
     'Shot Profiles
     CreateSharedShotProfiles
 
-    ' Modes
-    CreateBaseMode
-    CreateShieldsMode
-    CreateMysteryMode
-    CreateTimewarpMode
-    CreateShipSaveMode
-    CreateClusterBombMode
-    CreateProtonCannonMode
-    CreateHealthMode
-    CreateCombosMode
-    CreateMoonMultiballMode
+    ' Modes                         Active during waves
+    CreateBaseMode                  ' Always active during game
+    CreateShieldsMode               ' No
+    CreateTimewarpMode              ' No
+    CreateShipSaveMode              ' No
+    CreateCombosMode                ' No
+    CreateMysteryMode               ' No
+    CreateClusterBombMode           ' Yes
+    CreateProtonCannonMode          ' Yes
+    CreateHealthMode                ' Yes
+    
+    CreateMoonMultiballMode         ' Yes (but qualify shots disabled)
 
-    CreateTrainingQualifyMode
-    'CreateTrainingMode
+    CreateTrainingQualifyMode       ' No
+    'CreateTrainingMode             ' No
 
-    CreateMeteorWaveQualifyMode
-    CreateMeteorWaveMode
-    CreateMeteorMultiballMode
+    CreateMeteorWaveQualifyMode     ' No
+    CreateMeteorWaveMode            ' Yes
+    CreateMeteorMultiballMode       ' Yes
 
     'Initial Vars
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     Glf_SetInitialPlayerVar "meteor_mb_shootagain", MeteorMBShootAgainTime
-    
+    Glf_SetInitialPlayerVar "num_training_shots", 3
+    Glf_SetInitialPlayerVar "num_training_shots_hit", 3
+
 End Sub
 
 
