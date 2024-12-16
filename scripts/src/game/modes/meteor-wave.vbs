@@ -36,7 +36,7 @@ Sub CreateMeteorWaveMode
     With CreateGlfMode("meteor_wave", 1000)
         .Debug = True
         .StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 9}")
-        .StopEvents = Array("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_init.ticks == 1}")
+        .StopEvents = Array("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 1}")
         ' .StartEvents = Array("start_meteor_wave")
         ' .StopEvents = Array("stop_meteor_wave")
 
