@@ -1,15 +1,15 @@
 {
-  "table_name": "VPW Example Table",
+  "table_name": "Dark Chaos",
   "author_name": null,
   "table_blurb": null,
   "table_rules": null,
   "author_email": null,
   "release_date": null,
-  "table_save_rev": "1397",
-  "table_version": "1.3",
+  "table_save_rev": "1401",
+  "table_version": "1.0",
   "author_website": null,
-  "table_save_date": "Tue Dec 17 14:03:26 2024",
-  "table_description": "Test multiball by pressing start when plunger lane is empty",
+  "table_save_date": "Mon Dec 16 22:20:52 2024",
+  "table_description": "Dark Chaos: Defend and Destroy",
   "properties": {},
   "properties_order": []
 }
