@@ -16,7 +16,7 @@ Sub CreateMeteorMultiballMode
         .Debug = True
         .StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 1}")
         '.StartEvents = Array("start_meteor_multiball")
-        .StopEvents = Array("ball_ended")
+        .StopEvents = Array("ball_ended","kill_flippers")
 
         With .EventPlayer()
             .Add "mode_meteor_multiball_started", Array("clear_ship_save")

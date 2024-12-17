@@ -24,6 +24,7 @@ Const HealthColor3 = "ff0300"
 Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
 Const MeteorHotColor = "ed1800"
+Const MeteorWaveColor = "dd0400"
 
 
 ' Array of main shots and associated light names (used for combos and training modes)
@@ -110,11 +111,13 @@ Sub ConfigureGlfDevices
     With CreateGlfFlipper("left")
         .Switch = "s_left_flipper"
         .ActionCallback = "LeftFlipperAction"
+        .DisableEvents = Array("kill_flippers")
     End With
 
     With CreateGlfFlipper("right")
         .Switch = "s_right_flipper"
         .ActionCallback = "RightFlipperAction"
+        .DisableEvents = Array("kill_flippers")
     End With
 
 
@@ -277,6 +280,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "meteor_mb_shootagain", MeteorMBShootAgainTime
     Glf_SetInitialPlayerVar "num_training_shots", 3
     Glf_SetInitialPlayerVar "num_training_shots_hit", 3
+    Glf_SetInitialPlayerVar "meteor_wave_count", 4
 
 End Sub
 
