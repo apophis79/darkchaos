@@ -57,16 +57,15 @@ Sub CreateClusterBombMode
 
 
         With .EventPlayer()
-            .Add "mode_cluster_bombs_started{current_player.cluster_bomb_count == 0}", Array("reset_cluster_charges")
-            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 1}", Array("fire_cluster_bomb1","cluster_bomb_fired")
-            .Add "s_left_magna_key_active{current_player.cluster_bomb_count == 2}", Array("fire_cluster_bomb2","cluster_bomb_fired","reset_cluster_charges")
+            .Add "mode_cluster_bombs_started{current_player.shot_cluster_charge1 == 0}", Array("reset_cluster_charges")
             .Add "reset_cluster_charges", Array("ready_cluster_charge1")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3")
             .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
-            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 0}", Array("add_cluster_bomb1","restart_cb_timer")
-            .Add "light_cluster_charge3{current_player.cluster_bomb_count == 1}", Array("add_cluster_bomb2")
-            .Add "timer_cluster_bomb_reset_complete", Array("reset_cluster_charges")
+            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
+            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","reset_cluster_charges")
         End With
 
         With .ShowPlayer()
@@ -81,38 +80,6 @@ Sub CreateClusterBombMode
             End With
         End With
 
-        With .VariablePlayer()
-		    With .EventName("mode_cluster_bombs_started")
-				With .Variable("cluster_bomb_count")
-                    .Action = "set"
-					.Int = 0
-				End With
-			End With
-            For x = 1 to 2
-                With .EventName("fire_cluster_bomb"&x)
-                    With .Variable("cluster_bomb_count")
-                        .Action = "add"
-                        .Int = -1
-                    End With
-                End With
-                With .EventName("add_cluster_bomb"&x)
-                    With .Variable("cluster_bomb_count")
-                        .Action = "add"
-                        .Int = 1
-                    End With
-                End With
-            Next
-		End With
-
-        With .Timers("cluster_bomb_reset")
-            .TickInterval = 500
-            .StartValue = 0
-            .EndValue = 1
-            With .ControlEvents()
-                .EventName = "restart_cb_timer"
-                .Action = "restart"
-            End With
-        End With
 
         With .VariablePlayer()
 			With .EventName("left_orbit_hit")
