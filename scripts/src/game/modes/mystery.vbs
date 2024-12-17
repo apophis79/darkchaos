@@ -25,7 +25,7 @@ Sub CreateMysteryMode
         For x = 1 to 5
             With .Shots("mystery_shot"&x)
                 .Switch = "s_TargetMystery"&x
-                .Profile = "off_on_color"
+                .Profile = "flicker_on"
                 With .Tokens()
                     .Add "lights", "LM"&x
                     .Add "color", MysteryColor
@@ -52,29 +52,41 @@ Sub CreateMysteryMode
         With .ShotGroups("qualify_mystery")
             .Shots = Array("mystery_shot1", "mystery_shot2", "mystery_shot3", "mystery_shot4","mystery_shot5")
             .RestartEvents = Array("restart_qualify_mystery")
-            .DisableEvents = Array("disable_qualify_mystery")
+            '.DisableEvents = Array("disable_qualify_mystery")
         End With
 
 
         ' Players
         With .EventPlayer()
-            .Add "mode_mystery_started", Array("restart_qualify_mystery")
-            .Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
+            '.Add "mode_mystery_started", Array("restart_qualify_mystery")
+            '.Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
             .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
         End With
 
-        With .LightPlayer()
-            With .Events("disable_qualify_mystery")
-				With .Lights("MysteryShots")
-					.Color = MysteryColor
-				End With
-			End With
-            With .Events("restart_qualify_mystery")
-				With .Lights("MysteryShots")
-					.Color = "000000"
-				End With
-			End With
+        With .ShowPlayer()
+            With .Events("qualify_mystery_on_complete")
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "MysteryShots"
+                    .Add "color", MysteryColor
+                End With
+            End With
         End With
+
+        ' With .LightPlayer()
+        '     With .Events("disable_qualify_mystery")
+		' 		With .Lights("MysteryShots")
+		' 			.Color = MysteryColor
+		' 		End With
+		' 	End With
+        '     With .Events("restart_qualify_mystery")
+		' 		With .Lights("MysteryShots")
+		' 			.Color = "000000"
+		' 		End With
+		' 	End With
+        ' End With
 
     End With
 
