@@ -38,6 +38,7 @@ Sub CreateShipSaveMode
 
         With .EventPlayer()
             .Add "mode_ship_save_started{current_player.shot_ship_save1==0}", Array("restart_ship_save")
+            .Add "mode_ship_save_started{current_player.shot_ship_save3==2}", Array("restart_ship_save")
             .Add "restart_ship_save", Array("ready_ship_save1","clear_ship_save")
             .Add "right_orbit_hit{current_player.shot_ship_save1 == 1}", Array("light_ship_save1","ready_ship_save2")
             .Add "right_orbit_hit{current_player.shot_ship_save1 == 2 && current_player.shot_ship_save2 == 1}", Array("light_ship_save2","ready_ship_save3")

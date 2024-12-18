@@ -43,6 +43,7 @@ Sub CreateTimewarpMode
         With .EventPlayer()
             .Debug = True
             .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("restart_timewarp")
+            .Add "mode_timewarp_started{current_player.ball_just_started==0}", Array("restart_timewarp")
             .Add "restart_timewarp", Array("ready_timewarp1")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2","restart_tw_timer")
@@ -50,7 +51,6 @@ Sub CreateTimewarpMode
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==2 && current_player.shot_timewarp3==1}", Array("light_timewarp3","ready_timewarp4","restart_tw_timer")
             .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==2 && current_player.shot_timewarp4==1}", Array("light_timewarp4","restart_tw_timer")
             .Add "timer_timewarp_complete", Array("start_mwq_timer")  'Timewarp done, so continue the meteor wave qualify countdown
-            .Add "meteor_wave_ended", Array("restart_timewarp") 
         End With
 
         With .ShowPlayer()

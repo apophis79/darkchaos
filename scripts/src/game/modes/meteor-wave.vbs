@@ -235,7 +235,7 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
 
             .Add "meteor_dropped", Array("check_meteor_wave") 'avoids race cond with variableplayer?
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done","restart_timewarp","restart_ship_save")
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
         End With
 
         With .RandomEventPlayer()
