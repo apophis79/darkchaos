@@ -15,8 +15,8 @@ Sub CreateShieldsMode
     Dim x
 
     With CreateGlfMode("shields", 510)
-        .StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 5}")
-        .StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 5}")
+        .StartEvents = Array("ball_started") ',"timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 5}")
+        .StopEvents = Array("ball_ended") ',"timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 5}")
         ' .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
         ' .StopEvents = Array("ball_ended","mode_meteor_wave_started")
 
@@ -90,6 +90,7 @@ Sub CreateShieldsMode
             .RotateRightEvents = Array("s_right_flipper_active")
             .RestartEvents = Array("restart_qualify_shields")
             .DisableEvents = Array("disable_qualify_shields")
+            .EnableEvents = Array("enable_qualify_shields")
         End With
 
         ' Ball Save
@@ -101,23 +102,25 @@ Sub CreateShieldsMode
 
         ' Players
         With .EventPlayer()
-            .Add "mode_shields_started", Array("restart_qualify_shields")
-            .Add "qualify_shields_on_complete", Array("disable_qualify_shields")
+            '.Add "mode_shields_started", Array("restart_qualify_shields")
+            '.Add "qualify_shields_on_complete", Array("disable_qualify_shields")
             .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
             .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
+            'Disable qualify shots during a wave
+            .Add "start_meteor_wave", Array("disable_qualify_shields") 
+            .Add "stop_meteor_wave", Array("enable_qualify_shields")
         End With
 
-        With .LightPlayer()
-            With .Events("disable_qualify_shields")
-				With .Lights("ShieldShots")
-					.Color = ShieldsColor
-				End With
-			End With
-            With .Events("restart_qualify_shields")
-				With .Lights("ShieldShots")
-					.Color = "000000"
-				End With
-			End With
+        With .ShowPlayer()
+            With .Events("qualify_shields_on_complete")
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "ShieldShots"
+                    .Add "color", ShieldsColor
+                End With
+            End With
         End With
 
         With .VariablePlayer()
@@ -129,8 +132,8 @@ Sub CreateShieldsMode
 		End With
 
         With .SegmentDisplayPlayer()
-            With .Events("qualify_shields_hit")
-                With .Display("player1")
+            With .Events("qualify_shields_on_complete")
+                With .Display("player4")
                     .Text = """SHIELDS"""
                     .Flashing = "all"
                     .Expire = 2000
