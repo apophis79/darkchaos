@@ -82,6 +82,16 @@ Sub CreateShipSaveMode
 				End With
 			End With
 		End With
+
+        With .SegmentDisplayPlayer()
+            With .Events("light_ship_save3")
+                With .Display("player4")
+                    .Text = """SAVER"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+            End With
+        End With
     
     End With
 End Sub

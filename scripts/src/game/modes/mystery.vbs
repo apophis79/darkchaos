@@ -75,18 +75,22 @@ Sub CreateMysteryMode
             End With
         End With
 
-        ' With .LightPlayer()
-        '     With .Events("disable_qualify_mystery")
-		' 		With .Lights("MysteryShots")
-		' 			.Color = MysteryColor
-		' 		End With
-		' 	End With
-        '     With .Events("restart_qualify_mystery")
-		' 		With .Lights("MysteryShots")
-		' 			.Color = "000000"
-		' 		End With
-		' 	End With
-        ' End With
+
+        With .SegmentDisplayPlayer()
+            With .Events("qualify_mystery_on_complete")
+                With .Display("player2")
+                    .Text = """CLAIM"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+                With .Display("player3")
+                    .Text = """MYSTERY"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+            End With
+        End With
+
 
     End With
 

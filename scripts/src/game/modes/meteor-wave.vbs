@@ -316,6 +316,22 @@ Sub CreateMeteorWaveMode
             End With
 		End With
 
+        With .SegmentDisplayPlayer()
+            With .Events("mode_meteor_wave_started")
+                With .Display("player2")
+                    .Text = """METEOR"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+                With .Display("player3")
+                    .Text = """WAVE """
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+            End With
+        End With
+
+
     End With
 
 End Sub

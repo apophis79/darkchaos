@@ -262,6 +262,33 @@ Sub CreateMoonMultiballMode
 				End With
 			End With  
 		End With
-        .Debug = True
+        
+        With .SegmentDisplayPlayer()
+            With .Events("s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}")
+                With .Display("player2")
+                    .Text = """MOON"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+                With .Display("player3")
+                    .Text = """LAUNCH"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+            End With
+            With .Events("enable_moon_mb_locking")
+                With .Display("player2")
+                    .Text = """LOCK"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+                With .Display("player3")
+                    .Text = """BALL"""
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
+            End With
+        End With
+
     End With
 End Sub
