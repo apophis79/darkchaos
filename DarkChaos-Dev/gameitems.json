@@ -10658,7 +10658,7 @@
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.pf_seg2.json",
