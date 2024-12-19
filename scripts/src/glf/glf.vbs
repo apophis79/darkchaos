@@ -545,7 +545,7 @@ Public Sub Glf_GameTimer_Timer()
 				i = Glf_RunHandlers(i)
 			End If
 			i = i + 1
-			If i=glf_max_dispatch Then
+			If i>=glf_max_dispatch Then
 				Exit For
 			End If
 		Next
