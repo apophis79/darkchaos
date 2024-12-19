@@ -53,21 +53,37 @@ Sub CreateBaseMode()
             End With
         End With
 
+        'Define meteor wave lights
+        For x = 1 to 9
+            With .Shots("meteor_wave"&x)
+                .Profile = "flicker_on"
+                With .Tokens()
+                    .Add "lights", "LW"&x
+                    .Add "color", MeteorWaveColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("meteor_wave"&x&"_done")
+                    .State = 1
+                End With
+                .RestartEvents = Array(GLF_GAME_START)
+            End With
+        Next
+
 
         'The main shots sequences
         With .SequenceShots("left_side_up")
             .SwitchSequence = Array("s_LeftBumper1", "s_LeftBumper2")
-            .SequenceTimeout = 400
+            .SequenceTimeout = 500
         End With
 
         With .SequenceShots("left_side_down")
             .SwitchSequence = Array("s_LeftBumper2", "s_LeftBumper1")
-            .SequenceTimeout = 300
+            .SequenceTimeout = 500
         End With
 
         With .SequenceShots("left_orbit")
             .SwitchSequence = Array("s_LeftOrb1", "s_LeftOrb2")
-            .SequenceTimeout = 400
+            .SequenceTimeout = 500
         End With
 
         With .SequenceShots("inner_orbit")
@@ -87,7 +103,7 @@ Sub CreateBaseMode()
 
         With .SequenceShots("right_orbit")
             .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
-            .SequenceTimeout = 400
+            .SequenceTimeout = 500
         End With
 
         With .ShowPlayer()
