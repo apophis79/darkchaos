@@ -11,10 +11,10 @@ Sub CreateShipSaveMode
     Dim x
 
     With CreateGlfMode("ship_save", 510)
-        .StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 4}")
-        .StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 6}")
-        ' .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        ' .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        '.StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 4}")
+        '.StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 6}")
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
+        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
 
         'Define our shots
         For x = 1 to 3

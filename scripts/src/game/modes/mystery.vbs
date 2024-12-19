@@ -15,10 +15,10 @@ Sub CreateMysteryMode
     Dim x
 
     With CreateGlfMode("mystery", 510)
-        .StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 6}")
-        .StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 4}")
-        ' .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        ' .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        '.StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 6}")
+        '.StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 4}")
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
+        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
         .Debug = True
      
         'Define our shots

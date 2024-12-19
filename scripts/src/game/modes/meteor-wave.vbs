@@ -35,10 +35,10 @@ Sub CreateMeteorWaveMode
 
     With CreateGlfMode("meteor_wave", 1000)
         .Debug = True
-        .StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 9}")
-        .StopEvents = Array("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 1}")
-        ' .StartEvents = Array("start_meteor_wave")
-        ' .StopEvents = Array("stop_meteor_wave")
+        '.StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 9}")
+        '.StopEvents = Array("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 1}")
+        .StartEvents = Array("start_meteor_wave")
+        .StopEvents = Array("stop_meteor_wave")
 
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
@@ -202,7 +202,7 @@ Sub CreateMeteorWaveMode
 
         With .EventPlayer()
             .Debug = True
-            '.Add "mode_meteor_wave_started", Array("start_meteor_multiball")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
