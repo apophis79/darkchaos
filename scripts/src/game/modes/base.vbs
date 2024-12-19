@@ -123,6 +123,7 @@ Sub CreateBaseMode()
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
+            .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("clear_ball_just_started","start_new_ball_save")
             .Add "start_meteor_wave", Array("restart_meteor_wave_init")
             .Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
         End With
@@ -148,6 +149,40 @@ Sub CreateBaseMode()
             End With
         End With
 
+         With .BallSaves("new_ball")
+            .ActiveTime = 5000
+            .HurryUpTime = 3000
+            .GracePeriod = 2000
+            .AutoLaunch = True
+            .EnableEvents = Array("start_new_ball_save")
+        End With
+
+        With .ShowPlayer()
+            With .Events("ball_save_new_ball_enabled")
+                .Show = "flash_color_with_fade"
+                .Speed = 2
+				With .Tokens()
+                    .Add "lights", "LSA"
+                    .Add "color", ShipSaveColor
+                    .Add "fade", 200
+                End With
+			End With
+            With .Events("ball_save_new_ball_hurry_up")
+                .Show = "flash_color"
+                .Speed = 8
+				With .Tokens()
+                    .Add "lights", "LSA"
+                    .Add "color", ShipSaveColor
+                End With
+			End With
+            With .Events("ball_save_new_ball_grace_period")
+                .Show = "off"
+				With .Tokens()
+                    .Add "lights", "LSA"
+                End With
+			End With
+        End With
+        
 
         With .VariablePlayer()
             .Debug = true
@@ -157,7 +192,7 @@ Sub CreateBaseMode()
 					.Int = 1
 				End With
 			End With
-            With .EventName("s_Plunger2_active")
+            With .EventName("clear_ball_just_started")
 				With .Variable("ball_just_started")
                     .Action = "set"
 					.Int = 0
