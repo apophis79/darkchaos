@@ -124,30 +124,30 @@ Sub CreateBaseMode()
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("clear_ball_just_started","start_new_ball_save")
-            .Add "start_meteor_wave", Array("restart_meteor_wave_init")
-            .Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
+            '.Add "start_meteor_wave", Array("restart_meteor_wave_init")
+            '.Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
         End With
 
 
-        With .Timers("meteor_wave_init")
-            .TickInterval = 60
-            .StartValue = 0
-            .EndValue = 11 
-            With .ControlEvents()
-                .EventName = "restart_meteor_wave_init"
-                .Action = "restart"
-            End With
-        End With
+        ' With .Timers("meteor_wave_init")
+        '     .TickInterval = 60
+        '     .StartValue = 0
+        '     .EndValue = 11 
+        '     With .ControlEvents()
+        '         .EventName = "restart_meteor_wave_init"
+        '         .Action = "restart"
+        '     End With
+        ' End With
 
-        With .Timers("meteor_wave_finish")
-            .TickInterval = 60
-            .StartValue = 0
-            .EndValue = 11 
-            With .ControlEvents()
-                .EventName = "restart_meteor_wave_finish"
-                .Action = "restart"
-            End With
-        End With
+        ' With .Timers("meteor_wave_finish")
+        '     .TickInterval = 60
+        '     .StartValue = 0
+        '     .EndValue = 11 
+        '     With .ControlEvents()
+        '         .EventName = "restart_meteor_wave_finish"
+        '         .Action = "restart"
+        '     End With
+        ' End With
 
          With .BallSaves("new_ball")
             .ActiveTime = 5000

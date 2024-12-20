@@ -14,8 +14,8 @@ Sub CreateMeteorMultiballMode
 
     With CreateGlfMode("meteor_multiball", 1000)
         .Debug = True
-        .StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 1}")
-        '.StartEvents = Array("start_meteor_multiball")
+        '.StartEvents = Array("timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 1}")
+        .StartEvents = Array("start_meteor_multiball")
         .StopEvents = Array("ball_ended","kill_flippers")
 
         With .EventPlayer()
