@@ -769,6 +769,13 @@ Sub dSleeves_Hit(idx)
 	TargetBouncer Activeball, 0.7
 End Sub
 
+Sub zCol_Rubber_leftsling
+	RubbersD.dampen Activeball
+End Sub
+
+Sub zCol_Rubber_rightsling
+	RubbersD.dampen Activeball
+End Sub
 
 Dim RubbersD				'frubber
 Set RubbersD = New Dampener

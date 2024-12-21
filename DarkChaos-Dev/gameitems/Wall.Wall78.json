@@ -14,7 +14,7 @@
     "top_material": "Metal",
     "slingshot_material": "",
     "height_bottom": 0.0,
-    "height_top": 65.0,
+    "height_top": 250.0,
     "name": "Wall78",
     "display_texture": false,
     "slingshot_force": 80.0,
