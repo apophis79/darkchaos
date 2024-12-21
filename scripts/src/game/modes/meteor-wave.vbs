@@ -158,7 +158,7 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show")',"meteor"&x&"_flash_show")
                 End With
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")
@@ -182,7 +182,16 @@ Sub CreateMeteorWaveMode
                 End With
             End With
 
+            With .ShowPlayer()
+                With .Events("meteor"&x&"_explodes_show")
+                    .Show = "meteor"&x&"_explodes"
+                    .Speed = 1
+				    .Loops = 1
+                End With
+            End With
+
         Next
+
 
         With .EventPlayer()
             .Debug = True
@@ -307,6 +316,48 @@ Sub CreateMeteorWaveMode
         End With
 
 
+        With .ShowPlayer()
+            With .Events("meteor1_flash_show")
+                .Show = "flash_color_with_fade" 
+                .Speed = 2
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "FL2"
+                    .Add "color", "ffffff"
+                    .Add "fade", 300
+                End With
+            End With
+            With .Events("meteor2_flash_show")
+                .Show = "flash_color_with_fade" 
+                .Speed = 2
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "FL2"
+                    .Add "color", "ffffff"
+                    .Add "fade", 300
+                End With
+            End With
+            With .Events("meteor3_flash_show")
+                .Show = "flash_color_with_fade" 
+                .Speed = 2
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "FL1"
+                    .Add "color", "ffffff"
+                    .Add "fade", 300
+                End With
+            End With
+            With .Events("meteor4_flash_show")
+                .Show = "flash_color_with_fade" 
+                .Speed = 2
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "FL1"
+                    .Add "color", "ffffff"
+                    .Add "fade", 300
+                End With
+            End With
+        End With
 
         With .VariablePlayer()
             .Debug = true
