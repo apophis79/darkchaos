@@ -15,10 +15,8 @@ Sub CreateShieldsMode
     Dim x
 
     With CreateGlfMode("shields", 510)
-        '.StartEvents = Array("ball_started") ',"timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 5}")
-        '.StopEvents = Array("ball_ended") ',"timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 5}")
-        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        .StartEvents = Array("ball_started","stop_meteor_wave")
+        .StopEvents = Array("ball_ended","start_meteor_wave")
 
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")
@@ -107,8 +105,8 @@ Sub CreateShieldsMode
             .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
             .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
             'Disable qualify shots during a wave
-            .Add "start_meteor_wave", Array("disable_qualify_shields") 
-            .Add "stop_meteor_wave", Array("enable_qualify_shields")
+            '.Add "start_meteor_wave", Array("disable_qualify_shields") 
+            '.Add "stop_meteor_wave", Array("enable_qualify_shields")
         End With
 
         With .ShowPlayer()

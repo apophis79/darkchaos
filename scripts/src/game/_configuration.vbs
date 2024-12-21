@@ -25,7 +25,7 @@ Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
 Const MeteorHotColor = "ed1800"
 Const MeteorWaveColor = "dd0400"
-
+Const MeteorFlashColor = "ffe7a6"
 
 ' Array of main shots and associated light names (used for combos and training modes)
 Dim MainShotNames, MainShotLightNames

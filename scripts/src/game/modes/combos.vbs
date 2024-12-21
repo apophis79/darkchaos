@@ -12,10 +12,8 @@ Sub CreateCombosMode
     Dim x
 
     With CreateGlfMode("combos", 520)
-        '.StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 7}")
-        '.StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 3}")
-        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        .StartEvents = Array("ball_started","stop_meteor_wave")
+        .StopEvents = Array("ball_ended","start_meteor_wave")
         '.Debug = True
 
 

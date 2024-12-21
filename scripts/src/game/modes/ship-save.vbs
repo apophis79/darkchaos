@@ -11,10 +11,8 @@ Sub CreateShipSaveMode
     Dim x
 
     With CreateGlfMode("ship_save", 510)
-        '.StartEvents = Array("ball_started","timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks == 4}")
-        '.StopEvents = Array("ball_ended","timer_meteor_wave_init_tick{devices.timers.meteor_wave_init.ticks == 6}")
-        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        .StopEvents = Array("ball_ended","mode_meteor_wave_started")
+        .StartEvents = Array("ball_started","stop_meteor_wave")
+        .StopEvents = Array("ball_ended","start_meteor_wave")
 
         'Define our shots
         For x = 1 to 3
@@ -46,11 +44,11 @@ Sub CreateShipSaveMode
         End With
 
         With .ShowPlayer()
-            With .Events("light_ship_save1")
-                .Show = "ship_save_orbit"
-                .Speed = 4
-				.Loops = 1
-			End With
+            ' With .Events("light_ship_save1")
+            '     .Show = "ship_save_orbit"
+            '     .Speed = 4
+			' 	.Loops = 1
+			' End With
             With .Events("light_ship_save3")
                 .Show = "flash_color"
                 .Speed = 15
