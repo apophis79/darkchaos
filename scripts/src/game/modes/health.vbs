@@ -99,6 +99,19 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers")
         End With
 
+        With .ShowPlayer()
+            With .Events("add_health")
+                .Key = "key_health_charged"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "Healthbar"
+                    .Add "color", HealthColor1
+                End With
+            End With
+        End With
+
         With .VariablePlayer()
             'health_value
 		    With .EventName("restart_health")

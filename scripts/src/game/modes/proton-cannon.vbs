@@ -41,7 +41,7 @@ Sub CreateProtonCannonMode
 
         For x = 1 to 6
             With .Shots("proton_round"&x)
-                .Profile = "flicker_on"
+                .Profile = "off_on_color"
                 With .Tokens()
                     .Add "lights", "LPR"&x
                     .Add "color", ProtonColor
@@ -51,6 +51,19 @@ Sub CreateProtonCannonMode
                     .State = 1
                 End With
                 .RestartEvents = Array("fire_proton_round"&x)
+            End With
+
+            With .ShowPlayer()
+                With .Events("add_proton_round"&x)
+                    .Key = "key_proton"&x&"_charged"
+                    .Show = "flash_color"
+                    .Speed = 15
+                    .Loops = 5
+                    With .Tokens()
+                        .Add "lights", "LPR"&x
+                        .Add "color", ProtonColor
+                    End With
+                End With
             End With
         Next
 

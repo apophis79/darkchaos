@@ -36,7 +36,7 @@ Sub CreateCombosMode
         'Define combo meter shots
         For x = 1 to 8
             With .Shots("combo"&x&"_meter_light")
-                .Profile = "flicker_on"
+                .Profile = "off_on_color"
                 With .Tokens()
                     .Add "lights", "LC"&x
                     .Add "color", CombosColor
@@ -46,6 +46,19 @@ Sub CreateCombosMode
                     .State = 1
                 End With
                 .RestartEvents = Array("reset_combos")
+            End With
+
+            With .ShowPlayer()
+                With .Events("combos"&x&"_lit")
+                    .Key = "key_combo"&x&"_charged"
+                    .Show = "flash_color"
+                    .Speed = 15
+                    .Loops = 5
+                    With .Tokens()
+                        .Add "lights", "LC"&x
+                        .Add "color", CombosColor
+                    End With
+                End With
             End With
         Next
 
@@ -71,6 +84,7 @@ Sub CreateCombosMode
             .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos")
             .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","start_combo_command_wizard")
         End With
+
 
         With .Timers("combos_reset")
             .TickInterval = CombosTickInterval

@@ -79,6 +79,26 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
             End With
+            With .Events("add_cluster_bomb1")
+                .Key = "key_cluster1_charged"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "LCR1"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+            With .Events("add_cluster_bomb2")
+                .Key = "key_cluster2_charged"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "LCR2"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
         End With
 
 
