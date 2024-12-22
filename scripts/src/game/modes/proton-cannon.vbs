@@ -54,7 +54,7 @@ Sub CreateProtonCannonMode
             End With
 
             With .ShowPlayer()
-                With .Events("add_proton_round"&x)
+                With .EventName("add_proton_round"&x)
                     .Key = "key_proton"&x&"_charged"
                     .Show = "flash_color"
                     .Speed = 15
@@ -92,7 +92,7 @@ Sub CreateProtonCannonMode
                     .Add "color", ProtonColor
                 End With
             End With
-            With .Events("s_spinner_active")
+            With .EventName("s_spinner_active")
                 .Key = "key_spinner_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 15

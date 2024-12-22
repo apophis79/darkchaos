@@ -49,7 +49,7 @@ Sub CreateCombosMode
             End With
 
             With .ShowPlayer()
-                With .Events("combos"&x&"_lit")
+                With .EventName("combos"&x&"_lit")
                     .Key = "key_combo"&x&"_charged"
                     .Show = "flash_color"
                     .Speed = 15

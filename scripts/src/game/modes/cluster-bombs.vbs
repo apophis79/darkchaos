@@ -79,7 +79,7 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
             End With
-            With .Events("add_cluster_bomb1")
+            With .EventName("add_cluster_bomb1")
                 .Key = "key_cluster1_charged"
                 .Show = "flash_color"
                 .Speed = 15
@@ -89,7 +89,7 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
             End With
-            With .Events("add_cluster_bomb2")
+            With .EventName("add_cluster_bomb2")
                 .Key = "key_cluster2_charged"
                 .Show = "flash_color"
                 .Speed = 15
@@ -99,14 +99,14 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
             End With
-             With .Events("cluster_bomb_fired")
+             With .EventName("cluster_bomb_fired")
                 .Key = "key_cluster_explodes"
                 .Priority = 5
                 .Show = "cluster_explodes"  'the cluster color is included in the show
                 .Speed = 1
                 .Loops = 1
             End With
-            With .Events("cluster_bomb_flash")
+            With .EventName("cluster_bomb_flash")
                 .Key = "key_cluster_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20

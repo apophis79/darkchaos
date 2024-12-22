@@ -44,7 +44,7 @@ Sub CreateShipSaveMode
         End With
 
         With .ShowPlayer()
-            With .Events("light_ship_save3")
+            With .EventName("light_ship_save3")
                 .Key = "key_ship_saves_charged"
                 .Show = "flash_color"
                 .Speed = 15

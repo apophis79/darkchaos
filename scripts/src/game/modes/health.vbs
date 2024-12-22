@@ -100,7 +100,7 @@ Sub CreateHealthMode
         End With
 
         With .ShowPlayer()
-            With .Events("add_health")
+            With .EventName("add_health")
                 .Key = "key_health_charged"
                 .Show = "flash_color"
                 .Speed = 15

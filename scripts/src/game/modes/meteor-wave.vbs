@@ -187,7 +187,7 @@ Sub CreateMeteorWaveMode
             End With
 
             With .ShowPlayer()
-                With .Events("meteor"&x&"_explodes_show")
+                With .EventName("meteor"&x&"_explodes_show")
                     .Key = "key_meteor"&x&"_explodes"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
@@ -196,7 +196,7 @@ Sub CreateMeteorWaveMode
                         .Add "color", "ffffff"
                     End With    
                 End With
-                With .Events("meteor"&x&"_proton_hit")
+                With .EventName("meteor"&x&"_proton_hit")
                     .Key = "key_meteor"&x&"_proton_hit"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
@@ -294,7 +294,7 @@ Sub CreateMeteorWaveMode
 
 
         With .ShowPlayer()
-            With .Events("mode_meteor_wave_started{current_player.shot_proton_round1==1}")
+            With .EventName("mode_meteor_wave_started{current_player.shot_proton_round1==1}")
                 .Key = "key_proton_shots"
                 .Show = "flash_color_with_fade"
                 .Speed = 1
@@ -304,7 +304,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 200
                 End With
             End With
-            With .Events("light_proton_charge3")
+            With .EventName("light_proton_charge3")
                 .Key = "key_proton_charged"
                 .Show = "flash_color_with_fade"
                 .Speed = 1
@@ -314,7 +314,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 200
                 End With
             End With
-            With .Events("proton_fired")
+            With .EventName("proton_fired")
                 .Key = "key_proton_fired"
                 .Priority = 10
                 .Show = "flash_color"
@@ -325,14 +325,14 @@ Sub CreateMeteorWaveMode
                     .Add "color", ProtonColor
                 End With
             End With
-            With .Events("check_protons{current_player.shot_proton_round1==0}")
+            With .EventName("check_protons{current_player.shot_proton_round1==0}")
                 .Key = "key_proton_uncharged"
                 .Show = "off"
                 With .Tokens()
                     .Add "lights", "FireProtonShots"
                 End With
             End With
-            With .Events("meteor1_flash_show")
+            With .EventName("meteor1_flash_show")
                 .Key = "key_meteor1_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
@@ -343,7 +343,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("meteor2_flash_show")
+            With .EventName("meteor2_flash_show")
                 .Key = "key_meteor2_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
@@ -354,7 +354,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("meteor3_flash_show")
+            With .EventName("meteor3_flash_show")
                 .Key = "key_meteor3_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
@@ -365,7 +365,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("meteor4_flash_show")
+            With .EventName("meteor4_flash_show")
                 .Key = "key_meteor4_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
@@ -376,7 +376,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("proton_fired_flash_show")
+            With .EventName("proton_fired_flash_show")
                 .Key = "key_proton_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
@@ -387,14 +387,14 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("earth_hit")
+            With .EventName("earth_hit")
                 .Key = "key_earth_hit"
                 .Priority = 15
                 .Show = "earth_hit"
                 .Speed = 1
                 .Loops = 1
             End With
-            With .Events("earth_flash")
+            With .EventName("earth_flash")
                 .Key = "key_earth_flash"
                 .Priority = 15
                 .Show = "flash_color"
@@ -458,13 +458,13 @@ Sub CreateMeteorWaveMode
 		End With
 
         With .LightPlayer()
-            With .Events("mode_meteor_wave_started")
+            With .EventName("mode_meteor_wave_started")
 				With .Lights("GI")
 					.Color = "000000"
                     .Fade = 400
 				End With
 			End With
-            With .Events("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks==1}")
+            With .EventName("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks==1}")
                 With .Lights("GI")
                     .Color = GIColor3000k
                     .Fade = 400
