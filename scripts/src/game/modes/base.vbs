@@ -45,7 +45,7 @@ Sub CreateBaseMode()
         End With
 
         With .LightPlayer()
-            With .Events(GLF_BALL_STARTED)
+            With .EventName(GLF_BALL_STARTED)
                 With .Lights("GI")
                     .Color = GIColor3000k
                     .Fade = 200
@@ -108,7 +108,7 @@ Sub CreateBaseMode()
 
         With .ShowPlayer()
             For x = 1 to 4
-                With .Events("s_Bumper"&x&"_active")
+                With .EventName("s_Bumper"&x&"_active")
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
