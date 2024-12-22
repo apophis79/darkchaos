@@ -45,7 +45,7 @@ Sub CreateBaseMode()
         End With
 
         With .LightPlayer()
-            With .Events(GLF_BALL_STARTED)
+            With .EventName(GLF_BALL_STARTED)
                 With .Lights("GI")
                     .Color = GIColor3000k  '3000k
                     .Fade = 200
@@ -108,7 +108,7 @@ Sub CreateBaseMode()
 
         With .ShowPlayer()
             For x = 1 to 4
-                With .Events("s_Bumper"&x&"_active")
+                With .EventName("s_Bumper"&x&"_active")
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
                     .Loops = 1
@@ -158,7 +158,7 @@ Sub CreateBaseMode()
         End With
 
         With .ShowPlayer()
-            With .Events("ball_save_new_ball_enabled")
+            With .EventName("ball_save_new_ball_enabled")
                 .Show = "flash_color_with_fade"
                 .Speed = 2
 				With .Tokens()
@@ -167,7 +167,7 @@ Sub CreateBaseMode()
                     .Add "fade", 200
                 End With
 			End With
-            With .Events("ball_save_new_ball_hurry_up")
+            With .EventName("ball_save_new_ball_hurry_up")
                 .Show = "flash_color"
                 .Speed = 8
 				With .Tokens()
@@ -175,7 +175,7 @@ Sub CreateBaseMode()
                     .Add "color", ShipSaveColor
                 End With
 			End With
-            With .Events("ball_save_new_ball_grace_period")
+            With .EventName("ball_save_new_ball_grace_period")
                 .Show = "off"
 				With .Tokens()
                     .Add "lights", "LSA"

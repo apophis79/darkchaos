@@ -69,7 +69,7 @@ Sub CreateClusterBombMode
         End With
 
         With .ShowPlayer()
-            With .Events("light_cluster_charge3")
+            With .EventName("light_cluster_charge3")
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 5

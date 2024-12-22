@@ -54,7 +54,7 @@ Sub CreateTimewarpMode
         End With
 
         With .ShowPlayer()
-            With .Events("light_timewarp4")
+            With .EventName("light_timewarp4")
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 5

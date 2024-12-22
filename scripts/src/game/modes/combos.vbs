@@ -21,7 +21,7 @@ Sub CreateCombosMode
 
         With .ShowPlayer()
             For x = 1 to 8
-                With .Events(MainShotNames(x-1)&"_hit{current_player.combos_value>0}")
+                With .EventName(MainShotNames(x-1)&"_hit{current_player.combos_value>0}")
                     .Show = "flash_color"
                     .Speed = 15
                     .Loops = 5

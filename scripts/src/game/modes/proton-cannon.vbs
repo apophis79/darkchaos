@@ -69,7 +69,7 @@ Sub CreateProtonCannonMode
         End With
 
         With .ShowPlayer()
-            With .Events("light_proton_charge3")
+            With .EventName("light_proton_charge3")
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 5

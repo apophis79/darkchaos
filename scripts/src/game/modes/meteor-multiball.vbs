@@ -24,7 +24,7 @@ Sub CreateMeteorMultiballMode
                     
 
         With .ShowPlayer()
-            With .Events("mode_meteor_multiball_started")
+            With .EventName("mode_meteor_multiball_started")
                 .Show = "flash_color_with_fade"
                 .Speed = 2
 				With .Tokens()
@@ -33,7 +33,7 @@ Sub CreateMeteorMultiballMode
                     .Add "fade", 200
                 End With
 			End With
-            With .Events("multiball_meteor_hurry_up")
+            With .EventName("multiball_meteor_hurry_up")
                 .Show = "flash_color"
                 .Speed = 5
 				With .Tokens()
@@ -41,7 +41,7 @@ Sub CreateMeteorMultiballMode
                     .Add "color", ShipSaveColor
                 End With
 			End With
-            With .Events("multiball_meteor_shoot_again_ended")
+            With .EventName("multiball_meteor_shoot_again_ended")
                 .Show = "off"
 				With .Tokens()
                     .Add "lights", "LSA"

@@ -183,7 +183,8 @@ Sub CreateMeteorWaveMode
             End With
 
             With .ShowPlayer()
-                With .Events("meteor"&x&"_explodes_show")
+                With .EventName("meteor"&x&"_explodes_show")
+                    .Key = "meteor_explodes"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
 				    .Loops = 1
@@ -264,13 +265,13 @@ Sub CreateMeteorWaveMode
         
 
         With .LightPlayer()
-            With .Events("mode_meteor_wave_started")
+            With .EventName("mode_meteor_wave_started")
 				With .Lights("GI")
 					.Color = "000000"
                     .Fade = 1000
 				End With
 			End With
-            With .Events("stop_meteor_wave")
+            With .EventName("stop_meteor_wave")
 				With .Lights("GI")
 					.Color = GIColor3000k
                     .Fade = 200
@@ -280,7 +281,7 @@ Sub CreateMeteorWaveMode
 
 
         With .ShowPlayer()
-            With .Events("mode_meteor_wave_started{current_player.shot_proton_round1==1}")
+            With .EventName("mode_meteor_wave_started{current_player.shot_proton_round1==1}")
                 .Show = "flash_color_with_fade"
                 .Speed = 1
                 With .Tokens()
@@ -289,7 +290,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 200
                 End With
             End With
-            With .Events("light_proton_charge3")
+            With .EventName("light_proton_charge3")
                 .Show = "flash_color_with_fade"
                 .Speed = 1
                 With .Tokens()
@@ -298,7 +299,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 200
                 End With
             End With
-            With .Events("proton_fired")
+            With .EventName("proton_fired")
                 .Show = "flash_color"
                 .Speed = 20
                 .Loops = 5
@@ -307,7 +308,7 @@ Sub CreateMeteorWaveMode
                     .Add "color", ProtonColor
                 End With
             End With
-            With .Events("check_protons{current_player.shot_proton_round1==0}")
+            With .EventName("check_protons{current_player.shot_proton_round1==0}")
                 .Show = "off"
                 With .Tokens()
                     .Add "lights", "FireProtonShots"
@@ -317,7 +318,8 @@ Sub CreateMeteorWaveMode
 
 
         With .ShowPlayer()
-            With .Events("meteor1_flash_show")
+            With .EventName("meteor1_flash_show")
+                .Key = "meteor_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 2
                 .Loops = 1
@@ -327,7 +329,8 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("meteor2_flash_show")
+            With .EventName("meteor2_flash_show")
+                .Key = "meteor_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 2
                 .Loops = 1
@@ -337,7 +340,8 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("meteor3_flash_show")
+            With .EventName("meteor3_flash_show")
+                .Key = "meteor_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 2
                 .Loops = 1
@@ -347,7 +351,8 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            With .Events("meteor4_flash_show")
+            With .EventName("meteor4_flash_show")
+                .Key = "meteor_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 2
                 .Loops = 1
