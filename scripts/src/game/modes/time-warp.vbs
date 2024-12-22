@@ -62,13 +62,13 @@ Sub CreateTimewarpMode
                     .Add "color", TimewarpColor
                 End With
             End With
-            ' With .EventName("restart_tw_timer")
-            '     .Key = "key_timewarp_show"
-            '     .Priority = 10
-            '     .Show = "timewarp"
-            '     .Speed = 1
-            '     .Loops = 1
-            ' End With
+            With .EventName("restart_tw_timer")
+                .Key = "key_timewarp_show"
+                .Priority = 10
+                .Show = "timewarp"
+                .Speed = 1
+                .Loops = 1
+            End With
         End With
 
         With .Timers("timewarp")

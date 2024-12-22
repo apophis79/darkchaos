@@ -72,7 +72,7 @@ Sub ConfigureGlfDevices
     CreateMeteorWaveShows()
     CreateEarthHitShows()
     'CreateClusterBombShows()
-    'CreateTimeWarpShows()
+    CreateTimeWarpShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
