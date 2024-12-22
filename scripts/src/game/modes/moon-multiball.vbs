@@ -229,6 +229,7 @@ Sub CreateMoonMultiballMode
 
         With .ShowPlayer()
             With .Events("qualify_lock_on_complete")
+                .Key = "key_moon_qualified"
                 .Show = "flash_color"
                 .Speed = 13
                 .Loops = 7

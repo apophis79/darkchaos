@@ -20,33 +20,20 @@ Sub CreateMeteorMultiballMode
         With .EventPlayer()
             .Add "mode_meteor_multiball_started", Array("clear_ship_save")
         End With
-                    
 
-        With .ShowPlayer()
-            With .Events("mode_meteor_multiball_started")
-                .Show = "flash_color_with_fade"
-                .Speed = 2
-				With .Tokens()
-                    .Add "lights", "LSA"
-                    .Add "color", ShipSaveColor
-                    .Add "fade", 200
-                End With
-			End With
-            With .Events("multiball_meteor_hurry_up")
-                .Show = "flash_color"
-                .Speed = 5
-				With .Tokens()
-                    .Add "lights", "LSA"
-                    .Add "color", ShipSaveColor
-                End With
-			End With
-            With .Events("multiball_meteor_shoot_again_ended")
-                .Show = "off"
-				With .Tokens()
-                    .Add "lights", "LSA"
-                End With
-			End With
+        With .Shots("meteor_mb_shoot_again")
+            .Profile = "shoot_again"
+            With .ControlEvents()
+                .Events = Array("mode_meteor_multiball_started")
+                .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("multiball_meteor_hurry_up")
+                .State = 2
+            End With
+            .ResetEvents = Array("multiball_meteor_shoot_again_ended")
         End With
+                    
 
         With .Multiballs("meteor")
             .StartEvents = Array("mode_meteor_multiball_started")

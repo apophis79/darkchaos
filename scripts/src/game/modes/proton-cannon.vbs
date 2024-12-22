@@ -70,12 +70,24 @@ Sub CreateProtonCannonMode
 
         With .ShowPlayer()
             With .Events("light_proton_charge3")
+                .Key = "key_proton_charged"
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 5
                 With .Tokens()
                     .Add "lights", "ProtonShot"
                     .Add "color", ProtonColor
+                End With
+            End With
+            With .Events("s_spinner_active")
+                .Key = "key_spinner_flash"
+                .Show = "flash_color_with_fade" 
+                .Speed = 15
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "FL4"
+                    .Add "color", ProtonColor
+                    .Add "fade", 300
                 End With
             End With
         End With

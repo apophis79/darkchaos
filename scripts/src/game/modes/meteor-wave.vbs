@@ -22,11 +22,15 @@
 ' - kill flippers when health runs out              DONE
 ' - suppress other modes during meteor MB mode      DONE
 '     - health, protons, and cluster bombs should stay active   
-' - add shows (first light shows)                   
+' - add shows (first light shows)                  
+'     - proton hit                                  DONE
+'     - meteor hit                                  DONE
+'     - cluster bomb
+'     - earth hit
+
 
 ' Known issues:
 ' - moon mb not releasing all balls. ball count get messed up
-' - stutter at end of the wave
 
 
 
@@ -36,7 +40,7 @@ Sub CreateMeteorWaveMode
     With CreateGlfMode("meteor_wave", 1000)
         .Debug = True
         .StartEvents = Array("start_meteor_wave")
-        .StopEvents = Array("stop_meteor_wave")
+        .StopEvents = Array("timer_meteor_wave_finish_complete")
 
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
@@ -256,10 +260,10 @@ Sub CreateMeteorWaveMode
                 .ForceDifferent = False
             End With
             With .EventName("timer_meteors_init_tick")
-                .Add "meteor1_start{current_player.shot_meteor1_light == 0}", 1
-                .Add "meteor2_start{current_player.shot_meteor2_light == 0}", 1
-                .Add "meteor3_start{current_player.shot_meteor3_light == 0}", 1
-                .Add "meteor4_start{current_player.shot_meteor4_light == 0}", 1
+                .Add "meteor1_start{current_player.shot_meteor1_light == 0 && current_player.num_meteors_to_raise > 0}", 1
+                .Add "meteor2_start{current_player.shot_meteor2_light == 0 && current_player.num_meteors_to_raise > 0}", 1
+                .Add "meteor3_start{current_player.shot_meteor3_light == 0 && current_player.num_meteors_to_raise > 0}", 1
+                .Add "meteor4_start{current_player.shot_meteor4_light == 0 && current_player.num_meteors_to_raise > 0}", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -268,9 +272,19 @@ Sub CreateMeteorWaveMode
         With .Timers("meteors_init")
             .TickInterval = MeteorTimerInitTickInterval
             .StartValue = 0
-            .EndValue = 5 
+            .EndValue = 6 
             With .ControlEvents()
                 .EventName = "mode_meteor_wave_started"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("meteor_wave_finish")
+            .TickInterval = 600
+            .StartValue = 0
+            .EndValue = 2
+            With .ControlEvents()
+                .EventName = "stop_meteor_wave"
                 .Action = "restart"
             End With
         End With
@@ -412,9 +426,15 @@ Sub CreateMeteorWaveMode
             With .Events("mode_meteor_wave_started")
 				With .Lights("GI")
 					.Color = "000000"
-                    .Fade = 200
+                    .Fade = 500
 				End With
 			End With
+            With .Events("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks==1}")
+                With .Lights("GI")
+                    .Color = GIColor3000k
+                    .Fade = 500
+                End With
+            End With
         End With
 
 

@@ -111,6 +111,7 @@ Sub CreateShieldsMode
 
         With .ShowPlayer()
             With .Events("qualify_shields_on_complete")
+                .Key = "key_shields_qualified"
                 .Show = "flash_color"
                 .Speed = 13
                 .Loops = 7

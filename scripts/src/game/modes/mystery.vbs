@@ -63,6 +63,7 @@ Sub CreateMysteryMode
 
         With .ShowPlayer()
             With .Events("qualify_mystery_on_complete")
+                .Key = "key_mystery_qualified"
                 .Show = "flash_color"
                 .Speed = 13
                 .Loops = 7

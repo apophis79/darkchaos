@@ -349,5 +349,33 @@ Public Sub CreateSharedShotProfiles()
         End With
     End With
 
+    
+    With GlfShotProfiles("shoot_again")
+      With .States("unlit")
+          .Show = "off"
+          With .Tokens()
+              .Add "lights", "LSA"
+          End With
+      End With
+      With .States("flashing")
+          .Show = "flash_color_with_fade"
+          .Speed = 2
+          With .Tokens()
+              .Add "lights", "LSA"
+              .Add "color", ShipSaveColor
+              .Add "fade", 200
+          End With
+      End With
+      With .States("hurry")
+          .Show = "flash_color"
+          .Speed = 5
+          With .Tokens()
+              .Add "lights", "LSA"
+              .Add "color", ShipSaveColor
+          End With
+      End With
+    End With
+      
+
 End Sub
 

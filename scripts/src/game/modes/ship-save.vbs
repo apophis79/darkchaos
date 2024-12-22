@@ -50,6 +50,7 @@ Sub CreateShipSaveMode
 			' 	.Loops = 1
 			' End With
             With .Events("light_ship_save3")
+                .Key = "key_ship_saves_charged"
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 5

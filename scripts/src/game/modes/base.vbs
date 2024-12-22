@@ -32,7 +32,7 @@ Sub CreateBaseMode()
                     .Text = "{players[3].score:0>2,}"
                 End With
             End With
-            With .Events("mode_base_started")
+            With .Events(GLF_BALL_STARTED)
                 With .Display("ball")
                     .Text = "{current_player.ball:0>2}"
                 End With
@@ -46,17 +46,6 @@ Sub CreateBaseMode()
 
         With .LightPlayer()
             With .Events(GLF_BALL_STARTED)
-                With .Lights("GI")
-                    .Color = GIColor3000k
-                    .Fade = 200
-                End With
-            End With
-            With .Events("timer_meteor_wave_init_done")
-				With .Lights("GI")
-					.Color = "000000"
-				End With
-			End With
-            With .Events("timer_meteor_wave_finish_done")
                 With .Lights("GI")
                     .Color = GIColor3000k
                     .Fade = 200
@@ -120,6 +109,7 @@ Sub CreateBaseMode()
         With .ShowPlayer()
             For x = 1 to 4
                 With .Events("s_Bumper"&x&"_active")
+                    .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
                     .Loops = 1
@@ -135,29 +125,10 @@ Sub CreateBaseMode()
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("clear_ball_just_started","start_new_ball_save")
-            .Add "start_meteor_wave", Array("restart_meteor_wave_init")
-            .Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
+            ' .Add "start_meteor_wave", Array("restart_meteor_wave_init")
+            ' .Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
         End With
 
-        With .Timers("meteor_wave_init")
-            .TickInterval = 1000
-            .StartValue = 0
-            .EndValue = 1
-            With .ControlEvents()
-                .EventName = "restart_meteor_wave_init"
-                .Action = "restart"
-            End With
-        End With
-
-        With .Timers("meteor_wave_finish")
-            .TickInterval = 1000
-            .StartValue = 0
-            .EndValue = 1
-            With .ControlEvents()
-                .EventName = "restart_meteor_wave_finish"
-                .Action = "restart"
-            End With
-        End With
 
          With .BallSaves("new_ball")
             .ActiveTime = 5000
@@ -167,32 +138,20 @@ Sub CreateBaseMode()
             .EnableEvents = Array("start_new_ball_save")
         End With
 
-        With .ShowPlayer()
-            With .Events("ball_save_new_ball_enabled")
-                .Show = "flash_color_with_fade"
-                .Speed = 2
-				With .Tokens()
-                    .Add "lights", "LSA"
-                    .Add "color", ShipSaveColor
-                    .Add "fade", 200
-                End With
-			End With
-            With .Events("ball_save_new_ball_hurry_up")
-                .Show = "flash_color"
-                .Speed = 8
-				With .Tokens()
-                    .Add "lights", "LSA"
-                    .Add "color", ShipSaveColor
-                End With
-			End With
-            With .Events("ball_save_new_ball_grace_period")
-                .Show = "off"
-				With .Tokens()
-                    .Add "lights", "LSA"
-                End With
-			End With
+
+        With .Shots("base_shoot_again")
+            .Profile = "shoot_again"
+            With .ControlEvents()
+                .Events = Array("ball_save_new_ball_enabled")
+                .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("ball_save_new_ball_hurry_up")
+                .State = 2
+            End With
+            .ResetEvents = Array("ball_save_new_ball_grace_period")
         End With
-        
+       
 
         With .VariablePlayer()
             .Debug = true
