@@ -156,7 +156,7 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_hot")
                     .Target = "down"
                     .Events = Array("timer_meteor"&x&"_complete")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit","earth_flash")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_cool","up_warm","up_hot")
@@ -283,7 +283,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .Timers("meteor_wave_finish")
-            .TickInterval = 600
+            .TickInterval = 500
             .StartValue = 0
             .EndValue = 2
             With .ControlEvents()
@@ -332,10 +332,6 @@ Sub CreateMeteorWaveMode
                     .Add "lights", "FireProtonShots"
                 End With
             End With
-        End With
-
-
-        With .ShowPlayer()
             With .Events("meteor1_flash_show")
                 .Key = "key_meteor1_flash"
                 .Show = "flash_color_with_fade" 
@@ -389,6 +385,24 @@ Sub CreateMeteorWaveMode
                     .Add "lights", "FL3"
                     .Add "color", ProtonColor
                     .Add "fade", 300
+                End With
+            End With
+            With .Events("earth_hit")
+                .Key = "key_earth_hit"
+                .Priority = 15
+                .Show = "earth_hit"
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .Events("earth_flash")
+                .Key = "key_earth_flash"
+                .Priority = 15
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 3
+                With .Tokens()
+                    .Add "lights", "EarthFlash"
+                    .Add "color", EarthHitColor
                 End With
             End With
         End With
@@ -447,13 +461,13 @@ Sub CreateMeteorWaveMode
             With .Events("mode_meteor_wave_started")
 				With .Lights("GI")
 					.Color = "000000"
-                    .Fade = 500
+                    .Fade = 400
 				End With
 			End With
             With .Events("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks==1}")
                 With .Lights("GI")
                     .Color = GIColor3000k
-                    .Fade = 500
+                    .Fade = 400
                 End With
             End With
         End With

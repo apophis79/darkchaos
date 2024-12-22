@@ -27,6 +27,10 @@ Const MeteorHotColor = "ed1800"
 Const MeteorWaveColor = "dd0400"
 Const MeteorFlashColor = "ffe7a6"
 
+Const EarthHitColor = "ff0505"
+Const EarthHitColor2 = "880000"
+
+
 ' Array of main shots and associated light names (used for combos and training modes)
 Dim MainShotNames, MainShotLightNames
 MainShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
@@ -67,6 +71,7 @@ Sub ConfigureGlfDevices
     CreateShows()
     CreateMeteorWaveShows()
     CreateClusterBombShows()
+    CreateEarthHitShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
