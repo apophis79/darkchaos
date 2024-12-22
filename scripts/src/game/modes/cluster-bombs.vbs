@@ -12,7 +12,7 @@
 Sub CreateClusterBombMode
     Dim x
 
-    With CreateGlfMode("cluster_bombs", 510)
+    With CreateGlfMode("cluster_bombs", 1000)
         .Debug = true
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
@@ -64,8 +64,8 @@ Sub CreateClusterBombMode
             .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2")
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired")
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","reset_cluster_charges")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
         End With
 
         With .ShowPlayer()
@@ -97,6 +97,24 @@ Sub CreateClusterBombMode
                 With .Tokens()
                     .Add "lights", "LCR2"
                     .Add "color", ClusterBombColor
+                End With
+            End With
+             With .Events("cluster_bomb_fired")
+                .Key = "key_cluster_explodes"
+                .Priority = 5
+                .Show = "cluster_explodes"  'the cluster color is included in the show
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .Events("cluster_bomb_flash")
+                .Key = "key_cluster_flash"
+                .Show = "flash_color_with_fade" 
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "FL3"
+                    .Add "color", ClusterBombColor
+                    .Add "fade", 300
                 End With
             End With
         End With

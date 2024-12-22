@@ -115,7 +115,7 @@ Sub CreateMeteorWaveMode
                 End With
                 With .States("down")
                     .Label = "Down State"
-                    .EventsWhenStarted = Array("meteor"&x&"_down","restart_meteor"&x&"_timer","meteor_dropped") 
+                    .EventsWhenStarted = Array("meteor"&x&"_down","restart_meteor"&x&"_timer") 
                 End With
                 With .States("up_cool")
                     .Label = "Up Cool"
@@ -245,7 +245,10 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
 
             .Add "proton_fired", Array("check_protons","proton_fired_flash_show")
-            .Add "meteor_dropped", Array("check_meteor_wave") 'avoids race cond with variableplayer?
+            .Add "meteor1_down", Array("check_meteor_wave") 'avoids race cond with variableplayer?
+            .Add "meteor2_down", Array("check_meteor_wave")
+            .Add "meteor3_down", Array("check_meteor_wave")
+            .Add "meteor4_down", Array("check_meteor_wave")
             .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
         End With
 
@@ -408,7 +411,25 @@ Sub CreateMeteorWaveMode
                     .Int = -1
                 End With
             End With
-            With .EventName("meteor_dropped")  'gets called after a knockdown too
+            With .EventName("meteor1_down")  'gets called after a knockdown too
+                With .Variable("num_meteors_to_drop")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor2_down")  'gets called after a knockdown too
+                With .Variable("num_meteors_to_drop")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor3_down")  'gets called after a knockdown too
+                With .Variable("num_meteors_to_drop")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor4_down")  'gets called after a knockdown too
                 With .Variable("num_meteors_to_drop")
                     .Action = "add"
                     .Int = -1
