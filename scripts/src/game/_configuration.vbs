@@ -57,7 +57,7 @@ Const MeteorMBShootAgainTime = 8000
 Const ShipSaveShootAgainTime = 16000
 
 ' Timewarp settings
-Const TimeWarpPauseTicks = 8
+Const TimeWarpPauseTicks = 10
 Const TimeWarpTickInterval = 1000
 
 ' Combos settings
@@ -72,6 +72,7 @@ Sub ConfigureGlfDevices
     CreateMeteorWaveShows()
     CreateClusterBombShows()
     CreateEarthHitShows()
+    CreateTimeWarpShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
