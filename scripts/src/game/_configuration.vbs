@@ -70,9 +70,9 @@ Sub ConfigureGlfDevices
     ' Load up the shows
     CreateShows()
     CreateMeteorWaveShows()
-    CreateClusterBombShows()
     CreateEarthHitShows()
-    CreateTimeWarpShows()
+    'CreateClusterBombShows()
+    'CreateTimeWarpShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
