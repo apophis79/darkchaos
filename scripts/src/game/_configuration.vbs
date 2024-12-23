@@ -71,7 +71,7 @@ Sub ConfigureGlfDevices
     CreateShows()
     CreateMeteorWaveShows()
     CreateEarthHitShows()
-    'CreateClusterBombShows()
+    CreateClusterBombShows()
     CreateTimeWarpShows()
 
     ' Plunger
@@ -289,6 +289,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "num_training_shots", 3
     Glf_SetInitialPlayerVar "num_training_shots_hit", 3
     Glf_SetInitialPlayerVar "meteor_wave_count", 4
+    Glf_SetInitialPlayerVar "warping", 0
 
 End Sub
 

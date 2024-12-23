@@ -44,10 +44,10 @@ Sub CreateTimewarpMode
             .Add "mode_timewarp_started{current_player.ball_just_started==0}", Array("restart_timewarp")
             .Add "restart_timewarp", Array("ready_timewarp1")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2","restart_tw_timer")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", Array("light_timewarp2","ready_timewarp3","restart_tw_timer")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp2==2 && current_player.shot_timewarp3==1}", Array("light_timewarp3","ready_timewarp4","restart_tw_timer")
-            .Add "s_TimewarpRamp_active{current_player.shot_timewarp3==2 && current_player.shot_timewarp4==1}", Array("light_timewarp4","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", Array("light_timewarp2","ready_timewarp3","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp2==2 && current_player.shot_timewarp3==1}", Array("light_timewarp3","ready_timewarp4","restart_tw_timer")
+            .Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp3==2 && current_player.shot_timewarp4==1}", Array("light_timewarp4","restart_tw_timer")
             .Add "timer_timewarp_complete", Array("start_mwq_timer")  'Timewarp done, so continue the meteor wave qualify countdown
         End With
 
@@ -87,12 +87,33 @@ Sub CreateTimewarpMode
         
         
         With .VariablePlayer()
+            ' score
             With .EventName("timewarps_completed_hit")
 				With .Variable("score")
 					.Int = 150
 				End With
 			End With
+            ' warping
+            With .EventName("restart_tw_timer")
+				With .Variable("warping")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("timer_timewarp_complete")
+				With .Variable("warping")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            With .EventName("mode_timewarp_started")
+				With .Variable("warping")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
 		End With
+
 
         With .SegmentDisplayPlayer()
             With .Events("restart_tw_timer")   'FIXME  Can I use an event to clear the display instead of using "Expire"?

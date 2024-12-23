@@ -99,22 +99,22 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
             End With
-            '  With .EventName("cluster_bomb_fired")
-            '     .Key = "key_cluster_explodes"
-            '     .Priority = 5
-            '     .Show = "cluster_explodes"  'the cluster color is included in the show
-            '     .Speed = 1
-            '     .Loops = 1
-            ' End With
-            With .EventName("cluster_bomb_fired")
+             With .EventName("cluster_bomb_fired")
                 .Key = "key_cluster_explodes"
-                .Show = "meteor2_explodes"
+                .Priority = 5
+                .Show = "cluster_explodes"  'the cluster color is included in the show
                 .Speed = 1
                 .Loops = 1
-                With .Tokens()
-                    .Add "color", ClusterBombColor
-                End With    
             End With
+            ' With .EventName("cluster_bomb_fired")
+            '     .Key = "key_cluster_explodes"
+            '     .Show = "meteor2_explodes"
+            '     .Speed = 1
+            '     .Loops = 1
+            '     With .Tokens()
+            '         .Add "color", ClusterBombColor
+            '     End With    
+            ' End With
             With .EventName("cluster_bomb_flash")
                 .Key = "key_cluster_flash"
                 .Show = "flash_color_with_fade" 
