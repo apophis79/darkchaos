@@ -903,13 +903,6 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Wall.Wall016.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
-  },
-  {
     "file_name": "Wall.Wall017.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -12975,6 +12968,55 @@
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "segment lights",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.zCol_Rubber_moonramp.json",
+    "is_locked": true,
+    "editor_layer": 1,
+    "editor_layer_name": "Rubbers and Posts",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Ramp.Ramp007.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall007.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall014.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall015.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall016.json",
+    "is_locked": false,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall021.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
     "editor_layer_visibility": false
   }
 ]

@@ -28,7 +28,8 @@
       "zCol_Rubber_Peg005",
       "RubberBand008",
       "zCol_Rubber_Post015",
-      "zCol_Rubber_Post016"
+      "zCol_Rubber_Post016",
+      "zCol_Rubber_moonramp"
     ],
     "fire_events": true,
     "stop_single_events": false,
@@ -63,7 +64,6 @@
       "CenterColumn",
       "Wall008",
       "Wall011",
-      "Wall016",
       "Wall5",
       "Wall7"
     ],
@@ -101,7 +101,9 @@
       "Wall5top",
       "Wall350",
       "Wall3",
-      "Wall4"
+      "Wall4",
+      "Wall007",
+      "Wall016"
     ],
     "fire_events": true,
     "stop_single_events": false,
@@ -848,7 +850,7 @@
     "group_elements": false
   },
   {
-    "name": "Collection001",
+    "name": "PF_seg",
     "items": [
       "pf_seg15",
       "pf_seg16",

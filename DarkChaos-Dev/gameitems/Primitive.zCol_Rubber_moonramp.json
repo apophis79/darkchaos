@@ -1,19 +1,19 @@
 {
   "Primitive": {
     "position": {
-      "x": 429.7401,
-      "y": 285.00064,
-      "z": 50.0
+      "x": 627.2415,
+      "y": 514.4703,
+      "z": 25.0
     },
     "size": {
-      "x": 100.0,
-      "y": 100.0,
-      "z": 100.0
+      "x": 18.0,
+      "y": 18.0,
+      "z": 50.0
     },
     "rot_and_tra": [
       0.0,
       0.0,
-      6.0,
+      0.0,
       0.0,
       0.0,
       0.0,
@@ -23,17 +23,17 @@
     ],
     "image": "",
     "normal_map": "",
-    "sides": 30,
-    "name": "CenterColumn",
-    "material": "Plastic White",
+    "sides": 16,
+    "name": "zCol_Rubber_moonramp",
+    "material": "zCol_RubberPegs",
     "side_color": "#96009696",
     "is_visible": false,
     "draw_textures_inside": false,
     "hit_event": true,
-    "threshold": 2.0,
+    "threshold": 0.5,
     "elasticity": 0.8,
     "elasticity_falloff": 0.0,
-    "friction": 0.35,
+    "friction": 0.3,
     "scatter": 2.0,
     "edge_factor_ui": 0.25,
     "collision_reduction_factor": 0.0,
@@ -44,9 +44,9 @@
     "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 1.0,
-    "is_reflection_enabled": true,
+    "is_reflection_enabled": false,
     "backfaces_enabled": false,
-    "physics_material": "zCol_Metal",
+    "physics_material": "zCol_Sleeves",
     "overwrite_physics": false,
     "display_texture": false,
     "object_space_normal_map": false,
