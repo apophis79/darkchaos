@@ -56,14 +56,18 @@ Sub CreateBaseMode()
         'Define meteor wave lights
         For x = 1 to 9
             With .Shots("meteor_wave"&x)
-                .Profile = "flicker_on"
+                .Profile = "powerups"
                 With .Tokens()
                     .Add "lights", "LW"&x
                     .Add "color", MeteorWaveColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("meteor_wave"&x&"_done")
+                    .Events = Array("meteor_wave"&x&"_running")
                     .State = 1
+                End With
+                With .ControlEvents()
+                    .Events = Array("meteor_wave"&x&"_done")
+                    .State = 2
                 End With
                 .RestartEvents = Array(GLF_GAME_START)
             End With
