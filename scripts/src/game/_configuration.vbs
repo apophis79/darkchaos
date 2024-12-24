@@ -41,7 +41,7 @@ Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
 
 ' Meteor wave settings
 Const MeteorTimerInitTickInterval = 1000
-Const MeteorTimerTickInterval = 1100
+Const MeteorTimerTickInterval = 1000
 Const MeteorDropTicks = 1
 Const MeteorCoolTicks = 4
 Const MeteorWarmTicks = 4
@@ -51,10 +51,10 @@ Dim MeteorTotalTicks
 MeteorTotalTicks = MeteorDropTicks + MeteorCoolTicks + MeteorWarmTicks + MeteorHotTicks
 
 ' Meteor wave multiball settings
-Const MeteorMBShootAgainTime = 8000
+Const MeteorMBShootAgainTime = 6000
 
 ' Ship save settings (more shoot again time)
-Const ShipSaveShootAgainTime = 16000
+Const ShipSaveShootAgainTime = 12000
 
 ' Timewarp settings
 Const TimeWarpPauseTicks = 10
@@ -288,7 +288,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "meteor_mb_shootagain", MeteorMBShootAgainTime
     Glf_SetInitialPlayerVar "num_training_shots", 3
     Glf_SetInitialPlayerVar "num_training_shots_hit", 3
-    Glf_SetInitialPlayerVar "meteor_wave_count", 4
+    Glf_SetInitialPlayerVar "meteors_per_wave", 6
     Glf_SetInitialPlayerVar "warping", 0
 
 End Sub

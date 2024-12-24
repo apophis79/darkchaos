@@ -429,11 +429,11 @@ Sub CreateMeteorWaveMode
 		    With .EventName("mode_meteor_wave_started")
 				With .Variable("num_meteors_to_raise")
                     .Action = "set"
-					.Int = "current_player.meteor_wave_count" 
+					.Int = "current_player.meteors_per_wave" 
 				End With
                 With .Variable("num_meteors_to_drop")
                     .Action = "set"
-					.Int = "current_player.meteor_wave_count" 
+					.Int = "current_player.meteors_per_wave" 
 				End With
 			End With
             With .EventName("meteor_raised")
@@ -467,7 +467,7 @@ Sub CreateMeteorWaveMode
                 End With
             End With
             With .EventName("stop_meteor_wave") 
-                With .Variable("meteor_wave_count")
+                With .Variable("meteors_per_wave")
                     .Action = "add"
                     .Int = 3
                 End With
