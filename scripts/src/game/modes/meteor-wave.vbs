@@ -478,13 +478,13 @@ Sub CreateMeteorWaveMode
             With .EventName("mode_meteor_wave_started")
 				With .Lights("GI")
 					.Color = "000000"
-                    .Fade = 400
+                    '.Fade = 400
 				End With
 			End With
             With .EventName("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks==1}")
                 With .Lights("GI")
                     .Color = GIColor3000k
-                    .Fade = 400
+                    '.Fade = 400  'FIXME not working for some reason
                 End With
             End With
         End With

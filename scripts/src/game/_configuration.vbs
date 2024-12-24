@@ -36,13 +36,19 @@ Dim MainShotNames, MainShotLightNames
 MainShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
 MainShotLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
 
+' Array of rollover shots and associated light names
+Dim RolloverSwitches, RolloverLightNames
+RolloverSwitches = Array("s_LeftBumper1","s_LeftBumper2","s_CenterOrb1","s_CenterOrb2","s_CenterOrb3")
+RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
+
+
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
 
 ' Meteor wave settings
 Const MeteorTimerInitTickInterval = 1000
 Const MeteorTimerTickInterval = 1000
-Const MeteorDropTicks = 1
+Const MeteorDropTicks = 2
 Const MeteorCoolTicks = 4
 Const MeteorWarmTicks = 4
 Const MeteorHotTicks = 4

@@ -124,13 +124,24 @@ Sub CreateBaseMode()
                     End With
                 End With
             Next
+
+            For x = 0 to 4
+                With .EventName(RolloverSwitches(x)&"_active")
+                    .Key = "key_rollover"&x&"_flash"
+                    .Show = "flicker_color_off" 
+                    .Speed = 5
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", RolloverLightNames(x)
+                        .Add "color", GIColor3000k
+                    End With
+                End With
+            Next
         End With
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("clear_ball_just_started","start_new_ball_save")
-            ' .Add "start_meteor_wave", Array("restart_meteor_wave_init")
-            ' .Add "stop_meteor_wave", Array("restart_meteor_wave_finish")
         End With
 
 
