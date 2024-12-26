@@ -277,6 +277,14 @@ Sub swRamp9_hit
 	WireRampOn False 'wire
 End Sub
 
+Sub swRampScoop_hit
+	If activeball.vely>0 Then
+		Select Case Int(Rnd*2)+1
+			Case 1 : PlaySoundAtLevelActiveBall ("mfx_ScoopHit1"), MechVol
+			Case 2 : PlaySoundAtLevelActiveBall ("mfx_ScoopHit2"), MechVol
+		End Select
+	End If
+End Sub
 
 '******************************************************
 '**** END RAMP ROLLING SFX

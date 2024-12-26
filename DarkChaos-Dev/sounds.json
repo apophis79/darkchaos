@@ -2365,5 +2365,23 @@
     "volume": 0,
     "balance": 0,
     "output_target": 0
+  },
+  {
+    "name": "mfx_ScoopHit1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Mech Sounds\\mfx_ScoopHit1.wav",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 0
+  },
+  {
+    "name": "mfx_ScoopHit2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Mech Sounds\\mfx_ScoopHit2.wav",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 0
   }
 ]

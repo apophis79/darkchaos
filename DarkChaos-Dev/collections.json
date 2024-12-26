@@ -65,7 +65,8 @@
       "Wall008",
       "Wall011",
       "Wall5",
-      "Wall7"
+      "Wall7",
+      "ScoopRampHigh"
     ],
     "fire_events": true,
     "stop_single_events": false,
