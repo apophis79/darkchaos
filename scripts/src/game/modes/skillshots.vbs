@@ -56,7 +56,7 @@ Sub CreateSkillshotsMode
             .StartValue = 0
             .EndValue = SkillshotsTickLimit
             With .ControlEvents()
-                .EventName = "s_Plunger2_active"
+                .EventName = "new_ball_active"
                 .Action = "start"
             End With
         End With

@@ -34,15 +34,15 @@ Sub CreateTimewarpMode
                     .Events = Array("light_timewarp"&x)
                     .State = 2
                 End With
-                .RestartEvents = Array("restart_timewarp")
+                .RestartEvents = Array("reset_timewarp")
             End With
         Next
 
         With .EventPlayer()
             .Debug = True
-            .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("restart_timewarp")
-            .Add "mode_timewarp_started{current_player.ball_just_started==0}", Array("restart_timewarp")
-            .Add "restart_timewarp", Array("ready_timewarp1")
+            .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("reset_timewarp")
+            .Add "mode_timewarp_started{current_player.ball_just_started==0}", Array("reset_timewarp")
+            .Add "reset_timewarp", Array("ready_timewarp1")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             .Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2","restart_tw_timer")
             .Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", Array("light_timewarp2","ready_timewarp3","restart_tw_timer")
@@ -80,7 +80,7 @@ Sub CreateTimewarpMode
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "restart_timewarp"
+                .EventName = "reset_timewarp"
                 .Action = "reset"
             End With
         End With

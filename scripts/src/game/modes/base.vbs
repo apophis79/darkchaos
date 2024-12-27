@@ -141,7 +141,7 @@ Sub CreateBaseMode()
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
-            .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("clear_ball_just_started","start_new_ball_save")
+            .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
             .Add "ball_ended{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "ball_ended{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
             .Add "ball_ended{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
@@ -159,7 +159,7 @@ Sub CreateBaseMode()
             .HurryUpTime = 3000
             .GracePeriod = 2000
             .AutoLaunch = True
-            .EnableEvents = Array("start_new_ball_save")
+            .EnableEvents = Array("new_ball_active")
         End With
 
 
@@ -185,7 +185,7 @@ Sub CreateBaseMode()
 					.Int = 1
 				End With
 			End With
-            With .EventName("clear_ball_just_started")
+            With .EventName("new_ball_active")
 				With .Variable("ball_just_started")
                     .Action = "set"
 					.Int = 0
