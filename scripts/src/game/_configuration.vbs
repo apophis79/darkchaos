@@ -116,7 +116,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("start_meteor_wave")
-        .DeactivateEvents = Array("stop_meteor_wave")
+        .DeactivateEvents = Array("stop_meteor_wave",GLF_BALL_ENDED)
         .ActionCallback = "RaiseDiverterPin"
     End With
 

@@ -40,7 +40,7 @@ Sub CreateMeteorWaveMode
     With CreateGlfMode("meteor_wave", 1000)
         .Debug = True
         .StartEvents = Array("start_meteor_wave")
-        .StopEvents = Array("timer_meteor_wave_finish_complete")
+        .StopEvents = Array("timer_meteor_wave_finish_complete",GLF_BALL_ENDED)
 
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
@@ -76,38 +76,68 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
-        'Fire proton shot profile, two states
-        With .ShotProfiles("ready_to_fire_protons")
+        'Proton shot is ready, two states
+        With .ShotProfiles("proton_shot_ready")
             With .States("unlit")
-                .Key = "key_protons_not_ready"
+                .Key = "p_shot_not_ready"
                 .Show = "off"
                 With .Tokens()
                     .Add "lights", "FireProtonShots"
                 End With
             End With
             With .States("ready")
-                .Key = "key_protons_ready"
+                .Key = "p_shot_is_ready"
                 .Show = "flash_color_with_fade"
                 .Speed = 1
                 With .Tokens()
-                    .Add "lights", "FireProtonShots"
-                    .Add "color", ProtonColor
                     .Add "fade", 200
+                    .Add "color", ProtonColor
+                    .Add "lights", "FireProtonShots"
+                End With
+            End With
+        End With
+
+        'Health shot is ready, two states
+        With .ShotProfiles("health_shot_ready")
+            With .States("unlit")
+                .Key = "h_shot_not_ready"
+                .Show = "off"
+                With .Tokens()
+                    .Add "lights", "FireProtonShots"
+                End With
+            End With
+            With .States("ready")
+                .Key = "h_shot_is_ready"
+                .Show = "flash_color_with_fade"
+                .Speed = 1
+                With .Tokens()
+                    .Add "fade", 200
+                    .Add "color", HealthColor1
+                    .Add "lights", "HealthShots"
                 End With
             End With
         End With
 
         'Define fire proton shots
         With .Shots("fire_protons")
-            .Debug = True
-            .Profile = "ready_to_fire_protons"
+            .Profile = "proton_shot_ready"
             With .ControlEvents()
                 .Events = Array("mode_meteor_wave_started{current_player.shot_proton_round1==1}","light_proton_charge3")
                 .State = 1
             End With
-            .ResetEvents = Array("check_protons_done{current_player.shot_proton_round1==0}")  'FIXME: why is this not working?
+            .RestartEvents = Array("check_protons_done{current_player.shot_proton_round1==0}")  'FIXME: why is this not working?
         End With
 
+        'Define health shots
+        With .Shots("mw_health")
+            .Debug = True
+            .Profile = "health_shot_ready"
+            With .ControlEvents()
+                .Events = Array("mode_meteor_wave_started")
+                .State = 1
+            End With
+            .RestartEvents = Array("stop_meteor_wave") 
+        End With
 
 
         'Define meteor shots
