@@ -7,26 +7,8 @@
 '  1) with a normal ball hit, 2) with a proton cannon, 3) with a cluster bomb, 4) when time runs out and it hits earth
 'If a meteor hits Earth, one tick is removed from the Healt bar. When Health bar is depleted, then the flippers die (ball ends)
 'Each wave gets successively harder, where more meteors need to be destroyed to end the wave. 
-'Number of meteors per wave, starting from first wave and going to last wave: 4,7,10,13,16,19,22,25,28
+'Number of meteors per wave, starting from first wave and going to last wave: 6,9,12,15,18,21,24,27,30
 
-' TODO:
-' - GI event triggering at end of Wave              DONE
-' - Reset MB if still going at start of new wave    DONE
-' - include inital raise randomness                 DONE         
-' - include wave meteor counts                      DONE
-' - add proton cannon firing effect                 DONE
-' - add cluster bomb firing effect                  DONE
-' - add post diverter up                            DONE
-' - add health bar effects (negative and positive)  DONE
-' - add timewarp effect                             DONE
-' - kill flippers when health runs out              DONE
-' - suppress other modes during meteor MB mode      DONE
-'     - health, protons, and cluster bombs should stay active   
-' - add shows (first light shows)                  
-'     - proton hit                                  DONE
-'     - meteor hit                                  DONE
-'     - cluster bomb
-'     - earth hit
 
 
 ' Known issues:
@@ -308,9 +290,9 @@ Sub CreateMeteorWaveMode
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_running")
 
-            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave","light_eb") 
+            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 
+            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 'light_eb here?
             .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave","light_eb")
