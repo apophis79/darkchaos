@@ -3,13 +3,16 @@
 'Alien Attack Mode.
 
 
+' TODO: make direction random. Increase speed on later waves.
+
+
 Sub CreateAlienAttackMode
     Dim x
 
     With CreateGlfMode("alien_attack", 510)
         .StartEvents = Array("new_ball_active","stop_meteor_wave")
         .StopEvents = Array("ball_ended","start_meteor_wave")
-        '.Debug = True
+        .Debug = True
 
         
         'alien shot profile, two states
@@ -34,6 +37,7 @@ Sub CreateAlienAttackMode
         'Define alien shots
         For x = 1 to 8
             With .Shots("alien_shot"&x)
+                .Debug = True
                 .Profile = "alien"
                 With .Tokens()
                     .Add "lights", MainShotLightNames(x-1)
@@ -42,25 +46,26 @@ Sub CreateAlienAttackMode
                     .Events = Array("alien_shot"&x&"_lit")
                     .State = 1
                 End With
-                .RestartEvents = Array("reset_alien_shot"&x,"reset_all_aliens")
+                .RestartEvents = Array("reset_alien_shot"&x,"reset_alien_attacks")
             End With
         Next
 
 
         With .Timers("alien_attacks")
+            .Debug = True
             .TickInterval = AlienTickInterval1
             .StartValue = 0
             .EndValue = 9
             With .ControlEvents()
                 .EventName = "start_alien_attacks"
-                .Action = "start"
+                .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "restart_tw_timer"
+                .EventName = "restart_tw_timer{current_player.alien_attacking==1}"
                 .Action = "stop"
             End With
             With .ControlEvents()
-                .EventName = "timer_timewarp_complete"
+                .EventName = "timer_timewarp_complete{current_player.alien_attacking==1}"
                 .Action = "start"
             End With
             With .ControlEvents()
@@ -71,16 +76,24 @@ Sub CreateAlienAttackMode
 
 
         With .VariablePlayer()
-		    With .EventName("timer_alien_attacks_tick{devices.timers.alien_attacks.ticks>0}")
-				With .Variable("alien_position")
-                    .Action = "add"
+            .Debug = True
+		    With .EventName("start_alien_attacks")
+				With .Variable("alien_attacking")
+                    .Action = "set"
 					.Int = 1
+				End With
+			End With
+            With .EventName("reset_alien_attacks")
+				With .Variable("alien_attacking")
+                    .Action = "set"
+					.Int = 0
 				End With
 			End With
 		End With
 
 
         With .StateMachines("alien")
+            .Debug = True
             .PersistState = true
             .StartingState = "init"
             
@@ -145,7 +158,8 @@ Sub CreateAlienAttackMode
 
 
         With .EventPlayer()
-            .Add "mode_alien_attack_started", Array("reset_all_aliens")
+            .Debug = True
+            '.Add "mode_alien_attack_started", Array("reset_alien_attacks")
             'start the attack sequence (only after even waves)
             '.Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 0}", Array("start_alien_attacks") 'DEBUG
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("start_alien_attacks")
@@ -153,7 +167,7 @@ Sub CreateAlienAttackMode
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("start_alien_attacks")
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("start_alien_attacks")  
             'handle alien attack hit
-            .Add "timer_alien_attacks_complete", Array("earth_hit","earth_flash")
+            .Add "timer_alien_attacks_complete", Array("earth_hit","earth_flash","reset_alien_attacks")
         End With
 
 
