@@ -22,6 +22,8 @@ Sub Table1_Init
 	ConfigureGlfDevices
 	Glf_Init
 
+	' Desktop lights
+	Dim x: For Each x In DesktopLights: x.visible = DesktopMode: Next
 
 	' Ball rolling sounds
 	InitRolling
