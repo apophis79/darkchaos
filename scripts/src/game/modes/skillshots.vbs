@@ -22,6 +22,7 @@ Sub CreateSkillshotsMode
             With .States("ready")
                 .Key = "ss_shot_is_ready"
                 .Show = "flash_color_with_fade"
+                .Priority = 5
                 .Speed = 3
                 With .Tokens()
                     .Add "fade", 200

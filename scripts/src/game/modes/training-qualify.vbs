@@ -13,7 +13,7 @@
 Sub CreateTrainingQualifyMode
     Dim x
 
-    With CreateGlfMode("training_qualify", 510)
+    With CreateGlfMode("training_qualify", 513)
         .StartEvents = Array("ball_started","stop_meteor_wave")
         .StopEvents = Array("ball_ended","start_meteor_wave")
         .Debug = True
@@ -22,7 +22,7 @@ Sub CreateTrainingQualifyMode
         'Define our shots
         For x = 1 to 8
             With .Shots("training_shot"&x)
-                .Profile = "off_on_color"
+                .Profile = "training_profile"
                 With .Tokens()
                     .Add "lights", MainShotLightNames(x-1)
                     .Add "color", TrainingColor
@@ -47,6 +47,18 @@ Sub CreateTrainingQualifyMode
                 .State = 1
             End With
             .RestartEvents = Array("restart_qualify_training")
+        End With
+
+
+        With .ShotProfiles("training_profile")
+            With .States("unlit")
+                .Show = "off"
+                .Key = "key_training_off"
+            End With
+            With .States("on")
+                .Show = "led_color"
+                .Key = "key_training_on"
+            End With
         End With
 
 

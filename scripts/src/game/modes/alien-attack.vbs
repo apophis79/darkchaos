@@ -21,6 +21,7 @@ Sub CreateAlienAttackMode
             With .States("lit")
                 .Key = "key_alien_lit"
                 .Show = "flash_color_with_fade"
+                .Priority = 5
                 .Speed = 7
                 With .Tokens()
                     .Add "fade", 200
@@ -146,7 +147,7 @@ Sub CreateAlienAttackMode
         With .EventPlayer()
             .Add "mode_alien_attack_started", Array("reset_all_aliens")
             'start the attack sequence (only after even waves)
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 0}", Array("start_alien_attacks") 'DEBUG
+            '.Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 0}", Array("start_alien_attacks") 'DEBUG
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("start_alien_attacks")
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("start_alien_attacks")  
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("start_alien_attacks")
