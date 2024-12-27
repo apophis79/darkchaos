@@ -282,6 +282,7 @@ Sub ConfigureGlfDevices
     CreateShipSaveMode              ' No
     CreateCombosMode                ' No
     CreateMysteryMode               ' No
+    CreateExtraBallMode             ' No
     CreateClusterBombMode           ' Yes
     CreateProtonCannonMode          ' Yes
     CreateHealthMode                ' Yes
@@ -303,6 +304,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "num_training_shots_hit", 3
     Glf_SetInitialPlayerVar "meteors_per_wave", 6
     Glf_SetInitialPlayerVar "warping", 0
+    Glf_SetInitialPlayerVar "light_the_eb", 0
+    
 
 End Sub
 

@@ -308,12 +308,12 @@ Sub CreateMeteorWaveMode
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_running")
 
-            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave","light_eb") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave","light_eb")
             .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
@@ -500,6 +500,12 @@ Sub CreateMeteorWaveMode
                 With .Variable("meteors_per_wave")
                     .Action = "add"
                     .Int = 3
+                End With
+            End With
+            With .EventName("light_eb") 
+                With .Variable("light_the_eb")
+                    .Action = "set"
+                    .Int = 1
                 End With
             End With
 		End With
