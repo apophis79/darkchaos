@@ -21,6 +21,7 @@ Const HealthColor1 = "00dd00"
 Const HealthColor2 = "d14c00"
 Const HealthColor3 = "ff0300"
 Const SkillshotColor = "33dd33"
+Const AlienColor = "ff0300"
 
 Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
@@ -74,6 +75,10 @@ Const CombosTickLimit = 5
 ' Skillshots settings
 Const SkillshotsTickInterval = 1000
 Const SkillshotsTickLimit = 5
+
+' Alien Attack settings
+Const AlienTickInterval1 = 4800
+Const AlienTickInterval2 = 3800
 
 
 Sub ConfigureGlfDevices
@@ -277,6 +282,7 @@ Sub ConfigureGlfDevices
     ' Modes                         Active during waves
     CreateBaseMode                  ' Always active during game
     CreateSkillshotsMode            ' No
+    CreateAlienAttackMode           ' No
     CreateShieldsMode               ' No
     CreateTimewarpMode              ' No
     CreateShipSaveMode              ' No
@@ -305,7 +311,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "meteors_per_wave", 6
     Glf_SetInitialPlayerVar "warping", 0
     Glf_SetInitialPlayerVar "light_the_eb", 0
-    
+    Glf_SetInitialPlayerVar "alien_position", 0
 
 End Sub
 
@@ -328,18 +334,22 @@ Public Sub CreateSharedShotProfiles()
     With GlfShotProfiles("off_on_color")
         With .States("unlit")
             .Show = "off"
+            .Key = "key_off_a"
         End With
         With .States("on")
             .Show = "led_color"
+            .Key = "key_on_a"
         End With
     End With
 
     With GlfShotProfiles("flicker_on")
         With .States("unlit")
             .Show = "off"
+            .Key = "key_off_b"
         End With
         With .States("on")
             .Show = "flicker_color_on"
+            .Key = "key_on_b"
             .Speed = 4
         End With
     End With
@@ -347,9 +357,11 @@ Public Sub CreateSharedShotProfiles()
     With GlfShotProfiles("powerups")
         With .States("unlit")
             .Show = "off"
+            .Key = "key_off_c"
         End With
         With .States("ready")
             .Show = "flash_color_with_fade"
+            .Key = "key_ready_c"
             .Speed = 2
             With .Tokens()
                 .Add "fade", 100
@@ -357,15 +369,18 @@ Public Sub CreateSharedShotProfiles()
         End With
         With .States("collected")
             .Show = "led_color"
+            .Key = "key_collected_c"
         End With
     End With
 
     With GlfShotProfiles("qualified_shot")
         With .States("unlit")
             .Show = "off"
+            .Key = "key_off_d"
         End With
         With .States("ready")
             .Show = "flash_color_with_fade"
+            .Key = "key_on_d"
             .Speed = 2
             With .Tokens()
                 .Add "fade", 100
@@ -377,12 +392,14 @@ Public Sub CreateSharedShotProfiles()
     With GlfShotProfiles("shoot_again")
       With .States("unlit")
           .Show = "off"
+          .Key = "key_off_e"
           With .Tokens()
               .Add "lights", "LSA"
           End With
       End With
       With .States("flashing")
           .Show = "flash_color_with_fade"
+          .Key = "key_flashing_e"
           .Speed = 2
           With .Tokens()
               .Add "lights", "LSA"
@@ -392,6 +409,7 @@ Public Sub CreateSharedShotProfiles()
       End With
       With .States("hurry")
           .Show = "flash_color"
+          .Key = "key_hurry_e"
           .Speed = 5
           With .Tokens()
               .Add "lights", "LSA"
