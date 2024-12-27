@@ -20,6 +20,7 @@ Const TrainingColor = "ff4c00"
 Const HealthColor1 = "00dd00"
 Const HealthColor2 = "d14c00"
 Const HealthColor3 = "ff0300"
+Const SkillshotColor = "33dd33"
 
 Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
@@ -70,6 +71,10 @@ Const TimeWarpTickInterval = 1000
 Const CombosTickInterval = 1000
 Const CombosTickLimit = 5
 
+' Skillshots settings
+Const SkillshotsTickInterval = 1000
+Const SkillshotsTickLimit = 5
+
 
 Sub ConfigureGlfDevices
 
@@ -79,6 +84,7 @@ Sub ConfigureGlfDevices
     CreateEarthHitShows()
     CreateClusterBombShows()
     CreateTimeWarpShows()
+    CreateSkillshotShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
@@ -270,6 +276,7 @@ Sub ConfigureGlfDevices
 
     ' Modes                         Active during waves
     CreateBaseMode                  ' Always active during game
+    CreateSkillshotsMode            ' No
     CreateShieldsMode               ' No
     CreateTimewarpMode              ' No
     CreateShipSaveMode              ' No
