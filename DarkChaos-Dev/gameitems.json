@@ -13025,5 +13025,12 @@
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
     "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Wall.Wall022.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
   }
 ]

@@ -1,7 +1,7 @@
 {
   "Ramp": {
     "height_bottom": 29.0,
-    "height_top": 120.0,
+    "height_top": 115.0,
     "width_bottom": 97.0,
     "width_top": 60.0,
     "material": "zCol_Ramp",
