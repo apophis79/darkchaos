@@ -1684,21 +1684,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall019.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall020.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.LeftMagnaTimer.json",
@@ -12982,42 +12982,42 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall007.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall014.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall015.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall016.json",
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall021.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRampScoop.json",
@@ -13031,6 +13031,20 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Primitive.zCol_Rubber_Peg012.json",
+    "is_locked": true,
+    "editor_layer": 1,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Primitive.zCol_Rubber_Peg013.json",
+    "is_locked": true,
+    "editor_layer": 1,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": true
   }
 ]

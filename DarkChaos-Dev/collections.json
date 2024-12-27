@@ -164,7 +164,8 @@
       "zCol_Rubber_Peg007",
       "zCol_Rubber_Peg005",
       "zCol_Rubber_Peg006",
-      "zCol_Rubber_Peg011"
+      "zCol_Rubber_Peg011",
+      "zCol_Rubber_Peg012"
     ],
     "fire_events": true,
     "stop_single_events": false,
