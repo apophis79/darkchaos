@@ -77,8 +77,7 @@ Const SkillshotsTickInterval = 1000
 Const SkillshotsTickLimit = 5
 
 ' Alien Attack settings
-Const AlienTickInterval1 = 4000
-Const AlienTickInterval2 = 3000
+Const AlienTickInterval = 3800
 
 
 Sub ConfigureGlfDevices
@@ -311,7 +310,9 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "meteors_per_wave", 6
     Glf_SetInitialPlayerVar "warping", 0
     Glf_SetInitialPlayerVar "light_the_eb", 0
-    Glf_SetInitialPlayerVar "alien_attacking", 0
+    Glf_SetInitialPlayerVar "alien_tick_count", -1
+    Glf_SetInitialPlayerVar "alien_attack_dir", 0
+    Glf_SetInitialPlayerVar "alien_attack_done", 0
 
 End Sub
 
