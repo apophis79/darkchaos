@@ -52,7 +52,7 @@ Sub CreateAlienAttackMode
                     .Events = Array("alien_shot"&x&"_lit")
                     .State = 1
                 End With
-                .RestartEvents = Array("reset_alien_shot"&x,"reset_alien_attack")
+                .RestartEvents = Array("reset_alien_shot"&x,"alien_attack_finished")
             End With
         Next
 
