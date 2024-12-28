@@ -44,6 +44,15 @@ Sub CreateMeteorMultiballMode
             .GracePeriod = 2000
             .Debug = True
         End With
+
+        With .VariablePlayer()
+            With .EventName("clear_ship_save")
+				With .Variable("meteor_mb_shootagain")
+                    .Action = "set"
+					.Int = MeteorMBShootAgainTime
+				End With
+			End With
+		End With
     
     End With
 End Sub
