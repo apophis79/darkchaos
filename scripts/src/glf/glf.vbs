@@ -6953,7 +6953,7 @@ Class GlfStateMachine
     Public Property Get GetValue(value)
         Select Case value
             Case "state":
-                GetValue = m_state
+                GetValue = State()
         End Select
     End Property
 
@@ -6973,6 +6973,7 @@ Class GlfStateMachine
     Public Property Let State(value)
         If m_persist_state = True Then
             SetPlayerState m_player_var_name, value
+            m_state = value
         Else
             m_state = value
         End If

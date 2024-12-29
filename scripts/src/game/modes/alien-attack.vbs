@@ -14,7 +14,7 @@ Sub CreateAlienAttackMode
     With CreateGlfMode("alien_attack", 510)
         .StartEvents = Array("new_ball_active","stop_meteor_wave")
         .StopEvents = Array("ball_ended","start_meteor_wave")
-        .Debug = True
+        '.Debug = True
 
         
         'alien shot profile, two states
@@ -39,7 +39,7 @@ Sub CreateAlienAttackMode
         'Define alien shots
         For x = 1 to 8
             With .Shots("alien_shot"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "alien"
                 With .Tokens()
                     .Add "lights", MainShotLightNames(x-1)
@@ -59,7 +59,7 @@ Sub CreateAlienAttackMode
 
         'Alien state machine
         With .StateMachines("alien")
-            .Debug = True
+            '.Debug = True
             .PersistState = true
             .StartingState = "init"
             
@@ -116,7 +116,7 @@ Sub CreateAlienAttackMode
 
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             'resetting the attack
             .Add "mode_alien_attack_started{current_player.alien_attack_done==0}", Array("reset_alien_timer")
             .Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("reset_alien_attack")  'after wave 1
@@ -136,7 +136,7 @@ Sub CreateAlienAttackMode
         End With
 
         With .RandomEventPlayer()
-            .Debug = True
+            '.Debug = True
             With .EventName("reset_alien_attack")
                 .Add "alien_attack_from_left", 1
                 .Add "alien_attack_from_right", 1
@@ -147,7 +147,7 @@ Sub CreateAlienAttackMode
 
 
         With .Timers("alien_attack")
-            .Debug = True
+            '.Debug = True
             .TickInterval = AlienTickInterval
             .StartValue = "current_player.alien_tick_count"
             .EndValue = 9
@@ -171,7 +171,7 @@ Sub CreateAlienAttackMode
 
 
         With .VariablePlayer()
-            .Debug = True
+            '.Debug = True
             With .EventName("alien_attack_finished")
                 With .Variable("alien_attack_done")
                     .Action = "set"
