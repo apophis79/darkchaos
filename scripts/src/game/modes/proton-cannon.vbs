@@ -15,7 +15,6 @@ Sub CreateProtonCannonMode
     Dim x
 
     With CreateGlfMode("proton_cannon", 510)
-        .Debug = true
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
 
@@ -68,7 +67,6 @@ Sub CreateProtonCannonMode
         Next
 
         With .EventPlayer()
-            .Debug = True
             .Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", Array("reset_proton_charges")
             .Add "reset_proton_charges", Array("ready_proton_charge1")
             .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", Array("light_proton_charge1","ready_proton_charge2")

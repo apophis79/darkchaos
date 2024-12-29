@@ -8,12 +8,10 @@ Sub CreateExtraBallMode
     With CreateGlfMode("extra_ball", 510)
         .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
         .StopEvents = Array("ball_ended","start_meteor_wave")
-        .Debug = True
      
 
         'EB Ready
         With .Shots("eb_ready")
-            .Debug = True
             .Profile = "qualified_shot"
             With .Tokens()
                 .Add "lights", "LEBR"
@@ -28,7 +26,6 @@ Sub CreateExtraBallMode
 
 
         With .Shots("eb_shoot_again")
-            .Debug = True
             .Profile = "extraball"
             With .ControlEvents()
                 .Events = Array("eb_achieved")
@@ -58,7 +55,6 @@ Sub CreateExtraBallMode
 
 
         With .EventPlayer()
-            .Debug = True
             .Add "mode_extra_ball_started", Array("check_eb")
             .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit")
             .Add "s_Scoop_active{current_player.shot_eb_ready == 1}", Array("restart_eb","eb_achieved") 
@@ -66,7 +62,6 @@ Sub CreateExtraBallMode
 
 
         With .VariablePlayer()
-            .Debug = True
             With .EventName("eb_now_lit") 
                 With .Variable("light_the_eb")
                     .Action = "set"

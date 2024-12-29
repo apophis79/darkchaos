@@ -8,7 +8,6 @@ Sub CreateMeteorWaveQualifyMode
     With CreateGlfMode("meteor_wave_qualify", 900)
         .StartEvents = Array("ball_started","stop_meteor_wave")
         .StopEvents = Array("ball_ended","start_meteor_wave")
-        .Debug = True
         
         With .SegmentDisplayPlayer()
             With .Events("init_pf_display")
@@ -36,14 +35,9 @@ Sub CreateMeteorWaveQualifyMode
                 .EventName = "stop_mwq_timer"
                 .Action = "stop"
             End With
-            ' With .ControlEvents()
-            '     .EventName = "restart_mwq_timer"
-            '     .Action = "restart"
-            ' End With
         End With
 
         With .VariablePlayer()
-            .Debug = True
             With .EventName("reset_countdown_value")
                 With .Variable("meteor_countdown_value")
                     .Action = "set"
@@ -65,7 +59,6 @@ Sub CreateMeteorWaveQualifyMode
 		End With
         
         With .EventPlayer()
-            .Debug = True
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer")
             .Add "reset_countdown_value", Array("init_mwq_timer")

@@ -13,7 +13,6 @@ Sub CreateClusterBombMode
     Dim x
 
     With CreateGlfMode("cluster_bombs", 1000)
-        .Debug = true
         .StartEvents = Array("ball_started")
         .StopEvents = Array("ball_ended")
 
@@ -135,7 +134,6 @@ Sub CreateClusterBombMode
 					.Int = 1111
 				End With
 			End With
-            .Debug = True
 		End With
 
 

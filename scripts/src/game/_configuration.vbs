@@ -70,7 +70,7 @@ Const TimeWarpTickInterval = 1000
 
 ' Combos settings
 Const CombosTickInterval = 1000
-Const CombosTickLimit = 5
+Const CombosTickLimit = 6
 
 ' Skillshots settings
 Const SkillshotsTickInterval = 1000

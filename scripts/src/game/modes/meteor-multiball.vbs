@@ -13,7 +13,6 @@ Sub CreateMeteorMultiballMode
     Dim x
 
     With CreateGlfMode("meteor_multiball", 1000)
-        .Debug = True
         .StartEvents = Array("start_meteor_multiball")
         .StopEvents = Array("ball_ended","kill_flippers")
 
@@ -42,7 +41,6 @@ Sub CreateMeteorMultiballMode
             .ShootAgain = "current_player.meteor_mb_shootagain"
             .HurryUp = 3000
             .GracePeriod = 2000
-            .Debug = True
         End With
 
         With .VariablePlayer()

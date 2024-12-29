@@ -57,7 +57,6 @@ Sub CreateShipSaveMode
         End With
 
         With .VariablePlayer()
-            '.Debug = True
             With .EventName("right_orbit_hit")
 				With .Variable("score")
 					.Int = 2750

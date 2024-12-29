@@ -52,7 +52,6 @@ Sub CreateSkillshotsMode
 
 
         With .Timers("skillshots")
-            .Debug = True
             .TickInterval = SkillshotsTickInterval
             .StartValue = 0
             .EndValue = SkillshotsTickLimit

@@ -9,7 +9,6 @@ Sub CreateBaseMode()
     With CreateGlfMode("base", 100)
         .StartEvents = Array(GLF_GAME_START)
         .StopEvents = Array(GLF_GAME_OVER)
-        .Debug = True
 
         With .SegmentDisplayPlayer()
             With .Events("mode_base_started")
@@ -178,7 +177,6 @@ Sub CreateBaseMode()
        
 
         With .VariablePlayer()
-            .Debug = true
 		    With .EventName(GLF_BALL_STARTED)
 				With .Variable("ball_just_started")
                     .Action = "set"

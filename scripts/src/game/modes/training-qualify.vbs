@@ -16,7 +16,6 @@ Sub CreateTrainingQualifyMode
     With CreateGlfMode("training_qualify", 513)
         .StartEvents = Array("ball_started","stop_meteor_wave")
         .StopEvents = Array("ball_ended","start_meteor_wave")
-        .Debug = True
 
      
         'Define our shots
@@ -62,16 +61,7 @@ Sub CreateTrainingQualifyMode
         End With
 
 
-        ' ' Training qualifying shot group
-        ' With .ShotGroups("qualify_training")
-        '     .Shots = Array("training_shot1", "training_shot2", "training_shot3", "training_shot4","training_shot5", "training_shot6", "training_shot7","training_shot8")
-        '     .RestartEvents = Array("restart_qualify_training")
-        '     .DisableEvents = Array("disable_qualify_training")
-        ' End With
-
-
         With .EventPlayer()
-            .Debug = True
             .Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("restart_qualify_training")
             .Add MainShotNames(0)&"_hit{current_player.shot_training_shot1 == 1}", Array(MainShotNames(0)&"_training_off","training_shot_hit")
             .Add MainShotNames(1)&"_hit{current_player.shot_training_shot2 == 1}", Array(MainShotNames(1)&"_training_off","training_shot_hit")
@@ -89,7 +79,6 @@ Sub CreateTrainingQualifyMode
         End With
 
         With .RandomEventPlayer()
-            .Debug = True
             With .EventName("add_training_shot")
                 .Add MainShotNames(0)&"_training_on{current_player.shot_training_shot1 == 0}", 1
                 .Add MainShotNames(1)&"_training_on{current_player.shot_training_shot2 == 0}", 1
@@ -105,7 +94,6 @@ Sub CreateTrainingQualifyMode
         End With
 
         With .Timers("training_shot_add")
-            .Debug = True
             .TickInterval = 60
             .StartValue = "current_player.num_training_shots"
             .Direction = "down"
