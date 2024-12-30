@@ -48,7 +48,7 @@ RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
 
 ' Meteor wave settings
-Const MeteorTimerInitTickInterval = 1000
+Const MeteorTimerInitTickInterval = 500
 Const MeteorTimerTickInterval = 1000
 Const MeteorDropTicks = 2
 Const MeteorCoolTicks = 4
@@ -295,7 +295,7 @@ Sub ConfigureGlfDevices
     CreateMoonMultiballMode         ' Yes (but qualify shots disabled)
 
     CreateTrainingQualifyMode       ' No
-    'CreateTrainingMode             ' No
+    'CreateTrainingMode              ' No
 
     CreateMeteorWaveQualifyMode     ' No
     CreateMeteorWaveMode            ' Yes

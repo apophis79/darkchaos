@@ -12,7 +12,6 @@
 
 
 ' Known issues:
-' - moon mb not releasing all balls. ball count get messed up
 ' - if proton fired right when wave starts, can case some confusion with the meteors dropped
 
 
@@ -20,6 +19,7 @@ Sub CreateMeteorWaveMode
     Dim x
 
     With CreateGlfMode("meteor_wave", 1000)
+        .Debug = True
         .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("timer_meteor_wave_finish_complete",GLF_BALL_ENDED)
 
@@ -148,6 +148,7 @@ Sub CreateMeteorWaveMode
         For x = 1 to 4   'for each meteor
 
             With .StateMachines("meteor"&x)
+                .Debug = True
                 .PersistState = False
                 .StartingState = "init"
                 
@@ -176,7 +177,7 @@ Sub CreateMeteorWaveMode
                 With .Transitions()
                     .Source = Array("init")
                     .Target = "up_cool"
-                    .Events = Array("meteor"&x&"_start")
+                    .Events = Array("timer_meteor"&x&"_init_complete")
                     .EventsWhenTransitioning = Array("restart_meteor"&x&"_timer")
                 End With
                 With .Transitions()
@@ -215,6 +216,7 @@ Sub CreateMeteorWaveMode
             End With
 
             With .Timers("meteor"&x)
+                .Debug = True
                 .TickInterval = MeteorTimerTickInterval
                 .StartValue = 0
                 .EndValue = MeteorTotalTicks
@@ -228,6 +230,48 @@ Sub CreateMeteorWaveMode
                 End With
             End With
 
+            'Randomize the initialization time for each meteor
+            With .Timers("meteor"&x&"_init")
+                .Debug = True
+                .TickInterval = MeteorTimerInitTickInterval
+                .StartValue = 0
+                .EndValue = 5
+                .StartRunning = True
+                With .ControlEvents()
+                    .EventName = "meteor"&x&"_init_tick1"
+                    .Action = "jump"
+                    .Value = 1
+                End With
+                With .ControlEvents()
+                    .EventName = "meteor"&x&"_init_tick2"
+                    .Action = "jump"
+                    .Value = 2
+                End With
+                With .ControlEvents()
+                    .EventName = "meteor"&x&"_init_tick3"
+                    .Action = "jump"
+                    .Value = 3
+                End With
+                With .ControlEvents()
+                    .EventName = "meteor"&x&"_init_tick4"
+                    .Action = "jump"
+                    .Value = 4
+                End With
+            End With
+
+            With .RandomEventPlayer()
+                .Debug = True
+                With .EventName("init_meteor"&x)
+                    .Add "meteor"&x&"_init_tick1", 1
+                    .Add "meteor"&x&"_init_tick2", 1
+                    .Add "meteor"&x&"_init_tick3", 1
+                    .Add "meteor"&x&"_init_tick4", 1
+                    .ForceAll = False
+                    .ForceDifferent = False
+                End With
+             End With
+
+            'Light shows
             With .ShowPlayer()
                 With .EventName("meteor"&x&"_explodes_show")
                     .Key = "key_meteor"&x&"_explodes"
@@ -253,7 +297,8 @@ Sub CreateMeteorWaveMode
 
 
         With .EventPlayer()
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons")
+            .Debug = True
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
@@ -303,7 +348,9 @@ Sub CreateMeteorWaveMode
             .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
         End With
 
+        'Randomize which meteor gets hit by proton cannon
         With .RandomEventPlayer()
+            .Debug = True
             With .EventName("check_protons")
                 .Add "meteor1_proton_hit{current_player.shot_meteor1_light > 0}", 1
                 .Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", 1
@@ -312,27 +359,11 @@ Sub CreateMeteorWaveMode
                 .ForceAll = False
                 .ForceDifferent = False
             End With
-            With .EventName("timer_meteors_init_tick")
-                .Add "meteor1_start{current_player.shot_meteor1_light == 0 && current_player.num_meteors_to_raise > 0}", 1
-                .Add "meteor2_start{current_player.shot_meteor2_light == 0 && current_player.num_meteors_to_raise > 0}", 1
-                .Add "meteor3_start{current_player.shot_meteor3_light == 0 && current_player.num_meteors_to_raise > 0}", 1
-                .Add "meteor4_start{current_player.shot_meteor4_light == 0 && current_player.num_meteors_to_raise > 0}", 1
-                .ForceAll = False
-                .ForceDifferent = False
-            End With
         End With
 
-        With .Timers("meteors_init")
-            .TickInterval = MeteorTimerInitTickInterval
-            .StartValue = 0
-            .EndValue = 6 
-            With .ControlEvents()
-                .EventName = "mode_meteor_wave_started"
-                .Action = "restart"
-            End With
-        End With
-
+        'Stage the wave finish
         With .Timers("meteor_wave_finish")
+            .Debug = True
             .TickInterval = 500
             .StartValue = 0
             .EndValue = 2
@@ -342,7 +373,7 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
-
+        'Light shows
         With .ShowPlayer()
             With .EventName("proton_fired")
                 .Key = "key_proton_fired"
@@ -431,6 +462,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .VariablePlayer()
+            .Debug = True
 		    With .EventName("mode_meteor_wave_started")
 				With .Variable("num_meteors_to_raise")
                     .Action = "set"
