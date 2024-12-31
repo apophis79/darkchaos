@@ -7,7 +7,7 @@
 'Once training mission starts, the associlated shots will slow flash until you hit them to make them lit solid.
 'Once all are lit, the training objective achieved and award collected.
 'Award (except for heal training): only one hit required to collect associated power-up
-'Heal is a special training: there is no award, but during the training it is easy to increase health as the diverter pin is raised. 3 bumper hits = 1 health light
+'Heal award: the bumper diverter will remain up the rest of the game
 'There is a time limit during training missions (30 seconds). If objective is not achieved in time, then award not given. But progress is saved for next training round. 
 
 
@@ -31,6 +31,24 @@ Sub CreateTrainingSelectMode
             .Add "s_right_magna_key_active", Array("make_selection")
             .Add "timer_training_select_complete", Array("make_selection")
             .Add "make_selection", Array("training_select_release","stop_training","enable_flippers")
+            'hurry-up
+            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")
+        End With
+
+
+        With .VariablePlayer()
+            With .EventName("mode_training_select_started")
+				With .Variable("ts_hurry_up")
+                    .Action = "set"
+					.Int = 0  
+				End With
+			End With
+		    With .EventName("selection_hurry_up")
+				With .Variable("ts_hurry_up")
+                    .Action = "set"
+					.Int = 1  
+				End With
+			End With
         End With
 
 
@@ -47,19 +65,24 @@ Sub CreateTrainingSelectMode
         With .ShotProfiles("training_select")
             With .States("unlit")
                 .Show = "off"
+                .Key = "key_ts_unlit"
             End With
             With .States("ready1")
                 .Show = "flash_color_with_fade"
                 .Speed = 3
+                .Priority = 1
+                .Key = "key_ts_ready1"
                 With .Tokens()
-                    .Add "fade", 100
+                    .Add "fade", 200
                 End With
             End With
             With .States("ready2")
                 .Show = "flash_color_with_fade"
                 .Speed = 8
+                .Priority = 2
+                .Key = "key_ts_ready2"
                 With .Tokens()
-                    .Add "fade", 100
+                    .Add "fade", 200
                 End With
             End With
         End With
@@ -67,26 +90,28 @@ Sub CreateTrainingSelectMode
         'Selection shots
         For x = 0 to 5
             With .Shots("select_"&TrainingSelectionNames(x))
+                .Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", TrainingSelectionLightNames(x)
                     .Add "color", TrainingColors(x)
                 End With
                 With .ControlEvents()
-                    ' .Events = Array(TrainingSelectionNames(x)&"_selected{devices.timers.training_select.ticks < 10}")
-                    .Events = Array(TrainingSelectionNames(x)&"_selected")
+                    .Events = Array(TrainingSelectionNames(x)&"_selected{current_player.ts_hurry_up==0}")
                     .State = 1
                 End With
-                ' With .ControlEvents()
-                '     .Events = Array(TrainingSelectionNames(x)&"_selected{devices.timers.training_select.ticks >= 10}")
-                '     .State = 2
-                ' End With
+                With .ControlEvents()
+                    .Events = Array(TrainingSelectionNames(x)&"_selected{current_player.ts_hurry_up==1}", _
+                                    "selection_hurry_up{devices.state_machines.training_select.state=="""&TrainingSelectionNames(x)&"""}")
+                    .State = 2
+                End With
                 .RestartEvents = Array(TrainingSelectionNames(x)&"_unselected") 
             End With
         Next
         
         'Selection timer
         With .Timers("training_select")
+            .Debug = True
             .TickInterval = 1000
             .StartValue = 0
             .EndValue = 15
@@ -243,29 +268,6 @@ Sub CreateTrainingSelectMode
                 End With
             End With
         End With
-
-
-        ' With .ShowPlayer()
-        '     With .EventName("meteor"&x&"_explodes_show")
-        '         .Key = "key_meteor"&x&"_explodes"
-        '         .Show = "meteor"&x&"_explodes"
-        '         .Speed = 1
-        '         .Loops = 1
-        '         With .Tokens()
-        '             .Add "color", "ffffff"
-        '         End With    
-        '     End With
-        '     With .EventName("meteor"&x&"_proton_hit")
-        '         .Key = "key_meteor"&x&"_proton_hit"
-        '         .Show = "meteor"&x&"_explodes"
-        '         .Speed = 1
-        '         .Loops = 1
-        '         With .Tokens()
-        '             .Add "color", ProtonColor
-        '         End With    
-        '     End With
-        ' End With
-
 
 
     End With
