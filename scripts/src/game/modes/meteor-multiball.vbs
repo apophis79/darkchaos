@@ -4,10 +4,6 @@
 
 'Meteor multiball occurs at regular intervals. Once it starts, the meteor targets begin to pop up.
 
-' TODO:
-' - add extended ship shave time effect
-
-
 
 Sub CreateMeteorMultiballMode
     Dim x

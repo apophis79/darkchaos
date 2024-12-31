@@ -15,8 +15,8 @@ Sub CreateHealthMode
     Dim x
 
     With CreateGlfMode("health", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
+        .StartEvents = Array("ball_started","stop_training")
+        .StopEvents = Array("ball_ended","start_training")
 
         'Define a shot profile with four states, health meter leves
         With .ShotProfiles("health_meter")
@@ -106,7 +106,7 @@ Sub CreateHealthMode
                 .Speed = 15
                 .Loops = 5
                 With .Tokens()
-                    .Add "lights", "Healthbar"
+                    .Add "lights", "tHealth"
                     .Add "color", HealthColor1
                 End With
             End With

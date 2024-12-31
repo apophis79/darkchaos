@@ -13,7 +13,7 @@
     "color2": "#ff0057a9",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "StartLight",
+    "blink_pattern": "tStars",
     "off_image": "",
     "blink_interval": 125,
     "intensity": 10.0,

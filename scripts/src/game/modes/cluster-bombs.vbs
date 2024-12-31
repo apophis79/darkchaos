@@ -13,8 +13,8 @@ Sub CreateClusterBombMode
     Dim x
 
     With CreateGlfMode("cluster_bombs", 1000)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
+        .StartEvents = Array("ball_started","stop_training")
+        .StopEvents = Array("ball_ended","start_training")
 
         'Define our shots
         For x = 1 to 3
@@ -74,7 +74,7 @@ Sub CreateClusterBombMode
                 .Speed = 15
                 .Loops = 5
                 With .Tokens()
-                    .Add "lights", "ClusterBombShot"
+                    .Add "lights", "tCluster"
                     .Add "color", ClusterBombColor
                 End With
             End With

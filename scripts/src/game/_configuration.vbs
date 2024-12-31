@@ -43,6 +43,11 @@ Dim RolloverSwitches, RolloverLightNames
 RolloverSwitches = Array("s_LeftBumper1","s_LeftBumper2","s_CenterOrb1","s_CenterOrb2","s_CenterOrb3")
 RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
 
+' Array of training selection shots and associated info
+Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
+TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields")
+TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields")
+TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor)
 
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
@@ -136,12 +141,14 @@ Sub ConfigureGlfDevices
         .Switch = "s_left_flipper"
         .ActionCallback = "LeftFlipperAction"
         .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfFlipper("right")
         .Switch = "s_right_flipper"
         .ActionCallback = "RightFlipperAction"
         .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
 
@@ -295,7 +302,13 @@ Sub ConfigureGlfDevices
     CreateMoonMultiballMode         ' Yes (but qualify shots disabled)
 
     CreateTrainingQualifyMode       ' No
-    'CreateTrainingMode              ' No
+    CreateTrainingSelectMode        ' No
+    ' CreateTrainingHeal              ' No
+    ' CreateTrainingClusterBombs      ' No
+    ' CreateTrainingProtonCannon      ' No
+    ' CreateTrainingMoonMissile       ' No
+    ' CreateTrainingShipSave          ' No
+    ' CreateTrainingShields           ' No
 
     CreateMeteorWaveQualifyMode     ' No
     CreateMeteorWaveMode            ' Yes

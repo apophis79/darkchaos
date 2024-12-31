@@ -15,8 +15,8 @@ Sub CreateProtonCannonMode
     Dim x
 
     With CreateGlfMode("proton_cannon", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
+        .StartEvents = Array("ball_started","stop_training")
+        .StopEvents = Array("ball_ended","start_training")
 
         'Define our shots
         For x = 1 to 3
@@ -88,7 +88,7 @@ Sub CreateProtonCannonMode
                 .Speed = 15
                 .Loops = 5
                 With .Tokens()
-                    .Add "lights", "ProtonShot"
+                    .Add "lights", "tProton"
                     .Add "color", ProtonColor
                 End With
             End With

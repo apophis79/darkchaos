@@ -13,7 +13,7 @@
     "color2": "#ff000000",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "BumperLights",
+    "blink_pattern": "tBumper",
     "off_image": "",
     "blink_interval": 300,
     "intensity": 6.0,

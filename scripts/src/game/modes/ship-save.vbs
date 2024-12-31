@@ -11,8 +11,8 @@ Sub CreateShipSaveMode
     Dim x
 
     With CreateGlfMode("ship_save", 510)
-        .StartEvents = Array("ball_started","stop_meteor_wave")
-        .StopEvents = Array("ball_ended","start_meteor_wave")
+        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
         'Define our shots
         For x = 1 to 3
@@ -50,7 +50,7 @@ Sub CreateShipSaveMode
                 .Speed = 15
                 .Loops = 5
                 With .Tokens()
-                    .Add "lights", "ShipSaveShot"
+                    .Add "lights", "tSaver"
                     .Add "color", ShipSaveColor
                 End With
             End With

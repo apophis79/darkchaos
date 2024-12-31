@@ -14,8 +14,8 @@ Sub CreateTimewarpMode
     Dim x
 
     With CreateGlfMode("timewarp", 510)
-        .StartEvents = Array("ball_started","stop_meteor_wave")
-        .StopEvents = Array("ball_ended","start_meteor_wave")
+        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
         'Define our shots
         For x = 1 to 4
@@ -56,7 +56,7 @@ Sub CreateTimewarpMode
                 .Speed = 15
                 .Loops = 5
                 With .Tokens()
-                    .Add "lights", "ShipSaveShot"
+                    .Add "lights", "tTimewarp"
                     .Add "color", TimewarpColor
                 End With
             End With

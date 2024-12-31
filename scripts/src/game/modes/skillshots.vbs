@@ -7,8 +7,8 @@ Sub CreateSkillshotsMode
     Dim x
 
     With CreateGlfMode("skillshots", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended","stop_skillshots","start_meteor_wave")
+        .StartEvents = Array("ball_started","stop_training")
+        .StopEvents = Array("ball_ended","stop_skillshots","start_meteor_wave","start_training")
 
         'skill shot is ready, two states
         With .ShotProfiles("ss_ready")
@@ -16,7 +16,7 @@ Sub CreateSkillshotsMode
                 .Key = "ss_shot_not_ready"
                 .Show = "off"
                 With .Tokens()
-                    .Add "lights", "FireProtonShots"
+                    .Add "lights", "tFire"
                 End With
             End With
             With .States("ready")

@@ -54,9 +54,9 @@ Sub CreateMoonMultiballMode
 
 
     With CreateGlfMode("moon_multiball", 510)
-        .StartEvents = Array("ball_started")
-        .StopEvents = Array("ball_ended")
-        .Debug = True
+        .StartEvents = Array("ball_started","stop_training")
+        .StopEvents = Array("ball_ended","start_training")
+        '.Debug = True
 
         'Define our shots
         With .Shots("left_outlane")
@@ -144,7 +144,7 @@ Sub CreateMoonMultiballMode
 
 
         With .StateMachines("moon_mb")
-            .Debug = True
+            '.Debug = True
             .PersistState = True
             .StartingState = "qualify"
             
@@ -197,7 +197,7 @@ Sub CreateMoonMultiballMode
         End With
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             .Add "s_MoonRamp_active", Array("right_ramp_hit")
             'Release a ball (Lower the diverter pin) if we are not 
             .Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking""}", Array("release_moon_ball")
@@ -215,7 +215,7 @@ Sub CreateMoonMultiballMode
         
         'Lock the balls
         With .MultiballLocks("moon_launch")
-            .Debug = True
+            '.Debug = True
             .EnableEvents = Array("enable_moon_mb_locking", "mode_moon_multiball_started{devices.state_machines.moon_mb.state==""locking""}")
             .DisableEvents = Array("restart_qualify_shots")
             .ResetEvents = Array("start_moon_multiball")
@@ -224,7 +224,7 @@ Sub CreateMoonMultiballMode
         End With
 
         With .Multiballs("moon")
-            .Debug = True
+            '.Debug = True
             .StartEvents = Array("start_moon_multiball")
             .BallCount = "current_player.multiball_lock_moon_launch_balls_locked"
             .BallCountType = "add"
@@ -239,14 +239,14 @@ Sub CreateMoonMultiballMode
                 .Speed = 13
                 .Loops = 7
                 With .Tokens()
-                    .Add "lights", "MoonLanes"
+                    .Add "lights", "tMoon"
                     .Add "color", MoonColor
                 End With
             End With
         End With
 
         With .VariablePlayer()
-            .Debug = True
+            '.Debug = True
             With .EventName("mode_moon_multiball_started")
 				With .Variable("leftover_balls_in_lock")
                     .Action = "set"

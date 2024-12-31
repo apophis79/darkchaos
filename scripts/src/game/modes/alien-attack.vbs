@@ -12,8 +12,8 @@ Sub CreateAlienAttackMode
     Dim x
 
     With CreateGlfMode("alien_attack", 510)
-        .StartEvents = Array("new_ball_active","stop_meteor_wave")
-        .StopEvents = Array("ball_ended","start_meteor_wave")
+        .StartEvents = Array("new_ball_active","stop_meteor_wave","stop_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
         '.Debug = True
 
         
@@ -224,7 +224,7 @@ Sub CreateAlienAttackMode
                 .Speed = 15
                 .Loops = 3
                 With .Tokens()
-                    .Add "lights", "EarthFlash"
+                    .Add "lights", "tEarth"
                     .Add "color", EarthHitColor
                 End With
             End With

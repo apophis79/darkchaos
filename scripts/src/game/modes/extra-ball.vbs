@@ -6,8 +6,8 @@ Sub CreateExtraBallMode
     Dim x
 
     With CreateGlfMode("extra_ball", 510)
-        .StartEvents = Array("ball_started","mode_meteor_wave_stopped")
-        .StopEvents = Array("ball_ended","start_meteor_wave")
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped","stop_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
      
 
         'EB Ready
