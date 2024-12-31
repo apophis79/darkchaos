@@ -138,8 +138,23 @@ Sub CreateBaseMode()
             Next
         End With
 
+        With .ShowPlayer()
+            With .EventName("flash_mag_gi")
+                .Key = "key_ts_scoop_gi"
+                .Show = "flash_color" '_with_fade"
+                .Speed = 15
+                .Loops = 7
+                .Priority = 1000
+                With .Tokens()
+                    .Add "lights", "gi13" 
+                    .Add "color", GIColor3000k
+                    '.Add "fade", 300
+                End With
+            End With
+        End With
+
         With .EventPlayer()
-            '.Add "s_left_staged_flipper_key_active", Array("start_meteor_wave")   'DEBUG
+            '.Add "s_left_staged_flipper_key_active", Array("launch_moon_balls_test")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
             .Add "ball_ended{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "ball_ended{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
@@ -150,6 +165,7 @@ Sub CreateBaseMode()
             .Add "ball_ended{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
             .Add "ball_ended{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
             .Add "ball_ended{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
+            .Add "s_TargetMystery5_active", Array("flash_mag_gi")
         End With
 
 

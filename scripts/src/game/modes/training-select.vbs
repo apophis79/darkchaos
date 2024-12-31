@@ -33,6 +33,7 @@ Sub CreateTrainingSelectMode
             .Add "make_selection", Array("training_select_release","stop_training","enable_flippers")
             'hurry-up
             .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")
+            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
         End With
 
 
@@ -49,6 +50,20 @@ Sub CreateTrainingSelectMode
 					.Int = 1  
 				End With
 			End With
+        End With
+
+        With .ShowPlayer()
+            With .EventName("flash_ts_scoop_gi")
+                .Key = "key_ts_scoop_gi"
+                .Show = "flash_color_with_fade"
+                .Speed = 10
+                .Loops = 10
+                With .Tokens()
+                    .Add "lights", "GI"  'FIXME: make this gi22 once its lightmaps are split
+                    .Add "color", GIColor3000k
+                    .Add "fade", 300
+                End With
+            End With
         End With
 
 

@@ -96,6 +96,7 @@ Sub ConfigureGlfDevices
     CreateClusterBombShows()
     CreateTimeWarpShows()
     CreateSkillshotShows()
+    CreateMoonShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")

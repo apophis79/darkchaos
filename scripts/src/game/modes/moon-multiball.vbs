@@ -176,7 +176,7 @@ Sub CreateMoonMultiballMode
             With .Transitions()
                 .Source = Array("locking", "qualify", "locks_full")
                 .Target = "in_progress"
-                .Events = Array("s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}")
+                .Events = Array("launch_moon_balls")
                 .EventsWhenTransitioning = Array("start_moon_multiball")
             End With
             With .Transitions()
@@ -208,6 +208,8 @@ Sub CreateMoonMultiballMode
             'Light missiles
             .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==1}", Array("light_missile1")
             .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==2}", Array("light_missile2")
+            'Launch
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("launch_moon_balls")
             'Disable qualify shots during a wave
             .Add "start_meteor_wave", Array("disable_qualify_shots") 
             .Add "stop_meteor_wave", Array("enable_qualify_shots")
@@ -243,6 +245,13 @@ Sub CreateMoonMultiballMode
                     .Add "color", MoonColor
                 End With
             End With
+            With .EventName("launch_moon_balls")
+                .Key = "key_moon_gi"
+                .Show = "moon_launch_gi"
+                .Priority = 50
+                .Speed = 4
+                .Loops = 5
+            End With
         End With
 
         With .VariablePlayer()
@@ -271,7 +280,7 @@ Sub CreateMoonMultiballMode
 		End With
         
         With .SegmentDisplayPlayer()
-            With .Events("s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}")
+            With .Events("launch_moon_balls")
                 With .Display("player2")
                     .Text = """MOON"""
                     .Flashing = "all"
