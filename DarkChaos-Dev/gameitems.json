@@ -13007,7 +13007,7 @@
   },
   {
     "file_name": "Wall.Wall016.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
     "editor_layer_visibility": false
@@ -13044,6 +13044,20 @@
     "file_name": "Primitive.zCol_Rubber_Peg013.json",
     "is_locked": true,
     "editor_layer": 1,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall023.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall024.json",
+    "is_locked": true,
+    "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
     "editor_layer_visibility": false
   }
