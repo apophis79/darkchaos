@@ -85,6 +85,8 @@ Const SkillshotsTickLimit = 5
 Const AlienTickInterval = 3800
 
 
+
+
 Sub ConfigureGlfDevices
 
     ' Load up the shows
@@ -317,7 +319,7 @@ Sub ConfigureGlfDevices
     'Initial Vars
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
-    Glf_SetInitialPlayerVar "meteor_mb_shootagain", MeteorMBShootAgainTime
+    Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
     Glf_SetInitialPlayerVar "num_training_shots", 3
     Glf_SetInitialPlayerVar "num_training_shots_hit", 3
     Glf_SetInitialPlayerVar "meteors_per_wave", 6

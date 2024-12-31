@@ -10,10 +10,10 @@ Sub CreateMeteorMultiballMode
 
     With CreateGlfMode("meteor_multiball", 1000)
         .StartEvents = Array("start_meteor_multiball")
-        .StopEvents = Array("ball_ended","kill_flippers")
+        .StopEvents = Array("ball_ended","kill_flippers","stop_meteor_wave")
 
         With .EventPlayer()
-            .Add "mode_meteor_multiball_started", Array("clear_ship_save")
+            .Add "multiball_meteor_shoot_again_ended", Array("clear_ship_save")
         End With
 
         With .Shots("meteor_mb_shoot_again")
@@ -34,14 +34,14 @@ Sub CreateMeteorMultiballMode
             .StartEvents = Array("mode_meteor_multiball_started")
             .BallCount = 3
             .BallCountType = "total"
-            .ShootAgain = "current_player.meteor_mb_shootagain"
+            .ShootAgain = "current_player.meteor_mb_shootagain_time"
             .HurryUp = 3000
             .GracePeriod = 2000
         End With
 
         With .VariablePlayer()
             With .EventName("clear_ship_save")
-				With .Variable("meteor_mb_shootagain")
+				With .Variable("meteor_mb_shootagain_time")
                     .Action = "set"
 					.Int = MeteorMBShootAgainTime
 				End With
