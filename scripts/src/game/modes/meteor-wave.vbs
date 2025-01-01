@@ -23,6 +23,73 @@ Sub CreateMeteorWaveMode
         .StartEvents = Array("start_meteor_wave")
         .StopEvents = Array("timer_meteor_wave_finish_complete",GLF_BALL_ENDED)
 
+
+        With .EventPlayer()
+            '.Debug = True
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+
+            .Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+
+            .Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_running")
+            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_running")
+
+            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
+            .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 'light_eb here?
+            .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave","light_eb")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","stop_meteor_wave")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
+
+            .Add "proton_fired", Array("check_protons","proton_fired_flash_show")
+            .Add "meteor1_down", Array("check_meteor_wave") 'avoids race cond with variableplayer?
+            .Add "meteor2_down", Array("check_meteor_wave")
+            .Add "meteor3_down", Array("check_meteor_wave")
+            .Add "meteor4_down", Array("check_meteor_wave")
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
+        End With
+
+        'Randomize which meteor gets hit by proton cannon
+        With .RandomEventPlayer()
+            '.Debug = True
+            With .EventName("check_protons")
+                .Add "meteor1_proton_hit{current_player.shot_meteor1_light > 0}", 1
+                .Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", 1
+                .Add "meteor3_proton_hit{current_player.shot_meteor3_light > 0}", 1
+                .Add "meteor4_proton_hit{current_player.shot_meteor4_light > 0}", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+        End With
+        
+
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
             With .States("unlit")
@@ -295,71 +362,6 @@ Sub CreateMeteorWaveMode
 
         Next
 
-
-        With .EventPlayer()
-            '.Debug = True
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-
-            .Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-
-            .Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_running")
-            .Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_running")
-
-            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
-            .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 'light_eb here?
-            .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave","light_eb")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
-
-            .Add "proton_fired", Array("check_protons","proton_fired_flash_show")
-            .Add "meteor1_down", Array("check_meteor_wave") 'avoids race cond with variableplayer?
-            .Add "meteor2_down", Array("check_meteor_wave")
-            .Add "meteor3_down", Array("check_meteor_wave")
-            .Add "meteor4_down", Array("check_meteor_wave")
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
-        End With
-
-        'Randomize which meteor gets hit by proton cannon
-        With .RandomEventPlayer()
-            '.Debug = True
-            With .EventName("check_protons")
-                .Add "meteor1_proton_hit{current_player.shot_meteor1_light > 0}", 1
-                .Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", 1
-                .Add "meteor3_proton_hit{current_player.shot_meteor3_light > 0}", 1
-                .Add "meteor4_proton_hit{current_player.shot_meteor4_light > 0}", 1
-                .ForceAll = False
-                .ForceDifferent = False
-            End With
-        End With
 
         'Stage the wave finish
         With .Timers("meteor_wave_finish")

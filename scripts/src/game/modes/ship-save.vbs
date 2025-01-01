@@ -14,6 +14,16 @@ Sub CreateShipSaveMode
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
+        With .EventPlayer()
+            .Add "mode_ship_save_started{current_player.shot_ship_save1==0}", Array("restart_ship_save")
+            .Add "mode_ship_save_started{current_player.shot_ship_save3==2 && current_player.meteor_mb_shootagain_time =="&MeteorMBShootAgainTime&"}", Array("restart_ship_save")
+            .Add "restart_ship_save", Array("ready_ship_save1","clear_ship_save")
+            .Add "right_orbit_hit{current_player.shot_ship_save1 == 1}", Array("light_ship_save1","ready_ship_save2")
+            .Add "right_orbit_hit{current_player.shot_ship_save1 == 2 && current_player.shot_ship_save2 == 1}", Array("light_ship_save2","ready_ship_save3")
+            .Add "right_orbit_hit{current_player.shot_ship_save2 == 2 && current_player.shot_ship_save3 == 1}", Array("light_ship_save3")
+        End With
+        
+
         'Define our shots
         For x = 1 to 3
             With .Shots("ship_save"&x)
@@ -33,15 +43,6 @@ Sub CreateShipSaveMode
                 .RestartEvents = Array("restart_ship_save")
             End With
         Next
-
-        With .EventPlayer()
-            .Add "mode_ship_save_started{current_player.shot_ship_save1==0}", Array("restart_ship_save")
-            .Add "mode_ship_save_started{current_player.shot_ship_save3==2 && current_player.meteor_mb_shootagain_time =="&MeteorMBShootAgainTime&"}", Array("restart_ship_save")
-            .Add "restart_ship_save", Array("ready_ship_save1","clear_ship_save")
-            .Add "right_orbit_hit{current_player.shot_ship_save1 == 1}", Array("light_ship_save1","ready_ship_save2")
-            .Add "right_orbit_hit{current_player.shot_ship_save1 == 2 && current_player.shot_ship_save2 == 1}", Array("light_ship_save2","ready_ship_save3")
-            .Add "right_orbit_hit{current_player.shot_ship_save2 == 2 && current_player.shot_ship_save3 == 1}", Array("light_ship_save3")
-        End With
 
         With .ShowPlayer()
             With .EventName("light_ship_save3")

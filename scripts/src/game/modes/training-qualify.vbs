@@ -17,6 +17,40 @@ Sub CreateTrainingQualifyMode
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
+
+        With .EventPlayer()
+            .Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("restart_qualify_training")
+            .Add MainShotNames(0)&"_hit{current_player.shot_training_shot1 == 1}", Array(MainShotNames(0)&"_training_off","training_shot_hit")
+            .Add MainShotNames(1)&"_hit{current_player.shot_training_shot2 == 1}", Array(MainShotNames(1)&"_training_off","training_shot_hit")
+            .Add MainShotNames(2)&"_hit{current_player.shot_training_shot3 == 1}", Array(MainShotNames(2)&"_training_off","training_shot_hit")
+            .Add MainShotNames(3)&"_hit{current_player.shot_training_shot4 == 1}", Array(MainShotNames(3)&"_training_off","training_shot_hit")
+            .Add MainShotNames(4)&"_hit{current_player.shot_training_shot5 == 1}", Array(MainShotNames(4)&"_training_off","training_shot_hit")
+            .Add MainShotNames(5)&"_hit{current_player.shot_training_shot6 == 1}", Array(MainShotNames(5)&"_training_off","training_shot_hit")
+            .Add MainShotNames(6)&"_hit{current_player.shot_training_shot7 == 1}", Array(MainShotNames(6)&"_training_off","training_shot_hit")
+            .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
+            .Add "training_shot_hit",Array("check_training_qualify")
+            .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed")
+            .Add "s_Scoop_active{current_player.shot_training_ready==1}", Array("start_training","kill_flippers") 'Array("restart_qualify_training") 
+            .Add "stop_training", Array("restart_qualify_training") 
+            .Add "restart_qualify_training", Array("create_training_shots")
+            .Add "timer_training_shot_add_tick", Array("add_training_shot")
+        End With
+
+        With .RandomEventPlayer()
+            With .EventName("add_training_shot")
+                .Add MainShotNames(0)&"_training_on{current_player.shot_training_shot1 == 0}", 1
+                .Add MainShotNames(1)&"_training_on{current_player.shot_training_shot2 == 0}", 1
+                .Add MainShotNames(2)&"_training_on{current_player.shot_training_shot3 == 0}", 1
+                .Add MainShotNames(3)&"_training_on{current_player.shot_training_shot4 == 0}", 1
+                .Add MainShotNames(4)&"_training_on{current_player.shot_training_shot5 == 0}", 1
+                .Add MainShotNames(5)&"_training_on{current_player.shot_training_shot6 == 0}", 1
+                .Add MainShotNames(6)&"_training_on{current_player.shot_training_shot7 == 0}", 1
+                .Add MainShotNames(7)&"_training_on{current_player.shot_training_shot8 == 0}", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+        End With
+
      
         'Define our shots
         For x = 1 to 8
@@ -60,39 +94,6 @@ Sub CreateTrainingQualifyMode
             End With
         End With
 
-
-        With .EventPlayer()
-            .Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("restart_qualify_training")
-            .Add MainShotNames(0)&"_hit{current_player.shot_training_shot1 == 1}", Array(MainShotNames(0)&"_training_off","training_shot_hit")
-            .Add MainShotNames(1)&"_hit{current_player.shot_training_shot2 == 1}", Array(MainShotNames(1)&"_training_off","training_shot_hit")
-            .Add MainShotNames(2)&"_hit{current_player.shot_training_shot3 == 1}", Array(MainShotNames(2)&"_training_off","training_shot_hit")
-            .Add MainShotNames(3)&"_hit{current_player.shot_training_shot4 == 1}", Array(MainShotNames(3)&"_training_off","training_shot_hit")
-            .Add MainShotNames(4)&"_hit{current_player.shot_training_shot5 == 1}", Array(MainShotNames(4)&"_training_off","training_shot_hit")
-            .Add MainShotNames(5)&"_hit{current_player.shot_training_shot6 == 1}", Array(MainShotNames(5)&"_training_off","training_shot_hit")
-            .Add MainShotNames(6)&"_hit{current_player.shot_training_shot7 == 1}", Array(MainShotNames(6)&"_training_off","training_shot_hit")
-            .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
-            .Add "training_shot_hit",Array("check_training_qualify")
-            .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed")
-            .Add "s_Scoop_active{current_player.shot_training_ready==1}", Array("start_training","kill_flippers") 'Array("restart_qualify_training") 
-            .Add "stop_training", Array("restart_qualify_training") 
-            .Add "restart_qualify_training", Array("create_training_shots")
-            .Add "timer_training_shot_add_tick", Array("add_training_shot")
-        End With
-
-        With .RandomEventPlayer()
-            With .EventName("add_training_shot")
-                .Add MainShotNames(0)&"_training_on{current_player.shot_training_shot1 == 0}", 1
-                .Add MainShotNames(1)&"_training_on{current_player.shot_training_shot2 == 0}", 1
-                .Add MainShotNames(2)&"_training_on{current_player.shot_training_shot3 == 0}", 1
-                .Add MainShotNames(3)&"_training_on{current_player.shot_training_shot4 == 0}", 1
-                .Add MainShotNames(4)&"_training_on{current_player.shot_training_shot5 == 0}", 1
-                .Add MainShotNames(5)&"_training_on{current_player.shot_training_shot6 == 0}", 1
-                .Add MainShotNames(6)&"_training_on{current_player.shot_training_shot7 == 0}", 1
-                .Add MainShotNames(7)&"_training_on{current_player.shot_training_shot8 == 0}", 1
-                .ForceAll = False
-                .ForceDifferent = False
-            End With
-        End With
 
         With .Timers("training_shot_add")
             .TickInterval = 60

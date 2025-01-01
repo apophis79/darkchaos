@@ -16,6 +16,18 @@ Sub CreateClusterBombMode
         .StartEvents = Array("ball_started","stop_training")
         .StopEvents = Array("ball_ended","start_training")
 
+        With .EventPlayer()
+            .Add "mode_cluster_bombs_started{current_player.shot_cluster_charge1 == 0}", Array("reset_cluster_charges")
+            .Add "reset_cluster_charges", Array("ready_cluster_charge1")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
+            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
+            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
+        End With
+
         'Define our shots
         For x = 1 to 3
             With .Shots("cluster_charge"&x)
@@ -54,18 +66,6 @@ Sub CreateClusterBombMode
             End With
         Next
 
-
-        With .EventPlayer()
-            .Add "mode_cluster_bombs_started{current_player.shot_cluster_charge1 == 0}", Array("reset_cluster_charges")
-            .Add "reset_cluster_charges", Array("ready_cluster_charge1")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
-            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
-            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2")
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash")
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
-        End With
 
         With .ShowPlayer()
             With .EventName("light_cluster_charge3")

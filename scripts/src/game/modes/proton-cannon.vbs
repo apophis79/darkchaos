@@ -18,6 +18,22 @@ Sub CreateProtonCannonMode
         .StartEvents = Array("ball_started","stop_training")
         .StopEvents = Array("ball_ended","start_training")
 
+        With .EventPlayer()
+            .Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", Array("reset_proton_charges")
+            .Add "reset_proton_charges", Array("ready_proton_charge1")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", Array("light_proton_charge1","ready_proton_charge2")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", Array("light_proton_charge2","ready_proton_charge3")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", Array("light_proton_charge3")
+            .Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", Array("add_proton_round1","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("add_proton_round2","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("add_proton_round3","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("add_proton_round4","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("add_proton_round5","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("add_proton_round6")
+            .Add "check_protons", Array("check_protons_done")
+        End With
+        
+
         'Define our shots
         For x = 1 to 3
             With .Shots("proton_charge"&x)
@@ -66,20 +82,6 @@ Sub CreateProtonCannonMode
             End With
         Next
 
-        With .EventPlayer()
-            .Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", Array("reset_proton_charges")
-            .Add "reset_proton_charges", Array("ready_proton_charge1")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", Array("light_proton_charge1","ready_proton_charge2")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", Array("light_proton_charge2","ready_proton_charge3")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", Array("light_proton_charge3")
-            .Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", Array("add_proton_round1","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("add_proton_round2","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("add_proton_round3","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("add_proton_round4","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("add_proton_round5","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("add_proton_round6")
-            .Add "check_protons", Array("check_protons_done")
-        End With
 
         With .ShowPlayer()
             With .EventName("light_proton_charge3")

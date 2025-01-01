@@ -16,6 +16,38 @@ Sub CreateAlienAttackMode
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
         '.Debug = True
 
+
+        With .EventPlayer()
+            '.Debug = True
+            'resetting the attack
+            .Add "mode_alien_attack_started{current_player.alien_attack_done==0}", Array("reset_alien_timer") 'after a lost ball
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("reset_alien_attack")  'after wave 1
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("reset_alien_attack")  'after wave 3
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("reset_alien_attack")  'after wave 5
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("reset_alien_attack")  'after wave 6
+            'start the attack sequence (only after even waves)
+            .Add "reset_alien_timer{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("continue_alien_attack")  'after wave 2
+            .Add "reset_alien_timer{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("continue_alien_attack")  'after wave 4
+            .Add "reset_alien_timer{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("continue_alien_attack")  'after wave 6
+            .Add "reset_alien_timer{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("continue_alien_attack")  'after wave 8
+            'handle time warp
+            .Add "restart_tw_timer{devices.timers.alien_attack.ticks >= 0}", Array("freeze_alien_attack")  
+            .Add "timer_timewarp_complete{devices.timers.alien_attack.ticks >= 0 && current_player.alien_attack_done==0}", Array("continue_alien_attack") 
+            'handle alien attack hit
+            .Add "timer_alien_attack_complete", Array("earth_hit","earth_flash","alien_attack_finished")
+        End With
+
+        With .RandomEventPlayer()
+            '.Debug = True
+            With .EventName("reset_alien_attack")
+                .Add "alien_attack_from_left", 1
+                .Add "alien_attack_from_right", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+        End With
+
+
         
         'alien shot profile, two states
         With .ShotProfiles("alien")
@@ -112,37 +144,6 @@ Sub CreateAlienAttackMode
                 End With
             Next
            
-        End With
-
-
-        With .EventPlayer()
-            '.Debug = True
-            'resetting the attack
-            .Add "mode_alien_attack_started{current_player.alien_attack_done==0}", Array("reset_alien_timer") 'after a lost ball
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("reset_alien_attack")  'after wave 1
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("reset_alien_attack")  'after wave 3
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("reset_alien_attack")  'after wave 5
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("reset_alien_attack")  'after wave 6
-            'start the attack sequence (only after even waves)
-            .Add "reset_alien_timer{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("continue_alien_attack")  'after wave 2
-            .Add "reset_alien_timer{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("continue_alien_attack")  'after wave 4
-            .Add "reset_alien_timer{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("continue_alien_attack")  'after wave 6
-            .Add "reset_alien_timer{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("continue_alien_attack")  'after wave 8
-            'handle time warp
-            .Add "restart_tw_timer{devices.timers.alien_attack.ticks >= 0}", Array("freeze_alien_attack")  
-            .Add "timer_timewarp_complete{devices.timers.alien_attack.ticks >= 0 && current_player.alien_attack_done==0}", Array("continue_alien_attack") 
-            'handle alien attack hit
-            .Add "timer_alien_attack_complete", Array("earth_hit","earth_flash","alien_attack_finished")
-        End With
-
-        With .RandomEventPlayer()
-            '.Debug = True
-            With .EventName("reset_alien_attack")
-                .Add "alien_attack_from_left", 1
-                .Add "alien_attack_from_right", 1
-                .ForceAll = False
-                .ForceDifferent = False
-            End With
         End With
 
 

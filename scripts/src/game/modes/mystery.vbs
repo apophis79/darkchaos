@@ -17,6 +17,14 @@ Sub CreateMysteryMode
     With CreateGlfMode("mystery", 510)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+        
+
+        With .EventPlayer()
+            '.Add "mode_mystery_started", Array("restart_qualify_mystery")
+            '.Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
+            .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
+        End With
+
      
         'Define our shots
         For x = 1 to 5
@@ -52,13 +60,6 @@ Sub CreateMysteryMode
             '.DisableEvents = Array("disable_qualify_mystery")
         End With
 
-
-        ' Players
-        With .EventPlayer()
-            '.Add "mode_mystery_started", Array("restart_qualify_mystery")
-            '.Add "qualify_mystery_on_complete", Array("disable_qualify_mystery")
-            .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("restart_qualify_mystery") 
-        End With
 
         With .ShowPlayer()
             With .EventName("qualify_mystery_on_complete")

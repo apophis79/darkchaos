@@ -10,6 +10,22 @@ Sub CreateBaseMode()
         .StartEvents = Array(GLF_GAME_START)
         .StopEvents = Array(GLF_GAME_OVER)
 
+        With .EventPlayer()
+            '.Add "s_left_staged_flipper_key_active", Array("launch_moon_balls_test")   'DEBUG
+            .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
+            .Add "ball_ended{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
+            .Add "ball_ended{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
+            .Add "s_TargetMystery5_active", Array("flash_mag_gi")
+        End With
+        
+
         With .SegmentDisplayPlayer()
             With .Events("mode_base_started")
                 With .Display("player1")
@@ -151,21 +167,6 @@ Sub CreateBaseMode()
                     '.Add "fade", 300
                 End With
             End With
-        End With
-
-        With .EventPlayer()
-            '.Add "s_left_staged_flipper_key_active", Array("launch_moon_balls_test")   'DEBUG
-            .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
-            .Add "ball_ended{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
-            .Add "s_TargetMystery5_active", Array("flash_mag_gi")
         End With
 
 

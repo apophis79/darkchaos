@@ -9,6 +9,15 @@ Sub CreateSkillshotsMode
     With CreateGlfMode("skillshots", 510)
         .StartEvents = Array("ball_started","stop_training")
         .StopEvents = Array("ball_ended","stop_skillshots","start_meteor_wave","start_training")
+        
+
+        With .EventPlayer()
+            .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
+            .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
+            .Add "timer_skillshots_complete", Array("stop_skillshots") 
+            .Add "s_InnerOrb1_active", Array("stop_skillshots")
+        End With
+
 
         'skill shot is ready, two states
         With .ShotProfiles("ss_ready")
@@ -43,12 +52,7 @@ Sub CreateSkillshotsMode
         End With
 
 
-        With .EventPlayer()
-            .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
-            .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
-            .Add "timer_skillshots_complete", Array("stop_skillshots") 
-            .Add "s_InnerOrb1_active", Array("stop_skillshots")
-        End With
+        
 
 
         With .Timers("skillshots")

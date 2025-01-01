@@ -58,6 +58,25 @@ Sub CreateMoonMultiballMode
         .StopEvents = Array("ball_ended","start_training")
         '.Debug = True
 
+        With .EventPlayer()
+            '.Debug = True
+            .Add "s_MoonRamp_active", Array("right_ramp_hit")
+            'Release a ball (Lower the diverter pin) if we are not 
+            .Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking""}", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{devices.state_machines.moon_mb.state!=""locking"" && devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_entered{devices.state_machines.moon_mb.state==""in_progress""", Array("release_moon_ball")
+            'After a ball has been locked, if the number of balls in the lock is greater than the current players locked balls, release one
+            .Add "multiball_lock_moon_launch_locked_ball{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("release_moon_ball")
+            'Light missiles
+            .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==1}", Array("light_missile1")
+            .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==2}", Array("light_missile2")
+            'Launch
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("launch_moon_balls")
+            'Disable qualify shots during a wave
+            .Add "start_meteor_wave", Array("disable_qualify_shots") 
+            .Add "stop_meteor_wave", Array("enable_qualify_shots")
+        End With
+
         'Define our shots
         With .Shots("left_outlane")
             .Switch = "s_LeftOutlane"
@@ -196,24 +215,6 @@ Sub CreateMoonMultiballMode
             End With
         End With
 
-        With .EventPlayer()
-            '.Debug = True
-            .Add "s_MoonRamp_active", Array("right_ramp_hit")
-            'Release a ball (Lower the diverter pin) if we are not 
-            .Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking""}", Array("release_moon_ball")
-            .Add "balldevice_moon_lock_ball_enter{devices.state_machines.moon_mb.state!=""locking"" && devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
-            .Add "balldevice_moon_lock_ball_entered{devices.state_machines.moon_mb.state==""in_progress""", Array("release_moon_ball")
-            'After a ball has been locked, if the number of balls in the lock is greater than the current players locked balls, release one
-            .Add "multiball_lock_moon_launch_locked_ball{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("release_moon_ball")
-            'Light missiles
-            .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==1}", Array("light_missile1")
-            .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==2}", Array("light_missile2")
-            'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("launch_moon_balls")
-            'Disable qualify shots during a wave
-            .Add "start_meteor_wave", Array("disable_qualify_shots") 
-            .Add "stop_meteor_wave", Array("enable_qualify_shots")
-        End With
         
         'Lock the balls
         With .MultiballLocks("moon_launch")

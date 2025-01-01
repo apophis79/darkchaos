@@ -17,7 +17,7 @@ Sub CreateTrainingSelectMode
 
     With CreateGlfMode("training_select",600)
         .StartEvents = Array("start_training")
-        .StopEvents = Array("stop_training",GLF_BALL_ENDED)
+        .StopEvents = Array(GLF_BALL_ENDED,"stop_training_select")
         .Debug = True
 
 
@@ -30,10 +30,17 @@ Sub CreateTrainingSelectMode
             .Add "s_left_magna_key_active", Array("make_selection")
             .Add "s_right_magna_key_active", Array("make_selection")
             .Add "timer_training_select_complete", Array("make_selection")
-            .Add "make_selection", Array("training_select_release","stop_training","enable_flippers")
+            .Add "make_selection", Array("training_select_release","enable_flippers")
             'hurry-up
             .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")
             .Add "timer_training_select_tick{devices.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
+            'start requested training
+            .Add "make_selection{devices.state_machines.training_select.state==""heal""}", Array("start_training_heal","stop_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""cluster_bomb""}", Array("start_training_cluster_bomb","stop_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""proton_cannon""}", Array("start_training_proton_cannon","stop_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stop_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stop_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""shields""}", Array("start_training_shields","stop_training_select")
         End With
 
 
@@ -53,15 +60,14 @@ Sub CreateTrainingSelectMode
         End With
 
         With .ShowPlayer()
-            With .EventName("flash_ts_scoop_gi")
+            With .EventName("mode_training_select_started")
                 .Key = "key_ts_scoop_gi"
                 .Show = "flash_color_with_fade"
-                .Speed = 10
-                .Loops = 10
+                .Speed = 1
                 With .Tokens()
-                    .Add "lights", "GI"  'FIXME: make this gi22 once its lightmaps are split
+                    .Add "lights", "GI"
                     .Add "color", GIColor3000k
-                    .Add "fade", 300
+                    .Add "fade", 1000
                 End With
             End With
         End With

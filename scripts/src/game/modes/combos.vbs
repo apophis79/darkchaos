@@ -15,6 +15,28 @@ Sub CreateCombosMode
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
+        With .EventPlayer()
+            .Add "mode_combos_started", Array("reset_combos")
+            .Add "timer_combos_reset_complete", Array("reset_combos")
+            .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(2)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(3)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(4)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(5)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
+            .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
+            .Add "check_combos{current_player.combos_value==0}", Array("add_combos")
+            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos")
+            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","start_combo_command_wizard")
+        End With
+
 
         With .ShowPlayer()
             For x = 1 to 8
@@ -60,29 +82,6 @@ Sub CreateCombosMode
                 End With
             End With
         Next
-
-
-        With .EventPlayer()
-            .Add "mode_combos_started", Array("reset_combos")
-            .Add "timer_combos_reset_complete", Array("reset_combos")
-            .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(2)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(3)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(4)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(5)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
-            .Add "check_combos{current_player.combos_value==0}", Array("add_combos")
-            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","start_combo_command_wizard")
-        End With
 
 
         With .Timers("combos_reset")

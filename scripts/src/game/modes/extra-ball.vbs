@@ -8,6 +8,13 @@ Sub CreateExtraBallMode
     With CreateGlfMode("extra_ball", 510)
         .StartEvents = Array("ball_started","mode_meteor_wave_stopped","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+        
+
+        With .EventPlayer()
+            .Add "mode_extra_ball_started", Array("check_eb")
+            .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit")
+            .Add "s_Scoop_active{current_player.shot_eb_ready == 1}", Array("restart_eb","eb_achieved") 
+        End With
      
 
         'EB Ready
@@ -53,12 +60,6 @@ Sub CreateExtraBallMode
             End With
         End With
 
-
-        With .EventPlayer()
-            .Add "mode_extra_ball_started", Array("check_eb")
-            .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit")
-            .Add "s_Scoop_active{current_player.shot_eb_ready == 1}", Array("restart_eb","eb_achieved") 
-        End With
 
 
         With .VariablePlayer()

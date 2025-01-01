@@ -18,6 +18,17 @@ Sub CreateShieldsMode
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
+        With .EventPlayer()
+            '.Add "mode_shields_started", Array("restart_qualify_shields")
+            '.Add "qualify_shields_on_complete", Array("disable_qualify_shields")
+            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
+            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
+            'Disable qualify shots during a wave
+            '.Add "start_meteor_wave", Array("disable_qualify_shields") 
+            '.Add "stop_meteor_wave", Array("enable_qualify_shields")
+        End With
+        
+
         'Define a shot profile with two states (off/on)
         With .ShotProfiles("qualify_shields")
             With .States("unlit")
@@ -97,17 +108,7 @@ Sub CreateShieldsMode
             .EnableEvents = Array("shields_used")
             .AutoLaunch = True
         End With
-
-        ' Players
-        With .EventPlayer()
-            '.Add "mode_shields_started", Array("restart_qualify_shields")
-            '.Add "qualify_shields_on_complete", Array("disable_qualify_shields")
-            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
-            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
-            'Disable qualify shots during a wave
-            '.Add "start_meteor_wave", Array("disable_qualify_shields") 
-            '.Add "stop_meteor_wave", Array("enable_qualify_shields")
-        End With
+      
 
         With .ShowPlayer()
             With .EventName("qualify_shields_on_complete")

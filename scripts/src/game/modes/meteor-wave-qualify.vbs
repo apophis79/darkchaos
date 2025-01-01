@@ -8,6 +8,17 @@ Sub CreateMeteorWaveQualifyMode
     With CreateGlfMode("meteor_wave_qualify", 900)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+
+        With .EventPlayer()
+            .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
+            .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer")
+            .Add "reset_countdown_value", Array("init_mwq_timer")
+            .Add "init_mwq_timer", Array("init_pf_display")
+            .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer")
+            .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
+            .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
+            .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown
+        End With
         
         With .SegmentDisplayPlayer()
             With .Events("init_pf_display")
@@ -58,16 +69,6 @@ Sub CreateMeteorWaveQualifyMode
 			End With
 		End With
         
-        With .EventPlayer()
-            .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
-            .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer")
-            .Add "reset_countdown_value", Array("init_mwq_timer")
-            .Add "init_mwq_timer", Array("init_pf_display")
-            .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer")
-            .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
-            .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
-            .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown
-        End With
 
     End With
 
