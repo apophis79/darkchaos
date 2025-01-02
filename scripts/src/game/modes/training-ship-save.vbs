@@ -27,9 +27,9 @@ Sub CreateTrainingShipSaveMode
             .Add "init_training{current_player.shot_training_ship_charge2 == 0}", Array("ready_ship_charge2")
             .Add "init_training{current_player.shot_training_ship_charge3 == 0}", Array("ready_ship_charge3")
             'successfull shot
-            .Add "inner_orbit_hit{current_player.shot_training_ship_charge1 == 1}", Array("light_ship_charge1","flash_gi")
-            .Add "inner_orbit_hit{current_player.shot_training_ship_charge1 == 2 && current_player.shot_training_ship_charge2 == 1}", Array("light_ship_charge2","flash_gi")
-            .Add "inner_orbit_hit{current_player.shot_training_ship_charge2 == 2 && current_player.shot_training_ship_charge3 == 1}", Array("light_ship_charge3","flash_gi")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1}", Array("light_ship_charge1","flash_gi")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 2 && current_player.shot_training_ship_charge2 == 1}", Array("light_ship_charge2","flash_gi")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 2 && current_player.shot_training_ship_charge3 == 1}", Array("light_ship_charge3","flash_gi")
             .Add "light_ship_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")

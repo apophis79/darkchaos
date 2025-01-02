@@ -15,9 +15,13 @@ Sub CreateShipSaveMode
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
         With .EventPlayer()
+            'Reset ship charge shots
             .Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", Array("restart_ship_save")
+            .Add "mode_ship_save_started{current_player.training_ship_save_achieved==1 && current_player.shot_ship_charge3!=2}", Array("restart_ship_save")
             .Add "mode_ship_save_started{current_player.shot_ship_charge3==2 && current_player.meteor_mb_shootagain_time =="&MeteorMBShootAgainTime&"}", Array("restart_ship_save")
-            .Add "restart_ship_save", Array("ready_ship_charge1","clear_ship_save")
+            .Add "restart_ship_save{current_player.training_ship_save_achieved==0}", Array("ready_ship_charge1","clear_ship_save") 'no training boost
+            .Add "restart_ship_save{current_player.training_ship_save_achieved==1}", Array("light_ship_charge1","light_ship_charge2","ready_ship_charge3","clear_ship_save") 'with training boost
+            'Successful shot
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2")
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3")
             .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3")

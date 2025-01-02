@@ -133,7 +133,7 @@ Sub CreateTrainingSelectMode
             End With
         Next
         For x = 1 to 3
-            With .Shots("training_select_ship_save"&x)
+            With .Shots("training_select_ship_charge"&x)
                 .Debug = True
                 .Profile = "training_select"
                 With .Tokens()
