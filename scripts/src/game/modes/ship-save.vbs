@@ -82,7 +82,7 @@ Sub CreateShipSaveMode
 		End With
 
         With .SegmentDisplayPlayer()
-            With .Events("light_ship_charge3")
+            With .EventName("light_ship_charge3")
                 With .Display("player4")
                     .Text = """SAVER"""
                     .Flashing = "all"

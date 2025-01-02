@@ -136,12 +136,18 @@ Sub CreateTrainingProtonCannonMode
 
         'Display
         With .SegmentDisplayPlayer()
-            With .Events("init_training")
+            With .EventName("init_training")
+                With .Display("player1")
+                    .Text = """"""
+                End With
                 With .Display("player2")
                     .Text = """TRAIN """
                 End With
                 With .Display("player3")
                     .Text = """PROTON"""
+                End With
+                With .Display("player4")
+                    .Text = """"""
                 End With
                 With .Display("pf")
                     .Text = "{devices.timers.training_proton_cannon.ticks:0>2}"

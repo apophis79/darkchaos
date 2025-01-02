@@ -144,7 +144,7 @@ Sub CreateClusterBombMode
 
 
         With .SegmentDisplayPlayer()
-            With .Events("light_cluster_charge3")
+            With .EventName("light_cluster_charge3")
                 With .Display("player4")
                     .Text = """CLUSTER"""
                     .Flashing = "all"

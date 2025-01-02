@@ -565,16 +565,26 @@ Public Sub Glf_GameTimer_Timer()
 End Sub
 
 Public Function Glf_RunHandlers(i)
-	Dim key, keys
+	Dim key, keys, args
 	keys = glf_dispatch_handlers_await.Keys()
+	If UBound(keys) = -1 Then
+		Glf_RunHandlers = i
+		Exit Function
+	End If
 	For Each key in keys
-		DispatchPinHandlers key, glf_dispatch_handlers_await(key)
+		args = glf_dispatch_handlers_await(key)
+		DispatchPinHandlers key, args
 		glf_dispatch_handlers_await.Remove key
 		i = i + 1
 		If i=glf_max_dispatch Then
 			Exit For
 		End If
 	Next
+	If Ubound(glf_dispatch_handlers_await.Keys())=-1 Then
+		'Finished processing Handlers for current event.
+		'Remove any blocks for this event.
+		Glf_EventBlocks(args(2)).RemoveAll
+	End If
 	Glf_RunHandlers = i
 End Function
 
@@ -4652,13 +4662,16 @@ Class GlfSegmentDisplayPlayer
     
 
     Public Property Get EventNames() : EventNames = m_events.Keys() : End Property    
-    Public Property Get Events(name)
-        If m_events.Exists(name) Then
-            Set Events = m_events(name)
+    
+    Public Property Get EventName(value)
+        Dim newEvent : Set newEvent = (new GlfEvent)(value)
+
+        If m_events.Exists(newEvent.Raw) Then
+            Set EventName = m_events(newEvent.Raw)
         Else
-            Dim new_event : Set new_event = (new GlfSegmentDisplayPlayerEvent)()
-            m_events.Add name, new_event
-            Set Events = new_event
+            Dim new_segment_event : Set new_segment_event = (new GlfSegmentDisplayPlayerEvent)(newEvent)
+            m_events.Add newEvent.Raw, new_segment_event
+            Set EventName = new_segment_event
         End If
     End Property
 
@@ -4675,15 +4688,15 @@ Class GlfSegmentDisplayPlayer
     Public Sub Activate()
         Dim evt
         For Each evt In m_events.Keys()
-            AddPinEventListener evt, m_mode & "_segment_player_play", "SegmentPlayerEventHandler", m_priority, Array("play", Me, m_events(evt), evt)
+            AddPinEventListener m_events(evt).GlfEvent.EventName, m_mode & "_segment_player_play", "SegmentPlayerEventHandler", m_priority, Array("play", Me, m_events(evt), m_events(evt).GlfEvent.EventName)
         Next
     End Sub
 
     Public Sub Deactivate()
         Dim evt
         For Each evt In m_events.Keys()
-            RemovePinEventListener evt, m_mode & "_segment_player_play"
-            PlayOff evt, m_events(evt)
+            RemovePinEventListener m_events(evt).GlfEvent.EventName, m_mode & "_segment_player_play"
+            PlayOff m_events(evt).GlfEvent.EventName, m_events(evt)
         Next
     End Sub
 
@@ -4733,8 +4746,11 @@ End Class
 Class GlfSegmentDisplayPlayerEvent
 
     Private m_items
+    Private m_event
 
     Public Property Get Displays() : Displays = m_items.Items() : End Property
+
+    Public Property Get GlfEvent() : Set GlfEvent = m_event : End Property
 
     Public Property Get Display(value)
         If m_items.Exists(value) Then
@@ -4747,8 +4763,9 @@ Class GlfSegmentDisplayPlayerEvent
         End If
     End Property
 
-    Public default Function init()
+    Public default Function init(evt)
         Set m_items = CreateObject("Scripting.Dictionary")
+        Set m_event = evt
         Set Init = Me
 	End Function
 
@@ -4922,7 +4939,9 @@ Function SegmentPlayerEventHandler(args)
         Case "deactivate"
             SegmentPlayer.Deactivate
         Case "play"
-            SegmentPlayer.Play ownProps(3), ownProps(2)
+            If ownProps(2).GlfEvent.Evaluate() Then
+                SegmentPlayer.Play ownProps(3), ownProps(2)
+            End If
         Case "remove"
             RemoveDelay ownProps(2)
             SegmentPlayer.RemoveTextByKey ownProps(2)
@@ -10766,6 +10785,7 @@ Sub RunDispatchPinEvent(e, kwargs)
     If Not Glf_EventBlocks.Exists(e) Then
         Glf_EventBlocks.Add e, CreateObject("Scripting.Dictionary")
     End If
+
     glf_lastPinEvent = e
     Dim k
     Dim handlers : Set handlers = glf_pinEvents(e)
@@ -10786,8 +10806,6 @@ Sub RunDispatchPinEvent(e, kwargs)
             Glf_WriteDebugLog "DispatchPinEvent_"&e, "Handler does not exist: " & k(1)
         End If
     Next
-    Glf_EventBlocks(e).RemoveAll
-
 End Sub
 
 Sub RunAutoFireDispatchPinEvent(e, kwargs)

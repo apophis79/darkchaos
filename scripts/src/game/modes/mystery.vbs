@@ -76,7 +76,7 @@ Sub CreateMysteryMode
 
 
         With .SegmentDisplayPlayer()
-            With .Events("qualify_mystery_on_complete")
+            With .EventName("qualify_mystery_on_complete")
                 With .Display("player2")
                     .Text = """CLAIM"""
                     .Flashing = "all"

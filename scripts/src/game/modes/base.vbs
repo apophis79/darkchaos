@@ -27,32 +27,32 @@ Sub CreateBaseMode()
         
 
         With .SegmentDisplayPlayer()
-            With .Events("mode_base_started")
+            With .EventName("mode_base_started")
                 With .Display("player1")
                     .Text = "{players[0].score:0>2,}"
                 End With
             End With
-            With .Events("mode_base_started")
+            With .EventName("mode_base_started")
                 With .Display("player2")
                     .Text = "{players[1].score:0>2,}"
                 End With
             End With
-            With .Events("mode_base_started")
+            With .EventName("mode_base_started")
                 With .Display("player3")
                     .Text = "{players[2].score:0>2,}"
                 End With
             End With
-            With .Events("mode_base_started")
+            With .EventName("mode_base_started")
                 With .Display("player4")
                     .Text = "{players[3].score:0>2,}"
                 End With
             End With
-            With .Events(GLF_BALL_STARTED)
+            With .EventName(GLF_BALL_STARTED)
                 With .Display("ball")
                     .Text = "{current_player.ball:0>2}"
                 End With
             End With
-            ' With .Events("mode_base_started")
+            ' With .EventName("mode_base_started")
             '     With .Display("pf")
             '         .Text = "{00:0>2}"
             '     End With

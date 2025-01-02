@@ -21,7 +21,7 @@ Sub CreateMeteorWaveQualifyMode
         End With
         
         With .SegmentDisplayPlayer()
-            With .Events("init_pf_display")
+            With .EventName("init_pf_display")
                 With .Display("pf")
                     .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
                 End With

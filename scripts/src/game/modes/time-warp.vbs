@@ -117,7 +117,7 @@ Sub CreateTimewarpMode
 
 
         With .SegmentDisplayPlayer()
-            With .Events("restart_tw_timer")   'FIXME  Can I use an event to clear the display instead of using "Expire"?
+            With .EventName("restart_tw_timer")
                 With .Display("pf")
                     .Text = """00"""
                     .Flashing = "all"

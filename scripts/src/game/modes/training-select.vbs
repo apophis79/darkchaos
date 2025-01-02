@@ -353,37 +353,43 @@ Sub CreateTrainingSelectMode
         End With
 
         With .SegmentDisplayPlayer()
-            With .Events("mode_training_select_started")
+            With .EventName("mode_training_select_started")
+                With .Display("player1")
+                    .Text = """"""
+                End With
                 With .Display("player2")
                     .Text = """SELECT"""
                 End With
+                With .Display("player4")
+                    .Text = """"""
+                End With
             End With
-            With .Events("heal_selected")'{current_player.training_heal_achieved==0}")
+            With .EventName("heal_selected{current_player.training_heal_achieved==0}")
                 With .Display("player3")
                     .Text = """HEAL """
                 End With
             End With
-            With .Events("cluster_bomb_selected")'{current_player.training_cluster_bomb_achieved==0}")
+            With .EventName("cluster_bomb_selected{current_player.training_cluster_bomb_achieved==0}")
                 With .Display("player3")
                     .Text = """CLUSTER"""
                 End With
             End With
-            With .Events("proton_cannon_selected")'{current_player.training_proton_cannon_achieved==0}")
+            With .EventName("proton_cannon_selected{current_player.training_proton_cannon_achieved==0}")
                 With .Display("player3")
                     .Text = """PROTON"""
                 End With
             End With
-            With .Events("moon_missile_selected")'{current_player.training_moon_missile_achieved==0}")
+            With .EventName("moon_missile_selected{current_player.training_moon_missile_achieved==0}")
                 With .Display("player3")
                     .Text = """MOON """
                 End With
             End With
-            With .Events("ship_save_selected")'{current_player.training_ship_save_achieved==0}")
+            With .EventName("ship_save_selected{current_player.training_ship_save_achieved==0}")
                 With .Display("player3")
                     .Text = """SAVER """
                 End With
             End With
-            With .Events("shields_selected")'{current_player.training_shields_achieved==0}")
+            With .EventName("shields_selected{current_player.training_shields_achieved==0}")
                 With .Display("player3")
                     .Text = """SHIELDS"""
                 End With
