@@ -313,8 +313,8 @@ Sub ConfigureGlfDevices
     CreateTrainingQualifyMode       ' No
     CreateTrainingSelectMode        ' No
     ' CreateTrainingHealMode          ' No
-     CreateTrainingClusterBombMode  ' No
-    ' CreateTrainingProtonCannonMode  ' No
+    CreateTrainingClusterBombMode   ' No
+    CreateTrainingProtonCannonMode  ' No
     ' CreateTrainingMoonMissileMode   ' No
     ' CreateTrainingShipSaveMode      ' No
     ' CreateTrainingShieldsMode       ' No
@@ -327,8 +327,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
-    Glf_SetInitialPlayerVar "num_training_shots", 3
-    Glf_SetInitialPlayerVar "num_training_shots_hit", 3
+    Glf_SetInitialPlayerVar "num_training_shots", 2
+    Glf_SetInitialPlayerVar "num_training_shots_hit", 2
     Glf_SetInitialPlayerVar "meteors_per_wave", 6
     Glf_SetInitialPlayerVar "warping", 0
     Glf_SetInitialPlayerVar "light_the_eb", 0

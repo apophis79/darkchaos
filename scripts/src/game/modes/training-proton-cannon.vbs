@@ -1,6 +1,6 @@
 
 
-'Training Cluster Bomb Mode.
+'Training Proton Cannon Mode.
 
 'Once training mission starts, the associated shots will slow flash until you hit them to make them lit solid.
 'Any shots that have been completed in previous training will be lit solid.
@@ -10,47 +10,47 @@
 
 
 
-Sub CreateTrainingClusterBombMode
+Sub CreateTrainingProtonCannonMode
     Dim x
 
-    With CreateGlfMode("training_cluster_bomb",700)
-        .StartEvents = Array("start_training_cluster_bomb")
+    With CreateGlfMode("training_proton_cannon",700)
+        .StartEvents = Array("start_training_proton_cannon")
         .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
         .Debug = True
 
 
         With .EventPlayer()
             .Debug = True
-            .Add "mode_training_cluster_bomb_started", Array("init_training")
+            .Add "mode_training_proton_cannon_started", Array("init_training")
             'initialize shots
-            .Add "init_training{current_player.shot_training_cluster_charge1 == 0}", Array("ready_cluster_charge1")
-            .Add "init_training{current_player.shot_training_cluster_charge2 == 0}", Array("ready_cluster_charge2")
-            .Add "init_training{current_player.shot_training_cluster_charge3 == 0}", Array("ready_cluster_charge3")
+            .Add "init_training{current_player.shot_training_proton_charge1 == 0}", Array("ready_proton_charge1")
+            .Add "init_training{current_player.shot_training_proton_charge2 == 0}", Array("ready_proton_charge2")
+            .Add "init_training{current_player.shot_training_proton_charge3 == 0}", Array("ready_proton_charge3")
             'successfull shot
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1}", Array("light_cluster_charge1","flash_gi")
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 2 && current_player.shot_training_cluster_charge2 == 1}", Array("light_cluster_charge2","flash_gi")
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 2 && current_player.shot_training_cluster_charge3 == 1}", Array("light_cluster_charge3","flash_gi")
-            .Add "light_cluster_charge3", Array("training_achieved")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1}", Array("light_proton_charge1","flash_gi")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 2 && current_player.shot_training_proton_charge2 == 1}", Array("light_proton_charge2","flash_gi")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 2 && current_player.shot_training_proton_charge3 == 1}", Array("light_proton_charge3","flash_gi")
+            .Add "light_proton_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
-            .Add "timer_training_cluster_bomb_complete", Array("stop_training")
+            .Add "timer_training_proton_cannon_complete", Array("stop_training")
         End With
 
 
         'Define our shots
         For x = 1 to 3
-            With .Shots("training_cluster_charge"&x)
+            With .Shots("training_proton_charge"&x)
                 .Profile = "powerups"
                 With .Tokens()
-                    .Add "lights", "LCC"&x
-                    .Add "color", ClusterBombColor
+                    .Add "lights", "LPC"&x
+                    .Add "color", ProtonColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("ready_cluster_charge"&x)
+                    .Events = Array("ready_proton_charge"&x)
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_cluster_charge"&x)
+                    .Events = Array("light_proton_charge"&x)
                     .State = 2
                 End With
             End With
@@ -58,26 +58,26 @@ Sub CreateTrainingClusterBombMode
 
 
         With .VariablePlayer()
-            With .EventName("light_cluster_charge1")
-				With .Variable("shot_training_select_cluster_charge1")
+            With .EventName("light_proton_charge1")
+				With .Variable("shot_training_select_proton_charge1")
                     .Action = "set"
 					.Int = 3  
 				End With
             End With
-            With .EventName("light_cluster_charge2")
-				With .Variable("shot_training_select_cluster_charge2")
+            With .EventName("light_proton_charge2")
+				With .Variable("shot_training_select_proton_charge2")
                     .Action = "set"
 					.Int = 3  
 				End With
             End With
-            With .EventName("light_cluster_charge3")
-				With .Variable("shot_training_select_cluster_charge3")
+            With .EventName("light_proton_charge3")
+				With .Variable("shot_training_select_proton_charge3")
                     .Action = "set"
 					.Int = 3  
 				End With
             End With
             With .EventName("training_achieved")
-				With .Variable("training_cluster_bomb_achieved")
+				With .Variable("training_proton_cannon_achieved")
                     .Action = "set"
 					.Int = 1  
 				End With
@@ -86,7 +86,7 @@ Sub CreateTrainingClusterBombMode
 					.Int = 1  
 				End With
             End With
-            With .EventName("mode_training_cluster_bomb_stopping")
+            With .EventName("mode_training_proton_cannon_stopping")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  
@@ -102,7 +102,7 @@ Sub CreateTrainingClusterBombMode
                 .Speed = 5
                 With .Tokens()
                     .Add "lights", "GI"
-                    .Add "color", ClusterBombColor
+                    .Add "color", ProtonColor
                     .Add "intensity", 10
                 End With
             End With
@@ -112,14 +112,14 @@ Sub CreateTrainingClusterBombMode
                 .Speed = 5
                 With .Tokens()
                     .Add "lights", "GI"
-                    .Add "color", ClusterBombColor
+                    .Add "color", ProtonColor
                     .Add "intensity", 10
                 End With
             End With
         End With
         
         'Selection timer
-        With .Timers("training_cluster_bomb")
+        With .Timers("training_proton_cannon")
             .Debug = True
             .Direction = "down"
             .TickInterval = 1000
@@ -139,10 +139,10 @@ Sub CreateTrainingClusterBombMode
                     .Text = """TRAIN """
                 End With
                 With .Display("player3")
-                    .Text = """CLUSTER"""
+                    .Text = """PROTON"""
                 End With
                 With .Display("pf")
-                    .Text = "{devices.timers.training_cluster_bomb.ticks:0>2}"
+                    .Text = "{devices.timers.training_proton_cannon.ticks:0>2}"
                 End With
             End With
         End With
