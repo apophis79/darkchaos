@@ -78,7 +78,7 @@ Sub CreateMoonMultiballMode
         End With
 
         'Define our shots
-        With .Shots("left_outlane")
+        With .Shots("moon_lane1")
             .Switch = "s_LeftOutlane"
             .Profile = "flicker_on"
             With .Tokens()
@@ -87,7 +87,7 @@ Sub CreateMoonMultiballMode
             End With
         End With
         
-        With .Shots("left_inlane")
+        With .Shots("moon_lane2")
             .Switch = "s_LeftInlane"
             .Profile = "flicker_on"
             With .Tokens()
@@ -95,7 +95,7 @@ Sub CreateMoonMultiballMode
                 .Add "color", MoonColor
             End With
         End With
-        With .Shots("right_inlane")
+        With .Shots("moon_lane3")
             .Switch = "s_RightInlane"
             .Profile = "flicker_on"
             With .Tokens()
@@ -103,7 +103,7 @@ Sub CreateMoonMultiballMode
                 .Add "color", MoonColor
             End With
         End With
-        With .Shots("right_outlane")
+        With .Shots("moon_lane4")
             .Switch = "s_RightOutlane"
             .Profile = "flicker_on"
             With .Tokens()
@@ -153,7 +153,7 @@ Sub CreateMoonMultiballMode
         End With
         
         With .ShotGroups("qualify_lock")
-            .Shots = Array("left_outlane", "left_inlane", "right_inlane", "right_outlane")
+            .Shots = Array("moon_lane1", "moon_lane2", "moon_lane3", "moon_lane4")
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
             .RestartEvents = Array("restart_qualify_shots")

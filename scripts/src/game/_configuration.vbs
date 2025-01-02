@@ -66,6 +66,12 @@ MeteorTotalTicks = MeteorDropTicks + MeteorCoolTicks + MeteorWarmTicks + MeteorH
 ' Meteor wave multiball settings
 Const MeteorMBShootAgainTime = 6000
 
+
+' Array of rollover shots and associated light names
+Dim MoonQualifyLightNames
+MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
+
+
 ' Ship save settings (more shoot again time)
 Const ShipSaveShootAgainTime = 12000
 
@@ -306,12 +312,12 @@ Sub ConfigureGlfDevices
 
     CreateTrainingQualifyMode       ' No
     CreateTrainingSelectMode        ' No
-    ' CreateTrainingHeal              ' No
-    ' CreateTrainingClusterBombs      ' No
-    ' CreateTrainingProtonCannon      ' No
-    ' CreateTrainingMoonMissile       ' No
-    ' CreateTrainingShipSave          ' No
-    ' CreateTrainingShields           ' No
+    ' CreateTrainingHealMode          ' No
+     CreateTrainingClusterBombMode  ' No
+    ' CreateTrainingProtonCannonMode  ' No
+    ' CreateTrainingMoonMissileMode   ' No
+    ' CreateTrainingShipSaveMode      ' No
+    ' CreateTrainingShieldsMode       ' No
 
     CreateMeteorWaveQualifyMode     ' No
     CreateMeteorWaveMode            ' Yes
@@ -329,7 +335,14 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "alien_tick_count", -1
     Glf_SetInitialPlayerVar "alien_attack_dir", 0
     Glf_SetInitialPlayerVar "alien_attack_done", 0
-
+    Glf_SetInitialPlayerVar "training_just_finished", 0
+    Glf_SetInitialPlayerVar "training_heal_achieved", 0
+    Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
+    Glf_SetInitialPlayerVar "training_proton_cannon_achieved", 0
+    Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
+    Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
+    Glf_SetInitialPlayerVar "training_shields_achieved", 0
+    
 End Sub
 
 

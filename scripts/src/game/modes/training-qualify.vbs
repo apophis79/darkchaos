@@ -19,7 +19,12 @@ Sub CreateTrainingQualifyMode
 
 
         With .EventPlayer()
+            'Restart qualification round
             .Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("restart_qualify_training")
+            .Add "mode_training_qualify_started{current_player.training_just_finished == 1}", Array("restart_qualify_training")
+            .Add "restart_qualify_training", Array("create_training_shots")
+            .Add "timer_training_shot_add_tick", Array("add_training_shot")
+            'Successful qualification hits
             .Add MainShotNames(0)&"_hit{current_player.shot_training_shot1 == 1}", Array(MainShotNames(0)&"_training_off","training_shot_hit")
             .Add MainShotNames(1)&"_hit{current_player.shot_training_shot2 == 1}", Array(MainShotNames(1)&"_training_off","training_shot_hit")
             .Add MainShotNames(2)&"_hit{current_player.shot_training_shot3 == 1}", Array(MainShotNames(2)&"_training_off","training_shot_hit")
@@ -28,12 +33,11 @@ Sub CreateTrainingQualifyMode
             .Add MainShotNames(5)&"_hit{current_player.shot_training_shot6 == 1}", Array(MainShotNames(5)&"_training_off","training_shot_hit")
             .Add MainShotNames(6)&"_hit{current_player.shot_training_shot7 == 1}", Array(MainShotNames(6)&"_training_off","training_shot_hit")
             .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
+            'Handle a successful hit
             .Add "training_shot_hit",Array("check_training_qualify")
             .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed")
-            .Add "s_Scoop_active{current_player.shot_training_ready==1}", Array("start_training","kill_flippers") 'Array("restart_qualify_training") 
-            .Add "stop_training", Array("restart_qualify_training") 
-            .Add "restart_qualify_training", Array("create_training_shots")
-            .Add "timer_training_shot_add_tick", Array("add_training_shot")
+            'Start the training
+            .Add "s_Scoop_active{current_player.shot_training_ready==1}", Array("start_training","kill_flippers") 
         End With
 
         With .RandomEventPlayer()
@@ -128,6 +132,10 @@ Sub CreateTrainingQualifyMode
 				With .Variable("num_training_shots_hit")
                     .Action = "set"
 					.Int = 0
+				End With
+                With .Variable("training_just_finished")
+                    .Action = "set"
+					.Int = 0  
 				End With
 			End With
 		End With
