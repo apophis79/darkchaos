@@ -15,29 +15,29 @@ Sub CreateShipSaveMode
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
         With .EventPlayer()
-            .Add "mode_ship_save_started{current_player.shot_ship_save1==0}", Array("restart_ship_save")
-            .Add "mode_ship_save_started{current_player.shot_ship_save3==2 && current_player.meteor_mb_shootagain_time =="&MeteorMBShootAgainTime&"}", Array("restart_ship_save")
-            .Add "restart_ship_save", Array("ready_ship_save1","clear_ship_save")
-            .Add "right_orbit_hit{current_player.shot_ship_save1 == 1}", Array("light_ship_save1","ready_ship_save2")
-            .Add "right_orbit_hit{current_player.shot_ship_save1 == 2 && current_player.shot_ship_save2 == 1}", Array("light_ship_save2","ready_ship_save3")
-            .Add "right_orbit_hit{current_player.shot_ship_save2 == 2 && current_player.shot_ship_save3 == 1}", Array("light_ship_save3")
+            .Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", Array("restart_ship_save")
+            .Add "mode_ship_save_started{current_player.shot_ship_charge3==2 && current_player.meteor_mb_shootagain_time =="&MeteorMBShootAgainTime&"}", Array("restart_ship_save")
+            .Add "restart_ship_save", Array("ready_ship_charge1","clear_ship_save")
+            .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2")
+            .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3")
+            .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3")
         End With
         
 
         'Define our shots
         For x = 1 to 3
-            With .Shots("ship_save"&x)
+            With .Shots("ship_charge"&x)
                 .Profile = "powerups"
                 With .Tokens()
                     .Add "lights", "LF"&x
                     .Add "color", ShipSaveColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("ready_ship_save"&x)
+                    .Events = Array("ready_ship_charge"&x)
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_ship_save"&x)
+                    .Events = Array("light_ship_charge"&x)
                     .State = 2
                 End With
                 .RestartEvents = Array("restart_ship_save")
@@ -45,7 +45,7 @@ Sub CreateShipSaveMode
         Next
 
         With .ShowPlayer()
-            With .EventName("light_ship_save3")
+            With .EventName("light_ship_charge3")
                 .Key = "key_ship_saves_charged"
                 .Show = "flash_color"
                 .Speed = 15
@@ -69,7 +69,7 @@ Sub CreateShipSaveMode
 					.Int = MeteorMBShootAgainTime
 				End With
 			End With
-            With .EventName("light_ship_save3")
+            With .EventName("light_ship_charge3")
 				With .Variable("meteor_mb_shootagain_time")
                     .Action = "set"
 					.Int = ShipSaveShootAgainTime
@@ -78,7 +78,7 @@ Sub CreateShipSaveMode
 		End With
 
         With .SegmentDisplayPlayer()
-            With .Events("light_ship_save3")
+            With .Events("light_ship_charge3")
                 With .Display("player4")
                     .Text = """SAVER"""
                     .Flashing = "all"

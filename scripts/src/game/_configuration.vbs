@@ -316,7 +316,7 @@ Sub ConfigureGlfDevices
     CreateTrainingClusterBombMode   ' No
     CreateTrainingProtonCannonMode  ' No
     ' CreateTrainingMoonMissileMode   ' No
-    ' CreateTrainingShipSaveMode      ' No
+    CreateTrainingShipSaveMode      ' No
     ' CreateTrainingShieldsMode       ' No
 
     CreateMeteorWaveQualifyMode     ' No

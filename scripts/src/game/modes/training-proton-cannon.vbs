@@ -34,6 +34,8 @@ Sub CreateTrainingProtonCannonMode
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_proton_cannon_complete", Array("stop_training")
+            'Handle moon ramp
+            .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With
 
 
