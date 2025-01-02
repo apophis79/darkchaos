@@ -81,6 +81,10 @@ Sub CreateTrainingClusterBombMode
                     .Action = "set"
 					.Int = 1  
 				End With
+                With .Variable("training_total_achieved")
+                    .Action = "add"
+					.Int = 1  
+				End With
             End With
             With .EventName("mode_training_cluster_bomb_stopping")
                 With .Variable("training_just_finished")

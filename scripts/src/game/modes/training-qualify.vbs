@@ -22,7 +22,7 @@ Sub CreateTrainingQualifyMode
             'Restart qualification round
             .Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("restart_qualify_training")
             .Add "mode_training_qualify_started{current_player.training_just_finished == 1}", Array("restart_qualify_training")
-            .Add "restart_qualify_training", Array("create_training_shots")
+            .Add "restart_qualify_training{current_player.training_total_achieved < 6}", Array("create_training_shots")
             .Add "timer_training_shot_add_tick", Array("add_training_shot")
             'Successful qualification hits
             .Add MainShotNames(0)&"_hit{current_player.shot_training_shot1 == 1}", Array(MainShotNames(0)&"_training_off","training_shot_hit")

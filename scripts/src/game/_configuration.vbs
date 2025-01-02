@@ -342,6 +342,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
     Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
     Glf_SetInitialPlayerVar "training_shields_achieved", 0
+    Glf_SetInitialPlayerVar "training_total_achieved", 0
     
 End Sub
 
