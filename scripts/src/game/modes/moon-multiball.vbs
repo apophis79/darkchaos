@@ -51,7 +51,7 @@ End Sub
 
 
 Sub CreateMoonMultiballMode
-
+    Dim x
 
     With CreateGlfMode("moon_multiball", 510)
         .StartEvents = Array("ball_started","stop_training")
@@ -61,6 +61,9 @@ Sub CreateMoonMultiballMode
         With .EventPlayer()
             '.Debug = True
             .Add "s_MoonRamp_active", Array("right_ramp_hit")
+            'Reset
+            .Add "mode_moon_multiball_started{current_player.training_moon_missile_achieved==1}", Array("restart_qualify_shots") 'with training boost
+            .Add "restart_qualify_shots{current_player.training_moon_missile_achieved==1}", Array("boost_qualify_shots") 'with training boost
             'Release a ball (Lower the diverter pin) if we are not 
             .Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking""}", Array("release_moon_ball")
             .Add "balldevice_moon_lock_ball_enter{devices.state_machines.moon_mb.state!=""locking"" && devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
@@ -77,66 +80,45 @@ Sub CreateMoonMultiballMode
             .Add "stop_meteor_wave", Array("enable_qualify_shots")
         End With
 
-        'Define our shots
-        With .Shots("moon_lane1")
-            .Switch = "s_LeftOutlane"
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LLO"
-                .Add "color", MoonColor
+        'Lane qualification shots
+        For x = 1 to 3
+            With .Shots("moon_lane"&x)
+                .Switch = MoonQualifySwitches(x-1)
+                .Profile = "flicker_on"
+                With .Tokens()
+                    .Add "lights", MoonQualifyLightNames(x-1)
+                    .Add "color", MoonColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("boost_qualify_shots")
+                    .State = 1
+                End With
             End With
-        End With
-        
-        With .Shots("moon_lane2")
-            .Switch = "s_LeftInlane"
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LLI"
-                .Add "color", MoonColor
-            End With
-        End With
-        With .Shots("moon_lane3")
-            .Switch = "s_RightInlane"
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LRI"
-                .Add "color", MoonColor
-            End With
-        End With
+        Next
         With .Shots("moon_lane4")
-            .Switch = "s_RightOutlane"
+            .Switch = MoonQualifySwitches(3)
             .Profile = "flicker_on"
             With .Tokens()
-                .Add "lights", "LRO"
+                .Add "lights", MoonQualifyLightNames(3)
                 .Add "color", MoonColor
             End With
         End With
 
-        With .Shots("moon_missile1")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LMR1"
-                .Add "color", MoonColor
+        'Missile lights
+        For x = 1 to 2
+            With .Shots("moon_missile"&x)
+                .Profile = "flicker_on"
+                With .Tokens()
+                    .Add "lights", "LMR"&x
+                    .Add "color", MoonColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("light_missile"&x)
+                    .State = 1
+                End With
+                .RestartEvents = Array("multiball_moon_started")
             End With
-            With .ControlEvents()
-                .Events = Array("light_missile1")
-                .State = 1
-            End With
-            .RestartEvents = Array("multiball_moon_started")
-        End With
-
-        With .Shots("moon_missile2")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LMR2"
-                .Add "color", MoonColor
-            End With
-            With .ControlEvents()
-                .Events = Array("light_missile2")
-                .State = 1
-            End With
-            .RestartEvents = Array("multiball_moon_started")
-        End With
+        Next
 
         'Moon Lock Ready
         With .Shots("moon_lock_ready")

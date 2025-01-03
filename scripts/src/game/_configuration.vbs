@@ -69,7 +69,8 @@ Const MeteorMBShootAgainTime = 6000
 
 
 ' Array of rollover shots and associated light names
-Dim MoonQualifyLightNames
+Dim MoonQualifySwitches, MoonQualifyLightNames
+MoonQualifySwitches = Array("s_LeftOutlane","s_LeftInlane","s_RightInlane","s_RightOutlane")
 MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
 
 
@@ -316,7 +317,7 @@ Sub ConfigureGlfDevices
     ' CreateTrainingHealMode          ' No
     CreateTrainingClusterBombMode   ' No
     CreateTrainingProtonCannonMode  ' No
-    ' CreateTrainingMoonMissileMode   ' No
+    CreateTrainingMoonMissileMode   ' No
     CreateTrainingShipSaveMode      ' No
     CreateTrainingShieldsMode       ' No
 
