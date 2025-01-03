@@ -9,8 +9,6 @@
 'When health goes to zero, the flippers die and you lose the ball.
 
 
-Const BumperHitsPerRepair = 10
-
 Sub CreateHealthMode
     Dim x
 
@@ -19,14 +17,17 @@ Sub CreateHealthMode
         .StopEvents = Array("ball_ended","start_training")
 
         With .EventPlayer()
+            'restart the mode
             .Add "mode_health_started", Array("restart_health","reset_health_bump")
-            .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
+            .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("raise_diverter") 'training boost
+            'successful bumper hits
             .Add "s_Bumper1_active", Array("check_add_health_bump")
             .Add "s_Bumper2_active", Array("check_add_health_bump")
             .Add "s_Bumper3_active", Array("check_add_health_bump")
             .Add "s_Bumper4_active", Array("check_add_health_bump")
             ' .Add "s_LeftSlingshot_active", Array("check_add_health_bump")
             ' .Add "s_RightSlingshot_active", Array("check_add_health_bump")
+            'add or remove health lights as needed
             .Add "check_add_health_bump{current_player.health_bump_value<"&BumperHitsPerRepair&"}", Array("add_health_bump")
             .Add "check_add_health_bump{current_player.health_bump_value=="&BumperHitsPerRepair&"}", Array("check_add_health","reset_health_bump")
             .Add "check_add_health{current_player.health_value==8}", Array("health9_norm","add_health")
@@ -46,6 +47,8 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","remove_health")
             .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","remove_health")
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers")
+            'handle earth hits
+            .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
         End With
 
         'Define a shot profile with four states, health meter leves

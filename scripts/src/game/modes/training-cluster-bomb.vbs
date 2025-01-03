@@ -22,14 +22,10 @@ Sub CreateTrainingClusterBombMode
         With .EventPlayer()
             '.Debug = True
             .Add "mode_training_cluster_bomb_started", Array("init_training")
-            'initialize shots
-            .Add "init_training{current_player.shot_training_cluster_charge1 == 0}", Array("ready_cluster_charge1")
-            .Add "init_training{current_player.shot_training_cluster_charge2 == 0}", Array("ready_cluster_charge2")
-            .Add "init_training{current_player.shot_training_cluster_charge3 == 0}", Array("ready_cluster_charge3")
             'successfull shot
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1}", Array("light_cluster_charge1","flash_gi")
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 2 && current_player.shot_training_cluster_charge2 == 1}", Array("light_cluster_charge2","flash_gi")
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 2 && current_player.shot_training_cluster_charge3 == 1}", Array("light_cluster_charge3","flash_gi")
+            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}", Array("light_cluster_charge1","flash_gi")
+            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 && current_player.shot_training_cluster_charge2 == 0}", Array("light_cluster_charge2","flash_gi")
+            .Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 && current_player.shot_training_cluster_charge3 == 0}", Array("light_cluster_charge3","flash_gi")
             .Add "light_cluster_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
@@ -48,13 +44,10 @@ Sub CreateTrainingClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("ready_cluster_charge"&x)
+                    .Events = Array("light_cluster_charge"&x)
                     .State = 1
                 End With
-                With .ControlEvents()
-                    .Events = Array("light_cluster_charge"&x)
-                    .State = 2
-                End With
+                .RestartEvents = Array("init_training")
             End With
         Next
 

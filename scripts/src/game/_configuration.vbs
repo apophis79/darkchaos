@@ -44,11 +44,11 @@ RolloverSwitches = Array("s_LeftBumper1","s_LeftBumper2","s_CenterOrb1","s_Cente
 RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
 
 ' Array of training selection shots and associated info
+Const TrainingTicks = 60  'uses 1000 ms interval
 Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
 TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields")
 TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields")
 TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor)
-Const TrainingTicks = 60  'uses 1000 ms interval
 
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
@@ -73,6 +73,9 @@ Dim MoonQualifySwitches, MoonQualifyLightNames
 MoonQualifySwitches = Array("s_LeftOutlane","s_LeftInlane","s_RightInlane","s_RightOutlane")
 MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
 
+' Health settings
+Const BumperHitsPerRepair = 9
+Const BumperHitsPerRepairTrain = 3
 
 ' Ship save settings (more shoot again time)
 Const ShipSaveShootAgainTime = 12000
@@ -91,7 +94,6 @@ Const SkillshotsTickLimit = 5
 
 ' Alien Attack settings
 Const AlienTickInterval = 3800
-
 
 
 
@@ -141,8 +143,8 @@ Sub ConfigureGlfDevices
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
-        .ActivateEvents = Array("start_meteor_wave")
-        .DeactivateEvents = Array("stop_meteor_wave",GLF_BALL_ENDED)
+        .ActivateEvents = Array("start_meteor_wave","start_training_heal","raise_diverter")
+        .DeactivateEvents = Array("stop_meteor_wave","stop_training","drop_diverter",GLF_BALL_ENDED)
         .ActionCallback = "RaiseDiverterPin"
     End With
 
@@ -314,7 +316,7 @@ Sub ConfigureGlfDevices
 
     CreateTrainingQualifyMode       ' No
     CreateTrainingSelectMode        ' No
-    ' CreateTrainingHealMode          ' No
+    CreateTrainingHealMode          ' No
     CreateTrainingClusterBombMode   ' No
     CreateTrainingProtonCannonMode  ' No
     CreateTrainingMoonMissileMode   ' No
@@ -407,16 +409,12 @@ Public Sub CreateSharedShotProfiles()
     End With
 
     With GlfShotProfiles("training_powerups")
-        With .States("unlit")
-            .Show = "off"
-            .Key = "key_off_c"
-        End With
         With .States("ready")
             .Show = "flash_color_with_fade"
             .Key = "key_ready_c"
-            .Speed = 8
+            .Speed = 12
             With .Tokens()
-                .Add "fade", 400
+                .Add "fade", 100
             End With
         End With
         With .States("collected")

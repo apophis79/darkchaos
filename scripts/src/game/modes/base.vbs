@@ -132,6 +132,7 @@ Sub CreateBaseMode()
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", "ffffff"
@@ -146,6 +147,7 @@ Sub CreateBaseMode()
                     .Show = "flicker_color_off" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", RolloverLightNames(x)
                         .Add "color", GIColor3000k
