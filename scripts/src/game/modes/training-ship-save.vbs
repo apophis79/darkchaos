@@ -16,11 +16,11 @@ Sub CreateTrainingShipSaveMode
     With CreateGlfMode("training_ship_save",700)
         .StartEvents = Array("start_training_ship_save")
         .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
-        .Debug = True
+        '.Debug = True
 
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             .Add "mode_training_ship_save_started", Array("init_training")
             'initialize shots
             .Add "init_training{current_player.shot_training_ship_charge1 == 0}", Array("ready_ship_charge1")
@@ -42,7 +42,8 @@ Sub CreateTrainingShipSaveMode
         'Define our shots
         For x = 1 to 3
             With .Shots("training_ship_charge"&x)
-                .Profile = "powerups"
+                '.Debug = True
+                .Profile = "training_powerups"
                 With .Tokens()
                     .Add "lights", "LF"&x
                     .Add "color", ShipSaveColor
@@ -60,6 +61,7 @@ Sub CreateTrainingShipSaveMode
 
 
         With .VariablePlayer()
+            '.Debug = True
             With .EventName("light_ship_charge1")
 				With .Variable("shot_training_select_ship_charge1")
                     .Action = "set"
@@ -122,10 +124,10 @@ Sub CreateTrainingShipSaveMode
         
         'Selection timer
         With .Timers("training_ship_save")
-            .Debug = True
+            '.Debug = True
             .Direction = "down"
             .TickInterval = 1000
-            .StartValue = 60
+            .StartValue = TrainingTicks
             .EndValue = 0
             With .ControlEvents()
                 .EventName = "init_training"

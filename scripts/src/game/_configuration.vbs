@@ -48,6 +48,7 @@ Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
 TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields")
 TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields")
 TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor)
+Const TrainingTicks = 60  'uses 1000 ms interval
 
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
@@ -317,7 +318,7 @@ Sub ConfigureGlfDevices
     CreateTrainingProtonCannonMode  ' No
     ' CreateTrainingMoonMissileMode   ' No
     CreateTrainingShipSaveMode      ' No
-    ' CreateTrainingShieldsMode       ' No
+    CreateTrainingShieldsMode       ' No
 
     CreateMeteorWaveQualifyMode     ' No
     CreateMeteorWaveMode            ' Yes
@@ -393,9 +394,28 @@ Public Sub CreateSharedShotProfiles()
         With .States("ready")
             .Show = "flash_color_with_fade"
             .Key = "key_ready_c"
-            .Speed = 2
+            .Speed = 4
             With .Tokens()
-                .Add "fade", 100
+                .Add "fade", 400
+            End With
+        End With
+        With .States("collected")
+            .Show = "led_color"
+            .Key = "key_collected_c"
+        End With
+    End With
+
+    With GlfShotProfiles("training_powerups")
+        With .States("unlit")
+            .Show = "off"
+            .Key = "key_off_c"
+        End With
+        With .States("ready")
+            .Show = "flash_color_with_fade"
+            .Key = "key_ready_c"
+            .Speed = 8
+            With .Tokens()
+                .Add "fade", 400
             End With
         End With
         With .States("collected")

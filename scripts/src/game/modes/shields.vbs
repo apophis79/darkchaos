@@ -19,13 +19,12 @@ Sub CreateShieldsMode
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 
         With .EventPlayer()
-            '.Add "mode_shields_started", Array("restart_qualify_shields")
-            '.Add "qualify_shields_on_complete", Array("disable_qualify_shields")
+            'reset shields qualification
+            .Add "mode_shields_started{current_player.training_shields_achieved==1}", Array("restart_qualify_shields") 'with training boost
+            .Add "restart_qualify_shields{current_player.training_shields_achieved==1}", Array("boost_qualify_shields") 'with training boost
+            'use shields
             .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
             .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
-            'Disable qualify shots during a wave
-            '.Add "start_meteor_wave", Array("disable_qualify_shields") 
-            '.Add "stop_meteor_wave", Array("enable_qualify_shields")
         End With
         
 
@@ -57,16 +56,27 @@ Sub CreateShieldsMode
         End With
 
         'Define our shots
-        For x = 1 to 4
+        For x = 1 to 3
             With .Shots("shield_charge"&x)
                 .Switch = "s_TargetShield"&x
                 .Profile = "qualify_shields"
                 With .Tokens()
                     .Add "lights", "LSC"&x
                 End With
+                With .ControlEvents()
+                    .Events = Array("boost_qualify_shields")
+                    .State = 1
+                End With
             End With
         Next
-        
+        With .Shots("shield_charge4")
+            .Switch = "s_TargetShield4"
+            .Profile = "qualify_shields"
+            With .Tokens()
+                .Add "lights", "LSC4"
+            End With
+        End With
+    
         'Shields Ready
         With .Shots("shield_left")
             .Profile = "shields_ready"
@@ -98,8 +108,8 @@ Sub CreateShieldsMode
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
             .RestartEvents = Array("restart_qualify_shields")
-            .DisableEvents = Array("disable_qualify_shields")
-            .EnableEvents = Array("enable_qualify_shields")
+            '.DisableEvents = Array("disable_qualify_shields")
+            '.EnableEvents = Array("enable_qualify_shields")
         End With
 
         ' Ball Save

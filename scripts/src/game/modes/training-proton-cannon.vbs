@@ -16,11 +16,11 @@ Sub CreateTrainingProtonCannonMode
     With CreateGlfMode("training_proton_cannon",700)
         .StartEvents = Array("start_training_proton_cannon")
         .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
-        .Debug = True
+        '.Debug = True
 
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             .Add "mode_training_proton_cannon_started", Array("init_training")
             'initialize shots
             .Add "init_training{current_player.shot_training_proton_charge1 == 0}", Array("ready_proton_charge1")
@@ -42,7 +42,7 @@ Sub CreateTrainingProtonCannonMode
         'Define our shots
         For x = 1 to 3
             With .Shots("training_proton_charge"&x)
-                .Profile = "powerups"
+                .Profile = "training_powerups"
                 With .Tokens()
                     .Add "lights", "LPC"&x
                     .Add "color", ProtonColor
@@ -122,10 +122,10 @@ Sub CreateTrainingProtonCannonMode
         
         'Selection timer
         With .Timers("training_proton_cannon")
-            .Debug = True
+            '.Debug = True
             .Direction = "down"
             .TickInterval = 1000
-            .StartValue = 60
+            .StartValue = TrainingTicks
             .EndValue = 0
             With .ControlEvents()
                 .EventName = "init_training"

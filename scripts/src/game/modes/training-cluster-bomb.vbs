@@ -16,11 +16,11 @@ Sub CreateTrainingClusterBombMode
     With CreateGlfMode("training_cluster_bomb",700)
         .StartEvents = Array("start_training_cluster_bomb")
         .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
-        .Debug = True
+        '.Debug = True
 
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             .Add "mode_training_cluster_bomb_started", Array("init_training")
             'initialize shots
             .Add "init_training{current_player.shot_training_cluster_charge1 == 0}", Array("ready_cluster_charge1")
@@ -42,7 +42,7 @@ Sub CreateTrainingClusterBombMode
         'Define our shots
         For x = 1 to 3
             With .Shots("training_cluster_charge"&x)
-                .Profile = "powerups"
+                .Profile = "training_powerups"
                 With .Tokens()
                     .Add "lights", "LCC"&x
                     .Add "color", ClusterBombColor
@@ -122,10 +122,10 @@ Sub CreateTrainingClusterBombMode
         
         'Selection timer
         With .Timers("training_cluster_bomb")
-            .Debug = True
+            '.Debug = True
             .Direction = "down"
             .TickInterval = 1000
-            .StartValue = 60
+            .StartValue = TrainingTicks
             .EndValue = 0
             With .ControlEvents()
                 .EventName = "init_training"

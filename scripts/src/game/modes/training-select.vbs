@@ -19,11 +19,11 @@ Sub CreateTrainingSelectMode
     With CreateGlfMode("training_select",600)
         .StartEvents = Array("start_training")
         .StopEvents = Array(GLF_BALL_ENDED,"stop_training_select")
-        .Debug = True
+        '.Debug = True
 
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             'navigate selections
             .Add "s_left_flipper_active", Array("training_select_left")
             .Add "s_right_flipper_active", Array("training_select_right")
@@ -85,7 +85,7 @@ Sub CreateTrainingSelectMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", GIColor3000k
-                    .Add "fade", 1000
+                    .Add "fade", 900
                 End With
             End With
         End With
@@ -94,7 +94,7 @@ Sub CreateTrainingSelectMode
         'Show the shots that have been already completed
         For x = 1 to 9
             With .Shots("training_select_health"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", "LH"&x
@@ -104,7 +104,7 @@ Sub CreateTrainingSelectMode
         Next
         For x = 1 to 3
             With .Shots("training_select_cluster_charge"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", "LCC"&x
@@ -114,7 +114,7 @@ Sub CreateTrainingSelectMode
         Next
         For x = 1 to 3
             With .Shots("training_select_proton_charge"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", "LPC"&x
@@ -124,7 +124,7 @@ Sub CreateTrainingSelectMode
         Next
         For x = 1 to 4
             With .Shots("training_select_moon_lane"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", MoonQualifyLightNames(x-1)
@@ -134,7 +134,7 @@ Sub CreateTrainingSelectMode
         Next
         For x = 1 to 3
             With .Shots("training_select_ship_charge"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", "LF"&x
@@ -144,7 +144,7 @@ Sub CreateTrainingSelectMode
         Next
         For x = 1 to 4
             With .Shots("training_select_shield_charge"&x)
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", "LSC"&x
@@ -157,7 +157,7 @@ Sub CreateTrainingSelectMode
         'Selection shots
         For x = 0 to 5
             With .Shots("select_"&TrainingSelectionNames(x))
-                .Debug = True
+                '.Debug = True
                 .Profile = "training_select"
                 With .Tokens()
                     .Add "lights", TrainingSelectionLightNames(x)
@@ -209,7 +209,7 @@ Sub CreateTrainingSelectMode
         
         'Selection timer
         With .Timers("training_select")
-            .Debug = True
+            '.Debug = True
             .TickInterval = 1000
             .StartValue = 0
             .EndValue = 15
@@ -222,7 +222,7 @@ Sub CreateTrainingSelectMode
 
         'Scoop ball hold
         With .BallHolds("training_select")
-            .Debug = True
+            '.Debug = True
             .BallsToHold = 1
             .HoldDevices = Array("scoop")
             .EnableEvents = Array("mode_training_select_started") 
@@ -233,7 +233,7 @@ Sub CreateTrainingSelectMode
 
         'Selection state machines
         With .StateMachines("training_select")
-            .Debug = True
+            '.Debug = True
             .PersistState = False
             .StartingState = "heal"
             
