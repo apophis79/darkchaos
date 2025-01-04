@@ -26,28 +26,8 @@ Sub CreateMeteorWaveMode
 
         With .EventPlayer()
             '.Debug = True
+            'Start up in correct wave
             .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-
-            .Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-
-            .Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_running")
@@ -57,7 +37,40 @@ Sub CreateMeteorWaveMode
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_running")
-
+            'Successful center target hit, fire proton round if available
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            'Successful center orbit left, fire proton round if available
+            .Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            'Successful center orbit right, fire proton round if available
+            .Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            'Handle fired proton
+            .Add "proton_fired", Array("check_protons","proton_fired_flash_show")
+            'Handle events after meteor is downed
+            .Add "meteor1_down", Array("calc_num_meteors_ratio","check_meteor_wave")
+            .Add "meteor2_down", Array("calc_num_meteors_ratio","check_meteor_wave")
+            .Add "meteor3_down", Array("calc_num_meteors_ratio","check_meteor_wave")
+            .Add "meteor4_down", Array("calc_num_meteors_ratio","check_meteor_wave")
+            'handle pf display updates
+            .Add "calc_num_meteors_ratio", Array("check_num_meteors_ratio") 
+            .Add "check_num_meteors_ratio{current_player.num_meteors_ratio < current_player.last_num_meteors_ratio}", Array("update_last_num_meteors_ratio") 
+            .Add "update_last_num_meteors_ratio", Array("update_display","check_num_meteors_ratio")
+            'Stop the current successful wave
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
             .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 'light_eb here?
@@ -67,13 +80,6 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
-
-            .Add "proton_fired", Array("check_protons","proton_fired_flash_show")
-            .Add "meteor1_down", Array("check_meteor_wave") 'avoids race cond with variableplayer?
-            .Add "meteor2_down", Array("check_meteor_wave")
-            .Add "meteor3_down", Array("check_meteor_wave")
-            .Add "meteor4_down", Array("check_meteor_wave")
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
         End With
 
         'Randomize which meteor gets hit by proton cannon
@@ -84,6 +90,22 @@ Sub CreateMeteorWaveMode
                 .Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", 1
                 .Add "meteor3_proton_hit{current_player.shot_meteor3_light > 0}", 1
                 .Add "meteor4_proton_hit{current_player.shot_meteor4_light > 0}", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+            With .EventName("update_display")
+                .Add "pf_seg1_off{current_player.shot_mw_pf_seg1==0}", 1
+                .Add "pf_seg2_off{current_player.shot_mw_pf_seg2==0}", 1
+                .Add "pf_seg3_off{current_player.shot_mw_pf_seg3==0}", 1
+                .Add "pf_seg4_off{current_player.shot_mw_pf_seg4==0}", 1
+                .Add "pf_seg5_off{current_player.shot_mw_pf_seg5==0}", 1
+                .Add "pf_seg6_off{current_player.shot_mw_pf_seg6==0}", 1
+                .Add "pf_seg9_off{current_player.shot_mw_pf_seg9==0}", 1
+                .Add "pf_seg10_off{current_player.shot_mw_pf_seg10==0}", 1
+                .Add "pf_seg11_off{current_player.shot_mw_pf_seg11==0}", 1
+                .Add "pf_seg12_off{current_player.shot_mw_pf_seg12==0}", 1
+                .Add "pf_seg13_off{current_player.shot_mw_pf_seg13==0}", 1
+                .Add "pf_seg14_off{current_player.shot_mw_pf_seg14==0}", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -185,6 +207,25 @@ Sub CreateMeteorWaveMode
             End With
             .RestartEvents = Array("stop_meteor_wave") 
         End With
+
+        'Define PF display light shots
+        For x = 1 to 16    
+            If x<>7 And x<>8 And x<>15 And x<>16 Then  'don't use these lights during wave
+                With .Shots("mw_pf_seg"&x)
+                    .Profile = "flicker_on_flicker_off"
+                    '.Profile = "on_flicker_off"
+                    With .Tokens()
+                        .Add "lights", "pf_seg"&x
+                        .Add "color", "ffffff"
+                    End With
+                    With .ControlEvents()
+                        .Events = Array("pf_seg"&x&"_off")
+                        .State = 1
+                    End With
+                    .RestartEvents = Array("mode_meteor_wave_started") 
+                End With
+            End If
+        Next
 
 
         'Define meteor shots
@@ -363,7 +404,7 @@ Sub CreateMeteorWaveMode
         Next
 
 
-        'Stage the wave finish
+        'Stage the wave finish      FIXME: replace with relay events
         With .Timers("meteor_wave_finish")
             '.Debug = True
             .TickInterval = 500
@@ -474,6 +515,14 @@ Sub CreateMeteorWaveMode
                     .Action = "set"
 					.Int = "current_player.meteors_per_wave" 
 				End With
+                With .Variable("num_meteors_ratio")
+                    .Action = "set"
+                    .Int = 12
+                End With
+                With .Variable("last_num_meteors_ratio")
+                    .Action = "set"
+                    .Int = 12
+                End With
 			End With
             With .EventName("meteor_raised")
                 With .Variable("num_meteors_to_raise")
@@ -505,10 +554,30 @@ Sub CreateMeteorWaveMode
                     .Int = -1
                 End With
             End With
+            With .EventName("calc_num_meteors_ratio")
+                With .Variable("num_meteors_ratio")
+                    .Action = "set"
+                    .Int = "12 * current_player.num_meteors_to_drop / current_player.meteors_per_wave" 
+                End With
+            End With
+            With .EventName("update_last_num_meteors_ratio")
+                With .Variable("last_num_meteors_ratio")
+                    .Action = "add"
+                    .Int = -1 
+                End With
+            End With
             With .EventName("stop_meteor_wave") 
                 With .Variable("meteors_per_wave")
                     .Action = "add"
                     .Int = 3
+                End With
+                With .Variable("num_meteors_ratio")
+                    .Action = "set"
+                    .Int = 0
+                End With
+                With .Variable("last_num_meteors_ratio")
+                    .Action = "set"
+                    .Int = 0
                 End With
             End With
             With .EventName("light_eb") 
@@ -537,15 +606,23 @@ Sub CreateMeteorWaveMode
 
         With .SegmentDisplayPlayer()
             With .EventName("mode_meteor_wave_started")
+                With .Display("player1")
+                    .Text = """"""
+                    .Expire = 4000
+                End With
                 With .Display("player2")
                     .Text = """METEOR"""
                     .Flashing = "all"
-                    .Expire = 2000
+                    .Expire = 4000
                 End With
                 With .Display("player3")
                     .Text = """WAVE """
                     .Flashing = "all"
-                    .Expire = 2000
+                    .Expire = 4000
+                End With
+                With .Display("player4")
+                    .Text = """"""
+                    .Expire = 4000
                 End With
             End With
         End With

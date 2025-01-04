@@ -55,21 +55,26 @@ Sub CreateHealthMode
         With .ShotProfiles("health_meter")
             With .States("unlit")
                 .Show = "off"
+                .Key = "key_health_off"
             End With
             With .States("normal")
                 .Show = "led_color"
+                .Key = "key_health_normal"
                 With .Tokens()
                     .Add "color", HealthColor1
                 End With
             End With
             With .States("warning")
                 .Show = "led_color"
+                .Key = "key_health_warning"
                 With .Tokens()
                     .Add "color", HealthColor2
                 End With
             End With
             With .States("critical")
-                .Show = "led_color"
+                .Show = "flash_color"
+                .Key = "key_health_critical"
+                .Speed = 15
                 With .Tokens()
                     .Add "color", HealthColor3
                 End With

@@ -66,6 +66,9 @@ Sub CreateShows()
         With .AddStep(Null, Null, .16)
             .Lights = Array("(lights)|37|(color)")
         End With
+        With .AddStep(Null, Null, -1)
+            .Lights = Array("(lights)|0|(color)")
+        End With
     End With
     
 

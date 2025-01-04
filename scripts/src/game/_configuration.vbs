@@ -33,6 +33,10 @@ Const EarthHitColor = "ff0909"
 Const EarthHitColor2 = "880303"
 
 
+' Playfield display light names
+Dim PFDisplayLightNames
+PFDisplayLightNames = Array("pf_seg1","pf_seg2","pf_seg3","pf_seg4","pf_seg5","pf_seg6","pf_seg7","pf_seg8","pf_seg9","pf_seg10","pf_seg11","pf_seg12","pf_seg13","pf_seg14","pf_seg15","pf_seg16")
+
 ' Array of main shots and associated light names (used for combos and training modes)
 Dim MainShotNames, MainShotLightNames
 MainShotNames = Array("left_side_up","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
@@ -374,6 +378,31 @@ Public Sub CreateSharedShotProfiles()
         With .States("on")
             .Show = "led_color"
             .Key = "key_on_a"
+        End With
+    End With
+
+    With GlfShotProfiles("on_flicker_off")
+        With .States("lit")
+            .Show = "led_color"
+            .Key = "key_off_z"
+        End With
+        With .States("unlit")
+            .Show = "flicker_color_off"
+            .Speed = 3
+            .Key = "key_on_z"
+        End With
+    End With
+
+    With GlfShotProfiles("flicker_on_flicker_off")
+        With .States("lit")
+            .Show = "flicker_color_on"
+            .Key = "key_off_z"
+            .Speed = 3
+        End With
+        With .States("unlit")
+            .Show = "flicker_color_off"
+            .Speed = 3
+            .Key = "key_on_z"
         End With
     End With
 
