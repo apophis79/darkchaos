@@ -11,10 +11,6 @@
 
 
 
-' Known issues:
-' - if proton fired right when wave starts, can case some confusion with the meteors dropped
-
-
 Sub CreateMeteorWaveMode
     Dim x
 
@@ -68,9 +64,10 @@ Sub CreateMeteorWaveMode
             'handle pf display updates
             .Add "calc_num_meteors_ratio", Array("check_num_meteors_ratio") 
             .Add "check_num_meteors_ratio{current_player.num_meteors_ratio < current_player.last_num_meteors_ratio}", Array("update_last_num_meteors_ratio") 
-            .Add "update_last_num_meteors_ratio", Array("update_display","check_num_meteors_ratio")
+            .Add "update_last_num_meteors_ratio", Array("check_update_display","check_num_meteors_ratio")
+            .Add "check_update_display{current_player.last_num_meteors_ratio >= 0}", Array("update_display")
             'Stop the current successful wave
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop==0}", Array("meteor_wave_done")
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop<=0}", Array("meteor_wave_done")
             .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 'light_eb here?
@@ -270,7 +267,7 @@ Sub CreateMeteorWaveMode
                 End With
                 With .States("up_cool")
                     .Label = "Up Cool"
-                    .EventsWhenStarted = Array("meteor"&x&"_cool","meteor"&x&"_raise","meteor_raised")
+                    .EventsWhenStarted = Array("meteor"&x&"_cool","meteor"&x&"_raise")
                 End With
                 With .States("up_warm")
                     .Label = "Up Warm"
@@ -318,7 +315,7 @@ Sub CreateMeteorWaveMode
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
-                    .Events = Array("meteor"&x&"_proton_hit","stop_meteor_wave","cluster_bomb_fired",GLF_BALL_ENDED)
+                    .Events = Array("meteor"&x&"_proton_hit","stop_meteor_wave","cluster_bomb_fired","mode_meteor_wave_stopping")
                     .EventsWhenTransitioning = Array("meteor"&x&"_knockdown")
                 End With
             End With
@@ -418,6 +415,13 @@ Sub CreateMeteorWaveMode
 
         'Light shows
         With .ShowPlayer()
+            With .EventName("mode_meteor_wave_started")
+                .Key = "key_bumpers_off"
+                .Show = "off" 
+                With .Tokens()
+                    .Add "lights", "tBumper"
+                End With
+            End With
             With .EventName("proton_fired")
                 .Key = "key_proton_fired"
                 .Priority = 10
@@ -521,10 +525,28 @@ Sub CreateMeteorWaveMode
                 End With
                 With .Variable("last_num_meteors_ratio")
                     .Action = "set"
-                    .Int = 12
+                    .Int = "12 * (1 - 1/current_player.meteors_per_wave)"
                 End With
 			End With
-            With .EventName("meteor_raised")
+            With .EventName("meteor1_raise")
+                With .Variable("num_meteors_to_raise")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor2_raise")
+                With .Variable("num_meteors_to_raise")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor3_raise")
+                With .Variable("num_meteors_to_raise")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("meteor4_raise")
                 With .Variable("num_meteors_to_raise")
                     .Action = "add"
                     .Int = -1
