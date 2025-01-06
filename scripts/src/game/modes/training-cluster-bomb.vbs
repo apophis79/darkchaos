@@ -30,7 +30,6 @@ Sub CreateTrainingClusterBombMode
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_cluster_bomb_complete", Array("stop_training")
-            .Add "mode_training_cluster_bomb_stopping", Array("restart_training_qualify")
             'Handle moon ramp
             .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With
@@ -48,7 +47,7 @@ Sub CreateTrainingClusterBombMode
                     .Events = Array("light_cluster_charge"&x)
                     .State = 1
                 End With
-                .RestartEvents = Array("init_training")
+                '.RestartEvents = Array("init_training")
             End With
         Next
 

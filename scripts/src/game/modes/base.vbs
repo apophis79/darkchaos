@@ -126,19 +126,7 @@ Sub CreateBaseMode()
         End With
 
         With .ShowPlayer()
-            With .EventName("mode_base_started")
-                .Key = "key_bumpers_on"
-                .Show = "flicker_color_on_intensity" 
-                .Speed = 10
-                With .Tokens()
-                    .Add "lights", "tBumper"
-                    .Add "color", "ffffff"
-                    .Add "intensity", 25
-                End With
-            End With
-
             For x = 1 to 4
-                
                 With .EventName("s_Bumper"&x&"_active")
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 

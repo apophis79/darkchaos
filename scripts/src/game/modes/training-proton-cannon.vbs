@@ -30,7 +30,6 @@ Sub CreateTrainingProtonCannonMode
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_proton_cannon_complete", Array("stop_training")
-            .Add "mode_training_proton_cannon_stopping", Array("restart_training_qualify")
             'Handle moon ramp
             .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With
@@ -48,7 +47,7 @@ Sub CreateTrainingProtonCannonMode
                     .Events = Array("light_proton_charge"&x)
                     .State = 1
                 End With
-                .RestartEvents = Array("init_training")
+                '.RestartEvents = Array("init_training")
             End With
         Next
 

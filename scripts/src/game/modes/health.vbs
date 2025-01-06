@@ -118,6 +118,16 @@ Sub CreateHealthMode
                     .Add "color", HealthColor1
                 End With
             End With
+            With .EventName("mode_health_started")  'turn on bummper lights
+                .Key = "key_bumpers_on"
+                .Show = "flicker_color_on_intensity" 
+                .Speed = 10
+                With .Tokens()
+                    .Add "lights", "tBumper"
+                    .Add "color", "ffffff"
+                    .Add "intensity", 25
+                End With
+            End With
         End With
 
         With .VariablePlayer()

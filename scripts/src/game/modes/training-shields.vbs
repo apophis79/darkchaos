@@ -25,7 +25,6 @@ Sub CreateTrainingShieldsMode
             .Add "training_shield_group_collected_complete", Array("training_shields_completed")
             .Add "timer_training_shields_complete", Array("stop_training")
             .Add "training_shields_completed", Array("stop_training")
-            .Add "mode_training_shields_stopping", Array("restart_training_qualify")
             'Update the training select shots
             .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")

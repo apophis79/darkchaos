@@ -25,7 +25,6 @@ Sub CreateTrainingMoonMissileMode
             .Add "training_moon_lane_group_collected_complete", Array("training_moon_missile_completed")
             .Add "timer_training_moon_missile_complete", Array("stop_training")
             .Add "training_moon_missile_completed", Array("stop_training")
-            .Add "mode_training_moon_missile_stopping", Array("restart_training_qualify")
             'Update the training select shots
             .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
