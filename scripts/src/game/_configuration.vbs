@@ -22,6 +22,7 @@ Const HealthColor2 = "d14c00"
 Const HealthColor3 = "ff0300"
 Const SkillshotColor = "33dd33"
 Const AlienColor = "ff0300"
+Const AlienFlashColor = "ffb2a6"
 
 Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"

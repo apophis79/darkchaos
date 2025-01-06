@@ -140,7 +140,7 @@ Sub CreateAlienAttackMode
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array(MainShotNames(x-1)&"_hit","cluster_bomb_fired")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_attack_finished")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_attack_finished","alien_hit_show")
                 End With
             Next
            
@@ -227,6 +227,17 @@ Sub CreateAlienAttackMode
                 With .Tokens()
                     .Add "lights", "tEarth"
                     .Add "color", EarthHitColor
+                End With
+            End With
+            With .EventName("alien_hit_show")
+                .Key = "key_alien_flash"
+                .Show = "flash_color_with_fade" 
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", AlienFlashColor
+                    .Add "fade", 300
                 End With
             End With
         End With

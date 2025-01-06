@@ -12,7 +12,7 @@ Sub Table1_Init
     ' Grab magnet
     Set GrabMag = New cvpmMagnet
     With GrabMag
-        .InitMagnet GrabMagnet, 20  
+        .InitMagnet GrabMagnet, 30  
         .GrabCenter = False
 		.strength = 15
         .CreateEvents "GrabMag"
