@@ -12,6 +12,7 @@ Sub CreateSkillshotsMode
         
 
         With .EventPlayer()
+            .Add "mode_skillshots_started{current_player.ball_just_started==1}", Array("init_ss")
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
             .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
             .Add "timer_skillshots_complete", Array("stop_skillshots") 
@@ -45,7 +46,7 @@ Sub CreateSkillshotsMode
         With .Shots("ss")
             .Profile = "ss_ready"
             With .ControlEvents()
-                .Events = Array("mode_skillshots_started")
+                .Events = Array("init_ss")
                 .State = 1
             End With
             .ResetEvents = Array("stop_skillshots","ss_achieved") 
