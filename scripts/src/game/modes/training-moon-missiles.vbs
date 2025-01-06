@@ -25,6 +25,7 @@ Sub CreateTrainingMoonMissileMode
             .Add "training_moon_lane_group_collected_complete", Array("training_moon_missile_completed")
             .Add "timer_training_moon_missile_complete", Array("stop_training")
             .Add "training_moon_missile_completed", Array("stop_training")
+            .Add "mode_training_moon_missile_stopping", Array("restart_training_qualify")
             'Update the training select shots
             .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
@@ -148,7 +149,7 @@ Sub CreateTrainingMoonMissileMode
 					.Int = 1  
 				End With
             End With
-            With .EventName("mode_training_moon_missile_stopping")
+            With .EventName("stop_training")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  
@@ -172,6 +173,18 @@ Sub CreateTrainingMoonMissileMode
                 .Key = "key_training_gi"
                 .Show = "flicker_color_on_intensity"
                 .Speed = 5
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", MoonColor
+                    .Add "intensity", 10
+                End With
+            End With
+            With .EventName("mode_training_moon_missile_stopping")
+                .Key = "key_training_stopping"
+                .BlockQueue = True
+                .Show = "flicker_color"
+                .Speed = 5
+                .Loops = 1
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", MoonColor

@@ -25,11 +25,12 @@ Sub CreateTrainingShipSaveMode
             'successfull shot
             .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", Array("light_ship_charge1","flash_gi")
             .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 && current_player.shot_training_ship_charge2 == 0}", Array("light_ship_charge2","flash_gi")
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", Array("light_ship_charge3","flash_gi")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", Array("light_ship_charge3")
             .Add "light_ship_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_ship_save_complete", Array("stop_training")
+            .Add "mode_training_ship_save_stopping", Array("restart_training_qualify")
             'Handle moon ramp
             .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With
@@ -83,7 +84,7 @@ Sub CreateTrainingShipSaveMode
 					.Int = 1  
 				End With
             End With
-            With .EventName("mode_training_ship_save_stopping")
+            With .EventName("stop_training")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  
@@ -107,6 +108,18 @@ Sub CreateTrainingShipSaveMode
                 .Key = "key_training_gi"
                 .Show = "flicker_color_on_intensity"
                 .Speed = 5
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", ShipSaveColor
+                    .Add "intensity", 10
+                End With
+            End With
+            With .EventName("mode_training_ship_save_stopping")
+                .Key = "key_training_stopping"
+                .BlockQueue = True
+                .Show = "flicker_color"
+                .Speed = 5
+                .Loops = 1
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShipSaveColor

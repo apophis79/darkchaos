@@ -25,6 +25,7 @@ Sub CreateTrainingShieldsMode
             .Add "training_shield_group_collected_complete", Array("training_shields_completed")
             .Add "timer_training_shields_complete", Array("stop_training")
             .Add "training_shields_completed", Array("stop_training")
+            .Add "mode_training_shields_stopping", Array("restart_training_qualify")
             'Update the training select shots
             .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")
@@ -148,7 +149,7 @@ Sub CreateTrainingShieldsMode
 					.Int = 1  
 				End With
             End With
-            With .EventName("mode_training_shields_stopping")
+            With .EventName("stop_training")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  
@@ -172,6 +173,18 @@ Sub CreateTrainingShieldsMode
                 .Key = "key_training_gi"
                 .Show = "flicker_color_on_intensity"
                 .Speed = 5
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", ShieldsColor
+                    .Add "intensity", 10
+                End With
+            End With
+            With .EventName("mode_training_shields_stopping")
+                .Key = "key_training_stopping"
+                .BlockQueue = True
+                .Show = "flicker_color"
+                .Speed = 5
+                .Loops = 1
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShieldsColor

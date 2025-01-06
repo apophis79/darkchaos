@@ -30,6 +30,7 @@ Sub CreateTrainingProtonCannonMode
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_proton_cannon_complete", Array("stop_training")
+            .Add "mode_training_proton_cannon_stopping", Array("restart_training_qualify")
             'Handle moon ramp
             .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With
@@ -81,7 +82,7 @@ Sub CreateTrainingProtonCannonMode
 					.Int = 1  
 				End With
             End With
-            With .EventName("mode_training_proton_cannon_stopping")
+            With .EventName("stop_training")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  
@@ -114,8 +115,9 @@ Sub CreateTrainingProtonCannonMode
             With .EventName("mode_training_proton_cannon_stopping")
                 .Key = "key_training_stopping"
                 .BlockQueue = True
-                .Show = "flicker_color_on_intensity"
+                .Show = "flicker_color"
                 .Speed = 5
+                .Loops = 1
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ProtonColor

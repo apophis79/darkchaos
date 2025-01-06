@@ -38,10 +38,11 @@ Sub CreateTrainingHealMode
             .Add "check_add_training_health{current_player.shot_training_health5 == 1 && current_player.shot_training_health6 == 0}", Array("light_health6","flash_gi")
             .Add "check_add_training_health{current_player.shot_training_health6 == 1 && current_player.shot_training_health7 == 0}", Array("light_health7","flash_gi")
             .Add "check_add_training_health{current_player.shot_training_health7 == 1 && current_player.shot_training_health8 == 0}", Array("light_health8","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", Array("light_health9","flash_gi","training_achieved")
+            .Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", Array("light_health9","training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_heal_complete", Array("stop_training")
+            .Add "mode_training_heal_stopping", Array("restart_training_qualify")
             'Handle moon ramp
             .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With
@@ -106,7 +107,7 @@ Sub CreateTrainingHealMode
         
 
         With .ShowPlayer()
-            With .EventName("mode_training_heal_started")
+            With .EventName("stop_training")
                 .Key = "key_training_bumpers"
                 .Show = "led_color"
                 With .Tokens()
@@ -128,6 +129,18 @@ Sub CreateTrainingHealMode
                 .Key = "key_training_gi"
                 .Show = "flicker_color_on_intensity"
                 .Speed = 5
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", HealthColor1
+                    .Add "intensity", 10
+                End With
+            End With
+            With .EventName("mode_training_heal_stopping")
+                .Key = "key_training_stopping"
+                .BlockQueue = True
+                .Show = "flicker_color"
+                .Speed = 5
+                .Loops = 1
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", HealthColor1
