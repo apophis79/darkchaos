@@ -70,7 +70,7 @@ Sub CreateMeteorWaveMode
             .Add "check_meteor_wave{current_player.num_meteors_to_drop<=0}", Array("meteor_wave_done")
             .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave") 'light_eb here?
+            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave","light_eb")
@@ -398,6 +398,21 @@ Sub CreateMeteorWaveMode
                 End With
             End With
 
+            With .VariablePlayer()
+                With .EventName("meteor"&x&"_raise")
+                    With .Variable("num_meteors_to_raise")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+                With .EventName("meteor"&x&"_down")  'gets called after a knockdown too
+                    With .Variable("num_meteors_to_drop")
+                        .Action = "add"
+                        .Int = -1
+                    End With
+                End With
+            End With
+
         Next
 
 
@@ -406,7 +421,7 @@ Sub CreateMeteorWaveMode
             '.Debug = True
             .TickInterval = 500
             .StartValue = 0
-            .EndValue = 2
+            .EndValue = 1
             With .ControlEvents()
                 .EventName = "stop_meteor_wave"
                 .Action = "restart"
@@ -528,54 +543,6 @@ Sub CreateMeteorWaveMode
                     .Int = "12 * (1 - 1/current_player.meteors_per_wave)"
                 End With
 			End With
-            With .EventName("meteor1_raise")
-                With .Variable("num_meteors_to_raise")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor2_raise")
-                With .Variable("num_meteors_to_raise")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor3_raise")
-                With .Variable("num_meteors_to_raise")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor4_raise")
-                With .Variable("num_meteors_to_raise")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor1_down")  'gets called after a knockdown too
-                With .Variable("num_meteors_to_drop")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor2_down")  'gets called after a knockdown too
-                With .Variable("num_meteors_to_drop")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor3_down")  'gets called after a knockdown too
-                With .Variable("num_meteors_to_drop")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
-            With .EventName("meteor4_down")  'gets called after a knockdown too
-                With .Variable("num_meteors_to_drop")
-                    .Action = "add"
-                    .Int = -1
-                End With
-            End With
             With .EventName("calc_num_meteors_ratio")
                 With .Variable("num_meteors_ratio")
                     .Action = "set"
