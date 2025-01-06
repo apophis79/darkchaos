@@ -15,8 +15,12 @@ Sub CreateExtraBallMode
             .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit")
             .Add "s_Scoop_active{current_player.shot_eb_ready == 1}", Array("restart_eb","eb_achieved") 
         End With
-     
 
+        With .ExtraBalls("eb")
+            .AwardEvents = Array("eb_achieved")
+            .MaxPerGame = 3
+        End With
+     
         'EB Ready
         With .Shots("eb_ready")
             .Profile = "qualified_shot"
