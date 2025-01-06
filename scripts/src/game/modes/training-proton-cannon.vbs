@@ -25,7 +25,7 @@ Sub CreateTrainingProtonCannonMode
             'successfull shot
             .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", Array("light_proton_charge1","flash_gi")
             .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 && current_player.shot_training_proton_charge2 == 0}", Array("light_proton_charge2","flash_gi")
-            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3","flash_gi")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3") ',"flash_gi")
             .Add "light_proton_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
@@ -103,6 +103,17 @@ Sub CreateTrainingProtonCannonMode
             End With
             With .EventName("flash_gi")
                 .Key = "key_training_gi"
+                .Show = "flicker_color_on_intensity"
+                .Speed = 5
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", ProtonColor
+                    .Add "intensity", 10
+                End With
+            End With
+            With .EventName("mode_training_proton_cannon_stopping")
+                .Key = "key_training_stopping"
+                .BlockQueue = True
                 .Show = "flicker_color_on_intensity"
                 .Speed = 5
                 With .Tokens()
