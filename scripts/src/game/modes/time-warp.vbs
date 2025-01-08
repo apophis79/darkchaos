@@ -13,7 +13,7 @@
 Sub CreateTimewarpMode
     Dim x
 
-    With CreateGlfMode("timewarp", 510)
+    With CreateGlfMode("timewarp", 550)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
 

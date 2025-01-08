@@ -18,6 +18,7 @@ Sub CreateMeteorWaveQualifyMode
             .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
             .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown
+            .Add "select_random_mystery", Array("stop_mwq_timer")  'Mystery started, so halt the countdown
         End With
         
         With .SegmentDisplayPlayer()

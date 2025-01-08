@@ -125,7 +125,7 @@ Sub CreateHealthMode
                 With .Tokens()
                     .Add "lights", "tBumper"
                     .Add "color", "ffffff"
-                    .Add "intensity", 25
+                    .Add "intensity", 15
                 End With
             End With
         End With

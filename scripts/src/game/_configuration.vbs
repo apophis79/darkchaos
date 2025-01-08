@@ -100,6 +100,9 @@ Const SkillshotsTickLimit = 5
 ' Alien Attack settings
 Const AlienTickInterval = 3800
 
+' Mystery settings
+Const MysteryShowLength = 4000
+
 
 
 Sub ConfigureGlfDevices
@@ -112,6 +115,7 @@ Sub ConfigureGlfDevices
     CreateTimeWarpShows()
     CreateSkillshotShows()
     CreateMoonShows()
+    CreateMysteryShows()
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
@@ -344,6 +348,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "alien_tick_count", -1
     Glf_SetInitialPlayerVar "alien_attack_dir", 0
     Glf_SetInitialPlayerVar "alien_attack_done", 0
+    Glf_SetInitialPlayerVar "double_scoring_active", 0
+    Glf_SetInitialPlayerVar "combos_relaxed", 0
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0
     Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
