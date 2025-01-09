@@ -180,6 +180,16 @@ Sub CreateBaseMode()
             .EnableEvents = Array("new_ball_active")
         End With
 
+        'Scoop ball hold
+        With .BallHolds("scoop_hold")
+            '.Debug = True
+            .BallsToHold = 1
+            .HoldDevices = Array("scoop")
+            .EnableEvents = Array("enable_scoop_hold") 
+            .DisableEvents = Array("disable_scoop_hold") 
+            .ReleaseAllEvents = Array("release_scoop_hold")
+        End With
+
 
         With .Shots("base_shoot_again")
             .Profile = "shoot_again"

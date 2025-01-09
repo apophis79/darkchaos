@@ -7,7 +7,7 @@ Sub CreateMeteorWaveQualifyMode
 
     With CreateGlfMode("meteor_wave_qualify", 1100)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
 
         With .EventPlayer()
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
@@ -17,8 +17,9 @@ Sub CreateMeteorWaveQualifyMode
             .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer")
             .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
-            .Add "restart_tw_timer", Array("stop_mwq_timer")  'Timewarp started, so halt the countdown
-            .Add "select_random_mystery", Array("stop_mwq_timer")  'Mystery started, so halt the countdown
+            .Add "restart_tw_timer", Array("stop_mwq_timer")    'Timewarp started, so halt the countdown
+            .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
+            .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
         End With
         
         With .SegmentDisplayPlayer()

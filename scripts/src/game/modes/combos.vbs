@@ -13,7 +13,7 @@ Sub CreateCombosMode
 
     With CreateGlfMode("combos", 520)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
 
         With .EventPlayer()
             .Add "mode_combos_started", Array("reset_combos")

@@ -14,7 +14,7 @@ Sub CreateHealthMode
 
     With CreateGlfMode("health", 510)
         .StartEvents = Array("ball_started","stop_training")
-        .StopEvents = Array("ball_ended","start_training")
+        .StopEvents = Array("ball_ended","start_training_select")
 
         With .EventPlayer()
             'restart the mode

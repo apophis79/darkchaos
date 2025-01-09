@@ -17,7 +17,7 @@ Sub CreateTrainingSelectMode
     Dim x
 
     With CreateGlfMode("training_select",600)
-        .StartEvents = Array("start_training")
+        .StartEvents = Array("start_training_select")
         .StopEvents = Array(GLF_BALL_ENDED,"stop_training_select")
         '.Debug = True
 
@@ -31,7 +31,8 @@ Sub CreateTrainingSelectMode
             .Add "s_left_magna_key_active", Array("make_selection")
             .Add "s_right_magna_key_active", Array("make_selection")
             .Add "timer_training_select_complete", Array("make_selection")
-            .Add "make_selection", Array("training_select_release","enable_flippers")
+            .Add "make_selection", Array("release_scoop_hold","enable_flippers","start_training")
+            .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
             .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")
             '.Add "timer_training_select_tick{devices.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
@@ -218,18 +219,6 @@ Sub CreateTrainingSelectMode
                 .Action = "restart"
             End With
         End With
-
-
-        'Scoop ball hold
-        With .BallHolds("training_select")
-            '.Debug = True
-            .BallsToHold = 1
-            .HoldDevices = Array("scoop")
-            .EnableEvents = Array("mode_training_select_started") 
-            .DisableEvents = Array("training_select_disable") 
-            .ReleaseAllEvents = Array("training_select_release")
-        End With
-
 
         'Selection state machines
         With .StateMachines("training_select")

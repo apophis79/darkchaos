@@ -103,6 +103,9 @@ Const AlienTickInterval = 3800
 ' Mystery settings
 Const MysteryShowLength = 4000
 
+' Extra Ball settings
+Const EBShowLength = 4000
+
 
 
 Sub ConfigureGlfDevices

@@ -35,9 +35,9 @@ Sub CreateTrainingQualifyMode
             .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
             'Handle a successful hit
             .Add "training_shot_hit",Array("check_training_qualify")
-            .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed")
-            'Start the training
-            .Add "s_Scoop_active{current_player.shot_training_ready==1}", Array("start_training","kill_flippers") 
+            .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed","enable_scoop_hold")
+            'Start the training selection
+            .Add "check_training{current_player.shot_training_ready==1}", Array("start_training_select","kill_flippers") 
         End With
 
         With .RandomEventPlayer()
@@ -54,7 +54,6 @@ Sub CreateTrainingQualifyMode
                 .ForceDifferent = False
             End With
         End With
-
      
         'Define our shots
         For x = 1 to 8
@@ -83,7 +82,7 @@ Sub CreateTrainingQualifyMode
                 .Events = Array("training_shots_completed")
                 .State = 1
             End With
-            .RestartEvents = Array("restart_qualify_training")
+            .RestartEvents = Array("start_training_select")
         End With
 
 

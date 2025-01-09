@@ -55,7 +55,7 @@ Sub CreateMoonMultiballMode
 
     With CreateGlfMode("moon_multiball", 510)
         .StartEvents = Array("ball_started","stop_training")
-        .StopEvents = Array("ball_ended","start_training")
+        .StopEvents = Array("ball_ended","start_training_select")
         '.Debug = True
 
         With .EventPlayer()

@@ -17,13 +17,22 @@ Sub CreateMysteryMode
 
     With CreateGlfMode("mystery", 580)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
         
 
         With .EventPlayer()
-            .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("select_random_mystery")
+            'enable the ball hold if needed
+            .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("enable_scoop_hold") 
+            'run the mystery selection if ready, otherwise move along to training
+            .Add "check_mystery{current_player.shot_mystery_ready==0}", Array("check_training")
+            .Add "check_mystery{current_player.shot_mystery_ready==1}", Array("select_random_mystery")
+            'select random mystery and run show
             .Add "select_random_mystery", Array("play_mystery_show")
-            .Add "restart_qualify_mystery", Array("mystery_select_done","start_mwq_timer")   'Mystery done, so continue the meteor wave qualify countdown
+            'release ball hold if training is not ready
+            .Add "restart_qualify_mystery{current_player.shot_training_ready==0}", Array("release_scoop_hold")
+            .Add "release_scoop_hold", Array("disable_scoop_hold")
+            'reset stuff and continue
+            .Add "restart_qualify_mystery", Array("mystery_select_done","start_mwq_timer","check_training")   'Mystery done, so continue the meteor wave qualify countdown
         End With
 
         'Randomize mystery selection
@@ -47,13 +56,13 @@ Sub CreateMysteryMode
         End With
 
         'Scoop ball hold
-        With .BallHolds("mystery_select")
+        With .BallHolds("mystery_hold")
             '.Debug = True
             .BallsToHold = 1
             .HoldDevices = Array("scoop")
-            .EnableEvents = Array("select_random_mystery") 
-            .DisableEvents = Array("mystery_select_done") 
-            .ReleaseAllEvents = Array("restart_qualify_mystery")
+            .EnableEvents = Array("enable_mystery_hold") 
+            .DisableEvents = Array("disable_mystery_hold") 
+            .ReleaseAllEvents = Array("release_mystery_hold")
         End With
 
         'Define our shots
@@ -130,12 +139,10 @@ Sub CreateMysteryMode
             With .EventName("select_random_mystery")
                 With .Display("player1")
                     .Text = """"""
-                    .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player4")
                     .Text = """"""
-                    .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
             End With

@@ -148,7 +148,7 @@ Sub CreateTrainingShieldsMode
 					.Int = 1  
 				End With
             End With
-            With .EventName("stop_training")
+            With .EventName("mode_training_shields_stopping")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  

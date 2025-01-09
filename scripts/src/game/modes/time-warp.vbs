@@ -15,7 +15,7 @@ Sub CreateTimewarpMode
 
     With CreateGlfMode("timewarp", 550)
         .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
 
         With .EventPlayer()
             .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("reset_timewarp")
