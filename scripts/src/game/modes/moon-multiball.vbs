@@ -203,14 +203,14 @@ Sub CreateMoonMultiballMode
             '.Debug = True
             .EnableEvents = Array("enable_moon_mb_locking", "mode_moon_multiball_started{devices.state_machines.moon_mb.state==""locking""}")
             .DisableEvents = Array("restart_qualify_shots")
-            .ResetEvents = Array("start_moon_multiball")
+            .ResetEvents = Array("start_moon_multiball.1")
             .BallsToLock = 2
             .LockDevice = "moon_lock"
         End With
 
         With .Multiballs("moon")
             '.Debug = True
-            .StartEvents = Array("start_moon_multiball")
+            .StartEvents = Array("start_moon_multiball.2")
             .BallCount = "current_player.multiball_lock_moon_launch_balls_locked"
             .BallCountType = "add"
             .ShootAgain = 0
