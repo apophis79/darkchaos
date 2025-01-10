@@ -19,7 +19,7 @@ Sub CreateExtraBallMode
         With .EventPlayer()
             'initialize the EB
             .Add "mode_extra_ball_started", Array("check_eb")
-            .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit","enable_scoop_hold")
+            .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit")
             'handle successful scoop hit
             .Add "s_Scoop_active{current_player.shot_eb_ready == 0}", Array("eb_complete") 'EB not available so move on
             .Add "s_Scoop_active{current_player.shot_eb_ready == 1}", Array("enable_scoop_hold","play_eb_show","eb_achieved") 'Collect the EB

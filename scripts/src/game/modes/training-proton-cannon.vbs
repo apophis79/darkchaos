@@ -80,13 +80,11 @@ Sub CreateTrainingProtonCannonMode
                     .Action = "add"
 					.Int = 1  
 				End With
-            End With
-            With .EventName("mode_training_proton_cannon_stopping")
                 With .Variable("training_just_finished")
                     .Action = "set"
 					.Int = 1  
 				End With
-			End With
+            End With
         End With
         
 

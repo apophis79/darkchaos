@@ -387,7 +387,7 @@ Sub Glf_Options(ByVal eventId)
 	End If
 
 	Dim glfMaxDispatch : glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 5, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
-	glf_max_dispatch = glfMaxDispatch*5
+	glf_max_dispatch = 1'glfMaxDispatch*5
 
 	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
 	If glfuseBCP = 1 Then
