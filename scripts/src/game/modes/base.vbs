@@ -7,21 +7,21 @@ Sub CreateBaseMode()
     Dim x
 
     With CreateGlfMode("base", 100)
-        .StartEvents = Array(GLF_GAME_START)
-        .StopEvents = Array(GLF_GAME_OVER)
+        .StartEvents = Array(GLF_BALL_STARTED)
+        .StopEvents = Array(GLF_BALL_ENDED)
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("launch_moon_balls_test")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
-            .Add "ball_ended{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
-            .Add "ball_ended{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
             .Add "s_TargetMystery5_active", Array("flash_mag_gi")
         End With
         
@@ -47,7 +47,7 @@ Sub CreateBaseMode()
                     .Text = "{players[3].score:0>2,}"
                 End With
             End With
-            With .EventName(GLF_BALL_STARTED)
+            With .EventName("mode_base_started")
                 With .Display("ball")
                     .Text = "{current_player.ball:0>2}"
                 End With
@@ -60,7 +60,7 @@ Sub CreateBaseMode()
         End With
 
         With .LightPlayer()
-            With .EventName(GLF_BALL_STARTED)
+            With .EventName("mode_base_started")
                 With .Lights("GI")
                     .Color = GIColor3000k
                     .Fade = 200
@@ -206,7 +206,7 @@ Sub CreateBaseMode()
        
 
         With .VariablePlayer()
-		    With .EventName(GLF_BALL_STARTED)
+		    With .EventName("mode_base_started")
 				With .Variable("ball_just_started")
                     .Action = "set"
 					.Int = 1
