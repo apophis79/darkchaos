@@ -25,6 +25,8 @@ Sub CreateShieldsMode
             'use shields
             .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
             .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
+            'Handle mystery award
+            .Add "mystery_added_shields", Array("complete_qualify_shields")
         End With
         
 
@@ -64,7 +66,7 @@ Sub CreateShieldsMode
                     .Add "lights", "LSC"&x
                 End With
                 With .ControlEvents()
-                    .Events = Array("boost_qualify_shields")
+                    .Events = Array("boost_qualify_shields","complete_qualify_shields")
                     .State = 1
                 End With
             End With
@@ -74,6 +76,10 @@ Sub CreateShieldsMode
             .Profile = "qualify_shields"
             With .Tokens()
                 .Add "lights", "LSC4"
+            End With
+            With .ControlEvents()
+                .Events = Array("complete_qualify_shields")
+                .State = 1
             End With
         End With
     
@@ -143,7 +149,7 @@ Sub CreateShieldsMode
 
         With .SegmentDisplayPlayer()
             With .EventName("qualify_shields_on_complete")
-                With .Display("player4")
+                With .Display("player3")
                     .Text = """SHIELDS"""
                     .Flashing = "all"
                     .Expire = 2000

@@ -25,8 +25,6 @@ Sub CreateHealthMode
             .Add "s_Bumper2_active", Array("check_add_health_bump")
             .Add "s_Bumper3_active", Array("check_add_health_bump")
             .Add "s_Bumper4_active", Array("check_add_health_bump")
-            ' .Add "s_LeftSlingshot_active", Array("check_add_health_bump")
-            ' .Add "s_RightSlingshot_active", Array("check_add_health_bump")
             'add or remove health lights as needed
             .Add "check_add_health_bump{current_player.health_bump_value<"&BumperHitsPerRepair&"}", Array("add_health_bump")
             .Add "check_add_health_bump{current_player.health_bump_value=="&BumperHitsPerRepair&"}", Array("check_add_health","reset_health_bump")
@@ -49,6 +47,8 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers")
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
+            'Handle mystery award
+            .Add "mystery_full_health", Array("complete_full_health")
         End With
 
         'Define a shot profile with four states, health meter leves
@@ -93,7 +93,7 @@ Sub CreateHealthMode
                     .State = 0
                 End With
                 With .ControlEvents()
-                    .Events = Array("restart_health","health"&x&"_norm")
+                    .Events = Array("restart_health","health"&x&"_norm","complete_full_health")
                     .State = 1
                 End With
                 With .ControlEvents()
@@ -113,6 +113,16 @@ Sub CreateHealthMode
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tHealth"
+                    .Add "color", HealthColor1
+                End With
+            End With
+            With .EventName("complete_full_health")
+                .Key = "key_health_full_charged"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 15
                 With .Tokens()
                     .Add "lights", "tHealth"
                     .Add "color", HealthColor1

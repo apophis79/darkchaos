@@ -83,7 +83,7 @@ Const BumperHitsPerRepair = 9
 Const BumperHitsPerRepairTrain = 3
 
 ' Ship save settings (more shoot again time)
-Const ShipSaveShootAgainTime = 12000
+Const ShipSaveShootAgainTime = 15000
 
 ' Timewarp settings
 Const TimeWarpPauseTicks = 10
@@ -92,6 +92,7 @@ Const TimeWarpTickInterval = 1000
 ' Combos settings
 Const CombosTickInterval = 1000
 Const CombosTickLimit = 7
+Const CombosTickLimitRelaxed = 11
 
 ' Skillshots settings
 Const SkillshotsTickInterval = 1000
@@ -363,8 +364,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "alien_tick_count", -1
     Glf_SetInitialPlayerVar "alien_attack_dir", 0
     Glf_SetInitialPlayerVar "alien_attack_done", 0
-    Glf_SetInitialPlayerVar "double_scoring_active", 0
-    Glf_SetInitialPlayerVar "combos_relaxed", 0
+    Glf_SetInitialPlayerVar "scoring_multiplier", 1
+    Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0
     Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0

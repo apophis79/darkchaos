@@ -27,6 +27,8 @@ Sub CreateExtraBallMode
             .Add "eb_complete{current_player.shot_mystery_ready==0 && current_player.shot_training_ready==0}", Array("release_scoop_hold")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             .Add "eb_complete", Array("restart_eb","start_mwq_timer","check_mystery") 'restart meteor wave countdown, move on to mystery mode
+            'handle mystery award
+            .Add "mystery_eb_is_lit", Array("eb_now_lit")
         End With
 
 

@@ -38,7 +38,9 @@ Sub CreateTrainingQualifyMode
             .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed")
             'Start the training selection
             .Add "s_Scoop_active{current_player.shot_training_ready == 1}", Array("enable_scoop_hold")
-            .Add "check_training{current_player.shot_training_ready==1}", Array("start_training_select","kill_flippers") 
+            .Add "check_training{current_player.shot_training_ready==1}", Array("start_training_select","kill_flippers")
+            'Handle mystery award
+            .Add "mystery_trainer_ready",Array("clear_training_shots","training_shots_completed")
         End With
 
         With .RandomEventPlayer()
@@ -68,7 +70,7 @@ Sub CreateTrainingQualifyMode
                     .Events = Array(MainShotNames(x-1)&"_training_on")
                     .State = 1
                 End With
-                .RestartEvents = Array(MainShotNames(x-1)&"_training_off")
+                .RestartEvents = Array(MainShotNames(x-1)&"_training_off","clear_training_shots")
             End With
         Next
 

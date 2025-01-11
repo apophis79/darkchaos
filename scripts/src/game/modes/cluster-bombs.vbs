@@ -28,10 +28,12 @@ Sub CreateClusterBombMode
             .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
             'Add bombs
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
-            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2")
+            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded") 'check for wizard mode qualification
             'Fire bomb
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash")
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
+            'Handle mystery award
+            .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded")
         End With
 
         'Define our shots
@@ -47,7 +49,7 @@ Sub CreateClusterBombMode
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_cluster_charge"&x)
+                    .Events = Array("light_cluster_charge"&x,"complete_cluster_charges")
                     .State = 2
                 End With
                 .RestartEvents = Array("reset_cluster_charges")
@@ -145,7 +147,7 @@ Sub CreateClusterBombMode
 
         With .SegmentDisplayPlayer()
             With .EventName("light_cluster_charge3")
-                With .Display("player4")
+                With .Display("player3")
                     .Text = """CLUSTER"""
                     .Flashing = "all"
                     .Expire = 2000

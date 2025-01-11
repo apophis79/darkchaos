@@ -25,6 +25,8 @@ Sub CreateShipSaveMode
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2")
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3")
             .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3")
+            'Handle mystery award
+            .Add "mystery_added_saver", Array("complete_ship_save","light_ship_charge3")
         End With
         
 
@@ -41,7 +43,7 @@ Sub CreateShipSaveMode
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_ship_charge"&x)
+                    .Events = Array("light_ship_charge"&x,"complete_ship_save")
                     .State = 2
                 End With
                 .RestartEvents = Array("restart_ship_save")
@@ -83,8 +85,8 @@ Sub CreateShipSaveMode
 
         With .SegmentDisplayPlayer()
             With .EventName("light_ship_charge3")
-                With .Display("player4")
-                    .Text = """SAVER"""
+                With .Display("player3")
+                    .Text = """ SAVER """
                     .Flashing = "all"
                     .Expire = 2000
                 End With

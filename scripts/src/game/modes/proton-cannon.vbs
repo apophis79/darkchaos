@@ -34,8 +34,11 @@ Sub CreateProtonCannonMode
             .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("add_proton_round3","reset_proton_charges")
             .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("add_proton_round4","reset_proton_charges")
             .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("add_proton_round5","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("add_proton_round6")
+            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
             .Add "check_protons", Array("check_protons_done")
+            'Handle mystery award
+            .Add "mystery_full_protons", Array("complete_full_protons")
+            .Add "complete_full_protons", Array("check_fully_loaded") 'check for wizard mode qualification
         End With
         
 
@@ -52,7 +55,7 @@ Sub CreateProtonCannonMode
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_proton_charge"&x)
+                    .Events = Array("light_proton_charge"&x,"complete_full_protons")
                     .State = 2
                 End With
                 .RestartEvents = Array("reset_proton_charges")
@@ -67,7 +70,7 @@ Sub CreateProtonCannonMode
                     .Add "color", ProtonColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("add_proton_round"&x)
+                    .Events = Array("add_proton_round"&x,"complete_full_protons")
                     .State = 1
                 End With
                 .RestartEvents = Array("fire_proton_round"&x)
@@ -96,6 +99,16 @@ Sub CreateProtonCannonMode
                 .Loops = 5
                 With .Tokens()
                     .Add "lights", "tProton"
+                    .Add "color", ProtonColor
+                End With
+            End With
+            With .EventName("complete_full_protons")
+                .Key = "key_all_proton_charged"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 15
+                With .Tokens()
+                    .Add "lights", "tProtonAll"
                     .Add "color", ProtonColor
                 End With
             End With

@@ -17,6 +17,7 @@ Sub CreateCombosMode
 
         With .EventPlayer()
             .Add "mode_combos_started", Array("reset_combos")
+            .Add "mode_combos_started{current_player.ball_just_started==1}", Array("clear_relaxed_combos")
             .Add "timer_combos_reset_complete", Array("reset_combos")
             .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
             .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
@@ -51,6 +52,17 @@ Sub CreateCombosMode
                     End With
                 End With
             Next
+
+            With .EventName("mystery_relaxed_combos")
+                .Key = "key_combos_relaxed"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 15
+                With .Tokens()
+                    .Add "lights", "tCombos"
+                    .Add "color", CombosColor
+                End With
+            End With
         End With
 
 
@@ -87,7 +99,7 @@ Sub CreateCombosMode
         With .Timers("combos_reset")
             .TickInterval = CombosTickInterval
             .StartValue = 0
-            .EndValue = CombosTickLimit
+            .EndValue = "current_player.combo_ticks"
             With .ControlEvents()
                 .EventName = "restart_c_timer"
                 .Action = "restart"
@@ -108,7 +120,20 @@ Sub CreateCombosMode
 					.Int = 1  
 				End With
 			End With
-		End With
+            With .EventName("mystery_relaxed_combos") 'mystery award (lasts the rest of the ball)
+				With .Variable("combo_ticks")
+                    .Action = "set"
+					.Int = CombosTickLimitRelaxed  
+				End With
+			End With
+            With .EventName("clear_relaxed_combos") 'clear mystery award
+				With .Variable("combo_ticks")
+                    .Action = "set"
+					.Int = CombosTickLimit
+				End With
+			End With
+        End With
+
 
     End With
 

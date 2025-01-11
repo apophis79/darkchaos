@@ -42,12 +42,12 @@ Sub CreateMysteryMode
                 .Add "mystery_full_health{current_player.health_value < 9}", 1
                 .Add "mystery_full_protons{current_player.shot_proton_round6 == 0}", 0.7
                 .Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", 0.8
-                .Add "mystery_added_saver{current_player.shot_ship_charge3 == 1}", 1
+                .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
                 .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
                 .Add "mystery_moon_ready{current_player.multiball_lock_moon_launch_balls_locked < 2 && devices.state_machines.moon_mb.state!=""locking""}", 1
                 .Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
-                .Add "mystery_double_scoring{current_player.double_scoring_active == 0}", 0.5 
-                .Add "mystery_collect_bonus", 0.5
+                .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5  'FIXME add this mode
+                .Add "mystery_collect_bonus", 0.5  'FIXME added this mode
                 .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
                 .Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
                 .ForceAll = False
