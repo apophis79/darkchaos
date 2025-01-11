@@ -91,7 +91,7 @@ Const TimeWarpTickInterval = 1000
 
 ' Combos settings
 Const CombosTickInterval = 1000
-Const CombosTickLimit = 6
+Const CombosTickLimit = 7
 
 ' Skillshots settings
 Const SkillshotsTickInterval = 1000
@@ -181,11 +181,15 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("left_sling")
         .Switch = "s_LeftSlingshot"
         .ActionCallback = "LeftSlingshotAction"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfAutoFireDevice("right_sling")
         .Switch = "s_RightSlingshot"
         .ActionCallback = "RightSlingshotAction"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
 
@@ -193,21 +197,29 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("bumper1")
         .Switch = "s_Bumper1"
         .ActionCallback = "Bumper1Action"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfAutoFireDevice("bumper2")
         .Switch = "s_Bumper2"
         .ActionCallback = "Bumper2Action"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfAutoFireDevice("bumper3")
         .Switch = "s_Bumper3"
         .ActionCallback = "Bumper3Action"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfAutoFireDevice("bumper4")
         .Switch = "s_Bumper4"
         .ActionCallback = "Bumper4Action"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
 
