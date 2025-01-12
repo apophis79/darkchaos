@@ -191,6 +191,8 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("left_sling")
         .Switch = "s_LeftSlingshot"
         .ActionCallback = "LeftSlingshotAction"
+        .DisabledCallback = "LeftSlingshotDisabled"
+        .EnabledCallback = "LeftSlingshotEnabled"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
@@ -198,6 +200,8 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("right_sling")
         .Switch = "s_RightSlingshot"
         .ActionCallback = "RightSlingshotAction"
+        .DisabledCallback = "RightSlingshotDisabled"
+        .EnabledCallback = "RightSlingshotEnabled"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
@@ -207,6 +211,8 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("bumper1")
         .Switch = "s_Bumper1"
         .ActionCallback = "Bumper1Action"
+        .DisabledCallback = "Bumper1Disabled"
+        .EnabledCallback = "Bumper1Enabled"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
@@ -214,6 +220,8 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("bumper2")
         .Switch = "s_Bumper2"
         .ActionCallback = "Bumper2Action"
+        .DisabledCallback = "Bumper2Disabled"
+        .EnabledCallback = "Bumper2Enabled"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
@@ -221,6 +229,8 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("bumper3")
         .Switch = "s_Bumper3"
         .ActionCallback = "Bumper3Action"
+        .DisabledCallback = "Bumper3Disabled"
+        .EnabledCallback = "Bumper3Enabled"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
@@ -228,6 +238,8 @@ Sub ConfigureGlfDevices
     With CreateGlfAutoFireDevice("bumper4")
         .Switch = "s_Bumper4"
         .ActionCallback = "Bumper4Action"
+        .DisabledCallback = "Bumper4Disabled"
+        .EnabledCallback = "Bumper4Enabled"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With

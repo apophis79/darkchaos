@@ -22,6 +22,14 @@ Sub LeftSlingshotAction(args)
 	End If
 End Sub
 
+Sub LeftSlingshotDisabled()
+	s_LeftSlingshot.Disabled = True
+End Sub
+
+Sub LeftSlingshotEnabled()
+	s_LeftSlingshot.Disabled = False
+End Sub
+
 Sub s_LeftSlingshot_Timer
 	Dim BL
 	Dim x1, x2, y: x1 = True:x2 = False:y = 20
@@ -52,6 +60,15 @@ Sub RightSlingshotAction(args)
 		RandomSoundSlingshotRight BM_RArm
 	End If
 End Sub
+
+Sub RightSlingshotDisabled()
+	s_RightSlingshot.Disabled = True
+End Sub
+
+Sub RightSlingshotEnabled()
+	s_RightSlingshot.Disabled = False
+End Sub
+
 
 Sub s_RightSlingshot_Timer
 	Dim BL

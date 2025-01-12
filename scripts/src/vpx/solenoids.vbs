@@ -124,6 +124,15 @@ Sub Bumper1Action(args)
 	If enabled Then RandomSoundBumperMiddle s_Bumper1
 End Sub
 
+Sub Bumper1Disabled()
+	s_Bumper1.Threshold = 100
+End Sub
+
+Sub Bumper1Enabled()
+	s_Bumper1.Threshold = 1.5
+End Sub
+
+
 Sub Bumper2Action(args)
 	Dim enabled, ball : enabled = args(0)
     ' If Not IsNull(args(1)) Then
@@ -131,6 +140,15 @@ Sub Bumper2Action(args)
     ' End If
 	If enabled Then RandomSoundBumperTop s_Bumper2
 End Sub
+
+Sub Bumper2Disabled()
+	s_Bumper2.Threshold = 100
+End Sub
+
+Sub Bumper2Enabled()
+	s_Bumper2.Threshold = 1.5
+End Sub
+
 
 Sub Bumper3Action(args)
 	Dim enabled, ball : enabled = args(0)
@@ -140,10 +158,27 @@ Sub Bumper3Action(args)
 	If enabled Then RandomSoundBumperTop s_Bumper3
 End Sub
 
+Sub Bumper3Disabled()
+	s_Bumper3.Threshold = 100
+End Sub
+
+Sub Bumper3Enabled()
+	s_Bumper3.Threshold = 1.5
+End Sub
+
+
 Sub Bumper4Action(args)
 	Dim enabled, ball : enabled = args(0)
     ' If Not IsNull(args(1)) Then
     '     Set ball = args(1)
     ' End If
 	If enabled Then RandomSoundBumperTop s_Bumper4
+End Sub
+
+Sub Bumper4Disabled()
+	s_Bumper4.Threshold = 100
+End Sub
+
+Sub Bumper4Enabled()
+	s_Bumper4.Threshold = 1.5
 End Sub
