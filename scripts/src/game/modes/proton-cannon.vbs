@@ -135,6 +135,12 @@ Sub CreateProtonCannonMode
             End With
         End With
 
+        ' With .SoundPlayer()
+        '     With .EventName("s_spinner_active")
+        '         .Sound = "aquired_shields"
+        '     End With
+        ' End With
+
 
     End With
 End Sub

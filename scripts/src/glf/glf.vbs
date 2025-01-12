@@ -40,6 +40,10 @@ Dim glf_shows : Set glf_shows = CreateObject("Scripting.Dictionary")
 Dim glf_initialVars : Set glf_initialVars = CreateObject("Scripting.Dictionary")
 Dim glf_dispatch_await : Set glf_dispatch_await = CreateObject("Scripting.Dictionary")
 Dim glf_dispatch_handlers_await : Set glf_dispatch_handlers_await = CreateObject("Scripting.Dictionary")
+Dim glf_achievements : Set glf_achievements = CreateObject("Scripting.Dictionary")
+Dim glf_sound_buses : Set glf_sound_buses = CreateObject("Scripting.Dictionary")
+Dim glf_sounds : Set glf_sounds = CreateObject("Scripting.Dictionary")
+
 
 Dim bcpController : bcpController = Null
 Dim glf_debugBcpController : glf_debugBcpController = Null
@@ -55,6 +59,8 @@ Dim glf_BIP : glf_BIP = 0
 Dim glf_FuncCount : glf_FuncCount = 0
 Dim glf_SeqCount : glf_SeqCount = 0
 Dim glf_max_dispatch : glf_max_dispatch = 25
+
+Dim glf_master_volume : glf_master_volume = 0.8
 
 Dim glf_ballsPerGame : glf_ballsPerGame = 3
 Dim glf_troughSize : glf_troughSize = tnob
@@ -386,7 +392,7 @@ Sub Glf_Options(ByVal eventId)
 		glf_debug_level = "Info"
 	End If
 
-	Dim glfMaxDispatch : glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
+	Dim glfMaxDispatch : glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 5, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
 	glf_max_dispatch = glfMaxDispatch*5
 
 	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
@@ -1969,6 +1975,97 @@ End Sub
 '*****************************************************************************************************************************************
 '  Vpx Glf Bcp Controller
 '*****************************************************************************************************************************************a
+Class GlfAchievements
+
+    Private m_name
+    Private m_priority
+    Private m_complete_events
+    Private m_debug
+
+    Public Property Get Name(): Name = m_name: End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "enabled":
+                GetValue = m_enabled
+        End Select
+    End Property
+
+    Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
+    Public Property Let DisableEvents(value) : m_base_device.DisableEvents = value : End Property
+    Public Property Let CompleteEvents(value)
+        Dim x
+        For x=0 to UBound(value)
+            Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
+            m_complete_events.Add x, newEvent
+        Next
+    End Property
+
+    Public Property Let Debug(value)
+        m_debug = value
+        m_base_device.Debug = value
+    End Property
+
+    Public default Function Init(name, mode)
+        m_name = "achievements_" & name
+        m_mode = mode.Name
+        m_priority = mode.Priority
+        Set m_complete_events = CreateObject("Scripting.Dictionary")
+
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "achievement", Me)
+        glf_achievements.Add name, Me
+        Set Init = Me
+    End Function
+
+    Public Sub Activate()
+        Dim key
+        For Each key in m_complete_events.Keys
+            AddPinEventListener m_complete_events(key).EventName, m_name & "_complete_event_" & key, "AchievementsEventHandler", m_priority+m_complete_events(key).Priority, Array("complete", Me)
+        Next
+    End Sub
+
+    Public Sub Deactivate()
+        Disable()
+        Dim key
+        For Each key in m_complete_events.Keys
+            RemovePinEventListener m_complete_events(key).EventName, m_name & "_complete_event_" & key
+        Next
+    End Sub
+
+    Public Sub Complete()
+        'TODO: Implement Complete Events
+    End Sub
+
+    Private Sub Log(message)
+        If m_debug Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+
+End Class
+
+Function AchievementsHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
+    Else
+        kwargs = args(1)
+    End If
+
+    Dim evt : evt = ownProps(0)
+    Dim achievement : Set achievement = ownProps(1)
+
+    Select Case evt
+        Case "complete"
+            achievement.Complete
+    End Select
+
+    If IsObject(args(1)) Then
+        Set AchievementsHandler = kwargs
+    Else
+        AchievementsHandler = kwargs
+    End If
+End Function
+
 
 
 Class GlfBallHold
@@ -3556,6 +3653,7 @@ Class Mode
     Private m_eventplayer
     Private m_queueEventplayer
     Private m_random_event_player
+    Private m_sound_player
     Private m_shot_profiles
     Private m_sequence_shots
     Private m_state_machines
@@ -3592,6 +3690,7 @@ Class Mode
     Public Property Get QueueEventPlayer() : Set QueueEventPlayer = m_queueEventplayer: End Property
     Public Property Get RandomEventPlayer() : Set RandomEventPlayer = m_random_event_player : End Property
     Public Property Get VariablePlayer(): Set VariablePlayer = m_variableplayer: End Property
+    Public Property Get SoundPlayer() : Set SoundPlayer = m_sound_player : End Property
 
     Public Property Get ShotProfiles(name)
         If m_shot_profiles.Exists(name) Then
@@ -3798,6 +3897,9 @@ Class Mode
         If Not IsNull(m_random_event_player) Then
             m_random_event_player.Debug = value
         End If
+        If Not IsNull(m_sound_player) Then
+            m_sound_player.Debug = value
+        End If
         If Not IsNull(m_showplayer) Then
             m_showplayer.Debug = value
         End If
@@ -3835,6 +3937,7 @@ Class Mode
         Set m_eventplayer = (new GlfEventPlayer)(Me)
         Set m_queueEventplayer = (new GlfQueueEventPlayer)(Me)
         Set m_random_event_player = (new GlfRandomEventPlayer)(Me)
+        Set m_sound_player = (new GlfSoundPlayer)(Me)
         Set m_variableplayer = (new GlfVariablePlayer)(Me)
         Glf_MonitorModeUpdate Me
         AddPinEventListener m_name & "_starting", m_name & "_starting_end", "ModeEventHandler", -99, Array("started", Me, "")
@@ -4941,7 +5044,6 @@ Class GlfSegmentDisplayPlayer
         If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
     End Property
     
-
     Public Property Get EventNames() : EventNames = m_events.Keys() : End Property    
     
     Public Property Get EventName(value)
@@ -5195,7 +5297,7 @@ Class GlfSegmentPlayerTransition
 	Public default Function init()
         m_type = "push"
         m_text = Empty
-        m_direction = "push"
+        m_direction = "right"
         Set Init = Me
 	End Function
 
@@ -5252,7 +5354,7 @@ Function SegmentPlayerCallbackHandler(evt, segment_item, mode, priority)
             If segment_item.HasTransitionOut() Then
                 Set transition_out = segment_item.TransitionOut
             End If
-            display.AddTextEntry segment_item.Text, segment_item.Color, segment_item.Flashing, segment_item.FlashMask, transition, transition_out, segment_item.Priority, key
+            display.AddTextEntry segment_item.Text, segment_item.Color, segment_item.Flashing, segment_item.FlashMask, transition, transition_out, priority + segment_item.Priority, key
                                 
             If segment_item.Expire > 0 Then
                 SetDelay key & "_expire", "SegmentPlayerEventHandler",  Array(Array("remove", display, key)), segment_item.Expire
@@ -7335,6 +7437,162 @@ Class GlfShowStep
     End Function
 
 End Class
+
+Class GlfSoundPlayer
+
+    Private m_priority
+    Private m_mode
+    Private m_events
+    Private m_eventValues
+    Private m_debug
+    Private m_name
+    Private m_value
+    private m_base_device
+
+    Public Property Get Name() : Name = "sound_player" : End Property
+    Public Property Get EventSounds() : EventSounds = m_eventValues.Items() : End Property
+    Public Property Get EventName(name)
+
+        Dim newEvent : Set newEvent = (new GlfEvent)(name)
+        m_events.Add newEvent.Raw, newEvent
+        Dim new_sound : Set new_sound = (new GlfSoundPlayerItem)()
+        m_eventValues.Add newEvent.Raw, new_sound
+        Set EventName = new_sound
+        
+    End Property
+    Public Property Let Debug(value)
+        m_debug = value
+        m_base_device.Debug = value
+    End Property
+    Public Property Get IsDebug()
+        If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
+    End Property
+
+	Public default Function init(mode)
+        m_name = "sound_player_" & mode.name
+        m_mode = mode.Name
+        m_priority = mode.Priority
+        m_debug = False
+        Set m_events = CreateObject("Scripting.Dictionary")
+        Set m_eventValues = CreateObject("Scripting.Dictionary")
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "sound_player", Me)
+        Set Init = Me
+	End Function
+
+    Public Sub Activate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            AddPinEventListener m_events(evt).EventName, m_mode & "_" & m_eventValues(evt).Key & "_sound_player_play", "SoundPlayerEventHandler", m_priority+m_events(evt).Priority, Array("play", Me, evt)
+        Next
+    End Sub
+
+    Public Sub Deactivate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            RemovePinEventListener m_events(evt).EventName, m_mode & "_" & m_eventValues(evt).Key & "_sound_player_play"
+            PlayOff m_eventValues(evt).Key
+        Next
+    End Sub
+
+    Public Function Play(evt)
+        Play = Empty
+        If m_events(evt).Evaluate() Then
+            If m_eventValues(evt).Action = "stop" Then
+                PlayOff m_eventValues(evt).Key
+            Else
+                glf_sound_buses(m_eventValues(evt).Sound.Bus).Play m_eventValues(evt)
+            End If
+        End If
+    End Function
+
+    Public Sub PlayOff(key)
+        'If glf_running_shows.Exists(m_name & "_" & key) Then 
+        '    glf_running_shows(m_name & "_" & key).StopRunningSound()
+        'End If
+    End Sub
+
+    
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+
+    Public Function ToYaml()
+        Dim yaml
+        Dim evt
+        If UBound(m_events.Keys) > -1 Then
+            For Each key in m_events.keys
+                yaml = yaml & "  " & key & ": " & vbCrLf
+                yaml = yaml & m_events(key).ToYaml
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
+End Class
+
+Function SoundPlayerEventHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
+    Else
+        kwargs = args(1) 
+    End If
+    Dim evt : evt = ownProps(0)
+    Dim sound_player : Set sound_player = ownProps(1)
+    Select Case evt
+        Case "activate"
+            sound_player.Activate
+        Case "deactivate"
+            sound_player.Deactivate
+        Case "play"
+            'Dim block_queue
+            sound_player.Play(ownProps(2))
+            'If Not IsEmpty(block_queue) Then
+            '    kwargs.Add "wait_for", block_queue
+            'End If
+    End Select
+    If IsObject(args(1)) Then
+        Set SoundPlayerEventHandler = kwargs
+    Else
+        SoundPlayerEventHandler = kwargs
+    End If
+End Function
+
+
+Class GlfSoundPlayerItem
+	Private m_sound, m_action, m_key
+    
+    Public Property Get Action(): Action = m_action: End Property
+    Public Property Let Action(input): m_action = input: End Property
+
+    Public Property Get Key(): Key = m_key: End Property
+    Public Property Let Key(input): m_key = input: End Property
+
+    Public Property Get Sound()
+        If IsNull(m_sound) Then
+            Sound = Null
+        Else
+            Set Sound = m_sound
+        End If
+    End Property
+	Public Property Let Sound(input)
+        If glf_sounds.Exists(input) Then
+            Set m_sound = glf_sounds(input)
+        End If
+    End Property
+  
+	Public default Function init()
+        m_action = "play"
+        m_sound = Null
+        m_key = Empty
+        Set Init = Me
+	End Function
+
+End Class
+
 Class GlfStateMachine
     Private m_name
     Private m_player_var_name
@@ -9452,10 +9710,10 @@ Class GlfLightSegmentDisplay
         'start transition (if configured)
         Dim flashing, flash_mask
         If Not IsNull(transition_config) Then
-            Dim transition
-            Select Case transition_config.Type()
+            Dim transition_runner
+            Select Case transition_config.TransitionType()
                 case "push":
-                    Set transition = (new GlfPushTransition)(m_size, True, True, True, transition_config)
+                    Set transition_runner = (new GlfPushTransition)(m_size, True, True, True, transition_config)
             End Select
 
             Dim previous_text
@@ -9473,6 +9731,7 @@ Class GlfLightSegmentDisplay
                 flash_mask = m_current_state.flash_mask
             End If
 
+            transition_runner.Get
             'self._start_transition(transition, previous_text, top_text_stack_entry.text,
              '                      self._current_state.text.get_colors(), top_text_stack_entry.colors,
              '                      self.config['default_transition_update_hz'], flashing, flash_mask)
@@ -9658,7 +9917,7 @@ Class GlfTextStack
     ' Peek at the top entry of the stack without popping it
     Public Function Peek()
         If UBound(stack) >= 0 Then
-            Set Peek = stack(UBound(stack))
+            Set Peek = stack(LBound(stack))
         Else
             Set Peek = Nothing
         End If
@@ -10489,13 +10748,13 @@ Class GlfPushTransition
     Public Property Get TotalSteps(): TotalSteps = m_total_steps: End Property
 
     ' Initialize the class
-    Public Function Init(output_length, collapse_dots, collapse_commas, use_dots_for_commas, config)
+    Public default Function Init(output_length, collapse_dots, collapse_commas, use_dots_for_commas, config)
         'm_name = "transition_" & name
         m_output_length = output_length
         m_collapse_dots = collapse_dots
         m_collapse_commas = collapse_commas
         m_use_dots_for_commas = use_dots_for_commas
-        m_config = config
+        Set m_config = config
         m_current_step = 0
         m_total_steps = 0
 
@@ -10586,6 +10845,175 @@ Class GlfPushTransition
 
 End Class
 
+
+Function CreateGlfSoundBus(name)
+	Dim bus : Set bus = (new GlfSoundBus)(name)
+	Set CreateGlfSoundBus = bus
+End Function
+
+Class GlfSoundBus
+
+    Private m_name
+    Private m_simultaneous_sounds
+    Private m_current_sounds
+    Private m_sound_key
+    Private m_volume
+    Private m_debug
+
+    Public Property Get Name(): Name = m_name: End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "simultaneous_sounds":
+                GetValue = m_simultaneous_sounds
+            Case "volume":
+                GetValue = m_volume
+        End Select
+    End Property
+
+    Public Property Get SimultaneousSounds(): SimultaneousSounds = m_simultaneous_sounds: End Property
+    Public Property Let SimultaneousSounds(input): m_simultaneous_sounds = input: End Property
+
+    Public Property Get Volume(): Volume = m_volume: End Property
+    Public Property Let Volume(input): m_volume = input: End Property
+
+    Public Property Let Debug(value)
+        m_debug = value
+    End Property
+
+    Public default Function Init(name)
+        m_name = "sound_bus_" & name
+        m_simultaneous_sounds = 8
+        m_volume = 0.5
+        m_sound_key = 0
+        Set m_current_sounds = CreateObject("Scripting.Dictionary")
+        glf_sound_buses.Add name, Me
+        Set Init = Me
+    End Function
+
+    Public Sub Play(sound_settings)
+        If (UBound(m_current_sounds.Keys)-1) > m_simultaneous_sounds Then
+            'TODO: Queue Sound
+        Else
+            m_current_sounds.Add m_sound_key, sound_settings
+            PlaySound(sound_settings.Sound.File)
+            SetDelay m_name & "_stop_sound_" & m_sound_key, "Glf_SoundBusStopSoundHandler", Array(m_sound_key, Me), sound_settings.Sound.Duration
+            m_sound_key = m_sound_key + 1
+        End If
+    End Sub
+
+    Public Sub StopSoundWithKey(sound_key)
+        Dim sound_settings : Set sound_settings = m_current_sounds(sound_key)
+        Dim evt
+        For Each evt in sound_settings.Sound.EventsWhenStopped.Items()
+            If evt.Evaluate() Then
+                DispatchPinEvent evt.EventName, Null
+            End If
+        Next
+        m_current_sounds.Remove sound_key
+    End Sub
+
+    Private Sub Log(message)
+        If m_debug Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+
+End Class
+
+Function Glf_SoundBusStopSoundHandler(args)
+    Dim sound_key : sound_key = args(0)
+    Dim sound_bus : Set sound_bus = args(1)
+    sound_bus.StopSoundWithKey sound_key
+End Function
+
+Function CreateGlfSound(name)
+	Dim sound : Set sound = (new GlfSound)(name)
+	Set CreateGlfSound = sound
+End Function
+
+Class GlfSound
+
+    Private m_name
+    Private m_file
+    Private m_events_when_stopped
+    Private m_bus
+    Private m_volume
+    Private m_priority
+    Private m_max_queue_time
+    Private m_duration
+    Private m_debug
+
+    Public Property Get Name(): Name = m_name: End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "file":
+                GetValue = m_file
+            Case "volume":
+                GetValue = m_volume
+            Case "events_when_stopped":
+                Set GetValue = m_events_when_stopped
+            Case "bus":
+                GetValue = m_bus
+            Case "priority":
+                GetValue = m_priority
+            Case "max_queue_time":
+                GetValue = m_max_queue_time
+            Case "duration":
+                GetValue = m_duration
+        End Select
+    End Property
+
+    Public Property Get File(): File = m_file: End Property
+    Public Property Let File(input): m_file = input: End Property
+
+    Public Property Get Bus(): Bus = m_bus: End Property
+    Public Property Let Bus(input): m_bus = input: End Property
+
+    Public Property Get Volume(): Volume = m_volume: End Property
+    Public Property Let Volume(input): m_volume = input: End Property
+
+    Public Property Get Priority(): Priority = m_priority: End Property
+    Public Property Let Priority(input): m_priority = input: End Property
+
+    Public Property Get MaxQueueTime(): MaxQueueTime = m_max_queue_time: End Property
+    Public Property Let MaxQueueTime(input): m_max_queue_time = input: End Property
+
+    Public Property Get Duration(): Duration = m_duration: End Property
+    Public Property Let Duration(input): m_duration = input: End Property
+
+    Public Property Get EventsWhenStopped(): Set EventsWhenStopped = m_events_when_stopped: End Property
+    Public Property Let EventsWhenStopped(value)
+        Dim x
+        For x=0 to UBound(value)
+            Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
+            m_events_when_stopped.Add x, newEvent
+        Next
+    End Property
+
+    Public Property Let Debug(value)
+        m_debug = value
+    End Property
+
+    Public default Function Init(name)
+        m_name = "sound_bus_" & name
+        m_file = Empty
+        m_bus = Empty
+        m_volume = 0.5
+        m_priority = 0
+        m_duration = 0
+        m_max_queue_time = -1 
+        Set m_events_when_stopped = CreateObject("Scripting.Dictionary")
+        glf_sounds.Add name, Me
+        Set Init = Me
+    End Function
+
+    Private Sub Log(message)
+        If m_debug Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+
+End Class
 
 Class GlfEvent
 	Private m_raw, m_name, m_event, m_condition, m_delay, m_priority

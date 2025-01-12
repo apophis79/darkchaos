@@ -121,6 +121,15 @@ Sub ConfigureGlfDevices
     CreateMoonShows()
     CreateMysteryShows()
 
+    ' Sound effects bus
+    CreateSounds()
+
+    With CreateGlfSoundBus("SFX")
+        .SimultaneousSounds = 8
+        .Volume = 0.5
+    End With
+
+
     ' Plunger
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("s_Plunger1")
