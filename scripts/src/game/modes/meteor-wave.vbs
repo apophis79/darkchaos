@@ -23,7 +23,7 @@ Sub CreateMeteorWaveMode
         With .EventPlayer()
             '.Debug = True
             'Start up in correct wave
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_running")
@@ -72,11 +72,12 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave","light_eb")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave","light_eb")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","stop_meteor_wave")
             .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
+            .Add "meteor_wave_done{current_player.training_heal_achieved==0}", Array("drop_diverter")
         End With
 
         'Randomize which meteor gets hit by proton cannon

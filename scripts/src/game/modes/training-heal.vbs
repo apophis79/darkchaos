@@ -21,7 +21,7 @@ Sub CreateTrainingHealMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_heal_started", Array("init_training")
+            .Add "mode_training_heal_started", Array("init_training","raise_diverter")
             'successfull shot
             .Add "s_Bumper1_active", Array("check_add_training_health_bump")
             .Add "s_Bumper2_active", Array("check_add_training_health_bump")
@@ -42,6 +42,7 @@ Sub CreateTrainingHealMode
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_heal_complete", Array("stop_training")
+            .Add "mode_training_heal_stopping{current_player.training_heal_achieved==0}", Array("drop_diverter")
             'Handle moon ramp
             .Add "s_MoonRamp_active", Array("release_moon_ball")
         End With

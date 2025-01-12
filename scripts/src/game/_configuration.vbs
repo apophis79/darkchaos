@@ -165,8 +165,8 @@ Sub ConfigureGlfDevices
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
-        .ActivateEvents = Array("start_meteor_wave","start_training_heal","raise_diverter")
-        .DeactivateEvents = Array("stop_meteor_wave","stop_training","drop_diverter",GLF_BALL_ENDED)
+        .ActivateEvents = Array("raise_diverter") '"start_meteor_wave","start_training_heal"
+        .DeactivateEvents = Array("drop_diverter",GLF_BALL_ENDED) '"stop_meteor_wave","stop_training"
         .ActionCallback = "RaiseDiverterPin"
     End With
 
