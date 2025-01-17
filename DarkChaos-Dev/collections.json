@@ -29,7 +29,8 @@
       "RubberBand008",
       "zCol_Rubber_Post015",
       "zCol_Rubber_Post016",
-      "zCol_Rubber_moonramp"
+      "zCol_Rubber_moonramp",
+      "zCol_Rubber_TrustPost"
     ],
     "fire_events": true,
     "stop_single_events": false,
@@ -152,7 +153,8 @@
       "zCol_Rubber_Post013",
       "zCol_Rubber_Post015",
       "zCol_Rubber_Post016",
-      "zCol_Rubber_Peg004"
+      "zCol_Rubber_Peg004",
+      "zCol_Rubber_TrustPost"
     ],
     "fire_events": true,
     "stop_single_events": false,
@@ -222,7 +224,7 @@
       "gi02",
       "gi01",
       "LPF",
-      "LX",
+      "LEBR",
       "LS5",
       "LS1",
       "LSwL1",
@@ -255,8 +257,8 @@
       "LW2",
       "LW1",
       "LMLR",
-      "LEBR",
       "LMR",
+      "LX",
       "LPC5",
       "LPC4",
       "LSC4",
@@ -791,7 +793,9 @@
       "p3_seg4",
       "p3_seg3",
       "p3_seg2",
-      "p3_seg1"
+      "p3_seg1",
+      "LDS",
+      "LDP"
     ],
     "fire_events": false,
     "stop_single_events": false,

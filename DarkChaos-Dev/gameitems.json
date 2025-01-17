@@ -1393,14 +1393,14 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Light.LMR.json",
+    "file_name": "Light.LX.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Light.LEBR.json",
+    "file_name": "Light.LMR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
@@ -1988,7 +1988,7 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Light.LX.json",
+    "file_name": "Light.LEBR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
@@ -2069,42 +2069,42 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.FL2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.FL1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.FL5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.FL6.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.FL4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.LStars.json",
@@ -2223,7 +2223,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.s_DTMeteor1.json",
@@ -13059,6 +13059,41 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Primitive.zCol_Rubber_TrustPost.json",
+    "is_locked": true,
+    "editor_layer": 1,
+    "editor_layer_name": "Rubbers and Posts",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Wall.VisualBlocker.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Light.LDS.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Inserts",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LDP.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Inserts",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL7a.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Inserts",
     "editor_layer_visibility": true
   }
 ]

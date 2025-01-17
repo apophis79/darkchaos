@@ -1,10 +1,10 @@
 {
   "Spinner": {
     "center": {
-      "x": 251.2593,
-      "y": 249.14815
+      "x": 244.49384,
+      "y": 302.01245
     },
-    "rotation": 10.0,
+    "rotation": 0.0,
     "is_timer_enabled": false,
     "timer_interval": 100,
     "height": 55.0,
