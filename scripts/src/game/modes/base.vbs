@@ -13,6 +13,7 @@ Sub CreateBaseMode()
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("launch_moon_balls_test")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
+            .Add "mode_base_started{current_player.shot_meteor_wave1 == 0}", Array("pre_meteor_wave1")
             .Add "mode_base_started{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
@@ -22,6 +23,16 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
+
+            .Add "mode_base_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
+            .Add "mode_base_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
+
             .Add "s_TargetMystery5_active", Array("flash_mag_gi")
         End With
         
@@ -219,6 +230,70 @@ Sub CreateBaseMode()
 				End With
 			End With
 		End With
+
+        With .SoundPlayer()
+            'Music pre meteor wave 1
+            With .EventName("pre_meteor_wave1")
+                .Sound = "mus_main"
+            End With
+            With .EventName("pre_meteor_wave1_music_stop")
+                .Sound = "mus_main"
+                .Action = "stop"
+            End With
+
+            'Music meteor wave 1
+            With .EventName("meteor_wave1_running")
+                .Sound = "mus_secondary"
+            End With
+            With .EventName("meteor_wave1_restart")
+                .Sound = "mus_main"
+            End With
+            With .EventName("meteor_wave1_music_stop")
+                .Sound = "mus_secondary"
+                .Action = "stop"
+            End With
+
+            'Music meteor wave 2
+            With .EventName("meteor_wave2_running")
+                .Sound = "mus_wave"
+            End With
+            With .EventName("meteor_wave2_restart")
+                .Sound = "mus_secondary"
+            End With
+            With .EventName("meteor_wave2_music_stop")
+                .Sound = "mus_wave"
+                .Action = "stop"
+            End With
+
+
+
+            'Slings
+            With .EventName("s_LeftSlingshot_active")
+                .Sound = "sfx_left_sling"
+            End With
+            With .EventName("s_RightSlingshot_active")
+                .Sound = "sfx_right_sling"
+            End With
+
+            'Bumpers
+            With .EventName("s_Bumper1_active")
+                .Sound = "sfx_bumper1"
+            End With
+            With .EventName("s_Bumper2_active")
+                .Sound = "sfx_bumper2"
+            End With
+            With .EventName("s_Bumper3_active")
+                .Sound = "sfx_bumper3"
+            End With
+            With .EventName("s_Bumper4_active")
+                .Sound = "sfx_bumper4"
+            End With
+
+            'Other
+            With .EventName("mode_base_stopping")
+                .Sound = "sfx_ball_drain"
+            End With
+        End With
 
     End With
 

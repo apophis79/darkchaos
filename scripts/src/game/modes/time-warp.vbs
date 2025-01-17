@@ -131,5 +131,12 @@ Sub CreateTimewarpMode
             End With
         End With
 
+
+        With .SoundPlayer()
+            With .EventName("left_ramp_hit")
+                .Sound = "sfx_left_ramp_time_warp"
+            End With
+        End With
+
     End With
 End Sub

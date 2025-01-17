@@ -581,8 +581,15 @@ Public Function Glf_RunHandlers(i)
 	End If
 	For Each key in keys
 		args = glf_dispatch_handlers_await(key)
-		DispatchPinHandlers key, args
+		Dim wait_for : wait_for = DispatchPinHandlers(key, args)
 		glf_dispatch_handlers_await.Remove key
+		If Not IsEmpty(wait_for) Then
+			Dim remaining_handlers_keys : remaining_handlers_keys = glf_dispatch_handlers_await.Keys
+			Dim remaining_handlers_items : remaining_handlers_items = glf_dispatch_handlers_await.Items
+			AddPinEventListener wait_for, key & "_wait_for", "ContinueDispatchQueuePinEvent", 1000, Array(remaining_handlers_keys, remaining_handlers_items)
+			glf_dispatch_handlers_await.RemoveAll
+			Exit For
+		End If
 		i = i + 1
 		If i=glf_max_dispatch Then
 			Exit For
@@ -2877,6 +2884,7 @@ Class GlfEventPlayer
     Public Sub Activate()
         Dim evt
         For Each evt In m_events.Keys()
+            Log "Adding Event Listener for: " & m_events(evt).EventName
             AddPinEventListener m_events(evt).EventName, m_mode & "_" & m_events(evt).Name & "_event_player_play", "EventPlayerEventHandler", m_priority+m_events(evt).Priority, Array("play", Me, evt)
         Next
     End Sub
@@ -2889,6 +2897,7 @@ Class GlfEventPlayer
     End Sub
 
     Public Sub FireEvent(evt)
+        Log "Dispatching Event: " & evt
         If Not IsNull(m_events(evt).Condition) Then
             'msgbox m_events(evt).Condition
             If GetRef(m_events(evt).Condition)() = False Then
@@ -4969,7 +4978,9 @@ Class GlfRandomEventPlayer
 
     Public Sub Activate()
         Dim evt
+        Log "Activating"
         For Each evt In m_events.Keys()
+            Log "Adding: " & m_events(evt).EventName & ". For Key: " & m_mode & "_" & evt & "_random_event_player_play"
             AddPinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_random_event_player_play", "RandomEventPlayerEventHandler", m_priority+m_events(evt).Priority, Array("play", Me, evt)
         Next
     End Sub
@@ -4982,12 +4993,15 @@ Class GlfRandomEventPlayer
     End Sub
 
     Public Sub FireEvent(evt)
+        Log "Firing Random Event:  " & evt
         If m_events(evt).Evaluate() Then
             Dim event_to_fire
             event_to_fire = m_eventValues(evt).GetNextRandomEvent()
             If Not IsEmpty(event_to_fire) Then
                 Log "Dispatching Event: " & event_to_fire
                 DispatchPinEvent event_to_fire, Null
+            Else
+                Log "No event available to fire"
             End If
         End If
     End Sub
@@ -6886,7 +6900,6 @@ Class GlfShowPlayer
         End If
     End Sub
 
-    
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message
@@ -7490,7 +7503,7 @@ Class GlfSoundPlayer
         Dim evt
         For Each evt In m_events.Keys()
             RemovePinEventListener m_events(evt).EventName, m_mode & "_" & m_eventValues(evt).Key & "_sound_player_play"
-            PlayOff m_eventValues(evt).Key
+            PlayOff evt
         Next
     End Sub
 
@@ -7498,20 +7511,17 @@ Class GlfSoundPlayer
         Play = Empty
         If m_events(evt).Evaluate() Then
             If m_eventValues(evt).Action = "stop" Then
-                PlayOff m_eventValues(evt).Key
+                PlayOff evt
             Else
                 glf_sound_buses(m_eventValues(evt).Sound.Bus).Play m_eventValues(evt)
             End If
         End If
     End Function
 
-    Public Sub PlayOff(key)
-        'If glf_running_shows.Exists(m_name & "_" & key) Then 
-        '    glf_running_shows(m_name & "_" & key).StopRunningSound()
-        'End If
+    Public Sub PlayOff(evt)
+        glf_sound_buses(m_eventValues(evt).Sound.Bus).StopSoundWithKey m_eventValues(evt).Sound.File
     End Sub
 
-    
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message
@@ -7563,10 +7573,16 @@ End Function
 
 
 Class GlfSoundPlayerItem
-	Private m_sound, m_action, m_key
+	Private m_sound, m_action, m_key, m_volume, m_loops
     
     Public Property Get Action(): Action = m_action: End Property
     Public Property Let Action(input): m_action = input: End Property
+
+    Public Property Get Volume(): Volume = m_volume: End Property
+    Public Property Let Volume(input): m_volume = input: End Property
+
+    Public Property Get Loops(): Loops = m_loops: End Property
+    Public Property Let Loops(input): m_loops = input: End Property
 
     Public Property Get Key(): Key = m_key: End Property
     Public Property Let Key(input): m_key = input: End Property
@@ -7588,6 +7604,8 @@ Class GlfSoundPlayerItem
         m_action = "play"
         m_sound = Null
         m_key = Empty
+        m_volume = Empty
+        m_loops = Empty
         Set Init = Me
 	End Function
 
@@ -10868,7 +10886,6 @@ Class GlfSoundBus
     Private m_name
     Private m_simultaneous_sounds
     Private m_current_sounds
-    Private m_sound_key
     Private m_volume
     Private m_debug
 
@@ -10896,7 +10913,6 @@ Class GlfSoundBus
         m_name = "sound_bus_" & name
         m_simultaneous_sounds = 8
         m_volume = 0.5
-        m_sound_key = 0
         Set m_current_sounds = CreateObject("Scripting.Dictionary")
         glf_sound_buses.Add name, Me
         Set Init = Me
@@ -10906,22 +10922,47 @@ Class GlfSoundBus
         If (UBound(m_current_sounds.Keys)-1) > m_simultaneous_sounds Then
             'TODO: Queue Sound
         Else
-            m_current_sounds.Add m_sound_key, sound_settings
-            PlaySound(sound_settings.Sound.File)
-            SetDelay m_name & "_stop_sound_" & m_sound_key, "Glf_SoundBusStopSoundHandler", Array(m_sound_key, Me), sound_settings.Sound.Duration
-            m_sound_key = m_sound_key + 1
+            If m_current_sounds.Exists(sound_settings.Sound.File) Then
+                m_current_sounds.Remove sound_settings.Sound.File
+                RemoveDelay m_name & "_stop_sound_" & sound_settings.Sound.File       
+            End If
+            m_current_sounds.Add sound_settings.Sound.File, sound_settings
+            Dim volume : volume = m_volume
+            If Not IsEmpty(sound_settings.Sound.Volume) Then
+                volume = sound_settings.Sound.Volume
+            End If
+            If Not IsEmpty(sound_settings.Volume) Then
+                volume = sound_settings.Volume
+            End If
+            Dim loops : loops = 0
+            If Not IsEmpty(sound_settings.Sound.Loops) Then
+                loops = sound_settings.Sound.Loops
+            End If
+            If Not IsEmpty(sound_settings.Loops) Then
+                loops = sound_settings.Loops
+            End If
+
+            PlaySound sound_settings.Sound.File, loops, volume, 0,0,0,0,0,0
+            If loops = 0 Then
+                SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration
+            ElseIf loops>0 Then
+                SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration*loops
+            End If
         End If
     End Sub
 
     Public Sub StopSoundWithKey(sound_key)
-        Dim sound_settings : Set sound_settings = m_current_sounds(sound_key)
-        Dim evt
-        For Each evt in sound_settings.Sound.EventsWhenStopped.Items()
-            If evt.Evaluate() Then
-                DispatchPinEvent evt.EventName, Null
-            End If
-        Next
-        m_current_sounds.Remove sound_key
+        If m_current_sounds.Exists(sound_key) Then
+            Dim sound_settings : Set sound_settings = m_current_sounds(sound_key)
+            StopSound(sound_key)
+            Dim evt
+            For Each evt in sound_settings.Sound.EventsWhenStopped.Items()
+                If evt.Evaluate() Then
+                    DispatchPinEvent evt.EventName, Null
+                End If
+            Next
+            m_current_sounds.Remove sound_key
+        End If
     End Sub
 
     Private Sub Log(message)
@@ -10953,6 +10994,7 @@ Class GlfSound
     Private m_priority
     Private m_max_queue_time
     Private m_duration
+    Private m_loops
     Private m_debug
 
     Public Property Get Name(): Name = m_name: End Property
@@ -10984,6 +11026,9 @@ Class GlfSound
     Public Property Get Volume(): Volume = m_volume: End Property
     Public Property Let Volume(input): m_volume = input: End Property
 
+    Public Property Get Loops(): Loops = m_loops: End Property
+    Public Property Let Loops(input): m_loops = input: End Property
+
     Public Property Get Priority(): Priority = m_priority: End Property
     Public Property Let Priority(input): m_priority = input: End Property
 
@@ -11010,10 +11055,11 @@ Class GlfSound
         m_name = "sound_bus_" & name
         m_file = Empty
         m_bus = Empty
-        m_volume = 0.5
+        m_volume = Empty
         m_priority = 0
         m_duration = 0
         m_max_queue_time = -1 
+        m_loops = 0
         Set m_events_when_stopped = CreateObject("Scripting.Dictionary")
         glf_sounds.Add name, Me
         Set Init = Me
@@ -11529,21 +11575,46 @@ Dim glf_dispatch_q : Set glf_dispatch_q = CreateObject("Scripting.Dictionary")
 Dim glf_frame_dispatch_count : glf_frame_dispatch_count = 0
 Dim glf_frame_handler_count : glf_frame_handler_count = 0
 
+Dim glf_dispatch_queue_int : glf_dispatch_queue_int = 0
+
 Sub DispatchPinEvent(e, kwargs)
+    AddToDispatchEvents e, kwargs, 1
+End Sub
+
+Sub AddToDispatchEvents(e, kwargs, event_type)
     If glf_dispatch_await.Exists(e) Then
         glf_dispatch_await.Remove e
     End If
-    glf_dispatch_await.Add e, kwargs
+    glf_dispatch_await.Add e & ";" & glf_dispatch_queue_int, Array(kwargs, event_type)
+    glf_dispatch_queue_int = glf_dispatch_queue_int + 1
 End Sub
 
-Sub DispatchPinHandlers(e, args)
+Function DispatchPinHandlers(e, args)
+    DispatchPinHandlers = Empty
     Dim handler : handler = args(0)
+    Dim event_args, retArgs
+    event_args = args(1)
     glf_frame_handler_count = glf_frame_handler_count + 1
-    GetRef(handler(0))(Array(handler(2), args(1), args(2)))
-End Sub
+    If event_args(1) = 2 Then 'Queue Event
+        If IsNull(event_args(0)) Then
+            Set retArgs = GlfKwargs()
+        Else
+            retArgs = event_args(0)
+        End If
+        Set retArgs = GetRef(handler(0))(Array(handler(2), retArgs, args(2)))
+        If IsObject(retArgs) Then
+            If retArgs.Exists("wait_for") Then
+                DispatchPinHandlers = retArgs("wait_for")
+            End If
+        End If
+    Else
+        GetRef(handler(0))(Array(handler(2), event_args(0), args(2)))
+    End If
+End Function
 
-Sub RunDispatchPinEvent(e, kwargs)
-
+Sub RunDispatchPinEvent(eKey, kwargs)
+    Dim e
+    e=Split(eKey,";")(0)
     If Not glf_pinEvents.Exists(e) Then
         Glf_WriteDebugLog "DispatchPinEvent", e & " has no listeners"
         Exit Sub
@@ -11563,12 +11634,10 @@ Sub RunDispatchPinEvent(e, kwargs)
         If handlers.Exists(k(1)) Then
             handler = handlers(k(1))
             glf_frame_dispatch_count = glf_frame_dispatch_count + 1
-            'debug.print "Adding Handler for: " & e&"_"&k(1)
+            If e = "timer_training_shot_add_tick" Then
+                debug.print "Adding Handler for: " & e&"_"&k(1)
+            End If
             glf_dispatch_handlers_await.Add e&"_"&k(1), Array(handler, kwargs, e)
-            'If SwitchHandler(handler(0), Array(handler(2), kwargs, e)) = False Then
-                'debug.print e&"_"&k(1)
-                'GetRef(handler(0))(Array(handler(2), kwargs, e))
-            'End If
         Else
             Glf_WriteDebugLog "DispatchPinEvent_"&e, "Handler does not exist: " & k(1)
         End If
@@ -11631,6 +11700,10 @@ Function DispatchRelayPinEvent(e, kwargs)
 End Function
 
 Function DispatchQueuePinEvent(e, kwargs)
+    
+    AddToDispatchEvents e, kwargs, 2
+    Exit Function
+    
     If Not glf_pinEvents.Exists(e) Then
         Glf_WriteDebugLog "DispatchQueuePinEvent", e & " has no listeners"
         Exit Function
@@ -11677,49 +11750,27 @@ End Function
 ' wait_for kwargs
 ' event
 Function ContinueDispatchQueuePinEvent(args)
-    Dim arrContinue : arrContinue = args(0)
-    Dim e : e = arrContinue(0)
+    
+    Dim ownProps : ownProps = args(0)
     Dim kwargs
-    If IsObject(arrContinue(1)) Then
-        Set kwargs = arrContinue(1)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
     Else
-        kwargs = arrContinue(1)
+        kwargs = args(1)
     End If
-    Dim idx : idx = arrContinue(2)
-    If Not glf_pinEvents.Exists(e) Then
-        Glf_WriteDebugLog "ContinueDispatchQueuePinEvent", e & " has no listeners"
-        Exit Function
-    End If
-    If Not Glf_EventBlocks.Exists(e) Then
-        Glf_EventBlocks.Add e, CreateObject("Scripting.Dictionary")
-    End If
-    glf_lastPinEvent = e
-    Dim k,i,retArgs
-    Dim handlers : Set handlers = glf_pinEvents(e)
-    Glf_WriteDebugLog "ContinueDispatchQueuePinEvent", e
-    Dim glf_dis_events : glf_dis_events = glf_pinEventsOrder(e)
-    For i=idx to UBound(glf_dis_events)
-        k = glf_dis_events(i)
-        Glf_WriteDebugLog "ContinueDispatchQueuePinEvent"&e, "key: " & k(1) & ", priority: " & k(0)
 
-        'Call the handlers.
-        'The handlers might return a waitfor command.
-        'If NO wait for command, continue calling handlers.
-        'IF wait for command, then AddPinEventListener for the waitfor event. The callback handler needs to be ContinueDispatchQueuePinEvent.
-        Set retArgs = GetRef(handlers(k(1))(0))(Array(handlers(k(1))(2), kwargs, e))
-        If retArgs.Exists("wait_for") And i<Ubound(glf_dis_events) Then
-            'pause execution of handlers at index I. 
-            Dim wait_for : wait_for = retArgs("wait_for")
-            kwargs.Remove "wait_for" 
-            AddPinEventListener wait_for, k(1) & "_wait_for", "ContinueDispatchQueuePinEvent", k(0), Array(e, kwargs, i)
-            Exit For
-            'add event listener for the wait_for event.
-            'pass in the index and handlers from this.
-            'in the handler for resume queue event, process from the index the remaining handlers.
-        End If
+
+    Dim i,key,keys,items
+    keys=ownProps(0)
+    items=ownProps(1)
+
+    'Inject handlers back into dispatch
+    For i=0 to UBound(keys)
+        glf_dispatch_handlers_await.Add keys(i), items(i)
     Next
+    Exit Function
 
-    Glf_EventBlocks(e).RemoveAll
+
 End Function
 
 Sub AddPinEventListener(evt, key, callbackName, priority, args)

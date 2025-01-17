@@ -123,11 +123,17 @@ Sub ConfigureGlfDevices
 
     ' Sound effects bus
     CreateSounds()
-
-    With CreateGlfSoundBus("SFX")
+    
+    With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
         .Volume = 0.5
     End With
+
+    With CreateGlfSoundBus("mus")
+        .SimultaneousSounds = 4
+        .Volume = 0.5
+    End With
+
 
 
     ' Plunger

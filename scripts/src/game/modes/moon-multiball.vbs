@@ -295,5 +295,11 @@ Sub CreateMoonMultiballMode
             End With
         End With
 
+        With .SoundPlayer()
+            With .EventName("right_ramp_hit")
+                .Sound = "sfx_right_ramp_moon_launch"
+            End With
+        End With
+
     End With
 End Sub

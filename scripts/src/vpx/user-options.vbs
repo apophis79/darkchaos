@@ -25,7 +25,7 @@ Const VRRoom = 0 ' 1 - VR Room off, 1 - Minimal Room, 2 - Ultra Minimal Room
 Dim dspTriggered : dspTriggered = False
 Sub Table1_OptionEvent(ByVal eventId)
     If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
-	Dim BP 
+	Dim BP, v
 
 	Glf_Options(eventId)
 	
@@ -42,8 +42,10 @@ Sub Table1_OptionEvent(ByVal eventId)
 	LightLevel = NightDay/100
 	SetRoomBrightness LightLevel   'Uncomment this line for lightmapped tables.
 
-	' Trust post     FIXME make optional
-	For Each BP in BP_TrustPost : BP.visible = 0: Next
+	' Trust post
+	v = Table1.Option("Trust Post", 0, 1, 1, 1, 0, Array("No Post", "Post"))
+	For Each BP in BP_TrustPost : BP.visible = v: Next
+	zCol_Rubber_TrustPost.Collidable = v
 
 	' Rails          FIXME make optional
 	For Each BP in BP_Rails : BP.visible = 1: Next
