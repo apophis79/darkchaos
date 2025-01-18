@@ -1,12 +1,12 @@
 {
   "Timer": {
     "center": {
-      "x": -282.0,
-      "y": 1179.0
+      "x": 111.66268,
+      "y": 2232.2146
     },
     "is_timer_enabled": false,
-    "timer_interval": 3000,
-    "name": "LeftMagnaTimer",
+    "timer_interval": 20,
+    "name": "TimerPlunger",
     "backglass": false
   }
 }

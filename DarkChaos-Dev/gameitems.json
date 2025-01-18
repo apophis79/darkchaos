@@ -43,10 +43,10 @@
   },
   {
     "file_name": "Timer.CorTimer.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Kicker.swTrough1.json",
@@ -99,10 +99,10 @@
   },
   {
     "file_name": "Timer.FrameTimer.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall5.json",
@@ -372,17 +372,10 @@
   },
   {
     "file_name": "Timer.RampRoll.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.BumperTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Bumper.s_Bumper1.json",
@@ -397,13 +390,6 @@
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Timer.DMDTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.DMDbackbox.json",
@@ -477,10 +463,10 @@
   },
   {
     "file_name": "Timer.UpdateTroughTimer.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall002.json",
@@ -819,20 +805,6 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Timer.GrabMagnetTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.MagnetFlashTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Spinner.s_spinner.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -840,18 +812,11 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Timer.ReleaseBallTimer.json",
-    "is_locked": false,
+    "file_name": "Timer.TimerPlunger.json",
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.AutoPlungerDelay.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.s_Plunger1.json",
@@ -1484,81 +1449,11 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Timer.BlinkTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.ResetSkillShotTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.BallSaverSpeedUpTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.BallSaverTimerExpired.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.TiltDecreaseTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.TiltRecoveryTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.TiltDebounceTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Ramp.Ramp008.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
     "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Timer.RainbowTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.ComboTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Timer.TimeWarpTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.s_Lock1.json",
@@ -1573,13 +1468,6 @@
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
     "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Timer.WaveTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
   },
   {
     "file_name": "TextBox.tbDebug.json",
@@ -1666,13 +1554,6 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Timer.FallingMeteorAnim.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Trigger.swRamp9.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -1699,13 +1580,6 @@
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
     "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Timer.LeftMagnaTimer.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.55h.json",
@@ -2069,42 +1943,42 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.FL2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.FL1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.FL5.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.FL6.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.FL4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LStars.json",
@@ -2223,7 +2097,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Flasher",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.s_DTMeteor1.json",
@@ -2311,10 +2185,10 @@
   },
   {
     "file_name": "Timer.Glf_GameTimer.json",
-    "is_locked": false,
+    "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Timers",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.BM_Asteroid1.json",
@@ -13093,7 +12967,133 @@
     "file_name": "Light.FL7a.json",
     "is_locked": true,
     "editor_layer": 0,
-    "editor_layer_name": "Lights Inserts",
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5a.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5b.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5c.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5d.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5e.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5f.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5g.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL5h.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6b.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6c.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6d.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6e.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6f.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6g.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6h.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.FL6a.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Flasher",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PlungerLine.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Main",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Timer.TimerPlunger2.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Main",
     "editor_layer_visibility": true
   }
 ]
