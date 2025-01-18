@@ -273,16 +273,17 @@ Sub InitSpinner
 End Sub
 
 Sub s_spinner_animate
-	Dim LM, a, b, offset
-	a = s_spinner.currentangle
-	If a >= 0 And a < 60 Then
+	Dim LM, a, b, c, offset
+	a = -s_spinner.currentangle
+	c = 360+a
+	If c >= 0 And c < 60 Then
         b = 0
-    ElseIf a >= 60 And a < 120 Then
-        b = (a - 60) / 60
-    ElseIf a >= 120 And a < 240 Then
+    ElseIf c >= 60 And c < 120 Then
+        b = (c - 60) / 60
+    ElseIf c >= 120 And c < 240 Then
         b = 1
-    ElseIf a >= 240 And a < 300 Then
-        b = 1 + (240 - a) / 60
+    ElseIf c >= 240 And c < 300 Then
+        b = 1 + (240 - c) / 60
     Else
         b = 0
     End If
@@ -293,7 +294,7 @@ Sub s_spinner_animate
 		LM.Opacity = 100 * (1 - b)
 	Next
 	For Each LM in LMs_SpinU
-		LM.RotX = a
+		LM.RotX = a + 180
 		LM.Opacity = 100 * b
 	Next
 	For Each LM in BP_SpinWire: LM.RotX = a: Next
