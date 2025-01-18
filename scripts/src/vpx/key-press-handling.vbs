@@ -8,7 +8,13 @@ Sub Table1_KeyDown(ByVal keycode)
 	' ANY TIME
 	Glf_KeyDown(keycode)
 	If keycode = AddCreditKey or keycode = AddCreditKey2 Then RandomCoinSound
-	If keycode = PlungerKey Then Plunger.Pullback : SoundPlungerPull 
+	If keycode = PlungerKey Then 
+		Plunger.Pullback
+		SoundPlungerPull
+		TimerPlunger.Enabled = True
+		TimerPlunger2.Enabled = False
+		'PinCab_Shooter.TransY = 0  'FIXME
+	End If
 	If keycode = StartGameKey Then SoundStartButton : AudioCallout "boot"
 	If keycode = LeftTiltKey Then 
 		Nudge 90, 2
@@ -111,6 +117,8 @@ Sub Table1_KeyUp(ByVal keycode)
 	If KeyCode = PlungerKey Then
 		Plunger.Fire
 		SoundPlungerReleaseBall
+		TimerPlunger.Enabled = False
+		TimerPlunger2.Enabled = True
 	End If
 
 

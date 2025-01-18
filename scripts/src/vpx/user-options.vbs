@@ -47,8 +47,16 @@ Sub Table1_OptionEvent(ByVal eventId)
 	For Each BP in BP_TrustPost : BP.visible = v: Next
 	zCol_Rubber_TrustPost.Collidable = v
 
+	' Plunger Position Visualization
+    v = Table1.Option("Plunger Position Visualization", 0, 1, 1, 1, 0, Array("Disabled", "Enabled"))
+	PlungerLine.visible = v
+	PlungerLine.blenddisablelighting = 5
+
 	' Rails          FIXME make optional
 	For Each BP in BP_Rails : BP.visible = 1: Next
+
+	' VR 			FIXME check that this works
+	SetupRoom
 
     If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub
