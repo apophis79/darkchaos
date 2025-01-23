@@ -134,8 +134,8 @@ Sub CreateHealthMode
                 .Speed = 10
                 With .Tokens()
                     .Add "lights", "tBumper"
-                    .Add "color", "ffffff"
-                    .Add "intensity", 15
+                    .Add "color", GIColor3000k '"ffffff"
+                    .Add "intensity", 10
                 End With
             End With
         End With

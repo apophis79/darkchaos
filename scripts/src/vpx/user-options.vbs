@@ -52,6 +52,13 @@ Sub Table1_OptionEvent(ByVal eventId)
 	PlungerLine.visible = v
 	PlungerLine.blenddisablelighting = 5
 
+	' Apron Display
+	v = Table1.Option("Apron Display", 0, 1, 1, 1, 0, Array("No Display", "Use Display"))
+	ApronScreen.visible = v
+	For Each BP in BP_Screen : BP.visible = v: Next
+	For Each BP in BP_Card : BP.visible = 1-v: Next
+
+
 	' Rails          FIXME make optional
 	For Each BP in BP_Rails : BP.visible = 1: Next
 

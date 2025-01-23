@@ -10,7 +10,7 @@
 '      to handle updating their effective ambient brighness.
 
 ' Update these arrays if you want to change more materials with room light level
-Dim RoomBrightnessMtlArray: RoomBrightnessMtlArray = Array("VLM.Bake.Active","VLM.Bake.Solid","VLM.Bake.Ramp","VLM.Bake.Bumper","VLM.Bake.BumperRed","VLM.Bake.BumperBlue") 
+Dim RoomBrightnessMtlArray: RoomBrightnessMtlArray = Array("VLM.Bake.Active","VLM.Bake.Solid","VLM.Bake.Ramp","VLM.Bake.Bumper","VLM.Bake.BumperTop") 
 
 Sub SetRoomBrightness(lvl)
 	If lvl > 1 Then lvl = 1

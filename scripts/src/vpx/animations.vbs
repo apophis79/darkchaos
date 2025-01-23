@@ -331,6 +331,10 @@ Sub InitAsteroid
 '	For i = 0 to (UBound(BP_Asteroid2)-1): Set LMs_Asteroid2(i) = BP_Asteroid2(i+1): Next
 '	For i = 0 to (UBound(BP_Asteroid3)-1): Set LMs_Asteroid3(i) = BP_Asteroid3(i+1): Next
 '	For i = 0 to (UBound(BP_Asteroid4)-1): Set LMs_Asteroid4(i) = BP_Asteroid4(i+1): Next
+	LM_F_FL7_Asteroid1.Visible = 1
+	LM_F_FL7_Asteroid2.Visible = 0
+	LM_F_FL7_Asteroid3.Visible = 0
+	LM_F_FL7_Asteroid4.Visible = 0
 	' Adjust size to eliminate zfighting
 	BM_Asteroid1.Size_X = BM_Asteroid1.Size_X*0.999 '0.998
 	BM_Asteroid1.Size_Y = BM_Asteroid1.Size_Y*0.999 '0.998
@@ -382,6 +386,8 @@ Sub DrawAsteroid(a)
 '	BM_Asteroid3.RotZ = a
 '	BM_Asteroid3.Visible = v3
 '	BM_Asteroid3.Opacity = op13
+
+	LM_F_FL7_Asteroid1.RotZ = a
 
 	For each LM in LMs_Asteroid1
 		LM.Visible = v1
