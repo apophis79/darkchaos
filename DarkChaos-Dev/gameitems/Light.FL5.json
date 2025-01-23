@@ -13,7 +13,7 @@
     "color2": "#ff00ffff",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "fFlasher,tEarth",
+    "blink_pattern": "fFlasher,tEarth,tFL5",
     "off_image": "",
     "blink_interval": 125,
     "intensity": 20.0,

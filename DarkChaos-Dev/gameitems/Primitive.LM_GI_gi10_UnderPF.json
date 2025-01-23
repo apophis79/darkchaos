@@ -2,8 +2,8 @@
   "Primitive": {
     "position": {
       "x": 444.09042,
-      "y": 1033.1714,
-      "z": -33.75315
+      "y": 981.79956,
+      "z": -13.611843
     },
     "size": {
       "x": 1.0,
@@ -21,7 +21,7 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap5",
+    "image": "VLM.Nestmap0",
     "normal_map": "",
     "sides": 4,
     "name": "LM_GI_gi10_UnderPF",

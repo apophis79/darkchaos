@@ -25,7 +25,7 @@
     "normal_map": "VLM.Nestmap6 - NM",
     "sides": 4,
     "name": "BM_BmpTopB",
-    "material": "VLM.Bake.BumperBlue",
+    "material": "VLM.Bake.BumperTop",
     "side_color": "#ff00ffff",
     "is_visible": true,
     "draw_textures_inside": false,
