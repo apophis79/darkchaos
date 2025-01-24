@@ -98,12 +98,12 @@ Sub CreateMeteorWaveMode
                 .Add "pf_seg4_off{current_player.shot_mw_pf_seg4==0}", 1
                 .Add "pf_seg5_off{current_player.shot_mw_pf_seg5==0}", 1
                 .Add "pf_seg6_off{current_player.shot_mw_pf_seg6==0}", 1
-                .Add "pf_seg9_off{current_player.shot_mw_pf_seg9==0}", 1
-                .Add "pf_seg10_off{current_player.shot_mw_pf_seg10==0}", 1
-                .Add "pf_seg11_off{current_player.shot_mw_pf_seg11==0}", 1
-                .Add "pf_seg12_off{current_player.shot_mw_pf_seg12==0}", 1
-                .Add "pf_seg13_off{current_player.shot_mw_pf_seg13==0}", 1
-                .Add "pf_seg14_off{current_player.shot_mw_pf_seg14==0}", 1
+                .Add "pf_seg9_off{current_player.shot_mw_pf_seg16==0}", 1
+                .Add "pf_seg10_off{current_player.shot_mw_pf_seg17==0}", 1
+                .Add "pf_seg11_off{current_player.shot_mw_pf_seg18==0}", 1
+                .Add "pf_seg12_off{current_player.shot_mw_pf_seg19==0}", 1
+                .Add "pf_seg13_off{current_player.shot_mw_pf_seg20==0}", 1
+                .Add "pf_seg14_off{current_player.shot_mw_pf_seg21==0}", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -165,27 +165,6 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
-        'Health shot is ready, two states
-        With .ShotProfiles("health_shot_ready")
-            With .States("unlit")
-                .Key = "h_shot_not_ready"
-                .Show = "off"
-                With .Tokens()
-                    .Add "lights", "tFire"
-                End With
-            End With
-            With .States("ready")
-                .Key = "h_shot_is_ready"
-                .Show = "flash_color_with_fade"
-                .Speed = 1
-                With .Tokens()
-                    .Add "fade", 200
-                    .Add "color", HealthColor1
-                    .Add "lights", "tHealth2"
-                End With
-            End With
-        End With
-
         'Define fire proton shots
         With .Shots("fire_protons")
             .Profile = "proton_shot_ready"
@@ -207,22 +186,36 @@ Sub CreateMeteorWaveMode
         End With
 
         'Define PF display light shots
-        For x = 1 to 16    
-            If x<>7 And x<>8 And x<>15 And x<>16 Then  'don't use these lights during wave
-                With .Shots("mw_pf_seg"&x)
-                    .Profile = "flicker_on_flicker_off"
-                    '.Profile = "on_flicker_off"
-                    With .Tokens()
-                        .Add "lights", "pf_seg"&x
-                        .Add "color", "ffffff"
-                    End With
-                    With .ControlEvents()
-                        .Events = Array("pf_seg"&x&"_off")
-                        .State = 1
-                    End With
-                    .RestartEvents = Array("mode_meteor_wave_started") 
+        For x = 1 to 6    
+            With .Shots("mw_pf_seg"&x)
+                '.Profile = "flicker_on_flicker_off"
+                .Profile = "on_flicker_off"
+                With .Tokens()
+                    .Add "lights", "pf_seg"&x
+                    .Add "color", "ffffff"
                 End With
-            End If
+                With .ControlEvents()
+                    .Events = Array("pf_seg"&x&"_off")
+                    .State = 1
+                End With
+                .RestartEvents = Array("mode_meteor_wave_started") 
+            End With
+        Next
+
+        For x = 16 to 21    
+            With .Shots("mw_pf_seg"&x)
+                '.Profile = "flicker_on_flicker_off"
+                .Profile = "on_flicker_off"
+                With .Tokens()
+                    .Add "lights", "pf_seg"&x
+                    .Add "color", "ffffff"
+                End With
+                With .ControlEvents()
+                    .Events = Array("pf_seg"&x&"_off")
+                    .State = 1
+                End With
+                .RestartEvents = Array("mode_meteor_wave_started") 
+            End With
         Next
 
 

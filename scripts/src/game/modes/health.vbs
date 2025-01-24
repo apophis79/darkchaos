@@ -107,6 +107,17 @@ Sub CreateHealthMode
             End With
         Next
 
+        'Define health bumper diverter shot
+        With .Shots("health_diverter")
+            .Profile = "health_shot_ready"
+            With .ControlEvents()
+                .Events = Array("raise_diverter")
+                .State = 1
+            End With
+            .RestartEvents = Array("drop_diverter") 
+        End With
+        
+
         With .ShowPlayer()
             With .EventName("add_health")
                 .Key = "key_health_charged"

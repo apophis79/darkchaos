@@ -108,10 +108,11 @@ Sub CreateTrainingHealMode
             With .EventName("mode_training_heal_started")
                 .Key = "key_training_bumpers"
                 .Show = "flicker_color_on_intensity"
+                .Speed = 5
                 With .Tokens()
                     .Add "lights", "tBumper"
                     .Add "color", HealthColor1
-                    .Add "intensity", 85
+                    .Add "intensity", 20
                 End With
             End With
             With .EventName("init_training")

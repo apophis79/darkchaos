@@ -32,7 +32,7 @@ Sub CreateTrainingSelectMode
             .Add "s_left_magna_key_active", Array("make_selection")
             .Add "s_right_magna_key_active", Array("make_selection")
             .Add "timer_training_select_complete", Array("make_selection")
-            .Add "make_selection", Array("release_scoop_hold","enable_flippers","start_training")
+            .Add "make_selection", Array("release_scoop_hold","start_training")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
             .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")

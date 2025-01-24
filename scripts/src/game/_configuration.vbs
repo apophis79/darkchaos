@@ -36,7 +36,8 @@ Const EarthHitColor2 = "880303"
 
 ' Playfield display light names
 Dim PFDisplayLightNames
-PFDisplayLightNames = Array("pf_seg1","pf_seg2","pf_seg3","pf_seg4","pf_seg5","pf_seg6","pf_seg7","pf_seg8","pf_seg9","pf_seg10","pf_seg11","pf_seg12","pf_seg13","pf_seg14","pf_seg15","pf_seg16")
+PFDisplayLightNames = Array("pf_seg1", "pf_seg2", "pf_seg3", "pf_seg4", "pf_seg5", "pf_seg6", "pf_seg7", "pf_seg8", "pf_seg9", "pf_seg10","pf_seg11","pf_seg12","pf_seg13","pf_seg14","pf_seg15", _
+                            "pf_seg16","pf_seg17","pf_seg18","pf_seg19","pf_seg20","pf_seg21","pf_seg22","pf_seg23","pf_seg24","pf_seg25","pf_seg26","pf_seg27","pf_seg28","pf_seg29","pf_seg30")
 
 ' Array of main shots and associated light names (used for combos and training modes)
 Dim MainShotNames, MainShotLightNames
@@ -295,7 +296,7 @@ Sub ConfigureGlfDevices
     Set segment_display_p1 = (New GlfLightSegmentDisplay)("player1")
 
     segment_display_p1.SegmentType = "14Segment"
-    segment_display_p1.SegmentSize = 7
+    segment_display_p1.SegmentSize = 8
     segment_display_p1.LightGroup = "p1_seg"
     segment_display_p1.UpdateMethod = "stack"
     segment_display_p1.UseDotsForCommas = True
@@ -304,7 +305,7 @@ Sub ConfigureGlfDevices
     Set segment_display_p2 = (New GlfLightSegmentDisplay)("player2")
 
     segment_display_p2.SegmentType = "14Segment"
-    segment_display_p2.SegmentSize = 7
+    segment_display_p2.SegmentSize = 8
     segment_display_p2.LightGroup = "p2_seg"
     segment_display_p2.UpdateMethod = "stack"
     segment_display_p2.UseDotsForCommas = True
@@ -313,7 +314,7 @@ Sub ConfigureGlfDevices
     Set segment_display_p3 = (New GlfLightSegmentDisplay)("player3")
 
     segment_display_p3.SegmentType = "14Segment"
-    segment_display_p3.SegmentSize = 7
+    segment_display_p3.SegmentSize = 8
     segment_display_p3.LightGroup = "p3_seg"
     segment_display_p3.UpdateMethod = "stack"
     segment_display_p3.UseDotsForCommas = True
@@ -322,7 +323,7 @@ Sub ConfigureGlfDevices
     Set segment_display_p4 = (New GlfLightSegmentDisplay)("player4")
 
     segment_display_p4.SegmentType = "14Segment"
-    segment_display_p4.SegmentSize = 7
+    segment_display_p4.SegmentSize = 8
     segment_display_p4.LightGroup = "p4_seg"
     segment_display_p4.UpdateMethod = "stack"
     segment_display_p4.UseDotsForCommas = True
@@ -337,7 +338,7 @@ Sub ConfigureGlfDevices
     Dim segment_display_pf
     Set segment_display_pf = (New GlfLightSegmentDisplay)("pf")
 
-    segment_display_pf.SegmentType = "7Segment"
+    segment_display_pf.SegmentType = "14Segment"
     segment_display_pf.SegmentSize = 2
     segment_display_pf.UpdateMethod = "stack"
     segment_display_pf.LightGroup = "pf_seg"
@@ -545,6 +546,27 @@ Public Sub CreateSharedShotProfiles()
               .Add "color", ShipSaveColor
           End With
       End With
+    End With
+
+
+    With GlfShotProfiles("health_shot_ready")
+        With .States("unlit")
+            .Key = "h_shot_not_ready"
+            .Show = "off"
+            With .Tokens()
+                .Add "lights", "LDP"
+            End With
+        End With
+        With .States("ready")
+            .Key = "h_shot_is_ready"
+            .Show = "flash_color_with_fade"
+            .Speed = 2
+            With .Tokens()
+                .Add "fade", 400
+                .Add "color", HealthColor1
+                .Add "lights", "LDP"
+            End With
+        End With
     End With
       
 
