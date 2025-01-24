@@ -1,7 +1,7 @@
 {
   "Light": {
     "center": {
-      "x": 190.27556,
+      "x": 202.53688,
       "y": 51.09548
     },
     "height": 0.0,
@@ -37,7 +37,7 @@
     "visible": true,
     "drag_points": [
       {
-        "x": 191.63206,
+        "x": 203.89339,
         "y": 51.911766,
         "z": 0.0,
         "smooth": false,
@@ -50,7 +50,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 189.68294,
+        "x": 201.94426,
         "y": 48.372334,
         "z": 0.0,
         "smooth": false,
@@ -63,7 +63,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 189.25969,
+        "x": 201.52101,
         "y": 50.915764,
         "z": 0.0,
         "smooth": false,
@@ -76,7 +76,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 191.12212,
+        "x": 203.38344,
         "y": 54.255886,
         "z": 0.0,
         "smooth": false,

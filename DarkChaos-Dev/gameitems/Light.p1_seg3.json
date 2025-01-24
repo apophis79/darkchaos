@@ -1,7 +1,7 @@
 {
   "Light": {
     "center": {
-      "x": 34.818592,
+      "x": 32.08438,
       "y": 51.90412
     },
     "height": 301.0,
@@ -9,7 +9,7 @@
     "falloff_power": 1.0,
     "state_u32": 2,
     "state": 2.0,
-    "color": "#ff000080",
+    "color": "#00000000",
     "color2": "#00000000",
     "is_timer_enabled": false,
     "timer_interval": 100,
@@ -37,7 +37,7 @@
     "visible": true,
     "drag_points": [
       {
-        "x": 36.273823,
+        "x": 33.53961,
         "y": 48.01262,
         "z": 0.0,
         "smooth": false,
@@ -50,7 +50,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 36.563404,
+        "x": 33.829193,
         "y": 46.44844,
         "z": 0.0,
         "smooth": false,
@@ -63,7 +63,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 34.457417,
+        "x": 31.723206,
         "y": 47.989,
         "z": 0.0,
         "smooth": false,
@@ -76,7 +76,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 33.111412,
+        "x": 30.377201,
         "y": 54.884964,
         "z": 0.0,
         "smooth": false,
@@ -89,7 +89,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 33.870564,
+        "x": 31.136353,
         "y": 55.72973,
         "z": 0.0,
         "smooth": false,
@@ -102,7 +102,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 35.204212,
+        "x": 32.47,
         "y": 54.768326,
         "z": 0.0,
         "smooth": false,
