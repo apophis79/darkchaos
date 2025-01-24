@@ -11,7 +11,7 @@ Sub CreateBaseMode()
         .StopEvents = Array(GLF_BALL_ENDED)
 
         With .EventPlayer()
-            '.Add "s_left_staged_flipper_key_active", Array("launch_moon_balls_test")   'DEBUG
+            .Add "s_left_staged_flipper_key_active", Array("sling_rotate_cw_show")   'DEBUG
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
             .Add "mode_base_started{current_player.shot_meteor_wave1 == 0}", Array("pre_meteor_wave1")
             .Add "mode_base_started{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
@@ -165,9 +165,7 @@ Sub CreateBaseMode()
                     End With
                 End With
             Next
-        End With
 
-        With .ShowPlayer()
             With .EventName("flash_mag_gi")
                 .Key = "key_ts_scoop_gi"
                 .Show = "flash_color" '_with_fade"
@@ -178,6 +176,19 @@ Sub CreateBaseMode()
                     .Add "lights", "gi13" 
                     .Add "color", GIColor3000k
                     '.Add "fade", 300
+                End With
+            End With
+
+            With .EventName("sling_rotate_cw_show")
+                .Key = "key_sling_rotate_cw"
+                .Show = "sling_rotate_cw" '_with_fade"
+                .Speed = 2
+                .Loops = 7
+                .Priority = 1000
+                With .Tokens()
+                    .Add "intensity1", 40
+                    .Add "intensity2", 80
+                    .Add "color", ProtonColor
                 End With
             End With
         End With

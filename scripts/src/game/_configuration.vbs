@@ -121,6 +121,7 @@ Sub ConfigureGlfDevices
     CreateSkillshotShows()
     CreateMoonShows()
     CreateMysteryShows()
+    CreateSlingShows()
 
     ' Sound effects bus
     CreateSounds()
