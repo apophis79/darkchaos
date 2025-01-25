@@ -107,6 +107,30 @@ Sub CreateMeteorWaveMode
                 .ForceAll = False
                 .ForceDifferent = False
             End With
+            With .EventName("play_sfx_LMet")
+                .Add "play_sfx_LMet1", 1
+                .Add "play_sfx_LMet2", 1
+                .Add "play_sfx_LMet3", 1
+                .Add "play_sfx_LMet4", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+        End With
+
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_LMet1")
+                .Sound = "sfx_LMet1"
+            End With
+            With .EventName("play_sfx_LMet2")
+                .Sound = "sfx_LMet2"
+            End With
+            With .EventName("play_sfx_LMet3")
+                .Sound = "sfx_LMet3"
+            End With
+            With .EventName("play_sfx_LMet4")
+                .Sound = "sfx_LMet4"
+            End With
         End With
         
 
@@ -304,7 +328,7 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","play_sfx_LMet")
                 End With
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")

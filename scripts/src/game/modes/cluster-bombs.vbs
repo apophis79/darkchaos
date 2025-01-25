@@ -23,9 +23,9 @@ Sub CreateClusterBombMode
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}", Array("ready_cluster_charge1") 'no training boost
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==1}", Array("light_cluster_charge1","light_cluster_charge2","ready_cluster_charge3") 'with training boost
             'Successful shot
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2","play_sfx_LCC")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3","play_sfx_LCC")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3","play_sfx_LCC")
             'Add bombs
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded") 'check for wizard mode qualification
@@ -34,6 +34,29 @@ Sub CreateClusterBombMode
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded")
+        End With
+
+        With .RandomEventPlayer()
+            '.Debug = True
+            With .EventName("play_sfx_LCC")
+                .Add "play_sfx_LCC1", 1
+                .Add "play_sfx_LCC2", 1
+                .Add "play_sfx_LCC3", 1
+                .ForceAll = False
+                .ForceDifferent = True
+            End With
+        End With
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_LCC1")
+                .Sound = "sfx_LCC1"
+            End With
+            With .EventName("play_sfx_LCC2")
+                .Sound = "sfx_LCC2"
+            End With
+            With .EventName("play_sfx_LCC3")
+                .Sound = "sfx_LCC3"
+            End With
         End With
 
         'Define our shots

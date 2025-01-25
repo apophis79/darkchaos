@@ -82,6 +82,12 @@ Sub CreateMoonMultiballMode
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
         End With
 
+        With .SoundPlayer()
+            With .EventName("qualify_lock_on_complete")
+                .Sound = "sfx_LMLR"
+            End With
+        End With
+
         'Lane qualification shots
         For x = 1 to 3
             With .Shots("moon_lane"&x)

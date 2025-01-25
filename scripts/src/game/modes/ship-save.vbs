@@ -22,11 +22,34 @@ Sub CreateShipSaveMode
             .Add "restart_ship_save{current_player.training_ship_save_achieved==0}", Array("ready_ship_charge1","clear_ship_save") 'no training boost
             .Add "restart_ship_save{current_player.training_ship_save_achieved==1}", Array("light_ship_charge1","light_ship_charge2","ready_ship_charge3","clear_ship_save") 'with training boost
             'Successful shot
-            .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2")
-            .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3")
-            .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3")
+            .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2","play_sfx_LF")
+            .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3","play_sfx_LF")
+            .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3","play_sfx_LF")
             'Handle mystery award
             .Add "mystery_added_saver", Array("complete_ship_save","light_ship_charge3")
+        End With
+
+        With .RandomEventPlayer()
+            '.Debug = True
+            With .EventName("play_sfx_LF")
+                .Add "play_sfx_LF1", 1
+                .Add "play_sfx_LF2", 1
+                .Add "play_sfx_LF3", 1
+                .ForceAll = False
+                .ForceDifferent = True
+            End With
+        End With
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_LF1")
+                .Sound = "sfx_LF1"
+            End With
+            With .EventName("play_sfx_LF2")
+                .Sound = "sfx_LF2"
+            End With
+            With .EventName("play_sfx_LF3")
+                .Sound = "sfx_LF3"
+            End With
         End With
         
 

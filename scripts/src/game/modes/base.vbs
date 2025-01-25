@@ -300,6 +300,20 @@ Sub CreateBaseMode()
                 .Sound = "sfx_bumper4"
             End With
 
+            'Lanes
+            With .EventName("s_LeftOutlane_active")
+                .Sound = "sfx_LLO"
+            End With
+            ' With .EventName("s_LeftInlane_active")
+            '     .Sound = "sfx_LLI"
+            ' End With
+            ' With .EventName("s_RightInlane_active")
+            '     .Sound = "sfx_LRI"
+            ' End With
+            With .EventName("s_RightOutlane_active")
+                .Sound = "sfx_LRO"
+            End With
+
             'Other
             With .EventName("mode_base_stopping")
                 .Sound = "sfx_ball_drain"

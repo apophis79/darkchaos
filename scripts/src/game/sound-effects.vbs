@@ -6,8 +6,64 @@
 '*******************************************
 
 Dim SFXNames, SFXDurations
-SFXNames = Array("sfx_left_sling","sfx_right_sling","sfx_left_ramp_time_warp","sfx_right_ramp_moon_launch","sfx_ball_drain","sfx_bumper1","sfx_bumper2","sfx_bumper3","sfx_bumper4")
-SFXDurations = Array(4.754,4.767,4.049,3.146,4.075,1.927,3.461,3.461,1.025)
+SFXNames = Array( _
+    "sfx_left_sling", _
+    "sfx_right_sling", _
+    "sfx_left_ramp_time_warp", _
+    "sfx_right_ramp_moon_launch", _
+    "sfx_ball_drain", _
+    "sfx_bumper1", _
+    "sfx_bumper2", _
+    "sfx_bumper3", _
+    "sfx_bumper4", _
+    "sfx_LCC1", _
+    "sfx_LCC2", _
+    "sfx_LCC3", _
+    "sfx_LF1", _
+    "sfx_LF2", _
+    "sfx_LF3", _
+    "sfx_LLO", _
+    "sfx_LMet1", _
+    "sfx_LMet2", _
+    "sfx_LMet3", _
+    "sfx_LMet4", _
+    "sfx_LMLR", _
+    "sfx_LMR", _
+    "sfx_LRO", _
+    "sfx_p1", _
+    "sfx_p2", _
+    "sfx_p3", _
+    "sfx_p4")
+
+SFXDurations = Array( _
+    4.754, _
+    4.767, _
+    4.049, _
+    3.146, _
+    4.075, _
+    1.927, _
+    3.461, _
+    3.461, _
+    1.025, _
+    5.904, _
+    5.904, _
+    5.904, _
+    7.731, _
+    8.231, _
+    8.231, _
+    1.866, _
+    4.363, _
+    2.667, _
+    1.749, _
+    2.837, _
+    4.415, _
+    4.415, _
+    4.075, _
+    2.926, _
+    2.926, _
+    2.926, _
+    2.926)
+
 
 Dim MusicNames, MusicDurations
 MusicNames = Array("mus_ambient_bg","mus_main","mus_secondary","mus_wave","mus_post_game")

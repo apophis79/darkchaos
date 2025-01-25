@@ -55,6 +55,12 @@ Sub CreateMysteryMode
             End With
         End With
 
+        With .SoundPlayer()
+            With .EventName("qualify_mystery_on_complete")
+                .Sound = "sfx_LMR"
+            End With
+        End With
+
         'Scoop ball hold
         With .BallHolds("mystery_hold")
             '.Debug = True
