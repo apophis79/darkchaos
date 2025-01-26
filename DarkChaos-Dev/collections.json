@@ -1472,5 +1472,43 @@
     "fire_events": false,
     "stop_single_events": false,
     "group_elements": false
+  },
+  {
+    "name": "pPFSeg",
+    "items": [
+      "p_pf_seg30_",
+      "p_pf_seg29_",
+      "p_pf_seg28_",
+      "p_pf_seg27_",
+      "p_pf_seg26_",
+      "p_pf_seg25_",
+      "p_pf_seg24_",
+      "p_pf_seg23_",
+      "p_pf_seg22_",
+      "p_pf_seg21_",
+      "p_pf_seg20_",
+      "p_pf_seg19_",
+      "p_pf_seg18_",
+      "p_pf_seg17_",
+      "p_pf_seg16_",
+      "p_pf_seg15_",
+      "p_pf_seg14_",
+      "p_pf_seg13_",
+      "p_pf_seg12_",
+      "p_pf_seg11_",
+      "p_pf_seg10_",
+      "p_pf_seg9_",
+      "p_pf_seg8_",
+      "p_pf_seg7_",
+      "p_pf_seg6_",
+      "p_pf_seg5_",
+      "p_pf_seg4_",
+      "p_pf_seg3_",
+      "p_pf_seg2_",
+      "p_pf_seg1_"
+    ],
+    "fire_events": false,
+    "stop_single_events": false,
+    "group_elements": false
   }
 ]

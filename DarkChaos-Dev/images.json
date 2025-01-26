@@ -334,5 +334,19 @@
       "name": "VLM.Nestmap6 - NM"
     },
     "bits": false
+  },
+  {
+    "name": "NeoSegMap",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.webp",
+    "width": 3285,
+    "height": 345,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.webp",
+      "name": "NeoSegMap"
+    },
+    "bits": false
   }
 ]
