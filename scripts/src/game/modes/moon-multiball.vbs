@@ -86,6 +86,12 @@ Sub CreateMoonMultiballMode
             With .EventName("qualify_lock_on_complete")
                 .Sound = "sfx_LMLR"
             End With
+            With .EventName("light_missile1")
+                .Sound = "sfx_LMR1"
+            End With
+            With .EventName("light_missile2")
+                .Sound = "sfx_LMR2"
+            End With
         End With
 
         'Lane qualification shots

@@ -51,6 +51,14 @@ Sub CreateHealthMode
             .Add "mystery_full_health", Array("complete_full_health")
         End With
 
+
+        With .SoundPlayer()
+            With .EventName("add_health")
+                .Sound = "sfx_LH"
+            End With
+        End With
+        
+
         'Define a shot profile with four states, health meter leves
         With .ShotProfiles("health_meter")
             With .States("unlit")

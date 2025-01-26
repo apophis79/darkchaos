@@ -38,6 +38,15 @@ Sub CreateCombosMode
             .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","start_combo_command_wizard")
         End With
 
+        With .SoundPlayer()
+            ' With .EventName("add_combos")
+            '     .Sound = "sfx_combo"
+            ' End With
+            With .EventName("start_combo_command_wizard")
+                .Sound = "sfx_LCWiz"
+            End With
+        End With
+
 
         With .ShowPlayer()
             For x = 1 to 8

@@ -25,20 +25,55 @@ Sub CreateProtonCannonMode
             .Add "reset_proton_charges{current_player.training_proton_cannon_achieved==0}", Array("ready_proton_charge1") 'no training boost
             .Add "reset_proton_charges{current_player.training_proton_cannon_achieved==1}", Array("light_proton_charge1","light_proton_charge2","ready_proton_charge3") 'with training boost
             'Successful shot
-            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", Array("light_proton_charge1","ready_proton_charge2")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", Array("light_proton_charge2","ready_proton_charge3")
-            .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", Array("light_proton_charge3")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", Array("play_sfx_LPC","light_proton_charge1","ready_proton_charge2")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", Array("play_sfx_LPC","light_proton_charge2","ready_proton_charge3")
+            .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", Array("play_sfx_LPC","light_proton_charge3")
             'Add protons
-            .Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", Array("add_proton_round1","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("add_proton_round2","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("add_proton_round3","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("add_proton_round4","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("add_proton_round5","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
+            .Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", Array("play_sfx_LPR","add_proton_round1","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("play_sfx_LPR","add_proton_round2","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("play_sfx_LPR","add_proton_round3","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("play_sfx_LPR","add_proton_round4","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("play_sfx_LPR","add_proton_round5","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("play_sfx_LPR","add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
             .Add "check_protons", Array("check_protons_done")
             'Handle mystery award
             .Add "mystery_full_protons", Array("complete_full_protons")
             .Add "complete_full_protons", Array("check_fully_loaded") 'check for wizard mode qualification
+        End With
+
+
+        With .RandomEventPlayer()
+            With .EventName("play_sfx_LPC")
+                .Add "play_sfx_LPC1", 1
+                .Add "play_sfx_LPC2", 1
+                .Add "play_sfx_LPC3", 1
+                .Add "play_sfx_LPC4", 1
+                .Add "play_sfx_LPC5", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+        End With
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_LPC1")
+                .Sound = "sfx_LPC1"
+            End With
+            With .EventName("play_sfx_LPC2")
+                .Sound = "sfx_LPC2"
+            End With
+            With .EventName("play_sfx_LPC3")
+                .Sound = "sfx_LPC3"
+            End With
+            With .EventName("play_sfx_LPC4")
+                .Sound = "sfx_LPC4"
+            End With
+            With .EventName("play_sfx_LPC5")
+                .Sound = "sfx_LPC5"
+            End With
+
+            With .EventName("play_sfx_LPR")
+                .Sound = "sfx_LPR1"
+            End With
         End With
         
 

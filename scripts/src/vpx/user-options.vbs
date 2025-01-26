@@ -52,6 +52,18 @@ Sub Table1_OptionEvent(ByVal eventId)
 	PlungerLine.visible = v
 	PlungerLine.blenddisablelighting = 5
 
+	' ' Alphanumeric Display Color
+	' v = Table1.Option("Alphanumeric Display Color", 0, 6, 1, 0, 0, Array("Red", "Orange", "Yellow", "Green", "Cyan", "Blue", "Purple"))
+	' Select Case v
+	' 	Case 0: For Each BP in pPFSeg: BP.color = RGB(255,0,0): Next
+	' 	Case 1: For Each BP in pPFSeg: BP.color = RGB(255,128,0): Next
+	' 	Case 2: For Each BP in pPFSeg: BP.color = RGB(255,255,0): Next
+	' 	Case 3: For Each BP in pPFSeg: BP.color = RGB(0,255,0): Next
+	' 	Case 4: For Each BP in pPFSeg: BP.color = RGB(0,255,128): Next
+	' 	Case 5: For Each BP in pPFSeg: BP.color = RGB(0,128,255): Next
+	' 	Case 6: For Each BP in pPFSeg: BP.color = RGB(128,0,255): Next
+	' End Select
+
 	' Apron Display
 	v = Table1.Option("Apron Display", 0, 1, 1, 1, 0, Array("No Display", "Use Display"))
 	ApronScreen.visible = v

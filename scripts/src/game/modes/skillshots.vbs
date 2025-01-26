@@ -12,27 +12,36 @@ Sub CreateSkillshotsMode
         
 
         With .EventPlayer()
-            .Add "mode_skillshots_started{current_player.ball_just_started==1}", Array("init_ss")
+            .Add "check_skillshot_ready{current_player.ball_just_started==1}", Array("init_ss")
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
             .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
             .Add "timer_skillshots_complete", Array("stop_skillshots") 
             .Add "s_InnerOrb1_active", Array("stop_skillshots")
         End With
 
+        With .SoundPlayer()
+            With .EventName("ss_achieved")
+                .Sound = "sfx_ss"
+            End With
+            With .EventName("sss_achieved")
+                .Sound = "sfx_sss"
+            End With
+        End With
+
 
         'skill shot is ready, two states
         With .ShotProfiles("ss_ready")
             With .States("unlit")
-                .Key = "ss_shot_not_ready"
+                .Key = "key_ss_shot_not_ready"
                 .Show = "off"
                 With .Tokens()
-                    .Add "lights", "tFire"
+                    .Add "lights", "LM2"
                 End With
             End With
             With .States("ready")
-                .Key = "ss_shot_is_ready"
+                .Key = "key_ss_shot_is_ready"
                 .Show = "flash_color_with_fade"
-                .Priority = 5
+                .Priority = 500
                 .Speed = 3
                 With .Tokens()
                     .Add "fade", 200

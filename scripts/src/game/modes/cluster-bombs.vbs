@@ -37,12 +37,11 @@ Sub CreateClusterBombMode
         End With
 
         With .RandomEventPlayer()
-            '.Debug = True
             With .EventName("play_sfx_LCC")
                 .Add "play_sfx_LCC1", 1
                 .Add "play_sfx_LCC2", 1
                 .Add "play_sfx_LCC3", 1
-                .ForceAll = False
+                .ForceAll = True
                 .ForceDifferent = True
             End With
         End With
@@ -56,6 +55,13 @@ Sub CreateClusterBombMode
             End With
             With .EventName("play_sfx_LCC3")
                 .Sound = "sfx_LCC3"
+            End With
+
+            With .EventName("add_cluster_bomb1")
+                .Sound = "sfx_LCR1"
+            End With
+            With .EventName("add_cluster_bomb2")
+                .Sound = "sfx_LCR2"
             End With
         End With
 

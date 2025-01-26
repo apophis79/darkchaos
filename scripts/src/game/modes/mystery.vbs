@@ -53,11 +53,37 @@ Sub CreateMysteryMode
                 .ForceAll = False
                 .ForceDifferent = False
             End With
+
+            With .EventName("qualify_mystery_hit")
+                .Add "play_sfx_LM1", 1
+                .Add "play_sfx_LM2", 1
+                .Add "play_sfx_LM3", 1
+                .Add "play_sfx_LM4", 1
+                .Add "play_sfx_LM5", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
         End With
 
         With .SoundPlayer()
             With .EventName("qualify_mystery_on_complete")
                 .Sound = "sfx_LMR"
+            End With
+
+            With .EventName("play_sfx_LM1")
+                .Sound = "sfx_LM1"
+            End With
+            With .EventName("play_sfx_LM2")
+                .Sound = "sfx_LM2"
+            End With
+            With .EventName("play_sfx_LM3")
+                .Sound = "sfx_LM3"
+            End With
+            With .EventName("play_sfx_LM4")
+                .Sound = "sfx_LM4"
+            End With
+            With .EventName("play_sfx_LM5")
+                .Sound = "sfx_LM5"
             End With
         End With
 

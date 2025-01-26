@@ -33,9 +33,12 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
 
-            .Add "s_TargetMystery5_active", Array("flash_mag_gi")
+            .Add "mode_base_started", Array("check_skillshot_ready")
+
+            .Add "s_TargetMystery5_active", Array("magnet_activated")
+
         End With
-        
+       
 
         With .SegmentDisplayPlayer()
             With .EventName("mode_base_started")
@@ -166,7 +169,7 @@ Sub CreateBaseMode()
                 End With
             Next
 
-            With .EventName("flash_mag_gi")
+            With .EventName("magnet_activated")
                 .Key = "key_ts_scoop_gi"
                 .Show = "flash_color" '_with_fade"
                 .Speed = 15
@@ -304,12 +307,12 @@ Sub CreateBaseMode()
             With .EventName("s_LeftOutlane_active")
                 .Sound = "sfx_LLO"
             End With
-            ' With .EventName("s_LeftInlane_active")
-            '     .Sound = "sfx_LLI"
-            ' End With
-            ' With .EventName("s_RightInlane_active")
-            '     .Sound = "sfx_LRI"
-            ' End With
+            With .EventName("s_LeftInlane_active")
+                .Sound = "sfx_LLI"
+            End With
+            With .EventName("s_RightInlane_active")
+                .Sound = "sfx_LRI"
+            End With
             With .EventName("s_RightOutlane_active")
                 .Sound = "sfx_LRO"
             End With
@@ -317,6 +320,9 @@ Sub CreateBaseMode()
             'Other
             With .EventName("mode_base_stopping")
                 .Sound = "sfx_ball_drain"
+            End With
+            With .EventName("magnet_activated")
+                .Sound = "sfx_mag_cap"
             End With
         End With
 

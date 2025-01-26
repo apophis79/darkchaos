@@ -48,6 +48,15 @@ Sub CreateAlienAttackMode
         End With
 
 
+        With .SoundPlayer()
+            With .EventName("alien_attacking")
+                .Sound = "sfx_AlienAlert"
+            End With
+            With .EventName("alien_hit_show")
+                .Sound = "sfx_AlienHit"
+            End With
+        End With
+
         
         'alien shot profile, two states
         With .ShotProfiles("alien")
@@ -111,11 +120,13 @@ Sub CreateAlienAttackMode
                 .Source = Array("init")
                 .Target = "shot1"
                 .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 1}")
+                .EventsWhenTransitioning = Array("alien_attacking")
             End With
             With .Transitions()
                 .Source = Array("init")
                 .Target = "shot8"
                 .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 1}")
+                .EventsWhenTransitioning = Array("alien_attacking")
             End With
             For x = 1 to 7
                 With .Transitions()  'move alien from left to right

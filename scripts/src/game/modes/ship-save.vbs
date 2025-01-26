@@ -35,7 +35,7 @@ Sub CreateShipSaveMode
                 .Add "play_sfx_LF1", 1
                 .Add "play_sfx_LF2", 1
                 .Add "play_sfx_LF3", 1
-                .ForceAll = False
+                .ForceAll = True
                 .ForceDifferent = True
             End With
         End With

@@ -112,6 +112,26 @@ Sub CreateMeteorWaveMode
                 .Add "play_sfx_LMet2", 1
                 .Add "play_sfx_LMet3", 1
                 .Add "play_sfx_LMet4", 1
+                .Add "play_sfx_LMet5", 1
+                .Add "play_sfx_LMet6", 1
+                .Add "play_sfx_LMet7", 1
+                .Add "play_sfx_LMet8", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("earth_hit")
+                .Add "play_sfx_EarthHit1", 1
+                .Add "play_sfx_EarthHit2", 1
+                .Add "play_sfx_EarthHit3", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("proton_fired")
+                .Add "play_sfx_LPF1", 1
+                .Add "play_sfx_LPF2", 1
+                .Add "play_sfx_LPF3", 1
+                .Add "play_sfx_LPF4", 1
+                .Add "play_sfx_LPF5", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
@@ -130,6 +150,44 @@ Sub CreateMeteorWaveMode
             End With
             With .EventName("play_sfx_LMet4")
                 .Sound = "sfx_LMet4"
+            End With
+            With .EventName("play_sfx_LMet5")
+                .Sound = "sfx_LMet5"
+            End With
+            With .EventName("play_sfx_LMet6")
+                .Sound = "sfx_LMet6"
+            End With
+            With .EventName("play_sfx_LMet7")
+                .Sound = "sfx_LMet7"
+            End With
+            With .EventName("play_sfx_LMet8")
+                .Sound = "sfx_LMet8"
+            End With
+
+            With .EventName("play_sfx_EarthHit1")
+                .Sound = "sfx_EarthHit1"
+            End With
+            With .EventName("play_sfx_EarthHit2")
+                .Sound = "sfx_EarthHit2"
+            End With
+            With .EventName("play_sfx_EarthHit3")
+                .Sound = "sfx_EarthHit3"
+            End With
+
+            With .EventName("play_sfx_LPF1")
+                .Sound = "sfx_LPF1"
+            End With
+            With .EventName("play_sfx_LPF2")
+                .Sound = "sfx_LPF2"
+            End With
+            With .EventName("play_sfx_LPF3")
+                .Sound = "sfx_LPF3"
+            End With
+            With .EventName("play_sfx_LPF4")
+                .Sound = "sfx_LPF4"
+            End With
+            With .EventName("play_sfx_LPF5")
+                .Sound = "sfx_LPF5"
             End With
         End With
         
