@@ -274,7 +274,7 @@ Sub CreateMeteorWaveMode
                 .Profile = "on_flicker_off"
                 With .Tokens()
                     .Add "lights", "pf_seg"&x
-                    .Add "color", "ffffff"
+                    .Add "color", SegmentsColor
                 End With
                 With .ControlEvents()
                     .Events = Array("pf_seg"&x&"_off")
@@ -290,7 +290,7 @@ Sub CreateMeteorWaveMode
                 .Profile = "on_flicker_off"
                 With .Tokens()
                     .Add "lights", "pf_seg"&x
-                    .Add "color", "ffffff"
+                    .Add "color", SegmentsColor
                 End With
                 With .ControlEvents()
                     .Events = Array("pf_seg"&x&"_off")

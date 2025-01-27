@@ -33,6 +33,8 @@ Const MeteorFlashColor = "ffe7a6"
 Const EarthHitColor = "ff0909"
 Const EarthHitColor2 = "880303"
 
+Const SegmentsColor = "ff0000"
+
 
 ' Playfield display light names
 Dim PFDisplayLightNames
@@ -300,6 +302,7 @@ Sub ConfigureGlfDevices
     segment_display_p1.SegmentSize = 8
     segment_display_p1.LightGroup = "p1_seg"
     segment_display_p1.UpdateMethod = "stack"
+    segment_display_p1.DefaultColor = SegmentsColor
     segment_display_p1.UseDotsForCommas = True
 
     Dim segment_display_p2
@@ -309,6 +312,7 @@ Sub ConfigureGlfDevices
     segment_display_p2.SegmentSize = 8
     segment_display_p2.LightGroup = "p2_seg"
     segment_display_p2.UpdateMethod = "stack"
+    segment_display_p2.DefaultColor = SegmentsColor
     segment_display_p2.UseDotsForCommas = True
 
     Dim segment_display_p3
@@ -318,6 +322,7 @@ Sub ConfigureGlfDevices
     segment_display_p3.SegmentSize = 8
     segment_display_p3.LightGroup = "p3_seg"
     segment_display_p3.UpdateMethod = "stack"
+    segment_display_p3.DefaultColor = SegmentsColor
     segment_display_p3.UseDotsForCommas = True
 
     Dim segment_display_p4
@@ -327,6 +332,7 @@ Sub ConfigureGlfDevices
     segment_display_p4.SegmentSize = 8
     segment_display_p4.LightGroup = "p4_seg"
     segment_display_p4.UpdateMethod = "stack"
+    segment_display_p4.DefaultColor = SegmentsColor
     segment_display_p4.UseDotsForCommas = True
 
     Dim segment_display_ball
@@ -334,6 +340,7 @@ Sub ConfigureGlfDevices
 
     segment_display_ball.SegmentType = "14Segment"
     segment_display_ball.SegmentSize = 2
+    segment_display_ball.DefaultColor = SegmentsColor
     segment_display_ball.LightGroup = "ball_seg"
 
     Dim segment_display_pf
@@ -342,6 +349,7 @@ Sub ConfigureGlfDevices
     segment_display_pf.SegmentType = "14Segment"
     segment_display_pf.SegmentSize = 2
     segment_display_pf.UpdateMethod = "stack"
+    segment_display_pf.DefaultColor = SegmentsColor
     segment_display_pf.LightGroup = "pf_seg"
 
 
