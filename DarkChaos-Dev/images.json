@@ -337,15 +337,43 @@
   },
   {
     "name": "NeoSegMap",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.webp",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.png",
     "width": 3285,
     "height": 345,
     "alpha_test_value": -1.0,
     "is_opaque": true,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.webp",
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.png",
       "name": "NeoSegMap"
+    },
+    "bits": false
+  },
+  {
+    "name": "SparkfunSegMap",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\SparkfunSegMap.png",
+    "width": 3645,
+    "height": 374,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\SparkfunSegMap.png",
+      "name": "SparkfunSegMap"
+    },
+    "bits": false
+  },
+  {
+    "name": "InstructionCard",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\dark_chaos_card_instructions2.png",
+    "width": 1788,
+    "height": 996,
+    "alpha_test_value": -1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\dark_chaos_card_instructions2.png",
+      "name": "dark_chaos_card_instructions2"
     },
     "bits": false
   }
