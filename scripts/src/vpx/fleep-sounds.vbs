@@ -146,9 +146,9 @@ Sub PlaySoundAtVolLoops(sound, tableobj, Vol, Loops)
 	PlaySound sound, Loops, Vol * MechVol, AudioPan(tableobj), 0,0,0, 1, AudioFade(tableobj)
 End Sub
 
-Sub PlaySoundVol(soundname, Volume)
-	PlaySound soundname, 1, Volume*BackglassVol
-End Sub
+' Sub PlaySoundVol(soundname, Volume)
+' 	PlaySound soundname, 1, Volume*BackglassVol
+' End Sub
 
 '******************************************************
 '  Fleep  Supporting Ball & Sound Functions

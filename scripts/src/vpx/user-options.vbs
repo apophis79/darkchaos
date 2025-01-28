@@ -8,8 +8,8 @@ Dim LightLevel : LightLevel = 0.5				' Level of room lighting (0 to 1), where 0 
 Dim MechVol : MechVol = 0.8           			' Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
 Dim BallRollVolume : BallRollVolume = 0.5   	' Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume : RampRollVolume = 0.5 		' Level of ramp rolling volume. Value between 0 and 1
-Dim BackglassVol : BackglassVol = 1				'Separate setting that only affects sounds coming from backglass. Range from 0 to 1
-Dim CalloutVol : CalloutVol = 1					'Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
+' Dim BackglassVol : BackglassVol = 1				'Separate setting that only affects sounds coming from backglass. Range from 0 to 1
+' Dim CalloutVol : CalloutVol = 1					'Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
 
 Const VRRoom = 0 ' 1 - VR Room off, 1 - Minimal Room, 2 - Ultra Minimal Room
 
@@ -30,8 +30,8 @@ Sub Table1_OptionEvent(ByVal eventId)
 	Glf_Options(eventId)
 	
     ' Sound volumes
-    BackglassVol = Table1.Option("Game Sounds Volume", 0, 1, 0.01, 0.8, 1)
-	CalloutVol = Table1.Option("Callout Volume", 0, 1, 0.01, 0.8, 1)
+    ' BackglassVol = Table1.Option("Game Sounds Volume", 0, 1, 0.01, 0.8, 1)
+	' CalloutVol = Table1.Option("Callout Volume", 0, 1, 0.01, 0.8, 1)
     MechVol = Table1.Option("Mechanical Sounds Volume", 0, 1, 0.01, 0.8, 1)
     BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.3, 1)
 	RampRollVolume = Table1.Option("Ramp Roll Volume", 0, 1, 0.01, 0.5, 1)
@@ -51,18 +51,6 @@ Sub Table1_OptionEvent(ByVal eventId)
     v = Table1.Option("Plunger Position Visualization", 0, 1, 1, 1, 0, Array("Disabled", "Enabled"))
 	PlungerLine.visible = v
 	PlungerLine.blenddisablelighting = 5
-
-	' ' Alphanumeric Display Color
-	' v = Table1.Option("Alphanumeric Display Color", 0, 6, 1, 0, 0, Array("Red", "Orange", "Yellow", "Green", "Cyan", "Blue", "Purple"))
-	' Select Case v
-	' 	Case 0: For Each BP in pPFSeg: BP.color = RGB(255,0,0): Next
-	' 	Case 1: For Each BP in pPFSeg: BP.color = RGB(255,128,0): Next
-	' 	Case 2: For Each BP in pPFSeg: BP.color = RGB(255,255,0): Next
-	' 	Case 3: For Each BP in pPFSeg: BP.color = RGB(0,255,0): Next
-	' 	Case 4: For Each BP in pPFSeg: BP.color = RGB(0,255,128): Next
-	' 	Case 5: For Each BP in pPFSeg: BP.color = RGB(0,128,255): Next
-	' 	Case 6: For Each BP in pPFSeg: BP.color = RGB(128,0,255): Next
-	' End Select
 
 	' Apron Display
 	v = Table1.Option("Apron Display", 0, 1, 1, 1, 0, Array("No Display", "Use Display"))

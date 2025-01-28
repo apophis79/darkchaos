@@ -15,7 +15,7 @@ Sub Table1_KeyDown(ByVal keycode)
 		TimerPlunger2.Enabled = False
 		'PinCab_Shooter.TransY = 0  'FIXME
 	End If
-	If keycode = StartGameKey Then SoundStartButton : AudioCallout "boot"
+	If keycode = StartGameKey Then SoundStartButton
 	If keycode = LeftTiltKey Then 
 		Nudge 90, 2
 		ShipNudge 1, -1, ShipVelX, ShipTimeX, ShipVelX2, ShipMaxMovement, ShipAcc
