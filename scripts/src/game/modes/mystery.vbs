@@ -33,6 +33,8 @@ Sub CreateMysteryMode
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'reset stuff and continue
             .Add "restart_qualify_mystery", Array("mystery_select_done","start_mwq_timer","check_training")   'Mystery done, so continue the meteor wave qualify countdown
+            'handle sss award
+            .Add "sss_mystery_ready", Array("complete_mystery_shots")
         End With
 
         'Randomize mystery selection
@@ -105,6 +107,10 @@ Sub CreateMysteryMode
                 With .Tokens()
                     .Add "lights", "LM"&x
                     .Add "color", MysteryColor
+                End With
+                With .ControlEvents()
+                    .Events = Array("complete_mystery_shots")
+                    .State = 1
                 End With
             End With
         Next

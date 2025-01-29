@@ -12,9 +12,14 @@ Sub CreateSkillshotsMode
         
 
         With .EventPlayer()
+            'Only start skillshots if starting a new ball
             .Add "check_skillshot_ready{current_player.ball_just_started==1}", Array("init_ss")
+            'Handle successful skillshots
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
             .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
+            .Add "ss_achieved", Array("ss_trainer_ready")
+            .Add "sss_achieved", Array("ss_trainer_ready","sss_mystery_ready")
+            'Stop skillshots
             .Add "timer_skillshots_complete", Array("stop_skillshots") 
             .Add "s_InnerOrb1_active", Array("stop_skillshots")
         End With

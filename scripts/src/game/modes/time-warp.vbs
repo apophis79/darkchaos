@@ -120,7 +120,6 @@ Sub CreateTimewarpMode
             With .EventName("restart_tw_timer")
                 With .Display("pf")
                     .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
-                    .Flashing = "all"
                     .Expire = TimeWarpPauseTicks*TimeWarpTickInterval
                 End With
                 With .Display("player4")
