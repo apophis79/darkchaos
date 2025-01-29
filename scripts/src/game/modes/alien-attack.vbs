@@ -13,28 +13,20 @@ Sub CreateAlienAttackMode
 
     With CreateGlfMode("alien_attack", 510)
         .StartEvents = Array("new_ball_active","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
+        .StopEvents = Array("ball_ended","recycle_alien_done","start_training_select")
         '.Debug = True
 
 
         With .EventPlayer()
-            '.Debug = True
-            'resetting the attack
-            .Add "mode_alien_attack_started{current_player.alien_attack_done==0}", Array("reset_alien_timer") 'after a lost ball
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("reset_alien_attack")  'after wave 1
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("reset_alien_attack")  'after wave 3
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("reset_alien_attack")  'after wave 5
-            .Add "mode_alien_attack_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("reset_alien_attack")  'after wave 6
             'start the attack sequence (only after even waves)
-            .Add "reset_alien_timer{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("continue_alien_attack")  'after wave 2
-            .Add "reset_alien_timer{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("continue_alien_attack")  'after wave 4
-            .Add "reset_alien_timer{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("continue_alien_attack")  'after wave 6
-            .Add "reset_alien_timer{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("continue_alien_attack")  'after wave 8
-            'handle time warp
-            .Add "restart_tw_timer{devices.timers.alien_attack.ticks >= 0}", Array("freeze_alien_attack")  
-            .Add "timer_timewarp_complete{devices.timers.alien_attack.ticks >= 0 && current_player.alien_attack_done==0}", Array("continue_alien_attack") 
-            'handle alien attack hit
-            .Add "timer_alien_attack_complete", Array("earth_hit","earth_flash","alien_attack_finished")
+            '.Add "mode_alien_attack_started", Array("start_alien_attack")  'DEBUG
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("start_alien_attack")  'after wave 2
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("start_alien_attack")  'after wave 4
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("start_alien_attack")  'after wave 6
+            .Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("start_alien_attack")  'after wave 8
+            'reset stuff at start of wave
+            .Add "start_meteor_wave", Array("recycle_alien_attack")
+            .Add "recycle_alien_attack", Array("recycle_alien_done")
         End With
 
         With .RandomEventPlayer()
@@ -52,7 +44,7 @@ Sub CreateAlienAttackMode
             With .EventName("alien_attacking")
                 .Sound = "sfx_AlienAlert"
             End With
-            With .EventName("alien_hit_show")
+            With .EventName("play_sfx_alienhit")
                 .Sound = "sfx_AlienHit"
             End With
         End With
@@ -98,6 +90,77 @@ Sub CreateAlienAttackMode
         Next
 
 
+
+        'Alien state machine
+        With .StateMachines("attack_state")
+            '.Debug = True
+            .PersistState = true
+            .StartingState = "not_attacking"
+
+            'States
+            With .States("not_attacking")
+                .Label = "Not Attacking State"
+                .EventsWhenStarted = Array("reset_alien_attack","stop_alien_timer") 
+            End With
+            With .States("start_attacking")
+                .Label = "Not Attacking State"
+                .EventsWhenStarted = Array("start_alien_timer") 
+            End With
+            With .States("attacking")
+                .Label = "Attacking State"
+            End With
+            With .States("attack_paused")
+                .Label = "Attack Paused State"
+                .EventsWhenStarted = Array("stop_alien_timer") 
+            End With
+            With .States("attack_done")
+                .Label = "Attack Done State"
+                .EventsWhenStarted = Array("stop_alien_timer","alien_attack_finished") 
+            End With
+
+            'Transitions
+            With .Transitions()
+                .Source = Array("not_attacking")
+                .Target = "start_attacking"
+                .Events = Array("start_alien_attack")
+            End With
+            With .Transitions()
+                .Source = Array("start_attacking")
+                .Target = "attacking"
+                .Events = Array("timer_alien_attack_tick{devices.timers.alien_attack.ticks > 0}")
+                .EventsWhenTransitioning = Array("alien_attacking")
+            End With
+            With .Transitions() 'pause between modes and during timewarp
+                .Source = Array("start_attacking","attacking")
+                .Target = "attack_paused"
+                .Events = Array("mode_alien_attack_stopping","timer_timewarp_tick{devices.timers.timewarp.ticks==1}")
+            End With
+            With .Transitions() 
+                .Source = Array("attack_paused")
+                .Target = "start_attacking"
+                .Events = Array("mode_alien_attack_started","timer_timewarp_complete")
+                .EventsWhenTransitioning = Array("start_alien_timer")
+            End With
+            With .Transitions()  'successfully destroed alien
+                .Source = Array("attacking")
+                .Target = "attack_done"
+                .Events = Array("alien_hit_show")
+            End With
+            With .Transitions()  'alien made a hit on earth
+                .Source = Array("attacking")
+                .Target = "attack_done"
+                .Events = Array("timer_alien_attack_complete")
+                .EventsWhenTransitioning = Array("earth_hit","earth_flash")
+            End With
+            With .Transitions()  'successfully destroed alien
+                .Source = Array("attack_done")
+                .Target = "not_attacking"
+                .Events = Array("recycle_alien_attack")
+            End With
+
+        End With
+
+
         'Alien state machine
         With .StateMachines("alien")
             '.Debug = True
@@ -119,21 +182,18 @@ Sub CreateAlienAttackMode
             With .Transitions()
                 .Source = Array("init")
                 .Target = "shot1"
-                .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 1}")
-                .EventsWhenTransitioning = Array("alien_attacking")
+                .Events = Array("alien_attacking{current_player.alien_attack_dir == 0}")
             End With
             With .Transitions()
                 .Source = Array("init")
                 .Target = "shot8"
-                .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 1}")
-                .EventsWhenTransitioning = Array("alien_attacking")
+                .Events = Array("alien_attacking{current_player.alien_attack_dir == 1}")
             End With
             For x = 1 to 7
                 With .Transitions()  'move alien from left to right
                     .Source = Array("shot"&x)
                     .Target = "shot"&(x+1)
                     .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == "&(x+1)&"}") 
-                    '.Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 0}")
                     .EventsWhenTransitioning = Array("reset_alien_shot"&x)
                 End With
             Next
@@ -142,19 +202,26 @@ Sub CreateAlienAttackMode
                     .Source = Array("shot"&x)
                     .Target = "shot"&(x-1)
                     .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == "&(10-x)&"}") 
-                    '.Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 1}")
                     .EventsWhenTransitioning = Array("reset_alien_shot"&x)
                 End With
             Next
             For x = 1 to 8
-                With .Transitions()  'handle successfully destroyed alien
+                With .Transitions()  'attack destroyed
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array(MainShotNames(x-1)&"_hit","cluster_bomb_fired")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_attack_finished","alien_hit_show")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","play_sfx_alienhit")
                 End With
             Next
-           
+            For x = 1 to 8
+                With .Transitions()  'earth hit
+                    .Source = Array("shot"&x)
+                    .Target = "init"
+                    .Events = Array("earth_hit")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show")
+                End With
+            Next
+
         End With
 
 
@@ -168,33 +235,18 @@ Sub CreateAlienAttackMode
                 .Action = "reset"
             End With
             With .ControlEvents()
-                .EventName = "freeze_alien_attack"
+                .EventName = "stop_alien_timer"
                 .Action = "stop"
             End With
             With .ControlEvents()
-                .EventName = "alien_attack_finished"
-                .Action = "stop"
-            End With
-            With .ControlEvents()
-                .EventName = "continue_alien_attack"
+                .EventName = "start_alien_timer"
                 .Action = "start"
             End With
         End With
 
 
         With .VariablePlayer()
-            '.Debug = True
-            With .EventName("alien_attack_finished")
-                With .Variable("alien_attack_done")
-                    .Action = "set"
-					.Int = 1
-				End With
-			End With
             With .EventName("reset_alien_attack")
-                With .Variable("alien_attack_done")
-                    .Action = "set"
-					.Int = 0
-				End With
                 With .Variable("alien_tick_count")
                     .Action = "set"
 					.Int = -1
