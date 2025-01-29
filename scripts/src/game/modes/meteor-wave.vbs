@@ -98,12 +98,12 @@ Sub CreateMeteorWaveMode
                 .Add "pf_seg4_off{current_player.shot_mw_pf_seg4==0}", 1
                 .Add "pf_seg5_off{current_player.shot_mw_pf_seg5==0}", 1
                 .Add "pf_seg6_off{current_player.shot_mw_pf_seg6==0}", 1
-                .Add "pf_seg9_off{current_player.shot_mw_pf_seg16==0}", 1
-                .Add "pf_seg10_off{current_player.shot_mw_pf_seg17==0}", 1
-                .Add "pf_seg11_off{current_player.shot_mw_pf_seg18==0}", 1
-                .Add "pf_seg12_off{current_player.shot_mw_pf_seg19==0}", 1
-                .Add "pf_seg13_off{current_player.shot_mw_pf_seg20==0}", 1
-                .Add "pf_seg14_off{current_player.shot_mw_pf_seg21==0}", 1
+                .Add "pf_seg16_off{current_player.shot_mw_pf_seg16==0}", 1
+                .Add "pf_seg17_off{current_player.shot_mw_pf_seg17==0}", 1
+                .Add "pf_seg18_off{current_player.shot_mw_pf_seg18==0}", 1
+                .Add "pf_seg19_off{current_player.shot_mw_pf_seg19==0}", 1
+                .Add "pf_seg20_off{current_player.shot_mw_pf_seg20==0}", 1
+                .Add "pf_seg21_off{current_player.shot_mw_pf_seg21==0}", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
