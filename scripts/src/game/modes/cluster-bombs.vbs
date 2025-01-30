@@ -34,6 +34,11 @@ Sub CreateClusterBombMode
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded")
+            'Scoring
+            .Add "left_orbit_hit", Array("score_500")
+            .Add "add_cluster_bomb1", Array("score_5000")
+            .Add "add_cluster_bomb2", Array("score_10000")
+            .Add "complete_cluster_charges", Array("score_10000")
         End With
 
         With .RandomEventPlayer()

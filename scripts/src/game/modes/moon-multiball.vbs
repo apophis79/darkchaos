@@ -80,6 +80,11 @@ Sub CreateMoonMultiballMode
             .Add "stop_meteor_wave", Array("enable_moon_qualify_shots")
             'Handle mystery award
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
+            'Scoring
+            .Add "right_ramp_hit", Array("score_500")
+            .Add "light_missile1", Array("score_5000")
+            .Add "light_missile2", Array("score_10000")
+            .Add "complete_moon_qualify_shots", Array("score_10000")
         End With
 
         With .SoundPlayer()
