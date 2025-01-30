@@ -122,7 +122,7 @@ Sub CreateHealthMode
                 .Events = Array("raise_diverter")
                 .State = 1
             End With
-            .RestartEvents = Array("drop_diverter") 
+            .RestartEvents = Array("drop_diverter","mode_health_stopping") 
         End With
         
 
