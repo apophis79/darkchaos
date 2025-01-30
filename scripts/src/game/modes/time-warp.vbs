@@ -88,12 +88,6 @@ Sub CreateTimewarpMode
         
         
         With .VariablePlayer()
-            ' score
-            With .EventName("timewarps_completed_hit")
-				With .Variable("score")
-					.Int = 150
-				End With
-			End With
             ' warping
             With .EventName("restart_tw_timer")
 				With .Variable("warping")

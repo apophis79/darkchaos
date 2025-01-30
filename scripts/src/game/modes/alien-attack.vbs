@@ -206,11 +206,11 @@ Sub CreateAlienAttackMode
                 End With
             Next
             For x = 1 to 8
-                With .Transitions()  'attack destroyed
+                With .Transitions()  'alien destroyed
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array(MainShotNames(x-1)&"_hit","cluster_bomb_fired")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","play_sfx_alienhit")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","play_sfx_alienhit","start_double_scoring")
                 End With
             Next
             For x = 1 to 8

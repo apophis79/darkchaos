@@ -87,11 +87,6 @@ Sub CreateShipSaveMode
         End With
 
         With .VariablePlayer()
-            With .EventName("right_orbit_hit")
-				With .Variable("score")
-					.Int = 2750
-				End With
-			End With
             With .EventName("clear_ship_save")
 				With .Variable("meteor_mb_shootagain_time")
                     .Action = "set"

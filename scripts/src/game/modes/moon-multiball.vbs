@@ -272,12 +272,7 @@ Sub CreateMoonMultiballMode
                     .Action = "set"
 					.Int = 0
 				End With
-			End With  
-            With .EventName("qualify_lock_hit")
-				With .Variable("score")
-					.Int = 1250
-				End With
-			End With  
+			End With   
 		End With
         
         With .SegmentDisplayPlayer()

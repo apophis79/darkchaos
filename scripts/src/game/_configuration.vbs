@@ -23,6 +23,7 @@ Const HealthColor3 = "ff0300"
 Const SkillshotColor = "33dd33"
 Const AlienColor = "ff0300"
 Const AlienFlashColor = "ffb2a6"
+Const DoubleScoringColor = "ff3300"
 
 Const MeteorCoolColor = "ffA957"
 Const MeteorWarmColor = "edb600"
@@ -110,6 +111,10 @@ Const MysteryShowLength = 4000
 ' Extra Ball settings
 Const EBShowLength = 4000
 
+' Double Scoring settings
+Const DoubleScoringShowLength = 5000
+Const DoubleScoringTickInterval = 1000
+Const DoubleScoringMaxTicks = 60
 
 
 Sub ConfigureGlfDevices
@@ -361,7 +366,9 @@ Sub ConfigureGlfDevices
     CreateSharedShotProfiles
 
     ' Modes                         Active during waves
-    CreateBaseMode                  ' Always active during game
+    CreateScoreMode                 ' Always active
+
+    CreateBaseMode                  ' No   should be always active during game?
     CreateSkillshotsMode            ' No
     CreateAlienAttackMode           ' No
     CreateShieldsMode               ' No
@@ -370,6 +377,7 @@ Sub ConfigureGlfDevices
     CreateCombosMode                ' No
     CreateMysteryMode               ' No
     CreateExtraBallMode             ' No
+    CreateDoubleScoringMode         ' Yes
     CreateClusterBombMode           ' Yes
     CreateProtonCannonMode          ' Yes
     CreateHealthMode                ' Yes
@@ -391,6 +399,7 @@ Sub ConfigureGlfDevices
 
     'Initial Vars
     Glf_SetInitialPlayerVar "ball_just_started", 1
+    Glf_SetInitialPlayerVar "meteor_wave_running", 0
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
     Glf_SetInitialPlayerVar "num_training_shots", 2

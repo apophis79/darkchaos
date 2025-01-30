@@ -67,16 +67,17 @@ Sub CreateMeteorWaveMode
             .Add "update_last_num_meteors_ratio", Array("check_update_display","check_num_meteors_ratio")
             .Add "check_update_display{current_player.last_num_meteors_ratio >= 0}", Array("update_display")
             'Stop the current successful wave
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop<=0}", Array("meteor_wave_done")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","stop_meteor_wave") 
-            .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","stop_meteor_wave","light_eb")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","stop_meteor_wave")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","stop_meteor_wave","start_meteor_wizard")
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done")
+            .Add "meteor_wave_done{current_player.meteor_wave_running == 1}", Array("stop_meteor_wave","score_wave_count")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done") 
+            .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","light_eb")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","start_meteor_wizard")
             .Add "meteor_wave_done{current_player.training_heal_achieved==0}", Array("drop_diverter")
         End With
 
@@ -602,6 +603,10 @@ Sub CreateMeteorWaveMode
         With .VariablePlayer()
             '.Debug = True
 		    With .EventName("mode_meteor_wave_started")
+                With .Variable("meteor_wave_running")
+                    .Action = "set"
+                    .Int = 1
+                End With
 				With .Variable("num_meteors_to_raise")
                     .Action = "set"
 					.Int = "current_player.meteors_per_wave" 
@@ -641,6 +646,18 @@ Sub CreateMeteorWaveMode
                     .Int = 0
                 End With
                 With .Variable("last_num_meteors_ratio")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+            With .EventName("meteor_wave_done") 
+                With .Variable("meteor_wave_running")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+            With .EventName("mode_meteor_wave_stopping") 
+                With .Variable("meteor_wave_running")
                     .Action = "set"
                     .Int = 0
                 End With

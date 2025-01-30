@@ -165,15 +165,6 @@ Sub CreateClusterBombMode
         End With
 
 
-        With .VariablePlayer()
-			With .EventName("left_orbit_hit")
-				With .Variable("score")
-					.Int = 1111
-				End With
-			End With
-		End With
-
-
         With .SegmentDisplayPlayer()
             With .EventName("light_cluster_charge3")
                 With .Display("player3")

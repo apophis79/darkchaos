@@ -139,14 +139,6 @@ Sub CreateShieldsMode
             End With
         End With
 
-        With .VariablePlayer()
-            With .EventName("qualify_shields_hit")
-				With .Variable("score")
-					.Int = 750
-				End With
-			End With
-		End With
-
         With .SegmentDisplayPlayer()
             With .EventName("qualify_shields_on_complete")
                 With .Display("player3")
