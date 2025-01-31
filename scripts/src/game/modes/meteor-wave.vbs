@@ -23,7 +23,7 @@ Sub CreateMeteorWaveMode
         With .EventPlayer()
             '.Debug = True
             'Start up in correct wave
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","check_protons","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running","pre_meteor_wave1_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running","meteor_wave1_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_running","meteor_wave2_music_stop")
@@ -79,6 +79,8 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done")
             .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","start_meteor_wizard")
             .Add "meteor_wave_done{current_player.training_heal_achieved==0}", Array("drop_diverter")
+            'restart fire protons
+            .Add "check_protons{current_player.shot_proton_round1==0}", Array("restart_fire_protons")
         End With
 
         'Randomize which meteor gets hit by proton cannon
@@ -255,7 +257,7 @@ Sub CreateMeteorWaveMode
                 .Events = Array("mode_meteor_wave_started{current_player.shot_proton_round1==1}","light_proton_charge3")
                 .State = 1
             End With
-            .RestartEvents = Array("check_protons_done{current_player.shot_proton_round1==0}")  'FIXME: why is this not working?
+            .RestartEvents = Array("restart_fire_protons")
         End With
 
         'Define health shots

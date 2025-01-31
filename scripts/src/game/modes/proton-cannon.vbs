@@ -35,7 +35,7 @@ Sub CreateProtonCannonMode
             .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("play_sfx_LPR","add_proton_round4","reset_proton_charges")
             .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("play_sfx_LPR","add_proton_round5","reset_proton_charges")
             .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("play_sfx_LPR","add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
-            .Add "check_protons", Array("check_protons_done")
+            '.Add "check_protons", Array("check_protons_done")
             'Handle mystery award
             .Add "mystery_full_protons", Array("complete_full_protons")
             .Add "complete_full_protons", Array("check_fully_loaded","score_5000") 'check for wizard mode qualification
