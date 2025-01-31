@@ -241,9 +241,9 @@ Sub CreateMeteorWaveMode
             With .States("ready")
                 .Key = "p_shot_is_ready"
                 .Show = "flash_color_with_fade"
-                .Speed = 1
+                .Speed = 2
                 With .Tokens()
-                    .Add "fade", 200
+                    .Add "fade", 400
                     .Add "color", ProtonColor
                     .Add "lights", "tFire"
                 End With

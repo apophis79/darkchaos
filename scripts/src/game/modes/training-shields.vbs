@@ -36,7 +36,7 @@ Sub CreateTrainingShieldsMode
             .Add "update_training_select_shields{current_player.shot_training_shield_charge4==0}", Array("update_training_select_shield4a")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge4==1}", Array("update_training_select_shield4b")
             'Handle moon ramp
-            .Add "s_MoonRamp_active", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
 
 

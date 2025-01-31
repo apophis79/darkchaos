@@ -44,7 +44,7 @@ Sub CreateTrainingHealMode
             .Add "timer_training_heal_complete", Array("stop_training")
             .Add "mode_training_heal_stopping{current_player.training_heal_achieved==0}", Array("drop_diverter")
             'Handle moon ramp
-            .Add "s_MoonRamp_active", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
 
 

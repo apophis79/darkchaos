@@ -172,7 +172,7 @@ Sub ConfigureGlfDevices
     With CreateGlfDiverter("lock_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("release_moon_ball", "multiball_moon_started")
-        .ActivationTime = "250 if devices.ball_devices.moon_lock.balls > 0 else 2000"
+        .ActivationTime = "240 if devices.ball_devices.moon_lock.balls > 0 else 2000"
         .ActionCallback = "DropLockPin"
     End With
 
@@ -366,7 +366,8 @@ Sub ConfigureGlfDevices
     CreateSharedShotProfiles
 
     ' Modes                         Active during waves
-    CreateScoreMode                 ' Always active
+    CreateBasementMode              ' Active all the time
+    CreateScoreMode                 ' Always active during a game
 
     CreateBaseMode                  ' No   should be always active during game?
     CreateSkillshotsMode            ' No

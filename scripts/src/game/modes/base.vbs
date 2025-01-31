@@ -6,13 +6,15 @@
 Sub CreateBaseMode()
     Dim x
 
-    With CreateGlfMode("base", 100)
+    With CreateGlfMode("base", 200)
         .StartEvents = Array(GLF_BALL_STARTED)
         .StopEvents = Array(GLF_BALL_ENDED)
 
         With .EventPlayer()
-            .Add "s_left_staged_flipper_key_active", Array("sling_rotate_cw_show")   'DEBUG
+            'new ball
             .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
+
+            'waves
             .Add "mode_base_started{current_player.shot_meteor_wave1 == 0}", Array("pre_meteor_wave1")
             .Add "mode_base_started{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
@@ -32,11 +34,17 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
-
+        
+            'skillshots
             .Add "mode_base_started", Array("check_skillshot_ready")
 
+            'handle some switches
             .Add "s_TargetMystery5_active", Array("magnet_activated")
+            .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
+            .Add "s_MoonRamp_active", Array("right_ramp_hit")
 
+            'handle delayed moon ball release
+            .Add "timer_delay_ball_release_complete", Array("release_moon_ball")
         End With
        
 
@@ -260,6 +268,18 @@ Sub CreateBaseMode()
 				End With
 			End With
 		End With
+
+
+        With .Timers("delay_ball_release")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "delayed_release_moon_ball"
+                .Action = "restart"
+            End With
+        End With
+
 
         With .SoundPlayer()
             'Music pre meteor wave 1
