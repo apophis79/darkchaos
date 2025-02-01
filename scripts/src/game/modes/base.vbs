@@ -319,23 +319,29 @@ Sub CreateBaseMode()
 
             'Slings
             With .EventName("s_LeftSlingshot_active")
+                .Key = "key_sfx_left_sling"
                 .Sound = "sfx_left_sling"
             End With
             With .EventName("s_RightSlingshot_active")
+                .Key = "key_sfx_right_sling"
                 .Sound = "sfx_right_sling"
             End With
 
             'Bumpers
             With .EventName("s_Bumper1_active")
+                .Key = "key_sfx_bumper1"
                 .Sound = "sfx_bumper1"
             End With
             With .EventName("s_Bumper2_active")
+                .Key = "key_sfx_bumper2"
                 .Sound = "sfx_bumper2"
             End With
             With .EventName("s_Bumper3_active")
+                .Key = "key_sfx_bumper3"
                 .Sound = "sfx_bumper3"
             End With
             With .EventName("s_Bumper4_active")
+                .Key = "key_sfx_bumper4"
                 .Sound = "sfx_bumper4"
             End With
 

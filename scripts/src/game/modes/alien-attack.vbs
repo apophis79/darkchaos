@@ -133,12 +133,18 @@ Sub CreateAlienAttackMode
             With .Transitions() 'pause between modes and during timewarp
                 .Source = Array("start_attacking","attacking")
                 .Target = "attack_paused"
-                .Events = Array("mode_alien_attack_stopping","timer_timewarp_tick{devices.timers.timewarp.ticks==1}")
+                .Events = Array("timer_timewarp_tick{devices.timers.timewarp.ticks==1}")  '"mode_alien_attack_stopping"
             End With
             With .Transitions() 
                 .Source = Array("attack_paused")
                 .Target = "start_attacking"
-                .Events = Array("mode_alien_attack_started","timer_timewarp_complete")
+                .Events = Array("timer_timewarp_complete","mode_alien_attack_started")
+                .EventsWhenTransitioning = Array("start_alien_timer")
+            End With
+            With .Transitions() 
+                .Source = Array("attacking")
+                .Target = "start_attacking"
+                .Events = Array("mode_alien_attack_started")
                 .EventsWhenTransitioning = Array("start_alien_timer")
             End With
             With .Transitions()  'successfully destroed alien

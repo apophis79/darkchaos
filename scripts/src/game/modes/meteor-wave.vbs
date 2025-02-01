@@ -143,53 +143,69 @@ Sub CreateMeteorWaveMode
 
         With .SoundPlayer()
             With .EventName("play_sfx_LMet1")
+                .Key = "key_sfx_LMet1"
                 .Sound = "sfx_LMet1"
             End With
             With .EventName("play_sfx_LMet2")
+                .Key = "key_sfx_LMet2"
                 .Sound = "sfx_LMet2"
             End With
             With .EventName("play_sfx_LMet3")
+                .Key = "key_sfx_LMet3"
                 .Sound = "sfx_LMet3"
             End With
             With .EventName("play_sfx_LMet4")
+                .Key = "key_sfx_LMet4"
                 .Sound = "sfx_LMet4"
             End With
             With .EventName("play_sfx_LMet5")
+                .Key = "key_sfx_LMet5"
                 .Sound = "sfx_LMet5"
             End With
             With .EventName("play_sfx_LMet6")
+                .Key = "key_sfx_LMet6"
                 .Sound = "sfx_LMet6"
             End With
             With .EventName("play_sfx_LMet7")
+                .Key = "key_sfx_LMet7"
                 .Sound = "sfx_LMet7"
             End With
             With .EventName("play_sfx_LMet8")
+                .Key = "key_sfx_LMet8"
                 .Sound = "sfx_LMet8"
             End With
 
             With .EventName("play_sfx_EarthHit1")
+                .Key = "key_sfx_EarthHit1"
                 .Sound = "sfx_EarthHit1"
             End With
             With .EventName("play_sfx_EarthHit2")
+                .Key = "key_sfx_EarthHit2"
                 .Sound = "sfx_EarthHit2"
             End With
             With .EventName("play_sfx_EarthHit3")
+                .Key = "key_sfx_EarthHit3"
                 .Sound = "sfx_EarthHit3"
             End With
 
             With .EventName("play_sfx_LPF1")
+                .Key = "key_sfx_LPF1"
                 .Sound = "sfx_LPF1"
             End With
             With .EventName("play_sfx_LPF2")
+                .Key = "key_sfx_LPF2"
                 .Sound = "sfx_LPF2"
             End With
             With .EventName("play_sfx_LPF3")
+                .Key = "key_sfx_LPF3"
                 .Sound = "sfx_LPF3"
             End With
             With .EventName("play_sfx_LPF4")
+                .Key = "key_sfx_LPF4"
                 .Sound = "sfx_LPF4"
             End With
             With .EventName("play_sfx_LPF5")
+                .Key = "key_sfx_LPF5"
                 .Sound = "sfx_LPF5"
             End With
         End With
