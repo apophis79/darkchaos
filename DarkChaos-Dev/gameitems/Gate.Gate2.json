@@ -15,7 +15,7 @@
     "imgf": null,
     "imgb": null,
     "surface": "",
-    "elasticity": 0.3,
+    "elasticity": 0.7,
     "angle_max": 1.5707964,
     "angle_min": 0.0,
     "friction": 0.02,

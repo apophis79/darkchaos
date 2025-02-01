@@ -38,7 +38,7 @@
     "edge_factor_ui": 1.0,
     "collision_reduction_factor": 0.0,
     "is_collidable": true,
-    "is_toy": false,
+    "is_toy": true,
     "use_3d_mesh": true,
     "static_rendering": false,
     "disable_lighting_top_old": null,

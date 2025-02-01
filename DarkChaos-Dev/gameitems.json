@@ -17589,5 +17589,12 @@
     "editor_layer": 0,
     "editor_layer_name": "Segment prims p4",
     "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.PFwall.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Blocker Walls",
+    "editor_layer_visibility": false
   }
 ]

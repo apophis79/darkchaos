@@ -27,7 +27,7 @@
     "strength": 2700.0,
     "elasticity": 0.88,
     "elasticity_falloff": 0.15,
-    "friction": 0.9,
+    "friction": 0.7,
     "ramp_up": 2.5,
     "scatter": 0.0,
     "torque_damping": 0.375,
