@@ -11,8 +11,8 @@ Sub CreateShipSaveMode
     Dim x
 
     With CreateGlfMode("ship_save", 510)
-        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
+        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'Reset ship charge shots

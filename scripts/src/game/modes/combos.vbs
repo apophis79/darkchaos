@@ -12,8 +12,8 @@ Sub CreateCombosMode
     Dim x
 
     With CreateGlfMode("combos", 520)
-        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
+        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             .Add "mode_combos_started", Array("reset_combos")
@@ -35,14 +35,14 @@ Sub CreateCombosMode
             .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos")
             .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos")
             .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","start_combo_command_wizard")
+            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","activate_combo_command_wizard")
         End With
 
         With .SoundPlayer()
             ' With .EventName("add_combos")
             '     .Sound = "sfx_combo"
             ' End With
-            With .EventName("start_combo_command_wizard")
+            With .EventName("activate_combo_command_wizard")
                 .Sound = "sfx_LCWiz"
             End With
         End With

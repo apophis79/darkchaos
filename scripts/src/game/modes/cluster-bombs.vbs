@@ -13,8 +13,8 @@ Sub CreateClusterBombMode
     Dim x
 
     With CreateGlfMode("cluster_bombs", 1000)
-        .StartEvents = Array("ball_started","stop_training")
-        .StopEvents = Array("ball_ended","start_training_select")
+        .StartEvents = Array("ball_started","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'Reset cluster charge shots

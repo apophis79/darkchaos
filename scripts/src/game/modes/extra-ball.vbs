@@ -12,17 +12,16 @@ Sub CreateExtraBallMode
     Dim x
 
     With CreateGlfMode("extra_ball", 510)
-        .StartEvents = Array("ball_started","mode_meteor_wave_stopped","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
-        
+        .StartEvents = Array("ball_started","mode_meteor_wave_stopped","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'initialize the EB
             .Add "mode_extra_ball_started", Array("check_eb")
             .Add "check_eb{current_player.light_the_eb == 1}", Array("eb_now_lit")
             'handle successful scoop hit
-            .Add "s_Scoop_active{current_player.shot_eb_ready == 0}", Array("eb_complete") 'EB not available so move on
-            .Add "s_Scoop_active{current_player.shot_eb_ready == 1}", Array("enable_scoop_hold","play_eb_show","eb_achieved") 'Collect the EB
+            .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 && current_player.wizard_mode_is_ready==0}", Array("eb_complete") 'EB not available so move on
+            .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold","play_eb_show","eb_achieved") 'Collect the EB
             'only release the ball if mystery and training not also qualified (those use the scoop also)
             .Add "eb_complete{current_player.shot_mystery_ready==0 && current_player.shot_training_ready==0}", Array("release_scoop_hold")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
@@ -78,25 +77,6 @@ Sub CreateExtraBallMode
                 .State = 1
             End With
             .ResetEvents = Array("ball_ended")
-        End With
-
-
-        With .ShotProfiles("extraball")
-            With .States("unlit")
-                .Show = "off"
-                .Key = "key_eb_unlit"
-                With .Tokens()
-                    .Add "lights", "LSA"
-                End With
-            End With
-            With .States("lit")
-                .Show = "led_color"
-                .Key = "key_eb_lit"
-                With .Tokens()
-                    .Add "lights", "LSA"
-                    .Add "color", ShipSaveColor
-                End With
-            End With
         End With
 
 

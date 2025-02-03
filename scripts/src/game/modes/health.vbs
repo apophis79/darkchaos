@@ -13,8 +13,8 @@ Sub CreateHealthMode
     Dim x
 
     With CreateGlfMode("health", 510)
-        .StartEvents = Array("ball_started","stop_training")
-        .StopEvents = Array("ball_ended","start_training_select")
+        .StartEvents = Array("ball_started","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'restart the mode

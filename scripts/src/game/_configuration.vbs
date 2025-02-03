@@ -129,6 +129,7 @@ Sub ConfigureGlfDevices
     CreateMoonShows()
     CreateMysteryShows()
     CreateSlingShows()
+    CreateComboCommandShows()
 
     ' Sound effects bus
     CreateSounds()
@@ -398,6 +399,10 @@ Sub ConfigureGlfDevices
     CreateMeteorWaveMode            ' Yes
     CreateMeteorMultiballMode       ' Yes
 
+    CreateComboCommandWizardMode    ' No
+    'CreateFullyLoadedWizardMode     ' No
+    'CreateFinalWaveWizardMode       ' No
+
     'Initial Vars
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_wave_running", 0
@@ -421,6 +426,12 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
     Glf_SetInitialPlayerVar "training_shields_achieved", 0
     Glf_SetInitialPlayerVar "training_total_achieved", 0
+    Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
+    Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
+    Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
+    Glf_SetInitialPlayerVar "wizard_final_wave_phase", 0
+    Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
+    Glf_SetInitialPlayerVar "flwiz_super_jp", 0
     
 End Sub
 
@@ -585,6 +596,44 @@ Public Sub CreateSharedShotProfiles()
                 .Add "color", HealthColor1
                 .Add "lights", "LDP"
             End With
+        End With
+    End With
+
+    With GlfShotProfiles("extraball")
+        With .States("unlit")
+            .Show = "off"
+            .Key = "key_eb_unlit"
+            With .Tokens()
+                .Add "lights", "LSA"
+            End With
+        End With
+        With .States("lit")
+            .Show = "led_color"
+            .Key = "key_eb_lit"
+            With .Tokens()
+                .Add "lights", "LSA"
+                .Add "color", ShipSaveColor
+            End With
+        End With
+    End With
+
+
+    With GlfShotProfiles("wizard_ready1")
+        With .States("unlit")
+            .Show = "off"
+            .Key = "key_off_f"
+        End With
+        With .States("ready")
+            .Show = "flash_color_with_fade"
+            .Key = "key_ready_f"
+            .Speed = 8
+            With .Tokens()
+                .Add "fade", 400
+            End With
+        End With
+        With .States("collected")
+            .Show = "led_color"
+            .Key = "key_collected_f"
         End With
     End With
       

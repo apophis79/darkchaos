@@ -2,6 +2,17 @@
 
 
 ' Base Mode.
+'
+' Handles the following:
+'   - main sequence shots
+'   - delayed moon ball release
+'   - scoop holds
+'   - player score segment displays
+'   - wave shot lights across all waves
+'   - starting/stopping wizard modes
+'   - some sound effects and wave music
+'   - some light shows
+
 
 Sub CreateBaseMode()
     Dim x
@@ -37,6 +48,31 @@ Sub CreateBaseMode()
         
             'skillshots
             .Add "mode_base_started", Array("check_skillshot_ready")
+
+            'wizard modes
+            '   handle case when starting new ball
+            .Add "mode_base_started{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
+            .Add "mode_base_started{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
+            .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
+            .Add "check_fully_loaded{current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("activate_fully_loaded_wizard")
+            '   handle case when starting and finishing a meteor wave
+            .Add "start_meteor_wave", Array("disable_scoop_hold")
+            .Add "stop_meteor_wave{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
+            .Add "stop_meteor_wave{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
+            .Add "stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
+            '    wizard mode phase 1 qualifed. Ready the scoop
+            .Add "activate_final_wave_wizard", Array("wizard_mode_ready","run_fwwiz_scoop_show")
+            .Add "activate_combo_command_wizard", Array("wizard_mode_ready","run_ccwiz_scoop_show")
+            .Add "activate_fully_loaded_wizard", Array("wizard_mode_ready","run_flwiz_scoop_show")
+            .Add "wizard_mode_ready", Array("enable_scoop_hold")
+            '    run the wizard mode when qualified and ball enters the scoop. If more than one wizard is qualified, final wizard is top priority, then combo command, then fully loaded.
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show")
+            '    clean up wizard mode
+            .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
+            .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
+            .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended")
 
             'handle some switches
             .Add "s_TargetMystery5_active", Array("magnet_activated")
@@ -105,6 +141,60 @@ Sub CreateBaseMode()
                 End With
             End With
         End With
+
+        'Wizard mode lights
+        With .Shots("combo_command_wizard")
+            .Profile = "wizard_ready1"
+            With .Tokens()
+                .Add "lights", "LCWiz"
+                .Add "color", CombosColor
+            End With
+            With .ControlEvents()
+                .Events = Array("activate_combo_command_wizard")
+                .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("run_combo_command_wizard")
+                .State = 2
+            End With
+            .RestartEvents = Array(GLF_GAME_START)
+        End With
+
+        With .Shots("fully_loaded_wizard")
+            .Profile = "wizard_ready1"
+            With .Tokens()
+                .Add "lights", "LLWiz"
+                .Add "color", CombosColor
+            End With
+            With .ControlEvents()
+                .Events = Array("activate_fully_loaded_wizard")
+                .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("run_fully_loaded_wizard")
+                .State = 2
+            End With
+            .RestartEvents = Array(GLF_GAME_START,"start_meteor_wave")
+        End With
+
+        With .Shots("final_wave_wizard")
+            .Profile = "wizard_ready1"
+            With .Tokens()
+                .Add "lights", "LLWiz"
+                .Add "color", MeteorWaveColor
+            End With
+            With .ControlEvents()
+                .Events = Array("activate_final_wave_wizard")
+                .State = 1
+            End With
+            With .ControlEvents()
+                .Events = Array("run_final_wave_wizard")
+                .State = 2
+            End With
+            .RestartEvents = Array(GLF_GAME_START)
+        End With
+
+
 
         'Define meteor wave lights
         For x = 1 to 9
@@ -218,6 +308,42 @@ Sub CreateBaseMode()
                     .Add "color", ProtonColor
                 End With
             End With
+
+            ' Combo command wizard scoop lights
+            With .EventName("run_ccwiz_scoop_show")
+                .Key = "key_combo_command_scoop"
+                .Show = "combo_command_scoop"
+                .Speed = 1
+                .Priority = 2000
+                With .Tokens()
+                    .Add "intensity1", 20
+                    .Add "intensity2", 100
+                    .Add "color", CombosColor
+                End With
+            End With
+            With .EventName("stop_ccwiz_scoop_show")
+                .Key = "key_combo_command_scoop"
+                .Show = "combo_command_scoop"
+                .Action= "stop"
+                .Priority = 2000
+                With .Tokens()
+                    .Add "intensity1", 20
+                    .Add "intensity2", 100
+                    .Add "color", CombosColor
+                End With
+            End With
+            With .EventName("start_meteor_wave")
+                .Key = "key_combo_command_scoop"
+                .Show = "combo_command_scoop"
+                .Action= "stop"
+                .Priority = 2000
+                With .Tokens()
+                    .Add "intensity1", 20
+                    .Add "intensity2", 100
+                    .Add "color", CombosColor
+                End With
+            End With
+
         End With
 
 
@@ -255,6 +381,7 @@ Sub CreateBaseMode()
        
 
         With .VariablePlayer()
+            'ball_just_started
 		    With .EventName("mode_base_started")
 				With .Variable("ball_just_started")
                     .Action = "set"
@@ -267,7 +394,22 @@ Sub CreateBaseMode()
 					.Int = 0
 				End With
 			End With
+            'wizard_mode_is_ready
+            With .EventName("wizard_mode_ready")
+				With .Variable("wizard_mode_is_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("wizard_mode_started")
+				With .Variable("wizard_mode_is_ready")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
 		End With
+
+        
 
 
         With .Timers("delay_ball_release")

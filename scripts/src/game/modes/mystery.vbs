@@ -16,13 +16,12 @@ Sub CreateMysteryMode
     Dim x
 
     With CreateGlfMode("mystery", 580)
-        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select")
-        
+        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'enable the ball hold if needed
-            .Add "s_Scoop_active{current_player.shot_mystery_ready==1}", Array("enable_scoop_hold") 
+            .Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
             'run the mystery selection if ready, otherwise move along to training
             .Add "check_mystery{current_player.shot_mystery_ready==0}", Array("check_training")
             .Add "check_mystery{current_player.shot_mystery_ready==1}", Array("select_random_mystery")
@@ -87,16 +86,6 @@ Sub CreateMysteryMode
             With .EventName("play_sfx_LM5")
                 .Sound = "sfx_LM5"
             End With
-        End With
-
-        'Scoop ball hold
-        With .BallHolds("mystery_hold")
-            '.Debug = True
-            .BallsToHold = 1
-            .HoldDevices = Array("scoop")
-            .EnableEvents = Array("enable_mystery_hold") 
-            .DisableEvents = Array("disable_mystery_hold") 
-            .ReleaseAllEvents = Array("release_mystery_hold")
         End With
 
         'Define our shots
