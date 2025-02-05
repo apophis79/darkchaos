@@ -54,9 +54,9 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
             .Add "mode_base_started{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
             .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
-            .Add "check_fully_loaded{current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("activate_fully_loaded_wizard")
+            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("activate_fully_loaded_wizard")
             '   handle case when starting and finishing a meteor wave
-            .Add "start_meteor_wave", Array("disable_scoop_hold")
+            .Add "start_meteor_wave", Array("disable_scoop_hold","stop_ccwiz_scoop_show","stop_flwiz_scoop_show")
             .Add "stop_meteor_wave{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
             .Add "stop_meteor_wave{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
             .Add "stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
@@ -65,6 +65,11 @@ Sub CreateBaseMode()
             .Add "activate_combo_command_wizard", Array("wizard_mode_ready","run_ccwiz_scoop_show")
             .Add "activate_fully_loaded_wizard", Array("wizard_mode_ready","run_flwiz_scoop_show")
             .Add "wizard_mode_ready", Array("enable_scoop_hold")
+            '    handle multiple scoop shows
+            .Add "run_fwwiz_scoop_show", Array("stop_flwiz_scoop_show","stop_ccwiz_scoop_show")
+            .Add "run_ccwiz_scoop_show", Array("stop_flwiz_scoop_show")
+            .Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", Array("stop_ccwiz_scoop_show")
+            .Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", Array("stop_flwiz_scoop_show")
             '    run the wizard mode when qualified and ball enters the scoop. If more than one wizard is qualified, final wizard is top priority, then combo command, then fully loaded.
             .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show") 
             .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show") 
@@ -73,6 +78,7 @@ Sub CreateBaseMode()
             .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended")
+    
 
             'handle some switches
             .Add "s_TargetMystery5_active", Array("magnet_activated")
@@ -174,13 +180,13 @@ Sub CreateBaseMode()
                 .Events = Array("run_fully_loaded_wizard")
                 .State = 2
             End With
-            .RestartEvents = Array(GLF_GAME_START,"start_meteor_wave")
+            .RestartEvents = Array(GLF_GAME_START)
         End With
 
         With .Shots("final_wave_wizard")
             .Profile = "wizard_ready1"
             With .Tokens()
-                .Add "lights", "LLWiz"
+                .Add "lights", "LWiz"
                 .Add "color", MeteorWaveColor
             End With
             With .ControlEvents()
@@ -332,17 +338,30 @@ Sub CreateBaseMode()
                     .Add "color", CombosColor
                 End With
             End With
-            With .EventName("start_meteor_wave")
-                .Key = "key_combo_command_scoop"
-                .Show = "combo_command_scoop"
-                .Action= "stop"
-                .Priority = 2000
+
+
+            ' Fully loaded wizard scoop lights
+            With .EventName("run_flwiz_scoop_show")
+                .Key = "key_fully_loaded_scoop"
+                .Show = "fully_loaded_scoop"
+                .Speed = 1
+                .Priority = 1000
                 With .Tokens()
                     .Add "intensity1", 20
                     .Add "intensity2", 100
-                    .Add "color", CombosColor
                 End With
             End With
+            With .EventName("stop_flwiz_scoop_show")
+                .Key = "key_fully_loaded_scoop"
+                .Show = "fully_loaded_scoop"
+                .Action= "stop"
+                .Priority = 1000
+                With .Tokens()
+                    .Add "intensity1", 20
+                    .Add "intensity2", 100
+                End With
+            End With
+
 
         End With
 
@@ -555,6 +574,15 @@ Sub CreateBaseMode()
                 .Key = "key_sfx_EarthHit3"
                 .Sound = "sfx_EarthHit3"
             End With
+
+
+            With .EventName("activate_combo_command_wizard")
+                .Sound = "sfx_LCWiz"
+            End With
+            With .EventName("activate_fully_loaded_wizard")
+                .Sound = "sfx_LLWiz"
+            End With
+
         End With
 
     End With

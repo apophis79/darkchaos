@@ -13,7 +13,7 @@
     "color2": "#ff00ffff",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "tClusterAll,tInserts",
+    "blink_pattern": "tClusterAll,tInserts,tClusterR",
     "off_image": "",
     "blink_interval": 300,
     "intensity": 2.0,

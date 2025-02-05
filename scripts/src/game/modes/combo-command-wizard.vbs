@@ -15,18 +15,18 @@ Const CCWizMessageInterval = 3000
 Sub CreateComboCommandWizardMode
     Dim x
 
-    With CreateGlfMode("combo_command_wizard", 2000)
+    With CreateGlfMode("combo_command_wizard", 3000)
         .StartEvents = Array("run_combo_command_wizard")
         .StopEvents = Array("ball_ended","completed_combo_command_wizard")
 
         With .EventPlayer()
             'release the scoop ball to start the wizard mode
-            .Add "timer_combo_command_message_complete", Array("release_scoop_hold") ',"release_moon_ball","delayed_release_moon_ball")
+            .Add "timer_combo_command_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots completed, so activate the scoop for Super JPs
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", Array("activate_ccwiz_sjp","run_ccwiz_scoop_show")
             'Phase 1 Super JP achieved
-            .Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 1}", Array("ccwiz_sjp_achieved","stop_ccwiz_scoop_show","restart_combos_command_shots")   'Start phase 2
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 && current_player.ccwiz_super_jp == 1}", Array("ccwiz_sjp_achieved","stop_ccwiz_scoop_show","restart_combos_command_shots")   'Start phase 2
             .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot")
             'Phase 2 shots
             .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
@@ -43,7 +43,7 @@ Sub CreateComboCommandWizardMode
             .Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", Array("ccwiz_sdjp_achieved","stop_ccwiz_scoop_show","release_scoop_hold")  'Combo Command wizard mode completed
             .Add "ccwiz_sdjp_achieved", Array("completed_combo_command_wizard")  'FIXME  for now just end the mode, but we should have a show before mode ends
             'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
         End With
 
 

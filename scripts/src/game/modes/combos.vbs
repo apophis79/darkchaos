@@ -35,17 +35,15 @@ Sub CreateCombosMode
             .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos")
             .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos")
             .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","activate_combo_command_wizard")
+            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard")
+            .Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", Array("activate_combo_command_wizard")
         End With
 
-        With .SoundPlayer()
+        'With .SoundPlayer()
             ' With .EventName("add_combos")
             '     .Sound = "sfx_combo"
             ' End With
-            With .EventName("activate_combo_command_wizard")
-                .Sound = "sfx_LCWiz"
-            End With
-        End With
+        'End With
 
 
         With .ShowPlayer()

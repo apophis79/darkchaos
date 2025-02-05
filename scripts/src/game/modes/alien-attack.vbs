@@ -12,8 +12,8 @@ Sub CreateAlienAttackMode
     Dim x
 
     With CreateGlfMode("alien_attack", 510)
-        .StartEvents = Array("new_ball_active","stop_meteor_wave","stop_training")
-        .StopEvents = Array("ball_ended","recycle_alien_done","start_training_select")
+        .StartEvents = Array("new_ball_active","stop_meteor_wave","stop_training","wizard_mode_ended")
+        .StopEvents = Array("ball_ended","recycle_alien_done","start_training_select","wizard_mode_started")
         '.Debug = True
 
 

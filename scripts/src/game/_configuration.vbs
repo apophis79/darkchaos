@@ -130,6 +130,7 @@ Sub ConfigureGlfDevices
     CreateMysteryShows()
     CreateSlingShows()
     CreateComboCommandShows()
+    CreateFullyLoadedShows()
 
     ' Sound effects bus
     CreateSounds()
@@ -384,7 +385,8 @@ Sub ConfigureGlfDevices
     CreateProtonCannonMode          ' Yes
     CreateHealthMode                ' Yes
     
-    CreateMoonMultiballMode         ' Yes (but qualify shots disabled)
+    CreateMoonMultiballQualifyMode  ' No
+    CreateMoonMultiballMode         ' Yes
 
     CreateTrainingQualifyMode       ' No
     CreateTrainingSelectMode        ' No
@@ -400,7 +402,7 @@ Sub ConfigureGlfDevices
     CreateMeteorMultiballMode       ' Yes
 
     CreateComboCommandWizardMode    ' No
-    'CreateFullyLoadedWizardMode     ' No
+    CreateFullyLoadedWizardMode     ' No
     'CreateFinalWaveWizardMode       ' No
 
     'Initial Vars
