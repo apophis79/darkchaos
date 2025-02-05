@@ -64,12 +64,12 @@ Sub Gate2_Animate
 End Sub
 
 Sub GateL_Animate
-	Dim a: a = GateL.CurrentAngle -90  'FIXME? offset
+	Dim a: a = -GateL.CurrentAngle
 	Dim BP : For Each BP in BP_GateL: BP.RotX = a: Next
 End Sub
 
 Sub GateR_Animate
-	Dim a: a = GateR.CurrentAngle -90  'FIXME? offset
+	Dim a: a = GateR.CurrentAngle
 	Dim BP : For Each BP in BP_GateR: BP.RotX = a: Next
 End Sub
 
