@@ -45,12 +45,12 @@ Sub CreateFullyLoadedWizardMode
             .Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 && current_player.flwiz_super_jp == 1}", Array("flwiz_sjp_achieved","stop_flwiz_scoop_show","restart_fully_loaded_shots")   'Start phase 2
             .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot")
             'Phase 2 shots
-            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot")
-            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot")
-            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot")
-            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot")
-            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot")
-            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot")
+            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton1_hit")
+            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton2_hit")
+            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton3_hit")
+            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton4_hit")
+            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton5_hit")
+            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton6_hit")
             .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_cluster_hit")
             .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_moon_hit")
             'Phase 2 shots completed, so activate the scoop for Super JPs
@@ -146,7 +146,7 @@ Sub CreateFullyLoadedWizardMode
         End With
 
         For x = 1 to 5
-            With .Shots("flwiz_phase1_proton_round"&x)
+            With .Shots("flwiz_proton_round"&x)
                 .Profile = "fully_loaded_profile"
                 With .Tokens()
                     .Add "lights", "LPR"&x
@@ -157,12 +157,12 @@ Sub CreateFullyLoadedWizardMode
                     .State = 0
                 End With
                 With .ControlEvents()
-                    .Events = Array("mode_fully_loaded_wizard_started")
+                    .Events = Array("mode_fully_loaded_wizard_started","flwiz_phase2_proton"&x&"_hit")
                     .State = 2
                 End With
             End With
         Next
-        With .Shots("flwiz_phase1_proton_round"&x)
+        With .Shots("flwiz_proton_round"&x)
             .Profile = "fully_loaded_profile"
             With .Tokens()
                 .Add "lights", "LPR6"
@@ -173,11 +173,10 @@ Sub CreateFullyLoadedWizardMode
                 .State = 0
             End With
             With .ControlEvents()
-                .Events = Array("mode_fully_loaded_wizard_started")
+                .Events = Array("mode_fully_loaded_wizard_started","flwiz_phase2_proton6_hit")
                 .State = 2
             End With
         End With
-
 
         '   Moon shots
         With .Shots("flwiz_moon")
