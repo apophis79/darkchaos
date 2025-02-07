@@ -51,6 +51,7 @@ Sub CreateBaseMode()
 
             'wizard modes
             '   handle case when starting new ball
+            .Add "mode_base_started{current_player.shot_final_wave_wizard == 2}", Array("run_final_wave_wizard","wizard_mode_started")
             .Add "mode_base_started{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
             .Add "mode_base_started{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
             .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
@@ -359,6 +360,30 @@ Sub CreateBaseMode()
                 With .Tokens()
                     .Add "intensity1", 20
                     .Add "intensity2", 100
+                End With
+            End With
+
+            ' Final wave wizard scoop lights
+            With .EventName("run_fwwiz_scoop_show")
+                .Key = "key_final_wave_scoop"
+                .Show = "combo_command_scoop"
+                .Speed = 1
+                .Priority = 3000
+                With .Tokens()
+                    .Add "intensity1", 20
+                    .Add "intensity2", 100
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+            With .EventName("stop_fwwiz_scoop_show")
+                .Key = "key_final_wave_scoop"
+                .Show = "combo_command_scoop"
+                .Action= "stop"
+                .Priority = 3000
+                With .Tokens()
+                    .Add "intensity1", 20
+                    .Add "intensity2", 100
+                    .Add "color", MeteorWaveColor
                 End With
             End With
 

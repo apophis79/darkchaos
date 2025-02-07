@@ -165,9 +165,9 @@ Function AudioFade(tableobj) ' Fades between front and back of the table (for su
 	end if
 
     If tmp > 0 Then
-		AudioFade = Csng(tmp ^10)
+		AudioFade = Csng(tmp ^5)
     Else
-        AudioFade = Csng(-((- tmp) ^10) )
+        AudioFade = Csng(-((- tmp) ^5) )
     End If
 End Function
 
@@ -182,9 +182,9 @@ Function AudioPan(tableobj) ' Calculates the pan for a tableobj based on the X p
 	end if
 
     If tmp > 0 Then
-        AudioPan = Csng(tmp ^10)
+        AudioPan = Csng(tmp ^5)
     Else
-        AudioPan = Csng(-((- tmp) ^10) )
+        AudioPan = Csng(-((- tmp) ^5) )
     End If
 End Function
 

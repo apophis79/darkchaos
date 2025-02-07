@@ -116,6 +116,18 @@ Const DoubleScoringShowLength = 5000
 Const DoubleScoringTickInterval = 1000
 Const DoubleScoringMaxTicks = 60
 
+' Fully Loaded Wizard settings
+Const FLWizMessageInterval = 3000
+
+' Combo Command Wizard settings
+Const CCWizMessageInterval = 3000
+
+' Final Wave Wizard settings
+Const FWWizMessageInterval = 3000
+Const FWWizStartMeteorsInterval = 30000
+Const FWWizBallSaveTime = 45000
+Const FWWizMaxAsteroidHits = 30
+
 
 Sub ConfigureGlfDevices
 
@@ -403,7 +415,7 @@ Sub ConfigureGlfDevices
 
     CreateComboCommandWizardMode    ' No
     CreateFullyLoadedWizardMode     ' No
-    'CreateFinalWaveWizardMode       ' No
+    CreateFinalWaveWizardMode       ' No
 
     'Initial Vars
     Glf_SetInitialPlayerVar "ball_just_started", 1
@@ -434,6 +446,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "wizard_final_wave_phase", 0
     Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
     Glf_SetInitialPlayerVar "flwiz_super_jp", 0
+    Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
     
 End Sub
 

@@ -17,8 +17,6 @@
 'If the Super Duper JP is hit, then flippers die to drain other balls. Mode ends in full success!
 
 
-Const FLWizMessageInterval = 3000
-
 Sub CreateFullyLoadedWizardMode
     Dim x
 

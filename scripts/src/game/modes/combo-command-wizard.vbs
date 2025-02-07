@@ -10,7 +10,7 @@
 'Once all shots are completed, then the Super Duper JP is lit at the scoop.
 'If the Super Duper JP is hit, then flippers die to drain other balls. Mode ends in full success!
 
-Const CCWizMessageInterval = 3000
+
 
 Sub CreateComboCommandWizardMode
     Dim x
