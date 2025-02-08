@@ -85,7 +85,7 @@ Sub CreateFinalWaveWizardMode
             '   explosion flippers flips
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 27}", Array("s_right_flipper_active","s_left_flipper_active")
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 28}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers"
+            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers")
 
             .Add "timer_asteroid_explodes_complete", Array("stop_final_wave_wizard")   'FIXME  for now just end the mode, but need to transition to Victory Lap mode. 
                                                                                        '       Also need to handled end of ball properly. 
