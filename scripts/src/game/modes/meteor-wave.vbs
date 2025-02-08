@@ -77,7 +77,7 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done")
             .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done")
             .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","start_meteor_wizard")
+            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","activate_final_wave_wizard")
             .Add "meteor_wave_done{current_player.training_heal_achieved==0}", Array("drop_diverter")
             'restart fire protons
             .Add "check_protons{current_player.shot_proton_round1==0}", Array("restart_fire_protons")

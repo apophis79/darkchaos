@@ -23,8 +23,11 @@ Sub CreateBaseMode()
         .StopEvents = Array(GLF_BALL_ENDED)
 
         With .EventPlayer()
+            '.Add "s_left_staged_flipper_key_active", Array("meteor_wave1_done","meteor_wave2_done","meteor_wave3_done","meteor_wave4_done","meteor_wave5_done","meteor_wave6_done","meteor_wave7_done","meteor_wave8_done")  'DEBUG
+
             'new ball
-            .Add "mode_base_started", Array("knockdown_meteors","check_skillshot_ready")
+            .Add "mode_base_started", Array("knockdown_meteors")
+            .Add "mode_base_started{current_player.shot_meteor_wave9 < 2}", Array("check_skillshot_ready")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
 
@@ -62,7 +65,7 @@ Sub CreateBaseMode()
             .Add "stop_meteor_wave{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
             .Add "stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
             '    wizard mode phase 1 qualifed. Ready the scoop
-            .Add "activate_final_wave_wizard", Array("wizard_mode_ready","run_fwwiz_scoop_show")
+            .Add "activate_final_wave_wizard", Array("wizard_mode_ready","run_fwwiz_scoop_show","wizard_mode_started")
             .Add "activate_combo_command_wizard", Array("wizard_mode_ready","run_ccwiz_scoop_show")
             .Add "activate_fully_loaded_wizard", Array("wizard_mode_ready","run_flwiz_scoop_show")
             .Add "wizard_mode_ready", Array("enable_scoop_hold")
@@ -72,9 +75,9 @@ Sub CreateBaseMode()
             .Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", Array("stop_ccwiz_scoop_show")
             .Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", Array("stop_flwiz_scoop_show")
             '    run the wizard mode when qualified and ball enters the scoop. If more than one wizard is qualified, final wizard is top priority, then combo command, then fully loaded.
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show") 
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show") 
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show")
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
             '    clean up wizard mode
             .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
@@ -90,7 +93,8 @@ Sub CreateBaseMode()
             .Add "knockdown_meteors", Array("meteor1_knockdown","meteor2_knockdown","meteor3_knockdown","meteor4_knockdown")
 
             'handle delayed moon ball release
-            .Add "timer_delay_ball_release_complete", Array("release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
+            .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
         End With
        
 
@@ -167,7 +171,7 @@ Sub CreateBaseMode()
                 .Events = Array("run_combo_command_wizard")
                 .State = 2
             End With
-            .RestartEvents = Array(GLF_GAME_START)
+            .RestartEvents = Array(GLF_GAME_START,"run_final_wave_wizard")
         End With
 
         With .Shots("fully_loaded_wizard")
@@ -184,7 +188,7 @@ Sub CreateBaseMode()
                 .Events = Array("run_fully_loaded_wizard")
                 .State = 2
             End With
-            .RestartEvents = Array(GLF_GAME_START)
+            .RestartEvents = Array(GLF_GAME_START,"run_final_wave_wizard")
         End With
 
         With .Shots("final_wave_wizard")
@@ -448,7 +452,7 @@ Sub CreateBaseMode()
 					.Int = 1
 				End With
 			End With
-            With .EventName("wizard_mode_started")
+            With .EventName("clear_wizard_mode_ready")
 				With .Variable("wizard_mode_is_ready")
                     .Action = "set"
 					.Int = 0
