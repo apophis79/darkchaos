@@ -65,7 +65,7 @@ Sub CreateComboCommandWizardMode
 
         With .ExtraBalls("ccwiz_eb")
             .AwardEvents = Array("mode_combo_command_wizard_started")
-            .MaxPerGame = 4
+            .MaxPerGame = 5
         End With
 
         With .Shots("ccwiz_shoot_again")

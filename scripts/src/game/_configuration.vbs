@@ -125,8 +125,8 @@ Const CCWizMessageInterval = 3000
 ' Final Wave Wizard settings
 Const FWWizMessageInterval = 3000
 Const FWWizStartMeteorsInterval = 30000
-Const FWWizBallSaveTime = 45000
-Const FWWizMaxAsteroidHits = 30
+Const FWWizBallSaveTime = 60000
+Const FWWizMaxAsteroidHits = 20
 
 
 Sub ConfigureGlfDevices

@@ -12,7 +12,7 @@ Sub CreateCombosMode
     Dim x
 
     With CreateGlfMode("combos", 520)
-        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
+        .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()

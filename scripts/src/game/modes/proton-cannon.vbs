@@ -15,7 +15,7 @@ Sub CreateProtonCannonMode
     Dim x
 
     With CreateGlfMode("proton_cannon", 510)
-        .StartEvents = Array("ball_started","stop_training","wizard_mode_ended")
+        .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
         .StopEvents = Array("ball_ended","start_training_select","wizard_mode_started")
 
         With .EventPlayer()

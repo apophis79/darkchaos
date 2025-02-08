@@ -12,7 +12,7 @@ Sub CreateExtraBallMode
     Dim x
 
     With CreateGlfMode("extra_ball", 510)
-        .StartEvents = Array("ball_started","mode_meteor_wave_stopped","stop_training","wizard_mode_ended")
+        .StartEvents = Array("new_ball_started","mode_meteor_wave_stopped","stop_training","wizard_mode_ended")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
@@ -41,7 +41,7 @@ Sub CreateExtraBallMode
 
         With .ExtraBalls("eb")
             .AwardEvents = Array("eb_achieved")
-            .MaxPerGame = 4
+            .MaxPerGame = 5
         End With
 
 

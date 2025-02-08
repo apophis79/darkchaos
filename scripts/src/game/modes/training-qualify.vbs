@@ -14,7 +14,7 @@ Sub CreateTrainingQualifyMode
     Dim x
 
     With CreateGlfMode("training_qualify", 513)
-        .StartEvents = Array("ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
+        .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
         .StopEvents = Array("ball_ended","start_meteor_wave","start_training","wizard_mode_started")
 
 

@@ -4,12 +4,13 @@
 ' Base Mode.
 '
 ' Handles the following:
+'   - starting/stopping wizard modes
+'   - controls starting of other main modes
 '   - main sequence shots
 '   - delayed moon ball release
 '   - scoop holds
 '   - player score segment displays
 '   - wave shot lights across all waves
-'   - starting/stopping wizard modes
 '   - some sound effects and wave music
 '   - some light shows
 
@@ -23,7 +24,9 @@ Sub CreateBaseMode()
 
         With .EventPlayer()
             'new ball
-            .Add "s_Plunger2_active{current_player.ball_just_started==1}", Array("new_ball_active")
+            .Add "mode_base_started", Array("knockdown_meteors","check_skillshot_ready")
+            .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
+            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
 
             'waves
             .Add "mode_base_started{current_player.shot_meteor_wave1 == 0}", Array("pre_meteor_wave1")
@@ -45,9 +48,6 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
             .Add "mode_base_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
-        
-            'skillshots
-            .Add "mode_base_started", Array("check_skillshot_ready")
 
             'wizard modes
             '   handle case when starting new ball
@@ -85,6 +85,9 @@ Sub CreateBaseMode()
             .Add "s_TargetMystery5_active", Array("magnet_activated")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             .Add "s_MoonRamp_active", Array("right_ramp_hit")
+
+            'knock'em all down
+            .Add "knockdown_meteors", Array("meteor1_knockdown","meteor2_knockdown","meteor3_knockdown","meteor4_knockdown")
 
             'handle delayed moon ball release
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball")
@@ -607,6 +610,9 @@ Sub CreateBaseMode()
             With .EventName("activate_fully_loaded_wizard")
                 .Sound = "sfx_LLWiz"
             End With
+            ' With .EventName("activate_final_wave_wizard")
+            '     .Sound = "sfx_LWiz"
+            ' End With
 
         End With
 
