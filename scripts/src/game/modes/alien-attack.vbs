@@ -42,10 +42,10 @@ Sub CreateAlienAttackMode
 
         With .SoundPlayer()
             With .EventName("alien_attacking")
-                .Sound = "sfx_AlienAlert"
+                .Sound = "voc_AlienAlert"
             End With
-            With .EventName("play_sfx_alienhit")
-                .Sound = "sfx_AlienHit"
+            With .EventName("play_voc_AlienHit")
+                .Sound = "voc_AlienHit"
             End With
         End With
 
@@ -216,7 +216,7 @@ Sub CreateAlienAttackMode
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array(MainShotNames(x-1)&"_hit","cluster_bomb_fired")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","play_sfx_alienhit","start_double_scoring")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","play_voc_AlienHit","start_double_scoring")
                 End With
             Next
             For x = 1 to 8

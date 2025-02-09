@@ -84,19 +84,19 @@ Sub CreateMoonMultiballQualifyMode
 
         With .SoundPlayer()
             With .EventName("qualify_lock_on_complete")
-                .Sound = "sfx_LMLR"
+                .Sound = "voc_LMLR"
             End With
             With .EventName("light_missile1")
-                .Sound = "sfx_LMR1"
+                .Sound = "voc_LMR1"
             End With
             With .EventName("light_missile2")
-                .Sound = "sfx_LMR2"
+                .Sound = "voc_LMR2"
             End With
             With .EventName("s_GateR_active")
                 .Sound = "sfx_right_ramp_moon_launch"
             End With
             ' With .EventName("")
-            '     .Sound = "sfx_ball_locked"
+            '     .Sound = "voc_ball_locked"
             ' End With
         End With
 

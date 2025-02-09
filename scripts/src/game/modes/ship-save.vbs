@@ -51,7 +51,7 @@ Sub CreateShipSaveMode
                 .Sound = "sfx_LF3"
             End With
             With .EventName("light_ship_charge3")
-                .Sound = "sfx_ShipSaver"
+                .Sound = "voc_ShipSaver"
             End With
         End With
         

@@ -32,10 +32,10 @@ Sub CreateExtraBallMode
 
         With .SoundPlayer()
             With .EventName("eb_now_lit")
-                .Sound = "sfx_extra_ball_ready"
+                .Sound = "voc_extra_ball_ready"
             End With
             With .EventName("eb_achieved")
-                .Sound = "sfx_extra_ball_acheived"
+                .Sound = "voc_extra_ball_acheived"
             End With
         End With
 

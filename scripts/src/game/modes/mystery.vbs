@@ -68,7 +68,7 @@ Sub CreateMysteryMode
 
         With .SoundPlayer()
             With .EventName("qualify_mystery_on_complete")
-                .Sound = "sfx_LMR"
+                .Sound = "voc_LMR"
             End With
 
             With .EventName("play_sfx_LM1")

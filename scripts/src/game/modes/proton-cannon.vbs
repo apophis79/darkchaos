@@ -76,7 +76,7 @@ Sub CreateProtonCannonMode
             End With
 
             With .EventName("play_sfx_LPR")
-                .Sound = "sfx_LPR1"
+                .Sound = "voc_LPR1"
             End With
         End With
         

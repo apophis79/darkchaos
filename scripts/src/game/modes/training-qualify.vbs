@@ -71,7 +71,7 @@ Sub CreateTrainingQualifyMode
 
         With .SoundPlayer()
             With .EventName("training_shots_completed")
-                .Sound = "sfx_Training"
+                .Sound = "voc_Training"
             End With
         End With
 

@@ -63,10 +63,10 @@ Sub CreateClusterBombMode
             End With
 
             With .EventName("add_cluster_bomb1")
-                .Sound = "sfx_LCR1"
+                .Sound = "voc_LCR1"
             End With
             With .EventName("add_cluster_bomb2")
-                .Sound = "sfx_LCR2"
+                .Sound = "voc_LCR2"
             End With
         End With
 

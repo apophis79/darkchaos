@@ -17,20 +17,20 @@ Sub CreateBasementMode()
        
         With .SoundPlayer() 
             With .EventName("player_added{kwargs.num==1}")
-                .Key = "key_sfx_p1"
-                .Sound = "sfx_p1"
+                .Key = "key_voc_p1"
+                .Sound = "voc_p1"
             End With
             With .EventName("player_added{kwargs.num==2}")
-                .Key = "key_sfx_p2"
-                .Sound = "sfx_p2"
+                .Key = "key_voc_p2"
+                .Sound = "voc_p2"
             End With
             With .EventName("player_added{kwargs.num==3}")
-                .Key = "key_sfx_p3"
-                .Sound = "sfx_p3"
+                .Key = "key_voc_p3"
+                .Sound = "voc_p3"
             End With
             With .EventName("player_added{kwargs.num==4}")
-                .Key = "key_sfx_p4"
-                .Sound = "sfx_p4"
+                .Key = "key_voc_p4"
+                .Sound = "voc_p4"
             End With
 
             With .EventName("health1_off")

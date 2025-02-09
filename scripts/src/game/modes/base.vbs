@@ -654,13 +654,13 @@ Sub CreateBaseMode()
 
 
             With .EventName("activate_combo_command_wizard")
-                .Sound = "sfx_LCWiz"
+                .Sound = "voc_LCWiz"
             End With
             With .EventName("activate_fully_loaded_wizard")
-                .Sound = "sfx_LLWiz"
+                .Sound = "voc_LLWiz"
             End With
             With .EventName("activate_final_wave_wizard")
-                .Sound = "sfx_Wiz"
+                .Sound = "voc_Wiz"
             End With
 
         End With
