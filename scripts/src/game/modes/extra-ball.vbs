@@ -30,14 +30,14 @@ Sub CreateExtraBallMode
             .Add "mystery_eb_is_lit", Array("eb_now_lit")
         End With
 
-        ' With .SoundPlayer()
-        '     With .EventName("eb_now_lit")
-        '         .Sound = "sfx_extra_ball_ready"
-        '     End With
-        '     With .EventName("eb_achieved")
-        '         .Sound = "sfx_extra_ball_acheived"
-        '     End With
-        ' End With
+        With .SoundPlayer()
+            With .EventName("eb_now_lit")
+                .Sound = "sfx_extra_ball_ready"
+            End With
+            With .EventName("eb_achieved")
+                .Sound = "sfx_extra_ball_acheived"
+            End With
+        End With
 
         With .ExtraBalls("eb")
             .AwardEvents = Array("eb_achieved")

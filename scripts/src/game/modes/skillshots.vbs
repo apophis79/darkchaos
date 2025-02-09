@@ -13,7 +13,7 @@ Sub CreateSkillshotsMode
 
         With .EventPlayer()
             'Only start skillshots if starting a new ball
-            .Add "check_skillshot_ready{current_player.ball_just_started==1}", Array("init_ss")
+            .Add "mode_skillshots_started{current_player.ball_just_started==1 && current_player.shot_meteor_wave9 < 2}", Array("init_ss")
             'Handle successful skillshots
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
             .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 

@@ -6,7 +6,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "mfx_Apron_Bounce_2",
@@ -2385,44 +2385,8 @@
     "output_target": 0
   },
   {
-    "name": "mus_ambient_bg",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_ambient_bg.mp3",
-    "internal_name": "",
-    "fade": 0,
-    "volume": 0,
-    "balance": 0,
-    "output_target": 1
-  },
-  {
-    "name": "mus_main",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_main.mp3",
-    "internal_name": "",
-    "fade": 0,
-    "volume": 0,
-    "balance": 0,
-    "output_target": 1
-  },
-  {
     "name": "mus_post_game",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_post_game.mp3",
-    "internal_name": "",
-    "fade": 0,
-    "volume": 0,
-    "balance": 0,
-    "output_target": 1
-  },
-  {
-    "name": "mus_secondary",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_secondary.mp3",
-    "internal_name": "",
-    "fade": 0,
-    "volume": 0,
-    "balance": 0,
-    "output_target": 1
-  },
-  {
-    "name": "mus_wave",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_wave.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2493,6 +2457,24 @@
     "output_target": 1
   },
   {
+    "name": "sfx_button",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_button.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_combo",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_combo.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967260,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
     "name": "sfx_EarthHit1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_EarthHit1.mp3",
     "internal_name": "",
@@ -2513,6 +2495,33 @@
   {
     "name": "sfx_EarthHit3",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_EarthHit3.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_entry",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_entry.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_extra_ball_acheived",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_extra_ball_acheived.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_extra_ball_ready",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_extra_ball_ready.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2567,6 +2576,15 @@
   {
     "name": "sfx_LCWiz",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LCWiz.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LDS",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LDS.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2659,7 +2677,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LM1.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 30,
     "balance": 0,
     "output_target": 1
   },
@@ -2668,7 +2686,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LM2.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 30,
     "balance": 0,
     "output_target": 1
   },
@@ -2677,7 +2695,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LM3.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 30,
     "balance": 0,
     "output_target": 1
   },
@@ -2686,7 +2704,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LM4.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 30,
     "balance": 0,
     "output_target": 1
   },
@@ -2695,7 +2713,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LM5.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 30,
     "balance": 0,
     "output_target": 1
   },
@@ -2925,8 +2943,161 @@
     "output_target": 1
   },
   {
+    "name": "sfx_LS1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS1.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967275,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LS2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS2.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967275,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LS3",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS3.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967275,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LS4",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS4.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967275,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LS5",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS5.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967275,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LS6",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS6.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 4294967275,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSC1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSC1.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSC2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSC2.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSC3",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSC3.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSC4",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSC4.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSL",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSL.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSR",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSR.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LSUp",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LSUp.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LTW",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LTW.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
     "name": "sfx_mag_cap",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_mag_cap.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 33,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_Orb1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_Orb1.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_Orb2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_Orb2.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_Orb3",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_Orb3.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2970,6 +3141,15 @@
     "output_target": 1
   },
   {
+    "name": "sfx_powerdown",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_powerdown.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 39,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
     "name": "sfx_right_ramp_moon_launch",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_right_ramp_moon_launch.mp3",
     "internal_name": "",
@@ -2981,6 +3161,15 @@
   {
     "name": "sfx_right_sling",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_right_sling.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_ShipSaver",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_ShipSaver.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -3008,6 +3197,69 @@
   {
     "name": "sfx_sss",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_sss.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_tally",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_tally.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_training",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_training.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_wiz",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_wiz.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_ball_locked",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_ball_locked.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "mus_wave0",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_wave0.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "mus_wave1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_wave1.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "mus_wave2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_wave2.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,

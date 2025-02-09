@@ -125,8 +125,11 @@ Sub CreateTimewarpMode
 
 
         With .SoundPlayer()
-            With .EventName("left_ramp_hit")
+            With .EventName("s_GateL_active")
                 .Sound = "sfx_left_ramp_time_warp"
+            End With
+            With .EventName("restart_tw_timer")
+                .Sound = "sfx_LTW"
             End With
         End With
 

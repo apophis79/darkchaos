@@ -31,20 +31,33 @@ Sub CreateTrainingHealMode
             .Add "check_add_training_health_bump{current_player.training_health_bump_value<"&BumperHitsPerRepairTrain&"}", Array("add_training_health_bump")
             .Add "check_add_training_health_bump{current_player.training_health_bump_value=="&BumperHitsPerRepairTrain&"}", Array("check_add_training_health","reset_training_health_bump")
             .Add "check_add_training_health{current_player.shot_training_health1 == 0}", Array("light_health1","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health1 == 1 && current_player.shot_training_health2 == 0}", Array("light_health2","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health2 == 1 && current_player.shot_training_health3 == 0}", Array("light_health3","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health3 == 1 && current_player.shot_training_health4 == 0}", Array("light_health4","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health4 == 1 && current_player.shot_training_health5 == 0}", Array("light_health5","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health5 == 1 && current_player.shot_training_health6 == 0}", Array("light_health6","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health6 == 1 && current_player.shot_training_health7 == 0}", Array("light_health7","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health7 == 1 && current_player.shot_training_health8 == 0}", Array("light_health8","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", Array("light_health9","training_achieved")
+            .Add "check_add_training_health{current_player.shot_training_health1 == 1 && current_player.shot_training_health2 == 0}", Array("light_health2","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health2 == 1 && current_player.shot_training_health3 == 0}", Array("light_health3","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health3 == 1 && current_player.shot_training_health4 == 0}", Array("light_health4","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health4 == 1 && current_player.shot_training_health5 == 0}", Array("light_health5","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health5 == 1 && current_player.shot_training_health6 == 0}", Array("light_health6","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health6 == 1 && current_player.shot_training_health7 == 0}", Array("light_health7","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health7 == 1 && current_player.shot_training_health8 == 0}", Array("light_health8","flash_gi","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", Array("light_health9","training_achieved","play_sfx_LS")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_heal_complete", Array("stop_training")
             .Add "mode_training_heal_stopping{current_player.training_heal_achieved==0}", Array("drop_diverter")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+        End With
+
+        With .RandomEventPlayer()
+            With .EventName("play_sfx_LS")
+                .Add "play_sfx_LS1", 1
+                .Add "play_sfx_LS2", 1
+                .Add "play_sfx_LS3", 1
+                .Add "play_sfx_LS4", 1
+                .Add "play_sfx_LS5", 1
+                .Add "play_sfx_LS6", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
         End With
 
 

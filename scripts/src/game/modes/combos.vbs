@@ -28,22 +28,22 @@ Sub CreateCombosMode
             .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
             .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
             .Add "check_combos{current_player.combos_value==0}", Array("add_combos")
-            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos")
-            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard")
+            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard","play_sfx_combo")
             .Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", Array("activate_combo_command_wizard")
         End With
 
-        'With .SoundPlayer()
-            ' With .EventName("add_combos")
-            '     .Sound = "sfx_combo"
-            ' End With
-        'End With
+        With .SoundPlayer()
+            With .EventName("play_sfx_combo")
+                .Sound = "sfx_combo"
+            End With
+        End With
 
 
         With .ShowPlayer()

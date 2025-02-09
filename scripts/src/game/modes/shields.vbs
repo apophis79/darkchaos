@@ -28,6 +28,46 @@ Sub CreateShieldsMode
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
         End With
+
+        With .RandomEventPlayer()
+            With .EventName("qualify_shields_hit")
+                .Add "play_sfx_LSC1", 1
+                .Add "play_sfx_LSC2", 1
+                .Add "play_sfx_LSC3", 1
+                .Add "play_sfx_LSC4", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("shields_used")
+                .Add "play_sfx_LSL", 1
+                .Add "play_sfx_LSR", 1
+            End With
+        End With
+
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_LSC1")
+                .Sound = "sfx_LSC1"
+            End With
+            With .EventName("play_sfx_LSC2")
+                .Sound = "sfx_LSC2"
+            End With
+            With .EventName("play_sfx_LSC3")
+                .Sound = "sfx_LSC3"
+            End With
+            With .EventName("play_sfx_LSC4")
+                .Sound = "sfx_LSC4"
+            End With
+            With .EventName("play_sfx_LSL")
+                .Sound = "sfx_LSL"
+            End With
+            With .EventName("play_sfx_LSR")
+                .Sound = "sfx_LSR"
+            End With
+            With .EventName("qualify_shields_on_complete")
+                .Sound = "sfx_LSUp"
+            End With
+        End With
         
 
         'Define a shot profile with two states (off/on)

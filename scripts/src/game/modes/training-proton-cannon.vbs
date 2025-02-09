@@ -23,15 +23,28 @@ Sub CreateTrainingProtonCannonMode
             '.Debug = True
             .Add "mode_training_proton_cannon_started", Array("init_training")
             'successfull shot
-            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", Array("light_proton_charge1","flash_gi")
-            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 && current_player.shot_training_proton_charge2 == 0}", Array("light_proton_charge2","flash_gi")
-            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3") ',"flash_gi")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", Array("light_proton_charge1","flash_gi","play_sfx_LS")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 && current_player.shot_training_proton_charge2 == 0}", Array("light_proton_charge2","flash_gi","play_sfx_LS")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3","play_sfx_LS") ',"flash_gi")
             .Add "light_proton_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_proton_cannon_complete", Array("stop_training")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+        End With
+
+        With .RandomEventPlayer()
+            With .EventName("play_sfx_LS")
+                .Add "play_sfx_LS1", 1
+                .Add "play_sfx_LS2", 1
+                .Add "play_sfx_LS3", 1
+                .Add "play_sfx_LS4", 1
+                .Add "play_sfx_LS5", 1
+                .Add "play_sfx_LS6", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
         End With
 
 

@@ -57,7 +57,24 @@ Sub CreateTrainingQualifyMode
                 .ForceAll = False
                 .ForceDifferent = False
             End With
+            With .EventName("training_shot_hit")
+                .Add "play_sfx_LS1", 1
+                .Add "play_sfx_LS2", 1
+                .Add "play_sfx_LS3", 1
+                .Add "play_sfx_LS4", 1
+                .Add "play_sfx_LS5", 1
+                .Add "play_sfx_LS6", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
         End With
+
+        With .SoundPlayer()
+            With .EventName("training_shots_completed")
+                .Sound = "sfx_Training"
+            End With
+        End With
+
      
         'Define our shots
         For x = 1 to 8

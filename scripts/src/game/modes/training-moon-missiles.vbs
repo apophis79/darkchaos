@@ -26,7 +26,7 @@ Sub CreateTrainingMoonMissileMode
             .Add "timer_training_moon_missile_complete", Array("stop_training")
             .Add "training_moon_missile_completed", Array("stop_training")
             'Update the training select shots
-            .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi")
+            .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi","play_sfx_LS")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==1}", Array("update_training_select_moon_lane1b")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane2==0}", Array("update_training_select_moon_lane2a")
@@ -37,7 +37,20 @@ Sub CreateTrainingMoonMissileMode
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane4==1}", Array("update_training_select_moon_lane4b")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
-         End With
+        End With
+
+        With .RandomEventPlayer()
+            With .EventName("play_sfx_LS")
+                .Add "play_sfx_LS1", 1
+                .Add "play_sfx_LS2", 1
+                .Add "play_sfx_LS3", 1
+                .Add "play_sfx_LS4", 1
+                .Add "play_sfx_LS5", 1
+                .Add "play_sfx_LS6", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+        End With
 
 
         'Define our shots

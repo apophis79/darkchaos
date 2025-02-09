@@ -50,6 +50,9 @@ Sub CreateShipSaveMode
             With .EventName("play_sfx_LF3")
                 .Sound = "sfx_LF3"
             End With
+            With .EventName("light_ship_charge3")
+                .Sound = "sfx_ShipSaver"
+            End With
         End With
         
 
@@ -103,6 +106,11 @@ Sub CreateShipSaveMode
 
         With .SegmentDisplayPlayer()
             With .EventName("light_ship_charge3")
+                With .Display("player2")
+                    .Text = """ SHIP """
+                    .Flashing = "all"
+                    .Expire = 2000
+                End With
                 With .Display("player3")
                     .Text = """ SAVER """
                     .Flashing = "all"

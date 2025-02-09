@@ -26,7 +26,7 @@ Sub CreateTrainingShieldsMode
             .Add "timer_training_shields_complete", Array("stop_training")
             .Add "training_shields_completed", Array("stop_training")
             'Update the training select shots
-            .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi")
+            .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi","play_sfx_LS")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==1}", Array("update_training_select_shield1b")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge2==0}", Array("update_training_select_shield2a")
@@ -37,6 +37,19 @@ Sub CreateTrainingShieldsMode
             .Add "update_training_select_shields{current_player.shot_training_shield_charge4==1}", Array("update_training_select_shield4b")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+        End With
+
+        With .RandomEventPlayer()
+            With .EventName("play_sfx_LS")
+                .Add "play_sfx_LS1", 1
+                .Add "play_sfx_LS2", 1
+                .Add "play_sfx_LS3", 1
+                .Add "play_sfx_LS4", 1
+                .Add "play_sfx_LS5", 1
+                .Add "play_sfx_LS6", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
         End With
 
 

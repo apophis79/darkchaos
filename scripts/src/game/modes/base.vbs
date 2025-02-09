@@ -27,7 +27,6 @@ Sub CreateBaseMode()
 
             'new ball
             .Add "mode_base_started", Array("knockdown_meteors")
-            .Add "mode_base_started{current_player.shot_meteor_wave9 < 2}", Array("check_skillshot_ready")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
 
@@ -95,6 +94,23 @@ Sub CreateBaseMode()
             'handle delayed moon ball release
             .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
+        End With
+
+        With .RandomEventPlayer()
+            With .EventName("center_orbit_left_hit")
+                .Add "play_sfx_Orb1", 1
+                .Add "play_sfx_Orb2", 1
+                .Add "play_sfx_Orb3", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("center_orbit_right_hit")
+                .Add "play_sfx_Orb1", 1
+                .Add "play_sfx_Orb2", 1
+                .Add "play_sfx_Orb3", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
         End With
        
 
@@ -477,34 +493,35 @@ Sub CreateBaseMode()
         With .SoundPlayer()
             'Music pre meteor wave 1
             With .EventName("pre_meteor_wave1")
-                .Sound = "mus_main"
+                .Sound = "mus_wave0"
             End With
             With .EventName("pre_meteor_wave1_music_stop")
-                .Sound = "mus_main"
+                .Sound = "mus_wave0"
                 .Action = "stop"
             End With
+            
 
             'Music meteor wave 1
             With .EventName("meteor_wave1_running")
-                .Sound = "mus_secondary"
+                .Sound = "mus_wave1"
             End With
             With .EventName("meteor_wave1_restart")
-                .Sound = "mus_main"
+                .Sound = "mus_wave0"
             End With
             With .EventName("meteor_wave1_music_stop")
-                .Sound = "mus_secondary"
+                .Sound = "mus_wave1"
                 .Action = "stop"
             End With
 
             'Music meteor wave 2
             With .EventName("meteor_wave2_running")
-                .Sound = "mus_wave"
+                .Sound = "mus_wave2"
             End With
             With .EventName("meteor_wave2_restart")
-                .Sound = "mus_secondary"
+                .Sound = "mus_wave1"
             End With
             With .EventName("meteor_wave2_music_stop")
-                .Sound = "mus_wave"
+                .Sound = "mus_wave2"
                 .Action = "stop"
             End With
 
@@ -552,12 +569,40 @@ Sub CreateBaseMode()
                 .Sound = "sfx_LRO"
             End With
 
-            'Other
-            With .EventName("mode_base_stopping")
-                .Sound = "sfx_ball_drain"
+            'center orbit
+            With .EventName("play_sfx_Orb1")
+                .Sound = "sfx_Orb1"
             End With
+            With .EventName("play_sfx_Orb2")
+                .Sound = "sfx_Orb2"
+            End With
+            With .EventName("play_sfx_Orb3")
+                .Sound = "sfx_Orb3"
+            End With
+
+            'Other
             With .EventName("magnet_activated")
                 .Sound = "sfx_mag_cap"
+            End With
+
+            'training shots
+            With .EventName("play_sfx_LS1")
+                .Sound = "sfx_LS1"
+            End With
+            With .EventName("play_sfx_LS2")
+                .Sound = "sfx_LS2"
+            End With
+            With .EventName("play_sfx_LS3")
+                .Sound = "sfx_LS3"
+            End With
+            With .EventName("play_sfx_LS4")
+                .Sound = "sfx_LS4"
+            End With
+            With .EventName("play_sfx_LS5")
+                .Sound = "sfx_LS5"
+            End With
+            With .EventName("play_sfx_LS6")
+                .Sound = "sfx_LS6"
             End With
 
             'Meteor wave sounds (needed here so they dont stop when meteor wave mode stops)
@@ -614,9 +659,9 @@ Sub CreateBaseMode()
             With .EventName("activate_fully_loaded_wizard")
                 .Sound = "sfx_LLWiz"
             End With
-            ' With .EventName("activate_final_wave_wizard")
-            '     .Sound = "sfx_LWiz"
-            ' End With
+            With .EventName("activate_final_wave_wizard")
+                .Sound = "sfx_Wiz"
+            End With
 
         End With
 

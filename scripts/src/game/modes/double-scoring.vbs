@@ -15,11 +15,11 @@ Sub CreateDoubleScoringMode
             .Add "timer_double_scoring_complete", Array("stop_double_scoring")
         End With
 
-        ' With .SoundPlayer()
-        '     With .EventName("mode_double_scoring_started")
-        '         .Sound = "sfx_LDS"
-        '     End With
-        ' End With
+        With .SoundPlayer()
+            With .EventName("mode_double_scoring_started")
+                .Sound = "sfx_LDS"
+            End With
+        End With
 
         With .Shots("double_scoring")
             .Profile = "flicker_on"
