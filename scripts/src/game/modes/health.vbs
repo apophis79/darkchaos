@@ -54,6 +54,7 @@ Sub CreateHealthMode
 
         With .SoundPlayer()
             With .EventName("add_health")
+                .Key = "key_sfx_LH"
                 .Sound = "sfx_LH"
             End With
         End With

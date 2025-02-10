@@ -26,10 +26,12 @@ Sub CreateSkillshotsMode
 
         With .SoundPlayer()
             With .EventName("ss_achieved")
-                .Sound = "sfx_ss"
+                .Key = "key_voc_ss"
+                .Sound = "voc_ss"
             End With
             With .EventName("sss_achieved")
-                .Sound = "sfx_sss"
+                .Key = "key_voc_sss"
+                .Sound = "voc_sss"
             End With
         End With
 

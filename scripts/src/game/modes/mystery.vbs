@@ -33,7 +33,9 @@ Sub CreateMysteryMode
             'reset stuff and continue
             .Add "restart_qualify_mystery", Array("mystery_select_done","start_mwq_timer","check_training")   'Mystery done, so continue the meteor wave qualify countdown
             'handle sss award
-            .Add "sss_mystery_ready", Array("complete_mystery_shots")
+            .Add "sss_mystery_ready", Array("complete_mystery_shots","set_sss_mystery_flag")
+            'handle callout
+            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR")
         End With
 
         'Randomize mystery selection
@@ -67,26 +69,49 @@ Sub CreateMysteryMode
         End With
 
         With .SoundPlayer()
-            With .EventName("qualify_mystery_on_complete")
+            With .EventName("play_voc_LMR")
+                .Key = "key_voc_LMR"
                 .Sound = "voc_LMR"
             End With
 
             With .EventName("play_sfx_LM1")
+                .Key = "key_sfx_LM1"
                 .Sound = "sfx_LM1"
             End With
             With .EventName("play_sfx_LM2")
+                .Key = "key_sfx_LM2"
                 .Sound = "sfx_LM2"
             End With
             With .EventName("play_sfx_LM3")
+                .Key = "key_sfx_LM3"
                 .Sound = "sfx_LM3"
             End With
             With .EventName("play_sfx_LM4")
+                .Key = "key_sfx_LM4"
                 .Sound = "sfx_LM4"
             End With
             With .EventName("play_sfx_LM5")
+                .Key = "key_sfx_LM5"
                 .Sound = "sfx_LM5"
             End With
         End With
+
+
+        With .VariablePlayer()
+		    With .EventName("set_sss_mystery_flag")
+				With .Variable("flag_sss_mystery")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("play_voc_LMR")
+				With .Variable("flag_sss_mystery")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+        End With
+
 
         'Define our shots
         For x = 1 to 5

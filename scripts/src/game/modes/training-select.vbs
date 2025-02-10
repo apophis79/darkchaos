@@ -47,6 +47,14 @@ Sub CreateTrainingSelectMode
         End With
 
 
+        With .SoundPlayer()
+            With .EventName("mode_training_select_started")
+                .Key = "key_voc_select_option"
+                .Sound = "voc_select_option"
+            End With
+        End With
+
+
         With .VariablePlayer()
             With .EventName("mode_training_select_started")
 				With .Variable("ts_hurry_up")

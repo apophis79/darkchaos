@@ -34,14 +34,14 @@ Sub CreateTrainingQualifyMode
             .Add MainShotNames(6)&"_hit{current_player.shot_training_shot7 == 1}", Array(MainShotNames(6)&"_training_off","training_shot_hit")
             .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
             'Handle a successful hit
-            .Add "training_shot_hit",Array("check_training_qualify")
-            .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed")
+            .Add "training_shot_hit", Array("check_training_qualify")
+            .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed","play_voc_Training")
             'Start the training selection
             .Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold")
             .Add "check_training{current_player.shot_training_ready==1}", Array("start_training_select") ',"kill_flippers"
             'Handle mystery and skillshot awards
-            .Add "mystery_trainer_ready",Array("clear_training_shots","training_shots_completed")
-            .Add "ss_trainer_ready",Array("clear_training_shots","training_shots_completed")
+            .Add "mystery_trainer_ready", Array("clear_training_shots","training_shots_completed")
+            .Add "ss_trainer_ready", Array("clear_training_shots","training_shots_completed")
         End With
 
         With .RandomEventPlayer()
@@ -70,7 +70,8 @@ Sub CreateTrainingQualifyMode
         End With
 
         With .SoundPlayer()
-            With .EventName("training_shots_completed")
+            With .EventName("play_voc_Training")
+                .Key = "key_voc_Training"
                 .Sound = "voc_Training"
             End With
         End With

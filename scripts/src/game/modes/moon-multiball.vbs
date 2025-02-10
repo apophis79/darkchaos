@@ -19,7 +19,7 @@ Sub CreateMoonMultiballMode
 
         With .EventPlayer()
             'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("start_moon_multiball")
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("start_moon_multiball","play_sfx_launch")
         End With
 
 
@@ -30,6 +30,14 @@ Sub CreateMoonMultiballMode
             .BallCountType = "add"
             .ShootAgain = 0
             .BallLock = "moon_lock"
+        End With
+
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_launch")
+                .Key = "key_sfx_launch"
+                .Sound = "sfx_launch"
+            End With
         End With
 
 

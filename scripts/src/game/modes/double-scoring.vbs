@@ -17,6 +17,7 @@ Sub CreateDoubleScoringMode
 
         With .SoundPlayer()
             With .EventName("mode_double_scoring_started")
+                .Key = "key_sfx_LDS"
                 .Sound = "sfx_LDS"
             End With
         End With

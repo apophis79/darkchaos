@@ -52,20 +52,30 @@ Sub CreateClusterBombMode
         End With
 
         With .SoundPlayer()
+            With .EventName("cluster_bomb_fired")
+                .Key = "key_sfx_cluster_fired"
+                .Sound = "sfx_cluster_fired"
+            End With
+
             With .EventName("play_sfx_LCC1")
+                .Key = "key_sfx_LCC1"
                 .Sound = "sfx_LCC1"
             End With
             With .EventName("play_sfx_LCC2")
+                .Key = "key_sfx_LCC2"
                 .Sound = "sfx_LCC2"
             End With
             With .EventName("play_sfx_LCC3")
+                .Key = "key_sfx_LCC3"
                 .Sound = "sfx_LCC3"
             End With
 
             With .EventName("add_cluster_bomb1")
+                .Key = "key_voc_LCR1"
                 .Sound = "voc_LCR1"
             End With
             With .EventName("add_cluster_bomb2")
+                .Key = "key_voc_LCR2"
                 .Sound = "voc_LCR2"
             End With
         End With

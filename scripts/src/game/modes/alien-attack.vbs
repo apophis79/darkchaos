@@ -42,9 +42,11 @@ Sub CreateAlienAttackMode
 
         With .SoundPlayer()
             With .EventName("alien_attacking")
+                .Key = "key_voc_AlienAlert"
                 .Sound = "voc_AlienAlert"
             End With
             With .EventName("play_voc_AlienHit")
+                .Key = "key_voc_AlienHit"
                 .Sound = "voc_AlienHit"
             End With
         End With

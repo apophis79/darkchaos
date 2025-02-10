@@ -42,15 +42,19 @@ Sub CreateShipSaveMode
 
         With .SoundPlayer()
             With .EventName("play_sfx_LF1")
+                .Key = "key_sfx_LF1"
                 .Sound = "sfx_LF1"
             End With
             With .EventName("play_sfx_LF2")
+                .Key = "key_sfx_LF2"
                 .Sound = "sfx_LF2"
             End With
             With .EventName("play_sfx_LF3")
+                .Key = "key_sfx_LF3"
                 .Sound = "sfx_LF3"
             End With
             With .EventName("light_ship_charge3")
+                .Key = "key_voc_ShipSaver"
                 .Sound = "voc_ShipSaver"
             End With
         End With

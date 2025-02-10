@@ -34,9 +34,11 @@ Sub CreateBasementMode()
             End With
 
             With .EventName("health1_off")
+                .Key = "key_sfx_powerdown"
                 .Sound = "sfx_powerdown"
             End With
             With .EventName(GLF_BALL_ENDED)
+                .Key = "key_ball_drain"
                 .Sound = "sfx_ball_drain"
             End With
         End With

@@ -41,6 +41,7 @@ Sub CreateCombosMode
 
         With .SoundPlayer()
             With .EventName("play_sfx_combo")
+                .Key = "key_sfx_combo"
                 .Sound = "sfx_combo"
             End With
         End With

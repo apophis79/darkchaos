@@ -47,24 +47,31 @@ Sub CreateShieldsMode
 
         With .SoundPlayer()
             With .EventName("play_sfx_LSC1")
+                .Key = "key_sfx_LSC1"
                 .Sound = "sfx_LSC1"
             End With
             With .EventName("play_sfx_LSC2")
+                .Key = "key_sfx_LSC2"
                 .Sound = "sfx_LSC2"
             End With
             With .EventName("play_sfx_LSC3")
+                .Key = "key_sfx_LSC3"
                 .Sound = "sfx_LSC3"
             End With
             With .EventName("play_sfx_LSC4")
+                .Key = "key_sfx_LSC4"
                 .Sound = "sfx_LSC4"
             End With
             With .EventName("play_sfx_LSL")
+                .Key = "key_sfx_LSL"
                 .Sound = "sfx_LSL"
             End With
             With .EventName("play_sfx_LSR")
+                .Key = "key_sfx_LSR"
                 .Sound = "sfx_LSR"
             End With
             With .EventName("qualify_shields_on_complete")
+                .Key = "key_sfx_LSUp"
                 .Sound = "sfx_LSUp"
             End With
         End With

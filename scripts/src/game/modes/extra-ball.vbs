@@ -32,9 +32,11 @@ Sub CreateExtraBallMode
 
         With .SoundPlayer()
             With .EventName("eb_now_lit")
+                .Key = "key_voc_extra_ball_ready"
                 .Sound = "voc_extra_ball_ready"
             End With
             With .EventName("eb_achieved")
+                .Key = "key_voc_extra_ball_acheived"
                 .Sound = "voc_extra_ball_acheived"
             End With
         End With

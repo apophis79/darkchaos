@@ -60,23 +60,34 @@ Sub CreateProtonCannonMode
 
         With .SoundPlayer()
             With .EventName("play_sfx_LPC1")
+                .Key = "key_sfx_LPC1"
                 .Sound = "sfx_LPC1"
             End With
             With .EventName("play_sfx_LPC2")
+                .Key = "key_sfx_LPC2"
                 .Sound = "sfx_LPC2"
             End With
             With .EventName("play_sfx_LPC3")
+                .Key = "key_sfx_LPC3"
                 .Sound = "sfx_LPC3"
             End With
             With .EventName("play_sfx_LPC4")
+                .Key = "key_sfx_LPC4"
                 .Sound = "sfx_LPC4"
             End With
             With .EventName("play_sfx_LPC5")
+                .Key = "key_sfx_LPC5"
                 .Sound = "sfx_LPC5"
             End With
 
             With .EventName("play_sfx_LPR")
+                .Key = "key_voc_LPR1"
                 .Sound = "voc_LPR1"
+            End With
+
+            With .EventName("s_spinner_active")
+                .Key = "key_sfx_Spinner"
+                .Sound = "sfx_Spinner"
             End With
         End With
         
@@ -171,12 +182,6 @@ Sub CreateProtonCannonMode
                     .Flashing = "all"
                     .Expire = 2000
                 End With
-            End With
-        End With
-
-        With .SoundPlayer()
-            With .EventName("s_spinner_active")
-                .Sound = "sfx_Spinner"
             End With
         End With
 
