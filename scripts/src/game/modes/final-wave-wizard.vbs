@@ -23,13 +23,14 @@ Sub CreateFinalWaveWizardMode
     With CreateGlfMode("final_wave_wizard", 4000)
         .StartEvents = Array("run_final_wave_wizard")
         .StopEvents = Array("stop_final_wave_wizard")
+        .UseWaitQueue = True
 
         With .EventPlayer()
             'start/restart wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == "&FWWizMaxAsteroidHits&"}", Array("begin_fwwiz") 'start wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < "&FWWizMaxAsteroidHits&"}", Array("continue_fwwiz","display_hit_count","update_asteroid_glow") 'continue wizard mode
             'stopping wizard mode
-            .Add "ball_ended{current_player.wizard_final_hit_count > 0}", Array("stop_final_wave_wizard")
+            .Add "ball_ending{current_player.wizard_final_hit_count > 0}", Array("stop_final_wave_wizard") 'FIXME: this should play a show that has .EventsWhenCompleted = Array("stop_final_wave_wizard")
             'release the scoop ball to start the wizard mode
             .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")

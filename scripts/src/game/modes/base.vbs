@@ -20,7 +20,7 @@ Sub CreateBaseMode()
 
     With CreateGlfMode("base", 200)
         .StartEvents = Array(GLF_BALL_STARTED)
-        .StopEvents = Array(GLF_BALL_ENDED)
+        .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started")
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("meteor_wave1_done","meteor_wave2_done","meteor_wave3_done","meteor_wave4_done","meteor_wave5_done","meteor_wave6_done","meteor_wave7_done","meteor_wave8_done")  'DEBUG

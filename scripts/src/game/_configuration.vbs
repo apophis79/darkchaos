@@ -381,14 +381,94 @@ Sub ConfigureGlfDevices
     AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
     AddPinEventListener GLF_BALL_DRAIN, "ball_drain_sound", "BallDrainSound", 100, Null
 
+    
+    ' Machine variables
+    With CreateMachineVar("high_score_1")
+        .InitialValue = 15000000
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_1_initials")
+        .InitialValue = "DAN"
+        .ValueType = "string"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_2")
+        .InitialValue = 13000000
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_2_initials")
+        .InitialValue = "MAT"
+        .ValueType = "string"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_3")
+        .InitialValue = 10000000
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_3_initials")
+        .InitialValue = "ROB"
+        .ValueType = "string"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_4")
+        .InitialValue = 8000000
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("high_score_4_initials")
+        .InitialValue = "DUG"
+        .ValueType = "string"
+        .Persist = True
+    End With
+
+
+    ' Initial Vars
+    Glf_SetInitialPlayerVar "flag_sss_mystery", 0
+    Glf_SetInitialPlayerVar "ball_just_started", 1
+    Glf_SetInitialPlayerVar "meteor_wave_running", 0
+    Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
+    Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
+    Glf_SetInitialPlayerVar "num_training_shots", 2
+    Glf_SetInitialPlayerVar "num_training_shots_hit", 2
+    Glf_SetInitialPlayerVar "meteors_per_wave", 6
+    Glf_SetInitialPlayerVar "warping", 0
+    Glf_SetInitialPlayerVar "light_the_eb", 0
+    Glf_SetInitialPlayerVar "alien_tick_count", -1
+    Glf_SetInitialPlayerVar "alien_attack_dir", 0
+    Glf_SetInitialPlayerVar "alien_attack_done", 0
+    Glf_SetInitialPlayerVar "scoring_multiplier", 1
+    Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
+    Glf_SetInitialPlayerVar "training_just_finished", 0
+    Glf_SetInitialPlayerVar "training_heal_achieved", 0
+    Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
+    Glf_SetInitialPlayerVar "training_proton_cannon_achieved", 0
+    Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
+    Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
+    Glf_SetInitialPlayerVar "training_shields_achieved", 0
+    Glf_SetInitialPlayerVar "training_total_achieved", 0
+    Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
+    Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
+    Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
+    Glf_SetInitialPlayerVar "wizard_final_wave_phase", 0
+    Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
+    Glf_SetInitialPlayerVar "flwiz_super_jp", 0
+    Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
+
+
+
     'Shot Profiles
     CreateSharedShotProfiles
 
     ' Modes                         Active during waves
+    '-------                        -------------------
     CreateBasementMode              ' Active all the time
     CreateScoreMode                 ' Always active during a game
+    CreateBonusMode                 ' No
 
-    CreateBaseMode                  ' No   should be always active during game?
+    CreateBaseMode                  ' No
     CreateSkillshotsMode            ' No
     CreateAlienAttackMode           ' No
     CreateShieldsMode               ' No
@@ -421,38 +501,6 @@ Sub ConfigureGlfDevices
     CreateComboCommandWizardMode    ' No
     CreateFullyLoadedWizardMode     ' No
     CreateFinalWaveWizardMode       ' No
-
-    'Initial Vars
-    Glf_SetInitialPlayerVar "flag_sss_mystery", 0
-    Glf_SetInitialPlayerVar "ball_just_started", 1
-    Glf_SetInitialPlayerVar "meteor_wave_running", 0
-    Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
-    Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
-    Glf_SetInitialPlayerVar "num_training_shots", 2
-    Glf_SetInitialPlayerVar "num_training_shots_hit", 2
-    Glf_SetInitialPlayerVar "meteors_per_wave", 6
-    Glf_SetInitialPlayerVar "warping", 0
-    Glf_SetInitialPlayerVar "light_the_eb", 0
-    Glf_SetInitialPlayerVar "alien_tick_count", -1
-    Glf_SetInitialPlayerVar "alien_attack_dir", 0
-    Glf_SetInitialPlayerVar "alien_attack_done", 0
-    Glf_SetInitialPlayerVar "scoring_multiplier", 1
-    Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
-    Glf_SetInitialPlayerVar "training_just_finished", 0
-    Glf_SetInitialPlayerVar "training_heal_achieved", 0
-    Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
-    Glf_SetInitialPlayerVar "training_proton_cannon_achieved", 0
-    Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
-    Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
-    Glf_SetInitialPlayerVar "training_shields_achieved", 0
-    Glf_SetInitialPlayerVar "training_total_achieved", 0
-    Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
-    Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
-    Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
-    Glf_SetInitialPlayerVar "wizard_final_wave_phase", 0
-    Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
-    Glf_SetInitialPlayerVar "flwiz_super_jp", 0
-    Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
     
 End Sub
 

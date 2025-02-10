@@ -10,7 +10,7 @@ Sub CreateMeteorMultiballMode
 
     With CreateGlfMode("meteor_multiball", 1000)
         .StartEvents = Array("start_meteor_multiball")
-        .StopEvents = Array("ball_ended","kill_flippers","stop_meteor_wave")
+        .StopEvents = Array("mode_base_stopping","kill_flippers","stop_meteor_wave")
 
         With .EventPlayer()
             .Add "multiball_meteor_shoot_again_ended", Array("clear_ship_save")

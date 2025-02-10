@@ -17,7 +17,7 @@ Sub CreateComboCommandWizardMode
 
     With CreateGlfMode("combo_command_wizard", 3000)
         .StartEvents = Array("run_combo_command_wizard")
-        .StopEvents = Array("ball_ended","completed_combo_command_wizard")
+        .StopEvents = Array("mode_base_stopping","completed_combo_command_wizard")
 
         With .EventPlayer()
             'release the scoop ball to start the wizard mode

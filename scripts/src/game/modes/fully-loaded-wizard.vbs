@@ -22,7 +22,7 @@ Sub CreateFullyLoadedWizardMode
 
     With CreateGlfMode("fully_loaded_wizard", 2000)
         .StartEvents = Array("run_fully_loaded_wizard")
-        .StopEvents = Array("ball_ended","completed_fully_loaded_wizard")
+        .StopEvents = Array("mode_base_stopping","completed_fully_loaded_wizard")
 
         With .EventPlayer()
             'release the scoop ball to start the wizard mode

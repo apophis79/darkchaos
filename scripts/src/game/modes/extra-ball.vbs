@@ -13,7 +13,7 @@ Sub CreateExtraBallMode
 
     With CreateGlfMode("extra_ball", 510)
         .StartEvents = Array("new_ball_started","mode_meteor_wave_stopped","stop_training","wizard_mode_ended")
-        .StopEvents = Array("ball_ended","start_meteor_wave","start_training_select","wizard_mode_started")
+        .StopEvents = Array("mode_base_stopping","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'initialize the EB
