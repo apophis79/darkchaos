@@ -3226,7 +3226,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\voc_wave_incoming.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 100,
     "balance": 0,
     "output_target": 1
   },
@@ -3235,12 +3235,12 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\voc_select_option.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 100,
     "balance": 0,
     "output_target": 1
   },
   {
-    "name": "sfx_ball_launch",
+    "name": "sfx_ball_launch3",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_ball_launch.mp3",
     "internal_name": "",
     "fade": 0,
@@ -3255,7 +3255,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "sfx_LMet5",
@@ -3264,7 +3264,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "sfx_LMet6",
@@ -3273,7 +3273,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "sfx_LMet7",
@@ -3282,7 +3282,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "sfx_LMet8",
@@ -3291,7 +3291,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "sfx_left_sling",
@@ -3300,7 +3300,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
   },
   {
     "name": "sfx_right_sling",
@@ -3309,6 +3309,24 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": 1
+  },
+  {
+    "name": "sfx_ball_launch2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_ball_launch.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_ball_launch1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_ball_launch.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
   }
 ]

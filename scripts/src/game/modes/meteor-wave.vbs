@@ -142,10 +142,10 @@ Sub CreateMeteorWaveMode
 
 
         With .SoundPlayer()
-            With .EventName("mode_meteor_wave_started")
-                .Key = "key_voc_wav_incoming"
-                .Sound = "voc_wav_incoming"
-            End With
+            ' With .EventName("mode_meteor_wave_started")
+            '     .Key = "key_voc_wave_incoming"
+            '     .Sound = "voc_wave_incoming"
+            ' End With
 
             With .EventName("play_sfx_LPF1")
                 .Key = "key_sfx_LPF1"

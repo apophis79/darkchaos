@@ -82,6 +82,13 @@ Sub CreateBaseMode()
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended")
     
+            'handle some sound effects
+            .Add "center_orbit_left_hit", Array("play_sfx_Orb")
+            .Add "center_orbit_right_hit", Array("play_sfx_Orb")
+            .Add "s_Bumper1_active", Array("play_sfx_bumper")
+            .Add "s_Bumper2_active", Array("play_sfx_bumper")
+            .Add "s_Bumper3_active", Array("play_sfx_bumper")
+            .Add "s_Bumper4_active", Array("play_sfx_bumper")
 
             'handle some switches
             .Add "s_TargetMystery5_active", Array("magnet_activated")
@@ -97,17 +104,25 @@ Sub CreateBaseMode()
         End With
 
         With .RandomEventPlayer()
-            With .EventName("center_orbit_left_hit")
+            With .EventName("play_sfx_Orb")
                 .Add "play_sfx_Orb1", 1
                 .Add "play_sfx_Orb2", 1
                 .Add "play_sfx_Orb3", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
-            With .EventName("center_orbit_right_hit")
-                .Add "play_sfx_Orb1", 1
-                .Add "play_sfx_Orb2", 1
-                .Add "play_sfx_Orb3", 1
+            With .EventName("play_sfx_bumper")
+                .Add "play_sfx_bumper1", 1
+                .Add "play_sfx_bumper2", 1
+                .Add "play_sfx_bumper3", 1
+                .Add "play_sfx_bumper4", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("ball_launch_hit")
+                .Add "play_sfx_ball_launch1", 1
+                .Add "play_sfx_ball_launch2", 1
+                .Add "play_sfx_ball_launch3", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
@@ -282,6 +297,13 @@ Sub CreateBaseMode()
             .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
             .SequenceTimeout = 500
         End With
+
+        With .SequenceShots("ball_launch")
+            .EventSequence = Array("s_Plunger1_inactive", "s_Plunger2_inactive")
+            .SequenceTimeout = 300
+        End With
+
+
 
         With .ShowPlayer()
             For x = 1 to 4
@@ -535,10 +557,19 @@ Sub CreateBaseMode()
 
 
             'Ball launch
-            With .EventName("new_ball_active")
-                .Key = "key_sfx_ball_launch"
-                .Sound = "sfx_ball_launch"
+            With .EventName("play_sfx_ball_launch1")
+                .Key = "key_sfx_ball_launch1"
+                .Sound = "sfx_ball_launch1"
             End With
+            With .EventName("play_sfx_ball_launch2")
+                .Key = "key_sfx_ball_launch2"
+                .Sound = "sfx_ball_launch2"
+            End With
+            With .EventName("play_sfx_ball_launch3")
+                .Key = "key_sfx_ball_launch3"
+                .Sound = "sfx_ball_launch3"
+            End With
+
 
             'Slings
             With .EventName("s_LeftSlingshot_active")
@@ -551,19 +582,19 @@ Sub CreateBaseMode()
             End With
 
             'Bumpers
-            With .EventName("s_Bumper1_active")
+            With .EventName("play_sfx_bumper1")
                 .Key = "key_sfx_bumper1"
                 .Sound = "sfx_bumper1"
             End With
-            With .EventName("s_Bumper2_active")
+            With .EventName("play_sfx_bumper2")
                 .Key = "key_sfx_bumper2"
                 .Sound = "sfx_bumper2"
             End With
-            With .EventName("s_Bumper3_active")
+            With .EventName("play_sfx_bumper3")
                 .Key = "key_sfx_bumper3"
                 .Sound = "sfx_bumper3"
             End With
-            With .EventName("s_Bumper4_active")
+            With .EventName("play_sfx_bumper4")
                 .Key = "key_sfx_bumper4"
                 .Sound = "sfx_bumper4"
             End With

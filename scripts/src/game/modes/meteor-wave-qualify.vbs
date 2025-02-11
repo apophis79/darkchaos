@@ -30,6 +30,13 @@ Sub CreateMeteorWaveQualifyMode
             End With
         End With
 
+        With .SoundPlayer()
+            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}")
+                .Key = "key_voc_wave_incoming"
+                .Sound = "voc_wave_incoming"
+            End With
+        End With
+
         With .Timers("meteor_countdown")
             .TickInterval = 1000
             .StartValue = "current_player.meteor_countdown_value"

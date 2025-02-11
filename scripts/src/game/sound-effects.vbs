@@ -80,7 +80,9 @@ SFXNames = Array( _
     "sfx_tally", _
     "sfx_cluster_fired", _
     "sfx_launch", _
-    "sfx_ball_launch")
+    "sfx_ball_launch1", _
+    "sfx_ball_launch2", _
+    "sfx_ball_launch3")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -155,6 +157,8 @@ SFXDurations = Array( _
     0.223, _
     4.593, _
     7.552, _
+    4.736, _
+    4.736, _
     4.736)
 
 
@@ -183,7 +187,7 @@ VOCNames = Array( _
     "voc_ss", _
     "voc_sss", _
     "voc_Training", _
-    "voc_wav_incoming", _
+    "voc_wave_incoming", _
     "voc_Wiz")
 VOCDurations = Array( _
     6.000, _
