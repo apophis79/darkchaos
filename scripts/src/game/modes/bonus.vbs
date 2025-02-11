@@ -6,43 +6,294 @@
 
 Sub CreateBonusMode
 
-    With CreateGlfMode("bonus", 150)
+    With CreateGlfMode("bonus", 5000)
         .StartEvents = Array("ball_ending")
         .StopEvents = Array("bonus_finished")
         .UseWaitQueue = True
 
+        With .EventPlayer()
+            .Add "mode_bonus_started", Array("check_bonus_bomb1","check_bonus_missile1","check_bonus_proton1")
+            'calculate bomb bonus
+            .Add "check_bonus_bomb1{current_player.shot_cluster_bomb1 == 1}", Array("add_bonus_bomb","check_bonus_bomb2")
+            .Add "check_bonus_bomb2{current_player.shot_cluster_bomb2 == 1}", Array("add_bonus_bomb")
+            'calculate missile bonus
+            .Add "check_bonus_missile1{current_player.shot_moon_missile1 == 1}", Array("add_bonus_missile","check_bonus_missile2")
+            .Add "check_bonus_missile2{current_player.shot_moon_missile2 == 1}", Array("add_bonus_missile")
+            'calculate proton bonus
+            .Add "check_bonus_proton1{current_player.shot_proton_round1 == 1}", Array("add_bonus_proton","check_bonus_proton2")
+            .Add "check_bonus_proton2{current_player.shot_proton_round2 == 1}", Array("add_bonus_proton","check_bonus_proton3")
+            .Add "check_bonus_proton3{current_player.shot_proton_round3 == 1}", Array("add_bonus_proton","check_bonus_proton4")
+            .Add "check_bonus_proton4{current_player.shot_proton_round4 == 1}", Array("add_bonus_proton","check_bonus_proton5")
+            .Add "check_bonus_proton5{current_player.shot_proton_round5 == 1}", Array("add_bonus_proton","check_bonus_proton6")
+            .Add "check_bonus_proton6{current_player.shot_proton_round6 == 1}", Array("add_bonus_proton")
+            'add total bonus to player's score
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 11}", Array("calc_bonus_total")
+            .Add "calc_bonus_total", Array("score_bonus_total")
+            'handle bonus tally show
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 2}", Array("bonus_tally1","play_sfx_tally")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 4}", Array("bonus_tally2","play_sfx_tally")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 6}", Array("bonus_tally3","play_sfx_tally")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 8}", Array("bonus_tally4","play_sfx_tally")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 10}", Array("bonus_tally5","play_sfx_tally")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 12}", Array("bonus_tally6","play_sfx_tally")
+            'finish up bonus mode
+            .Add "timer_bonus_complete", Array("bonus_finished")
+        End With
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_tally")
+                .Key = "key_sfx_tally"
+                .Sound = "sfx_tally"
+            End With
+        End With
+
         With .ShowPlayer()
             With .EventName("mode_bonus_started")
-                .Key = "bonus_show"
-                .Show = "mystery"
+                .Key = "key_bonus_show"
+                .Show = "mystery"  'FIXME  make new show for this?
                 .Speed = 1
-                .Loops = 1
-                .EventsWhenCompleted = Array("bonus_finished")
+            End With
+
+            With .EventName("bonus_tally1")
+                .Key = "key_tally1_show"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tWaves"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_tally2")
+                .Key = "key_tally2_show"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tTrain"
+                    .Add "color", TrainingColor
+                End With
+            End With
+            With .EventName("bonus_tally3")
+                .Key = "key_tally3_show"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tClusterAll"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+            With .EventName("bonus_tally4")
+                .Key = "key_tally4_show"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tMoonAll"
+                    .Add "color", MoonColor
+                End With
+            End With
+            With .EventName("bonus_tally5")
+                .Key = "key_tally5_show"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tProtonAll"
+                    .Add "color", ProtonColor
+                End With
+            End With
+
+        End With
+
+        With .Timers("bonus")
+            .TickInterval = BonusTimerTickInterval
+            .StartValue = 0
+            .EndValue = 16
+            With .ControlEvents()
+                .EventName = "mode_bonus_started"
+                .Action = "restart"
             End With
         End With
      
         With .SegmentDisplayPlayer()
             With .EventName("mode_bonus_started")
                 With .Display("player1")
-                    .Priority = 9000
                     .Text = """BONUS"""
                 End With
                 With .Display("player2")
-                    .Priority = 9000
-                    .Text = """TBD"""
-                    .Flashing = "all"
+                    .Text = """"""
                 End With
                 With .Display("player3")
-                    .Priority = 9000
                     .Text = """"""
                 End With
                 With .Display("player4")
-                    .Priority = 9000
                     .Text = """"""
                 End With
             End With
+
+            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 2}")
+                With .Display("player2")
+                    .Priority = 10
+                    .Text = """WAVES"""
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+                With .Display("player3")
+                    .Priority = 10
+                    .Text = "{current_player.bonus_waves:0>2}"
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+            End With
+
+            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 4}")
+                With .Display("player2")
+                    .Priority = 20
+                    .Text = """TRAINING"""
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+                With .Display("player3")
+                    .Priority = 20
+                    .Text = "{current_player.bonus_training:0>2}"
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+            End With
+
+            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 6}")
+                With .Display("player2")
+                    .Priority = 30
+                    .Text = """BOMBS"""
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+                With .Display("player3")
+                    .Priority = 30
+                    .Text = "{current_player.bonus_bombs:0>2}"
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+            End With
+
+            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 8}")
+                With .Display("player2")
+                    .Priority = 40
+                    .Text = """MISSILES"""
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+                With .Display("player3")
+                    .Priority = 40
+                    .Text = "{current_player.bonus_missiles:0>2}"
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+            End With
+
+            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 10}")
+                With .Display("player2")
+                    .Priority = 50
+                    .Text = """PROTONS"""
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+                With .Display("player3")
+                    .Priority = 50
+                    .Text = "{current_player.bonus_protons:0>2}"
+                    .Flashing = "all"
+                    '.Expire = BonusTimerTickInterval
+                End With
+            End With
+
+            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 12}")
+                With .Display("player2")
+                    .Priority = 60
+                    .Text = """TOTAL"""
+                End With
+                With .Display("player3")
+                    .Priority = 60
+                    .Text = "{current_player.bonus_total:0>2}"
+                    .Flashing = "all"
+                End With
+            End With
+
         End With
 
+
+        With .VariablePlayer()
+            
+            With .EventName("mode_bonus_started")
+                'initalize vars
+				With .Variable("bonus_bombs")
+                    .Action = "set"
+					.Int = 0
+				End With
+                With .Variable("bonus_missiles")
+                    .Action = "set"
+					.Int = 0
+				End With
+                With .Variable("bonus_protons")
+                    .Action = "set"
+					.Int = 0
+				End With
+                With .Variable("bonus_total")
+                    .Action = "set"
+					.Int = 0
+				End With
+                'calc waves and training bonus
+                With .Variable("bonus_waves")
+                    .Action = "set"
+					.Int = BonusPerMeteorWave & " * current_player.num_meteor_waves_completed"
+				End With
+                With .Variable("bonus_training")
+                    .Action = "set"
+					.Int = BonusPerTraining & " * current_player.training_total_achieved"
+				End With
+			End With
+
+            'sum up ammo for bonus points
+		    With .EventName("add_bonus_bomb")
+				With .Variable("bonus_bombs")
+                    .Action = "add"
+					.Int = BonusPerClusterBomb
+				End With
+			End With
+            With .EventName("add_bonus_missile")
+				With .Variable("bonus_missiles")
+                    .Action = "add"
+					.Int = BonusPerMoonMissile
+				End With
+			End With
+            With .EventName("add_bonus_proton")
+				With .Variable("bonus_protons")
+                    .Action = "add"
+					.Int = BonusPerProtonRound
+				End With
+			End With
+
+            'calculate the total bonus
+            With .EventName("calc_bonus_total")
+                With .Variable("bonus_total")
+                    .Action = "set"
+                    .Int = "current_player.bonus_waves + " & _
+                           "current_player.bonus_training + " & _
+                           "current_player.bonus_bombs + " & _
+                           "current_player.bonus_missiles + " & _
+                           "current_player.bonus_protons"
+                End With
+            End With
+        
+            'add the total bonus to player's score
+            With .EventName("score_bonus_total")
+				With .Variable("score")
+                    .Action = "add"
+					.Int = "current_player.bonus_total"
+				End With
+			End With
+        End With
 
     End With
 

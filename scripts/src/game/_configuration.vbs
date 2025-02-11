@@ -128,6 +128,15 @@ Const FWWizStartMeteorsInterval = 30000
 Const FWWizBallSaveTime = 60000
 Const FWWizMaxAsteroidHits = 20
 
+' Bonus settings
+Const BonusTimerTickInterval = 400
+Const BonusPerMeteorWave = 50000
+Const BonusPerTraining = 40000
+Const BonusPerClusterBomb = 30000
+Const BonusPerMoonMissile = 30000
+Const BonusPerProtonRound = 10000
+
+
 
 Sub ConfigureGlfDevices
 
@@ -432,6 +441,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
     Glf_SetInitialPlayerVar "num_training_shots", 2
+    Glf_SetInitialPlayerVar "num_meteor_waves_completed", 0
     Glf_SetInitialPlayerVar "num_training_shots_hit", 2
     Glf_SetInitialPlayerVar "meteors_per_wave", 6
     Glf_SetInitialPlayerVar "warping", 0
@@ -456,6 +466,12 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
     Glf_SetInitialPlayerVar "flwiz_super_jp", 0
     Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
+    Glf_SetInitialPlayerVar "bonus_waves", 0
+    Glf_SetInitialPlayerVar "bonus_training", 0
+    Glf_SetInitialPlayerVar "bonus_bombs", 0
+    Glf_SetInitialPlayerVar "bonus_missiles", 0
+    Glf_SetInitialPlayerVar "bonus_protons", 0
+    Glf_SetInitialPlayerVar "bonus_total", 0
 
 
 
