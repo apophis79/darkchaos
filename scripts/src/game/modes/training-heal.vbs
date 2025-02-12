@@ -15,7 +15,7 @@ Sub CreateTrainingHealMode
 
     With CreateGlfMode("training_heal",700)
         .StartEvents = Array("start_training_heal")
-        .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
+        .StopEvents = Array("mode_base_stopping","stop_training")
         '.Debug = True
 
 

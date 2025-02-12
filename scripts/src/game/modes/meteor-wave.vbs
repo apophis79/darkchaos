@@ -17,7 +17,7 @@ Sub CreateMeteorWaveMode
     With CreateGlfMode("meteor_wave", 1000)
         '.Debug = True
         .StartEvents = Array("start_meteor_wave")
-        .StopEvents = Array("timer_meteor_wave_finish_complete",GLF_BALL_ENDED)
+        .StopEvents = Array("timer_meteor_wave_finish_complete","mode_base_stopping")
 
 
         With .EventPlayer()

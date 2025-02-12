@@ -57,7 +57,9 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
             .Add "mode_base_started{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
             .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
-            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("activate_fully_loaded_wizard")
+            '   check if fully loaded is ready
+            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("prime_fully_loaded_wizard")
+            .Add "prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}", Array("activate_fully_loaded_wizard")
             '   handle case when starting and finishing a meteor wave
             .Add "start_meteor_wave", Array("disable_scoop_hold","stop_ccwiz_scoop_show","stop_flwiz_scoop_show")
             .Add "stop_meteor_wave{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
@@ -170,12 +172,6 @@ Sub CreateBaseMode()
                     .Text = "{players[3].score:0>2,}"
                 End With
             End With
-            
-            ' With .EventName("mode_base_started")
-            '     With .Display("pf")
-            '         .Text = "{00:0>2}"
-            '     End With
-            ' End With
         End With
 
         With .LightPlayer()
@@ -212,7 +208,7 @@ Sub CreateBaseMode()
                 .Add "color", CombosColor
             End With
             With .ControlEvents()
-                .Events = Array("activate_fully_loaded_wizard")
+                .Events = Array("prime_fully_loaded_wizard")
                 .State = 1
             End With
             With .ControlEvents()
@@ -336,13 +332,26 @@ Sub CreateBaseMode()
             Next
 
             With .EventName("magnet_activated")
-                .Key = "key_ts_scoop_gi"
+                .Key = "key_ts_mag_gi"
                 .Show = "flash_color" '_with_fade"
                 .Speed = 15
                 .Loops = 7
                 .Priority = 1000
                 With .Tokens()
                     .Add "lights", "gi13" 
+                    .Add "color", GIColor3000k
+                    '.Add "fade", 300
+                End With
+            End With
+
+            With .EventName("balldevice_scoop_ball_exiting")
+                .Key = "key_ts_scoop_gi"
+                .Show = "flash_color" '_with_fade"
+                .Speed = 15
+                .Loops = 7
+                .Priority = 1000
+                With .Tokens()
+                    .Add "lights", "gi22" 
                     .Add "color", GIColor3000k
                     '.Add "fade", 300
                 End With
@@ -568,6 +577,13 @@ Sub CreateBaseMode()
             With .EventName("play_sfx_ball_launch3")
                 .Key = "key_sfx_ball_launch3"
                 .Sound = "sfx_ball_launch3"
+            End With
+
+
+            ' Scoop launch
+            With .EventName("balldevice_scoop_ball_exiting")
+                .Key = "key_sfx_scoop"
+                .Sound = "sfx_scoop"
             End With
 
 

@@ -15,7 +15,7 @@ Sub CreateTrainingShipSaveMode
 
     With CreateGlfMode("training_ship_save",700)
         .StartEvents = Array("start_training_ship_save")
-        .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
+        .StopEvents = Array("mode_base_stopping","stop_training")
         '.Debug = True
 
 

@@ -129,7 +129,7 @@ Const FWWizBallSaveTime = 60000
 Const FWWizMaxAsteroidHits = 20
 
 ' Bonus settings
-Const BonusTimerTickInterval = 400
+Const BonusTimerTickInterval = 500
 Const BonusPerMeteorWave = 50000
 Const BonusPerTraining = 40000
 Const BonusPerClusterBomb = 30000

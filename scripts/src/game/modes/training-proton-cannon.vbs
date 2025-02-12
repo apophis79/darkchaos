@@ -15,7 +15,7 @@ Sub CreateTrainingProtonCannonMode
 
     With CreateGlfMode("training_proton_cannon",700)
         .StartEvents = Array("start_training_proton_cannon")
-        .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
+        .StopEvents = Array("mode_base_stopping","stop_training")
         '.Debug = True
 
 

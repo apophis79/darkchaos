@@ -77,12 +77,15 @@ SFXNames = Array( _
     "sfx_right_ramp_moon_launch", _
     "sfx_right_sling", _
     "sfx_Spinner", _
-    "sfx_tally", _
+    "sfx_tally_alt", _
     "sfx_cluster_fired", _
     "sfx_launch", _
     "sfx_ball_launch1", _
     "sfx_ball_launch2", _
-    "sfx_ball_launch3")
+    "sfx_ball_launch3", _
+    "sfx_scoop", _
+    "sfx_tilt_warning", _
+    "sfx_tilt")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -154,12 +157,15 @@ SFXDurations = Array( _
     3.146, _
     1.957, _
     0.173, _
-    0.223, _
+    2.000, _
     4.593, _
     7.552, _
     4.736, _
     4.736, _
-    4.736)
+    4.736, _
+    1.954, _
+    1.050, _
+    4.714)
 
 
 Dim VOCNames, VOCDurations
@@ -213,7 +219,7 @@ VOCDurations = Array( _
     2.331, _
     2.540, _
     2.392, _
-    5.558, _
+    4.974, _
     2.111)
 
 

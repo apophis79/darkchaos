@@ -15,7 +15,7 @@ Sub CreateTrainingClusterBombMode
 
     With CreateGlfMode("training_cluster_bomb",700)
         .StartEvents = Array("start_training_cluster_bomb")
-        .StopEvents = Array(GLF_BALL_ENDED,"stop_training")
+        .StopEvents = Array("mode_base_stopping","stop_training")
         '.Debug = True
 
 

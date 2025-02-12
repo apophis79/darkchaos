@@ -18,7 +18,7 @@ Sub CreateTrainingSelectMode
 
     With CreateGlfMode("training_select",600)
         .StartEvents = Array("start_training_select")
-        .StopEvents = Array(GLF_BALL_ENDED,"stop_training_select")
+        .StopEvents = Array("mode_base_stopping","stop_training_select")
         '.Debug = True
 
 

@@ -30,20 +30,27 @@ Sub CreateBonusMode
             .Add "timer_bonus_tick{devices.timers.bonus.ticks == 11}", Array("calc_bonus_total")
             .Add "calc_bonus_total", Array("score_bonus_total")
             'handle bonus tally show
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 2}", Array("bonus_tally1","play_sfx_tally")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 4}", Array("bonus_tally2","play_sfx_tally")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 6}", Array("bonus_tally3","play_sfx_tally")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 8}", Array("bonus_tally4","play_sfx_tally")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 10}", Array("bonus_tally5","play_sfx_tally")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 12}", Array("bonus_tally6","play_sfx_tally")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 2}", Array("bonus_tally1","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 4}", Array("bonus_tally2","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 6}", Array("bonus_tally3","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 8}", Array("bonus_tally4","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 10}", Array("bonus_tally5","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 12}", Array("bonus_tally6","restart_sfx_tally_alt")
+            .Add "restart_sfx_tally_alt", Array("stop_sfx_tally_alt")
+            .Add "stop_sfx_tally_alt", Array("play_sfx_tally_alt")
             'finish up bonus mode
             .Add "timer_bonus_complete", Array("bonus_finished")
         End With
 
         With .SoundPlayer()
-            With .EventName("play_sfx_tally")
-                .Key = "key_sfx_tally"
-                .Sound = "sfx_tally"
+             With .EventName("stop_sfx_tally_alt")
+                .Key = "key_sfx_tally_alt"
+                .Sound = "sfx_tally_alt"
+                .Action = "stop"
+            End With
+            With .EventName("play_sfx_tally_alt")
+                .Key = "key_sfx_tally_alt"
+                .Sound = "sfx_tally_alt"
             End With
         End With
 
