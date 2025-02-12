@@ -34,6 +34,9 @@ Sub CreateFinalWaveWizardMode
             'release the scoop ball to start the wizard mode
             .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
+            'add-a-ball
+            .Add "inner_orbit_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
+            '.Add "inner_orbit_hit{current_player.fwwiz_add_ball_ready == 2}", Array("fwwiz_add_ball_2")
             'asteroid hits
             .Add "center_orbit_left_hit", Array("asteroid_hit")
             .Add "center_orbit_right_hit", Array("asteroid_hit")
@@ -116,6 +119,16 @@ Sub CreateFinalWaveWizardMode
             .ShootAgain = FWWizBallSaveTime
             .HurryUp = 5000
             .GracePeriod = 500
+        End With
+
+        With .Multiballs("fwwiz_2")
+            .StartEvents = Array("fwwiz_add_ball")
+            '.AddABallEvents = Array("fwwiz_add_ball_2")
+            .BallCount = 1
+            .BallCountType = "add"
+            .ShootAgain = 0
+            .HurryUp = 0
+            .GracePeriod = 0
         End With
 
         With .ExtraBalls("fwwiz_eb")
@@ -230,7 +243,31 @@ Sub CreateFinalWaveWizardMode
                     .Action = "add"
 					.Int = -1
 				End With
-			End With   
+			End With
+            With .EventName("multiball_fwwiz_shoot_again_ended")
+				With .Variable("fwwiz_add_ball_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("continue_fwwiz")
+				With .Variable("fwwiz_add_ball_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("timer_add_ball_cooldown_complete")
+				With .Variable("fwwiz_add_ball_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("fwwiz_add_ball")
+				With .Variable("fwwiz_add_ball_ready")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
 		End With
 
 
@@ -276,6 +313,15 @@ Sub CreateFinalWaveWizardMode
             With .ControlEvents()
                 .EventName = "asteroid_destroyed"
                 .Action = "start"
+            End With
+        End With
+        With .Timers("add_ball_cooldown")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 4
+            With .ControlEvents()
+                .EventName = "fwwiz_add_ball"
+                .Action = "restart"
             End With
         End With
 

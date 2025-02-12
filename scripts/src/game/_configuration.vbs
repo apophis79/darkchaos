@@ -463,6 +463,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
     Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
     Glf_SetInitialPlayerVar "wizard_final_wave_phase", 0
+    Glf_SetInitialPlayerVar "fwwiz_add_ball_ready", 0
     Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
     Glf_SetInitialPlayerVar "flwiz_super_jp", 0
     Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
