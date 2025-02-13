@@ -229,11 +229,23 @@ MusicNames = Array( _
     "mus_wave0", _
     "mus_wave1", _
     "mus_wave2", _
+    "mus_wave3", _
+    "mus_wave4", _
+    "mus_wave5", _
+    "mus_wave6", _
+    "mus_wave7", _
+    "mus_wave8", _
     "mus_post_game")
 MusicDurations = Array( _
     92.212, _
     53.551, _
     58.018, _
+    62.459, _
+    66.926, _
+    66.926, _
+    66.926, _
+    56.844, _
+    52.863, _
     121.723)
 
 

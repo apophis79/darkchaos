@@ -534,35 +534,22 @@ Sub CreateBaseMode()
             End With
             
 
-            'Music meteor wave 1
-            With .EventName("meteor_wave1_running")
-                .Key = "key_mus_wave1"
-                .Sound = "mus_wave1"
-            End With
-            With .EventName("meteor_wave1_restart")
-                .Key = "key_mus_wave0"
-                .Sound = "mus_wave0"
-            End With
-            With .EventName("meteor_wave1_music_stop")
-                .Key = "key_mus_wave1"
-                .Sound = "mus_wave1"
-                .Action = "stop"
-            End With
-
-            'Music meteor wave 2
-            With .EventName("meteor_wave2_running")
-                .Key = "key_mus_wave2"
-                .Sound = "mus_wave2"
-            End With
-            With .EventName("meteor_wave2_restart")
-                .Key = "key_mus_wave1"
-                .Sound = "mus_wave1"
-            End With
-            With .EventName("meteor_wave2_music_stop")
-                .Key = "key_mus_wave2"
-                .Sound = "mus_wave2"
-                .Action = "stop"
-            End With
+            'Music meteor waves
+            For x = 1 to 9
+                With .EventName("meteor_wave"&x&"_running")
+                    .Key = "key_mus_wave"&x
+                    .Sound = "mus_wave"&x
+                End With
+                With .EventName("meteor_wave"&x&"_restart")
+                    .Key = "key_mus_wave"&(x-1)
+                    .Sound = "mus_wave"&(x-1)
+                End With
+                With .EventName("meteor_wave"&x&"_music_stop")
+                    .Key = "key_mus_wave"&x
+                    .Sound = "mus_wave"&x
+                    .Action = "stop"
+                End With
+            Next
 
 
             'Ball launch
