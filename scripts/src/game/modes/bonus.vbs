@@ -253,7 +253,7 @@ Sub CreateBonusMode
                 'calc waves and training bonus
                 With .Variable("bonus_waves")
                     .Action = "set"
-					.Int = BonusPerMeteorWave & " * current_player.num_meteor_waves_completed"
+					.Int = BonusrWaveMultiplier & " * current_player.num_waves_completed_this_ball * current_player.num_waves_completed"
 				End With
                 With .Variable("bonus_training")
                     .Action = "set"

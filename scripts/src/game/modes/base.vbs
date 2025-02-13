@@ -23,7 +23,16 @@ Sub CreateBaseMode()
         .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started")
 
         With .EventPlayer()
+            'DEBUG
             '.Add "s_left_staged_flipper_key_active", Array("meteor_wave1_done","meteor_wave2_done","meteor_wave3_done","meteor_wave4_done","meteor_wave5_done","meteor_wave6_done","meteor_wave7_done","meteor_wave8_done")  'DEBUG
+            .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
             .Add "mode_base_started", Array("knockdown_meteors")
@@ -479,12 +488,15 @@ Sub CreateBaseMode()
        
 
         With .VariablePlayer()
-            'ball_just_started
 		    With .EventName("mode_base_started")
 				With .Variable("ball_just_started")
                     .Action = "set"
 					.Int = 1
 				End With
+                With .Variable("num_waves_completed_this_ball") 
+                    .Action = "set"
+                    .Int = 0
+                End With
 			End With
             With .EventName("new_ball_active")
 				With .Variable("ball_just_started")
