@@ -777,9 +777,9 @@ Sub zCol_Rubber_rightsling
 	RubbersD.dampen Activeball
 End Sub
 
-Sub zCol_Rubber_moonramp
-	RubbersD.dampen Activeball
-End Sub
+' Sub zCol_Rubber_moonramp
+' 	RubbersD.dampen Activeball
+' End Sub
 
 
 Dim RubbersD				'frubber

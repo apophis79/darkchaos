@@ -1,16 +1,17 @@
 {
   "Primitive": {
     "position": {
-      "x": 627.2415,
-      "y": 514.4703,
-      "z": 25.0
+      "x": 627.0,
+      "y": 506.0,
+      "z": 33.0
     },
     "size": {
-      "x": 18.0,
-      "y": 18.0,
-      "z": 50.0
+      "x": 8.0,
+      "y": 30.0,
+      "z": 90.0
     },
     "rot_and_tra": [
+      -7.0,
       0.0,
       0.0,
       0.0,
@@ -18,29 +19,28 @@
       0.0,
       0.0,
       0.0,
-      0.0,
-      0.0
+      15.0
     ],
     "image": "",
     "normal_map": "",
-    "sides": 16,
-    "name": "zCol_Rubber_moonramp",
-    "material": "zCol_RubberPegs",
+    "sides": 4,
+    "name": "SternSleeve",
+    "material": "",
     "side_color": "#96009696",
     "is_visible": false,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,
-    "elasticity": 0.8,
-    "elasticity_falloff": 0.0,
+    "elasticity": 0.3,
+    "elasticity_falloff": 0.5,
     "friction": 0.3,
-    "scatter": 2.0,
+    "scatter": 0.0,
     "edge_factor_ui": 0.25,
     "collision_reduction_factor": 0.0,
     "is_collidable": true,
     "is_toy": false,
     "use_3d_mesh": false,
-    "static_rendering": false,
+    "static_rendering": true,
     "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 1.0,
@@ -55,7 +55,7 @@
     "mesh_file_name": null,
     "depth_bias": 0.0,
     "add_blend": false,
-    "use_depth_mask": true,
+    "use_depth_mask": false,
     "alpha": 100.0,
     "color": "#ff00ffff",
     "light_map": "",

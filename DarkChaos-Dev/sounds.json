@@ -3418,5 +3418,14 @@
     "volume": 0,
     "balance": 0,
     "output_target": 1
+  },
+  {
+    "name": "mus_training",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_training.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
   }
 ]

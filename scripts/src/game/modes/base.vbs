@@ -35,30 +35,31 @@ Sub CreateBaseMode()
             .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
-            .Add "mode_base_started", Array("knockdown_meteors")
+            .Add "mode_base_started", Array("knockdown_meteors","check_base_restart")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
+            
+            'restarting waves
+            .Add "stop_training", Array("check_base_restart","training_music_stop")
+            .Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave0_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
 
-            'waves
-            .Add "mode_base_started{current_player.shot_meteor_wave1 == 0}", Array("pre_meteor_wave1")
-            .Add "mode_base_started{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
-
-            .Add "mode_base_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
-            .Add "mode_base_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
 
             'wizard modes
             '   handle case when starting new ball
@@ -93,13 +94,14 @@ Sub CreateBaseMode()
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended")
     
-            'handle some sound effects
+            'handle some sound effects and music
             .Add "center_orbit_left_hit", Array("play_sfx_Orb")
             .Add "center_orbit_right_hit", Array("play_sfx_Orb")
             .Add "s_Bumper1_active", Array("play_sfx_bumper")
             .Add "s_Bumper2_active", Array("play_sfx_bumper")
             .Add "s_Bumper3_active", Array("play_sfx_bumper")
             .Add "s_Bumper4_active", Array("play_sfx_bumper")
+            .Add "stop_training_select", Array("training_music_start","meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches
             .Add "s_TargetMystery5_active", Array("magnet_activated")
@@ -535,11 +537,11 @@ Sub CreateBaseMode()
 
         With .SoundPlayer()
             'Music pre meteor wave 1
-            With .EventName("pre_meteor_wave1")
+            With .EventName("meteor_wave0_restart")
                 .Key = "key_mus_wave0"
                 .Sound = "mus_wave0"
             End With
-            With .EventName("pre_meteor_wave1_music_stop")
+            With .EventName("meteor_wave0_music_stop")
                 .Key = "key_mus_wave0"
                 .Sound = "mus_wave0"
                 .Action = "stop"
@@ -562,6 +564,17 @@ Sub CreateBaseMode()
                     .Action = "stop"
                 End With
             Next
+
+            'Training music
+            With .EventName("training_music_start")
+                .Key = "key_mus_training"
+                .Sound = "mus_training"
+            End With
+            With .EventName("training_music_stop")
+                .Key = "key_mus_training"
+                .Sound = "mus_training"
+                .Action = "stop"
+            End With
 
 
             'Ball launch

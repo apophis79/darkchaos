@@ -29,8 +29,8 @@
       "RubberBand008",
       "zCol_Rubber_Post015",
       "zCol_Rubber_Post016",
-      "zCol_Rubber_moonramp",
-      "zCol_Rubber_TrustPost"
+      "zCol_Rubber_TrustPost",
+      "SternSleeve"
     ],
     "fire_events": true,
     "stop_single_events": false,
@@ -169,7 +169,8 @@
       "zCol_Rubber_Peg005",
       "zCol_Rubber_Peg006",
       "zCol_Rubber_Peg011",
-      "zCol_Rubber_Peg012"
+      "zCol_Rubber_Peg012",
+      "SternSleeve"
     ],
     "fire_events": true,
     "stop_single_events": false,
