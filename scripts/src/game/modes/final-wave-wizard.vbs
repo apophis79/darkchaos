@@ -35,8 +35,10 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'add-a-ball
-            .Add "inner_orbit_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
-            '.Add "inner_orbit_hit{current_player.fwwiz_add_ball_ready == 2}", Array("fwwiz_add_ball_2")
+            .Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
+            .Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
+            .Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", Array("fwwiz_add_ball_2")
+            .Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", Array("fwwiz_add_ball_2")
             'asteroid hits
             .Add "center_orbit_left_hit", Array("asteroid_hit")
             .Add "center_orbit_right_hit", Array("asteroid_hit")
@@ -123,7 +125,7 @@ Sub CreateFinalWaveWizardMode
 
         With .Multiballs("fwwiz_2")
             .StartEvents = Array("fwwiz_add_ball")
-            '.AddABallEvents = Array("fwwiz_add_ball_2")
+            .AddABallEvents = Array("fwwiz_add_ball_2")
             .BallCount = 1
             .BallCountType = "add"
             .ShootAgain = 0
@@ -263,16 +265,22 @@ Sub CreateFinalWaveWizardMode
 					.Int = 1
 				End With
 			End With
-            With .EventName("timer_add_ball_cooldown_complete")
-				With .Variable("fwwiz_add_ball_ready")
-                    .Action = "set"
-					.Int = 1
-				End With
-			End With
+            ' With .EventName("timer_add_ball_cooldown_complete")
+			' 	With .Variable("fwwiz_add_ball_ready")
+            '         .Action = "set"
+			' 		.Int = 1
+			' 	End With
+			' End With
             With .EventName("fwwiz_add_ball")
 				With .Variable("fwwiz_add_ball_ready")
                     .Action = "set"
-					.Int = 0
+					.Int = 2
+				End With
+			End With
+            With .EventName("multiball_fwwiz_2_ended")
+				With .Variable("fwwiz_add_ball_ready")
+                    .Action = "set"
+					.Int = 1
 				End With
 			End With
 		End With
@@ -322,15 +330,15 @@ Sub CreateFinalWaveWizardMode
                 .Action = "start"
             End With
         End With
-        With .Timers("add_ball_cooldown")
-            .TickInterval = 1000
-            .StartValue = 0
-            .EndValue = 4
-            With .ControlEvents()
-                .EventName = "fwwiz_add_ball"
-                .Action = "restart"
-            End With
-        End With
+        ' With .Timers("add_ball_cooldown")
+        '     .TickInterval = 1000
+        '     .StartValue = 0
+        '     .EndValue = 4
+        '     With .ControlEvents()
+        '         .EventName = "fwwiz_add_ball"
+        '         .Action = "restart"
+        '     End With
+        ' End With
 
 
         With .SegmentDisplayPlayer()
@@ -356,22 +364,22 @@ Sub CreateFinalWaveWizardMode
 
             With .EventName("timer_final_wave_message_tick{devices.timers.final_wave_message.ticks == 1}")
                 With .Display("player1")
-                    .Text = """ UPPER """
+                    .Text = """ RAMPS """
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """  LOOP  """
+                    .Text = """ ADD A  """
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """ ADDS A """
+                    .Text = """  BALL  """
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """  BALL  """
+                    .Text = """"""
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
