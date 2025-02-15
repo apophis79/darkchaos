@@ -152,6 +152,7 @@ Sub ConfigureGlfDevices
     CreateSlingShows()
     CreateComboCommandShows()
     CreateFullyLoadedShows()
+    'CreateFinalWaveWizardShows()
 
     ' Sound effects bus
     CreateSounds()
@@ -463,11 +464,11 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
     Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
     Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
-    Glf_SetInitialPlayerVar "wizard_final_wave_phase", 0
     Glf_SetInitialPlayerVar "fwwiz_add_ball_ready", 0
     Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
     Glf_SetInitialPlayerVar "flwiz_super_jp", 0
     Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
+    Glf_SetInitialPlayerVar "victory", 0
     Glf_SetInitialPlayerVar "bonus_waves", 0
     Glf_SetInitialPlayerVar "bonus_training", 0
     Glf_SetInitialPlayerVar "bonus_bombs", 0

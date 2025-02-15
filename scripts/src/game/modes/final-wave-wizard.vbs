@@ -2,10 +2,10 @@
 
 'Final Wave Wizard Mode.
 
-' Goal: hit asteroid 99 times (inner asteroid orbit and/or center standup target). Count displayed on playfield and backglass/apron.
+' Goal: hit asteroid 20 times (inner asteroid orbit and/or center standup target). Count displayed on playfield and backglass/apron.
 ' Wizard starts at scoop
 ' No time limit. EBs can be used. Starts with 5 ball MB. Add-a-ball at center orbit (upper flipper).
-' 45 sec ball save
+' 60 sec ball save to start
 ' Asteroid glow increases with each hit. All inserts start to glow red too.
 ' At about 30 sec the meteors start to pop up, only two up at a time max
 ' Once asteroid destroyed, flippers die. Huge light show and music.
@@ -234,6 +234,13 @@ Sub CreateFinalWaveWizardMode
                     .Add "fade", 300
                 End With
             End With
+
+            ' With .EventName("asteroid_explodes_show")
+            '     .Key = "key_asteroid_explodes_show"
+            '     .Show = "asteroid_explodes_show" 
+            '     .Speed = 1
+            '     .EventsWhenCompleted = Array("stop_final_wave_wizard")
+            ' End With
         End With
 
 

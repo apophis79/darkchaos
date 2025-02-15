@@ -140,6 +140,14 @@ Sub CreateBaseMode()
                 .ForceDifferent = True
             End With
         End With
+
+
+        ' With .ComboSwitches("base_comboswitch_test")
+        '     .Switch1 = "s_left_flipper"
+        '     .Switch2 = "s_right_flipper"
+        '     .EventsWhenBoth = Array("test_comboswtiches")
+        '     '.HoldTime = 200
+        ' End With
        
 
         With .SegmentDisplayPlayer()
@@ -734,6 +742,12 @@ Sub CreateBaseMode()
             With .EventName("activate_final_wave_wizard")
                 .Sound = "voc_Wiz"
             End With
+
+            ' With .EventName("test_comboswtiches")  'DEBUG
+            '     .Sound = "sfx_tally_alt"
+            ' End With
+
+            
 
         End With
 
