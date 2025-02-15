@@ -108,9 +108,17 @@ Sub CreateFinalWaveWizardMode
             End With
         End With
 
+        With .QueueRelayPlayer()
+            With .EventName("balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active && current_player.wizard_final_hit_count == 0}")
+                .Post = "awaiting_wizard_show"
+                .WaitFor = "stop_final_wave_wizard"
+            End With
+        End With
+
 
         With .Multiballs("fwwiz")
             .StartEvents = Array("timer_final_wave_message_complete")
+            .DisableEvents = Array("asteroid_destroyed")
             .BallCount = 5
             .BallCountType = "total"
             .ShootAgain = FWWizBallSaveTime
@@ -120,6 +128,7 @@ Sub CreateFinalWaveWizardMode
 
         With .Multiballs("fwwiz_2")
             .StartEvents = Array("fwwiz_add_ball")
+            .DisableEvents = Array("asteroid_destroyed")
             .AddABallEvents = Array("fwwiz_add_ball_2")
             .BallCount = 1
             .BallCountType = "add"

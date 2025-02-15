@@ -783,6 +783,7 @@ Public Function Glf_ParseInput(value)
 			tmp = Glf_ReplaceCurrentPlayerAttributes(tmp)
 			tmp = Glf_ReplaceAnyPlayerAttributes(tmp)
 			tmp = Glf_ReplaceDeviceAttributes(tmp)
+			tmp = Glf_ReplaceModeAttributes(tmp)
 			tmp = Glf_ReplaceKwargsAttributes(tmp)
 			'msgbox tmp
 			If InStr(tmp, " if ") Then
@@ -844,6 +845,7 @@ Public Function Glf_ParseEventInput(value)
 		dim conditionReplaced : conditionReplaced = Glf_ReplaceCurrentPlayerAttributes(condition)
 		conditionReplaced = Glf_ReplaceAnyPlayerAttributes(conditionReplaced)
 		conditionReplaced = Glf_ReplaceDeviceAttributes(conditionReplaced)
+		conditionReplaced = Glf_ReplaceModeAttributes(conditionReplaced)
 		conditionReplaced = Glf_ReplaceKwargsAttributes(conditionReplaced)
 		templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
 		templateCode = templateCode & vbTab & "On Error Resume Next" & vbCrLf
@@ -901,6 +903,19 @@ Function Glf_ReplaceDeviceAttributes(inputString)
     outputString = regex.Replace(inputString, replacement)
     Set regex = Nothing
     Glf_ReplaceDeviceAttributes = outputString
+End Function
+
+Function Glf_ReplaceModeAttributes(inputString)
+    Dim pattern, replacement, regex, outputString
+    pattern = "modes\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
+    Set regex = New RegExp
+    regex.Pattern = pattern
+    regex.IgnoreCase = True
+    regex.Global = True
+	replacement = "glf_modes(""$1"").GetValue(""$2"")"
+    outputString = regex.Replace(inputString, replacement)
+    Set regex = Nothing
+    Glf_ReplaceModeAttributes = outputString
 End Function
 
 Function Glf_ReplaceKwargsAttributes(inputString)
@@ -963,7 +978,6 @@ End Function
 
 Function Glf_CheckForDeviceState(inputString)
     Dim pattern, regex, matches, match, hasDeviceState, attribute, deviceType, deviceName
-	'inputString = Glf_ReplaceDeviceAttributes(inputString)
     pattern = "devices\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
     Set regex = New RegExp
     regex.Pattern = pattern
@@ -1945,6 +1959,9 @@ Sub Glf_MonitorModeUpdate(mode)
     End If
     If Not IsNull(mode.QueueEventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.QueueEventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.QueueEventPlayer.Name & """},"
+    End If
+    If Not IsNull(mode.QueueRelayPlayer) Then
+        glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.QueueRelayPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.QueueRelayPlayer.Name & """},"
     End If
     If Not IsNull(mode.RandomEventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.RandomEventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.RandomEventPlayer.Name & """},"
@@ -4110,6 +4127,7 @@ Class Mode
     Private m_variableplayer
     Private m_eventplayer
     Private m_queueEventplayer
+    Private m_queueRelayPlayer
     Private m_random_event_player
     Private m_sound_player
     Private m_shot_profiles
@@ -4120,6 +4138,16 @@ Class Mode
     Private m_use_wait_queue
 
     Public Property Get Name(): Name = m_name: End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "active":
+                If m_started Then
+                    GetValue = True
+                Else
+                    GetValue = False
+                End If
+        End Select
+    End Property
     Public Property Get Priority(): Priority = m_priority: End Property
     Public Property Get Status()
         If m_started Then
@@ -4148,6 +4176,7 @@ Class Mode
     End Property
     Public Property Get EventPlayer() : Set EventPlayer = m_eventplayer: End Property
     Public Property Get QueueEventPlayer() : Set QueueEventPlayer = m_queueEventplayer: End Property
+    Public Property Get QueueRelayPlayer() : Set QueueRelayPlayer = m_queueRelayPlayer: End Property
     Public Property Get RandomEventPlayer() : Set RandomEventPlayer = m_random_event_player : End Property
     Public Property Get VariablePlayer(): Set VariablePlayer = m_variableplayer: End Property
     Public Property Get SoundPlayer() : Set SoundPlayer = m_sound_player : End Property
@@ -4370,6 +4399,9 @@ Class Mode
         If Not IsNull(m_queueEventplayer) Then
             m_queueEventplayer.Debug = value
         End If
+        If Not IsNull(m_queueRelayPlayer) Then
+            m_queueRelayPlayer.Debug = value
+        End If
         If Not IsNull(m_random_event_player) Then
             m_random_event_player.Debug = value
         End If
@@ -4414,6 +4446,7 @@ Class Mode
         m_segment_display_player = Null
         Set m_eventplayer = (new GlfEventPlayer)(Me)
         Set m_queueEventplayer = (new GlfQueueEventPlayer)(Me)
+        Set m_queueRelayPlayer = (new GlfQueueRelayPlayer)(Me)
         Set m_random_event_player = (new GlfRandomEventPlayer)(Me)
         Set m_sound_player = (new GlfSoundPlayer)(Me)
         Set m_variableplayer = (new GlfVariablePlayer)(Me)
@@ -5438,6 +5471,137 @@ Function QueueEventPlayerEventHandler(args)
         QueueEventPlayerEventHandler = kwargs
     End If
 End Function
+
+
+Class GlfQueueRelayPlayer
+
+    Private m_priority
+    Private m_mode
+    Private m_debug
+    private m_base_device
+    Private m_events
+    Private m_eventValues
+
+    Public Property Get Name() : Name = "queue_relay_player" : End Property
+
+    Public Property Let Debug(value)
+        m_debug = value
+        m_base_device.Debug = value
+    End Property
+    Public Property Get IsDebug()
+        If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
+    End Property
+
+	Public default Function init(mode)
+        m_mode = mode.Name
+        m_priority = mode.Priority
+        m_debug = False
+        Set m_events = CreateObject("Scripting.Dictionary")
+        Set m_eventValues = CreateObject("Scripting.Dictionary")
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "queue_relay_player", Me)
+        Set Init = Me
+	End Function
+
+    Public Property Get Events() : Set Events = m_events : End Property
+    Public Property Get EventNames() : EventNames = m_events.Keys() : End Property    
+    Public Property Get EventName(name)
+        If m_events.Exists(name) Then
+            Set EventName = m_eventValues(name)
+        Else
+            Dim new_event : Set new_event = (new GlfEvent)(name)
+            m_events.Add new_event.Raw, new_event
+            Dim new_event_value : Set new_event_value = (new GlfQueueRelayEvent)()
+            m_eventValues.Add new_event.Raw, new_event_value
+            Set EventName = new_event_value
+        End If
+    End Property
+
+    Public Sub Activate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            AddPinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_queue_relay_player_play", "QueueRelayPlayerEventHandler", m_priority+m_events(evt).Priority, Array("play", Me, evt)
+        Next
+    End Sub
+
+    Public Sub Deactivate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            RemovePinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_queue_relay_player_play"
+        Next
+    End Sub
+
+    Public Function FireEvent(evt)
+        FireEvent=Empty
+        If m_events(evt).Evaluate() Then
+            'post a new event, and wait for the release
+            DispatchPinEvent m_eventValues(evt).Post, Null
+            FireEvent = m_eventValues(evt).WaitFor
+        End If
+    End Function
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_mode & "_queue_relay_player", message
+        End If
+    End Sub
+
+    Public Function ToYaml()
+        Dim yaml
+        Dim evt
+        If UBound(m_events.Keys) > -1 Then
+            For Each key in m_events.keys
+                yaml = yaml & "  " & m_events(key).Raw & ": " & vbCrLf
+                For Each evt in m_eventValues(key)
+                    yaml = yaml & "    - " & evt & vbCrLf
+                Next
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
+End Class
+
+Function QueueRelayPlayerEventHandler(args)
+    
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
+    Else
+        kwargs = args(1) 
+    End If
+    Dim evt : evt = ownProps(0)
+    Dim eventPlayer : Set eventPlayer = ownProps(1)
+    Select Case evt
+        Case "play"
+            Dim wait_for : wait_for = eventPlayer.FireEvent(ownProps(2))
+            If Not IsEmpty(wait_for) Then
+                kwargs.Add "wait_for", wait_for
+            End If
+    End Select
+    If IsObject(args(1)) Then
+        Set QueueRelayPlayerEventHandler = kwargs
+    Else
+        QueueRelayPlayerEventHandler = kwargs
+    End If
+End Function
+
+Class GlfQueueRelayEvent
+
+	Private m_wait_for, m_post
+  
+    Public Property Get WaitFor() : WaitFor = m_wait_for : End Property
+    Public Property Let WaitFor(input) : m_wait_for = input : End Property
+    Public Property Get Post() : Post = m_post : End Property
+    Public Property Let Post(input) : m_post = input : End Property
+        
+	Public default Function init()
+        m_wait_for = Empty
+        m_post = Empty
+	    Set Init = Me
+	End Function
+
+End Class
 
 
 Class GlfRandomEventPlayer
@@ -11957,13 +12121,34 @@ AddPinEventListener GLF_NEXT_PLAYER, "next_player_release_ball",   "Glf_ReleaseB
 '
 '*****************************
 Function Glf_ReleaseBall(args)
+    Dim kwargs
+    Set kwargs = GlfKwargs()
     If Not IsNull(args) Then
         If args(0) = True Then
-            glf_BIP = glf_BIP + 1
-            DispatchPinEvent GLF_BALL_STARTED, Null
-            If useBcp Then
-                bcpController.SendPlayerVariable GLF_CURRENT_BALL, GetPlayerState(GLF_CURRENT_BALL), GetPlayerState(GLF_CURRENT_BALL)-1
-                bcpController.SendPlayerVariable GLF_SCORE, GetPlayerState(GLF_SCORE), GetPlayerState(GLF_SCORE)
+            kwargs.Add "new_ball", True
+        End If
+    End If
+    DispatchQueuePinEvent "balldevice_trough_ball_eject_attempt", kwargs
+End Function
+
+
+'****************************
+' Release Ball
+' Event Listeners:  
+AddPinEventListener "balldevice_trough_ball_eject_attempt", "trough_eject",  "Glf_TroughReleaseBall", 20, Null
+'
+'*****************************
+Function Glf_TroughReleaseBall(args)
+
+    If Not IsNull(args) Then
+        If IsObject(args(1)) Then
+            If args(1)("new_ball") = True Then
+                glf_BIP = glf_BIP + 1
+                DispatchPinEvent GLF_BALL_STARTED, Null
+                If useBcp Then
+                    bcpController.SendPlayerVariable GLF_CURRENT_BALL, GetPlayerState(GLF_CURRENT_BALL), GetPlayerState(GLF_CURRENT_BALL)-1
+                    bcpController.SendPlayerVariable GLF_SCORE, GetPlayerState(GLF_SCORE), GetPlayerState(GLF_SCORE)
+                End If
             End If
         End If
     End If
@@ -11973,7 +12158,6 @@ Function Glf_ReleaseBall(args)
     DispatchPinEvent "trough_eject", Null
     Glf_WriteDebugLog "Release Ball", "Just Kicked"
 End Function
-
 
 '****************************
 ' Ball Drain

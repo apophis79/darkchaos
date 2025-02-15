@@ -18,6 +18,7 @@ Sub CreateVictoryLapMode
         With .BallSaves("victory")
             .ActiveTime = 13000
             .EnableEvents = Array("mode_victory_lap_started")
+            .BallsToSave = 1
             .AutoLaunch = False
         End With
 
