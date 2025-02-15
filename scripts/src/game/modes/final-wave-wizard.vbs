@@ -22,15 +22,13 @@ Sub CreateFinalWaveWizardMode
 
     With CreateGlfMode("final_wave_wizard", 4000)
         .StartEvents = Array("run_final_wave_wizard")
-        .StopEvents = Array("stop_final_wave_wizard")
+        .StopEvents = Array("ball_ending","stop_final_wave_wizard")
         .UseWaitQueue = True
 
         With .EventPlayer()
             'start/restart wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == "&FWWizMaxAsteroidHits&"}", Array("begin_fwwiz") 'start wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < "&FWWizMaxAsteroidHits&"}", Array("continue_fwwiz","display_hit_count","update_asteroid_glow") 'continue wizard mode
-            'stopping wizard mode
-            .Add "ball_ending{current_player.wizard_final_hit_count > 0}", Array("stop_final_wave_wizard") 'FIXME: this should play a show that has .EventsWhenCompleted = Array("stop_final_wave_wizard")
             'release the scoop ball to start the wizard mode
             .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
@@ -93,9 +91,6 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 28}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers")
 
-            .Add "timer_asteroid_explodes_complete", Array("stop_final_wave_wizard")   'FIXME  for now just end the mode, but need to transition to Victory Lap mode. 
-                                                                                       '       Also need to handled end of ball properly. 
-
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
 
@@ -131,11 +126,6 @@ Sub CreateFinalWaveWizardMode
             .ShootAgain = 0
             .HurryUp = 0
             .GracePeriod = 0
-        End With
-
-        With .ExtraBalls("fwwiz_eb")
-            .AwardEvents = Array("asteroid_destroyed")
-            .MaxPerGame = 5
         End With
 
 
@@ -237,12 +227,13 @@ Sub CreateFinalWaveWizardMode
                 End With
             End With
 
-            ' With .EventName("asteroid_explodes_show")
-            '     .Key = "key_asteroid_explodes_show"
-            '     .Show = "asteroid_explodes_show" 
-            '     .Speed = 1
-            '     .EventsWhenCompleted = Array("stop_final_wave_wizard")
-            ' End With
+            With .EventName("asteroid_destroyed")
+                .Key = "key_asteroid_explodes_show"
+                .Show = "asteroid_explodes_show" 
+                .Loops = 6 '12 sec
+                .EventsWhenCompleted = Array("enable_flippers","stop_final_wave_wizard")
+            End With
+
         End With
 
 
@@ -265,12 +256,6 @@ Sub CreateFinalWaveWizardMode
 					.Int = 1
 				End With
 			End With
-            ' With .EventName("timer_add_ball_cooldown_complete")
-			' 	With .Variable("fwwiz_add_ball_ready")
-            '         .Action = "set"
-			' 		.Int = 1
-			' 	End With
-			' End With
             With .EventName("fwwiz_add_ball")
 				With .Variable("fwwiz_add_ball_ready")
                     .Action = "set"
@@ -305,7 +290,7 @@ Sub CreateFinalWaveWizardMode
             End With
         End With
         With .Timers("fwwiz_add_meteor")
-            .TickInterval = 1000
+            .TickInterval = 400
             .StartValue = 0
             .EndValue = 2
             With .ControlEvents()
@@ -324,21 +309,12 @@ Sub CreateFinalWaveWizardMode
         With .Timers("asteroid_explodes")
             .TickInterval = 200
             .StartValue = 0
-            .EndValue = 50
+            .EndValue = 55
             With .ControlEvents()
                 .EventName = "asteroid_destroyed"
                 .Action = "start"
             End With
         End With
-        ' With .Timers("add_ball_cooldown")
-        '     .TickInterval = 1000
-        '     .StartValue = 0
-        '     .EndValue = 4
-        '     With .ControlEvents()
-        '         .EventName = "fwwiz_add_ball"
-        '         .Action = "restart"
-        '     End With
-        ' End With
 
 
         With .SegmentDisplayPlayer()

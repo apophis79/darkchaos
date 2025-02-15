@@ -129,7 +129,7 @@ Const FWWizBallSaveTime = 60000
 Const FWWizMaxAsteroidHits = 20
 
 ' Bonus settings
-Const BonusTimerTickInterval = 500
+Const BonusTimerTickInterval = 333
 Const BonusrWaveMultiplier = 20000
 Const BonusPerTraining = 100000
 Const BonusPerClusterBomb = 30000
@@ -152,7 +152,7 @@ Sub ConfigureGlfDevices
     CreateSlingShows()
     CreateComboCommandShows()
     CreateFullyLoadedShows()
-    'CreateFinalWaveWizardShows()
+    CreateFinalWaveWizardShows()
 
     ' Sound effects bus
     CreateSounds()
@@ -520,6 +520,7 @@ Sub ConfigureGlfDevices
     CreateComboCommandWizardMode    ' No
     CreateFullyLoadedWizardMode     ' No
     CreateFinalWaveWizardMode       ' No
+    CreateVictoryLapMode            ' No
     
 End Sub
 
