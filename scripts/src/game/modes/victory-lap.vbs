@@ -14,6 +14,7 @@ Sub CreateVictoryLapMode
         .StopEvents = Array("mode_base_stopping")
 
         With .EventPlayer()
+            .Add "mode_victory_lap_started", Array("stop_asteroid_motor")
             .Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
             .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap","start_double_scoring")
             .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("run_victory_lap_show")

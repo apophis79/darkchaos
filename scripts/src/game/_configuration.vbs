@@ -218,6 +218,15 @@ Sub ConfigureGlfDevices
     End With
 
 
+    ' Asteroid motor
+    With CreateGlfDiverter("asteroid_motor")
+        .EnableEvents = Array("enable_asteroid_motor")
+        .ActivateEvents = Array("run_asteroid_motor") '"start_meteor_wave","start_training_heal"
+        .DeactivateEvents = Array("stop_asteroid_motor") '"stop_meteor_wave","stop_training"
+        .ActionCallback = "SolSpinAsteroid"
+    End With
+
+
     ' Flippers
     With CreateGlfFlipper("left")
         .Switch = "s_left_flipper"
@@ -489,6 +498,7 @@ Sub ConfigureGlfDevices
     CreateBasementMode              ' Active all the time
     CreateScoreMode                 ' Always active during a game
     CreateBonusMode                 ' No
+    CreateAttractMode               ' No
 
     CreateBaseMode                  ' No
     CreateSkillshotsMode            ' No

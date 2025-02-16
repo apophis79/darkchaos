@@ -11,9 +11,9 @@ Sub CreateBasementMode()
         .StartEvents = Array("reset_complete")
         .StopEvents = Array("when_the_universe_ends")
 
-        ' With .EventPlayer()
-        '     .Add "s_left_staged_flipper_key_active", Array("sling_rotate_cw_show")  'DEBUG
-        ' End With
+        With .EventPlayer()
+            .Add "mode_basement_started", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
+        End With
        
         With .SoundPlayer() 
             With .EventName("player_added{kwargs.num==1}")
@@ -43,15 +43,18 @@ Sub CreateBasementMode()
             End With
         End With
 
-        ' 'DEBUG
-        ' With .ShowPlayer()
-        '     With .EventName("asteroid_explodes_show")   
-        '         .Key = "key_asteroid_explodes_show"
-        '         .Show = "asteroid_explodes_show" 
-        '         .Loops = 2
-        '         '.EventsWhenCompleted = Array("stop_final_wave_wizard")
-        '     End With
-        ' End With
+        With .LightPlayer()
+            With .EventName("turn_on_starlight")   
+                With .Lights("LStars")
+					.Color = "ffffff"
+				End With
+            End With
+            With .EventName("turn_on_ship_lights")   
+				With .Lights("LShip")
+					.Color = "ffffff"
+				End With
+			End With
+        End With
 
     End With
 

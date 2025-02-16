@@ -1,6 +1,6 @@
 
 '***************************************************************
-'* ZSHD : VPW DYNAMIC BALL SHADOWS by Iakki, Apophis, and Wylte
+'* ZSHD : Ball shadows
 '***************************************************************
 ' For dynamic ball shadows, Check the "Raytraced ball shadows" box for the specific light. 
 ' Also make sure the light's z position is around 25 (mid ball)

@@ -32,16 +32,6 @@ Sub Table1_Init
 	InitPolarity
 	InitSlingCorrection
 
-	' StartAttractMode
-	'SetLampState LSpot1,1
-	LStars.state = 1       	'FIXME need to do this using GLF
-
-	' Spin the asteroid
-	SolSpinAsteroid true	'FIXME need to do this using GLF
-	
-	RaiseDiverterPin false	'FIXME need to do this using GLF
-	GrabMagnetAction false	'FIXME need to do this using GLF
-
 End Sub
 
 

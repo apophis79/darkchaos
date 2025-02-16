@@ -350,7 +350,7 @@ End Sub
 Sub SolSpinAsteroid(Enabled)
 	AstDelta = AstVel
 	SpinAst = Enabled
-	If Enabled=True Then
+	If Enabled Then
 		PlaySoundAtLevelStaticLoop "mfx_Motor", MechVol*0.05, BM_Asteroid1
 	Else
 		StopSound "mfx_Motor"
@@ -359,7 +359,7 @@ End Sub
 
 Sub UpdateAsteroid
 	If AstDelta > 0.005 Then
-		If SpinAst = True Then
+		If SpinAst <> False Then
 			AstDelta = AstVel 
 		Else
 			AstDelta = AstDelta - FrameTime*AstVel/2000  'Deceleration
@@ -474,7 +474,7 @@ Dim ShipDispY:ShipDispY = 0
 Dim Ship1DispY:Ship1DispY = 0
 
 
-Const ShipMaxMovement = 3
+Const ShipMaxMovement = 5
 Const ShipDecay = 0.90
 Const ShipAcc = 3000
 

@@ -57,13 +57,7 @@ Sub Table1_KeyUp(ByVal keycode)
 		TimerPlunger2.Enabled = True
 	End If
 
-
-
 End Sub
 
 
 
-' Sub LeftMagnaTimer_Timer
-' 	LeftMagnaTimer.Enabled = False
-' 	StartEarthKillerWizard
-' End Sub
