@@ -12,7 +12,8 @@ Sub CreateBasementMode()
         .StopEvents = Array("when_the_universe_ends")
 
         With .EventPlayer()
-            .Add "mode_basement_started", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
+            .Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
+            .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
         End With
        
         With .SoundPlayer() 
@@ -54,6 +55,16 @@ Sub CreateBasementMode()
 					.Color = "ffffff"
 				End With
 			End With
+        End With
+
+        With .Timers("table_init")
+            .TickInterval = 500
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "mode_basement_started"
+                .Action = "start"
+            End With
         End With
 
     End With

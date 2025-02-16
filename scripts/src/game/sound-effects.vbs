@@ -163,7 +163,7 @@ SFXDurations = Array( _
     4.736, _
     4.736, _
     4.736, _
-    1.954, _
+    2.690, _
     1.050, _
     4.714)
 
@@ -194,7 +194,12 @@ VOCNames = Array( _
     "voc_sss", _
     "voc_Training", _
     "voc_wave_incoming", _
-    "voc_Wiz")
+    "voc_Wiz", _
+    "voc_attract1", _
+    "voc_attract2", _
+    "voc_attract3", _
+    "voc_attract4", _
+    "voc_attract5")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -220,7 +225,12 @@ VOCDurations = Array( _
     2.540, _
     2.392, _
     4.974, _
-    2.111)
+    2.111, _
+    2.423, _
+    2.000, _
+    2.000, _
+    2.362, _
+    2.000)
 
 
 
@@ -248,7 +258,7 @@ MusicDurations = Array( _
     61.422, _
     56.844, _
     52.863, _
-    57.651, _
+    57.763, _
     52.062, _
     121.723)
 
