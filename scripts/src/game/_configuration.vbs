@@ -128,6 +128,9 @@ Const FWWizStartMeteorsInterval = 30000
 Const FWWizBallSaveTime = 60000
 Const FWWizMaxAsteroidHits = 20
 
+' Victory Lap settings
+Const VictoryLapTime = 45 'seconds
+
 ' Bonus settings
 Const BonusTimerTickInterval = 333
 Const BonusrWaveMultiplier = 20000
@@ -652,7 +655,6 @@ Public Sub CreateSharedShotProfiles()
           .Speed = 2
           With .Tokens()
               .Add "lights", "LSA"
-              .Add "color", ShipSaveColor
               .Add "fade", 200
           End With
       End With
@@ -662,7 +664,6 @@ Public Sub CreateSharedShotProfiles()
           .Speed = 5
           With .Tokens()
               .Add "lights", "LSA"
-              .Add "color", ShipSaveColor
           End With
       End With
     End With
