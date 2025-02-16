@@ -17,6 +17,14 @@
 'If the Super Duper JP is hit, then flippers die to drain other balls. Mode ends in full success!
 
 
+'DEBUG
+Sub FLW() 
+    DispatchPinEvent "complete_full_protons", NULL
+    DispatchPinEvent "complete_cluster_bombs", NULL
+    DispatchPinEvent "complete_moon_missiles", NULL
+End Sub
+
+
 Sub CreateFullyLoadedWizardMode
     Dim x
 

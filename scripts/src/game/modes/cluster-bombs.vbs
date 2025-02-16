@@ -108,7 +108,7 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("add_cluster_bomb"&x)
+                    .Events = Array("add_cluster_bomb"&x,"complete_cluster_bombs")
                     .State = 1
                 End With
                 With .ControlEvents()

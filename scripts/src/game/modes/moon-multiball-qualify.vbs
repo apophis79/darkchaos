@@ -142,7 +142,7 @@ Sub CreateMoonMultiballQualifyMode
                     .Add "color", MoonColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("light_missile"&x)
+                    .Events = Array("light_missile"&x,"complete_moon_missiles")
                     .State = 1
                 End With
                 .RestartEvents = Array("multiball_moon_started")

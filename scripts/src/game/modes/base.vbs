@@ -15,6 +15,7 @@
 '   - some light shows
 
 
+
 Sub CreateBaseMode()
     Dim x
 
@@ -35,7 +36,7 @@ Sub CreateBaseMode()
             .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
-            .Add "mode_base_started", Array("knockdown_meteors","check_base_restart","run_asteroid_motor")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
             
@@ -70,7 +71,7 @@ Sub CreateBaseMode()
             'restart victory lap if needed (player had more balls after beating the game)
             .Add "mode_base_started{current_player.victory == 1}", Array("restart_victory")
             '   check if fully loaded is ready
-            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("prime_fully_loaded_wizard")
+            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_moon_missile2 == 1}", Array("prime_fully_loaded_wizard")
             .Add "prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}", Array("activate_fully_loaded_wizard")
             '   handle case when starting and finishing a meteor wave
             .Add "start_meteor_wave", Array("disable_scoop_hold","stop_ccwiz_scoop_show","stop_flwiz_scoop_show")
