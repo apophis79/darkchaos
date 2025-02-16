@@ -43,6 +43,16 @@ Sub CreateBasementMode()
             End With
         End With
 
+        ' 'DEBUG
+        ' With .ShowPlayer()
+        '     With .EventName("asteroid_explodes_show")   
+        '         .Key = "key_asteroid_explodes_show"
+        '         .Show = "asteroid_explodes_show" 
+        '         .Loops = 2
+        '         '.EventsWhenCompleted = Array("stop_final_wave_wizard")
+        '     End With
+        ' End With
+
     End With
 
 End Sub

@@ -18,6 +18,9 @@ Sub CreateMeteorMultiballMode
 
         With .Shots("meteor_mb_shoot_again")
             .Profile = "shoot_again"
+            With .Tokens()
+                .Add "color", ShipSaveColor
+            End With
             With .ControlEvents()
                 .Events = Array("mode_meteor_multiball_started")
                 .State = 1

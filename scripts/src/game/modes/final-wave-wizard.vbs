@@ -8,9 +8,8 @@
 ' 60 sec ball save to start
 ' Asteroid glow increases with each hit. All inserts start to glow red too.
 ' At about 30 sec the meteors start to pop up, only two up at a time max
-' Once asteroid destroyed, flippers die. Huge light show and music.
-' Victory lap! All shots are lit, double scoring, 30 sec ball save, 5 ball mb
-' Flippers die after 30sec. Game over.
+' Once asteroid destroyed, flippers die. Huge light show and music. Then victory lap mode starts
+
 
 
 Dim FWWizAsteroidColors
@@ -140,6 +139,9 @@ Sub CreateFinalWaveWizardMode
 
         With .Shots("fwwiz_shoot_again")
             .Profile = "shoot_again"
+            With .Tokens()
+                .Add "color", HealthColor2
+            End With
             With .ControlEvents()
                 .Events = Array("begin_fwwiz")
                 .State = 1

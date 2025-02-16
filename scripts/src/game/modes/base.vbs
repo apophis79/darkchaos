@@ -63,10 +63,12 @@ Sub CreateBaseMode()
 
             'wizard modes
             '   handle case when starting new ball
-            .Add "mode_base_started{current_player.shot_final_wave_wizard == 2}", Array("run_final_wave_wizard","wizard_mode_started")
-            .Add "mode_base_started{current_player.shot_final_wave_wizard == 1}", Array("activate_final_wave_wizard")
-            .Add "mode_base_started{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
-            .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
+            .Add "mode_base_started{current_player.shot_final_wave_wizard == 2 && current_player.victory == 0}", Array("run_final_wave_wizard","wizard_mode_started")
+            .Add "mode_base_started{current_player.shot_final_wave_wizard == 1 && current_player.victory == 0}", Array("activate_final_wave_wizard")
+            .Add "mode_base_started{current_player.shot_combo_command_wizard == 1 && current_player.victory == 0}", Array("activate_combo_command_wizard")
+            .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 && current_player.victory == 0}", Array("activate_fully_loaded_wizard")
+            'restart victory lap if needed (player had more balls after beating the game)
+            .Add "mode_base_started{current_player.victory == 1}", Array("restart_victory")
             '   check if fully loaded is ready
             .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_light_missile2 == 1}", Array("prime_fully_loaded_wizard")
             .Add "prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}", Array("activate_fully_loaded_wizard")
@@ -76,7 +78,7 @@ Sub CreateBaseMode()
             .Add "stop_meteor_wave{current_player.shot_combo_command_wizard == 1}", Array("activate_combo_command_wizard")
             .Add "stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}", Array("activate_fully_loaded_wizard")
             '    wizard mode phase 1 qualifed. Ready the scoop
-            .Add "activate_final_wave_wizard", Array("wizard_mode_ready","run_fwwiz_scoop_show","wizard_mode_started")
+            .Add "activate_final_wave_wizard", Array("wizard_mode_ready","run_fwwiz_scoop_show","run_asteroid_spotlight_show","wizard_mode_started")
             .Add "activate_combo_command_wizard", Array("wizard_mode_ready","run_ccwiz_scoop_show")
             .Add "activate_fully_loaded_wizard", Array("wizard_mode_ready","run_flwiz_scoop_show")
             .Add "wizard_mode_ready", Array("enable_scoop_hold")
@@ -86,7 +88,7 @@ Sub CreateBaseMode()
             .Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", Array("stop_ccwiz_scoop_show")
             .Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", Array("stop_flwiz_scoop_show")
             '    run the wizard mode when qualified and ball enters the scoop. If more than one wizard is qualified, final wizard is top priority, then combo command, then fully loaded.
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","stop_asteroid_spotlight_show","clear_wizard_mode_ready") 
             .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show","clear_wizard_mode_ready") 
             .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
             '    clean up wizard mode
@@ -198,6 +200,12 @@ Sub CreateBaseMode()
                 With .Lights("GI")
                     .Color = GIColor3000k
                     .Fade = 200
+                End With
+            End With
+            With .EventName("activate_final_wave_wizard")
+                With .Lights("GI")
+                    .Priority = 100
+                    .Color = "000000"
                 End With
             End With
         End With
@@ -460,6 +468,30 @@ Sub CreateBaseMode()
                 End With
             End With
 
+            With .EventName("run_asteroid_spotlight_show")
+                .Key = "key_asteroid_spotlight"
+                .Show = "flash_color_with_fade"
+                .Speed = 1
+                .Priority = 3000
+                With .Tokens()
+                    .Add "lights", "LSpot1"
+                    .Add "color", "ffffff"
+                    .Add "fade", 700
+                End With
+            End With
+            With .EventName("stop_asteroid_spotlight_show")
+                .Key = "key_asteroid_spotlight"
+                .Show = "flash_color_with_fade"
+                .Speed = 1
+                .Priority = 3000
+                .Action= "stop"
+                With .Tokens()
+                    .Add "lights", "LSpot1"
+                    .Add "color", "ffffff"
+                    .Add "fade", 700
+                End With
+            End With
+
 
         End With
 
@@ -485,6 +517,9 @@ Sub CreateBaseMode()
 
         With .Shots("base_shoot_again")
             .Profile = "shoot_again"
+            With .Tokens()
+                .Add "color", ShipSaveColor
+            End With
             With .ControlEvents()
                 .Events = Array("ball_save_new_ball_enabled")
                 .State = 1
