@@ -12,6 +12,8 @@ Sub CreateBasementMode()
         .StopEvents = Array("when_the_universe_ends")
 
         With .EventPlayer()
+            .Add "s_left_staged_flipper_key_active", Array("test_show") 'DEBUG
+
             .Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
             .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
         End With
@@ -70,6 +72,24 @@ Sub CreateBasementMode()
                 .Action = "stop"
             End With
         End With
+
+
+        ' With .ShowPlayer()
+        '     With .EventName("test_show")  'DEBUG
+        '         .Key = "key_test_show"
+        '         .Show = "rsling_rotate1_cw"
+        '         .Speed = 1
+        '         .Loops = 10
+        '         With .Tokens()
+        '             .Add "color", "ffffff"
+        '             '.Add "color1", "ffff00"
+        '             '.Add "color2", "00ffff"
+        '             '.Add "color3", "ff0000"
+        '             '.Add "color4", "0000ff"
+        '             .Add "intensity", 50
+        '         End With
+        '     End With
+        ' End With
 
     End With
 
