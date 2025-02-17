@@ -247,7 +247,7 @@ MusicNames = Array( _
     "mus_wave8", _
     "mus_wave9", _
     "mus_training", _
-    "mus_post_game")
+    "mus_ambient_bg")
 MusicDurations = Array( _
     92.212, _
     53.551, _
@@ -260,7 +260,7 @@ MusicDurations = Array( _
     52.863, _
     57.763, _
     52.062, _
-    121.723)
+    58.508)
 
 
 
@@ -303,6 +303,14 @@ Sub CreateSounds()
             .EventsWhenStopped = Array(MusicNames(x)&"_stopped")
         End With
     Next
+
+    'Non looping music
+    With CreateGlfSound("mus_post_game")
+        .File = "mus_post_game" 
+        .Bus = BusName ' Sound bus to play on
+        .Duration = 54.897 * 1000
+        .EventsWhenStopped = Array("mus_post_game_stopped")
+    End With
 
 
 End Sub

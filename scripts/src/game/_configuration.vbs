@@ -172,7 +172,7 @@ Sub ConfigureGlfDevices
 
     With CreateGlfSoundBus("mus")
         .SimultaneousSounds = 4
-        .Volume = 0.5
+        .Volume = 0.8
     End With
 
 
@@ -499,6 +499,7 @@ Sub ConfigureGlfDevices
     CreateScoreMode                 ' Always active during a game
     CreateBonusMode                 ' No
     CreateAttractMode               ' No
+    CreatePostGameMode              ' No
 
     CreateBaseMode                  ' No
     CreateSkillshotsMode            ' No

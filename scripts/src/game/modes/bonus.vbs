@@ -138,7 +138,7 @@ Sub CreateBonusMode
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "skip_bonus_tally{current_player.bonus_comboflip_block==0}"
+                .EventName = "skip_bonus_tally{current_player.bonus_comboflip_block==0 && devices.timers.bonus.ticks < 16}"
                 .Action = "jump"
                 .Value = 16  'bonus total
             End With

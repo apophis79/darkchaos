@@ -3397,7 +3397,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_wave7.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 20,
     "balance": 0,
     "output_target": 1
   },
@@ -3406,7 +3406,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_wave8.mp3",
     "internal_name": "",
     "fade": 0,
-    "volume": 0,
+    "volume": 20,
     "balance": 0,
     "output_target": 1
   },
@@ -3467,6 +3467,15 @@
   {
     "name": "voc_attract5",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\voc_attract5.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "mus_ambient_bg",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\mus_ambient_bg.mp3",
     "internal_name": "",
     "fade": 0,
     "volume": 0,

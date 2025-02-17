@@ -8,11 +8,11 @@ Sub CreateAttractMode()
     Dim x
 
     With CreateGlfMode("attract", 120)
-        .StartEvents = Array("start_attract_mode",GLF_GAME_OVER)
+        .StartEvents = Array("start_attract_mode")
         .StopEvents = Array("stop_attract_mode",GLF_BALL_STARTED)
 
         With .EventPlayer()
-            .Add "mode_attract_started", Array("play_attract_show1","stop_asteroid_motor","drop_diverter")
+            .Add "mode_attract_started", Array("play_attract_show1","play_mus_ambient_bg","stop_asteroid_motor","drop_diverter")
             .Add "timer_attract_voc_complete", Array("play_attract_voc")
         End With
 
@@ -35,6 +35,10 @@ Sub CreateAttractMode()
                     .Sound = "voc_attract"&x
                 End With
             Next
+            With .EventName("play_mus_ambient_bg")
+                .Key = "key_mus_ambient_bg"
+                .Sound = "mus_ambient_bg"
+            End With
         End With
 
         With .Timers("attract_voc")
