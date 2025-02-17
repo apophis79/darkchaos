@@ -65,6 +65,10 @@ Sub CreateBasementMode()
                 .EventName = "mode_basement_started"
                 .Action = "start"
             End With
+            With .ControlEvents()
+                .EventName = GLF_BALL_STARTED
+                .Action = "stop"
+            End With
         End With
 
     End With

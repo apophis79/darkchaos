@@ -349,12 +349,12 @@ End Sub
 
 Sub SolSpinAsteroid(Enabled)
 	AstDelta = AstVel
-	SpinAst = Enabled
-	If Enabled <> False Then
+	If Enabled <> False And SpinAst = False Then
 		PlaySoundAtLevelStaticLoop "mfx_Motor", MechVol*0.02, BM_Asteroid1
-	Else
+	ElseIf Enabled = False Then
 		StopSound "mfx_Motor"
 	End If
+	SpinAst = Enabled
 End Sub
 
 Sub UpdateAsteroid
