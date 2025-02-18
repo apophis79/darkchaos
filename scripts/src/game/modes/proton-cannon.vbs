@@ -14,7 +14,7 @@
 Sub CreateProtonCannonMode
     Dim x
 
-    With CreateGlfMode("proton_cannon", 510)
+    With CreateGlfMode("proton_cannon", 900)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
         .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
 
@@ -29,15 +29,16 @@ Sub CreateProtonCannonMode
             .Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", Array("play_sfx_LPC","light_proton_charge2","ready_proton_charge3")
             .Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", Array("play_sfx_LPC","light_proton_charge3")
             'Add protons
-            .Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", Array("play_sfx_LPR","add_proton_round1","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("play_sfx_LPR","add_proton_round2","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("play_sfx_LPR","add_proton_round3","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("play_sfx_LPR","add_proton_round4","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("play_sfx_LPR","add_proton_round5","reset_proton_charges")
-            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("play_sfx_LPR","add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
+            .Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", Array("added_proton","add_proton_round1","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", Array("added_proton","add_proton_round2","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", Array("added_proton","add_proton_round3","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("added_proton","add_proton_round4","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("added_proton","add_proton_round5","reset_proton_charges")
+            .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("added_proton","add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
+            .Add "added_proton", Array("slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc")
             '.Add "check_protons", Array("check_protons_done")
             'Handle mystery award
-            .Add "mystery_full_protons", Array("complete_full_protons")
+            .Add "mystery_full_protons", Array("complete_full_protons","slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc")
             .Add "complete_full_protons", Array("check_fully_loaded","score_5000") 'check for wizard mode qualification
             'Scoring
             .Add "s_spinner_active", Array("score_10")
@@ -80,7 +81,7 @@ Sub CreateProtonCannonMode
                 .Sound = "sfx_LPC5"
             End With
 
-            With .EventName("play_sfx_LPR")
+            With .EventName("added_proton")
                 .Key = "key_voc_LPR1"
                 .Sound = "voc_LPR1"
             End With
@@ -173,6 +174,31 @@ Sub CreateProtonCannonMode
                     .Add "fade", 300
                 End With
             End With
+
+            'Added proton shows
+            With .EventName("lsling_powerup_pc")
+                .Key = "key_lsling_powerup_pc"
+                .Show = "lsling_rotate2_cw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ProtonColor
+                    .Add "color2", ProtonColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("rsling_powerup_pc")
+                .Key = "key_rsling_powerup_pc"
+                .Show = "rsling_rotate2_ccw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ProtonColor
+                    .Add "color2", ProtonColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+
         End With
 
         With .SegmentDisplayPlayer()

@@ -5,7 +5,7 @@
 
 Sub CreateDoubleScoringMode
 
-    With CreateGlfMode("double_scoring", 800)
+    With CreateGlfMode("double_scoring", 700)
         .StartEvents = Array("start_double_scoring","mystery_double_scoring")
         .StopEvents = Array("mode_base_stopping","stop_double_scoring")
         

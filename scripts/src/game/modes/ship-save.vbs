@@ -10,7 +10,7 @@
 Sub CreateShipSaveMode
     Dim x
 
-    With CreateGlfMode("ship_save", 510)
+    With CreateGlfMode("ship_save", 520)
         .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
         .StopEvents = Array("mode_base_stopping","start_meteor_wave","start_training_select","wizard_mode_started")
 
@@ -25,6 +25,7 @@ Sub CreateShipSaveMode
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2","play_sfx_LF")
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3","play_sfx_LF")
             .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3","play_sfx_LF")
+            .Add "light_ship_charge3", Array("slings_powerup_added","lsling_powerup_sa","rsling_powerup_sa")
             'Handle mystery award
             .Add "mystery_added_saver", Array("complete_ship_save","light_ship_charge3")
         End With
@@ -89,6 +90,29 @@ Sub CreateShipSaveMode
                 With .Tokens()
                     .Add "lights", "tSaver"
                     .Add "color", ShipSaveColor
+                End With
+            End With
+            'Added ship saver shows
+            With .EventName("lsling_powerup_sa")
+                .Key = "key_lsling_powerup_sa"
+                .Show = "lsling_rotate2_cw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ShipSaveColor
+                    .Add "color2", ShipSaveColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("rsling_powerup_sa")
+                .Key = "key_rsling_powerup_sa"
+                .Show = "rsling_rotate2_ccw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ShipSaveColor
+                    .Add "color2", ShipSaveColor
+                    .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
         End With

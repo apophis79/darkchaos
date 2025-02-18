@@ -53,7 +53,7 @@ End Sub
 Sub CreateMoonMultiballQualifyMode
     Dim x
 
-    With CreateGlfMode("moon_multiball_qualify", 510)
+    With CreateGlfMode("moon_multiball_qualify", 590)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
         .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
 
@@ -77,8 +77,8 @@ Sub CreateMoonMultiballQualifyMode
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
             'Scoring
             .Add "right_ramp_hit", Array("score_500")
-            .Add "light_missile1", Array("score_5000")
-            .Add "light_missile2", Array("score_10000")
+            .Add "light_missile1", Array("score_5000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm")
+            .Add "light_missile2", Array("score_10000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm")
             .Add "complete_moon_qualify_shots", Array("score_10000")
         End With
 
@@ -252,6 +252,29 @@ Sub CreateMoonMultiballQualifyMode
                 With .Tokens()
                     .Add "lights", "tMoon"
                     .Add "color", MoonColor
+                End With
+            End With
+            'Added moon missile shows
+            With .EventName("lsling_powerup_mm")
+                .Key = "key_lsling_powerup_mm"
+                .Show = "lsling_rotate2_cw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", MoonColor
+                    .Add "color2", MoonColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("rsling_powerup_mm")
+                .Key = "key_rsling_powerup_mm"
+                .Show = "rsling_rotate2_ccw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", MoonColor
+                    .Add "color2", MoonColor
+                    .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
         End With

@@ -121,7 +121,11 @@ Sub CreateBaseMode()
             'handle some shows
             .Add "s_LeftSlingshot_active", Array("lsling_base_show1","lsling_base_show2") 
             .Add "s_RightSlingshot_active", Array("rsling_base_show1","rsling_base_show2") 
+            .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
+            
         End With
+
+            
 
         With .RandomEventPlayer()
             With .EventName("play_sfx_Orb")
@@ -530,6 +534,51 @@ Sub CreateBaseMode()
                 End With
             End With
 
+            ' Sling power up show
+            With .EventName("pu_lsling1_show")
+                .Key = "key_pc_lsling1_show"
+                .Show = "flash_color_with_fade" 
+                .Speed = 9
+                .Loops = 9
+                With .Tokens()
+                    .Add "lights", "gi04"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 900
+                End With
+            End With
+            With .EventName("pu_lsling2_show")
+                .Key = "key_pc_lsling2_show"
+                .Show = "flash_color_with_fade" 
+                .Speed = 4
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "gi03"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 900
+                End With
+            End With
+            With .EventName("pu_rsling1_show")
+                .Key = "key_pu_rsling1_show"
+                .Show = "flash_color_with_fade" 
+                .Speed = 9
+                .Loops = 9
+                With .Tokens()
+                    .Add "lights", "gi08"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 900
+                End With
+            End With
+            With .EventName("pu_rsling2_show")
+                .Key = "key_pu_rsling2_show"
+                .Show = "flash_color_with_fade" 
+                .Speed = 4
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "gi07"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 900
+                End With
+            End With
 
         End With
 

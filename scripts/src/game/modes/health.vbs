@@ -12,7 +12,7 @@
 Sub CreateHealthMode
     Dim x
 
-    With CreateGlfMode("health", 510)
+    With CreateGlfMode("health", 800)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
         .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
 
@@ -45,10 +45,11 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","remove_health")
             .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","remove_health")
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers")
+            .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h")
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
             'Handle mystery award
-            .Add "mystery_full_health", Array("complete_full_health")
+            .Add "mystery_full_health", Array("complete_full_health""slings_powerup_added","lsling_powerup_h","rsling_powerup_h")
         End With
 
 
@@ -156,6 +157,29 @@ Sub CreateHealthMode
                     .Add "lights", "tBumper"
                     .Add "color", GIColor3000k '"ffffff"
                     .Add "intensity", 10
+                End With
+            End With
+            'Added health shows
+            With .EventName("lsling_powerup_h")
+                .Key = "key_lsling_powerup_h"
+                .Show = "lsling_rotate2_cw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", HealthColor1
+                    .Add "color2", HealthColor1
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("rsling_powerup_h")
+                .Key = "key_rsling_powerup_h"
+                .Show = "rsling_rotate2_ccw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", HealthColor1
+                    .Add "color2", HealthColor1
+                    .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
         End With

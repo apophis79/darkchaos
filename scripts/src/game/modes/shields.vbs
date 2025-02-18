@@ -27,6 +27,8 @@ Sub CreateShieldsMode
             .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
+            'show
+            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh")
         End With
 
         With .RandomEventPlayer()
@@ -182,6 +184,29 @@ Sub CreateShieldsMode
                 With .Tokens()
                     .Add "lights", "tShields"
                     .Add "color", ShieldsColor
+                End With
+            End With
+            'Added shields shows
+            With .EventName("lsling_powerup_sh")
+                .Key = "key_lsling_powerup_sh"
+                .Show = "lsling_rotate2_cw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ShieldsColor
+                    .Add "color2", ShieldsColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("rsling_powerup_sh")
+                .Key = "key_rsling_powerup_sh"
+                .Show = "rsling_rotate2_ccw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ShieldsColor
+                    .Add "color2", ShieldsColor
+                    .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
         End With

@@ -33,11 +33,11 @@ Sub CreateClusterBombMode
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash")
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Handle mystery award
-            .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded")
+            .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
             .Add "left_orbit_hit", Array("score_500")
-            .Add "add_cluster_bomb1", Array("score_5000")
-            .Add "add_cluster_bomb2", Array("score_10000")
+            .Add "add_cluster_bomb1", Array("score_5000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
+            .Add "add_cluster_bomb2", Array("score_10000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             .Add "complete_cluster_charges", Array("score_10000")
         End With
 
@@ -177,6 +177,31 @@ Sub CreateClusterBombMode
                     .Add "fade", 300
                 End With
             End With
+
+            'Added cluster bomb shows
+            With .EventName("lsling_powerup_cb")
+                .Key = "key_lsling_powerup_cb"
+                .Show = "lsling_rotate2_cw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ClusterBombColor
+                    .Add "color2", ClusterBombColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("rsling_powerup_cb")
+                .Key = "key_rsling_powerup_cb"
+                .Show = "rsling_rotate2_ccw"
+                .Speed = 2
+                .Loops = 3
+                With .Tokens()
+                    .Add "color1", ClusterBombColor
+                    .Add "color2", ClusterBombColor
+                    .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+
         End With
 
 

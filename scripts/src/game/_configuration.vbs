@@ -36,6 +36,8 @@ Const EarthHitColor2 = "880303"
 
 Const SegmentsColor = "ff0000"
 
+Const SlingDomePowerUpBrightness = 100  '0 to 100
+
 
 ' Playfield display light names
 Dim PFDisplayLightNames
@@ -494,48 +496,47 @@ Sub ConfigureGlfDevices
     'Shot Profiles
     CreateSharedShotProfiles
 
-    ' Modes                         Active during waves
-    '-------                        -------------------
-    CreateBasementMode              ' Active all the time
-    CreateScoreMode                 ' Always active during a game
-    CreateBonusMode                 ' No
-    CreateAttractMode               ' No
-    CreatePostGameMode              ' No
+    ' Modes                         Priority        Active during waves
+    '-------                        --------        -------------------
+    CreateBasementMode              ' 100           Active all the time
+    CreateAttractMode               ' 120           No
+    CreateBonusMode                 ' 150           No
+    CreatePostGameMode              ' 180           No
+    CreateScoreMode                 ' 2000          Always active during a game
 
-    CreateBaseMode                  ' No
-    CreateSkillshotsMode            ' No
-    CreateAlienAttackMode           ' No
-    CreateShieldsMode               ' No
-    CreateTimewarpMode              ' No
-    CreateShipSaveMode              ' No
-    CreateCombosMode                ' No
-    CreateMysteryMode               ' No
-    CreateExtraBallMode             ' No
-    CreateDoubleScoringMode         ' Yes
-    CreateClusterBombMode           ' Yes
-    CreateProtonCannonMode          ' Yes
-    CreateHealthMode                ' Yes
-    
-    CreateMoonMultiballQualifyMode  ' No
-    CreateMoonMultiballMode         ' Yes
+    CreateBaseMode                  ' 200           No
+    CreateSkillshotsMode            ' 500           No
+    CreateAlienAttackMode           ' 500           No
+    CreateShieldsMode               ' 510           No
+    CreateShipSaveMode              ' 520           No
+    CreateCombosMode                ' 530           No
+    CreateTimewarpMode              ' 550           No
+    CreateExtraBallMode             ' 560           No
+    CreateMysteryMode               ' 580           No
+    CreateMoonMultiballQualifyMode  ' 590           No
+    CreateMoonMultiballMode         ' 600           Yes
+    CreateDoubleScoringMode         ' 700           Yes
+    CreateHealthMode                ' 800           Yes
+    CreateProtonCannonMode          ' 900           Yes
+    CreateClusterBombMode           ' 1000          Yes
 
-    CreateTrainingQualifyMode       ' No
-    CreateTrainingSelectMode        ' No
-    CreateTrainingHealMode          ' No
-    CreateTrainingClusterBombMode   ' No
-    CreateTrainingProtonCannonMode  ' No
-    CreateTrainingMoonMissileMode   ' No
-    CreateTrainingShipSaveMode      ' No
-    CreateTrainingShieldsMode       ' No
+    CreateTrainingQualifyMode       ' 513           No
+    CreateTrainingSelectMode        ' 600           No
+    CreateTrainingHealMode          ' 700           No
+    CreateTrainingClusterBombMode   ' 700           No
+    CreateTrainingProtonCannonMode  ' 700           No
+    CreateTrainingMoonMissileMode   ' 700           No
+    CreateTrainingShipSaveMode      ' 700           No
+    CreateTrainingShieldsMode       ' 700           No
 
-    CreateMeteorWaveQualifyMode     ' No
-    CreateMeteorWaveMode            ' Yes
-    CreateMeteorMultiballMode       ' Yes
+    CreateMeteorWaveQualifyMode     ' 1100          No
+    CreateMeteorWaveMode            ' 1000          Yes
+    CreateMeteorMultiballMode       ' 1000          Yes
 
-    CreateComboCommandWizardMode    ' No
-    CreateFullyLoadedWizardMode     ' No
-    CreateFinalWaveWizardMode       ' No
-    CreateVictoryLapMode            ' No
+    CreateFullyLoadedWizardMode     ' 2000          No
+    CreateComboCommandWizardMode    ' 3000          No
+    CreateFinalWaveWizardMode       ' 4000          No
+    CreateVictoryLapMode            ' 9999          No
     
 End Sub
 

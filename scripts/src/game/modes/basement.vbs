@@ -77,8 +77,8 @@ Sub CreateBasementMode()
         ' With .ShowPlayer()
         '     With .EventName("test_show")  'DEBUG
         '         .Key = "key_test_show"
-        '         .Show = "rsling_rotate1_cw"
-        '         .Speed = 1
+        '         .Show = "rsling_rotate2_cw"
+        '         .Speed = 2
         '         .Loops = 10
         '         With .Tokens()
         '             .Add "color", "ffffff"
@@ -86,7 +86,7 @@ Sub CreateBasementMode()
         '             '.Add "color2", "00ffff"
         '             '.Add "color3", "ff0000"
         '             '.Add "color4", "0000ff"
-        '             .Add "intensity", 50
+        '             .Add "intensity", 100
         '         End With
         '     End With
         ' End With

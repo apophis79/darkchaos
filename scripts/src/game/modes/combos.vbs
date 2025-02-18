@@ -11,7 +11,7 @@
 Sub CreateCombosMode
     Dim x
 
-    With CreateGlfMode("combos", 520)
+    With CreateGlfMode("combos", 530)
         .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
         .StopEvents = Array("mode_base_stopping","start_meteor_wave","start_training_select","wizard_mode_started")
 
