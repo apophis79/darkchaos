@@ -81,6 +81,8 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done{current_player.training_heal_achieved==0}", Array("drop_diverter")
             'restart fire protons
             .Add "check_protons{current_player.shot_proton_round1==0}", Array("restart_fire_protons")
+            'earth hit show
+            .Add "earth_hit", Array("mw_lsing_earth_hit","mw_rsling_earth_hit")
         End With
 
         'Randomize which meteor gets hit by proton cannon
@@ -557,6 +559,7 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
+            'Earth hit
             With .EventName("earth_hit")
                 .Key = "key_earth_hit"
                 .Priority = 15
@@ -575,6 +578,48 @@ Sub CreateMeteorWaveMode
                     .Add "color", EarthHitColor
                 End With
             End With
+            With .EventName("mw_lsing_earth_hit")
+                .Key = "key_mw_lsing_earth_hit"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 6
+                With .Tokens()
+                    .Add "lights", "tFL5"
+                    .Add "color", EarthHitColor
+                End With
+            End With
+            With .EventName("mw_rsling_earth_hit")
+                .Key = "key_mw_rsling_earth_hit"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 6
+                With .Tokens()
+                    .Add "lights", "tFL6"
+                    .Add "color", EarthHitColor
+                End With
+            End With
+            ' With .EventName("mw_lsing_earth_hit")
+            '     .Key = "key_mw_lsing_earth_hit"
+            '     .Show = "lsling_swap_2_2_b"
+            '     .Speed = 2
+            '     .Loops = 7
+            '     With .Tokens()
+            '         .Add "color1", "ff1100"
+            '         .Add "color2", "001122"
+            '         .Add "intensity", 100
+            '     End With
+            ' End With
+            ' With .EventName("mw_rsling_earth_hit")
+            '     .Key = "key_mw_rsling_earth_hit"
+            '     .Show = "rsling_swap_2_2_b"
+            '     .Speed = 2
+            '     .Loops = 7
+            '     With .Tokens()
+            '         .Add "color1", "ff1100"
+            '         .Add "color2", "001122"
+            '         .Add "intensity", 100
+            '     End With
+            ' End With
         End With
 
         With .VariablePlayer()

@@ -117,6 +117,10 @@ Sub CreateBaseMode()
             'handle delayed moon ball release
             .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
+
+            'handle some shows
+            .Add "s_LeftSlingshot_active", Array("lsling_base_show1","lsling_base_show2") 
+            .Add "s_RightSlingshot_active", Array("rsling_base_show1","rsling_base_show2") 
         End With
 
         With .RandomEventPlayer()
@@ -385,16 +389,49 @@ Sub CreateBaseMode()
                 End With
             End With
 
-            With .EventName("sling_rotate_cw_show")
-                .Key = "key_sling_rotate_cw"
-                .Show = "sling_rotate_cw" '_with_fade"
-                .Speed = 2
-                .Loops = 7
-                .Priority = 1000
+            With .EventName("lsling_base_show1")
+                .Key = "key_lsling_base_show1"
+                .Show = "lsling_rotate1_ccw"
+                .Speed = 7
+                .Loops = 1
                 With .Tokens()
-                    .Add "intensity1", 40
-                    .Add "intensity2", 80
-                    .Add "color", ProtonColor
+                    .Add "intensity", 100
+                    .Add "color", "ffffff"
+                End With
+            End With
+            With .EventName("lsling_base_show2")
+                .Key = "key_lsling_base_show2"
+                .Show = "flash_color"
+                .Speed = 20
+                .Loops = 3
+                .Priority = 10000
+                With .Tokens()
+                    .Add "lights", "tLSling"
+                    .Add "color", GIColor3000k
+                    '.Add "fade", 500
+                End With
+            End With
+
+            With .EventName("rsling_base_show1")
+                .Key = "key_rsling_rotate1_cw"
+                .Show = "rsling_rotate1_ccw"
+                .Speed = 7
+                .Loops = 1
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", "ffffff"
+                End With
+            End With
+            With .EventName("rsling_base_show2")
+                .Key = "key_rsling_base_show2"
+                .Show = "flash_color"
+                .Speed = 20
+                .Loops = 3
+                .Priority = 10000
+                With .Tokens()
+                    .Add "lights", "tRSling"
+                    .Add "color", GIColor3000k
+                    '.Add "fade", 500
                 End With
             End With
 
