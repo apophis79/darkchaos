@@ -74,22 +74,22 @@ Sub CreateBasementMode()
         End With
 
 
-        ' With .ShowPlayer()
-        '     With .EventName("test_show")  'DEBUG
-        '         .Key = "key_test_show"
-        '         .Show = "rsling_rotate2_cw"
-        '         .Speed = 2
-        '         .Loops = 10
-        '         With .Tokens()
-        '             .Add "color", "ffffff"
-        '             '.Add "color1", "ffff00"
-        '             '.Add "color2", "00ffff"
-        '             '.Add "color3", "ff0000"
-        '             '.Add "color4", "0000ff"
-        '             .Add "intensity", 100
-        '         End With
-        '     End With
-        ' End With
+        With .ShowPlayer()
+            With .EventName("test_show")  'DEBUG
+                .Key = "key_test_show"
+                .Show = "lsling_swap_2_2_b"
+                .Speed = 1
+                .Loops = 5
+                With .Tokens()
+                    '.Add "color", "ffffff"
+                    .Add "color1", "ff0000"
+                    .Add "color2", "ff9900"
+                    '.Add "color3", "ff0000"
+                    '.Add "color4", "0000ff"
+                    .Add "intensity", 50
+                End With
+            End With
+        End With
 
     End With
 

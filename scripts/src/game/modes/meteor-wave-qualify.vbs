@@ -20,6 +20,10 @@ Sub CreateMeteorWaveQualifyMode
             .Add "restart_tw_timer", Array("stop_mwq_timer")    'Timewarp started, so halt the countdown
             .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
             .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
+
+            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show")
+            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show")
+            .Add "meteor_wave_alert_show", Array("meteor_wave_alert_show1","meteor_wave_alert_show2","meteor_wave_alert_show3","meteor_wave_alert_show4")
         End With
         
         With .SegmentDisplayPlayer()
@@ -77,6 +81,53 @@ Sub CreateMeteorWaveQualifyMode
 				End With
 			End With
 		End With
+
+        With .ShowPlayer()
+            With .EventName("meteor_wave_alert_show1")
+                .Key = "key_meteor_wave_alert_show1"
+                .Show = "lsling_swap_2_2_b"
+                .Speed = 1
+                .Loops = 5
+                With .Tokens()
+                    .Add "color1", "ff0000"
+                    .Add "color2", "ff9900"
+                    .Add "intensity", 30
+                End With
+            End With
+            With .EventName("meteor_wave_alert_show2")
+                .Key = "key_meteor_wave_alert_show2"
+                .Show = "rsling_swap_2_2_a"
+                .Speed = 1
+                .Loops = 5
+                With .Tokens()
+                    .Add "color1", "ff0000"
+                    .Add "color2", "ff9900"
+                    .Add "intensity", 30
+                End With
+            End With
+            With .EventName("meteor_wave_alert_show3")
+                .Key = "key_meteor_wave_alert_show3"
+                .Show = "lsling_swap_2_2_a"
+                .Speed = 1
+                .Loops = 5
+                With .Tokens()
+                    .Add "color1", "ff0000"
+                    .Add "color2", "ff9900"
+                    .Add "intensity", 30
+                End With
+            End With
+            With .EventName("meteor_wave_alert_show4")
+                .Key = "key_meteor_wave_alert_show4"
+                .Show = "rsling_swap_2_2_b"
+                .Speed = 1
+                .Loops = 5
+                With .Tokens()
+                    .Add "color1", "ff0000"
+                    .Add "color2", "ff9900"
+                    .Add "intensity", 30
+                End With
+            End With
+        End With
         
 
     End With
