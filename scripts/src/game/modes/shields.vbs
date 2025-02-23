@@ -23,8 +23,8 @@ Sub CreateShieldsMode
             .Add "mode_shields_started{current_player.training_shields_achieved==1}", Array("restart_qualify_shields") 'with training boost
             .Add "restart_qualify_shields{current_player.training_shields_achieved==1}", Array("boost_qualify_shields") 'with training boost
             'use shields
-            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1 && current_player.meteor_wave_running == 0}", Array("shields_used","restart_qualify_shields")
-            .Add "s_RightOutlane_active{current_player.shot_shield_right==1 && current_player.meteor_wave_running == 0}", Array("shields_used","restart_qualify_shields")
+            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
+            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
             'show

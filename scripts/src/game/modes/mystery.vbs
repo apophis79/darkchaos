@@ -21,7 +21,7 @@ Sub CreateMysteryMode
 
         With .EventPlayer()
             'enable the ball hold if needed
-            .Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0 && current_player.meteor_wave_running == 0}", Array("enable_scoop_hold") 
+            '.Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
             'run the mystery selection if ready, otherwise move along to training
             .Add "check_mystery{current_player.shot_mystery_ready==0}", Array("check_training")
             .Add "check_mystery{current_player.shot_mystery_ready==1}", Array("select_random_mystery")
@@ -35,7 +35,7 @@ Sub CreateMysteryMode
             'handle sss award
             .Add "sss_mystery_ready", Array("complete_mystery_shots","set_sss_mystery_flag")
             'handle callout
-            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR")
+            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold")
         End With
 
         ' Randomize mystery selection
@@ -178,11 +178,13 @@ Sub CreateMysteryMode
             'Mystery is ready to be claimed
             With .EventName("qualify_mystery_on_complete")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """CLAIM"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """MYSTERY"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -191,10 +193,12 @@ Sub CreateMysteryMode
             'Clear p1 and p4
             With .EventName("select_random_mystery")
                 With .Display("player1")
+                    .Priority = 1000
                     .Text = """"""
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player4")
+                    .Priority = 1000
                     .Text = """"""
                     .Expire = MysteryShowLength
                 End With
@@ -205,11 +209,13 @@ Sub CreateMysteryMode
             'FULL HEALTH
             With .EventName("mystery_full_health")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ FULL """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """HEALTH"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -219,11 +225,13 @@ Sub CreateMysteryMode
             'FULL PROTONS
             With .EventName("mystery_full_protons")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ FULL """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """PROTONS"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -233,11 +241,13 @@ Sub CreateMysteryMode
             'ADDED CLUSTER
             With .EventName("mystery_added_cluster")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ ADDED """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """CLUSTER"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -247,11 +257,13 @@ Sub CreateMysteryMode
             'ADDED SAVER
             With .EventName("mystery_added_saver")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ ADDED """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """ SAVER """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -261,11 +273,13 @@ Sub CreateMysteryMode
             'ADDED SHIELDS
             With .EventName("mystery_added_shields")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ ADDED """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """SHIELDS"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -275,11 +289,13 @@ Sub CreateMysteryMode
             'MOON READY
             With .EventName("mystery_moon_ready")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ MOON """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """ READY """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -289,11 +305,13 @@ Sub CreateMysteryMode
             'TRAINER READY
             With .EventName("mystery_trainer_ready")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """TRAINER"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """ READY """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -303,11 +321,13 @@ Sub CreateMysteryMode
             'DOUBLE SCORING
             With .EventName("mystery_double_scoring")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """DOUBLE"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """SCORING"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -317,11 +337,13 @@ Sub CreateMysteryMode
             'COLLECT BONUS
             With .EventName("mystery_collect_bonus")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """COLLECT"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """ BONUS """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -331,11 +353,13 @@ Sub CreateMysteryMode
             'RELAXED COMBOS
             With .EventName("mystery_relaxed_combos")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """RELAXED"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """COMBOS"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
@@ -345,11 +369,13 @@ Sub CreateMysteryMode
             'EB IS LIT
             With .EventName("mystery_eb_is_lit")
                 With .Display("player2")
+                    .Priority = 1000
                     .Text = """ EB IS """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player3")
+                    .Priority = 1000
                     .Text = """ LIT """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
