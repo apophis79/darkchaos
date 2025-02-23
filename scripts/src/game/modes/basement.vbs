@@ -60,7 +60,7 @@ Sub CreateBasementMode()
         End With
 
         With .Timers("table_init")
-            .TickInterval = 500
+            .TickInterval = 50
             .StartValue = 0
             .EndValue = 1
             With .ControlEvents()

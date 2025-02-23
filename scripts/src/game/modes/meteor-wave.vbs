@@ -22,16 +22,10 @@ Sub CreateMeteorWaveMode
 
         With .EventPlayer()
             '.Debug = True
-            ' Smoot out meteor wave start up (hack for stutter hitch at start of wave... not needed for IRL game)
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 1}", Array("stop_training_qualify")
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 2}", Array("stop_extra_ball")
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 3}", Array("stop_mystery")
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 4}", Array("stop_skillshots")
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 5}", Array("stop_combos")
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 6}", Array("stop_ship_save")
-            .Add "timer_mw_start_tick{devices.timers.mw_start.ticks == 7}", Array("stop_timewarp")
+            'Initializations
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter","stop_some_modes_for_mw")
+            .Add "stop_some_modes_for_mw", Array("stop_training_qualify","stop_extra_ball","stop_skillshots","stop_combos","stop_ship_save","stop_timewarp","stop_mystery","stop_shields") 
             'Start up in correct wave
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running","meteor_wave0_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running","meteor_wave1_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_running","meteor_wave2_music_stop")
@@ -478,18 +472,6 @@ Sub CreateMeteorWaveMode
             End With
 
         Next
-
-        'Stage the wave start
-        With .Timers("mw_start")
-            .TickInterval = 100
-            .StartValue = 0
-            .EndValue = 8
-            With .ControlEvents()
-                .EventName = "mode_meteor_wave_started"
-                .Action = "restart"
-            End With
-        End With
-
 
         'Stage the wave finish      FIXME: replace with relay events
         With .Timers("meteor_wave_finish")

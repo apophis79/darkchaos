@@ -38,7 +38,7 @@ Sub CreateMysteryMode
             .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR")
         End With
 
-        'Randomize mystery selection
+        ' Randomize mystery selection
         With .RandomEventPlayer()
             '.Debug = True
             With .EventName("select_random_mystery")
@@ -48,7 +48,7 @@ Sub CreateMysteryMode
                 .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
                 .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
                 .Add "mystery_moon_ready{current_player.multiball_lock_moon_launch_balls_locked < 2 && devices.state_machines.moon_mb.state!=""locking""}", 1
-                .Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
+                '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
                 .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5 
                 .Add "mystery_collect_bonus", 0.5  'FIXME added this mode
                 .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
@@ -148,7 +148,8 @@ Sub CreateMysteryMode
         With .ShotGroups("qualify_mystery")
             .Shots = Array("mystery_shot1", "mystery_shot2", "mystery_shot3", "mystery_shot4","mystery_shot5")
             .RestartEvents = Array("restart_qualify_mystery")
-            .DisableEvents = Array("select_random_mystery")
+            .DisableEvents = Array("select_random_mystery","start_meteor_wave")
+            .EnableEvents = Array("stop_meteor_wave")
         End With
 
 
