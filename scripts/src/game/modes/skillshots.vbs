@@ -8,7 +8,7 @@ Sub CreateSkillshotsMode
 
     With CreateGlfMode("skillshots", 500)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","stop_skillshots","start_meteor_wave","start_training_select","wizard_mode_started")
+        .StopEvents = Array("mode_base_stopping","stop_skillshots","start_training_select","wizard_mode_started") ',"start_meteor_wave"
         
 
         With .EventPlayer()

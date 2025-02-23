@@ -15,7 +15,7 @@ Sub CreateTrainingQualifyMode
 
     With CreateGlfMode("training_qualify", 513)
         .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_meteor_wave","start_training","wizard_mode_started")
+        .StopEvents = Array("stop_training_qualify","mode_base_stopping","start_training","wizard_mode_started") ',"start_meteor_wave"
 
 
         With .EventPlayer()

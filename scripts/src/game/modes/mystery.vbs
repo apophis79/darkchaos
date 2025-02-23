@@ -17,11 +17,11 @@ Sub CreateMysteryMode
 
     With CreateGlfMode("mystery", 580)
         .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_meteor_wave","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_mystery","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
             'enable the ball hold if needed
-            .Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
+            .Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0 && current_player.meteor_wave_running == 0}", Array("enable_scoop_hold") 
             'run the mystery selection if ready, otherwise move along to training
             .Add "check_mystery{current_player.shot_mystery_ready==0}", Array("check_training")
             .Add "check_mystery{current_player.shot_mystery_ready==1}", Array("select_random_mystery")

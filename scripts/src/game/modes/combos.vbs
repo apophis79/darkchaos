@@ -13,7 +13,7 @@ Sub CreateCombosMode
 
     With CreateGlfMode("combos", 530)
         .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_meteor_wave","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_combos","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
             .Add "mode_combos_started", Array("reset_combos")
@@ -36,7 +36,7 @@ Sub CreateCombosMode
             .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos","play_sfx_combo")
             .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos","play_sfx_combo")
             .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard","play_sfx_combo")
-            .Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", Array("activate_combo_command_wizard")
+            .Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0 && current_player.meteor_wave_running == 0}", Array("activate_combo_command_wizard")
         End With
 
         With .SoundPlayer()
