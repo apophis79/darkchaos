@@ -16,9 +16,11 @@ Sub CreateCombosMode
         .StopEvents = Array("stop_combos","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
+            'init and reset
             .Add "mode_combos_started", Array("reset_combos")
             .Add "mode_combos_started{current_player.ball_just_started==1}", Array("clear_relaxed_combos")
             .Add "timer_combos_reset_complete", Array("reset_combos")
+            'handle when valid shot is hit
             .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
             .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
             .Add MainShotNames(2)&"_hit", Array("restart_c_timer","check_combos")
@@ -28,21 +30,29 @@ Sub CreateCombosMode
             .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
             .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
             .Add "check_combos{current_player.combos_value==0}", Array("add_combos")
-            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos","play_sfx_combo")
-            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard","play_sfx_combo")
+            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos","replay_sfx_combo")
+            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard","replay_sfx_combo")
             .Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", Array("activate_combo_command_wizard")
+            'handle sound effect
+            .Add "replay_sfx_combo", Array("stop_sfx_combo")
+            .Add "stop_sfx_combo", Array("play_sfx_combo")
         End With
 
         With .SoundPlayer()
             With .EventName("play_sfx_combo")
                 .Key = "key_sfx_combo"
                 .Sound = "sfx_combo"
+            End With
+            With .EventName("stop_sfx_combo")
+                .Key = "key_sfx_combo"
+                .Sound = "sfx_combo"
+                .Action = "stop"
             End With
         End With
 

@@ -51,10 +51,13 @@ Sub CreateExtraBallMode
         With .ShowPlayer()
             With .EventName("play_eb_show")
                 .Key = "key_eb_show"
-                .Show = "mystery"
+                .Show = "gi_spin1_cw"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 2
                 .EventsWhenCompleted = Array("eb_complete")
+                With .Tokens()
+                    .Add "intensity", 100
+                End With
             End With
         End With
      

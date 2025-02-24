@@ -147,6 +147,8 @@ Sub ConfigureGlfDevices
 
     ' Load up the shows
     CreateShows()
+    CreateGIShows()
+    CreateAttractShows()
     CreateMeteorWaveShows()
     CreateEarthHitShows()
     CreateClusterBombShows()

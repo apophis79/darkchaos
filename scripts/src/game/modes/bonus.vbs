@@ -72,8 +72,11 @@ Sub CreateBonusMode
         With .ShowPlayer()
             With .EventName("run_bonus_started")
                 .Key = "key_bonus_show"
-                .Show = "mystery"  'FIXME  make new show for this?
+                .Show = "gi_spin1_cw"
                 .Speed = 1
+                With .Tokens()
+                    .Add "intensity", 100
+                End With
             End With
 
             With .EventName("bonus_tally1")

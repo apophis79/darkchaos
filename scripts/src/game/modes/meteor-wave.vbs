@@ -575,7 +575,7 @@ Sub CreateMeteorWaveMode
                 .Speed = 15
                 .Loops = 3
                 With .Tokens()
-                    .Add "lights", "tEarth"
+                    .Add "lights", "tFlasherU"
                     .Add "color", EarthHitColor
                 End With
             End With

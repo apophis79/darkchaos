@@ -166,10 +166,13 @@ Sub CreateMysteryMode
             End With
             With .EventName("play_mystery_show")
                 .Key = "key_mystery_show"
-                .Show = "mystery"
+                .Show = "gi_spin1_cw"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 2
                 .EventsWhenCompleted = Array("restart_qualify_mystery")
+                With .Tokens()
+                    .Add "intensity", 100
+                End With
             End With
         End With
 

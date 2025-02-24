@@ -90,12 +90,10 @@ Sub CreateTrainingSelectMode
         With .ShowPlayer()
             With .EventName("mode_training_select_started")
                 .Key = "key_ts_gi"
-                .Show = "flash_color_with_fade"
-                .Speed = 2
+                .Show = "gi_pulse"
+                .Speed = 3
                 With .Tokens()
-                    .Add "lights", "GI"
-                    .Add "color", GIColor3000k
-                    .Add "fade", 900
+                    .Add "intensity", 100
                 End With
             End With
         End With

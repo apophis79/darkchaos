@@ -55,13 +55,13 @@ Sub CreateAttractMode()
             End With
         End With
 
-        ' With .ShowPlayer()
-        '     With .EventName("play_attract_show1")   
-        '         .Key = "key_attract_show1"
-        '         .Show = "attract_show1" 
-        '         '.EventsWhenCompleted = Array("play_attract_show2")
-        '     End With
-        ' End With
+        With .ShowPlayer()
+            With .EventName("play_attract_show1")   
+                .Key = "key_attract_show1"
+                .Show = "insert_sparkles" 
+                '.EventsWhenCompleted = Array("play_attract_show2")
+            End With
+        End With
 
     End With
 
