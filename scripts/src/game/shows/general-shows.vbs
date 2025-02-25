@@ -102,6 +102,76 @@ Sub CreateShows()
       End With
     End With
 
+
+    With CreateGlfShow("flash_color_fadeout")
+        With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|50|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|100|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|95|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|90|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|85|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|80|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|75|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|70|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|65|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|60|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|55|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|50|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|45|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|40|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|35|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|30|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|25|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|20|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|15|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|10|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|5|(color)")
+      End With
+      With .AddStep(Null, Null, 0.16)
+          .Lights = Array("(lights)|0|(color)")
+      End With
+    End With
+
 End Sub
 
 
