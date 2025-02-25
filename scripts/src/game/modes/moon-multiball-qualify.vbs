@@ -238,11 +238,11 @@ Sub CreateMoonMultiballQualifyMode
 
         With .ShowPlayer()
             With .EventName("start_moon_multiball")
-                .Key = "key_moon_gi"
-                .Show = "moon_launch_gi"
+                .Key = "key_moon_launch"
+                .Show = "moon_launch"
                 .Priority = 50
-                .Speed = 4
-                .Loops = 5
+                .Speed = 1
+                .Loops = 1
             End With
             With .EventName("qualify_lock_on_complete")
                 .Key = "key_moon_qualified"
