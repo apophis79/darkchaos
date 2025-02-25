@@ -368,7 +368,7 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","play_sfx_LMet")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet")
                 End With
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")
@@ -444,6 +444,16 @@ Sub CreateMeteorWaveMode
                     With .Tokens()
                         .Add "color", "ffffff"
                     End With    
+                End With
+                With .EventName("meteor"&x&"_blink_show")
+                    .Key = "key_meteor"&x&"_blink"
+                    .Show = "flash_color"
+                    .Speed = 22
+                    .Loops = 4
+                    With .Tokens()
+                        .Add "lights", "LMet"&x
+                        .Add "color", "ff1100"
+                    End With  
                 End With
                 With .EventName("meteor"&x&"_proton_hit")
                     .Key = "key_meteor"&x&"_proton_hit"

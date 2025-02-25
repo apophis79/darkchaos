@@ -217,6 +217,12 @@ Sub CreateBaseMode()
                     .Color = "000000"
                 End With
             End With
+            With .EventName("turn_off_gi")
+                With .Lights("GI")
+                    .Priority = 100
+                    .Color = "000000"
+                End With
+            End With
         End With
 
         'Wizard mode lights
@@ -543,7 +549,7 @@ Sub CreateBaseMode()
                 With .Tokens()
                     .Add "lights", "gi04"
                     .Add "color", GIColor3000k
-                    .Add "fade", 900
+                    .Add "fade", 800
                 End With
             End With
             With .EventName("pu_lsling2_show")
@@ -554,7 +560,7 @@ Sub CreateBaseMode()
                 With .Tokens()
                     .Add "lights", "gi03"
                     .Add "color", GIColor3000k
-                    .Add "fade", 900
+                    .Add "fade", 800
                 End With
             End With
             With .EventName("pu_rsling1_show")
@@ -565,7 +571,7 @@ Sub CreateBaseMode()
                 With .Tokens()
                     .Add "lights", "gi08"
                     .Add "color", GIColor3000k
-                    .Add "fade", 900
+                    .Add "fade", 800
                 End With
             End With
             With .EventName("pu_rsling2_show")
@@ -576,8 +582,16 @@ Sub CreateBaseMode()
                 With .Tokens()
                     .Add "lights", "gi07"
                     .Add "color", GIColor3000k
-                    .Add "fade", 900
+                    .Add "fade", 800
                 End With
+            End With
+
+            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 3}")   
+                .Key = "key_gi_cracked"
+                .Show = "gi_cracked" 
+                .Priority = 200
+                .Speed = 1.3
+                .Loops = 1
             End With
 
         End With

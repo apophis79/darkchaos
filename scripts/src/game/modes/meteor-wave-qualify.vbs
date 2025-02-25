@@ -127,6 +127,13 @@ Sub CreateMeteorWaveQualifyMode
                     .Add "intensity", 30
                 End With
             End With
+            ' With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 3}")   
+            '     .Key = "key_gi_cracked"
+            '     .Show = "gi_cracked" 
+            '     .Priority = 10
+            '     .Speed = 1.3
+            '     .Loops = 1
+            ' End With
         End With
         
 
