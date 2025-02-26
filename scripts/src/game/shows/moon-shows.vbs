@@ -12,7 +12,7 @@ Sub CreateMoonShows()
                 .Key = "key_moon_launch_spin"
                 .Speed = 2
                 .Loops = 2
-                .Priority = 5
+                .Priority = 5005
                 With .Tokens()
                     .Add "color", MoonColor
                     .Add "intensity", 100
@@ -20,12 +20,12 @@ Sub CreateMoonShows()
             End With
         End With
 
-                With .AddStep(0.01, Null, Null)
+        With .AddStep(0.01, Null, Null)
             With .Shows("flash_color")
                 .Key = "key_moon_lanuch_flash1"
                 .Speed = 13
                 .Loops = 8
-                .Priority = 15
+                .Priority = 5015
                 With .Tokens()
                     .Add "color", "ffffff"
                     .Add "lights", "gi15"
@@ -38,7 +38,7 @@ Sub CreateMoonShows()
                 .Key = "key_moon_lanuch_flash2"
                 .Speed = 13
                 .Loops = 8
-                .Priority = 15
+                .Priority = 5015
                 With .Tokens()
                     .Add "color", "ffffff"
                     .Add "lights", "gi19"
@@ -51,7 +51,7 @@ Sub CreateMoonShows()
                 .Key = "key_moon_lanuch_flash3"
                 .Speed = 13
                 .Loops = 8
-                .Priority = 15
+                .Priority = 5015
                 With .Tokens()
                     .Add "color", "ffffff"
                     .Add "lights", "gi14"

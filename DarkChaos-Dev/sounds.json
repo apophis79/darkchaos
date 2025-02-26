@@ -3481,5 +3481,59 @@
     "volume": 0,
     "balance": 0,
     "output_target": 1
+  },
+  {
+    "name": "sfx_boom6",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_boom6.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_boom5",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_boom5.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_boom4",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_boom4.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_boom3",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_boom3.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_boom2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_boom2.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_boom1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_boom1.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
   }
 ]

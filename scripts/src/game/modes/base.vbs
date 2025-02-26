@@ -122,6 +122,7 @@ Sub CreateBaseMode()
             .Add "s_LeftSlingshot_active", Array("lsling_base_show1","lsling_base_show2") 
             .Add "s_RightSlingshot_active", Array("rsling_base_show1","rsling_base_show2") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
+            .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
             
         End With
 
@@ -466,6 +467,17 @@ Sub CreateBaseMode()
                     .Add "intensity1", 20
                     .Add "intensity2", 100
                     .Add "color", CombosColor
+                End With
+            End With
+            With .EventName("scoop_blast")
+                .Key = "key_scoop_fire_blast"
+                .Show = "insert_gi_slide_diag"
+                .Speed = 2.5
+                .Loops = 1
+                .Priority = 2000
+                With .Tokens()
+                    .Add "color", MeteorHotColor
+                    .Add "intensity", 100
                 End With
             End With
 
