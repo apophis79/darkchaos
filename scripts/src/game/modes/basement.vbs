@@ -16,6 +16,8 @@ Sub CreateBasementMode()
 
             .Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
             .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
+
+            .Add GLF_GAME_START, Array("reset_won_game")
         End With
        
         With .SoundPlayer() 
@@ -70,6 +72,15 @@ Sub CreateBasementMode()
             With .ControlEvents()
                 .EventName = GLF_BALL_STARTED
                 .Action = "stop"
+            End With
+        End With
+
+        With .VariablePlayer()
+            With .EventName("reset_won_game")
+                With .Variable("won_game")
+                    .Action = "set_machine"
+                    .Int = 0
+                End With
             End With
         End With
 

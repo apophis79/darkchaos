@@ -452,6 +452,33 @@ Sub ConfigureGlfDevices
         .Persist = True
     End With
 
+    With CreateMachineVar("last_score_1")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("last_score_2")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("last_score_3")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("last_score_4")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
+    End With
+
+    With CreateMachineVar("won_game")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
+    End With
+
 
     ' Initial Vars
     Glf_SetInitialPlayerVar "flag_sss_mystery", 0
