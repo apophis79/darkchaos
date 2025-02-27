@@ -354,7 +354,7 @@ Sub CreateBaseMode()
                     .Priority = 2000
                     With .Tokens()
                         .Add "lights", "LB"&x
-                        .Add "color", "00cc00" '"ffffff"
+                        .Add "color", "05cc05" '"ffffff"
                         .Add "fade", 50
                     End With
                 End With
