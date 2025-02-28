@@ -211,7 +211,13 @@ VOCNames = Array( _
     "voc_attract2", _
     "voc_attract3", _
     "voc_attract4", _
-    "voc_attract5")
+    "voc_attract5", _
+    "voc_winners_poem1", _
+    "voc_winners_poem2", _
+    "voc_winners_poem3", _
+    "voc_winners_poem4", _
+    "voc_winners_poem5", _
+    "voc_winners_poem6")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -242,7 +248,13 @@ VOCDurations = Array( _
     2.000, _
     2.000, _
     2.362, _
-    2.000)
+    2.000, _
+    4.055, _
+    3.768, _
+    3.768, _
+    2.624, _
+    3.363, _
+    4.055)
 
 
 
@@ -321,6 +333,12 @@ Sub CreateSounds()
         .File = "mus_post_game" 
         .Bus = BusName ' Sound bus to play on
         .Duration = 54.897 * 1000
+        .EventsWhenStopped = Array("mus_post_game_stopped")
+    End With
+    With CreateGlfSound("mus_post_game_heavier")
+        .File = "mus_post_game_heavier" 
+        .Bus = BusName ' Sound bus to play on
+        .Duration = 65.358 * 1000
         .EventsWhenStopped = Array("mus_post_game_stopped")
     End With
 

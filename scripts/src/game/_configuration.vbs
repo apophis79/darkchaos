@@ -162,6 +162,7 @@ Sub ConfigureGlfDevices
     CreateComboCommandShows()
     CreateFullyLoadedShows()
     CreateFinalWaveWizardShows()
+    CreatePostGameShows()
 
     ' Sound effects bus
     CreateSounds()
@@ -211,6 +212,13 @@ Sub ConfigureGlfDevices
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("release_moon_ball", "multiball_moon_started")
         .ActivationTime = "240 if devices.ball_devices.moon_lock.balls > 0 else 2000"
+        .ActionCallback = "DropLockPin"
+    End With
+
+    With CreateGlfDiverter("lock_pin_game_over")
+        .EnableEvents = Array(GLF_GAME_STARTED)
+        .ActivateEvents = Array("game_ended{devices.ball_devices.moon_lock.balls > 0}")
+        .ActivationTime = "3000"
         .ActionCallback = "DropLockPin"
     End With
 
