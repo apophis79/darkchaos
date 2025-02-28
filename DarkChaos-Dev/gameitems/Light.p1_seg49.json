@@ -13,7 +13,7 @@
     "color2": "#00000000",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "10",
+    "blink_pattern": "tScoreSegs",
     "off_image": "",
     "blink_interval": 125,
     "intensity": 300.0,
