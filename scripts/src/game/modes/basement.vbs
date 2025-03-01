@@ -13,7 +13,7 @@ Sub CreateBasementMode()
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("test_show") 'DEBUG
-            .Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
+            '.Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
 
             .Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
             .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
@@ -87,6 +87,13 @@ Sub CreateBasementMode()
 
 
         With .ShowPlayer()
+            With .EventName("test_show")  'DEBUG
+                .Key = "key_test_show"
+                .Show = "proton_big_charge_fire"
+                .Speed = 1
+                .Loops = 1
+                .Priority = 10000
+            End With
         '     With .EventName("test_show")  'DEBUG
         '         .Key = "key_test_show"
         '         .Show = "moon_launch"
@@ -102,14 +109,14 @@ Sub CreateBasementMode()
         '         '     .Add "intensity", 100
         '         ' End With
         '     End With
-        ' End With
+        End With
 
         ' With .SoundPlayer()
         '     With .EventName("test_show")
         '         .Key = "key_test_show"
         '         .Sound = "sfx_cluster_fired"
         '     End With
-        End With
+        'End With
 
     End With
 
