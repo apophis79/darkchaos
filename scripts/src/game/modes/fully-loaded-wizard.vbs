@@ -33,6 +33,8 @@ Sub CreateFullyLoadedWizardMode
         .StopEvents = Array("mode_base_stopping","completed_fully_loaded_wizard")
 
         With .EventPlayer()
+            .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start")
+            .Add "mode_fully_loaded_wizard_stopping", Array("flwiz_music_stop")   
             'release the scoop ball to start the wizard mode
             .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")

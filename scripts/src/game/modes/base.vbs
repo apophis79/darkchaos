@@ -752,6 +752,24 @@ Sub CreateBaseMode()
                 .Sound = "mus_wizard"
                 .Action = "stop"
             End With
+            With .EventName("flwiz_music_start")
+                .Key = "key_mus_wizard"
+                .Sound = "mus_wizard2"
+            End With
+            With .EventName("flwiz_music_stop")
+                .Key = "key_mus_wizard2"
+                .Sound = "mus_wizard2"
+                .Action = "stop"
+            End With
+            With .EventName("ccwiz_music_start")
+                .Key = "key_mus_wizard2"
+                .Sound = "mus_wizard2"
+            End With
+            With .EventName("ccwiz_music_stop")
+                .Key = "key_mus_wizard2"
+                .Sound = "mus_wizard2"
+                .Action = "stop"
+            End With
 
 
             'Ball launch

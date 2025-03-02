@@ -273,7 +273,8 @@ MusicNames = Array( _
     "mus_training", _
     "mus_training_alt", _
     "mus_ambient_bg", _
-    "mus_wizard")
+    "mus_wizard", _
+    "mus_wizard2")
 MusicDurations = Array( _
     92.212, _
     53.551, _
@@ -288,7 +289,8 @@ MusicDurations = Array( _
     52.062, _
     70.532, _
     58.508, _
-    118.143)
+    118.143, _
+    79.967)
 
 
 

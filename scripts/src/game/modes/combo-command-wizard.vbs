@@ -20,6 +20,8 @@ Sub CreateComboCommandWizardMode
         .StopEvents = Array("mode_base_stopping","completed_combo_command_wizard")
 
         With .EventPlayer()
+            .Add "mode_combo_command_wizard_started", Array("meteor_wave_music_stop","ccwiz_music_start")
+            .Add "mode_combo_command_wizard_stopping", Array("ccwiz_music_stop") 
             'release the scoop ball to start the wizard mode
             .Add "timer_combo_command_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
