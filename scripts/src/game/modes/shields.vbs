@@ -23,12 +23,12 @@ Sub CreateShieldsMode
             .Add "mode_shields_started{current_player.training_shields_achieved==1}", Array("restart_qualify_shields") 'with training boost
             .Add "restart_qualify_shields{current_player.training_shields_achieved==1}", Array("boost_qualify_shields") 'with training boost
             'use shields
-            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields")
-            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields")
+            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields","play_shields_down")
+            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields","play_shields_down")
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
             'show
-            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh")
+            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up")
         End With
 
         With .RandomEventPlayer()
@@ -209,6 +209,22 @@ Sub CreateShieldsMode
                     .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
+
+            With .EventName("play_shields_up")
+                .Key = "key_shields_up"
+                .Show = "shields_up"
+                .Speed = 1
+                .Loops = 1
+                .Priority = 1000
+            End With
+            With .EventName("play_shields_down")
+                .Key = "key_shields_down"
+                .Show = "shields_down"
+                .Speed = 1
+                .Loops = 1
+                .Priority = 1000
+            End With
+            
         End With
 
         With .SegmentDisplayPlayer()

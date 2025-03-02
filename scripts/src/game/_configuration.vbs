@@ -155,6 +155,7 @@ Sub ConfigureGlfDevices
     CreateMeteorWaveShows()
     CreateEarthHitShows()
     CreateClusterBombShows()
+    CreateShieldShows()
     CreateTimeWarpShows()
     CreateSkillshotShows()
     CreateMoonShows()
