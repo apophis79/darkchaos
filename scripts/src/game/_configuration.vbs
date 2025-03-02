@@ -55,7 +55,7 @@ RolloverSwitches = Array("s_LeftBumper1","s_LeftBumper2","s_CenterOrb1","s_Cente
 RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
 
 ' Array of training selection shots and associated info
-Const TrainingTicks = 60  'uses 1000 ms interval
+Const TrainingTicks = 69  'uses 1000 ms interval
 Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
 TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields")
 TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields")

@@ -12,7 +12,7 @@ Sub CreateBasementMode()
         .StopEvents = Array("when_the_universe_ends")
 
         With .EventPlayer()
-            '.Add "s_left_staged_flipper_key_active", Array("test_show") 'DEBUG
+            .Add "s_left_staged_flipper_key_active", Array("test_show") 'DEBUG
             '.Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
 
             .Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
@@ -89,7 +89,7 @@ Sub CreateBasementMode()
         With .ShowPlayer()
             With .EventName("test_show")  'DEBUG
                 .Key = "key_test_show"
-                .Show = "proton_big_charge_fire"
+                .Show = "asteroid_explodes_show"
                 .Speed = 1
                 .Loops = 1
                 .Priority = 10000

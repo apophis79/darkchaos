@@ -41,7 +41,7 @@ Sub CreateBaseMode()
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
             
             'restarting waves
-            .Add "stop_training", Array("check_base_restart","training_music_stop")
+            .Add "stop_training", Array("check_base_restart","training_music_alt_stop")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave0_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
@@ -104,7 +104,8 @@ Sub CreateBaseMode()
             .Add "s_Bumper2_active", Array("play_sfx_bumper")
             .Add "s_Bumper3_active", Array("play_sfx_bumper")
             .Add "s_Bumper4_active", Array("play_sfx_bumper")
-            .Add "stop_training_select", Array("training_music_start","meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
+            .Add "stop_training_select", Array("training_music_alt_start","meteor_wave_music_stop")
+            .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches
             .Add "s_TargetMystery5_active", Array("magnet_activated")
@@ -415,7 +416,7 @@ Sub CreateBaseMode()
                 .Show = "flash_color"
                 .Speed = 20
                 .Loops = 3
-                .Priority = 10000
+                .Priority = 20000
                 With .Tokens()
                     .Add "lights", "tLSling"
                     .Add "color", GIColor3000k
@@ -438,7 +439,7 @@ Sub CreateBaseMode()
                 .Show = "flash_color"
                 .Speed = 20
                 .Loops = 3
-                .Priority = 10000
+                .Priority = 20000
                 With .Tokens()
                     .Add "lights", "tRSling"
                     .Add "color", GIColor3000k
@@ -729,6 +730,26 @@ Sub CreateBaseMode()
             With .EventName("training_music_stop")
                 .Key = "key_mus_training"
                 .Sound = "mus_training"
+                .Action = "stop"
+            End With
+            With .EventName("training_music_alt_start")
+                .Key = "key_mus_training_alt"
+                .Sound = "mus_training_alt"
+            End With
+            With .EventName("training_music_alt_stop")
+                .Key = "key_mus_training_alt"
+                .Sound = "mus_training_alt"
+                .Action = "stop"
+            End With
+
+            'Wizard music
+            With .EventName("fwwiz_music_start")
+                .Key = "key_mus_wizard"
+                .Sound = "mus_wizard"
+            End With
+            With .EventName("fwwiz_music_stop")
+                .Key = "key_mus_wizard"
+                .Sound = "mus_wizard"
                 .Action = "stop"
             End With
 

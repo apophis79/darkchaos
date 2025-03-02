@@ -28,6 +28,8 @@ Sub CreateFinalWaveWizardMode
             'start/restart wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == "&FWWizMaxAsteroidHits&"}", Array("begin_fwwiz") 'start wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < "&FWWizMaxAsteroidHits&"}", Array("continue_fwwiz","display_hit_count","update_asteroid_glow") 'continue wizard mode
+            .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","fwwiz_music_start","turn_off_gi")
+            .Add "mode_final_wave_wizard_stopping", Array("fwwiz_music_stop") 
             'release the scoop ball to start the wizard mode
             .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
@@ -40,7 +42,7 @@ Sub CreateFinalWaveWizardMode
             .Add "center_orbit_left_hit", Array("asteroid_hit")
             .Add "center_orbit_right_hit", Array("asteroid_hit")
             .Add "s_TargetMystery3_active", Array("asteroid_hit")
-            .Add "asteroid_hit", Array("check_fwwiz_done","asteroid_flash1","asteroid_flash2","update_asteroid_glow")
+            .Add "asteroid_hit", Array("check_fwwiz_done","asteroid_flash3","asteroid_flicker1","play_asteroid_hit")
             .Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", Array("update_hit_count")
             .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 0}", Array("asteroid_destroyed","asteroid_off")
             'asteroid glow
@@ -58,16 +60,16 @@ Sub CreateFinalWaveWizardMode
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 8}", Array("asteroid_temp12")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 7}", Array("asteroid_temp13")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 6}", Array("asteroid_temp14")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 5}", Array("asteroid_temp15")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 5}", Array("asteroid_temp15","start_asteroid_flicker")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 4}", Array("asteroid_temp16")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 3}", Array("asteroid_temp17")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 2}", Array("asteroid_temp18")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 1}", Array("asteroid_temp19")
             'add meteors. There should max of two meteors up at a time
-            .Add "s_DTMeteor1_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor") 'additional meteor
-            .Add "s_DTMeteor2_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor") 'additional meteor
-            .Add "s_DTMeteor3_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor") 'additional meteor
-            .Add "s_DTMeteor4_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor") 'additional meteor
+            .Add "s_DTMeteor1_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor","meteor1_explodes_show","meteor1_blink_show") 'additional meteor
+            .Add "s_DTMeteor2_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor","meteor2_explodes_show","meteor2_blink_show") 'additional meteor
+            .Add "s_DTMeteor3_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor","meteor3_explodes_show","meteor3_blink_show") 'additional meteor
+            .Add "s_DTMeteor4_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor","meteor4_explodes_show","meteor4_blink_show") 'additional meteor
             .Add "timer_fwwiz_add_meteor_complete{current_player.wizard_final_hit_count > 1}", Array("fwwiz_raise_meteor") 'additional meteor
             .Add "timer_fwwiz_start_meteors_complete", Array("fwwiz_raise_meteor") 'first meteor
             .Add "continue_fwwiz", Array("fwwiz_raise_meteor") 'first meteor
@@ -90,6 +92,69 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 28}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers")
 
+            'handle GI light show
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 1}", Array("play_flash_gi09","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 2}", Array("play_flash_gi06","play_flash_gi11","play_flash_gi21","play_flash_gi22","play_flash_gi12","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 3}", Array("play_flash_gi03","play_flash_gi10","play_flash_gi18","play_flash_gi16")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 4}", Array("play_flash_gi08","play_flash_gi19","play_flash_gi20")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 5}", Array("play_flash_gi05","play_flash_gi09","play_flash_gi21","play_flash_gi13","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 6}", Array("play_flash_gi02","play_flash_gi22","play_flash_gi16","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 7}", Array("play_flash_gi07","play_flash_gi11","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 8}", Array("play_flash_gi04","play_flash_gi10","play_flash_gi18","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 9}", Array("play_flash_gi01","play_flash_gi19","play_flash_gi20","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 10}", Array("play_flash_gi06","play_flash_gi21","play_flash_gi13","play_flash_gi12")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 11}", Array("play_flash_gi03","play_flash_gi09","play_flash_gi22","play_flash_gi16","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 12}", Array("play_flash_gi08","play_flash_gi11","play_flash_gi17","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 13}", Array("play_flash_gi05","play_flash_gi10","play_flash_gi18","play_flash_gi13")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 14}", Array("play_flash_gi02","play_flash_gi20","play_flash_gi22","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 15}", Array("play_flash_gi07","play_flash_gi21","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 16}", Array("play_flash_gi04","play_flash_gi09","play_flash_gi16")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 17}", Array("play_flash_gi01","play_flash_gi11","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 18}", Array("play_flash_gi06","play_flash_gi19","play_flash_gi18","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 19}", Array("play_flash_gi03","play_flash_gi20","play_flash_gi13")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 20}", Array("play_flash_gi09","play_flash_gi08","play_flash_gi21","play_flash_gi22","play_flash_gi12")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 21}", Array("play_flash_gi05","play_flash_gi11","play_flash_gi16","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 22}", Array("play_flash_gi02","play_flash_gi10","play_flash_gi18","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 23}", Array("play_flash_gi07","play_flash_gi19","play_flash_gi20","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 24}", Array("play_flash_gi04","play_flash_gi09","play_flash_gi21","play_flash_gi13")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 25}", Array("play_flash_gi01","play_flash_gi11","play_flash_gi22","play_flash_gi16","play_flash_gi14","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 26}", Array("play_flash_gi06","play_flash_gi10","play_flash_gi18","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 27}", Array("play_flash_gi03","play_flash_gi19","play_flash_gi20","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 28}", Array("play_flash_gi08","play_flash_gi13")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 29}", Array("play_flash_gi09","play_flash_gi05","play_flash_gi21","play_flash_gi22","play_flash_gi12")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 30}", Array("play_flash_gi02","play_flash_gi10","play_flash_gi11","play_flash_gi16","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 31}", Array("play_flash_gi07","play_flash_gi18","play_flash_gi13")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 32}", Array("play_flash_gi04","play_flash_gi19","play_flash_gi20","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 33}", Array("play_flash_gi01","play_flash_gi09","play_flash_gi21","play_flash_gi22","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 34}", Array("play_flash_gi06","play_flash_gi10","play_flash_gi11","play_flash_gi16")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 35}", Array("play_flash_gi03","play_flash_gi19","play_flash_gi18","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 36}", Array("play_flash_gi08","play_flash_gi20","play_flash_gi13","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 37}", Array("play_flash_gi05","play_flash_gi21","play_flash_gi22","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 38}", Array("play_flash_gi02","play_flash_gi10","play_flash_gi18","play_flash_gi16","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 39}", Array("play_flash_gi07","play_flash_gi20","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 40}", Array("play_flash_gi09","play_flash_gi19","play_flash_gi21","play_flash_gi12")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 41}", Array("play_flash_gi04","play_flash_gi11","play_flash_gi13","play_flash_gi22","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 42}", Array("play_flash_gi01","play_flash_gi10","play_flash_gi18","play_flash_gi16","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 43}", Array("play_flash_gi06","play_flash_gi20","play_flash_gi17","play_flash_gi15")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 44}", Array("play_flash_gi03","play_flash_gi09")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 45}", Array("play_flash_gi08","play_flash_gi11","play_flash_gi19","play_flash_gi21")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 46}", Array("play_flash_gi05","play_flash_gi10","play_flash_gi13","play_flash_gi16")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 47}", Array("play_flash_gi02","play_flash_gi18","play_flash_gi22","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 48}", Array("play_flash_gi07","play_flash_gi20","play_flash_gi17")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 49}", Array("play_flash_gi09","play_flash_gi19","play_flash_gi21","play_flash_gi12")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 50}", Array("play_flash_gi04","play_flash_gi11","play_flash_gi13","play_flash_gi22","play_flash_giapron")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 51}", Array("play_flash_gi01","play_flash_gi10","play_flash_gi18","play_flash_gi16","play_flash_gi14")
+            .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 52}", Array("play_flash_gi06","play_flash_gi20","play_flash_gi17","play_flash_gi15")
+
+            'handle asteroid flicker show
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 1}", Array("play_asteroid_flicker")
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 7}", Array("play_asteroid_flicker")
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 10}", Array("play_asteroid_flicker")
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 15}", Array("play_asteroid_flicker")
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 22}", Array("play_asteroid_flicker")
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 24}", Array("play_asteroid_flicker")
+            .Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 29}", Array("play_asteroid_flicker")
+
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
 
@@ -104,6 +169,26 @@ Sub CreateFinalWaveWizardMode
                 .Add "meteor4_raise{current_player.shot_fwwiz_meteor4 == 0}", 1
                 .ForceAll = False
                 .ForceDifferent = True
+            End With
+            With .EventName("play_asteroid_flicker")
+                .Add "asteroid_flicker1", 1
+                .Add "asteroid_flicker2", 1
+                .Add "asteroid_flicker3", 1
+                .Add "asteroid_flicker4", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+            With .EventName("asteroid_hit")
+                .Add "play_sfx_LMet1", 1
+                .Add "play_sfx_LMet2", 1
+                .Add "play_sfx_LMet3", 1
+                .Add "play_sfx_LMet4", 1
+                .Add "play_sfx_LMet5", 1
+                .Add "play_sfx_LMet6", 1
+                .Add "play_sfx_LMet7", 1
+                .Add "play_sfx_LMet8", 1
+                .ForceAll = False
+                .ForceDifferent = False
             End With
         End With
 
@@ -215,36 +300,135 @@ Sub CreateFinalWaveWizardMode
 
 
         With .ShowPlayer()
-            With .EventName("asteroid_flash1")
-                .Key = "key_asteroid_flash1"
-                .Priority = 10
-                .Show = "flash_color"
-                .Speed = 20
-                .Loops = 5
+
+            'asteroid hit shows
+            With .EventName("play_asteroid_hit")   
+                .Key = "key_asteroid_hit"
+                .Show = "asteroid_hit" 
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .EventName("asteroid_flash3")   
+                .Key = "key_asteroid_flash3"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
                 With .Tokens()
-                    .Add "lights", "tBlast"
-                    .Add "color", MeteorWaveColor
+                    .Add "lights", "tFlasherU"
+                    .Add "color", GIColor3000k
                 End With
             End With
-            With .EventName("asteroid_flash2")
-                .Key = "key_proton_flash"
-                .Show = "flash_color_with_fade" 
-                .Speed = 20
-                .Loops = 3
+            With .EventName("asteroid_flicker1")
+                .Key = "key_asteroid_flicker1"
+                .Show = "flicker_color"
+                .Speed = 5
+                .Loops = 1
+                .EventsWhenCompleted = Array("update_asteroid_glow")
                 With .Tokens()
-                    .Add "lights", "FL3"
-                    .Add "color", MeteorWaveColor
-                    .Add "fade", 300
+                    .Add "lights", "tAsteroid"
+                    .Add "color", "ffffff"
                 End With
             End With
+            With .EventName("asteroid_flicker2")
+                .Key = "key_asteroid_flicker2"
+                .Show = "flicker_color"
+                .Speed = 8
+                .Loops = 2
+                .EventsWhenCompleted = Array("update_asteroid_glow")
+                With .Tokens()
+                    .Add "lights", "tAsteroid"
+                    .Add "color", "ffffff"
+                End With
+            End With
+            With .EventName("asteroid_flicker3")
+                .Key = "key_asteroid_flicker3"
+                .Show = "flicker2_color"
+                .Speed = 4
+                .Loops = 1
+                .EventsWhenCompleted = Array("update_asteroid_glow")
+                With .Tokens()
+                    .Add "lights", "tAsteroid"
+                    .Add "color", "ffffff"
+                End With
+            End With
+            With .EventName("asteroid_flicker4")
+                .Key = "key_asteroid_flicker4"
+                .Show = "flicker2_color"
+                .Speed = 7
+                .Loops = 2
+                .EventsWhenCompleted = Array("update_asteroid_glow")
+                With .Tokens()
+                    .Add "lights", "tAsteroid"
+                    .Add "color", "ffffff"
+                End With
+            End With
+
 
             With .EventName("asteroid_destroyed")
                 .Key = "key_asteroid_explodes_show"
                 .Show = "asteroid_explodes_show" 
-                .Loops = 6 '12 sec
+                .Loops = 1
                 .EventsWhenCompleted = Array("enable_flippers","stop_final_wave_wizard")
             End With
 
+            'GI flashes
+            For x = 1 to 9
+                With .EventName("play_flash_gi0"&x)   
+                    .Key = "key_flash_gi0"&x
+                    .Show = "flash_color_fadeout" 
+                    .Speed = 3
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "gi0"&x
+                        .Add "color", GIColor2700k
+                    End With
+                End With
+            Next
+            For x = 10 to 22
+                With .EventName("play_flash_gi"&x)   
+                    .Key = "key_flash_gi"&x
+                    .Show = "flash_color_fadeout" 
+                    .Speed = 3
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "gi"&x
+                        .Add "color", GIColor2700k
+                    End With
+                End With
+            Next
+            With .EventName("play_flash_giapron")   
+                .Key = "key_flash_giapron"
+                .Show = "flash_color_fadeout" 
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "giapron"
+                    .Add "color", GIColor2700k
+                End With
+            End With
+
+            'Meteor hits
+            For x = 1 to 4
+                With .EventName("meteor"&x&"_explodes_show")
+                    .Key = "key_meteor"&x&"_explodes"
+                    .Show = "meteor"&x&"_explodes"
+                    .Speed = 1
+				    .Loops = 1
+                    With .Tokens()
+                        .Add "color", "ffffff"
+                    End With    
+                End With
+                With .EventName("meteor"&x&"_blink_show")
+                    .Key = "key_meteor"&x&"_blink"
+                    .Show = "flash_color"
+                    .Speed = 22
+                    .Loops = 4
+                    With .Tokens()
+                        .Add "lights", "LMet"&x
+                        .Add "color", "ff1100"
+                    End With  
+                End With
+            Next
         End With
 
 
@@ -326,6 +510,42 @@ Sub CreateFinalWaveWizardMode
                 .Action = "start"
             End With
         End With
+        With .Timers("final_wave_gi")
+            .TickInterval = 500
+            .StartValue = 0
+            .EndValue = 53
+            With .ControlEvents()
+                .EventName = "mode_final_wave_wizard_started"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "timer_final_wave_gi_complete"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "asteroid_destroyed"
+                .Action = "stop"
+            End With
+        End With
+        With .Timers("final_wave_flicker")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 30
+            With .ControlEvents()
+                .EventName = "start_asteroid_flicker"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "timer_final_wave_flicker_complete"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "asteroid_destroyed"
+                .Action = "stop"
+            End With
+        End With
+
+
 
 
         With .SegmentDisplayPlayer()

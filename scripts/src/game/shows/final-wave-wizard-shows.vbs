@@ -3,17 +3,6 @@
 Sub CreateFinalWaveWizardShows()
 
 
-With CreateGlfShow("asteroid_explodes_show")
-  With .AddStep(Null, Null, 1)
-    .Lights = Array("tAsteroid|100|ffffff|600")
-  End With
-  With .AddStep(Null, Null, 1)
-    .Lights = Array("tAsteroid|100|000000|600")
-  End With
-End With
-
-
-
 With CreateGlfShow("asteroid_hit_single")
   With .AddStep(0.00000, Null, Null)
     .Lights = Array( _
@@ -279,7 +268,6 @@ End With
 
 
 With CreateGlfShow("asteroid_hit")
- 
   With .AddStep(0.01, Null, Null)
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single1"
@@ -292,7 +280,6 @@ With CreateGlfShow("asteroid_hit")
       End With
     End With
   End With
-
   With .AddStep(0.1, Null, Null)
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single2"
@@ -305,7 +292,6 @@ With CreateGlfShow("asteroid_hit")
       End With
     End With
   End With
-
   With .AddStep(0.2, Null, Null)
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single3"
@@ -318,8 +304,148 @@ With CreateGlfShow("asteroid_hit")
       End With
     End With
   End With
+End With
+
+
+
+With CreateGlfShow("asteroid_explodes_show")
+
+  With .AddStep(0.8, Null, Null)
+    With .Shows("insert_swap3")
+      .Key = "key_ass_xpld1"
+      .Speed = 2
+      .Loops = 5
+      With .Tokens()
+          .Add "color1", "ffffff"
+          .Add "color2", MeteorHotColor
+          .Add "color3", MeteorWarmColor
+          .Add "intensity", 100
+      End With
+    End With
+  End With
+
+  With .AddStep(0.81, Null, Null)
+    With .Shows("flicker_color_off")
+      .Key = "key_ass_xpld2"
+      .Speed = 4
+      .Loops = 1
+      With .Tokens()
+          .Add "lights", "tAsteroid"
+          .Add "color", "ffffff"
+      End With
+    End With
+  End With
+
+  With .AddStep(1.0, Null, Null)
+    With .Shows("asteroid_hit")
+      .Key = "key_ass_xpld3"
+      .Speed = 1
+      .Loops = 1
+    End With
+  End With
+
+  With .AddStep(2.2, Null, Null)
+    With .Shows("insert_swap3")
+      .Key = "key_ass_xpld4"
+      .Speed = 2
+      .Loops = 5
+      With .Tokens()
+          .Add "color1", "000000"
+          .Add "color2", MeteorHotColor
+          .Add "color3", MeteorWarmColor
+          .Add "intensity", 100
+      End With
+    End With
+  End With
+
+  With .AddStep(2.21, Null, Null)
+    With .Shows("flicker_color_off")
+      .Key = "key_ass_xpld5"
+      .Speed = 4
+      .Loops = 1
+      With .Tokens()
+          .Add "lights", "tAsteroid"
+          .Add "color", "aaaaaa"
+      End With
+    End With
+  End With
+
+  With .AddStep(2.4, Null, Null)
+    With .Shows("asteroid_hit_single")
+      .Key = "key_ass_xpld6"
+      .Speed = 1.5
+      .Loops = 1
+      With .Tokens()
+          .Add "color", MeteorWarmColor
+          .Add "intensity", 100
+      End With
+    End With
+  End With
+
+  With .AddStep(3.8, Null, Null)
+    With .Shows("insert_swap2")
+      .Key = "key_ass_xpld7"
+      .Speed = 2
+      .Loops = 5
+      With .Tokens()
+          .Add "color1", "000000"
+          .Add "color2", MeteorHotColor
+          .Add "intensity", 100
+      End With
+    End With
+  End With
+
+  With .AddStep(3.81, Null, Null)
+    With .Shows("flicker_color_off")
+      .Key = "key_ass_xpld8"
+      .Speed = 4
+      .Loops = 1
+      With .Tokens()
+          .Add "lights", "tAsteroid"
+          .Add "color", "555555"
+      End With
+    End With
+  End With
+
+  With .AddStep(4.0, Null, Null)
+    With .Shows("asteroid_hit_single")
+      .Key = "key_ass_xpld9"
+      .Speed = 1.5
+      .Loops = 1
+      With .Tokens()
+          .Add "color", MeteorHotColor
+          .Add "intensity", 100
+      End With
+    End With
+  End With
+
+  With .AddStep(5.4, Null, Null)
+    With .Shows("flicker_color_off")
+      .Key = "key_ass_xpld8"
+      .Speed = 4
+      .Loops = 1
+      With .Tokens()
+          .Add "lights", "tAsteroid"
+          .Add "color", "111111"
+      End With
+    End With
+  End With
+
+  With .AddStep(5.41, Null, Null)
+    With .Shows("asteroid_hit_single")
+      .Key = "key_ass_xpld9"
+      .Speed = 1.5
+      .Loops = 1
+      With .Tokens()
+          .Add "color", MeteorHotColor
+          .Add "intensity", 100
+      End With
+    End With
+  End With
+
 
 End With
+
 
 
 End Sub

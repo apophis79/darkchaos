@@ -83,36 +83,36 @@ Sub CreatePostGameMode()
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 40}", Array("powerup_health","check_loser_message","check_winner_message3","play_flash_gi01","play_flash_gi11","play_flash_giapron")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 41}", Array("powerup_combos","play_flash_gi06","play_flash_gi19","play_flash_gi18","play_flash_gi17")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 42}", Array("powerup_training","play_flash_gi03","play_flash_gi20","play_flash_gi13")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 43}", Array("powerup_cluster","display_last_scores","play_flash_gi09","play_flash_gi08","play_flash_gi21","play_flash_gi22","play_flash_gi12")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 43}", Array("powerup_cluster","play_flash_gi09","play_flash_gi08","play_flash_gi21","play_flash_gi22","play_flash_gi12")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 44}", Array("powerup_moon","play_earth_hit_center","play_flash_gi05","play_flash_gi11","play_flash_gi16","play_flash_gi14")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 45}", Array("powerup_proton","play_flash_gi02","play_flash_gi10","play_flash_gi18","play_flash_gi15")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 46}", Array("powerup_shields","play_flash_gi07","play_flash_gi19","play_flash_gi20","play_flash_gi17")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 47}", Array("powerup_timewarp","play_flash_gi04""play_flash_gi09","play_flash_gi21","play_flash_gi13","play_spotlight_off")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 48}", Array("powerup_saver","play_flash_gi01","play_flash_gi11","play_flash_gi22","play_flash_gi16","play_flash_gi14","play_flash_giapron")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 48}", Array("powerup_saver","display_last_scores","play_flash_gi01","play_flash_gi11","play_flash_gi22","play_flash_gi16","play_flash_gi14","play_flash_giapron")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 49}", Array("powerup_health","play_flash_gi06","play_flash_gi10","play_flash_gi18","play_flash_gi15","play_spotlight_on")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 50}", Array("powerup_combos","play_flash_gi03","play_flash_gi19","play_flash_gi20","play_flash_gi17")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 51}", Array("powerup_training","check_loser_message","check_winner_message4","play_flash_gi08","play_flash_gi13","play_flasher3_flash_hot")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 51}", Array("powerup_training","play_flash_gi08","play_flash_gi13","play_flasher3_flash_hot")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 52}", Array("powerup_cluster","play_slide_down6","play_flash_gi09","play_flash_gi05","play_flash_gi21","play_flash_gi22","play_flash_gi12","play_flasher1_flash_magenta")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 53}", Array("powerup_moon","play_flash_gi02","play_flash_gi10","play_flash_gi11","play_flash_gi16","play_flash_gi14","play_flasher2_flash_yellow")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 54}", Array("powerup_proton","play_flash_gi07","play_flash_gi18","play_flash_gi13","play_flasher3_flash_cyan")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 55}", Array("powerup_shields","play_flash_gi04","play_flash_gi19","play_flash_gi20","play_flash_gi17","play_flasher2_flash_blue")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 56}", Array("powerup_timewarp","play_flash_gi01","play_flash_gi09","play_flash_gi21","play_flash_gi22","play_flash_giapron","play_flasher1_flash_white")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 56}", Array("powerup_timewarp","check_loser_message","check_winner_message4","play_flash_gi01","play_flash_gi09","play_flash_gi21","play_flash_gi22","play_flash_giapron","play_flasher1_flash_white")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 57}", Array("powerup_saver","play_flash_gi06","play_flash_gi10","play_flash_gi11","play_flash_gi16","play_flasher2_flash_purple","play_spotlight_off")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 58}", Array("powerup_health","play_flash_gi03","play_flash_gi19","play_flash_gi18","play_flash_gi15","play_flasher3_flash_green","play_spotlight_on")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 59}", Array("powerup_combos","display_last_scores","play_flash_gi08","play_flash_gi20","play_flash_gi13","play_flash_gi17","play_flasher2_flash_white")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 59}", Array("powerup_combos","play_flash_gi08","play_flash_gi20","play_flash_gi13","play_flash_gi17","play_flasher2_flash_white")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 60}", Array("powerup_training","play_flash_gi05","play_flash_gi21","play_flash_gi22","play_flash_gi14","play_flasher3_flash_hot")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 61}", Array("powerup_cluster","play_flash_gi02","play_flash_gi10","play_flash_gi18","play_flash_gi16","play_flash_gi15","play_flasher1_flash_magenta","play_lsling_magenta")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 62}", Array("powerup_moon","play_flash_gi07","play_flash_gi20","play_flash_gi17","play_flasher2_flash_yellow","play_rsling_yellow")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 63}", Array("powerup_proton","play_flash_gi09","play_flash_gi19","play_flash_gi21","play_flash_gi12","play_flasher3_flash_cyan","play_lsling_cyan")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 64}", Array("powerup_shields","play_flash_gi04","play_flash_gi11","play_flash_gi13","play_flash_gi22","play_flash_giapron","play_flasher2_flash_blue","play_rsling_blue")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 64}", Array("powerup_shields","display_last_scores","play_flash_gi04","play_flash_gi11","play_flash_gi13","play_flash_gi22","play_flash_giapron","play_flasher2_flash_blue","play_rsling_blue")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 65}", Array("powerup_timewarp","play_flash_gi01","play_flash_gi10","play_flash_gi18","play_flash_gi16","play_flash_gi14","play_flasher1_flash_white","play_lsling_white")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 66}", Array("powerup_saver","play_flash_gi06","play_flash_gi20","play_flash_gi17","play_flash_gi15","play_flasher2_flash_purple","play_rsling_purple","play_spotlight_off")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 67}", Array("powerup_health","check_loser_message","check_winner_message5","play_flash_gi03","play_flash_gi09","play_flasher3_flash_green","play_lsling_green")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 67}", Array("powerup_health","play_flash_gi03","play_flash_gi09","play_flasher3_flash_green","play_lsling_green")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 68}", Array("powerup_combos","play_flash_gi08","play_flash_gi11","play_flash_gi19","play_flash_gi21","play_flasher2_flash_white","play_rsling_white","play_spotlight_on")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 69}", Array("powerup_training","play_flash_gi05","play_flash_gi10","play_flash_gi13","play_flash_gi16","play_flasher3_flash_hot","play_lsling_hot")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 70}", Array("powerup_cluster","play_flash_gi02","play_flash_gi18","play_flash_gi22","play_flash_gi14","play_flasher1_flash_magenta","play_rsling_magenta")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 71}", Array("powerup_moon","play_flash_gi07","play_flash_gi20","play_flash_gi17","play_flasher2_flash_yellow","play_lsling_yellow")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 72}", Array("powerup_proton","play_flash_gi09","play_flash_gi19","play_flash_gi21","play_flash_gi12","play_flasher3_flash_cyan","play_rsling_cyan")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 72}", Array("powerup_proton","check_loser_message","check_winner_message5","play_flash_gi09","play_flash_gi19","play_flash_gi21","play_flash_gi12","play_flasher3_flash_cyan","play_rsling_cyan")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 73}", Array("powerup_shields","play_flash_gi04","play_flash_gi11","play_flash_gi13","play_flash_gi22","play_flash_giapron","play_flasher2_flash_blue","play_lsling_blue")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 74}", Array("powerup_timewarp","play_flash_gi01","play_flash_gi10","play_flash_gi18","play_flash_gi16","play_flash_gi14","play_flasher1_flash_white","play_rsling_white")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 75}", Array("powerup_saver","play_flash_gi06","play_flash_gi20","play_flash_gi17","play_flash_gi15","play_flasher2_flash_purple","play_lsling_purple")
@@ -120,7 +120,7 @@ Sub CreatePostGameMode()
             '.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 77}", Array("meteor1_knockdown","meteor1_flash_show","meteor1_blink_show","meteor1_explodes_white")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 78}", Array("meteor3_knockdown","meteor3_flash_show","meteor3_blink_show","meteor3_explodes_hot")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 79}", Array("meteor2_knockdown","meteor2_flash_show","meteor2_blink_show","meteor2_explodes_red")
-            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 80}", Array("meteor4_knockdown","meteor4_flash_show","meteor4_blink_show","meteor4_explodes_white","meteor3_raise")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 80}", Array("meteor4_knockdown","meteor4_flash_show","meteor4_blink_show","meteor4_explodes_white","meteor3_raise","display_last_scores")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 81}", Array("meteor1_knockdown","meteor1_flash_show","meteor1_blink_show","meteor1_explodes_hot","meteor2_raise")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 82}", Array("meteor3_knockdown","meteor3_flash_show","meteor3_blink_show","meteor3_explodes_red","meteor4_raise")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 83}", Array("meteor2_knockdown","meteor2_flash_show","meteor2_blink_show","meteor2_explodes_white","meteor1_raise")
@@ -871,7 +871,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_magenta"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ClusterBombColor
@@ -881,7 +881,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_yellow"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", MoonColor
@@ -891,7 +891,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_cyan"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ProtonColor
@@ -901,7 +901,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_blue"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShieldsColor
@@ -911,7 +911,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_white"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", TimewarpColor
@@ -921,7 +921,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_purple"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShipSaveColor
@@ -931,7 +931,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_green"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", HealthColor1
@@ -941,7 +941,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_white"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", TimewarpColor
@@ -951,7 +951,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_hot"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", TrainingColor
@@ -961,7 +961,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_magenta"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ClusterBombColor
@@ -971,7 +971,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_yellow"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", MoonColor
@@ -981,7 +981,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_cyan"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ProtonColor
@@ -991,7 +991,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_blue"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShieldsColor
@@ -1001,7 +1001,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_purple"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 1
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShipSaveColor

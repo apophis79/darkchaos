@@ -23,6 +23,29 @@ Sub CreateShows()
         End With
     End With
 
+
+    With CreateGlfShow("flicker2_color")
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|20|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|50|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|24|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|80|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|10|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|45|(color)")
+        End With
+    End With
+
+
     With CreateGlfShow("flicker_color_on")
         With .AddStep(Null, Null, .16)
             .Lights = Array("(lights)|37|(color)")
