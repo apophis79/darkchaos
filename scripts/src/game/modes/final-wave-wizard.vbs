@@ -28,7 +28,7 @@ Sub CreateFinalWaveWizardMode
             'start/restart wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == "&FWWizMaxAsteroidHits&"}", Array("begin_fwwiz") 'start wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < "&FWWizMaxAsteroidHits&"}", Array("continue_fwwiz","display_hit_count","update_asteroid_glow") 'continue wizard mode
-            .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","fwwiz_music_start","turn_off_gi")
+            .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","fwwiz_music_start","turn_off_gi","final_flash1","final_flash2","final_flash3")
             .Add "mode_final_wave_wizard_stopping", Array("fwwiz_music_stop") 
             'release the scoop ball to start the wizard mode
             .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
@@ -44,7 +44,7 @@ Sub CreateFinalWaveWizardMode
             .Add "s_TargetMystery3_active", Array("asteroid_hit")
             .Add "asteroid_hit", Array("check_fwwiz_done","asteroid_flash3","asteroid_flicker1","play_asteroid_hit")
             .Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", Array("update_hit_count")
-            .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 0}", Array("asteroid_destroyed","asteroid_off")
+            .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 0}", Array("asteroid_destroyed","asteroid_off","fwwiz_music_stop")
             'asteroid glow
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", Array("asteroid_temp1")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 18}", Array("asteroid_temp2")
@@ -92,6 +92,7 @@ Sub CreateFinalWaveWizardMode
             ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 27}", Array("s_right_flipper_active","s_left_flipper_active")
             ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 28}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
             ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers")
+            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 50}", Array("enable_flippers","stop_final_wave_wizard")
 
             'handle GI light show
             .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 1}", Array("play_flash_gi09","play_flash_giapron")
@@ -369,7 +370,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_asteroid_explodes_show"
                 .Show = "asteroid_explodes_show" 
                 .Loops = 1
-                .EventsWhenCompleted = Array("enable_flippers","stop_final_wave_wizard")
+                '.EventsWhenCompleted = Array("enable_flippers","stop_final_wave_wizard")
             End With
 
 
@@ -431,6 +432,37 @@ Sub CreateFinalWaveWizardMode
                     End With  
                 End With
             Next
+
+            With .EventName("final_flash1")   
+                .Key = "key_final_flash3"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", MeteorFlashColor
+                End With
+            End With
+            With .EventName("final_flash2")   
+                .Key = "key_final_flash4"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFL5"
+                    .Add "color", MeteorFlashColor
+                End With
+            End With
+            With .EventName("final_flash3")   
+                .Key = "key_final_flash5"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFL6"
+                    .Add "color", MeteorFlashColor
+                End With
+            End With
         End With
 
 
