@@ -3625,5 +3625,14 @@
     "volume": 0,
     "balance": 0,
     "output_target": 1
+  },
+  {
+    "name": "sfx_final_explosion",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_final_explosion.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
   }
 ]

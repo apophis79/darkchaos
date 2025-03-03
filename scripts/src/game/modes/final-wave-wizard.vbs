@@ -77,20 +77,21 @@ Sub CreateFinalWaveWizardMode
             .Add "asteroid_destroyed", Array("knockdown_meteors")
             
             '   explosion flippers flips
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 4}", Array("s_left_flipper_active")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 5}", Array("s_left_flipper_inactive","s_right_flipper_active")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 6}", Array("s_right_flipper_inactive")
-            '   explosion flippers flips
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 11}", Array("s_right_flipper_active")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 12}", Array("s_right_flipper_inactive","s_left_flipper_active")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 13}", Array("s_left_flipper_inactive")
-            '   explosion flippers flips
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 19}", Array("s_right_flipper_active","s_left_flipper_active")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 20}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
-            '   explosion flippers flips
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 27}", Array("s_right_flipper_active","s_left_flipper_active")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 28}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
-            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers")
+            .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 4}", Array("kill_flippers")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 4}", Array("s_left_flipper_active")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 5}", Array("s_left_flipper_inactive","s_right_flipper_active")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 6}", Array("s_right_flipper_inactive")
+            ' '   explosion flippers flips
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 11}", Array("s_right_flipper_active")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 12}", Array("s_right_flipper_inactive","s_left_flipper_active")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 13}", Array("s_left_flipper_inactive")
+            ' '   explosion flippers flips
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 19}", Array("s_right_flipper_active","s_left_flipper_active")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 20}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
+            ' '   explosion flippers flips
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 27}", Array("s_right_flipper_active","s_left_flipper_active")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 28}", Array("s_right_flipper_inactive","s_left_flipper_inactive")
+            ' .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 30}", Array("kill_flippers")
 
             'handle GI light show
             .Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 1}", Array("play_flash_gi09","play_flash_giapron")
@@ -371,6 +372,7 @@ Sub CreateFinalWaveWizardMode
                 .EventsWhenCompleted = Array("enable_flippers","stop_final_wave_wizard")
             End With
 
+
             'GI flashes
             For x = 1 to 9
                 With .EventName("play_flash_gi0"&x)   
@@ -429,6 +431,14 @@ Sub CreateFinalWaveWizardMode
                     End With  
                 End With
             Next
+        End With
+
+
+        With .SoundPlayer()
+            With .EventName("asteroid_destroyed")
+                .Key = "key_sfx_final_explosion"
+                .Sound = "sfx_final_explosion"
+            End With
         End With
 
 

@@ -7,7 +7,7 @@ With CreateGlfShow("cluster_explodes")
   With .AddStep(0.1, Null, Null)
     With .Shows("insert_swap2")
       .Key = "key_cb_xpl_inserts"
-      .Speed = 3
+      .Speed = 2
       .Loops = 7
       .Priority = 10000
       With .Tokens()

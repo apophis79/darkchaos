@@ -310,7 +310,7 @@ End With
 
 With CreateGlfShow("asteroid_explodes_show")
 
-  With .AddStep(0.8, Null, Null)
+  With .AddStep(0.01, Null, Null)
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld1"
       .Speed = 2
@@ -324,7 +324,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(0.81, Null, Null)
+  With .AddStep(0.02, Null, Null)
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld2"
       .Speed = 4
@@ -336,7 +336,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(1.0, Null, Null)
+  With .AddStep(0.2, Null, Null)
     With .Shows("asteroid_hit")
       .Key = "key_ass_xpld3"
       .Speed = 1
@@ -344,7 +344,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(2.2, Null, Null)
+  With .AddStep(1.7, Null, Null)
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld4"
       .Speed = 2
@@ -358,7 +358,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(2.21, Null, Null)
+  With .AddStep(1.71, Null, Null)
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld5"
       .Speed = 4
@@ -370,7 +370,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(2.4, Null, Null)
+  With .AddStep(1.9, Null, Null)
     With .Shows("asteroid_hit_single")
       .Key = "key_ass_xpld6"
       .Speed = 1.5
@@ -382,7 +382,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(3.8, Null, Null)
+  With .AddStep(4.1, Null, Null)
     With .Shows("insert_swap2")
       .Key = "key_ass_xpld7"
       .Speed = 2
@@ -395,7 +395,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(3.81, Null, Null)
+  With .AddStep(4.11, Null, Null)
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld8"
       .Speed = 4
@@ -407,7 +407,7 @@ With CreateGlfShow("asteroid_explodes_show")
     End With
   End With
 
-  With .AddStep(4.0, Null, Null)
+  With .AddStep(4.36, Null, Null)
     With .Shows("asteroid_hit_single")
       .Key = "key_ass_xpld9"
       .Speed = 1.5

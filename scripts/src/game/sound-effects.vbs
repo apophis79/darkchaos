@@ -91,7 +91,8 @@ SFXNames = Array( _
     "sfx_boom3", _
     "sfx_boom4", _
     "sfx_boom5", _
-    "sfx_boom6")
+    "sfx_boom6", _ 
+    "sfx_final_explosion")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -177,7 +178,8 @@ SFXDurations = Array( _
     5.851, _
     5.329, _
     6.322, _
-    6.322)
+    6.322, _ 
+    9.473)
 
 
 Dim VOCNames, VOCDurations
