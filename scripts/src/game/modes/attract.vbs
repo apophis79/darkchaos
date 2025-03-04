@@ -14,6 +14,7 @@ Sub CreateAttractMode()
         With .EventPlayer()
             .Add "mode_attract_started", Array("play_attract_show1","play_mus_ambient_bg","stop_asteroid_motor","drop_diverter")
             .Add "timer_attract_voc_complete", Array("play_attract_voc")
+            .Add "mode_attract_stopping", Array("drop_diverter")
             'main attract show timing
             .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 8}", Array("play_meteor_fall_left")
             .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 16}", Array("play_meteor_fall_right","play_att_lsling_show1","play_att_rsling_show1")

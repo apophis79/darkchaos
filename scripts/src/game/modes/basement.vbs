@@ -12,12 +12,12 @@ Sub CreateBasementMode()
         .StopEvents = Array("when_the_universe_ends")
 
         With .EventPlayer()
-            .Add "s_left_staged_flipper_key_active", Array("test_show1") 'DEBUG
+            '.Add "s_left_staged_flipper_key_active", Array("test_show1") 'DEBUG
             '.Add "s_right_staged_flipper_key_active", Array("test_show2") 'DEBUG
             '.Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
 
-            .Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
-            .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights","enable_asteroid_motor")
+            '.Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
+            .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights")',"enable_asteroid_motor","enable_diverter")
 
             .Add GLF_GAME_START, Array("reset_won_game")
         End With
@@ -66,7 +66,7 @@ Sub CreateBasementMode()
         With .Timers("table_init")
             .TickInterval = 50
             .StartValue = 0
-            .EndValue = 1
+            .EndValue = 4
             With .ControlEvents()
                 .EventName = "mode_basement_started"
                 .Action = "start"

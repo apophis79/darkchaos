@@ -228,7 +228,7 @@ Sub ConfigureGlfDevices
 
     ' Diverter above pop bumpers
     With CreateGlfDiverter("divert_pin")
-        .EnableEvents = Array("enable_diverter",GLF_BALL_STARTED)
+        .EnableEvents = Array("reset_complete","enable_diverter",GLF_BALL_STARTED)
         .ActivateEvents = Array("raise_diverter") '"start_meteor_wave","start_training_heal"
         .DeactivateEvents = Array("drop_diverter",GLF_BALL_ENDED) '"stop_meteor_wave","stop_training"
         .ActionCallback = "RaiseDiverterPin"
@@ -237,7 +237,7 @@ Sub ConfigureGlfDevices
 
     ' Asteroid motor
     With CreateGlfDiverter("asteroid_motor")
-        .EnableEvents = Array("enable_asteroid_motor")
+        .EnableEvents = Array("reset_complete","enable_asteroid_motor")
         .ActivateEvents = Array("run_asteroid_motor") '"start_meteor_wave","start_training_heal"
         .DeactivateEvents = Array("stop_asteroid_motor") '"stop_meteor_wave","stop_training"
         .ActionCallback = "SolSpinAsteroid"
