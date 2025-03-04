@@ -146,7 +146,7 @@ Const BonusPerProtonRound = 10000
 Sub ConfigureGlfDevices
 
     ' Load up the shows
-    CreateShows()
+    CreateGeneralShows()
     CreateGIShows()
     CreateInsertShows()
     CreateAttractShows()
@@ -159,7 +159,9 @@ Sub ConfigureGlfDevices
     CreateTimeWarpShows()
     CreateSkillshotShows()
     CreateMoonShows()
+    CreateShipSaverBombShows()
     CreateMysteryShows()
+    CreateExtraBallShows()
     CreateComboCommandShows()
     CreateFullyLoadedShows()
     CreateFinalWaveWizardShows()

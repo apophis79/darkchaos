@@ -1,6 +1,6 @@
 'Dark Chaos Shows
 
-Sub CreateShows()
+Sub CreateGeneralShows()
 
     With CreateGlfShow("flicker_color")
         With .AddStep(Null, Null, .16)

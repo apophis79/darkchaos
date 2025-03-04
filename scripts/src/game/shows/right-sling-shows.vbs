@@ -565,5 +565,29 @@ Sub CreateRightSlingShows()
     End With
 
 
+    With CreateGlfShow("rsling_base_show")
+        With .AddStep(0.01, Null, Null)
+            With .Shows("rsling_rotate1_cw")
+                .Key = "key_rsling_base_show1"
+                .Speed = 7
+                .Loops = 1
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", "ffffff"
+                End With
+            End With
+        End With
+        With .AddStep(0.02, Null, Null)
+            With .Shows("flash_color")
+                .Key = "key_rsling_base_show2"
+                .Speed = 15
+                .Loops = 3
+                With .Tokens()
+                    .Add "lights", "tRSling"
+                    .Add "color", GIColor3000k
+                End With
+            End With
+        End With
+    End With
 
 End Sub

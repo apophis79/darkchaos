@@ -45,11 +45,11 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","remove_health")
             .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","remove_health")
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers")
-            .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h")
+            .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h","health_charge1","health_charge2")
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
             'Handle mystery award
-            .Add "mystery_full_health", Array("complete_full_health""slings_powerup_added","lsling_powerup_h","rsling_powerup_h")
+            .Add "mystery_full_health", Array("complete_full_health","slings_powerup_added","lsling_powerup_h","rsling_powerup_h")
         End With
 
 
@@ -66,10 +66,12 @@ Sub CreateHealthMode
             With .States("unlit")
                 .Show = "off"
                 .Key = "key_health_off"
+                .Priority = 90
             End With
             With .States("normal")
                 .Show = "led_color"
                 .Key = "key_health_normal"
+                .Priority = 80
                 With .Tokens()
                     .Add "color", HealthColor1
                 End With
@@ -77,6 +79,7 @@ Sub CreateHealthMode
             With .States("warning")
                 .Show = "led_color"
                 .Key = "key_health_warning"
+                .Priority = 70
                 With .Tokens()
                     .Add "color", HealthColor2
                 End With
@@ -85,6 +88,7 @@ Sub CreateHealthMode
                 .Show = "flash_color"
                 .Key = "key_health_critical"
                 .Speed = 15
+                .Priority = 60
                 With .Tokens()
                     .Add "color", HealthColor3
                 End With
@@ -129,13 +133,24 @@ Sub CreateHealthMode
         
 
         With .ShowPlayer()
-            With .EventName("add_health")
-                .Key = "key_health_charged"
+            With .EventName("health_charge1")
+                .Key = "key_health_charge1"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 7
                 With .Tokens()
                     .Add "lights", "tHealth"
+                    .Add "color", HealthColor1
+                End With
+            End With
+            With .EventName("health_charge2")
+                .Key = "key_health_charge2"
+                .Show = "insert_gi_spin_center"
+                .Speed = 3
+                .Loops = 1
+                .Priority = 1000
+                With .Tokens()
+                    .Add "intensity", 100
                     .Add "color", HealthColor1
                 End With
             End With

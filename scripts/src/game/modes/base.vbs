@@ -108,7 +108,7 @@ Sub CreateBaseMode()
             .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches
-            .Add "s_TargetMystery5_active", Array("magnet_activated")
+            .Add "s_TargetMystery5_active", Array("magnet_activated_flash","magnet_activated_gi")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             .Add "s_MoonRamp_active", Array("right_ramp_hit")
 
@@ -120,8 +120,8 @@ Sub CreateBaseMode()
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
 
             'handle some shows
-            .Add "s_LeftSlingshot_active", Array("lsling_base_show1","lsling_base_show2") 
-            .Add "s_RightSlingshot_active", Array("rsling_base_show1","rsling_base_show2") 
+            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show") 
+            .Add "s_RightSlingshot_active", Array("play_rsling_base_show") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
             .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
             
@@ -215,13 +215,13 @@ Sub CreateBaseMode()
             End With
             With .EventName("activate_final_wave_wizard")
                 With .Lights("GI")
-                    .Priority = 100
+                    '.Priority = 100
                     .Color = "000000"
                 End With
             End With
             With .EventName("turn_off_gi")
                 With .Lights("GI")
-                    .Priority = 100
+                    '.Priority = 100
                     .Color = "000000"
                 End With
             End With
@@ -375,18 +375,18 @@ Sub CreateBaseMode()
                 End With
             Next
 
-            With .EventName("magnet_activated")
-                .Key = "key_ts_mag_gi"
-                .Show = "flash_color" '_with_fade"
-                .Speed = 15
+            With .EventName("magnet_activated_flash")
+                .Key = "key_ts_mag_flash"
+                .Show = "flash_color" 
+                .Speed = 20
                 .Loops = 7
-                .Priority = 1000
+                .Priority = 100
                 With .Tokens()
-                    .Add "lights", "gi13" 
-                    .Add "color", GIColor3000k
-                    '.Add "fade", 300
+                    .Add "lights", "FL1"
+                    .Add "color", GIColor2700k
                 End With
             End With
+            
 
             With .EventName("balldevice_scoop_ball_exiting")
                 .Key = "key_ts_scoop_gi"
@@ -401,50 +401,20 @@ Sub CreateBaseMode()
                 End With
             End With
 
-            With .EventName("lsling_base_show1")
-                .Key = "key_lsling_base_show1"
-                .Show = "lsling_rotate1_ccw"
-                .Speed = 7
+            ' slings
+            With .EventName("play_lsling_base_show")
+                .Key = "key_lsling_base_show"
+                .Show = "lsling_base_show"
+                .Speed = 1
                 .Loops = 1
-                With .Tokens()
-                    .Add "intensity", 100
-                    .Add "color", "ffffff"
-                End With
+                .Priority = 10000
             End With
-            With .EventName("lsling_base_show2")
-                .Key = "key_lsling_base_show2"
-                .Show = "flash_color"
-                .Speed = 20
-                .Loops = 3
-                .Priority = 20000
-                With .Tokens()
-                    .Add "lights", "tLSling"
-                    .Add "color", GIColor3000k
-                    '.Add "fade", 500
-                End With
-            End With
-
-            With .EventName("rsling_base_show1")
-                .Key = "key_rsling_rotate1_cw"
-                .Show = "rsling_rotate1_ccw"
-                .Speed = 7
+            With .EventName("play_rsling_base_show")
+                .Key = "key_rsling_base_show"
+                .Show = "rsling_base_show"
+                .Speed = 1
                 .Loops = 1
-                With .Tokens()
-                    .Add "intensity", 100
-                    .Add "color", "ffffff"
-                End With
-            End With
-            With .EventName("rsling_base_show2")
-                .Key = "key_rsling_base_show2"
-                .Show = "flash_color"
-                .Speed = 20
-                .Loops = 3
-                .Priority = 20000
-                With .Tokens()
-                    .Add "lights", "tRSling"
-                    .Add "color", GIColor3000k
-                    '.Add "fade", 500
-                End With
+                .Priority = 10000
             End With
 
             ' Combo command wizard scoop lights
@@ -605,6 +575,28 @@ Sub CreateBaseMode()
                 .Priority = 200
                 .Speed = 1.3
                 .Loops = 1
+            End With
+
+            With .EventName("activate_combo_command_wizard")   
+                .Key = "key_combo_wiz_ready"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", CombosColor
+                End With
+            End With
+
+            With .EventName("activate_fully_loaded_wizard")   
+                .Key = "key_loaded_wiz_ready"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", ProtonColor
+                End With
             End With
 
         End With
@@ -848,7 +840,7 @@ Sub CreateBaseMode()
             End With
 
             'Other
-            With .EventName("magnet_activated")
+            With .EventName("magnet_activated_gi")
                 .Sound = "sfx_mag_cap"
             End With
 

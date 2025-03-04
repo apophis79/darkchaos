@@ -149,7 +149,7 @@ Sub CreateAlienAttackMode
                 .Events = Array("mode_alien_attack_started")
                 .EventsWhenTransitioning = Array("start_alien_timer")
             End With
-            With .Transitions()  'successfully destroed alien
+            With .Transitions()  'successfully destroyed alien
                 .Source = Array("attacking")
                 .Target = "attack_done"
                 .Events = Array("alien_hit_show")
@@ -158,7 +158,7 @@ Sub CreateAlienAttackMode
                 .Source = Array("attacking")
                 .Target = "attack_done"
                 .Events = Array("timer_alien_attack_complete")
-                .EventsWhenTransitioning = Array("earth_hit","earth_flash")
+                .EventsWhenTransitioning = Array("earth_hit","alien_hit_show")
             End With
             With .Transitions()  'successfully destroed alien
                 .Source = Array("attack_done")
@@ -218,7 +218,7 @@ Sub CreateAlienAttackMode
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array(MainShotNames(x-1)&"_hit","cluster_bomb_fired")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","play_voc_AlienHit","start_double_scoring")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","alien_hit_show2","play_voc_AlienHit","start_double_scoring")
                 End With
             Next
             For x = 1 to 8
@@ -226,7 +226,7 @@ Sub CreateAlienAttackMode
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array("earth_hit")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x)
                 End With
             Next
 
@@ -289,17 +289,6 @@ Sub CreateAlienAttackMode
                 .Speed = 1
                 .Loops = 1
             End With
-            With .EventName("earth_flash")
-                .Key = "key_earth_flash"
-                .Priority = 15
-                .Show = "flash_color"
-                .Speed = 15
-                .Loops = 3
-                With .Tokens()
-                    .Add "lights", "tEarth"
-                    .Add "color", EarthHitColor
-                End With
-            End With
             With .EventName("alien_hit_show")
                 .Key = "key_alien_flash"
                 .Show = "flash_color_with_fade" 
@@ -309,6 +298,18 @@ Sub CreateAlienAttackMode
                     .Add "lights", "tFlasherU"
                     .Add "color", AlienFlashColor
                     .Add "fade", 300
+                End With
+            End With
+            With .EventName("alien_hit_show2")
+                .Key = "key_alien_flash2"
+                .Show = "insert_swap2" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", DoubleScoringColor
+                    .Add "color2", AlienColor
+                    .Add "intensity", 100
                 End With
             End With
         End With

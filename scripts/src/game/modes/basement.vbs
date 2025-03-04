@@ -12,7 +12,7 @@ Sub CreateBasementMode()
         .StopEvents = Array("when_the_universe_ends")
 
         With .EventPlayer()
-            '.Add "s_left_staged_flipper_key_active", Array("test_show1") 'DEBUG
+            .Add "s_left_staged_flipper_key_active", Array("test_show1") 'DEBUG
             '.Add "s_right_staged_flipper_key_active", Array("test_show2") 'DEBUG
             '.Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
 
@@ -89,35 +89,33 @@ Sub CreateBasementMode()
 
         With .ShowPlayer()
             With .EventName("test_show1")  'DEBUG
-                .Key = "key_test_show"
-                .Show = "shields_up"
+                .Key = "key_test_show1"
+                .Show = "ship_saver_acquired"
                 .Speed = 1
                 .Loops = 1
-                .Priority = 10000
+                .Priority = 20000
             End With
-            With .EventName("test_show2")  'DEBUG
-                .Key = "key_test_show"
-                .Show = "shields_down"
-                .Speed = 1
-                .Loops = 1
-                .Priority = 10000
-            End With
-        '     With .EventName("test_show")  'DEBUG
-        '         .Key = "key_test_show"
-        '         .Show = "moon_launch"
-        '         .Speed = 1
-        '         .Loops = 1
-        '         .Priority = 10000
-        '         ' With .Tokens()
-        '         '     .Add "color", MoonColor
-        '         ' '     .Add "color1", "ffffff"
-        '         ' '     .Add "color2", ClusterBombColor
-        '         ' '     '.Add "color3", "ff0000"
-        '         ' '     '.Add "color4", "0000ff"
-        '         '     .Add "intensity", 100
-        '         ' End With
-        '     End With
+            ' With .EventName("test_show2")  'DEBUG
+            '     .Key = "key_test_show2"
+            '     .Show = "shields_down"
+            '     .Speed = 1
+            '     .Loops = 1
+            '     .Priority = 10000
+            ' End With
+            ' With .EventName("test_show1")  'DEBUG
+            '     .Key = "key_test_show1"
+            '     .Show = "moon_missile_acquired" 
+            '     .Speed = 4
+            '     .Loops = 1
+            '     .Priority = 10000
+            '     With .Tokens()
+            '         .Add "color", MoonColor
+            '         .Add "intensity", 100
+            '     End With
+            ' End With
         End With
+
+
 
         ' With .SoundPlayer()
         '     With .EventName("test_show")

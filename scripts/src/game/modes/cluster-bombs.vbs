@@ -36,8 +36,8 @@ Sub CreateClusterBombMode
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
             .Add "left_orbit_hit", Array("score_500")
-            .Add "add_cluster_bomb1", Array("score_5000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
-            .Add "add_cluster_bomb2", Array("score_10000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
+            .Add "add_cluster_bomb1", Array("score_5000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
+            .Add "add_cluster_bomb2", Array("score_10000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
             .Add "complete_cluster_charges", Array("score_10000")
         End With
 
@@ -199,6 +199,17 @@ Sub CreateClusterBombMode
                     .Add "color1", ClusterBombColor
                     .Add "color2", ClusterBombColor
                     .Add "intensity", SlingDomePowerUpBrightness
+                End With
+            End With
+            With .EventName("cb_acquired") 
+                .Key = "key_cb_acquired"
+                .Show = "cluster_bomb_acquired" 
+                .Speed = 4
+                .Loops = 1
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color", ClusterBombColor
+                    .Add "intensity", 100
                 End With
             End With
 

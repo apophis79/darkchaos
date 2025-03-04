@@ -35,11 +35,11 @@ Sub CreateProtonCannonMode
             .Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", Array("added_proton","add_proton_round4","reset_proton_charges")
             .Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", Array("added_proton","add_proton_round5","reset_proton_charges")
             .Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("added_proton","add_proton_round6","check_fully_loaded") 'check for wizard mode qualification
-            .Add "added_proton", Array("slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc")
+            .Add "added_proton", Array("slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc","proton_added_show")
             '.Add "check_protons", Array("check_protons_done")
             'Handle mystery award
             .Add "mystery_full_protons", Array("complete_full_protons","slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc")
-            .Add "complete_full_protons", Array("check_fully_loaded","score_5000") 'check for wizard mode qualification
+            .Add "complete_full_protons", Array("proton_added_show","check_fully_loaded","score_5000") 'check for wizard mode qualification
             'Scoring
             .Add "s_spinner_active", Array("score_10")
             .Add "inner_orbit_hit", Array("score_100")
@@ -147,7 +147,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_proton_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 7
                 With .Tokens()
                     .Add "lights", "tProton"
                     .Add "color", ProtonColor
@@ -158,8 +158,20 @@ Sub CreateProtonCannonMode
                 .Show = "flash_color"
                 .Speed = 15
                 .Loops = 15
+                .Priority = 2000
                 With .Tokens()
                     .Add "lights", "tProtonAll"
+                    .Add "color", ProtonColor
+                End With
+            End With
+            With .EventName("proton_added_show")
+                .Key = "key_all_proton_charged"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 13
+                .Priority = 100
+                With .Tokens()
+                    .Add "lights", "tInlaneGI"
                     .Add "color", ProtonColor
                 End With
             End With

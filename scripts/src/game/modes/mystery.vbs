@@ -35,7 +35,7 @@ Sub CreateMysteryMode
             'handle sss award
             .Add "sss_mystery_ready", Array("complete_mystery_shots","set_sss_mystery_flag")
             'handle callout
-            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold")
+            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold","mystery_flash")
         End With
 
         ' Randomize mystery selection
@@ -164,6 +164,18 @@ Sub CreateMysteryMode
                     .Add "color", MysteryColor
                 End With
             End With
+            
+            With .EventName("mystery_flash")   
+                .Key = "key_loaded_wiz_ready"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", MysteryColor
+                End With
+            End With
+
             With .EventName("play_mystery_show")
                 .Key = "key_mystery_show"
                 .Show = "gi_spin1_cw"

@@ -77,8 +77,8 @@ Sub CreateMoonMultiballQualifyMode
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
             'Scoring
             .Add "right_ramp_hit", Array("score_500")
-            .Add "light_missile1", Array("score_5000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm")
-            .Add "light_missile2", Array("score_10000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm")
+            .Add "light_missile1", Array("score_5000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
+            .Add "light_missile2", Array("score_10000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
             .Add "complete_moon_qualify_shots", Array("score_10000")
         End With
 
@@ -277,6 +277,18 @@ Sub CreateMoonMultiballQualifyMode
                     .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
+            With .EventName("mm_acquired")  'DEBUG
+                .Key = "key_mm_acquired"
+                .Show = "moon_missile_acquired" 
+                .Speed = 4
+                .Loops = 1
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color", MoonColor
+                    .Add "intensity", 100
+                End With
+            End With
+
         End With
 
         With .VariablePlayer()

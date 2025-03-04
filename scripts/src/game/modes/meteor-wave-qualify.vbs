@@ -127,6 +127,17 @@ Sub CreateMeteorWaveQualifyMode
                     .Add "intensity", 30
                 End With
             End With
+            With .EventName("magnet_activated_gi")
+                .Key = "key_ts_mag_gi"
+                .Show = "flash_color_fadeout" 
+                .Speed = 4.6
+                .Loops = 3
+                .Priority = 100
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", GIColor2700k
+                End With
+            End With
             ' With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 3}")   
             '     .Key = "key_gi_cracked"
             '     .Show = "gi_cracked" 

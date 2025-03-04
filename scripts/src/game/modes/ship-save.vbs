@@ -25,7 +25,7 @@ Sub CreateShipSaveMode
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2","play_sfx_LF")
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3","play_sfx_LF")
             .Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", Array("light_ship_charge3","play_sfx_LF")
-            .Add "light_ship_charge3", Array("slings_powerup_added","lsling_powerup_sa","rsling_powerup_sa")
+            .Add "light_ship_charge3", Array("slings_powerup_added","lsling_powerup_sa","rsling_powerup_sa","saver_acquired")
             'Handle mystery award
             .Add "mystery_added_saver", Array("complete_ship_save","light_ship_charge3")
         End With
@@ -114,6 +114,13 @@ Sub CreateShipSaveMode
                     .Add "color2", ShipSaveColor
                     .Add "intensity", SlingDomePowerUpBrightness
                 End With
+            End With
+            With .EventName("saver_acquired") 
+                .Key = "key_saver_acquired"
+                .Show = "ship_saver_acquired" 
+                .Speed = 1
+                .Loops = 1
+                .Priority = 1000
             End With
         End With
 

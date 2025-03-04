@@ -85,23 +85,28 @@ Sub CreateSkillshotsMode
         With .ShowPlayer()
             With .EventName("ss_achieved")
                 .Key = "key_ss_achieved"
-                .Show = "flash_color_with_fade"
-                .Speed = 15
+                .Show = "insert_swap2"
+                .Speed = 2
                 .Loops = 5
                 With .Tokens()
-                    .Add "lights", "GI"
-                    .Add "color", SkillshotColor
-                    .Add "fade", 300
+                    .Add "color1", "000000"
+                    .Add "color2", SkillshotColor
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("sss_achieved")
                 .Key = "key_sss_achieved"
-                .Show = "sss"
-                .Speed = 1
-                .Loops = 1
+                .Show = "insert_swap3"
+                .Speed = 2
+                .Loops = 5
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", SkillshotColor
+                    .Add "color3", TrainingColor
+                    .Add "intensity", 100
+                End With
             End With
         End With
-
 
     End With
 
