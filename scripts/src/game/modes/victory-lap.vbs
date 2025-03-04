@@ -16,8 +16,8 @@ Sub CreateVictoryLapMode
         With .EventPlayer()
             .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game")
             .Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
-            .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap","start_double_scoring")
-            .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("run_victory_lap_show")
+            .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap","start_double_scoring","play_mus_victory","run_victory_lap_show")
+            .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap")
             .Add "multiball_victory_shoot_again_ended", Array("kill_flippers")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
@@ -67,7 +67,7 @@ Sub CreateVictoryLapMode
                     .Add "color", "ffffff"
                 End With
                 With .ControlEvents()
-                    .Events = Array("run_victory_lap_show")
+                    .Events = Array("init_victory_lap")
                     .State = 1
                 End With
             End With
@@ -80,7 +80,7 @@ Sub CreateVictoryLapMode
                     .Add "color", "ffffff"
                 End With
                 With .ControlEvents()
-                    .Events = Array("run_victory_lap_show")
+                    .Events = Array("init_victory_lap")
                     .State = 1
                 End With
             End With
@@ -144,7 +144,7 @@ Sub CreateVictoryLapMode
 
 
         With .SegmentDisplayPlayer()
-            With .EventName("run_victory_lap_show")
+            With .EventName("init_victory_lap")
                 With .Display("player1")
                     .Text = """ YOU """
                     .Flashing = "all"
@@ -189,6 +189,42 @@ Sub CreateVictoryLapMode
             End With
         End With
 
+
+        With .SoundPlayer()
+            With .EventName("play_mus_victory")
+                .Key = "key_mus_victory"
+                .Sound = "mus_victory"
+            End With
+        End With
+
+
+        With .ShowPlayer()
+            ' ' Main show, should run about 60 sec long    'FIXME
+            ' With .EventName("run_victory_lap_show")
+            '     .Key = "key_victory_lap_show"
+            '     .Show = "flicker_color"
+            '     .Speed = 5
+            '     .Loops = 1
+            '     With .Tokens()
+            '         .Add "lights", "GI"
+            '         .Add "color", ShipSaveColor
+            '         .Add "intensity", 10
+            '     End With
+            ' End With
+            ' ' Ball drain blocking show. Should last about 15 to 20 seconds. When this show stops, the game ends the ball.    'FIXME
+            ' With .EventName("mode_victory_lap_stopping")
+            '     .Key = "key_victory_lap_stopping_show"
+            '     .BlockQueue = True
+            '     .Show = "flicker_color"
+            '     .Speed = 5
+            '     .Loops = 1
+            '     With .Tokens()
+            '         .Add "lights", "GI"
+            '         .Add "color", ShipSaveColor
+            '         .Add "intensity", 10
+            '     End With
+            ' End With
+        End With
     
     End With
 End Sub

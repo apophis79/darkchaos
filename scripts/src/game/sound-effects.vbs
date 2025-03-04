@@ -92,7 +92,9 @@ SFXNames = Array( _
     "sfx_boom4", _
     "sfx_boom5", _
     "sfx_boom6", _ 
-    "sfx_final_explosion")
+    "sfx_final_explosion", _
+    "sfx_jackpot", _
+    "sfx_super_jackpot")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -179,7 +181,9 @@ SFXDurations = Array( _
     5.329, _
     6.322, _
     6.322, _ 
-    9.473)
+    9.473, _ 
+    1.386, _ 
+    3.422)
 
 
 Dim VOCNames, VOCDurations
@@ -349,6 +353,13 @@ Sub CreateSounds()
         .Duration = 65.358 * 1000
         .EventsWhenStopped = Array("mus_post_game_stopped")
     End With
+    With CreateGlfSound("mus_victory")
+        .File = "mus_victory" 
+        .Bus = BusName ' Sound bus to play on
+        .Duration = 65.463 * 1000
+        .EventsWhenStopped = Array("mus_victory_stopped")
+    End With
+
 
 
 End Sub
