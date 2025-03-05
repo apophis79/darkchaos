@@ -338,44 +338,30 @@ Sub CreateBaseMode()
 
 
         With .ShowPlayer()
-            ' For x = 1 to 4
-            '     With .EventName("s_Bumper"&x&"_active")
-            '         .Key = "key_bumper"&x&"_flash"
-            '         .Show = "flash_color_with_fade" 
-            '         .Speed = 15
-            '         .Loops = 1
-            '         .Priority = 2000
-            '         With .Tokens()
-            '             .Add "lights", "LB"&x
-            '             .Add "color", "05cc05" '"ffffff"
-            '             .Add "fade", 50
-            '         End With
-            '     End With
-            ' Next
-
             For x = 0 to 4
                 With .EventName(RolloverSwitches(x)&"_active")
                     .Key = "key_rollover"&x&"_flash"
-                    .Show = "flicker_color_off" 
-                    .Speed = 5
-                    .Loops = 2
+                    .Show = "flash_color" 
+                    .Speed = 20
+                    .Loops = 4
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", RolloverLightNames(x)
-                        .Add "color", GIColor3000k
+                        .Add "color", "ffffff"
                     End With
                 End With
             Next
 
             With .EventName("magnet_activated_flash")
                 .Key = "key_ts_mag_flash"
-                .Show = "flash_color" 
+                .Show = "flash_color_with_fade" 
                 .Speed = 20
                 .Loops = 7
                 .Priority = 100
                 With .Tokens()
                     .Add "lights", "FL1"
-                    .Add "color", GIColor2700k
+                    .Add "color", "aaaaaa"
+                    .Add "fade", 200
                 End With
             End With
             

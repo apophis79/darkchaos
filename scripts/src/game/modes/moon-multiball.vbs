@@ -19,7 +19,7 @@ Sub CreateMoonMultiballMode
 
         With .EventPlayer()
             'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("start_moon_multiball","play_sfx_launch")
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch")
         End With
 
 
