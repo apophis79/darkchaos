@@ -44,7 +44,7 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==4}", Array("health4_off","health3_crit","health2_crit","health1_crit","remove_health")
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","remove_health")
             .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","remove_health")
-            .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers")
+            .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers","meteor_wave_music_stop")
             .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h","health_charge1","health_charge2")
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
@@ -197,6 +197,21 @@ Sub CreateHealthMode
                     .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
+            'Bumpers
+            For x = 1 to 4
+                With .EventName("s_Bumper"&x&"_active")
+                    .Key = "key_bumper"&x&"_flash"
+                    .Show = "flash_color_with_fade" 
+                    .Speed = 15
+                    .Loops = 1
+                    .Priority = 2000
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", "05cc05" '"ffffff"
+                        .Add "fade", 50
+                    End With
+                End With
+            Next
         End With
 
         With .VariablePlayer()

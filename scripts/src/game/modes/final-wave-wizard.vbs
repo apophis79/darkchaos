@@ -463,6 +463,22 @@ Sub CreateFinalWaveWizardMode
                     .Add "color", MeteorFlashColor
                 End With
             End With
+
+            'bumpers
+            For x = 1 to 4
+                With .EventName("s_Bumper"&x&"_active")
+                    .Key = "key_bumper"&x&"_flash"
+                    .Show = "flash_color_with_fade" 
+                    .Speed = 15
+                    .Loops = 1
+                    .Priority = 2000
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", MeteorHotColor
+                        .Add "fade", 50
+                    End With
+                End With
+            Next
         End With
 
 

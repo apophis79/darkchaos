@@ -153,15 +153,7 @@ Sub CreateBaseMode()
                 .ForceDifferent = True
             End With
         End With
-
-
-        ' With .ComboSwitches("base_comboswitch_test")
-        '     .Switch1 = "s_left_flipper"
-        '     .Switch2 = "s_right_flipper"
-        '     .EventsWhenBoth = Array("test_comboswtiches")
-        '     '.HoldTime = 200
-        ' End With
-       
+    
 
         With .SegmentDisplayPlayer()
             With .EventName("mode_base_started")
@@ -346,20 +338,20 @@ Sub CreateBaseMode()
 
 
         With .ShowPlayer()
-            For x = 1 to 4
-                With .EventName("s_Bumper"&x&"_active")
-                    .Key = "key_bumper"&x&"_flash"
-                    .Show = "flash_color_with_fade" 
-                    .Speed = 15
-                    .Loops = 1
-                    .Priority = 2000
-                    With .Tokens()
-                        .Add "lights", "LB"&x
-                        .Add "color", "05cc05" '"ffffff"
-                        .Add "fade", 50
-                    End With
-                End With
-            Next
+            ' For x = 1 to 4
+            '     With .EventName("s_Bumper"&x&"_active")
+            '         .Key = "key_bumper"&x&"_flash"
+            '         .Show = "flash_color_with_fade" 
+            '         .Speed = 15
+            '         .Loops = 1
+            '         .Priority = 2000
+            '         With .Tokens()
+            '             .Add "lights", "LB"&x
+            '             .Add "color", "05cc05" '"ffffff"
+            '             .Add "fade", 50
+            '         End With
+            '     End With
+            ' Next
 
             For x = 0 to 4
                 With .EventName(RolloverSwitches(x)&"_active")
@@ -911,6 +903,14 @@ Sub CreateBaseMode()
                 .Sound = "sfx_EarthHit3"
             End With
 
+            'jackpots
+            With .EventName("play_sfx_jackpot")
+                .Sound = "sfx_jackpot"
+            End With
+            With .EventName("play_sfx_super_jackpot")
+                .Sound = "sfx_super_jackpot"
+            End With
+
 
             With .EventName("activate_combo_command_wizard")
                 .Sound = "voc_LCWiz"
@@ -922,9 +922,7 @@ Sub CreateBaseMode()
                 .Sound = "voc_Wiz"
             End With
 
-            ' With .EventName("test_comboswtiches")  'DEBUG
-            '     .Sound = "sfx_tally_alt"
-            ' End With
+            
 
             
 
