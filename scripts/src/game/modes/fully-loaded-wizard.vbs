@@ -111,7 +111,7 @@ Sub CreateFullyLoadedWizardMode
             .StartEvents = Array("timer_fully_loaded_message_complete")
             .BallCount = 5
             .BallCountType = "total"
-            .ShootAgain = 10000
+            .ShootAgain = 20000
             .HurryUp = 3000
             .GracePeriod = 2000
         End With

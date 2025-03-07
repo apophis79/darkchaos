@@ -20,30 +20,40 @@ Sub CreateComboCommandWizardMode
         .StopEvents = Array("mode_base_stopping","completed_combo_command_wizard")
 
         With .EventPlayer()
-            .Add "mode_combo_command_wizard_started", Array("meteor_wave_music_stop","ccwiz_music_start")
+            .Add "mode_combo_command_wizard_started", Array("meteor_wave_music_stop","ccwiz_music_start","ccwiz_sjp1_show2")
             .Add "mode_combo_command_wizard_stopping", Array("ccwiz_music_stop") 
             'release the scoop ball to start the wizard mode
             .Add "timer_combo_command_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
+            'Phase 1 shots
+            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
+            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show")
             'Phase 1 shots completed, so activate the scoop for Super JPs
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", Array("activate_ccwiz_sjp","run_ccwiz_scoop_show")
             'Phase 1 Super JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 && current_player.ccwiz_super_jp == 1}", Array("ccwiz_sjp_achieved","stop_ccwiz_scoop_show","restart_combos_command_shots")   'Start phase 2
-            .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot")
+            .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot","play_sfx_super_jackpot","ccwiz_sjp1_show1","ccwiz_sjp1_show2")
             'Phase 2 shots
-            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
-            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot")
+            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show1","ccwiz_flash_phase2_show1")
+            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show8","ccwiz_flash_phase2_show8")
+            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show2","ccwiz_flash_phase2_show2")
+            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show5","ccwiz_flash_phase2_show5")
+            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show4","ccwiz_flash_phase2_show4")
+            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show6","ccwiz_flash_phase2_show6")
+            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show3","ccwiz_flash_phase2_show3")
+            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show7","ccwiz_flash_phase2_show7")
             'Phase 2 shots completed, so activate the scoop for Super JPs
-            .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", Array("activate_ccwiz_sdjp","run_ccwiz_scoop_show","enable_scoop_hold")
+            .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", Array("activate_ccwiz_sdjp","run_ccwiz_scoop_show","enable_scoop_hold")  'FIXME scoop hold not working?
             'Phase 2 Super Duper JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", Array("ccwiz_sdjp_achieved","stop_ccwiz_scoop_show","release_scoop_hold")  'Combo Command wizard mode completed
-            .Add "ccwiz_sdjp_achieved", Array("completed_combo_command_wizard")  'FIXME  for now just end the mode, but we should have a show before mode ends
+            .Add "ccwiz_sdjp_achieved", Array("play_sfx_super_jackpot","ccwiz_sjp2_show1","ccwiz_sjp2_show2","ccwiz_music_stop") 
+            .Add "ccwiz_finalize", Array("release_scoop_hold","completed_combo_command_wizard")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
         End With
@@ -84,7 +94,7 @@ Sub CreateComboCommandWizardMode
             .StartEvents = Array("timer_combo_command_message_complete")
             .BallCount = 5
             .BallCountType = "total"
-            .ShootAgain = 10000
+            .ShootAgain = 20000
             .HurryUp = 3000
             .GracePeriod = 2000
         End With
@@ -197,6 +207,285 @@ Sub CreateComboCommandWizardMode
                     End With
                 End With
             Next
+
+            'Phase 1 light shows
+            With .EventName("ccwiz_shot_phase1_show")
+                .Key = "key_ccwiz_shot_phase1_show"
+                .Show = "insert_swap2" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase1_show")   
+                .Key = "key_ccwiz_flash_phase1_show"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", CombosColor
+                End With
+            End With
+
+
+            'Phase 2 light shows
+            With .EventName("ccwiz_shot_phase2_show1")
+                .Key = "key_ccwiz_shot_phase2_show1"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", MeteorWaveColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show1")   
+                .Key = "key_ccwiz_flash_phase2_show1"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show2")
+                .Key = "key_ccwiz_shot_phase2_show2"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", TrainingColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show2")   
+                .Key = "key_ccwiz_flash_phase2_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", TrainingColor
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show3")
+                .Key = "key_ccwiz_shot_phase2_show3"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", MoonColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show3")   
+                .Key = "key_ccwiz_flash_phase2_show3"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", MoonColor
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show4")
+                .Key = "key_ccwiz_shot_phase2_show4"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", HealthColor1
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show4")   
+                .Key = "key_ccwiz_flash_phase2_show4"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", HealthColor1
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show5")
+                .Key = "key_ccwiz_shot_phase2_show5"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", ProtonColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show5")   
+                .Key = "key_ccwiz_flash_phase2_show5"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", ProtonColor
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show6")
+                .Key = "key_ccwiz_shot_phase2_show6"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", ShieldsColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show6")   
+                .Key = "key_ccwiz_flash_phase2_show6"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", ShieldsColor
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show7")
+                .Key = "key_ccwiz_shot_phase2_show7"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", ShipSaveColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show7")   
+                .Key = "key_ccwiz_flash_phase2_show7"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", ShipSaveColor
+                End With
+            End With
+
+            With .EventName("ccwiz_shot_phase2_show8")
+                .Key = "key_ccwiz_shot_phase2_show8"
+                .Show = "insert_swap3" 
+                .Speed = 2
+                .Loops = 5
+                .Priority = 1000
+                With .Tokens()
+                    .Add "color1", "000000"
+                    .Add "color2", CombosColor
+                    .Add "color3", ClusterBombColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ccwiz_flash_phase2_show8")   
+                .Key = "key_ccwiz_flash_phase2_show8"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+
+            'Super jackpot 1 shows
+            With .EventName("ccwiz_sjp1_show1")
+                .Key = "key_ccwiz_sjp1_show1"
+                .Show = "insert_gi_spin_center"
+                .Speed = 2
+                .Loops = 4
+                .Priority = 1000
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", CombosColor
+                End With
+            End With
+            With .EventName("ccwiz_sjp1_show2")
+                .Key = "key_ccwiz_sjp1_show2"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", CombosColor
+                End With
+            End With
+
+            'Super jackpot 2 shows
+            With .EventName("ccwiz_sjp2_show1")
+                .Key = "key_ccwiz_sjp2_show1"
+                .Show = "insert_gi_spin_center"
+                .Speed = 2
+                .Loops = 4
+                .Priority = 1000
+                .EventsWhenCompleted = Array("ccwiz_finalize")
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", MeteorHotColor
+                End With
+            End With
+            With .EventName("ccwiz_sjp2_show2")
+                .Key = "key_ccwiz_sjp2_show2"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+
+
+        End With
+
+
+        With .SoundPlayer()
+            With .EventName("play_sfx_jackpot")
+                .Key = "key_sfx_jackpot"
+                .Sound = "sfx_jackpot"
+            End With
+            With .EventName("play_sfx_super_jackpot")
+                .Key = "key_sfx_super_jackpot"
+                .Sound = "sfx_super_jackpot"
+            End With
         End With
         
 

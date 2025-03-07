@@ -104,13 +104,23 @@ Sub CreateBasementMode()
             ' End With
             ' With .EventName("test_show1")  'DEBUG
             '     .Key = "key_test_show1"
-            '     .Show = "moon_missile_acquired" 
-            '     .Speed = 4
-            '     .Loops = 1
-            '     .Priority = 10000
+            '     .Show = "insert_gi_spin_center"
+            '     .Speed = 2
+            '     .Loops = 4
+            '     .Priority = 1000
             '     With .Tokens()
-            '         .Add "color", MoonColor
             '         .Add "intensity", 100
+            '         .Add "color", CombosColor
+            '     End With
+            ' End With
+            ' With .EventName("test_show2")  'DEBUG
+            '     .Key = "key_test_show2"
+            '     .Show = "flash_color" 
+            '     .Speed = 20
+            '     .Loops = 6
+            '     With .Tokens()
+            '         .Add "lights", "tFlasher"
+            '         .Add "color", CombosColor
             '     End With
             ' End With
         End With

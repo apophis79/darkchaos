@@ -42,6 +42,8 @@ Sub CreateBaseMode()
             
             'restarting waves
             .Add "stop_training", Array("check_base_restart","training_music_alt_stop")
+            .Add "completed_combo_command_wizard", Array("check_base_restart")
+            .Add "completed_fully_loaded_wizard", Array("check_base_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave0_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
