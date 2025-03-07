@@ -54,7 +54,7 @@ Sub CreateExtraBallMode
                 .Show = "eb_show"
                 .Speed = 1
                 .Loops = 1
-                .Priority = 2000
+                .Priority = 10000
                 .EventsWhenCompleted = Array("eb_complete")
             End With
         End With

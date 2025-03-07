@@ -277,7 +277,7 @@ Sub CreateMoonMultiballQualifyMode
                     .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
-            With .EventName("mm_acquired")  'DEBUG
+            With .EventName("mm_acquired") 
                 .Key = "key_mm_acquired"
                 .Show = "moon_missile_acquired" 
                 .Speed = 4

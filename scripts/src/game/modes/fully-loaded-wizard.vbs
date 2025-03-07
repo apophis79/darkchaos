@@ -33,39 +33,43 @@ Sub CreateFullyLoadedWizardMode
         .StopEvents = Array("mode_base_stopping","completed_fully_loaded_wizard")
 
         With .EventPlayer()
-            .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start")
+            .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start","flwiz_sjp1_show2")
             .Add "mode_fully_loaded_wizard_stopping", Array("flwiz_music_stop")   
             'release the scoop ball to start the wizard mode
             .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
-            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_hit","proton_fired","proton_fired_flash_show")
-            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", Array("flwiz_proton2_hit","proton_fired","proton_fired_flash_show")
-            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", Array("flwiz_proton3_hit","proton_fired","proton_fired_flash_show")
-            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", Array("flwiz_proton4_hit","proton_fired","proton_fired_flash_show")
-            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", Array("flwiz_proton5_hit","proton_fired","proton_fired_flash_show")
-            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6==1}", Array("flwiz_proton6_hit","proton_fired","proton_fired_flash_show")
-            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_cluster_hit")
-            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_moon_hit")
+            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot")
+            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", Array("flwiz_proton2_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot")
+            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", Array("flwiz_proton3_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot")
+            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", Array("flwiz_proton4_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot")
+            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", Array("flwiz_proton5_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot")
+            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6==1}", Array("flwiz_proton6_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot")
+            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_cluster_hit","cluster_bomb_fired","cluster_bomb_flash","play_sfx_jackpot","play_sfx_cluster_fired")
+            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_moon_hit","moon_missile_fired","play_sfx_jackpot")
             'Phase 1 shots completed, so activate the scoop for Super JPs
             .Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}", Array("activate_flwiz_sjp","run_flwiz_scoop_show") 
             'Phase 1 Super JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 && current_player.flwiz_super_jp == 1}", Array("flwiz_sjp_achieved","stop_flwiz_scoop_show","restart_fully_loaded_shots")   'Start phase 2
-            .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot")
+            .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot","play_sfx_super_jackpot","flwiz_sjp1_show1","flwiz_sjp1_show2")
             'Phase 2 shots
-            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton1_hit")
-            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton2_hit")
-            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton3_hit")
-            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton4_hit")
-            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton5_hit")
-            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton6_hit")
-            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_cluster_hit")
-            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_moon_hit")
+            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton1_hit","play_flwiz_proton_show","play_sfx_jackpot")
+            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton2_hit","play_flwiz_proton_show","play_sfx_jackpot")
+            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton3_hit","play_flwiz_proton_show","play_sfx_jackpot")
+            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton4_hit","play_flwiz_proton_show","play_sfx_jackpot")
+            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton5_hit","play_flwiz_proton_show","play_sfx_jackpot")
+            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton6_hit","play_flwiz_proton_show","play_sfx_jackpot")
+            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_cluster_hit","play_flwiz_cluster_show","play_sfx_jackpot","play_sfx_cluster_fired")
+            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_moon_hit","play_flwiz_moon_show","play_sfx_jackpot","play_sfx_launch")
             'Phase 2 shots completed, so activate the scoop for Super JPs
             .Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 2}", Array("activate_flwiz_sdjp","run_flwiz_scoop_show","enable_scoop_hold") 
             'Phase 2 Super Duper JP achieved
-            .Add "balldevice_scoop_ball_entered{current_player.flwiz_super_jp == 2}", Array("flwiz_sdjp_achieved","stop_flwiz_scoop_show","release_scoop_hold")  'Fully Loaded wizard mode completed
-            .Add "flwiz_sdjp_achieved", Array("completed_fully_loaded_wizard")  'FIXME  for now just end the mode, but we should have a show before mode ends
+            .Add "balldevice_scoop_ball_entered{current_player.flwiz_super_jp == 2}", Array("flwiz_sdjp_achieved","stop_flwiz_scoop_show")  'Fully Loaded wizard mode completed
+            .Add "flwiz_sdjp_achieved", Array("play_sfx_super_jackpot","flwiz_sjp2_show1","flwiz_sjp2_show2","flwiz_music_stop")  'FIXME  for now just end the mode, but we should have a show before mode ends
+            .Add "flwiz_finalize", Array("release_scoop_hold","completed_fully_loaded_wizard")
+            'Handle bumper lights
+            .Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_bumpers_show1")
+            .Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 2}", Array("flwiz_bumpers_show2")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
             'Handle shield shot bank
@@ -86,6 +90,31 @@ Sub CreateFullyLoadedWizardMode
                 .Add "flwiz_proton6_ready{current_player.shot_flwiz_proton6 == 0}", 1
                 .Add "flwiz_cluster_ready{current_player.shot_flwiz_cluster == 0}", 1
                 .Add "flwiz_moon_ready{current_player.shot_flwiz_moon == 0}", 1
+                .ForceAll = True
+                .ForceDifferent = False
+            End With
+            With .EventName("proton_fired")
+                .Add "play_flwiz_sfx_LPF1", 1
+                .Add "play_flwiz_sfx_LPF2", 1
+                .Add "play_flwiz_sfx_LPF3", 1
+                .Add "play_flwiz_sfx_LPF4", 1
+                .Add "play_flwiz_sfx_LPF5", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("flwiz_bumpers_show2")
+                .Add "flwiz_bumper1_show2p", 1
+                .Add "flwiz_bumper2_show2p", 1
+                .Add "flwiz_bumper3_show2p", 1
+                .Add "flwiz_bumper4_show2p", 1
+                .Add "flwiz_bumper1_show2c", 1
+                .Add "flwiz_bumper2_show2c", 1
+                .Add "flwiz_bumper3_show2c", 1
+                .Add "flwiz_bumper4_show2c", 1
+                .Add "flwiz_bumper1_show2m", 1
+                .Add "flwiz_bumper2_show2m", 1
+                .Add "flwiz_bumper3_show2m", 1
+                .Add "flwiz_bumper4_show2m", 1
                 .ForceAll = True
                 .ForceDifferent = False
             End With
@@ -291,6 +320,16 @@ Sub CreateFullyLoadedWizardMode
             End With
         End With
 
+        With .Timers("flwiz_bumper_lights")
+            .TickInterval = 711  'one beat of the song
+            .StartValue = 0
+            .EndValue = 100000
+            With .ControlEvents()
+                .EventName = "mode_fully_loaded_wizard_started"
+                .Action = "restart"
+            End With
+        End With
+
 
         With .VariablePlayer()
             With .EventName("mode_fully_loaded_wizard_started")
@@ -386,30 +425,9 @@ Sub CreateFullyLoadedWizardMode
 
         End With
 
-        With .ShowPlayer()
-            With .EventName("proton_fired")
-                .Key = "key_proton_fired"
-                .Priority = 10
-                .Show = "flash_color"
-                .Speed = 20
-                .Loops = 5
-                With .Tokens()
-                    .Add "lights", "tBlast"
-                    .Add "color", ProtonColor
-                End With
-            End With
-            With .EventName("proton_fired_flash_show")
-                .Key = "key_proton_flash"
-                .Show = "flash_color_with_fade" 
-                .Speed = 20
-                .Loops = 3
-                With .Tokens()
-                    .Add "lights", "FL3"
-                    .Add "color", ProtonColor
-                    .Add "fade", 300
-                End With
-            End With
 
+
+        With .ShowPlayer()
             'bumpers
             For x = 1 to 4
                 With .EventName("s_Bumper"&x&"_active")
@@ -425,6 +443,304 @@ Sub CreateFullyLoadedWizardMode
                     End With
                 End With
             Next
+            With .EventName("flwiz_bumpers_show1")
+                .Key = "key_bumpers_show1"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tBumper"
+                    .Add "color", "555555"
+                End With
+            End With
+
+            With .EventName("flwiz_bumper1_show2p")
+                .Key = "key_bumper1_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB1"
+                    .Add "color", ProtonColor
+                End With
+            End With
+            With .EventName("flwiz_bumper2_show2p")
+                .Key = "key_bumper2_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB2"
+                    .Add "color", ProtonColor
+                End With
+            End With
+            With .EventName("flwiz_bumper3_show2p")
+                .Key = "key_bumper3_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB3"
+                    .Add "color", ProtonColor
+                End With
+            End With
+            With .EventName("flwiz_bumper4_show2p")
+                .Key = "key_bumper4_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB4"
+                    .Add "color", ProtonColor
+                End With
+            End With
+
+            With .EventName("flwiz_bumper1_show2c")
+                .Key = "key_bumper1_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB1"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+            With .EventName("flwiz_bumper2_show2c")
+                .Key = "key_bumper2_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB2"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+            With .EventName("flwiz_bumper3_show2c")
+                .Key = "key_bumper3_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB3"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+            With .EventName("flwiz_bumper4_show2c")
+                .Key = "key_bumper4_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB4"
+                    .Add "color", ClusterBombColor
+                End With
+            End With
+
+            With .EventName("flwiz_bumper1_show2m")
+                .Key = "key_bumper1_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB1"
+                    .Add "color", MoonColor
+                End With
+            End With
+            With .EventName("flwiz_bumper2_show2m")
+                .Key = "key_bumper2_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB2"
+                    .Add "color", MoonColor
+                End With
+            End With
+            With .EventName("flwiz_bumper3_show2m")
+                .Key = "key_bumper3_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB3"
+                    .Add "color", MoonColor
+                End With
+            End With
+            With .EventName("flwiz_bumper4_show2m")
+                .Key = "key_bumper4_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB4"
+                    .Add "color", MoonColor
+                End With
+            End With
+
+
+            'Super jackpot 1 shows
+            With .EventName("flwiz_sjp1_show1")
+                .Key = "key_flwiz_sjp1_show1"
+                .Show = "insert_gi_spin_center"
+                .Speed = 2
+                .Loops = 4
+                .Priority = 1000
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", "ffffff"
+                End With
+            End With
+            With .EventName("flwiz_sjp1_show2")
+                .Key = "key_flwiz_sjp1_show2"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", MoonColor
+                End With
+            End With
+
+            'Super jackpot 2 shows
+            With .EventName("flwiz_sjp2_show1")
+                .Key = "key_flwiz_sjp2_show1"
+                .Show = "insert_gi_spin_center"
+                .Speed = 2
+                .Loops = 4
+                .Priority = 1000
+                .EventsWhenCompleted = Array("flwiz_finalize")
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", MeteorHotColor
+                End With
+            End With
+            With .EventName("flwiz_sjp2_show2")
+                .Key = "key_flwiz_sjp2_show2"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+
+            'Protons fired
+            With .EventName("proton_fired")
+                .Key = "key_flwiz_proton_fired"
+                .Priority = 10
+                .Show = "flash_color"
+                .Speed = 20
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tBlast"
+                    .Add "color", ProtonColor
+                End With
+            End With
+            With .EventName("proton_fired_flash_show")
+                .Key = "key_flwiz_proton_flash"
+                .Show = "flash_color_with_fade" 
+                .Speed = 20
+                .Loops = 3
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", ProtonColor
+                    .Add "fade", 300
+                End With
+            End With
+            With .EventName("play_flwiz_proton_show")
+                .Key = "key_flwiz_proton_show"
+                .Show = "flwiz_proton_show"
+                .Speed = 1
+                .Loops = 1
+                .Priority = 10000
+            End With
+
+            'Cluster bombs
+            With .EventName("cluster_bomb_fired")
+                .Key = "key_flwiz_cluster_explodes"
+                .Priority = 5
+                .Show = "cluster_explodes"  'the cluster color is included in the show
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .EventName("cluster_bomb_flash")
+                .Key = "key_flwiz_cluster_flash"
+                .Show = "flash_color_with_fade" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", ClusterBombColor
+                    .Add "fade", 300
+                End With
+            End With
+            With .EventName("play_flwiz_cluster_show")
+                .Key = "key_flwiz_cluster_show"
+                .Show = "flwiz_cluster_show"
+                .Speed = 1
+                .Loops = 1
+                .Priority = 10000
+            End With
+
+            'Moon
+            With .EventName("moon_missile_fired")
+                .Key = "key_flwiz_moon_launch"
+                .Show = "moon_launch"
+                .Priority = 50
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .EventName("play_flwiz_moon_show")
+                .Key = "key_flwiz_moon_show"
+                .Show = "flwiz_moon_show"
+                .Speed = 1
+                .Loops = 1
+                .Priority = 10000
+            End With
+
+        End With
+
+
+        With .SoundPlayer()
+            With .EventName("play_flwiz_sfx_LPF1")
+                .Key = "key_flwiz_sfx_LPF1"
+                .Sound = "sfx_LPF1"
+            End With
+            With .EventName("play_flwiz_sfx_LPF2")
+                .Key = "key_flwiz_sfx_LPF2"
+                .Sound = "sfx_LPF2"
+            End With
+            With .EventName("play_flwiz_sfx_LPF3")
+                .Key = "key_flwiz_sfx_LPF3"
+                .Sound = "sfx_LPF3"
+            End With
+            With .EventName("play_flwiz_sfx_LPF4")
+                .Key = "key_flwiz_sfx_LPF4"
+                .Sound = "sfx_LPF4"
+            End With
+            With .EventName("play_flwiz_sfx_LPF5")
+                .Key = "key_flwiz_sfx_LPF5"
+                .Sound = "sfx_LPF5"
+            End With
+
+            With .EventName("play_sfx_cluster_fired")
+                .Key = "key_flwiz_sfx_cluster_fired"
+                .Sound = "sfx_cluster_fired"
+            End With
+            With .EventName("play_sfx_launch")
+                .Key = "key_flwiz_sfx_launch"
+                .Sound = "sfx_launch"
+            End With
+
+            With .EventName("play_sfx_jackpot")
+                .Key = "key_flwiz_sfx_jackpot"
+                .Sound = "sfx_jackpot"
+            End With
+            With .EventName("play_sfx_super_jackpot")
+                .Key = "key_flwiz_sfx_super_jackpot"
+                .Sound = "sfx_super_jackpot"
+            End With
         End With
 
 
