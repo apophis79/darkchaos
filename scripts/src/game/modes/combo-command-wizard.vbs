@@ -49,11 +49,14 @@ Sub CreateComboCommandWizardMode
             .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show3","ccwiz_flash_phase2_show3")
             .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show7","ccwiz_flash_phase2_show7")
             'Phase 2 shots completed, so activate the scoop for Super JPs
-            .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", Array("activate_ccwiz_sdjp","run_ccwiz_scoop_show","enable_scoop_hold")  'FIXME scoop hold not working?
+            .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", Array("activate_ccwiz_sdjp","run_ccwiz_scoop_show","enable_scoop_hold")
             'Phase 2 Super Duper JP achieved
-            .Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", Array("ccwiz_sdjp_achieved","stop_ccwiz_scoop_show","release_scoop_hold")  'Combo Command wizard mode completed
+            .Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", Array("ccwiz_sdjp_achieved","stop_ccwiz_scoop_show")  'Combo Command wizard mode completed
             .Add "ccwiz_sdjp_achieved", Array("play_sfx_super_jackpot","ccwiz_sjp2_show1","ccwiz_sjp2_show2","ccwiz_music_stop") 
             .Add "ccwiz_finalize", Array("release_scoop_hold","completed_combo_command_wizard")
+            'Handle bumper lights
+            .Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 1}", Array("ccwiz_bumpers_show1")
+            .Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 2}", Array("ccwiz_bumpers_show2")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
         End With
@@ -69,6 +72,14 @@ Sub CreateComboCommandWizardMode
                 .Add "combo_command6_ready{current_player.shot_combo_command6 == 0}", 1
                 .Add "combo_command7_ready{current_player.shot_combo_command7 == 0}", 1
                 .Add "combo_command8_ready{current_player.shot_combo_command8 == 0}", 1
+                .ForceAll = True
+                .ForceDifferent = False
+            End With
+            With .EventName("ccwiz_bumpers_show2")
+                .Add "ccwiz_bumper1_show2", 1
+                .Add "ccwiz_bumper2_show2", 1
+                .Add "ccwiz_bumper3_show2", 1
+                .Add "ccwiz_bumper4_show2", 1
                 .ForceAll = True
                 .ForceDifferent = False
             End With
@@ -98,6 +109,7 @@ Sub CreateComboCommandWizardMode
             .HurryUp = 3000
             .GracePeriod = 2000
         End With
+
 
 
         'Define combo command wizard shots
@@ -161,6 +173,16 @@ Sub CreateComboCommandWizardMode
             End With
         End With
 
+        With .Timers("ccwiz_bumper_lights")
+            .TickInterval = 711  'one beat of the song
+            .StartValue = 0
+            .EndValue = 100000
+            With .ControlEvents()
+                .EventName = "mode_combo_command_wizard_started"
+                .Action = "restart"
+            End With
+        End With
+
 
         With .VariablePlayer()
             With .EventName("mode_combo_command_wizard_started")
@@ -207,6 +229,57 @@ Sub CreateComboCommandWizardMode
                     End With
                 End With
             Next
+            With .EventName("ccwiz_bumpers_show1")
+                .Key = "key_bumpers_show1"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "tBumper"
+                    .Add "color", "555555"
+                End With
+            End With
+            With .EventName("ccwiz_bumper1_show2")
+                .Key = "key_bumper1_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB1"
+                    .Add "color", "555555"
+                End With
+            End With
+            With .EventName("ccwiz_bumper2_show2")
+                .Key = "key_bumper2_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB2"
+                    .Add "color", "555555"
+                End With
+            End With
+            With .EventName("ccwiz_bumper3_show2")
+                .Key = "key_bumper3_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB3"
+                    .Add "color", "555555"
+                End With
+            End With
+            With .EventName("ccwiz_bumper4_show2")
+                .Key = "key_bumper4_show2"
+                .Show = "flash_color_fadeout" 
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LB4"
+                    .Add "color", "555555"
+                End With
+            End With
+
 
             'Phase 1 light shows
             With .EventName("ccwiz_shot_phase1_show")
