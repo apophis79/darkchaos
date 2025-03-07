@@ -21,7 +21,7 @@ Sub CreateBaseMode()
 
     With CreateGlfMode("base", 200)
         .StartEvents = Array(GLF_BALL_STARTED)
-        .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started")
+        .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started","tilt")
 
         With .EventPlayer()
             'DEBUG
@@ -42,8 +42,6 @@ Sub CreateBaseMode()
             
             'restarting waves
             .Add "stop_training", Array("check_base_restart","training_music_alt_stop")
-            .Add "completed_combo_command_wizard", Array("check_base_restart")
-            .Add "completed_fully_loaded_wizard", Array("check_base_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave0_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
@@ -96,8 +94,8 @@ Sub CreateBaseMode()
             .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
             '    clean up wizard mode
             .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
-            .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
-            .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended")
+            .Add "completed_combo_command_wizard", Array("wizard_mode_ended","check_base_restart")
+            .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended","check_base_restart")
     
             'handle some sound effects and music
             .Add "center_orbit_left_hit", Array("play_sfx_Orb")

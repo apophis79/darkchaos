@@ -7,7 +7,7 @@
 Sub CreateBonusMode
 
     With CreateGlfMode("bonus", 150)
-        .StartEvents = Array("ball_ending")
+        .StartEvents = Array("ball_ending{game.tilted == False}")
         .StopEvents = Array("bonus_finished")
         .UseWaitQueue = True
 

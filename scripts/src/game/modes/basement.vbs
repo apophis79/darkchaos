@@ -16,11 +16,22 @@ Sub CreateBasementMode()
             '.Add "s_right_staged_flipper_key_active", Array("test_show2") 'DEBUG
             '.Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
 
-            '.Add "mode_basement_started", Array("enable_diverter","enable_asteroid_motor")
-            .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights")',"enable_asteroid_motor","enable_diverter")
-
+            'initialization
+            .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights")
+            'clear won_game flag at start of new game
             .Add GLF_GAME_START, Array("reset_won_game")
+            'handle tilt
+            .Add "tilt", Array("kill_flippers","training_music_alt_stop","meteor_wave_music_stop","fwwiz_music_stop","flwiz_music_stop","ccwiz_music_stop")
         End With
+
+
+        With .Tilt()
+            .MultipleHitWindow = 300
+            .SettleTime = 5000
+            .WarningsToTilt = 3
+            .ResetWarningEvents = Array("ball_started")
+        End With
+
        
         With .SoundPlayer() 
             With .EventName("player_added{kwargs.num==1}")
@@ -48,6 +59,16 @@ Sub CreateBasementMode()
                 .Key = "key_ball_drain"
                 .Sound = "sfx_ball_drain"
             End With
+
+            With .EventName("tilt_warning")
+                .Key = "key_sfx_tilt_warning"
+                .Sound = "sfx_tilt_warning"
+            End With
+            With .EventName("tilt")
+                .Key = "key_sfx_tilt"
+                .Sound = "sfx_tilt"
+            End With
+            
         End With
 
         With .LightPlayer()
@@ -87,7 +108,80 @@ Sub CreateBasementMode()
         End With
 
 
+        With .SegmentDisplayPlayer()
+            With .EventName("tilt_warning")
+                With .Display("player1")
+                    .Text = """"""
+                    .Expire = 4000
+                    .Priority = 10000
+                End With
+                With .Display("player2")
+                    .Text = """WARNING"""
+                    .Expire = 4000
+                    .Flashing = "all"
+                    .Priority = 10000
+                End With
+                With .Display("player3")
+                    .Text = """WARNING"""
+                    .Expire = 4000
+                    .Flashing = "all"
+                    .Priority = 10000
+                End With
+                With .Display("player4")
+                    .Text = """"""
+                    .Expire = 4000
+                    .Priority = 10000
+                End With
+            End With
+            With .EventName("tilt")
+                With .Display("player1")
+                    .Text = """"""
+                    .Expire = 4000
+                    .Priority = 10000
+                End With
+                With .Display("player2")
+                    .Text = """TILT"""
+                    .Expire = 4000
+                    .Priority = 10000
+                End With
+                With .Display("player3")
+                    .Text = """TILT"""
+                    .Expire = 4000
+                    .Priority = 10000
+                End With
+                With .Display("player4")
+                    .Text = """"""
+                    .Expire = 4000
+                    .Priority = 10000
+                End With
+            End With
+        End With
+
+
         With .ShowPlayer()
+            With .EventName("tilt") 
+                .Key = "key_tilted_gi"
+                .Show = "flicker_color_off" 
+                .Speed = 3
+                .Loops = 1
+                .Priority = 10000
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", GIColor3000k
+                End With
+            End With
+            With .EventName(GLF_BALL_STARTED) 
+                .Key = "key_tilted_gi"
+                .Show = "flicker_color_off" 
+                .Speed = 3
+                .Loops = 1
+                .Priority = 10000
+                .Action = "stop"
+                With .Tokens()
+                    .Add "lights", "GI"
+                    .Add "color", GIColor3000k
+                End With
+            End With
             ' With .EventName("test_show1")  'DEBUG
             '     .Key = "key_test_show1"
             '     .Show = "ship_saver_acquired"
@@ -126,13 +220,6 @@ Sub CreateBasementMode()
         End With
 
 
-
-        ' With .SoundPlayer()
-        '     With .EventName("test_show")
-        '         .Key = "key_test_show"
-        '         .Sound = "sfx_cluster_fired"
-        '     End With
-        'End With
 
     End With
 
