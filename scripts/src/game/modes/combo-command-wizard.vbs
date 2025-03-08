@@ -547,20 +547,7 @@ Sub CreateComboCommandWizardMode
             End With
 
 
-        End With
-
-
-        With .SoundPlayer()
-            With .EventName("play_sfx_jackpot")
-                .Key = "key_ccwiz_sfx_jackpot"
-                .Sound = "sfx_jackpot"
-            End With
-            With .EventName("play_sfx_super_jackpot")
-                .Key = "key_ccwiz_sfx_super_jackpot"
-                .Sound = "sfx_super_jackpot"
-            End With
-        End With
-        
+        End With       
 
 
         With .SegmentDisplayPlayer()

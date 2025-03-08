@@ -145,35 +145,6 @@ Sub CreateMeteorWaveMode
         End With
 
 
-        With .SoundPlayer()
-            ' With .EventName("mode_meteor_wave_started")
-            '     .Key = "key_voc_wave_incoming"
-            '     .Sound = "voc_wave_incoming"
-            ' End With
-
-            With .EventName("play_sfx_LPF1")
-                .Key = "key_sfx_LPF1"
-                .Sound = "sfx_LPF1"
-            End With
-            With .EventName("play_sfx_LPF2")
-                .Key = "key_sfx_LPF2"
-                .Sound = "sfx_LPF2"
-            End With
-            With .EventName("play_sfx_LPF3")
-                .Key = "key_sfx_LPF3"
-                .Sound = "sfx_LPF3"
-            End With
-            With .EventName("play_sfx_LPF4")
-                .Key = "key_sfx_LPF4"
-                .Sound = "sfx_LPF4"
-            End With
-            With .EventName("play_sfx_LPF5")
-                .Key = "key_sfx_LPF5"
-                .Sound = "sfx_LPF5"
-            End With
-        End With
-        
-
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
             With .States("unlit")

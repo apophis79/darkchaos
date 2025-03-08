@@ -94,11 +94,11 @@ Sub CreateFullyLoadedWizardMode
                 .ForceDifferent = False
             End With
             With .EventName("proton_fired")
-                .Add "play_flwiz_sfx_LPF1", 1
-                .Add "play_flwiz_sfx_LPF2", 1
-                .Add "play_flwiz_sfx_LPF3", 1
-                .Add "play_flwiz_sfx_LPF4", 1
-                .Add "play_flwiz_sfx_LPF5", 1
+                .Add "play_sfx_LPF1", 1
+                .Add "play_sfx_LPF2", 1
+                .Add "play_sfx_LPF3", 1
+                .Add "play_sfx_LPF4", 1
+                .Add "play_sfx_LPF5", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
@@ -703,27 +703,6 @@ Sub CreateFullyLoadedWizardMode
 
 
         With .SoundPlayer()
-            With .EventName("play_flwiz_sfx_LPF1")
-                .Key = "key_flwiz_sfx_LPF1"
-                .Sound = "sfx_LPF1"
-            End With
-            With .EventName("play_flwiz_sfx_LPF2")
-                .Key = "key_flwiz_sfx_LPF2"
-                .Sound = "sfx_LPF2"
-            End With
-            With .EventName("play_flwiz_sfx_LPF3")
-                .Key = "key_flwiz_sfx_LPF3"
-                .Sound = "sfx_LPF3"
-            End With
-            With .EventName("play_flwiz_sfx_LPF4")
-                .Key = "key_flwiz_sfx_LPF4"
-                .Sound = "sfx_LPF4"
-            End With
-            With .EventName("play_flwiz_sfx_LPF5")
-                .Key = "key_flwiz_sfx_LPF5"
-                .Sound = "sfx_LPF5"
-            End With
-
             With .EventName("play_sfx_cluster_fired")
                 .Key = "key_flwiz_sfx_cluster_fired"
                 .Sound = "sfx_cluster_fired"
@@ -731,15 +710,6 @@ Sub CreateFullyLoadedWizardMode
             With .EventName("play_sfx_launch")
                 .Key = "key_flwiz_sfx_launch"
                 .Sound = "sfx_launch"
-            End With
-
-            With .EventName("play_sfx_jackpot")
-                .Key = "key_flwiz_sfx_jackpot"
-                .Sound = "sfx_jackpot"
-            End With
-            With .EventName("play_sfx_super_jackpot")
-                .Key = "key_flwiz_sfx_super_jackpot"
-                .Sound = "sfx_super_jackpot"
             End With
         End With
 

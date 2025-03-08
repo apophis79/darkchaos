@@ -876,6 +876,7 @@ Sub CreateBaseMode()
                 .Sound = "sfx_LMet8"
             End With
 
+            'Earth hits
             With .EventName("play_sfx_EarthHit1")
                 .Key = "key_sfx_EarthHit1"
                 .Sound = "sfx_EarthHit1"
@@ -889,11 +890,35 @@ Sub CreateBaseMode()
                 .Sound = "sfx_EarthHit3"
             End With
 
+            'Proton fire
+            With .EventName("play_sfx_LPF1")
+                .Key = "key_sfx_LPF1"
+                .Sound = "sfx_LPF1"
+            End With
+            With .EventName("play_sfx_LPF2")
+                .Key = "key_sfx_LPF2"
+                .Sound = "sfx_LPF2"
+            End With
+            With .EventName("play_sfx_LPF3")
+                .Key = "key_sfx_LPF3"
+                .Sound = "sfx_LPF3"
+            End With
+            With .EventName("play_sfx_LPF4")
+                .Key = "key_sfx_LPF4"
+                .Sound = "sfx_LPF4"
+            End With
+            With .EventName("play_sfx_LPF5")
+                .Key = "key_sfx_LPF5"
+                .Sound = "sfx_LPF5"
+            End With
+
             'jackpots
             With .EventName("play_sfx_jackpot")
+                .Key = "key_sfx_jackpot"
                 .Sound = "sfx_jackpot"
             End With
             With .EventName("play_sfx_super_jackpot")
+                .Key = "key_sfx_super_jackpot"
                 .Sound = "sfx_super_jackpot"
             End With
 
