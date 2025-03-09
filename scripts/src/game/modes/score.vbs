@@ -67,6 +67,20 @@ Sub CreateScoreMode
                 End With
             End With
 
+            'manage bonus multiplier
+            With .EventName(GLF_BALL_STARTED) 
+                With .Variable("bonus_multiplier")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("mystery_double_bonus") 
+                With .Variable("bonus_multiplier")
+                    .Action = "set"
+                    .Int = 2
+                End With
+            End With
+
 		End With
 
         

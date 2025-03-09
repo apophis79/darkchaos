@@ -493,6 +493,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "alien_attack_dir", 0
     Glf_SetInitialPlayerVar "alien_attack_done", 0
     Glf_SetInitialPlayerVar "scoring_multiplier", 1
+    Glf_SetInitialPlayerVar "bonus_multiplier", 1
     Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0
