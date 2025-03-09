@@ -42,6 +42,18 @@ Sub CreateScoreMode
                     .Int = "200 * current_player.scoring_multiplier"
                 End With
             End With
+            With .EventName("score_300") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "300 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_400") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "400 * current_player.scoring_multiplier"
+                End With
+            End With
             With .EventName("score_500") 
                 With .Variable("score")
                     .Action = "add"
