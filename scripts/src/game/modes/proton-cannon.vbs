@@ -39,7 +39,7 @@ Sub CreateProtonCannonMode
             '.Add "check_protons", Array("check_protons_done")
             'Handle mystery award
             .Add "mystery_full_protons", Array("complete_full_protons","slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc")
-            .Add "complete_full_protons", Array("proton_added_show","check_fully_loaded","score_5000") 'check for wizard mode qualification
+            .Add "complete_full_protons", Array("proton_added_show","check_fully_loaded","score_10000") 'check for wizard mode qualification
             'Scoring
             .Add "s_spinner_active", Array("score_10")
             .Add "inner_orbit_hit", Array("score_100")

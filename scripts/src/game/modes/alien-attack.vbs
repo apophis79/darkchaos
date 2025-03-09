@@ -27,6 +27,8 @@ Sub CreateAlienAttackMode
             'reset stuff at start of wave
             .Add "start_meteor_wave", Array("recycle_alien_attack")
             .Add "recycle_alien_attack", Array("recycle_alien_done")
+            'handle alien hit
+            .Add "alien_hit", Array("alien_hit_show","alien_hit_show2","play_voc_AlienHit","start_double_scoring","score_100000")
         End With
 
         With .RandomEventPlayer()
@@ -218,7 +220,7 @@ Sub CreateAlienAttackMode
                     .Source = Array("shot"&x)
                     .Target = "init"
                     .Events = Array(MainShotNames(x-1)&"_hit","cluster_bomb_fired")
-                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit_show","alien_hit_show2","play_voc_AlienHit","start_double_scoring")
+                    .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit")
                 End With
             Next
             For x = 1 to 8

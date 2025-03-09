@@ -21,10 +21,10 @@ Sub CreateHealthMode
             .Add "mode_health_started", Array("restart_health","reset_health_bump")
             .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("raise_diverter") 'training boost
             'successful bumper hits
-            .Add "s_Bumper1_active", Array("check_add_health_bump")
-            .Add "s_Bumper2_active", Array("check_add_health_bump")
-            .Add "s_Bumper3_active", Array("check_add_health_bump")
-            .Add "s_Bumper4_active", Array("check_add_health_bump")
+            .Add "s_Bumper1_active", Array("check_add_health_bump","score_200")
+            .Add "s_Bumper2_active", Array("check_add_health_bump","score_200")
+            .Add "s_Bumper3_active", Array("check_add_health_bump","score_200")
+            .Add "s_Bumper4_active", Array("check_add_health_bump","score_200")
             'add or remove health lights as needed
             .Add "check_add_health_bump{current_player.health_bump_value<"&BumperHitsPerRepair&"}", Array("add_health_bump")
             .Add "check_add_health_bump{current_player.health_bump_value=="&BumperHitsPerRepair&"}", Array("check_add_health","reset_health_bump")
@@ -45,11 +45,11 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","remove_health")
             .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","remove_health")
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers","meteor_wave_music_stop")
-            .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h","health_charge1","health_charge2")
+            .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h","health_charge1","health_charge2","score_10000")
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
             'Handle mystery award
-            .Add "mystery_full_health", Array("complete_full_health","slings_powerup_added","lsling_powerup_h","rsling_powerup_h")
+            .Add "mystery_full_health", Array("complete_full_health","slings_powerup_added","lsling_powerup_h","rsling_powerup_h","score_20000")
         End With
 
 

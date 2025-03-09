@@ -36,6 +36,12 @@ Sub CreateScoreMode
                     .Int = "100 * current_player.scoring_multiplier"
                 End With
             End With
+            With .EventName("score_200") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "200 * current_player.scoring_multiplier"
+                End With
+            End With
             With .EventName("score_500") 
                 With .Variable("score")
                     .Action = "add"
@@ -46,6 +52,24 @@ Sub CreateScoreMode
                 With .Variable("score")
                     .Action = "add"
                     .Int = "1000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_2000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "2000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_3000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "3000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_4000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "4000 * current_player.scoring_multiplier"
                 End With
             End With
             With .EventName("score_5000") 
@@ -60,10 +84,70 @@ Sub CreateScoreMode
                     .Int = "10000 * current_player.scoring_multiplier"
                 End With
             End With
+            With .EventName("score_m20000")  'negative score
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "-20000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_20000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "20000 * current_player.scoring_multiplier"
+                End With
+            End With
             With .EventName("score_50000") 
                 With .Variable("score")
                     .Action = "add"
                     .Int = "50000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_100000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "100000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_200000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "200000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_250000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "250000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_300000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "300000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_400000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "400000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_500000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "500000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_1000000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "1000000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_2000000") 
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "2000000 * current_player.scoring_multiplier"
                 End With
             End With
 

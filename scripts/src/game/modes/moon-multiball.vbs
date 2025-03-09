@@ -19,7 +19,11 @@ Sub CreateMoonMultiballMode
 
         With .EventPlayer()
             'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch")
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("launch_moon_missiles")
+            .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_10000")
+            'Panic pentalty
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0}", Array("launch_panic_penalty")
+            .Add "launch_panic_penalty", Array("score_m20000")
         End With
 
 
@@ -38,8 +42,24 @@ Sub CreateMoonMultiballMode
                 .Key = "key_sfx_launch"
                 .Sound = "sfx_launch"
             End With
+            With .EventName("launch_panic_penalty")
+                .Key = "key_sfx_error_buzz"
+                .Sound = "sfx_error_buzz"
+            End With
         End With
 
+        With .ShowPlayer()
+            With .EventName("launch_panic_penalty")
+                .Key = "key_launch_panic_penalty"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tMoonAll"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+        End With
 
         With .VariablePlayer()
             With .EventName("start_moon_multiball")

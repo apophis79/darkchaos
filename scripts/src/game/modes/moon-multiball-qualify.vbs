@@ -77,9 +77,10 @@ Sub CreateMoonMultiballQualifyMode
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
             'Scoring
             .Add "right_ramp_hit", Array("score_500")
-            .Add "light_missile1", Array("score_5000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
-            .Add "light_missile2", Array("score_10000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
-            .Add "complete_moon_qualify_shots", Array("score_10000")
+            .Add "light_missile1", Array("score_10000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
+            .Add "light_missile2", Array("score_20000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
+            .Add "qualify_lock_hit", Array("score_500")
+            .Add "qualify_lock_on_complete", Array("score_10000")
         End With
 
         With .SoundPlayer()

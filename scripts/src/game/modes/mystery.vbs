@@ -42,17 +42,17 @@ Sub CreateMysteryMode
         With .RandomEventPlayer()
             '.Debug = True
             With .EventName("select_random_mystery")
-                ' .Add "mystery_full_health{current_player.health_value < 9}", 1
-                ' .Add "mystery_full_protons{current_player.shot_proton_round6 == 0}", 0.7
-                ' .Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", 0.8
-                ' .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
-                ' .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
-                ' .Add "mystery_moon_ready{current_player.multiball_lock_moon_launch_balls_locked < 2 && devices.state_machines.moon_mb.state!=""locking""}", 1
-                ' '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
-                ' .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5 
+                .Add "mystery_full_health{current_player.health_value < 9}", 1
+                .Add "mystery_full_protons{current_player.shot_proton_round6 == 0}", 0.7
+                .Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", 0.8
+                .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
+                .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
+                .Add "mystery_moon_ready{current_player.multiball_lock_moon_launch_balls_locked < 2 && devices.state_machines.moon_mb.state!=""locking""}", 1
+                '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
+                .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5 
                 .Add "mystery_double_bonus{current_player.bonus_multiplier == 1}", 0.5  
-                ' .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
-                ' .Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
+                .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
+                .Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -95,10 +95,15 @@ Sub CreateMysteryMode
                 .Sound = "sfx_LM5"
             End With
 
-            ' collect bouns sfx
+            ' double bouns sfx
             With .EventName("mystery_double_bonus")
                 .Key = "key_m_sfx_tally_alt"
                 .Sound = "sfx_tally_alt"
+            End With
+            ' relaxed combos sfx
+            With .EventName("mystery_relaxed_combos")
+                .Key = "key_m_sfx_combo"
+                .Sound = "sfx_combo"
             End With
         End With
 

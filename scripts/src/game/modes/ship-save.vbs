@@ -28,6 +28,9 @@ Sub CreateShipSaveMode
             .Add "light_ship_charge3", Array("slings_powerup_added","lsling_powerup_sa","rsling_powerup_sa","saver_acquired")
             'Handle mystery award
             .Add "mystery_added_saver", Array("complete_ship_save","light_ship_charge3")
+            'Scoring
+            .Add "right_orbit_hit", Array("score_500")
+            .Add "saver_acquired", Array("score_10000")
         End With
 
         With .RandomEventPlayer()
