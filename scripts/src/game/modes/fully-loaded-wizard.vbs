@@ -454,128 +454,43 @@ Sub CreateFullyLoadedWizardMode
                 End With
             End With
 
-            With .EventName("flwiz_bumper1_show2p")
-                .Key = "key_bumper1_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB1"
-                    .Add "color", ProtonColor
+            For x = 1 to 4
+                With .EventName("flwiz_bumper"&x&"_show2p")
+                    .Key = "key_bumper"&x&"_show2p"
+                    .Show = "flash_color_fadeout" 
+                    .Speed = 10
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", ProtonColor
+                    End With
                 End With
-            End With
-            With .EventName("flwiz_bumper2_show2p")
-                .Key = "key_bumper2_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB2"
-                    .Add "color", ProtonColor
+            Next
+            For x = 1 to 4
+                With .EventName("flwiz_bumper"&x&"_show2c")
+                    .Key = "key_bumper"&x&"_show2c"
+                    .Show = "flash_color_fadeout" 
+                    .Speed = 10
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", ClusterBombColor
+                    End With
                 End With
-            End With
-            With .EventName("flwiz_bumper3_show2p")
-                .Key = "key_bumper3_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB3"
-                    .Add "color", ProtonColor
+            Next
+            For x = 1 to 4
+                With .EventName("flwiz_bumper"&x&"_show2m")
+                    .Key = "key_bumper"&x&"_show2m"
+                    .Show = "flash_color_fadeout" 
+                    .Speed = 10
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", MoonColor
+                    End With
                 End With
-            End With
-            With .EventName("flwiz_bumper4_show2p")
-                .Key = "key_bumper4_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB4"
-                    .Add "color", ProtonColor
-                End With
-            End With
+            Next
 
-            With .EventName("flwiz_bumper1_show2c")
-                .Key = "key_bumper1_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB1"
-                    .Add "color", ClusterBombColor
-                End With
-            End With
-            With .EventName("flwiz_bumper2_show2c")
-                .Key = "key_bumper2_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB2"
-                    .Add "color", ClusterBombColor
-                End With
-            End With
-            With .EventName("flwiz_bumper3_show2c")
-                .Key = "key_bumper3_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB3"
-                    .Add "color", ClusterBombColor
-                End With
-            End With
-            With .EventName("flwiz_bumper4_show2c")
-                .Key = "key_bumper4_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB4"
-                    .Add "color", ClusterBombColor
-                End With
-            End With
-
-            With .EventName("flwiz_bumper1_show2m")
-                .Key = "key_bumper1_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB1"
-                    .Add "color", MoonColor
-                End With
-            End With
-            With .EventName("flwiz_bumper2_show2m")
-                .Key = "key_bumper2_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB2"
-                    .Add "color", MoonColor
-                End With
-            End With
-            With .EventName("flwiz_bumper3_show2m")
-                .Key = "key_bumper3_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB3"
-                    .Add "color", MoonColor
-                End With
-            End With
-            With .EventName("flwiz_bumper4_show2m")
-                .Key = "key_bumper4_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB4"
-                    .Add "color", MoonColor
-                End With
-            End With
 
 
             'Super jackpot 1 shows

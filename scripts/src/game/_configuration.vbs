@@ -38,6 +38,8 @@ Const SegmentsColor = "ff0000"
 
 Const SlingDomePowerUpBrightness = 100  '0 to 100
 
+Dim RainbowColors
+RainbowColors = Array(MeteorWaveColor,TrainingColor,MoonColor,HealthColor1,ProtonColor,ShieldsColor,ClusterBombColor,TimewarpColor)
 
 ' Playfield display light names
 Dim PFDisplayLightNames
@@ -190,7 +192,7 @@ Sub ConfigureGlfDevices
     ' Plunger
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("s_Plunger1")
-        .EjectTimeout = 200
+        .EjectTimeout = 10
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"

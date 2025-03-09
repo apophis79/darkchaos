@@ -12,7 +12,7 @@ Sub CreateBasementMode()
         .StopEvents = Array("when_the_universe_ends")
 
         With .EventPlayer()
-            '.Add "s_left_staged_flipper_key_active", Array("test_show1") 'DEBUG
+            '.Add "s_left_staged_flipper_key_active", Array("test_show1","test_show2") 'DEBUG
             '.Add "s_right_staged_flipper_key_active", Array("test_show2") 'DEBUG
             '.Add "s_left_staged_flipper_key_active", Array("stop_attract_mode","test_post_game") 'DEBUG
 
@@ -182,39 +182,44 @@ Sub CreateBasementMode()
                     .Add "color", GIColor3000k
                 End With
             End With
-            ' With .EventName("test_show1")  'DEBUG
+
+            'DEBUG
+            ' With .EventName("test_show1") 
             '     .Key = "key_test_show1"
             '     .Show = "ship_saver_acquired"
             '     .Speed = 1
             '     .Loops = 1
             '     .Priority = 20000
             ' End With
-            ' With .EventName("test_show2")  'DEBUG
+            ' With .EventName("test_show2")
             '     .Key = "key_test_show2"
             '     .Show = "shields_down"
             '     .Speed = 1
             '     .Loops = 1
             '     .Priority = 10000
             ' End With
-            ' With .EventName("test_show1")  'DEBUG
+            '  With .EventName("test_show1") 
             '     .Key = "key_test_show1"
-            '     .Show = "insert_gi_spin_center"
-            '     .Speed = 2
-            '     .Loops = 4
-            '     .Priority = 1000
+            '     .Show = "lsling_rotate4_ccw"
+            '     .Speed = 1
             '     With .Tokens()
-            '         .Add "intensity", 100
-            '         .Add "color", CombosColor
+            '         .Add "intensity", 50
+            '         .Add "color1", MoonColor
+            '         .Add "color2", HealthColor1
+            '         .Add "color3", ShieldsColor
+            '         .Add "color4", HealthColor3
             '     End With
             ' End With
-            ' With .EventName("test_show2")  'DEBUG
+            ' With .EventName("test_show2") 
             '     .Key = "key_test_show2"
-            '     .Show = "flash_color" 
-            '     .Speed = 20
-            '     .Loops = 6
+            '     .Show = "rsling_rotate4_cw"
+            '     .Speed = 1
             '     With .Tokens()
-            '         .Add "lights", "tFlasher"
-            '         .Add "color", CombosColor
+            '         .Add "intensity", 50
+            '         .Add "color1", MoonColor
+            '         .Add "color2", HealthColor1
+            '         .Add "color3", ShieldsColor
+            '         .Add "color4", HealthColor3
             '     End With
             ' End With
         End With
