@@ -679,6 +679,7 @@ Sub CreateVictoryLapMode
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", RainbowColors(r)
@@ -688,11 +689,12 @@ Sub CreateVictoryLapMode
                 if r > 7 then r = 0
             Next
             For x = 10 to 22
-                With .EventName("victory_gi0"&x&"_show1")
+                With .EventName("victory_gi"&x&"_show1")
                     .Key = "key_v_gi"&x&"_show1"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", RainbowColors(r)
@@ -709,6 +711,7 @@ Sub CreateVictoryLapMode
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", RainbowColors(r)
@@ -718,11 +721,12 @@ Sub CreateVictoryLapMode
                 if r > 7 then r = 0
             Next
             For x = 10 to 22
-                With .EventName("victory_gi0"&x&"_show2")
+                With .EventName("victory_gi"&x&"_show2")
                     .Key = "key_v_gi"&x&"_show2"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", RainbowColors(r)
@@ -739,6 +743,7 @@ Sub CreateVictoryLapMode
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", RainbowColors(r)
@@ -748,11 +753,12 @@ Sub CreateVictoryLapMode
                 if r > 7 then r = 0
             Next
             For x = 10 to 22
-                With .EventName("victory_gi0"&x&"_show3")
+                With .EventName("victory_gi"&x&"_show3")
                     .Key = "key_v_gi"&x&"_show3"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
                     .Loops = 1
+                    .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", RainbowColors(r)
