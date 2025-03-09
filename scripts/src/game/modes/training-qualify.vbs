@@ -42,6 +42,7 @@ Sub CreateTrainingQualifyMode
             'Handle mystery and skillshot awards
             .Add "mystery_trainer_ready", Array("clear_training_shots","training_shots_completed")
             .Add "ss_trainer_ready", Array("clear_training_shots","training_shots_completed")
+            .Add "training_shots_completed", Array("score_5000")
         End With
 
         With .RandomEventPlayer()
