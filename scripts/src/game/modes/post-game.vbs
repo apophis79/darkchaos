@@ -43,6 +43,7 @@ Sub CreatePostGameMode()
             'play the show
             .Add "timer_post_game_show_started", Array("play_flasher1_flash_3000k","play_flasher2_flash_3000k","play_flasher3_flash_3000k","play_asteroid_hit")
             .Add "timer_post_game_show_tick", Array("play_flasher4_flash_hot")
+            .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 1}", Array("display_last_scores")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 2}", Array("play_spotlight_on")
             .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 4}", Array("play_flasher1_flash_3000k","play_flasher2_flash_3000k","play_flasher3_flash_3000k","play_asteroid_hit")
             ' .Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 5}", Array("")

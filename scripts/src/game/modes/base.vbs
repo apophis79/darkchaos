@@ -321,12 +321,12 @@ Sub CreateBaseMode()
 
         With .SequenceShots("center_orbit_left")
             .SwitchSequence = Array("s_CenterOrb1", "s_CenterOrb2", "s_CenterOrb3")
-            .SequenceTimeout = 500
+            .SequenceTimeout = 600
         End With
 
         With .SequenceShots("center_orbit_right")
             .SwitchSequence = Array("s_CenterOrb3", "s_CenterOrb2", "s_CenterOrb1")
-            .SequenceTimeout = 500
+            .SequenceTimeout = 600
         End With
 
         With .SequenceShots("right_orbit")

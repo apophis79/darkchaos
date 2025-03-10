@@ -44,7 +44,7 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==4}", Array("health4_off","health3_crit","health2_crit","health1_crit","remove_health")
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","remove_health")
             .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","remove_health")
-            .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers","meteor_wave_music_stop")
+            .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","remove_health","kill_flippers","turn_off_gi","meteor_wave_music_stop")
             .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h","health_charge1","health_charge2","score_10000")
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")

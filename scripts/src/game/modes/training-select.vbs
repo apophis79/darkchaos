@@ -35,7 +35,7 @@ Sub CreateTrainingSelectMode
             .Add "make_selection", Array("release_scoop_hold","start_training")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
-            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")
+            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 7}", Array("selection_hurry_up")
             '.Add "timer_training_select_tick{devices.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
             'start requested training
             .Add "make_selection{devices.state_machines.training_select.state==""heal""}", Array("start_training_heal","stop_training_select")
@@ -222,7 +222,7 @@ Sub CreateTrainingSelectMode
             '.Debug = True
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = 15
+            .EndValue = 10
             With .ControlEvents()
                 .EventName = "mode_training_select_started"
                 .Action = "restart"
