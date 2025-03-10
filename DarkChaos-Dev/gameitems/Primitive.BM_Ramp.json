@@ -61,7 +61,7 @@
     "light_map": "",
     "reflection_probe": "",
     "reflection_strength": 0.3,
-    "refraction_probe": "Refraction Pass 3",
+    "refraction_probe": "<None>",
     "refraction_thickness": 4.0
   }
 }

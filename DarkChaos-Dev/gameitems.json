@@ -17596,5 +17596,12 @@
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
     "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Trigger.swGateSfx.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Main",
+    "editor_layer_visibility": true
   }
 ]

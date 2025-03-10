@@ -46,7 +46,8 @@
       "s_TargetMystery5",
       "s_TargetMystery4",
       "s_TargetMystery2",
-      "s_TargetMystery1"
+      "s_TargetMystery1",
+      "s_TargetMystery3"
     ],
     "fire_events": true,
     "stop_single_events": false,

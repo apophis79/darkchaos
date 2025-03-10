@@ -5,19 +5,15 @@
 '*******************************************
 
 
-ReDim bBallInTrough(tnob)
-Sub CheckBallLocations
-	Dim b
-	For b = 0 to UBound(gBOT)
-		'Check if ball is in the trough
-		If InRect(gBOT(b).X, gBOT(b).Y, 377,2018,850,1783,850,1895,404,2087) Then
-			bBallInTrough(b) = True
-		Else
-			bBallInTrough(b) = False
-		End If
-	Next
+
+'metal gate hit sfx
+Sub swGateSfx_hit
+	If activeball.velx > 0 Then RandomSoundMetal
 End Sub
 
 
-
-
+'brighten the meteor drop targets
+BM_TMet1.blenddisablelighting = 10
+BM_TMet2.blenddisablelighting = 10
+BM_TMet3.blenddisablelighting = 10
+BM_TMet4.blenddisablelighting = 10

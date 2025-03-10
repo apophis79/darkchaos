@@ -110,7 +110,7 @@
   "light_range": 4000000.0,
   "light_emission_scale": 4000000.0,
   "env_emission_scale": 2.0,
-  "global_emission_scale": 0.5,
+  "global_emission_scale": 0.4,
   "ao_scale": 0.0,
   "ssr_scale": 0.0,
   "table_sound_volume": 1.0,
