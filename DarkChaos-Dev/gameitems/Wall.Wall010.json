@@ -14,7 +14,7 @@
     "top_material": "Plastic with opaque image",
     "slingshot_material": "",
     "height_bottom": 90.0,
-    "height_top": 130.0,
+    "height_top": 200.0,
     "name": "Wall010",
     "display_texture": false,
     "slingshot_force": 80.0,

@@ -585,7 +585,7 @@ Sub CreateBaseMode()
 
 
          With .BallSaves("new_ball")
-            .ActiveTime = 5000
+            .ActiveTime = 6000
             .HurryUpTime = 3000
             .GracePeriod = 2000
             .AutoLaunch = True

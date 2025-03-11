@@ -229,7 +229,7 @@
     "width": 7552,
     "height": 8192,
     "alpha_test_value": 1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\VLM.Nestmap0a.webp",
