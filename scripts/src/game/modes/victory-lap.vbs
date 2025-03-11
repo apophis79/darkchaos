@@ -23,7 +23,7 @@ Sub CreateVictoryLapMode
             .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap")
             .Add "multiball_victory_shoot_again_ended", Array("kill_flippers")
             'run stuff during the victory lap
-            .Add "run_victory_lap", Array("victory_bumpers_show","start_double_scoring","play_mus_victory","run_victory_lap_show","play_vic_lsling_show","play_vic_rsling_show")
+            .Add "run_victory_lap", Array("victory_bumpers_show","play_mus_victory","run_victory_lap_show","play_vic_lsling_show","play_vic_rsling_show")
             'Handle bumper and gi lights
             .Add "timer_victory_bumper_lights_tick", Array("victory_bumpers_show","victory_gi_show1","victory_gi_show2","victory_gi_show3")
             'Handle shots

@@ -35,8 +35,8 @@ Sub CreateMysteryMode
             'handle sss award
             .Add "sss_mystery_ready", Array("complete_mystery_shots","set_sss_mystery_flag")
             'handle callout
-            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold","mystery_flash","score_5000")
-            .Add "qualify_mystery_hit", Array("score_500")
+            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold","mystery_flash","score_30000")
+            .Add "qualify_mystery_hit", Array("score_1000")
         End With
 
         ' Randomize mystery selection

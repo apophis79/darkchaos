@@ -99,9 +99,9 @@ Sub CreateBaseMode()
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended","check_base_restart")
     
             'handle some sound effects and music
-            .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_500")
-            .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_500")
-            .Add "left_side_up_hit", Array("play_sfx_Orb","score_500")
+            .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
+            .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
+            .Add "left_side_up_hit", Array("play_sfx_Orb","score_2000")
             .Add "s_Bumper1_active", Array("play_sfx_bumper")
             .Add "s_Bumper2_active", Array("play_sfx_bumper")
             .Add "s_Bumper3_active", Array("play_sfx_bumper")
@@ -122,8 +122,8 @@ Sub CreateBaseMode()
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
 
             'handle some shows
-            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_300") 
-            .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_300") 
+            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_1000") 
+            .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
             .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
 

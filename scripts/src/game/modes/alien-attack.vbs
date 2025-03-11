@@ -28,7 +28,7 @@ Sub CreateAlienAttackMode
             .Add "start_meteor_wave", Array("recycle_alien_attack")
             .Add "recycle_alien_attack", Array("recycle_alien_done")
             'handle alien hit
-            .Add "alien_hit", Array("alien_hit_show","alien_hit_show2","play_voc_AlienHit","start_double_scoring","score_100000")
+            .Add "alien_hit", Array("alien_hit_show","alien_hit_show2","play_voc_AlienHit","start_double_scoring","score_400000")
         End With
 
         With .RandomEventPlayer()

@@ -23,9 +23,9 @@ Sub CreateTrainingClusterBombMode
             '.Debug = True
             .Add "mode_training_cluster_bomb_started", Array("init_training","play_lsling_training","play_rsling_training")
             'successfull shot
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}", Array("light_cluster_charge1","flash_gi","play_sfx_LS","score_5000")
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 && current_player.shot_training_cluster_charge2 == 0}", Array("light_cluster_charge2","flash_gi","play_sfx_LS","score_5000")
-            .Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 && current_player.shot_training_cluster_charge3 == 0}", Array("light_cluster_charge3","play_sfx_LS","score_5000") ',"flash_gi")
+            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}", Array("light_cluster_charge1","flash_gi","play_sfx_LS","score_20000")
+            .Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 && current_player.shot_training_cluster_charge2 == 0}", Array("light_cluster_charge2","flash_gi","play_sfx_LS","score_30000")
+            .Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 && current_player.shot_training_cluster_charge3 == 0}", Array("light_cluster_charge3","play_sfx_LS","score_50000") ',"flash_gi")
             .Add "light_cluster_charge3", Array("training_achieved","play_sfx_super_jackpot")
             'Stop the training
             .Add "training_achieved", Array("stop_training")

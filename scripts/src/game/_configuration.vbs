@@ -137,11 +137,11 @@ Const VictoryLapTime = 45 'seconds
 
 ' Bonus settings
 Const BonusTimerTickInterval = 333
-Const BonusrWaveMultiplier = 20000
-Const BonusPerTraining = 100000
-Const BonusPerClusterBomb = 30000
-Const BonusPerMoonMissile = 30000
-Const BonusPerProtonRound = 10000
+Const BonusrWaveMultiplier = 50000
+Const BonusPerTraining = 250000
+Const BonusPerClusterBomb = 250000
+Const BonusPerMoonMissile = 250000
+Const BonusPerProtonRound = 50000
 
 
 

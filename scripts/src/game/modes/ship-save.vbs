@@ -29,8 +29,8 @@ Sub CreateShipSaveMode
             'Handle mystery award
             .Add "mystery_added_saver", Array("complete_ship_save","light_ship_charge3")
             'Scoring
-            .Add "right_orbit_hit", Array("score_500")
-            .Add "saver_acquired", Array("score_10000")
+            .Add "right_orbit_hit", Array("score_2000")
+            .Add "saver_acquired", Array("score_50000")
         End With
 
         With .RandomEventPlayer()
