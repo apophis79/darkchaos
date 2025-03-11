@@ -487,6 +487,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "num_waves_completed_this_ball", 0
     Glf_SetInitialPlayerVar "num_training_shots_hit", 2
     Glf_SetInitialPlayerVar "meteors_per_wave", 7
+    Glf_SetInitialPlayerVar "disable_moon_launch", 0
     Glf_SetInitialPlayerVar "warping", 0
     Glf_SetInitialPlayerVar "light_the_eb", 0
     Glf_SetInitialPlayerVar "alien_tick_count", -1
