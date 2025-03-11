@@ -59,9 +59,9 @@ RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
 ' Array of training selection shots and associated info
 Const TrainingTicks = 69  'uses 1000 ms interval
 Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
-TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields")
-TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields")
-TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor)
+TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields","skip")
+TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields","gi22")
+TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor,GIColorWhite)
 
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
