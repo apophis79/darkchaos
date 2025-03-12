@@ -3,7 +3,9 @@
 
 ' Post Game Mode.
 
+Const NumLoserMessages = 14
 Dim LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10
+Dim LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14 ',LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20
 LoserMessage1 = Array("""YOU""","""FAILED""","""WE ALL""","""DIED""")
 LoserMessage2 = Array("""PLAY""","""BETTER""","""NEXT""","""TIME""")
 LoserMessage3 = Array("""EARTH""","""DIED""","""THANKS""","""TO YOU""")
@@ -14,8 +16,13 @@ LoserMessage7 = Array("""ITS EASY""","""YOU JUST""","""NEED TO""","""NOT SUCK"""
 LoserMessage8 = Array("""PRACTICE""","""PRACTICE""","""PRACTICE""","""PRACTICE""")
 LoserMessage9 = Array("""DAMN""","""LUCKILY""","""THIS IS""","""NOT REAL""")
 LoserMessage10 = Array("""GAMEOVER""","""MAN""","""WE ALL""","""DEAD NOW""")
+LoserMessage11 = Array("""MORE""","""BEER""","""MIGHT""","""HELP""")
+LoserMessage12 = Array("""UNLUCKY""","""SHOT""","""EARTH-""","""LING""")
+LoserMessage13 = Array("""THE""","""DINOS""","""LASTED""","""LONGER""")
+LoserMessage14 = Array("""ASTEROID""","""PLUS ONE""","""HUMANS""","""ZERO""")
 Dim LoserMessages
-LoserMessages = Array(LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10)
+LoserMessages = Array(LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10, _
+                      LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14)
 
 Dim WinnerMessage1,WinnerMessage2,WinnerMessage3,WinnerMessage4,WinnerMessage5,WinnerMessage6
 WinnerMessage1 = Array("""A VILE""","""DARK""","""CHAOS""","""LOOMED""")
@@ -138,16 +145,9 @@ Sub CreatePostGameMode()
 
 
             'handle post game messages
-            .Add "check_loser_message{machine.message_num == 1 && machine.won_game == 0}", Array("display_loser_message1")
-            .Add "check_loser_message{machine.message_num == 2 && machine.won_game == 0}", Array("display_loser_message2")
-            .Add "check_loser_message{machine.message_num == 3 && machine.won_game == 0}", Array("display_loser_message3")
-            .Add "check_loser_message{machine.message_num == 4 && machine.won_game == 0}", Array("display_loser_message4")
-            .Add "check_loser_message{machine.message_num == 5 && machine.won_game == 0}", Array("display_loser_message5")
-            .Add "check_loser_message{machine.message_num == 6 && machine.won_game == 0}", Array("display_loser_message6")
-            .Add "check_loser_message{machine.message_num == 7 && machine.won_game == 0}", Array("display_loser_message7")
-            .Add "check_loser_message{machine.message_num == 8 && machine.won_game == 0}", Array("display_loser_message8")
-            .Add "check_loser_message{machine.message_num == 9 && machine.won_game == 0}", Array("display_loser_message9")
-            .Add "check_loser_message{machine.message_num == 10 && machine.won_game == 0}", Array("display_loser_message10")
+            For x = 1 to NumLoserMessages
+                .Add "check_loser_message{machine.message_num == "&x&" && machine.won_game == 0}", Array("display_loser_message"&x)
+            Next
             .Add "check_winner_message1{machine.won_game == 1}", Array("display_winner_message1","play_voc_winners_poem1")
             .Add "check_winner_message2{machine.won_game == 1}", Array("display_winner_message2","play_voc_winners_poem2")
             .Add "check_winner_message3{machine.won_game == 1}", Array("display_winner_message3","play_voc_winners_poem3")
@@ -165,16 +165,9 @@ Sub CreatePostGameMode()
 
         With .RandomEventPlayer()
             With .EventName("select_message_num")
-                .Add "select_message_1", 1
-                .Add "select_message_2", 1
-                .Add "select_message_3", 1
-                .Add "select_message_4", 1
-                .Add "select_message_5", 1
-                .Add "select_message_6", 1
-                .Add "select_message_7", 1
-                .Add "select_message_8", 1
-                .Add "select_message_9", 1
-                .Add "select_message_10", 1
+                For x = 1 to NumLoserMessages
+                    .Add "select_message_"&x, 1
+                Next
             End With
         End With
 
@@ -227,7 +220,7 @@ Sub CreatePostGameMode()
         End With
 
         With .SegmentDisplayPlayer()
-            For x = 1 to 10
+            For x = 1 to 14
                 With .EventName("display_loser_message"&x)
                     With .Display("player1")
                         .Text = LoserMessages(x-1)(0)
@@ -277,66 +270,14 @@ Sub CreatePostGameMode()
 
 
         With .VariablePlayer()
-            With .EventName("select_message_1")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 1
+            For x = 1 to NumLoserMessages
+                With .EventName("select_message_"&x)
+                    With .Variable("message_num")
+                        .Action = "set_machine"
+                        .Int = x
+                    End With
                 End With
-            End With
-            With .EventName("select_message_2")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 2
-                End With
-            End With
-            With .EventName("select_message_3")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 3
-                End With
-            End With
-            With .EventName("select_message_4")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 4
-                End With
-            End With
-            With .EventName("select_message_5")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 5
-                End With
-            End With
-            With .EventName("select_message_6")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 6
-                End With
-            End With
-            With .EventName("select_message_7")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 7
-                End With
-            End With
-            With .EventName("select_message_8")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 8
-                End With
-            End With
-            With .EventName("select_message_9")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 9
-                End With
-            End With
-            With .EventName("select_message_10")
-                With .Variable("message_num")
-                    .Action = "set_machine"
-                    .Int = 10
-                End With
-            End With
+            Next
         End With
 
 
