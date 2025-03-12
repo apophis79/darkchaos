@@ -4,10 +4,13 @@
 Dim glf_currentPlayer : glf_currentPlayer = Null
 Dim glf_canAddPlayers : glf_canAddPlayers = True
 Dim glf_PI : glf_PI = 4 * Atn(1)
-Dim glf_plunger
+Dim glf_plunger, glf_ballsearch
+glf_ballsearch = Null
 Dim glf_gameStarted : glf_gameStarted = False
 Dim glf_gameTilted : glf_gameTilted = False
 Dim glf_gameEnding : glf_gameEnding = False
+Dim glf_last_switch_hit_time : glf_last_switch_hit_time = 0
+Dim glf_last_switch_hit : glf_last_switch_hit = ""
 Dim glf_current_virtual_tilt : glf_current_virtual_tilt = 0
 Dim glf_tilt_sensitivity : glf_tilt_sensitivity = 7
 Dim glf_pinEvents : Set glf_pinEvents = CreateObject("Scripting.Dictionary")
@@ -121,22 +124,23 @@ Public Sub Glf_Init()
 	Dim switch, switchHitSubs
 	switchHitSubs = ""
 	For Each switch in Glf_Switches
-		switchHitSubs = switchHitSubs & "Sub " & switch.Name & "_Hit() : If Not glf_gameTilted Then : DispatchPinEvent """ & switch.Name & "_active"", ActiveBall : End If : End Sub" & vbCrLf
+		switchHitSubs = switchHitSubs & "Sub " & switch.Name & "_Hit() : If Not glf_gameTilted Then : If glf_last_switch_hit <> """ & switch.Name & """ Or (gametime-glf_last_switch_hit_time) > 10 Then : Glf_ResetBallSearch : DispatchPinEvent """ & switch.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& switch.Name &""": End If : End If : End Sub" & vbCrLf
 		switchHitSubs = switchHitSubs & "Sub " & switch.Name & "_UnHit() : If Not glf_gameTilted Then : DispatchPinEvent """ & switch.Name & "_inactive"", ActiveBall : End If  : End Sub" & vbCrLf
 	Next
+	
 	ExecuteGlobal switchHitSubs
 
 	Dim slingshot, slingshotHitSubs
 	slingshotHitSubs = ""
 	For Each slingshot in Glf_Slingshots
-		slingshotHitSubs = slingshotHitSubs & "Sub " & slingshot.Name & "_Slingshot() : If Not glf_gameTilted Then : DispatchPinEvent """ & slingshot.Name & "_active"", ActiveBall : End If  : End Sub" & vbCrLf
+		slingshotHitSubs = slingshotHitSubs & "Sub " & slingshot.Name & "_Slingshot() : If Not glf_gameTilted Then : Glf_ResetBallSearch : DispatchPinEvent """ & slingshot.Name & "_active"", ActiveBall : End If  : End Sub" & vbCrLf
 	Next
 	ExecuteGlobal slingshotHitSubs
 
 	Dim spinner, spinnerHitSubs
 	spinnerHitSubs = ""
 	For Each spinner in Glf_Spinners
-		spinnerHitSubs = spinnerHitSubs & "Sub " & spinner.Name & "_Spin() : If Not glf_gameTilted Then : DispatchPinEvent """ & spinner.Name & "_active"", ActiveBall : End If  : End Sub" & vbCrLf
+		spinnerHitSubs = spinnerHitSubs & "Sub " & spinner.Name & "_Spin() : If Not glf_gameTilted Then : Glf_ResetBallSearch : DispatchPinEvent """ & spinner.Name & "_active"", ActiveBall : End If  : End Sub" & vbCrLf
 	Next
 	ExecuteGlobal spinnerHitSubs
 
@@ -732,6 +736,12 @@ Sub Glf_CheckTilt()
 	If (glf_current_virtual_tilt > 10) Then 
 		RunAutoFireDispatchPinEvent "s_tilt_warning_active", Null
 		glf_current_virtual_tilt = glf_tilt_sensitivity
+	End If
+End Sub
+
+Sub Glf_ResetBallSearch()
+	If Not IsNull(glf_ballsearch) Then
+		glf_ballsearch.Reset()
 	End If
 End Sub
 
@@ -1919,6 +1929,164 @@ Const GLF_CURRENT_BALL = "ball"
 Const GLF_INITIALS = "initials"
 
 
+Function EnableGlfBallSearch()
+	Dim ball_search : Set ball_search = (new GlfBallSearch)()
+    With CreateGlfMode("glf_ball_search", 100)
+        .StartEvents = Array("reset_complete")
+
+        With .TimedSwitches("flipper_cradle")
+            .Switches = Array("s_left_flipper", "s_right_flipper")
+            .Time = 3000
+            .EventsWhenActive = Array("flipper_cradle")
+            .EventsWhenReleased = Array("flipper_release")
+            .Debug = True
+        End With
+    End With
+	Set EnableGlfBallSearch = ball_search
+End Function
+
+Class GlfBallSearch
+
+    Private m_debug
+    Private m_timeout
+    Private m_search_interval
+    Private m_ball_search_wait_after_iteration
+    Private m_phase
+    Private m_devices
+    Private m_current_device_type
+
+    Public Property Get GetValue(value)
+        'Select Case value
+            'Case   
+        'End Select
+        GetValue = True
+    End Property
+
+    Public Property Let Timeout(value): Set m_timeout = CreateGlfInput(value): End Property
+    Public Property Get Timeout(): Timeout = m_timeout.Value(): End Property
+
+    Public Property Let SearchInterval(value): Set m_search_interval = CreateGlfInput(value): End Property
+    Public Property Get SearchInterval(): SearchInterval = m_search_interval.Value(): End Property
+
+    Public Property Let BallSearchWaitAfterIteration(value): Set m_ball_search_wait_after_iteration = CreateGlfInput(value): End Property
+    Public Property Get BallSearchWaitAfterIteration(): BallSearchWaitAfterIteration = m_ball_search_wait_after_iteration.Value(): End Property
+
+    Public Property Let Debug(value)
+        m_debug = value
+        m_base_device.Debug = value
+    End Property
+    Public Property Get IsDebug()
+        If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
+    End Property
+
+    Public default Function init()
+        Set m_timeout = CreateGlfInput(15000)
+        Set m_search_interval = CreateGlfInput(150)
+        Set m_ball_search_wait_after_iteration = CreateGlfInput(10000)
+        m_phase = 0
+        m_devices = Array()
+        m_current_device_type = Empty
+        Set glf_ballsearch = Me
+        SetDelay "ball_search" , "BallSearchHandler", Array("start", Me), m_timeout.Value
+        AddPinEventListener "flipper_cradle", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("stop", Me)
+        AddPinEventListener "flipper_release", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("reset", Me)
+        Set Init = Me
+    End Function
+
+    Public Sub Start(phase)
+        Dim ball_hold, held_balls
+        held_balls = 0
+        For Each ball_hold in glf_ball_holds.Items()
+            held_balls = held_balls + ball_hold.GetValue("balls_held")
+        Next
+        If glf_gameStarted = True And glf_BIP > 0 And (glf_BIP-held_balls)>0 And glf_plunger.HasBall() = False Then
+            m_phase = phase
+            'Fire all auto fire devices, slings, pops.
+            m_devices = glf_autofiredevices.Items()
+            m_current_device_type = "autofire"
+            If UBound(m_devices) > -1 Then
+                m_devices(0).BallSearch(m_phase)
+                SetDelay "ball_search_next_device" , "BallSearchHandler", Array("next_device", Me, 0), m_search_interval.Value
+            End If
+        Else
+            SetDelay "ball_search" , "BallSearchHandler", Array("start", Me), m_timeout.Value
+        End If
+    End Sub
+
+    Public Sub NextDevice(device_index)
+        If UBound(m_devices) > device_index Then
+            m_devices(device_index+1).BallSearch(m_phase)
+            SetDelay "ball_search_next_device" , "BallSearchHandler", Array("next_device", Me, device_index+1), m_search_interval.Value
+        Else
+            If m_current_device_type = "autofire" Then
+                m_devices = glf_ball_devices.Items()
+                m_current_device_type = "balldevices"
+                If UBound(m_devices) > -1 Then
+                    m_devices(0).BallSearch(m_phase)
+                    SetDelay "ball_search_next_device" , "BallSearchHandler", Array("next_device", Me, 0), m_search_interval.Value
+                End If
+            ElseIf m_current_device_type = "balldevices" Then
+                m_devices = glf_droptargets.Items()
+                m_current_device_type = "droptargets"
+                If UBound(m_devices) > -1 Then
+                    m_devices(0).BallSearch(m_phase)
+                    SetDelay "ball_search_next_device" , "BallSearchHandler", Array("next_device", Me, 0), m_search_interval.Value
+                End If
+            ElseIf m_current_device_type = "droptargets" Then
+                m_devices = glf_diverters.Items()
+                m_current_device_type = "diverters"
+                If UBound(m_devices) > -1 Then
+                    m_devices(0).BallSearch(m_phase)
+                    SetDelay "ball_search_next_device" , "BallSearchHandler", Array("next_device", Me, 0), m_search_interval.Value
+                End If
+            Else
+                m_current_device_type = Empty
+                If m_phase < 3 Then
+                    Start m_phase+1
+                Else
+                    m_phase = 0
+                    SetDelay "ball_search" , "BallSearchHandler", Array("start", Me), m_timeout.Value
+                End If
+            End If
+        End If
+    End Sub
+
+    Public Sub Reset()
+        RemoveDelay "ball_search_next_device"
+        m_phase = 0
+        SetDelay "ball_search" , "BallSearchHandler", Array("start", Me), m_timeout.Value
+    End Sub
+
+    Public Sub StopBallSearch()
+        RemoveDelay "ball_search_next_device"
+        m_phase = 0
+        RemoveDelay "ball_search"
+    End Sub
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+
+End Class
+
+Function BallSearchHandler(args)
+    Dim evt : evt = args(0)
+    Dim ball_search : Set ball_search = args(1)
+    
+    Select Case evt
+        Case "start"
+            ball_search.Start 1
+        Case "reset":
+            ball_search.Reset
+        Case "stop":
+            ball_search.StopBallSearch
+        Case "next_device"
+            ball_search.NextDevice args(2)
+    End Select
+End Function
+
 
 
 '*****************************************************************************************************************************************
@@ -2447,6 +2615,12 @@ Class GlfBallHold
     Private m_release_one_if_full_events
 
     Public Property Get Name() : Name = m_name : End Property
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "balls_held":
+                GetValue = m_balls_held
+        End Select
+    End Property
     Public Property Let Debug(value)
         m_debug = value
         m_base_device.Debug = value
@@ -2502,7 +2676,7 @@ Class GlfBallHold
         Set m_release_all_events = CreateObject("Scripting.Dictionary")
         Set m_release_one_events = CreateObject("Scripting.Dictionary")
         Set m_release_one_if_full_events = CreateObject("Scripting.Dictionary")
-
+        ReleaseAllEvents = Array("tilt")
         Set m_base_device = (new GlfBaseModeDevice)(mode, "ball_hold", Me)
         glf_ball_holds.Add name, Me
         Set Init = Me
@@ -2539,6 +2713,7 @@ Class GlfBallHold
 
     Public Sub Disable()
         m_enabled = False
+        ReleaseAll()
         Dim device
         For Each device in m_hold_devices
             RemovePinEventListener "balldevice_" & device & "_ball_enter", m_mode & "_" & name & "_hold"
@@ -10187,6 +10362,14 @@ Class GlfAutoFireDevice
         DispatchPinEvent m_name & "_deactivate", Null
     End Sub
 
+    Public Sub BallSearch(phase)
+        Log "Ball Search, phase " & phase
+        If Not IsEmpty(m_action_cb) Then
+            GetRef(m_action_cb)(Array(1, Null))
+        End If
+        SetDelay m_name & "ball_search_deactivate", "AutoFireDeviceEventHandler", Array(Array("deactivate", Me), Null), 150
+    End Sub
+
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message
@@ -10446,6 +10629,19 @@ Class GlfBallDevice
         m_lost_balls = 0
     End Sub
 
+    Public Sub BallSearch(phase)
+        Log "Ball Search, phase " & phase
+        If m_default_device = True Then
+            Exit Sub
+        End If
+        If phase = 1 And HasBall() Then
+            Exit Sub
+        End If
+        If Not IsNull(m_eject_callback) Then
+            GetRef(m_eject_callback)(m_balls(0))
+        End If
+    End Sub
+
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message
@@ -10505,6 +10701,7 @@ Class GlfDiverter
     Private m_action_cb
     Private m_enabled
     Private m_active
+    Private m_ball_search_hold_time
     Private m_debug
 
     Public Property Get Name(): Name = m_name : End Property
@@ -10558,6 +10755,7 @@ Class GlfDiverter
     End Property
     Public Property Let ActivationTime(value) : Set m_activation_time = CreateGlfInput(value) : End Property
     Public Property Let ActivationSwitches(value) : m_activation_switches = value : End Property
+    Public Property Let BallSearchHoldTime(value) : Set m_ball_search_hold_time = CreateGlfInput(value) : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(name)
@@ -10568,6 +10766,7 @@ Class GlfDiverter
         Set m_deactivate_events = CreateObject("Scripting.Dictionary")
         m_activation_switches = Array()
         Set m_activation_time = CreateGlfInput(0)
+        Set m_ball_search_hold_time = CreateGlfInput(1000)
         m_debug = False
         m_enabled = False
         m_active = False
@@ -10623,6 +10822,23 @@ Class GlfDiverter
         RemoveDelay m_name & "_deactivate"
         GetRef(m_action_cb)(0)
         DispatchPinEvent m_name & "_deactivating", Null
+    End Sub
+
+    Public Sub BallSearch(phase)
+        Log "Ball Search, phase " & phase
+        If m_active = False Then
+            If Not IsEmpty(m_action_cb) Then
+                m_active = True
+                GetRef(m_action_cb)(1)
+            End If
+            SetDelay m_name & "ball_search_deactivate", "DiverterEventHandler", Array(Array("deactivate", Me), Null), m_ball_search_hold_time.Value
+        Else
+            If Not IsEmpty(m_action_cb) Then
+                m_active = False
+                GetRef(m_action_cb)(0)
+            End If
+            SetDelay m_name & "ball_search_activate", "DiverterEventHandler", Array(Array("activate", Me), Null), m_ball_search_hold_time.Value
+        End If
     End Sub
 
     Private Sub Log(message)
@@ -10808,6 +11024,19 @@ Class GlfDroptarget
 		End If
     End Sub
 
+    Public Sub BallSearch(phase)
+        Log "Ball Search, phase " & phase
+        If Not IsEmpty(m_action_cb) And m_complete = 0 Then
+            GetRef(m_action_cb)(1) 'Knockdown
+            SetDelay m_name & "ball_search_deactivate", "DroptargetEventHandler", Array(Array("reset", Me), Null), 100
+		Else
+            If Not IsEmpty(m_action_cb) And m_complete = 1 Then
+                GetRef(m_action_cb)(0) 'Reset
+                SetDelay m_name & "ball_search_deactivate", "DroptargetEventHandler", Array(Array("knockdown", Me), Null), 100
+            End If
+        End If
+    End Sub
+    
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message

@@ -188,6 +188,13 @@ Sub ConfigureGlfDevices
     End With
 
 
+    ' Ball search
+    With EnableGlfBallSearch()
+        .Timeout = 15000
+        .SearchInterval = 300
+        .BallSearchWaitAfterIteration = 5000
+    End With
+
 
     ' Plunger
     With CreateGlfBallDevice("plunger")
