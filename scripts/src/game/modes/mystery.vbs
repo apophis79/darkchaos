@@ -35,7 +35,8 @@ Sub CreateMysteryMode
             'handle sss award
             .Add "sss_mystery_ready", Array("complete_mystery_shots","set_sss_mystery_flag")
             'handle callout
-            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold","mystery_flash")
+            .Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", Array("play_voc_LMR","enable_scoop_hold","mystery_flash","score_30000")
+            .Add "qualify_mystery_hit", Array("score_1000")
         End With
 
         ' Randomize mystery selection
@@ -50,7 +51,7 @@ Sub CreateMysteryMode
                 .Add "mystery_moon_ready{current_player.multiball_lock_moon_launch_balls_locked < 2 && devices.state_machines.moon_mb.state!=""locking""}", 1
                 '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
                 .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5 
-                .Add "mystery_collect_bonus", 0.5  'FIXME added this mode
+                .Add "mystery_double_bonus{current_player.bonus_multiplier == 1}", 0.5  
                 .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
                 .Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
                 .ForceAll = False
@@ -93,6 +94,17 @@ Sub CreateMysteryMode
             With .EventName("play_sfx_LM5")
                 .Key = "key_sfx_LM5"
                 .Sound = "sfx_LM5"
+            End With
+
+            ' double bouns sfx
+            With .EventName("mystery_double_bonus")
+                .Key = "key_m_sfx_tally_alt"
+                .Sound = "sfx_tally_alt"
+            End With
+            ' relaxed combos sfx
+            With .EventName("mystery_relaxed_combos")
+                .Key = "key_m_sfx_combo"
+                .Sound = "sfx_combo"
             End With
         End With
 
@@ -349,11 +361,11 @@ Sub CreateMysteryMode
                 End With
             End With
 
-            'COLLECT BONUS
-            With .EventName("mystery_collect_bonus")
+            'DOUBLE BONUS
+            With .EventName("mystery_double_bonus")
                 With .Display("player2")
                     .Priority = 1000
-                    .Text = """COLLECT"""
+                    .Text = """DOUBLE"""
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With

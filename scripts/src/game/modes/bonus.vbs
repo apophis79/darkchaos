@@ -7,7 +7,7 @@
 Sub CreateBonusMode
 
     With CreateGlfMode("bonus", 150)
-        .StartEvents = Array("ball_ending")
+        .StartEvents = Array("ball_ending{game.tilted == False}")
         .StopEvents = Array("bonus_finished")
         .UseWaitQueue = True
 
@@ -35,6 +35,7 @@ Sub CreateBonusMode
             .Add "timer_bonus_tick{devices.timers.bonus.ticks == 17}", Array("calc_bonus_total")
             .Add "calc_bonus_total", Array("score_bonus_total")
             'handle bonus tally show
+            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", Array("bonus_2x")
             .Add "timer_bonus_tick{devices.timers.bonus.ticks == 3}", Array("bonus_tally1","restart_sfx_tally_alt")
             .Add "timer_bonus_tick{devices.timers.bonus.ticks == 6}", Array("bonus_tally2","restart_sfx_tally_alt")
             .Add "timer_bonus_tick{devices.timers.bonus.ticks == 9}", Array("bonus_tally3","restart_sfx_tally_alt")
@@ -163,6 +164,13 @@ Sub CreateBonusMode
                 End With
             End With
 
+            With .EventName("bonus_2x")
+                With .Display("player4")
+                    .Priority = 5005
+                    .Text = """ X 2  """
+                End With
+            End With
+
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 3}")
                 With .Display("player2")
                     .Priority = 5010
@@ -248,6 +256,10 @@ Sub CreateBonusMode
                     .Text = "{current_player.bonus_total:0>2}"
                     .Flashing = "all"
                 End With
+                With .Display("player4")
+                    .Priority = 5060
+                    .Text = """"""
+                End With
             End With
 
         End With
@@ -321,11 +333,11 @@ Sub CreateBonusMode
             With .EventName("calc_bonus_total")
                 With .Variable("bonus_total")
                     .Action = "set"
-                    .Int = "current_player.bonus_waves + " & _
+                    .Int = "(current_player.bonus_waves + " & _
                            "current_player.bonus_training + " & _
                            "current_player.bonus_bombs + " & _
                            "current_player.bonus_missiles + " & _
-                           "current_player.bonus_protons"
+                           "current_player.bonus_protons) * current_player.bonus_multiplier"
                 End With
             End With
         

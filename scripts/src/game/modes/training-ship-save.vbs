@@ -21,15 +21,17 @@ Sub CreateTrainingShipSaveMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_ship_save_started", Array("init_training")
+            .Add "mode_training_ship_save_started", Array("init_training","play_lsling_training","play_rsling_training")
             'successfull shot
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", Array("light_ship_charge1","flash_gi","play_sfx_LS")
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 && current_player.shot_training_ship_charge2 == 0}", Array("light_ship_charge2","flash_gi","play_sfx_LS")
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", Array("light_ship_charge3","play_sfx_LS")
-            .Add "light_ship_charge3", Array("training_achieved")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", Array("light_ship_charge1","flash_gi","play_sfx_LS","score_20000")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 && current_player.shot_training_ship_charge2 == 0}", Array("light_ship_charge2","flash_gi","play_sfx_LS","score_30000")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", Array("light_ship_charge3","play_sfx_LS","score_50000")
+            .Add "light_ship_charge3", Array("training_achieved","play_sfx_super_jackpot")
             'Stop the training
             .Add "training_achieved", Array("stop_training")
             .Add "timer_training_ship_save_complete", Array("stop_training")
+            'handle gi flicker shows
+            .Add "timer_training_ship_save_tick", Array("flicker_gi")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
@@ -45,8 +47,33 @@ Sub CreateTrainingShipSaveMode
                 .ForceAll = True
                 .ForceDifferent = True
             End With
+            With .EventName("flicker_gi")
+                .Add "play_flicker_gi01", 1
+                .Add "play_flicker_gi02", 1
+                .Add "play_flicker_gi03", 1
+                .Add "play_flicker_gi04", 1
+                .Add "play_flicker_gi05", 1
+                .Add "play_flicker_gi06", 1
+                .Add "play_flicker_gi07", 1
+                .Add "play_flicker_gi08", 1
+                .Add "play_flicker_gi09", 1
+                .Add "play_flicker_gi10", 1
+                .Add "play_flicker_gi11", 1
+                .Add "play_flicker_gi12", 1
+                .Add "play_flicker_gi13", 1
+                .Add "play_flicker_gi14", 1
+                .Add "play_flicker_gi15", 1
+                .Add "play_flicker_gi16", 1
+                .Add "play_flicker_gi17", 1
+                .Add "play_flicker_gi18", 1
+                .Add "play_flicker_gi19", 1
+                .Add "play_flicker_gi20", 1
+                .Add "play_flicker_gi21", 1
+                .Add "play_flicker_gi22", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
         End With
-
 
         'Define our shots
         For x = 1 to 3
@@ -136,6 +163,82 @@ Sub CreateTrainingShipSaveMode
                     .Add "intensity", 10
                 End With
             End With
+
+            With .EventName("training_achieved")   
+                .Key = "key_training_flash"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", ShipSaveColor
+                End With
+            End With
+
+            'GI flicker
+            For x = 1 to 9
+                With .EventName("play_flicker_gi0"&x)   
+                    .Key = "key_flicker_gi0"&x
+                    .Show = "flicker2_color_on_intensity" 
+                    .Speed = 2
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "gi0"&x
+                        .Add "color", ShipSaveColor
+                        .Add "intensity", 10
+                    End With
+                End With
+            Next
+            For x = 10 to 22
+                With .EventName("play_flicker_gi"&x)   
+                    .Key = "key_flicker_gi"&x
+                    .Show = "flicker2_color_on_intensity" 
+                    .Speed = 2
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "gi"&x
+                        .Add "color", ShipSaveColor
+                        .Add "intensity", 10
+                    End With
+                End With
+            Next
+
+            'sling domes
+            With .EventName("play_lsling_training")
+                .Key = "key_lsling_training"
+                .Show = "lsling_rotate1_cw"
+                .Speed = 0.3
+                With .Tokens()
+                    .Add "color", "ffffff"
+                    .Add "intensity", 50
+                End With
+            End With
+            With .EventName("play_rsling_training")
+                .Key = "key_rsling_training"
+                .Show = "rsling_rotate1_ccw"
+                .Speed = 0.3
+                With .Tokens()
+                    .Add "color", "ffffff"
+                    .Add "intensity", 50
+                End With
+            End With
+
+            'bumpers
+            For x = 1 to 4
+                With .EventName("s_Bumper"&x&"_active")
+                    .Key = "key_bumper"&x&"_flash"
+                    .Show = "flash_color_with_fade" 
+                    .Speed = 15
+                    .Loops = 1
+                    .Priority = 2000
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", "ffffff" 
+                        .Add "fade", 50
+                    End With
+                End With
+            Next
+
         End With
         
         'Selection timer

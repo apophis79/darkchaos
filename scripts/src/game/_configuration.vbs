@@ -38,6 +38,8 @@ Const SegmentsColor = "ff0000"
 
 Const SlingDomePowerUpBrightness = 100  '0 to 100
 
+Dim RainbowColors
+RainbowColors = Array(MeteorWaveColor,TrainingColor,MoonColor,HealthColor1,ProtonColor,ShieldsColor,ClusterBombColor,TimewarpColor)
 
 ' Playfield display light names
 Dim PFDisplayLightNames
@@ -57,9 +59,9 @@ RolloverLightNames = Array("LSwL1","LSwL2","LSwC1","LSwC2","LSwC3")
 ' Array of training selection shots and associated info
 Const TrainingTicks = 69  'uses 1000 ms interval
 Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
-TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields")
-TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields")
-TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor)
+TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields","skip")
+TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields","gi22")
+TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor,GIColorWhite)
 
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
@@ -135,11 +137,11 @@ Const VictoryLapTime = 45 'seconds
 
 ' Bonus settings
 Const BonusTimerTickInterval = 333
-Const BonusrWaveMultiplier = 20000
-Const BonusPerTraining = 100000
-Const BonusPerClusterBomb = 30000
-Const BonusPerMoonMissile = 30000
-Const BonusPerProtonRound = 10000
+Const BonusrWaveMultiplier = 50000
+Const BonusPerTraining = 250000
+Const BonusPerClusterBomb = 250000
+Const BonusPerMoonMissile = 250000
+Const BonusPerProtonRound = 50000
 
 
 
@@ -190,7 +192,7 @@ Sub ConfigureGlfDevices
     ' Plunger
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("s_Plunger1")
-        .EjectTimeout = 200
+        .EjectTimeout = 10
         .MechanicalEject = True
         .DefaultDevice = True
 		.EjectCallback = "PlungerEjectCallback"
@@ -484,13 +486,15 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "num_waves_completed", 0
     Glf_SetInitialPlayerVar "num_waves_completed_this_ball", 0
     Glf_SetInitialPlayerVar "num_training_shots_hit", 2
-    Glf_SetInitialPlayerVar "meteors_per_wave", 6
+    Glf_SetInitialPlayerVar "meteors_per_wave", 7
+    Glf_SetInitialPlayerVar "disable_moon_launch", 0
     Glf_SetInitialPlayerVar "warping", 0
     Glf_SetInitialPlayerVar "light_the_eb", 0
     Glf_SetInitialPlayerVar "alien_tick_count", -1
     Glf_SetInitialPlayerVar "alien_attack_dir", 0
     Glf_SetInitialPlayerVar "alien_attack_done", 0
     Glf_SetInitialPlayerVar "scoring_multiplier", 1
+    Glf_SetInitialPlayerVar "bonus_multiplier", 1
     Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0

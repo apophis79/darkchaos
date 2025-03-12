@@ -19,7 +19,11 @@ Sub CreateMoonMultiballMode
 
         With .EventPlayer()
             'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0}", Array("start_moon_multiball","play_sfx_launch")
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 && current_player.disable_moon_launch==0}", Array("launch_moon_missiles")
+            .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
+            'Panic penalty
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0}", Array("launch_panic_penalty")
+            .Add "launch_panic_penalty", Array("score_m50000")
         End With
 
 
@@ -32,14 +36,40 @@ Sub CreateMoonMultiballMode
             .BallLock = "moon_lock"
         End With
 
+        With .Timers("pause_moon_launch")
+            .TickInterval = 100
+            .StartValue = 0
+            .EndValue = 3
+            With .ControlEvents()
+                .EventName = GLF_BALL_DRAIN
+                .Action = "restart"
+            End With
+        End With
+
 
         With .SoundPlayer()
             With .EventName("play_sfx_launch")
                 .Key = "key_sfx_launch"
                 .Sound = "sfx_launch"
             End With
+            With .EventName("launch_panic_penalty")
+                .Key = "key_sfx_error_buzz"
+                .Sound = "sfx_error_buzz"
+            End With
         End With
 
+        With .ShowPlayer()
+            With .EventName("launch_panic_penalty")
+                .Key = "key_launch_panic_penalty"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tMoonAll"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+        End With
 
         With .VariablePlayer()
             With .EventName("start_moon_multiball")
@@ -48,6 +78,24 @@ Sub CreateMoonMultiballMode
 					.Int = 0
 				End With
 			End With   
+            With .EventName(GLF_BALL_DRAIN)
+				With .Variable("disable_moon_launch")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("mode_moon_multiball_started")
+				With .Variable("disable_moon_launch")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            With .EventName("timer_pause_moon_launch_complete")
+				With .Variable("disable_moon_launch")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With  
 		End With
         
     End With

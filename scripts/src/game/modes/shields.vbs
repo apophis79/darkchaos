@@ -28,7 +28,8 @@ Sub CreateShieldsMode
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
             'show
-            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up")
+            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up","score_50000")
+            .Add "qualify_shields_hit", Array("score_1000")
         End With
 
         With .RandomEventPlayer()

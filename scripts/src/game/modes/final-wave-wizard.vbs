@@ -46,25 +46,25 @@ Sub CreateFinalWaveWizardMode
             .Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", Array("update_hit_count")
             .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 0}", Array("asteroid_destroyed","asteroid_off","fwwiz_music_stop")
             'asteroid glow
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", Array("asteroid_temp1")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 18}", Array("asteroid_temp2")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 17}", Array("asteroid_temp3")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 16}", Array("asteroid_temp4")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 15}", Array("asteroid_temp5")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 14}", Array("asteroid_temp6")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 13}", Array("asteroid_temp7")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 12}", Array("asteroid_temp8")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 11}", Array("asteroid_temp9")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 10}", Array("asteroid_temp10")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 9}", Array("asteroid_temp11")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 8}", Array("asteroid_temp12")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 7}", Array("asteroid_temp13")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 6}", Array("asteroid_temp14")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 5}", Array("asteroid_temp15","start_asteroid_flicker")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 4}", Array("asteroid_temp16")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 3}", Array("asteroid_temp17")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 2}", Array("asteroid_temp18")
-            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 1}", Array("asteroid_temp19")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", Array("asteroid_temp1","score_100000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 18}", Array("asteroid_temp2","score_200000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 17}", Array("asteroid_temp3","score_300000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 16}", Array("asteroid_temp4","score_400000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 15}", Array("asteroid_temp5","score_500000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 14}", Array("asteroid_temp6","score_500000","score_100000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 13}", Array("asteroid_temp7","score_500000","score_200000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 12}", Array("asteroid_temp8","score_500000","score_300000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 11}", Array("asteroid_temp9","score_500000","score_400000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 10}", Array("asteroid_temp10","score_1000000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 9}", Array("asteroid_temp11","score_1000000","score_100000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 8}", Array("asteroid_temp12","score_1000000","score_200000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 7}", Array("asteroid_temp13","score_1000000","score_300000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 6}", Array("asteroid_temp14","score_1000000","score_400000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 5}", Array("asteroid_temp15","start_asteroid_flicker","score_1000000","score_500000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 4}", Array("asteroid_temp16","score_1000000","score_500000","score_100000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 3}", Array("asteroid_temp17","score_1000000","score_500000","score_200000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 2}", Array("asteroid_temp18","score_1000000","score_500000","score_300000")
+            .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 1}", Array("asteroid_temp19","score_1000000","score_500000","score_400000")
             'add meteors. There should max of two meteors up at a time
             .Add "s_DTMeteor1_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor","meteor1_explodes_show","meteor1_blink_show") 'additional meteor
             .Add "s_DTMeteor2_active{current_player.wizard_final_hit_count > 1}", Array("fwwiz_add_meteor","meteor2_explodes_show","meteor2_blink_show") 'additional meteor
@@ -74,7 +74,7 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_fwwiz_start_meteors_complete", Array("fwwiz_raise_meteor") 'first meteor
             .Add "continue_fwwiz", Array("fwwiz_raise_meteor") 'first meteor
             'asteroid destroyed
-            .Add "asteroid_destroyed", Array("knockdown_meteors")
+            .Add "asteroid_destroyed", Array("knockdown_meteors","score_2000000")
             
             '   explosion flippers flips
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 4}", Array("kill_flippers")
@@ -463,6 +463,22 @@ Sub CreateFinalWaveWizardMode
                     .Add "color", MeteorFlashColor
                 End With
             End With
+
+            'bumpers
+            For x = 1 to 4
+                With .EventName("s_Bumper"&x&"_active")
+                    .Key = "key_bumper"&x&"_flash"
+                    .Show = "flash_color_with_fade" 
+                    .Speed = 15
+                    .Loops = 1
+                    .Priority = 2000
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", MeteorHotColor
+                        .Add "fade", 50
+                    End With
+                End With
+            Next
         End With
 
 

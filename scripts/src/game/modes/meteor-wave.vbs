@@ -17,7 +17,7 @@ Sub CreateMeteorWaveMode
     With CreateGlfMode("meteor_wave", 1000)
         '.Debug = True
         .StartEvents = Array("start_meteor_wave")
-        .StopEvents = Array("timer_meteor_wave_finish_complete","mode_base_stopping")
+        .StopEvents = Array("timer_meteor_wave_finish_complete","mode_base_stopping","kill_flippers")
 
 
         With .EventPlayer()
@@ -57,7 +57,7 @@ Sub CreateMeteorWaveMode
             .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
             .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
             'Handle fired proton
-            .Add "proton_fired", Array("check_protons","proton_fired_flash_show")
+            .Add "proton_fired", Array("check_protons","proton_fired_flash_show","score_5000")
             'Handle events after meteor is downed
             .Add "meteor1_down", Array("calc_num_meteors_ratio","check_meteor_wave")
             .Add "meteor2_down", Array("calc_num_meteors_ratio","check_meteor_wave")
@@ -144,35 +144,6 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
-
-        With .SoundPlayer()
-            ' With .EventName("mode_meteor_wave_started")
-            '     .Key = "key_voc_wave_incoming"
-            '     .Sound = "voc_wave_incoming"
-            ' End With
-
-            With .EventName("play_sfx_LPF1")
-                .Key = "key_sfx_LPF1"
-                .Sound = "sfx_LPF1"
-            End With
-            With .EventName("play_sfx_LPF2")
-                .Key = "key_sfx_LPF2"
-                .Sound = "sfx_LPF2"
-            End With
-            With .EventName("play_sfx_LPF3")
-                .Key = "key_sfx_LPF3"
-                .Sound = "sfx_LPF3"
-            End With
-            With .EventName("play_sfx_LPF4")
-                .Key = "key_sfx_LPF4"
-                .Sound = "sfx_LPF4"
-            End With
-            With .EventName("play_sfx_LPF5")
-                .Key = "key_sfx_LPF5"
-                .Sound = "sfx_LPF5"
-            End With
-        End With
-        
 
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
@@ -365,10 +336,22 @@ Sub CreateMeteorWaveMode
                     .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit","earth_flash")
                 End With
                 With .Transitions()  'normal hit
-                    .Source = Array("up_cool","up_warm","up_hot")
+                    .Source = Array("up_cool")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_4000")
+                End With
+                With .Transitions()  'normal hit
+                    .Source = Array("up_warm")
+                    .Target = "down"
+                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_8000")
+                End With
+                With .Transitions()  'normal hit
+                    .Source = Array("up_hot")
+                    .Target = "down"
+                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_15000")
                 End With
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")

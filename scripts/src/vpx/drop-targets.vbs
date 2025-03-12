@@ -86,6 +86,8 @@ Const DTDropDelay = 20 'time in milliseconds before target drops (due to frictio
 Const DTRaiseDelay = 40 'time in milliseconds before target drops back to normal up position after the solenoid fires to raise the target
 Const DTBrickVel = 30 'velocity at which the target will brick, set to '0' to disable brick
 Const DTEnableBrick = 0 'Set to 0 to disable bricking, 1 to enable bricking
+Const DTBackHitVel = 10 'velocity at which the target will drop if hit from behind
+Const DTBackHitDrops = 1 'Set to 0 to disable dropping from back hits, 1 to enable dropping from back hits
 Const DTMass = 0.2 'Mass of the Drop Target (between 0 and 1), higher values provide more resistance
 
 
@@ -189,6 +191,10 @@ Function DTCheckBrick(aBall, dtprim)
     Else
         DTCheckBrick = 0
     End If
+
+    If DTBackHitDrops = 1 And perpvel < -DTBackHitVel And perpvelafter >= 0 Then
+        DTCheckBrick = 1
+    End If
 End Function
 
 Sub DoDTAnim()
@@ -221,7 +227,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
     
     animtime = GameTime - primary.uservalue
     
-    If (animate = 1 Or animate = 4) And animtime < DTDropDelay Then
+    If (animate = 1 Or animate = 4) And animtime < DTDropDelay Then  'Drop
         primary.collidable = 0
         If animate = 1 Then secondary.collidable = 1 Else secondary.collidable = 0
         prim.rotx = DTMaxBend * Cos(rangle)
@@ -237,7 +243,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
         SoundDropTargetDrop prim
     End If
     
-    If animate = 2 Then
+    If animate = 2 Then  'Dropping
         transz = (animtime - DTDropDelay) / DTDropSpeed * DTDropUnits *  - 1
         If prim.transz >  - DTDropUnits  Then
             prim.transz = transz
@@ -260,7 +266,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
         End If
     End If
     
-    If animate = 3 And animtime < DTDropDelay Then
+    If animate = 3 And animtime < DTDropDelay Then  'Hit, but keep up
         primary.collidable = 0
         secondary.collidable = 1
         prim.rotx = DTMaxBend * Cos(rangle)
@@ -275,7 +281,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
         Exit Function
     End If
     
-    If animate =  - 1 Then
+    If animate =  - 1 Then  'Raise
         transz = (1 - (animtime) / DTDropUpSpeed) * DTDropUnits *  - 1
         
         If prim.transz =  - DTDropUnits Then
@@ -309,7 +315,7 @@ Function DTAnimate(primary, secondary, prim, switch, animate)
         DTAction switchid, 0
     End If
     
-    If animate =  - 2 And animtime > DTRaiseDelay Then
+    If animate =  - 2 And animtime > DTRaiseDelay Then  'Raise recoil
         prim.transz = (animtime - DTRaiseDelay) / DTDropSpeed * DTDropUnits *  - 1 + DTDropUpUnits
         If prim.transz < 0 Then
             prim.transz = 0

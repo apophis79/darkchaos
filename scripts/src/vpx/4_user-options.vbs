@@ -59,8 +59,9 @@ Sub Table1_OptionEvent(ByVal eventId)
 	For Each BP in pApronSeg : BP.visible = v: Next
 	For Each BP in BP_Card : BP.visible = 1-v: Next
 
-	' Rails          FIXME make optional
-	For Each BP in BP_Rails : BP.visible = 1: Next
+	' Rails
+	v = Table1.Option("Cab Rails", 0, 1, 1, 1, 0, Array("Not Visible", "Visible"))
+	For Each BP in BP_Rails : BP.visible = v: Next
 
 	' VR 			FIXME check that this works
 	SetupRoom

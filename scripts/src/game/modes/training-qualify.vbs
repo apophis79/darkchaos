@@ -34,7 +34,7 @@ Sub CreateTrainingQualifyMode
             .Add MainShotNames(6)&"_hit{current_player.shot_training_shot7 == 1}", Array(MainShotNames(6)&"_training_off","training_shot_hit")
             .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
             'Handle a successful hit
-            .Add "training_shot_hit", Array("check_training_qualify")
+            .Add "training_shot_hit", Array("check_training_qualify","score_8000")
             .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed","play_voc_Training","training_flash")
             'Start the training selection
             .Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold")
@@ -42,6 +42,7 @@ Sub CreateTrainingQualifyMode
             'Handle mystery and skillshot awards
             .Add "mystery_trainer_ready", Array("clear_training_shots","training_shots_completed")
             .Add "ss_trainer_ready", Array("clear_training_shots","training_shots_completed")
+            .Add "training_shots_completed", Array("score_30000")
         End With
 
         With .RandomEventPlayer()

@@ -79,7 +79,7 @@ Sub RaiseDiverterPin(Enabled)
 	Else
 		DiverterPin.isdropped=True
 		SoundSaucerKick 0,swRamp6
-		For Each BP in BP_DiverterPin : BP.transz = -50: Next  'FIXME  check height. Animate with flipper?
+		For Each BP in BP_DiverterPin : BP.transz = -50: Next 
 	End If
 End Sub
 

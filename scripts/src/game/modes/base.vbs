@@ -13,6 +13,7 @@
 '   - wave shot lights across all waves
 '   - some sound effects and wave music
 '   - some light shows
+'   - some minor scoring
 
 
 
@@ -21,7 +22,7 @@ Sub CreateBaseMode()
 
     With CreateGlfMode("base", 200)
         .StartEvents = Array(GLF_BALL_STARTED)
-        .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started")
+        .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started","tilt")
 
         With .EventPlayer()
             'DEBUG
@@ -89,22 +90,22 @@ Sub CreateBaseMode()
             .Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", Array("stop_ccwiz_scoop_show")
             .Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", Array("stop_flwiz_scoop_show")
             '    run the wizard mode when qualified and ball enters the scoop. If more than one wizard is qualified, final wizard is top priority, then combo command, then fully loaded.
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","stop_asteroid_spotlight_show","clear_wizard_mode_ready") 
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show","clear_wizard_mode_ready") 
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1 && current_player.meteor_wave_running == 0}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","stop_asteroid_spotlight_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1 && current_player.meteor_wave_running == 0}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1 && current_player.meteor_wave_running == 0}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
             '    clean up wizard mode
             .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
-            .Add "completed_combo_command_wizard", Array("wizard_mode_ended")
-            .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended")
+            .Add "completed_combo_command_wizard", Array("wizard_mode_ended","check_base_restart")
+            .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended","check_base_restart")
     
             'handle some sound effects and music
-            .Add "center_orbit_left_hit", Array("play_sfx_Orb")
-            .Add "center_orbit_right_hit", Array("play_sfx_Orb")
+            .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
+            .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
+            .Add "left_side_up_hit", Array("play_sfx_Orb","score_2000")
             .Add "s_Bumper1_active", Array("play_sfx_bumper")
             .Add "s_Bumper2_active", Array("play_sfx_bumper")
             .Add "s_Bumper3_active", Array("play_sfx_bumper")
             .Add "s_Bumper4_active", Array("play_sfx_bumper")
-            .Add "stop_training_select", Array("training_music_alt_start","meteor_wave_music_stop")
             .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches
@@ -120,10 +121,12 @@ Sub CreateBaseMode()
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
 
             'handle some shows
-            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show") 
-            .Add "s_RightSlingshot_active", Array("play_rsling_base_show") 
+            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_1000") 
+            .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
             .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
+
+
             
         End With
 
@@ -153,15 +156,7 @@ Sub CreateBaseMode()
                 .ForceDifferent = True
             End With
         End With
-
-
-        ' With .ComboSwitches("base_comboswitch_test")
-        '     .Switch1 = "s_left_flipper"
-        '     .Switch2 = "s_right_flipper"
-        '     .EventsWhenBoth = Array("test_comboswtiches")
-        '     '.HoldTime = 200
-        ' End With
-       
+    
 
         With .SegmentDisplayPlayer()
             With .EventName("mode_base_started")
@@ -325,12 +320,12 @@ Sub CreateBaseMode()
 
         With .SequenceShots("center_orbit_left")
             .SwitchSequence = Array("s_CenterOrb1", "s_CenterOrb2", "s_CenterOrb3")
-            .SequenceTimeout = 500
+            .SequenceTimeout = 600
         End With
 
         With .SequenceShots("center_orbit_right")
             .SwitchSequence = Array("s_CenterOrb3", "s_CenterOrb2", "s_CenterOrb1")
-            .SequenceTimeout = 500
+            .SequenceTimeout = 600
         End With
 
         With .SequenceShots("right_orbit")
@@ -346,44 +341,30 @@ Sub CreateBaseMode()
 
 
         With .ShowPlayer()
-            For x = 1 to 4
-                With .EventName("s_Bumper"&x&"_active")
-                    .Key = "key_bumper"&x&"_flash"
-                    .Show = "flash_color_with_fade" 
-                    .Speed = 15
-                    .Loops = 1
-                    .Priority = 2000
-                    With .Tokens()
-                        .Add "lights", "LB"&x
-                        .Add "color", "05cc05" '"ffffff"
-                        .Add "fade", 50
-                    End With
-                End With
-            Next
-
             For x = 0 to 4
                 With .EventName(RolloverSwitches(x)&"_active")
                     .Key = "key_rollover"&x&"_flash"
-                    .Show = "flicker_color_off" 
-                    .Speed = 5
-                    .Loops = 2
+                    .Show = "flash_color" 
+                    .Speed = 20
+                    .Loops = 4
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", RolloverLightNames(x)
-                        .Add "color", GIColor3000k
+                        .Add "color", "ffffff"
                     End With
                 End With
             Next
 
             With .EventName("magnet_activated_flash")
                 .Key = "key_ts_mag_flash"
-                .Show = "flash_color" 
+                .Show = "flash_color_with_fade" 
                 .Speed = 20
                 .Loops = 7
                 .Priority = 100
                 With .Tokens()
                     .Add "lights", "FL1"
-                    .Add "color", GIColor2700k
+                    .Add "color", "aaaaaa"
+                    .Add "fade", 200
                 End With
             End With
             
@@ -603,7 +584,7 @@ Sub CreateBaseMode()
 
 
          With .BallSaves("new_ball")
-            .ActiveTime = 5000
+            .ActiveTime = 6000
             .HurryUpTime = 3000
             .GracePeriod = 2000
             .AutoLaunch = True
@@ -898,6 +879,7 @@ Sub CreateBaseMode()
                 .Sound = "sfx_LMet8"
             End With
 
+            'Earth hits
             With .EventName("play_sfx_EarthHit1")
                 .Key = "key_sfx_EarthHit1"
                 .Sound = "sfx_EarthHit1"
@@ -911,6 +893,38 @@ Sub CreateBaseMode()
                 .Sound = "sfx_EarthHit3"
             End With
 
+            'Proton fire
+            With .EventName("play_sfx_LPF1")
+                .Key = "key_sfx_LPF1"
+                .Sound = "sfx_LPF1"
+            End With
+            With .EventName("play_sfx_LPF2")
+                .Key = "key_sfx_LPF2"
+                .Sound = "sfx_LPF2"
+            End With
+            With .EventName("play_sfx_LPF3")
+                .Key = "key_sfx_LPF3"
+                .Sound = "sfx_LPF3"
+            End With
+            With .EventName("play_sfx_LPF4")
+                .Key = "key_sfx_LPF4"
+                .Sound = "sfx_LPF4"
+            End With
+            With .EventName("play_sfx_LPF5")
+                .Key = "key_sfx_LPF5"
+                .Sound = "sfx_LPF5"
+            End With
+
+            'jackpots
+            With .EventName("play_sfx_jackpot")
+                .Key = "key_sfx_jackpot"
+                .Sound = "sfx_jackpot"
+            End With
+            With .EventName("play_sfx_super_jackpot")
+                .Key = "key_sfx_super_jackpot"
+                .Sound = "sfx_super_jackpot"
+            End With
+
 
             With .EventName("activate_combo_command_wizard")
                 .Sound = "voc_LCWiz"
@@ -922,9 +936,7 @@ Sub CreateBaseMode()
                 .Sound = "voc_Wiz"
             End With
 
-            ' With .EventName("test_comboswtiches")  'DEBUG
-            '     .Sound = "sfx_tally_alt"
-            ' End With
+            
 
             
 

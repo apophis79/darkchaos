@@ -67,3 +67,7 @@ Sub RightFlipper_Collide(parm)
 	RF.ReProcessBalls ActiveBall
 	RightFlipperCollide parm
 End Sub
+
+Sub RightFlipper1_Collide(parm)
+	RightFlipperCollide parm
+End Sub

@@ -30,7 +30,7 @@ FlipperDownSoundLevel = 0.45                      						'volume level; range [0,
 FlipperLeftHitParm = FlipperUpSoundLevel								'sound helper; not configurable
 FlipperRightHitParm = FlipperUpSoundLevel								'sound helper; not configurable
 SlingshotSoundLevel = 0.95												'volume level; range [0, 1]
-BumperSoundFactor = 4.25												'volume multiplier; must not be zero
+BumperSoundFactor = 1								  				    'volume multiplier; must not be zero
 KnockerSoundLevel = 1 													'volume level; range [0, 1]
 
 '///////////////////////-----Ball Drops, Bumps and Collisions-----///////////////////////
@@ -288,15 +288,15 @@ End Sub
 
 '/////////////////////////////  BUMPER SOLENOID SOUNDS  ////////////////////////////
 Sub RandomSoundBumperTop(Bump)
-	PlaySoundAtLevelStatic SoundFX("mfx_Bumpers_Top_" & Int(Rnd*5)+1,DOFContactors), Vol(ActiveBall) * BumperSoundFactor, Bump
+	PlaySoundAtLevelStatic SoundFX("mfx_Bumpers_Top_" & Int(Rnd*5)+1,DOFContactors), BumperSoundFactor, Bump
 End Sub
 
 Sub RandomSoundBumperMiddle(Bump)
-	PlaySoundAtLevelStatic SoundFX("mfx_Bumpers_Middle_" & Int(Rnd*5)+1,DOFContactors), Vol(ActiveBall) * BumperSoundFactor, Bump
+	PlaySoundAtLevelStatic SoundFX("mfx_Bumpers_Middle_" & Int(Rnd*5)+1,DOFContactors), BumperSoundFactor, Bump
 End Sub
 
 Sub RandomSoundBumperBottom(Bump)
-	PlaySoundAtLevelStatic SoundFX("mfx_Bumpers_Bottom_" & Int(Rnd*5)+1,DOFContactors), Vol(ActiveBall) * BumperSoundFactor, Bump
+	PlaySoundAtLevelStatic SoundFX("mfx_Bumpers_Bottom_" & Int(Rnd*5)+1,DOFContactors), BumperSoundFactor, Bump
 End Sub
 
 '/////////////////////////////  SPINNER SOUNDS  ////////////////////////////

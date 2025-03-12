@@ -59,7 +59,7 @@ Sub CreateMoonMultiballQualifyMode
 
         With .EventPlayer()
             'Reset
-            .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && devices.state_machines.moon_mb.state!=""locking""}", Array("restart_moon_qualify_shots") 'with training boost
+            .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && devices.state_machines.moon_mb.state!=""locking"" && current_player.multiball_lock_moon_launch_balls_locked<2}", Array("restart_moon_qualify_shots") 'with training boost
             .Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", Array("boost_qualify_shots") 'with training boost
             'Release a ball (Lower the diverter pin) if we are not 
             .Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking""}", Array("release_moon_ball")
@@ -76,10 +76,11 @@ Sub CreateMoonMultiballQualifyMode
             'Handle mystery award
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
             'Scoring
-            .Add "right_ramp_hit", Array("score_500")
-            .Add "light_missile1", Array("score_5000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
-            .Add "light_missile2", Array("score_10000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
-            .Add "complete_moon_qualify_shots", Array("score_10000")
+            .Add "right_ramp_hit", Array("score_2000")
+            .Add "light_missile1", Array("score_50000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
+            .Add "light_missile2", Array("score_100000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
+            .Add "qualify_lock_hit", Array("score_2000")
+            .Add "qualify_lock_on_complete", Array("score_50000")
         End With
 
         With .SoundPlayer()
@@ -277,7 +278,7 @@ Sub CreateMoonMultiballQualifyMode
                     .Add "intensity", SlingDomePowerUpBrightness
                 End With
             End With
-            With .EventName("mm_acquired")  'DEBUG
+            With .EventName("mm_acquired") 
                 .Key = "key_mm_acquired"
                 .Show = "moon_missile_acquired" 
                 .Speed = 4

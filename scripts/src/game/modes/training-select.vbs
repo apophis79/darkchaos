@@ -35,15 +35,16 @@ Sub CreateTrainingSelectMode
             .Add "make_selection", Array("release_scoop_hold","start_training")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
-            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 10}", Array("selection_hurry_up")
+            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 7}", Array("selection_hurry_up")
             '.Add "timer_training_select_tick{devices.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
             'start requested training
-            .Add "make_selection{devices.state_machines.training_select.state==""heal""}", Array("start_training_heal","stop_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""cluster_bomb""}", Array("start_training_cluster_bomb","stop_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""proton_cannon""}", Array("start_training_proton_cannon","stop_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stop_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stop_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""shields""}", Array("start_training_shields","stop_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""heal""}", Array("start_training_heal","stopping_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""cluster_bomb""}", Array("start_training_cluster_bomb","stopping_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""proton_cannon""}", Array("start_training_proton_cannon","stopping_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stopping_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stopping_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
+            .Add "stopping_training_select", Array("training_music_alt_start","meteor_wave_music_stop","stop_training_select")
         End With
 
 
@@ -96,6 +97,26 @@ Sub CreateTrainingSelectMode
                     .Add "lights", "GI"
                     .Add "fade", 900
                     .Add "color", GIColor3000k
+                End With
+            End With
+            With .EventName("skip_selected")
+                .Key = "key_skip_gi"
+                .Show = "flash_color"
+                .Speed = 11
+                .Priority = 100
+                With .Tokens()
+                    .Add "lights", "gi22"
+                    .Add "color", GIColorWhite
+                End With
+            End With
+            With .EventName("skip_unselected")
+                .Key = "key_skip_gi"
+                .Show = "flash_color"
+                .Speed = 13
+                .Action = "stop"
+                With .Tokens()
+                    .Add "lights", "gi22"
+                    .Add "color", GIColorWhite
                 End With
             End With
         End With
@@ -222,7 +243,7 @@ Sub CreateTrainingSelectMode
             '.Debug = True
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = 15
+            .EndValue = 10
             With .ControlEvents()
                 .EventName = "mode_training_select_started"
                 .Action = "restart"
@@ -272,6 +293,10 @@ Sub CreateTrainingSelectMode
                                            "training_select_left{current_player.ts_last_move==""left"" && current_player.training_shields_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" && current_player.training_shields_achieved==1}")  
             End With
+            With .States("skip")
+                .Label = "Skip State"
+                .EventsWhenStarted = Array("skip_selected")  
+            End With
 
             'Transitions, move selection right
             With .Transitions()
@@ -306,35 +331,29 @@ Sub CreateTrainingSelectMode
             End With
             With .Transitions()
                 .Source = Array("moon_missile")
-                .Target = "heal"
+                .Target = "skip"
                 .Events = Array("training_select_right")
                 .EventsWhenTransitioning = Array("moon_missile_unselected")
+            End With
+            With .Transitions()
+                .Source = Array("skip")
+                .Target = "heal"
+                .Events = Array("training_select_right")
+                .EventsWhenTransitioning = Array("skip_unselected")
             End With
 
             'Transitions, move selection left
             With .Transitions()
                 .Source = Array("heal")
-                .Target = "moon_missile"
+                .Target = "skip"
                 .Events = Array("training_select_left")
                 .EventsWhenTransitioning = Array("heal_unselected")
             End With
             With .Transitions()
-                .Source = Array("moon_missile")
-                .Target = "shields"
+                .Source = Array("cluster_bomb")
+                .Target = "heal"
                 .Events = Array("training_select_left")
-                .EventsWhenTransitioning = Array("moon_missile_unselected")
-            End With
-            With .Transitions()
-                .Source = Array("shields")
-                .Target = "ship_save"
-                .Events = Array("training_select_left")
-                .EventsWhenTransitioning = Array("shields_unselected")
-            End With
-            With .Transitions()
-                .Source = Array("ship_save")
-                .Target = "proton_cannon"
-                .Events = Array("training_select_left")
-                .EventsWhenTransitioning = Array("ship_save_unselected")
+                .EventsWhenTransitioning = Array("cluster_bomb_unselected")
             End With
             With .Transitions()
                 .Source = Array("proton_cannon")
@@ -343,10 +362,28 @@ Sub CreateTrainingSelectMode
                 .EventsWhenTransitioning = Array("proton_cannon_unselected")
             End With
             With .Transitions()
-                .Source = Array("cluster_bomb")
-                .Target = "heal"
+                .Source = Array("ship_save")
+                .Target = "proton_cannon"
                 .Events = Array("training_select_left")
-                .EventsWhenTransitioning = Array("cluster_bomb_unselected")
+                .EventsWhenTransitioning = Array("ship_save_unselected")
+            End With
+            With .Transitions()
+                .Source = Array("shields")
+                .Target = "ship_save"
+                .Events = Array("training_select_left")
+                .EventsWhenTransitioning = Array("shields_unselected")
+            End With
+            With .Transitions()
+                .Source = Array("moon_missile")
+                .Target = "shields"
+                .Events = Array("training_select_left")
+                .EventsWhenTransitioning = Array("moon_missile_unselected")
+            End With
+            With .Transitions()
+                .Source = Array("skip")
+                .Target = "moon_missile"
+                .Events = Array("training_select_left")
+                .EventsWhenTransitioning = Array("skip_unselected")
             End With
         End With
 
@@ -390,6 +427,11 @@ Sub CreateTrainingSelectMode
             With .EventName("shields_selected{current_player.training_shields_achieved==0}")
                 With .Display("player3")
                     .Text = """SHIELDS"""
+                End With
+            End With
+            With .EventName("skip_selected")
+                With .Display("player3")
+                    .Text = """SKIP """
                 End With
             End With
         End With

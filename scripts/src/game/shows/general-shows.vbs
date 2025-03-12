@@ -88,6 +88,47 @@ Sub CreateGeneralShows()
         End With
     End With
 
+
+    With CreateGlfShow("flicker2_color_on_intensity")
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|15|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|80|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|20|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|70|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|5|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|90|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|35|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|80|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|15|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|65|(color)")
+        End With
+        With .AddStep(Null, Null, .16)
+            .Lights = Array("(lights)|15|(color)")
+        End With
+        With .AddStep(Null, Null, -1)
+            .Lights = Array("(lights)|(intensity)|(color)")
+        End With
+    End With
+
+
     With CreateGlfShow("flicker_color_off")
         With .AddStep(Null, Null, .16)
             .Lights = Array("(lights)|37|(color)")

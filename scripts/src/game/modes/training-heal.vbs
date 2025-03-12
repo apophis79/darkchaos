@@ -21,28 +21,30 @@ Sub CreateTrainingHealMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_heal_started", Array("init_training","raise_diverter")
+            .Add "mode_training_heal_started", Array("init_training","raise_diverter","play_lsling_training","play_rsling_training")
             'successfull shot
-            .Add "s_Bumper1_active", Array("check_add_training_health_bump")
-            .Add "s_Bumper2_active", Array("check_add_training_health_bump")
-            .Add "s_Bumper3_active", Array("check_add_training_health_bump")
-            .Add "s_Bumper4_active", Array("check_add_training_health_bump")
+            .Add "s_Bumper1_active", Array("check_add_training_health_bump","score_1000")
+            .Add "s_Bumper2_active", Array("check_add_training_health_bump","score_1000")
+            .Add "s_Bumper3_active", Array("check_add_training_health_bump","score_1000")
+            .Add "s_Bumper4_active", Array("check_add_training_health_bump","score_1000")
             'add health lights as needed
             .Add "check_add_training_health_bump{current_player.training_health_bump_value<"&BumperHitsPerRepairTrain&"}", Array("add_training_health_bump")
             .Add "check_add_training_health_bump{current_player.training_health_bump_value=="&BumperHitsPerRepairTrain&"}", Array("check_add_training_health","reset_training_health_bump")
-            .Add "check_add_training_health{current_player.shot_training_health1 == 0}", Array("light_health1","flash_gi")
-            .Add "check_add_training_health{current_player.shot_training_health1 == 1 && current_player.shot_training_health2 == 0}", Array("light_health2","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health2 == 1 && current_player.shot_training_health3 == 0}", Array("light_health3","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health3 == 1 && current_player.shot_training_health4 == 0}", Array("light_health4","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health4 == 1 && current_player.shot_training_health5 == 0}", Array("light_health5","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health5 == 1 && current_player.shot_training_health6 == 0}", Array("light_health6","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health6 == 1 && current_player.shot_training_health7 == 0}", Array("light_health7","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health7 == 1 && current_player.shot_training_health8 == 0}", Array("light_health8","flash_gi","play_sfx_LS")
-            .Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", Array("light_health9","training_achieved","play_sfx_LS")
+            .Add "check_add_training_health{current_player.shot_training_health1 == 0}", Array("light_health1","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health1 == 1 && current_player.shot_training_health2 == 0}", Array("light_health2","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health2 == 1 && current_player.shot_training_health3 == 0}", Array("light_health3","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health3 == 1 && current_player.shot_training_health4 == 0}", Array("light_health4","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health4 == 1 && current_player.shot_training_health5 == 0}", Array("light_health5","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health5 == 1 && current_player.shot_training_health6 == 0}", Array("light_health6","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health6 == 1 && current_player.shot_training_health7 == 0}", Array("light_health7","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health7 == 1 && current_player.shot_training_health8 == 0}", Array("light_health8","flash_gi","play_sfx_LS","score_9000")
+            .Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", Array("light_health9","training_achieved","play_sfx_LS","score_9000")
             'Stop the training
-            .Add "training_achieved", Array("stop_training")
+            .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot")
             .Add "timer_training_heal_complete", Array("stop_training")
             .Add "mode_training_heal_stopping{current_player.training_heal_achieved==0}", Array("drop_diverter")
+            'handle gi flicker shows
+            .Add "timer_training_heal_tick", Array("flicker_gi")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
@@ -57,6 +59,32 @@ Sub CreateTrainingHealMode
                 .Add "play_sfx_LS6", 1
                 .ForceAll = True
                 .ForceDifferent = True
+            End With
+            With .EventName("flicker_gi")
+                .Add "play_flicker_gi01", 1
+                .Add "play_flicker_gi02", 1
+                .Add "play_flicker_gi03", 1
+                .Add "play_flicker_gi04", 1
+                .Add "play_flicker_gi05", 1
+                .Add "play_flicker_gi06", 1
+                .Add "play_flicker_gi07", 1
+                .Add "play_flicker_gi08", 1
+                .Add "play_flicker_gi09", 1
+                .Add "play_flicker_gi10", 1
+                .Add "play_flicker_gi11", 1
+                .Add "play_flicker_gi12", 1
+                .Add "play_flicker_gi13", 1
+                .Add "play_flicker_gi14", 1
+                .Add "play_flicker_gi15", 1
+                .Add "play_flicker_gi16", 1
+                .Add "play_flicker_gi17", 1
+                .Add "play_flicker_gi18", 1
+                .Add "play_flicker_gi19", 1
+                .Add "play_flicker_gi20", 1
+                .Add "play_flicker_gi21", 1
+                .Add "play_flicker_gi22", 1
+                .ForceAll = False
+                .ForceDifferent = False
             End With
         End With
 
@@ -160,6 +188,81 @@ Sub CreateTrainingHealMode
                     .Add "intensity", 10
                 End With
             End With
+
+            With .EventName("training_achieved")   
+                .Key = "key_training_flash"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", HealthColor1
+                End With
+            End With
+
+            'GI flicker
+            For x = 1 to 9
+                With .EventName("play_flicker_gi0"&x)   
+                    .Key = "key_flicker_gi0"&x
+                    .Show = "flicker2_color_on_intensity" 
+                    .Speed = 2
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "gi0"&x
+                        .Add "color", HealthColor1
+                        .Add "intensity", 10
+                    End With
+                End With
+            Next
+            For x = 10 to 22
+                With .EventName("play_flicker_gi"&x)   
+                    .Key = "key_flicker_gi"&x
+                    .Show = "flicker2_color_on_intensity" 
+                    .Speed = 2
+                    .Loops = 1
+                    With .Tokens()
+                        .Add "lights", "gi"&x
+                        .Add "color", HealthColor1
+                        .Add "intensity", 10
+                    End With
+                End With
+            Next
+
+            'sling domes
+            With .EventName("play_lsling_training")
+                .Key = "key_lsling_training"
+                .Show = "lsling_rotate1_cw"
+                .Speed = 0.3
+                With .Tokens()
+                    .Add "color", "ffffff"
+                    .Add "intensity", 50
+                End With
+            End With
+            With .EventName("play_rsling_training")
+                .Key = "key_rsling_training"
+                .Show = "rsling_rotate1_ccw"
+                .Speed = 0.3
+                With .Tokens()
+                    .Add "color", "ffffff"
+                    .Add "intensity", 50
+                End With
+            End With
+
+            'bumpers
+            For x = 1 to 4
+                With .EventName("s_Bumper"&x&"_active")
+                    .Key = "key_bumper"&x&"_flash"
+                    .Show = "flash_color_with_fade" 
+                    .Speed = 15
+                    .Loops = 1
+                    .Priority = 2000
+                    With .Tokens()
+                        .Add "lights", "LB"&x
+                        .Add "color", HealthColor1 
+                        .Add "fade", 50
+                    End With
+                End With
+            Next
         End With
         
         'Selection timer

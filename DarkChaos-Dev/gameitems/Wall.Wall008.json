@@ -14,7 +14,7 @@
     "top_material": "Plastic with opaque image",
     "slingshot_material": "",
     "height_bottom": 90.0,
-    "height_top": 130.0,
+    "height_top": 200.0,
     "name": "Wall008",
     "display_texture": false,
     "slingshot_force": 80.0,
@@ -47,7 +47,7 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 686.87573,
+        "x": 636.30804,
         "y": 26.89075,
         "z": 0.0,
         "smooth": false,
@@ -60,8 +60,21 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 686.3879,
-        "y": 131.89323,
+        "x": 648.4739,
+        "y": 81.182045,
+        "z": 0.0,
+        "smooth": true,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 673.7461,
+        "y": 127.1525,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -73,8 +86,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 692.0314,
-        "y": 132.68448,
+        "x": 689.3977,
+        "y": 134.26472,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

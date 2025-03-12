@@ -35,10 +35,11 @@ Sub CreateClusterBombMode
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
-            .Add "left_orbit_hit", Array("score_500")
-            .Add "add_cluster_bomb1", Array("score_5000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
-            .Add "add_cluster_bomb2", Array("score_10000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
-            .Add "complete_cluster_charges", Array("score_10000")
+            .Add "left_orbit_hit", Array("score_2000")
+            .Add "add_cluster_bomb1", Array("score_50000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
+            .Add "add_cluster_bomb2", Array("score_100000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
+            .Add "complete_cluster_charges", Array("score_50000")
+            .Add "cluster_bomb_fired", Array("score_50000")
         End With
 
         With .RandomEventPlayer()
@@ -150,22 +151,13 @@ Sub CreateClusterBombMode
                     .Add "color", ClusterBombColor
                 End With
             End With
-             With .EventName("cluster_bomb_fired")
+            With .EventName("cluster_bomb_fired")
                 .Key = "key_cluster_explodes"
                 .Priority = 5
                 .Show = "cluster_explodes"  'the cluster color is included in the show
                 .Speed = 1
                 .Loops = 1
             End With
-            ' With .EventName("cluster_bomb_fired")
-            '     .Key = "key_cluster_explodes"
-            '     .Show = "meteor2_explodes"
-            '     .Speed = 1
-            '     .Loops = 1
-            '     With .Tokens()
-            '         .Add "color", ClusterBombColor
-            '     End With    
-            ' End With
             With .EventName("cluster_bomb_flash")
                 .Key = "key_cluster_flash"
                 .Show = "flash_color_with_fade" 
