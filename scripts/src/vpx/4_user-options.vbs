@@ -8,6 +8,7 @@ Dim LightLevel : LightLevel = 0.5				' Level of room lighting (0 to 1), where 0 
 Dim MechVol : MechVol = 0.8           			' Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
 Dim BallRollVolume : BallRollVolume = 0.5   	' Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume : RampRollVolume = 0.5 		' Level of ramp rolling volume. Value between 0 and 1
+Dim StagedFlipper : StagedFlipper = 0 			' 0 = Not enabled, 1 = Enabled
 ' Dim BackglassVol : BackglassVol = 1				'Separate setting that only affects sounds coming from backglass. Range from 0 to 1
 ' Dim CalloutVol : CalloutVol = 1					'Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
 
@@ -62,6 +63,9 @@ Sub Table1_OptionEvent(ByVal eventId)
 	' Rails
 	v = Table1.Option("Cab Rails", 0, 1, 1, 1, 0, Array("Not Visible", "Visible"))
 	For Each BP in BP_Rails : BP.visible = v: Next
+
+	' Staged Flipper
+	StagedFlipper = Table1.Option("Staged Flipper", 0, 1, 1, 0, 0, Array("Not Enabled", "Enabled"))
 
 	' VR 			FIXME check that this works
 	SetupRoom

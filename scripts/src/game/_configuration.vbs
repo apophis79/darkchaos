@@ -261,6 +261,13 @@ Sub ConfigureGlfDevices
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
+    With CreateGlfFlipper("upper_right")
+        .Switch = "s_right_staged_flipper_key"
+        .ActionCallback = "RightFlipper1Action"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
 
     ' Slingshots
     With CreateGlfAutoFireDevice("left_sling")
