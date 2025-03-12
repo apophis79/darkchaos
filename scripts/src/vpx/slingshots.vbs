@@ -9,11 +9,10 @@ Dim RStep : RStep = 0 : s_RightSlingshot.TimerEnabled = 1
 
 Sub LeftSlingshotAction(args)
 	Dim enabled, ball : enabled = args(0)
-    If Not IsNull(args(1)) Then
-        Set ball = args(1)
-    End If
 	If enabled then
-		LS.VelocityCorrect(ball)
+		If Not IsNull(args(1)) Then
+			LS.VelocityCorrect(args(1))
+		End If
 		LStep = 0
 		s_LeftSlingshot_Timer
 		s_LeftSlingshot.TimerEnabled = 1
@@ -48,11 +47,10 @@ End Sub
 
 Sub RightSlingshotAction(args)
 	Dim enabled, ball : enabled = args(0)
-    If Not IsNull(args(1)) Then
-        Set ball = args(1)
-    End If
 	If enabled then
-		RS.VelocityCorrect(ball)
+		If Not IsNull(args(1)) Then
+			RS.VelocityCorrect(args(1))
+		End If
 		RStep = 0
 		s_RightSlingshot_Timer
 		s_RightSlingshot.TimerEnabled = 1
