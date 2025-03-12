@@ -118,9 +118,9 @@ End Sub
 
 Sub Bumper1Action(args)
 	Dim enabled, ball : enabled = args(0)
-    ' If Not IsNull(args(1)) Then
-    '     Set ball = args(1)
-    ' End If
+    If IsNull(args(1)) And enabled Then
+        s_Bumper1.PlayHit()
+    End If
 	If enabled Then RandomSoundBumperMiddle s_Bumper1
 End Sub
 
@@ -135,9 +135,9 @@ End Sub
 
 Sub Bumper2Action(args)
 	Dim enabled, ball : enabled = args(0)
-    ' If Not IsNull(args(1)) Then
-    '     Set ball = args(1)
-    ' End If
+    If IsNull(args(1)) And enabled Then
+        s_Bumper2.PlayHit()
+    End If
 	If enabled Then RandomSoundBumperTop s_Bumper2
 End Sub
 
@@ -152,9 +152,9 @@ End Sub
 
 Sub Bumper3Action(args)
 	Dim enabled, ball : enabled = args(0)
-    ' If Not IsNull(args(1)) Then
-    '     Set ball = args(1)
-    ' End If
+    If IsNull(args(1)) And enabled Then
+        s_Bumper3.PlayHit()
+    End If
 	If enabled Then RandomSoundBumperTop s_Bumper3
 End Sub
 
@@ -169,9 +169,9 @@ End Sub
 
 Sub Bumper4Action(args)
 	Dim enabled, ball : enabled = args(0)
-    ' If Not IsNull(args(1)) Then
-    '     Set ball = args(1)
-    ' End If
+    If IsNull(args(1)) And enabled Then
+        s_Bumper4.PlayHit()
+    End If
 	If enabled Then RandomSoundBumperTop s_Bumper4
 End Sub
 
