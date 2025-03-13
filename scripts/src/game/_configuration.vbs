@@ -609,18 +609,6 @@ Public Sub CreateSharedShotProfiles()
         End With
     End With
 
-    With GlfShotProfiles("on_flicker_off")
-        With .States("lit")
-            .Show = "led_color"
-            .Key = "key_off_z"
-        End With
-        With .States("unlit")
-            .Show = "flicker_color_off"
-            .Speed = 3
-            .Key = "key_on_z"
-        End With
-    End With
-
     With GlfShotProfiles("flicker_on_flicker_off")
         With .States("lit")
             .Show = "flicker_color_on"
@@ -668,7 +656,7 @@ Public Sub CreateSharedShotProfiles()
     With GlfShotProfiles("training_powerups")
         With .States("ready")
             .Show = "flash_color_with_fade"
-            .Key = "key_ready_c"
+            .Key = "key_ready_zc"
             .Speed = 12
             With .Tokens()
                 .Add "fade", 100
@@ -676,7 +664,7 @@ Public Sub CreateSharedShotProfiles()
         End With
         With .States("collected")
             .Show = "led_color"
-            .Key = "key_collected_c"
+            .Key = "key_collected_zc"
         End With
     End With
 

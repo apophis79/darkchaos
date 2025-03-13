@@ -224,34 +224,56 @@ Sub CreateMeteorWaveMode
         For x = 1 to 6    
             With .Shots("mw_pf_seg"&x)
                 '.Profile = "flicker_on_flicker_off"
-                .Profile = "on_flicker_off"
+                .Profile = "pf_segs"
                 With .Tokens()
                     .Add "lights", "pf_seg"&x
                     .Add "color", SegmentsColor
                 End With
+                ' With .ControlEvents()
+                '     .Events = Array("mode_meteor_wave_started")
+                '     .State = 0
+                ' End With
                 With .ControlEvents()
-                    .Events = Array("pf_seg"&x&"_off")
+                    .Events = Array("pf_seg"&x&"_off","mode_meteor_wave_stopping")
                     .State = 1
                 End With
-                .RestartEvents = Array("mode_meteor_wave_started") 
+                .RestartEvents = Array("timer_meteor1_init_complete","timer_meteor2_init_complete","timer_meteor3_init_complete","timer_meteor4_init_complete") 
             End With
         Next
 
         For x = 16 to 21    
             With .Shots("mw_pf_seg"&x)
                 '.Profile = "flicker_on_flicker_off"
-                .Profile = "on_flicker_off"
+                .Profile = "pf_segs"
                 With .Tokens()
                     .Add "lights", "pf_seg"&x
                     .Add "color", SegmentsColor
                 End With
+                ' With .ControlEvents()
+                '     .Events = Array("mode_meteor_wave_started")
+                '     .State = 0
+                ' End With
                 With .ControlEvents()
-                    .Events = Array("pf_seg"&x&"_off")
+                    .Events = Array("pf_seg"&x&"_off","mode_meteor_wave_stopping")
                     .State = 1
                 End With
-                .RestartEvents = Array("mode_meteor_wave_started") 
+                .RestartEvents = Array("timer_meteor1_init_complete","timer_meteor2_init_complete","timer_meteor3_init_complete","timer_meteor4_init_complete") 
             End With
         Next
+
+        With .ShotProfiles("pf_segs")
+            With .States("lit")
+                .Show = "led_color"
+                .Key = "key_pf_segs_lit"
+                .Priority = 100
+            End With
+            With .States("unlit")
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Key = "key_pf_segs_off"
+                .Priority = 110
+            End With
+        End With
 
 
         'Define meteor shots
