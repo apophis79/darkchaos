@@ -49,6 +49,7 @@ Dim glf_initialVars : Set glf_initialVars = CreateObject("Scripting.Dictionary")
 Dim glf_dispatch_await : Set glf_dispatch_await = CreateObject("Scripting.Dictionary")
 Dim glf_dispatch_handlers_await : Set glf_dispatch_handlers_await = CreateObject("Scripting.Dictionary")
 Dim glf_dispatch_current_kwargs
+Dim glf_dispatch_lightmaps_await : Set glf_dispatch_lightmaps_await = CreateObject("Scripting.Dictionary")
 Dim glf_machine_vars : Set glf_machine_vars = CreateObject("Scripting.Dictionary")
 Dim glf_achievements : Set glf_achievements = CreateObject("Scripting.Dictionary")
 Dim glf_sound_buses : Set glf_sound_buses = CreateObject("Scripting.Dictionary")
@@ -69,6 +70,8 @@ Dim glf_BIP : glf_BIP = 0
 Dim glf_FuncCount : glf_FuncCount = 0
 Dim glf_SeqCount : glf_SeqCount = 0
 Dim glf_max_dispatch : glf_max_dispatch = 25
+Dim glf_max_lightmap_sync : glf_max_lightmap_sync = 100
+Dim glf_max_lights_test : glf_max_lights_test = 0
 
 Dim glf_master_volume : glf_master_volume = 0.8
 
@@ -547,6 +550,9 @@ Sub Glf_Options(ByVal eventId)
 		End If
 	End If
 
+	Dim max_lightmap_frame_sync : max_lightmap_frame_sync = Table1.Option("Glf Max Lightmap Frame Sync", 1, 10, 1, 5, 0, Array("10", "20", "30", "40", "50", "60", "70", "80", "90", "100"))
+	glf_max_lightmap_sync = max_lightmap_frame_sync*10
+
 	
 End Sub
 
@@ -560,6 +566,7 @@ Public Sub Glf_Exit()
 		glf_debugBcpController = Null
 	End If
 	If glf_debugEnabled = True Then
+		glf_debugLog.WriteToLog "Max Lights", glf_max_lights_test
 		glf_debugLog.DisableLogs
 	End If
 	Glf_WriteMachineVars()
@@ -694,7 +701,7 @@ Public Sub Glf_GameTimer_Timer()
 	glf_frame_handler_count = 0
 	'glf_temp1 = 0
 
-	Dim i, key, keys
+	Dim i, key, keys, lightMap
 	i = 0
 	keys = glf_dispatch_handlers_await.Keys()
 	i = Glf_RunHandlers(i)
@@ -715,11 +722,33 @@ Public Sub Glf_GameTimer_Timer()
 	End If
 
 	DelayTick
+
+	i=0
+	keys = glf_dispatch_lightmaps_await.Keys()
+	'debug.print(ubound(keys))
+	If glf_max_lights_test < Ubound(keys) Then
+		glf_max_lights_test = Ubound(keys)
+	End If
+	For Each key in keys
+		For Each lightMap in glf_lightMaps(key)
+			If Not IsNull(lightMap) Then
+				On Error Resume Next
+				lightMap.Color = glf_lightNames(key).Color
+				If Err Then Debug.Print "Error: " & Err & ". Light:" & key & ", LightMap: " & lightMap.Name
+			End If
+		Next
+		glf_dispatch_lightmaps_await.Remove key
+		i=i+1
+		If i>glf_max_lightmap_sync or (gametime - glf_lastEventExecutionTime) > 16 Then
+			'debug.print("Exiting")
+			Exit For
+		End If
+	Next
 	
 	If (gametime - glf_lastTiltUpdateExecutionTime) >=50 And glf_current_virtual_tilt > 0 Then
 		glf_current_virtual_tilt = glf_current_virtual_tilt - 0.1
 		glf_lastTiltUpdateExecutionTime = gametime
-		Debug.print("Tilt Cooldown: " & glf_current_virtual_tilt) 
+		'Debug.print("Tilt Cooldown: " & glf_current_virtual_tilt) 
 	End If
 
 	If (gametime - glf_lastBcpExecutionTime) >= 300 Then
@@ -831,19 +860,25 @@ Public Function Glf_SetLight(light, color)
 	
 	
 	If IsNull(color) Then
-		glf_debugLog.WriteToLog "SetLight", "Turning Light Off"
+		'glf_debugLog.WriteToLog "SetLight", "Turning Light Off"
 		glf_lightNames(light).Color = rgb(0,0,0)
 	Else
 		glf_lightNames(light).Color = rgbColor
 	End If
-	dim lightMap
-	For Each lightMap in glf_lightMaps(light)
-		If Not IsNull(lightMap) Then
-			On Error Resume Next
-			lightMap.Color = glf_lightNames(light).Color
-			If Err Then Debug.Print "Error: " & Err & ". Light:" & light & ", LightMap: " & lightMap.Name
-		End If
-	Next
+    If Not glf_dispatch_lightmaps_await.Exists(light) Then
+        glf_dispatch_lightmaps_await.Add light, True
+    End If
+	' dim lightMap
+	' For Each lightMap in glf_lightMaps(light)
+	' 	If Not IsNull(lightMap) Then
+	' 		If Not glf_dispatch_lightmaps_await.Exists(light) Then
+	' 			glf_dispatch_lightmaps_await.Add light, True
+	' 		End If
+	' 		'On Error Resume Next
+	' 		'lightMap.Color = glf_lightNames(light).Color
+	' 		'If Err Then Debug.Print "Error: " & Err & ". Light:" & light & ", LightMap: " & lightMap.Name
+	' 	End If
+	' Next
 End Function
 
 Public Function Glf_ParseInput(value)
@@ -2353,6 +2388,9 @@ Sub Glf_MonitorModeUpdate(mode)
     If Not IsNull(mode.VariablePlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.VariablePlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.VariablePlayer.Name & """},"
     End If
+    If Not IsNull(mode.DOFPlayer) Then
+        glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.DOFPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.DOFPlayer.Name & """},"
+    End If
 End Sub
 
 Sub Glf_MonitorPlayerStateUpdate(key, value)
@@ -3701,6 +3739,144 @@ Function CounterEventHandler(args)
 End Function
 
 
+Class GlfDofPlayer
+
+    Private m_name
+    Private m_priority
+    Private m_mode
+    Private m_debug
+    private m_base_device
+    Private m_events
+    Private m_eventValues
+
+    Public Property Get Name() : Name = "dof_player" : End Property
+
+
+    Public Property Get EventDOF() : EventDOF = m_eventValues.Items() : End Property
+    Public Property Get EventName(name)
+
+        Dim newEvent : Set newEvent = (new GlfEvent)(name)
+        m_events.Add newEvent.Raw, newEvent
+        Dim new_dof : Set new_dof = (new GlfDofPlayerItem)()
+        m_eventValues.Add newEvent.Raw, new_dof
+        Set EventName = new_dof
+        
+    End Property
+    
+    Public Property Let Debug(value)
+        m_debug = value
+        m_base_device.Debug = value
+    End Property
+    Public Property Get IsDebug()
+        If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
+    End Property
+
+	Public default Function init(mode)
+        m_name = "dof_player_" & mode.name
+        m_mode = mode.Name
+        m_priority = mode.Priority
+        m_debug = False
+        Set m_events = CreateObject("Scripting.Dictionary")
+        Set m_eventValues = CreateObject("Scripting.Dictionary")
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "dof_player", Me)
+        Set Init = Me
+	End Function
+
+    Public Sub Activate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            AddPinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_dof_player_play", "DofPlayerEventHandler", m_priority+m_events(evt).Priority, Array("play", Me, evt)
+        Next
+    End Sub
+
+    Public Sub Deactivate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            RemovePinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_dof_player_play"
+        Next
+    End Sub
+
+    Public Function Play(evt)
+        Play = Empty
+        If m_events(evt).Evaluate() Then
+            Log "Firing DOF Event: " & m_eventValues(evt).DOFEvent & " State: " & m_eventValues(evt).Action
+            DOF m_eventValues(evt).DOFEvent, m_eventValues(evt).Action  
+        End If
+    End Function
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_mode & "_dof_player", message
+        End If
+    End Sub
+
+    Public Function ToYaml()
+        Dim yaml
+        Dim evt
+        If UBound(m_events.Keys) > -1 Then
+            For Each key in m_events.keys
+                yaml = yaml & "  " & key & ": " & vbCrLf
+                yaml = yaml & m_events(key).ToYaml
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
+End Class
+
+Function DofPlayerEventHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
+    Else
+        kwargs = args(1) 
+    End If
+    Dim evt : evt = ownProps(0)
+    Dim dof_player : Set dof_player = ownProps(1)
+    Select Case evt
+        Case "activate"
+            dof_player.Activate
+        Case "deactivate"
+            dof_player.Deactivate
+        Case "play"
+            dof_player.Play(ownProps(2))
+    End Select
+    If IsObject(args(1)) Then
+        Set DofPlayerEventHandler = kwargs
+    Else
+        DofPlayerEventHandler = kwargs
+    End If
+End Function
+
+Class GlfDofPlayerItem
+	Private m_dof_event, m_action
+    
+    Public Property Get Action(): Action = m_action: End Property
+    Public Property Let Action(input)
+        Select Case input
+            Case "DOF_OFF"
+                m_action = 0
+            Case "DOF_ON"
+                m_action = 1
+            Case "DOF_PULSE"
+                m_action = 2
+        End Select
+    End Property
+
+    Public Property Get DOFEvent(): DOFEvent = m_dof_event: End Property
+    Public Property Let DOFEvent(input): m_dof_event = input: End Property
+
+	Public default Function init()
+        m_action = Empty
+        m_dof_event = Empty
+        Set Init = Me
+	End Function
+
+End Class
+
+
+
 Class GlfEventPlayer
 
     Private m_priority
@@ -4503,6 +4679,7 @@ Class Mode
     Private m_queueRelayPlayer
     Private m_random_event_player
     Private m_sound_player
+    Private m_dof_player
     Private m_shot_profiles
     Private m_sequence_shots
     Private m_state_machines
@@ -4555,6 +4732,7 @@ Class Mode
     Public Property Get RandomEventPlayer() : Set RandomEventPlayer = m_random_event_player : End Property
     Public Property Get VariablePlayer(): Set VariablePlayer = m_variableplayer: End Property
     Public Property Get SoundPlayer() : Set SoundPlayer = m_sound_player : End Property
+    Public Property Get DOFPlayer() : Set DOFPlayer = m_dof_player : End Property
 
     Public Property Get ShotProfiles(name)
         If m_shot_profiles.Exists(name) Then
@@ -4814,6 +4992,9 @@ Class Mode
         If Not IsNull(m_sound_player) Then
             m_sound_player.Debug = value
         End If
+        If Not IsNull(m_dof_player) Then
+            m_dof_player.Debug = value
+        End If
         If Not IsNull(m_showplayer) Then
             m_showplayer.Debug = value
         End If
@@ -4857,6 +5038,7 @@ Class Mode
         Set m_queueRelayPlayer = (new GlfQueueRelayPlayer)(Me)
         Set m_random_event_player = (new GlfRandomEventPlayer)(Me)
         Set m_sound_player = (new GlfSoundPlayer)(Me)
+        Set m_dof_player = (new GlfDofPlayer)(Me)
         Set m_variableplayer = (new GlfVariablePlayer)(Me)
         Glf_MonitorModeUpdate Me
         AddPinEventListener m_name & "_starting", m_name & "_starting_end", "ModeEventHandler", -99, Array("started", Me, "")
@@ -8453,6 +8635,13 @@ Function GlfShowStepHandler(args)
             End If
         Next
     End If
+    If UBound(nextStep.DOFEventsInStep().Keys())>-1 Then
+        Dim dof_item
+        Dim dof_items : dof_items = nextStep.DOFEventsInStep().Items()
+        For Each dof_item in dof_items
+            DOF dof_item.DOFEvent, dof_item.Action
+        Next
+    End If
 
     If nextStep.Duration = -1 Then
         'glf_debugLog.WriteToLog "Running Show", "HOLD"
@@ -8494,7 +8683,7 @@ End Function
 
 Class GlfShowStep
 
-    Private m_lights, m_shows, m_time, m_duration, m_isLastStep, m_absTime, m_relTime
+    Private m_lights, m_shows, m_dofs, m_time, m_duration, m_isLastStep, m_absTime, m_relTime
 
     Public Property Get Lights(): Lights = m_lights: End Property
     Public Property Let Lights(input) : m_lights = input: End Property
@@ -8505,6 +8694,14 @@ Class GlfShowStep
         new_show.Show = name
         m_shows.Add name & CStr(UBound(m_shows.Keys)), new_show
         Set Shows = new_show
+    End Property
+
+    Public Property Get DOFEventsInStep(): Set DOFEventsInStep = m_dofs: End Property
+    Public Property Get DOFEvent(dof_event)
+        Dim new_dof : Set new_dof = (new GlfDofPlayerItem)()
+        new_dof.DOFEvent = dof_event
+        m_dofs.Add name & CStr(UBound(m_dofs.Keys)), new_dof
+        Set DOFEvent = new_dof
     End Property
 
     Public Property Get Time()
@@ -8540,6 +8737,7 @@ Class GlfShowStep
         m_relTime = Null
         m_isLastStep = False
         Set m_shows = CreateObject("Scripting.Dictionary")
+        Set m_dofs = CreateObject("Scripting.Dictionary")
         Set Init = Me
 	End Function
 
@@ -11218,6 +11416,7 @@ Class GlfLightSegmentDisplay
     Private m_current_flash_mask
     private m_lights
     private m_light_group
+    private m_light_groups
     private m_segmentmap
     private m_segment_type
     private m_size
@@ -11229,6 +11428,7 @@ Class GlfLightSegmentDisplay
     private m_use_dots_for_commas
     private m_display_flash_duty
     private m_display_flash_display_flash_frequency
+    private m_default_transition_update_hz
     private m_color
 
     Public Property Get Name() : Name = m_name : End Property
@@ -11247,6 +11447,12 @@ Class GlfLightSegmentDisplay
     Public Property Get LightGroup() : LightGroup = m_light_group : End Property
     Public Property Let LightGroup(input)
         m_light_group = input
+        CalculateLights()
+    End Property
+
+    Public Property Get LightGroups() : LightGroups = m_light_groups : End Property
+    Public Property Let LightGroups(input)
+        m_light_groups = input
         CalculateLights()
     End Property
 
@@ -11271,6 +11477,9 @@ Class GlfLightSegmentDisplay
     Public Property Get DefaultColor() : DefaultColor = m_color : End Property
     Public Property Let DefaultColor(input) : m_color = input : End Property
 
+    Public Property Get DefaultTransitionUpdateHz() : DefaultTransitionUpdateHz = m_default_transition_update_hz : End Property
+    Public Property Let DefaultTransitionUpdateHz(input) : m_default_transition_update_hz = input : End Property
+
     Public default Function init(name)
         m_name = name
         m_flash_on = True
@@ -11281,6 +11490,7 @@ Class GlfLightSegmentDisplay
         m_segment_type = Empty
         m_segmentmap = Null
         m_light_group = Empty
+        m_light_groups = Array()
         m_current_text = Empty
         m_display_state = Empty
         m_current_state = Null
@@ -11296,6 +11506,7 @@ Class GlfLightSegmentDisplay
         m_use_dots_for_commas = False
 
         m_display_flash_duty = 30
+        m_default_transition_update_hz = 30
         m_display_flash_display_flash_frequency = 60
 
         m_color = "ffffff"
@@ -11307,17 +11518,38 @@ Class GlfLightSegmentDisplay
     End Function
 
     Private Sub CalculateLights()
-        If Not IsEmpty(m_segment_type) And m_size > 0 And Not IsEmpty(m_light_group) Then
+        If Not IsEmpty(m_segment_type) And m_size > 0 And (Not IsEmpty(m_light_group) Or Ubound(m_light_groups)>-1) Then
             m_lights = Array()
             If m_segment_type = "14Segment" Then
-                ReDim m_lights(m_size * 15)
+                ReDim m_lights((m_size * 15)-1)
             ElseIf m_segment_type = "7Segment" Then
-                ReDim m_lights(m_size * 8)
+                ReDim m_lights((m_size * 8)-1)
             End If
 
-            Dim i
+            Dim i, group_idx, current_light_group
+            If Not IsEmpty(m_light_group) Then
+                current_light_group = m_light_group
+            ElseIf UBound(m_light_groups)>-1 Then
+                current_light_group = m_light_groups(0)
+                group_idx = 0
+            End If
+            Dim k : k = 0
             For i=0 to UBound(m_lights)
-                m_lights(i) = m_light_group & CStr(i+1)
+                'On Error Resume Next
+                If typename(Eval(current_light_group & CStr(k+1))) = "Light" Then
+                    m_lights(i) = current_light_group & CStr(k+1)
+                    k=k+1
+                Else
+                    'msgbox typename(Eval(current_light_group & CStr(k+1)))
+                    'msgbox current_light_group & CStr(k+1)
+                    current_light_group = m_light_groups(group_idx+1)
+                    'msgbox current_light_group
+                    group_idx = group_idx + 1
+                    k = 0
+                    m_lights(i) = current_light_group & CStr(k+1)
+                    k=k+1
+                End If
+
             Next
         End If
     End Sub
@@ -11372,35 +11604,35 @@ Class GlfLightSegmentDisplay
                 mapped_text = MapSegmentTextToSegments(m_current_state.BlankSegments(String(m_size, "F")), m_size, m_segmentmap)
             End If
         End If
-        Dim segment_idx : segment_idx = 1
+        Dim segment_idx : segment_idx = 0
         For Each segment in mapped_text
             
             If m_segment_type = "14Segment" Then
-                Glf_SetLight m_light_group & CStr(segment_idx), SegmentColor(segment.a)
-                Glf_SetLight m_light_group & CStr(segment_idx + 1), SegmentColor(segment.b)
-                Glf_SetLight m_light_group & CStr(segment_idx + 2), SegmentColor(segment.c)
-                Glf_SetLight m_light_group & CStr(segment_idx + 3), SegmentColor(segment.d)
-                Glf_SetLight m_light_group & CStr(segment_idx + 4), SegmentColor(segment.e)
-                Glf_SetLight m_light_group & CStr(segment_idx + 5), SegmentColor(segment.f)
-                Glf_SetLight m_light_group & CStr(segment_idx + 6), SegmentColor(segment.g1)
-                Glf_SetLight m_light_group & CStr(segment_idx + 7), SegmentColor(segment.g2)
-                Glf_SetLight m_light_group & CStr(segment_idx + 8), SegmentColor(segment.h)
-                Glf_SetLight m_light_group & CStr(segment_idx + 9), SegmentColor(segment.j)
-                Glf_SetLight m_light_group & CStr(segment_idx + 10), SegmentColor(segment.k)
-                Glf_SetLight m_light_group & CStr(segment_idx + 11), SegmentColor(segment.n)
-                Glf_SetLight m_light_group & CStr(segment_idx + 12), SegmentColor(segment.m)
-                Glf_SetLight m_light_group & CStr(segment_idx + 13), SegmentColor(segment.l)
-                Glf_SetLight m_light_group & CStr(segment_idx + 14), SegmentColor(segment.dp)
+                Glf_SetLight m_lights(segment_idx), SegmentColor(segment.a)
+                Glf_SetLight m_lights(segment_idx + 1), SegmentColor(segment.b)
+                Glf_SetLight m_lights(segment_idx + 2), SegmentColor(segment.c)
+                Glf_SetLight m_lights(segment_idx + 3), SegmentColor(segment.d)
+                Glf_SetLight m_lights(segment_idx + 4), SegmentColor(segment.e)
+                Glf_SetLight m_lights(segment_idx + 5), SegmentColor(segment.f)
+                Glf_SetLight m_lights(segment_idx + 6), SegmentColor(segment.g1)
+                Glf_SetLight m_lights(segment_idx + 7), SegmentColor(segment.g2)
+                Glf_SetLight m_lights(segment_idx + 8), SegmentColor(segment.h)
+                Glf_SetLight m_lights(segment_idx + 9), SegmentColor(segment.j)
+                Glf_SetLight m_lights(segment_idx + 10), SegmentColor(segment.k)
+                Glf_SetLight m_lights(segment_idx + 11), SegmentColor(segment.n)
+                Glf_SetLight m_lights(segment_idx + 12), SegmentColor(segment.m)
+                Glf_SetLight m_lights(segment_idx + 13), SegmentColor(segment.l)
+                Glf_SetLight m_lights(segment_idx + 14), SegmentColor(segment.dp)
                 segment_idx = segment_idx + 15
             ElseIf m_segment_type = "7Segment" Then
-                Glf_SetLight m_light_group & CStr(segment_idx), SegmentColor(segment.a)
-                Glf_SetLight m_light_group & CStr(segment_idx + 1), SegmentColor(segment.b)
-                Glf_SetLight m_light_group & CStr(segment_idx + 2), SegmentColor(segment.c)
-                Glf_SetLight m_light_group & CStr(segment_idx + 3), SegmentColor(segment.d)
-                Glf_SetLight m_light_group & CStr(segment_idx + 4), SegmentColor(segment.e)
-                Glf_SetLight m_light_group & CStr(segment_idx + 5), SegmentColor(segment.f)
-                Glf_SetLight m_light_group & CStr(segment_idx + 6), SegmentColor(segment.g)
-                Glf_SetLight m_light_group & CStr(segment_idx + 7), SegmentColor(segment.dp)
+                Glf_SetLight m_lights(segment_idx), SegmentColor(segment.a)
+                Glf_SetLight m_lights(segment_idx + 1), SegmentColor(segment.b)
+                Glf_SetLight m_lights(segment_idx + 2), SegmentColor(segment.c)
+                Glf_SetLight m_lights(segment_idx + 3), SegmentColor(segment.d)
+                Glf_SetLight m_lights(segment_idx + 4), SegmentColor(segment.e)
+                Glf_SetLight m_lights(segment_idx + 5), SegmentColor(segment.f)
+                Glf_SetLight m_lights(segment_idx + 6), SegmentColor(segment.g)
+                Glf_SetLight m_lights(segment_idx + 7), SegmentColor(segment.dp)
                 segment_idx = segment_idx + 8
             End If
             
@@ -11437,7 +11669,7 @@ Class GlfLightSegmentDisplay
         Else
             Set display_text = (new GlfSegmentDisplayText)(display_text,m_integrated_commas, m_integrated_dots, m_use_dots_for_commas) 
             UpdateDisplay display_text, m_flashing, m_flash_mask
-            SetDelay m_name & "_update_transition", "Glf_SegmentDisplayUpdateTransition", Array(Me, transition_runner), 33
+            SetDelay m_name & "_update_transition", "Glf_SegmentDisplayUpdateTransition", Array(Me, transition_runner), 1000/m_default_transition_update_hz
         End If
     End Sub
 
@@ -11512,7 +11744,7 @@ Class GlfLightSegmentDisplay
             display_text = transition_runner.StartTransition(previous_text, top_text_stack_entry.text.Value(), Array(), Array())
             Set display_text = (new GlfSegmentDisplayText)(display_text,m_integrated_commas, m_integrated_dots, m_use_dots_for_commas) 
             UpdateDisplay display_text, flashing, flash_mask
-            SetDelay m_name & "_update_transition", "Glf_SegmentDisplayUpdateTransition", Array(Me, transition_runner), 33
+            SetDelay m_name & "_update_transition", "Glf_SegmentDisplayUpdateTransition", Array(Me, transition_runner), 1000/m_default_transition_update_hz
         Else
             'no transition - subscribe to text template changes and update display
             If top_text_stack_entry.text.IsPlayerState() Then
@@ -11848,7 +12080,7 @@ FOURTEEN_SEGMENTS.Add 70, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1
 FOURTEEN_SEGMENTS.Add 71, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, "G")
 FOURTEEN_SEGMENTS.Add 72, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, "H")
 FOURTEEN_SEGMENTS.Add 73, (New FourteenSegments)(0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, "I")
-FOURTEEN_SEGMENTS.Add 74, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, "J")
+FOURTEEN_SEGMENTS.Add 74, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, "J")
 FOURTEEN_SEGMENTS.Add 75, (New FourteenSegments)(0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, "K")
 FOURTEEN_SEGMENTS.Add 76, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, "L")
 FOURTEEN_SEGMENTS.Add 77, (New FourteenSegments)(0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, "M")
@@ -11863,7 +12095,7 @@ FOURTEEN_SEGMENTS.Add 85, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
 FOURTEEN_SEGMENTS.Add 86, (New FourteenSegments)(0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, "V")
 FOURTEEN_SEGMENTS.Add 87, (New FourteenSegments)(0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, "W")
 FOURTEEN_SEGMENTS.Add 88, (New FourteenSegments)(0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, "X")
-FOURTEEN_SEGMENTS.Add 89, (New FourteenSegments)(0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, "Y")
+FOURTEEN_SEGMENTS.Add 89, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, "Y")
 FOURTEEN_SEGMENTS.Add 90, (New FourteenSegments)(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, "Z")
 FOURTEEN_SEGMENTS.Add 91, (New FourteenSegments)(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, "[")
 FOURTEEN_SEGMENTS.Add 92, (New FourteenSegments)(0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, Chr(92)) ' Character \
