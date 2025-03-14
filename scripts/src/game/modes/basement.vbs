@@ -168,6 +168,17 @@ Sub CreateBasementMode()
                     .Add "color", GIColor3000k
                 End With
             End With
+            With .EventName("tilt_warning") 
+                .Key = "key_tilt_warning_gi"
+                .Show = "flash_color" 
+                .Speed = 9
+                .Loops = 9
+                .Priority = 10000
+                With .Tokens()
+                    .Add "lights", "tInlaneGI"
+                    .Add "color", GIColor3000k
+                End With
+            End With
             With .EventName(GLF_BALL_STARTED) 
                 .Key = "key_tilted_gi"
                 .Show = "flicker_color_off" 
