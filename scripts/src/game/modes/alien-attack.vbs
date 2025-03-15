@@ -152,7 +152,7 @@ Sub CreateAlienAttackMode
                 .EventsWhenTransitioning = Array("start_alien_timer")
             End With
             With .Transitions()  'successfully destroyed alien
-                .Source = Array("attacking")
+                .Source = Array("attacking","attack_paused")
                 .Target = "attack_done"
                 .Events = Array("alien_hit_show")
             End With
