@@ -123,7 +123,7 @@ Sub CreateFullyLoadedWizardMode
 
         With .ExtraBalls("flwiz_eb")
             .AwardEvents = Array("mode_fully_loaded_wizard_started")
-            .MaxPerGame = 5
+            .MaxPerGame = 3
         End With
 
         With .Shots("flwiz_shoot_again")

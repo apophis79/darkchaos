@@ -44,7 +44,7 @@ Sub CreateExtraBallMode
 
         With .ExtraBalls("eb")
             .AwardEvents = Array("eb_achieved")
-            .MaxPerGame = 5
+            .MaxPerGame = 3
         End With
 
 

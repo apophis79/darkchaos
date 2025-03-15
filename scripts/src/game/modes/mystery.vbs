@@ -53,7 +53,7 @@ Sub CreateMysteryMode
                 .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5 
                 .Add "mystery_double_bonus{current_player.bonus_multiplier == 1}", 0.5  
                 .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
-                .Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
+                '.Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
