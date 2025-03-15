@@ -6,7 +6,7 @@
 'Once they are all lit, the "Moon Lauch" insert flashes indicating a ball can be locked on the moon ramp
 'Once a ball is successfully launched on the ramp it remains locked there.
 'A total of 2 balls can be locked. If any more balls go up there, then one will be released to keep the total at 2 max. Also, if a ball goes up there before the "Moon Launch" is lit, then a ball will be released
-'All locked balls can be released by pressing the right magna.
+'All locked balls can be released by pressing the right magna. Launching balls restarts the lock qualification process.
 'The right magna is disabled when an outlane switch is hit
 
 
@@ -19,7 +19,7 @@ Sub CreateMoonMultiballMode
 
         With .EventPlayer()
             'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 && current_player.disable_moon_launch==0}", Array("launch_moon_missiles")
+            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 && current_player.disable_moon_launch==0}", Array("launch_moon_missiles","restart_moon_qualify_shots")
             .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
             'Panic penalty
             .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0}", Array("launch_panic_penalty")
