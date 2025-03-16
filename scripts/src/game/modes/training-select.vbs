@@ -43,6 +43,7 @@ Sub CreateTrainingSelectMode
             .Add "make_selection{devices.state_machines.training_select.state==""proton_cannon""}", Array("start_training_proton_cannon","stopping_training_select")
             .Add "make_selection{devices.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stopping_training_select")
             .Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stopping_training_select")
+            .Add "make_selection{devices.state_machines.training_select.state==""shields""}", Array("start_training_shields","stopping_training_select")
             .Add "make_selection{devices.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
             .Add "stopping_training_select", Array("training_music_alt_start","meteor_wave_music_stop","stop_training_select")
         End With
