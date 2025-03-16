@@ -236,6 +236,51 @@ Sub CreateGeneralShows()
       End With
     End With
 
+    With CreateGlfShow("bumper_bg_show1")
+        With .AddStep(0.01, Null, Null)
+            With .DOFEvent("8")
+                .Action = "DOF_ON"
+            End With
+        End With
+        With .AddStep(0.4, Null, Null)
+            With .DOFEvent("8")
+                .Action = "DOF_OFF"
+            End With
+        End With
+        With .AddStep(0.41, Null, Null)
+        End With
+    End With
+
+    With CreateGlfShow("bumper_bg_show2")
+        With .AddStep(0.01, Null, Null)
+            With .DOFEvent("9")
+                .Action = "DOF_ON"
+            End With
+        End With
+        With .AddStep(0.4, Null, Null)
+            With .DOFEvent("9")
+                .Action = "DOF_OFF"
+            End With
+        End With
+        With .AddStep(0.41, Null, Null)
+        End With
+    End With
+
+    With CreateGlfShow("bumper_bg_show3")
+        With .AddStep(0.01, Null, Null)
+            With .DOFEvent("12")
+                .Action = "DOF_ON"
+            End With
+        End With
+        With .AddStep(0.4, Null, Null)
+            With .DOFEvent("12")
+                .Action = "DOF_OFF"
+            End With
+        End With
+        With .AddStep(0.41, Null, Null)
+        End With
+    End With
+
 End Sub
 
 

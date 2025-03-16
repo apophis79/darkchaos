@@ -18,6 +18,7 @@ Sub LeftSlingshotAction(args)
 		s_LeftSlingshot.TimerEnabled = 1
 		s_LeftSlingshot.TimerInterval = 17
 		RandomSoundSlingshotLeft BM_LArm
+		DOF 103, DOFPulse
 	End If
 End Sub
 
@@ -56,6 +57,7 @@ Sub RightSlingshotAction(args)
 		s_RightSlingshot.TimerEnabled = 1
 		s_RightSlingshot.TimerInterval = 17
 		RandomSoundSlingshotRight BM_RArm
+		DOF 104, DOFPulse
 	End If
 End Sub
 

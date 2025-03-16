@@ -3,9 +3,9 @@
 
 ' Post Game Mode.
 
-Const NumLoserMessages = 14
+Const NumLoserMessages = 15
 Dim LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10
-Dim LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14 ',LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20
+Dim LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15 ',LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20
 LoserMessage1 = Array("""YOU""","""FAILED""","""WE ALL""","""DIED""")
 LoserMessage2 = Array("""PLAY""","""BETTER""","""NEXT""","""TIME""")
 LoserMessage3 = Array("""EARTH""","""DIED""","""THANKS""","""TO YOU""")
@@ -20,9 +20,10 @@ LoserMessage11 = Array("""MORE""","""BEER""","""MIGHT""","""HELP""")
 LoserMessage12 = Array("""UNLUCKY""","""SHOT""","""EARTH-""","""LING""")
 LoserMessage13 = Array("""THE""","""DINOS""","""LASTED""","""LONGER""")
 LoserMessage14 = Array("""ASTEROID""","""PLUS ONE""","""HUMANS""","""ZERO""")
+LoserMessage15 = Array("""THE OODS""","""WERE""","""3720""","""TO ONE""")
 Dim LoserMessages
 LoserMessages = Array(LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10, _
-                      LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14)
+                      LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15)
 
 Dim WinnerMessage1,WinnerMessage2,WinnerMessage3,WinnerMessage4,WinnerMessage5,WinnerMessage6
 WinnerMessage1 = Array("""A VILE""","""DARK""","""CHAOS""","""LOOMED""")

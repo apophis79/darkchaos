@@ -51,6 +51,46 @@
 ' ZVRR : VR Room / VR Cabinet
 ' ZGCF : GLF Configurations
 ' ZGLF : Game Logic Framework (GLF)
+'
+'
+'
+'
+' B2S Backglass IDs
+' ------------
+' E001 0/1 DARK  
+' E002 0/1 CHAOS
+' E003 0/1 Fire cluster bombs
+' E004 0/1 Shields
+' E005 0/1 Wave incoming
+' E006 0/1 Ball
+' E007 0/1 Fire moon missiles
+' E008 0/1 Left ship
+' E009 0/1 Right ship
+' E010 0/1 Main window left
+' E011 0/1 Right window bottom
+' E012 0/1 Right window top
+' E013 0/1 Left window
+' E014 0/1 Right cockpit
+' E015 0/1 Main window right
+' E016 0/1 Left cockpit
+'
+'
+' DOF IDs
+' ------------
+' E101 0/1 LeftFlipper
+' E102 0/1 RightFlipper
+' E103 2 Leftslingshot
+' E104 2 Rightslingshot
+' E105 2 side bumper
+' E106 2 top bumper left 
+' E107 2 top bumper center
+' E108 2 top bumper right
+' E109 2 scoop solenoid
+' E110 2 plunger auto fire
+' E111 2 diverter pin
+' E112 2 lock pin
+' E113 2 knocker
+
 
 
 

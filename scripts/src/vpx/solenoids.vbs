@@ -34,15 +34,16 @@ Sub ScoopEjectCallback(ball)
 	Else
 		SoundSaucerKick 0, s_Scoop
 	End If
+	DOF 109, DOFPulse
 End Sub
 
-Sub MoonLockEjectCallback(ball)
-	If Not IsNull(ball) Then
-		DropLockPin 1
-	Else
-		DropLockPin 0
-	End If
-End Sub
+' Sub MoonLockEjectCallback(ball)
+' 	If Not IsNull(ball) Then
+' 		DropLockPin 1
+' 	Else
+' 		DropLockPin 0
+' 	End If
+' End Sub
 
 
 Sub PlungerEjectCallback(ball)
@@ -52,6 +53,7 @@ Sub PlungerEjectCallback(ball)
 	Else
 		SoundSaucerKick 0, s_Plunger1
 	End If
+	DOF 110, DOFPulse
 End Sub
 
 
@@ -81,6 +83,7 @@ Sub RaiseDiverterPin(Enabled)
 		SoundSaucerKick 0,swRamp6
 		For Each BP in BP_DiverterPin : BP.transz = -50: Next 
 	End If
+	DOF 111, DOFPulse
 End Sub
 
 
@@ -98,6 +101,7 @@ Sub DropLockPin(enabled)
 		SoundSaucerKick 0,s_Lock1
 		For each BP in BP_LockPin: BP.transz = 0: Next
 	End If
+	DOF 112, DOFPulse
 End Sub 
 
 
@@ -108,6 +112,7 @@ End Sub
 Sub SolKnocker(Enabled)
 	If enabled Then
 		KnockerSolenoid 'Add knocker position object
+		DOF 113, DOFPulse
 	End If
 End Sub
 
@@ -121,7 +126,10 @@ Sub Bumper1Action(args)
     If IsNull(args(1)) And enabled Then
         s_Bumper1.PlayHit()
     End If
-	If enabled Then RandomSoundBumperMiddle s_Bumper1
+	If enabled Then
+		RandomSoundBumperMiddle s_Bumper1
+		DOF 105, DOFPulse
+	End If
 End Sub
 
 Sub Bumper1Disabled()
@@ -138,7 +146,10 @@ Sub Bumper2Action(args)
     If IsNull(args(1)) And enabled Then
         s_Bumper2.PlayHit()
     End If
-	If enabled Then RandomSoundBumperTop s_Bumper2
+	If enabled Then
+		RandomSoundBumperTop s_Bumper2
+		DOF 108, DOFPulse
+	End If
 End Sub
 
 Sub Bumper2Disabled()
@@ -155,7 +166,10 @@ Sub Bumper3Action(args)
     If IsNull(args(1)) And enabled Then
         s_Bumper3.PlayHit()
     End If
-	If enabled Then RandomSoundBumperTop s_Bumper3
+	If enabled Then
+		RandomSoundBumperTop s_Bumper3
+		DOF 106, DOFPulse
+	End If
 End Sub
 
 Sub Bumper3Disabled()
@@ -172,7 +186,10 @@ Sub Bumper4Action(args)
     If IsNull(args(1)) And enabled Then
         s_Bumper4.PlayHit()
     End If
-	If enabled Then RandomSoundBumperTop s_Bumper4
+	If enabled Then
+		RandomSoundBumperTop s_Bumper4
+		DOF 107, DOFPulse
+	End If
 End Sub
 
 Sub Bumper4Disabled()

@@ -22,6 +22,8 @@ Sub CreateClusterBombMode
             .Add "mode_cluster_bombs_started{current_player.training_cluster_bomb_achieved==1}", Array("reset_cluster_charges")
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}", Array("ready_cluster_charge1") 'no training boost
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==1}", Array("light_cluster_charge1","light_cluster_charge2","ready_cluster_charge3") 'with training boost
+            .Add "mode_cluster_bombs_stopping", Array("backglass_clusters_off")
+            .Add "mode_cluster_bombs_started{current_player.cluster_bomb1==1}", Array("backglass_clusters_on")
             'Successful shot
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2","play_sfx_LCC")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3","play_sfx_LCC")
@@ -30,15 +32,15 @@ Sub CreateClusterBombMode
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded") 'check for wizard mode qualification
             'Fire bomb
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash","backglass_clusters_off")
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
             .Add "left_orbit_hit", Array("score_2000")
-            .Add "add_cluster_bomb1", Array("score_50000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
-            .Add "add_cluster_bomb2", Array("score_100000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired")
-            .Add "complete_cluster_charges", Array("score_50000")
+            .Add "add_cluster_bomb1", Array("score_50000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired","backglass_clusters_on")
+            .Add "add_cluster_bomb2", Array("score_100000","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb","cb_acquired","backglass_clusters_on")
+            .Add "complete_cluster_charges", Array("score_50000","backglass_clusters_on")
             .Add "cluster_bomb_fired", Array("score_50000")
         End With
 

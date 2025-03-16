@@ -576,6 +576,9 @@ Sub CreateRightSlingShows()
                     .Add "color", "ffffff"
                 End With
             End With
+            With .DOFEvent("14")
+                .Action = "DOF_ON"
+            End With
         End With
         With .AddStep(0.02, Null, Null)
             With .Shows("flash_color")
@@ -587,6 +590,13 @@ Sub CreateRightSlingShows()
                     .Add "color", GIColor3000k
                 End With
             End With
+        End With
+        With .AddStep(0.3, Null, Null)
+            With .DOFEvent("14")
+                .Action = "DOF_OFF"
+            End With
+        End With
+        With .AddStep(0.31, Null, Null)
         End With
     End With
 

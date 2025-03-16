@@ -560,7 +560,6 @@ Sub Glf_Options(ByVal eventId)
         Case 5: glf_max_lightmap_sync = 6
         Case Else: glf_max_lightmap_sync = 15
     End Select
-
 	
 End Sub
 
@@ -767,7 +766,7 @@ Public Sub Glf_GameTimer_Timer()
 	If glf_last_switch_hit_time > 0 And (gametime - glf_last_ballsearch_reset_time) > 2000 Then
 		Glf_ResetBallSearch
 		glf_last_switch_hit_time = 0
-        glf_last_ballsearch_reset_time = gametime
+		glf_last_ballsearch_reset_time = gametime
 	End If
 	glf_lastEventExecutionTime = gametime
 End Sub
@@ -2032,7 +2031,7 @@ Class GlfBallSearch
         m_devices = Array()
         m_current_device_type = Empty
         Set glf_ballsearch = Me
-        SetDelay "ball_search" , "BallSearchHandler", Array("start", Me), m_timeout.Value
+        SetDelay "ball_search" , "BallSearchHandler", Array(Array("start", Me), Null), m_timeout.Value
         AddPinEventListener "flipper_cradle", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("stop", Me)
         AddPinEventListener "flipper_release", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("reset", Me)
         Set Init = Me

@@ -37,7 +37,7 @@ Sub CreateBaseMode()
             .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
-            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
             
@@ -125,9 +125,7 @@ Sub CreateBaseMode()
             .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
             .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
-
-
-            
+        
         End With
 
             
@@ -156,7 +154,8 @@ Sub CreateBaseMode()
                 .ForceDifferent = True
             End With
         End With
-    
+
+                
 
         With .SegmentDisplayPlayer()
             With .EventName("mode_base_started")

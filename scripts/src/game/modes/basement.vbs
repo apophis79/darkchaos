@@ -23,14 +23,7 @@ Sub CreateBasementMode()
         End With
 
 
-        With .Tilt()
-            .MultipleHitWindow = 300
-            .SettleTime = 5000
-            .WarningsToTilt = 3
-            .ResetWarningEvents = Array("ball_started")
-        End With
-
-       
+        ' some sound effects
         With .SoundPlayer() 
             With .EventName("player_added{kwargs.num==1}")
                 .Key = "key_voc_p1"
@@ -69,6 +62,8 @@ Sub CreateBasementMode()
             
         End With
 
+
+
         With .LightPlayer()
             With .EventName("turn_on_starlight")   
                 With .Lights("LStars")
@@ -103,6 +98,164 @@ Sub CreateBasementMode()
                     .Int = 0
                 End With
             End With
+        End With
+
+
+
+        ' Backglass lights
+        With .DOFPlayer()
+            With .EventName("backglass_dark_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 1
+            End With
+            With .EventName("backglass_dark_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 1
+            End With
+
+            With .EventName("backglass_chaos_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 2
+            End With
+            With .EventName("backglass_chaos_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 2
+            End With
+
+            With .EventName("backglass_clusters_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 3
+            End With
+            With .EventName("backglass_clusters_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 3
+            End With
+
+            With .EventName("backglass_shields_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 4
+            End With
+            With .EventName("backglass_shields_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 4
+            End With
+
+            With .EventName("backglass_wave_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 5
+            End With
+            With .EventName("backglass_wave_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 5
+            End With
+
+            With .EventName("backglass_ball_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 6
+            End With
+            With .EventName("backglass_ball_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 6
+            End With
+
+            With .EventName("backglass_moon_on")
+                .Action = "DOF_ON"
+                .DOFEvent = 7
+            End With
+            With .EventName("backglass_moon_off")
+                .Action = "DOF_OFF"
+                .DOFEvent = 7
+            End With
+
+            ' With .EventName("backglass_lship_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 8
+            ' End With
+            ' With .EventName("backglass_lship_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 8
+            ' End With
+
+            ' With .EventName("backglass_rship_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 9
+            ' End With
+            ' With .EventName("backglass_rship_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 9
+            ' End With
+
+            ' With .EventName("backglass_main1_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 10
+            ' End With
+            ' With .EventName("backglass_main1_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 10
+            ' End With
+
+            ' With .EventName("backglass_right1_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 11
+            ' End With
+            ' With .EventName("backglass_right1_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 11
+            ' End With
+
+            ' With .EventName("backglass_right2_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 12
+            ' End With
+            ' With .EventName("backglass_right2_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 12
+            ' End With
+
+            ' With .EventName("backglass_left_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 13
+            ' End With
+            ' With .EventName("backglass_left_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 13
+            ' End With
+
+            ' With .EventName("backglass_cockpit1_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 14
+            ' End With
+            ' With .EventName("backglass_cockpit1_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 14
+            ' End With
+
+            ' With .EventName("backglass_main2_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 15
+            ' End With
+            ' With .EventName("backglass_main2_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 15
+            ' End With
+
+            ' With .EventName("backglass_cockpit2_on")
+            '     .Action = "DOF_ON"
+            '     .DOFEvent = 16
+            ' End With
+            ' With .EventName("backglass_cockpit2_off")
+            '     .Action = "DOF_OFF"
+            '     .DOFEvent = 16
+            ' End With
+        End With
+
+
+        ' Tilt
+        With .Tilt()
+            .MultipleHitWindow = 300
+            .SettleTime = 5000
+            .WarningsToTilt = 3
+            .ResetWarningEvents = Array("ball_started")
         End With
 
 
@@ -190,6 +343,25 @@ Sub CreateBasementMode()
                     .Add "lights", "GI"
                     .Add "color", GIColor3000k
                 End With
+            End With
+
+            With .EventName("s_Bumper1_active") 
+                .Key = "key_bumper_bg_show1"
+                .Show = "bumper_bg_show1"
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .EventName("s_Bumper3_active") 
+                .Key = "key_bumper_bg_show2"
+                .Show = "bumper_bg_show2"
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .EventName("s_CenterOrb2_active") 
+                .Key = "key_bumper_bg_show3"
+                .Show = "bumper_bg_show3"
+                .Speed = 1
+                .Loops = 1
             End With
 
             'DEBUG

@@ -585,7 +585,8 @@ End Sub
 
 ' Event callbacks
 Function OnTroughEject(args)
-    RandomSoundBallRelease swTrough1
+	RandomSoundBallRelease swTrough1
+	DOF 110, DOFPulse
 End Function
 
 Function BallDrainSound(args)
