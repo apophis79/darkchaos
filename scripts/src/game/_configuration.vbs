@@ -173,7 +173,7 @@ Sub ConfigureGlfDevices
     CreateSounds()
 
     ' External alphanumeric display
-    Glf_EnableVirutalSegmentDmd()
+    Glf_EnableVirtualSegmentDmd()
     
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8

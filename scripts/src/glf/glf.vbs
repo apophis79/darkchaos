@@ -435,7 +435,7 @@ Sub Glf_ReadMachineVars()
     Next
 End Sub
 
-Sub Glf_EnableVirutalSegmentDmd()
+Sub Glf_EnableVirtualSegmentDmd()
 	Dim i
 	Set glf_flex_alphadmd = CreateObject("FlexDMD.FlexDMD")
 	With glf_flex_alphadmd
@@ -3840,7 +3840,7 @@ Class GlfDofPlayer
         Play = Empty
         If m_events(evt).Evaluate() Then
             Log "Firing DOF Event: " & m_eventValues(evt).DOFEvent & " State: " & m_eventValues(evt).Action
-            DOF CInt(m_eventValues(evt).DOFEvent), m_eventValues(evt).Action  
+            DOF m_eventValues(evt).DOFEvent, m_eventValues(evt).Action  
         End If
     End Function
 
@@ -3905,7 +3905,7 @@ Class GlfDofPlayerItem
     End Property
 
     Public Property Get DOFEvent(): DOFEvent = m_dof_event: End Property
-    Public Property Let DOFEvent(input): m_dof_event = input: End Property
+    Public Property Let DOFEvent(input): m_dof_event = CInt(input): End Property
 
 	Public default Function init()
         m_action = Empty
@@ -8679,7 +8679,7 @@ Function GlfShowStepHandler(args)
         Dim dof_item
         Dim dof_items : dof_items = nextStep.DOFEventsInStep().Items()
         For Each dof_item in dof_items
-            DOF CInt(dof_item.DOFEvent), dof_item.Action
+            DOF dof_item.DOFEvent, dof_item.Action
         Next
     End If
 
@@ -11471,7 +11471,6 @@ Class GlfLightSegmentDisplay
     private m_default_transition_update_hz
     private m_color
     private m_flex_dmd_index
-    private m_flex_dmd
 
     Public Property Get Name() : Name = m_name : End Property
 
@@ -11546,7 +11545,6 @@ Class GlfLightSegmentDisplay
         Set m_text_stack = (new GlfTextStack)()
         m_update_method = "replace"
         m_lights = Array()  
-        m_flex_dmd = Null
         m_integrated_commas = False
         m_integrated_dots = False
         m_use_dots_for_commas = False
