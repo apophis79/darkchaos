@@ -766,7 +766,7 @@ Public Sub Glf_GameTimer_Timer()
 	End If
 	For Each key in keys
 		For Each lightMap in glf_lightMaps(key)
-			If Not IsNull(lightMap) Then
+			If IsObject(lightMap) Then
 				On Error Resume Next
 				lightMap.Color = glf_lightNames(key).Color
 				If Err Then Debug.Print "Error: " & Err & ". Light:" & key & ", LightMap: " & lightMap.Name
@@ -809,7 +809,7 @@ Sub Glf_CheckTilt()
 End Sub
 
 Sub Glf_ResetBallSearch()
-	If Not IsNull(glf_ballsearch) Then
+	If IsObject(glf_ballsearch) Then
 		glf_ballsearch.Reset()
 	End If
 End Sub
@@ -2266,7 +2266,7 @@ Sub Glf_BcpAddPlayer(playerNum)
 End Sub
 
 Sub Glf_BcpUpdate()
-    If IsNull(bcpController) Then
+    If Not IsObject(bcpController) Then
         Exit Sub
     End If
     Dim messages : messages = bcpController.GetMessages()
@@ -2401,47 +2401,47 @@ Sub Glf_MonitorModeUpdate(mode)
     For Each config_item in mode.ModeStateMachines()
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & config_item.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & config_item.Name & """},"
     Next
-    If Not IsNull(mode.LightPlayer) Then
+    If Not Not IsObject(mode.LightPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.LightPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.LightPlayer.Name & """},"
     End If
-    If Not IsNull(mode.EventPlayer) Then
+    If Not Not IsObject(mode.EventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.EventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.EventPlayer.Name & """},"
     End If
-    If Not IsNull(mode.TiltConfig) Then
+    If Not Not IsObject(mode.TiltConfig) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.TiltConfig.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.TiltConfig.Name & """},"
     End If
-    If Not IsNull(mode.QueueEventPlayer) Then
+    If Not Not IsObject(mode.QueueEventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.QueueEventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.QueueEventPlayer.Name & """},"
     End If
-    If Not IsNull(mode.QueueRelayPlayer) Then
+    If Not Not IsObject(mode.QueueRelayPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.QueueRelayPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.QueueRelayPlayer.Name & """},"
     End If
-    If Not IsNull(mode.RandomEventPlayer) Then
+    If Not Not IsObject(mode.RandomEventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.RandomEventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.RandomEventPlayer.Name & """},"
     End If
-    If Not IsNull(mode.ShowPlayer) Then
+    If Not Not IsObject(mode.ShowPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.ShowPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.ShowPlayer.Name & """},"
     End If
-    If Not IsNull(mode.SegmentDisplayPlayer) Then
+    If Not Not IsObject(mode.SegmentDisplayPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.SegmentDisplayPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.SegmentDisplayPlayer.Name & """},"
     End If
-    If Not IsNull(mode.VariablePlayer) Then
+    If Not Not IsObject(mode.VariablePlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.VariablePlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.VariablePlayer.Name & """},"
     End If
-    If Not IsNull(mode.DOFPlayer) Then
+    If Not Not IsObject(mode.DOFPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.DOFPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.DOFPlayer.Name & """},"
     End If
 End Sub
 
 Sub Glf_MonitorPlayerStateUpdate(key, value)
-    If IsNull(glf_debugBcpController) Then
+    If Not IsObject(glf_debugBcpController) Then
         Exit Sub
     End If    
     glf_monitor_player_state = glf_monitor_player_state & "{""key"": """&key&""", ""value"": """&value&"""},"
 End Sub
 
 Sub Glf_MonitorEventStream(label, message)
-    If IsNull(glf_debugBcpController) Then
+    If Not IsObject(glf_debugBcpController) Then
         Exit Sub
     End If
     glf_monitor_event_stream = glf_monitor_event_stream & "{""label"": """&label&""", ""message"": """&message&"""},"
@@ -2449,7 +2449,7 @@ End Sub
 
 
 Sub Glf_MonitorBcpUpdate()
-    If IsNull(glf_debugBcpController) Then
+    If Not IsObject(glf_debugBcpController) Then
         Exit Sub
     End If
 
@@ -2551,25 +2551,25 @@ Sub Glf_MonitorBcpUpdate()
                             For Each config_item in mode.ModeStateMachines()
                                 If config_item.Name = device_name Then : config_item.Debug = is_debug : End If
                             Next
-                            If Not IsNull(mode.LightPlayer) Then
+                            If IsObject(mode.LightPlayer) Then
                                 If mode.LightPlayer.Name = device_name Then : mode.LightPlayer.Debug = is_debug : End If
                             End If
-                            If Not IsNull(mode.EventPlayer) Then
+                            If IsObject(mode.EventPlayer) Then
                                 If mode.EventPlayer.Name = device_name Then : mode.EventPlayer.Debug = is_debug : End If
                             End If
-                            If Not IsNull(mode.TiltConfig) Then
+                            If IsObject(mode.TiltConfig) Then
                                 If mode.TiltConfig.Name = device_name Then : mode.TiltConfig.Debug = is_debug : End If
                             End If
-                            If Not IsNull(mode.RandomEventPlayer) Then
+                            If IsObject(mode.RandomEventPlayer) Then
                                 If mode.RandomEventPlayer.Name = device_name Then : mode.RandomEventPlayer.Debug = is_debug : End If
                             End If
-                            If Not IsNull(mode.ShowPlayer) Then
+                            If IsObject(mode.ShowPlayer) Then
                                 If mode.ShowPlayer.Name = device_name Then : mode.ShowPlayer.Debug = is_debug : End If
                             End If
-                            If Not IsNull(mode.SegmentDisplayPlayer) Then
+                            If IsObject(mode.SegmentDisplayPlayer) Then
                                 If mode.SegmentDisplayPlayer.Name = device_name Then : mode.SegmentDisplayPlayer.Debug = is_debug : End If
                             End If
-                            If Not IsNull(mode.VariablePlayer) Then
+                            If IsObject(mode.VariablePlayer) Then
                                 If mode.VariablePlayer.Name = device_name Then : mode.VariablePlayer.Debug = is_debug : End If
                             End If
                         End If
