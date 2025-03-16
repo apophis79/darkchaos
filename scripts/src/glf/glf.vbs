@@ -3840,7 +3840,7 @@ Class GlfDofPlayer
         Play = Empty
         If m_events(evt).Evaluate() Then
             Log "Firing DOF Event: " & m_eventValues(evt).DOFEvent & " State: " & m_eventValues(evt).Action
-            DOF m_eventValues(evt).DOFEvent, m_eventValues(evt).Action  
+            DOF CInt(m_eventValues(evt).DOFEvent), m_eventValues(evt).Action  
         End If
     End Function
 
@@ -8679,7 +8679,7 @@ Function GlfShowStepHandler(args)
         Dim dof_item
         Dim dof_items : dof_items = nextStep.DOFEventsInStep().Items()
         For Each dof_item in dof_items
-            DOF dof_item.DOFEvent, dof_item.Action
+            DOF CInt(dof_item.DOFEvent), dof_item.Action
         Next
     End If
 

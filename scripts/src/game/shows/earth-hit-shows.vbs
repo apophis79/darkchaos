@@ -2,6 +2,33 @@
 
 Sub CreateEarthHitShows()
 
+
+With CreateGlfShow("earth_hit_bg")
+  With .AddStep(0.01, Null, Null)
+      With .DOFEvent("2")
+          .Action = "DOF_ON"
+      End With
+  End With
+  With .AddStep(0.1, Null, Null)
+      With .DOFEvent("1")
+          .Action = "DOF_ON"
+      End With
+  End With
+  With .AddStep(0.3, Null, Null)
+      With .DOFEvent("2")
+          .Action = "DOF_OFF"
+      End With
+  End With
+  With .AddStep(0.4, Null, Null)
+      With .DOFEvent("1")
+          .Action = "DOF_OFF"
+      End With
+  End With
+  With .AddStep(0.41, Null, Null)
+  End With
+End WIth
+
+
 With CreateGlfShow("earth_hit")
   With .AddStep(0.03333, Null, Null)
     .Lights = Array( _
@@ -2268,7 +2295,6 @@ With CreateGlfShow("earth_hit_center")
 End With
 
 
-
 With CreateGlfShow("earth_hit_left")
   With .AddStep(0.06667, Null, Null)
     .Lights = Array( _
@@ -3638,7 +3664,6 @@ With CreateGlfShow("earth_hit_left")
   With .AddStep(0.96667, Null, Null)
   End With
 End With
-
 
 
 With CreateGlfShow("earth_hit_right")

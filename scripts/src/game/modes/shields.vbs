@@ -22,13 +22,16 @@ Sub CreateShieldsMode
             'reset shields qualification
             .Add "mode_shields_started{current_player.training_shields_achieved==1}", Array("restart_qualify_shields") 'with training boost
             .Add "restart_qualify_shields{current_player.training_shields_achieved==1}", Array("boost_qualify_shields") 'with training boost
+            'backglass
+            .Add "mode_shields_started{current_player.shot_shield_left==1}", Array("backglass_shields_on")
+            .Add "mode_shields_stopping", Array("backglass_shields_off")
             'use shields
-            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields","play_shields_down")
-            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields","play_shields_down")
+            .Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", Array("shields_used","restart_qualify_shields","play_shields_down","backglass_shields_off")
+            .Add "s_RightOutlane_active{current_player.shot_shield_right==1}", Array("shields_used","restart_qualify_shields","play_shields_down","backglass_shields_off")
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
             'show
-            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up","score_50000")
+            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up","score_50000","backglass_shields_on")
             .Add "qualify_shields_hit", Array("score_1000")
         End With
 

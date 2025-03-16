@@ -61,6 +61,8 @@ Sub CreateMoonMultiballQualifyMode
             'Reset
             .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && devices.state_machines.moon_mb.state!=""locking"" && current_player.multiball_lock_moon_launch_balls_locked<2}", Array("restart_moon_qualify_shots") 'with training boost
             .Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", Array("boost_qualify_shots") 'with training boost
+            .Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile1 == 1}", Array("backglass_moon_on")
+            .Add "mode_moon_multiball_qualify_stopping", Array("backglass_moon_off")
             'Release a ball (Lower the diverter pin) if we are not 
             .Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking""}", Array("release_moon_ball")
             .Add "balldevice_moon_lock_ball_enter{devices.state_machines.moon_mb.state!=""locking"" && devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
@@ -77,8 +79,8 @@ Sub CreateMoonMultiballQualifyMode
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
             'Scoring
             .Add "right_ramp_hit", Array("score_2000")
-            .Add "light_missile1", Array("score_50000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
-            .Add "light_missile2", Array("score_100000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired")
+            .Add "light_missile1", Array("score_50000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired","backglass_moon_on")
+            .Add "light_missile2", Array("score_100000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired","backglass_moon_on")
             .Add "qualify_lock_hit", Array("score_2000")
             .Add "qualify_lock_on_complete", Array("score_50000")
         End With

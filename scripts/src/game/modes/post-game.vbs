@@ -44,7 +44,7 @@ Sub CreatePostGameMode()
         .StopEvents = Array("stop_post_game_mode",GLF_BALL_STARTED)
 
         With .EventPlayer()
-            .Add "mode_post_game_started", Array("select_message_num","meteor1_raise","meteor2_raise","meteor3_raise","meteor4_raise")
+            .Add "mode_post_game_started", Array("select_message_num","meteor1_raise","meteor2_raise","meteor3_raise","meteor4_raise","backglass_dark_on","backglass_chaos_on")
             .Add "mode_post_game_started{machine.won_game == 0}", Array("play_mus_post_game")
             .Add "mode_post_game_started{machine.won_game == 1}", Array("play_mus_post_game_heavier")
             

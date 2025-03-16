@@ -357,7 +357,7 @@ Sub CreateBasementMode()
                 .Speed = 1
                 .Loops = 1
             End With
-            With .EventName("s_CenterOrb2_active") 
+            With .EventName("s_TargetMystery5_active") 
                 .Key = "key_bumper_bg_show3"
                 .Show = "bumper_bg_show3"
                 .Speed = 1

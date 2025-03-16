@@ -23,8 +23,9 @@ Sub CreateMeteorWaveMode
         With .EventPlayer()
             '.Debug = True
             'Initializations
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter","stop_some_modes_for_mw",,"backglass_dark_off","backglass_chaos_off")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on")
             .Add "stop_some_modes_for_mw", Array("stop_training_qualify","stop_extra_ball","stop_skillshots","stop_combos","stop_ship_save","stop_timewarp","stop_mystery","stop_shields") 
+            '.Add "mode_meteor_wave_stopping", Array("backglass_dark_on","backglass_chaos_on")
             'Start up in correct wave
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running","meteor_wave0_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running","meteor_wave1_music_stop")
@@ -355,7 +356,7 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_hot")
                     .Target = "down"
                     .Events = Array("timer_meteor"&x&"_complete")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit","earth_flash")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit","earth_flash","earth_bg")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_cool")
@@ -580,6 +581,13 @@ Sub CreateMeteorWaveMode
                 .Key = "key_earth_hit"
                 .Priority = 15
                 .Show = "earth_hit"
+                .Speed = 1
+                .Loops = 1
+            End With
+            With .EventName("earth_bg")
+                .Key = "key_earth_bg"
+                .Priority = 15
+                .Show = "earth_hit_bg"
                 .Speed = 1
                 .Loops = 1
             End With

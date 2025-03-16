@@ -23,7 +23,7 @@ Sub CreateClusterBombMode
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}", Array("ready_cluster_charge1") 'no training boost
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==1}", Array("light_cluster_charge1","light_cluster_charge2","ready_cluster_charge3") 'with training boost
             .Add "mode_cluster_bombs_stopping", Array("backglass_clusters_off")
-            .Add "mode_cluster_bombs_started{current_player.cluster_bomb1==1}", Array("backglass_clusters_on")
+            .Add "mode_cluster_bombs_started{current_player.shot_cluster_bomb1 == 1}", Array("backglass_clusters_on")
             'Successful shot
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2","play_sfx_LCC")
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3","play_sfx_LCC")
