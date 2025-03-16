@@ -171,6 +171,9 @@ Sub ConfigureGlfDevices
 
     ' Sound effects bus
     CreateSounds()
+
+    ' External alphanumeric display
+    Glf_EnableVirutalSegmentDmd()
     
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
@@ -383,6 +386,7 @@ Sub ConfigureGlfDevices
     segment_display_p1.UpdateMethod = "stack"
     segment_display_p1.DefaultColor = SegmentsColor
     segment_display_p1.UseDotsForCommas = True
+    segment_display_p1.ExternalFlexDmdSegmentIndex = 0
 
     Dim segment_display_p2
     Set segment_display_p2 = (New GlfLightSegmentDisplay)("player2")
@@ -393,6 +397,7 @@ Sub ConfigureGlfDevices
     segment_display_p2.UpdateMethod = "stack"
     segment_display_p2.DefaultColor = SegmentsColor
     segment_display_p2.UseDotsForCommas = True
+    segment_display_p2.ExternalFlexDmdSegmentIndex = 8
 
     Dim segment_display_p3
     Set segment_display_p3 = (New GlfLightSegmentDisplay)("player3")
@@ -403,6 +408,7 @@ Sub ConfigureGlfDevices
     segment_display_p3.UpdateMethod = "stack"
     segment_display_p3.DefaultColor = SegmentsColor
     segment_display_p3.UseDotsForCommas = True
+    segment_display_p3.ExternalFlexDmdSegmentIndex = 16
 
     Dim segment_display_p4
     Set segment_display_p4 = (New GlfLightSegmentDisplay)("player4")
@@ -413,6 +419,7 @@ Sub ConfigureGlfDevices
     segment_display_p4.UpdateMethod = "stack"
     segment_display_p4.DefaultColor = SegmentsColor
     segment_display_p4.UseDotsForCommas = True
+    segment_display_p4.ExternalFlexDmdSegmentIndex = 24
 
     Dim segment_display_ball
     Set segment_display_ball = (New GlfLightSegmentDisplay)("ball")

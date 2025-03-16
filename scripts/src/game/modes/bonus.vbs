@@ -151,7 +151,7 @@ Sub CreateBonusMode
         With .SegmentDisplayPlayer()
             With .EventName("run_bonus_started")
                 With .Display("player1")
-                    .Text = """BONUS"""
+                    .Text = """BONUS  """
                 End With
                 With .Display("player2")
                     .Text = """"""
