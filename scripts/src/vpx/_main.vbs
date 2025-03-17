@@ -11,7 +11,7 @@
 ' ------------------------------------------------------------------------------
 '
 ' Defenders and Destroyers
-'   * Apophis: Game design, modeling, and coding.
+'   * Apophis: Game design, modeling, light shows, DOF, and coding.
 '   * Unsavory: Music and audio design. Art design support.
 '   * Flux: Game logic framework. Coding support.
 
@@ -21,6 +21,12 @@
 '   * VPW testers: Bug hunting and advice.
 '
 ' ------------------------------------------------------------------------------
+'
+'
+' This table was developed using the Game Logic Framework (GLF).
+' For detailed information, see: https://mpcarr.github.io/vpx-glf/
+'
+' Dark Chaos repo: https://github.com/apophis79/darkchaos
 '
 '
 '

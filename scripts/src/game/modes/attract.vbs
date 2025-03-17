@@ -12,7 +12,7 @@ Sub CreateAttractMode()
         .StopEvents = Array("stop_attract_mode",GLF_BALL_STARTED)
 
         With .EventPlayer()
-            .Add "mode_attract_started", Array("play_attract_show1","play_mus_ambient_bg","stop_asteroid_motor","drop_diverter")
+            .Add "mode_attract_started", Array("play_attract_show1","play_mus_ambient_bg","stop_asteroid_motor","drop_diverter","backglass_dark_on","backglass_chaos_on")
             .Add "timer_attract_voc_complete", Array("play_attract_voc")
             .Add "mode_attract_stopping", Array("drop_diverter")
             'main attract show timing

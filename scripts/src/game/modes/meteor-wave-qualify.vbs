@@ -24,10 +24,6 @@ Sub CreateMeteorWaveQualifyMode
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show")
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show")
             .Add "meteor_wave_alert_show", Array("meteor_wave_alert_show1","meteor_wave_alert_show2","meteor_wave_alert_show3","meteor_wave_alert_show4")
-
-            'handle flipper cradles
-            .Add "flipper_cradle", Array("stop_mwq_timer")
-            .Add "flipper_release", Array("start_mwq_timer")
         End With
         
         With .SegmentDisplayPlayer()

@@ -26,20 +26,26 @@ Sub CreateBaseMode()
 
         With .EventPlayer()
             'DEBUG
-            '.Add "s_left_staged_flipper_key_active", Array("meteor_wave1_done","meteor_wave2_done","meteor_wave3_done","meteor_wave4_done","meteor_wave5_done","meteor_wave6_done","meteor_wave7_done","meteor_wave8_done")  'DEBUG
-            .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_done")
-            .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
+            ' .Add "s_left_staged_flipper_key_active", Array("meteor_wave1_done","meteor_wave2_done","meteor_wave3_done","meteor_wave4_done","meteor_wave5_done","meteor_wave6_done","meteor_wave7_done","meteor_wave8_done")  'DEBUG
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_done")
+            ' .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
-            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","display34_ball_num")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
-            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active")
+            '.Add "mode_base_started{current_player.number == 1}", Array("flash_player1_score","display34_ball_num")
+            '.Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
+            '.Add "mode_base_started{current_player.number == 3}", Array("flash_player3_score","display12_ball_num")
+            '.Add "mode_base_started{current_player.number == 4}", Array("flash_player4_score","display12_ball_num")
+            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num")
+            
+            'wave ended
             .Add "mode_meteor_wave_stopped", Array("backglass_dark_on","backglass_chaos_on","backglass_wave_off")
             
             'restarting waves
@@ -197,6 +203,52 @@ Sub CreateBaseMode()
             With .EventName("player_added{kwargs.num==4}")
                 With .Display("player4")
                     .Text = "{players[3].score:0>2,}"
+                End With
+            End With
+
+            With .EventName("display34_ball_num")
+                With .Display("player3")
+                    .key = "p3_ball_num"
+                    .Text = """BALL"""
+                    .Priority = 10000
+                End With
+                With .Display("player4")
+                    .key = "p4_ball_num"
+                    .Text = "{current_player.ball:0>2}"
+                    .Priority = 10000
+                End With
+            End With
+            With .EventName("remove_display34_ball_num")
+                With .Display("player3")
+                    .key = "p3_ball_num"
+                    .Action = "remove"
+                End With
+                With .Display("player4")
+                    .key = "p4_ball_num"
+                    .Action = "remove"
+                End With
+            End With
+
+            With .EventName("display12_ball_num")
+                With .Display("player1")
+                    .key = "p1_ball_num"
+                    .Text = """BALL"""
+                    .Priority = 10000
+                End With
+                With .Display("player2")
+                    .key = "p2_ball_num"
+                    .Text = "{current_player.ball:0>2}"
+                    .Priority = 10000
+                End With
+            End With
+            With .EventName("remove_display12_ball_num")
+                With .Display("player1")
+                    .key = "p1_ball_num"
+                    .Action = "remove"
+                End With
+                With .Display("player2")
+                    .key = "p2_ball_num"
+                    .Action = "remove"
                 End With
             End With
         End With
@@ -936,11 +988,8 @@ Sub CreateBaseMode()
                 .Sound = "voc_Wiz"
             End With
 
-            
-
-            
-
         End With
+
 
     End With
 
