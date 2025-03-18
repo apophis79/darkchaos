@@ -609,7 +609,7 @@ Sub Glf_Options(ByVal eventId)
 		Glf_DisableVirtualSegmentDmd()
 	End If
 
-	Dim min_lightmap_update_rate : min_lightmap_update_rate = Table1.Option("Glf Min Lightmap Update Rate", 1, 6, 1, 2, 0, Array("Disabled", "30 Hz", "60 Hz", "120 Hz", "144 Hz", "165 Hz"))
+	Dim min_lightmap_update_rate : min_lightmap_update_rate = Table1.Option("Glf Min Lightmap Update Rate", 1, 6, 1, 1, 0, Array("Disabled", "30 Hz", "60 Hz", "120 Hz", "144 Hz", "165 Hz"))
     Select Case min_lightmap_update_rate
 		Case 1: glf_max_lightmap_sync_enabled = False
 		Case 2: glf_max_lightmap_sync = 30 : glf_max_lightmap_sync_enabled = True
