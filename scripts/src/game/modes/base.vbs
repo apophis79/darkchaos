@@ -37,13 +37,14 @@ Sub CreateBaseMode()
             ' .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
-            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","display34_ball_num")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
-            '.Add "mode_base_started{current_player.number == 1}", Array("flash_player1_score","display34_ball_num")
-            '.Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
-            '.Add "mode_base_started{current_player.number == 3}", Array("flash_player3_score","display12_ball_num")
-            '.Add "mode_base_started{current_player.number == 4}", Array("flash_player4_score","display12_ball_num")
-            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num")
+            .Add "mode_base_started{current_player.number == 1}", Array("flash_player1_score","display34_ball_num")
+            .Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
+            .Add "mode_base_started{current_player.number == 3}", Array("flash_player3_score","display12_ball_num")
+            .Add "mode_base_started{current_player.number == 4}", Array("flash_player4_score","display12_ball_num")
+            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num", _
+                  "stop_flash_player1_score","stop_flash_player2_score","stop_flash_player3_score","stop_flash_player4_score")
             
             'wave ended
             .Add "mode_meteor_wave_stopped", Array("backglass_dark_on","backglass_chaos_on","backglass_wave_off")
@@ -205,6 +206,65 @@ Sub CreateBaseMode()
                     .Text = "{players[3].score:0>2,}"
                 End With
             End With
+
+            With .EventName("flash_player1_score")
+                With .Display("player1")
+                    .key = "p1_score_flash"
+                    .Text = "{players[0].score:0>2}"
+                    .Flashing = "all"
+                    .Priority = 100
+                End With
+            End With
+            With .EventName("stop_flash_player1_score")
+                With .Display("player1")
+                    .key = "p1_score_flash"
+                    .Action = "remove"
+                End With
+            End With
+            With .EventName("flash_player2_score")
+                With .Display("player2")
+                    .key = "p2_score_flash"
+                    .Text = "{players[1].score:0>2}"
+                    .Flashing = "all"
+                    .Priority = 100
+                End With
+            End With
+            With .EventName("stop_flash_player2_score")
+                With .Display("player2")
+                    .key = "p2_score_flash"
+                    .Action = "remove"
+                End With
+            End With
+            With .EventName("flash_player3_score")
+                With .Display("player3")
+                    .key = "p3_score_flash"
+                    .Text = "{players[2].score:0>2}"
+                    .Flashing = "all"
+                    .Priority = 100
+                End With
+            End With
+            With .EventName("stop_flash_player3_score")
+                With .Display("player3")
+                    .key = "p3_score_flash"
+                    .Action = "remove"
+                End With
+            End With
+            With .EventName("flash_player4_score")
+                With .Display("player4")
+                    .key = "p4_score_flash"
+                    .Text = "{players[3].score:0>2}"
+                    .Flashing = "all"
+                    .Priority = 100
+                End With
+            End With
+            With .EventName("stop_flash_player4_score")
+                With .Display("player4")
+                    .key = "p4_score_flash"
+                    .Action = "remove"
+                End With
+            End With
+
+            
 
             With .EventName("display34_ball_num")
                 With .Display("player3")
