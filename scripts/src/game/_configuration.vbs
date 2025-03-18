@@ -171,10 +171,7 @@ Sub ConfigureGlfDevices
 
     ' Sound effects bus
     CreateSounds()
-
-    ' External alphanumeric display
-    Glf_EnableVirtualSegmentDmd()
-    
+   
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
         .Volume = 0.5

@@ -6,6 +6,7 @@ Dim glf_canAddPlayers : glf_canAddPlayers = True
 Dim glf_PI : glf_PI = 4 * Atn(1)
 Dim glf_plunger, glf_ballsearch
 glf_ballsearch = Null
+Dim glf_ballsearch_enabled : glf_ballsearch_enabled = False
 Dim glf_gameStarted : glf_gameStarted = False
 Dim glf_gameTilted : glf_gameTilted = False
 Dim glf_gameEnding : glf_gameEnding = False
@@ -74,7 +75,8 @@ Dim glf_BIP : glf_BIP = 0
 Dim glf_FuncCount : glf_FuncCount = 0
 Dim glf_SeqCount : glf_SeqCount = 0
 Dim glf_max_dispatch : glf_max_dispatch = 25
-Dim glf_max_lightmap_sync : glf_max_lightmap_sync = 16
+Dim glf_max_lightmap_sync : glf_max_lightmap_sync = -1
+Dim glf_max_lightmap_sync_enabled : glf_max_lightmap_sync_enabled = False
 Dim glf_max_lights_test : glf_max_lights_test = 0
 
 Dim glf_master_volume : glf_master_volume = 0.8
@@ -409,6 +411,14 @@ Sub Glf_Reset()
 	DispatchQueuePinEvent "reset_complete", Null
 End Sub
 
+AddPinEventListener "reset_complete", "initial_segment_displays", "Glf_SegmentInit", 100, Null
+Sub Glf_SegmentInit(args)
+	Dim segment_display
+	For Each segment_display in glf_segment_displays.Items()	
+		segment_display.SetVirtualDMDLights Not glf_flex_alphadmd_enabled
+	Next
+End Sub
+
 Sub Glf_ReadMachineVars()
     Dim objFSO, objFile, arrLines, line, inSection
     Set objFSO = CreateObject("Scripting.FileSystemObject")
@@ -435,7 +445,21 @@ Sub Glf_ReadMachineVars()
     Next
 End Sub
 
+Sub Glf_DisableVirtualSegmentDmd()
+	If Not glf_flex_alphadmd is Nothing Then
+		glf_flex_alphadmd.Show = False
+		glf_flex_alphadmd.Run = False
+		Set glf_flex_alphadmd = Nothing
+	End If
+	glf_flex_alphadmd_enabled = False
+	Dim segment_display
+	For Each segment_display in glf_segment_displays.Items()
+		segment_display.SetVirtualDMDLights True
+	Next
+End Sub
+
 Sub Glf_EnableVirtualSegmentDmd()
+	Glf_DisableVirtualSegmentDmd()
 	Dim i
 	Set glf_flex_alphadmd = CreateObject("FlexDMD.FlexDMD")
 	With glf_flex_alphadmd
@@ -452,8 +476,11 @@ Sub Glf_EnableVirtualSegmentDmd()
 		glf_flex_alphadmd_segments(i) = 0
 	Next
 	glf_flex_alphadmd.Segments = glf_flex_alphadmd_segments
-	glf_flex_alphadmd_enabled = True    
-
+	glf_flex_alphadmd_enabled = True
+	Dim segment_display
+	For Each segment_display in glf_segment_displays.Items()	
+		segment_display.SetVirtualDMDLights False
+	Next
 End Sub
 
 Sub Glf_WriteMachineVars()
@@ -575,14 +602,21 @@ Sub Glf_Options(ByVal eventId)
 		End If
 	End If
 
-	Dim min_lightmap_update_rate : min_lightmap_update_rate = Table1.Option("Glf Min Lightmap Update Rate", 1, 5, 1, 2, 0, Array("30 Hz", "60 Hz", "120 Hz", "144 Hz", "165 Hz"))
+	Dim glfuseVirtualSegmentDMD : glfuseVirtualSegmentDMD = Table1.Option("Glf Virtual Segment DMD", 0, 1, 1, 0, 0, Array("Off", "On"))
+	If glfuseVirtualSegmentDMD = 1 And glf_flex_alphadmd_enabled = False Then
+		Glf_EnableVirtualSegmentDmd()
+	ElseIf glfuseVirtualSegmentDMD = 0 And  glf_flex_alphadmd_enabled = True Then
+		Glf_DisableVirtualSegmentDmd()
+	End If
+
+	Dim min_lightmap_update_rate : min_lightmap_update_rate = Table1.Option("Glf Min Lightmap Update Rate", 1, 6, 1, 2, 0, Array("Disabled", "30 Hz", "60 Hz", "120 Hz", "144 Hz", "165 Hz"))
     Select Case min_lightmap_update_rate
-        Case 1: glf_max_lightmap_sync = 30
-        Case 2: glf_max_lightmap_sync = 15
-        Case 3: glf_max_lightmap_sync = 8
-        Case 4: glf_max_lightmap_sync = 7
-        Case 5: glf_max_lightmap_sync = 6
-        Case Else: glf_max_lightmap_sync = 15
+		Case 1: glf_max_lightmap_sync_enabled = False
+		Case 2: glf_max_lightmap_sync = 30 : glf_max_lightmap_sync_enabled = True
+        Case 3: glf_max_lightmap_sync = 15 : glf_max_lightmap_sync_enabled = True
+        Case 4: glf_max_lightmap_sync = 8 : glf_max_lightmap_sync_enabled = True
+        Case 5: glf_max_lightmap_sync = 7 : glf_max_lightmap_sync_enabled = True
+        Case 6: glf_max_lightmap_sync = 6 : glf_max_lightmap_sync_enabled = True
     End Select
 	
 End Sub
@@ -600,11 +634,7 @@ Public Sub Glf_Exit()
 		glf_debugLog.WriteToLog "Max Lights", glf_max_lights_test
 		glf_debugLog.DisableLogs
 	End If
-	If Not glf_flex_alphadmd is Nothing Then
-		glf_flex_alphadmd.Show = False
-		glf_flex_alphadmd.Run = False
-		glf_flex_alphadmd = NULL
-    End If
+	Glf_DisableVirtualSegmentDmd()
 	Glf_WriteMachineVars()
 End Sub
 
@@ -759,26 +789,27 @@ Public Sub Glf_GameTimer_Timer()
 
 	DelayTick
 
-	keys = glf_dispatch_lightmaps_await.Keys()
-	'debug.print(ubound(keys))
-	If glf_max_lights_test < Ubound(keys) Then
-		glf_max_lights_test = Ubound(keys)
-	End If
-	For Each key in keys
-		For Each lightMap in glf_lightMaps(key)
-			If IsObject(lightMap) Then
-				On Error Resume Next
-				lightMap.Color = glf_lightNames(key).Color
-				If Err Then Debug.Print "Error: " & Err & ". Light:" & key & ", LightMap: " & lightMap.Name
+	If glf_max_lightmap_sync_enabled = True Then
+		keys = glf_dispatch_lightmaps_await.Keys()
+		'debug.print(ubound(keys))
+		If glf_max_lights_test < Ubound(keys) Then
+			glf_max_lights_test = Ubound(keys)
+		End If
+		For Each key in keys
+			For Each lightMap in glf_lightMaps(key)
+				If Not IsNull(lightMap) Then
+					On Error Resume Next
+					lightMap.Color = glf_lightNames(key).Color
+					If Err Then Debug.Print "Error: " & Err & ". Light:" & key & ", LightMap: " & lightMap.Name
+				End If
+			Next
+			glf_dispatch_lightmaps_await.Remove key
+			If (gametime - glf_lastEventExecutionTime) > glf_max_lightmap_sync Then
+				'debug.print("Exiting")
+				Exit For
 			End If
 		Next
-		glf_dispatch_lightmaps_await.Remove key
-		If (gametime - glf_lastEventExecutionTime) > glf_max_lightmap_sync Then
-			'debug.print("Exiting")
-			Exit For
-		End If
-	Next
-	
+	End If
 	If (gametime - glf_lastTiltUpdateExecutionTime) >=50 And glf_current_virtual_tilt > 0 Then
 		glf_current_virtual_tilt = glf_current_virtual_tilt - 0.1
 		glf_lastTiltUpdateExecutionTime = gametime
@@ -809,7 +840,7 @@ Sub Glf_CheckTilt()
 End Sub
 
 Sub Glf_ResetBallSearch()
-	If IsObject(glf_ballsearch) Then
+	If glf_ballsearch_enabled = True Then
 		glf_ballsearch.Reset()
 	End If
 End Sub
@@ -898,25 +929,18 @@ Public Function Glf_SetLight(light, color)
 		rgbColor = glf_lightColorLookup(color)
 	End If
 	
-	
-	If IsNull(color) Then
-		'glf_debugLog.WriteToLog "SetLight", "Turning Light Off"
-		glf_lightNames(light).Color = rgb(0,0,0)
-	Else
-		glf_lightNames(light).Color = rgbColor
-	End If
-	If Not glf_dispatch_lightmaps_await.Exists(light) Then
-		glf_dispatch_lightmaps_await.Add light, True
-	End If
-	'dim lightMap
-	'For Each lightMap in glf_lightMaps(light)
-	'	If Not IsNull(lightMap) Then
+	glf_lightNames(light).Color = rgbColor
 
-			'On Error Resume Next
-			'lightMap.Color = glf_lightNames(light).Color
-			'If Err Then Debug.Print "Error: " & Err & ". Light:" & light & ", LightMap: " & lightMap.Name
-	'	End If
-	'Next
+	If glf_max_lightmap_sync_enabled = True Then
+		If Not glf_dispatch_lightmaps_await.Exists(light) Then
+			glf_dispatch_lightmaps_await.Add light, True
+		End If
+	Else
+		dim lightMap
+		For Each lightMap in glf_lightMaps(light)
+			lightMap.Color = glf_lightNames(light).Color
+		Next
+	End If
 End Function
 
 Public Function Glf_ParseInput(value)
@@ -2012,9 +2036,9 @@ Function EnableGlfBallSearch()
             .Time = 3000
             .EventsWhenActive = Array("flipper_cradle")
             .EventsWhenReleased = Array("flipper_release")
-            .Debug = True
         End With
     End With
+    glf_ballsearch_enabled = True
 	Set EnableGlfBallSearch = ball_search
 End Function
 
@@ -2266,7 +2290,7 @@ Sub Glf_BcpAddPlayer(playerNum)
 End Sub
 
 Sub Glf_BcpUpdate()
-    If Not IsObject(bcpController) Then
+    If IsNull(bcpController) Then
         Exit Sub
     End If
     Dim messages : messages = bcpController.GetMessages()
@@ -2401,47 +2425,47 @@ Sub Glf_MonitorModeUpdate(mode)
     For Each config_item in mode.ModeStateMachines()
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & config_item.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & config_item.Name & """},"
     Next
-    If IsObject(mode.LightPlayer) Then
+    If Not IsNull(mode.LightPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.LightPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.LightPlayer.Name & """},"
     End If
-    If IsObject(mode.EventPlayer) Then
+    If Not IsNull(mode.EventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.EventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.EventPlayer.Name & """},"
     End If
-    If IsObject(mode.TiltConfig) Then
+    If Not IsNull(mode.TiltConfig) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.TiltConfig.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.TiltConfig.Name & """},"
     End If
-    If IsObject(mode.QueueEventPlayer) Then
+    If Not IsNull(mode.QueueEventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.QueueEventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.QueueEventPlayer.Name & """},"
     End If
-    If IsObject(mode.QueueRelayPlayer) Then
+    If Not IsNull(mode.QueueRelayPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.QueueRelayPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.QueueRelayPlayer.Name & """},"
     End If
-    If IsObject(mode.RandomEventPlayer) Then
+    If Not IsNull(mode.RandomEventPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.RandomEventPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.RandomEventPlayer.Name & """},"
     End If
-    If IsObject(mode.ShowPlayer) Then
+    If Not IsNull(mode.ShowPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.ShowPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.ShowPlayer.Name & """},"
     End If
-    If IsObject(mode.SegmentDisplayPlayer) Then
+    If Not IsNull(mode.SegmentDisplayPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.SegmentDisplayPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.SegmentDisplayPlayer.Name & """},"
     End If
-    If IsObject(mode.VariablePlayer) Then
+    If Not IsNull(mode.VariablePlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.VariablePlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.VariablePlayer.Name & """},"
     End If
-    If IsObject(mode.DOFPlayer) Then
+    If Not IsNull(mode.DOFPlayer) Then
         glf_monitor_modes = glf_monitor_modes & "{""mode"": """&mode.Name&""", ""value"": """", ""debug"": " & mode.DOFPlayer.IsDebug & ", ""mode_device"": 1, ""mode_device_name"": """ & mode.DOFPlayer.Name & """},"
     End If
 End Sub
 
 Sub Glf_MonitorPlayerStateUpdate(key, value)
-    If Not IsObject(glf_debugBcpController) Then
+    If IsNull(glf_debugBcpController) Then
         Exit Sub
     End If    
     glf_monitor_player_state = glf_monitor_player_state & "{""key"": """&key&""", ""value"": """&value&"""},"
 End Sub
 
 Sub Glf_MonitorEventStream(label, message)
-    If Not IsObject(glf_debugBcpController) Then
+    If IsNull(glf_debugBcpController) Then
         Exit Sub
     End If
     glf_monitor_event_stream = glf_monitor_event_stream & "{""label"": """&label&""", ""message"": """&message&"""},"
@@ -2449,7 +2473,7 @@ End Sub
 
 
 Sub Glf_MonitorBcpUpdate()
-    If Not IsObject(glf_debugBcpController) Then
+    If IsNull(glf_debugBcpController) Then
         Exit Sub
     End If
 
@@ -2551,25 +2575,25 @@ Sub Glf_MonitorBcpUpdate()
                             For Each config_item in mode.ModeStateMachines()
                                 If config_item.Name = device_name Then : config_item.Debug = is_debug : End If
                             Next
-                            If IsObject(mode.LightPlayer) Then
+                            If Not IsNull(mode.LightPlayer) Then
                                 If mode.LightPlayer.Name = device_name Then : mode.LightPlayer.Debug = is_debug : End If
                             End If
-                            If IsObject(mode.EventPlayer) Then
+                            If Not IsNull(mode.EventPlayer) Then
                                 If mode.EventPlayer.Name = device_name Then : mode.EventPlayer.Debug = is_debug : End If
                             End If
-                            If IsObject(mode.TiltConfig) Then
+                            If Not IsNull(mode.TiltConfig) Then
                                 If mode.TiltConfig.Name = device_name Then : mode.TiltConfig.Debug = is_debug : End If
                             End If
-                            If IsObject(mode.RandomEventPlayer) Then
+                            If Not IsNull(mode.RandomEventPlayer) Then
                                 If mode.RandomEventPlayer.Name = device_name Then : mode.RandomEventPlayer.Debug = is_debug : End If
                             End If
-                            If IsObject(mode.ShowPlayer) Then
+                            If Not IsNull(mode.ShowPlayer) Then
                                 If mode.ShowPlayer.Name = device_name Then : mode.ShowPlayer.Debug = is_debug : End If
                             End If
-                            If IsObject(mode.SegmentDisplayPlayer) Then
+                            If Not IsNull(mode.SegmentDisplayPlayer) Then
                                 If mode.SegmentDisplayPlayer.Name = device_name Then : mode.SegmentDisplayPlayer.Debug = is_debug : End If
                             End If
-                            If IsObject(mode.VariablePlayer) Then
+                            If Not IsNull(mode.VariablePlayer) Then
                                 If mode.VariablePlayer.Name = device_name Then : mode.VariablePlayer.Debug = is_debug : End If
                             End If
                         End If
@@ -11599,6 +11623,15 @@ Class GlfLightSegmentDisplay
         End If
     End Sub
 
+    Public Sub SetVirtualDMDLights(input)
+        If m_flex_dmd_index>-1 Then
+            Dim x
+            For x=0 to UBound(m_lights)
+                glf_lightNames(m_lights(x)).Visible = input
+            Next
+        End If
+    End Sub
+
     Private Sub SetText(text, flashing, flash_mask)
         'Set a text to the display.
         Exit Sub
@@ -13471,6 +13504,7 @@ Sub Glf_AddPlayer()
             DispatchPinEvent "player_added", kwargs
             glf_playerState.Add "PLAYER 1", Glf_InitNewPlayer()
             SetPlayerStateByPlayer GLF_SCORE, 0, 0
+            SetPlayerStateByPlayer "number", 1, 0
             Glf_BcpAddPlayer 1
             glf_currentPlayer = "PLAYER 1"
         Case 0:     
@@ -13479,6 +13513,7 @@ Sub Glf_AddPlayer()
                 DispatchPinEvent "player_added", kwargs
                 glf_playerState.Add "PLAYER 2", Glf_InitNewPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 1
+                SetPlayerStateByPlayer "number", 2, 1
                 Glf_BcpAddPlayer 2
             End If
         Case 1:
@@ -13487,6 +13522,7 @@ Sub Glf_AddPlayer()
                 DispatchPinEvent "player_added", kwargs
                 glf_playerState.Add "PLAYER 3", Glf_InitNewPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 2
+                SetPlayerStateByPlayer "number", 3, 2
                 Glf_BcpAddPlayer 3
             End If     
         Case 2:   
@@ -13495,6 +13531,7 @@ Sub Glf_AddPlayer()
                 DispatchPinEvent "player_added", kwargs
                 glf_playerState.Add "PLAYER 4", Glf_InitNewPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 3
+                SetPlayerStateByPlayer "number", 4, 3
                 Glf_BcpAddPlayer 4
             End If  
             glf_canAddPlayers = False
