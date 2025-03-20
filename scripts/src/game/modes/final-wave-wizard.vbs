@@ -307,6 +307,18 @@ Sub CreateFinalWaveWizardMode
         End With
 
 
+        With .DOFPlayer()
+            With .EventName("play_asteroid_hit")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 152
+            End With
+            With .EventName("asteroid_destroyed")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 153
+            End With
+        End With
+
+
         With .ShowPlayer()
 
             'asteroid hit shows

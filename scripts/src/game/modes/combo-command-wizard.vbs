@@ -213,6 +213,55 @@ Sub CreateComboCommandWizardMode
 		End With
 
 
+        With .DOFPlayer()
+            With .EventName("ccwiz_shot_phase1_show")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 120
+            End With
+            With .EventName("ccwiz_shot_phase2_show1")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 121
+            End With
+            With .EventName("ccwiz_shot_phase2_show2")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 122
+            End With
+            With .EventName("ccwiz_shot_phase2_show3")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 123
+            End With
+            With .EventName("ccwiz_shot_phase2_show4")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 124
+            End With
+            With .EventName("ccwiz_shot_phase2_show5")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 125
+            End With
+            With .EventName("ccwiz_shot_phase2_show6")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 126
+            End With
+            With .EventName("ccwiz_shot_phase2_show7")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 127
+            End With
+            With .EventName("ccwiz_shot_phase2_show8")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 128
+            End With
+
+            With .EventName("ccwiz_sjp1_show1")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 150
+            End With
+            With .EventName("ccwiz_sjp2_show1")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 150
+            End With
+        End With
+
+
         With .ShowPlayer()
             'bumpers
             For x = 1 to 4

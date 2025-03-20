@@ -426,6 +426,31 @@ Sub CreateFullyLoadedWizardMode
         End With
 
 
+        With .DOFPlayer()
+            With .EventName("cluster_bomb_fired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 136
+            End With
+            With .EventName("proton_fired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 140
+            End With
+            With .EventName("moon_missile_fired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 143
+            End With
+
+            With .EventName("flwiz_sjp1_show1")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 151
+            End With
+            With .EventName("flwiz_sjp2_show1")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 151
+            End With
+        End With
+
+
 
         With .ShowPlayer()
             'bumpers

@@ -714,8 +714,23 @@ Sub CreateBaseMode()
 
         End With
 
+        With .DOFPlayer()
+            With .EventName("activate_combo_command_wizard")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 120
+            End With
+            With .EventName("activate_fully_loaded_wizard")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 125
+            End With
+            With .EventName("activate_final_wave_wizard")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 121
+            End With
+        End With
 
-         With .BallSaves("new_ball")
+
+        With .BallSaves("new_ball")
             .ActiveTime = 6000
             .HurryUpTime = 3000
             .GracePeriod = 2000

@@ -96,7 +96,6 @@
 ' E111 2 diverter pin
 ' E112 2 lock pin
 ' E113 2 knocker
-
 ' E120 2 flashers white
 ' E121 2 flashers red
 ' E122 2 flashers orange
@@ -106,7 +105,7 @@
 ' E126 2 flashers blue
 ' E127 2 flashers purple
 ' E128 2 flashers magenta
-
+' E129 2 flashers pink
 ' E130 0/1 undercab Normal
 ' E131 2 ball launch from plunger
 ' E132 2 ball ended
@@ -124,8 +123,19 @@
 ' E144 2 shields up
 ' E145 2 shields down
 ' E146 2 time warp
-
-
+' E150 2 combo command wizard jackpot
+' E151 2 fully loaded wizard jackpot
+' E152 2 final wave wizard asteroid hit
+' E153 2 final wave wizard asteroid destroyed
+' E160 2 victory lap white
+' E161 2 victory lap red
+' E162 2 victory lap orange
+' E163 2 victory lap yellow
+' E164 2 victory lap green
+' E165 2 victory lap cyan
+' E166 2 victory lap blue
+' E167 2 victory lap purple
+' E168 2 victory lap magenta
 
 Option Explicit
 Randomize

@@ -159,8 +159,6 @@ Sub CreatePostGameMode()
             .Add "mus_post_game_stopped", Array("start_attract_mode")
             .Add "start_attract_mode", Array("stop_post_game_mode")
 
-            
-            
         End With
 
 
@@ -169,6 +167,79 @@ Sub CreatePostGameMode()
                 For x = 1 to NumLoserMessages
                     .Add "select_message_"&x, 1
                 Next
+            End With
+        End With
+
+
+        With .DOFPlayer()
+            With .EventName("play_flasher1_flash_3000k")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 160
+            End With
+            With .EventName("play_flasher1_flash_white")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 160
+            End With
+            With .EventName("play_flasher2_flash_3000k")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 160
+            End With
+            With .EventName("play_flasher2_flash_white")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 160
+            End With
+            With .EventName("play_flasher3_flash_3000k")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 160
+            End With
+            With .EventName("play_flasher3_flash_hot")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 161
+            End With
+            With .EventName("play_flasher4_flash_hot")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 162
+            End With
+            With .EventName("play_flasher2_flash_yellow")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 163
+            End With
+            With .EventName("play_flasher3_flash_green")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 164
+            End With
+            With .EventName("play_flasher3_flash_cyan")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 165
+            End With
+            With .EventName("play_flasher2_flash_blue")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 166
+            End With
+            With .EventName("play_flasher2_flash_purple")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 167
+            End With
+            With .EventName("play_flasher1_flash_magenta")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 168
+            End With
+
+            With .EventName("meteor1_flash_show")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 141
+            End With
+            With .EventName("meteor2_flash_show")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 141
+            End With
+            With .EventName("meteor3_flash_show")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 141
+            End With
+            With .EventName("meteor4_flash_show")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 141
             End With
         End With
 

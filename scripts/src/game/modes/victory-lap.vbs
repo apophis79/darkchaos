@@ -240,6 +240,46 @@ Sub CreateVictoryLapMode
         End With
 
 
+        With .DOFPlayer()
+            With .EventName("victory_firework1_show_white")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 160
+            End With
+            With .EventName("victory_firework1_show_red")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 161
+            End With
+            With .EventName("victory_firework1_show_orange")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 162
+            End With
+            With .EventName("victory_firework1_show_yellow")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 163
+            End With
+            With .EventName("victory_firework1_show_green")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 164
+            End With
+            With .EventName("victory_firework1_show_cyan")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 165
+            End With
+            With .EventName("victory_firework1_show_blue")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 166
+            End With
+            With .EventName("victory_firework1_show_purple")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 167
+            End With
+            With .EventName("victory_firework1_show_magenta")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 168
+            End With
+        End With
+
+
         With .BallSaves("victory_startup")
             .ActiveTime = 13000
             .EnableEvents = Array("victory_startup_ballsave")
