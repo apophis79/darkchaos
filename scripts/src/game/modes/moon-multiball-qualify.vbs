@@ -59,7 +59,7 @@ Sub CreateMoonMultiballQualifyMode
 
         With .EventPlayer()
             'Reset
-            .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && devices.state_machines.moon_mb.state!=""locking"" && current_player.multiball_lock_moon_launch_balls_locked<2}", Array("restart_moon_qualify_shots") 'with training boost
+            .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && devices.state_machines.moon_mb.state!=""locking"" && current_player.shot_moon_missile2 == 0}", Array("restart_moon_qualify_shots") 'with training boost
             .Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", Array("boost_qualify_shots") 'with training boost
             .Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile1 == 1}", Array("backglass_moon_on")
             .Add "mode_moon_multiball_qualify_stopping", Array("backglass_moon_off")
