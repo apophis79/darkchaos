@@ -80,6 +80,13 @@ Sub CreateTrainingMoonMissileMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("play_sfx_LS")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 123
+            End With
+        End With
+
 
         'Define our shots
         For x = 1 to 4

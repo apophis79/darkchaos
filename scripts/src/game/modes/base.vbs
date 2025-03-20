@@ -163,6 +163,26 @@ Sub CreateBaseMode()
             End With
         End With
 
+
+        With .DOFPlayer()
+            With .EventName("ball_launch_hit")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 131
+            End With
+            With .EventName("mode_base_stopping")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 132
+            End With
+            With .EventName("new_ball_started")
+                .Action = "DOF_ON"
+                .DOFEvent = 131
+            End With
+            With .EventName("new_ball_active")
+                .Action = "DOF_OFF"
+                .DOFEvent = 131
+            End With
+        End WIth
+
                 
 
         With .SegmentDisplayPlayer()

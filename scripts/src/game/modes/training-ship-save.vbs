@@ -75,6 +75,13 @@ Sub CreateTrainingShipSaveMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("play_sfx_LS")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 127
+            End With
+        End With
+
         'Define our shots
         For x = 1 to 3
             With .Shots("training_ship_charge"&x)

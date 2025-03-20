@@ -97,7 +97,33 @@
 ' E112 2 lock pin
 ' E113 2 knocker
 
+' E120 2 flashers white
+' E121 2 flashers red
+' E122 2 flashers orange
+' E123 2 flashers yellow
+' E124 2 flashers green
+' E125 2 flashers cyan
+' E126 2 flashers blue
+' E127 2 flashers purple
+' E128 2 flashers magenta
 
+' E130 0/1 undercab Normal
+' E131 2 ball launch from plunger
+' E132 2 ball ended
+' E133 0/1 new ball in plunger lane
+' E134 0/1 attract
+' E135 2 spinner
+' E136 2 cluster bomb fired
+' E137 2 extra ball achieved
+' E138 2 health added
+' E139 2 wave incoming
+' E140 2 proton fired
+' E141 2 meteor hit
+' E142 2 earth hit
+' E143 2 moon missile fired
+' E144 2 shields up
+' E145 2 shields down
+' E146 2 time warp
 
 
 

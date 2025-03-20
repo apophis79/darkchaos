@@ -177,6 +177,13 @@ Sub CreateTrainingQualifyMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("training_flash")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 122
+            End With
+        End With
+
         With .SegmentDisplayPlayer()
             With .EventName("training_shots_completed")
                 With .Display("player2")

@@ -59,6 +59,13 @@ Sub CreateHealthMode
                 .Sound = "sfx_LH"
             End With
         End With
+
+        With .DOFPlayer()
+            With .EventName("add_health")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 138
+            End With
+        End With
         
 
         'Define a shot profile with four states, health meter leves

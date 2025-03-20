@@ -59,6 +59,15 @@ Sub CreateProtonCannonMode
             End With
         End With
 
+
+        With .DOFPlayer()
+            With .EventName("s_spinner_active")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 135
+            End With
+        End With
+        
+
         With .SoundPlayer()
             With .EventName("play_sfx_LPC1")
                 .Key = "key_sfx_LPC1"

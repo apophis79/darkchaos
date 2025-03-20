@@ -47,6 +47,13 @@ Sub CreateExtraBallMode
             .MaxPerGame = 3
         End With
 
+        With .DOFPlayer()
+            With .EventName("eb_achieved")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 137
+            End With
+        End With
+
 
         With .ShowPlayer()
             With .EventName("play_eb_show")

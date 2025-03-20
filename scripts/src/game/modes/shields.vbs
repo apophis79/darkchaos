@@ -51,6 +51,18 @@ Sub CreateShieldsMode
         End With
 
 
+        With .DOFPlayer()
+            With .EventName("play_shields_up")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 144
+            End With
+            With .EventName("play_shields_down")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 145
+            End With
+        End With
+
+
         With .SoundPlayer()
             With .EventName("play_sfx_LSC1")
                 .Key = "key_sfx_LSC1"
@@ -230,6 +242,7 @@ Sub CreateShieldsMode
             End With
             
         End With
+
 
         With .SegmentDisplayPlayer()
             With .EventName("qualify_shields_on_complete")

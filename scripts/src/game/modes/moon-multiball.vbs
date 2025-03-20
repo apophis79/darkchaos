@@ -46,6 +46,13 @@ Sub CreateMoonMultiballMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("play_sfx_launch")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 143
+            End With
+        End With
+
 
         With .SoundPlayer()
             With .EventName("play_sfx_launch")

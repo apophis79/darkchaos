@@ -41,6 +41,17 @@ Sub CreateMeteorWaveQualifyMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 139
+            End With
+            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 139
+            End With
+        End With
+
         With .Timers("meteor_countdown")
             .TickInterval = 1000
             .StartValue = "current_player.meteor_countdown_value"

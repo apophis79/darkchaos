@@ -54,6 +54,13 @@ Sub CreateClusterBombMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("cluster_bomb_fired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 136
+            End With
+        End With
+
         With .SoundPlayer()
             With .EventName("cluster_bomb_fired")
                 .Key = "key_sfx_cluster_fired"

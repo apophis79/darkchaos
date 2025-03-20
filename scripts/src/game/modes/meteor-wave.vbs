@@ -146,6 +146,22 @@ Sub CreateMeteorWaveMode
         End With
 
 
+        With .DOFPlayer()
+            With .EventName("proton_fired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 140
+            End With
+            With .EventName("play_sfx_LMet")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 141
+            End With
+            With .EventName("earth_hit")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 142
+            End With
+        End With
+
+
         'Define a shot profile with four states
         With .ShotProfiles("meteor_temp")
             With .States("unlit")

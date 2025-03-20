@@ -69,6 +69,13 @@ Sub CreateMysteryMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("mystery_flash")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 129
+            End With
+        End With
+
         With .SoundPlayer()
             With .EventName("play_voc_LMR")
                 .Key = "key_voc_LMR"

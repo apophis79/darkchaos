@@ -12,7 +12,7 @@ Sub CreateAttractMode()
         .StopEvents = Array("stop_attract_mode",GLF_BALL_STARTED)
 
         With .EventPlayer()
-            .Add "mode_attract_started", Array("play_attract_show1","play_mus_ambient_bg","stop_asteroid_motor","drop_diverter","backglass_dark_on","backglass_chaos_on")
+            .Add "mode_attract_started", Array("play_attract_show","play_mus_ambient_bg","stop_asteroid_motor","drop_diverter","backglass_dark_on","backglass_chaos_on")
             .Add "timer_attract_voc_complete", Array("play_attract_voc")
             .Add "mode_attract_stopping", Array("drop_diverter")
             'main attract show timing
@@ -83,6 +83,17 @@ Sub CreateAttractMode()
                 .ForceDifferent = True
             End With
         End With
+
+        With .DOFPlayer()
+            With .EventName("play_attract_show")
+                .Action = "DOF_ON"
+                .DOFEvent = 134
+            End With
+            With .EventName("mode_attract_stopping")
+                .Action = "DOF_OFF"
+                .DOFEvent = 134
+            End With
+        End With
        
         With .SoundPlayer() 
             For x = 1 to 5
@@ -132,7 +143,7 @@ Sub CreateAttractMode()
         End With
 
         With .ShowPlayer()
-            With .EventName("play_attract_show1")   
+            With .EventName("play_attract_show")   
                 .Key = "key_attract_show1"
                 .Show = "insert_sparkles" 
                 With .Tokens()
