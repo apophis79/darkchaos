@@ -160,9 +160,28 @@ Public Sub Glf_Init()
 		scaleFactor = 1080 / tableheight
 
 		Dim light
-		Dim switchNumber : switchNumber = 1
-		Dim lightsNumber : lightsNumber = 1
+		Dim switchNumber : switchNumber = 0
+		Dim lightsNumber : lightsNumber = 0
+		Dim coilsNumber : coilsNumber = 0
 		Dim switchesYaml : switchesYaml = "#config_version=6" & vbCrLf & vbCrLf
+		Dim coilsYaml : coilsYaml = "#config_version=6" & vbCrLf & vbCrLf
+		coilsYaml = coilsYaml + "coils:" & vbCrLf
+		Dim ballDevicesYaml : ballDevicesYaml = "#config_version=6" & vbCrLf & vbCrLf
+		ballDevicesYaml = ballDevicesYaml + "ball_devices:" & vbCrLf
+		Dim configYaml : configYaml = "#config_version=6" & vbCrLf & vbCrLf
+		configYaml = configYaml + "config:" & vbCrLf
+		configYaml = configYaml + "  - lights.yaml" & vbCrLf
+		configYaml = configYaml + "  - ball_devices.yaml" & vbCrLf
+		configYaml = configYaml + "  - coils.yaml" & vbCrLf
+		configYaml = configYaml + "  - switches.yaml" & vbCrLf
+		configYaml = configYaml + vbCrLf
+		configYaml = configYaml + "playfields:" & vbCrLf
+		configYaml = configYaml + "  playfield:" & vbCrLf
+		configYaml = configYaml + "    tags: default" & vbCrLf
+		configYaml = configYaml + "    default_source_device: balldevice_plunger" & vbCrLf
+
+		
+		
 		Dim lightsYaml : lightsYaml = "#config_version=6" & vbCrLf & vbCrLf
 		lightsYaml = lightsYaml + "lights:" & vbCrLf
 		Dim monitorYaml : monitorYaml = "light:" & vbCrLf
@@ -201,7 +220,7 @@ Public Sub Glf_Init()
 		monitorYaml = monitorYaml + vbCrLf
 		monitorYaml = monitorYaml + "switch:" & vbCrLf
 		switchesYaml = switchesYaml + "switches:" & vbCrLf
-		
+
 		For Each switch in glf_switches
 			monitorYaml = monitorYaml + "  " & switch.name & ":"&vbCrLf
 			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
@@ -235,7 +254,9 @@ Public Sub Glf_Init()
 			switchesYaml = switchesYaml + "    tags: " & vbCrLf
 			switchNumber = switchNumber + 1
 		Next
-		Dim troughCount
+		Dim troughCount, troughSwitchesArr()
+		ReDim troughSwitchesArr(tnob)
+		configYaml = configYaml + vbCrLf & "virtual_platform_start_active_switches:" & vbCrLf
 		For troughCount=1 to tnob
 			monitorYaml = monitorYaml + "  s_trough" & troughCount & ":"&vbCrLf
 			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
@@ -246,7 +267,12 @@ Public Sub Glf_Init()
 			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
 			switchesYaml = switchesYaml + "    tags: " & vbCrLf
 			switchNumber = switchNumber + 1
+			troughSwitchesArr(troughCount-1) = "s_trough" & troughCount
+			configYaml = configYaml + "  - s_trough" & troughCount & vbCrLf
 		Next
+
+		
+
 		switchesYaml = switchesYaml + "  s_trough_jam" & ":"&vbCrLf
 		switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
 		switchesYaml = switchesYaml + "    tags: " & vbCrLf
@@ -261,6 +287,26 @@ Public Sub Glf_Init()
 		switchesYaml = switchesYaml + "    tags: start" & vbCrLf
 		switchNumber = switchNumber + 1
 
+		dim device
+
+		ballDevicesYaml = ballDevicesYaml + "  bd_trough:" & vbCrLf
+		ballDevicesYaml = ballDevicesYaml + "    ball_switches: "&Join(troughSwitchesArr, ",")&" s_trough_jam" & vbCrLf
+		ballDevicesYaml = ballDevicesYaml + "    eject_coil: c_trough_eject" & vbCrLf
+		ballDevicesYaml = ballDevicesYaml + "    tags: trough, home, drain" & vbCrLf
+		ballDevicesYaml = ballDevicesYaml + "    jam_switch: s_trough_jam" & vbCrLf
+		ballDevicesYaml = ballDevicesYaml + "    eject_targets: balldevice_plunger" & vbCrLf
+		
+
+		coilsYaml = coilsYaml + "  c_trough_eject:" & vbCrLf
+		coilsYaml = coilsYaml + "    number: " & coilsNumber & vbCrLf 
+		coilsNumber = coilsNumber + 1
+
+		For Each device in glf_ball_devices.Items()
+			ballDevicesYaml = ballDevicesYaml + device.ToYaml()
+			coilsYaml = coilsYaml + "  c_" & device.Name & "_eject:" & vbCrLf
+			coilsYaml = coilsYaml + "    number: " & coilsNumber & vbCrLf 
+			coilsNumber = coilsNumber + 1
+		Next
 
 		Dim fso, modesFolder, TxtFileStream, monitorFolder, configFolder
 		Set fso = CreateObject("Scripting.FileSystemObject")
@@ -277,6 +323,15 @@ Public Sub Glf_Init()
 		End If
 		Set TxtFileStream = fso.OpenTextFile(monitorFolder & "\monitor.yaml", 2, True)
 		TxtFileStream.WriteLine monitorYaml
+		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\config.yaml", 2, True)
+		TxtFileStream.WriteLine configYaml
+		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\ball_devices.yaml", 2, True)
+		TxtFileStream.WriteLine ballDevicesYaml
+		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\coils.yaml", 2, True)
+		TxtFileStream.WriteLine coilsYaml
 		TxtFileStream.Close
 		Set TxtFileStream = fso.OpenTextFile(configFolder & "\switches.yaml", 2, True)
 		TxtFileStream.WriteLine switchesYaml
@@ -792,11 +847,7 @@ Public Sub Glf_GameTimer_Timer()
 		End If
 		For Each key in keys
 			For Each lightMap in glf_lightMaps(key)
-				If Not IsNull(lightMap) Then
-					On Error Resume Next
-					lightMap.Color = glf_lightNames(key).Color
-					If Err Then Debug.Print "Error: " & Err & ". Light:" & key & ", LightMap: " & lightMap.Name
-				End If
+				lightMap.Color = glf_lightNames(key).Color
 			Next
 			glf_dispatch_lightmaps_await.Remove key
 			If (gametime - glf_lastEventExecutionTime) > glf_max_lightmap_sync Then
@@ -904,6 +955,7 @@ Public Function Glf_RegisterLights()
 		Next
 		lmStr = lmStr & "Null)"
 		lmStr = Replace(lmStr, ",Null)", ")")
+		lmStr = Replace(lmStr, "Null)", ")")
 		ExecuteGlobal "Dim lmArr : "&lmStr
 		glf_lightMaps.Add light.Name, lmArr
 		glf_lightNames.Add light.Name, light
@@ -933,9 +985,7 @@ Public Function Glf_SetLight(light, color)
 	Else
 		dim lightMap
 		For Each lightMap in glf_lightMaps(light)
-			If Not IsNull(lightMap) Then
-				lightMap.Color = glf_lightNames(light).Color
-			End If
+			lightMap.Color = glf_lightNames(light).Color
 		Next
 	End If
 End Function
@@ -2270,7 +2320,7 @@ Class GlfVpxBcpController
 End Class
 
 Sub Glf_BcpSendPlayerVar(args)
-    If IsNull(bcpController) Then
+    If useBcp=False Then
         Exit Sub
     End If
     Dim ownProps, kwargs : ownProps = args(0) : kwargs = args(1) 
@@ -2287,7 +2337,7 @@ Sub Glf_BcpAddPlayer(playerNum)
 End Sub
 
 Sub Glf_BcpUpdate()
-    If IsNull(bcpController) Then
+    If useBcp=False Then
         Exit Sub
     End If
     Dim messages : messages = bcpController.GetMessages()
@@ -3048,26 +3098,20 @@ Function BallHoldsEventHandler(args)
             kwargs = ball_hold.HoldBall(ownProps(2), kwargs)
         Case "release_all"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             ball_hold.ReleaseAll
         Case "release_one"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             ball_hold.ReleaseBalls 1
         Case "release_one_if_full"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             If ball_hold.IsFull Then
                 ball_hold.ReleaseBalls 1
@@ -4693,18 +4737,14 @@ Function BaseModeDeviceEventHandler(args)
             device.Deactivate
         Case "enable"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             device.Enable
         Case "disable"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             device.Disable
     End Select
@@ -5297,10 +5337,8 @@ Function ModeEventHandler(args)
     Select Case evt
         Case "start"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             mode.StartMode
             If mode.UseWaitQueue = True Then
@@ -5308,10 +5346,8 @@ Function ModeEventHandler(args)
             End If
         Case "stop"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             mode.StopMode
         Case "started"
@@ -6066,11 +6102,8 @@ Class GlfQueueEventPlayer
     End Sub
 
     Public Sub FireEvent(evt)
-        If Not IsNull(m_events(evt).Condition) Then
-            'msgbox m_events(evt).Condition
-            If GetRef(m_events(evt).Condition)() = False Then
-                Exit Sub
-            End If
+        If m_events(evt).Evaluate() = False Then
+            Exit Sub
         End If
         Dim evtValue
         For Each evtValue In m_eventValues(evt)
@@ -7039,18 +7072,14 @@ Function SequenceShotsHandler(args)
             sequence_shot.SequenceAdvance ownProps(2)
         Case "cancel"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             sequence_shot.ResetAllSequences
         Case "delay"
             Set glfEvent = ownProps(2)
-            If Not IsNull(glfEvent.Condition) Then
-                If GetRef(glfEvent.Condition)() = False Then
-                    Exit Function
-                End If
+            If glfEvent.Evaluate() = False Then
+                Exit Function
             End If
             sequence_shot.DelayEvent glfEvent.Delay, glfEvent.EventName
         Case "seq_timeout"
@@ -9126,11 +9155,7 @@ Class GlfStateMachine
         If UBound(state_config.EventsWhenStarted().Keys()) > -1 Then
             Dim evt
             For Each evt in state_config.EventsWhenStarted().Items()
-                If Not IsNull(evt.Condition) Then
-                    If GetRef(evt.Condition)() = True Then
-                        DispatchPinEvent evt.EventName, Null
-                    End If
-                Else
+                If evt.Evaluate() = True Then
                     DispatchPinEvent evt.EventName, Null
                 End If
             Next
@@ -9148,11 +9173,7 @@ Class GlfStateMachine
         If UBound(state_config.EventsWhenStopped().Keys()) > -1 Then
             Dim evt
             For Each evt in state_config.EventsWhenStopped().Items()
-                If Not IsNull(evt.Condition) Then
-                    If GetRef(evt.Condition)() = True Then
-                        DispatchPinEvent evt.EventName, Null
-                    End If
-                Else
+                If evt.Evaluate() = True Then
                     DispatchPinEvent evt.EventName, Null
                 End If
             Next
@@ -9212,11 +9233,7 @@ Class GlfStateMachine
         If UBound(transition.EventsWhenTransitioning().Keys()) > -1 Then
             Dim evt
             For Each evt in transition.EventsWhenTransitioning().Items()
-                If Not IsNull(evt.Condition) Then
-                    If GetRef(evt.Condition)() = True Then
-                        DispatchPinEvent evt.EventName, Null
-                    End If
-                Else
+                If evt.Evaluate() = True Then
                     DispatchPinEvent evt.EventName, Null
                 End If
             Next
@@ -9337,16 +9354,12 @@ Public Function StateMachineTransitionHandler(args)
     Select Case evt
         Case "transition"
             Dim glf_event : Set glf_event = ownProps(2)
-            If Not IsNull(glf_event.Condition) Then
-                If GetRef(glf_event.Condition)() = True Then
-                    state_machine.MakeTransition ownProps(3)
-                Else
-                    If glf_debug_level = "Debug" Then
-                        glf_debugLog.WriteToLog "State machine transition",  "failed condition: " & glf_event.Raw
-                    End If
-                End If
-            Else
+            If glf_event.Evaluate() = True Then
                 state_machine.MakeTransition ownProps(3)
+            Else
+                If glf_debug_level = "Debug" Then
+                    glf_debugLog.WriteToLog "State machine transition",  "failed condition: " & glf_event.Raw
+                End If
             End If
     End Select
     If IsObject(args(1)) Then
@@ -10259,10 +10272,8 @@ Class GlfVariablePlayer
 
     Public Sub Play(evt)
         Log "Playing: " & evt
-        If Not IsNull(m_events(evt).BaseEvent.Condition) Then
-            If GetRef(m_events(evt).BaseEvent.Condition)() = False Then
-                Exit Sub
-            End If
+        If m_events(evt).BaseEvent.Evaluate() = False Then
+            Exit Sub
         End If
         Dim vKey, v
         For Each vKey in m_events(evt).Variables.Keys
@@ -10900,6 +10911,15 @@ Class GlfBallDevice
             GetRef(m_eject_callback)(m_balls(0))
         End If
     End Sub
+
+    Public Function ToYaml
+        Dim yaml
+        yaml = "  " & m_name & ":" & vbCrLf
+        yaml = yaml + "    ball_switches: " & Join(m_ball_switches, ",") & vbCrLf
+        yaml = yaml + "    mechanical_eject: " & m_mechanical_eject & vbCrLf
+        
+        ToYaml = yaml
+    End Function
 
     Private Sub Log(message)
         If m_debug = True Then
@@ -13281,7 +13301,7 @@ Class GlfSound
 End Class
 
 Class GlfEvent
-	Private m_raw, m_name, m_event, m_condition, m_delay, m_priority
+	Private m_raw, m_name, m_event, m_condition, m_delay, m_priority, has_condition
   
     Public Property Get Name() : Name = m_name : End Property
     Public Property Get EventName() : EventName = m_event : End Property
@@ -13291,7 +13311,7 @@ Class GlfEvent
     Public Property Get Priority() : Priority = m_priority : End Property
 
     Public Function Evaluate()
-        If Not IsNull(m_condition) Then
+        If has_condition = True Then
             Evaluate = GetRef(m_condition)()
         Else
             Evaluate = True
@@ -13304,6 +13324,11 @@ Class GlfEvent
         m_name = parsedEvent(0)
         m_event = parsedEvent(1)
         m_condition = parsedEvent(2)
+        If Not IsNull(m_condition) Then
+            has_condition = True
+        Else
+            has_condition = False
+        End If
         m_delay = parsedEvent(3)
         m_priority = parsedEvent(4)
 	    Set Init = Me
@@ -13329,14 +13354,6 @@ Class GlfRandomEvent
     Public Property Let ForceAll(value) : m_force_all = value : End Property
     Public Property Let ForceDifferent(value) : m_force_different = value : End Property
     Public Property Let DisableRandom(value) : m_disable_random = value : End Property
-
-    Public Function Evaluate()
-        If Not IsNull(m_condition) Then
-            Evaluate = GetRef(m_condition)()
-        Else
-            Evaluate = True
-        End If
-    End Function
 
 	Public default Function init(evt, mode, key)
         m_parent_key = evt
