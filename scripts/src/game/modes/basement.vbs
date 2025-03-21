@@ -98,18 +98,6 @@ Sub CreateBasementMode()
                     .Int = 0
                 End With
             End With
-            With .EventName("s_Plunger1_active")
-                With .Variable("ball_in_plunger_lane")
-                    .Action = "set"
-                    .Int = 1
-                End With
-            End With
-            With .EventName("s_Plunger1_inactive")
-                With .Variable("ball_in_plunger_lane")
-                    .Action = "set"
-                    .Int = 0
-                End With
-            End With
             With .EventName("kill_flippers")
                 With .Variable("flippers_are_dead")
                     .Action = "set"

@@ -133,6 +133,9 @@ Sub CreateBaseMode()
             .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
             .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
+
+            'handle ball stuck in plunger fail
+            .Add "timer_plunger_check_complete", Array("plunger_eject")
         
         End With
 
@@ -812,6 +815,20 @@ Sub CreateBaseMode()
             With .ControlEvents()
                 .EventName = "delayed_release_moon_ball"
                 .Action = "restart"
+            End With
+        End With
+
+        With .Timers("plunger_check")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 8
+            With .ControlEvents()
+                .EventName = "s_Plunger1_active{ball_just_started==0}"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "s_Plunger1_inactive"
+                .Action = "stop"
             End With
         End With
 
