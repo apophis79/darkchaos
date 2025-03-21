@@ -21,17 +21,18 @@ Sub CreateMysteryMode
 
         With .EventPlayer()
             'enable the ball hold if needed
+            .Add "mode_mystery_started{current_player.shot_mystery_ready==1 && current_player.flippers_are_dead==0}", Array("enable_scoop_hold")
             '.Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
             'run the mystery selection if ready, otherwise move along to training
-            .Add "check_mystery{current_player.shot_mystery_ready==0}", Array("check_training")
-            .Add "check_mystery{current_player.shot_mystery_ready==1}", Array("select_random_mystery")
+            .Add "check_mystery{current_player.shot_mystery_ready==0 && current_player.flippers_are_dead==0}", Array("check_training")
+            .Add "check_mystery{current_player.shot_mystery_ready==1 && current_player.flippers_are_dead==0}", Array("select_random_mystery")
             'select random mystery and run show
             .Add "select_random_mystery", Array("play_mystery_show")
             'release ball hold if training is not ready
             .Add "restart_qualify_mystery{current_player.shot_training_ready==0}", Array("release_scoop_hold")
-            .Add "release_scoop_hold", Array("disable_scoop_hold")
+            .Add "release_scoop_hold", Array("disable_scoop_hold","start_mwq_timer")
             'reset stuff and continue
-            .Add "restart_qualify_mystery", Array("mystery_select_done","start_mwq_timer","check_training")   'Mystery done, so continue the meteor wave qualify countdown
+            .Add "restart_qualify_mystery", Array("mystery_select_done","check_training")   'Mystery done, so continue the meteor wave qualify countdown
             'handle sss award
             .Add "sss_mystery_ready", Array("complete_mystery_shots","set_sss_mystery_flag")
             'handle callout

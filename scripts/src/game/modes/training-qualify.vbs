@@ -37,8 +37,8 @@ Sub CreateTrainingQualifyMode
             .Add "training_shot_hit", Array("check_training_qualify","score_8000")
             .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed","play_voc_Training","training_flash")
             'Start the training selection
-            .Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold")
-            .Add "check_training{current_player.shot_training_ready==1}", Array("start_training_select") ',"kill_flippers"
+            .Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0 && current_player.flippers_are_dead==0}", Array("enable_scoop_hold")
+            .Add "check_training{current_player.shot_training_ready==1 && current_player.flippers_are_dead==0}", Array("start_training_select")
             'Handle mystery and skillshot awards
             .Add "mystery_trainer_ready", Array("clear_training_shots","training_shots_completed")
             .Add "ss_trainer_ready", Array("clear_training_shots","training_shots_completed")

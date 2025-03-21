@@ -536,6 +536,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "bonus_missiles", 0
     Glf_SetInitialPlayerVar "bonus_protons", 0
     Glf_SetInitialPlayerVar "bonus_total", 0
+    Glf_SetInitialPlayerVar "ball_in_plunger_lane", 0
+    Glf_SetInitialPlayerVar "flippers_are_dead", 0
 
 
 

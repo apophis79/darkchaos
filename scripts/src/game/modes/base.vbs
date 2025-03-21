@@ -776,6 +776,10 @@ Sub CreateBaseMode()
                     .Action = "set"
                     .Int = 0
                 End With
+                With .Variable("flippers_are_dead")
+                    .Action = "set"
+                    .Int = 0
+                End With
 			End With
             With .EventName("new_ball_active")
 				With .Variable("ball_just_started")
@@ -1081,6 +1085,12 @@ Sub CreateBaseMode()
             End With
             With .EventName("activate_final_wave_wizard")
                 .Sound = "voc_Wiz"
+            End With
+
+            'eb
+            With .EventName("eb_achieved")
+                .Key = "key_voc_extra_ball_acheived"
+                .Sound = "voc_extra_ball_acheived"
             End With
 
         End With
