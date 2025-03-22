@@ -70,6 +70,10 @@ Sub CreateAlienAttackMode
                     .Add "color", AlienColor
                 End With
             End With
+            With .States("grace")
+                .Key = "key_alien_grace"
+                .Show = "off"
+            End With
         End With
 
 
@@ -95,7 +99,7 @@ Sub CreateAlienAttackMode
 
 
 
-        'Alien state machine
+        'Alien attack state machine
         With .StateMachines("attack_state")
             '.Debug = True
             .PersistState = true
@@ -171,7 +175,7 @@ Sub CreateAlienAttackMode
         End With
 
 
-        'Alien state machine
+        'Alien ship state machine
         With .StateMachines("alien")
             '.Debug = True
             .PersistState = true

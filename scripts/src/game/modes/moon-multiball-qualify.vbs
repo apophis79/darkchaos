@@ -27,7 +27,7 @@ Sub MM1()
     DispatchPinEvent "s_RightInlane_active", Null
     glf_ball1.Z = 130
     glf_ball1.X = 894.0132
-    glf_ball1.Y = 200
+    glf_ball1.Y = 130
     glf_ball1.Velx = 0
     glf_ball1.Vely = 0
     glf_ball1.Velz = 0
@@ -42,7 +42,7 @@ Sub MM2()
     DispatchPinEvent "s_RightInlane_active", Null
     glf_ball2.Z = 130
     glf_ball2.X = 894.0132
-    glf_ball2.Y = 200
+    glf_ball2.Y = 130
     glf_ball2.Velx = 0
     glf_ball2.Vely = 0
     glf_ball2.Velz = 0

@@ -26,8 +26,9 @@ Const VRRoom = 0 ' 1 - VR Room off, 1 - Minimal Room, 2 - Ultra Minimal Room
 Dim dspTriggered : dspTriggered = False
 Sub Table1_OptionEvent(ByVal eventId)
     If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
-	Dim BP, v
+	Dim BP, v, x
 
+	'Game logic framework options
 	Glf_Options(eventId)
 	
     ' Sound volumes
@@ -69,6 +70,9 @@ Sub Table1_OptionEvent(ByVal eventId)
 
 	' VR 			FIXME check that this works
 	SetupRoom
+
+	'Hide desktop lights if not in desktop mode
+	For Each x In DesktopLights: x.visible = DesktopMode: Next
 
     If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub

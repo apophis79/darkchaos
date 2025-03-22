@@ -16,4 +16,3 @@ Sub Include (strFile)
 	Set objFSO = Nothing
 	Set objTextFile = Nothing
 End Sub
-
