@@ -92,6 +92,7 @@ Sub CreateMoonMultiballQualifyMode
             End With
         End With
 
+
         With .SoundPlayer()
             With .EventName("qualify_lock_on_complete")
                 .Key = "key_voc_LMLR"
@@ -226,7 +227,7 @@ Sub CreateMoonMultiballQualifyMode
             With .Transitions()
                 .Source = Array("qualify")
                 .Target = "locks_full"
-                .Events = Array("multiball_lock_moon_launch_full", "mode_moon_multiball_qualify_started{current_player.multiball_lock_moon_launch_balls_locked==2}")
+                .Events = Array("multiball_lock_moon_launch_full", "mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}")
             End With
             With .Transitions()
                 .Source = Array("in_progress")
