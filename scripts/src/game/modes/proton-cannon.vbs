@@ -65,8 +65,11 @@ Sub CreateProtonCannonMode
                 .Action = "DOF_PULSE"
                 .DOFEvent = 135
             End With
+            With .EventName("added_proton")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 172
+            End With
         End With
-        
 
         With .SoundPlayer()
             With .EventName("play_sfx_LPC1")

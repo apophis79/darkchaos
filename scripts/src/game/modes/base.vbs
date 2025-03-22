@@ -37,7 +37,7 @@ Sub CreateBaseMode()
             ' .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
 
             'new ball
-            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "mode_base_started{current_player.number == 1}", Array("flash_player1_score","display34_ball_num")
             .Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
@@ -135,6 +135,7 @@ Sub CreateBaseMode()
             .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
 
             'handle ball stuck in plunger fail
+            .Add "check_plunger{current_player.ball_just_started==0}", Array("restart_plunger_check")
             .Add "timer_plunger_check_complete", Array("plunger_eject")
         
         End With
@@ -178,11 +179,11 @@ Sub CreateBaseMode()
             End With
             With .EventName("new_ball_started")
                 .Action = "DOF_ON"
-                .DOFEvent = 131
+                .DOFEvent = 133
             End With
             With .EventName("new_ball_active")
                 .Action = "DOF_OFF"
-                .DOFEvent = 131
+                .DOFEvent = 133
             End With
         End WIth
 
@@ -821,9 +822,10 @@ Sub CreateBaseMode()
         With .Timers("plunger_check")
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = 8
+            .EndValue = 5
+            .StartRunning = False
             With .ControlEvents()
-                .EventName = "s_Plunger1_active{ball_just_started==0}"
+                .EventName = "restart_plunger_check"
                 .Action = "restart"
             End With
             With .ControlEvents()

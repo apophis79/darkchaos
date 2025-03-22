@@ -44,6 +44,13 @@ Sub CreateShipSaveMode
             End With
         End With
 
+        With .DOFPlayer()
+            With .EventName("saver_acquired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 173
+            End With
+        End With
+
         With .SoundPlayer()
             With .EventName("play_sfx_LF1")
                 .Key = "key_sfx_LF1"

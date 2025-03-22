@@ -59,6 +59,10 @@ Sub CreateClusterBombMode
                 .Action = "DOF_PULSE"
                 .DOFEvent = 136
             End With
+            With .EventName("cb_acquired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 170
+            End With
         End With
 
         With .SoundPlayer()

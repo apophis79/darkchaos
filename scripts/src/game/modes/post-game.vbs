@@ -196,10 +196,6 @@ Sub CreatePostGameMode()
                 .Action = "DOF_PULSE"
                 .DOFEvent = 161
             End With
-            With .EventName("play_flasher4_flash_hot")
-                .Action = "DOF_PULSE"
-                .DOFEvent = 162
-            End With
             With .EventName("play_flasher2_flash_yellow")
                 .Action = "DOF_PULSE"
                 .DOFEvent = 163

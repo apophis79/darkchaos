@@ -85,6 +85,13 @@ Sub CreateMoonMultiballQualifyMode
             .Add "qualify_lock_on_complete", Array("score_50000")
         End With
 
+        With .DOFPlayer()
+            With .EventName("mm_acquired")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 171
+            End With
+        End With
+
         With .SoundPlayer()
             With .EventName("qualify_lock_on_complete")
                 .Key = "key_voc_LMLR"
