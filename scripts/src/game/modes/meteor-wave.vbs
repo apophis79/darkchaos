@@ -159,6 +159,22 @@ Sub CreateMeteorWaveMode
                 .Action = "DOF_PULSE"
                 .DOFEvent = 142
             End With
+            With .EventName("meteor1_raise")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 114
+            End With
+            With .EventName("meteor2_raise")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 114
+            End With
+            With .EventName("meteor3_raise")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 115
+            End With
+            With .EventName("meteor4_raise")
+                .Action = "DOF_PULSE"
+                .DOFEvent = 115
+            End With
         End With
 
 

@@ -96,6 +96,8 @@
 ' E111 2 diverter pin
 ' E112 2 lock pin
 ' E113 2 knocker
+' E114 2 meteor solenoid 12
+' E115 2 meteor solenoid 34
 ' E120 2 flashers white
 ' E121 2 flashers red
 ' E122 2 flashers orange
