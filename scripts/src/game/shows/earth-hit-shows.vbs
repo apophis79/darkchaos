@@ -32,7 +32,7 @@ End WIth
 With CreateGlfShow("earth_hit")
     With .AddStep(Null, Null, 0.1)
         With .Shows("insert_gi_slide_up")
-            .Key = "insert_saver_acquiredA"
+            .Key = "insert_earth_hit_A"
             .Speed = 1
             .Loops = 1
             With .Tokens()
@@ -43,23 +43,12 @@ With CreateGlfShow("earth_hit")
     End With
     With .AddStep(Null, Null, 0.1)
         With .Shows("insert_gi_slide_up")
-            .Key = "insert_saver_acquiredB"
+            .Key = "insert_earth_hit_B"
             .Speed = 1
             .Loops = 1
             With .Tokens()
                 .Add "color", MeteorHotColor
-                .Add "intensity", 30
-            End With
-        End With
-    End With
-    With .AddStep(Null, Null, 0.1)
-        With .Shows("insert_gi_slide_up")
-            .Key = "insert_saver_acquiredC"
-            .Speed = 1
-            .Loops = 1
-            With .Tokens()
-                .Add "color", MeteorHotColor
-                .Add "intensity", 5
+                .Add "intensity", 10
             End With
         End With
     End With
