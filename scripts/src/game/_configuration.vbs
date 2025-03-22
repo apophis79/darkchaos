@@ -512,6 +512,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "alien_tick_count", -1
     Glf_SetInitialPlayerVar "alien_attack_dir", 0
     Glf_SetInitialPlayerVar "alien_attack_done", 0
+    Glf_SetInitialPlayerVar "alien_grace_time", 0
     Glf_SetInitialPlayerVar "scoring_multiplier", 1
     Glf_SetInitialPlayerVar "bonus_multiplier", 1
     Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit

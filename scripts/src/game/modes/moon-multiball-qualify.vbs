@@ -75,7 +75,7 @@ Sub CreateMoonMultiballQualifyMode
             .Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==2}", Array("light_missile2","check_fully_loaded") 'check for wizard mode qualification
             'Disable qualify shots during a wave
             .Add "start_meteor_wave", Array("disable_moon_qualify_shots") 
-            .Add "stop_meteor_wave", Array("enable_moon_qualify_shots{current_player.shot_moon_missile2 == 0}")
+            .Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", Array("enable_moon_qualify_shots")
             'Handle mystery award
             .Add "mystery_moon_ready", Array("complete_moon_qualify_shots")
             'Scoring
