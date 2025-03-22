@@ -7,8 +7,8 @@ With CreateGlfShow("cluster_explodes")
   With .AddStep(0.1, Null, Null)
     With .Shows("insert_swap2")
       .Key = "key_cb_xpl_inserts"
-      .Speed = 2
-      .Loops = 5
+      .Speed = 1.5
+      .Loops = 4
       .Priority = 10000
       With .Tokens()
           .Add "color1", "ffffff"

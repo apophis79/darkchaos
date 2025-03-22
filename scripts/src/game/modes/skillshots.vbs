@@ -86,8 +86,9 @@ Sub CreateSkillshotsMode
             With .EventName("ss_achieved")
                 .Key = "key_ss_achieved"
                 .Show = "insert_swap2"
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 2
+                .Priority = 3000
                 With .Tokens()
                     .Add "color1", "000000"
                     .Add "color2", SkillshotColor
@@ -97,8 +98,9 @@ Sub CreateSkillshotsMode
             With .EventName("sss_achieved")
                 .Key = "key_sss_achieved"
                 .Show = "insert_swap3"
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 2
+                .Priority = 3000
                 With .Tokens()
                     .Add "color1", "000000"
                     .Add "color2", SkillshotColor

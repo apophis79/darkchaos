@@ -29,7 +29,7 @@ Sub Table1_KeyDown(ByVal keycode)
 		' CheckTilt
 	End If
 	If keycode = CenterTiltKey Then 
-		Nudge 0, 3
+		Nudge 0, 2
 		ShipNudge 1, -1, ShipVelY, ShipTimeY, ShipVelY2, ShipMaxMovement, ShipAcc
 		SoundNudgeCenter
 		' CheckTilt

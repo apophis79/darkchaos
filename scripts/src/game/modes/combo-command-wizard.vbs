@@ -334,8 +334,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase1_show")
                 .Key = "key_ccwiz_shot_phase1_show"
                 .Show = "insert_swap2" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -359,8 +359,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show1")
                 .Key = "key_ccwiz_shot_phase2_show1"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -383,8 +383,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show2")
                 .Key = "key_ccwiz_shot_phase2_show2"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -407,8 +407,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show3")
                 .Key = "key_ccwiz_shot_phase2_show3"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -431,8 +431,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show4")
                 .Key = "key_ccwiz_shot_phase2_show4"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -455,8 +455,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show5")
                 .Key = "key_ccwiz_shot_phase2_show5"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -479,8 +479,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show6")
                 .Key = "key_ccwiz_shot_phase2_show6"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -503,8 +503,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show7")
                 .Key = "key_ccwiz_shot_phase2_show7"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -527,8 +527,8 @@ Sub CreateComboCommandWizardMode
             With .EventName("ccwiz_shot_phase2_show8")
                 .Key = "key_ccwiz_shot_phase2_show8"
                 .Show = "insert_swap3" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"

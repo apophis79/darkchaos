@@ -23,7 +23,7 @@ Sub CreateMeteorWaveMode
         With .EventPlayer()
             '.Debug = True
             'Initializations
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on","backglass_ball_off")
             .Add "stop_some_modes_for_mw", Array("stop_skillshots","stop_combos","stop_ship_save","stop_timewarp","stop_shields") '"stop_extra_ball","stop_mystery","stop_training_qualify"
             '.Add "mode_meteor_wave_stopping", Array("backglass_dark_on","backglass_chaos_on")
             'Start up in correct wave

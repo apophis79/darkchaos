@@ -313,8 +313,8 @@ With CreateGlfShow("asteroid_explodes_show")
   With .AddStep(0.01, Null, Null)
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld1"
-      .Speed = 2
-      .Loops = 5
+      .Speed = 1.5
+      .Loops = 3
       With .Tokens()
           .Add "color1", "ffffff"
           .Add "color2", MeteorHotColor
@@ -347,8 +347,8 @@ With CreateGlfShow("asteroid_explodes_show")
   With .AddStep(1.7, Null, Null)
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld4"
-      .Speed = 2
-      .Loops = 5
+      .Speed = 1.5
+      .Loops = 3
       With .Tokens()
           .Add "color1", "000000"
           .Add "color2", MeteorHotColor
@@ -385,8 +385,8 @@ With CreateGlfShow("asteroid_explodes_show")
   With .AddStep(4.1, Null, Null)
     With .Shows("insert_swap2")
       .Key = "key_ass_xpld7"
-      .Speed = 2
-      .Loops = 5
+      .Speed = 1.5
+      .Loops = 4
       With .Tokens()
           .Add "color1", "000000"
           .Add "color2", MeteorHotColor

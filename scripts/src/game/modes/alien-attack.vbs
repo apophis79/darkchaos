@@ -305,8 +305,8 @@ Sub CreateAlienAttackMode
             With .EventName("alien_hit_show2")
                 .Key = "key_alien_flash2"
                 .Show = "insert_swap2" 
-                .Speed = 2
-                .Loops = 5
+                .Speed = 1.5
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", DoubleScoringColor
