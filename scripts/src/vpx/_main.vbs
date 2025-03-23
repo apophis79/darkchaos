@@ -19,6 +19,7 @@
 '   * Idigstuff: Ideation and music support.
 '   * Niwak: Blender toolkit.
 '   * VPW testers: Bug hunting and advice.
+'   * The VP dev team
 '
 ' ------------------------------------------------------------------------------
 '
@@ -139,7 +140,7 @@
 ' E167 2 victory lap purple
 ' E168 2 victory lap magenta
 ' E170 2 cluster bomb aquired
-' E171 2 moon missle aquired
+' E171 2 moon missile aquired
 ' E172 2 proton round aquired
 ' E173 2 ship save aquired
 

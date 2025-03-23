@@ -229,7 +229,7 @@ Sub CreateMysteryMode
             With .EventName("select_random_mystery")
                 With .Display("player1")
                     .Priority = 1000
-                    .Text = """"""
+                    .Text = """MYSTERY"""
                     .Expire = MysteryShowLength
                 End With
                 With .Display("player4")

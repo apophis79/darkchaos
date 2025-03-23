@@ -45,6 +45,9 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.number == 4}", Array("flash_player4_score","display12_ball_num")
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num", _
                   "stop_flash_player1_score","stop_flash_player2_score","stop_flash_player3_score","stop_flash_player4_score")
+
+            'stopping stuff
+            .Add "mode_base_stopping", Array("training_music_alt_stop")
             
             'wave ended
             .Add "mode_meteor_wave_stopped", Array("backglass_dark_on","backglass_chaos_on","backglass_wave_off")

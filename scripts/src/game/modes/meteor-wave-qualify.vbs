@@ -21,6 +21,12 @@ Sub CreateMeteorWaveQualifyMode
             .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
             .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
 
+            .Add "flipper_cradle{game.balls_in_play == 1}", Array("stop_mwq_timer")        'handle flipper cradle
+            .Add "flipper_release{game.balls_in_play == 1}", Array("start_mwq_timer")
+
+            .Add "stop_mwq_timer", Array("flash_mwq_display")
+            .Add "start_mwq_timer", Array("remove_flash_mwq_display")
+
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show")
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show")
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold") 'stop these early to prevent scoop issues
@@ -41,6 +47,20 @@ Sub CreateMeteorWaveQualifyMode
             With .EventName("init_pf_display")
                 With .Display("pf")
                     .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
+                End With
+            End With
+            With .EventName("flash_mwq_display")
+                With .Display("pf")
+                    .Key = "key_flash_mwq_display"
+                    .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
+                    .Flashing = "all"
+                    .Priority = 100
+                End With
+            End With
+            With .EventName("remove_flash_mwq_display")
+                With .Display("pf")
+                    .Key = "key_flash_mwq_display"
+                    .Action = "remove"
                 End With
             End With
         End With

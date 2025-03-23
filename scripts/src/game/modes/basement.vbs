@@ -20,6 +20,8 @@ Sub CreateBasementMode()
             .Add GLF_GAME_START, Array("reset_won_game")
             'handle tilt
             .Add "tilt", Array("kill_flippers","training_music_alt_stop","meteor_wave_music_stop","fwwiz_music_stop","flwiz_music_stop","ccwiz_music_stop")
+            'ball search ejects from plunger for this table (special case)
+            .Add "ball_search_started", Array("plunger_eject")
         End With
 
 
