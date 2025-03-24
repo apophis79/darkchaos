@@ -18,16 +18,22 @@ Sub CreateScoreMode
                     .Int = 1
                 End With
             End With
-            With .EventName("score_330") 
+            With .EventName("score_330")  'reserved for spinner
                 With .Variable("score")
                     .Action = "add"
-                    .Int = "330 * current_player.scoring_multiplier"
+                    .Int = "330 * current_player.scoring_multiplier * current_player.spin_multiplier"
                 End With
             End With
             With .EventName("score_1000") 
                 With .Variable("score")
                     .Action = "add"
                     .Int = "1000 * current_player.scoring_multiplier"
+                End With
+            End With
+            With .EventName("score_1300")  'reserved for pop bumpers
+                With .Variable("score")
+                    .Action = "add"
+                    .Int = "1000 * current_player.scoring_multiplier * current_player.pop_multiplier"
                 End With
             End With
             With .EventName("score_2000") 

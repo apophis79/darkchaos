@@ -13,7 +13,7 @@
 Sub CreateTrainingHealMode
     Dim x
 
-    With CreateGlfMode("training_heal",700)
+    With CreateGlfMode("training_heal",1300)
         .StartEvents = Array("start_training_heal")
         .StopEvents = Array("mode_base_stopping","stop_training")
         '.Debug = True
@@ -23,10 +23,10 @@ Sub CreateTrainingHealMode
             '.Debug = True
             .Add "mode_training_heal_started", Array("init_training","raise_diverter","play_lsling_training","play_rsling_training")
             'successfull shot
-            .Add "s_Bumper1_active", Array("check_add_training_health_bump","score_1000")
-            .Add "s_Bumper2_active", Array("check_add_training_health_bump","score_1000")
-            .Add "s_Bumper3_active", Array("check_add_training_health_bump","score_1000")
-            .Add "s_Bumper4_active", Array("check_add_training_health_bump","score_1000")
+            .Add "s_Bumper1_active", Array("check_add_training_health_bump")
+            .Add "s_Bumper2_active", Array("check_add_training_health_bump")
+            .Add "s_Bumper3_active", Array("check_add_training_health_bump")
+            .Add "s_Bumper4_active", Array("check_add_training_health_bump")
             'add health lights as needed
             .Add "check_add_training_health_bump{current_player.training_health_bump_value<"&BumperHitsPerRepairTrain&"}", Array("add_training_health_bump")
             .Add "check_add_training_health_bump{current_player.training_health_bump_value=="&BumperHitsPerRepairTrain&"}", Array("check_add_training_health","reset_training_health_bump")
@@ -157,6 +157,7 @@ Sub CreateTrainingHealMode
                 .Key = "key_training_bumpers"
                 .Show = "flicker_color_on_intensity"
                 .Speed = 5
+                .Priority = 1000
                 With .Tokens()
                     .Add "lights", "tBumper"
                     .Add "color", HealthColor1

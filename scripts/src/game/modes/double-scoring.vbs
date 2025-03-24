@@ -23,16 +23,46 @@ Sub CreateDoubleScoringMode
         End With
 
         With .Shots("double_scoring")
-            .Profile = "flicker_on"
-            With .Tokens()
-                .Add "lights", "LDS"
-                .Add "color", DoubleScoringColor
-            End With
+            .Profile = "double_scoring"
             With .ControlEvents()
                 .Events = Array("mode_double_scoring_started")
                 .State = 1
             End With
+            With .ControlEvents()
+                .Events = Array("timer_double_scoring_tick{devices.timers.double_scoring.ticks == "&(DoubleScoringMaxTicks-5)&"}")
+                .State = 2
+            End With
             .ResetEvents = Array("mode_double_scoring_stopping")
+        End With
+
+        With .ShotProfiles("double_scoring")
+            With .States("unlit")
+                .Show = "off"
+                .Key = "key_off_ds"
+                With .Tokens()
+                    .Add "lights", "LDS"
+                    .Add "color", DoubleScoringColor
+                End With
+            End With
+            With .States("flashing")
+                .Show = "flash_color_with_fade"
+                .Key = "key_flashing_ds"
+                .Speed = 2
+                With .Tokens()
+                    .Add "lights", "LDS"
+                    .Add "fade", 500
+                    .Add "color", DoubleScoringColor
+                End With
+            End With
+            With .States("hurry")
+                .Show = "flash_color"
+                .Key = "key_hurry_ds"
+                .Speed = 7
+                With .Tokens()
+                    .Add "lights", "LDS"
+                    .Add "color", DoubleScoringColor
+                End With
+            End With
         End With
 
         With .Timers("double_scoring")

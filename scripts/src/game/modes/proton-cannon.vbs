@@ -41,7 +41,6 @@ Sub CreateProtonCannonMode
             .Add "mystery_full_protons", Array("complete_full_protons","slings_powerup_added","lsling_powerup_pc","rsling_powerup_pc")
             .Add "complete_full_protons", Array("proton_added_show","check_fully_loaded","score_50000") 'check for wizard mode qualification
             'Scoring
-            .Add "s_spinner_active", Array("score_330")
             .Add "inner_orbit_hit", Array("score_2000")
             .Add "light_proton_charge3", Array("score_5000")
         End With
@@ -98,10 +97,6 @@ Sub CreateProtonCannonMode
                 .Sound = "voc_LPR1"
             End With
 
-            With .EventName("s_spinner_active")
-                .Key = "key_sfx_Spinner"
-                .Sound = "sfx_Spinner"
-            End With
         End With
         
 

@@ -24,7 +24,7 @@ Sub CreateTrainingSelectMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_select_started", Array("enable_scoop_hold")
+            .Add "mode_training_select_started", Array("enable_scoop_hold","stop_super_pops","stop_super_spinner","stop_double_scoring")
             'navigate selections
             .Add "s_left_flipper_active", Array("training_select_left")
             .Add "s_right_flipper_active", Array("training_select_right")

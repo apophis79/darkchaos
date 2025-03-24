@@ -51,7 +51,9 @@ Sub CreateMysteryMode
                 .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
                 .Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && devices.state_machines.moon_mb.state!=""locking""}", 1
                 '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
-                .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5 
+                .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5
+                .Add "mystery_super_spinner{current_player.spin_multiplier == 1}", 0.5
+                .Add "mystery_super_pops{current_player.pop_multiplier == 1}", 0.5 
                 .Add "mystery_double_bonus{current_player.bonus_multiplier == 1}", 0.5  
                 .Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", 0.5
                 '.Add "mystery_eb_is_lit{current_player.eb_ready == 0}", 0.1
@@ -364,6 +366,38 @@ Sub CreateMysteryMode
                 With .Display("player3")
                     .Priority = 1000
                     .Text = """SCORING"""
+                    .Flashing = "all"
+                    .Expire = MysteryShowLength
+                End With
+            End With
+
+            'SUPER SPINNER
+            With .EventName("mystery_super_spinner")
+                With .Display("player2")
+                    .Priority = 1000
+                    .Text = """ SUPER """
+                    .Flashing = "all"
+                    .Expire = MysteryShowLength
+                End With
+                With .Display("player3")
+                    .Priority = 1000
+                    .Text = """SPINNER"""
+                    .Flashing = "all"
+                    .Expire = MysteryShowLength
+                End With
+            End With
+
+            'SUPER POPS
+            With .EventName("mystery_super_pops")
+                With .Display("player2")
+                    .Priority = 1000
+                    .Text = """ SUPER """
+                    .Flashing = "all"
+                    .Expire = MysteryShowLength
+                End With
+                With .Display("player3")
+                    .Priority = 1000
+                    .Text = """  POPS  """
                     .Flashing = "all"
                     .Expire = MysteryShowLength
                 End With

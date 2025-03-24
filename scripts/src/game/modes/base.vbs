@@ -109,14 +109,15 @@ Sub CreateBaseMode()
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended","check_base_restart")
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended","check_base_restart")
     
-            'handle some sound effects and music
+            'handle some sound effects, music, and points
             .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
             .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
             .Add "left_side_up_hit", Array("play_sfx_Orb","score_2000")
-            .Add "s_Bumper1_active", Array("play_sfx_bumper")
-            .Add "s_Bumper2_active", Array("play_sfx_bumper")
-            .Add "s_Bumper3_active", Array("play_sfx_bumper")
-            .Add "s_Bumper4_active", Array("play_sfx_bumper")
+            .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300")
+            .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300")
+            .Add "s_Bumper3_active", Array("play_sfx_bumper","score_1300")
+            .Add "s_Bumper4_active", Array("play_sfx_bumper","score_1300")
+            .Add "s_spinner_active", Array("score_330")
             .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches
@@ -140,7 +141,7 @@ Sub CreateBaseMode()
             'handle ball stuck in plunger fail
             .Add "check_plunger{current_player.ball_just_started==0}", Array("restart_plunger_check")
             .Add "timer_plunger_check_complete", Array("plunger_eject")
-        
+
         End With
 
             
@@ -939,6 +940,11 @@ Sub CreateBaseMode()
                 .Sound = "sfx_scoop"
             End With
 
+            ' Spinner
+            With .EventName("s_spinner_active")
+                .Key = "key_sfx_Spinner"
+                .Sound = "sfx_Spinner"
+            End With
 
             'Slings
             With .EventName("s_LeftSlingshot_active")

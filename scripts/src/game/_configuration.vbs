@@ -120,6 +120,16 @@ Const DoubleScoringShowLength = 5000
 Const DoubleScoringTickInterval = 1000
 Const DoubleScoringMaxTicks = 60
 
+' Super Spinner Scoring settings
+Const SuperSpinnerShowLength = 5000
+Const SuperSpinnerTickInterval = 1000
+Const SuperSpinnerMaxTicks = 60
+
+' Super Pops Scoring settings
+Const SuperPopsShowLength = 5000
+Const SuperPopsTickInterval = 1000
+Const SuperPopsMaxTicks = 60
+
 ' Fully Loaded Wizard settings
 Const FLWizMessageInterval = 3000
 
@@ -514,6 +524,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "alien_attack_done", 0
     Glf_SetInitialPlayerVar "alien_grace_time", 0
     Glf_SetInitialPlayerVar "scoring_multiplier", 1
+    Glf_SetInitialPlayerVar "pop_multiplier", 1
+    Glf_SetInitialPlayerVar "spin_multiplier", 1
     Glf_SetInitialPlayerVar "bonus_multiplier", 1
     Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
     Glf_SetInitialPlayerVar "training_just_finished", 0
@@ -565,12 +577,14 @@ Sub ConfigureGlfDevices
     CreateMoonMultiballQualifyMode  ' 590           No
     CreateMoonMultiballMode         ' 600           Yes
     CreateDoubleScoringMode         ' 700           Yes
+    CreateSuperSpinnerMode          ' 700           Yes
+    CreateSuperPopsMode             ' 700           Yes
     CreateHealthMode                ' 800           Yes
     CreateProtonCannonMode          ' 900           Yes
     CreateClusterBombMode           ' 1000          Yes
 
     CreateTrainingQualifyMode       ' 513           No
-    CreateTrainingSelectMode        ' 600           No
+    CreateTrainingSelectMode        ' 1600          No
     CreateTrainingHealMode          ' 700           No
     CreateTrainingClusterBombMode   ' 700           No
     CreateTrainingProtonCannonMode  ' 700           No
@@ -706,13 +720,13 @@ Public Sub CreateSharedShotProfiles()
           .Speed = 2
           With .Tokens()
               .Add "lights", "LSA"
-              .Add "fade", 200
+              .Add "fade", 500
           End With
       End With
       With .States("hurry")
           .Show = "flash_color"
           .Key = "key_hurry_e"
-          .Speed = 5
+          .Speed = 7
           With .Tokens()
               .Add "lights", "LSA"
           End With
@@ -733,7 +747,7 @@ Public Sub CreateSharedShotProfiles()
             .Show = "flash_color_with_fade"
             .Speed = 2
             With .Tokens()
-                .Add "fade", 400
+                .Add "fade", 500
                 .Add "color", HealthColor1
                 .Add "lights", "LDP"
             End With
