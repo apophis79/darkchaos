@@ -73,7 +73,7 @@ With CreateGlfShow("eb_show")
     End With
   End With
 
-  With .AddStep(1, Null, Null)
+  With .AddStep(2, Null, Null)
   End With
 
 End With

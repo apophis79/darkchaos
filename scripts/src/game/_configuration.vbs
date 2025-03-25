@@ -584,7 +584,7 @@ Sub ConfigureGlfDevices
     CreateClusterBombMode           ' 1000          Yes
 
     CreateTrainingQualifyMode       ' 513           No
-    CreateTrainingSelectMode        ' 1600          No
+    CreateTrainingSelectMode        ' 600           No
     CreateTrainingHealMode          ' 700           No
     CreateTrainingClusterBombMode   ' 700           No
     CreateTrainingProtonCannonMode  ' 700           No

@@ -47,7 +47,7 @@ Sub CreateMoonMultiballMode
         End With
 
         With .Timers("moon_launch_cooldown")
-            .TickInterval = 2000
+            .TickInterval = 5000
             .StartValue = 0
             .EndValue = 2
             With .ControlEvents()
