@@ -1,8 +1,8 @@
 {
   "Flasher": {
     "height": 50.0,
-    "pos_x": -7111.58,
-    "pos_y": -1781.5104,
+    "pos_x": -7112.4805,
+    "pos_y": -1792.3002,
     "rot_x": 0.0,
     "rot_y": 0.0,
     "rot_z": 0.0,
@@ -25,8 +25,8 @@
     "light_map": "<None>",
     "drag_points": [
       {
-        "x": 416.19427,
-        "y": -1048.6986,
+        "x": 415.29517,
+        "y": -1059.4884,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -38,8 +38,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 416.19427,
-        "y": -788.6994,
+        "x": 415.29517,
+        "y": -799.48895,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -51,8 +51,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 676.1958,
-        "y": -788.6994,
+        "x": 675.2965,
+        "y": -799.48895,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -64,8 +64,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 676.1958,
-        "y": -1048.6986,
+        "x": 675.2965,
+        "y": -1059.4884,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

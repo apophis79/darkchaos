@@ -12,6 +12,7 @@ Sub SetupRoom
 		For Each x in BP_Rails : x.visible = 1: Next  'overrides option menu setting
 		For Each VRThing in VR_Cab: VRThing.visible = 1: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 1: Next
+		For Each VRThing in VR_Display: VRThing.visible = 1: Next
 
 		'Asteroid Room
 		If VRRoom = 1 Then 
@@ -36,6 +37,7 @@ Sub SetupRoom
 		For Each VRThing in VR_Min: VRThing.visible = 0: Next
 		For Each VRThing in VR_Cab: VRThing.visible = 0: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 0: Next
+		For Each VRThing in VR_Display: VRThing.visible = 0: Next
 		'Hide desktop lights if not in desktop mode
 		For Each x In DesktopLights: x.visible = DesktopMode: Next
 	End if
@@ -55,15 +57,27 @@ Sub InitVR
 	For Each obj in VR_Flashers
 		obj.x = obj.x + 0
 		obj.height = -obj.y + 350
-		obj.y = 11    'adjusts the distance from the backglass towards the user
+		obj.y = 20    'adjusts the distance from the backglass towards the user
 		obj.rotx = -86.5
 	Next
 
-	'Randomize VR starry sky angles
+	For Each obj in VR_Display
+		obj.x = obj.x + 0
+		obj.z = -obj.y + 350
+		obj.y = 90    'adjusts the distance from the backglass towards the user
+		obj.rotx = -86.5
+	Next
+	BGDisplay.y = 85
+
+	NewSkyAngle
+End Sub
+
+
+Sub NewSkyAngle
+    'Randomize VR starry sky angles
 	VRSphere.rotx = Rnd*360
 	VRSphere.roty = Rnd*360
 	VRSphere.rotz = Rnd*360
-
 End Sub
 
 

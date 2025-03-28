@@ -151,105 +151,105 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg001.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_leftsling.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_rightsling.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post005.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post009.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post010.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.RubberBand002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.RubberBand005.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.RubberBand006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Plunger.Plunger.json",
@@ -354,28 +354,28 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.EndPoint2LS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.EndPoint1RS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.EndPoint2RS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall001.json",
@@ -536,28 +536,28 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post012.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post013.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.RubberBand007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "HitTarget.s_TargetShield1.json",
@@ -781,35 +781,35 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg009.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "HitTarget.s_TargetMystery1.json",
@@ -830,7 +830,7 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.LockPin.json",
@@ -844,28 +844,28 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post015.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post016.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.RubberBand008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.DiverterPin.json",
@@ -2153,35 +2153,35 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg011.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.s_RightSlingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.s_LeftSlingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.RubberBand001.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.s_GateL.json",
@@ -5464,7 +5464,7 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.VisualBlocker.json",
@@ -17546,7 +17546,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swGateSfx.json",
@@ -17938,6 +17938,3373 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.BGDisplay.json",
+    "is_locked": true,
+    "editor_layer": 8,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg1_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg2_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg3_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg4_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg5_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg6_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg7_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg8_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg9_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg10_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg11_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg12_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg13_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg14_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg15_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg16_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg17_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg18_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg19_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg20_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg21_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg22_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg23_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg24_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg25_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg26_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg27_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg28_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg29_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg30_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg31_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg32_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg33_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg34_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg35_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg36_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg37_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg38_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg39_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg40_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg41_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg42_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg43_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg44_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg45_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg46_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg47_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg48_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg49_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg50_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg51_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg52_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg53_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg54_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg55_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg56_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg57_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg58_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg59_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg60_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg61_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg62_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg63_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg64_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg65_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg66_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg67_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg68_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg69_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg70_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg71_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg72_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg73_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg74_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg75_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg76_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg77_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg78_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg79_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg80_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg81_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg82_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg83_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg84_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg85_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg86_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg87_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg88_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg89_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg90_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg91_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg92_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg93_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg94_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg95_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg96_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg97_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg98_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg99_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg100_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg101_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg102_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg103_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg104_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg105_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg106_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg107_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg108_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg109_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg110_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg111_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg112_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg113_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg114_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg115_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg116_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg117_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg118_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg119_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p1_seg120_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p1",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg1_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg2_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg3_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg4_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg5_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg6_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg7_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg8_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg9_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg10_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg11_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg12_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg13_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg14_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg15_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg16_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg17_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg18_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg19_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg20_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg21_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg22_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg23_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg24_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg25_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg26_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg27_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg28_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg29_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg30_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg31_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg32_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg33_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg34_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg35_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg36_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg37_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg38_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg39_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg40_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg41_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg42_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg43_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg44_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg45_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg46_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg47_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg48_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg49_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg50_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg51_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg52_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg53_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg54_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg55_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg56_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg57_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg58_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg59_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg60_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg61_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg62_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg63_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg64_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg65_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg66_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg67_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg68_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg69_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg70_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg71_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg72_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg73_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg74_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg75_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg76_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg77_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg78_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg79_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg80_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg81_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg82_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg83_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg84_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg85_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg86_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg87_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg88_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg89_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg90_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg91_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg92_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg93_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg94_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg95_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg96_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg97_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg98_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg99_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg100_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg101_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg102_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg103_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg104_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg105_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg106_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg107_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg108_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg109_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg110_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg111_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg112_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg113_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg114_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg115_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg116_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg117_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg118_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg119_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p2_seg120_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p2",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg1_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg2_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg3_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg4_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg5_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg6_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg7_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg8_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg9_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg10_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg11_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg12_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg13_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg14_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg15_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg16_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg17_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg18_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg19_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg20_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg21_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg22_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg23_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg24_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg25_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg26_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg27_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg28_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg29_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg30_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg31_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg32_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg33_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg34_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg35_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg36_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg37_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg38_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg39_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg40_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg41_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg42_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg43_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg44_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg45_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg46_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg47_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg48_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg49_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg50_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg51_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg52_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg53_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg54_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg55_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg56_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg57_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg58_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg59_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg60_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg61_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg62_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg63_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg64_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg65_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg66_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg67_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg68_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg69_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg70_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg71_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg72_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg73_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg74_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg75_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg76_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg77_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg78_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg79_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg80_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg81_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg82_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg83_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg84_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg85_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg86_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg87_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg88_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg89_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg90_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg91_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg92_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg93_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg94_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg95_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg96_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg97_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg98_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg99_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg100_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg101_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg102_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg103_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg104_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg105_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg106_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg107_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg108_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg109_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg110_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg111_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg112_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg113_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg114_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg115_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg116_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg117_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg118_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg119_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p3_seg120_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p3",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg1_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg2_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg3_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg4_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg5_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg6_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg7_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg8_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg9_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg10_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg11_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg12_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg13_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg14_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg15_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg16_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg17_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg18_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg19_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg20_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg21_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg22_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg23_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg24_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg25_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg26_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg27_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg28_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg29_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg30_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg31_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg32_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg33_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg34_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg35_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg36_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg37_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg38_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg39_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg40_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg41_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg42_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg43_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg44_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg45_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg46_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg47_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg48_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg49_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg50_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg51_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg52_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg53_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg54_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg55_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg56_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg57_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg58_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg59_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg60_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg61_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg62_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg63_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg64_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg65_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg66_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg67_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg68_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg69_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg70_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg71_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg72_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg73_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg74_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg75_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg76_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg77_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg78_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg79_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg80_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg81_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg82_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg83_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg84_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg85_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg86_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg87_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg88_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg89_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg90_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg91_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg92_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg93_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg94_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg95_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg96_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg97_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg98_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg99_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg100_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg101_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg102_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg103_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg104_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg105_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg106_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg107_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg108_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg109_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg110_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg111_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg112_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg113_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg114_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg115_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg116_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg117_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg118_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg119_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_p4_seg120_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims p4",
     "editor_layer_visibility": false
   }
 ]

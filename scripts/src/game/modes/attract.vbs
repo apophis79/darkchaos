@@ -378,6 +378,24 @@ Sub CreateAttractMode()
         End With
 
 
+        With .SegmentDisplayPlayer()
+            With .EventName("mode_attract_started")
+                With .Display("player1")
+                    .Text = """DARK"""
+                End With
+                With .Display("player2")
+                    .Text = """"""
+                End With
+                With .Display("player3")
+                    .Text = """"""
+                End With
+                With .Display("player4")
+                    .Text = """CHAOS   """
+                End With
+            End With
+        End With
+
+
         
 
     End With
