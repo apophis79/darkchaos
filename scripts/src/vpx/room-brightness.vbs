@@ -10,7 +10,8 @@
 '      to handle updating their effective ambient brighness.
 
 ' Update these arrays if you want to change more materials with room light level
-Dim RoomBrightnessMtlArray: RoomBrightnessMtlArray = Array("VLM.Bake.Active","VLM.Bake.Solid","VLM.Bake.Ramp","VLM.Bake.Bumper","VLM.Bake.BumperTop") 
+Dim RoomBrightnessMtlArray: RoomBrightnessMtlArray = Array("VLM.Bake.Active","VLM.Bake.Solid","VLM.Bake.Ramp","VLM.Bake.Bumper","VLM.Bake.BumperTop","VLM.Bake.Metals", _
+															"VR.BlackPowderCoat","VR.PlasticMagenta","VR.PlasticRed","VR.PlasticYellow","VR.PlasticGray") 
 
 Sub SetRoomBrightness(lvl)
 	If lvl > 1 Then lvl = 1
@@ -22,6 +23,9 @@ Sub SetRoomBrightness(lvl)
 	Dim i: For i = 0 to UBound(RoomBrightnessMtlArray)
 		ModulateMaterialBaseColor RoomBrightnessMtlArray(i), i, v
 	Next
+
+	dim c: c = int(5 + 90*(lvl))
+	BGTranslite.color = RGB(c,c,c)
 End Sub
 
 Dim SavedMtlColorArray

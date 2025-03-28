@@ -34,24 +34,19 @@ End Sub
 
 ' Plunger animation timers
 Sub TimerPlunger_Timer
-	' If PinCab_Shooter.TransY < 90 then   FIXME: update when VR plunger is ready
-	' 	PinCab_Shooter.TransY = PinCab_Shooter.TransY + 5
-	' End If
+	If PinCab_Shooter.TransZ < 90 then
+		PinCab_Shooter.TransZ = (6.0* Plunger.Position) - 20
+	End If
 	PlungerLine.TransY = (6.0* Plunger.Position) - 20
 	PlungerLine.TransZ = -0.7*(Plunger.Position - 4.1)
 End Sub
 
 Sub TimerPlunger2_Timer
-	' PinCab_Shooter.TransY = (5* Plunger.Position) -20
+	PinCab_Shooter.TransZ = (6.0* Plunger.Position) - 20
 	PlungerLine.TransY = (6.0* Plunger.Position) - 20
 	PlungerLine.TransZ = -0.7*(Plunger.Position - 4.1)
 End Sub
 
 
-' 'Debug textbox
-' tbDebug.Timerenabled = True
-' Sub tbDebug_Timer
-' 	me.text = Player(CurrentPlayer).BallsRemaining
-' End Sub
 
 

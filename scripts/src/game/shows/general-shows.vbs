@@ -242,6 +242,17 @@ Sub CreateGeneralShows()
                 .Action = "DOF_ON"
             End With
         End With
+        With .AddStep(0.02, Null, Null)
+            With .Shows("flash_color_fadeout")
+                .Key = "key_DOF8"
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "color", GIColor3000k
+                    .Add "lights", "LBG08"
+                End With
+            End With
+        End With
         With .AddStep(0.4, Null, Null)
             With .DOFEvent("8")
                 .Action = "DOF_OFF"
@@ -257,6 +268,17 @@ Sub CreateGeneralShows()
                 .Action = "DOF_ON"
             End With
         End With
+        With .AddStep(0.02, Null, Null)
+            With .Shows("flash_color_fadeout")
+                .Key = "key_DOF9"
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "color", GIColor3000k
+                    .Add "lights", "LBG09"
+                End With
+            End With
+        End With
         With .AddStep(0.4, Null, Null)
             With .DOFEvent("9")
                 .Action = "DOF_OFF"
@@ -270,6 +292,17 @@ Sub CreateGeneralShows()
         With .AddStep(0.01, Null, Null)
             With .DOFEvent("12")
                 .Action = "DOF_ON"
+            End With
+        End With
+        With .AddStep(0.02, Null, Null)
+            With .Shows("flash_color_fadeout")
+                .Key = "key_DOF12"
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "color", GIColor3000k
+                    .Add "lights", "LBG12"
+                End With
             End With
         End With
         With .AddStep(0.4, Null, Null)

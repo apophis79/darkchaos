@@ -46,7 +46,7 @@
     "disable_lighting_below": 1.0,
     "is_reflection_enabled": false,
     "backfaces_enabled": false,
-    "physics_material": "zCol_Sleeves",
+    "physics_material": "zCol_Sleeves1",
     "overwrite_physics": false,
     "display_texture": false,
     "object_space_normal_map": false,

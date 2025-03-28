@@ -372,6 +372,171 @@ Sub CreateBasementMode()
                 .Loops = 1
             End With
 
+
+            ' Backglass light shows 
+
+            With .EventName("backglass_dark_on")
+                .Key = "key_backglass_dark_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG01"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_dark_off")
+                .Key = "key_backglass_dark_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG01"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+            With .EventName("backglass_chaos_on")
+                .Key = "key_backglass_chaos_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG02"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_chaos_off")
+                .Key = "key_backglass_chaos_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG02"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+            With .EventName("backglass_clusters_on")
+                .Key = "key_backglass_clusters_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG03"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_clusters_off")
+                .Key = "key_backglass_clusters_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG03"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+            With .EventName("backglass_shields_on")
+                .Key = "key_backglass_shields_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG04"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_shields_off")
+                .Key = "key_backglass_shields_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG04"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+            With .EventName("backglass_wave_on")
+                .Key = "key_backglass_wave_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG05"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_wave_off")
+                .Key = "key_backglass_wave_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG05"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+            With .EventName("backglass_ball_on")
+                .Key = "key_backglass_ball_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG06"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_ball_off")
+                .Key = "key_backglass_ball_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG06"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+            With .EventName("backglass_moon_on")
+                .Key = "key_backglass_moon_on"
+                .Show = "flicker_color_on"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG07"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_moon_off")
+                .Key = "key_backglass_moon_off"
+                .Show = "flicker_color_off"
+                .Speed = 3
+                .Loops = 1
+                With .Tokens()
+                    .Add "lights", "LBG07"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 800
+                End With
+            End With
+
+
             'DEBUG
             ' With .EventName("test_show1") 
             '     .Key = "key_test_show1"

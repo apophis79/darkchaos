@@ -592,6 +592,17 @@ Sub CreateLeftSlingShows()
                 End With
             End With
         End With
+        With .AddStep(0.03, Null, Null)
+            With .Shows("flash_color_fadeout")
+                .Key = "key_DOF16"
+                .Speed = 10
+                .Loops = 1
+                With .Tokens()
+                    .Add "color", GIColor3000k
+                    .Add "lights", "LBG16"
+                End With
+            End With
+        End With
         With .AddStep(0.3, Null, Null)
             With .DOFEvent("16")
                 .Action = "DOF_OFF"

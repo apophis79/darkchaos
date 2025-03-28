@@ -84,26 +84,12 @@
     "bits": false
   },
   {
-    "name": "flipper_williams_logo_Left",
-    "path": "C:\\VPX4\\tables\\makeover stuff\\flipper_williams_logo_Left.png",
-    "width": 1024,
-    "height": 1024,
-    "alpha_test_value": 1.0,
-    "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\VPX4\\tables\\makeover stuff\\flipper_williams_logo_Left.png",
-      "name": "flipper_williams_logo_Left"
-    },
-    "bits": false
-  },
-  {
     "name": "Colour_Dark",
     "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Colours\\Colour_Dark.png",
     "width": 100,
     "height": 100,
     "alpha_test_value": 1.0,
-    "is_opaque": null,
+    "is_opaque": true,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Colours\\Colour_Dark.png",
@@ -112,44 +98,16 @@
     "bits": false
   },
   {
-    "name": "VR_Floor",
-    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Floor.png",
-    "width": 2000,
-    "height": 2000,
-    "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Floor.png",
-      "name": "VR_Floor"
-    },
-    "bits": false
-  },
-  {
-    "name": "VR_Roof",
-    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Roof.jpg",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Roof.jpg",
-      "name": "VR_Roof"
-    },
-    "bits": false
-  },
-  {
     "name": "Backglassimage",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Pincab_Backglass.png",
-    "width": 1566,
-    "height": 1080,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Backglassimage.png",
+    "width": 2000,
+    "height": 1379,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Pincab_Backglass.png",
-      "name": "Pincab_Backglass"
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Backglassimage.png",
+      "name": "Backglassimage"
     },
     "bits": false
   },
@@ -169,57 +127,29 @@
   },
   {
     "name": "Pincab_Cabinet",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Eample_Pincab_Cabinet.png",
-    "width": 2048,
-    "height": 2048,
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Cabinet.png",
+    "width": 4000,
+    "height": 4000,
     "alpha_test_value": 1.0,
-    "is_opaque": null,
+    "is_opaque": true,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Eample_Pincab_Cabinet.png",
-      "name": "Eample_Pincab_Cabinet"
-    },
-    "bits": false
-  },
-  {
-    "name": "VR_Wall_Right",
-    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Right.jpg",
-    "width": 2000,
-    "height": 2000,
-    "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Right.jpg",
-      "name": "VR_Wall_Right"
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Cabinet.png",
+      "name": "Pincab_Cabinet"
     },
     "bits": false
   },
   {
     "name": "Pincab_Backbox",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Example_Pincab_Backbox.png",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
     "width": 2048,
     "height": 4096,
     "alpha_test_value": 1.0,
-    "is_opaque": null,
+    "is_opaque": true,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\Example_Pincab_Backbox.png",
-      "name": "Example_Pincab_Backbox"
-    },
-    "bits": false
-  },
-  {
-    "name": "VR_Wall_Left",
-    "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Left.jpg",
-    "width": 2000,
-    "height": 2000,
-    "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Room\\VR_Wall_Left.jpg",
-      "name": "VR_Wall_Left"
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
+      "name": "Pincab_Backbox"
     },
     "bits": false
   },
@@ -374,6 +304,104 @@
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\dark_chaos_card_instructions2.png",
       "name": "dark_chaos_card_instructions2"
+    },
+    "bits": false
+  },
+  {
+    "name": "starmap_2020_4k",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\starmap_2020_4k_2.exr",
+    "width": 4096,
+    "height": 2048,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\starmap_2020_4k_2.exr",
+      "name": "starmap_2020_4k_2"
+    },
+    "bits": false
+  },
+  {
+    "name": "stars",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\stars.png",
+    "width": 2964,
+    "height": 1667,
+    "alpha_test_value": -1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\stars.png",
+      "name": "stars"
+    },
+    "bits": false
+  },
+  {
+    "name": "VRMinimal",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VRMinimal2.webp",
+    "width": 4000,
+    "height": 4000,
+    "alpha_test_value": -1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VRMinimal2.webp",
+      "name": "VRMinimal2"
+    },
+    "bits": false
+  },
+  {
+    "name": "VR_Asteroid_Color",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Asteroid_Color.webp",
+    "width": 4096,
+    "height": 4096,
+    "alpha_test_value": -1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Asteroid_Color.webp",
+      "name": "VR_Asteroid_Color"
+    },
+    "bits": false
+  },
+  {
+    "name": "Floor1_3x3.002_baseColor",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_baseColor.webp",
+    "width": 1024,
+    "height": 1024,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_baseColor.webp",
+      "name": "Floor1_3x3.002_baseColor"
+    },
+    "bits": false
+  },
+  {
+    "name": "Floor1_3x3.002_normal",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_normal.webp",
+    "width": 1024,
+    "height": 1024,
+    "alpha_test_value": -1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_normal.webp",
+      "name": "Floor1_3x3.002_normal"
+    },
+    "bits": false
+  },
+  {
+    "name": "bgflash",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\bgflash.png",
+    "width": 293,
+    "height": 282,
+    "alpha_test_value": -1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\bgflash.png",
+      "name": "bgflash"
     },
     "bits": false
   }

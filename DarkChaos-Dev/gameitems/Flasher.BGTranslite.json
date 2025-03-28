@@ -1,0 +1,81 @@
+{
+  "Flasher": {
+    "height": 1176.4866,
+    "pos_x": 462.90524,
+    "pos_y": -76.81557,
+    "rot_x": -86.0,
+    "rot_y": 0.0,
+    "rot_z": 0.0,
+    "color": "#91009191",
+    "is_timer_enabled": false,
+    "timer_interval": 100,
+    "name": "BGTranslite",
+    "image_a": "backglassimage",
+    "image_b": "",
+    "alpha": 100,
+    "modulate_vs_add": 0.8,
+    "is_visible": false,
+    "add_blend": false,
+    "is_dmd": false,
+    "display_texture": true,
+    "depth_bias": 1.0,
+    "image_alignment": "wrap",
+    "filter": "additive",
+    "filter_amount": 100,
+    "light_map": "",
+    "drag_points": [
+      {
+        "x": -151.85191,
+        "y": -1287.8138,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": -151.85191,
+        "y": -388.78775,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 1103.1484,
+        "y": -388.7878,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 1103.1484,
+        "y": -1287.8138,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      }
+    ]
+  }
+}

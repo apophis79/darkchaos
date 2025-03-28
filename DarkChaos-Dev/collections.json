@@ -180,19 +180,21 @@
   {
     "name": "VR_Cab",
     "items": [
-      "PinCab_Backglass",
       "PinCab_Coindoor",
       "PinCab_Backbox",
-      "PinCab_Buttons",
       "PinCab_Cabinet",
       "PinCab_Metals",
-      "VR_Floor",
-      "VR_Roof",
-      "VR_Wall_Left",
-      "VR_Wall_Right",
       "PinCab_Shooter",
       "PinCab_Housing",
-      "PinCab_Bottom"
+      "PinCab_Bottom",
+      "PinCab_ButtonRing4",
+      "PinCab_ButtonRing1",
+      "PinCab_LeftMagnaButton",
+      "PinCab_ButtonRing3",
+      "PinCab_RightMagnaButton",
+      "PinCab_ButtonRing2",
+      "PinCab_LeftFlipperButton",
+      "PinCab_RightFlipperButton"
     ],
     "fire_events": false,
     "stop_single_events": false,
@@ -888,7 +890,23 @@
       "pf_seg4",
       "pf_seg3",
       "pf_seg2",
-      "pf_seg1"
+      "pf_seg1",
+      "LBG08",
+      "LBG16",
+      "LBG15",
+      "LBG14",
+      "LBG13",
+      "LBG12",
+      "LBG11",
+      "LBG10",
+      "LBG09",
+      "LBG07",
+      "LBG06",
+      "LBG05",
+      "LBG04",
+      "LBG03",
+      "LBG02",
+      "LBG01"
     ],
     "fire_events": false,
     "stop_single_events": false,
@@ -1996,6 +2014,69 @@
       "p_p1_seg3_",
       "p_p1_seg2_",
       "p_p1_seg1_"
+    ],
+    "fire_events": false,
+    "stop_single_events": false,
+    "group_elements": false
+  },
+  {
+    "name": "VR_Mega",
+    "items": [
+      "VRSphere",
+      "VR_CordPlug",
+      "VR_Asteroid_Floor",
+      "VR_Outlet",
+      "VR_Cord",
+      "VR_Asteroid_main",
+      "Vr_Outletpost"
+    ],
+    "fire_events": false,
+    "stop_single_events": false,
+    "group_elements": false
+  },
+  {
+    "name": "VR_Min",
+    "items": [
+      "VRMinRoom"
+    ],
+    "fire_events": false,
+    "stop_single_events": false,
+    "group_elements": false
+  },
+  {
+    "name": "VR_Backglass",
+    "items": [
+      "BGTranslite"
+    ],
+    "fire_events": false,
+    "stop_single_events": false,
+    "group_elements": false
+  },
+  {
+    "name": "VR_Flashers",
+    "items": [
+      "F_LBG10_",
+      "F_LBG16_",
+      "F_LBG15_",
+      "F_LBG14_",
+      "F_LBG13_",
+      "F_LBG12_",
+      "F_LBG11_",
+      "F_LBG09_",
+      "F_LBG08_",
+      "F_LBG07_",
+      "F_LBG06_",
+      "F_LBG05_",
+      "F_LBG04_",
+      "F_LBG03_",
+      "F_LBG02_d",
+      "F_LBG02_c",
+      "F_LBG02_b",
+      "F_LBG02_a",
+      "F_LBG01_d",
+      "F_LBG01_c",
+      "F_LBG01_b",
+      "F_LBG01_a"
     ],
     "fire_events": false,
     "stop_single_events": false,

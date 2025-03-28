@@ -151,105 +151,105 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg001.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_leftsling.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_rightsling.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post005.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post009.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post010.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand002.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand005.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Plunger.Plunger.json",
@@ -273,34 +273,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.VR_Wall_Right.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_Wall_Left.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_Roof.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_Floor.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Primitive.PinCab_Metals.json",
     "is_locked": true,
     "editor_layer": 10,
@@ -315,13 +287,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.PinCab_Buttons.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Primitive.PinCab_Backbox.json",
     "is_locked": true,
     "editor_layer": 10,
@@ -330,13 +295,6 @@
   },
   {
     "file_name": "Primitive.PinCab_Coindoor.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.PinCab_Backglass.json",
     "is_locked": true,
     "editor_layer": 10,
     "editor_layer_name": "VR",
@@ -392,39 +350,32 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "Flasher.DMDbackbox.json",
-    "is_locked": true,
-    "editor_layer": 10,
-    "editor_layer_name": "VR",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Primitive.EndPoint1LS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.EndPoint2LS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.EndPoint1RS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.EndPoint2RS.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall001.json",
@@ -585,28 +536,28 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post012.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post013.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "HitTarget.s_TargetShield1.json",
@@ -830,35 +781,35 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg006.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg007.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg009.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "HitTarget.s_TargetMystery1.json",
@@ -879,7 +830,7 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.LockPin.json",
@@ -893,28 +844,28 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post015.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Post016.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand008.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.DiverterPin.json",
@@ -2202,35 +2153,35 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg011.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.s_RightSlingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.s_LeftSlingshot.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.RubberBand001.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.s_GateL.json",
@@ -5513,7 +5464,7 @@
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.VisualBlocker.json",
@@ -17595,7 +17546,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Rubbers and Posts",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swGateSfx.json",
@@ -17603,5 +17554,390 @@
     "editor_layer": 0,
     "editor_layer_name": "Main",
     "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Primitive.VRSphere.json",
+    "is_locked": true,
+    "editor_layer": 8,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VRMinRoom.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_RightFlipperButton.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_ButtonRing4.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_LeftFlipperButton.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_ButtonRing2.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_RightMagnaButton.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_ButtonRing3.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_LeftMagnaButton.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.PinCab_ButtonRing1.json",
+    "is_locked": true,
+    "editor_layer": 10,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_Asteroid_main.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_Cord.json",
+    "is_locked": true,
+    "editor_layer": 6,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_Outlet.json",
+    "is_locked": true,
+    "editor_layer": 6,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_CordPlug.json",
+    "is_locked": true,
+    "editor_layer": 6,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_Asteroid_Floor.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.Vr_Outletpost.json",
+    "is_locked": true,
+    "editor_layer": 6,
+    "editor_layer_name": "VR",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.BGTranslite.json",
+    "is_locked": true,
+    "editor_layer": 8,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG01.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG01_a.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG01_b.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG01_c.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG01_d.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG02_a.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG02.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG03.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG04.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG05.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG06.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG07.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG08.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG09.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG10.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG11.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG12.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG13.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG14.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG15.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Light.LBG16.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Lights Above PF",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG02_b.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG02_c.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG02_d.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG03_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG04_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG05_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG06_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG07_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG08_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG09_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG10_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG11_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG12_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG13_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG14_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG15_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.F_LBG16_.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Backglass",
+    "editor_layer_visibility": false
   }
 ]

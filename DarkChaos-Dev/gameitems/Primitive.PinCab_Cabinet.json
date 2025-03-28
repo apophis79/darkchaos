@@ -25,7 +25,7 @@
     "normal_map": "",
     "sides": 4,
     "name": "PinCab_Cabinet",
-    "material": "colormaxnoreflectionhalf",
+    "material": "VLM.Bake.Solid",
     "side_color": "#96009696",
     "is_visible": false,
     "draw_textures_inside": false,

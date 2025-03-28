@@ -5,7 +5,7 @@
       "y": 2232.023
     },
     "is_timer_enabled": false,
-    "timer_interval": 11,
+    "timer_interval": -1,
     "name": "TimerPlunger2",
     "backglass": false
   }

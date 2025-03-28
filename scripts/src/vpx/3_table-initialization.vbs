@@ -29,6 +29,9 @@ Sub Table1_Init
 	InitPolarity
 	InitSlingCorrection
 
+	' Init VR things
+	InitVR
+
 End Sub
 
 

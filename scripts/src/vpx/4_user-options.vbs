@@ -9,12 +9,12 @@ Dim MechVol : MechVol = 0.8           			' Overall Mechanical sound effect volum
 Dim BallRollVolume : BallRollVolume = 0.5   	' Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume : RampRollVolume = 0.5 		' Level of ramp rolling volume. Value between 0 and 1
 Dim StagedFlipper : StagedFlipper = 0 			' 0 = Not enabled, 1 = Enabled
-' Dim BackglassVol : BackglassVol = 1				'Separate setting that only affects sounds coming from backglass. Range from 0 to 1
-' Dim CalloutVol : CalloutVol = 1					'Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
+Dim BackglassVol : BackglassVol = 1			    ' Separate setting that only affects sounds coming from backglass. Range from 0 to 1
+Dim CalloutVol : CalloutVol = 1				    ' Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
 
-Const VRRoom = 0 ' 1 - VR Room off, 1 - Minimal Room, 2 - Ultra Minimal Room
-
-
+Dim VRRoomChoice: VRRoomChoice = 1 				' 1 - Asteroid Room, 2 - Minimal Room, 3 - Ultra Minimal Room
+Dim VRRoom: VRRoom = 0
+Const TestVR = False
 
 ' Called when options are tweaked by the player. 
 ' - 0: game has started, good time to load options and adjust accordingly
@@ -68,11 +68,10 @@ Sub Table1_OptionEvent(ByVal eventId)
 	' Staged Flipper
 	StagedFlipper = Table1.Option("Staged Flipper", 0, 1, 1, 0, 0, Array("Not Enabled", "Enabled"))
 
-	' VR 			FIXME check that this works
+	' VR
+	VRRoomChoice = Table1.Option("VR Room", 1, 3, 1, 1, 0, Array("Asteroid", "Minimal", "Ultra Minimal"))
+	If RenderingMode = 2 or TestVR = True Then: VRRoom = VRRoomChoice: Else VRRoom = 0: End If
 	SetupRoom
-
-	'Hide desktop lights if not in desktop mode
-	For Each x In DesktopLights: x.visible = DesktopMode: Next
 
     If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub
