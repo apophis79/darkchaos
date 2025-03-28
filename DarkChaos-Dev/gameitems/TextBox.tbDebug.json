@@ -16,7 +16,7 @@
     "timer_interval": 100,
     "name": "tbDebug",
     "align": "right",
-    "is_transparent": false,
+    "is_transparent": true,
     "is_dmd": false,
     "font": {
       "style": [],

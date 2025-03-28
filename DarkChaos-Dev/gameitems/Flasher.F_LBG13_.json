@@ -12,7 +12,7 @@
     "name": "F_LBG13_",
     "image_a": "bgflash",
     "image_b": "",
-    "alpha": 3000,
+    "alpha": 2500,
     "modulate_vs_add": 1.0,
     "is_visible": true,
     "add_blend": true,

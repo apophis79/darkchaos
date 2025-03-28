@@ -22,6 +22,7 @@ Sub CreateShipSaveMode
             .Add "restart_ship_save{current_player.training_ship_save_achieved==0}", Array("ready_ship_charge1","clear_ship_save") 'no training boost
             .Add "restart_ship_save{current_player.training_ship_save_achieved==1}", Array("light_ship_charge1","light_ship_charge2","ready_ship_charge3","clear_ship_save") 'with training boost
             .Add "mode_ship_save_started{current_player.shot_ship_charge3 == 2}", Array("backglass_ball_on")
+            .Add "mode_ship_save_stopping", Array("backglass_ball_off")
             'Successful shot
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", Array("light_ship_charge1","ready_ship_charge2","play_sfx_LF")
             .Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", Array("light_ship_charge2","ready_ship_charge3","play_sfx_LF")

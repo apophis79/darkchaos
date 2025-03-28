@@ -1,8 +1,8 @@
 {
   "Flasher": {
     "height": 50.0,
-    "pos_x": 462.4572,
-    "pos_y": -1195.67,
+    "pos_x": 932.4572,
+    "pos_y": -1185.67,
     "rot_x": 0.0,
     "rot_y": 0.0,
     "rot_z": 0.0,
@@ -12,7 +12,7 @@
     "name": "F_LBG15_",
     "image_a": "bgflash",
     "image_b": "",
-    "alpha": 3000,
+    "alpha": 2500,
     "modulate_vs_add": 1.0,
     "is_visible": true,
     "add_blend": true,
@@ -25,8 +25,8 @@
     "light_map": "<None>",
     "drag_points": [
       {
-        "x": 332.4571,
-        "y": -1325.6708,
+        "x": 802.4571,
+        "y": -1315.6708,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -38,8 +38,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 332.4571,
-        "y": -1065.6702,
+        "x": 802.4571,
+        "y": -1055.6702,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -51,8 +51,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 592.4561,
-        "y": -1065.6702,
+        "x": 1062.456,
+        "y": -1055.6702,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -64,8 +64,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 592.4561,
-        "y": -1325.6708,
+        "x": 1062.456,
+        "y": -1315.6708,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

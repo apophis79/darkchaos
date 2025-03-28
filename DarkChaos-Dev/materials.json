@@ -1085,7 +1085,7 @@
     "wrap_lighting": 0.0,
     "roughness": 0.0,
     "glossy_image_lerp": 1.0,
-    "thickness": 0.047058824,
+    "thickness": 0.04705882,
     "edge": 0.0,
     "edge_alpha": 0.0,
     "opacity": 1.0,
@@ -1358,5 +1358,25 @@
     "friction": 0.0,
     "scatter_angle": 0.0,
     "refraction_tint": "#00ffffff"
+  },
+  {
+    "name": "VR.Sky",
+    "type_": "Basic",
+    "wrap_lighting": 0.0,
+    "roughness": 0.0,
+    "glossy_image_lerp": 1.0,
+    "thickness": 0.04705882,
+    "edge": 0.0,
+    "edge_alpha": 0.0,
+    "opacity": 1.0,
+    "base_color": "#000d0d0d",
+    "glossy_color": "#00000000",
+    "clearcoat_color": "#00000000",
+    "opacity_active": false,
+    "elasticity": 0.0,
+    "elasticity_falloff": 0.0,
+    "friction": 0.0,
+    "scatter_angle": 0.0,
+    "refraction_tint": "#ffffffff"
   }
 ]

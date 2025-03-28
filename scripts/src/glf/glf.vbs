@@ -11868,6 +11868,7 @@ Class GlfLightSegmentDisplay
             Dim x
             For x=0 to UBound(m_lights)
                 glf_lightNames(m_lights(x)).Visible = input
+                If Not DesktopMode Then glf_lightNames(m_lights(x)).Visible = 0  'apophis edit
             Next
         End If
     End Sub
