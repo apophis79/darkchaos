@@ -41,9 +41,9 @@ Sub CreateHealthMode
             .Add "check_remove_health{current_player.health_value==7}", Array("health7_off","health8_off","health9_off","health6_warm","health5_warm","health4_warm","health3_warm","health2_warm","health1_warm","remove_health")
             .Add "check_remove_health{current_player.health_value==6}", Array("health6_off","health7_off","health8_off","health9_off","remove_health")
             .Add "check_remove_health{current_player.health_value==5}", Array("health5_off","health6_off","health7_off","health8_off","health9_off","remove_health")
-            .Add "check_remove_health{current_player.health_value==4}", Array("health4_off","health5_off","health6_off","health7_off","health8_off","health9_off","health3_crit","health2_crit","health1_crit","remove_health")
+            .Add "check_remove_health{current_player.health_value==4}", Array("health4_off","health5_off","health6_off","health7_off","health8_off","health9_off","health3_crit","health2_crit","health1_crit","remove_health","play_voc_critically_low_health")
             .Add "check_remove_health{current_player.health_value==3}", Array("health3_off","health4_off","health5_off","health6_off","health7_off","health8_off","health9_off","remove_health")
-            .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","health3_off","health4_off","health5_off","health6_off","health7_off","health8_off","health9_off","remove_health")
+            .Add "check_remove_health{current_player.health_value==2}", Array("health2_off","health3_off","health4_off","health5_off","health6_off","health7_off","health8_off","health9_off","remove_health","play_voc_imminent_shutdown")
             .Add "check_remove_health{current_player.health_value==1}", Array("health1_off","health2_off","health3_off","health4_off","health5_off","health6_off","health7_off","health8_off","health9_off","remove_health","kill_flippers","turn_off_gi","meteor_wave_music_stop")
             .Add "add_health", Array("slings_powerup_added","lsling_powerup_h","rsling_powerup_h","health_charge1","health_charge2","score_50000")
             'handle earth hits

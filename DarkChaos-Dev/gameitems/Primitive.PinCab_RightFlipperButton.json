@@ -42,7 +42,7 @@
     "use_3d_mesh": true,
     "static_rendering": false,
     "disable_lighting_top_old": null,
-    "disable_lighting_top": 1.0,
+    "disable_lighting_top": 0.0,
     "disable_lighting_below": 1.0,
     "is_reflection_enabled": false,
     "backfaces_enabled": false,

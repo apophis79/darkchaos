@@ -877,6 +877,11 @@ Sub CreateBaseMode()
                 End With
             Next
 
+            With .EventName("play_voc_wave_completed")
+                .Key = "key_voc_wave_completed"
+                .Sound = "voc_wave_completed"
+            End With
+
             'Training music
             With .EventName("training_music_start")
                 .Key = "key_mus_training"
@@ -1078,6 +1083,17 @@ Sub CreateBaseMode()
             With .EventName("play_sfx_EarthHit3")
                 .Key = "key_sfx_EarthHit3"
                 .Sound = "sfx_EarthHit3"
+            End With
+
+            'Health low
+            With .EventName("play_voc_critically_low_health")
+                .Key = "key_voc_critically_low_health"
+                .Sound = "voc_critically_low_health"
+            End With
+
+            With .EventName("play_voc_imminent_shutdown")
+                .Key = "key_voc_imminent_shutdown"
+                .Sound = "voc_imminent_shutdown"
             End With
 
             'Proton fire

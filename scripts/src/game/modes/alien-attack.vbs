@@ -51,6 +51,10 @@ Sub CreateAlienAttackMode
                 .Key = "key_voc_AlienHit"
                 .Sound = "voc_AlienHit"
             End With
+            With .EventName("earth_hit")
+                .Key = "key_sfx_alien_ship_crash"
+                .Sound = "sfx_alien_ship_crash"
+            End With
         End With
 
         

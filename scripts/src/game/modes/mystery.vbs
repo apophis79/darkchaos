@@ -44,7 +44,7 @@ Sub CreateMysteryMode
         With .RandomEventPlayer()
             '.Debug = True
             With .EventName("select_random_mystery")
-                .Add "mystery_full_health{current_player.health_value < 9}", 1
+                .Add "mystery_full_health{current_player.shot_health9_light == 0}", 1
                 .Add "mystery_full_protons{current_player.shot_proton_round6 == 0}", 0.7
                 .Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", 0.8
                 .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
@@ -106,16 +106,39 @@ Sub CreateMysteryMode
                 .Sound = "sfx_LM5"
             End With
 
-            ' double bouns sfx
-            With .EventName("mystery_double_bonus")
-                .Key = "key_m_sfx_tally_alt"
-                .Sound = "sfx_tally_alt"
-            End With
-            ' relaxed combos sfx
+            ' mystery award callouts
+
             With .EventName("mystery_relaxed_combos")
-                .Key = "key_m_sfx_combo"
-                .Sound = "sfx_combo"
+                .Key = "key_voc_relaxed_combos"
+                .Sound = "voc_relaxed_combos"
             End With
+            With .EventName("mystery_super_spinner")
+                .Key = "key_voc_super_spinner"
+                .Sound = "voc_super_spinner"
+            End With
+            With .EventName("mystery_super_pops")
+                .Key = "key_voc_super_pop_bumpers"
+                .Sound = "voc_super_pop_bumpers"
+            End With
+            With .EventName("mystery_full_protons")
+                .Key = "key_voc_full_protons"
+                .Sound = "voc_full_protons"
+            End With
+            With .EventName("mystery_full_health")
+                .Key = "key_voc_full_health"
+                .Sound = "voc_full_health"
+            End With
+            With .EventName("mystery_double_scoring")
+                .Key = "key_voc_double_scoring"
+                .Sound = "voc_double_scoring"
+            End With
+            With .EventName("mystery_double_bonus")
+                .Key = "key_voc_double_bonus"
+                .Sound = "voc_double_bonus"
+            End With
+
+
+
         End With
 
 

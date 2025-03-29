@@ -70,7 +70,7 @@ Sub CreateMeteorWaveMode
             .Add "update_last_num_meteors_ratio", Array("check_update_display","check_num_meteors_ratio")
             .Add "check_update_display{current_player.last_num_meteors_ratio >= 0}", Array("update_display")
             'Stop the current successful wave
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done")
+            .Add "check_meteor_wave{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done","play_voc_wave_completed")
             .Add "meteor_wave_done{current_player.meteor_wave_running == 1}", Array("stop_meteor_wave","score_wave_count")
             .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done")

@@ -95,7 +95,8 @@ SFXNames = Array( _
     "sfx_final_explosion", _
     "sfx_jackpot", _
     "sfx_super_jackpot", _
-    "sfx_error_buzz")
+    "sfx_error_buzz", _ 
+    "sfx_alien_ship_crash")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -126,7 +127,7 @@ SFXDurations = Array( _
     2.105, _
     1.951, _
     4.231, _
-    2.000, _
+    1.995, _
     1.737, _
     4.092, _
     0.908, _
@@ -185,7 +186,8 @@ SFXDurations = Array( _
     9.473, _ 
     1.386, _ 
     3.422, _ 
-    0.506)
+    0.506, _ 
+    4.467)
 
 
 Dim VOCNames, VOCDurations
@@ -225,7 +227,18 @@ VOCNames = Array( _
     "voc_winners_poem3", _
     "voc_winners_poem4", _
     "voc_winners_poem5", _
-    "voc_winners_poem6")
+    "voc_winners_poem6", _ 
+    "voc_wizard_game", _
+    "voc_wave_completed", _ 
+    "voc_super_spinner", _ 
+    "voc_super_pop_bumpers", _ 
+    "voc_relaxed_combos", _ 
+    "voc_imminent_shutdown", _ 
+    "voc_full_protons", _ 
+    "voc_full_health", _ 
+    "voc_double_scoring", _
+    "voc_double_bonus", _
+    "voc_critically_low_health")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -262,7 +275,18 @@ VOCDurations = Array( _
     3.768, _
     2.624, _
     3.363, _
-    4.055)
+    4.055, _
+    1.966, _
+    3.579, _
+    2.059, _
+    2.623, _
+    1.768, _
+    2.072, _
+    1.962, _
+    1.804, _
+    1.846, _
+    1.879, _
+    2.417)
 
 
 

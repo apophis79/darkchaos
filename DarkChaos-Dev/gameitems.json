@@ -17672,7 +17672,7 @@
     "is_locked": true,
     "editor_layer": 8,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG01.json",
@@ -17686,35 +17686,35 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG01_b.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG01_c.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG01_d.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG02_a.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG02.json",
@@ -17826,126 +17826,126 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG02_c.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG02_d.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG03_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG04_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG05_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG06_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG07_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG08_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG09_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG10_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG11_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG12_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG13_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG14_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG15_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG16_.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.BGDisplay.json",
     "is_locked": true,
     "editor_layer": 8,
     "editor_layer_name": "VR Backglass",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.p_p1_seg1_vr.json",
