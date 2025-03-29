@@ -385,6 +385,24 @@ Sub ConfigureGlfDevices
 
 
     ' Alphanumeric displays
+
+    Dim segment_display_pf
+    Set segment_display_pf = (New GlfLightSegmentDisplay)("pf")
+
+    segment_display_pf.SegmentType = "14Segment"
+    segment_display_pf.SegmentSize = 2
+    segment_display_pf.UpdateMethod = "stack"
+    segment_display_pf.DefaultColor = SegmentsColor
+    segment_display_pf.LightGroup = "pf_seg"
+
+    Dim segment_display_ball
+    Set segment_display_ball = (New GlfLightSegmentDisplay)("ball")
+
+    segment_display_ball.SegmentType = "14Segment"
+    segment_display_ball.SegmentSize = 2
+    segment_display_ball.DefaultColor = SegmentsColor
+    segment_display_ball.LightGroup = "ball_seg"
+
     Dim segment_display_p1
     Set segment_display_p1 = (New GlfLightSegmentDisplay)("player1")
 
@@ -429,22 +447,38 @@ Sub ConfigureGlfDevices
     segment_display_p4.UseDotsForCommas = True
     segment_display_p4.ExternalFlexDmdSegmentIndex = 24
 
-    Dim segment_display_ball
-    Set segment_display_ball = (New GlfLightSegmentDisplay)("ball")
+    ' Dim segment_display_top
+    ' Set segment_display_top = (New GlfLightSegmentDisplay)("top")
+    
+    ' segment_display_top.SegmentType = "14Segment"
+    ' segment_display_top.SegmentSize = 16
+    ' segment_display_top.LightGroups = Array("p1_seg", "p2_seg")
+    ' segment_display_top.UpdateMethod = "stack"
+    ' segment_display_top.DefaultColor = SegmentsColor
+    ' segment_display_top.UseDotsForCommas = True
+    ' segment_display_top.DefaultTransitionUpdateHz = 10
 
-    segment_display_ball.SegmentType = "14Segment"
-    segment_display_ball.SegmentSize = 2
-    segment_display_ball.DefaultColor = SegmentsColor
-    segment_display_ball.LightGroup = "ball_seg"
+    ' Dim segment_display_bottom
+    ' Set segment_display_bottom = (New GlfLightSegmentDisplay)("bottom")
+    
+    ' segment_display_bottom.SegmentType = "14Segment"
+    ' segment_display_bottom.SegmentSize = 16
+    ' segment_display_bottom.LightGroups = Array("p3_seg", "p4_seg")
+    ' segment_display_bottom.UpdateMethod = "stack"
+    ' segment_display_bottom.DefaultColor = SegmentsColor
+    ' segment_display_bottom.UseDotsForCommas = True
+    ' segment_display_bottom.DefaultTransitionUpdateHz = 10
 
-    Dim segment_display_pf
-    Set segment_display_pf = (New GlfLightSegmentDisplay)("pf")
-
-    segment_display_pf.SegmentType = "14Segment"
-    segment_display_pf.SegmentSize = 2
-    segment_display_pf.UpdateMethod = "stack"
-    segment_display_pf.DefaultColor = SegmentsColor
-    segment_display_pf.LightGroup = "pf_seg"
+    Dim segment_display_all
+    Set segment_display_all = (New GlfLightSegmentDisplay)("all")
+    
+    segment_display_all.SegmentType = "14Segment"
+    segment_display_all.SegmentSize = 32
+    segment_display_all.LightGroups = Array("p1_seg", "p2_seg", "p3_seg", "p4_seg")
+    segment_display_all.UpdateMethod = "stack"
+    segment_display_all.DefaultColor = SegmentsColor
+    segment_display_all.UseDotsForCommas = True
+    segment_display_all.DefaultTransitionUpdateHz = 10
 
 
     ' Trough sound effects

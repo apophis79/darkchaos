@@ -60,6 +60,18 @@ Sub CreateAttractMode()
             .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 233}", Array("play_earth_hit_right","play_attract_boom")
             .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 238}", Array("play_meteor_fall_left","play_att_lsling_show8","play_att_rsling_show8")
             .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 239}", Array("play_earth_hit_left","play_attract_boom")
+
+
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 1}", Array("show_attract_title")   '5 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 7}", Array("show_attract_message") '9 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 17}", Array("show_attract_hs1")    '3 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 21}", Array("show_attract_hs2")    '3 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 25}", Array("show_attract_hs3")    '3 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 29}", Array("show_attract_hs4")    '3 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 33}", Array("show_attract_credits1") '5 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 39}", Array("show_attract_credits2") '2 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 41}", Array("show_attract_credits3") '2 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 43}", Array("show_attract_credits4") '4 + 1 sec
         End With
 
         With .RandomEventPlayer()
@@ -79,6 +91,24 @@ Sub CreateAttractMode()
                 .Add "play_sfx_boom4", 1
                 .Add "play_sfx_boom5", 1
                 .Add "play_sfx_boom6", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+            With .EventName("show_attract_message")
+                .Add "show_attract_message1", 1
+                .Add "show_attract_message2", 1
+                .Add "show_attract_message3", 1
+                .Add "show_attract_message4", 1
+                .Add "show_attract_message5", 1
+                .Add "show_attract_message6", 1
+                .Add "show_attract_message7", 1
+                .Add "show_attract_message8", 1
+                .Add "show_attract_message9", 1
+                .Add "show_attract_message10", 1
+                .Add "show_attract_message11", 1
+                .Add "show_attract_message12", 1
+                .Add "show_attract_message13", 1
+                .Add "show_attract_message14", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
@@ -138,6 +168,20 @@ Sub CreateAttractMode()
             End With
             With .ControlEvents()
                 .EventName = "timer_attract_shows_complete"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("attract_display")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 48
+            With .ControlEvents()
+                .EventName = "mode_attract_started"
+                .Action = "start"
+            End With
+            With .ControlEvents()
+                .EventName = "timer_attract_display_complete"
                 .Action = "restart"
             End With
         End With
@@ -379,20 +423,368 @@ Sub CreateAttractMode()
 
 
         With .SegmentDisplayPlayer()
-            With .EventName("mode_attract_started")
-                With .Display("player1")
-                    .Text = """DARK"""
-                End With
+            With .EventName("show_attract_title")
                 With .Display("player2")
-                    .Text = """"""
+                    .Key = "key_top_show_attract_title"
+                    .Text = """DARK"""
+                    .Expire = 5000
+                    .Priority = 1
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "right"
+                        .Text = ""
+                    End With
                 End With
                 With .Display("player3")
-                    .Text = """"""
-                End With
-                With .Display("player4")
+                    .Key = "key_bot_show_attract_title"
                     .Text = """CHAOS   """
+                    .Expire = 5000
+                    .Priority = 1
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = ""
+                    End With
                 End With
             End With
+
+            With .EventName("show_attract_hs1")
+                With .Display("player2")
+                    .Key = "key_p2_show_attract_hs1"
+                    .Text = """LEADER 1"""
+                    .Expire = 3000
+                    .Priority = 3
+                End With
+                With .Display("player3")
+                    .Key = "key_p3_show_attract_hs1"
+                    .Text = "machine.high_score_1_initials"
+                    .Expire = 3000
+                    .Priority = 3
+                End With
+                With .Display("player4")
+                    .Key = "key_p4_show_attract_hs1"
+                    .Text = "machine.high_score_1"
+                    .Expire = 3000
+                    .Priority = 3
+                End With
+            End With
+
+            With .EventName("show_attract_hs2")
+                With .Display("player2")
+                    .Key = "key_p2_show_attract_hs2"
+                    .Text = """LEADER 2"""
+                    .Expire = 3000
+                    .Priority = 4
+                End With
+                With .Display("player3")
+                    .Key = "key_p3_show_attract_hs2"
+                    .Text = "machine.high_score_2_initials"
+                    .Expire = 3000
+                    .Priority = 4
+                End With
+                With .Display("player4")
+                    .Key = "key_p4_show_attract_hs2"
+                    .Text = "machine.high_score_2"
+                    .Expire = 3000
+                    .Priority = 4
+                End With
+            End With
+
+            With .EventName("show_attract_hs3")
+                With .Display("player2")
+                    .Key = "key_p2_show_attract_hs3"
+                    .Text = """LEADER 3"""
+                    .Expire = 3000
+                    .Priority = 5
+                End With
+                With .Display("player3")
+                    .Key = "key_p3_show_attract_hs3"
+                    .Text = "machine.high_score_3_initials"
+                    .Expire = 3000
+                    .Priority = 5
+                End With
+                With .Display("player4")
+                    .Key = "key_p4_show_attract_hs3"
+                    .Text = "machine.high_score_3"
+                    .Expire = 3000
+                    .Priority = 5
+                End With
+            End With
+
+            With .EventName("show_attract_hs4")
+                With .Display("player2")
+                    .Key = "key_p2_show_attract_hs4"
+                    .Text = """LEADER 4"""
+                    .Expire = 3000
+                    .Priority = 6
+                End With
+                With .Display("player3")
+                    .Key = "key_p3_show_attract_hs4"
+                    .Text = "machine.high_score_4_initials"
+                    .Expire = 3000
+                    .Priority = 6
+                End With
+                With .Display("player4")
+                    .Key = "key_p4_show_attract_hs4"
+                    .Text = "machine.high_score_4"
+                    .Expire = 3000
+                    .Priority = 6
+                End With
+            End With
+
+            With .EventName("show_attract_credits1")
+                With .Display("all")
+                    .Key = "key_all_show_attract_credits1"
+                    .Text = """"""
+                    .Expire = 5000
+                    .Priority = 7
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "ORIGINAL TABLE BY"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_credits2")
+                With .Display("player2")
+                    .Key = "key_p2_show_attract_credits2"
+                    .Text = """APOPHIS"""
+                    .Expire = 8000
+                    .Priority = 8
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "right"
+                        .Text = ""
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_credits3")
+                With .Display("player3")
+                    .Key = "key_p3_show_attract_credits3"
+                    .Text = """FLUX  """
+                    .Expire = 6000
+                    .Priority = 8
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "right"
+                        .Text = ""
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_credits4")
+                With .Display("player4")
+                    .Key = "key_p4_show_attract_credits4"
+                    .Text = """UNSAVORY"""
+                    .Expire = 4000
+                    .Priority = 8
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "right"
+                        .Text = ""
+                    End With
+                End With
+            End With
+
+
+            With .EventName("show_attract_message1")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message1"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "DESTROY THE ASTEROID AND SAVE EARTH"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message2")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message2"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "COLLECT POWER UPS TO SURVIVE METEOR WAVES"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message3")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message3"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "CLUSTER BOMBS DESTROY NEARBY METEORS"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message4")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message4"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "PROTON CANNON DESTROYS ONE RANDOM METEOR"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message5")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message5"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "LAUNCH MOON MISSILES FOR INSTANT MULTIBALL"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message6")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message6"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "COLLECT SHIELDS FOR AN OUTLANE BALL SAVE"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message7")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message7"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "COLLECT SHIP SAVER TO INCREASE BALLSAVE TIME"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message8")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message8"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "TIME WARP RAMP PAUSES COUNTDOWN FOR 10 SEC"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message9")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message9"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "BUMPERS IMPROVE HEALTH METER"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message10")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message10"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "COMPLETE TRAININGS TO EASILY COLLECT POWER UPS"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message11")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message11"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "METEORS DO DAMAGE IF THEY MAKE IT THRU DEFENSES"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message12")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message12"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "COLLECT 8 COMBOS TO START COMBO COMMAND WIZARD"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message13")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message13"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "COLLECT ALL AMMO TO START FULLY LOADED WIZARD"
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_message14")
+                With .Display("all")
+                    .Key = "key_all_show_attract_message14"
+                    .Text = """"""
+                    .Expire = 9000
+                    .Priority = 2
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = "SURVIVE ALL WAVES TO START FINAL WAVE WIZARD"
+                    End With
+                End With
+            End With
+
         End With
 
 
