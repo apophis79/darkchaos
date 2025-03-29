@@ -746,6 +746,14 @@ Sub CreateBaseMode()
             .EnableEvents = Array("new_ball_active")
         End With
 
+        With .BallSaves("wave_coming")
+            .ActiveTime = 1500
+            .HurryUpTime = 0
+            .GracePeriod = 500
+            .AutoLaunch = True
+            .EnableEvents = Array("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}")
+        End With
+
         'Scoop ball hold
         With .BallHolds("scoop_hold")
             '.Debug = True

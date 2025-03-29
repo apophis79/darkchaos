@@ -34,14 +34,6 @@ Sub CreateMeteorWaveQualifyMode
 
             .Add "meteor_wave_alert_show", Array("meteor_wave_alert_show1","meteor_wave_alert_show2","meteor_wave_alert_show3","meteor_wave_alert_show4")
         End With
-
-        With .BallSaves("wave_coming")
-            .ActiveTime = 1000
-            .HurryUpTime = 0
-            .GracePeriod = 500
-            .AutoLaunch = True
-            .EnableEvents = Array("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}")
-        End With
         
         With .SegmentDisplayPlayer()
             With .EventName("init_pf_display")
