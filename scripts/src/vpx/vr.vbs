@@ -49,21 +49,21 @@ Sub InitVR
 
 	For Each obj in VR_Backglass
 		obj.x = obj.x + 0
-		obj.height = -obj.y + 350
+		obj.height = -obj.y + 375
 		obj.y = 10    'adjusts the distance from the backglass towards the user
 		obj.rotx = -86.5
 	Next
 
 	For Each obj in VR_Flashers
 		obj.x = obj.x + 0
-		obj.height = -obj.y + 350
+		obj.height = -obj.y + 375
 		obj.y = 20    'adjusts the distance from the backglass towards the user
 		obj.rotx = -86.5
 	Next
 
 	For Each obj in VR_Display
 		obj.x = obj.x + 0
-		obj.z = -obj.y + 350
+		obj.z = -obj.y + 375
 		obj.y = 90    'adjusts the distance from the backglass towards the user
 		obj.rotx = -86.5
 	Next
