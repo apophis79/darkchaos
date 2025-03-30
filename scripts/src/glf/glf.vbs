@@ -2231,6 +2231,7 @@ Class GlfBallSearch
             'Fire all auto fire devices, slings, pops.
             m_devices = glf_autofiredevices.Items()
             m_current_device_type = "autofire"
+            DispatchPinEvent "ball_search_started", Null
             If UBound(m_devices) > -1 Then
                 m_devices(0).BallSearch(m_phase)
                 SetDelay "ball_search_next_device" , "BallSearchHandler", Array(Array("next_device", Me, 0), Null), m_search_interval.Value
@@ -2280,11 +2281,13 @@ Class GlfBallSearch
 
     Public Sub Reset()
         RemoveDelay "ball_search_next_device"
+        DispatchPinEvent "ball_search_stopped", Null
         m_phase = 0
         SetDelay "ball_search" , "BallSearchHandler", Array(Array("start", Me), Null), m_timeout.Value
     End Sub
 
     Public Sub StopBallSearch()
+        DispatchPinEvent "ball_search_stopped", Null
         RemoveDelay "ball_search_next_device"
         m_phase = 0
         RemoveDelay "ball_search"
@@ -11327,11 +11330,13 @@ Class GlfAutoFireDevice
     Private m_action_cb
     Private m_disabled_cb
     Private m_enabled_cb
+    Private m_exclude_from_ball_search
     Private m_debug
 
     Public Property Let Switch(value)
         m_switch = value
     End Property
+    Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
     Public Property Let ActionCallback(value) : m_action_cb = value : End Property
     Public Property Let DisabledCallback(value) : m_disabled_cb = value : End Property
     Public Property Let EnabledCallback(value) : m_enabled_cb = value : End Property
@@ -11371,6 +11376,7 @@ Class GlfAutoFireDevice
         m_enabled_cb = Empty
         m_switch = Empty
         m_debug = False
+        m_exclude_from_ball_search = False
         glf_autofiredevices.Add name, Me
         Set Init = Me
 	End Function
@@ -11415,6 +11421,9 @@ Class GlfAutoFireDevice
     End Sub
 
     Public Sub BallSearch(phase)
+        If m_exclude_from_ball_search = True Then
+            Exit Sub
+        End If
         Log "Ball Search, phase " & phase
         If Not IsEmpty(m_action_cb) Then
             GetRef(m_action_cb)(Array(1, Null))
@@ -11479,6 +11488,7 @@ Class GlfBallDevice
     Private m_entrance_count_delay
     Private m_incoming_balls
     Private m_lost_balls
+    Private m_exclude_from_ball_search
     Private m_debug
 
     Public Property Get Name(): Name = m_name : End Property
@@ -11537,7 +11547,7 @@ Class GlfBallDevice
         Next
     End Property
     Public Property Let MechanicalEject(value) : m_mechanical_eject = value : End Property
-
+    Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
 
     Public Property Let Debug(value) : m_debug = value : End Property
         
@@ -11560,6 +11570,7 @@ Class GlfBallDevice
         m_eject_enable_time = 0
         m_entrance_count_delay = 500
         m_incoming_balls = 0
+        m_exclude_from_ball_search = False
         glf_ball_devices.Add name, Me
 	    Set Init = Me
 	End Function
@@ -11682,6 +11693,9 @@ Class GlfBallDevice
     End Sub
 
     Public Sub BallSearch(phase)
+        If m_exclude_from_ball_search = True Then
+            Exit Sub
+        End If
         Log "Ball Search, phase " & phase
         If m_default_device = True Then
             Exit Sub
@@ -11763,6 +11777,7 @@ Class GlfDiverter
     Private m_enabled
     Private m_active
     Private m_ball_search_hold_time
+    Private m_exclude_from_ball_search
     Private m_debug
 
     Public Property Get Name(): Name = m_name : End Property
@@ -11817,6 +11832,7 @@ Class GlfDiverter
     Public Property Let ActivationTime(value) : Set m_activation_time = CreateGlfInput(value) : End Property
     Public Property Let ActivationSwitches(value) : m_activation_switches = value : End Property
     Public Property Let BallSearchHoldTime(value) : Set m_ball_search_hold_time = CreateGlfInput(value) : End Property
+    Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(name)
@@ -11831,6 +11847,7 @@ Class GlfDiverter
         m_debug = False
         m_enabled = False
         m_active = False
+        m_exclude_from_ball_search = False
         glf_diverters.Add name, Me
         Set Init = Me
 	End Function
@@ -11886,6 +11903,9 @@ Class GlfDiverter
     End Sub
 
     Public Sub BallSearch(phase)
+        If m_exclude_from_ball_search = True Then
+            Exit Sub
+        End If
         Log "Ball Search, phase " & phase
         If m_active = False Then
             If Not IsEmpty(m_action_cb) Then
@@ -11962,6 +11982,7 @@ Class GlfDroptarget
 	Private m_knockdown_events
 	Private m_reset_events
     Private m_complete
+    Private m_exclude_from_ball_search
 
     
     Private m_debug
@@ -12021,6 +12042,7 @@ Class GlfDroptarget
 			AddPinEventListener evt, m_name & "_reset", "DroptargetEventHandler", 1000, Array("reset", Me)
 		Next
 	End Property
+    Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
     Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(name)
@@ -12033,6 +12055,7 @@ Class GlfDroptarget
 		ResetEvents = Array()
         m_complete = 0
 		m_debug = False
+        m_exclude_from_ball_search = False
         glf_droptargets.Add name, Me
         Set Init = Me
 	End Function
@@ -12086,6 +12109,9 @@ Class GlfDroptarget
     End Sub
 
     Public Sub BallSearch(phase)
+        If m_exclude_from_ball_search = True Then
+            Exit Sub
+        End If
         Log "Ball Search, phase " & phase
         If Not IsEmpty(m_action_cb) And m_complete = 0 Then
             GetRef(m_action_cb)(1) 'Knockdown
