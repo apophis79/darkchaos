@@ -65,7 +65,7 @@ Sub CreateTrainingSelectMode
 				End With
                 With .Variable("ts_last_move")
                     .Action = "set"
-					.String = "right"  
+					.String = """right"""  
 				End With
 			End With
 		    With .EventName("selection_hurry_up")
@@ -77,13 +77,13 @@ Sub CreateTrainingSelectMode
             With .EventName("training_select_left")
 				With .Variable("ts_last_move")
                     .Action = "set"
-					.String = "left"  
+					.String = """left"""  
 				End With
 			End With
             With .EventName("training_select_right")
 				With .Variable("ts_last_move")
                     .Action = "set"
-					.String = "right"  
+					.String = """right"""  
 				End With
 			End With
         End With

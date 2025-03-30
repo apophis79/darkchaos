@@ -197,6 +197,18 @@ Sub ConfigureGlfDevices
         .Volume = 0.8
     End With
 
+    With EnableGlfHighScores()
+        With .Categories()
+            .Add "score", Array("GRAND CHAMPION", "HIGH SCORE 1", "HIGH SCORE 2", "HIGH SCORE 3") 
+        End With
+        With .Defaults("score")
+            .Add "DAN", 1000
+            .Add "MPC", 500
+            .Add "ROB", 300
+            .Add "DUG", 100
+        End With
+    End With
+
 
     ' Ball search
     With EnableGlfBallSearch()
@@ -487,46 +499,22 @@ Sub ConfigureGlfDevices
 
     
     ' Machine variables
-    With CreateMachineVar("high_score_1")
-        .InitialValue = 15000000
-        .ValueType = "int"
-        .Persist = True
-    End With
-    With CreateMachineVar("high_score_1_initials")
-        .InitialValue = "DAN"
+    With CreateMachineVar("high_score_initials")
+        .InitialValue = ""
         .ValueType = "string"
-        .Persist = True
+        .Persist = False
     End With
-    With CreateMachineVar("high_score_2")
-        .InitialValue = 13000000
+    With CreateMachineVar("high_score_initials_index")
+        .InitialValue = 0
         .ValueType = "int"
-        .Persist = True
+        .Persist = False
     End With
-    With CreateMachineVar("high_score_2_initials")
-        .InitialValue = "MAT"
-        .ValueType = "string"
-        .Persist = True
-    End With
-    With CreateMachineVar("high_score_3")
-        .InitialValue = 10000000
+    With CreateMachineVar("high_score_initials_chars")
+        .InitialValue = 0
         .ValueType = "int"
-        .Persist = True
+        .Persist = False
     End With
-    With CreateMachineVar("high_score_3_initials")
-        .InitialValue = "ROB"
-        .ValueType = "string"
-        .Persist = True
-    End With
-    With CreateMachineVar("high_score_4")
-        .InitialValue = 8000000
-        .ValueType = "int"
-        .Persist = True
-    End With
-    With CreateMachineVar("high_score_4_initials")
-        .InitialValue = "DUG"
-        .ValueType = "string"
-        .Persist = True
-    End With
+    
     With CreateMachineVar("won_game")
         .InitialValue = 0
         .ValueType = "int"
@@ -598,6 +586,7 @@ Sub ConfigureGlfDevices
     CreateBonusMode                 ' 150           No
     CreatePostGameMode              ' 180           No
     CreateScoreMode                 ' 2000          Always active during a game
+    CreateHighScoreMode             ' 120
 
     CreateBaseMode                  ' 200           No
     CreateSkillshotsMode            ' 500           No

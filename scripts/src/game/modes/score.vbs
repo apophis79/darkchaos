@@ -7,7 +7,7 @@ Sub CreateScoreMode
 
     With CreateGlfMode("score", 2000)
         .StartEvents = Array(GLF_GAME_START)
-        .StopEvents = Array(GLF_GAME_OVER)
+        .StopEvents = Array("game_ended")
 
 
         With .VariablePlayer()

@@ -40,7 +40,7 @@ Sub CreatePostGameMode()
     Dim x
 
     With CreateGlfMode("post_game", 180)
-        .StartEvents = Array(GLF_GAME_OVER,"test_post_game")
+        .StartEvents = Array("game_ended","test_post_game")
         .StopEvents = Array("stop_post_game_mode",GLF_BALL_STARTED)
 
         With .EventPlayer()
