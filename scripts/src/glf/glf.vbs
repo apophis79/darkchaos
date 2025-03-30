@@ -158,6 +158,8 @@ Public Sub Glf_Init()
 	ExecuteGlobal spinnerHitSubs
 
 	If glf_debugEnabled = True Then
+
+		'***GLFMPF_EXPORT_START***
 		glf_debugLog.WriteToLog "Init", "Exporting MPF Config"
 		' Calculate the scale factor
 		Dim scaleFactor
@@ -345,6 +347,8 @@ Public Sub Glf_Init()
 		TxtFileStream.WriteLine godotLightScene
 		TxtFileStream.Close
 		glf_debugLog.WriteToLog "Init", "Finished MPF Config"
+
+		'***GLFMPF_EXPORT_END***
 	End If
 
 	'Cache Shows
@@ -612,8 +616,9 @@ End Sub
 
 Sub Glf_Options(ByVal eventId)
 	
-	
+	Dim glfMaxDispatch : glfMaxDispatch = 1
 
+	'***GLF_DEBUG_OPTIONS_START***
 	Dim glfDebug : glfDebug = Table1.Option("Glf Debug Log", 0, 1, 1, 0, 0, Array("Off", "On"))
 	If glfDebug = 1 Then
 		glf_debugEnabled = True
@@ -622,21 +627,7 @@ Sub Glf_Options(ByVal eventId)
 		glf_debugEnabled = False
 		glf_debugLog.DisableLogs
 	End If
-
 	glf_debugLog.WriteToLog "Options", "Start"
-
-
-	Dim ballsPerGame : ballsPerGame = Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))
-	If ballsPerGame = 1 Then
-		glf_ballsPerGame = 3
-	Else
-		glf_ballsPerGame = 5
-	End If
-
-	Dim tilt_sensitivity : tilt_sensitivity = Table1.Option("Tilt Sensitivity (digital nudge)", 1, 10, 1, 5, 0, Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
-	glf_tilt_sensitivity = tilt_sensitivity
-
-	
 
 	Dim glfDebugLevel : glfDebugLevel = Table1.Option("Glf Debug Log Level", 0, 1, 1, 0, 0, Array("Info", "Debug"))
 	If glfDebugLevel = 1 Then
@@ -645,22 +636,8 @@ Sub Glf_Options(ByVal eventId)
 		glf_debug_level = "Info"
 	End If
 
-	Dim glfMaxDispatch : glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
-	glf_max_dispatch = glfMaxDispatch*5
+	glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
 
-	glf_debugLog.WriteToLog "Options", "BCP Check"
-	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
-	If glfuseBCP = 1 Then
-		If IsNull(bcpController) Then
-			SetDelay "start_glf_bcp", "Glf_ConnectToBCPMediaController", Null, 500
-		End If
-	Else
-		useBCP = False
-		If Not IsNull(bcpController) Then
-			bcpController.Disconnect
-			bcpController = Null
-		End If
-	End If
 	glf_debugLog.WriteToLog "Options", "GLF Monitor Check"
 	Dim glfuseDebugBCP : glfuseDebugBCP = Table1.Option("Glf Monitor", 0, 1, 1, 0, 0, Array("Off", "On"))
 	If glfuseDebugBCP = 1 And useGlfBCPMonitor = False Then
@@ -676,6 +653,35 @@ Sub Glf_Options(ByVal eventId)
 			glf_hasDebugController = False
 		End If
 	End If
+	'***GLF_DEBUG_OPTIONS_END***
+
+
+	Dim ballsPerGame : ballsPerGame = Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))
+	If ballsPerGame = 1 Then
+		glf_ballsPerGame = 3
+	Else
+		glf_ballsPerGame = 5
+	End If
+
+	Dim tilt_sensitivity : tilt_sensitivity = Table1.Option("Tilt Sensitivity (digital nudge)", 1, 10, 1, 5, 0, Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
+	glf_tilt_sensitivity = tilt_sensitivity
+
+	glf_max_dispatch = glfMaxDispatch*5
+
+	glf_debugLog.WriteToLog "Options", "BCP Check"
+	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
+	If glfuseBCP = 1 Then
+		If IsNull(bcpController) Then
+			SetDelay "start_glf_bcp", "Glf_ConnectToBCPMediaController", Null, 500
+		End If
+	Else
+		useBCP = False
+		If Not IsNull(bcpController) Then
+			bcpController.Disconnect
+			bcpController = Null
+		End If
+	End If
+
 	glf_debugLog.WriteToLog "Options", "GLF Segments (Flex) Check"
 	Dim glfuseVirtualSegmentDMD : glfuseVirtualSegmentDMD = Table1.Option("Glf Virtual Segment DMD", 0, 1, 1, 0, 0, Array("Off", "On"))
 	If glfuseVirtualSegmentDMD = 1 And glf_flex_alphadmd_enabled = False Then
@@ -763,7 +769,7 @@ Public Sub Glf_KeyDown(ByVal keycode)
 	End If
 	
 	If keycode = MechanicalTilt Then 
-		RunAutoFireDispatchPinEvent "s_tilt_warning_active", Null
+		SetDelay "glf_mechcanical_tilt_debounce", "MechcanicalTiltDebounce", Null, 300
     End If
 
 	If keycode = LeftTiltKey Then 
@@ -834,6 +840,10 @@ Public Sub Glf_KeyUp(ByVal keycode)
 	If KeyCode = AddCreditKey2 Then
 		RunAutoFireDispatchPinEvent "s_add_credit_key2_inactive", Null
 	End If
+End Sub
+
+Public Sub MechcanicalTiltDebounce(args)
+	RunAutoFireDispatchPinEvent "s_tilt_warning_active", Null
 End Sub
 
 Dim glf_lastEventExecutionTime, glf_lastBcpExecutionTime, glf_lastLightUpdateExecutionTime, glf_lastTiltUpdateExecutionTime
@@ -2206,7 +2216,6 @@ Class GlfBallSearch
 
     Public Property Let Debug(value)
         m_debug = value
-        m_base_device.Debug = value
     End Property
     Public Property Get IsDebug()
         If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
@@ -4428,9 +4437,12 @@ Class GlfHighScore
             'eg score.
             ' get the value for each player
             Dim player_values()
+            Dim player_numbers()
             ReDiM player_values(UBound(glf_playerState.Keys()))
+            ReDiM player_numbers(UBound(glf_playerState.Keys()))
             For p=0 to UBound(glf_playerState.Keys())
                 player_values(p) = GetPlayerStateForPlayer(p, category)
+                player_numbers(p) = p+1
             Next
             'Sort the values high to low.
             Dim i, j, temp
@@ -4440,6 +4452,10 @@ Class GlfHighScore
                         temp = player_values(i)
                         player_values(i) = player_values(j)
                         player_values(j) = temp
+
+                        temp = player_numbers(i)
+                        player_numbers(i) = player_numbers(j)
+                        player_numbers(j) = temp
                     End If
                 Next
             Next
@@ -4461,10 +4477,45 @@ Class GlfHighScore
                     If player_values(i) > high_score Then
                         'msgbox "setting new high score"
                         Log "Setting new high score"
+
+                        'Shift everything down, knocking the bottom score off.
+                        Dim shift_index, hs_item, hs_tmp
+                        Set hs_tmp = GlfKwargs()
+                        With hs_tmp
+                            .Add "label", ""
+                            .Add "player_name", ""
+                            .Add "value", 0
+                        End With
+                        Set hs_item = GlfKwargs()
+                        With hs_item
+                            .Add "label", ""
+                            .Add "player_name", ""
+                            .Add "value", 0
+                        End With
+                        For shift_index=position+1 to UBound(m_categories(category))
+                            If Not IsNull(hs_tmp) Then
+                                Set hs_item = hs_tmp
+                            Else
+                                hs_item("label") = m_highscores(category)(CStr(shift_index))("label")
+                                hs_item("player_name") = m_highscores(category)(CStr(shift_index))("player_name")
+                                hs_item("value") = m_highscores(category)(CStr(shift_index))("value")
+                            End If
+                            hs_tmp("label") = m_highscores(category)(CStr(shift_index+1))("label")
+                            hs_tmp("player_name") = m_highscores(category)(CStr(shift_index+1))("player_name")
+                            hs_tmp("value") = m_highscores(category)(CStr(shift_index+1))("value")
+
+                            ''msgbox "hs_item" & hs_item("value")
+                            'msgbox "hs_tmp" & hs_tmp("value")
+
+                            m_highscores(category)(CStr(shift_index+1))("label") = hs_item("label")
+                            m_highscores(category)(CStr(shift_index+1))("player_name") = hs_item("player_name")
+                            m_highscores(category)(CStr(shift_index+1))("value") = hs_item("value")
+                        Next
+
                         'new score
                         m_highscores(category)(CStr(position+1))("value") = player_values(i)
                         m_highscores(category)(CStr(position+1))("player_name") = ""
-                        m_highscores(category)(CStr(position+1))("player_num") = i+1
+                        m_highscores(category)(CStr(position+1))("player_num") = player_numbers(i)
                         m_highscores(category)(CStr(position+1))("award") = m_categories(category)(position)
                         m_highscores(category)(CStr(position+1))("category") = category
                         m_highscores(category)(CStr(position+1))("position") = position + 1
@@ -4523,7 +4574,7 @@ Class GlfHighScore
         For Each key in keys
             Dim s
             For Each s in m_highscores(key).Keys()
-                If m_highscores(key)(s)("player_num") = m_current_initials+1 Then
+                If m_highscores(key)(s)("player_num") = initials_item("player_num") Then
                     'msgbox "Setting Player " & m_current_initials+1 & " Name to >" & text & "<"
                     m_highscores(key)(s)("player_name") = text
                 End If
@@ -12666,6 +12717,7 @@ Class GlfLightSegmentDisplay
             SetDelay m_name & "_update_transition", "Glf_SegmentDisplayUpdateTransition", Array(Me, transition_runner), 1000/m_default_transition_update_hz
         Else
             'no transition - subscribe to text template changes and update display
+            RemoveDelay m_name & "_update_transition"
             If top_text_stack_entry.text.IsPlayerState() Then
                 AddPlayerStateEventListener top_text_stack_entry.text.PlayerStateValue(), m_name, top_text_stack_entry.text.PlayerStatePlayer(), "Glf_SegmentTextStackEventHandler", top_text_stack_entry.priority, Me
             ElseIf top_text_stack_entry.text.IsDeviceState() Then
