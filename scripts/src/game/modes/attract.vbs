@@ -449,86 +449,86 @@ Sub CreateAttractMode()
             End With
 
             With .EventName("show_attract_hs1")
-                With .Display("player2")
-                    .Key = "key_p2_show_attract_hs1"
-                    .Text = """LEADER 1"""
+                With .Display("p1p2")
+                    .Key = "key_machine.score_1_label"
+                    .Text = "machine.score_1_label"
                     .Expire = 3000
                     .Priority = 3
                 End With
                 With .Display("player3")
-                    .Key = "key_p3_show_attract_hs1"
-                    .Text = "machine.high_score_1_initials"
+                    .Key = "key_score_1_name"
+                    .Text = "machine.score_1_name"
                     .Expire = 3000
                     .Priority = 3
                 End With
                 With .Display("player4")
-                    .Key = "key_p4_show_attract_hs1"
-                    .Text = "machine.high_score_1"
+                    .Key = "key_score_1_value"
+                    .Text = "machine.score_1_value"
                     .Expire = 3000
                     .Priority = 3
                 End With
             End With
 
             With .EventName("show_attract_hs2")
-                With .Display("player2")
-                    .Key = "key_p2_show_attract_hs2"
-                    .Text = """LEADER 2"""
+                With .Display("p1p2")
+                    .Key = "key_machine.score_2_label"
+                    .Text = "machine.score_2_label"
                     .Expire = 3000
                     .Priority = 4
                 End With
                 With .Display("player3")
-                    .Key = "key_p3_show_attract_hs2"
-                    .Text = "machine.high_score_2_initials"
+                    .Key = "key_score_2_name"
+                    .Text = "machine.score_2_name"
                     .Expire = 3000
                     .Priority = 4
                 End With
                 With .Display("player4")
-                    .Key = "key_p4_show_attract_hs2"
-                    .Text = "machine.high_score_2"
+                    .Key = "key_score_2_value"
+                    .Text = "machine.score_2_value"
                     .Expire = 3000
                     .Priority = 4
                 End With
             End With
 
             With .EventName("show_attract_hs3")
-                With .Display("player2")
-                    .Key = "key_p2_show_attract_hs3"
-                    .Text = """LEADER 3"""
+                With .Display("p1p2")
+                    .Key = "key_machine.score_3_label"
+                    .Text = "machine.score_3_label"
                     .Expire = 3000
                     .Priority = 5
                 End With
                 With .Display("player3")
-                    .Key = "key_p3_show_attract_hs3"
-                    .Text = "machine.high_score_3_initials"
+                    .Key = "key_score_3_name"
+                    .Text = "machine.score_3_name"
                     .Expire = 3000
                     .Priority = 5
                 End With
                 With .Display("player4")
-                    .Key = "key_p4_show_attract_hs3"
-                    .Text = "machine.high_score_3"
+                    .Key = "key_score_3_value"
+                    .Text = "machine.score_3_value"
                     .Expire = 3000
                     .Priority = 5
                 End With
             End With
 
             With .EventName("show_attract_hs4")
-                With .Display("player2")
-                    .Key = "key_p2_show_attract_hs4"
-                    .Text = """LEADER 4"""
+                With .Display("p1p2")
+                    .Key = "key_machine.score_4_label"
+                    .Text = "machine.score_4_label"
                     .Expire = 3000
-                    .Priority = 6
+                    .Priority = 3
                 End With
                 With .Display("player3")
-                    .Key = "key_p3_show_attract_hs4"
-                    .Text = "machine.high_score_4_initials"
+                    .Key = "key_score_4_name"
+                    .Text = "machine.score_4_name"
                     .Expire = 3000
-                    .Priority = 6
+                    .Priority = 3
                 End With
                 With .Display("player4")
-                    .Key = "key_p4_show_attract_hs4"
-                    .Text = "machine.high_score_4"
+                    .Key = "key_score_4_value"
+                    .Text = "machine.score_4_value"
                     .Expire = 3000
-                    .Priority = 6
+                    .Priority = 3
                 End With
             End With
 
