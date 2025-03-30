@@ -166,27 +166,32 @@ Sub CreateHighScoreMode
             With .EventName("high_score_enter_initials{kwargs.player_num==1}")
                 With .Display("player1")
                     .Text = """P1 """
+                    .Priority = 10000
                 End With
             End With
             With .EventName("high_score_enter_initials{kwargs.player_num==2}")
                 With .Display("player1")
                     .Text = """P2 """
+                    .Priority = 10000
                 End With
             End With
             With .EventName("high_score_enter_initials{kwargs.player_num==3}")
                 With .Display("player1")
                     .Text = """P3 """
+                    .Priority = 10000
                 End With
             End With
             With .EventName("high_score_enter_initials{kwargs.player_num==4}")
                 With .Display("player1")
                     .Text = """P4 """
+                    .Priority = 10000
                 End With
             End With
 
             With .EventName("high_score_enter_initials")
                 With .Display("player2")
                     .Text = """INITIALS"""
+                    .Priority = 10000
                 End With
             End With
 
@@ -236,20 +241,20 @@ Sub CreateHighScoreMode
 
         With .SegmentDisplayPlayer()
 
-            With .EventName("timer_high_score_award_timeout_complete")
-                With .Display("player1")
-                    .Text = """"""
-                End With
-                With .Display("player2")
-                    .Text = """"""
-                End With
-                With .Display("player3")
-                    .Text = """"""
-                End With
-                With .Display("player4")
-                    .Text = """"""
-                End With
-            End With
+            ' With .EventName("timer_high_score_award_timeout_complete")
+            '     With .Display("player1")
+            '         .Text = """"""
+            '     End With
+            '     With .Display("player2")
+            '         .Text = """"""
+            '     End With
+            '     With .Display("player3")
+            '         .Text = """"""
+            '     End With
+            '     With .Display("player4")
+            '         .Text = """"""
+            '     End With
+            ' End With
 
             With .EventName("high_score_award_display{kwargs.position == 1}")
                 With .Display("player1")
