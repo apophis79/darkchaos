@@ -490,6 +490,17 @@ Sub ConfigureGlfDevices
     segment_display_p1p2.DefaultTransitionUpdateHz = 10
     segment_display_p1p2.ExternalFlexDmdSegmentIndex = 0
 
+    ' Dim segment_display_p3p4
+    ' Set segment_display_p3p4 = (New GlfLightSegmentDisplay)("p3p4")
+    ' segment_display_p3p4.SegmentType = "14Segment"
+    ' segment_display_p3p4.SegmentSize = 16
+    ' segment_display_p3p4.LightGroups = Array("p3_seg", "p4_seg")
+    ' segment_display_p3p4.UpdateMethod = "stack"
+    ' segment_display_p3p4.DefaultColor = SegmentsColor
+    ' segment_display_p3p4.UseDotsForCommas = True
+    ' segment_display_p3p4.DefaultTransitionUpdateHz = 10
+    ' segment_display_p3p4.ExternalFlexDmdSegmentIndex = 0
+
 
     ' Trough sound effects
     AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
@@ -571,6 +582,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "bonus_protons", 0
     Glf_SetInitialPlayerVar "bonus_total", 0
     Glf_SetInitialPlayerVar "flippers_are_dead", 0
+    Glf_SetInitialPlayerVar "hs_input_ready", 1
 
 
 

@@ -60,17 +60,12 @@ Sub CreateMeteorWaveMode
             'Handle fired proton
             .Add "proton_fired", Array("check_protons","proton_fired_flash_show","score_5000")
             'Handle events after meteor is downed
-            .Add "meteor1_down", Array("calc_num_meteors_ratio","check_meteor_wave")
-            .Add "meteor2_down", Array("calc_num_meteors_ratio","check_meteor_wave")
-            .Add "meteor3_down", Array("calc_num_meteors_ratio","check_meteor_wave")
-            .Add "meteor4_down", Array("calc_num_meteors_ratio","check_meteor_wave")
-            'handle pf display updates
-            .Add "calc_num_meteors_ratio", Array("check_num_meteors_ratio") 
-            .Add "check_num_meteors_ratio{current_player.num_meteors_ratio < current_player.last_num_meteors_ratio}", Array("update_last_num_meteors_ratio") 
-            .Add "update_last_num_meteors_ratio", Array("check_update_display","check_num_meteors_ratio")
-            .Add "check_update_display{current_player.last_num_meteors_ratio >= 0}", Array("update_display")
+            .Add "meteor1_down", Array("check_meteor_wave")
+            .Add "meteor2_down", Array("check_meteor_wave")
+            .Add "meteor3_down", Array("check_meteor_wave")
+            .Add "meteor4_down", Array("check_meteor_wave")
             'Stop the current successful wave
-            .Add "check_meteor_wave{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done","play_voc_wave_completed")
+            .Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done","play_voc_wave_completed")
             .Add "meteor_wave_done{current_player.meteor_wave_running == 1}", Array("stop_meteor_wave","score_wave_count")
             .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done")
@@ -96,22 +91,6 @@ Sub CreateMeteorWaveMode
                 .Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", 1
                 .Add "meteor3_proton_hit{current_player.shot_meteor3_light > 0}", 1
                 .Add "meteor4_proton_hit{current_player.shot_meteor4_light > 0}", 1
-                .ForceAll = False
-                .ForceDifferent = False
-            End With
-            With .EventName("update_display")
-                .Add "pf_seg1_off{current_player.shot_mw_pf_seg1==0}", 1
-                .Add "pf_seg2_off{current_player.shot_mw_pf_seg2==0}", 1
-                .Add "pf_seg3_off{current_player.shot_mw_pf_seg3==0}", 1
-                .Add "pf_seg4_off{current_player.shot_mw_pf_seg4==0}", 1
-                .Add "pf_seg5_off{current_player.shot_mw_pf_seg5==0}", 1
-                .Add "pf_seg6_off{current_player.shot_mw_pf_seg6==0}", 1
-                .Add "pf_seg16_off{current_player.shot_mw_pf_seg16==0}", 1
-                .Add "pf_seg17_off{current_player.shot_mw_pf_seg17==0}", 1
-                .Add "pf_seg18_off{current_player.shot_mw_pf_seg18==0}", 1
-                .Add "pf_seg19_off{current_player.shot_mw_pf_seg19==0}", 1
-                .Add "pf_seg20_off{current_player.shot_mw_pf_seg20==0}", 1
-                .Add "pf_seg21_off{current_player.shot_mw_pf_seg21==0}", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -252,62 +231,6 @@ Sub CreateMeteorWaveMode
             End With
             .RestartEvents = Array("stop_meteor_wave") 
         End With
-
-        'Define PF display light shots
-        For x = 1 to 6    
-            With .Shots("mw_pf_seg"&x)
-                '.Profile = "flicker_on_flicker_off"
-                .Profile = "pf_segs"
-                With .Tokens()
-                    .Add "lights", "pf_seg"&x
-                    .Add "color", SegmentsColor
-                End With
-                ' With .ControlEvents()
-                '     .Events = Array("mode_meteor_wave_started")
-                '     .State = 0
-                ' End With
-                With .ControlEvents()
-                    .Events = Array("pf_seg"&x&"_off","mode_meteor_wave_stopping")
-                    .State = 1
-                End With
-                .RestartEvents = Array("timer_meteor1_init_complete","timer_meteor2_init_complete","timer_meteor3_init_complete","timer_meteor4_init_complete") 
-            End With
-        Next
-
-        For x = 16 to 21    
-            With .Shots("mw_pf_seg"&x)
-                '.Profile = "flicker_on_flicker_off"
-                .Profile = "pf_segs"
-                With .Tokens()
-                    .Add "lights", "pf_seg"&x
-                    .Add "color", SegmentsColor
-                End With
-                ' With .ControlEvents()
-                '     .Events = Array("mode_meteor_wave_started")
-                '     .State = 0
-                ' End With
-                With .ControlEvents()
-                    .Events = Array("pf_seg"&x&"_off","mode_meteor_wave_stopping")
-                    .State = 1
-                End With
-                .RestartEvents = Array("timer_meteor1_init_complete","timer_meteor2_init_complete","timer_meteor3_init_complete","timer_meteor4_init_complete") 
-            End With
-        Next
-
-        With .ShotProfiles("pf_segs")
-            With .States("lit")
-                .Show = "led_color"
-                .Key = "key_pf_segs_lit"
-                .Priority = 100
-            End With
-            With .States("unlit")
-                .Show = "flicker_color_off"
-                .Speed = 3
-                .Key = "key_pf_segs_off"
-                .Priority = 110
-            End With
-        End With
-
 
         'Define meteor shots
         For x = 1 to 4
@@ -693,39 +616,11 @@ Sub CreateMeteorWaveMode
                     .Action = "set"
 					.Int = "current_player.meteors_per_wave" 
 				End With
-                With .Variable("num_meteors_ratio")
-                    .Action = "set"
-                    .Int = 12
-                End With
-                With .Variable("last_num_meteors_ratio")
-                    .Action = "set"
-                    .Int = "12 * (1 - 1/current_player.meteors_per_wave)"
-                End With
 			End With
-            With .EventName("calc_num_meteors_ratio")
-                With .Variable("num_meteors_ratio")
-                    .Action = "set"
-                    .Int = "12 * current_player.num_meteors_to_drop / current_player.meteors_per_wave" 
-                End With
-            End With
-            With .EventName("update_last_num_meteors_ratio")
-                With .Variable("last_num_meteors_ratio")
-                    .Action = "add"
-                    .Int = -1 
-                End With
-            End With
             With .EventName("stop_meteor_wave") 
                 With .Variable("meteors_per_wave")
                     .Action = "add"
                     .Int = 3
-                End With
-                With .Variable("num_meteors_ratio")
-                    .Action = "set"
-                    .Int = 0
-                End With
-                With .Variable("last_num_meteors_ratio")
-                    .Action = "set"
-                    .Int = 0
                 End With
             End With
             With .EventName("meteor_wave_done") 
@@ -773,24 +668,69 @@ Sub CreateMeteorWaveMode
 
 
         With .SegmentDisplayPlayer()
-            With .EventName("mode_meteor_wave_started")
+        
+            With .EventName("mode_meteor_wave_started{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = """METEOR """
+                    .Flashing = "all"
                     .Expire = 4000
+                    .Priority = 1000
                 End With
                 With .Display("player2")
-                    .Text = """METEOR"""
+                    .Text = """WAVE  """
                     .Flashing = "all"
                     .Expire = 4000
+                    .Priority = 1000
                 End With
                 With .Display("player3")
-                    .Text = """WAVE """
-                    .Flashing = "all"
-                    .Expire = 4000
+                    .Text = """METEORS"""
+                    .Priority = 10000
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                End With
+            End With
+
+            With .EventName("mode_meteor_wave_started{current_player.number == 3 or current_player.number == 4}")
+                With .Display("player1")
+                    .Text = """METEORS"""
+                    .Priority = 10000
+                End With
+                With .Display("player2")
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                End With
+                With .Display("player3")
+                    .Text = """METEOR """
+                    .Flashing = "all"
                     .Expire = 4000
+                    .Priority = 1000
+                End With
+                With .Display("player4")
+                    .Text = """WAVE  """
+                    .Flashing = "all"
+                    .Expire = 4000
+                    .Priority = 1000
+                End With
+            End With
+
+            With .EventName("check_meteor_wave.2{current_player.number == 1 or current_player.number == 2}")
+                With .Display("player3")
+                    .Text = """METEORS"""
+                    .Priority = 10000
+                End With
+                With .Display("player4")
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                    .Priority = 10000
+                End With
+            End With
+            With .EventName("check_meteor_wave.2{current_player.number == 3 or current_player.number == 4}")
+                With .Display("player1")
+                    .Text = """METEORS"""
+                    .Priority = 10000
+                End With
+                With .Display("player2")
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                    .Priority = 10000
                 End With
             End With
         End With

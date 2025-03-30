@@ -16,14 +16,24 @@ Sub CreateHighScoreMode
 
         With .EventPlayer()
             'inputs
-            .Add "s_right_magna_key_active", Array("text_inputted")
-            .Add "s_plunger_key_active", Array("text_inputted")
-            .Add "s_lockbar_key_active", Array("text_inputted")
-            .Add "s_start_active", Array("text_inputted")
+            .Add "s_right_magna_key_active{current_player.hs_input_ready == 1}", Array("text_inputted")
+            .Add "s_plunger_key_active{current_player.hs_input_ready == 1}", Array("text_inputted")
+            .Add "s_lockbar_key_active{current_player.hs_input_ready == 1}", Array("text_inputted")
+            .Add "s_start_active{current_player.hs_input_ready == 1}", Array("text_inputted")
             'final initial inputted
             .Add "text_inputted.1{machine.high_score_initials_chars == 3}", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
             'timer ran out
             .Add "timer_high_score_timeout_complete", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
+        End With
+
+        With .Timers("hs_cooldown")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "text_inputted{machine.high_score_initials_chars < 3}"
+                .Action = "restart"
+            End With
         End With
 
         With .SoundPlayer
@@ -49,6 +59,7 @@ Sub CreateHighScoreMode
         End With
 
         With .VariablePlayer()
+
             With .EventName("s_left_flipper_active.2")
 				With .Variable("high_score_initials_index")
                     .Action = "add_machine"
@@ -84,6 +95,10 @@ Sub CreateHighScoreMode
                     .Action = "set_machine"
                     .Int = 0
                 End With
+                With .Variable("hs_input_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
             End With
 
             With .EventName("text_inputted.2")
@@ -95,7 +110,19 @@ Sub CreateHighScoreMode
                     .Action = "set_machine"
                     .Int = 0
                 End With
+                With .Variable("hs_input_ready")
+                    .Action = "set"
+                    .Int = 0
+                End With
             End With
+
+            With .EventName("timer_hs_cooldown_complete")
+				With .Variable("hs_input_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+
         End With
 
         With .Timers("high_score_timeout")

@@ -763,7 +763,7 @@ Public Sub Glf_KeyDown(ByVal keycode)
 	End If
 	
 	If keycode = MechanicalTilt Then 
-		RunAutoFireDispatchPinEvent "s_tilt_warning_active", Null
+		SetDelay "glf_mechcanical_tilt_debounce", "MechcanicalTiltDebounce", Null, 500
     End If
 
 	If keycode = LeftTiltKey Then 
@@ -834,6 +834,10 @@ Public Sub Glf_KeyUp(ByVal keycode)
 	If KeyCode = AddCreditKey2 Then
 		RunAutoFireDispatchPinEvent "s_add_credit_key2_inactive", Null
 	End If
+End Sub
+
+Public Sub MechcanicalTiltDebounce(args)
+	RunAutoFireDispatchPinEvent "s_tilt_warning_active", Null
 End Sub
 
 Dim glf_lastEventExecutionTime, glf_lastBcpExecutionTime, glf_lastLightUpdateExecutionTime, glf_lastTiltUpdateExecutionTime
@@ -4427,9 +4431,12 @@ Class GlfHighScore
             'eg score.
             ' get the value for each player
             Dim player_values()
+            Dim player_numbers()
             ReDiM player_values(UBound(glf_playerState.Keys()))
+            ReDiM player_numbers(UBound(glf_playerState.Keys()))
             For p=0 to UBound(glf_playerState.Keys())
                 player_values(p) = GetPlayerStateForPlayer(p, category)
+                player_numbers(p) = p+1
             Next
             'Sort the values high to low.
             Dim i, j, temp
@@ -4439,6 +4446,10 @@ Class GlfHighScore
                         temp = player_values(i)
                         player_values(i) = player_values(j)
                         player_values(j) = temp
+
+                        temp = player_numbers(i)
+                        player_numbers(i) = player_numbers(j)
+                        player_numbers(j) = temp
                     End If
                 Next
             Next
@@ -4460,10 +4471,45 @@ Class GlfHighScore
                     If player_values(i) > high_score Then
                         'msgbox "setting new high score"
                         Log "Setting new high score"
+
+                        'Shift everything down, knocking the bottom score off.
+                        Dim shift_index, hs_item, hs_tmp
+                        Set hs_tmp = GlfKwargs()
+                        With hs_tmp
+                            .Add "label", ""
+                            .Add "player_name", ""
+                            .Add "value", 0
+                        End With
+                        Set hs_item = GlfKwargs()
+                        With hs_item
+                            .Add "label", ""
+                            .Add "player_name", ""
+                            .Add "value", 0
+                        End With
+                        For shift_index=position+1 to UBound(m_categories(category))
+                            If Not IsNull(hs_tmp) Then
+                                Set hs_item = hs_tmp
+                            Else
+                                hs_item("label") = m_highscores(category)(CStr(shift_index))("label")
+                                hs_item("player_name") = m_highscores(category)(CStr(shift_index))("player_name")
+                                hs_item("value") = m_highscores(category)(CStr(shift_index))("value")
+                            End If
+                            hs_tmp("label") = m_highscores(category)(CStr(shift_index+1))("label")
+                            hs_tmp("player_name") = m_highscores(category)(CStr(shift_index+1))("player_name")
+                            hs_tmp("value") = m_highscores(category)(CStr(shift_index+1))("value")
+
+                            ''msgbox "hs_item" & hs_item("value")
+                            'msgbox "hs_tmp" & hs_tmp("value")
+
+                            m_highscores(category)(CStr(shift_index+1))("label") = hs_item("label")
+                            m_highscores(category)(CStr(shift_index+1))("player_name") = hs_item("player_name")
+                            m_highscores(category)(CStr(shift_index+1))("value") = hs_item("value")
+                        Next
+
                         'new score
                         m_highscores(category)(CStr(position+1))("value") = player_values(i)
                         m_highscores(category)(CStr(position+1))("player_name") = ""
-                        m_highscores(category)(CStr(position+1))("player_num") = i+1
+                        m_highscores(category)(CStr(position+1))("player_num") = player_numbers(i)
                         m_highscores(category)(CStr(position+1))("award") = m_categories(category)(position)
                         m_highscores(category)(CStr(position+1))("category") = category
                         m_highscores(category)(CStr(position+1))("position") = position + 1
@@ -4522,7 +4568,7 @@ Class GlfHighScore
         For Each key in keys
             Dim s
             For Each s in m_highscores(key).Keys()
-                If m_highscores(key)(s)("player_num") = m_current_initials+1 Then
+                If m_highscores(key)(s)("player_num") = initials_item("player_num") Then
                     'msgbox "Setting Player " & m_current_initials+1 & " Name to >" & text & "<"
                     m_highscores(key)(s)("player_name") = text
                 End If
@@ -12665,6 +12711,7 @@ Class GlfLightSegmentDisplay
             SetDelay m_name & "_update_transition", "Glf_SegmentDisplayUpdateTransition", Array(Me, transition_runner), 1000/m_default_transition_update_hz
         Else
             'no transition - subscribe to text template changes and update display
+            RemoveDelay m_name & "_update_transition"
             If top_text_stack_entry.text.IsPlayerState() Then
                 AddPlayerStateEventListener top_text_stack_entry.text.PlayerStateValue(), m_name, top_text_stack_entry.text.PlayerStatePlayer(), "Glf_SegmentTextStackEventHandler", top_text_stack_entry.priority, Me
             ElseIf top_text_stack_entry.text.IsDeviceState() Then
