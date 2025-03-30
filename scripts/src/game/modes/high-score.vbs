@@ -15,7 +15,37 @@ Sub CreateHighScoreMode
         Dim i
 
         With .EventPlayer()
-            .Add "s_right_magna_key_active.1{machine.high_score_initials_chars == 3}", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
+            'inputs
+            .Add "s_right_magna_key_active", Array("text_inputted")
+            .Add "s_plunger_key_active", Array("text_inputted")
+            .Add "s_lockbar_key_active", Array("text_inputted")
+            .Add "s_start_active", Array("text_inputted")
+            'final initial inputted
+            .Add "text_inputted.1{machine.high_score_initials_chars == 3}", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
+            'timer ran out
+            .Add "timer_high_score_timeout_complete", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
+        End With
+
+        With .SoundPlayer
+            With .EventName("mode_high_score_started")
+                .Key = "key_mus_highscore"
+                .Sound = "mus_victory"
+            End With
+            With .EventName("text_inputted.4")
+                .Key = "key_sfx_hs_initial"
+                .Sound = "sfx_hs_initial"
+            End With
+        End With
+
+        With .ShowPlayer()
+            With .EventName("mode_high_score_started")
+                .Key = "key_hs_show"
+                .Show = "rainbow"
+                .Speed = 1
+                With .Tokens()
+                    .Add "lights", "GI"
+                End With
+            End With
         End With
 
         With .VariablePlayer()
@@ -33,7 +63,7 @@ Sub CreateHighScoreMode
 			End With  
             
             For i=0 to 35
-                With .EventName("s_right_magna_key_active.3{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & "}")
+                With .EventName("text_inputted.3{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & "}")
                     With .Variable("high_score_initials")
                         .Action = "set_machine"
                         .String = "machine.high_score_initials & """ & AZLookup(i) & """"
@@ -41,7 +71,22 @@ Sub CreateHighScoreMode
                 End With
             Next
 
-            With .EventName("s_right_magna_key_active.2")
+            With .EventName("high_score_enter_initials") 'reset initials
+                With .Variable("high_score_initials")
+                    .Action = "set_machine"
+                    .String = """"""   
+                End With
+                With .Variable("high_score_initials_chars")
+                    .Action = "set_machine"
+                    .Int = 0
+                End With
+                With .Variable("high_score_initials_index")
+                    .Action = "set_machine"
+                    .Int = 0
+                End With
+            End With
+
+            With .EventName("text_inputted.2")
                 With .Variable("high_score_initials_chars")
                     .Action = "add_machine"
                     .Int = 1
@@ -50,13 +95,12 @@ Sub CreateHighScoreMode
                     .Action = "set_machine"
                     .Int = 0
                 End With
-                
             End With
         End With
 
         With .Timers("high_score_timeout")
             .TickInterval = 1000
-            .StartValue = 20
+            .StartValue = 60
             .EndValue = 0
             .Direction = "down"
             .StartRunning = False
@@ -139,11 +183,13 @@ Sub CreateHighScoreMode
                 End With
             Next
 
-            With .EventName("s_right_magna_key_active.1{high_score_initials_chars<3}")
+            With .EventName("text_inputted.1{high_score_initials_chars<3}")
                 With .Display("player3")
                     .Text = "machine.high_score_initials & ""A"""
                 End With
             End With
+
+                       
 
         End With
 

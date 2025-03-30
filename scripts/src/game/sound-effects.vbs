@@ -96,7 +96,8 @@ SFXNames = Array( _
     "sfx_jackpot", _
     "sfx_super_jackpot", _
     "sfx_error_buzz", _ 
-    "sfx_alien_ship_crash")
+    "sfx_alien_ship_crash", _ 
+    "sfx_hs_initial")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -187,7 +188,8 @@ SFXDurations = Array( _
     1.386, _ 
     3.422, _ 
     0.506, _ 
-    4.467)
+    4.467, _ 
+    1.302)
 
 
 Dim VOCNames, VOCDurations
@@ -302,7 +304,6 @@ MusicNames = Array( _
     "mus_wave7", _
     "mus_wave8", _
     "mus_wave9", _
-    "mus_highscore", _
     "mus_ambient_bg", _
     "mus_wizard", _
     "mus_wizard2")
@@ -317,7 +318,6 @@ MusicDurations = Array( _
     56.844, _
     52.863, _
     57.763, _
-    52.062, _
     58.508, _
     118.143, _
     79.967)

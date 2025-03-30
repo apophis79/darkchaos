@@ -17,17 +17,17 @@ Sub Table1_KeyDown(ByVal keycode)
 	End If
 	If keycode = StartGameKey Then SoundStartButton
 	If keycode = LeftTiltKey Then 
-		Nudge 90, 2
+		'Nudge 90, 2 'This is set in GLF
 		ShipNudge 1, -1, ShipVelX, ShipTimeX, ShipVelX2, ShipMaxMovement, ShipAcc
 		SoundNudgeLeft
 	End If
 	If keycode = RightTiltKey Then 
-		Nudge 270, 2
+		'Nudge 270, 2
 		ShipNudge 1, 1, ShipVelX, ShipTimeX, ShipVelX2, ShipMaxMovement, ShipAcc
 		SoundNudgeRight
 	End If
 	If keycode = CenterTiltKey Then 
-		Nudge 0, 2
+		'Nudge 0, 2
 		ShipNudge 1, -1, ShipVelY, ShipTimeY, ShipVelY2, ShipMaxMovement, ShipAcc
 		SoundNudgeCenter
 	End If

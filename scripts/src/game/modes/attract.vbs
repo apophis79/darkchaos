@@ -450,7 +450,7 @@ Sub CreateAttractMode()
 
             With .EventName("show_attract_hs1")
                 With .Display("p1p2")
-                    .Key = "key_machine.score_1_label"
+                    .Key = "key_score_1_label"
                     .Text = "machine.score_1_label"
                     .Expire = 3000
                     .Priority = 3
@@ -471,7 +471,7 @@ Sub CreateAttractMode()
 
             With .EventName("show_attract_hs2")
                 With .Display("p1p2")
-                    .Key = "key_machine.score_2_label"
+                    .Key = "key_score_2_label"
                     .Text = "machine.score_2_label"
                     .Expire = 3000
                     .Priority = 4
@@ -492,7 +492,7 @@ Sub CreateAttractMode()
 
             With .EventName("show_attract_hs3")
                 With .Display("p1p2")
-                    .Key = "key_machine.score_3_label"
+                    .Key = "key_score_3_label"
                     .Text = "machine.score_3_label"
                     .Expire = 3000
                     .Priority = 5
@@ -513,7 +513,7 @@ Sub CreateAttractMode()
 
             With .EventName("show_attract_hs4")
                 With .Display("p1p2")
-                    .Key = "key_machine.score_4_label"
+                    .Key = "key_score_4_label"
                     .Text = "machine.score_4_label"
                     .Expire = 3000
                     .Priority = 3

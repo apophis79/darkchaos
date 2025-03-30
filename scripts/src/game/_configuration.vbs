@@ -205,8 +205,9 @@ Sub ConfigureGlfDevices
             .Add "DAN", 1000
             .Add "MPC", 500
             .Add "ROB", 300
-            .Add "DUG", 100
+            .Add "DIG", 100
         End With
+        .EnterInitialsTimeout = 65000
     End With
 
 
@@ -248,6 +249,7 @@ Sub ConfigureGlfDevices
         .ActivateEvents = Array("release_moon_ball", "multiball_moon_started")
         .ActivationTime = "230 if devices.ball_devices.moon_lock.balls > 0 else 2000"
         .ActionCallback = "DropLockPin"
+        '.ExcludeFromBallSearch = True
     End With
 
     With CreateGlfDiverter("lock_pin_game_over")
@@ -255,6 +257,7 @@ Sub ConfigureGlfDevices
         .ActivateEvents = Array("game_ended{devices.ball_devices.moon_lock.balls > 0}")
         .ActivationTime = "3000"
         .ActionCallback = "DropLockPin"
+        '.ExcludeFromBallSearch = True
     End With
 
 
@@ -372,6 +375,7 @@ Sub ConfigureGlfDevices
         .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
         .ResetEvents = Array("meteor1_raise")
         .ActionCallback = "DTMeteor1Callback"
+        '.ExcludeFromBallSearch = True
     End With
 
     With CreateGlfDroptarget("drop2")
@@ -379,6 +383,7 @@ Sub ConfigureGlfDevices
         .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
         .ResetEvents = Array("meteor2_raise")
         .ActionCallback = "DTMeteor2Callback"
+        '.ExcludeFromBallSearch = True
     End With
 
     With CreateGlfDroptarget("drop3")
@@ -386,6 +391,7 @@ Sub ConfigureGlfDevices
         .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
         .ResetEvents = Array("meteor3_raise")
         .ActionCallback = "DTMeteor3Callback"
+        '.ExcludeFromBallSearch = True
     End With
 
     With CreateGlfDroptarget("drop4")
@@ -393,6 +399,7 @@ Sub ConfigureGlfDevices
         .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
         .ResetEvents = Array("meteor4_raise")
         .ActionCallback = "DTMeteor4Callback"
+        '.ExcludeFromBallSearch = True
     End With
 
 
@@ -458,28 +465,6 @@ Sub ConfigureGlfDevices
     segment_display_p4.DefaultColor = SegmentsColor
     segment_display_p4.UseDotsForCommas = True
     segment_display_p4.ExternalFlexDmdSegmentIndex = 24
-
-    ' Dim segment_display_top
-    ' Set segment_display_top = (New GlfLightSegmentDisplay)("top")
-    
-    ' segment_display_top.SegmentType = "14Segment"
-    ' segment_display_top.SegmentSize = 16
-    ' segment_display_top.LightGroups = Array("p1_seg", "p2_seg")
-    ' segment_display_top.UpdateMethod = "stack"
-    ' segment_display_top.DefaultColor = SegmentsColor
-    ' segment_display_top.UseDotsForCommas = True
-    ' segment_display_top.DefaultTransitionUpdateHz = 10
-
-    ' Dim segment_display_bottom
-    ' Set segment_display_bottom = (New GlfLightSegmentDisplay)("bottom")
-    
-    ' segment_display_bottom.SegmentType = "14Segment"
-    ' segment_display_bottom.SegmentSize = 16
-    ' segment_display_bottom.LightGroups = Array("p3_seg", "p4_seg")
-    ' segment_display_bottom.UpdateMethod = "stack"
-    ' segment_display_bottom.DefaultColor = SegmentsColor
-    ' segment_display_bottom.UseDotsForCommas = True
-    ' segment_display_bottom.DefaultTransitionUpdateHz = 10
 
     Dim segment_display_all
     Set segment_display_all = (New GlfLightSegmentDisplay)("all")

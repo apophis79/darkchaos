@@ -314,6 +314,32 @@ Sub CreateGeneralShows()
         End With
     End With
 
+
+    With CreateGlfShow("rainbow")
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|e81416|1000")
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|ffa500|1000")
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|faeb36|1000")
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|79c314|1000")
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|487de7|1000")
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|4b369d|1000")
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array("(lights)|100|70369d|1000")
+        End With
+    End With
+    
+
 End Sub
 
 
