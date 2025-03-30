@@ -491,6 +491,7 @@ Sub ConfigureGlfDevices
     segment_display_all.DefaultColor = SegmentsColor
     segment_display_all.UseDotsForCommas = True
     segment_display_all.DefaultTransitionUpdateHz = 10
+    segment_display_all.ExternalFlexDmdSegmentIndex = 0
 
 
     ' Trough sound effects
