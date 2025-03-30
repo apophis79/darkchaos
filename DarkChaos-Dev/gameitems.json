@@ -308,13 +308,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "TextBox.tbWR.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
-  },
-  {
     "file_name": "Trigger.swRamp2.json",
     "is_locked": true,
     "editor_layer": 2,
@@ -1419,13 +1412,6 @@
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
     "editor_layer_visibility": false
-  },
-  {
-    "file_name": "TextBox.tbDebug.json",
-    "is_locked": false,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.LC8.json",
@@ -21305,6 +21291,223 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VR Segment prims p4",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg1_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg2_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg3_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg4_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg5_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg6_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg7_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg8_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg9_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg10_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg11_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg12_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg13_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg14_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg15_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg16_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg17_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg18_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg19_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg20_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg21_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg22_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg23_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg24_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg25_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg26_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg27_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg28_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg29_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.p_ball_seg30_vr.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Segment prims ball",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.BGDisplayBall.json",
+    "is_locked": true,
+    "editor_layer": 8,
+    "editor_layer_name": "VR Backglass",
     "editor_layer_visibility": false
   }
 ]

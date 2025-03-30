@@ -13,6 +13,7 @@ Sub SetupRoom
 		For Each VRThing in VR_Cab: VRThing.visible = 1: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 1: Next
 		For Each VRThing in VR_Display: VRThing.visible = 1: Next
+		For Each VRThing in VR_DisplayBall: VRThing.visible = 1: Next
 
 		'Asteroid Room
 		If VRRoom = 1 Then 
@@ -38,6 +39,7 @@ Sub SetupRoom
 		For Each VRThing in VR_Cab: VRThing.visible = 0: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 0: Next
 		For Each VRThing in VR_Display: VRThing.visible = 0: Next
+		For Each VRThing in VR_DisplayBall: VRThing.visible = 0: Next
 		'Hide desktop lights if not in desktop mode
 		For Each x In DesktopLights: x.visible = DesktopMode: Next
 	End if
@@ -57,9 +59,17 @@ Sub InitVR
 	For Each obj in VR_Flashers
 		obj.x = obj.x + 0
 		obj.height = -obj.y + 375
-		obj.y = 20    'adjusts the distance from the backglass towards the user
+		obj.y = 15    'adjusts the distance from the backglass towards the user
 		obj.rotx = -86.5
 	Next
+
+	For Each obj in VR_DisplayBall
+		obj.x = obj.x + 0
+		obj.z = -obj.y + 375
+		obj.y = 25    'adjusts the distance from the backglass towards the user
+		obj.rotx = -86.5
+	Next
+	BGDisplayBall.y = 20
 
 	For Each obj in VR_Display
 		obj.x = obj.x + 0
@@ -68,6 +78,7 @@ Sub InitVR
 		obj.rotx = -86.5
 	Next
 	BGDisplay.y = 85
+	
 
 	NewSkyAngle
 End Sub

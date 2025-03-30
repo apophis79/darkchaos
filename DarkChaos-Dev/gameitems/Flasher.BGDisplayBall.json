@@ -1,0 +1,81 @@
+{
+  "Flasher": {
+    "height": 1176.4866,
+    "pos_x": -420.24695,
+    "pos_y": 93.87263,
+    "rot_x": -86.0,
+    "rot_y": 0.0,
+    "rot_z": 0.0,
+    "color": "#91009191",
+    "is_timer_enabled": false,
+    "timer_interval": 100,
+    "name": "BGDisplayBall",
+    "image_a": "Colour_Dark",
+    "image_b": "",
+    "alpha": 100,
+    "modulate_vs_add": 0.8,
+    "is_visible": false,
+    "add_blend": false,
+    "is_dmd": false,
+    "display_texture": true,
+    "depth_bias": -2000.0,
+    "image_alignment": "wrap",
+    "filter": "none",
+    "filter_amount": 100,
+    "light_map": "",
+    "drag_points": [
+      {
+        "x": 649.4408,
+        "y": -700.31793,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 649.4405,
+        "y": -630.9162,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 752.06415,
+        "y": -630.9166,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      },
+      {
+        "x": 752.06415,
+        "y": -700.318,
+        "z": 0.0,
+        "smooth": false,
+        "is_slingshot": false,
+        "has_auto_texture": true,
+        "tex_coord": 0.0,
+        "is_locked": false,
+        "editor_layer": 0,
+        "editor_layer_name": "",
+        "editor_layer_visibility": true
+      }
+    ]
+  }
+}
