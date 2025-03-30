@@ -40,6 +40,24 @@ jobs:
           Move-Item -Path dest/vpx/tablescript.vbs -Destination ../DarkChaos-Dev/script.vbs -Force
         shell: pwsh
 
+      - name: Remove GLF blocks from script.vbs
+        run: |
+          $scriptPath = "DarkChaos-Dev/script.vbs"
+          $content = Get-Content $scriptPath -Raw
+
+          # Patterns to remove both blocks
+          $patterns = @(
+            '(?s)\*\*\*GLFMPF_EXPORT_START\*\*\*.*?\*\*\*GLFMPF_EXPORT_END\*\*\*',
+            "(?s)'[*]+GLF_DEBUG_OPTIONS_START[*]+.*?'[*]+GLF_DEBUG_OPTIONS_END[*]+"
+          )
+
+          foreach ($pattern in $patterns) {
+            $content = [regex]::Replace($content, $pattern, '')
+          }
+
+          Set-Content -Path $scriptPath -Value $content
+        shell: pwsh
+
       - name: Install jq
         run: |
           Invoke-WebRequest -Uri https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe -OutFile jq.exe
