@@ -240,7 +240,8 @@ VOCNames = Array( _
     "voc_full_health", _ 
     "voc_double_scoring", _
     "voc_double_bonus", _
-    "voc_critically_low_health")
+    "voc_critically_low_health", _ 
+    "voc_shields_acquired")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -288,7 +289,8 @@ VOCDurations = Array( _
     1.804, _
     1.846, _
     1.879, _
-    2.417)
+    2.417, _ 
+    2.218)
 
 
 

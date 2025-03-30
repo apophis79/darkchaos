@@ -31,7 +31,7 @@ Sub CreateShieldsMode
             'Handle mystery award
             .Add "mystery_added_shields", Array("complete_qualify_shields")
             'show
-            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up","score_50000","backglass_shields_on")
+            .Add "qualify_shields_on_complete", Array("slings_powerup_added","lsling_powerup_sh","rsling_powerup_sh","play_shields_up","play_voc_shields_acquired","score_50000","backglass_shields_on")
             .Add "qualify_shields_hit", Array("score_1000")
         End With
 
@@ -64,6 +64,12 @@ Sub CreateShieldsMode
 
 
         With .SoundPlayer()
+        
+            With .EventName("play_voc_shields_acquired")
+                .Key = "key_voc_shields_acquired"
+                .Sound = "voc_shields_acquired"
+            End With
+
             With .EventName("play_sfx_LSC1")
                 .Key = "key_sfx_LSC1"
                 .Sound = "sfx_LSC1"
