@@ -40,6 +40,15 @@ jobs:
           Move-Item -Path dest/vpx/tablescript.vbs -Destination ../DarkChaos-Dev/script.vbs -Force
         shell: pwsh
 
+      - name: Prod Tidy Script
+        run: |
+          $scriptPath = "DarkChaos-Dev/script.vbs"
+          $content = Get-Content $scriptPath -Raw
+          $pattern = '(?s)\*\*\*GLFMPF_EXPORT_START\*\*\*.*?\*\*\*GLFMPF_EXPORT_END\*\*\*'
+          $cleaned = [regex]::Replace($content, $pattern, "")
+          Set-Content -Path $scriptPath -Value $cleaned
+        shell: pwsh
+
       - name: Install jq
         run: |
           Invoke-WebRequest -Uri https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe -OutFile jq.exe
