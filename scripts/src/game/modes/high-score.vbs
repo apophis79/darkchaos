@@ -27,7 +27,7 @@ Sub CreateHighScoreMode
         End With
 
         With .Timers("hs_cooldown")
-            .TickInterval = 1000
+            .TickInterval = 200
             .StartValue = 0
             .EndValue = 1
             With .ControlEvents()
@@ -60,13 +60,13 @@ Sub CreateHighScoreMode
 
         With .VariablePlayer()
 
-            With .EventName("s_left_flipper_active.2")
+            With .EventName("s_left_flipper_active.2{current_player.hs_input_ready == 1}")
 				With .Variable("high_score_initials_index")
                     .Action = "add_machine"
 					.Int = -1
 				End With
 			End With
-            With .EventName("s_right_flipper_active.2")
+            With .EventName("s_right_flipper_active.2{current_player.hs_input_ready == 1}")
 				With .Variable("high_score_initials_index")
                     .Action = "add_machine"
 					.Int = 1
@@ -203,12 +203,12 @@ Sub CreateHighScoreMode
 
             
             For i=0 to 35
-                With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & "}")
+                With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & " && current_player.hs_input_ready == 1}")
                     With .Display("player3")
                         .Text = "machine.high_score_initials & """ & AZLookup(i) & """"
                     End With
                 End With
-                With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & "}")
+                With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & " && current_player.hs_input_ready == 1}")
                     With .Display("player3")
                         .Text = "machine.high_score_initials & """ & AZLookup(i) & """"
                     End With
