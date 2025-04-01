@@ -12,6 +12,7 @@ Sub SetupRoom
 		For Each x in BP_Rails : x.visible = 1: Next  'overrides option menu setting
 		For Each VRThing in VR_Cab: VRThing.visible = 1: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 1: Next
+		For Each VRThing in VR_Flashers: VRThing.visible = 1: Next
 		For Each VRThing in VR_Display: VRThing.visible = 1: Next
 		For Each VRThing in VR_DisplayBall: VRThing.visible = 1: Next
 
@@ -38,6 +39,7 @@ Sub SetupRoom
 		For Each VRThing in VR_Min: VRThing.visible = 0: Next
 		For Each VRThing in VR_Cab: VRThing.visible = 0: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 0: Next
+		For Each VRThing in VR_Flashers: VRThing.visible = 0: Next
 		For Each VRThing in VR_Display: VRThing.visible = 0: Next
 		For Each VRThing in VR_DisplayBall: VRThing.visible = 0: Next
 		'Hide desktop lights if not in desktop mode

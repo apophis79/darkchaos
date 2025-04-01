@@ -968,10 +968,10 @@ End Function
 Dim glf_tmp_lmarr
 Public Function Glf_RegisterLights()
 
-	Dim elemetDict : Set elementDict = CreateObject("Scripting.Dictionary")
+	Dim elementDict : Set elementDict = CreateObject("Scripting.Dictionary")
 
 	For Each e in GetElements()
-		If typename(e) = "Primitive" Then
+		If typename(e) = "Primitive" Or typename(e) = "Flasher" Then
 			elementDict.Add LCase(e.Name), True
 		End If
 	Next
@@ -10434,7 +10434,7 @@ Class GlfTilt
 
     Public Sub HandleTiltWarningSwitch()
         Log "Handling Tilt Warning Switch"
-        If m_last_warning = 0 Or (m_last_warning + m_multiple_hit_window.Value() * 0.001) <= gametime Then
+        If m_last_warning = 0 Or (m_last_warning + m_multiple_hit_window.Value()) <= gametime Then
             TiltWarning()
         End If
     End Sub

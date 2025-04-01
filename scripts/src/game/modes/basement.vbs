@@ -260,7 +260,7 @@ Sub CreateBasementMode()
 
         ' Tilt
         With .Tilt()
-            .MultipleHitWindow = 300
+            .MultipleHitWindow = 3000
             .SettleTime = 5000
             .WarningsToTilt = 3
             .ResetWarningEvents = Array("ball_started")
@@ -487,6 +487,16 @@ Sub CreateBasementMode()
                     .Add "lights", "LBG05"
                     .Add "color", GIColor3000k
                     .Add "fade", 800
+                End With
+            End With
+            With .EventName("backglass_wave_flash")
+                .Key = "key_backglass_wave_flash"
+                .Show = "flash_color"
+                .Speed = 20
+                .Loops = 10
+                With .Tokens()
+                    .Add "lights", "LBG05"
+                    .Add "color", GIColor3000k
                 End With
             End With
 

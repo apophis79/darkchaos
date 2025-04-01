@@ -148,6 +148,7 @@
 
 Option Explicit
 Randomize
+SetLocale 1033
 
 On Error Resume Next
 ExecuteGlobal GetTextFile("controller.vbs")

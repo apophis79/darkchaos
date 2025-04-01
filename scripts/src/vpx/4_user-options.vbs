@@ -30,10 +30,32 @@ Sub Table1_OptionEvent(ByVal eventId)
 
 	'Game logic framework options
 	Glf_Options(eventId)
+
+	' Reflections
+    v = Table1.Option("Playfield Reflections", 0, 1, 1, 1, 0, Array("Disabled", "Enabled"))
+	If v = 0 Then
+		BM_Playfield.ReflectionProbe = ""
+	Else
+		BM_Playfield.ReflectionProbe = "Playfield Reflections"
+	End If
+
+	' Refractions
+    v = Table1.Option("Clear Plastic Refractions", 0, 1, 1, 1, 0, Array("Disabled", "Enabled"))
+	If v = 0 Then
+		BM_BmpBot.RefractionProbe = ""
+		BM_BmpTopB.RefractionProbe = ""
+		BM_BmpTopR.RefractionProbe = ""
+		BM_Layer1.RefractionProbe = ""
+	Else
+		BM_BmpBot.RefractionProbe = "Refraction Pass 1"
+		BM_BmpTopB.RefractionProbe = "Refraction Pass 2"
+		BM_BmpTopR.RefractionProbe = "Refraction Pass 2"
+		BM_Layer1.RefractionProbe = "Refraction Pass 3"
+	End If
 	
     ' Sound volumes
-    BackglassVol = Table1.Option("Game Sounds Volume", 0, 1, 0.01, 0.8, 1)
-	CalloutVol = Table1.Option("Callout Volume", 0, 1, 0.01, 0.8, 1)
+    'BackglassVol = Table1.Option("Game Sounds Volume", 0, 1, 0.01, 0.8, 1)
+	'CalloutVol = Table1.Option("Callout Volume", 0, 1, 0.01, 0.8, 1)
     MechVol = Table1.Option("Mechanical Sounds Volume", 0, 1, 0.01, 0.8, 1)
     BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.3, 1)
 	RampRollVolume = Table1.Option("Ramp Roll Volume", 0, 1, 0.01, 0.5, 1)
