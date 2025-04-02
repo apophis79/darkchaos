@@ -106,6 +106,45 @@ Sub CreateBasementMode()
                     .Int = 1
                 End With
             End With
+
+            ' ' moon lock switch tracking
+            ' With .EventName("s_Lock1_active")
+            '     With .Variable("s_Lock1_on")
+            '         .Action = "set"
+            '         .Int = 1
+            '     End With
+            ' End With
+            ' With .EventName("s_Lock1_inactive")
+            '     With .Variable("s_Lock1_on")
+            '         .Action = "set"
+            '         .Int = 0
+            '     End With
+            ' End With
+            ' With .EventName("s_Lock2_active")
+            '     With .Variable("s_Lock2_on")
+            '         .Action = "set"
+            '         .Int = 1
+            '     End With
+            ' End With
+            ' With .EventName("s_Lock2_inactive")
+            '     With .Variable("s_Lock2_on")
+            '         .Action = "set"
+            '         .Int = 0
+            '     End With
+            ' End With
+            ' With .EventName("s_Lock3_active")
+            '     With .Variable("s_Lock3_on")
+            '         .Action = "set"
+            '         .Int = 1
+            '     End With
+            ' End With
+            ' With .EventName("s_Lock3_inactive")
+            '     With .Variable("s_Lock3_on")
+            '         .Action = "set"
+            '         .Int = 0
+            '     End With
+            ' End With
+            
         End With
 
 

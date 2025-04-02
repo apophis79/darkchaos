@@ -25,7 +25,7 @@ Sub CreateMeteorWaveQualifyMode
             .Add "flipper_cradle{game.balls_in_play == 1 && current_player.number == 2}", Array("stop_mwq_timer","display34_ball_num")        'handle flipper cradle
             .Add "flipper_cradle{game.balls_in_play == 1 && current_player.number == 3}", Array("stop_mwq_timer","display12_ball_num")        'handle flipper cradle
             .Add "flipper_cradle{game.balls_in_play == 1 && current_player.number == 4}", Array("stop_mwq_timer","display12_ball_num")        'handle flipper cradle
-            .Add "flipper_release{game.balls_in_play == 1}", Array("start_mwq_timer","remove_display12_ball_num","remove_display34_ball_num")
+            .Add "flipper_release", Array("start_mwq_timer","remove_display12_ball_num","remove_display34_ball_num")
 
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
