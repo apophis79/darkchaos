@@ -131,6 +131,7 @@ Sub CreateBaseMode()
             'handle delayed moon ball release
             .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
+            .Add "s_LockOut_active", Array("raise_lock_pin") 
 
             'handle some shows
             .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_1000") 
@@ -742,6 +743,7 @@ Sub CreateBaseMode()
             .ActiveTime = 6000
             .HurryUpTime = 3000
             .GracePeriod = 2000
+            .BallsToSave = -1
             .AutoLaunch = True
             .EnableEvents = Array("new_ball_active")
         End With

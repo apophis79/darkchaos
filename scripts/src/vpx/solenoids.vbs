@@ -91,7 +91,7 @@ End Sub
 '*******************************************
 
 Sub DropLockPin(enabled)
-	Dim BP
+	Dim BP,b
 	If Enabled Then
 		LockPin.isdropped=True
 		SoundSaucerKick 0,s_Lock1
@@ -102,6 +102,12 @@ Sub DropLockPin(enabled)
 		For each BP in BP_LockPin: BP.transz = 0: Next
 	End If
 	DOF 112, DOFPulse
+	'balls are sinking into ramp and getting stuck, so move balls up a little for a hacky fix
+	For each b in gBOT
+		If b.z > 50 Then
+			b.z = b.z + 3
+		End If
+	Next
 End Sub 
 
 

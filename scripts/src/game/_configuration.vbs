@@ -248,7 +248,9 @@ Sub ConfigureGlfDevices
     With CreateGlfDiverter("lock_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("release_moon_ball", "multiball_moon_started")
-        .ActivationTime = "230 if devices.ball_devices.moon_lock.balls > 0 else 2000"
+        .DeactivateEvents = Array("raise_lock_pin")
+        '.ActivationTime = "230 if devices.ball_devices.moon_lock.balls > 0 else 2000"
+        .ActivationTime = "3000"
         .ActionCallback = "DropLockPin"
         .ExcludeFromBallSearch = True
     End With

@@ -943,7 +943,8 @@
       "s_Bumper1",
       "s_Bumper2",
       "s_Bumper3",
-      "s_Bumper4"
+      "s_Bumper4",
+      "s_LockOut"
     ],
     "fire_events": false,
     "stop_single_events": false,

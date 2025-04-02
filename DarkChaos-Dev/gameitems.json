@@ -21509,5 +21509,12 @@
     "editor_layer": 8,
     "editor_layer_name": "VR Backglass",
     "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Trigger.s_LockOut.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Ramps",
+    "editor_layer_visibility": true
   }
 ]

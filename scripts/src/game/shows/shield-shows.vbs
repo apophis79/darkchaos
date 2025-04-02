@@ -154,7 +154,7 @@ With CreateGlfShow("shields_down_interior")
       "LSL|(intensity)|(color)" _
       )
   End With
-  With .AddStep(Null, Null, 2)
+  With .AddStep(Null, Null, 1)
     .Lights = Array( _
       "LSA|(intensity)|000000|(fade)", _
       "gi01|(intensity)|000000|(fade)", _
@@ -241,7 +241,7 @@ With CreateGlfShow("shields_up")
     With .Shows("shields_up_interior")
       .Key = "key_shield_up4"
       .Speed = 1
-      .Loops = 5
+      .Loops = 2
       With .Tokens()
           .Add "intensity", 100
           .Add "color", ShieldsColor
@@ -288,7 +288,7 @@ With CreateGlfShow("shields_down")
     End With
   End With
 
-  With .AddStep(0.05, Null, Null)
+  With .AddStep(0.03, Null, Null)
     With .Shows("shields_down_interior")
       .Key = "key_shield_down4"
       .Speed = 1
