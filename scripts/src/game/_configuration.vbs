@@ -638,6 +638,8 @@ Sub ConfigureGlfDevices
     CreateComboCommandWizardMode    ' 3000          No
     CreateFinalWaveWizardMode       ' 4000          No
     CreateVictoryLapMode            ' 9999          No
+
+    CreateTiltMode                  ' 10000         Yes
     
 End Sub
 

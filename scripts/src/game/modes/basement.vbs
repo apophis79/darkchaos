@@ -297,15 +297,6 @@ Sub CreateBasementMode()
         End With
 
 
-        ' Tilt
-        With .Tilt()
-            .MultipleHitWindow = 3000
-            .SettleTime = 5000
-            .WarningsToTilt = 3
-            .ResetWarningEvents = Array("ball_started")
-        End With
-
-
         With .SegmentDisplayPlayer()
             With .EventName("tilt_warning")
                 With .Display("player1")
