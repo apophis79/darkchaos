@@ -6,7 +6,7 @@
 
 Sub CreateHighScoreMode
 
-    Dim AZLookup : AZLookup = Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9")
+    Dim AZLookup : AZLookup = Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9","_")
 
     With CreateGlfMode("high_score", 120)
         .StartEvents = Array("game_will_end")
@@ -73,8 +73,8 @@ Sub CreateHighScoreMode
 				End With
 			End With  
             
-            For i=0 to 35
-                With .EventName("text_inputted.3{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & "}")
+            For i=0 to 36
+                With .EventName("text_inputted.3{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & "}")
                     With .Variable("high_score_initials")
                         .Action = "set_machine"
                         .String = "machine.high_score_initials & """ & AZLookup(i) & """"
@@ -202,13 +202,13 @@ Sub CreateHighScoreMode
             End With
 
             
-            For i=0 to 35
-                With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & " && current_player.hs_input_ready == 1}")
+            For i=0 to 36
+                With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " && current_player.hs_input_ready == 1}")
                     With .Display("player3")
                         .Text = "machine.high_score_initials & """ & AZLookup(i) & """"
                     End With
                 End With
-                With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 36) + 36) Mod 36) == " & i & " && current_player.hs_input_ready == 1}")
+                With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " && current_player.hs_input_ready == 1}")
                     With .Display("player3")
                         .Text = "machine.high_score_initials & """ & AZLookup(i) & """"
                     End With

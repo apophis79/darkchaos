@@ -743,6 +743,7 @@ Public Sub CreateSharedShotProfiles()
       With .States("unlit")
           .Show = "off"
           .Key = "key_off_e"
+          .Priority = 5000
           With .Tokens()
               .Add "lights", "LSA"
           End With
@@ -751,6 +752,7 @@ Public Sub CreateSharedShotProfiles()
           .Show = "flash_color_with_fade"
           .Key = "key_flashing_e"
           .Speed = 2
+          .Priority = 5000
           With .Tokens()
               .Add "lights", "LSA"
               .Add "fade", 500
@@ -760,6 +762,7 @@ Public Sub CreateSharedShotProfiles()
           .Show = "flash_color"
           .Key = "key_hurry_e"
           .Speed = 7
+          .Priority = 5000
           With .Tokens()
               .Add "lights", "LSA"
           End With

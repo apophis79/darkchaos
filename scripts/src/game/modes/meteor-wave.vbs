@@ -668,6 +668,17 @@ Sub CreateMeteorWaveMode
 
 
         With .SegmentDisplayPlayer()
+
+            With .EventName("mode_meteor_wave_started")
+                With .Display("pf")
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                End With
+            End With
+            With .EventName("check_meteor_wave.2")
+                With .Display("pf")
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                End With
+            End With
         
             With .EventName("mode_meteor_wave_started{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player1")
