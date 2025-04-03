@@ -67,7 +67,7 @@ Sub Table1_OptionEvent(ByVal eventId)
 	SetRoomBrightness LightLevel   'Uncomment this line for lightmapped tables.
 
 	' Trust post
-	v = Table1.Option("Trust Post", 0, 1, 1, 1, 0, Array("No Post", "Post"))
+	v = 1 'Table1.Option("Trust Post", 0, 1, 1, 1, 0, Array("No Post", "Post"))
 	For Each BP in BP_TrustPost : BP.visible = v: Next
 	zCol_Rubber_TrustPost.Collidable = v
 

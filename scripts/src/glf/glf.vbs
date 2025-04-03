@@ -4483,8 +4483,8 @@ Class GlfHighScore
                     'msgbox "Category: " & category
                     high_score = m_highscores(category)(CStr(position+1))("value")
                     high_score = CLng(high_score)
-                    ''msgbox "HighScore: " & ">" & high_score & "<"
-                    ''msgbox "PlayerScore: " & CInt(player_values(i))
+                    'msgbox "HighScore: " & ">" & high_score & "<"
+                    'msgbox "PlayerScore: " & CLng(player_values(i))
                     'msgbox typename(high_score)
                     'msgbox typename(player_values(i))
                     If player_values(i) > high_score Then
@@ -4576,6 +4576,7 @@ Class GlfHighScore
         RemovePinEventListener "text_input_high_score_complete", "text_input_high_score_complete"
 
         'm_highscores(initials_item("category"))(CStr(initials_item("position")))("player_name") = text
+        'msgbox "Player="&CStr(initials_item("player_num"))&" position="&CStr(initials_item("position")) 
 
         Dim text : text = ""
         If Not IsNull(kwargs) Then
@@ -4632,6 +4633,7 @@ Class GlfHighScore
                 Next
                 WriteHighScores "HighScores", tmp
             Next
+            m_initials_needed.RemoveAll
             Log "Ending"
             DispatchPinEvent "high_score_complete", Null
         End If        
@@ -10361,19 +10363,19 @@ Class GlfTilt
     Public Sub Deactivate()
         Dim evt
         For Each evt in m_reset_warnings_events.Keys()
-            RemoveEventListener m_reset_warnings_events(evt).EventName, m_name & "_" & evt & "_reset_warnings"
+            RemovePinEventListener m_reset_warnings_events(evt).EventName, m_name & "_" & evt & "_reset_warnings"
         Next
         For Each evt in m_tilt_events.Keys()
-            RemoveEventListener m_tilt_events(evt).EventName, m_name & "_" & evt & "_tilt"
+            RemovePinEventListener m_tilt_events(evt).EventName, m_name & "_" & evt & "_tilt"
         Next
         For Each evt in m_tilt_warning_events.Keys()
-            RemoveEventListener m_tilt_warning_events(evt).EventName, m_name & "_" & evt & "_tilt_warning"
+            RemovePinEventListener m_tilt_warning_events(evt).EventName, m_name & "_" & evt & "_tilt_warning"
         Next
         For Each evt in m_tilt_slam_tilt_events.Keys()
-            RemoveEventListener m_tilt_slam_tilt_events(evt).EventName, m_name & "_" & evt & "_slam__tilt"
+            RemovePinEventListener m_tilt_slam_tilt_events(evt).EventName, m_name & "_" & evt & "_slam__tilt"
         Next
 
-        RemoveEventListener "s_tilt_warning_active", m_name & "_tilt_warning_switch_active"
+        RemovePinEventListener "s_tilt_warning_active", m_name & "_tilt_warning_switch_active"
 
     End Sub
 
