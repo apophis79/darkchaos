@@ -10,45 +10,6 @@
 'The right magna is disabled when an outlane switch is hit
 
 
-Sub TTT(Y)
-    ActiveBall.Z = 130
-    ActiveBall.X = 894.0132
-    ActiveBall.Y = Y
-    ActiveBall.Velx = 0
-    ActiveBall.Vely = 0
-    ActiveBall.Velz = 0
-End Sub
-
-Sub MM1()
-
-    DispatchPinEvent "s_LeftOutlane_active", Null
-    DispatchPinEvent "s_LeftInlane_active", Null
-    DispatchPinEvent "s_RightOutlane_active", Null
-    DispatchPinEvent "s_RightInlane_active", Null
-    glf_ball1.Z = 130
-    glf_ball1.X = 894.0132
-    glf_ball1.Y = 130
-    glf_ball1.Velx = 0
-    glf_ball1.Vely = 0
-    glf_ball1.Velz = 0
-
-End Sub
-
-Sub MM2()
-
-    DispatchPinEvent "s_LeftOutlane_active", Null
-    DispatchPinEvent "s_LeftInlane_active", Null
-    DispatchPinEvent "s_RightOutlane_active", Null
-    DispatchPinEvent "s_RightInlane_active", Null
-    glf_ball2.Z = 130
-    glf_ball2.X = 894.0132
-    glf_ball2.Y = 130
-    glf_ball2.Velx = 0
-    glf_ball2.Vely = 0
-    glf_ball2.Velz = 0
-
-End Sub
-
 
 Sub CreateMoonMultiballQualifyMode
     Dim x

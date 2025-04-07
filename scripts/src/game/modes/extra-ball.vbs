@@ -3,11 +3,6 @@
 'Extra Ball Mode.
 
 
-Sub EB1()  
-    DispatchPinEvent "eb_now_lit", Null   'DEBUG
-End Sub
-
-
 Sub CreateExtraBallMode
     Dim x
 
