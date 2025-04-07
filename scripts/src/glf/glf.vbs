@@ -473,6 +473,17 @@ Public Sub Glf_Init()
 	Glf_ReadMachineVars("HighScores")
 	glf_debugLog.WriteToLog "Init", "Finished Creating Machine Vars"
 
+	
+    With CreateGlfMode("glf_game_mode", 10)
+        .StartEvents = Array("reset_complete")
+
+        With .TimedSwitches("flipper_cancel")
+            .Switches = Array("s_left_flipper", "s_start")
+            .Time = 5000
+            .EventsWhenActive = Array("glf_game_cancel")
+        End With
+    End With
+
 	Glf_Reset()
 End Sub
 
@@ -12317,10 +12328,12 @@ Class GlfFlipper
 
     Public Sub Activate()
         Log "Activating"
-        If Not IsEmpty(m_action_cb) Then
-            GetRef(m_action_cb)(1)
+        If glf_gameStarted Then
+            If Not IsEmpty(m_action_cb) Then
+                GetRef(m_action_cb)(1)
+            End If
+            DispatchPinEvent m_name & "_activate", Null
         End If
-        DispatchPinEvent m_name & "_activate", Null
     End Sub
 
     Public Sub Deactivate()
@@ -14654,7 +14667,7 @@ End Function
 '*****************************
 Function Glf_Drain(args)
     
-    If Not glf_gameTilted Then
+    If Not glf_gameTilted And glf_gameStarted = True Then
         Dim ballsToSave : ballsToSave = args(1) 
         Glf_WriteDebugLog "end_of_ball, unclaimed balls", CStr(ballsToSave)
         Glf_WriteDebugLog "end_of_ball, balls in play", CStr(glf_BIP)
@@ -14775,6 +14788,28 @@ Function Glf_EndGame(args)
     glf_playerState.RemoveAll()
 
     DispatchPinEvent "game_ended", Null
+End Function
+
+AddPinEventListener "glf_game_cancel", "glf_game_cancel", "Glf_GameCancel", 20, Null
+
+Function Glf_GameCancel(args)
+    Dim device
+    For Each device in glf_ball_devices.Items()
+        If device.HasBall() Then
+            device.EjectAll()
+        End If
+    Next
+    Dim mode
+    For Each mode in glf_modes.Items()
+        mode.StopMode()
+    Next
+    Dim flipper
+    For Each flipper in glf_flippers.Items()
+        flipper.Deactivate()
+    Next
+    
+    Glf_EndGame Null
+    Glf_Reset()
 End Function
 
 Public Function EndOfBallNextPlayer(args)
