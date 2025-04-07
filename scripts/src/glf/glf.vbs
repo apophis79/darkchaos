@@ -14807,9 +14807,13 @@ Function Glf_GameCancel(args)
     Next
     Dim flipper
     For Each flipper in glf_flippers.Items()
-        flipper.Deactivate()
+        flipper.Disable()
     Next
-    
+    Dim auto_fire_device
+    For Each auto_fire_device in glf_autofiredevices.Items()
+        auto_fire_device.Disable()
+    Next
+    glf_bip = 0
     Glf_EndGame Null
     Glf_Reset()
 End Function
