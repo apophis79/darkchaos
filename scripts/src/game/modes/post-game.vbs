@@ -25,7 +25,7 @@ LoserMessage16 = Array("""ONE""","""GIANT""","""WEEP FOR""","""MANKIND""")
 LoserMessage17 = Array("""THE DARK""","""CHAOS""","""GOD IS""","""HAPPY""")
 LoserMessage18 = Array("""TRY JUST""","""ONE""","""MORE""","""TIME""")
 LoserMessage19 = Array("""YOU ARE""","""LUCKY""","""ITS ON""","""FREEPLAY""")
-LoserMessage20 = Array("""STAY""","""CALM""","""PLAY""","""PINBALL""")
+LoserMessage20 = Array("""KEEP""","""CALM""","""PLAY""","""PINBALL""")
 
 Dim LoserMessages
 LoserMessages = Array(LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10, _

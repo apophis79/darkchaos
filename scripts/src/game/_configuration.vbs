@@ -202,10 +202,10 @@ Sub ConfigureGlfDevices
             .Add "score", Array("GRAND CHAMPION", "HIGH SCORE 1", "HIGH SCORE 2", "HIGH SCORE 3") 
         End With
         With .Defaults("score")
-            .Add "DAN", 1000
-            .Add "MPC", 500
-            .Add "AVE", 300
-            .Add "DIG", 100
+            .Add "DAN", 9000000
+            .Add "MPC", 7000000
+            .Add "AVE", 5000000
+            .Add "DIG", 3000000
         End With
         .EnterInitialsTimeout = 65000
     End With

@@ -12,7 +12,7 @@
 '
 ' Defenders and Destroyers
 '   * Apophis: Game design, modeling, light shows, DOF, and coding.
-'   * Unsavory: Music and audio design. Art design support.
+'   * Unsavory: Music, sound effects, and callouts. Art design support.
 '   * Flux: Game logic framework. Coding support.
 
 ' Special Thanks
