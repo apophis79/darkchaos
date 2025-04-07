@@ -11494,10 +11494,12 @@ Class GlfAutoFireDevice
 
     Public Sub Activate(active_ball)
         Log "Activating"
-        If Not IsEmpty(m_action_cb) Then
-            GetRef(m_action_cb)(Array(1, active_ball))
-        End If
-        DispatchPinEvent m_name & "_activate", Null
+        If gameStarted = True Then
+            If Not IsEmpty(m_action_cb) Then
+                GetRef(m_action_cb)(Array(1, active_ball))
+            End If
+            DispatchPinEvent m_name & "_activate", Null
+        End If 
     End Sub
 
     Public Sub Deactivate(active_ball)
