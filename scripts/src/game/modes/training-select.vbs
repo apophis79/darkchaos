@@ -46,6 +46,8 @@ Sub CreateTrainingSelectMode
             .Add "make_selection{devices.state_machines.training_select.state==""shields""}", Array("start_training_shields","stopping_training_select")
             .Add "make_selection{devices.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
             .Add "stopping_training_select", Array("training_music_alt_start","meteor_wave_music_stop","stop_training_select")
+            'Handle moon ramp
+            .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
 
 
