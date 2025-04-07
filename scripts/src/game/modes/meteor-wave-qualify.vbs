@@ -32,7 +32,7 @@ Sub CreateMeteorWaveQualifyMode
 
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
-            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold") 'stop these early to prevent scoop issues
+            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold","start_mwq_timer") 'stop these early to prevent scoop issues
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
 
             .Add "meteor_wave_alert_show", Array("meteor_wave_alert_show1","meteor_wave_alert_show2","meteor_wave_alert_show3","meteor_wave_alert_show4")
