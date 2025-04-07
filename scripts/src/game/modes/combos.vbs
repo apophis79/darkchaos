@@ -19,26 +19,37 @@ Sub CreateCombosMode
             'init and reset
             .Add "mode_combos_started", Array("reset_combos")
             .Add "mode_combos_started{current_player.ball_just_started==1}", Array("clear_relaxed_combos")
-            .Add "timer_combos_reset_complete", Array("reset_combos")
+            .Add "timer_combos_complete", Array("restart_decay_timer","check_subtract_combos")
+            .Add "timer_decay_combos_complete", Array("check_subtract_combos")
             'handle when valid shot is hit
-            .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(2)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(3)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(4)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(5)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_combos")
-            .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_combos")
-            .Add "check_combos{current_player.combos_value==0}", Array("add_combos")
-            .Add "check_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos","replay_sfx_combo","flash_combos","score_2000")
-            .Add "check_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos","replay_sfx_combo","flash_combos","score_4000")
-            .Add "check_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos","replay_sfx_combo","flash_combos","score_10000")
-            .Add "check_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos","replay_sfx_combo","flash_combos","score_20000")
-            .Add "check_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos","replay_sfx_combo","flash_combos","score_50000")
-            .Add "check_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos","replay_sfx_combo","flash_combos","score_150000")
-            .Add "check_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos","replay_sfx_combo","flash_combos","score_500000")
-            .Add "check_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard","replay_sfx_combo","flash_combos","score_1000000")
+            .Add MainShotNames(0)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(1)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(2)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(3)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(4)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(5)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_add_combos")
+            .Add "check_add_combos{current_player.combos_value==0}", Array("add_combos")
+            .Add "check_add_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos","replay_sfx_combo","flash_combos","score_2000")
+            .Add "check_add_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos","replay_sfx_combo","flash_combos","score_4000")
+            .Add "check_add_combos{current_player.combos_value==3}", Array("combos3_lit","add_combos","replay_sfx_combo","flash_combos","score_10000")
+            .Add "check_add_combos{current_player.combos_value==4}", Array("combos4_lit","add_combos","replay_sfx_combo","flash_combos","score_20000")
+            .Add "check_add_combos{current_player.combos_value==5}", Array("combos5_lit","add_combos","replay_sfx_combo","flash_combos","score_50000")
+            .Add "check_add_combos{current_player.combos_value==6}", Array("combos6_lit","add_combos","replay_sfx_combo","flash_combos","score_150000")
+            .Add "check_add_combos{current_player.combos_value==7}", Array("combos7_lit","add_combos","replay_sfx_combo","flash_combos","score_500000")
+            .Add "check_add_combos{current_player.combos_value==8}", Array("combos8_lit","check_combo_command_wizard","replay_sfx_combo","flash_combos","score_1000000")
             .Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", Array("activate_combo_command_wizard")
+            'handle combo decay
+            .Add "check_subtract_combos{current_player.combos_value==8}", Array("combos8_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==7}", Array("combos7_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==6}", Array("combos6_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==5}", Array("combos5_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==4}", Array("combos4_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==3}", Array("combos3_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==2}", Array("combos2_unlit","subtract_combos","restart_decay_timer")
+            .Add "check_subtract_combos{current_player.combos_value==1}", Array("combos1_unlit","reset_combos")
+            'handle mystery award
             .Add "mystery_relaxed_combos", Array("flash_combos")
             'handle sound effect
             .Add "replay_sfx_combo", Array("stop_sfx_combo")
@@ -97,7 +108,7 @@ Sub CreateCombosMode
                     .Events = Array("combos"&x&"_lit")
                     .State = 1
                 End With
-                .RestartEvents = Array("reset_combos")
+                .RestartEvents = Array("combos"&x&"_unlit","reset_combos")
             End With
 
             With .ShowPlayer()
@@ -115,7 +126,7 @@ Sub CreateCombosMode
         Next
 
 
-        With .Timers("combos_reset")
+        With .Timers("combos")
             .TickInterval = CombosTickInterval
             .StartValue = 0
             .EndValue = "current_player.combo_ticks"
@@ -124,6 +135,21 @@ Sub CreateCombosMode
                 .Action = "restart"
             End With
         End With
+
+        With .Timers("decay_combos")
+            .TickInterval = CombosDecayTickInterval
+            .StartValue = 0
+            .EndValue = "current_player.combo_decay_ticks"
+            With .ControlEvents()
+                .EventName = "restart_decay_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "restart_c_timer"
+                .Action = "stop"
+            End With
+        End With
+
 
         With .VariablePlayer()
             'combos_value
@@ -139,16 +165,30 @@ Sub CreateCombosMode
 					.Int = 1  
 				End With
 			End With
+            With .EventName("subtract_combos")
+				With .Variable("combos_value")
+                    .Action = "add"
+					.Int = -1  
+				End With
+			End With
             With .EventName("mystery_relaxed_combos") 'mystery award (lasts the rest of the ball)
 				With .Variable("combo_ticks")
                     .Action = "set"
 					.Int = CombosTickLimitRelaxed  
+				End With
+                With .Variable("combo_decay_ticks")
+                    .Action = "set"
+					.Int = CombosDecayTickLimitRelaxed  
 				End With
 			End With
             With .EventName("clear_relaxed_combos") 'clear mystery award
 				With .Variable("combo_ticks")
                     .Action = "set"
 					.Int = CombosTickLimit
+				End With
+                With .Variable("combo_decay_ticks")
+                    .Action = "set"
+					.Int = CombosDecayTickLimit
 				End With
 			End With
         End With

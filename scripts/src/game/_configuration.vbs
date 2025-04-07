@@ -102,6 +102,10 @@ Const CombosTickInterval = 1000
 Const CombosTickLimit = 7
 Const CombosTickLimitRelaxed = 11
 
+Const CombosDecayTickInterval = 200
+Const CombosDecayTickLimit = 4
+Const CombosDecayTickLimitRelaxed = 7
+
 ' Skillshots settings
 Const SkillshotsTickInterval = 1000
 Const SkillshotsTickLimit = 5
@@ -565,6 +569,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "spin_multiplier", 1
     Glf_SetInitialPlayerVar "bonus_multiplier", 1
     Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
+    Glf_SetInitialPlayerVar "combo_decay_ticks", CombosDecayTickLimit
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0
     Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
