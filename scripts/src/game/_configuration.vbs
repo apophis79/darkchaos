@@ -539,6 +539,7 @@ Sub ConfigureGlfDevices
 
 
     ' Initial Vars
+    Glf_SetInitialPlayerVar "flag_ss", 0
     Glf_SetInitialPlayerVar "flag_sss_mystery", 0
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_wave_running", 0

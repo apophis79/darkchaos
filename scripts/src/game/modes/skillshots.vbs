@@ -8,7 +8,7 @@ Sub CreateSkillshotsMode
 
     With CreateGlfMode("skillshots", 500)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","stop_skillshots","start_training_select","wizard_mode_started") ',"start_meteor_wave"
+        .StopEvents = Array("mode_base_stopping","stop_skillshots","start_training_select","wizard_mode_started") 
         
 
         With .EventPlayer()
@@ -17,8 +17,12 @@ Sub CreateSkillshotsMode
             'Handle successful skillshots
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
             .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
+            .Add "right_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 1}", Array("ssss_achieved") 
+            .Add "left_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 2}", Array("sdsss_achieved") 
             .Add "ss_achieved", Array("ss_trainer_ready","score_500000")
             .Add "sss_achieved", Array("ss_trainer_ready","sss_mystery_ready","score_1000000")
+            .Add "ssss_achieved", Array("score_2000000")
+            .Add "sdsss_achieved", Array("score_3000000")
             'Stop skillshots
             .Add "timer_skillshots_complete", Array("stop_skillshots") 
             .Add "s_InnerOrb1_active", Array("stop_skillshots")
@@ -32,6 +36,14 @@ Sub CreateSkillshotsMode
             With .EventName("sss_achieved")
                 .Key = "key_voc_sss"
                 .Sound = "voc_sss"
+            End With
+            With .EventName("ssss_achieved")
+                .Key = "key_voc_ssss"
+                .Sound = "voc_ssss"
+            End With
+            With .EventName("sdsss_achieved")
+                .Key = "key_voc_sdsss"
+                .Sound = "voc_sdsss"
             End With
         End With
 
@@ -69,7 +81,36 @@ Sub CreateSkillshotsMode
         End With
 
 
-        
+        With .VariablePlayer
+            With .EventName("init_ss")
+                'initalize vars
+				With .Variable("flag_ss")
+                    .Action = "set"
+					.Int = 0
+				End With
+            End With
+            With .EventName("sss_achieved")
+                'initalize vars
+				With .Variable("flag_ss")
+                    .Action = "set"
+					.Int = 1
+				End With
+            End With
+            With .EventName("ssss_achieved")
+                'initalize vars
+				With .Variable("flag_ss")
+                    .Action = "set"
+					.Int = 2
+				End With
+            End With
+            With .EventName("sdsss_achieved")
+                'initalize vars
+				With .Variable("flag_ss")
+                    .Action = "set"
+					.Int = 0
+				End With
+            End With
+        End With
 
 
         With .Timers("skillshots")
@@ -78,7 +119,15 @@ Sub CreateSkillshotsMode
             .EndValue = SkillshotsTickLimit
             With .ControlEvents()
                 .EventName = "new_ball_active"
-                .Action = "start"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "sss_achieved"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "ssss_achieved"
+                .Action = "restart"
             End With
         End With
 
@@ -105,6 +154,32 @@ Sub CreateSkillshotsMode
                     .Add "color1", "000000"
                     .Add "color2", SkillshotColor
                     .Add "color3", TrainingColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("ssss_achieved")
+                .Key = "key_ssss_achieved"
+                .Show = "insert_swap3"
+                .Speed = 1.5
+                .Loops = 3
+                .Priority = 3000
+                With .Tokens()
+                    .Add "color1", ProtonColor
+                    .Add "color2", SkillshotColor
+                    .Add "color3", MoonColor
+                    .Add "intensity", 100
+                End With
+            End With
+            With .EventName("sdsss_achieved")
+                .Key = "key_sdsss_achieved"
+                .Show = "insert_swap3"
+                .Speed = 1.5
+                .Loops = 4
+                .Priority = 3000
+                With .Tokens()
+                    .Add "color1", MeteorHotColor
+                    .Add "color2", SkillshotColor
+                    .Add "color3", ShieldsColor
                     .Add "intensity", 100
                 End With
             End With
