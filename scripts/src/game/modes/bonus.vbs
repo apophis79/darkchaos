@@ -17,20 +17,30 @@ Sub CreateBonusMode
             ' .Add "mode_bonus_started{current_player.wizard_final_hit_count > 0}", Array("run_bonus_started") 'normal startup. run bonus
             ' .Add "mode_bonus_started{current_player.wizard_final_hit_count == 0 && current_player.victory == 0}", Array("bonus_finished") 'final wizard just completed. dont run bonus
             ' .Add "mode_bonus_started{current_player.wizard_final_hit_count == 0 && current_player.victory == 1}", Array("run_bonus_started") 'victory mode done. run bonus
-            .Add "run_bonus_started", Array("check_bonus_bomb1","check_bonus_missile1","check_bonus_proton1")
+            .Add "run_bonus_started", Array("check_bonus_bomb1","check_bonus_missile1","check_bonus_proton1","check_bonus_waves")
             'calculate bomb bonus
-            .Add "check_bonus_bomb1{current_player.shot_cluster_bomb1 == 1}", Array("add_bonus_bomb","check_bonus_bomb2")
-            .Add "check_bonus_bomb2{current_player.shot_cluster_bomb2 == 1}", Array("add_bonus_bomb")
+            .Add "check_bonus_bomb1{current_player.shot_cluster_bomb1 == 1}", Array("add_bonus_bomb","check_bonus_bomb2","bonus_light_cr1")
+            .Add "check_bonus_bomb2{current_player.shot_cluster_bomb2 == 1}", Array("add_bonus_bomb","bonus_light_cr2")
             'calculate missile bonus
-            .Add "check_bonus_missile1{current_player.shot_moon_missile1 == 1}", Array("add_bonus_missile","check_bonus_missile2")
-            .Add "check_bonus_missile2{current_player.shot_moon_missile2 == 1}", Array("add_bonus_missile")
+            .Add "check_bonus_missile1{current_player.shot_moon_missile1 == 1}", Array("add_bonus_missile","check_bonus_missile2","bonus_light_mr1")
+            .Add "check_bonus_missile2{current_player.shot_moon_missile2 == 1}", Array("add_bonus_missile","bonus_light_mr2")
             'calculate proton bonus
-            .Add "check_bonus_proton1{current_player.shot_proton_round1 == 1}", Array("add_bonus_proton","check_bonus_proton2")
-            .Add "check_bonus_proton2{current_player.shot_proton_round2 == 1}", Array("add_bonus_proton","check_bonus_proton3")
-            .Add "check_bonus_proton3{current_player.shot_proton_round3 == 1}", Array("add_bonus_proton","check_bonus_proton4")
-            .Add "check_bonus_proton4{current_player.shot_proton_round4 == 1}", Array("add_bonus_proton","check_bonus_proton5")
-            .Add "check_bonus_proton5{current_player.shot_proton_round5 == 1}", Array("add_bonus_proton","check_bonus_proton6")
-            .Add "check_bonus_proton6{current_player.shot_proton_round6 == 1}", Array("add_bonus_proton")
+            .Add "check_bonus_proton1{current_player.shot_proton_round1 == 1}", Array("add_bonus_proton","check_bonus_proton2","bonus_light_pr1")
+            .Add "check_bonus_proton2{current_player.shot_proton_round2 == 1}", Array("add_bonus_proton","check_bonus_proton3","bonus_light_pr2")
+            .Add "check_bonus_proton3{current_player.shot_proton_round3 == 1}", Array("add_bonus_proton","check_bonus_proton4","bonus_light_pr3")
+            .Add "check_bonus_proton4{current_player.shot_proton_round4 == 1}", Array("add_bonus_proton","check_bonus_proton5","bonus_light_pr4")
+            .Add "check_bonus_proton5{current_player.shot_proton_round5 == 1}", Array("add_bonus_proton","check_bonus_proton6","bonus_light_pr5")
+            .Add "check_bonus_proton6{current_player.shot_proton_round6 == 1}", Array("add_bonus_proton","bonus_light_pr6")
+            'light wave lights
+            .Add "check_bonus_waves{current_player.shot_meteor_wave1 == 2}", Array("bonus_light_w1")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave2 == 2}", Array("bonus_light_w2")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave3 == 2}", Array("bonus_light_w3")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave4 == 2}", Array("bonus_light_w4")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave5 == 2}", Array("bonus_light_w5")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave6 == 2}", Array("bonus_light_w6")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave7 == 2}", Array("bonus_light_w7")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave8 == 2}", Array("bonus_light_w8")
+            .Add "check_bonus_waves{current_player.shot_meteor_wave9 == 2}", Array("bonus_light_w9")
             'add total bonus to player's score
             .Add "timer_bonus_tick{devices.timers.bonus.ticks == 17}", Array("calc_bonus_total")
             .Add "calc_bonus_total", Array("score_bonus_total")
@@ -96,7 +106,7 @@ Sub CreateBonusMode
                 .Speed = 13
                 .Loops = 7
                 With .Tokens()
-                    .Add "lights", "tTrain"
+                    .Add "lights", "LX"
                     .Add "color", TrainingColor
                 End With
             End With
@@ -132,6 +142,110 @@ Sub CreateBonusMode
             End With
 
         End With
+
+
+        With .LightPlayer()
+            With .EventName("bonus_light_cr1")
+                With .Lights("LCR1")
+                    .Color = ClusterBombColor
+                End With
+            End With
+            With .EventName("bonus_light_cr2")
+                With .Lights("LCR2")
+                    .Color = ClusterBombColor
+                End With
+            End With
+
+            With .EventName("bonus_light_mr1")
+                With .Lights("LMR1")
+                    .Color = MoonColor
+                End With
+            End With
+            With .EventName("bonus_light_mr2")
+                With .Lights("LMR2")
+                    .Color = MoonColor
+                End With
+            End With
+
+            With .EventName("bonus_light_pr1")
+                With .Lights("LPR1")
+                    .Color = ProtonColor
+                End With
+            End With
+            With .EventName("bonus_light_pr2")
+                With .Lights("LPR2")
+                    .Color = ProtonColor
+                End With
+            End With
+            With .EventName("bonus_light_pr3")
+                With .Lights("LPR3")
+                    .Color = ProtonColor
+                End With
+            End With
+            With .EventName("bonus_light_pr4")
+                With .Lights("LPR4")
+                    .Color = ProtonColor
+                End With
+            End With
+            With .EventName("bonus_light_pr5")
+                With .Lights("LPR5")
+                    .Color = ProtonColor
+                End With
+            End With
+            With .EventName("bonus_light_pr6")
+                With .Lights("LPR6")
+                    .Color = ProtonColor
+                End With
+            End With
+
+            With .EventName("bonus_light_w1")
+                With .Lights("LW1")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w2")
+                With .Lights("LW2")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w3")
+                With .Lights("LW3")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w4")
+                With .Lights("LW4")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w5")
+                With .Lights("LW5")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w6")
+                With .Lights("LW6")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w7")
+                With .Lights("LW7")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w8")
+                With .Lights("LW8")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+            With .EventName("bonus_light_w9")
+                With .Lights("LW9")
+                    .Color = MeteorWaveColor
+                End With
+            End With
+        End With
+
+
 
         With .Timers("bonus")
             .TickInterval = BonusTimerTickInterval

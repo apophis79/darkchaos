@@ -294,7 +294,7 @@ Sub CreatePostGameMode()
         End With
 
         With .SegmentDisplayPlayer()
-            For x = 1 to 14
+            For x = 1 to NumLoserMessages
                 With .EventName("display_loser_message"&x)
                     With .Display("player1")
                         .Text = LoserMessages(x-1)(0)
