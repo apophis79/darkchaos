@@ -1,3 +1,9 @@
+
+
+'-------------------------------------
+' ZGLF : Game Logic Framework (GLF)
+'-------------------------------------
+
 'VPX Game Logic Framework (https://mpcarr.github.io/vpx-glf/)
 
 '
@@ -477,10 +483,11 @@ Public Sub Glf_Init()
     With CreateGlfMode("glf_game_mode", 10)
         .StartEvents = Array("reset_complete")
 
-        With .TimedSwitches("flipper_cancel")
-            .Switches = Array("s_left_flipper", "s_start")
-            .Time = 5000
-            .EventsWhenActive = Array("glf_game_cancel")
+        With .ComboSwitches("flipper_cancel")
+            .Switch1 = "s_left_flipper"
+            .Switch2 = "s_start"
+            .HoldTime = 5000
+            .EventsWhenBoth = Array("glf_game_cancel")
         End With
     End With
 
@@ -667,7 +674,7 @@ Sub Glf_Options(ByVal eventId)
 	'***GLF_DEBUG_OPTIONS_END***
 
 
-	Dim ballsPerGame : ballsPerGame = Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))
+	Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))   'apophis mod
 	If ballsPerGame = 1 Then
 		glf_ballsPerGame = 3
 	Else
@@ -680,7 +687,7 @@ Sub Glf_Options(ByVal eventId)
 	glf_max_dispatch = glfMaxDispatch*5
 
 	glf_debugLog.WriteToLog "Options", "BCP Check"
-	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
+	Dim glfuseBCP : glfuseBCP = 0 'Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))   'apophis mod
 	If glfuseBCP = 1 Then
 		If IsNull(bcpController) Then
 			SetDelay "start_glf_bcp", "Glf_ConnectToBCPMediaController", Null, 500
