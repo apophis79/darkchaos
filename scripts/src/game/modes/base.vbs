@@ -162,6 +162,14 @@ Sub CreateBaseMode()
         End With
 
 
+        With .ComboSwitches("flipper_cancel")
+            .Switch1 = "s_left_flipper"
+            .Switch2 = "s_start"
+            .HoldTime = 5000
+            .EventsWhenBoth = Array("glf_game_cancel")
+        End With
+
+
         With .DOFPlayer()
             With .EventName("ball_launch_hit")
                 .Action = "DOF_PULSE"
