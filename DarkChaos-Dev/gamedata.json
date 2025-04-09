@@ -76,9 +76,9 @@
   "physics_max_loops": 4294967295,
   "render_em_reels": true,
   "render_decals": true,
-  "offset_x": 476.0,
-  "offset_y": 1081.0,
-  "zoom": 0.5,
+  "offset_x": 453.83008,
+  "offset_y": 598.2602,
+  "zoom": 0.87875783,
   "angle_tilt_max": 6.25,
   "angle_tilt_min": 6.25,
   "stereo_max_separation": 0.015,
@@ -155,5 +155,5 @@
     "#00000000"
   ],
   "protection_data": null,
-  "locked": 4
+  "locked": 2
 }
