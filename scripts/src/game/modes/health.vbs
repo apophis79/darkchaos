@@ -49,7 +49,7 @@ Sub CreateHealthMode
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
             'Handle mystery award
-            .Add "mystery_full_health", Array("complete_full_health","slings_powerup_added","lsling_powerup_h","rsling_powerup_h","score_100000")
+            .Add "mystery_full_health", Array("complete_full_health","restart_health","slings_powerup_added","lsling_powerup_h","rsling_powerup_h","score_100000")
         End With
 
 
@@ -114,7 +114,7 @@ Sub CreateHealthMode
                     .State = 0
                 End With
                 With .ControlEvents()
-                    .Events = Array("restart_health","health"&x&"_norm","complete_full_health")
+                    .Events = Array("restart_health","health"&x&"_norm")
                     .State = 1
                 End With
                 With .ControlEvents()
