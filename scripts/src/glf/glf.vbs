@@ -14584,6 +14584,7 @@ Function Glf_StartGame(args)
     If args(1) = True And glf_gameStarted = False Then
         Glf_AddPlayer()
         glf_gameStarted = True
+        glf_canAddPlayers = True
         DispatchPinEvent GLF_GAME_START, Null
         If useBcp Then
             bcpController.Send "player_turn_start?player_num=int:1"
