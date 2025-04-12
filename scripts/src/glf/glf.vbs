@@ -707,12 +707,9 @@ Sub Glf_Options(ByVal eventId)
         Case 6: glf_max_lightmap_sync = 6 : glf_max_lightmap_sync_enabled = True
     End Select
 
-    Dim glfMaxDispatch : glfMaxDispatch = Table1.Option("Monitor Refresh Rate", 1, 2, 1, 2, 0, Array("60 Hz", "120Hz or greater"))   'apophis mod
-    If glfMaxDispatch = 1 Then
-		glf_max_dispatch = 10
-	Else
-		glf_max_dispatch = 5
-	End If
+    Dim glfMaxDispatch : glfMaxDispatch = 1 'Table1.Option("Monitor Refresh Rate", 1, 2, 1, 1, 0, Array("120Hz or greater", "60 Hz"))   'apophis mod
+    glf_max_dispatch = glfMaxDispatch*5
+    
 
     Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))   'apophis mod
 	If ballsPerGame = 1 Then
