@@ -92,13 +92,21 @@ Sub CreateComboCommandWizardMode
         End With
 
         With .Shots("ccwiz_shoot_again")
-            .Profile = "extraball"
+            .Profile = "shoot_again"
+            With .Tokens()
+                .Add "color", ShipSaveColor
+            End With
             With .ControlEvents()
                 .Events = Array("mode_combo_command_wizard_started")
                 .State = 1
             End With
-            .ResetEvents = Array("ball_ended")
+            With .ControlEvents()
+                .Events = Array("multiball_ccwiz_hurry_up")
+                .State = 2
+            End With
+            .ResetEvents = Array("multiball_ccwiz_shoot_again_ended")
         End With
+                
 
 
         With .Multiballs("ccwiz")

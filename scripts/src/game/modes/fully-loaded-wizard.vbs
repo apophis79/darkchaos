@@ -120,13 +120,21 @@ Sub CreateFullyLoadedWizardMode
             .MaxPerGame = 3
         End With
 
+
         With .Shots("flwiz_shoot_again")
-            .Profile = "extraball"
+            .Profile = "shoot_again"
+            With .Tokens()
+                .Add "color", ShipSaveColor
+            End With
             With .ControlEvents()
                 .Events = Array("mode_fully_loaded_wizard_started")
                 .State = 1
             End With
-            .ResetEvents = Array("ball_ended")
+            With .ControlEvents()
+                .Events = Array("multiball_flwiz_hurry_up")
+                .State = 2
+            End With
+            .ResetEvents = Array("multiball_flwiz_shoot_again_ended")
         End With
 
 
