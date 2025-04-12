@@ -34,6 +34,9 @@ Sub CreateClusterBombMode
             'Fire bomb
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash","backglass_clusters_off")
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
+            'Panic penalty
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}", Array("cluster_panic_penalty")
+            .Add "cluster_panic_penalty", Array("score_m50000")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
@@ -92,7 +95,13 @@ Sub CreateClusterBombMode
                 .Key = "key_voc_LCR2"
                 .Sound = "voc_LCR2"
             End With
+
+            With .EventName("cluster_panic_penalty")
+                .Key = "key_sfx_error_buzz2"
+                .Sound = "sfx_error_buzz"
+            End With
         End With
+
 
         'Define our shots
         For x = 1 to 3
@@ -134,6 +143,17 @@ Sub CreateClusterBombMode
 
 
         With .ShowPlayer()
+            With .EventName("cluster_panic_penalty")
+                .Key = "key_cluster_panic_penalty"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 7
+                With .Tokens()
+                    .Add "lights", "tClusterAll"
+                    .Add "color", MeteorWaveColor
+                End With
+            End With
+
             With .EventName("light_cluster_charge3")
                 .Key = "key_clusters_charged"
                 .Show = "flash_color"
