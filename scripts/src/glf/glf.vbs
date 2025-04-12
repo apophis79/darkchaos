@@ -634,7 +634,6 @@ End Sub
 
 Sub Glf_Options(ByVal eventId)
 	
-	Dim glfMaxDispatch : glfMaxDispatch = 1
 
 	'***GLF_DEBUG_OPTIONS_START***
 	Dim glfDebug : glfDebug = Table1.Option("Glf Debug Log", 0, 1, 1, 0, 0, Array("Off", "On"))
@@ -674,17 +673,6 @@ Sub Glf_Options(ByVal eventId)
 	'***GLF_DEBUG_OPTIONS_END***
 
 
-	Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))   'apophis mod
-	If ballsPerGame = 1 Then
-		glf_ballsPerGame = 3
-	Else
-		glf_ballsPerGame = 5
-	End If
-
-	Dim tilt_sensitivity : tilt_sensitivity = Table1.Option("Tilt Sensitivity (digital nudge)", 1, 10, 1, 5, 0, Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
-	glf_tilt_sensitivity = tilt_sensitivity
-
-	glf_max_dispatch = glfMaxDispatch*5
 
 	glf_debugLog.WriteToLog "Options", "BCP Check"
 	Dim glfuseBCP : glfuseBCP = 0 'Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))   'apophis mod
@@ -718,6 +706,23 @@ Sub Glf_Options(ByVal eventId)
         Case 5: glf_max_lightmap_sync = 7 : glf_max_lightmap_sync_enabled = True
         Case 6: glf_max_lightmap_sync = 6 : glf_max_lightmap_sync_enabled = True
     End Select
+
+    Dim glfMaxDispatch : glfMaxDispatch = Table1.Option("Monitor Refresh Rate", 1, 2, 1, 2, 0, Array("60 Hz", "120Hz or greater"))   'apophis mod
+    If glfMaxDispatch = 1 Then
+		glf_max_dispatch = 10
+	Else
+		glf_max_dispatch = 5
+	End If
+
+    Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))   'apophis mod
+	If ballsPerGame = 1 Then
+		glf_ballsPerGame = 3
+	Else
+		glf_ballsPerGame = 5
+	End If
+
+	Dim tilt_sensitivity : tilt_sensitivity = Table1.Option("Tilt Sensitivity (digital nudge)", 1, 10, 1, 5, 0, Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
+	glf_tilt_sensitivity = tilt_sensitivity
 	
 End Sub
 
