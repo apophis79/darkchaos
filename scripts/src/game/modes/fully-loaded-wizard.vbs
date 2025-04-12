@@ -331,7 +331,17 @@ Sub CreateFullyLoadedWizardMode
                     .Action = "set"
 					.Int = 1
 				End With
+                With .Variable("wizard_mode_running")
+                    .Action = "set"
+					.Int = 1
+				End With
 			End With   
+            With .EventName("mode_fully_loaded_wizard_stopping")
+                With .Variable("wizard_mode_running")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With  
             With .EventName("activate_flwiz_sjp")
 				With .Variable("flwiz_super_jp")
                     .Action = "set"

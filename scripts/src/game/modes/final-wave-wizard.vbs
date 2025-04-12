@@ -508,6 +508,18 @@ Sub CreateFinalWaveWizardMode
 
 
         With .VariablePlayer()
+            With .EventName("mode_final_wave_wizard_started")
+                With .Variable("wizard_mode_running")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With 
+            With .EventName("mode_final_wave_wizard_stopping")
+                With .Variable("wizard_mode_running")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With 
             With .EventName("asteroid_hit{current_player.wizard_final_hit_count > 0}")
 				With .Variable("wizard_final_hit_count")
                     .Action = "add"

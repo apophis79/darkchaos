@@ -579,6 +579,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "training_shields_achieved", 0
     Glf_SetInitialPlayerVar "training_total_achieved", 0
     Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
+    Glf_SetInitialPlayerVar "wizard_mode_running", 0
     Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
     Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
     Glf_SetInitialPlayerVar "fwwiz_add_ball_ready", 0
