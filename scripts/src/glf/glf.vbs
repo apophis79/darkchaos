@@ -98,7 +98,7 @@ Dim glf_debugLog : Set glf_debugLog = (new GlfDebugLogFile)()
 Dim glf_debugEnabled : glf_debugEnabled = False
 Dim glf_debug_level : glf_debug_level = "Info"
 
-Glf_RegisterLights()
+
 Dim glf_ball1, glf_ball2, glf_ball3, glf_ball4, glf_ball5, glf_ball6, glf_ball7, glf_ball8	
 
 Public Sub Glf_ConnectToBCPMediaController(args)
@@ -129,7 +129,7 @@ End Function
 
 Public Sub Glf_Init()
 	Glf_Options Null 'Force Options Check
-
+    Glf_RegisterLights()
 	glf_debugLog.WriteToLog "Init", "Start"
 	If glf_troughSize > 0 Then : swTrough1.DestroyBall : Set glf_ball1 = swTrough1.CreateSizedballWithMass(Ballsize / 2,Ballmass) : gBot = Array(glf_ball1) : Set glf_lastTroughSw = swTrough1 : End If
 	If glf_troughSize > 1 Then : swTrough2.DestroyBall : Set glf_ball2 = swTrough2.CreateSizedballWithMass(Ballsize / 2,Ballmass) : gBot = Array(glf_ball1, glf_ball2) : Set glf_lastTroughSw = swTrough2 : End If
@@ -991,14 +991,6 @@ End Function
 Dim glf_tmp_lmarr
 Public Function Glf_RegisterLights()
 
-	Dim elementDict : Set elementDict = CreateObject("Scripting.Dictionary")
-
-	For Each e in GetElements()
-		If typename(e) = "Primitive" Or typename(e) = "Flasher" Then
-			elementDict.Add LCase(e.Name), True
-		End If
-	Next
-
 	Dim light, tags, tag
 	For Each light In Glf_Lights
 		tags = Split(light.BlinkPattern, ",")
@@ -1014,23 +1006,6 @@ Public Function Glf_RegisterLights()
 		Next
 		glf_lightPriority.Add light.Name, 0
 		
-		Dim e, lmStr: lmStr = "glf_tmp_lmarr = Array("    
-		For Each e in elementDict.Keys
-			If InStr(e, LCase("_" & light.Name & "_")) Then
-				lmStr = lmStr & e & ","
-			End If
-			For Each tag in tags
-				tag = "T_" & Trim(tag)
-				If InStr(e, LCase("_" & tag & "_")) Then
-					lmStr = lmStr & e & ","
-				End If
-			Next
-		Next
-		lmStr = lmStr & "Null)"
-		lmStr = Replace(lmStr, ",Null)", ")")
-		lmStr = Replace(lmStr, "Null)", ")")
-		ExecuteGlobal lmStr
-		glf_lightMaps.Add light.Name, glf_tmp_lmarr
 		glf_lightNames.Add light.Name, light
 		Dim lightStack : Set lightStack = (new GlfLightStack)()
 		glf_lightStacks.Add light.Name, lightStack
@@ -15528,3 +15503,1414 @@ Sub UpdateTroughDebounced(args)
 
 	If glf_lastTroughSw.BallCntOver = 0 Then Drain.kick 57, 10
 End Sub
+
+ 
+Dim glf_gi17_lmarr : glf_gi17_lmarr = Array(lm_gi_gi17_parts,lm_gi_gi17_playfield)
+glf_lightMaps.Add "gi17", glf_gi17_lmarr
+Dim glf_giapron_lmarr : glf_giapron_lmarr = Array(lm_gi_giapron_lflip,lm_gi_giapron_lflipu,lm_gi_giapron_lsling1,lm_gi_giapron_lsling2,lm_gi_giapron_parts,lm_gi_giapron_playfield,lm_gi_giapron_rflip,lm_gi_giapron_rflipu,lm_gi_giapron_rsling1,lm_gi_giapron_rsling2,lm_gi_giapron_screen,lm_gi_giapron_trustpost)
+glf_lightMaps.Add "giapron", glf_giapron_lmarr
+Dim glf_gi22_lmarr : glf_gi22_lmarr = Array(lm_gi_gi22_asteroid1,lm_gi_gi22_asteroid2,lm_gi_gi22_asteroid3,lm_gi_gi22_asteroid4,lm_gi_gi22_br2,lm_gi_gi22_br3,lm_gi_gi22_br4,lm_gi_gi22_bs2,lm_gi_gi22_bs3,lm_gi_gi22_bs4,lm_gi_gi22_bmpbot,lm_gi_gi22_bmptopb,lm_gi_gi22_layer1,lm_gi_gi22_parts,lm_gi_gi22_playfield,lm_gi_gi22_tm4,lm_gi_gi22_underpf,lm_gi_gi22_swc3)
+glf_lightMaps.Add "gi22", glf_gi22_lmarr
+Dim glf_LStars_lmarr : glf_LStars_lmarr = Array()
+glf_lightMaps.Add "LStars", glf_LStars_lmarr
+Dim glf_gi20_lmarr : glf_gi20_lmarr = Array(lm_gi_gi20_asteroid1,lm_gi_gi20_asteroid2,lm_gi_gi20_asteroid3,lm_gi_gi20_asteroid4,lm_gi_gi20_gatel,lm_gi_gi20_parts,lm_gi_gi20_playfield,lm_gi_gi20_ramp,lm_gi_gi20_spin,lm_gi_gi20_spinu,lm_gi_gi20_spinwire,lm_gi_gi20_tm2,lm_gi_gi20_swc1,lm_gi_gi20_swi1,lm_gi_gi20_swl1,lm_gi_gi20_swl2)
+glf_lightMaps.Add "gi20", glf_gi20_lmarr
+Dim glf_gi21_lmarr : glf_gi21_lmarr = Array(lm_gi_gi21_asteroid1,lm_gi_gi21_asteroid2,lm_gi_gi21_asteroid3,lm_gi_gi21_asteroid4,lm_gi_gi21_gatel,lm_gi_gi21_parts,lm_gi_gi21_playfield,lm_gi_gi21_ramp,lm_gi_gi21_spin,lm_gi_gi21_spinu,lm_gi_gi21_spinwire,lm_gi_gi21_tm2,lm_gi_gi21_swl1,lm_gi_gi21_swl2)
+glf_lightMaps.Add "gi21", glf_gi21_lmarr
+Dim glf_gi19_lmarr : glf_gi19_lmarr = Array(lm_gi_gi19_lockpin,lm_gi_gi19_parts,lm_gi_gi19_playfield,lm_gi_gi19_rflip1,lm_gi_gi19_rflip1u)
+glf_lightMaps.Add "gi19", glf_gi19_lmarr
+Dim glf_gi18_lmarr : glf_gi18_lmarr = Array(lm_gi_gi18_parts,lm_gi_gi18_playfield)
+glf_lightMaps.Add "gi18", glf_gi18_lmarr
+Dim glf_gi16_lmarr : glf_gi16_lmarr = Array(lm_gi_gi16_parts,lm_gi_gi16_playfield,lm_gi_gi16_ramp)
+glf_lightMaps.Add "gi16", glf_gi16_lmarr
+Dim glf_gi15_lmarr : glf_gi15_lmarr = Array(lm_gi_gi15_lockpin,lm_gi_gi15_parts,lm_gi_gi15_playfield,lm_gi_gi15_rflip1,lm_gi_gi15_rflip1u)
+glf_lightMaps.Add "gi15", glf_gi15_lmarr
+Dim glf_gi14_lmarr : glf_gi14_lmarr = Array(lm_gi_gi14_gate2,lm_gi_gi14_lockpin,lm_gi_gi14_parts,lm_gi_gi14_playfield,lm_gi_gi14_rflip1,lm_gi_gi14_rflip1u,lm_gi_gi14_tm5)
+glf_lightMaps.Add "gi14", glf_gi14_lmarr
+Dim glf_gi13_lmarr : glf_gi13_lmarr = Array(lm_gi_gi13_br4,lm_gi_gi13_bs4,lm_gi_gi13_bmpbot,lm_gi_gi13_bmptopb,lm_gi_gi13_gater,lm_gi_gi13_parts,lm_gi_gi13_playfield,lm_gi_gi13_rflip1u,lm_gi_gi13_tm4,lm_gi_gi13_tm5)
+glf_lightMaps.Add "gi13", glf_gi13_lmarr
+Dim glf_gi12_lmarr : glf_gi12_lmarr = Array(lm_gi_gi12_parts,lm_gi_gi12_playfield)
+glf_lightMaps.Add "gi12", glf_gi12_lmarr
+Dim glf_gi11_lmarr : glf_gi11_lmarr = Array(lm_gi_gi11_parts,lm_gi_gi11_playfield)
+glf_lightMaps.Add "gi11", glf_gi11_lmarr
+Dim glf_gi10_lmarr : glf_gi10_lmarr = Array(lm_gi_gi10_gate2,lm_gi_gi10_parts,lm_gi_gi10_playfield,lm_gi_gi10_rflip1u,lm_gi_gi10_ts1,lm_gi_gi10_ts2,lm_gi_gi10_ts3,lm_gi_gi10_ts4,lm_gi_gi10_underpf)
+glf_lightMaps.Add "gi10", glf_gi10_lmarr
+Dim glf_gi09_lmarr : glf_gi09_lmarr = Array(lm_gi_gi09_parts,lm_gi_gi09_playfield)
+glf_lightMaps.Add "gi09", glf_gi09_lmarr
+Dim glf_gi08_lmarr : glf_gi08_lmarr = Array(lm_gi_gi08_parts,lm_gi_gi08_playfield,lm_gi_gi08_rarm,lm_gi_gi08_rflip,lm_gi_gi08_rflipu,lm_gi_gi08_rsling1,lm_gi_gi08_rsling2,lm_gi_gi08_underpf,lm_gi_gi08_swri,lm_gi_gi08_swro)
+glf_lightMaps.Add "gi08", glf_gi08_lmarr
+Dim glf_gi07_lmarr : glf_gi07_lmarr = Array(lm_gi_gi07_lflip,lm_gi_gi07_lflipu,lm_gi_gi07_parts,lm_gi_gi07_playfield,lm_gi_gi07_rarm,lm_gi_gi07_rflip,lm_gi_gi07_rflipu,lm_gi_gi07_rsling1,lm_gi_gi07_rsling2,lm_gi_gi07_swri,lm_gi_gi07_swro)
+glf_lightMaps.Add "gi07", glf_gi07_lmarr
+Dim glf_gi06_lmarr : glf_gi06_lmarr = Array(lm_gi_gi06_parts,lm_gi_gi06_playfield,lm_gi_gi06_rarm,lm_gi_gi06_rflip,lm_gi_gi06_rflipu,lm_gi_gi06_swri)
+glf_lightMaps.Add "gi06", glf_gi06_lmarr
+Dim glf_gi05_lmarr : glf_gi05_lmarr = Array(lm_gi_gi05_parts,lm_gi_gi05_playfield,lm_gi_gi05_rarm,lm_gi_gi05_rflip,lm_gi_gi05_rflipu,lm_gi_gi05_rsling1,lm_gi_gi05_rsling2,lm_gi_gi05_underpf,lm_gi_gi05_swri,lm_gi_gi05_swro)
+glf_lightMaps.Add "gi05", glf_gi05_lmarr
+Dim glf_gi04_lmarr : glf_gi04_lmarr = Array(lm_gi_gi04_larm,lm_gi_gi04_lflip,lm_gi_gi04_lflipu,lm_gi_gi04_lsling1,lm_gi_gi04_lsling2,lm_gi_gi04_parts,lm_gi_gi04_playfield,lm_gi_gi04_underpf,lm_gi_gi04_swli,lm_gi_gi04_swlo)
+glf_lightMaps.Add "gi04", glf_gi04_lmarr
+Dim glf_gi03_lmarr : glf_gi03_lmarr = Array(lm_gi_gi03_larm,lm_gi_gi03_lflip,lm_gi_gi03_lflipu,lm_gi_gi03_lsling1,lm_gi_gi03_lsling2,lm_gi_gi03_parts,lm_gi_gi03_playfield,lm_gi_gi03_rflip,lm_gi_gi03_rflipu,lm_gi_gi03_swli,lm_gi_gi03_swlo)
+glf_lightMaps.Add "gi03", glf_gi03_lmarr
+Dim glf_gi02_lmarr : glf_gi02_lmarr = Array(lm_gi_gi02_larm,lm_gi_gi02_lflip,lm_gi_gi02_lflipu,lm_gi_gi02_parts,lm_gi_gi02_playfield,lm_gi_gi02_underpf,lm_gi_gi02_swli,lm_gi_gi02_swlo)
+glf_lightMaps.Add "gi02", glf_gi02_lmarr
+Dim glf_gi01_lmarr : glf_gi01_lmarr = Array(lm_gi_gi01_larm,lm_gi_gi01_lflip,lm_gi_gi01_lflipu,lm_gi_gi01_lsling1,lm_gi_gi01_lsling2,lm_gi_gi01_parts,lm_gi_gi01_playfield,lm_gi_gi01_rflip,lm_gi_gi01_rflipu,lm_gi_gi01_underpf,lm_gi_gi01_swli,lm_gi_gi01_swlo)
+glf_lightMaps.Add "gi01", glf_gi01_lmarr
+Dim glf_LPF_lmarr : glf_LPF_lmarr = Array(lm_l_lpf_asteroid1,lm_l_lpf_asteroid2,lm_l_lpf_asteroid3,lm_l_lpf_asteroid4,lm_l_lpf_playfield,lm_l_lpf_tm3,lm_l_lpf_underpf)
+glf_lightMaps.Add "LPF", glf_LPF_lmarr
+Dim glf_LEBR_lmarr : glf_LEBR_lmarr = Array(lm_l_lebr_parts,lm_l_lebr_playfield,lm_l_lebr_underpf)
+glf_lightMaps.Add "LEBR", glf_LEBR_lmarr
+Dim glf_LS5_lmarr : glf_LS5_lmarr = Array(lm_l_ls5_parts,lm_l_ls5_playfield,lm_l_ls5_underpf)
+glf_lightMaps.Add "LS5", glf_LS5_lmarr
+Dim glf_LS1_lmarr : glf_LS1_lmarr = Array(lm_l_ls1_parts,lm_l_ls1_playfield,lm_l_ls1_tm1,lm_l_ls1_underpf,lm_l_ls1_swlb1)
+glf_lightMaps.Add "LS1", glf_LS1_lmarr
+Dim glf_LSwL1_lmarr : glf_LSwL1_lmarr = Array(lm_l_lswl1_br1,lm_l_lswl1_bs1,lm_l_lswl1_bmptopr,lm_l_lswl1_parts,lm_l_lswl1_playfield,lm_l_lswl1_tm1,lm_l_lswl1_underpf,lm_l_lswl1_swlb1)
+glf_lightMaps.Add "LSwL1", glf_LSwL1_lmarr
+Dim glf_LSwL2_lmarr : glf_LSwL2_lmarr = Array(lm_l_lswl2_bs1,lm_l_lswl2_bmpbot,lm_l_lswl2_bmptopr,lm_l_lswl2_parts,lm_l_lswl2_playfield,lm_l_lswl2_underpf,lm_l_lswl2_swlb2)
+glf_lightMaps.Add "LSwL2", glf_LSwL2_lmarr
+Dim glf_LS2_lmarr : glf_LS2_lmarr = Array(lm_l_ls2_bmptopr,lm_l_ls2_parts,lm_l_ls2_playfield,lm_l_ls2_underpf)
+glf_lightMaps.Add "LS2", glf_LS2_lmarr
+Dim glf_LS3_lmarr : glf_LS3_lmarr = Array(lm_l_ls3_parts,lm_l_ls3_playfield,lm_l_ls3_tmet2,lm_l_ls3_underpf)
+glf_lightMaps.Add "LS3", glf_LS3_lmarr
+Dim glf_LS4_lmarr : glf_LS4_lmarr = Array(lm_l_ls4_parts,lm_l_ls4_playfield,lm_l_ls4_underpf)
+glf_lightMaps.Add "LS4", glf_LS4_lmarr
+Dim glf_LS6_lmarr : glf_LS6_lmarr = Array(lm_l_ls6_parts,lm_l_ls6_playfield,lm_l_ls6_rflip1,lm_l_ls6_rflip1u,lm_l_ls6_underpf)
+glf_lightMaps.Add "LS6", glf_LS6_lmarr
+Dim glf_LSwC3_lmarr : glf_LSwC3_lmarr = Array(lm_l_lswc3_asteroid1,lm_l_lswc3_asteroid2,lm_l_lswc3_asteroid3,lm_l_lswc3_asteroid4,lm_l_lswc3_layer1,lm_l_lswc3_parts,lm_l_lswc3_playfield,lm_l_lswc3_underpf,lm_l_lswc3_swc2,lm_l_lswc3_swc3)
+glf_lightMaps.Add "LSwC3", glf_LSwC3_lmarr
+Dim glf_LSwC2_lmarr : glf_LSwC2_lmarr = Array(lm_l_lswc2_asteroid1,lm_l_lswc2_asteroid2,lm_l_lswc2_asteroid3,lm_l_lswc2_asteroid4,lm_l_lswc2_parts,lm_l_lswc2_playfield,lm_l_lswc2_tm3,lm_l_lswc2_underpf,lm_l_lswc2_swc2)
+glf_lightMaps.Add "LSwC2", glf_LSwC2_lmarr
+Dim glf_LSwC1_lmarr : glf_LSwC1_lmarr = Array(lm_l_lswc1_asteroid1,lm_l_lswc1_asteroid2,lm_l_lswc1_asteroid3,lm_l_lswc1_asteroid4,lm_l_lswc1_parts,lm_l_lswc1_playfield,lm_l_lswc1_underpf,lm_l_lswc1_swc1,lm_l_lswc1_swc2)
+glf_lightMaps.Add "LSwC1", glf_LSwC1_lmarr
+Dim glf_LCWiz_lmarr : glf_LCWiz_lmarr = Array(lm_l_lcwiz_parts,lm_l_lcwiz_playfield,lm_l_lcwiz_underpf)
+glf_lightMaps.Add "LCWiz", glf_LCWiz_lmarr
+Dim glf_LLWiz_lmarr : glf_LLWiz_lmarr = Array(lm_l_llwiz_parts,lm_l_llwiz_playfield,lm_l_llwiz_underpf)
+glf_lightMaps.Add "LLWiz", glf_LLWiz_lmarr
+Dim glf_LC1_lmarr : glf_LC1_lmarr = Array(lm_l_lc1_lflip,lm_l_lc1_lflipu,lm_l_lc1_lsling1,lm_l_lc1_parts,lm_l_lc1_playfield,lm_l_lc1_underpf)
+glf_lightMaps.Add "LC1", glf_LC1_lmarr
+Dim glf_LC2_lmarr : glf_LC2_lmarr = Array(lm_l_lc2_lflip,lm_l_lc2_lflipu,lm_l_lc2_parts,lm_l_lc2_playfield,lm_l_lc2_underpf)
+glf_lightMaps.Add "LC2", glf_LC2_lmarr
+Dim glf_LC3_lmarr : glf_LC3_lmarr = Array(lm_l_lc3_lflipu,lm_l_lc3_playfield,lm_l_lc3_underpf)
+glf_lightMaps.Add "LC3", glf_LC3_lmarr
+Dim glf_LC4_lmarr : glf_LC4_lmarr = Array(lm_l_lc4_lflipu,lm_l_lc4_playfield,lm_l_lc4_underpf)
+glf_lightMaps.Add "LC4", glf_LC4_lmarr
+Dim glf_LC5_lmarr : glf_LC5_lmarr = Array(lm_l_lc5_playfield,lm_l_lc5_rflipu,lm_l_lc5_underpf)
+glf_lightMaps.Add "LC5", glf_LC5_lmarr
+Dim glf_LC6_lmarr : glf_LC6_lmarr = Array(lm_l_lc6_playfield,lm_l_lc6_rflipu,lm_l_lc6_underpf)
+glf_lightMaps.Add "LC6", glf_LC6_lmarr
+Dim glf_LC7_lmarr : glf_LC7_lmarr = Array(lm_l_lc7_playfield,lm_l_lc7_rflip,lm_l_lc7_rflipu,lm_l_lc7_underpf)
+glf_lightMaps.Add "LC7", glf_LC7_lmarr
+Dim glf_LC8_lmarr : glf_LC8_lmarr = Array(lm_l_lc8_parts,lm_l_lc8_playfield,lm_l_lc8_rflip,lm_l_lc8_rflipu,lm_l_lc8_underpf)
+glf_lightMaps.Add "LC8", glf_LC8_lmarr
+Dim glf_LWiz_lmarr : glf_LWiz_lmarr = Array(lm_l_lwiz_parts,lm_l_lwiz_playfield,lm_l_lwiz_underpf)
+glf_lightMaps.Add "LWiz", glf_LWiz_lmarr
+Dim glf_LW9_lmarr : glf_LW9_lmarr = Array(lm_l_lw9_parts,lm_l_lw9_playfield,lm_l_lw9_underpf)
+glf_lightMaps.Add "LW9", glf_LW9_lmarr
+Dim glf_LW8_lmarr : glf_LW8_lmarr = Array(lm_l_lw8_parts,lm_l_lw8_playfield,lm_l_lw8_underpf)
+glf_lightMaps.Add "LW8", glf_LW8_lmarr
+Dim glf_LW7_lmarr : glf_LW7_lmarr = Array(lm_l_lw7_parts,lm_l_lw7_playfield,lm_l_lw7_underpf)
+glf_lightMaps.Add "LW7", glf_LW7_lmarr
+Dim glf_LW6_lmarr : glf_LW6_lmarr = Array(lm_l_lw6_parts,lm_l_lw6_playfield,lm_l_lw6_underpf)
+glf_lightMaps.Add "LW6", glf_LW6_lmarr
+Dim glf_LW5_lmarr : glf_LW5_lmarr = Array(lm_l_lw5_parts,lm_l_lw5_playfield,lm_l_lw5_underpf)
+glf_lightMaps.Add "LW5", glf_LW5_lmarr
+Dim glf_LW4_lmarr : glf_LW4_lmarr = Array(lm_l_lw4_parts,lm_l_lw4_playfield,lm_l_lw4_underpf)
+glf_lightMaps.Add "LW4", glf_LW4_lmarr
+Dim glf_LW3_lmarr : glf_LW3_lmarr = Array(lm_l_lw3_parts,lm_l_lw3_playfield,lm_l_lw3_underpf)
+glf_lightMaps.Add "LW3", glf_LW3_lmarr
+Dim glf_LW2_lmarr : glf_LW2_lmarr = Array(lm_l_lw2_parts,lm_l_lw2_playfield,lm_l_lw2_underpf)
+glf_lightMaps.Add "LW2", glf_LW2_lmarr
+Dim glf_LW1_lmarr : glf_LW1_lmarr = Array(lm_l_lw1_parts,lm_l_lw1_playfield,lm_l_lw1_underpf)
+glf_lightMaps.Add "LW1", glf_LW1_lmarr
+Dim glf_LMLR_lmarr : glf_LMLR_lmarr = Array(lm_l_lmlr_parts,lm_l_lmlr_playfield,lm_l_lmlr_tm5,lm_l_lmlr_underpf)
+glf_lightMaps.Add "LMLR", glf_LMLR_lmarr
+Dim glf_LMR_lmarr : glf_LMR_lmarr = Array(lm_l_lmr_parts,lm_l_lmr_playfield,lm_l_lmr_tm4,lm_l_lmr_underpf)
+glf_lightMaps.Add "LMR", glf_LMR_lmarr
+Dim glf_LX_lmarr : glf_LX_lmarr = Array(lm_l_lx_gater,lm_l_lx_parts,lm_l_lx_playfield,lm_l_lx_tm4,lm_l_lx_underpf)
+glf_lightMaps.Add "LX", glf_LX_lmarr
+Dim glf_LPC5_lmarr : glf_LPC5_lmarr = Array(lm_l_lpc5_asteroid1,lm_l_lpc5_asteroid2,lm_l_lpc5_asteroid3,lm_l_lpc5_asteroid4,lm_l_lpc5_parts,lm_l_lpc5_playfield,lm_l_lpc5_tm3,lm_l_lpc5_tm4,lm_l_lpc5_underpf,lm_l_lpc5_swc3)
+glf_lightMaps.Add "LPC5", glf_LPC5_lmarr
+Dim glf_LPC4_lmarr : glf_LPC4_lmarr = Array(lm_l_lpc4_asteroid1,lm_l_lpc4_asteroid2,lm_l_lpc4_asteroid3,lm_l_lpc4_asteroid4,lm_l_lpc4_parts,lm_l_lpc4_playfield,lm_l_lpc4_ramp,lm_l_lpc4_tm3,lm_l_lpc4_underpf,lm_l_lpc4_swc1)
+glf_lightMaps.Add "LPC4", glf_LPC4_lmarr
+Dim glf_LSC4_lmarr : glf_LSC4_lmarr = Array(lm_l_lsc4_parts,lm_l_lsc4_playfield,lm_l_lsc4_ts4,lm_l_lsc4_underpf)
+glf_lightMaps.Add "LSC4", glf_LSC4_lmarr
+Dim glf_LSC3_lmarr : glf_LSC3_lmarr = Array(lm_l_lsc3_parts,lm_l_lsc3_playfield,lm_l_lsc3_ts2,lm_l_lsc3_ts3,lm_l_lsc3_ts4,lm_l_lsc3_underpf)
+glf_lightMaps.Add "LSC3", glf_LSC3_lmarr
+Dim glf_LSC2_lmarr : glf_LSC2_lmarr = Array(lm_l_lsc2_parts,lm_l_lsc2_playfield,lm_l_lsc2_ts1,lm_l_lsc2_ts2,lm_l_lsc2_ts3,lm_l_lsc2_underpf)
+glf_lightMaps.Add "LSC2", glf_LSC2_lmarr
+Dim glf_LSC1_lmarr : glf_LSC1_lmarr = Array(lm_l_lsc1_parts,lm_l_lsc1_playfield,lm_l_lsc1_ts1,lm_l_lsc1_ts2,lm_l_lsc1_underpf)
+glf_lightMaps.Add "LSC1", glf_LSC1_lmarr
+Dim glf_LF3_lmarr : glf_LF3_lmarr = Array(lm_l_lf3_parts,lm_l_lf3_playfield,lm_l_lf3_rflip1u,lm_l_lf3_tm5,lm_l_lf3_underpf)
+glf_lightMaps.Add "LF3", glf_LF3_lmarr
+Dim glf_LF2_lmarr : glf_LF2_lmarr = Array(lm_l_lf2_parts,lm_l_lf2_playfield,lm_l_lf2_tm5,lm_l_lf2_underpf,lm_l_lf2_swr1)
+glf_lightMaps.Add "LF2", glf_LF2_lmarr
+Dim glf_LF1_lmarr : glf_LF1_lmarr = Array(lm_l_lf1_parts,lm_l_lf1_playfield,lm_l_lf1_underpf,lm_l_lf1_swr1)
+glf_lightMaps.Add "LF1", glf_LF1_lmarr
+Dim glf_LPC3_lmarr : glf_LPC3_lmarr = Array(lm_l_lpc3_parts,lm_l_lpc3_playfield,lm_l_lpc3_underpf)
+glf_lightMaps.Add "LPC3", glf_LPC3_lmarr
+Dim glf_LPC2_lmarr : glf_LPC2_lmarr = Array(lm_l_lpc2_parts,lm_l_lpc2_playfield,lm_l_lpc2_tm2,lm_l_lpc2_underpf)
+glf_lightMaps.Add "LPC2", glf_LPC2_lmarr
+Dim glf_LPC1_lmarr : glf_LPC1_lmarr = Array(lm_l_lpc1_asteroid4,lm_l_lpc1_gatel,lm_l_lpc1_parts,lm_l_lpc1_playfield,lm_l_lpc1_ramp,lm_l_lpc1_spinu,lm_l_lpc1_tm2,lm_l_lpc1_underpf)
+glf_lightMaps.Add "LPC1", glf_LPC1_lmarr
+Dim glf_LTW4_lmarr : glf_LTW4_lmarr = Array(lm_l_ltw4_parts,lm_l_ltw4_playfield,lm_l_ltw4_underpf)
+glf_lightMaps.Add "LTW4", glf_LTW4_lmarr
+Dim glf_LTW3_lmarr : glf_LTW3_lmarr = Array(lm_l_ltw3_parts,lm_l_ltw3_playfield,lm_l_ltw3_underpf)
+glf_lightMaps.Add "LTW3", glf_LTW3_lmarr
+Dim glf_LTW2_lmarr : glf_LTW2_lmarr = Array(lm_l_ltw2_parts,lm_l_ltw2_playfield,lm_l_ltw2_ramp,lm_l_ltw2_underpf)
+glf_lightMaps.Add "LTW2", glf_LTW2_lmarr
+Dim glf_LTW1_lmarr : glf_LTW1_lmarr = Array(lm_l_ltw1_parts,lm_l_ltw1_playfield,lm_l_ltw1_ramp,lm_l_ltw1_underpf)
+glf_lightMaps.Add "LTW1", glf_LTW1_lmarr
+Dim glf_LCC3_lmarr : glf_LCC3_lmarr = Array(lm_l_lcc3_parts,lm_l_lcc3_playfield,lm_l_lcc3_underpf)
+glf_lightMaps.Add "LCC3", glf_LCC3_lmarr
+Dim glf_LCC2_lmarr : glf_LCC2_lmarr = Array(lm_l_lcc2_parts,lm_l_lcc2_playfield,lm_l_lcc2_underpf)
+glf_lightMaps.Add "LCC2", glf_LCC2_lmarr
+Dim glf_LCC1_lmarr : glf_LCC1_lmarr = Array(lm_l_lcc1_parts,lm_l_lcc1_playfield,lm_l_lcc1_ramp,lm_l_lcc1_underpf)
+glf_lightMaps.Add "LCC1", glf_LCC1_lmarr
+Dim glf_LMet4_lmarr : glf_LMet4_lmarr = Array(lm_l_lmet4_parts,lm_l_lmet4_playfield,lm_l_lmet4_tmet4,lm_l_lmet4_underpf)
+glf_lightMaps.Add "LMet4", glf_LMet4_lmarr
+Dim glf_LMet3_lmarr : glf_LMet3_lmarr = Array(lm_l_lmet3_parts,lm_l_lmet3_playfield,lm_l_lmet3_tmet3,lm_l_lmet3_underpf)
+glf_lightMaps.Add "LMet3", glf_LMet3_lmarr
+Dim glf_LMet2_lmarr : glf_LMet2_lmarr = Array(lm_l_lmet2_parts,lm_l_lmet2_playfield,lm_l_lmet2_tmet2,lm_l_lmet2_underpf)
+glf_lightMaps.Add "LMet2", glf_LMet2_lmarr
+Dim glf_LMet1_lmarr : glf_LMet1_lmarr = Array(lm_l_lmet1_br1,lm_l_lmet1_parts,lm_l_lmet1_playfield,lm_l_lmet1_tmet1,lm_l_lmet1_underpf)
+glf_lightMaps.Add "LMet1", glf_LMet1_lmarr
+Dim glf_LM5_lmarr : glf_LM5_lmarr = Array(lm_l_lm5_parts,lm_l_lm5_playfield,lm_l_lm5_rflip1u,lm_l_lm5_tm5,lm_l_lm5_underpf)
+glf_lightMaps.Add "LM5", glf_LM5_lmarr
+Dim glf_LM4_lmarr : glf_LM4_lmarr = Array(lm_l_lm4_parts,lm_l_lm4_playfield,lm_l_lm4_tm4,lm_l_lm4_underpf)
+glf_lightMaps.Add "LM4", glf_LM4_lmarr
+Dim glf_LM3_lmarr : glf_LM3_lmarr = Array(lm_l_lm3_asteroid1,lm_l_lm3_asteroid2,lm_l_lm3_asteroid3,lm_l_lm3_asteroid4,lm_l_lm3_playfield,lm_l_lm3_tm3,lm_l_lm3_underpf)
+glf_lightMaps.Add "LM3", glf_LM3_lmarr
+Dim glf_LM2_lmarr : glf_LM2_lmarr = Array(lm_l_lm2_parts,lm_l_lm2_playfield,lm_l_lm2_tm2,lm_l_lm2_underpf)
+glf_lightMaps.Add "LM2", glf_LM2_lmarr
+Dim glf_LM1_lmarr : glf_LM1_lmarr = Array(lm_l_lm1_parts,lm_l_lm1_playfield,lm_l_lm1_tm1,lm_l_lm1_underpf)
+glf_lightMaps.Add "LM1", glf_LM1_lmarr
+Dim glf_LSA_lmarr : glf_LSA_lmarr = Array(lm_l_lsa_lflip,lm_l_lsa_lflipu,lm_l_lsa_playfield,lm_l_lsa_rflip,lm_l_lsa_rflipu,lm_l_lsa_trustpost,lm_l_lsa_underpf)
+glf_lightMaps.Add "LSA", glf_LSA_lmarr
+Dim glf_LH9_lmarr : glf_LH9_lmarr = Array(lm_l_lh9_parts,lm_l_lh9_playfield,lm_l_lh9_rflip,lm_l_lh9_rflipu,lm_l_lh9_underpf)
+glf_lightMaps.Add "LH9", glf_LH9_lmarr
+Dim glf_LH8_lmarr : glf_LH8_lmarr = Array(lm_l_lh8_playfield,lm_l_lh8_rflip,lm_l_lh8_rflipu,lm_l_lh8_underpf)
+glf_lightMaps.Add "LH8", glf_LH8_lmarr
+Dim glf_LH7_lmarr : glf_LH7_lmarr = Array(lm_l_lh7_playfield,lm_l_lh7_rflip,lm_l_lh7_rflipu,lm_l_lh7_underpf)
+glf_lightMaps.Add "LH7", glf_LH7_lmarr
+Dim glf_LH6_lmarr : glf_LH6_lmarr = Array(lm_l_lh6_playfield,lm_l_lh6_rflip,lm_l_lh6_rflipu,lm_l_lh6_underpf)
+glf_lightMaps.Add "LH6", glf_LH6_lmarr
+Dim glf_LH5_lmarr : glf_LH5_lmarr = Array(lm_l_lh5_lflipu,lm_l_lh5_playfield,lm_l_lh5_rflipu,lm_l_lh5_underpf)
+glf_lightMaps.Add "LH5", glf_LH5_lmarr
+Dim glf_LH4_lmarr : glf_LH4_lmarr = Array(lm_l_lh4_lflip,lm_l_lh4_lflipu,lm_l_lh4_playfield,lm_l_lh4_underpf)
+glf_lightMaps.Add "LH4", glf_LH4_lmarr
+Dim glf_LH3_lmarr : glf_LH3_lmarr = Array(lm_l_lh3_lflip,lm_l_lh3_lflipu,lm_l_lh3_playfield,lm_l_lh3_underpf)
+glf_lightMaps.Add "LH3", glf_LH3_lmarr
+Dim glf_LH2_lmarr : glf_LH2_lmarr = Array(lm_l_lh2_lflip,lm_l_lh2_lflipu,lm_l_lh2_playfield,lm_l_lh2_underpf)
+glf_lightMaps.Add "LH2", glf_LH2_lmarr
+Dim glf_LH1_lmarr : glf_LH1_lmarr = Array(lm_l_lh1_lflip,lm_l_lh1_lflipu,lm_l_lh1_parts,lm_l_lh1_playfield,lm_l_lh1_underpf)
+glf_lightMaps.Add "LH1", glf_LH1_lmarr
+Dim glf_LPR1_lmarr : glf_LPR1_lmarr = Array(lm_l_lpr1_parts,lm_l_lpr1_playfield,lm_l_lpr1_underpf)
+glf_lightMaps.Add "LPR1", glf_LPR1_lmarr
+Dim glf_LPR3_lmarr : glf_LPR3_lmarr = Array(lm_l_lpr3_parts,lm_l_lpr3_playfield,lm_l_lpr3_underpf)
+glf_lightMaps.Add "LPR3", glf_LPR3_lmarr
+Dim glf_LPR2_lmarr : glf_LPR2_lmarr = Array(lm_l_lpr2_parts,lm_l_lpr2_playfield,lm_l_lpr2_underpf)
+glf_lightMaps.Add "LPR2", glf_LPR2_lmarr
+Dim glf_LPR6_lmarr : glf_LPR6_lmarr = Array(lm_l_lpr6_parts,lm_l_lpr6_playfield,lm_l_lpr6_rflipu,lm_l_lpr6_underpf)
+glf_lightMaps.Add "LPR6", glf_LPR6_lmarr
+Dim glf_LPR5_lmarr : glf_LPR5_lmarr = Array(lm_l_lpr5_lflipu,lm_l_lpr5_parts,lm_l_lpr5_playfield,lm_l_lpr5_rflipu,lm_l_lpr5_underpf)
+glf_lightMaps.Add "LPR5", glf_LPR5_lmarr
+Dim glf_LPR4_lmarr : glf_LPR4_lmarr = Array(lm_l_lpr4_lflip,lm_l_lpr4_lflipu,lm_l_lpr4_parts,lm_l_lpr4_playfield,lm_l_lpr4_underpf)
+glf_lightMaps.Add "LPR4", glf_LPR4_lmarr
+Dim glf_LMR2_lmarr : glf_LMR2_lmarr = Array(lm_l_lmr2_parts,lm_l_lmr2_playfield,lm_l_lmr2_rsling1,lm_l_lmr2_rsling2,lm_l_lmr2_underpf)
+glf_lightMaps.Add "LMR2", glf_LMR2_lmarr
+Dim glf_LMR1_lmarr : glf_LMR1_lmarr = Array(lm_l_lmr1_parts,lm_l_lmr1_playfield,lm_l_lmr1_rsling1,lm_l_lmr1_rsling2,lm_l_lmr1_underpf)
+glf_lightMaps.Add "LMR1", glf_LMR1_lmarr
+Dim glf_LCR2_lmarr : glf_LCR2_lmarr = Array(lm_l_lcr2_lsling1,lm_l_lcr2_lsling2,lm_l_lcr2_parts,lm_l_lcr2_playfield,lm_l_lcr2_underpf)
+glf_lightMaps.Add "LCR2", glf_LCR2_lmarr
+Dim glf_LCR1_lmarr : glf_LCR1_lmarr = Array(lm_l_lcr1_lsling1,lm_l_lcr1_lsling2,lm_l_lcr1_parts,lm_l_lcr1_playfield,lm_l_lcr1_underpf)
+glf_lightMaps.Add "LCR1", glf_LCR1_lmarr
+Dim glf_LRI_lmarr : glf_LRI_lmarr = Array(lm_l_lri_parts,lm_l_lri_playfield,lm_l_lri_underpf,lm_l_lri_swri)
+glf_lightMaps.Add "LRI", glf_LRI_lmarr
+Dim glf_LRO_lmarr : glf_LRO_lmarr = Array(lm_l_lro_parts,lm_l_lro_playfield,lm_l_lro_underpf,lm_l_lro_swro)
+glf_lightMaps.Add "LRO", glf_LRO_lmarr
+Dim glf_LLI_lmarr : glf_LLI_lmarr = Array(lm_l_lli_parts,lm_l_lli_playfield,lm_l_lli_underpf,lm_l_lli_swli)
+glf_lightMaps.Add "LLI", glf_LLI_lmarr
+Dim glf_LLO_lmarr : glf_LLO_lmarr = Array(lm_l_llo_parts,lm_l_llo_playfield,lm_l_llo_underpf,lm_l_llo_swlo)
+glf_lightMaps.Add "LLO", glf_LLO_lmarr
+Dim glf_LSR_lmarr : glf_LSR_lmarr = Array(lm_l_lsr_parts,lm_l_lsr_playfield,lm_l_lsr_underpf,lm_l_lsr_swro)
+glf_lightMaps.Add "LSR", glf_LSR_lmarr
+Dim glf_LSL_lmarr : glf_LSL_lmarr = Array(lm_l_lsl_parts,lm_l_lsl_playfield,lm_l_lsl_underpf,lm_l_lsl_swlo)
+glf_lightMaps.Add "LSL", glf_LSL_lmarr
+Dim glf_LB2_lmarr : glf_LB2_lmarr = Array(lm_l_lb2_asteroid1,lm_l_lb2_asteroid2,lm_l_lb2_asteroid3,lm_l_lb2_asteroid4,lm_l_lb2_br2,lm_l_lb2_br3,lm_l_lb2_br4,lm_l_lb2_bs2,lm_l_lb2_bs3,lm_l_lb2_bs4,lm_l_lb2_bmpbot,lm_l_lb2_bmptopb,lm_l_lb2_diverterpin,lm_l_lb2_gater,lm_l_lb2_layer1,lm_l_lb2_parts,lm_l_lb2_playfield,lm_l_lb2_ship,lm_l_lb2_tm5,lm_l_lb2_underpf,lm_l_lb2_swr1,lm_l_lb2_swr2)
+glf_lightMaps.Add "LB2", glf_LB2_lmarr
+Dim glf_LB3_lmarr : glf_LB3_lmarr = Array(lm_l_lb3_asteroid1,lm_l_lb3_asteroid2,lm_l_lb3_asteroid3,lm_l_lb3_asteroid4,lm_l_lb3_br2,lm_l_lb3_br3,lm_l_lb3_br4,lm_l_lb3_bs2,lm_l_lb3_bs3,lm_l_lb3_bs4,lm_l_lb3_bmpbot,lm_l_lb3_bmptopb,lm_l_lb3_diverterpin,lm_l_lb3_layer1,lm_l_lb3_parts,lm_l_lb3_playfield,lm_l_lb3_ramp,lm_l_lb3_spin,lm_l_lb3_spinu,lm_l_lb3_tm2,lm_l_lb3_tm3,lm_l_lb3_tm4,lm_l_lb3_underpf,lm_l_lb3_swc1,lm_l_lb3_swc2,lm_l_lb3_swc3,lm_l_lb3_swi2,lm_l_lb3_swr2)
+glf_lightMaps.Add "LB3", glf_LB3_lmarr
+Dim glf_LShip_lmarr : glf_LShip_lmarr = Array(lm_l_lship_parts,lm_l_lship_ship)
+glf_lightMaps.Add "LShip", glf_LShip_lmarr
+Dim glf_LSpot2_lmarr : glf_LSpot2_lmarr = Array()
+glf_lightMaps.Add "LSpot2", glf_LSpot2_lmarr
+Dim glf_LSpot2a_lmarr : glf_LSpot2a_lmarr = Array()
+glf_lightMaps.Add "LSpot2a", glf_LSpot2a_lmarr
+Dim glf_LSpot1_lmarr : glf_LSpot1_lmarr = Array(lm_l_lspot1_asteroid1,lm_l_lspot1_asteroid2,lm_l_lspot1_asteroid3,lm_l_lspot1_asteroid4,lm_l_lspot1_br2,lm_l_lspot1_br4,lm_l_lspot1_bs2,lm_l_lspot1_bs4,lm_l_lspot1_bmpbot,lm_l_lspot1_bmptopb,lm_l_lspot1_parts,lm_l_lspot1_playfield,lm_l_lspot1_ramp,lm_l_lspot1_spin,lm_l_lspot1_spinu,lm_l_lspot1_spinwire,lm_l_lspot1_tm3,lm_l_lspot1_tm4,lm_l_lspot1_underpf,lm_l_lspot1_swc1,lm_l_lspot1_swc2,lm_l_lspot1_swc3,lm_l_lspot1_swi2)
+glf_lightMaps.Add "LSpot1", glf_LSpot1_lmarr
+Dim glf_LB1_lmarr : glf_LB1_lmarr = Array(lm_l_lb1_br1,lm_l_lb1_bs1,lm_l_lb1_bmpbot,lm_l_lb1_bmptopr,lm_l_lb1_parts,lm_l_lb1_playfield,lm_l_lb1_rflip1,lm_l_lb1_rflip1u,lm_l_lb1_ramp,lm_l_lb1_ship,lm_l_lb1_tm1,lm_l_lb1_tmet1,lm_l_lb1_underpf,lm_l_lb1_swlb1,lm_l_lb1_swlb2)
+glf_lightMaps.Add "LB1", glf_LB1_lmarr
+Dim glf_LB4_lmarr : glf_LB4_lmarr = Array(lm_l_lb4_asteroid1,lm_l_lb4_asteroid2,lm_l_lb4_asteroid3,lm_l_lb4_asteroid4,lm_l_lb4_br2,lm_l_lb4_br3,lm_l_lb4_br4,lm_l_lb4_bs2,lm_l_lb4_bs3,lm_l_lb4_bs4,lm_l_lb4_bmpbot,lm_l_lb4_bmptopb,lm_l_lb4_diverterpin,lm_l_lb4_gater,lm_l_lb4_layer1,lm_l_lb4_parts,lm_l_lb4_playfield,lm_l_lb4_rflip1u,lm_l_lb4_ship,lm_l_lb4_tm2,lm_l_lb4_tm3,lm_l_lb4_tm4,lm_l_lb4_tm5,lm_l_lb4_underpf,lm_l_lb4_swc3,lm_l_lb4_swr1,lm_l_lb4_swr2)
+glf_lightMaps.Add "LB4", glf_LB4_lmarr
+Dim glf_FL6_lmarr : glf_FL6_lmarr = Array()
+glf_lightMaps.Add "FL6", glf_FL6_lmarr
+Dim glf_FL7_lmarr : glf_FL7_lmarr = Array(lm_f_fl7_asteroid1,lm_f_fl7_asteroid2,lm_f_fl7_asteroid3,lm_f_fl7_asteroid4)
+glf_lightMaps.Add "FL7", glf_FL7_lmarr
+Dim glf_FL4_lmarr : glf_FL4_lmarr = Array(lm_f_fl4_asteroid1,lm_f_fl4_asteroid2,lm_f_fl4_asteroid3,lm_f_fl4_asteroid4,lm_f_fl4_bmpbot,lm_f_fl4_bmptopb,lm_f_fl4_larm,lm_f_fl4_layer1,lm_f_fl4_parts,lm_f_fl4_playfield,lm_f_fl4_rflip1,lm_f_fl4_rflip1u,lm_f_fl4_ramp,lm_f_fl4_spin,lm_f_fl4_spinu,lm_f_fl4_tm2,lm_f_fl4_tm3,lm_f_fl4_tm4,lm_f_fl4_underpf,lm_f_fl4_swc1,lm_f_fl4_swc2,lm_f_fl4_swc3)
+glf_lightMaps.Add "FL4", glf_FL4_lmarr
+Dim glf_FL5_lmarr : glf_FL5_lmarr = Array()
+glf_lightMaps.Add "FL5", glf_FL5_lmarr
+Dim glf_FL1_lmarr : glf_FL1_lmarr = Array(lm_f_fl1_asteroid1,lm_f_fl1_asteroid2,lm_f_fl1_asteroid3,lm_f_fl1_asteroid4,lm_f_fl1_br2,lm_f_fl1_br3,lm_f_fl1_br4,lm_f_fl1_bs2,lm_f_fl1_bs3,lm_f_fl1_bs4,lm_f_fl1_bmpbot,lm_f_fl1_bmptopb,lm_f_fl1_diverterpin,lm_f_fl1_gate2,lm_f_fl1_gater,lm_f_fl1_layer1,lm_f_fl1_lockpin,lm_f_fl1_parts,lm_f_fl1_playfield,lm_f_fl1_rflip1,lm_f_fl1_rflip1u,lm_f_fl1_ship,lm_f_fl1_tm2,lm_f_fl1_tm4,lm_f_fl1_tm5,lm_f_fl1_underpf,lm_f_fl1_swc3,lm_f_fl1_swi2,lm_f_fl1_swr1,lm_f_fl1_swr2)
+glf_lightMaps.Add "FL1", glf_FL1_lmarr
+Dim glf_FL2_lmarr : glf_FL2_lmarr = Array(lm_f_fl2_asteroid1,lm_f_fl2_asteroid2,lm_f_fl2_asteroid3,lm_f_fl2_asteroid4,lm_f_fl2_br2,lm_f_fl2_br3,lm_f_fl2_br4,lm_f_fl2_bs2,lm_f_fl2_bs3,lm_f_fl2_bs4,lm_f_fl2_bmpbot,lm_f_fl2_bmptopb,lm_f_fl2_diverterpin,lm_f_fl2_gatel,lm_f_fl2_gater,lm_f_fl2_layer1,lm_f_fl2_lockpin,lm_f_fl2_parts,lm_f_fl2_playfield,lm_f_fl2_ramp,lm_f_fl2_spin,lm_f_fl2_spinu,lm_f_fl2_spinwire,lm_f_fl2_tm2,lm_f_fl2_tm3,lm_f_fl2_tm4,lm_f_fl2_underpf,lm_f_fl2_swc1,lm_f_fl2_swc2,lm_f_fl2_swc3,lm_f_fl2_swi1,lm_f_fl2_swi2,lm_f_fl2_swl1,lm_f_fl2_swl2,lm_f_fl2_swr2)
+glf_lightMaps.Add "FL2", glf_FL2_lmarr
+Dim glf_FL3_lmarr : glf_FL3_lmarr = Array(lm_f_fl3_asteroid1,lm_f_fl3_asteroid2,lm_f_fl3_asteroid3,lm_f_fl3_asteroid4,lm_f_fl3_br2,lm_f_fl3_br3,lm_f_fl3_br4,lm_f_fl3_bs2,lm_f_fl3_bs3,lm_f_fl3_bs4,lm_f_fl3_bmpbot,lm_f_fl3_bmptopb,lm_f_fl3_diverterpin,lm_f_fl3_gatel,lm_f_fl3_gater,lm_f_fl3_layer1,lm_f_fl3_parts,lm_f_fl3_playfield,lm_f_fl3_ramp,lm_f_fl3_spin,lm_f_fl3_spinu,lm_f_fl3_spinwire,lm_f_fl3_tm3,lm_f_fl3_tm4,lm_f_fl3_underpf,lm_f_fl3_swc1,lm_f_fl3_swc2,lm_f_fl3_swc3,lm_f_fl3_swi1,lm_f_fl3_swi2,lm_f_fl3_swl1,lm_f_fl3_swl2,lm_f_fl3_swr1,lm_f_fl3_swr2)
+glf_lightMaps.Add "FL3", glf_FL3_lmarr
+Dim glf_LDS_lmarr : glf_LDS_lmarr = Array(lm_l_lds_gate2,lm_l_lds_parts,lm_l_lds_playfield,lm_l_lds_rflip1,lm_l_lds_rflip1u,lm_l_lds_underpf)
+glf_lightMaps.Add "LDS", glf_LDS_lmarr
+Dim glf_LDP_lmarr : glf_LDP_lmarr = Array(lm_l_ldp_bs2,lm_l_ldp_bs3,lm_l_ldp_bs4,lm_l_ldp_bmptopb,lm_l_ldp_diverterpin,lm_l_ldp_parts,lm_l_ldp_playfield,lm_l_ldp_underpf)
+glf_lightMaps.Add "LDP", glf_LDP_lmarr
+Dim glf_FL7a_lmarr : glf_FL7a_lmarr = Array(lm_f_fl7a_br2,lm_f_fl7a_br3,lm_f_fl7a_br4,lm_f_fl7a_bs2,lm_f_fl7a_bs3,lm_f_fl7a_bmpbot,lm_f_fl7a_bmptopb,lm_f_fl7a_diverterpin,lm_f_fl7a_gatel,lm_f_fl7a_gater,lm_f_fl7a_layer1,lm_f_fl7a_parts,lm_f_fl7a_playfield,lm_f_fl7a_ramp,lm_f_fl7a_spin,lm_f_fl7a_spinu,lm_f_fl7a_spinwire,lm_f_fl7a_tm2,lm_f_fl7a_tm3,lm_f_fl7a_tm4,lm_f_fl7a_tm5,lm_f_fl7a_underpf,lm_f_fl7a_swc1,lm_f_fl7a_swc2,lm_f_fl7a_swc3,lm_f_fl7a_swi1,lm_f_fl7a_swi2,lm_f_fl7a_swl1)
+glf_lightMaps.Add "FL7a", glf_FL7a_lmarr
+Dim glf_FL5a_lmarr : glf_FL5a_lmarr = Array(lm_f_fl5a_larm,lm_f_fl5a_lflip,lm_f_fl5a_lflipu,lm_f_fl5a_lsling1,lm_f_fl5a_lsling2,lm_f_fl5a_parts,lm_f_fl5a_playfield,lm_f_fl5a_rflip,lm_f_fl5a_rflipu,lm_f_fl5a_underpf,lm_f_fl5a_swli)
+glf_lightMaps.Add "FL5a", glf_FL5a_lmarr
+Dim glf_FL6a_lmarr : glf_FL6a_lmarr = Array(lm_f_fl6a_lflip,lm_f_fl6a_lflipu,lm_f_fl6a_parts,lm_f_fl6a_playfield,lm_f_fl6a_rarm,lm_f_fl6a_rflip,lm_f_fl6a_rflipu,lm_f_fl6a_rsling1,lm_f_fl6a_rsling2)
+glf_lightMaps.Add "FL6a", glf_FL6a_lmarr
+Dim glf_FL6h_lmarr : glf_FL6h_lmarr = Array(lm_f_fl6h_lflip,lm_f_fl6h_lflipu,lm_f_fl6h_parts,lm_f_fl6h_playfield,lm_f_fl6h_rarm,lm_f_fl6h_rflip,lm_f_fl6h_rflipu,lm_f_fl6h_rsling1,lm_f_fl6h_rsling2)
+glf_lightMaps.Add "FL6h", glf_FL6h_lmarr
+Dim glf_FL6g_lmarr : glf_FL6g_lmarr = Array(lm_f_fl6g_lflip,lm_f_fl6g_parts,lm_f_fl6g_playfield,lm_f_fl6g_rarm,lm_f_fl6g_rflip,lm_f_fl6g_rflipu,lm_f_fl6g_rsling1,lm_f_fl6g_rsling2)
+glf_lightMaps.Add "FL6g", glf_FL6g_lmarr
+Dim glf_FL6f_lmarr : glf_FL6f_lmarr = Array(lm_f_fl6f_lflip,lm_f_fl6f_lflipu,lm_f_fl6f_parts,lm_f_fl6f_playfield,lm_f_fl6f_rarm,lm_f_fl6f_rflip,lm_f_fl6f_rflipu,lm_f_fl6f_rsling1,lm_f_fl6f_rsling2)
+glf_lightMaps.Add "FL6f", glf_FL6f_lmarr
+Dim glf_FL6e_lmarr : glf_FL6e_lmarr = Array(lm_f_fl6e_lflipu,lm_f_fl6e_parts,lm_f_fl6e_playfield,lm_f_fl6e_rarm,lm_f_fl6e_rflip,lm_f_fl6e_rflipu,lm_f_fl6e_rsling1,lm_f_fl6e_rsling2)
+glf_lightMaps.Add "FL6e", glf_FL6e_lmarr
+Dim glf_FL6d_lmarr : glf_FL6d_lmarr = Array(lm_f_fl6d_lflipu,lm_f_fl6d_parts,lm_f_fl6d_playfield,lm_f_fl6d_rarm,lm_f_fl6d_rflip,lm_f_fl6d_rflipu,lm_f_fl6d_rsling1,lm_f_fl6d_rsling2)
+glf_lightMaps.Add "FL6d", glf_FL6d_lmarr
+Dim glf_FL6c_lmarr : glf_FL6c_lmarr = Array(lm_f_fl6c_lflip,lm_f_fl6c_lflipu,lm_f_fl6c_parts,lm_f_fl6c_playfield,lm_f_fl6c_rarm,lm_f_fl6c_rflip,lm_f_fl6c_rflipu,lm_f_fl6c_rsling1,lm_f_fl6c_rsling2,lm_f_fl6c_swri)
+glf_lightMaps.Add "FL6c", glf_FL6c_lmarr
+Dim glf_FL6b_lmarr : glf_FL6b_lmarr = Array(lm_f_fl6b_lflipu,lm_f_fl6b_parts,lm_f_fl6b_playfield,lm_f_fl6b_rarm,lm_f_fl6b_rflip,lm_f_fl6b_rflipu,lm_f_fl6b_rsling1,lm_f_fl6b_rsling2,lm_f_fl6b_swri)
+glf_lightMaps.Add "FL6b", glf_FL6b_lmarr
+Dim glf_FL5h_lmarr : glf_FL5h_lmarr = Array(lm_f_fl5h_larm,lm_f_fl5h_lflip,lm_f_fl5h_lflipu,lm_f_fl5h_lsling1,lm_f_fl5h_lsling2,lm_f_fl5h_parts,lm_f_fl5h_playfield,lm_f_fl5h_rflipu,lm_f_fl5h_underpf,lm_f_fl5h_swli)
+glf_lightMaps.Add "FL5h", glf_FL5h_lmarr
+Dim glf_FL5g_lmarr : glf_FL5g_lmarr = Array(lm_f_fl5g_larm,lm_f_fl5g_lflip,lm_f_fl5g_lflipu,lm_f_fl5g_lsling1,lm_f_fl5g_lsling2,lm_f_fl5g_parts,lm_f_fl5g_playfield,lm_f_fl5g_rflip,lm_f_fl5g_rflipu,lm_f_fl5g_swli)
+glf_lightMaps.Add "FL5g", glf_FL5g_lmarr
+Dim glf_FL5f_lmarr : glf_FL5f_lmarr = Array(lm_f_fl5f_larm,lm_f_fl5f_lflip,lm_f_fl5f_lflipu,lm_f_fl5f_lsling1,lm_f_fl5f_lsling2,lm_f_fl5f_parts,lm_f_fl5f_playfield,lm_f_fl5f_rflip,lm_f_fl5f_rflipu,lm_f_fl5f_underpf)
+glf_lightMaps.Add "FL5f", glf_FL5f_lmarr
+Dim glf_FL5e_lmarr : glf_FL5e_lmarr = Array(lm_f_fl5e_larm,lm_f_fl5e_lflip,lm_f_fl5e_lflipu,lm_f_fl5e_lsling1,lm_f_fl5e_lsling2,lm_f_fl5e_parts,lm_f_fl5e_playfield,lm_f_fl5e_rflip,lm_f_fl5e_rflipu,lm_f_fl5e_underpf)
+glf_lightMaps.Add "FL5e", glf_FL5e_lmarr
+Dim glf_FL5d_lmarr : glf_FL5d_lmarr = Array(lm_f_fl5d_larm,lm_f_fl5d_lflip,lm_f_fl5d_lflipu,lm_f_fl5d_lsling1,lm_f_fl5d_lsling2,lm_f_fl5d_parts,lm_f_fl5d_playfield,lm_f_fl5d_rflip,lm_f_fl5d_rflipu,lm_f_fl5d_underpf)
+glf_lightMaps.Add "FL5d", glf_FL5d_lmarr
+Dim glf_FL5c_lmarr : glf_FL5c_lmarr = Array(lm_f_fl5c_larm,lm_f_fl5c_lflip,lm_f_fl5c_lflipu,lm_f_fl5c_lsling1,lm_f_fl5c_lsling2,lm_f_fl5c_parts,lm_f_fl5c_playfield,lm_f_fl5c_rflip)
+glf_lightMaps.Add "FL5c", glf_FL5c_lmarr
+Dim glf_FL5b_lmarr : glf_FL5b_lmarr = Array(lm_f_fl5b_larm,lm_f_fl5b_lflip,lm_f_fl5b_lflipu,lm_f_fl5b_lsling1,lm_f_fl5b_lsling2,lm_f_fl5b_parts,lm_f_fl5b_playfield,lm_f_fl5b_rflip,lm_f_fl5b_rflipu)
+glf_lightMaps.Add "FL5b", glf_FL5b_lmarr
+Dim glf_ball_seg30_lmarr : glf_ball_seg30_lmarr = Array(p_ball_seg30_vr)
+glf_lightMaps.Add "ball_seg30", glf_ball_seg30_lmarr
+Dim glf_p4_seg120_lmarr : glf_p4_seg120_lmarr = Array(p_p4_seg120_,p_p4_seg120_vr)
+glf_lightMaps.Add "p4_seg120", glf_p4_seg120_lmarr
+Dim glf_p4_seg119_lmarr : glf_p4_seg119_lmarr = Array(p_p4_seg119_,p_p4_seg119_vr)
+glf_lightMaps.Add "p4_seg119", glf_p4_seg119_lmarr
+Dim glf_p4_seg118_lmarr : glf_p4_seg118_lmarr = Array(p_p4_seg118_,p_p4_seg118_vr)
+glf_lightMaps.Add "p4_seg118", glf_p4_seg118_lmarr
+Dim glf_p4_seg117_lmarr : glf_p4_seg117_lmarr = Array(p_p4_seg117_,p_p4_seg117_vr)
+glf_lightMaps.Add "p4_seg117", glf_p4_seg117_lmarr
+Dim glf_p4_seg116_lmarr : glf_p4_seg116_lmarr = Array(p_p4_seg116_,p_p4_seg116_vr)
+glf_lightMaps.Add "p4_seg116", glf_p4_seg116_lmarr
+Dim glf_p4_seg115_lmarr : glf_p4_seg115_lmarr = Array(p_p4_seg115_,p_p4_seg115_vr)
+glf_lightMaps.Add "p4_seg115", glf_p4_seg115_lmarr
+Dim glf_p4_seg114_lmarr : glf_p4_seg114_lmarr = Array(p_p4_seg114_,p_p4_seg114_vr)
+glf_lightMaps.Add "p4_seg114", glf_p4_seg114_lmarr
+Dim glf_p4_seg113_lmarr : glf_p4_seg113_lmarr = Array(p_p4_seg113_,p_p4_seg113_vr)
+glf_lightMaps.Add "p4_seg113", glf_p4_seg113_lmarr
+Dim glf_p4_seg112_lmarr : glf_p4_seg112_lmarr = Array(p_p4_seg112_,p_p4_seg112_vr)
+glf_lightMaps.Add "p4_seg112", glf_p4_seg112_lmarr
+Dim glf_p4_seg111_lmarr : glf_p4_seg111_lmarr = Array(p_p4_seg111_,p_p4_seg111_vr)
+glf_lightMaps.Add "p4_seg111", glf_p4_seg111_lmarr
+Dim glf_p4_seg110_lmarr : glf_p4_seg110_lmarr = Array(p_p4_seg110_,p_p4_seg110_vr)
+glf_lightMaps.Add "p4_seg110", glf_p4_seg110_lmarr
+Dim glf_p4_seg109_lmarr : glf_p4_seg109_lmarr = Array(p_p4_seg109_,p_p4_seg109_vr)
+glf_lightMaps.Add "p4_seg109", glf_p4_seg109_lmarr
+Dim glf_p4_seg108_lmarr : glf_p4_seg108_lmarr = Array(p_p4_seg108_,p_p4_seg108_vr)
+glf_lightMaps.Add "p4_seg108", glf_p4_seg108_lmarr
+Dim glf_p4_seg107_lmarr : glf_p4_seg107_lmarr = Array(p_p4_seg107_,p_p4_seg107_vr)
+glf_lightMaps.Add "p4_seg107", glf_p4_seg107_lmarr
+Dim glf_p4_seg106_lmarr : glf_p4_seg106_lmarr = Array(p_p4_seg106_,p_p4_seg106_vr)
+glf_lightMaps.Add "p4_seg106", glf_p4_seg106_lmarr
+Dim glf_p3_seg120_lmarr : glf_p3_seg120_lmarr = Array(p_p3_seg120_,p_p3_seg120_vr)
+glf_lightMaps.Add "p3_seg120", glf_p3_seg120_lmarr
+Dim glf_p3_seg119_lmarr : glf_p3_seg119_lmarr = Array(p_p3_seg119_,p_p3_seg119_vr)
+glf_lightMaps.Add "p3_seg119", glf_p3_seg119_lmarr
+Dim glf_p3_seg118_lmarr : glf_p3_seg118_lmarr = Array(p_p3_seg118_,p_p3_seg118_vr)
+glf_lightMaps.Add "p3_seg118", glf_p3_seg118_lmarr
+Dim glf_p3_seg117_lmarr : glf_p3_seg117_lmarr = Array(p_p3_seg117_,p_p3_seg117_vr)
+glf_lightMaps.Add "p3_seg117", glf_p3_seg117_lmarr
+Dim glf_p3_seg116_lmarr : glf_p3_seg116_lmarr = Array(p_p3_seg116_,p_p3_seg116_vr)
+glf_lightMaps.Add "p3_seg116", glf_p3_seg116_lmarr
+Dim glf_p3_seg115_lmarr : glf_p3_seg115_lmarr = Array(p_p3_seg115_,p_p3_seg115_vr)
+glf_lightMaps.Add "p3_seg115", glf_p3_seg115_lmarr
+Dim glf_p3_seg114_lmarr : glf_p3_seg114_lmarr = Array(p_p3_seg114_,p_p3_seg114_vr)
+glf_lightMaps.Add "p3_seg114", glf_p3_seg114_lmarr
+Dim glf_p3_seg113_lmarr : glf_p3_seg113_lmarr = Array(p_p3_seg113_,p_p3_seg113_vr)
+glf_lightMaps.Add "p3_seg113", glf_p3_seg113_lmarr
+Dim glf_p3_seg112_lmarr : glf_p3_seg112_lmarr = Array(p_p3_seg112_,p_p3_seg112_vr)
+glf_lightMaps.Add "p3_seg112", glf_p3_seg112_lmarr
+Dim glf_p3_seg111_lmarr : glf_p3_seg111_lmarr = Array(p_p3_seg111_,p_p3_seg111_vr)
+glf_lightMaps.Add "p3_seg111", glf_p3_seg111_lmarr
+Dim glf_p3_seg110_lmarr : glf_p3_seg110_lmarr = Array(p_p3_seg110_,p_p3_seg110_vr)
+glf_lightMaps.Add "p3_seg110", glf_p3_seg110_lmarr
+Dim glf_p3_seg109_lmarr : glf_p3_seg109_lmarr = Array(p_p3_seg109_,p_p3_seg109_vr)
+glf_lightMaps.Add "p3_seg109", glf_p3_seg109_lmarr
+Dim glf_p3_seg108_lmarr : glf_p3_seg108_lmarr = Array(p_p3_seg108_,p_p3_seg108_vr)
+glf_lightMaps.Add "p3_seg108", glf_p3_seg108_lmarr
+Dim glf_p3_seg107_lmarr : glf_p3_seg107_lmarr = Array(p_p3_seg107_,p_p3_seg107_vr)
+glf_lightMaps.Add "p3_seg107", glf_p3_seg107_lmarr
+Dim glf_p3_seg106_lmarr : glf_p3_seg106_lmarr = Array(p_p3_seg106_,p_p3_seg106_vr)
+glf_lightMaps.Add "p3_seg106", glf_p3_seg106_lmarr
+Dim glf_p2_seg120_lmarr : glf_p2_seg120_lmarr = Array(p_p2_seg120_,p_p2_seg120_vr)
+glf_lightMaps.Add "p2_seg120", glf_p2_seg120_lmarr
+Dim glf_p2_seg119_lmarr : glf_p2_seg119_lmarr = Array(p_p2_seg119_,p_p2_seg119_vr)
+glf_lightMaps.Add "p2_seg119", glf_p2_seg119_lmarr
+Dim glf_p2_seg118_lmarr : glf_p2_seg118_lmarr = Array(p_p2_seg118_,p_p2_seg118_vr)
+glf_lightMaps.Add "p2_seg118", glf_p2_seg118_lmarr
+Dim glf_p2_seg117_lmarr : glf_p2_seg117_lmarr = Array(p_p2_seg117_,p_p2_seg117_vr)
+glf_lightMaps.Add "p2_seg117", glf_p2_seg117_lmarr
+Dim glf_p2_seg116_lmarr : glf_p2_seg116_lmarr = Array(p_p2_seg116_,p_p2_seg116_vr)
+glf_lightMaps.Add "p2_seg116", glf_p2_seg116_lmarr
+Dim glf_p2_seg115_lmarr : glf_p2_seg115_lmarr = Array(p_p2_seg115_,p_p2_seg115_vr)
+glf_lightMaps.Add "p2_seg115", glf_p2_seg115_lmarr
+Dim glf_p2_seg114_lmarr : glf_p2_seg114_lmarr = Array(p_p2_seg114_,p_p2_seg114_vr)
+glf_lightMaps.Add "p2_seg114", glf_p2_seg114_lmarr
+Dim glf_p2_seg113_lmarr : glf_p2_seg113_lmarr = Array(p_p2_seg113_,p_p2_seg113_vr)
+glf_lightMaps.Add "p2_seg113", glf_p2_seg113_lmarr
+Dim glf_p2_seg112_lmarr : glf_p2_seg112_lmarr = Array(p_p2_seg112_,p_p2_seg112_vr)
+glf_lightMaps.Add "p2_seg112", glf_p2_seg112_lmarr
+Dim glf_p2_seg111_lmarr : glf_p2_seg111_lmarr = Array(p_p2_seg111_,p_p2_seg111_vr)
+glf_lightMaps.Add "p2_seg111", glf_p2_seg111_lmarr
+Dim glf_p2_seg110_lmarr : glf_p2_seg110_lmarr = Array(p_p2_seg110_,p_p2_seg110_vr)
+glf_lightMaps.Add "p2_seg110", glf_p2_seg110_lmarr
+Dim glf_p2_seg109_lmarr : glf_p2_seg109_lmarr = Array(p_p2_seg109_,p_p2_seg109_vr)
+glf_lightMaps.Add "p2_seg109", glf_p2_seg109_lmarr
+Dim glf_p2_seg108_lmarr : glf_p2_seg108_lmarr = Array(p_p2_seg108_,p_p2_seg108_vr)
+glf_lightMaps.Add "p2_seg108", glf_p2_seg108_lmarr
+Dim glf_p2_seg107_lmarr : glf_p2_seg107_lmarr = Array(p_p2_seg107_,p_p2_seg107_vr)
+glf_lightMaps.Add "p2_seg107", glf_p2_seg107_lmarr
+Dim glf_p2_seg106_lmarr : glf_p2_seg106_lmarr = Array(p_p2_seg106_,p_p2_seg106_vr)
+glf_lightMaps.Add "p2_seg106", glf_p2_seg106_lmarr
+Dim glf_p1_seg120_lmarr : glf_p1_seg120_lmarr = Array(p_p1_seg120_,p_p1_seg120_vr)
+glf_lightMaps.Add "p1_seg120", glf_p1_seg120_lmarr
+Dim glf_p1_seg119_lmarr : glf_p1_seg119_lmarr = Array(p_p1_seg119_,p_p1_seg119_vr)
+glf_lightMaps.Add "p1_seg119", glf_p1_seg119_lmarr
+Dim glf_p1_seg118_lmarr : glf_p1_seg118_lmarr = Array(p_p1_seg118_,p_p1_seg118_vr)
+glf_lightMaps.Add "p1_seg118", glf_p1_seg118_lmarr
+Dim glf_p1_seg117_lmarr : glf_p1_seg117_lmarr = Array(p_p1_seg117_,p_p1_seg117_vr)
+glf_lightMaps.Add "p1_seg117", glf_p1_seg117_lmarr
+Dim glf_p1_seg116_lmarr : glf_p1_seg116_lmarr = Array(p_p1_seg116_,p_p1_seg116_vr)
+glf_lightMaps.Add "p1_seg116", glf_p1_seg116_lmarr
+Dim glf_p1_seg115_lmarr : glf_p1_seg115_lmarr = Array(p_p1_seg115_,p_p1_seg115_vr)
+glf_lightMaps.Add "p1_seg115", glf_p1_seg115_lmarr
+Dim glf_p1_seg114_lmarr : glf_p1_seg114_lmarr = Array(p_p1_seg114_,p_p1_seg114_vr)
+glf_lightMaps.Add "p1_seg114", glf_p1_seg114_lmarr
+Dim glf_p1_seg113_lmarr : glf_p1_seg113_lmarr = Array(p_p1_seg113_,p_p1_seg113_vr)
+glf_lightMaps.Add "p1_seg113", glf_p1_seg113_lmarr
+Dim glf_p1_seg112_lmarr : glf_p1_seg112_lmarr = Array(p_p1_seg112_,p_p1_seg112_vr)
+glf_lightMaps.Add "p1_seg112", glf_p1_seg112_lmarr
+Dim glf_p1_seg111_lmarr : glf_p1_seg111_lmarr = Array(p_p1_seg111_,p_p1_seg111_vr)
+glf_lightMaps.Add "p1_seg111", glf_p1_seg111_lmarr
+Dim glf_p1_seg110_lmarr : glf_p1_seg110_lmarr = Array(p_p1_seg110_,p_p1_seg110_vr)
+glf_lightMaps.Add "p1_seg110", glf_p1_seg110_lmarr
+Dim glf_p1_seg109_lmarr : glf_p1_seg109_lmarr = Array(p_p1_seg109_,p_p1_seg109_vr)
+glf_lightMaps.Add "p1_seg109", glf_p1_seg109_lmarr
+Dim glf_p1_seg108_lmarr : glf_p1_seg108_lmarr = Array(p_p1_seg108_,p_p1_seg108_vr)
+glf_lightMaps.Add "p1_seg108", glf_p1_seg108_lmarr
+Dim glf_p1_seg107_lmarr : glf_p1_seg107_lmarr = Array(p_p1_seg107_,p_p1_seg107_vr)
+glf_lightMaps.Add "p1_seg107", glf_p1_seg107_lmarr
+Dim glf_p1_seg106_lmarr : glf_p1_seg106_lmarr = Array(p_p1_seg106_,p_p1_seg106_vr)
+glf_lightMaps.Add "p1_seg106", glf_p1_seg106_lmarr
+Dim glf_p4_seg105_lmarr : glf_p4_seg105_lmarr = Array(p_p4_seg105_,p_p4_seg105_vr)
+glf_lightMaps.Add "p4_seg105", glf_p4_seg105_lmarr
+Dim glf_p3_seg105_lmarr : glf_p3_seg105_lmarr = Array(p_p3_seg105_,p_p3_seg105_vr)
+glf_lightMaps.Add "p3_seg105", glf_p3_seg105_lmarr
+Dim glf_p2_seg105_lmarr : glf_p2_seg105_lmarr = Array(p_p2_seg105_,p_p2_seg105_vr)
+glf_lightMaps.Add "p2_seg105", glf_p2_seg105_lmarr
+Dim glf_p4_seg104_lmarr : glf_p4_seg104_lmarr = Array(p_p4_seg104_,p_p4_seg104_vr)
+glf_lightMaps.Add "p4_seg104", glf_p4_seg104_lmarr
+Dim glf_p3_seg104_lmarr : glf_p3_seg104_lmarr = Array(p_p3_seg104_,p_p3_seg104_vr)
+glf_lightMaps.Add "p3_seg104", glf_p3_seg104_lmarr
+Dim glf_p2_seg104_lmarr : glf_p2_seg104_lmarr = Array(p_p2_seg104_,p_p2_seg104_vr)
+glf_lightMaps.Add "p2_seg104", glf_p2_seg104_lmarr
+Dim glf_p4_seg103_lmarr : glf_p4_seg103_lmarr = Array(p_p4_seg103_,p_p4_seg103_vr)
+glf_lightMaps.Add "p4_seg103", glf_p4_seg103_lmarr
+Dim glf_p3_seg103_lmarr : glf_p3_seg103_lmarr = Array(p_p3_seg103_,p_p3_seg103_vr)
+glf_lightMaps.Add "p3_seg103", glf_p3_seg103_lmarr
+Dim glf_p2_seg103_lmarr : glf_p2_seg103_lmarr = Array(p_p2_seg103_,p_p2_seg103_vr)
+glf_lightMaps.Add "p2_seg103", glf_p2_seg103_lmarr
+Dim glf_p4_seg102_lmarr : glf_p4_seg102_lmarr = Array(p_p4_seg102_,p_p4_seg102_vr)
+glf_lightMaps.Add "p4_seg102", glf_p4_seg102_lmarr
+Dim glf_p3_seg102_lmarr : glf_p3_seg102_lmarr = Array(p_p3_seg102_,p_p3_seg102_vr)
+glf_lightMaps.Add "p3_seg102", glf_p3_seg102_lmarr
+Dim glf_p2_seg102_lmarr : glf_p2_seg102_lmarr = Array(p_p2_seg102_,p_p2_seg102_vr)
+glf_lightMaps.Add "p2_seg102", glf_p2_seg102_lmarr
+Dim glf_p4_seg101_lmarr : glf_p4_seg101_lmarr = Array(p_p4_seg101_,p_p4_seg101_vr)
+glf_lightMaps.Add "p4_seg101", glf_p4_seg101_lmarr
+Dim glf_p3_seg101_lmarr : glf_p3_seg101_lmarr = Array(p_p3_seg101_,p_p3_seg101_vr)
+glf_lightMaps.Add "p3_seg101", glf_p3_seg101_lmarr
+Dim glf_p2_seg101_lmarr : glf_p2_seg101_lmarr = Array(p_p2_seg101_,p_p2_seg101_vr)
+glf_lightMaps.Add "p2_seg101", glf_p2_seg101_lmarr
+Dim glf_p4_seg100_lmarr : glf_p4_seg100_lmarr = Array(p_p4_seg100_,p_p4_seg100_vr)
+glf_lightMaps.Add "p4_seg100", glf_p4_seg100_lmarr
+Dim glf_p3_seg100_lmarr : glf_p3_seg100_lmarr = Array(p_p3_seg100_,p_p3_seg100_vr)
+glf_lightMaps.Add "p3_seg100", glf_p3_seg100_lmarr
+Dim glf_p2_seg100_lmarr : glf_p2_seg100_lmarr = Array(p_p2_seg100_,p_p2_seg100_vr)
+glf_lightMaps.Add "p2_seg100", glf_p2_seg100_lmarr
+Dim glf_p4_seg99_lmarr : glf_p4_seg99_lmarr = Array(p_p4_seg99_,p_p4_seg99_vr)
+glf_lightMaps.Add "p4_seg99", glf_p4_seg99_lmarr
+Dim glf_p3_seg99_lmarr : glf_p3_seg99_lmarr = Array(p_p3_seg99_,p_p3_seg99_vr)
+glf_lightMaps.Add "p3_seg99", glf_p3_seg99_lmarr
+Dim glf_p2_seg99_lmarr : glf_p2_seg99_lmarr = Array(p_p2_seg99_,p_p2_seg99_vr)
+glf_lightMaps.Add "p2_seg99", glf_p2_seg99_lmarr
+Dim glf_p4_seg98_lmarr : glf_p4_seg98_lmarr = Array(p_p4_seg98_,p_p4_seg98_vr)
+glf_lightMaps.Add "p4_seg98", glf_p4_seg98_lmarr
+Dim glf_p3_seg98_lmarr : glf_p3_seg98_lmarr = Array(p_p3_seg98_,p_p3_seg98_vr)
+glf_lightMaps.Add "p3_seg98", glf_p3_seg98_lmarr
+Dim glf_p2_seg98_lmarr : glf_p2_seg98_lmarr = Array(p_p2_seg98_,p_p2_seg98_vr)
+glf_lightMaps.Add "p2_seg98", glf_p2_seg98_lmarr
+Dim glf_p4_seg97_lmarr : glf_p4_seg97_lmarr = Array(p_p4_seg97_,p_p4_seg97_vr)
+glf_lightMaps.Add "p4_seg97", glf_p4_seg97_lmarr
+Dim glf_p3_seg97_lmarr : glf_p3_seg97_lmarr = Array(p_p3_seg97_,p_p3_seg97_vr)
+glf_lightMaps.Add "p3_seg97", glf_p3_seg97_lmarr
+Dim glf_p2_seg97_lmarr : glf_p2_seg97_lmarr = Array(p_p2_seg97_,p_p2_seg97_vr)
+glf_lightMaps.Add "p2_seg97", glf_p2_seg97_lmarr
+Dim glf_p4_seg96_lmarr : glf_p4_seg96_lmarr = Array(p_p4_seg96_,p_p4_seg96_vr)
+glf_lightMaps.Add "p4_seg96", glf_p4_seg96_lmarr
+Dim glf_p3_seg96_lmarr : glf_p3_seg96_lmarr = Array(p_p3_seg96_,p_p3_seg96_vr)
+glf_lightMaps.Add "p3_seg96", glf_p3_seg96_lmarr
+Dim glf_p2_seg96_lmarr : glf_p2_seg96_lmarr = Array(p_p2_seg96_,p_p2_seg96_vr)
+glf_lightMaps.Add "p2_seg96", glf_p2_seg96_lmarr
+Dim glf_p4_seg95_lmarr : glf_p4_seg95_lmarr = Array(p_p4_seg95_,p_p4_seg95_vr)
+glf_lightMaps.Add "p4_seg95", glf_p4_seg95_lmarr
+Dim glf_p3_seg95_lmarr : glf_p3_seg95_lmarr = Array(p_p3_seg95_,p_p3_seg95_vr)
+glf_lightMaps.Add "p3_seg95", glf_p3_seg95_lmarr
+Dim glf_p2_seg95_lmarr : glf_p2_seg95_lmarr = Array(p_p2_seg95_,p_p2_seg95_vr)
+glf_lightMaps.Add "p2_seg95", glf_p2_seg95_lmarr
+Dim glf_p4_seg94_lmarr : glf_p4_seg94_lmarr = Array(p_p4_seg94_,p_p4_seg94_vr)
+glf_lightMaps.Add "p4_seg94", glf_p4_seg94_lmarr
+Dim glf_p3_seg94_lmarr : glf_p3_seg94_lmarr = Array(p_p3_seg94_,p_p3_seg94_vr)
+glf_lightMaps.Add "p3_seg94", glf_p3_seg94_lmarr
+Dim glf_p2_seg94_lmarr : glf_p2_seg94_lmarr = Array(p_p2_seg94_,p_p2_seg94_vr)
+glf_lightMaps.Add "p2_seg94", glf_p2_seg94_lmarr
+Dim glf_p4_seg93_lmarr : glf_p4_seg93_lmarr = Array(p_p4_seg93_,p_p4_seg93_vr)
+glf_lightMaps.Add "p4_seg93", glf_p4_seg93_lmarr
+Dim glf_p3_seg93_lmarr : glf_p3_seg93_lmarr = Array(p_p3_seg93_,p_p3_seg93_vr)
+glf_lightMaps.Add "p3_seg93", glf_p3_seg93_lmarr
+Dim glf_p2_seg93_lmarr : glf_p2_seg93_lmarr = Array(p_p2_seg93_,p_p2_seg93_vr)
+glf_lightMaps.Add "p2_seg93", glf_p2_seg93_lmarr
+Dim glf_p4_seg92_lmarr : glf_p4_seg92_lmarr = Array(p_p4_seg92_,p_p4_seg92_vr)
+glf_lightMaps.Add "p4_seg92", glf_p4_seg92_lmarr
+Dim glf_p3_seg92_lmarr : glf_p3_seg92_lmarr = Array(p_p3_seg92_,p_p3_seg92_vr)
+glf_lightMaps.Add "p3_seg92", glf_p3_seg92_lmarr
+Dim glf_p2_seg92_lmarr : glf_p2_seg92_lmarr = Array(p_p2_seg92_,p_p2_seg92_vr)
+glf_lightMaps.Add "p2_seg92", glf_p2_seg92_lmarr
+Dim glf_p4_seg91_lmarr : glf_p4_seg91_lmarr = Array(p_p4_seg91_,p_p4_seg91_vr)
+glf_lightMaps.Add "p4_seg91", glf_p4_seg91_lmarr
+Dim glf_p3_seg91_lmarr : glf_p3_seg91_lmarr = Array(p_p3_seg91_,p_p3_seg91_vr)
+glf_lightMaps.Add "p3_seg91", glf_p3_seg91_lmarr
+Dim glf_p2_seg91_lmarr : glf_p2_seg91_lmarr = Array(p_p2_seg91_,p_p2_seg91_vr)
+glf_lightMaps.Add "p2_seg91", glf_p2_seg91_lmarr
+Dim glf_p4_seg90_lmarr : glf_p4_seg90_lmarr = Array(p_p4_seg90_,p_p4_seg90_vr)
+glf_lightMaps.Add "p4_seg90", glf_p4_seg90_lmarr
+Dim glf_p3_seg90_lmarr : glf_p3_seg90_lmarr = Array(p_p3_seg90_,p_p3_seg90_vr)
+glf_lightMaps.Add "p3_seg90", glf_p3_seg90_lmarr
+Dim glf_p2_seg90_lmarr : glf_p2_seg90_lmarr = Array(p_p2_seg90_,p_p2_seg90_vr)
+glf_lightMaps.Add "p2_seg90", glf_p2_seg90_lmarr
+Dim glf_p4_seg89_lmarr : glf_p4_seg89_lmarr = Array(p_p4_seg89_,p_p4_seg89_vr)
+glf_lightMaps.Add "p4_seg89", glf_p4_seg89_lmarr
+Dim glf_p3_seg89_lmarr : glf_p3_seg89_lmarr = Array(p_p3_seg89_,p_p3_seg89_vr)
+glf_lightMaps.Add "p3_seg89", glf_p3_seg89_lmarr
+Dim glf_p2_seg89_lmarr : glf_p2_seg89_lmarr = Array(p_p2_seg89_,p_p2_seg89_vr)
+glf_lightMaps.Add "p2_seg89", glf_p2_seg89_lmarr
+Dim glf_p4_seg88_lmarr : glf_p4_seg88_lmarr = Array(p_p4_seg88_,p_p4_seg88_vr)
+glf_lightMaps.Add "p4_seg88", glf_p4_seg88_lmarr
+Dim glf_p3_seg88_lmarr : glf_p3_seg88_lmarr = Array(p_p3_seg88_,p_p3_seg88_vr)
+glf_lightMaps.Add "p3_seg88", glf_p3_seg88_lmarr
+Dim glf_p2_seg88_lmarr : glf_p2_seg88_lmarr = Array(p_p2_seg88_,p_p2_seg88_vr)
+glf_lightMaps.Add "p2_seg88", glf_p2_seg88_lmarr
+Dim glf_p4_seg87_lmarr : glf_p4_seg87_lmarr = Array(p_p4_seg87_,p_p4_seg87_vr)
+glf_lightMaps.Add "p4_seg87", glf_p4_seg87_lmarr
+Dim glf_p3_seg87_lmarr : glf_p3_seg87_lmarr = Array(p_p3_seg87_,p_p3_seg87_vr)
+glf_lightMaps.Add "p3_seg87", glf_p3_seg87_lmarr
+Dim glf_p2_seg87_lmarr : glf_p2_seg87_lmarr = Array(p_p2_seg87_,p_p2_seg87_vr)
+glf_lightMaps.Add "p2_seg87", glf_p2_seg87_lmarr
+Dim glf_p4_seg86_lmarr : glf_p4_seg86_lmarr = Array(p_p4_seg86_,p_p4_seg86_vr)
+glf_lightMaps.Add "p4_seg86", glf_p4_seg86_lmarr
+Dim glf_p3_seg86_lmarr : glf_p3_seg86_lmarr = Array(p_p3_seg86_,p_p3_seg86_vr)
+glf_lightMaps.Add "p3_seg86", glf_p3_seg86_lmarr
+Dim glf_p2_seg86_lmarr : glf_p2_seg86_lmarr = Array(p_p2_seg86_,p_p2_seg86_vr)
+glf_lightMaps.Add "p2_seg86", glf_p2_seg86_lmarr
+Dim glf_p4_seg85_lmarr : glf_p4_seg85_lmarr = Array(p_p4_seg85_,p_p4_seg85_vr)
+glf_lightMaps.Add "p4_seg85", glf_p4_seg85_lmarr
+Dim glf_p3_seg85_lmarr : glf_p3_seg85_lmarr = Array(p_p3_seg85_,p_p3_seg85_vr)
+glf_lightMaps.Add "p3_seg85", glf_p3_seg85_lmarr
+Dim glf_p2_seg85_lmarr : glf_p2_seg85_lmarr = Array(p_p2_seg85_,p_p2_seg85_vr)
+glf_lightMaps.Add "p2_seg85", glf_p2_seg85_lmarr
+Dim glf_p4_seg84_lmarr : glf_p4_seg84_lmarr = Array(p_p4_seg84_,p_p4_seg84_vr)
+glf_lightMaps.Add "p4_seg84", glf_p4_seg84_lmarr
+Dim glf_p3_seg84_lmarr : glf_p3_seg84_lmarr = Array(p_p3_seg84_,p_p3_seg84_vr)
+glf_lightMaps.Add "p3_seg84", glf_p3_seg84_lmarr
+Dim glf_p2_seg84_lmarr : glf_p2_seg84_lmarr = Array(p_p2_seg84_,p_p2_seg84_vr)
+glf_lightMaps.Add "p2_seg84", glf_p2_seg84_lmarr
+Dim glf_p4_seg83_lmarr : glf_p4_seg83_lmarr = Array(p_p4_seg83_,p_p4_seg83_vr)
+glf_lightMaps.Add "p4_seg83", glf_p4_seg83_lmarr
+Dim glf_p3_seg83_lmarr : glf_p3_seg83_lmarr = Array(p_p3_seg83_,p_p3_seg83_vr)
+glf_lightMaps.Add "p3_seg83", glf_p3_seg83_lmarr
+Dim glf_p2_seg83_lmarr : glf_p2_seg83_lmarr = Array(p_p2_seg83_,p_p2_seg83_vr)
+glf_lightMaps.Add "p2_seg83", glf_p2_seg83_lmarr
+Dim glf_p4_seg82_lmarr : glf_p4_seg82_lmarr = Array(p_p4_seg82_,p_p4_seg82_vr)
+glf_lightMaps.Add "p4_seg82", glf_p4_seg82_lmarr
+Dim glf_p3_seg82_lmarr : glf_p3_seg82_lmarr = Array(p_p3_seg82_,p_p3_seg82_vr)
+glf_lightMaps.Add "p3_seg82", glf_p3_seg82_lmarr
+Dim glf_p2_seg82_lmarr : glf_p2_seg82_lmarr = Array(p_p2_seg82_,p_p2_seg82_vr)
+glf_lightMaps.Add "p2_seg82", glf_p2_seg82_lmarr
+Dim glf_p4_seg81_lmarr : glf_p4_seg81_lmarr = Array(p_p4_seg81_,p_p4_seg81_vr)
+glf_lightMaps.Add "p4_seg81", glf_p4_seg81_lmarr
+Dim glf_p3_seg81_lmarr : glf_p3_seg81_lmarr = Array(p_p3_seg81_,p_p3_seg81_vr)
+glf_lightMaps.Add "p3_seg81", glf_p3_seg81_lmarr
+Dim glf_p2_seg81_lmarr : glf_p2_seg81_lmarr = Array(p_p2_seg81_,p_p2_seg81_vr)
+glf_lightMaps.Add "p2_seg81", glf_p2_seg81_lmarr
+Dim glf_p4_seg80_lmarr : glf_p4_seg80_lmarr = Array(p_p4_seg80_,p_p4_seg80_vr)
+glf_lightMaps.Add "p4_seg80", glf_p4_seg80_lmarr
+Dim glf_p3_seg80_lmarr : glf_p3_seg80_lmarr = Array(p_p3_seg80_,p_p3_seg80_vr)
+glf_lightMaps.Add "p3_seg80", glf_p3_seg80_lmarr
+Dim glf_p2_seg80_lmarr : glf_p2_seg80_lmarr = Array(p_p2_seg80_,p_p2_seg80_vr)
+glf_lightMaps.Add "p2_seg80", glf_p2_seg80_lmarr
+Dim glf_p4_seg79_lmarr : glf_p4_seg79_lmarr = Array(p_p4_seg79_,p_p4_seg79_vr)
+glf_lightMaps.Add "p4_seg79", glf_p4_seg79_lmarr
+Dim glf_p3_seg79_lmarr : glf_p3_seg79_lmarr = Array(p_p3_seg79_,p_p3_seg79_vr)
+glf_lightMaps.Add "p3_seg79", glf_p3_seg79_lmarr
+Dim glf_p2_seg79_lmarr : glf_p2_seg79_lmarr = Array(p_p2_seg79_,p_p2_seg79_vr)
+glf_lightMaps.Add "p2_seg79", glf_p2_seg79_lmarr
+Dim glf_p4_seg78_lmarr : glf_p4_seg78_lmarr = Array(p_p4_seg78_,p_p4_seg78_vr)
+glf_lightMaps.Add "p4_seg78", glf_p4_seg78_lmarr
+Dim glf_p3_seg78_lmarr : glf_p3_seg78_lmarr = Array(p_p3_seg78_,p_p3_seg78_vr)
+glf_lightMaps.Add "p3_seg78", glf_p3_seg78_lmarr
+Dim glf_p2_seg78_lmarr : glf_p2_seg78_lmarr = Array(p_p2_seg78_,p_p2_seg78_vr)
+glf_lightMaps.Add "p2_seg78", glf_p2_seg78_lmarr
+Dim glf_p4_seg77_lmarr : glf_p4_seg77_lmarr = Array(p_p4_seg77_,p_p4_seg77_vr)
+glf_lightMaps.Add "p4_seg77", glf_p4_seg77_lmarr
+Dim glf_p3_seg77_lmarr : glf_p3_seg77_lmarr = Array(p_p3_seg77_,p_p3_seg77_vr)
+glf_lightMaps.Add "p3_seg77", glf_p3_seg77_lmarr
+Dim glf_p2_seg77_lmarr : glf_p2_seg77_lmarr = Array(p_p2_seg77_,p_p2_seg77_vr)
+glf_lightMaps.Add "p2_seg77", glf_p2_seg77_lmarr
+Dim glf_p4_seg76_lmarr : glf_p4_seg76_lmarr = Array(p_p4_seg76_,p_p4_seg76_vr)
+glf_lightMaps.Add "p4_seg76", glf_p4_seg76_lmarr
+Dim glf_p3_seg76_lmarr : glf_p3_seg76_lmarr = Array(p_p3_seg76_,p_p3_seg76_vr)
+glf_lightMaps.Add "p3_seg76", glf_p3_seg76_lmarr
+Dim glf_p2_seg76_lmarr : glf_p2_seg76_lmarr = Array(p_p2_seg76_,p_p2_seg76_vr)
+glf_lightMaps.Add "p2_seg76", glf_p2_seg76_lmarr
+Dim glf_p4_seg75_lmarr : glf_p4_seg75_lmarr = Array(p_p4_seg75_,p_p4_seg75_vr)
+glf_lightMaps.Add "p4_seg75", glf_p4_seg75_lmarr
+Dim glf_p3_seg75_lmarr : glf_p3_seg75_lmarr = Array(p_p3_seg75_,p_p3_seg75_vr)
+glf_lightMaps.Add "p3_seg75", glf_p3_seg75_lmarr
+Dim glf_p2_seg75_lmarr : glf_p2_seg75_lmarr = Array(p_p2_seg75_,p_p2_seg75_vr)
+glf_lightMaps.Add "p2_seg75", glf_p2_seg75_lmarr
+Dim glf_p4_seg74_lmarr : glf_p4_seg74_lmarr = Array(p_p4_seg74_,p_p4_seg74_vr)
+glf_lightMaps.Add "p4_seg74", glf_p4_seg74_lmarr
+Dim glf_p3_seg74_lmarr : glf_p3_seg74_lmarr = Array(p_p3_seg74_,p_p3_seg74_vr)
+glf_lightMaps.Add "p3_seg74", glf_p3_seg74_lmarr
+Dim glf_p2_seg74_lmarr : glf_p2_seg74_lmarr = Array(p_p2_seg74_,p_p2_seg74_vr)
+glf_lightMaps.Add "p2_seg74", glf_p2_seg74_lmarr
+Dim glf_p4_seg73_lmarr : glf_p4_seg73_lmarr = Array(p_p4_seg73_,p_p4_seg73_vr)
+glf_lightMaps.Add "p4_seg73", glf_p4_seg73_lmarr
+Dim glf_p3_seg73_lmarr : glf_p3_seg73_lmarr = Array(p_p3_seg73_,p_p3_seg73_vr)
+glf_lightMaps.Add "p3_seg73", glf_p3_seg73_lmarr
+Dim glf_p2_seg73_lmarr : glf_p2_seg73_lmarr = Array(p_p2_seg73_,p_p2_seg73_vr)
+glf_lightMaps.Add "p2_seg73", glf_p2_seg73_lmarr
+Dim glf_p4_seg72_lmarr : glf_p4_seg72_lmarr = Array(p_p4_seg72_,p_p4_seg72_vr)
+glf_lightMaps.Add "p4_seg72", glf_p4_seg72_lmarr
+Dim glf_p3_seg72_lmarr : glf_p3_seg72_lmarr = Array(p_p3_seg72_,p_p3_seg72_vr)
+glf_lightMaps.Add "p3_seg72", glf_p3_seg72_lmarr
+Dim glf_p2_seg72_lmarr : glf_p2_seg72_lmarr = Array(p_p2_seg72_,p_p2_seg72_vr)
+glf_lightMaps.Add "p2_seg72", glf_p2_seg72_lmarr
+Dim glf_p4_seg71_lmarr : glf_p4_seg71_lmarr = Array(p_p4_seg71_,p_p4_seg71_vr)
+glf_lightMaps.Add "p4_seg71", glf_p4_seg71_lmarr
+Dim glf_p3_seg71_lmarr : glf_p3_seg71_lmarr = Array(p_p3_seg71_,p_p3_seg71_vr)
+glf_lightMaps.Add "p3_seg71", glf_p3_seg71_lmarr
+Dim glf_p2_seg71_lmarr : glf_p2_seg71_lmarr = Array(p_p2_seg71_,p_p2_seg71_vr)
+glf_lightMaps.Add "p2_seg71", glf_p2_seg71_lmarr
+Dim glf_p4_seg70_lmarr : glf_p4_seg70_lmarr = Array(p_p4_seg70_,p_p4_seg70_vr)
+glf_lightMaps.Add "p4_seg70", glf_p4_seg70_lmarr
+Dim glf_p3_seg70_lmarr : glf_p3_seg70_lmarr = Array(p_p3_seg70_,p_p3_seg70_vr)
+glf_lightMaps.Add "p3_seg70", glf_p3_seg70_lmarr
+Dim glf_p2_seg70_lmarr : glf_p2_seg70_lmarr = Array(p_p2_seg70_,p_p2_seg70_vr)
+glf_lightMaps.Add "p2_seg70", glf_p2_seg70_lmarr
+Dim glf_p4_seg69_lmarr : glf_p4_seg69_lmarr = Array(p_p4_seg69_,p_p4_seg69_vr)
+glf_lightMaps.Add "p4_seg69", glf_p4_seg69_lmarr
+Dim glf_p3_seg69_lmarr : glf_p3_seg69_lmarr = Array(p_p3_seg69_,p_p3_seg69_vr)
+glf_lightMaps.Add "p3_seg69", glf_p3_seg69_lmarr
+Dim glf_p2_seg69_lmarr : glf_p2_seg69_lmarr = Array(p_p2_seg69_,p_p2_seg69_vr)
+glf_lightMaps.Add "p2_seg69", glf_p2_seg69_lmarr
+Dim glf_p4_seg68_lmarr : glf_p4_seg68_lmarr = Array(p_p4_seg68_,p_p4_seg68_vr)
+glf_lightMaps.Add "p4_seg68", glf_p4_seg68_lmarr
+Dim glf_p3_seg68_lmarr : glf_p3_seg68_lmarr = Array(p_p3_seg68_,p_p3_seg68_vr)
+glf_lightMaps.Add "p3_seg68", glf_p3_seg68_lmarr
+Dim glf_p2_seg68_lmarr : glf_p2_seg68_lmarr = Array(p_p2_seg68_,p_p2_seg68_vr)
+glf_lightMaps.Add "p2_seg68", glf_p2_seg68_lmarr
+Dim glf_p4_seg67_lmarr : glf_p4_seg67_lmarr = Array(p_p4_seg67_,p_p4_seg67_vr)
+glf_lightMaps.Add "p4_seg67", glf_p4_seg67_lmarr
+Dim glf_p3_seg67_lmarr : glf_p3_seg67_lmarr = Array(p_p3_seg67_,p_p3_seg67_vr)
+glf_lightMaps.Add "p3_seg67", glf_p3_seg67_lmarr
+Dim glf_p2_seg67_lmarr : glf_p2_seg67_lmarr = Array(p_p2_seg67_,p_p2_seg67_vr)
+glf_lightMaps.Add "p2_seg67", glf_p2_seg67_lmarr
+Dim glf_p4_seg66_lmarr : glf_p4_seg66_lmarr = Array(p_p4_seg66_,p_p4_seg66_vr)
+glf_lightMaps.Add "p4_seg66", glf_p4_seg66_lmarr
+Dim glf_p3_seg66_lmarr : glf_p3_seg66_lmarr = Array(p_p3_seg66_,p_p3_seg66_vr)
+glf_lightMaps.Add "p3_seg66", glf_p3_seg66_lmarr
+Dim glf_p2_seg66_lmarr : glf_p2_seg66_lmarr = Array(p_p2_seg66_,p_p2_seg66_vr)
+glf_lightMaps.Add "p2_seg66", glf_p2_seg66_lmarr
+Dim glf_p4_seg65_lmarr : glf_p4_seg65_lmarr = Array(p_p4_seg65_,p_p4_seg65_vr)
+glf_lightMaps.Add "p4_seg65", glf_p4_seg65_lmarr
+Dim glf_p3_seg65_lmarr : glf_p3_seg65_lmarr = Array(p_p3_seg65_,p_p3_seg65_vr)
+glf_lightMaps.Add "p3_seg65", glf_p3_seg65_lmarr
+Dim glf_p2_seg65_lmarr : glf_p2_seg65_lmarr = Array(p_p2_seg65_,p_p2_seg65_vr)
+glf_lightMaps.Add "p2_seg65", glf_p2_seg65_lmarr
+Dim glf_p4_seg64_lmarr : glf_p4_seg64_lmarr = Array(p_p4_seg64_,p_p4_seg64_vr)
+glf_lightMaps.Add "p4_seg64", glf_p4_seg64_lmarr
+Dim glf_p3_seg64_lmarr : glf_p3_seg64_lmarr = Array(p_p3_seg64_,p_p3_seg64_vr)
+glf_lightMaps.Add "p3_seg64", glf_p3_seg64_lmarr
+Dim glf_p2_seg64_lmarr : glf_p2_seg64_lmarr = Array(p_p2_seg64_,p_p2_seg64_vr)
+glf_lightMaps.Add "p2_seg64", glf_p2_seg64_lmarr
+Dim glf_p4_seg63_lmarr : glf_p4_seg63_lmarr = Array(p_p4_seg63_,p_p4_seg63_vr)
+glf_lightMaps.Add "p4_seg63", glf_p4_seg63_lmarr
+Dim glf_p3_seg63_lmarr : glf_p3_seg63_lmarr = Array(p_p3_seg63_,p_p3_seg63_vr)
+glf_lightMaps.Add "p3_seg63", glf_p3_seg63_lmarr
+Dim glf_p2_seg63_lmarr : glf_p2_seg63_lmarr = Array(p_p2_seg63_,p_p2_seg63_vr)
+glf_lightMaps.Add "p2_seg63", glf_p2_seg63_lmarr
+Dim glf_p4_seg62_lmarr : glf_p4_seg62_lmarr = Array(p_p4_seg62_,p_p4_seg62_vr)
+glf_lightMaps.Add "p4_seg62", glf_p4_seg62_lmarr
+Dim glf_p3_seg62_lmarr : glf_p3_seg62_lmarr = Array(p_p3_seg62_,p_p3_seg62_vr)
+glf_lightMaps.Add "p3_seg62", glf_p3_seg62_lmarr
+Dim glf_p2_seg62_lmarr : glf_p2_seg62_lmarr = Array(p_p2_seg62_,p_p2_seg62_vr)
+glf_lightMaps.Add "p2_seg62", glf_p2_seg62_lmarr
+Dim glf_p4_seg61_lmarr : glf_p4_seg61_lmarr = Array(p_p4_seg61_,p_p4_seg61_vr)
+glf_lightMaps.Add "p4_seg61", glf_p4_seg61_lmarr
+Dim glf_p3_seg61_lmarr : glf_p3_seg61_lmarr = Array(p_p3_seg61_,p_p3_seg61_vr)
+glf_lightMaps.Add "p3_seg61", glf_p3_seg61_lmarr
+Dim glf_p2_seg61_lmarr : glf_p2_seg61_lmarr = Array(p_p2_seg61_,p_p2_seg61_vr)
+glf_lightMaps.Add "p2_seg61", glf_p2_seg61_lmarr
+Dim glf_p4_seg60_lmarr : glf_p4_seg60_lmarr = Array(p_p4_seg60_,p_p4_seg60_vr)
+glf_lightMaps.Add "p4_seg60", glf_p4_seg60_lmarr
+Dim glf_p3_seg60_lmarr : glf_p3_seg60_lmarr = Array(p_p3_seg60_,p_p3_seg60_vr)
+glf_lightMaps.Add "p3_seg60", glf_p3_seg60_lmarr
+Dim glf_p2_seg60_lmarr : glf_p2_seg60_lmarr = Array(p_p2_seg60_,p_p2_seg60_vr)
+glf_lightMaps.Add "p2_seg60", glf_p2_seg60_lmarr
+Dim glf_p4_seg59_lmarr : glf_p4_seg59_lmarr = Array(p_p4_seg59_,p_p4_seg59_vr)
+glf_lightMaps.Add "p4_seg59", glf_p4_seg59_lmarr
+Dim glf_p3_seg59_lmarr : glf_p3_seg59_lmarr = Array(p_p3_seg59_,p_p3_seg59_vr)
+glf_lightMaps.Add "p3_seg59", glf_p3_seg59_lmarr
+Dim glf_p2_seg59_lmarr : glf_p2_seg59_lmarr = Array(p_p2_seg59_,p_p2_seg59_vr)
+glf_lightMaps.Add "p2_seg59", glf_p2_seg59_lmarr
+Dim glf_p4_seg58_lmarr : glf_p4_seg58_lmarr = Array(p_p4_seg58_,p_p4_seg58_vr)
+glf_lightMaps.Add "p4_seg58", glf_p4_seg58_lmarr
+Dim glf_p3_seg58_lmarr : glf_p3_seg58_lmarr = Array(p_p3_seg58_,p_p3_seg58_vr)
+glf_lightMaps.Add "p3_seg58", glf_p3_seg58_lmarr
+Dim glf_p2_seg58_lmarr : glf_p2_seg58_lmarr = Array(p_p2_seg58_,p_p2_seg58_vr)
+glf_lightMaps.Add "p2_seg58", glf_p2_seg58_lmarr
+Dim glf_p4_seg57_lmarr : glf_p4_seg57_lmarr = Array(p_p4_seg57_,p_p4_seg57_vr)
+glf_lightMaps.Add "p4_seg57", glf_p4_seg57_lmarr
+Dim glf_p3_seg57_lmarr : glf_p3_seg57_lmarr = Array(p_p3_seg57_,p_p3_seg57_vr)
+glf_lightMaps.Add "p3_seg57", glf_p3_seg57_lmarr
+Dim glf_p2_seg57_lmarr : glf_p2_seg57_lmarr = Array(p_p2_seg57_,p_p2_seg57_vr)
+glf_lightMaps.Add "p2_seg57", glf_p2_seg57_lmarr
+Dim glf_p4_seg56_lmarr : glf_p4_seg56_lmarr = Array(p_p4_seg56_,p_p4_seg56_vr)
+glf_lightMaps.Add "p4_seg56", glf_p4_seg56_lmarr
+Dim glf_p3_seg56_lmarr : glf_p3_seg56_lmarr = Array(p_p3_seg56_,p_p3_seg56_vr)
+glf_lightMaps.Add "p3_seg56", glf_p3_seg56_lmarr
+Dim glf_p2_seg56_lmarr : glf_p2_seg56_lmarr = Array(p_p2_seg56_,p_p2_seg56_vr)
+glf_lightMaps.Add "p2_seg56", glf_p2_seg56_lmarr
+Dim glf_p4_seg55_lmarr : glf_p4_seg55_lmarr = Array(p_p4_seg55_,p_p4_seg55_vr)
+glf_lightMaps.Add "p4_seg55", glf_p4_seg55_lmarr
+Dim glf_p3_seg55_lmarr : glf_p3_seg55_lmarr = Array(p_p3_seg55_,p_p3_seg55_vr)
+glf_lightMaps.Add "p3_seg55", glf_p3_seg55_lmarr
+Dim glf_p2_seg55_lmarr : glf_p2_seg55_lmarr = Array(p_p2_seg55_,p_p2_seg55_vr)
+glf_lightMaps.Add "p2_seg55", glf_p2_seg55_lmarr
+Dim glf_p4_seg54_lmarr : glf_p4_seg54_lmarr = Array(p_p4_seg54_,p_p4_seg54_vr)
+glf_lightMaps.Add "p4_seg54", glf_p4_seg54_lmarr
+Dim glf_p3_seg54_lmarr : glf_p3_seg54_lmarr = Array(p_p3_seg54_,p_p3_seg54_vr)
+glf_lightMaps.Add "p3_seg54", glf_p3_seg54_lmarr
+Dim glf_p2_seg54_lmarr : glf_p2_seg54_lmarr = Array(p_p2_seg54_,p_p2_seg54_vr)
+glf_lightMaps.Add "p2_seg54", glf_p2_seg54_lmarr
+Dim glf_p4_seg53_lmarr : glf_p4_seg53_lmarr = Array(p_p4_seg53_,p_p4_seg53_vr)
+glf_lightMaps.Add "p4_seg53", glf_p4_seg53_lmarr
+Dim glf_p3_seg53_lmarr : glf_p3_seg53_lmarr = Array(p_p3_seg53_,p_p3_seg53_vr)
+glf_lightMaps.Add "p3_seg53", glf_p3_seg53_lmarr
+Dim glf_p2_seg53_lmarr : glf_p2_seg53_lmarr = Array(p_p2_seg53_,p_p2_seg53_vr)
+glf_lightMaps.Add "p2_seg53", glf_p2_seg53_lmarr
+Dim glf_p4_seg52_lmarr : glf_p4_seg52_lmarr = Array(p_p4_seg52_,p_p4_seg52_vr)
+glf_lightMaps.Add "p4_seg52", glf_p4_seg52_lmarr
+Dim glf_p3_seg52_lmarr : glf_p3_seg52_lmarr = Array(p_p3_seg52_,p_p3_seg52_vr)
+glf_lightMaps.Add "p3_seg52", glf_p3_seg52_lmarr
+Dim glf_p2_seg52_lmarr : glf_p2_seg52_lmarr = Array(p_p2_seg52_,p_p2_seg52_vr)
+glf_lightMaps.Add "p2_seg52", glf_p2_seg52_lmarr
+Dim glf_p4_seg51_lmarr : glf_p4_seg51_lmarr = Array(p_p4_seg51_,p_p4_seg51_vr)
+glf_lightMaps.Add "p4_seg51", glf_p4_seg51_lmarr
+Dim glf_p3_seg51_lmarr : glf_p3_seg51_lmarr = Array(p_p3_seg51_,p_p3_seg51_vr)
+glf_lightMaps.Add "p3_seg51", glf_p3_seg51_lmarr
+Dim glf_p2_seg51_lmarr : glf_p2_seg51_lmarr = Array(p_p2_seg51_,p_p2_seg51_vr)
+glf_lightMaps.Add "p2_seg51", glf_p2_seg51_lmarr
+Dim glf_p4_seg50_lmarr : glf_p4_seg50_lmarr = Array(p_p4_seg50_,p_p4_seg50_vr)
+glf_lightMaps.Add "p4_seg50", glf_p4_seg50_lmarr
+Dim glf_p3_seg50_lmarr : glf_p3_seg50_lmarr = Array(p_p3_seg50_,p_p3_seg50_vr)
+glf_lightMaps.Add "p3_seg50", glf_p3_seg50_lmarr
+Dim glf_p2_seg50_lmarr : glf_p2_seg50_lmarr = Array(p_p2_seg50_,p_p2_seg50_vr)
+glf_lightMaps.Add "p2_seg50", glf_p2_seg50_lmarr
+Dim glf_p4_seg49_lmarr : glf_p4_seg49_lmarr = Array(p_p4_seg49_,p_p4_seg49_vr)
+glf_lightMaps.Add "p4_seg49", glf_p4_seg49_lmarr
+Dim glf_p3_seg49_lmarr : glf_p3_seg49_lmarr = Array(p_p3_seg49_,p_p3_seg49_vr)
+glf_lightMaps.Add "p3_seg49", glf_p3_seg49_lmarr
+Dim glf_p2_seg49_lmarr : glf_p2_seg49_lmarr = Array(p_p2_seg49_,p_p2_seg49_vr)
+glf_lightMaps.Add "p2_seg49", glf_p2_seg49_lmarr
+Dim glf_p4_seg48_lmarr : glf_p4_seg48_lmarr = Array(p_p4_seg48_,p_p4_seg48_vr)
+glf_lightMaps.Add "p4_seg48", glf_p4_seg48_lmarr
+Dim glf_p3_seg48_lmarr : glf_p3_seg48_lmarr = Array(p_p3_seg48_,p_p3_seg48_vr)
+glf_lightMaps.Add "p3_seg48", glf_p3_seg48_lmarr
+Dim glf_p2_seg48_lmarr : glf_p2_seg48_lmarr = Array(p_p2_seg48_,p_p2_seg48_vr)
+glf_lightMaps.Add "p2_seg48", glf_p2_seg48_lmarr
+Dim glf_p4_seg47_lmarr : glf_p4_seg47_lmarr = Array(p_p4_seg47_,p_p4_seg47_vr)
+glf_lightMaps.Add "p4_seg47", glf_p4_seg47_lmarr
+Dim glf_p3_seg47_lmarr : glf_p3_seg47_lmarr = Array(p_p3_seg47_,p_p3_seg47_vr)
+glf_lightMaps.Add "p3_seg47", glf_p3_seg47_lmarr
+Dim glf_p2_seg47_lmarr : glf_p2_seg47_lmarr = Array(p_p2_seg47_,p_p2_seg47_vr)
+glf_lightMaps.Add "p2_seg47", glf_p2_seg47_lmarr
+Dim glf_p4_seg46_lmarr : glf_p4_seg46_lmarr = Array(p_p4_seg46_,p_p4_seg46_vr)
+glf_lightMaps.Add "p4_seg46", glf_p4_seg46_lmarr
+Dim glf_p3_seg46_lmarr : glf_p3_seg46_lmarr = Array(p_p3_seg46_,p_p3_seg46_vr)
+glf_lightMaps.Add "p3_seg46", glf_p3_seg46_lmarr
+Dim glf_p2_seg46_lmarr : glf_p2_seg46_lmarr = Array(p_p2_seg46_,p_p2_seg46_vr)
+glf_lightMaps.Add "p2_seg46", glf_p2_seg46_lmarr
+Dim glf_p4_seg45_lmarr : glf_p4_seg45_lmarr = Array(p_p4_seg45_,p_p4_seg45_vr)
+glf_lightMaps.Add "p4_seg45", glf_p4_seg45_lmarr
+Dim glf_p3_seg45_lmarr : glf_p3_seg45_lmarr = Array(p_p3_seg45_,p_p3_seg45_vr)
+glf_lightMaps.Add "p3_seg45", glf_p3_seg45_lmarr
+Dim glf_p2_seg45_lmarr : glf_p2_seg45_lmarr = Array(p_p2_seg45_,p_p2_seg45_vr)
+glf_lightMaps.Add "p2_seg45", glf_p2_seg45_lmarr
+Dim glf_p4_seg44_lmarr : glf_p4_seg44_lmarr = Array(p_p4_seg44_,p_p4_seg44_vr)
+glf_lightMaps.Add "p4_seg44", glf_p4_seg44_lmarr
+Dim glf_p3_seg44_lmarr : glf_p3_seg44_lmarr = Array(p_p3_seg44_,p_p3_seg44_vr)
+glf_lightMaps.Add "p3_seg44", glf_p3_seg44_lmarr
+Dim glf_p2_seg44_lmarr : glf_p2_seg44_lmarr = Array(p_p2_seg44_,p_p2_seg44_vr)
+glf_lightMaps.Add "p2_seg44", glf_p2_seg44_lmarr
+Dim glf_p4_seg43_lmarr : glf_p4_seg43_lmarr = Array(p_p4_seg43_,p_p4_seg43_vr)
+glf_lightMaps.Add "p4_seg43", glf_p4_seg43_lmarr
+Dim glf_p3_seg43_lmarr : glf_p3_seg43_lmarr = Array(p_p3_seg43_,p_p3_seg43_vr)
+glf_lightMaps.Add "p3_seg43", glf_p3_seg43_lmarr
+Dim glf_p2_seg43_lmarr : glf_p2_seg43_lmarr = Array(p_p2_seg43_,p_p2_seg43_vr)
+glf_lightMaps.Add "p2_seg43", glf_p2_seg43_lmarr
+Dim glf_p4_seg42_lmarr : glf_p4_seg42_lmarr = Array(p_p4_seg42_,p_p4_seg42_vr)
+glf_lightMaps.Add "p4_seg42", glf_p4_seg42_lmarr
+Dim glf_p3_seg42_lmarr : glf_p3_seg42_lmarr = Array(p_p3_seg42_,p_p3_seg42_vr)
+glf_lightMaps.Add "p3_seg42", glf_p3_seg42_lmarr
+Dim glf_p2_seg42_lmarr : glf_p2_seg42_lmarr = Array(p_p2_seg42_,p_p2_seg42_vr)
+glf_lightMaps.Add "p2_seg42", glf_p2_seg42_lmarr
+Dim glf_p4_seg41_lmarr : glf_p4_seg41_lmarr = Array(p_p4_seg41_,p_p4_seg41_vr)
+glf_lightMaps.Add "p4_seg41", glf_p4_seg41_lmarr
+Dim glf_p3_seg41_lmarr : glf_p3_seg41_lmarr = Array(p_p3_seg41_,p_p3_seg41_vr)
+glf_lightMaps.Add "p3_seg41", glf_p3_seg41_lmarr
+Dim glf_p2_seg41_lmarr : glf_p2_seg41_lmarr = Array(p_p2_seg41_,p_p2_seg41_vr)
+glf_lightMaps.Add "p2_seg41", glf_p2_seg41_lmarr
+Dim glf_p4_seg40_lmarr : glf_p4_seg40_lmarr = Array(p_p4_seg40_,p_p4_seg40_vr)
+glf_lightMaps.Add "p4_seg40", glf_p4_seg40_lmarr
+Dim glf_p3_seg40_lmarr : glf_p3_seg40_lmarr = Array(p_p3_seg40_,p_p3_seg40_vr)
+glf_lightMaps.Add "p3_seg40", glf_p3_seg40_lmarr
+Dim glf_p2_seg40_lmarr : glf_p2_seg40_lmarr = Array(p_p2_seg40_,p_p2_seg40_vr)
+glf_lightMaps.Add "p2_seg40", glf_p2_seg40_lmarr
+Dim glf_p4_seg39_lmarr : glf_p4_seg39_lmarr = Array(p_p4_seg39_,p_p4_seg39_vr)
+glf_lightMaps.Add "p4_seg39", glf_p4_seg39_lmarr
+Dim glf_p3_seg39_lmarr : glf_p3_seg39_lmarr = Array(p_p3_seg39_,p_p3_seg39_vr)
+glf_lightMaps.Add "p3_seg39", glf_p3_seg39_lmarr
+Dim glf_p2_seg39_lmarr : glf_p2_seg39_lmarr = Array(p_p2_seg39_,p_p2_seg39_vr)
+glf_lightMaps.Add "p2_seg39", glf_p2_seg39_lmarr
+Dim glf_p4_seg38_lmarr : glf_p4_seg38_lmarr = Array(p_p4_seg38_,p_p4_seg38_vr)
+glf_lightMaps.Add "p4_seg38", glf_p4_seg38_lmarr
+Dim glf_p3_seg38_lmarr : glf_p3_seg38_lmarr = Array(p_p3_seg38_,p_p3_seg38_vr)
+glf_lightMaps.Add "p3_seg38", glf_p3_seg38_lmarr
+Dim glf_p2_seg38_lmarr : glf_p2_seg38_lmarr = Array(p_p2_seg38_,p_p2_seg38_vr)
+glf_lightMaps.Add "p2_seg38", glf_p2_seg38_lmarr
+Dim glf_p4_seg37_lmarr : glf_p4_seg37_lmarr = Array(p_p4_seg37_,p_p4_seg37_vr)
+glf_lightMaps.Add "p4_seg37", glf_p4_seg37_lmarr
+Dim glf_p3_seg37_lmarr : glf_p3_seg37_lmarr = Array(p_p3_seg37_,p_p3_seg37_vr)
+glf_lightMaps.Add "p3_seg37", glf_p3_seg37_lmarr
+Dim glf_p2_seg37_lmarr : glf_p2_seg37_lmarr = Array(p_p2_seg37_,p_p2_seg37_vr)
+glf_lightMaps.Add "p2_seg37", glf_p2_seg37_lmarr
+Dim glf_p4_seg36_lmarr : glf_p4_seg36_lmarr = Array(p_p4_seg36_,p_p4_seg36_vr)
+glf_lightMaps.Add "p4_seg36", glf_p4_seg36_lmarr
+Dim glf_p3_seg36_lmarr : glf_p3_seg36_lmarr = Array(p_p3_seg36_,p_p3_seg36_vr)
+glf_lightMaps.Add "p3_seg36", glf_p3_seg36_lmarr
+Dim glf_p2_seg36_lmarr : glf_p2_seg36_lmarr = Array(p_p2_seg36_,p_p2_seg36_vr)
+glf_lightMaps.Add "p2_seg36", glf_p2_seg36_lmarr
+Dim glf_p4_seg35_lmarr : glf_p4_seg35_lmarr = Array(p_p4_seg35_,p_p4_seg35_vr)
+glf_lightMaps.Add "p4_seg35", glf_p4_seg35_lmarr
+Dim glf_p3_seg35_lmarr : glf_p3_seg35_lmarr = Array(p_p3_seg35_,p_p3_seg35_vr)
+glf_lightMaps.Add "p3_seg35", glf_p3_seg35_lmarr
+Dim glf_p2_seg35_lmarr : glf_p2_seg35_lmarr = Array(p_p2_seg35_,p_p2_seg35_vr)
+glf_lightMaps.Add "p2_seg35", glf_p2_seg35_lmarr
+Dim glf_p4_seg34_lmarr : glf_p4_seg34_lmarr = Array(p_p4_seg34_,p_p4_seg34_vr)
+glf_lightMaps.Add "p4_seg34", glf_p4_seg34_lmarr
+Dim glf_p3_seg34_lmarr : glf_p3_seg34_lmarr = Array(p_p3_seg34_,p_p3_seg34_vr)
+glf_lightMaps.Add "p3_seg34", glf_p3_seg34_lmarr
+Dim glf_p2_seg34_lmarr : glf_p2_seg34_lmarr = Array(p_p2_seg34_,p_p2_seg34_vr)
+glf_lightMaps.Add "p2_seg34", glf_p2_seg34_lmarr
+Dim glf_p4_seg33_lmarr : glf_p4_seg33_lmarr = Array(p_p4_seg33_,p_p4_seg33_vr)
+glf_lightMaps.Add "p4_seg33", glf_p4_seg33_lmarr
+Dim glf_p3_seg33_lmarr : glf_p3_seg33_lmarr = Array(p_p3_seg33_,p_p3_seg33_vr)
+glf_lightMaps.Add "p3_seg33", glf_p3_seg33_lmarr
+Dim glf_p2_seg33_lmarr : glf_p2_seg33_lmarr = Array(p_p2_seg33_,p_p2_seg33_vr)
+glf_lightMaps.Add "p2_seg33", glf_p2_seg33_lmarr
+Dim glf_p4_seg32_lmarr : glf_p4_seg32_lmarr = Array(p_p4_seg32_,p_p4_seg32_vr)
+glf_lightMaps.Add "p4_seg32", glf_p4_seg32_lmarr
+Dim glf_p3_seg32_lmarr : glf_p3_seg32_lmarr = Array(p_p3_seg32_,p_p3_seg32_vr)
+glf_lightMaps.Add "p3_seg32", glf_p3_seg32_lmarr
+Dim glf_p2_seg32_lmarr : glf_p2_seg32_lmarr = Array(p_p2_seg32_,p_p2_seg32_vr)
+glf_lightMaps.Add "p2_seg32", glf_p2_seg32_lmarr
+Dim glf_p4_seg31_lmarr : glf_p4_seg31_lmarr = Array(p_p4_seg31_,p_p4_seg31_vr)
+glf_lightMaps.Add "p4_seg31", glf_p4_seg31_lmarr
+Dim glf_p3_seg31_lmarr : glf_p3_seg31_lmarr = Array(p_p3_seg31_,p_p3_seg31_vr)
+glf_lightMaps.Add "p3_seg31", glf_p3_seg31_lmarr
+Dim glf_p2_seg31_lmarr : glf_p2_seg31_lmarr = Array(p_p2_seg31_,p_p2_seg31_vr)
+glf_lightMaps.Add "p2_seg31", glf_p2_seg31_lmarr
+Dim glf_p4_seg30_lmarr : glf_p4_seg30_lmarr = Array(p_p4_seg30_,p_p4_seg30_vr)
+glf_lightMaps.Add "p4_seg30", glf_p4_seg30_lmarr
+Dim glf_p3_seg30_lmarr : glf_p3_seg30_lmarr = Array(p_p3_seg30_,p_p3_seg30_vr)
+glf_lightMaps.Add "p3_seg30", glf_p3_seg30_lmarr
+Dim glf_p2_seg30_lmarr : glf_p2_seg30_lmarr = Array(p_p2_seg30_,p_p2_seg30_vr)
+glf_lightMaps.Add "p2_seg30", glf_p2_seg30_lmarr
+Dim glf_p4_seg29_lmarr : glf_p4_seg29_lmarr = Array(p_p4_seg29_,p_p4_seg29_vr)
+glf_lightMaps.Add "p4_seg29", glf_p4_seg29_lmarr
+Dim glf_p3_seg29_lmarr : glf_p3_seg29_lmarr = Array(p_p3_seg29_,p_p3_seg29_vr)
+glf_lightMaps.Add "p3_seg29", glf_p3_seg29_lmarr
+Dim glf_p2_seg29_lmarr : glf_p2_seg29_lmarr = Array(p_p2_seg29_,p_p2_seg29_vr)
+glf_lightMaps.Add "p2_seg29", glf_p2_seg29_lmarr
+Dim glf_p4_seg28_lmarr : glf_p4_seg28_lmarr = Array(p_p4_seg28_,p_p4_seg28_vr)
+glf_lightMaps.Add "p4_seg28", glf_p4_seg28_lmarr
+Dim glf_p3_seg28_lmarr : glf_p3_seg28_lmarr = Array(p_p3_seg28_,p_p3_seg28_vr)
+glf_lightMaps.Add "p3_seg28", glf_p3_seg28_lmarr
+Dim glf_p2_seg28_lmarr : glf_p2_seg28_lmarr = Array(p_p2_seg28_,p_p2_seg28_vr)
+glf_lightMaps.Add "p2_seg28", glf_p2_seg28_lmarr
+Dim glf_p4_seg27_lmarr : glf_p4_seg27_lmarr = Array(p_p4_seg27_,p_p4_seg27_vr)
+glf_lightMaps.Add "p4_seg27", glf_p4_seg27_lmarr
+Dim glf_p3_seg27_lmarr : glf_p3_seg27_lmarr = Array(p_p3_seg27_,p_p3_seg27_vr)
+glf_lightMaps.Add "p3_seg27", glf_p3_seg27_lmarr
+Dim glf_p2_seg27_lmarr : glf_p2_seg27_lmarr = Array(p_p2_seg27_,p_p2_seg27_vr)
+glf_lightMaps.Add "p2_seg27", glf_p2_seg27_lmarr
+Dim glf_p4_seg26_lmarr : glf_p4_seg26_lmarr = Array(p_p4_seg26_,p_p4_seg26_vr)
+glf_lightMaps.Add "p4_seg26", glf_p4_seg26_lmarr
+Dim glf_p3_seg26_lmarr : glf_p3_seg26_lmarr = Array(p_p3_seg26_,p_p3_seg26_vr)
+glf_lightMaps.Add "p3_seg26", glf_p3_seg26_lmarr
+Dim glf_p2_seg26_lmarr : glf_p2_seg26_lmarr = Array(p_p2_seg26_,p_p2_seg26_vr)
+glf_lightMaps.Add "p2_seg26", glf_p2_seg26_lmarr
+Dim glf_p4_seg25_lmarr : glf_p4_seg25_lmarr = Array(p_p4_seg25_,p_p4_seg25_vr)
+glf_lightMaps.Add "p4_seg25", glf_p4_seg25_lmarr
+Dim glf_p3_seg25_lmarr : glf_p3_seg25_lmarr = Array(p_p3_seg25_,p_p3_seg25_vr)
+glf_lightMaps.Add "p3_seg25", glf_p3_seg25_lmarr
+Dim glf_p2_seg25_lmarr : glf_p2_seg25_lmarr = Array(p_p2_seg25_,p_p2_seg25_vr)
+glf_lightMaps.Add "p2_seg25", glf_p2_seg25_lmarr
+Dim glf_p4_seg24_lmarr : glf_p4_seg24_lmarr = Array(p_p4_seg24_,p_p4_seg24_vr)
+glf_lightMaps.Add "p4_seg24", glf_p4_seg24_lmarr
+Dim glf_p3_seg24_lmarr : glf_p3_seg24_lmarr = Array(p_p3_seg24_,p_p3_seg24_vr)
+glf_lightMaps.Add "p3_seg24", glf_p3_seg24_lmarr
+Dim glf_p2_seg24_lmarr : glf_p2_seg24_lmarr = Array(p_p2_seg24_,p_p2_seg24_vr)
+glf_lightMaps.Add "p2_seg24", glf_p2_seg24_lmarr
+Dim glf_p4_seg23_lmarr : glf_p4_seg23_lmarr = Array(p_p4_seg23_,p_p4_seg23_vr)
+glf_lightMaps.Add "p4_seg23", glf_p4_seg23_lmarr
+Dim glf_p3_seg23_lmarr : glf_p3_seg23_lmarr = Array(p_p3_seg23_,p_p3_seg23_vr)
+glf_lightMaps.Add "p3_seg23", glf_p3_seg23_lmarr
+Dim glf_p2_seg23_lmarr : glf_p2_seg23_lmarr = Array(p_p2_seg23_,p_p2_seg23_vr)
+glf_lightMaps.Add "p2_seg23", glf_p2_seg23_lmarr
+Dim glf_p4_seg22_lmarr : glf_p4_seg22_lmarr = Array(p_p4_seg22_,p_p4_seg22_vr)
+glf_lightMaps.Add "p4_seg22", glf_p4_seg22_lmarr
+Dim glf_p3_seg22_lmarr : glf_p3_seg22_lmarr = Array(p_p3_seg22_,p_p3_seg22_vr)
+glf_lightMaps.Add "p3_seg22", glf_p3_seg22_lmarr
+Dim glf_p2_seg22_lmarr : glf_p2_seg22_lmarr = Array(p_p2_seg22_,p_p2_seg22_vr)
+glf_lightMaps.Add "p2_seg22", glf_p2_seg22_lmarr
+Dim glf_p4_seg21_lmarr : glf_p4_seg21_lmarr = Array(p_p4_seg21_,p_p4_seg21_vr)
+glf_lightMaps.Add "p4_seg21", glf_p4_seg21_lmarr
+Dim glf_p3_seg21_lmarr : glf_p3_seg21_lmarr = Array(p_p3_seg21_,p_p3_seg21_vr)
+glf_lightMaps.Add "p3_seg21", glf_p3_seg21_lmarr
+Dim glf_p2_seg21_lmarr : glf_p2_seg21_lmarr = Array(p_p2_seg21_,p_p2_seg21_vr)
+glf_lightMaps.Add "p2_seg21", glf_p2_seg21_lmarr
+Dim glf_p4_seg20_lmarr : glf_p4_seg20_lmarr = Array(p_p4_seg20_,p_p4_seg20_vr)
+glf_lightMaps.Add "p4_seg20", glf_p4_seg20_lmarr
+Dim glf_p3_seg20_lmarr : glf_p3_seg20_lmarr = Array(p_p3_seg20_,p_p3_seg20_vr)
+glf_lightMaps.Add "p3_seg20", glf_p3_seg20_lmarr
+Dim glf_p2_seg20_lmarr : glf_p2_seg20_lmarr = Array(p_p2_seg20_,p_p2_seg20_vr)
+glf_lightMaps.Add "p2_seg20", glf_p2_seg20_lmarr
+Dim glf_p4_seg19_lmarr : glf_p4_seg19_lmarr = Array(p_p4_seg19_,p_p4_seg19_vr)
+glf_lightMaps.Add "p4_seg19", glf_p4_seg19_lmarr
+Dim glf_p3_seg19_lmarr : glf_p3_seg19_lmarr = Array(p_p3_seg19_,p_p3_seg19_vr)
+glf_lightMaps.Add "p3_seg19", glf_p3_seg19_lmarr
+Dim glf_p2_seg19_lmarr : glf_p2_seg19_lmarr = Array(p_p2_seg19_,p_p2_seg19_vr)
+glf_lightMaps.Add "p2_seg19", glf_p2_seg19_lmarr
+Dim glf_p4_seg18_lmarr : glf_p4_seg18_lmarr = Array(p_p4_seg18_,p_p4_seg18_vr)
+glf_lightMaps.Add "p4_seg18", glf_p4_seg18_lmarr
+Dim glf_p3_seg18_lmarr : glf_p3_seg18_lmarr = Array(p_p3_seg18_,p_p3_seg18_vr)
+glf_lightMaps.Add "p3_seg18", glf_p3_seg18_lmarr
+Dim glf_p2_seg18_lmarr : glf_p2_seg18_lmarr = Array(p_p2_seg18_,p_p2_seg18_vr)
+glf_lightMaps.Add "p2_seg18", glf_p2_seg18_lmarr
+Dim glf_p4_seg17_lmarr : glf_p4_seg17_lmarr = Array(p_p4_seg17_,p_p4_seg17_vr)
+glf_lightMaps.Add "p4_seg17", glf_p4_seg17_lmarr
+Dim glf_p3_seg17_lmarr : glf_p3_seg17_lmarr = Array(p_p3_seg17_,p_p3_seg17_vr)
+glf_lightMaps.Add "p3_seg17", glf_p3_seg17_lmarr
+Dim glf_p2_seg17_lmarr : glf_p2_seg17_lmarr = Array(p_p2_seg17_,p_p2_seg17_vr)
+glf_lightMaps.Add "p2_seg17", glf_p2_seg17_lmarr
+Dim glf_p4_seg16_lmarr : glf_p4_seg16_lmarr = Array(p_p4_seg16_,p_p4_seg16_vr)
+glf_lightMaps.Add "p4_seg16", glf_p4_seg16_lmarr
+Dim glf_p3_seg16_lmarr : glf_p3_seg16_lmarr = Array(p_p3_seg16_,p_p3_seg16_vr)
+glf_lightMaps.Add "p3_seg16", glf_p3_seg16_lmarr
+Dim glf_p2_seg16_lmarr : glf_p2_seg16_lmarr = Array(p_p2_seg16_,p_p2_seg16_vr)
+glf_lightMaps.Add "p2_seg16", glf_p2_seg16_lmarr
+Dim glf_p4_seg15_lmarr : glf_p4_seg15_lmarr = Array(p_p4_seg15_,p_p4_seg15_vr)
+glf_lightMaps.Add "p4_seg15", glf_p4_seg15_lmarr
+Dim glf_p3_seg15_lmarr : glf_p3_seg15_lmarr = Array(p_p3_seg15_,p_p3_seg15_vr)
+glf_lightMaps.Add "p3_seg15", glf_p3_seg15_lmarr
+Dim glf_p2_seg15_lmarr : glf_p2_seg15_lmarr = Array(p_p2_seg15_,p_p2_seg15_vr)
+glf_lightMaps.Add "p2_seg15", glf_p2_seg15_lmarr
+Dim glf_p4_seg14_lmarr : glf_p4_seg14_lmarr = Array(p_p4_seg14_,p_p4_seg14_vr)
+glf_lightMaps.Add "p4_seg14", glf_p4_seg14_lmarr
+Dim glf_p3_seg14_lmarr : glf_p3_seg14_lmarr = Array(p_p3_seg14_,p_p3_seg14_vr)
+glf_lightMaps.Add "p3_seg14", glf_p3_seg14_lmarr
+Dim glf_p2_seg14_lmarr : glf_p2_seg14_lmarr = Array(p_p2_seg14_,p_p2_seg14_vr)
+glf_lightMaps.Add "p2_seg14", glf_p2_seg14_lmarr
+Dim glf_p4_seg13_lmarr : glf_p4_seg13_lmarr = Array(p_p4_seg13_,p_p4_seg13_vr)
+glf_lightMaps.Add "p4_seg13", glf_p4_seg13_lmarr
+Dim glf_p3_seg13_lmarr : glf_p3_seg13_lmarr = Array(p_p3_seg13_,p_p3_seg13_vr)
+glf_lightMaps.Add "p3_seg13", glf_p3_seg13_lmarr
+Dim glf_p2_seg13_lmarr : glf_p2_seg13_lmarr = Array(p_p2_seg13_,p_p2_seg13_vr)
+glf_lightMaps.Add "p2_seg13", glf_p2_seg13_lmarr
+Dim glf_p4_seg12_lmarr : glf_p4_seg12_lmarr = Array(p_p4_seg12_,p_p4_seg12_vr)
+glf_lightMaps.Add "p4_seg12", glf_p4_seg12_lmarr
+Dim glf_p3_seg12_lmarr : glf_p3_seg12_lmarr = Array(p_p3_seg12_,p_p3_seg12_vr)
+glf_lightMaps.Add "p3_seg12", glf_p3_seg12_lmarr
+Dim glf_p2_seg12_lmarr : glf_p2_seg12_lmarr = Array(p_p2_seg12_,p_p2_seg12_vr)
+glf_lightMaps.Add "p2_seg12", glf_p2_seg12_lmarr
+Dim glf_p4_seg11_lmarr : glf_p4_seg11_lmarr = Array(p_p4_seg11_,p_p4_seg11_vr)
+glf_lightMaps.Add "p4_seg11", glf_p4_seg11_lmarr
+Dim glf_p3_seg11_lmarr : glf_p3_seg11_lmarr = Array(p_p3_seg11_,p_p3_seg11_vr)
+glf_lightMaps.Add "p3_seg11", glf_p3_seg11_lmarr
+Dim glf_p2_seg11_lmarr : glf_p2_seg11_lmarr = Array(p_p2_seg11_,p_p2_seg11_vr)
+glf_lightMaps.Add "p2_seg11", glf_p2_seg11_lmarr
+Dim glf_p4_seg10_lmarr : glf_p4_seg10_lmarr = Array(p_p4_seg10_,p_p4_seg10_vr)
+glf_lightMaps.Add "p4_seg10", glf_p4_seg10_lmarr
+Dim glf_p3_seg10_lmarr : glf_p3_seg10_lmarr = Array(p_p3_seg10_,p_p3_seg10_vr)
+glf_lightMaps.Add "p3_seg10", glf_p3_seg10_lmarr
+Dim glf_p2_seg10_lmarr : glf_p2_seg10_lmarr = Array(p_p2_seg10_,p_p2_seg10_vr)
+glf_lightMaps.Add "p2_seg10", glf_p2_seg10_lmarr
+Dim glf_p4_seg9_lmarr : glf_p4_seg9_lmarr = Array(p_p4_seg9_,p_p4_seg9_vr)
+glf_lightMaps.Add "p4_seg9", glf_p4_seg9_lmarr
+Dim glf_p3_seg9_lmarr : glf_p3_seg9_lmarr = Array(p_p3_seg9_,p_p3_seg9_vr)
+glf_lightMaps.Add "p3_seg9", glf_p3_seg9_lmarr
+Dim glf_p2_seg9_lmarr : glf_p2_seg9_lmarr = Array(p_p2_seg9_,p_p2_seg9_vr)
+glf_lightMaps.Add "p2_seg9", glf_p2_seg9_lmarr
+Dim glf_p4_seg8_lmarr : glf_p4_seg8_lmarr = Array(p_p4_seg8_,p_p4_seg8_vr)
+glf_lightMaps.Add "p4_seg8", glf_p4_seg8_lmarr
+Dim glf_p3_seg8_lmarr : glf_p3_seg8_lmarr = Array(p_p3_seg8_,p_p3_seg8_vr)
+glf_lightMaps.Add "p3_seg8", glf_p3_seg8_lmarr
+Dim glf_p2_seg8_lmarr : glf_p2_seg8_lmarr = Array(p_p2_seg8_,p_p2_seg8_vr)
+glf_lightMaps.Add "p2_seg8", glf_p2_seg8_lmarr
+Dim glf_p4_seg7_lmarr : glf_p4_seg7_lmarr = Array(p_p4_seg7_,p_p4_seg7_vr)
+glf_lightMaps.Add "p4_seg7", glf_p4_seg7_lmarr
+Dim glf_p3_seg7_lmarr : glf_p3_seg7_lmarr = Array(p_p3_seg7_,p_p3_seg7_vr)
+glf_lightMaps.Add "p3_seg7", glf_p3_seg7_lmarr
+Dim glf_p2_seg7_lmarr : glf_p2_seg7_lmarr = Array(p_p2_seg7_,p_p2_seg7_vr)
+glf_lightMaps.Add "p2_seg7", glf_p2_seg7_lmarr
+Dim glf_p4_seg6_lmarr : glf_p4_seg6_lmarr = Array(p_p4_seg6_,p_p4_seg6_vr)
+glf_lightMaps.Add "p4_seg6", glf_p4_seg6_lmarr
+Dim glf_p3_seg6_lmarr : glf_p3_seg6_lmarr = Array(p_p3_seg6_,p_p3_seg6_vr)
+glf_lightMaps.Add "p3_seg6", glf_p3_seg6_lmarr
+Dim glf_p2_seg6_lmarr : glf_p2_seg6_lmarr = Array(p_p2_seg6_,p_p2_seg6_vr)
+glf_lightMaps.Add "p2_seg6", glf_p2_seg6_lmarr
+Dim glf_p4_seg5_lmarr : glf_p4_seg5_lmarr = Array(p_p4_seg5_,p_p4_seg5_vr)
+glf_lightMaps.Add "p4_seg5", glf_p4_seg5_lmarr
+Dim glf_p3_seg5_lmarr : glf_p3_seg5_lmarr = Array(p_p3_seg5_,p_p3_seg5_vr)
+glf_lightMaps.Add "p3_seg5", glf_p3_seg5_lmarr
+Dim glf_p2_seg5_lmarr : glf_p2_seg5_lmarr = Array(p_p2_seg5_,p_p2_seg5_vr)
+glf_lightMaps.Add "p2_seg5", glf_p2_seg5_lmarr
+Dim glf_p4_seg4_lmarr : glf_p4_seg4_lmarr = Array(p_p4_seg4_,p_p4_seg4_vr)
+glf_lightMaps.Add "p4_seg4", glf_p4_seg4_lmarr
+Dim glf_p3_seg4_lmarr : glf_p3_seg4_lmarr = Array(p_p3_seg4_,p_p3_seg4_vr)
+glf_lightMaps.Add "p3_seg4", glf_p3_seg4_lmarr
+Dim glf_p2_seg4_lmarr : glf_p2_seg4_lmarr = Array(p_p2_seg4_,p_p2_seg4_vr)
+glf_lightMaps.Add "p2_seg4", glf_p2_seg4_lmarr
+Dim glf_p4_seg3_lmarr : glf_p4_seg3_lmarr = Array(p_p4_seg3_,p_p4_seg3_vr)
+glf_lightMaps.Add "p4_seg3", glf_p4_seg3_lmarr
+Dim glf_p3_seg3_lmarr : glf_p3_seg3_lmarr = Array(p_p3_seg3_,p_p3_seg3_vr)
+glf_lightMaps.Add "p3_seg3", glf_p3_seg3_lmarr
+Dim glf_p2_seg3_lmarr : glf_p2_seg3_lmarr = Array(p_p2_seg3_,p_p2_seg3_vr)
+glf_lightMaps.Add "p2_seg3", glf_p2_seg3_lmarr
+Dim glf_p4_seg2_lmarr : glf_p4_seg2_lmarr = Array(p_p4_seg2_,p_p4_seg2_vr)
+glf_lightMaps.Add "p4_seg2", glf_p4_seg2_lmarr
+Dim glf_p3_seg2_lmarr : glf_p3_seg2_lmarr = Array(p_p3_seg2_,p_p3_seg2_vr)
+glf_lightMaps.Add "p3_seg2", glf_p3_seg2_lmarr
+Dim glf_p2_seg2_lmarr : glf_p2_seg2_lmarr = Array(p_p2_seg2_,p_p2_seg2_vr)
+glf_lightMaps.Add "p2_seg2", glf_p2_seg2_lmarr
+Dim glf_p4_seg1_lmarr : glf_p4_seg1_lmarr = Array(p_p4_seg1_,p_p4_seg1_vr)
+glf_lightMaps.Add "p4_seg1", glf_p4_seg1_lmarr
+Dim glf_p3_seg1_lmarr : glf_p3_seg1_lmarr = Array(p_p3_seg1_,p_p3_seg1_vr)
+glf_lightMaps.Add "p3_seg1", glf_p3_seg1_lmarr
+Dim glf_p2_seg1_lmarr : glf_p2_seg1_lmarr = Array(p_p2_seg1_,p_p2_seg1_vr)
+glf_lightMaps.Add "p2_seg1", glf_p2_seg1_lmarr
+Dim glf_ball_seg29_lmarr : glf_ball_seg29_lmarr = Array(p_ball_seg29_vr)
+glf_lightMaps.Add "ball_seg29", glf_ball_seg29_lmarr
+Dim glf_ball_seg28_lmarr : glf_ball_seg28_lmarr = Array(p_ball_seg28_vr)
+glf_lightMaps.Add "ball_seg28", glf_ball_seg28_lmarr
+Dim glf_ball_seg27_lmarr : glf_ball_seg27_lmarr = Array(p_ball_seg27_vr)
+glf_lightMaps.Add "ball_seg27", glf_ball_seg27_lmarr
+Dim glf_ball_seg26_lmarr : glf_ball_seg26_lmarr = Array(p_ball_seg26_vr)
+glf_lightMaps.Add "ball_seg26", glf_ball_seg26_lmarr
+Dim glf_ball_seg25_lmarr : glf_ball_seg25_lmarr = Array(p_ball_seg25_vr)
+glf_lightMaps.Add "ball_seg25", glf_ball_seg25_lmarr
+Dim glf_ball_seg24_lmarr : glf_ball_seg24_lmarr = Array(p_ball_seg24_vr)
+glf_lightMaps.Add "ball_seg24", glf_ball_seg24_lmarr
+Dim glf_ball_seg23_lmarr : glf_ball_seg23_lmarr = Array(p_ball_seg23_vr)
+glf_lightMaps.Add "ball_seg23", glf_ball_seg23_lmarr
+Dim glf_ball_seg22_lmarr : glf_ball_seg22_lmarr = Array(p_ball_seg22_vr)
+glf_lightMaps.Add "ball_seg22", glf_ball_seg22_lmarr
+Dim glf_ball_seg21_lmarr : glf_ball_seg21_lmarr = Array(p_ball_seg21_vr)
+glf_lightMaps.Add "ball_seg21", glf_ball_seg21_lmarr
+Dim glf_ball_seg20_lmarr : glf_ball_seg20_lmarr = Array(p_ball_seg20_vr)
+glf_lightMaps.Add "ball_seg20", glf_ball_seg20_lmarr
+Dim glf_ball_seg19_lmarr : glf_ball_seg19_lmarr = Array(p_ball_seg19_vr)
+glf_lightMaps.Add "ball_seg19", glf_ball_seg19_lmarr
+Dim glf_ball_seg18_lmarr : glf_ball_seg18_lmarr = Array(p_ball_seg18_vr)
+glf_lightMaps.Add "ball_seg18", glf_ball_seg18_lmarr
+Dim glf_ball_seg17_lmarr : glf_ball_seg17_lmarr = Array(p_ball_seg17_vr)
+glf_lightMaps.Add "ball_seg17", glf_ball_seg17_lmarr
+Dim glf_ball_seg16_lmarr : glf_ball_seg16_lmarr = Array(p_ball_seg16_vr)
+glf_lightMaps.Add "ball_seg16", glf_ball_seg16_lmarr
+Dim glf_ball_seg15_lmarr : glf_ball_seg15_lmarr = Array(p_ball_seg15_vr)
+glf_lightMaps.Add "ball_seg15", glf_ball_seg15_lmarr
+Dim glf_ball_seg14_lmarr : glf_ball_seg14_lmarr = Array(p_ball_seg14_vr)
+glf_lightMaps.Add "ball_seg14", glf_ball_seg14_lmarr
+Dim glf_ball_seg13_lmarr : glf_ball_seg13_lmarr = Array(p_ball_seg13_vr)
+glf_lightMaps.Add "ball_seg13", glf_ball_seg13_lmarr
+Dim glf_ball_seg12_lmarr : glf_ball_seg12_lmarr = Array(p_ball_seg12_vr)
+glf_lightMaps.Add "ball_seg12", glf_ball_seg12_lmarr
+Dim glf_ball_seg11_lmarr : glf_ball_seg11_lmarr = Array(p_ball_seg11_vr)
+glf_lightMaps.Add "ball_seg11", glf_ball_seg11_lmarr
+Dim glf_ball_seg10_lmarr : glf_ball_seg10_lmarr = Array(p_ball_seg10_vr)
+glf_lightMaps.Add "ball_seg10", glf_ball_seg10_lmarr
+Dim glf_ball_seg9_lmarr : glf_ball_seg9_lmarr = Array(p_ball_seg9_vr)
+glf_lightMaps.Add "ball_seg9", glf_ball_seg9_lmarr
+Dim glf_ball_seg8_lmarr : glf_ball_seg8_lmarr = Array(p_ball_seg8_vr)
+glf_lightMaps.Add "ball_seg8", glf_ball_seg8_lmarr
+Dim glf_ball_seg7_lmarr : glf_ball_seg7_lmarr = Array(p_ball_seg7_vr)
+glf_lightMaps.Add "ball_seg7", glf_ball_seg7_lmarr
+Dim glf_ball_seg6_lmarr : glf_ball_seg6_lmarr = Array(p_ball_seg6_vr)
+glf_lightMaps.Add "ball_seg6", glf_ball_seg6_lmarr
+Dim glf_ball_seg5_lmarr : glf_ball_seg5_lmarr = Array(p_ball_seg5_vr)
+glf_lightMaps.Add "ball_seg5", glf_ball_seg5_lmarr
+Dim glf_ball_seg4_lmarr : glf_ball_seg4_lmarr = Array(p_ball_seg4_vr)
+glf_lightMaps.Add "ball_seg4", glf_ball_seg4_lmarr
+Dim glf_ball_seg3_lmarr : glf_ball_seg3_lmarr = Array(p_ball_seg3_vr)
+glf_lightMaps.Add "ball_seg3", glf_ball_seg3_lmarr
+Dim glf_ball_seg2_lmarr : glf_ball_seg2_lmarr = Array(p_ball_seg2_vr)
+glf_lightMaps.Add "ball_seg2", glf_ball_seg2_lmarr
+Dim glf_ball_seg1_lmarr : glf_ball_seg1_lmarr = Array(p_ball_seg1_vr)
+glf_lightMaps.Add "ball_seg1", glf_ball_seg1_lmarr
+Dim glf_p1_seg105_lmarr : glf_p1_seg105_lmarr = Array(p_p1_seg105_,p_p1_seg105_vr)
+glf_lightMaps.Add "p1_seg105", glf_p1_seg105_lmarr
+Dim glf_p1_seg104_lmarr : glf_p1_seg104_lmarr = Array(p_p1_seg104_,p_p1_seg104_vr)
+glf_lightMaps.Add "p1_seg104", glf_p1_seg104_lmarr
+Dim glf_p1_seg103_lmarr : glf_p1_seg103_lmarr = Array(p_p1_seg103_,p_p1_seg103_vr)
+glf_lightMaps.Add "p1_seg103", glf_p1_seg103_lmarr
+Dim glf_p1_seg102_lmarr : glf_p1_seg102_lmarr = Array(p_p1_seg102_,p_p1_seg102_vr)
+glf_lightMaps.Add "p1_seg102", glf_p1_seg102_lmarr
+Dim glf_p1_seg101_lmarr : glf_p1_seg101_lmarr = Array(p_p1_seg101_,p_p1_seg101_vr)
+glf_lightMaps.Add "p1_seg101", glf_p1_seg101_lmarr
+Dim glf_p1_seg100_lmarr : glf_p1_seg100_lmarr = Array(p_p1_seg100_,p_p1_seg100_vr)
+glf_lightMaps.Add "p1_seg100", glf_p1_seg100_lmarr
+Dim glf_p1_seg99_lmarr : glf_p1_seg99_lmarr = Array(p_p1_seg99_,p_p1_seg99_vr)
+glf_lightMaps.Add "p1_seg99", glf_p1_seg99_lmarr
+Dim glf_p1_seg98_lmarr : glf_p1_seg98_lmarr = Array(p_p1_seg98_,p_p1_seg98_vr)
+glf_lightMaps.Add "p1_seg98", glf_p1_seg98_lmarr
+Dim glf_p1_seg97_lmarr : glf_p1_seg97_lmarr = Array(p_p1_seg97_,p_p1_seg97_vr)
+glf_lightMaps.Add "p1_seg97", glf_p1_seg97_lmarr
+Dim glf_p1_seg96_lmarr : glf_p1_seg96_lmarr = Array(p_p1_seg96_,p_p1_seg96_vr)
+glf_lightMaps.Add "p1_seg96", glf_p1_seg96_lmarr
+Dim glf_p1_seg95_lmarr : glf_p1_seg95_lmarr = Array(p_p1_seg95_,p_p1_seg95_vr)
+glf_lightMaps.Add "p1_seg95", glf_p1_seg95_lmarr
+Dim glf_p1_seg94_lmarr : glf_p1_seg94_lmarr = Array(p_p1_seg94_,p_p1_seg94_vr)
+glf_lightMaps.Add "p1_seg94", glf_p1_seg94_lmarr
+Dim glf_p1_seg93_lmarr : glf_p1_seg93_lmarr = Array(p_p1_seg93_,p_p1_seg93_vr)
+glf_lightMaps.Add "p1_seg93", glf_p1_seg93_lmarr
+Dim glf_p1_seg92_lmarr : glf_p1_seg92_lmarr = Array(p_p1_seg92_,p_p1_seg92_vr)
+glf_lightMaps.Add "p1_seg92", glf_p1_seg92_lmarr
+Dim glf_p1_seg91_lmarr : glf_p1_seg91_lmarr = Array(p_p1_seg91_,p_p1_seg91_vr)
+glf_lightMaps.Add "p1_seg91", glf_p1_seg91_lmarr
+Dim glf_p1_seg90_lmarr : glf_p1_seg90_lmarr = Array(p_p1_seg90_,p_p1_seg90_vr)
+glf_lightMaps.Add "p1_seg90", glf_p1_seg90_lmarr
+Dim glf_p1_seg89_lmarr : glf_p1_seg89_lmarr = Array(p_p1_seg89_,p_p1_seg89_vr)
+glf_lightMaps.Add "p1_seg89", glf_p1_seg89_lmarr
+Dim glf_p1_seg88_lmarr : glf_p1_seg88_lmarr = Array(p_p1_seg88_,p_p1_seg88_vr)
+glf_lightMaps.Add "p1_seg88", glf_p1_seg88_lmarr
+Dim glf_p1_seg87_lmarr : glf_p1_seg87_lmarr = Array(p_p1_seg87_,p_p1_seg87_vr)
+glf_lightMaps.Add "p1_seg87", glf_p1_seg87_lmarr
+Dim glf_p1_seg86_lmarr : glf_p1_seg86_lmarr = Array(p_p1_seg86_,p_p1_seg86_vr)
+glf_lightMaps.Add "p1_seg86", glf_p1_seg86_lmarr
+Dim glf_p1_seg85_lmarr : glf_p1_seg85_lmarr = Array(p_p1_seg85_,p_p1_seg85_vr)
+glf_lightMaps.Add "p1_seg85", glf_p1_seg85_lmarr
+Dim glf_p1_seg84_lmarr : glf_p1_seg84_lmarr = Array(p_p1_seg84_,p_p1_seg84_vr)
+glf_lightMaps.Add "p1_seg84", glf_p1_seg84_lmarr
+Dim glf_p1_seg83_lmarr : glf_p1_seg83_lmarr = Array(p_p1_seg83_,p_p1_seg83_vr)
+glf_lightMaps.Add "p1_seg83", glf_p1_seg83_lmarr
+Dim glf_p1_seg82_lmarr : glf_p1_seg82_lmarr = Array(p_p1_seg82_,p_p1_seg82_vr)
+glf_lightMaps.Add "p1_seg82", glf_p1_seg82_lmarr
+Dim glf_p1_seg81_lmarr : glf_p1_seg81_lmarr = Array(p_p1_seg81_,p_p1_seg81_vr)
+glf_lightMaps.Add "p1_seg81", glf_p1_seg81_lmarr
+Dim glf_p1_seg80_lmarr : glf_p1_seg80_lmarr = Array(p_p1_seg80_,p_p1_seg80_vr)
+glf_lightMaps.Add "p1_seg80", glf_p1_seg80_lmarr
+Dim glf_p1_seg79_lmarr : glf_p1_seg79_lmarr = Array(p_p1_seg79_,p_p1_seg79_vr)
+glf_lightMaps.Add "p1_seg79", glf_p1_seg79_lmarr
+Dim glf_p1_seg78_lmarr : glf_p1_seg78_lmarr = Array(p_p1_seg78_,p_p1_seg78_vr)
+glf_lightMaps.Add "p1_seg78", glf_p1_seg78_lmarr
+Dim glf_p1_seg77_lmarr : glf_p1_seg77_lmarr = Array(p_p1_seg77_,p_p1_seg77_vr)
+glf_lightMaps.Add "p1_seg77", glf_p1_seg77_lmarr
+Dim glf_p1_seg76_lmarr : glf_p1_seg76_lmarr = Array(p_p1_seg76_,p_p1_seg76_vr)
+glf_lightMaps.Add "p1_seg76", glf_p1_seg76_lmarr
+Dim glf_p1_seg75_lmarr : glf_p1_seg75_lmarr = Array(p_p1_seg75_,p_p1_seg75_vr)
+glf_lightMaps.Add "p1_seg75", glf_p1_seg75_lmarr
+Dim glf_p1_seg74_lmarr : glf_p1_seg74_lmarr = Array(p_p1_seg74_,p_p1_seg74_vr)
+glf_lightMaps.Add "p1_seg74", glf_p1_seg74_lmarr
+Dim glf_p1_seg73_lmarr : glf_p1_seg73_lmarr = Array(p_p1_seg73_,p_p1_seg73_vr)
+glf_lightMaps.Add "p1_seg73", glf_p1_seg73_lmarr
+Dim glf_p1_seg72_lmarr : glf_p1_seg72_lmarr = Array(p_p1_seg72_,p_p1_seg72_vr)
+glf_lightMaps.Add "p1_seg72", glf_p1_seg72_lmarr
+Dim glf_p1_seg71_lmarr : glf_p1_seg71_lmarr = Array(p_p1_seg71_,p_p1_seg71_vr)
+glf_lightMaps.Add "p1_seg71", glf_p1_seg71_lmarr
+Dim glf_p1_seg70_lmarr : glf_p1_seg70_lmarr = Array(p_p1_seg70_,p_p1_seg70_vr)
+glf_lightMaps.Add "p1_seg70", glf_p1_seg70_lmarr
+Dim glf_p1_seg69_lmarr : glf_p1_seg69_lmarr = Array(p_p1_seg69_,p_p1_seg69_vr)
+glf_lightMaps.Add "p1_seg69", glf_p1_seg69_lmarr
+Dim glf_p1_seg68_lmarr : glf_p1_seg68_lmarr = Array(p_p1_seg68_,p_p1_seg68_vr)
+glf_lightMaps.Add "p1_seg68", glf_p1_seg68_lmarr
+Dim glf_p1_seg67_lmarr : glf_p1_seg67_lmarr = Array(p_p1_seg67_,p_p1_seg67_vr)
+glf_lightMaps.Add "p1_seg67", glf_p1_seg67_lmarr
+Dim glf_p1_seg66_lmarr : glf_p1_seg66_lmarr = Array(p_p1_seg66_,p_p1_seg66_vr)
+glf_lightMaps.Add "p1_seg66", glf_p1_seg66_lmarr
+Dim glf_p1_seg65_lmarr : glf_p1_seg65_lmarr = Array(p_p1_seg65_,p_p1_seg65_vr)
+glf_lightMaps.Add "p1_seg65", glf_p1_seg65_lmarr
+Dim glf_p1_seg64_lmarr : glf_p1_seg64_lmarr = Array(p_p1_seg64_,p_p1_seg64_vr)
+glf_lightMaps.Add "p1_seg64", glf_p1_seg64_lmarr
+Dim glf_p1_seg63_lmarr : glf_p1_seg63_lmarr = Array(p_p1_seg63_,p_p1_seg63_vr)
+glf_lightMaps.Add "p1_seg63", glf_p1_seg63_lmarr
+Dim glf_p1_seg62_lmarr : glf_p1_seg62_lmarr = Array(p_p1_seg62_,p_p1_seg62_vr)
+glf_lightMaps.Add "p1_seg62", glf_p1_seg62_lmarr
+Dim glf_p1_seg61_lmarr : glf_p1_seg61_lmarr = Array(p_p1_seg61_,p_p1_seg61_vr)
+glf_lightMaps.Add "p1_seg61", glf_p1_seg61_lmarr
+Dim glf_p1_seg60_lmarr : glf_p1_seg60_lmarr = Array(p_p1_seg60_,p_p1_seg60_vr)
+glf_lightMaps.Add "p1_seg60", glf_p1_seg60_lmarr
+Dim glf_p1_seg59_lmarr : glf_p1_seg59_lmarr = Array(p_p1_seg59_,p_p1_seg59_vr)
+glf_lightMaps.Add "p1_seg59", glf_p1_seg59_lmarr
+Dim glf_p1_seg58_lmarr : glf_p1_seg58_lmarr = Array(p_p1_seg58_,p_p1_seg58_vr)
+glf_lightMaps.Add "p1_seg58", glf_p1_seg58_lmarr
+Dim glf_p1_seg57_lmarr : glf_p1_seg57_lmarr = Array(p_p1_seg57_,p_p1_seg57_vr)
+glf_lightMaps.Add "p1_seg57", glf_p1_seg57_lmarr
+Dim glf_p1_seg56_lmarr : glf_p1_seg56_lmarr = Array(p_p1_seg56_,p_p1_seg56_vr)
+glf_lightMaps.Add "p1_seg56", glf_p1_seg56_lmarr
+Dim glf_p1_seg55_lmarr : glf_p1_seg55_lmarr = Array(p_p1_seg55_,p_p1_seg55_vr)
+glf_lightMaps.Add "p1_seg55", glf_p1_seg55_lmarr
+Dim glf_p1_seg54_lmarr : glf_p1_seg54_lmarr = Array(p_p1_seg54_,p_p1_seg54_vr)
+glf_lightMaps.Add "p1_seg54", glf_p1_seg54_lmarr
+Dim glf_p1_seg53_lmarr : glf_p1_seg53_lmarr = Array(p_p1_seg53_,p_p1_seg53_vr)
+glf_lightMaps.Add "p1_seg53", glf_p1_seg53_lmarr
+Dim glf_p1_seg52_lmarr : glf_p1_seg52_lmarr = Array(p_p1_seg52_,p_p1_seg52_vr)
+glf_lightMaps.Add "p1_seg52", glf_p1_seg52_lmarr
+Dim glf_p1_seg51_lmarr : glf_p1_seg51_lmarr = Array(p_p1_seg51_,p_p1_seg51_vr)
+glf_lightMaps.Add "p1_seg51", glf_p1_seg51_lmarr
+Dim glf_p1_seg50_lmarr : glf_p1_seg50_lmarr = Array(p_p1_seg50_,p_p1_seg50_vr)
+glf_lightMaps.Add "p1_seg50", glf_p1_seg50_lmarr
+Dim glf_p1_seg49_lmarr : glf_p1_seg49_lmarr = Array(p_p1_seg49_,p_p1_seg49_vr)
+glf_lightMaps.Add "p1_seg49", glf_p1_seg49_lmarr
+Dim glf_p1_seg48_lmarr : glf_p1_seg48_lmarr = Array(p_p1_seg48_,p_p1_seg48_vr)
+glf_lightMaps.Add "p1_seg48", glf_p1_seg48_lmarr
+Dim glf_p1_seg47_lmarr : glf_p1_seg47_lmarr = Array(p_p1_seg47_,p_p1_seg47_vr)
+glf_lightMaps.Add "p1_seg47", glf_p1_seg47_lmarr
+Dim glf_p1_seg46_lmarr : glf_p1_seg46_lmarr = Array(p_p1_seg46_,p_p1_seg46_vr)
+glf_lightMaps.Add "p1_seg46", glf_p1_seg46_lmarr
+Dim glf_p1_seg45_lmarr : glf_p1_seg45_lmarr = Array(p_p1_seg45_,p_p1_seg45_vr)
+glf_lightMaps.Add "p1_seg45", glf_p1_seg45_lmarr
+Dim glf_p1_seg44_lmarr : glf_p1_seg44_lmarr = Array(p_p1_seg44_,p_p1_seg44_vr)
+glf_lightMaps.Add "p1_seg44", glf_p1_seg44_lmarr
+Dim glf_p1_seg43_lmarr : glf_p1_seg43_lmarr = Array(p_p1_seg43_,p_p1_seg43_vr)
+glf_lightMaps.Add "p1_seg43", glf_p1_seg43_lmarr
+Dim glf_p1_seg42_lmarr : glf_p1_seg42_lmarr = Array(p_p1_seg42_,p_p1_seg42_vr)
+glf_lightMaps.Add "p1_seg42", glf_p1_seg42_lmarr
+Dim glf_p1_seg41_lmarr : glf_p1_seg41_lmarr = Array(p_p1_seg41_,p_p1_seg41_vr)
+glf_lightMaps.Add "p1_seg41", glf_p1_seg41_lmarr
+Dim glf_p1_seg40_lmarr : glf_p1_seg40_lmarr = Array(p_p1_seg40_,p_p1_seg40_vr)
+glf_lightMaps.Add "p1_seg40", glf_p1_seg40_lmarr
+Dim glf_p1_seg39_lmarr : glf_p1_seg39_lmarr = Array(p_p1_seg39_,p_p1_seg39_vr)
+glf_lightMaps.Add "p1_seg39", glf_p1_seg39_lmarr
+Dim glf_p1_seg38_lmarr : glf_p1_seg38_lmarr = Array(p_p1_seg38_,p_p1_seg38_vr)
+glf_lightMaps.Add "p1_seg38", glf_p1_seg38_lmarr
+Dim glf_p1_seg37_lmarr : glf_p1_seg37_lmarr = Array(p_p1_seg37_,p_p1_seg37_vr)
+glf_lightMaps.Add "p1_seg37", glf_p1_seg37_lmarr
+Dim glf_p1_seg36_lmarr : glf_p1_seg36_lmarr = Array(p_p1_seg36_,p_p1_seg36_vr)
+glf_lightMaps.Add "p1_seg36", glf_p1_seg36_lmarr
+Dim glf_p1_seg35_lmarr : glf_p1_seg35_lmarr = Array(p_p1_seg35_,p_p1_seg35_vr)
+glf_lightMaps.Add "p1_seg35", glf_p1_seg35_lmarr
+Dim glf_p1_seg34_lmarr : glf_p1_seg34_lmarr = Array(p_p1_seg34_,p_p1_seg34_vr)
+glf_lightMaps.Add "p1_seg34", glf_p1_seg34_lmarr
+Dim glf_p1_seg33_lmarr : glf_p1_seg33_lmarr = Array(p_p1_seg33_,p_p1_seg33_vr)
+glf_lightMaps.Add "p1_seg33", glf_p1_seg33_lmarr
+Dim glf_p1_seg32_lmarr : glf_p1_seg32_lmarr = Array(p_p1_seg32_,p_p1_seg32_vr)
+glf_lightMaps.Add "p1_seg32", glf_p1_seg32_lmarr
+Dim glf_p1_seg31_lmarr : glf_p1_seg31_lmarr = Array(p_p1_seg31_,p_p1_seg31_vr)
+glf_lightMaps.Add "p1_seg31", glf_p1_seg31_lmarr
+Dim glf_p1_seg30_lmarr : glf_p1_seg30_lmarr = Array(p_p1_seg30_,p_p1_seg30_vr)
+glf_lightMaps.Add "p1_seg30", glf_p1_seg30_lmarr
+Dim glf_p1_seg29_lmarr : glf_p1_seg29_lmarr = Array(p_p1_seg29_,p_p1_seg29_vr)
+glf_lightMaps.Add "p1_seg29", glf_p1_seg29_lmarr
+Dim glf_p1_seg28_lmarr : glf_p1_seg28_lmarr = Array(p_p1_seg28_,p_p1_seg28_vr)
+glf_lightMaps.Add "p1_seg28", glf_p1_seg28_lmarr
+Dim glf_p1_seg27_lmarr : glf_p1_seg27_lmarr = Array(p_p1_seg27_,p_p1_seg27_vr)
+glf_lightMaps.Add "p1_seg27", glf_p1_seg27_lmarr
+Dim glf_p1_seg26_lmarr : glf_p1_seg26_lmarr = Array(p_p1_seg26_,p_p1_seg26_vr)
+glf_lightMaps.Add "p1_seg26", glf_p1_seg26_lmarr
+Dim glf_p1_seg25_lmarr : glf_p1_seg25_lmarr = Array(p_p1_seg25_,p_p1_seg25_vr)
+glf_lightMaps.Add "p1_seg25", glf_p1_seg25_lmarr
+Dim glf_p1_seg24_lmarr : glf_p1_seg24_lmarr = Array(p_p1_seg24_,p_p1_seg24_vr)
+glf_lightMaps.Add "p1_seg24", glf_p1_seg24_lmarr
+Dim glf_p1_seg23_lmarr : glf_p1_seg23_lmarr = Array(p_p1_seg23_,p_p1_seg23_vr)
+glf_lightMaps.Add "p1_seg23", glf_p1_seg23_lmarr
+Dim glf_p1_seg22_lmarr : glf_p1_seg22_lmarr = Array(p_p1_seg22_,p_p1_seg22_vr)
+glf_lightMaps.Add "p1_seg22", glf_p1_seg22_lmarr
+Dim glf_p1_seg21_lmarr : glf_p1_seg21_lmarr = Array(p_p1_seg21_,p_p1_seg21_vr)
+glf_lightMaps.Add "p1_seg21", glf_p1_seg21_lmarr
+Dim glf_p1_seg20_lmarr : glf_p1_seg20_lmarr = Array(p_p1_seg20_,p_p1_seg20_vr)
+glf_lightMaps.Add "p1_seg20", glf_p1_seg20_lmarr
+Dim glf_p1_seg19_lmarr : glf_p1_seg19_lmarr = Array(p_p1_seg19_,p_p1_seg19_vr)
+glf_lightMaps.Add "p1_seg19", glf_p1_seg19_lmarr
+Dim glf_p1_seg18_lmarr : glf_p1_seg18_lmarr = Array(p_p1_seg18_,p_p1_seg18_vr)
+glf_lightMaps.Add "p1_seg18", glf_p1_seg18_lmarr
+Dim glf_p1_seg17_lmarr : glf_p1_seg17_lmarr = Array(p_p1_seg17_,p_p1_seg17_vr)
+glf_lightMaps.Add "p1_seg17", glf_p1_seg17_lmarr
+Dim glf_p1_seg16_lmarr : glf_p1_seg16_lmarr = Array(p_p1_seg16_,p_p1_seg16_vr)
+glf_lightMaps.Add "p1_seg16", glf_p1_seg16_lmarr
+Dim glf_p1_seg15_lmarr : glf_p1_seg15_lmarr = Array(p_p1_seg15_,p_p1_seg15_vr)
+glf_lightMaps.Add "p1_seg15", glf_p1_seg15_lmarr
+Dim glf_p1_seg14_lmarr : glf_p1_seg14_lmarr = Array(p_p1_seg14_,p_p1_seg14_vr)
+glf_lightMaps.Add "p1_seg14", glf_p1_seg14_lmarr
+Dim glf_p1_seg13_lmarr : glf_p1_seg13_lmarr = Array(p_p1_seg13_,p_p1_seg13_vr)
+glf_lightMaps.Add "p1_seg13", glf_p1_seg13_lmarr
+Dim glf_p1_seg12_lmarr : glf_p1_seg12_lmarr = Array(p_p1_seg12_,p_p1_seg12_vr)
+glf_lightMaps.Add "p1_seg12", glf_p1_seg12_lmarr
+Dim glf_p1_seg11_lmarr : glf_p1_seg11_lmarr = Array(p_p1_seg11_,p_p1_seg11_vr)
+glf_lightMaps.Add "p1_seg11", glf_p1_seg11_lmarr
+Dim glf_p1_seg10_lmarr : glf_p1_seg10_lmarr = Array(p_p1_seg10_,p_p1_seg10_vr)
+glf_lightMaps.Add "p1_seg10", glf_p1_seg10_lmarr
+Dim glf_p1_seg9_lmarr : glf_p1_seg9_lmarr = Array(p_p1_seg9_,p_p1_seg9_vr)
+glf_lightMaps.Add "p1_seg9", glf_p1_seg9_lmarr
+Dim glf_p1_seg8_lmarr : glf_p1_seg8_lmarr = Array(p_p1_seg8_,p_p1_seg8_vr)
+glf_lightMaps.Add "p1_seg8", glf_p1_seg8_lmarr
+Dim glf_p1_seg7_lmarr : glf_p1_seg7_lmarr = Array(p_p1_seg7_,p_p1_seg7_vr)
+glf_lightMaps.Add "p1_seg7", glf_p1_seg7_lmarr
+Dim glf_p1_seg6_lmarr : glf_p1_seg6_lmarr = Array(p_p1_seg6_,p_p1_seg6_vr)
+glf_lightMaps.Add "p1_seg6", glf_p1_seg6_lmarr
+Dim glf_p1_seg5_lmarr : glf_p1_seg5_lmarr = Array(p_p1_seg5_,p_p1_seg5_vr)
+glf_lightMaps.Add "p1_seg5", glf_p1_seg5_lmarr
+Dim glf_p1_seg4_lmarr : glf_p1_seg4_lmarr = Array(p_p1_seg4_,p_p1_seg4_vr)
+glf_lightMaps.Add "p1_seg4", glf_p1_seg4_lmarr
+Dim glf_p1_seg3_lmarr : glf_p1_seg3_lmarr = Array(p_p1_seg3_,p_p1_seg3_vr)
+glf_lightMaps.Add "p1_seg3", glf_p1_seg3_lmarr
+Dim glf_p1_seg2_lmarr : glf_p1_seg2_lmarr = Array(p_p1_seg2_,p_p1_seg2_vr)
+glf_lightMaps.Add "p1_seg2", glf_p1_seg2_lmarr
+Dim glf_p1_seg1_lmarr : glf_p1_seg1_lmarr = Array(p_p1_seg1_,p_p1_seg1_vr)
+glf_lightMaps.Add "p1_seg1", glf_p1_seg1_lmarr
+Dim glf_pf_seg30_lmarr : glf_pf_seg30_lmarr = Array(p_pf_seg30_)
+glf_lightMaps.Add "pf_seg30", glf_pf_seg30_lmarr
+Dim glf_pf_seg29_lmarr : glf_pf_seg29_lmarr = Array(p_pf_seg29_)
+glf_lightMaps.Add "pf_seg29", glf_pf_seg29_lmarr
+Dim glf_pf_seg28_lmarr : glf_pf_seg28_lmarr = Array(p_pf_seg28_)
+glf_lightMaps.Add "pf_seg28", glf_pf_seg28_lmarr
+Dim glf_pf_seg27_lmarr : glf_pf_seg27_lmarr = Array(p_pf_seg27_)
+glf_lightMaps.Add "pf_seg27", glf_pf_seg27_lmarr
+Dim glf_pf_seg26_lmarr : glf_pf_seg26_lmarr = Array(p_pf_seg26_)
+glf_lightMaps.Add "pf_seg26", glf_pf_seg26_lmarr
+Dim glf_pf_seg25_lmarr : glf_pf_seg25_lmarr = Array(p_pf_seg25_)
+glf_lightMaps.Add "pf_seg25", glf_pf_seg25_lmarr
+Dim glf_pf_seg24_lmarr : glf_pf_seg24_lmarr = Array(p_pf_seg24_)
+glf_lightMaps.Add "pf_seg24", glf_pf_seg24_lmarr
+Dim glf_pf_seg23_lmarr : glf_pf_seg23_lmarr = Array(p_pf_seg23_)
+glf_lightMaps.Add "pf_seg23", glf_pf_seg23_lmarr
+Dim glf_pf_seg22_lmarr : glf_pf_seg22_lmarr = Array(p_pf_seg22_)
+glf_lightMaps.Add "pf_seg22", glf_pf_seg22_lmarr
+Dim glf_pf_seg21_lmarr : glf_pf_seg21_lmarr = Array(p_pf_seg21_)
+glf_lightMaps.Add "pf_seg21", glf_pf_seg21_lmarr
+Dim glf_pf_seg20_lmarr : glf_pf_seg20_lmarr = Array(p_pf_seg20_)
+glf_lightMaps.Add "pf_seg20", glf_pf_seg20_lmarr
+Dim glf_pf_seg19_lmarr : glf_pf_seg19_lmarr = Array(p_pf_seg19_)
+glf_lightMaps.Add "pf_seg19", glf_pf_seg19_lmarr
+Dim glf_pf_seg18_lmarr : glf_pf_seg18_lmarr = Array(p_pf_seg18_)
+glf_lightMaps.Add "pf_seg18", glf_pf_seg18_lmarr
+Dim glf_pf_seg17_lmarr : glf_pf_seg17_lmarr = Array(p_pf_seg17_)
+glf_lightMaps.Add "pf_seg17", glf_pf_seg17_lmarr
+Dim glf_pf_seg16_lmarr : glf_pf_seg16_lmarr = Array(p_pf_seg16_)
+glf_lightMaps.Add "pf_seg16", glf_pf_seg16_lmarr
+Dim glf_pf_seg15_lmarr : glf_pf_seg15_lmarr = Array(p_pf_seg15_)
+glf_lightMaps.Add "pf_seg15", glf_pf_seg15_lmarr
+Dim glf_pf_seg14_lmarr : glf_pf_seg14_lmarr = Array(p_pf_seg14_)
+glf_lightMaps.Add "pf_seg14", glf_pf_seg14_lmarr
+Dim glf_pf_seg13_lmarr : glf_pf_seg13_lmarr = Array(p_pf_seg13_)
+glf_lightMaps.Add "pf_seg13", glf_pf_seg13_lmarr
+Dim glf_pf_seg12_lmarr : glf_pf_seg12_lmarr = Array(p_pf_seg12_)
+glf_lightMaps.Add "pf_seg12", glf_pf_seg12_lmarr
+Dim glf_pf_seg11_lmarr : glf_pf_seg11_lmarr = Array(p_pf_seg11_)
+glf_lightMaps.Add "pf_seg11", glf_pf_seg11_lmarr
+Dim glf_pf_seg10_lmarr : glf_pf_seg10_lmarr = Array(p_pf_seg10_)
+glf_lightMaps.Add "pf_seg10", glf_pf_seg10_lmarr
+Dim glf_pf_seg9_lmarr : glf_pf_seg9_lmarr = Array(p_pf_seg9_)
+glf_lightMaps.Add "pf_seg9", glf_pf_seg9_lmarr
+Dim glf_pf_seg8_lmarr : glf_pf_seg8_lmarr = Array(p_pf_seg8_)
+glf_lightMaps.Add "pf_seg8", glf_pf_seg8_lmarr
+Dim glf_pf_seg7_lmarr : glf_pf_seg7_lmarr = Array(p_pf_seg7_)
+glf_lightMaps.Add "pf_seg7", glf_pf_seg7_lmarr
+Dim glf_pf_seg6_lmarr : glf_pf_seg6_lmarr = Array(p_pf_seg6_)
+glf_lightMaps.Add "pf_seg6", glf_pf_seg6_lmarr
+Dim glf_pf_seg5_lmarr : glf_pf_seg5_lmarr = Array(p_pf_seg5_)
+glf_lightMaps.Add "pf_seg5", glf_pf_seg5_lmarr
+Dim glf_pf_seg4_lmarr : glf_pf_seg4_lmarr = Array(p_pf_seg4_)
+glf_lightMaps.Add "pf_seg4", glf_pf_seg4_lmarr
+Dim glf_pf_seg3_lmarr : glf_pf_seg3_lmarr = Array(p_pf_seg3_)
+glf_lightMaps.Add "pf_seg3", glf_pf_seg3_lmarr
+Dim glf_pf_seg2_lmarr : glf_pf_seg2_lmarr = Array(p_pf_seg2_)
+glf_lightMaps.Add "pf_seg2", glf_pf_seg2_lmarr
+Dim glf_pf_seg1_lmarr : glf_pf_seg1_lmarr = Array(p_pf_seg1_)
+glf_lightMaps.Add "pf_seg1", glf_pf_seg1_lmarr
+Dim glf_LBG08_lmarr : glf_LBG08_lmarr = Array(f_lbg08_)
+glf_lightMaps.Add "LBG08", glf_LBG08_lmarr
+Dim glf_LBG16_lmarr : glf_LBG16_lmarr = Array(f_lbg16_)
+glf_lightMaps.Add "LBG16", glf_LBG16_lmarr
+Dim glf_LBG15_lmarr : glf_LBG15_lmarr = Array(f_lbg15_)
+glf_lightMaps.Add "LBG15", glf_LBG15_lmarr
+Dim glf_LBG14_lmarr : glf_LBG14_lmarr = Array(f_lbg14_)
+glf_lightMaps.Add "LBG14", glf_LBG14_lmarr
+Dim glf_LBG13_lmarr : glf_LBG13_lmarr = Array(f_lbg13_)
+glf_lightMaps.Add "LBG13", glf_LBG13_lmarr
+Dim glf_LBG12_lmarr : glf_LBG12_lmarr = Array(f_lbg12_)
+glf_lightMaps.Add "LBG12", glf_LBG12_lmarr
+Dim glf_LBG11_lmarr : glf_LBG11_lmarr = Array(f_lbg11_)
+glf_lightMaps.Add "LBG11", glf_LBG11_lmarr
+Dim glf_LBG10_lmarr : glf_LBG10_lmarr = Array(f_lbg10_)
+glf_lightMaps.Add "LBG10", glf_LBG10_lmarr
+Dim glf_LBG09_lmarr : glf_LBG09_lmarr = Array(f_lbg09_)
+glf_lightMaps.Add "LBG09", glf_LBG09_lmarr
+Dim glf_LBG07_lmarr : glf_LBG07_lmarr = Array(f_lbg07_)
+glf_lightMaps.Add "LBG07", glf_LBG07_lmarr
+Dim glf_LBG06_lmarr : glf_LBG06_lmarr = Array(f_lbg06_)
+glf_lightMaps.Add "LBG06", glf_LBG06_lmarr
+Dim glf_LBG05_lmarr : glf_LBG05_lmarr = Array(f_lbg05_)
+glf_lightMaps.Add "LBG05", glf_LBG05_lmarr
+Dim glf_LBG04_lmarr : glf_LBG04_lmarr = Array(f_lbg04_)
+glf_lightMaps.Add "LBG04", glf_LBG04_lmarr
+Dim glf_LBG03_lmarr : glf_LBG03_lmarr = Array(f_lbg03_)
+glf_lightMaps.Add "LBG03", glf_LBG03_lmarr
+Dim glf_LBG02_lmarr : glf_LBG02_lmarr = Array(f_lbg02_a,f_lbg02_b,f_lbg02_c,f_lbg02_d)
+glf_lightMaps.Add "LBG02", glf_LBG02_lmarr
+Dim glf_LBG01_lmarr : glf_LBG01_lmarr = Array(f_lbg01_a,f_lbg01_b,f_lbg01_c,f_lbg01_d)
+glf_lightMaps.Add "LBG01", glf_LBG01_lmarr
+
