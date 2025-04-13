@@ -49,7 +49,7 @@ Sub CreateHealthMode
             'handle earth hits
             .Add "earth_hit{current_player.health_value>0}", Array("check_remove_health")
             'Handle mystery award
-            .Add "mystery_full_health", Array("complete_full_health","restart_health","slings_powerup_added","lsling_powerup_h","rsling_powerup_h","score_100000")
+            .Add "mystery_full_health", Array("complete_full_health","restart_health","reset_health_bump","slings_powerup_added","lsling_powerup_h","rsling_powerup_h","score_100000")
         End With
 
 
