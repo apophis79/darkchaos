@@ -18,7 +18,7 @@ Sub CreateHealthMode
 
         With .EventPlayer()
             'restart the mode
-            .Add "mode_health_started", Array("restart_health","reset_health_bump")
+            .Add "mode_health_started{current_player.ball_just_started==1}", Array("restart_health","reset_health_bump")
             .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("raise_diverter") 'training boost
             'successful bumper hits
             .Add "s_Bumper1_active", Array("check_add_health_bump")
