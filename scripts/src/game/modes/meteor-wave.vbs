@@ -413,7 +413,7 @@ Sub CreateMeteorWaveMode
                     .Loops = 4
                     With .Tokens()
                         .Add "lights", "LMet"&x
-                        .Add "color", "ff1100"
+                        .Add "color", ProtonColor
                     End With  
                 End With
                 With .EventName("meteor"&x&"_proton_hit")
