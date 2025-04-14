@@ -104,6 +104,18 @@ Sub CreateTimewarpMode
 					.Int = 1
 				End With
 			End With
+            With .EventName("warping_true")
+				With .Variable("warping")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("warping_false")
+				With .Variable("warping")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
             With .EventName("timer_timewarp_complete")
 				With .Variable("warping")
                     .Action = "set"

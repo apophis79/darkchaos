@@ -545,6 +545,7 @@ Sub ConfigureGlfDevices
     ' Initial Vars
     Glf_SetInitialPlayerVar "flag_ss", 0
     Glf_SetInitialPlayerVar "flag_sss_mystery", 0
+    Glf_SetInitialPlayerVar "ball_cradled", 0
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_wave_running", 0
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
@@ -610,7 +611,8 @@ Sub ConfigureGlfDevices
     CreateScoreMode                 ' 2000          Always active during a game
     CreateHighScoreMode             ' 120
 
-    CreateBaseMode                  ' 200           No
+    CreateBaseMode                  ' 200           Yes
+    CreateInstantInfoMode           ' 300           Yes
     CreateSkillshotsMode            ' 500           No
     CreateAlienAttackMode           ' 500           No
     CreateShieldsMode               ' 510           No
