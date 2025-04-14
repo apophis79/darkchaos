@@ -20,8 +20,8 @@ Sub CreateInstantInfoMode
 
             'show info
             .Add "timer_info_tick{devices.timers.info.ticks == 0}", Array("info_ball_num")
-            .Add "timer_info_tick{devices.timers.info.ticks == 1}", Array("info_eb_num")
-            .Add "timer_info_tick{devices.timers.info.ticks == 2}", Array("info_trained_num")
+            .Add "timer_info_tick{devices.timers.info.ticks == 1}", Array("info_trained_num")
+            .Add "timer_info_tick{devices.timers.info.ticks == 2}", Array("info_eb_num")
             .Add "timer_info_tick{devices.timers.info.ticks == 3}", Array("info_restart")
         End With
 
@@ -99,50 +99,20 @@ Sub CreateInstantInfoMode
                     .Priority = 20000
                 End With
             End With
-
-            With .EventName("info_eb_num{current_player.number == 1 or current_player.number == 2}")
-                With .Display("player3")
-                    .key = "p3_ball_num"
-                    .Text = """EB NUM"""
-                    .Expire = 2000
-                    .Priority = 20010
-                End With
-                With .Display("player4")
-                    .key = "p4_ball_num"
-                    .Text = "{current_player.extra_balls:0>2}"
-                    .Expire = 2000
-                    .Priority = 20010
-                End With
-            End With
-
-            With .EventName("info_eb_num{current_player.number == 3 or current_player.number == 4}")
-                With .Display("player1")
-                    .key = "p1_ball_num"
-                    .Text = """EB NUM"""
-                    .Expire = 2000
-                    .Priority = 20010
-                End With
-                With .Display("player2")
-                    .key = "p2_ball_num"
-                    .Text = "{current_player.extra_balls:0>2}"
-                    .Expire = 2000
-                    .Priority = 20010
-                End With
-            End With
-
+            
 
             With .EventName("info_trained_num{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player3")
                     .key = "p3_ball_num"
                     .Text = """TRAINED"""
                     .Expire = 2000
-                    .Priority = 20020
+                    .Priority = 20010
                 End With
                 With .Display("player4")
                     .key = "p4_ball_num"
                     .Text = "{current_player.training_total_achieved:0>2}"
                     .Expire = 2000
-                    .Priority = 20020
+                    .Priority = 20010
                 End With
             End With
 
@@ -151,16 +121,47 @@ Sub CreateInstantInfoMode
                     .key = "p1_ball_num"
                     .Text = """TRAINED"""
                     .Expire = 2000
-                    .Priority = 20020
+                    .Priority = 20010
                 End With
                 With .Display("player2")
                     .key = "p2_ball_num"
                     .Text = "{current_player.training_total_achieved:0>2}"
                     .Expire = 2000
+                    .Priority = 20010
+                End With
+            End With
+
+
+            With .EventName("info_eb_num{current_player.number == 1 or current_player.number == 2}")
+                With .Display("player3")
+                    .key = "p3_ball_num"
+                    .Text = """EB NUM"""
+                    .Expire = 2000
+                    .Priority = 20020
+                End With
+                With .Display("player4")
+                    .key = "p4_ball_num"
+                    .Text = "{current_player.extra_balls:0>2}"
+                    .Expire = 2000
                     .Priority = 20020
                 End With
             End With
-            
+
+            With .EventName("info_eb_num{current_player.number == 3 or current_player.number == 4}")
+                With .Display("player1")
+                    .key = "p1_ball_num"
+                    .Text = """EB NUM"""
+                    .Expire = 2000
+                    .Priority = 20020
+                End With
+                With .Display("player2")
+                    .key = "p2_ball_num"
+                    .Text = "{current_player.extra_balls:0>2}"
+                    .Expire = 2000
+                    .Priority = 20020
+                End With
+            End With
+
             
         End With
 

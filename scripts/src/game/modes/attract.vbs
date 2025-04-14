@@ -426,7 +426,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_title")
                 With .Display("player2")
                     .Key = "key_top_show_attract_title"
-                    .Text = """DARK"""
+                    .Text = """DARK """
                     .Expire = 5000
                     .Priority = 1
                     With .Transition()
