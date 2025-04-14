@@ -761,7 +761,7 @@ Sub CreatePostGameMode()
                     .Loops = 1
                     With .Tokens()
                         .Add "lights", "gi0"&x
-                        .Add "color", GIColor2700k
+                        .Add "color", GIColor3000k
                     End With
                 End With
             Next
@@ -773,7 +773,7 @@ Sub CreatePostGameMode()
                     .Loops = 1
                     With .Tokens()
                         .Add "lights", "gi"&x
-                        .Add "color", GIColor2700k
+                        .Add "color", GIColor3000k
                     End With
                 End With
             Next
@@ -784,7 +784,7 @@ Sub CreatePostGameMode()
                 .Loops = 1
                 With .Tokens()
                     .Add "lights", "giapron"
-                    .Add "color", GIColor2700k
+                    .Add "color", GIColor3000k
                 End With
             End With
 
