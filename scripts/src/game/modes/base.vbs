@@ -882,15 +882,6 @@ Sub CreateBaseMode()
             End With
 
             'Training music
-            With .EventName("training_music_start")
-                .Key = "key_mus_training"
-                .Sound = "mus_training"
-            End With
-            With .EventName("training_music_stop")
-                .Key = "key_mus_training"
-                .Sound = "mus_training"
-                .Action = "stop"
-            End With
             With .EventName("training_music_alt_start")
                 .Key = "key_mus_training_alt"
                 .Sound = "mus_training_alt"
