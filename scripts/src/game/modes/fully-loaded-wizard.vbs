@@ -229,7 +229,7 @@ Sub CreateFullyLoadedWizardMode
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("right_ramp_hit")
+                .Events = Array("flwiz_phase1_moon_hit","flwiz_phase2_moon_hit")
                 .State = 2
             End With
         End With
@@ -261,7 +261,7 @@ Sub CreateFullyLoadedWizardMode
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("left_ramp_hit")
+                .Events = Array("flwiz_phase1_cluster_hit","flwiz_phase2_cluster_hit")
                 .State = 2
             End With
         End With
