@@ -16,6 +16,7 @@ Sub CreateExtraBallMode
             .Add "mode_extra_ball_started", Array("check_eb")
             .Add "check_eb{current_player.light_the_eb == 1 && current_player.flippers_are_dead==0}", Array("eb_now_lit","enable_scoop_hold")
             .Add "check_eb{current_player.extra_balls == 0}", Array("eb_reset")
+            .Add "check_eb{current_player.extra_balls > 0}", Array("eb_lit")
             'handle successful scoop hit
             .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 && current_player.wizard_mode_is_ready==0}", Array("eb_complete") 'EB not available so move on
             .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 && current_player.wizard_mode_is_ready==0}", Array("play_eb_show","eb_achieved","score_200000") 'Collect the EB
@@ -76,10 +77,29 @@ Sub CreateExtraBallMode
         With .Shots("eb_shoot_again")
             .Profile = "extraball"
             With .ControlEvents()
-                .Events = Array("eb_achieved")
+                .Events = Array("eb_achieved","eb_lit")
                 .State = 1
             End With
             .RestartEvents = Array("eb_reset")
+        End With
+
+
+        With .ShotProfiles("extraball")
+            With .States("unlit")
+                .Show = "off"
+                .Key = "key_eb_unlit"
+                With .Tokens()
+                    .Add "lights", "LSA"
+                End With
+            End With
+            With .States("lit")
+                .Show = "led_color"
+                .Key = "key_eb_lit"
+                With .Tokens()
+                    .Add "lights", "LSA"
+                    .Add "color", ShipSaveColor
+                End With
+            End With
         End With
 
 

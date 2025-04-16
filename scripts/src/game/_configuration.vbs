@@ -759,7 +759,7 @@ Public Sub CreateSharedShotProfiles()
       With .States("unlit")
           .Show = "off"
           .Key = "key_off_e"
-          .Priority = 5000
+          '.Priority = 5000
           With .Tokens()
               .Add "lights", "LSA"
           End With
@@ -802,24 +802,6 @@ Public Sub CreateSharedShotProfiles()
                 .Add "fade", 500
                 .Add "color", HealthColor1
                 .Add "lights", "LDP"
-            End With
-        End With
-    End With
-
-    With GlfShotProfiles("extraball")
-        With .States("unlit")
-            .Show = "off"
-            .Key = "key_eb_unlit"
-            With .Tokens()
-                .Add "lights", "LSA"
-            End With
-        End With
-        With .States("lit")
-            .Show = "led_color"
-            .Key = "key_eb_lit"
-            With .Tokens()
-                .Add "lights", "LSA"
-                .Add "color", ShipSaveColor
             End With
         End With
     End With

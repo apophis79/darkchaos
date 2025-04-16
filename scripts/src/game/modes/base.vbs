@@ -777,7 +777,7 @@ Sub CreateBaseMode()
                 .Events = Array("ball_save_new_ball_hurry_up")
                 .State = 2
             End With
-            .ResetEvents = Array("ball_save_new_ball_grace_period")
+            .RestartEvents = Array("ball_save_new_ball_grace_period")
         End With
        
 
