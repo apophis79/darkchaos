@@ -220,7 +220,7 @@ Sub ConfigureGlfDevices
         .Timeout = 15000
         .SearchInterval = 300
         .BallSearchWaitAfterIteration = 5000
-        .Debug = True
+        '.Debug = True
     End With
 
 

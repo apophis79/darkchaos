@@ -61,7 +61,7 @@ Sub CreateBonusMode
         End With
 
         With .ComboSwitches("bonus_skip")
-            .Debug = True
+            '.Debug = True
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"
             .EventsWhenBoth = Array("skip_bonus_tally")

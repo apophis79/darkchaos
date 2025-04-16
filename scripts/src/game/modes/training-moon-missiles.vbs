@@ -16,10 +16,10 @@ Sub CreateTrainingMoonMissileMode
     With CreateGlfMode("training_moon_missile",700)
         .StartEvents = Array("start_training_moon_missile")
         .StopEvents = Array("mode_base_stopping","stop_training")
-        .Debug = True
+        '.Debug = True
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             .Add "mode_training_moon_missile_started", Array("init_training","play_lsling_training","play_rsling_training")
             'Stop the training
             .Add "training_moon_lane_group_collected_complete", Array("training_moon_missile_completed","play_sfx_super_jackpot")
@@ -93,7 +93,7 @@ Sub CreateTrainingMoonMissileMode
             With .Shots("training_moon_lane"&x)
                 .Switch = MoonQualifySwitches(x-1)
                 .Profile = "train_moon_missile"
-                .Debug = True
+                '.Debug = True
                 With .Tokens()
                     .Add "lights", MoonQualifyLightNames(x-1)
                     .Add "color", MoonColor
@@ -123,7 +123,7 @@ Sub CreateTrainingMoonMissileMode
 
         ' Moon lane qualifying shot group
         With .ShotGroups("training_moon_lane_group")
-            .Debug = True
+            '.Debug = True
             .Shots = Array("training_moon_lane1", "training_moon_lane2", "training_moon_lane3", "training_moon_lane4")
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
@@ -132,7 +132,7 @@ Sub CreateTrainingMoonMissileMode
 
 
         With .VariablePlayer()
-            .Debug = True
+            '.Debug = True
             'update the training select shots 1
             With .EventName("update_training_select_moon_lane1a")
 				With .Variable("shot_training_select_moon_lane1")

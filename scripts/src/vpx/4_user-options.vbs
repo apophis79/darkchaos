@@ -16,7 +16,7 @@ Dim VRRoom: VRRoom = 0
 Dim VRRoomChoice: VRRoomChoice = 1 				' 1 - Asteroid Room, 2 - Minimal Room, 3 - Ultra Minimal Room
 Dim VRRoomRotate: VRRoomRotate = 1				' 1 - X Rot, 2 - Y Rot, 3 - Z Rot
 Dim VRRotateRate: VRRotateRate = 0				' 0 - Stopped, 1 - Slow, 2 - Med, 3 - Fast
-Const TestVR = True
+Const TestVR = False
 
 ' Called when options are tweaked by the player. 
 ' - 0: game has started, good time to load options and adjust accordingly

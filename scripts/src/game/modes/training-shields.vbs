@@ -16,10 +16,10 @@ Sub CreateTrainingShieldsMode
     With CreateGlfMode("training_shields",700)
         .StartEvents = Array("start_training_shields")
         .StopEvents = Array("mode_base_stopping","stop_training")
-        .Debug = True
+        '.Debug = True
 
         With .EventPlayer()
-            .Debug = True
+            '.Debug = True
             .Add "mode_training_shields_started", Array("init_training","play_lsling_training","play_rsling_training")
             'Stop the training
             .Add "training_shield_group_collected_complete", Array("training_shields_completed","play_sfx_super_jackpot")
@@ -93,7 +93,7 @@ Sub CreateTrainingShieldsMode
             With .Shots("training_shield_charge"&x)
                 .Switch = "s_TargetShield"&x
                 .Profile = "train_shields"
-                .Debug = True
+                '.Debug = True
                 With .Tokens()
                     .Add "lights", "LSC"&x
                     .Add "color", ShieldsColor
@@ -123,7 +123,7 @@ Sub CreateTrainingShieldsMode
 
         ' Shield qualifying shot group
         With .ShotGroups("training_shield_group")
-            .Debug = True
+            '.Debug = True
             .Shots = Array("training_shield_charge1", "training_shield_charge2", "training_shield_charge3", "training_shield_charge4")
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
@@ -132,7 +132,7 @@ Sub CreateTrainingShieldsMode
 
 
         With .VariablePlayer()
-            .Debug = True
+            '.Debug = True
             'update the training select shots 1
             With .EventName("update_training_select_shield1a")
 				With .Variable("shot_training_select_shield_charge1")
