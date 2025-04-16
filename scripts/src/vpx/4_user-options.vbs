@@ -12,9 +12,11 @@ Dim StagedFlipper : StagedFlipper = 0 			' 0 = Not enabled, 1 = Enabled
 Dim BackglassVol : BackglassVol = 1			    ' Separate setting that only affects sounds coming from backglass. Range from 0 to 1
 Dim CalloutVol : CalloutVol = 1				    ' Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
 
-Dim VRRoomChoice: VRRoomChoice = 1 				' 1 - Asteroid Room, 2 - Minimal Room, 3 - Ultra Minimal Room
 Dim VRRoom: VRRoom = 0
-Const TestVR = False
+Dim VRRoomChoice: VRRoomChoice = 1 				' 1 - Asteroid Room, 2 - Minimal Room, 3 - Ultra Minimal Room
+Dim VRRoomRotate: VRRoomRotate = 1				' 1 - X Rot, 2 - Y Rot, 3 - Z Rot
+Dim VRRotateRate: VRRotateRate = 0				' 0 - Stopped, 1 - Slow, 2 - Med, 3 - Fast
+Const TestVR = True
 
 ' Called when options are tweaked by the player. 
 ' - 0: game has started, good time to load options and adjust accordingly
@@ -92,6 +94,8 @@ Sub Table1_OptionEvent(ByVal eventId)
 
 	' VR
 	VRRoomChoice = Table1.Option("VR Room", 1, 3, 1, 1, 0, Array("Asteroid", "Minimal", "Ultra Minimal"))
+	VRRoomRotate = Table1.Option("VR Asteroid Rotation", 1, 3, 1, 1, 0, Array("X Rotation", "Y Rotation", "Z Rotation"))
+	VRRotateRate = Table1.Option("VR Asteroid Rotation Speed", 0, 3, 1, 0, 0, Array("Stopped", "Slow", "Med", "Fast"))
 	If RenderingMode = 2 or TestVR = True Then: VRRoom = VRRoomChoice: Else VRRoom = 0: End If
 	SetupRoom
 

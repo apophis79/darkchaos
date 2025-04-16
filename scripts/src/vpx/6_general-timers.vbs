@@ -29,6 +29,7 @@ Sub FrameTimer_Timer()
 	UpdateBallBrightness
 	UpdateAsteroid
 	NudgeAnim
+	RotateSky
 End Sub
 
 

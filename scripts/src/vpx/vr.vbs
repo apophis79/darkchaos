@@ -93,5 +93,15 @@ Sub NewSkyAngle
 	VRSphere.rotz = Rnd*360
 End Sub
 
+Sub RotateSky
+	if VRRoom <> 1 Or VRRotateRate = 0 Then Exit Sub
+    'Randomize VR starry sky angles
+	Select Case VRRoomRotate
+		Case 1: VRSphere.objrotx = VRSphere.objrotx + FrameTime*VRRotateRate*0.0001
+		Case 2: VRSphere.objroty = VRSphere.objroty + FrameTime*VRRotateRate*0.0001
+		Case 3: VRSphere.objrotz = VRSphere.objrotz + FrameTime*VRRotateRate*0.0001
+	End Select
+End Sub
+
 
 
