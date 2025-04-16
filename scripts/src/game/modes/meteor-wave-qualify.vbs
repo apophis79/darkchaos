@@ -18,17 +18,11 @@ Sub CreateMeteorWaveQualifyMode
             .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
             
             .Add "restart_tw_timer", Array("stop_mwq_timer")    'Timewarp started, so halt the countdown
-            .Add "play_mystery_show", Array("stop_mwq_timer","warping_true")   'Mystery show started, so halt the countdown
-            .Add "play_eb_show", Array("stop_mwq_timer","warping_true")        'EB show started, so halt the countdown
-
-            .Add "flipper_cradling{current_player.warping == 0 && current_player.ball_just_started == 0}", Array("stop_mwq_timer")   'handle flipper cradle
-            .Add "flipper_release{current_player.warping == 0 && current_player.ball_just_started == 0}", Array("start_mwq_timer") 
-            .Add "s_left_flipper_active{current_player.warping == 0 && current_player.ball_just_started == 0}", Array("start_mwq_timer") 
-            .Add "s_right_flipper_active{current_player.warping == 0 && current_player.ball_just_started == 0}", Array("start_mwq_timer") 
-            .Add "s_right_staged_flipper_key_active{current_player.warping == 0 && current_player.ball_just_started == 0}", Array("start_mwq_timer") 
+            .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
+            .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
             
             .Add "stop_mwq_timer", Array("flash_mwq_display")
-            .Add "start_mwq_timer", Array("remove_flash_mwq_display","warping_false")
+            .Add "start_mwq_timer", Array("remove_flash_mwq_display")
 
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
@@ -187,17 +181,6 @@ Sub CreateMeteorWaveQualifyMode
                 End With
             End With
             With .EventName("flipper_release")
-                .Key = "key_flipper_cradling"
-                .Show = "flash_color"
-                .Speed = 15
-                .Priority = 5000
-                .Action = "stop"
-                With .Tokens()
-                    .Add "lights", "tInlaneGI"
-                    .Add "color", GIColor3000k
-                End With
-            End With
-            With .EventName("warping_false")
                 .Key = "key_flipper_cradling"
                 .Show = "flash_color"
                 .Speed = 15
