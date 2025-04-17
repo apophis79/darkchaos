@@ -95,7 +95,13 @@ Sub Table1_OptionEvent(ByVal eventId)
 	' VR
 	VRRoomChoice = Table1.Option("VR Room", 1, 3, 1, 1, 0, Array("Asteroid", "Minimal", "Ultra Minimal"))
 	VRRoomRotate = Table1.Option("VR Asteroid Rotation", 1, 3, 1, 1, 0, Array("X Rotation", "Y Rotation", "Z Rotation"))
-	VRRotateRate = Table1.Option("VR Asteroid Rotation Speed", 0, 3, 1, 0, 0, Array("Stopped", "Slow", "Med", "Fast"))
+	v = Table1.Option("VR Asteroid Rotation Speed", 0, 3, 1, 0, 0, Array("Stopped", "Slow", "Med", "Fast"))
+	Select Case v
+		Case 0: VRRotateRate = 0
+		Case 1: VRRotateRate = 1
+		Case 2: VRRotateRate = 3
+		Case 3: VRRotateRate = 6
+	End Select
 	If RenderingMode = 2 or TestVR = True Then: VRRoom = VRRoomChoice: Else VRRoom = 0: End If
 	SetupRoom
 
