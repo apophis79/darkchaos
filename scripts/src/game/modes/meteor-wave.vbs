@@ -166,25 +166,25 @@ Sub CreateMeteorWaveMode
             With .States("cool")
                 .Key = "key_meteor_cool"
                 .Show = "flash_color_with_fade"
-                .Speed = 1
+                .Speed = 2
                 With .Tokens()
                     .Add "color", MeteorCoolColor
-                    .Add "fade", 200
+                    .Add "fade", 1000
                 End With
             End With
             With .States("warm")
                 .Key = "key_meteor_warm"
                 .Show = "flash_color_with_fade"
-                .Speed = 3
+                .Speed = 5
                 With .Tokens()
                     .Add "color", MeteorWarmColor
-                    .Add "fade", 300
+                    .Add "fade", 1000
                 End With
             End With
             With .States("hot")
                 .Key = "key_meteor_hot"
                 .Show = "flash_color"
-                .Speed = 8
+                .Speed = 12
                 With .Tokens()
                     .Add "color", MeteorHotColor
                 End With
