@@ -2,6 +2,7 @@
 
 'Score Mode.
 
+Const MinimumScore = -1000000
 
 Sub CreateScoreMode
 
@@ -10,12 +11,24 @@ Sub CreateScoreMode
         .StopEvents = Array("game_ended")
 
 
+        With .EventPlayer
+            .Add "score_m50000{current_player.score > "&MinimumScore&"}", Array("apply_score_m50000")  'limit the negative score
+            .Add "apply_score_m50000.1{current_player.score < "&MinimumScore&"}", Array("set_minimum_score")  'limit the negative score
+        End With
+
+
         With .VariablePlayer()
 
             With .EventName("score_wave_count") 
                 With .Variable("score")
                     .Action = "add"
                     .Int = 1
+                End With
+            End With
+            With .EventName("set_minimum_score") 
+                With .Variable("score")
+                    .Action = "set"
+                    .Int = MinimumScore
                 End With
             End With
             With .EventName("score_330")  'reserved for spinner
@@ -96,7 +109,7 @@ Sub CreateScoreMode
                     .Int = "30000 * current_player.scoring_multiplier"
                 End With
             End With
-            With .EventName("score_m50000")  'negative score
+            With .EventName("apply_score_m50000.2")  'negative score
                 With .Variable("score")
                     .Action = "add"
                     .Int = "-50000 * current_player.scoring_multiplier"
