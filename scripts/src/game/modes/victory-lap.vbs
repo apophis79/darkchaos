@@ -16,7 +16,7 @@ Sub CreateVictoryLapMode
 
         With .EventPlayer()
             'victory lap starts before final wve ends... so wait till the final wave is done
-            .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game")
+            .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game","meteor_wave_music_stop")
             .Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
             'starting, restarting, and stopping the victor lap itself
             .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap")

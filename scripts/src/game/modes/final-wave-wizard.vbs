@@ -45,6 +45,7 @@ Sub CreateFinalWaveWizardMode
             .Add "asteroid_hit", Array("check_fwwiz_done","asteroid_flash3","asteroid_flicker1","play_asteroid_hit")
             .Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", Array("update_hit_count")
             .Add "update_hit_count", Array("update_fwwiz_score")
+            .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 3}", Array("disable_fwwiz_mb","start_add_ball_fwwiz")
             .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 0}", Array("asteroid_destroyed","asteroid_off","fwwiz_music_stop")
             'asteroid glow
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", Array("asteroid_temp1")
@@ -210,7 +211,7 @@ Sub CreateFinalWaveWizardMode
 
         With .Multiballs("fwwiz")
             .StartEvents = Array("timer_final_wave_message_complete")
-            .DisableEvents = Array("asteroid_destroyed")
+            .DisableEvents = Array("asteroid_destroyed","disable_fwwiz_mb")
             .BallCount = 5
             .BallCountType = "total"
             .ShootAgain = FWWizBallSaveTime
@@ -533,6 +534,12 @@ Sub CreateFinalWaveWizardMode
 				End With
 			End With
             With .EventName("continue_fwwiz")
+				With .Variable("fwwiz_add_ball_ready")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("start_add_ball_fwwiz")
 				With .Variable("fwwiz_add_ball_ready")
                     .Action = "set"
 					.Int = 1
