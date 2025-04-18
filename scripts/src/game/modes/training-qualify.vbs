@@ -41,7 +41,7 @@ Sub CreateTrainingQualifyMode
             .Add "check_training{current_player.shot_training_ready==1 && current_player.flippers_are_dead==0}", Array("start_training_select")
             'Handle mystery and skillshot awards
             .Add "mystery_trainer_ready", Array("clear_training_shots","training_shots_completed")
-            .Add "ss_trainer_ready", Array("clear_training_shots","training_shots_completed")
+            .Add "ss_trainer_ready{current_player.shot_training_ready == 0}", Array("clear_training_shots","training_shots_completed")
             .Add "training_shots_completed", Array("score_30000")
         End With
 
