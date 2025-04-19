@@ -63,6 +63,10 @@ TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missi
 TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields","gi22")
 TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor,GIColorWhite)
 
+Const TrainingCancelTime = 3000
+Const TrainingCancelWarningTime = 1500
+
+
 ' Meteor wave qualify settings
 Const MeteorWaveDelayTicks = 45  'uses 1000 ms interval
 

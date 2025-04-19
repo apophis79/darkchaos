@@ -82,6 +82,21 @@ Sub CreateTrainingShipSaveMode
             End With
         End With
 
+        With .ComboSwitches("cancel_training_ss")
+            .Switch1 = "s_left_flipper"
+            .Switch2 = "s_right_flipper"
+            .HoldTime = TrainingCancelTime
+            .EventsWhenBoth = Array("stop_training")
+        End With
+
+        With .ComboSwitches("cancel_training_warning_ss")
+            .Switch1 = "s_left_flipper"
+            .Switch2 = "s_right_flipper"
+            .HoldTime = TrainingCancelWarningTime
+            .EventsWhenBoth = Array("training_cancel_warning")
+            .EventsWhenInactive = Array("training_cancel_warning_stop")
+        End With
+
         'Define our shots
         For x = 1 to 3
             With .Shots("training_ship_charge"&x)
@@ -245,6 +260,31 @@ Sub CreateTrainingShipSaveMode
                     End With
                 End With
             Next
+
+            'cancel warning
+            With .EventName("training_cancel_warning")
+                .Key = "key_training_cancel_ss_warning"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 15
+                .Priority = 100
+                With .Tokens()
+                    .Add "lights", "tInlaneGI"
+                    .Add "color", TrainingColor
+                End With
+            End With
+            With .EventName("training_cancel_warning_stop")
+                .Key = "key_training_cancel_ss_warning"
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 15
+                .Priority = 100
+                .Action = "stop"
+                With .Tokens()
+                    .Add "lights", "tInlaneGI"
+                    .Add "color", TrainingColor
+                End With
+            End With
 
         End With
         
