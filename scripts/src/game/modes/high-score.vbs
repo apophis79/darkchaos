@@ -215,7 +215,7 @@ Sub CreateHighScoreMode
                 End With
             Next
 
-            With .EventName("text_inputted.1{high_score_initials_chars<3}")
+            With .EventName("text_inputted.1{machine.high_score_initials_chars<3}")
                 With .Display("player3")
                     .Text = "machine.high_score_initials & ""A"""
                 End With
