@@ -22,7 +22,6 @@ Sub CreateFinalWaveWizardMode
     With CreateGlfMode("final_wave_wizard", 4000)
         .StartEvents = Array("run_final_wave_wizard")
         .StopEvents = Array("ball_ending","stop_final_wave_wizard")
-        .UseWaitQueue = True
 
         With .EventPlayer()
             'start/restart wizard mode
