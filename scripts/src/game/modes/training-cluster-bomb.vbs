@@ -86,7 +86,7 @@ Sub CreateTrainingClusterBombMode
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"
             .HoldTime = TrainingCancelTime
-            .EventsWhenBoth = Array("stop_training")
+            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled")
         End With
 
         With .ComboSwitches("cancel_training_warning_cb")

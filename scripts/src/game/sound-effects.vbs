@@ -243,7 +243,8 @@ VOCNames = Array( _
     "voc_critically_low_health", _ 
     "voc_shields_acquired", _
     "voc_ssss", _
-    "voc_sdsss")
+    "voc_sdsss", _
+    "voc_training_canceled")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -254,7 +255,7 @@ VOCDurations = Array( _
     4.718, _
     2.422, _
     3.252, _
-    4.415, _
+    2.587, _
     4.415, _
     2.362, _
     2.877, _
@@ -294,7 +295,8 @@ VOCDurations = Array( _
     2.417, _ 
     2.218, _
     3.723, _
-    4.302)
+    4.302, _
+    4.415)
 
 
 

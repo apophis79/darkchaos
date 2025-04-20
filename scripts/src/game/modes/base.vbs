@@ -881,7 +881,7 @@ Sub CreateBaseMode()
                 .Sound = "voc_wave_completed"
             End With
 
-            'Training music
+            'Training
             With .EventName("training_music_alt_start")
                 .Key = "key_mus_training_alt"
                 .Sound = "mus_training_alt"
@@ -891,6 +891,11 @@ Sub CreateBaseMode()
                 .Sound = "mus_training_alt"
                 .Action = "stop"
             End With
+            With .EventName("play_voc_training_canceled")
+                .Key = "key_voc_training_canceled"
+                .Sound = "voc_training_canceled"
+            End With
+            
 
             'Wizard music
             With .EventName("fwwiz_music_start")
