@@ -189,7 +189,7 @@ SFXDurations = Array( _
     3.422, _ 
     0.506, _ 
     4.467, _ 
-    1.302)
+    0.139)
 
 
 Dim VOCNames, VOCDurations
