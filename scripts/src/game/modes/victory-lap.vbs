@@ -42,12 +42,14 @@ Sub CreateVictoryLapMode
             .Add MainShotNames(7)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_250000")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            'Handled mode ending
+            .Add "mus_victory_stopped", Array("end_victory_lap")
         End With
 
         With .QueueRelayPlayer()
             With .EventName(GLF_BALL_ENDING)
                 .Post = "awaiting_victory_music_end"
-                .WaitFor = "mus_victory_stopped"
+                .WaitFor = "end_victory_lap"
             End With
         End With
 
