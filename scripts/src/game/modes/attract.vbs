@@ -68,10 +68,12 @@ Sub CreateAttractMode()
             .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 21}", Array("show_attract_hs2")    '3 + 1 sec
             .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 25}", Array("show_attract_hs3")    '3 + 1 sec
             .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 29}", Array("show_attract_hs4")    '3 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 33}", Array("show_attract_credits1") '5 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 39}", Array("show_attract_credits2") '2 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 41}", Array("show_attract_credits3") '2 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 43}", Array("show_attract_credits4") '4 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 33}", Array("show_attract_lastscores1")    '2 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 36}", Array("show_attract_lastscores2")    '3 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 40}", Array("show_attract_credits1") '5 + 1 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 46}", Array("show_attract_credits2") '2 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 48}", Array("show_attract_credits3") '2 sec
+            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 50}", Array("show_attract_credits4") '4 + 1 sec = 55
         End With
 
         With .RandomEventPlayer()
@@ -175,7 +177,7 @@ Sub CreateAttractMode()
         With .Timers("attract_display")
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = 48
+            .EndValue = 55
             With .ControlEvents()
                 .EventName = "mode_attract_started"
                 .Action = "start"
@@ -516,19 +518,63 @@ Sub CreateAttractMode()
                     .Key = "key_score_4_label"
                     .Text = "machine.score_4_label"
                     .Expire = 3000
-                    .Priority = 3
+                    .Priority = 6
                 End With
                 With .Display("player3")
                     .Key = "key_score_4_name"
                     .Text = "machine.score_4_name"
                     .Expire = 3000
-                    .Priority = 3
+                    .Priority = 6
                 End With
                 With .Display("player4")
                     .Key = "key_score_4_value"
                     .Text = "machine.score_4_value"
                     .Expire = 3000
-                    .Priority = 3
+                    .Priority = 6
+                End With
+            End With
+
+            With .EventName("show_attract_lastscores1")
+                With .Display("player2")
+                    .Key = "key_p2_show_last_score"
+                    .Text = """LAST """
+                    .Expire = 2000
+                    .Priority = 7
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "right"
+                        .Text = ""
+                    End With
+                End With
+                With .Display("player3")
+                    .Key = "key_p3_show_last_score"
+                    .Text = """SCORES """
+                    .Expire = 2000
+                    .Priority = 7
+                    With .Transition()
+                        .TransitionType = "push"
+                        .Direction = "left"
+                        .Text = ""
+                    End With
+                End With
+            End With
+
+            With .EventName("show_attract_lastscores2")
+                With .Display("player1")
+                    .Text = "machine.player1_score"
+                    .Expire = 3000
+                End With
+                With .Display("player2")
+                    .Text = "machine.player2_score"
+                    .Expire = 3000
+                End With
+                With .Display("player3")
+                    .Text = "machine.player3_score"
+                    .Expire = 3000
+                End With
+                With .Display("player4")
+                    .Text = "machine.player4_score"
+                    .Expire = 3000
                 End With
             End With
 
@@ -537,7 +583,7 @@ Sub CreateAttractMode()
                     .Key = "key_all_show_attract_credits1"
                     .Text = """"""
                     .Expire = 5000
-                    .Priority = 7
+                    .Priority = 9
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "left"
@@ -551,7 +597,7 @@ Sub CreateAttractMode()
                     .Key = "key_p2_show_attract_credits2"
                     .Text = """APOPHIS"""
                     .Expire = 8000
-                    .Priority = 8
+                    .Priority = 10
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
@@ -565,7 +611,7 @@ Sub CreateAttractMode()
                     .Key = "key_p3_show_attract_credits3"
                     .Text = """FLUX  """
                     .Expire = 6000
-                    .Priority = 8
+                    .Priority = 10
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
@@ -579,7 +625,7 @@ Sub CreateAttractMode()
                     .Key = "key_p4_show_attract_credits4"
                     .Text = """UNSAVORY"""
                     .Expire = 4000
-                    .Priority = 8
+                    .Priority = 10
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
