@@ -23,7 +23,7 @@ Sub CreateMoonMultiballMode
             .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
             'Panic penalty
             .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0 && current_player.disable_moon_launch==0}", Array("launch_panic_penalty")
-            .Add "launch_panic_penalty", Array("score_m50000")
+            .Add "launch_panic_penalty", Array("score_m100000")
         End With
 
 

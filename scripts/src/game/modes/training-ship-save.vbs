@@ -23,9 +23,9 @@ Sub CreateTrainingShipSaveMode
             '.Debug = True
             .Add "mode_training_ship_save_started", Array("init_training","play_lsling_training","play_rsling_training")
             'successfull shot
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", Array("light_ship_charge1","flash_gi","play_sfx_LS","score_20000")
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 && current_player.shot_training_ship_charge2 == 0}", Array("light_ship_charge2","flash_gi","play_sfx_LS","score_30000")
-            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", Array("light_ship_charge3","play_sfx_LS","score_50000")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", Array("light_ship_charge1","flash_gi","play_sfx_LS","score_200000")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 && current_player.shot_training_ship_charge2 == 0}", Array("light_ship_charge2","flash_gi","play_sfx_LS","score_300000")
+            .Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", Array("light_ship_charge3","play_sfx_LS","score_500000")
             .Add "light_ship_charge3", Array("training_achieved","play_sfx_super_jackpot")
             'Stop the training
             .Add "training_achieved", Array("stop_training")

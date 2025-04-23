@@ -132,11 +132,13 @@ Const DoubleScoringMaxTicks = 60
 Const SuperSpinnerShowLength = 5000
 Const SuperSpinnerTickInterval = 1000
 Const SuperSpinnerMaxTicks = 60
+Const SuperSpinnerMultiplier = 69
 
 ' Super Pops Scoring settings
 Const SuperPopsShowLength = 5000
 Const SuperPopsTickInterval = 1000
 Const SuperPopsMaxTicks = 60
+Const SuperPopsMultiplier = 69
 
 ' Fully Loaded Wizard settings
 Const FLWizMessageInterval = 3000
@@ -155,7 +157,7 @@ Const VictoryLapTime = 45 'seconds
 
 ' Bonus settings
 Const BonusTimerTickInterval = 333
-Const BonusrWaveMultiplier = 50000
+Const BonusrWaveMultiplier = 100000
 Const BonusPerTraining = 250000
 Const BonusPerClusterBomb = 250000
 Const BonusPerMoonMissile = 250000

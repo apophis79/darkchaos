@@ -106,7 +106,7 @@ Sub CreateBaseMode()
             .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper3_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper4_active", Array("play_sfx_bumper","score_1300")
-            .Add "s_spinner_active", Array("score_330")
+            .Add "s_spinner_active", Array("score_930")
             .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches

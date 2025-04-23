@@ -83,7 +83,7 @@ Sub CreateSuperSpinnerMode
             With .EventName("mode_super_spinner_started") 
                 With .Variable("spin_multiplier")
                     .Action = "set"
-                    .Int = 10
+                    .Int = SuperSpinnerMultiplier
                 End With
             End With
             With .EventName("mode_super_spinner_stopping") 
