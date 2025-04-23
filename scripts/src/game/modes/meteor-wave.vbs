@@ -58,7 +58,7 @@ Sub CreateMeteorWaveMode
             .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
             .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
             'Handle fired proton
-            .Add "proton_fired", Array("check_protons","proton_fired_flash_show","score_5000")
+            .Add "proton_fired", Array("check_protons","proton_fired_flash_show","score_10000")
             'Handle events after meteor is downed
             .Add "meteor1_down", Array("check_meteor_wave")
             .Add "meteor2_down", Array("check_meteor_wave")
@@ -317,19 +317,19 @@ Sub CreateMeteorWaveMode
                     .Source = Array("up_cool")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_4000")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_80000")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_warm")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_8000")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_90000")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_hot")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
-                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_15000")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_100000")
                 End With
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")
