@@ -66,6 +66,7 @@ Sub CreateFullyLoadedWizardMode
             .Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 2}", Array("flwiz_bumpers_show2")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            .Add "ball_search_started", Array("release_moon_ball")
             'Handle shield shot bank
             .Add "s_TargetShield1_active", Array("shield_bank_hit")
             .Add "s_TargetShield2_active", Array("shield_bank_hit")

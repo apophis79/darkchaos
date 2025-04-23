@@ -42,6 +42,7 @@ Sub CreateVictoryLapMode
             .Add MainShotNames(7)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_250000")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            .Add "ball_search_started", Array("release_moon_ball")
             'Handled mode ending
             .Add "mus_victory_stopped", Array("end_victory_lap")
         End With

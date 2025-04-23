@@ -59,6 +59,7 @@ Sub CreateComboCommandWizardMode
             .Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 2}", Array("ccwiz_bumpers_show2")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            .Add "ball_search_started", Array("release_moon_ball")
         End With
 
 

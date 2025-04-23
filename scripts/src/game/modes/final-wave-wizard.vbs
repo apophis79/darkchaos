@@ -165,6 +165,7 @@ Sub CreateFinalWaveWizardMode
 
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            .Add "ball_search_started", Array("release_moon_ball")
 
         End With
 
