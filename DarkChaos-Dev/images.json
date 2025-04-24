@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.00026,
+    "alpha_test_value": 200.00027,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
@@ -416,6 +416,20 @@
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\MRBallDark3.hdr",
       "name": "MRBallDark3"
+    },
+    "bits": false
+  },
+  {
+    "name": "ball_Test8B",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\Balls\\ball_Test8B.hdr",
+    "width": 600,
+    "height": 300,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\Balls\\ball_Test8B.hdr",
+      "name": "ball_Test8B"
     },
     "bits": false
   }
