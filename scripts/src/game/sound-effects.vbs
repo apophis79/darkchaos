@@ -247,7 +247,8 @@ VOCNames = Array( _
     "voc_ssss", _
     "voc_sdsss", _
     "voc_training_canceled", _
-    "voc_final_wave_ready")
+    "voc_final_wave_ready", _
+    "voc_nuke")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -300,7 +301,8 @@ VOCDurations = Array( _
     3.723, _
     4.302, _
     4.415, _
-    3.657)
+    3.657, _ 
+    5.773)
 
 
 
@@ -350,6 +352,16 @@ Sub CreateSounds()
             .EventsWhenStopped = Array(SFXNames(x)&"_stopped")
         End With
     Next
+
+    With CreateGlfSound("sfx_nuke")  'Nuke detonation
+        .File = "sfx_nuke"
+        .Bus = BusName 
+        .Volume = 1 'Override bus volume
+        .Duration = 11.860* 1000
+        .EventsWhenStopped = Array("sfx_nuke_stopped")
+    End With
+
+    
 
     ' Callouts
     BusName = "voc"

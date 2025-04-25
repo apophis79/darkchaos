@@ -95,7 +95,7 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_fwwiz_start_meteors_complete", Array("fwwiz_raise_meteor") 'first meteor
             .Add "continue_fwwiz", Array("fwwiz_raise_meteor") 'first meteor
             'asteroid destroyed
-            .Add "asteroid_destroyed", Array("knockdown_meteors","score_2000000")
+            .Add "asteroid_destroyed", Array("knockdown_meteors","score_2000000","deactivate_nuke")
             '  explosion flippers
             .Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 4}", Array("kill_flippers")
             .Add "timer_asteroid_explodes_complete", Array("enable_flippers","explosion_done")

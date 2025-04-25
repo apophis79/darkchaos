@@ -43,6 +43,9 @@ Sub CreateBaseMode()
             
             'restarting waves
             .Add "stop_training", Array("check_base_restart","training_music_alt_stop")
+
+            .Add "check_base_restart{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", Array("activate_nuke")
+
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave0_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_restart")
@@ -1078,6 +1081,16 @@ Sub CreateBaseMode()
             With .EventName("play_sfx_EarthHit3")
                 .Key = "key_sfx_EarthHit3"
                 .Sound = "sfx_EarthHit3"
+            End With
+
+            'Nuke
+            With .EventName("play_voc_nuke")
+                .Key = "key_voc_nuke"
+                .Sound = "voc_nuke"
+            End With
+            With .EventName("detonate_nuke")
+                .Key = "key_sfx_nuke"
+                .Sound = "sfx_nuke"
             End With
 
             'Health low
