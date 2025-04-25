@@ -26,33 +26,33 @@ Sub CreateComboCommandWizardMode
             .Add "timer_combo_command_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
-            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
-            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_300000")
+            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
             'Phase 1 shots completed, so activate the scoop for Super JPs
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", Array("activate_ccwiz_sjp","run_ccwiz_scoop_show")
             'Phase 1 Super JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 && current_player.ccwiz_super_jp == 1}", Array("ccwiz_sjp_achieved","stop_ccwiz_scoop_show","restart_combos_command_shots")   'Start phase 2
-            .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot","play_sfx_super_jackpot","ccwiz_sjp1_show1","ccwiz_sjp1_show2","score_2000000")
+            .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot","play_sfx_super_jackpot","ccwiz_sjp1_show1","ccwiz_sjp1_show2","score_1000000")
             'Phase 2 shots
-            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show1","ccwiz_flash_phase2_show1","score_500000")
-            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show8","ccwiz_flash_phase2_show8","score_500000")
-            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show2","ccwiz_flash_phase2_show2","score_500000")
-            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show5","ccwiz_flash_phase2_show5","score_500000")
-            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show4","ccwiz_flash_phase2_show4","score_500000")
-            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show6","ccwiz_flash_phase2_show6","score_500000")
-            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show3","ccwiz_flash_phase2_show3","score_500000")
-            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show7","ccwiz_flash_phase2_show7","score_500000")
+            .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show1","ccwiz_flash_phase2_show1","score_300000")
+            .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show8","ccwiz_flash_phase2_show8","score_300000")
+            .Add MainShotNames(2)&"_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show2","ccwiz_flash_phase2_show2","score_300000")
+            .Add MainShotNames(3)&"_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show5","ccwiz_flash_phase2_show5","score_300000")
+            .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show4","ccwiz_flash_phase2_show4","score_300000")
+            .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show6","ccwiz_flash_phase2_show6","score_300000")
+            .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show3","ccwiz_flash_phase2_show3","score_300000")
+            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 2}", Array("add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show7","ccwiz_flash_phase2_show7","score_300000")
             'Phase 2 shots completed, so activate the scoop for Super JPs
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", Array("activate_ccwiz_sdjp","run_ccwiz_scoop_show","enable_scoop_hold")
             'Phase 2 Super Duper JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", Array("ccwiz_sdjp_achieved","stop_ccwiz_scoop_show")  'Combo Command wizard mode completed
-            .Add "ccwiz_sdjp_achieved", Array("play_sfx_super_jackpot","ccwiz_sjp2_show1","ccwiz_sjp2_show2","ccwiz_music_stop","score_3000000") 
+            .Add "ccwiz_sdjp_achieved", Array("play_sfx_super_jackpot","ccwiz_sjp2_show1","ccwiz_sjp2_show2","ccwiz_music_stop","score_2000000") 
             .Add "ccwiz_finalize", Array("release_scoop_hold","completed_combo_command_wizard")
             'Handle bumper lights
             .Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 1}", Array("ccwiz_bumpers_show1")

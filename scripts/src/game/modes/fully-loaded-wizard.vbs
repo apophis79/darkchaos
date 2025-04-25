@@ -33,33 +33,33 @@ Sub CreateFullyLoadedWizardMode
             .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
-            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_300000")
-            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", Array("flwiz_proton2_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_300000")
-            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", Array("flwiz_proton3_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_300000")
-            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", Array("flwiz_proton4_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_300000")
-            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", Array("flwiz_proton5_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_300000")
-            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6==1}", Array("flwiz_proton6_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_300000")
-            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_cluster_hit","cluster_bomb_fired","cluster_bomb_flash","play_sfx_jackpot","play_sfx_cluster_fired","score_300000")
-            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_moon_hit","moon_missile_fired","play_sfx_jackpot","score_300000")
+            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", Array("flwiz_proton2_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", Array("flwiz_proton3_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", Array("flwiz_proton4_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", Array("flwiz_proton5_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6==1}", Array("flwiz_proton6_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_cluster_hit","cluster_bomb_fired","cluster_bomb_flash","play_sfx_jackpot","play_sfx_cluster_fired","score_200000")
+            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_moon_hit","moon_missile_fired","play_sfx_jackpot","score_200000")
             'Phase 1 shots completed, so activate the scoop for Super JPs
             .Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}", Array("activate_flwiz_sjp","run_flwiz_scoop_show") 
             'Phase 1 Super JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 && current_player.flwiz_super_jp == 1}", Array("flwiz_sjp_achieved","stop_flwiz_scoop_show","restart_fully_loaded_shots")   'Start phase 2
-            .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot","play_sfx_super_jackpot","flwiz_sjp1_show1","flwiz_sjp1_show2","score_2000000")
+            .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot","play_sfx_super_jackpot","flwiz_sjp1_show1","flwiz_sjp1_show2","score_1000000")
             'Phase 2 shots
-            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton1_hit","play_flwiz_proton_show","play_sfx_jackpot","score_500000")
-            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton2_hit","play_flwiz_proton_show","play_sfx_jackpot","score_500000")
-            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton3_hit","play_flwiz_proton_show","play_sfx_jackpot","score_500000")
-            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton4_hit","play_flwiz_proton_show","play_sfx_jackpot","score_500000")
-            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton5_hit","play_flwiz_proton_show","play_sfx_jackpot","score_500000")
-            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton6_hit","play_flwiz_proton_show","play_sfx_jackpot","score_500000")
-            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_cluster_hit","play_flwiz_cluster_show","play_sfx_jackpot","play_sfx_cluster_fired","score_500000")
-            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_moon_hit","play_flwiz_moon_show","play_sfx_jackpot","play_sfx_launch","score_500000")
+            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton1_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
+            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton2_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
+            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton3_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
+            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton4_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
+            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton5_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
+            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_proton6_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
+            .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_cluster_hit","play_flwiz_cluster_show","play_sfx_jackpot","play_sfx_cluster_fired","score_300000")
+            .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 2}", Array("add_flwiz_phase2_shot","flwiz_phase2_moon_hit","play_flwiz_moon_show","play_sfx_jackpot","play_sfx_launch","score_300000")
             'Phase 2 shots completed, so activate the scoop for Super JPs
             .Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 2}", Array("activate_flwiz_sdjp","run_flwiz_scoop_show","enable_scoop_hold") 
             'Phase 2 Super Duper JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.flwiz_super_jp == 2}", Array("flwiz_sdjp_achieved","stop_flwiz_scoop_show")  'Fully Loaded wizard mode completed
-            .Add "flwiz_sdjp_achieved", Array("play_sfx_super_jackpot","flwiz_sjp2_show1","flwiz_sjp2_show2","flwiz_music_stop","score_3000000")  
+            .Add "flwiz_sdjp_achieved", Array("play_sfx_super_jackpot","flwiz_sjp2_show1","flwiz_sjp2_show2","flwiz_music_stop","score_2000000")  
             .Add "flwiz_finalize", Array("release_scoop_hold","completed_fully_loaded_wizard")
             'Handle bumper lights
             .Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_bumpers_show1")
