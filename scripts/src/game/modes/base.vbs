@@ -1125,13 +1125,17 @@ Sub CreateBaseMode()
 
 
             With .EventName("activate_combo_command_wizard")
+                .Key = "key_voc_LCWiz"
                 .Sound = "voc_LCWiz"
             End With
             With .EventName("activate_fully_loaded_wizard")
+                .Key = "key_voc_LLWiz"
                 .Sound = "voc_LLWiz"
             End With
             With .EventName("activate_final_wave_wizard")
-                .Sound = "voc_Wiz"
+                .Key = "key_voc_Wiz"
+                '.Sound = "voc_Wiz"
+                .Sound = "voc_final_wave_ready"
             End With
 
             'eb

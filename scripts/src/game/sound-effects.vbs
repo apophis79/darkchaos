@@ -97,7 +97,8 @@ SFXNames = Array( _
     "sfx_super_jackpot", _
     "sfx_error_buzz", _ 
     "sfx_alien_ship_crash", _ 
-    "sfx_hs_initial")
+    "sfx_hs_initial", _
+    "sfx_final_wave_scoop")
 SFXDurations = Array( _
     4.075, _
     1.927, _
@@ -189,7 +190,8 @@ SFXDurations = Array( _
     3.422, _ 
     0.506, _ 
     4.467, _ 
-    0.139)
+    0.139, _
+    10.316)
 
 
 Dim VOCNames, VOCDurations
@@ -244,7 +246,8 @@ VOCNames = Array( _
     "voc_shields_acquired", _
     "voc_ssss", _
     "voc_sdsss", _
-    "voc_training_canceled")
+    "voc_training_canceled", _
+    "voc_final_wave_ready")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -296,7 +299,8 @@ VOCDurations = Array( _
     2.218, _
     3.723, _
     4.302, _
-    4.415)
+    4.415, _
+    3.657)
 
 
 

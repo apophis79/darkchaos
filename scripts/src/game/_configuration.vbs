@@ -144,7 +144,7 @@ Const SuperPopsMultiplier = 69
 Const FLWizMessageInterval = 3000
 
 ' Combo Command Wizard settings
-Const CCWizMessageInterval = 3000
+Const CCWizMessageInterval = 3400
 
 ' Final Wave Wizard settings
 Const FWWizMessageInterval = 3000

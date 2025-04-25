@@ -26,11 +26,11 @@ Sub CreateFinalWaveWizardMode
         With .EventPlayer()
             'start/restart wizard mode
             .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == "&FWWizMaxAsteroidHits&"}", Array("begin_fwwiz") 'start wizard mode
-            .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < "&FWWizMaxAsteroidHits&"}", Array("continue_fwwiz","display_hit_count","update_asteroid_glow") 'continue wizard mode
-            .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","fwwiz_music_start","turn_off_gi","final_flash1","final_flash2","final_flash3")
+            .Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < "&FWWizMaxAsteroidHits&"}", Array("continue_fwwiz","display_hit_count","update_asteroid_glow","fwwiz_music_start") 'continue wizard mode
+            .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","turn_off_gi","final_flash1")
             .Add "mode_final_wave_wizard_stopping", Array("fwwiz_music_stop") 
             'release the scoop ball to start the wizard mode
-            .Add "timer_final_wave_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
+            .Add "timer_final_wave_message_complete", Array("fwwiz_music_start","release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'add-a-ball
             .Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
@@ -195,7 +195,7 @@ Sub CreateFinalWaveWizardMode
                 .Add "play_sfx_LMet5", 1
                 .Add "play_sfx_LMet6", 1
                 .Add "play_sfx_LMet7", 1
-                .Add "play_sfx_LMet8", 1
+                '.Add "play_sfx_LMet8", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -455,29 +455,9 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_final_flash3"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 6
                 With .Tokens()
-                    .Add "lights", "tFlasherU"
-                    .Add "color", MeteorFlashColor
-                End With
-            End With
-            With .EventName("final_flash2")   
-                .Key = "key_final_flash4"
-                .Show = "flash_color" 
-                .Speed = 20
-                .Loops = 4
-                With .Tokens()
-                    .Add "lights", "tFL5"
-                    .Add "color", MeteorFlashColor
-                End With
-            End With
-            With .EventName("final_flash3")   
-                .Key = "key_final_flash5"
-                .Show = "flash_color" 
-                .Speed = 20
-                .Loops = 4
-                With .Tokens()
-                    .Add "lights", "tFL6"
+                    .Add "lights", "tFlasher"
                     .Add "color", MeteorFlashColor
                 End With
             End With
@@ -504,6 +484,10 @@ Sub CreateFinalWaveWizardMode
             With .EventName("asteroid_destroyed")
                 .Key = "key_sfx_final_explosion"
                 .Sound = "sfx_final_explosion"
+            End With
+            With .EventName("begin_fwwiz")
+                .Key = "key_sfx_final_wave_scoop"
+                .Sound = "sfx_final_wave_scoop"
             End With
         End With
 
