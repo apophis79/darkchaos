@@ -45,7 +45,9 @@ Sub CreateFinalWaveWizardMode
             .Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", Array("update_hit_count")
             .Add "update_hit_count", Array("update_fwwiz_score")
             .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 3}", Array("disable_fwwiz_mb","start_add_ball_fwwiz")
-            .Add "check_fwwiz_done{current_player.wizard_final_hit_count == 0}", Array("asteroid_destroyed","asteroid_off","fwwiz_music_stop")
+            .Add "check_fwwiz_done{current_player.wizard_final_hit_count <= 0}", Array("asteroid_destroyed","asteroid_off","fwwiz_music_stop")
+            'nuke
+            .Add "detonate_nuke.1", Array("update_hit_count","update_asteroid_glow","check_fwwiz_done")
             'asteroid glow
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", Array("asteroid_temp1")
             .Add "update_asteroid_glow{current_player.wizard_final_hit_count == 18}", Array("asteroid_temp2")
@@ -509,6 +511,18 @@ Sub CreateFinalWaveWizardMode
 				With .Variable("wizard_final_hit_count")
                     .Action = "add"
 					.Int = -1
+				End With
+			End With
+            With .EventName("detonate_nuke.3")
+				With .Variable("wizard_final_hit_count")
+                    .Action = "add"
+					.Int = -10
+				End With
+			End With
+            With .EventName("detonate_nuke.2{current_player.wizard_final_hit_count < 0}")
+				With .Variable("wizard_final_hit_count")
+                    .Action = "set"
+					.Int = 0
 				End With
 			End With
             With .EventName("multiball_fwwiz_shoot_again_ended")
