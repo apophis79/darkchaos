@@ -16,11 +16,11 @@ Sub CreateVictoryLapMode
 
         With .EventPlayer()
             'victory lap starts before final wve ends... so wait till the final wave is done
-            .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game","meteor_wave_music_stop")
+            .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game","meteor_wave_music_stop","turn_off_gi")
             .Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
             'starting, restarting, and stopping the victor lap itself
-            .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap")
-            .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap","stop_final_wave_wizard")
+            .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap","enable_flippers")
+            .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap","stop_final_wave_wizard","enable_flippers")
             .Add "multiball_victory_shoot_again_ended", Array("kill_flippers")
             'run stuff during the victory lap
             .Add "run_victory_lap", Array("victory_bumpers_show","play_mus_victory","run_victory_lap_show","play_vic_lsling_show","play_vic_rsling_show")
@@ -182,7 +182,7 @@ Sub CreateVictoryLapMode
                 .Add "victory_gi20_show1", 1
                 .Add "victory_gi21_show1", 1
                 .Add "victory_gi22_show1", 1
-                .ForceAll = False
+                
                 .ForceDifferent = False
             End With
 
@@ -210,6 +210,7 @@ Sub CreateVictoryLapMode
                 .Add "victory_gi21_show2", 1
                 .Add "victory_gi22_show2", 1
                 .ForceAll = False
+
                 .ForceDifferent = False
             End With
 
