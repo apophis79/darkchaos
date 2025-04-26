@@ -7,7 +7,7 @@ Sub CreateSuperPopsMode
 
     With CreateGlfMode("super_pops", 700)
         .StartEvents = Array("start_super_pops","mystery_super_pops")
-        .StopEvents = Array("mode_base_stopping","stop_super_pops")
+        .StopEvents = Array("mode_base_stopping","stop_super_pops","init_training")
         
 
         With .EventPlayer()

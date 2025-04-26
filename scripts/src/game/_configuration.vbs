@@ -188,6 +188,7 @@ Sub ConfigureGlfDevices
     CreateFullyLoadedShows()
     CreateFinalWaveWizardShows()
     CreatePostGameShows()
+    CreateNukeShows()
 
     ' Sound effects bus
     CreateSounds()
@@ -551,6 +552,7 @@ Sub ConfigureGlfDevices
     ' Initial Vars
     Glf_SetInitialPlayerVar "flag_ss", 0
     Glf_SetInitialPlayerVar "flag_sss_mystery", 0
+    Glf_SetInitialPlayerVar "num_skillshots", 0
     Glf_SetInitialPlayerVar "ball_cradled", 0
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_wave_running", 0
@@ -602,6 +604,9 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "bonus_total", 0
     Glf_SetInitialPlayerVar "flippers_are_dead", 0
     Glf_SetInitialPlayerVar "hs_input_ready", 1
+    Glf_SetInitialPlayerVar "nuke_acquired", 0
+    Glf_SetInitialPlayerVar "nuke_used", 0
+    Glf_SetInitialPlayerVar "nuke_just_used", 0
 
 
 
@@ -619,6 +624,7 @@ Sub ConfigureGlfDevices
 
     CreateBaseMode                  ' 200           Yes
     CreateInstantInfoMode           ' 300           Yes
+    CreateNukeMode                  ' 400           Yes
     CreateSkillshotsMode            ' 500           No
     CreateAlienAttackMode           ' 500           No
     CreateShieldsMode               ' 510           No

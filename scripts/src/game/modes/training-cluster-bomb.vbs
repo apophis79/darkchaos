@@ -28,8 +28,8 @@ Sub CreateTrainingClusterBombMode
             .Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 && current_player.shot_training_cluster_charge3 == 0}", Array("light_cluster_charge3","play_sfx_LS","score_500000") ',"flash_gi")
             .Add "light_cluster_charge3", Array("training_achieved","play_sfx_super_jackpot")
             'Stop the training
-            .Add "training_achieved", Array("stop_training")
-            .Add "timer_training_cluster_bomb_complete", Array("stop_training")
+            .Add "training_achieved", Array("stop_training","training_stopped")
+            .Add "timer_training_cluster_bomb_complete", Array("stop_training","training_stopped")
             'handle gi flicker shows
             .Add "timer_training_cluster_bomb_tick", Array("flicker_gi")
             'Handle moon ramp
@@ -86,7 +86,7 @@ Sub CreateTrainingClusterBombMode
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"
             .HoldTime = TrainingCancelTime
-            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled")
+            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled","training_stopped")
         End With
 
         With .ComboSwitches("cancel_training_warning_cb")

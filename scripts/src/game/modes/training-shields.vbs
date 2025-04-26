@@ -23,8 +23,8 @@ Sub CreateTrainingShieldsMode
             .Add "mode_training_shields_started", Array("init_training","play_lsling_training","play_rsling_training")
             'Stop the training
             .Add "training_shield_group_collected_complete", Array("training_shields_completed","play_sfx_super_jackpot")
-            .Add "timer_training_shields_complete", Array("stop_training")
-            .Add "training_shields_completed", Array("stop_training")
+            .Add "timer_training_shields_complete", Array("stop_training","training_stopped")
+            .Add "training_shields_completed", Array("stop_training","training_stopped")
             'Update the training select shots
             .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi","play_sfx_LS","score_200000")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")
@@ -91,7 +91,7 @@ Sub CreateTrainingShieldsMode
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"
             .HoldTime = TrainingCancelTime
-            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled")
+            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled","training_stopped")
         End With
 
         With .ComboSwitches("cancel_training_warning_sh")

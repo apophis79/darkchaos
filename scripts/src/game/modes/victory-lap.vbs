@@ -20,7 +20,7 @@ Sub CreateVictoryLapMode
             .Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
             'starting, restarting, and stopping the victor lap itself
             .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap","enable_flippers")
-            .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap","stop_final_wave_wizard","enable_flippers")
+            .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap","stop_final_wave_wizard","enable_flippers","deactivate_nuke")
             .Add "multiball_victory_shoot_again_ended", Array("kill_flippers")
             'run stuff during the victory lap
             .Add "run_victory_lap", Array("victory_bumpers_show","play_mus_victory","run_victory_lap_show","play_vic_lsling_show","play_vic_rsling_show")

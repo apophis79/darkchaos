@@ -7,7 +7,7 @@ Sub CreateSuperSpinnerMode
 
     With CreateGlfMode("super_spinner", 700)
         .StartEvents = Array("start_super_spinner","mystery_super_spinner")
-        .StopEvents = Array("mode_base_stopping","stop_super_spinner")
+        .StopEvents = Array("mode_base_stopping","stop_super_spinner","init_training")
         
 
         With .EventPlayer()
