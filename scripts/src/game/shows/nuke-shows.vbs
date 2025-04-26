@@ -73,7 +73,7 @@ With CreateGlfShow("nuke_explodes")
     With .Shows("flash_color")
         .Key = "key_nuke_fired1"
         .Speed = 20
-        .Loops = 15
+        .Loops = 20
         .Priority = 10000
         With .Tokens()
             .Add "lights", "tBlast" 
@@ -83,15 +83,28 @@ With CreateGlfShow("nuke_explodes")
   End With
 
   With .AddStep(0.11, Null, Null)
-    With .Shows("flash_color_with_fade")
-        .Key = "key_nuke_fired2"
+    With .Shows("flash_color")
+        .Key = "key_nuke_fired2a"
         .Speed = 20
-        .Loops = 7
+        .Loops = 11
         .Priority = 10000
         With .Tokens()
-            .Add "lights", "FL3"
+            .Add "lights", "tFlasherU"
             .Add "color", MeteorHotColor
             .Add "fade", 300
+        End With
+    End With
+  End With
+
+  With .AddStep(1, Null, Null)
+    With .Shows("flash_color_fadeout")
+        .Key = "key_nuke_fired2b"
+        .Speed = 2
+        .Loops = 1
+        .Priority = 11000
+        With .Tokens()
+            .Add "lights", "tFlasherU"
+            .Add "color", MeteorHotColor
         End With
     End With
   End With

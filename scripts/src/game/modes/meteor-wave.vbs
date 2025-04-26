@@ -3,8 +3,8 @@
 'Meteor Wave Mode.
 
 'Meteor waves occur at regular intervals. Once it starts, the meteor targets begin to pop up and meteor MB starts.
-'Meteor targets can be dropped four different ways: 
-'  1) with a normal ball hit, 2) with a proton cannon, 3) with a cluster bomb, 4) when time runs out and it hits earth
+'Meteor targets can be dropped five different ways: 
+'  1) with a normal ball hit, 2) with a proton cannon, 3) with a cluster bomb, 4) with a nuke, 5) when time runs out and it hits earth
 'If a meteor hits Earth, one tick is removed from the Healt bar. When Health bar is depleted, then the flippers die (ball ends)
 'Each wave gets successively harder, where more meteors need to be destroyed to end the wave. 
 'Number of meteors per wave, starting from first wave and going to last wave: 6,9,12,15,18,21,24,27,30
@@ -17,7 +17,7 @@ Sub CreateMeteorWaveMode
     With CreateGlfMode("meteor_wave", 1000)
         '.Debug = True
         .StartEvents = Array("start_meteor_wave")
-        .StopEvents = Array("timer_meteor_wave_finish_complete","mode_base_stopping","kill_flippers")
+        .StopEvents = Array("stop_meteor_wave","mode_base_stopping","kill_flippers")
 
 
         With .EventPlayer()
@@ -66,7 +66,7 @@ Sub CreateMeteorWaveMode
             .Add "meteor4_down", Array("check_meteor_wave")
             'Stop the current successful wave
             .Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done")
-            .Add "meteor_wave_done{current_player.meteor_wave_running == 1}", Array("stop_meteor_wave","score_wave_count")
+            .Add "meteor_wave_done{current_player.meteor_wave_running == 1}", Array("finish_meteor_wave","score_wave_count")
             .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","play_voc_wave_completed") 
             .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","play_voc_wave_completed")
             .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","play_voc_wave_completed")
@@ -81,6 +81,9 @@ Sub CreateMeteorWaveMode
             .Add "check_protons{current_player.shot_proton_round1==0}", Array("restart_fire_protons")
             'earth hit show
             .Add "earth_hit", Array("mw_lsing_earth_hit","mw_rsling_earth_hit")
+            'stop wave
+            .Add "timer_meteor_wave_finish_complete", Array("stop_meteor_wave")
+            .Add "timer_meteor_wave_nuked_complete", Array("stop_meteor_wave")
         End With
 
         'Randomize which meteor gets hit by proton cannon
@@ -229,7 +232,7 @@ Sub CreateMeteorWaveMode
                 .Events = Array("mode_meteor_wave_started")
                 .State = 1
             End With
-            .RestartEvents = Array("stop_meteor_wave") 
+            .RestartEvents = Array("finish_meteor_wave") 
         End With
 
         'Define meteor shots
@@ -334,7 +337,7 @@ Sub CreateMeteorWaveMode
                 With .Transitions()  'knockdowns
                     .Source = Array("up_cool","up_warm","up_hot")
                     .Target = "down"
-                    .Events = Array("meteor"&x&"_proton_hit","stop_meteor_wave","cluster_bomb_fired","mode_meteor_wave_stopping")
+                    .Events = Array("meteor"&x&"_proton_hit","finish_meteor_wave","cluster_bomb_fired","detonate_nuke.2","mode_meteor_wave_stopping")
                     .EventsWhenTransitioning = Array("meteor"&x&"_knockdown")
                 End With
             End With
@@ -441,17 +444,26 @@ Sub CreateMeteorWaveMode
                     End With
                 End With
             End With
-
         Next
 
-        'Stage the wave finish      FIXME: replace with relay events
+        'Stage the wave finish 
         With .Timers("meteor_wave_finish")
             '.Debug = True
             .TickInterval = 500
             .StartValue = 0
             .EndValue = 1
             With .ControlEvents()
-                .EventName = "stop_meteor_wave"
+                .EventName = "finish_meteor_wave{current_player.nuke_just_used == 0}"
+                .Action = "restart"
+            End With
+        End With
+        With .Timers("meteor_wave_nuked")
+            '.Debug = True
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 9
+            With .ControlEvents()
+                .EventName = "finish_meteor_wave{current_player.nuke_just_used == 1}"
                 .Action = "restart"
             End With
         End With
@@ -616,8 +628,12 @@ Sub CreateMeteorWaveMode
                     .Action = "set"
 					.Int = "current_player.meteors_per_wave" 
 				End With
+                With .Variable("nuke_just_used")
+                    .Action = "set"
+                    .Int = 1
+                End With
 			End With
-            With .EventName("stop_meteor_wave") 
+            With .EventName("finish_meteor_wave") 
                 With .Variable("meteors_per_wave")
                     .Action = "add"
                     .Int = 3
@@ -651,6 +667,21 @@ Sub CreateMeteorWaveMode
                     .Int = 1
                 End With
             End With
+            'nuke event
+            With .EventName("detonate_nuke.1")
+                With .Variable("num_meteors_to_raise")
+                    .Action = "set"
+                    .Int = 0
+                End With
+                With .Variable("num_meteors_to_drop")
+                    .Action = "set"
+                    .Int = 0
+                End With
+                With .Variable("nuke_just_used")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
 		End With
 
         With .LightPlayer()
@@ -671,14 +702,51 @@ Sub CreateMeteorWaveMode
 
             With .EventName("mode_meteor_wave_started")
                 With .Display("pf")
+                    .Key = "key_mw_pf1"
                     .Text = "{current_player.num_meteors_to_drop:0>2}"
                 End With
             End With
             With .EventName("check_meteor_wave.2")
                 With .Display("pf")
+                    .Key = "key_mw_pf2"
                     .Text = "{current_player.num_meteors_to_drop:0>2}"
                 End With
             End With
+            With .EventName("detonate_nuke")
+                With .Display("pf")
+                    .Key = "key_mw_pf3"
+                    .Text = """00"""
+                    .Expire = 11000
+                    .Priority = 11000
+                End With
+                With .Display("player1")
+                    .Key = "key_mw_nuke1"
+                    .Text = """"""
+                    .Expire = 11000
+                    .Priority = 11000
+                End With
+                With .Display("player2")
+                    .Key = "key_mw_nuke2"
+                    .Text = """  NUKED """
+                    .Flashing = "all"
+                    .Expire = 11000
+                    .Priority = 11000
+                End With
+                With .Display("player3")
+                    .Key = "key_mw_nuke3"
+                    .Text = """ NUKED  """
+                    .Flashing = "all"
+                    .Expire = 11000
+                    .Priority = 11000
+                End With
+                With .Display("player4")
+                    .Key = "key_mw_nuke4"
+                    .Text = """"""
+                    .Expire = 11000
+                    .Priority = 11000
+                End With
+            End With
+            
         
             With .EventName("mode_meteor_wave_started{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player1")

@@ -605,6 +605,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "hs_input_ready", 1
     Glf_SetInitialPlayerVar "nuke_acquired", 0
     Glf_SetInitialPlayerVar "nuke_used", 0
+    Glf_SetInitialPlayerVar "nuke_just_used", 0
 
 
 
