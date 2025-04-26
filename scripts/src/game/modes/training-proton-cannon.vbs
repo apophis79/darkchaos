@@ -28,8 +28,8 @@ Sub CreateTrainingProtonCannonMode
             .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3","play_sfx_LS","score_500000") ',"flash_gi")
             .Add "light_proton_charge3", Array("training_achieved")
             'Stop the training
-            .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot")
-            .Add "timer_training_proton_cannon_complete", Array("stop_training")
+            .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot","training_stopped")
+            .Add "timer_training_proton_cannon_complete", Array("stop_training","training_stopped")
             'handle gi flicker shows
             .Add "timer_training_proton_cannon_tick", Array("flicker_gi")
             'Handle moon ramp
@@ -86,7 +86,7 @@ Sub CreateTrainingProtonCannonMode
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"
             .HoldTime = TrainingCancelTime
-            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled")
+            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled","training_stopped")
         End With
 
         With .ComboSwitches("cancel_training_warning_pc")

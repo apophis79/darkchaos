@@ -23,8 +23,8 @@ Sub CreateTrainingMoonMissileMode
             .Add "mode_training_moon_missile_started", Array("init_training","play_lsling_training","play_rsling_training")
             'Stop the training
             .Add "training_moon_lane_group_collected_complete", Array("training_moon_missile_completed","play_sfx_super_jackpot")
-            .Add "timer_training_moon_missile_complete", Array("stop_training")
-            .Add "training_moon_missile_completed", Array("stop_training")
+            .Add "timer_training_moon_missile_complete", Array("stop_training","training_stopped")
+            .Add "training_moon_missile_completed", Array("stop_training","training_stopped")
             'Update the training select shots
             .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi","play_sfx_LS","score_200000")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
@@ -91,7 +91,7 @@ Sub CreateTrainingMoonMissileMode
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"
             .HoldTime = TrainingCancelTime
-            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled")
+            .EventsWhenBoth = Array("stop_training","play_voc_training_canceled","training_stopped")
         End With
 
         With .ComboSwitches("cancel_training_warning_mm")
