@@ -2,49 +2,38 @@
 
 Sub CreateNukeShows()
 
-' With CreateGlfShow("nuke_inserts_show")
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|37|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|100|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|24|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|100|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|70|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|100|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|37|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|0|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|10|(color)")
-'     End With
-'     With .AddStep(Null, Null, .16)
-'         .Lights = Array("(lights)|10|000000")
-'     End With
-'     With .AddStep(Null, Null, 7.4)
-'         .Lights = Array("(lights)|100|000000")
-'     End With
-' End With
+
+With CreateGlfShow("nuke_inserts_show")
+    With .AddStep(0.01, Null, Null)
+        .Lights = Array("(lights)|100|(color)|300")
+    End With
+    With .AddStep(0.3, Null, Null)
+        .Lights = Array("(lights)|100|000000|300")
+    End With
+    With .AddStep(1, Null, Null)
+        .Lights = Array("(lights)|100|000000")
+    End With
+    With .AddStep(3.5, Null, Null)
+        .Lights = Array("(lights)|100|000000")
+    End With
+    With .AddStep(3.8, Null, Null)
+        .Lights = Array("(lights)|100|(color)|300")
+    End With
+    With .AddStep(4.1, Null, Null)
+        .Lights = Array("(lights)|100|000000|300")
+    End With
+    With .AddStep(9, Null, 0.1)
+        .Lights = Array("(lights)|100|000000")
+    End With
+End With
     
 
 With CreateGlfShow("nuke_explodes")
 
   With .AddStep(0.01, Null, Null)
-    With .Shows("flicker_color_off")
+    With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi1"
-        .Speed = 1.5
+        .Speed = 1
         .Loops = 1
         .Priority = 10000
         With .Tokens()
@@ -55,7 +44,7 @@ With CreateGlfShow("nuke_explodes")
   End With
 
   With .AddStep(0.02, Null, Null)
-    With .Shows("flicker_color_off")
+    With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi2"
         .Speed = 1
         .Loops = 1
@@ -68,7 +57,7 @@ With CreateGlfShow("nuke_explodes")
   End With
 
   With .AddStep(0.03, Null, Null)
-    With .Shows("flicker_color_off")
+    With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi3"
         .Speed = 1
         .Loops = 1
@@ -108,12 +97,25 @@ With CreateGlfShow("nuke_explodes")
   End With
 
 
-  With .AddStep(4, Null, Null)
+  With .AddStep(3.9, Null, Null)
+    With .Shows("flash_color")
+      .Key = "key_nuke_fired3a"
+      .Speed = 20
+      .Loops = 5
+      .Priority = 10000
+       With .Tokens()
+            .Add "lights", "tFlasher"
+            .Add "color", "ffffff"
+        End With
+    End With
+  End With
+
+  With .AddStep(4.3, Null, Null)
     With .Shows("flash_color_fadeout")
-      .Key = "key_nuke_fired3"
+      .Key = "key_nuke_fired3b"
       .Speed = 2
       .Loops = 1
-      .Priority = 11000
+      .Priority = 10000
        With .Tokens()
             .Add "lights", "tFlasher"
             .Add "color", "ffffff"
