@@ -21,19 +21,22 @@ Sub CreateSkillshotsMode
             .Add "left_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 2}", Array("sdsss_achieved") 
             .Add "ss_achieved", Array("ss_trainer_ready","score_500000")
             .Add "sss_achieved", Array("ss_trainer_ready","sss_mystery_ready","score_1000000")
+            .Add "sss_achieved.1{current_player.num_skillshots==3}", Array("activate_nuke")
             .Add "ssss_achieved", Array("score_2000000")
             .Add "sdsss_achieved", Array("score_3000000")
+            .Add "voc_ss_stopped{current_player.num_skillshots==3}", Array("activate_nuke")
+            .Add "voc_sss_stopped{current_player.num_skillshots==3}", Array("activate_nuke")
             'Stop skillshots
             .Add "timer_skillshots_complete", Array("stop_skillshots") 
             .Add "s_InnerOrb1_active", Array("stop_skillshots")
         End With
 
         With .SoundPlayer()
-            With .EventName("ss_achieved")
+            With .EventName("ss_achieved.1")
                 .Key = "key_voc_ss"
                 .Sound = "voc_ss"
             End With
-            With .EventName("sss_achieved")
+            With .EventName("sss_achieved.1")
                 .Key = "key_voc_sss"
                 .Sound = "voc_sss"
             End With
@@ -89,10 +92,21 @@ Sub CreateSkillshotsMode
 					.Int = 0
 				End With
             End With
-            With .EventName("sss_achieved")
+            With .EventName("ss_achieved.2")
+                'initalize vars
+                With .Variable("num_skillshots")
+                    .Action = "add"
+					.Int = 1
+				End With
+            End With
+            With .EventName("sss_achieved.2")
                 'initalize vars
 				With .Variable("flag_ss")
                     .Action = "set"
+					.Int = 1
+				End With
+                With .Variable("num_skillshots")
+                    .Action = "add"
 					.Int = 1
 				End With
             End With
