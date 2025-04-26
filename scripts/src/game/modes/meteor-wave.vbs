@@ -630,7 +630,7 @@ Sub CreateMeteorWaveMode
 				End With
                 With .Variable("nuke_just_used")
                     .Action = "set"
-                    .Int = 1
+                    .Int = 0
                 End With
 			End With
             With .EventName("finish_meteor_wave") 
@@ -690,7 +690,7 @@ Sub CreateMeteorWaveMode
 					.Color = "000000"
 				End With
 			End With
-            With .EventName("timer_meteor_wave_finish_tick{devices.timers.meteor_wave_finish.ticks==1}")
+            With .EventName("stop_meteor_wave")
                 With .Lights("GI")
                     .Color = GIColor3000k
                 End With
