@@ -228,7 +228,7 @@ Sub CreateAlienAttackMode
                 .Target = "init"
                 .Events = Array(MainShotNames(0)&"_hit", _ 
                             MainShotNames(1)&"_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", _ 
-                            "cluster_bomb_fired")
+                            "cluster_bomb_fired","detonate_nuke")
                 .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit")
             End With
             For x = 2 to 7
@@ -238,7 +238,7 @@ Sub CreateAlienAttackMode
                     .Events = Array(MainShotNames(x-1)&"_hit", _ 
                               MainShotNames(x-2)&"_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", _ 
                               MainShotNames(x)&"_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", _ 
-                              "cluster_bomb_fired")
+                              "cluster_bomb_fired","detonate_nuke")
                     .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit")
                 End With
             Next
@@ -247,7 +247,7 @@ Sub CreateAlienAttackMode
                 .Target = "init"
                 .Events = Array(MainShotNames(7)&"_hit", _ 
                             MainShotNames(6)&"_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", _ 
-                            "cluster_bomb_fired")
+                            "cluster_bomb_fired","detonate_nuke")
                 .EventsWhenTransitioning = Array("reset_alien_shot"&x,"alien_hit")
             End With
 
