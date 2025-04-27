@@ -164,6 +164,13 @@ Sub CreateTrainingHealMode
 					.Int = 1  
 				End With
             End With
+            'training_moon_missile_used
+            With .EventName("start_moon_multiball")
+                With .Variable("training_moon_missile_used")
+                    .Action = "set"
+					.Int = 1  
+				End With
+            End With
         End With
         
 
@@ -333,15 +340,19 @@ Sub CreateTrainingHealMode
             With .EventName("init_training")
                 With .Display("player1")
                     .Text = """"""
+                    .Expire = 5000
                 End With
                 With .Display("player2")
                     .Text = """TRAIN """
+                    .Expire = 5000
                 End With
                 With .Display("player3")
                     .Text = """HEALTH"""
+                    .Expire = 5000
                 End With
                 With .Display("player4")
                     .Text = """"""
+                    .Expire = 5000
                 End With
                 With .Display("pf")
                     .Text = "{devices.timers.training_heal.ticks:0>2}"

@@ -48,7 +48,7 @@ Sub CreateSuperSpinnerMode
             With .States("flashing")
                 .Show = "flash_color_with_fade"
                 .Key = "key_flashing_supspin"
-                .Speed = 2
+                .Speed = 5
                 .Priority = 500
                 With .Tokens()
                     .Add "lights", "gi21"
@@ -59,7 +59,7 @@ Sub CreateSuperSpinnerMode
             With .States("hurry")
                 .Show = "flash_color"
                 .Key = "key_hurry_supspin"
-                .Speed = 7
+                .Speed = 10
                 .Priority = 500
                 With .Tokens()
                     .Add "lights", "gi21"

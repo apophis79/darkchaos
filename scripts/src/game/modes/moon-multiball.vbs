@@ -14,8 +14,8 @@ Sub CreateMoonMultiballMode
     Dim x
 
     With CreateGlfMode("moon_multiball", 600)
-        .StartEvents = Array("new_ball_started","stop_training","mode_moon_multiball_qualify_started")
-        .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_ended")
+        .StartEvents = Array("new_ball_started","mode_moon_multiball_qualify_started") '"stop_training",
+        .StopEvents = Array("mode_base_stopping","wizard_mode_ended")  '"start_training_select",
 
         With .EventPlayer()
             'Launch
@@ -42,6 +42,10 @@ Sub CreateMoonMultiballMode
             .EndValue = 3
             With .ControlEvents()
                 .EventName = GLF_BALL_DRAIN
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "mode_training_select_stopping"
                 .Action = "restart"
             End With
         End With
@@ -100,6 +104,12 @@ Sub CreateMoonMultiballMode
 				End With
 			End With   
             With .EventName(GLF_BALL_DRAIN)
+				With .Variable("disable_moon_launch")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("mode_training_select_started")
 				With .Variable("disable_moon_launch")
                     .Action = "set"
 					.Int = 1
