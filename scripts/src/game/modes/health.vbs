@@ -27,7 +27,7 @@ Sub CreateHealthMode
             .Add "s_Bumper4_active", Array("check_add_health_bump")
             'add or remove health lights as needed
             .Add "check_add_health_bump{current_player.health_bump_value<"&BumperHitsPerRepair&"}", Array("add_health_bump")
-            .Add "check_add_health_bump{current_player.health_bump_value=="&BumperHitsPerRepair&"}", Array("check_add_health","reset_health_bump")
+            .Add "check_add_health_bump{current_player.health_bump_value>="&BumperHitsPerRepair&"}", Array("check_add_health","reset_health_bump")
             .Add "check_add_health{current_player.health_value==8}", Array("health9_norm","add_health")
             .Add "check_add_health{current_player.health_value==7}", Array("health8_norm","add_health")
             .Add "check_add_health{current_player.health_value==6}", Array("health7_norm","health6_norm","health5_norm","health4_norm","health3_norm","health2_norm","health1_norm","add_health")
