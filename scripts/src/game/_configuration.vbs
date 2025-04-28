@@ -609,6 +609,10 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "nuke_used", 0
     Glf_SetInitialPlayerVar "nuke_just_used", 0
 
+    'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0
+    'Glf_SetInitialPlayerVar "debug_multiball_lock_moon_launch_balls_locked", 0
+    'Glf_SetInitialPlayerVar "debug_leftover_balls_in_lock", 0
+    
 
 
     'Shot Profiles

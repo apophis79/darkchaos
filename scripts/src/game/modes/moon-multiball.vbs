@@ -29,7 +29,7 @@ Sub CreateMoonMultiballMode
 
         With .Multiballs("moon")
             '.Debug = True
-            .StartEvents = Array("start_moon_multiball.2")
+            .StartEvents = Array("start_moon_multiball.3")
             .BallCount = "current_player.multiball_lock_moon_launch_balls_locked"
             .BallCountType = "add"
             .ShootAgain = 0
@@ -59,6 +59,17 @@ Sub CreateMoonMultiballMode
                 .Action = "restart"
             End With
         End With
+
+        ' With .Timers("moon_debug")
+        '     .TickInterval = 250
+        '     .StartValue = 0
+        '     .EndValue = 100000
+        '     With .ControlEvents()
+        '         .EventName = "mode_moon_multiball_started"
+        '         .Action = "restart"
+        '     End With
+        ' End With
+
 
         With .DOFPlayer()
             With .EventName("play_sfx_launch")
@@ -93,7 +104,13 @@ Sub CreateMoonMultiballMode
         End With
 
         With .VariablePlayer()
-            With .EventName("start_moon_multiball")
+            With .EventName("start_moon_multiball.1{current_player.wizard_mode_running == 0}")
+                With .Variable("multiball_lock_moon_launch_balls_locked")
+                    .Action = "set"
+					.Int = 0
+				End With
+            End With
+            With .EventName("start_moon_multiball.1")
 				With .Variable("leftover_balls_in_lock")
                     .Action = "set"
 					.Int = 0
@@ -133,6 +150,21 @@ Sub CreateMoonMultiballMode
 					.Int = 0
 				End With
 			End With  
+
+            ' With .EventName("timer_moon_debug_tick")
+            '     With .Variable("debug_ball_devices_moon_lock_balls")
+            '         .Action = "set"
+			' 		.Int = "devices.ball_devices.moon_lock.balls"
+			' 	End With
+            '     With .Variable("debug_multiball_lock_moon_launch_balls_locked")
+            '         .Action = "set"
+			' 		.Int = "current_player.multiball_lock_moon_launch_balls_locked"
+			' 	End With
+            '     With .Variable("debug_leftover_balls_in_lock")
+            '         .Action = "set"
+			' 		.Int = "current_player.leftover_balls_in_lock"
+			' 	End With
+            ' End With
 		End With
         
     End With
