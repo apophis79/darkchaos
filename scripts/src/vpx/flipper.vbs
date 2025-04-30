@@ -7,9 +7,12 @@
 ' Flipper callbacks
 
 Const ReflipAngle = 20
+Dim LeftFlipperEnabled: LeftFlipperEnabled = False
+Dim RightFlipperEnabled: RightFlipperEnabled = False
+Dim RightFlipper1Enabled: RightFlipperEnabled = False
 
 Sub LeftFlipperAction(Enabled)
-	If Enabled Then
+	If Enabled And LeftFlipperEnabled Then
 		DOF 101, DOFOn
 		FlipperActivate LeftFlipper, LFPress
 		LF.Fire    
@@ -30,8 +33,21 @@ Sub LeftFlipperAction(Enabled)
 	End If
 End Sub
 
-Sub RightFlipperAction(Enabled)
+Sub LeftFlipperActionGLF(Enabled)
 	If Enabled Then
+		If glf_flippers("left").GetValue("enabled") Then
+			LeftFlipperEnabled = True
+		End If
+	Else
+		If Not glf_flippers("left").GetValue("enabled") Then
+			LeftFlipperEnabled = False
+			LeftFlipperAction False
+		End If
+	End If
+End Sub
+
+Sub RightFlipperAction(Enabled)
+	If Enabled And RightFlipperEnabled Then
 		DOF 102, DOFOn
 		FlipperActivate RightFlipper, RFPress
 		RF.Fire 
@@ -54,9 +70,22 @@ Sub RightFlipperAction(Enabled)
 	End If
 End Sub
 
+Sub RightFlipperActionGLF(Enabled)
+	If Enabled Then
+		If glf_flippers("right").GetValue("enabled") Then
+			RightFlipperEnabled = True
+		End If
+	Else
+		If Not glf_flippers("left").GetValue("enabled") Then
+			RightFlipperEnabled = False
+			RightFlipperAction False
+		End If
+	End If
+End Sub
+
 Sub RightFlipper1Action(Enabled)
 	If StagedFlipper = 0 Then Exit Sub
-	If Enabled Then
+	If Enabled And RightFlipperEnabled Then
 		RightFlipper1.rotatetoend
 		If RightFlipper1.currentangle > RightFlipper1.endangle - ReflipAngle Then
 			RandomSoundReflipUpRight RightFlipper1
@@ -70,6 +99,19 @@ Sub RightFlipper1Action(Enabled)
 			RandomSoundFlipperDownRight RightFlipper1
 		End If	
 		FlipperRightHitParm = FlipperUpSoundLevel
+	End If
+End Sub
+
+Sub RightFlipper1ActionGLF(Enabled)
+	If Enabled Then
+		If glf_flippers("upper_right").GetValue("enabled") Then
+			RightFlipper1Enabled = True
+		End If
+	Else
+		If Not glf_flippers("upper_right").GetValue("enabled") Then
+			RightFlipper1Enabled = False
+			RightFlipper1Action False
+		End If
 	End If
 End Sub
 

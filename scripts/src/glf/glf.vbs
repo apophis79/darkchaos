@@ -12276,6 +12276,15 @@ Class GlfFlipper
     Private m_action_cb
     Private m_debug
 
+    Public Property Get GetValue(value)
+        Select Case value
+            Case "enabled":
+                GetValue = m_enabled
+            Case "active":
+                GetValue = m_active
+        End Select
+    End Property
+
     Public Property Let Switch(value)
         m_switch = value
     End Property

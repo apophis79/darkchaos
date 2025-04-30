@@ -5,8 +5,26 @@
 
 Sub Table1_KeyDown(ByVal keycode)
 
-	' ANY TIME
 	Glf_KeyDown(keycode)
+
+	If keycode = LeftFlipperKey Then 
+		LeftFlipperAction True
+		PinCab_LeftFlipperButton.TransX = -10
+	End if
+    If keycode = RightFlipperKey Then 
+		RightFlipperAction True
+		PinCab_RightFlipperButton.TransX = 10
+	End if
+	If keycode = StagedRightFlipperKey Then 
+		RightFlipper1Action True
+	End if
+	If keycode = LeftMagnaSave Then 
+		PinCab_LeftMagnaButton.TransX = -10
+	End if
+    If keycode = RightMagnaSave Then 
+		PinCab_RightMagnaButton.TransX = 10
+	End if
+
 	If keycode = AddCreditKey or keycode = AddCreditKey2 Then RandomCoinSound
 	If keycode = PlungerKey Then 
 		Plunger.Pullback
@@ -32,18 +50,7 @@ Sub Table1_KeyDown(ByVal keycode)
 		SoundNudgeCenter
 	End If
 
-	If keycode = LeftFlipperKey Then 
-		PinCab_LeftFlipperButton.TransX = -10
-	End if
-    If keycode = RightFlipperKey Then 
-		PinCab_RightFlipperButton.TransX = 10
-	End if
-	If keycode = LeftMagnaSave Then 
-		PinCab_LeftMagnaButton.TransX = -10
-	End if
-    If keycode = RightMagnaSave Then 
-		PinCab_RightMagnaButton.TransX = 10
-	End if
+	
 
 End Sub
 
@@ -53,19 +60,17 @@ Sub Table1_KeyUp(ByVal keycode)
 
 	' ANY TIME
 	Glf_KeyUp(keycode)
-	
-	If KeyCode = PlungerKey Then
-		Plunger.Fire
-		SoundPlungerReleaseBall
-		TimerPlunger.Enabled = False
-		TimerPlunger2.Enabled = True
-	End If
 
 	If keycode = LeftFlipperKey Then 
+		LeftFlipperAction False
 		PinCab_LeftFlipperButton.TransX = 0
 	End if
     If keycode = RightFlipperKey Then 
+		RightFlipperAction False
 		PinCab_RightFlipperButton.TransX = 0
+	End if
+	If keycode = StagedRightFlipperKey Then 
+		RightFlipper1Action False
 	End if
 	If keycode = LeftMagnaSave Then 
 		PinCab_LeftMagnaButton.TransX = 0
@@ -73,6 +78,13 @@ Sub Table1_KeyUp(ByVal keycode)
     If keycode = RightMagnaSave Then 
 		PinCab_RightMagnaButton.TransX = 0
 	End if
+	
+	If KeyCode = PlungerKey Then
+		Plunger.Fire
+		SoundPlungerReleaseBall
+		TimerPlunger.Enabled = False
+		TimerPlunger2.Enabled = True
+	End If
 
 End Sub
 
