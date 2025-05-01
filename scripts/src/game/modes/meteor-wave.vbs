@@ -65,25 +65,28 @@ Sub CreateMeteorWaveMode
             .Add "meteor3_down", Array("check_meteor_wave")
             .Add "meteor4_down", Array("check_meteor_wave")
             'Stop the current successful wave
-            .Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0}", Array("meteor_wave_done")
+            .Add "check_meteor_wave.4{current_player.num_meteors_to_drop < 0}", Array("zero_num_meteors_to_drop")
+            .Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0 && current_player.nuke_just_used == 0}", Array("meteor_wave_done")
             .Add "meteor_wave_done{current_player.meteor_wave_running == 1}", Array("finish_meteor_wave","score_wave_count")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","play_voc_wave_completed") 
-            .Add "meteor_wave_done{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","play_voc_wave_completed")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","play_voc_wave_completed")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","play_voc_wave_completed")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","play_voc_wave_completed","light_eb")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","play_voc_wave_completed")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","play_voc_wave_completed")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","play_voc_wave_completed")
-            .Add "meteor_wave_done{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","activate_final_wave_wizard")
-            .Add "meteor_wave_done{current_player.training_heal_achieved==0}", Array("drop_diverter")
+            .Add "detonate_nuke{current_player.meteor_wave_running == 1}", Array("finish_meteor_wave","score_wave_count")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_done","play_voc_wave_completed") 
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave2 == 1}", Array("meteor_wave2_done","play_voc_wave_completed")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave3 == 1}", Array("meteor_wave3_done","play_voc_wave_completed")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave4 == 1}", Array("meteor_wave4_done","play_voc_wave_completed")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave5 == 1}", Array("meteor_wave5_done","play_voc_wave_completed","light_eb")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave6 == 1}", Array("meteor_wave6_done","play_voc_wave_completed")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","play_voc_wave_completed")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","play_voc_wave_completed")
+            .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","activate_final_wave_wizard")
+            .Add "meteor_wave_done_done.2{current_player.training_heal_achieved==0}", Array("drop_diverter")
+            .Add "meteor_wave_done_done.1", Array("stop_meteor_wave")
             'restart fire protons
             .Add "check_protons{current_player.shot_proton_round1==0}", Array("restart_fire_protons")
             'earth hit show
             .Add "earth_hit", Array("mw_lsing_earth_hit","mw_rsling_earth_hit")
             'stop wave
-            .Add "timer_meteor_wave_finish_complete", Array("stop_meteor_wave")
-            .Add "timer_meteor_wave_nuked_complete", Array("stop_meteor_wave")
+            .Add "timer_meteor_wave_finish_complete", Array("meteor_wave_done_done")
+            .Add "timer_meteor_wave_nuked_complete", Array("meteor_wave_done_done")
         End With
 
         'Randomize which meteor gets hit by proton cannon
@@ -639,12 +642,12 @@ Sub CreateMeteorWaveMode
                     .Int = 3
                 End With
             End With
-            With .EventName("meteor_wave_done") 
-                With .Variable("meteor_wave_running")
-                    .Action = "set"
-                    .Int = 0
-                End With
-            End With
+            ' With .EventName("meteor_wave_done") 
+            '     With .Variable("meteor_wave_running")
+            '         .Action = "set"
+            '         .Int = 0
+            '     End With
+            ' End With
             With .EventName("score_wave_count") 
                 With .Variable("num_waves_completed_this_ball") 
                     .Action = "add"
@@ -680,6 +683,12 @@ Sub CreateMeteorWaveMode
                 With .Variable("nuke_just_used")
                     .Action = "set"
                     .Int = 1
+                End With
+            End With
+            With .EventName("zero_num_meteors_to_drop")
+                With .Variable("num_meteors_to_drop")
+                    .Action = "set"
+                    .Int = 0
                 End With
             End With
 		End With
