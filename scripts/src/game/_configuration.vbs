@@ -296,21 +296,21 @@ Sub ConfigureGlfDevices
     ' Flippers
     With CreateGlfFlipper("left")
         .Switch = "s_left_flipper"
-        .ActionCallback = "LeftFlipperActionGLF"
+        .ActionCallback = "LeftFlipperAction"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfFlipper("right")
         .Switch = "s_right_flipper"
-        .ActionCallback = "RightFlipperActionGLF"
+        .ActionCallback = "RightFlipperAction"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
     With CreateGlfFlipper("upper_right")
         .Switch = "s_right_staged_flipper_key"
-        .ActionCallback = "RightFlipper1ActionGLF"
+        .ActionCallback = "RightFlipper1Action"
         .DisableEvents = Array("kill_flippers")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With

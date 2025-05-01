@@ -8,15 +8,10 @@ Sub Table1_KeyDown(ByVal keycode)
 	Glf_KeyDown(keycode)
 
 	If keycode = LeftFlipperKey Then 
-		LeftFlipperAction True
 		PinCab_LeftFlipperButton.TransX = -10
 	End if
     If keycode = RightFlipperKey Then 
-		RightFlipperAction True
 		PinCab_RightFlipperButton.TransX = 10
-	End if
-	If keycode = StagedRightFlipperKey Then 
-		RightFlipper1Action True
 	End if
 	If keycode = LeftMagnaSave Then 
 		PinCab_LeftMagnaButton.TransX = -10
@@ -62,15 +57,10 @@ Sub Table1_KeyUp(ByVal keycode)
 	Glf_KeyUp(keycode)
 
 	If keycode = LeftFlipperKey Then 
-		LeftFlipperAction False
 		PinCab_LeftFlipperButton.TransX = 0
 	End if
     If keycode = RightFlipperKey Then 
-		RightFlipperAction False
 		PinCab_RightFlipperButton.TransX = 0
-	End if
-	If keycode = StagedRightFlipperKey Then 
-		RightFlipper1Action False
 	End if
 	If keycode = LeftMagnaSave Then 
 		PinCab_LeftMagnaButton.TransX = 0
