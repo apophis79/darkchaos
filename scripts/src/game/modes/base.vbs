@@ -898,6 +898,12 @@ Sub CreateBaseMode()
                 .Key = "key_voc_training_canceled"
                 .Sound = "voc_training_canceled"
             End With
+            With .EventName("play_voc_training_incomplete")
+                .Key = "key_voc_training_incomplete"
+                .Sound = "voc_training_incomplete"
+            End With
+
+            
             
 
             'Wizard music
