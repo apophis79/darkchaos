@@ -29,7 +29,7 @@ Sub CreateTrainingProtonCannonMode
             .Add "light_proton_charge3", Array("training_achieved")
             'Stop the training
             .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot","training_stopped")
-            .Add "timer_training_proton_cannon_complete", Array("stop_training","training_stopped")
+            .Add "timer_training_proton_cannon_complete", Array("stop_training","training_stopped","play_voc_training_incomplete")
             'handle gi flicker shows
             .Add "timer_training_proton_cannon_tick", Array("flicker_gi")
             'Handle moon ramp

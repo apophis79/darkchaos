@@ -248,7 +248,8 @@ VOCNames = Array( _
     "voc_sdsss", _
     "voc_training_canceled", _
     "voc_final_wave_ready", _
-    "voc_nuke")
+    "voc_nuke", _
+    "voc_training_incomplete")
 VOCDurations = Array( _
     6.000, _
     3.046, _
@@ -302,7 +303,8 @@ VOCDurations = Array( _
     4.302, _
     4.415, _
     3.657, _ 
-    5.773)
+    5.773, _
+    2.668)
 
 
 

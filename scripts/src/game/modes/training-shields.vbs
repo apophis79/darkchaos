@@ -23,7 +23,7 @@ Sub CreateTrainingShieldsMode
             .Add "mode_training_shields_started", Array("init_training","play_lsling_training","play_rsling_training")
             'Stop the training
             .Add "training_shield_group_collected_complete", Array("training_shields_completed","play_sfx_super_jackpot")
-            .Add "timer_training_shields_complete", Array("stop_training","training_stopped")
+            .Add "timer_training_shields_complete", Array("stop_training","training_stopped","play_voc_training_incomplete")
             .Add "training_shields_completed", Array("stop_training","training_stopped")
             'Update the training select shots
             .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi","play_sfx_LS","score_200000")
