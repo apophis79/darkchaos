@@ -642,12 +642,12 @@ Sub CreateMeteorWaveMode
                     .Int = 3
                 End With
             End With
-            ' With .EventName("meteor_wave_done") 
-            '     With .Variable("meteor_wave_running")
-            '         .Action = "set"
-            '         .Int = 0
-            '     End With
-            ' End With
+            With .EventName("meteor_wave_done") 
+                With .Variable("meteor_wave_running")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
             With .EventName("score_wave_count") 
                 With .Variable("num_waves_completed_this_ball") 
                     .Action = "add"
