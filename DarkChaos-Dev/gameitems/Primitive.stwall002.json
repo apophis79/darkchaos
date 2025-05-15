@@ -2,7 +2,7 @@
   "Primitive": {
     "position": {
       "x": 781.9108,
-      "y": 1170.9166,
+      "y": 1160.7921,
       "z": 25.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "stwall002",
     "material": "",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

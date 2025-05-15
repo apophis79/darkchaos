@@ -22,7 +22,7 @@
     "friction": 0.3,
     "scatter": 0.0,
     "is_collidable": true,
-    "is_visible": false,
+    "is_visible": true,
     "depth_bias": 0.0,
     "wire_diameter": 8.0,
     "wire_distance_x": 38.0,
@@ -32,8 +32,8 @@
     "overwrite_physics": false,
     "drag_points": [
       {
-        "x": 661.69073,
-        "y": 592.13745,
+        "x": 664.7603,
+        "y": 584.9751,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -45,8 +45,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 664.62445,
-        "y": 582.36066,
+        "x": 666.67084,
+        "y": 576.392,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,

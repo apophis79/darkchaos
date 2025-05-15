@@ -26,7 +26,7 @@ Sub CreateTrainingHealMode
             .Add "s_Bumper1_active", Array("check_add_training_health_bump")
             .Add "s_Bumper2_active", Array("check_add_training_health_bump")
             .Add "s_Bumper3_active", Array("check_add_training_health_bump")
-            .Add "s_Bumper4_active", Array("check_add_training_health_bump")
+            .Add "s_TopSlingshot_active", Array("check_add_training_health_bump")
             'add health lights as needed
             .Add "check_add_training_health_bump{current_player.training_health_bump_value<"&BumperHitsPerRepairTrain&"}", Array("add_training_health_bump")
             .Add "check_add_training_health_bump{current_player.training_health_bump_value>="&BumperHitsPerRepairTrain&"}", Array("check_add_training_health","reset_training_health_bump")

@@ -13,7 +13,7 @@
     "timer_interval": 100,
     "material": "",
     "surface": "",
-    "is_visible": false,
+    "is_visible": true,
     "is_enabled": true,
     "hit_height": 50.0,
     "name": "swGateSfx",

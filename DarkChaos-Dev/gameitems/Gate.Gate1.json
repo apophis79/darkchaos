@@ -1,8 +1,8 @@
 {
   "Gate": {
     "center": {
-      "x": 861.64435,
-      "y": 1848.497
+      "x": 864.3133,
+      "y": 1818.7286
     },
     "length": 70.0,
     "height": 50.0,
@@ -21,7 +21,7 @@
     "friction": 0.02,
     "damping": 0.985,
     "gravity_factor": 0.25,
-    "is_visible": false,
+    "is_visible": true,
     "name": "Gate1",
     "two_way": false,
     "is_reflection_enabled": false,

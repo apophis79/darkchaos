@@ -1,11 +1,11 @@
 {
   "Trigger": {
     "center": {
-      "x": 902.476,
-      "y": 210.4417
+      "x": 887.1793,
+      "y": 164.06534
     },
     "radius": 25.0,
-    "rotation": 0.0,
+    "rotation": -25.0,
     "wire_thickness": 0.0,
     "scale_x": 1.0,
     "scale_y": 1.0,
@@ -13,7 +13,7 @@
     "timer_interval": 100,
     "material": "Metal",
     "surface": "",
-    "is_visible": false,
+    "is_visible": true,
     "is_enabled": true,
     "hit_height": 50.0,
     "name": "s_RightOrb2",
@@ -22,8 +22,8 @@
     "is_reflection_enabled": false,
     "drag_points": [
       {
-        "x": 877.8103,
-        "y": 189.61702,
+        "x": 857.17194,
+        "y": 158.78043,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -35,8 +35,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 877.8103,
-        "y": 227.63896,
+        "x": 871.012,
+        "y": 192.67458,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -48,8 +48,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 927.5686,
-        "y": 227.63896,
+        "x": 919.0703,
+        "y": 172.52151,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -61,8 +61,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 927.5686,
-        "y": 189.61702,
+        "x": 904.7451,
+        "y": 139.84135,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

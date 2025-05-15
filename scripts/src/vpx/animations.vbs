@@ -94,11 +94,11 @@ Sub s_Bumper3_Animate
 	For Each BP in BP_BR3 : BP.transz = z: Next
 End Sub
 
-Sub s_Bumper4_Animate
-	Dim z, BP
-	z = s_Bumper4.CurrentRingOffset
-	For Each BP in BP_BR4 : BP.transz = z: Next
-End Sub
+' Sub s_Bumper4_Animate
+' 	Dim z, BP
+' 	z = s_Bumper4.CurrentRingOffset
+' 	For Each BP in BP_BR4 : BP.transz = z: Next
+' End Sub
 
 
 ' Switches

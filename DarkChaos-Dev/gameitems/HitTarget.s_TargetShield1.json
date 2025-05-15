@@ -2,7 +2,7 @@
   "HitTarget": {
     "position": {
       "x": 783.26135,
-      "y": 1068.6683,
+      "y": 1058.5438,
       "z": 0.0
     },
     "size": {
@@ -15,7 +15,7 @@
     "target_type": "hit_target_round",
     "name": "s_TargetShield1",
     "material": "Plastic",
-    "is_visible": false,
+    "is_visible": true,
     "is_legacy": false,
     "use_hit_event": true,
     "threshold": 1.5,

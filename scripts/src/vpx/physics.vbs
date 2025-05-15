@@ -12,7 +12,7 @@
 
 dim LS : Set LS = New SlingshotCorrection
 dim RS : Set RS = New SlingshotCorrection
-
+dim TS : Set TS = New SlingshotCorrection
 
 
 Sub InitSlingCorrection
@@ -24,6 +24,10 @@ Sub InitSlingCorrection
 	RS.Object = s_RightSlingshot
 	RS.EndPoint1 = EndPoint1RS
 	RS.EndPoint2 = EndPoint2RS
+
+	TS.Object = s_TopSlingshot
+	TS.EndPoint1 = EndPoint1TS
+	TS.EndPoint2 = EndPoint2TS
 
 	'Slingshot angle corrections (pt, BallPos in %, Angle in deg)
 	' These values are best guesses. Retune them if needed based on specific table research.
@@ -38,7 +42,7 @@ End Sub
 
 
 Sub AddSlingsPt(idx, aX, aY)        'debugger wrapper for adjusting flipper script in-game
-	dim a : a = Array(LS, RS)
+	dim a : a = Array(LS, RS, TS)
 	dim x : for each x in a
 		x.addpoint idx, aX, aY
 	Next

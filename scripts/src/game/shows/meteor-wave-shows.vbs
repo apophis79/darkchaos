@@ -227,9 +227,9 @@ Sub CreateMeteorWaveShows()
         "LH4|100|000000", _
         "LRO|100|000000", _
         "LSR|100|(color)", _
-        "LSL|100|000000", _
-        "LB4|100|(color)" _
-        )
+        "LSL|100|000000")
+        '"LB4|100|(color)" _
+        ')
     End With
     With .AddStep(0.30000, Null, Null)
       .Lights = Array( _
@@ -242,9 +242,9 @@ Sub CreateMeteorWaveShows()
         "LSwC1|100|000000", _
         "LSA|100|000000", _
         "LSR|100|000000", _
-        "LB3|100|(color)", _
-        "LB4|100|000000" _
-        )
+        "LB3|100|(color)")
+        '"LB4|100|000000" _
+        ')
     End With
     With .AddStep(0.33333, Null, Null)
       .Lights = Array( _
@@ -421,9 +421,9 @@ Sub CreateMeteorWaveShows()
         "LCR2|100|(color)", _
         "LCR1|100|(color)", _
         "LLI|100|(color)", _
-        "LLO|100|(color)", _
-        "LB4|100|(color)" _
-        )
+        "LLO|100|(color)")
+        '"LB4|100|(color)" _
+        ')
     End With
     With .AddStep(0.26667, Null, Null)
       .Lights = Array( _
@@ -485,9 +485,9 @@ Sub CreateMeteorWaveShows()
         "LRO|100|(color)", _
         "LLO|100|000000", _
         "LSL|100|(color)", _
-        "LB2|100|272727", _
-        "LB4|100|000000" _
-        )
+        "LB2|100|272727")
+        '"LB4|100|000000" _
+        ')
     End With
     With .AddStep(0.33333, Null, Null)
       .Lights = Array( _
@@ -705,9 +705,9 @@ Sub CreateMeteorWaveShows()
         "LCR1|100|(color)", _
         "LRI|100|000000", _
         "LRO|100|(color)", _
-        "LLI|100|(color)", _
-        "LB4|100|(color)" _
-        )
+        "LLI|100|(color)")
+        '"LB4|100|(color)" _
+        ')
     End With
     With .AddStep(0.26667, Null, Null)
       .Lights = Array( _
@@ -737,9 +737,9 @@ Sub CreateMeteorWaveShows()
         "LCR2|100|000000", _
         "LCR1|100|000000", _
         "LRO|100|000000", _
-        "LLO|100|(color)", _
-        "LB4|100|000000" _
-        )
+        "LLO|100|(color)")
+        '"LB4|100|000000" _
+        ')
     End With
     With .AddStep(0.30000, Null, Null)
       .Lights = Array( _
@@ -1042,9 +1042,9 @@ Sub CreateMeteorWaveShows()
         "LPR4|100|000000", _
         "LLI|100|000000", _
         "LLO|100|(color)", _
-        "LSR|100|000000", _
-        "LB4|100|(color)" _
-        )
+        "LSR|100|000000")
+        '"LB4|100|(color)" _
+        ')
     End With
     With .AddStep(0.30000, Null, Null)
       .Lights = Array( _
@@ -1089,9 +1089,9 @@ Sub CreateMeteorWaveShows()
         "LM3|100|000000", _
         "LSA|100|000000", _
         "LB2|100|(color)", _
-        "LB3|100|(color)", _
-        "LB4|100|000000" _
-        )
+        "LB3|100|(color)")
+        '"LB4|100|000000" _
+        ')
     End With
     With .AddStep(0.36667, Null, Null)
       .Lights = Array( _

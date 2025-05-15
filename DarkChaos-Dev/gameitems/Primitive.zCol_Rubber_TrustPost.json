@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 437.2235,
-      "y": 1916.6802,
+      "x": 434.452,
+      "y": 1902.3031,
       "z": 25.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "zCol_Rubber_TrustPost",
     "material": "zCol_RubberPegs",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,

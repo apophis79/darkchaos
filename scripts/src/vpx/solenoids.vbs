@@ -187,21 +187,21 @@ Sub Bumper3Enabled()
 End Sub
 
 
-Sub Bumper4Action(args)
-	Dim enabled, ball : enabled = args(0)
-    If IsNull(args(1)) And enabled Then
-        s_Bumper4.PlayHit()
-    End If
-	If enabled Then
-		RandomSoundBumperTop s_Bumper4
-		DOF 107, DOFPulse
-	End If
-End Sub
+' Sub Bumper4Action(args)
+' 	Dim enabled, ball : enabled = args(0)
+'     If IsNull(args(1)) And enabled Then
+'         s_Bumper4.PlayHit()
+'     End If
+' 	If enabled Then
+' 		RandomSoundBumperTop s_Bumper4
+' 		DOF 107, DOFPulse
+' 	End If
+' End Sub
 
-Sub Bumper4Disabled()
-	s_Bumper4.Threshold = 100
-End Sub
+' Sub Bumper4Disabled()
+' 	s_Bumper4.Threshold = 100
+' End Sub
 
-Sub Bumper4Enabled()
-	s_Bumper4.Threshold = 1.5
-End Sub
+' Sub Bumper4Enabled()
+' 	s_Bumper4.Threshold = 1.5
+' End Sub

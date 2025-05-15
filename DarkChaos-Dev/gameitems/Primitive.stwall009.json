@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 156.48318,
-      "y": 1102.347,
+      "x": 159.0383,
+      "y": 1105.7006,
       "z": 25.0
     },
     "size": {
@@ -19,7 +19,7 @@
       0.0,
       0.0,
       0.0,
-      -16.0
+      -19.0
     ],
     "image": "",
     "normal_map": "",
@@ -27,7 +27,7 @@
     "name": "stwall009",
     "material": "",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

@@ -1,8 +1,8 @@
 {
   "HitTarget": {
     "position": {
-      "x": 155.6931,
-      "y": 1100.5396,
+      "x": 158.08852,
+      "y": 1103.8931,
       "z": 0.0
     },
     "size": {
@@ -10,12 +10,12 @@
       "y": 32.0,
       "z": 32.0
     },
-    "rot_z": -16.0,
+    "rot_z": -19.0,
     "image": "",
     "target_type": "hit_fat_target_slim",
     "name": "s_TargetMystery1",
     "material": "",
-    "is_visible": false,
+    "is_visible": true,
     "is_legacy": false,
     "use_hit_event": true,
     "threshold": 2.0,

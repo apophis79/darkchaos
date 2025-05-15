@@ -60,42 +60,42 @@ Sub CreateVictoryLapMode
                 .Add "victory_bumper1_show_red", 1
                 .Add "victory_bumper2_show_red", 1
                 .Add "victory_bumper3_show_red", 1
-                .Add "victory_bumper4_show_red", 1
+                '.Add "victory_bumper4_show_red", 1
 
                 .Add "victory_bumper1_show_orange", 1
                 .Add "victory_bumper2_show_orange", 1
                 .Add "victory_bumper3_show_orange", 1
-                .Add "victory_bumper4_show_orange", 1
+                '.Add "victory_bumper4_show_orange", 1
 
                 .Add "victory_bumper1_show_yellow", 1
                 .Add "victory_bumper2_show_yellow", 1
                 .Add "victory_bumper3_show_yellow", 1
-                .Add "victory_bumper4_show_yellow", 1
+                '.Add "victory_bumper4_show_yellow", 1
 
                 .Add "victory_bumper1_show_green", 1
                 .Add "victory_bumper2_show_green", 1
                 .Add "victory_bumper3_show_green", 1
-                .Add "victory_bumper4_show_green", 1
+                '.Add "victory_bumper4_show_green", 1
 
                 .Add "victory_bumper1_show_cyan", 1
                 .Add "victory_bumper2_show_cyan", 1
                 .Add "victory_bumper3_show_cyan", 1
-                .Add "victory_bumper4_show_cyan", 1
+                '.Add "victory_bumper4_show_cyan", 1
 
                 .Add "victory_bumper1_show_blue", 1
                 .Add "victory_bumper2_show_blue", 1
                 .Add "victory_bumper3_show_blue", 1
-                .Add "victory_bumper4_show_blue", 1
+                '.Add "victory_bumper4_show_blue", 1
 
                 .Add "victory_bumper1_show_magenta", 1
                 .Add "victory_bumper2_show_magenta", 1
                 .Add "victory_bumper3_show_magenta", 1
-                .Add "victory_bumper4_show_magenta", 1
+                '.Add "victory_bumper4_show_magenta", 1
 
                 .Add "victory_bumper1_show_white", 1
                 .Add "victory_bumper2_show_white", 1
                 .Add "victory_bumper3_show_white", 1
-                .Add "victory_bumper4_show_white", 1
+                '.Add "victory_bumper4_show_white", 1
 
                 .ForceAll = False
                 .ForceDifferent = False
@@ -514,7 +514,7 @@ Sub CreateVictoryLapMode
             End With
 
             'Bumpers
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_red")
                     .Key = "key_v_bumper"&x&"_show_red"
                     .Show = "flash_color_fadeout" 
@@ -526,7 +526,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_orange")
                     .Key = "key_v_bumper"&x&"_show_orange"
                     .Show = "flash_color_fadeout" 
@@ -538,7 +538,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_yellow")
                     .Key = "key_v_bumper"&x&"_show_yellow"
                     .Show = "flash_color_fadeout" 
@@ -550,7 +550,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_green")
                     .Key = "key_v_bumper"&x&"_show_green"
                     .Show = "flash_color_fadeout" 
@@ -562,7 +562,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_cyan")
                     .Key = "key_v_bumper"&x&"_show_cyan"
                     .Show = "flash_color_fadeout" 
@@ -574,7 +574,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_blue")
                     .Key = "key_v_bumper"&x&"_show_blue"
                     .Show = "flash_color_fadeout" 
@@ -586,7 +586,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_magenta")
                     .Key = "key_v_bumper"&x&"_show_magenta"
                     .Show = "flash_color_fadeout" 
@@ -598,7 +598,7 @@ Sub CreateVictoryLapMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("victory_bumper"&x&"_show_white")
                     .Key = "key_v_bumper"&x&"_show_white"
                     .Show = "flash_color_fadeout" 

@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 126.814445,
-      "y": 842.4472,
+      "x": 125.676544,
+      "y": 840.9736,
       "z": 25.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "zCol_Rubber_Peg011",
     "material": "zCol_RubberPegs",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,

@@ -80,7 +80,7 @@ Sub CreateComboCommandWizardMode
                 .Add "ccwiz_bumper1_show2", 1
                 .Add "ccwiz_bumper2_show2", 1
                 .Add "ccwiz_bumper3_show2", 1
-                .Add "ccwiz_bumper4_show2", 1
+                ' .Add "ccwiz_bumper4_show2", 1
                 .ForceAll = True
                 .ForceDifferent = False
             End With
@@ -337,16 +337,16 @@ Sub CreateComboCommandWizardMode
                     .Add "color", "555555"
                 End With
             End With
-            With .EventName("ccwiz_bumper4_show2")
-                .Key = "key_bumper4_show2"
-                .Show = "flash_color_fadeout" 
-                .Speed = 10
-                .Loops = 1
-                With .Tokens()
-                    .Add "lights", "LB4"
-                    .Add "color", "555555"
-                End With
-            End With
+            ' With .EventName("ccwiz_bumper4_show2")
+            '     .Key = "key_bumper4_show2"
+            '     .Show = "flash_color_fadeout" 
+            '     .Speed = 10
+            '     .Loops = 1
+            '     With .Tokens()
+            '         .Add "lights", "LB4"
+            '         .Add "color", "555555"
+            '     End With
+            ' End With
 
 
             'Phase 1 light shows

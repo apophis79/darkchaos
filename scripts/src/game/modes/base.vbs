@@ -25,6 +25,19 @@ Sub CreateBaseMode()
         .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started","tilt")
 
         With .EventPlayer()
+
+            'DEBUG
+            .Add "s_left_staged_flipper_key_active", Array("meteor_wave1_done","meteor_wave2_done","meteor_wave3_done","meteor_wave4_done","meteor_wave5_done","meteor_wave6_done","meteor_wave7_done","meteor_wave8_done")  'DEBUG
+            .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_done")
+            .Add "debug_increase_wave{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_done")
+
+
             'new ball
             .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
@@ -108,7 +121,7 @@ Sub CreateBaseMode()
             .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper3_active", Array("play_sfx_bumper","score_1300")
-            .Add "s_Bumper4_active", Array("play_sfx_bumper","score_1300")
+            .Add "s_TopSlingshot_active", Array("play_sfx_bumper","score_1300")
             .Add "s_spinner_active", Array("score_930")
             .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 

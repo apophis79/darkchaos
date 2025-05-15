@@ -27,7 +27,7 @@
     "name": "BM_LFlipU",
     "material": "VLM.Bake.Solid",
     "side_color": "#ff00ffff",
-    "is_visible": true,
+    "is_visible": false,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

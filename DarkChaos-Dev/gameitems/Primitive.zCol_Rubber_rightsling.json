@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 627.1913,
-      "y": 1654.0,
+      "x": 625.6367,
+      "y": 1642.5515,
       "z": 25.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "zCol_Rubber_rightsling",
     "material": "zCol_RubberPosts",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,

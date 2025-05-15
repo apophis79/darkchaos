@@ -21,7 +21,7 @@
     "friction": 0.02,
     "damping": 0.985,
     "gravity_factor": 0.25,
-    "is_visible": false,
+    "is_visible": true,
     "name": "Gate2",
     "two_way": false,
     "is_reflection_enabled": true,

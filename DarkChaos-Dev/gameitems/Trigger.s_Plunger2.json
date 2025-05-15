@@ -1,8 +1,8 @@
 {
   "Trigger": {
     "center": {
-      "x": 903.51746,
-      "y": 1610.6183
+      "x": 898.77277,
+      "y": 1566.8214
     },
     "radius": 25.0,
     "rotation": 0.0,
@@ -13,7 +13,7 @@
     "timer_interval": 100,
     "material": "Metal",
     "surface": "",
-    "is_visible": false,
+    "is_visible": true,
     "is_enabled": true,
     "hit_height": 50.0,
     "name": "s_Plunger2",
@@ -22,8 +22,8 @@
     "is_reflection_enabled": false,
     "drag_points": [
       {
-        "x": 878.8518,
-        "y": 1589.7936,
+        "x": 874.1071,
+        "y": 1545.9967,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -35,8 +35,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 878.8518,
-        "y": 1627.8156,
+        "x": 874.1071,
+        "y": 1584.0187,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -48,8 +48,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 928.61005,
-        "y": 1627.8156,
+        "x": 923.86536,
+        "y": 1584.0187,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -61,8 +61,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 928.6101,
-        "y": 1589.7936,
+        "x": 923.8654,
+        "y": 1545.9967,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

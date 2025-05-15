@@ -34,7 +34,7 @@
     "bulb_halo_height": 0.0,
     "shadows": "none",
     "fader": "none",
-    "visible": false,
+    "visible": true,
     "drag_points": [
       {
         "x": 831.3728,

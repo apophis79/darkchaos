@@ -23,9 +23,9 @@
     "elasticity_falloff": 0.0,
     "friction": 0.02,
     "scatter": 5.0,
-    "is_top_bottom_visible": false,
+    "is_top_bottom_visible": true,
     "slingshot_animation": true,
-    "is_side_visible": false,
+    "is_side_visible": true,
     "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 0.0,
@@ -73,8 +73,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 875.0,
-        "y": 1882.6008,
+        "x": 874.6352,
+        "y": 1854.4976,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -86,8 +86,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 843.4525,
-        "y": 1882.3722,
+        "x": 856.9566,
+        "y": 1854.269,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -99,8 +99,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 829.9628,
-        "y": 1883.0913,
+        "x": 844.562,
+        "y": 1854.2576,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -112,8 +112,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 471.31155,
-        "y": 2098.6506,
+        "x": 458.9937,
+        "y": 2080.5842,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -125,8 +125,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 430.49136,
-        "y": 2109.3977,
+        "x": 416.53116,
+        "y": 2088.8672,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -138,8 +138,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 308.71338,
-        "y": 1955.0,
+        "x": 319.10648,
+        "y": 1936.2925,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -151,8 +151,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 22.0,
-        "y": 1738.0,
+        "x": 22.692879,
+        "y": 1731.7642,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

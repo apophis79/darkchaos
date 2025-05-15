@@ -105,7 +105,6 @@
       "Wall350",
       "Wall3",
       "Wall4",
-      "Wall007",
       "Wall016",
       "Wall023",
       "Wall024"
@@ -943,7 +942,6 @@
       "s_Bumper1",
       "s_Bumper2",
       "s_Bumper3",
-      "s_Bumper4",
       "s_LockOut"
     ],
     "fire_events": false,
@@ -963,7 +961,8 @@
     "name": "glf_slingshots",
     "items": [
       "s_RightSlingshot",
-      "s_LeftSlingshot"
+      "s_LeftSlingshot",
+      "s_TopSlingshot"
     ],
     "fire_events": false,
     "stop_single_events": false,

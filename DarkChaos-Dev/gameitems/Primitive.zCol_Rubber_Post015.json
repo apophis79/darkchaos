@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 603.055,
-      "y": 284.91965,
+      "x": 624.12085,
+      "y": 280.22852,
       "z": 25.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "zCol_Rubber_Post015",
     "material": "zCol_RubberPosts",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,

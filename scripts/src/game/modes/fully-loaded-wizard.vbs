@@ -101,15 +101,15 @@ Sub CreateFullyLoadedWizardMode
                 .Add "flwiz_bumper1_show2p", 1
                 .Add "flwiz_bumper2_show2p", 1
                 .Add "flwiz_bumper3_show2p", 1
-                .Add "flwiz_bumper4_show2p", 1
+                '.Add "flwiz_bumper4_show2p", 1
                 .Add "flwiz_bumper1_show2c", 1
                 .Add "flwiz_bumper2_show2c", 1
                 .Add "flwiz_bumper3_show2c", 1
-                .Add "flwiz_bumper4_show2c", 1
+                '.Add "flwiz_bumper4_show2c", 1
                 .Add "flwiz_bumper1_show2m", 1
                 .Add "flwiz_bumper2_show2m", 1
                 .Add "flwiz_bumper3_show2m", 1
-                .Add "flwiz_bumper4_show2m", 1
+                '.Add "flwiz_bumper4_show2m", 1
                 .ForceAll = True
                 .ForceDifferent = False
             End With
@@ -492,7 +492,7 @@ Sub CreateFullyLoadedWizardMode
                 End With
             End With
 
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("flwiz_bumper"&x&"_show2p")
                     .Key = "key_bumper"&x&"_show2p"
                     .Show = "flash_color_fadeout" 
@@ -504,7 +504,7 @@ Sub CreateFullyLoadedWizardMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("flwiz_bumper"&x&"_show2c")
                     .Key = "key_bumper"&x&"_show2c"
                     .Show = "flash_color_fadeout" 
@@ -516,7 +516,7 @@ Sub CreateFullyLoadedWizardMode
                     End With
                 End With
             Next
-            For x = 1 to 4
+            For x = 1 to 3
                 With .EventName("flwiz_bumper"&x&"_show2m")
                     .Key = "key_bumper"&x&"_show2m"
                     .Show = "flash_color_fadeout" 

@@ -27,7 +27,7 @@
     "name": "zCol_Rubber_Peg006",
     "material": "zCol_RubberPegs",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,

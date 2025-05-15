@@ -1,7 +1,7 @@
 {
   "HitTarget": {
     "position": {
-      "x": 548.4927,
+      "x": 548.9413,
       "y": 414.0967,
       "z": 0.0
     },
@@ -15,7 +15,7 @@
     "target_type": "hit_fat_target_slim",
     "name": "s_TargetMystery4",
     "material": "",
-    "is_visible": false,
+    "is_visible": true,
     "is_legacy": false,
     "use_hit_event": true,
     "threshold": 2.0,

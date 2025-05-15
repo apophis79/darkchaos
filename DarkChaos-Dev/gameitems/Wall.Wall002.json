@@ -23,9 +23,9 @@
     "elasticity_falloff": 0.0,
     "friction": 0.3,
     "scatter": 0.0,
-    "is_top_bottom_visible": false,
+    "is_top_bottom_visible": true,
     "slingshot_animation": true,
-    "is_side_visible": false,
+    "is_side_visible": true,
     "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 0.0,
@@ -281,8 +281,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 670.92334,
-        "y": 341.63843,
+        "x": 671.5001,
+        "y": 340.9655,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -294,8 +294,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 593.60645,
-        "y": 300.64105,
+        "x": 609.9755,
+        "y": 289.72833,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -307,8 +307,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 588.89716,
-        "y": 295.38855,
+        "x": 604.2269,
+        "y": 281.87753,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -320,8 +320,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 587.9333,
-        "y": 268.21875,
+        "x": 599.10583,
+        "y": 259.3846,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -333,8 +333,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 596.9141,
-        "y": 165.48276,
+        "x": 597.6727,
+        "y": 164.97699,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -346,8 +346,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 575.05994,
-        "y": 138.26064,
+        "x": 593.26733,
+        "y": 139.77794,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

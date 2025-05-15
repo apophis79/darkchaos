@@ -1,8 +1,8 @@
 {
   "Flipper": {
     "center": {
-      "x": 278.4479,
-      "y": 1803.2714
+      "x": 275.71973,
+      "y": 1784.9521
     },
     "base_radius": 20.2,
     "end_radius": 12.0,
@@ -17,7 +17,7 @@
     "surface": "",
     "material": "Plastic White",
     "name": "LeftFlipper",
-    "rubber_material": "Red Rubber",
+    "rubber_material": "Rubber Black",
     "rubber_thickness_int": 5,
     "rubber_thickness": 5.8825,
     "rubber_height_int": 17,
@@ -33,7 +33,7 @@
     "torque_damping": 0.375,
     "torque_damping_angle": 6.0,
     "flipper_radius_min": 0.0,
-    "is_visible": false,
+    "is_visible": true,
     "is_enabled": true,
     "height": 50.0,
     "image": "",

@@ -15,7 +15,7 @@
     "target_type": "hit_fat_target_rectangle",
     "name": "s_TargetMystery2",
     "material": "Plastic",
-    "is_visible": false,
+    "is_visible": true,
     "is_legacy": false,
     "use_hit_event": true,
     "threshold": 2.0,

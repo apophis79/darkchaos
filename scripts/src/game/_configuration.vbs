@@ -335,6 +335,15 @@ Sub ConfigureGlfDevices
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
+    With CreateGlfAutoFireDevice("top_sling")
+        .Switch = "s_TopSlingshot"
+        .ActionCallback = "TopSlingshotAction"
+        .DisabledCallback = "TopSlingshotDisabled"
+        .EnabledCallback = "TopSlingshotEnabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
 
     ' Bumpers
     With CreateGlfAutoFireDevice("bumper1")
@@ -364,14 +373,14 @@ Sub ConfigureGlfDevices
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
     End With
 
-    With CreateGlfAutoFireDevice("bumper4")
-        .Switch = "s_Bumper4"
-        .ActionCallback = "Bumper4Action"
-        .DisabledCallback = "Bumper4Disabled"
-        .EnabledCallback = "Bumper4Enabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
+    ' With CreateGlfAutoFireDevice("bumper4")
+    '     .Switch = "s_Bumper4"
+    '     .ActionCallback = "Bumper4Action"
+    '     .DisabledCallback = "Bumper4Disabled"
+    '     .EnabledCallback = "Bumper4Enabled"
+    '     .DisableEvents = Array("kill_flippers")
+    '     .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    ' End With
 
 
     ' Magnet
