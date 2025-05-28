@@ -71,7 +71,7 @@ Sub CreateFullyLoadedWizardMode
             .Add "s_TargetShield1_active", Array("shield_bank_hit")
             .Add "s_TargetShield2_active", Array("shield_bank_hit")
             .Add "s_TargetShield3_active", Array("shield_bank_hit")
-            .Add "s_TargetShield4_active", Array("shield_bank_hit")              
+            '.Add "s_TargetShield4_active", Array("shield_bank_hit")              
         End With
 
 

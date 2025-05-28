@@ -13,7 +13,7 @@
     "timer_interval": 100,
     "material": "",
     "surface": "75h",
-    "is_visible": false,
+    "is_visible": true,
     "is_enabled": true,
     "hit_height": 50.0,
     "name": "s_Lock2",

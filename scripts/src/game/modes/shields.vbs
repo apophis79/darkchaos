@@ -129,7 +129,7 @@ Sub CreateShieldsMode
         End With
 
         'Define our shots
-        For x = 1 to 3
+        For x = 1 to 2
             With .Shots("shield_charge"&x)
                 .Switch = "s_TargetShield"&x
                 .Profile = "qualify_shields"
@@ -142,11 +142,11 @@ Sub CreateShieldsMode
                 End With
             End With
         Next
-        With .Shots("shield_charge4")
-            .Switch = "s_TargetShield4"
+        With .Shots("shield_charge3")
+            .Switch = "s_TargetShield3"
             .Profile = "qualify_shields"
             With .Tokens()
-                .Add "lights", "LSC4"
+                .Add "lights", "LSC3"
             End With
             With .ControlEvents()
                 .Events = Array("complete_qualify_shields")
@@ -181,7 +181,7 @@ Sub CreateShieldsMode
 
         ' Shield qualifying shot group
         With .ShotGroups("qualify_shields")
-            .Shots = Array("shield_charge1", "shield_charge2", "shield_charge3", "shield_charge4")
+            .Shots = Array("shield_charge1", "shield_charge2", "shield_charge3") ', "shield_charge4")
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
             .RestartEvents = Array("restart_qualify_shields")

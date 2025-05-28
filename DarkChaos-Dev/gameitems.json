@@ -574,20 +574,6 @@
     "editor_layer_visibility": true
   },
   {
-    "file_name": "HitTarget.s_TargetShield4.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Wall.Wall012.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
-  },
-  {
     "file_name": "Gate.Gate2.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -610,13 +596,6 @@
   },
   {
     "file_name": "Trigger.s_LeftBumper1.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Trigger.s_LeftBumper2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Main",
@@ -1488,21 +1467,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall019.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall020.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.55h.json",
@@ -1712,21 +1691,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LB4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LB1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LS6.json",
@@ -1803,21 +1782,21 @@
     "is_locked": false,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSpot2a.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LSpot2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.BallShadow1.json",
@@ -1908,21 +1887,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LShip.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LB3.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Gate.GateL.json",
@@ -1961,13 +1940,6 @@
   },
   {
     "file_name": "Primitive.stwall002.json",
-    "is_locked": true,
-    "editor_layer": 1,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": true
-  },
-  {
-    "file_name": "Primitive.stwall003.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Main",
@@ -5359,28 +5331,28 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall015.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall016.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall021.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Trigger.swRampScoop.json",
@@ -5394,35 +5366,35 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg012.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg013.json",
     "is_locked": true,
     "editor_layer": 1,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall023.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall024.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.zCol_Rubber_TrustPost.json",
@@ -5436,7 +5408,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LDS.json",
@@ -13283,21 +13255,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall026.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Wall.Wall027.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.p1_seg106.json",
@@ -17504,7 +17476,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Blocker Walls",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Primitive.SternSleeve.json",
@@ -17644,7 +17616,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG01_a.json",
@@ -17686,105 +17658,105 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG03.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG04.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG05.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG06.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG07.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG08.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG09.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG10.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG11.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG12.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG13.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG14.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG15.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Light.LBG16.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Above PF",
-    "editor_layer_visibility": true
+    "editor_layer_visibility": false
   },
   {
     "file_name": "Flasher.F_LBG02_b.json",
@@ -21521,6 +21493,20 @@
     "file_name": "Primitive.EndPoint2TS.json",
     "is_locked": true,
     "editor_layer": 0,
+    "editor_layer_name": "Rubbers and Posts",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Wall.Wall012.json",
+    "is_locked": false,
+    "editor_layer": 0,
+    "editor_layer_name": "Main",
+    "editor_layer_visibility": true
+  },
+  {
+    "file_name": "Primitive.zCol_Rubber_Peg014.json",
+    "is_locked": true,
+    "editor_layer": 1,
     "editor_layer_name": "Rubbers and Posts",
     "editor_layer_visibility": true
   }

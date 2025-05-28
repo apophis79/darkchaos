@@ -40,7 +40,6 @@
     "name": "Targets",
     "items": [
       "s_TargetShield2",
-      "s_TargetShield4",
       "s_TargetShield3",
       "s_TargetShield1",
       "s_TargetMystery5",
@@ -117,7 +116,6 @@
     "name": "Rollovers",
     "items": [
       "s_Plunger2",
-      "s_LeftBumper2",
       "s_LeftBumper1",
       "s_RightOutlane",
       "s_RightInlane",
@@ -929,7 +927,6 @@
       "s_CenterOrb3",
       "s_CenterOrb2",
       "s_CenterOrb1",
-      "s_LeftBumper2",
       "s_LeftBumper1",
       "s_Lock1",
       "s_Lock2",

@@ -19,7 +19,7 @@
     "name": "swRamp5",
     "shape": "star",
     "anim_speed": 1.0,
-    "is_reflection_enabled": true,
+    "is_reflection_enabled": false,
     "drag_points": [
       {
         "x": 687.4885,

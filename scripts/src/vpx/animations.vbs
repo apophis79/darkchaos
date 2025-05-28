@@ -142,11 +142,6 @@ Sub s_LeftBumper1_Animate
 	Dim BP : For Each BP in BP_swLB1 : BP.transz = z: Next
 End Sub
 
-Sub s_LeftBumper2_Animate
-	Dim z : z = s_LeftBumper2.CurrentAnimOffset
-	Dim BP : For Each BP in BP_swLB2 : BP.transz = z: Next
-End Sub
-
 Sub s_LeftInlane_Animate
 	Dim z : z = s_LeftInlane.CurrentAnimOffset
 	Dim BP : For Each BP in BP_swLI : BP.transz = z: Next

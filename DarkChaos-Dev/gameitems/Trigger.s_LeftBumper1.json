@@ -1,11 +1,11 @@
 {
   "Trigger": {
     "center": {
-      "x": 79.64893,
-      "y": 1112.8668
+      "x": 56.264267,
+      "y": 1052.067
     },
     "radius": 25.0,
-    "rotation": 0.0,
+    "rotation": -8.0,
     "wire_thickness": 0.0,
     "scale_x": 1.0,
     "scale_y": 1.0,
@@ -13,17 +13,17 @@
     "timer_interval": 100,
     "material": "Metal",
     "surface": "",
-    "is_visible": false,
+    "is_visible": true,
     "is_enabled": true,
     "hit_height": 50.0,
     "name": "s_LeftBumper1",
-    "shape": "star",
+    "shape": "wire_a",
     "anim_speed": 1.0,
-    "is_reflection_enabled": true,
+    "is_reflection_enabled": false,
     "drag_points": [
       {
-        "x": 54.98326,
-        "y": 1092.0422,
+        "x": 31.598597,
+        "y": 1031.2424,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -35,8 +35,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 54.98329,
-        "y": 1130.0642,
+        "x": 31.598627,
+        "y": 1069.2644,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -48,8 +48,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 104.74157,
-        "y": 1130.0642,
+        "x": 81.3569,
+        "y": 1069.2644,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -61,8 +61,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 104.7416,
-        "y": 1092.0422,
+        "x": 81.35693,
+        "y": 1031.2424,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

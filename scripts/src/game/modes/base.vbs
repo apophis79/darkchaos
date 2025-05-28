@@ -117,7 +117,7 @@ Sub CreateBaseMode()
             'handle some sound effects, music, and points
             .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
             .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
-            .Add "left_side_up_hit", Array("play_sfx_Orb","score_2000")
+            .Add "left_side_hit", Array("play_sfx_Orb","score_2000")
             .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper3_active", Array("play_sfx_bumper","score_1300")
@@ -129,6 +129,7 @@ Sub CreateBaseMode()
             .Add "s_TargetMystery5_active", Array("magnet_activated_flash","magnet_activated_gi")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             .Add "s_MoonRamp_active", Array("right_ramp_hit")
+            .Add "s_LeftBumper1_active", Array("left_side_hit")
 
             'knock'em all down
             .Add "knockdown_meteors", Array("meteor1_knockdown","meteor2_knockdown","meteor3_knockdown","meteor4_knockdown")
@@ -452,16 +453,6 @@ Sub CreateBaseMode()
 
 
         'The main shots sequences
-        With .SequenceShots("left_side_up")
-            .SwitchSequence = Array("s_LeftBumper1", "s_LeftBumper2")
-            .SequenceTimeout = 500
-        End With
-
-        With .SequenceShots("left_side_down")
-            .SwitchSequence = Array("s_LeftBumper2", "s_LeftBumper1")
-            .SequenceTimeout = 500
-        End With
-
         With .SequenceShots("left_orbit")
             .SwitchSequence = Array("s_LeftOrb1", "s_LeftOrb2")
             .SequenceTimeout = 500
@@ -495,7 +486,7 @@ Sub CreateBaseMode()
 
 
         With .ShowPlayer()
-            For x = 0 to 4
+            For x = 0 to 2
                 With .EventName(RolloverSwitches(x)&"_active")
                     .Key = "key_rollover"&x&"_flash"
                     .Show = "flash_color" 

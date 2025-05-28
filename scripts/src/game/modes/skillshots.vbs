@@ -16,7 +16,7 @@ Sub CreateSkillshotsMode
             .Add "mode_skillshots_started{current_player.ball_just_started==1 && current_player.shot_meteor_wave9 < 2}", Array("init_ss")
             'Handle successful skillshots
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
-            .Add "left_side_down_hit{current_player.shot_ss==1}", Array("sss_achieved") 
+            .Add "left_side_hit{current_player.shot_ss==1}", Array("sss_achieved") 
             .Add "right_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 1}", Array("ssss_achieved") 
             .Add "left_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 2}", Array("sdsss_achieved") 
             .Add "ss_achieved", Array("ss_trainer_ready","score_500000")
