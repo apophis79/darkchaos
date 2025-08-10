@@ -2,7 +2,7 @@
   "Trigger": {
     "center": {
       "x": 898.8579,
-      "y": 1881.3468
+      "y": 1876.8043
     },
     "radius": 25.0,
     "rotation": 0.0,
@@ -23,7 +23,7 @@
     "drag_points": [
       {
         "x": 874.19226,
-        "y": 1860.5221,
+        "y": 1855.9796,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -36,7 +36,7 @@
       },
       {
         "x": 873.30334,
-        "y": 1917.2113,
+        "y": 1912.6688,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -49,7 +49,7 @@
       },
       {
         "x": 923.9505,
-        "y": 1918.9888,
+        "y": 1914.4463,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -62,7 +62,7 @@
       },
       {
         "x": 923.95056,
-        "y": 1860.5221,
+        "y": 1855.9796,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

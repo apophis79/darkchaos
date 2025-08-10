@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.0005,
+    "alpha_test_value": 200.00055,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
@@ -449,15 +449,15 @@
   },
   {
     "name": "DC-updated-layout",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Fusion\\DC-updated-layout.jpg",
-    "width": 1000,
-    "height": 2268,
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Fusion\\DC-updated-layout-2.jpg",
+    "width": 1052,
+    "height": 2337,
     "alpha_test_value": -1.0,
     "is_opaque": true,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Fusion\\DC-updated-layout.jpg",
-      "name": "DC-updated-layout"
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Fusion\\DC-updated-layout-2.jpg",
+      "name": "DC-updated-layout-2"
     },
     "bits": false
   }
