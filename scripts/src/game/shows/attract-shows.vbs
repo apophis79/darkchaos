@@ -11,8 +11,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|020406", _
       "LS5|(intensity)|080f16", _
       "LS1|(intensity)|346b98", _
-      "LSwL1|(intensity)|346b98", _
-      "LSwL2|(intensity)|1d3c55", _
       "LS2|(intensity)|070e14", _
       "LS3|(intensity)|4894d2", _
       "LS4|(intensity)|000101", _
@@ -45,7 +43,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4389c2", _
       "LPC5|(intensity)|000102", _
       "LPC4|(intensity)|4fa1e5", _
-      "LSC4|(intensity)|4791ce", _
       "LSC3|(intensity)|091219", _
       "LSC2|(intensity)|081118", _
       "LSC1|(intensity)|448bc5", _
@@ -55,8 +52,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|000000", _
       "LPC2|(intensity)|020405", _
       "LPC1|(intensity)|0b1721", _
-      "LTW4|(intensity)|000101", _
-      "LTW3|(intensity)|2f6189", _
       "LTW2|(intensity)|4ea0e2", _
       "LTW1|(intensity)|448ac4", _
       "LCC3|(intensity)|50a3e8", _
@@ -105,8 +100,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|010203", _
       "LS5|(intensity)|0b161f", _
       "LS1|(intensity)|2e5d85", _
-      "LSwL1|(intensity)|2e5e85", _
-      "LSwL2|(intensity)|244968", _
       "LS2|(intensity)|04090c", _
       "LS3|(intensity)|4b99d9", _
       "LS4|(intensity)|000001", _
@@ -133,7 +126,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|3e7fb5", _
       "LPC5|(intensity)|000101", _
       "LPC4|(intensity)|4ea0e2", _
-      "LSC4|(intensity)|4a96d5", _
       "LSC3|(intensity)|060d12", _
       "LSC2|(intensity)|050b10", _
       "LSC1|(intensity)|4792cf", _
@@ -142,7 +134,6 @@ With CreateGlfShow("insert_sparkles")
       "LF1|(intensity)|010102", _
       "LPC2|(intensity)|010203", _
       "LPC1|(intensity)|081118", _
-      "LTW3|(intensity)|285274", _
       "LTW2|(intensity)|4d9ddf", _
       "LTW1|(intensity)|4892d0", _
       "LCC2|(intensity)|37709f", _
@@ -176,8 +167,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|010202", _
       "LS5|(intensity)|0f1e2a", _
       "LS1|(intensity)|274f70", _
-      "LSwL1|(intensity)|274f71", _
-      "LSwL2|(intensity)|2b577b", _
       "LS2|(intensity)|020406", _
       "LS3|(intensity)|4d9dde", _
       "LS4|(intensity)|000000", _
@@ -201,7 +190,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|37709e", _
       "LMR|(intensity)|3872a2", _
       "LPC4|(intensity)|4d9ee0", _
-      "LSC4|(intensity)|4b9adb", _
       "LSC3|(intensity)|04080c", _
       "LSC2|(intensity)|03070a", _
       "LSC1|(intensity)|4b99d9", _
@@ -210,7 +198,6 @@ With CreateGlfShow("insert_sparkles")
       "LF1|(intensity)|000101", _
       "LPC2|(intensity)|000101", _
       "LPC1|(intensity)|060c11", _
-      "LTW3|(intensity)|214460", _
       "LTW2|(intensity)|4b9ada", _
       "LTW1|(intensity)|4a98d8", _
       "LCC2|(intensity)|326691", _
@@ -244,8 +231,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|000102", _
       "LS5|(intensity)|14293b", _
       "LS1|(intensity)|20415c", _
-      "LSwL1|(intensity)|21425e", _
-      "LSwL2|(intensity)|31648e", _
       "LS2|(intensity)|010203", _
       "LS3|(intensity)|4d9ee0", _
       "LS6|(intensity)|3974a5", _
@@ -270,14 +255,12 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|31648e", _
       "LPC5|(intensity)|010203", _
       "LPC4|(intensity)|4c9bdc", _
-      "LSC4|(intensity)|4d9dde", _
       "LSC3|(intensity)|020406", _
       "LSC2|(intensity)|020405", _
       "LSC1|(intensity)|4e9fe1", _
       "LF3|(intensity)|4d9dde", _
       "LF2|(intensity)|112433", _
       "LPC1|(intensity)|03070a", _
-      "LTW3|(intensity)|1b364d", _
       "LTW2|(intensity)|4994d2", _
       "LTW1|(intensity)|4c9cdd", _
       "LCC2|(intensity)|2c597e", _
@@ -311,8 +294,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|000101", _
       "LS5|(intensity)|1a354b", _
       "LS1|(intensity)|193348", _
-      "LSwL1|(intensity)|1a364c", _
-      "LSwL2|(intensity)|37709f", _
       "LS2|(intensity)|010102", _
       "LS3|(intensity)|4d9dde", _
       "LS6|(intensity)|3f80b5", _
@@ -338,15 +319,12 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|2a5679", _
       "LPC5|(intensity)|030508", _
       "LPC4|(intensity)|4995d3", _
-      "LSC4|(intensity)|4d9ddf", _
       "LSC3|(intensity)|010304", _
       "LSC2|(intensity)|010203", _
       "LSC1|(intensity)|4fa1e4", _
       "LF3|(intensity)|4b98d8", _
       "LF2|(intensity)|183044", _
       "LPC1|(intensity)|020406", _
-      "LTW4|(intensity)|010203", _
-      "LTW3|(intensity)|152b3c", _
       "LTW2|(intensity)|458ec9", _
       "LTW1|(intensity)|4e9fe2", _
       "LCC2|(intensity)|254c6b", _
@@ -380,8 +358,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|000000", _
       "LS5|(intensity)|20415d", _
       "LS1|(intensity)|132636", _
-      "LSwL1|(intensity)|14293b", _
-      "LSwL2|(intensity)|3d7cb0", _
       "LS2|(intensity)|000101", _
       "LS3|(intensity)|4c9bdc", _
       "LS6|(intensity)|4389c3", _
@@ -409,14 +385,11 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|224664", _
       "LPC5|(intensity)|04080c", _
       "LPC4|(intensity)|468fcb", _
-      "LSC4|(intensity)|4c9bdc", _
       "LSC3|(intensity)|010203", _
       "LSC1|(intensity)|4fa1e5", _
       "LF3|(intensity)|4894d1", _
       "LF2|(intensity)|1f3f59", _
       "LPC1|(intensity)|010304", _
-      "LTW4|(intensity)|020406", _
-      "LTW3|(intensity)|0f202d", _
       "LTW2|(intensity)|4287bf", _
       "LTW1|(intensity)|4fa1e5", _
       "LCC2|(intensity)|1e3d57", _
@@ -448,8 +421,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|274f70", _
       "LS1|(intensity)|0e1d29", _
-      "LSwL1|(intensity)|0f1f2c", _
-      "LSwL2|(intensity)|4286be", _
       "LS2|(intensity)|000000", _
       "LS3|(intensity)|4b99d9", _
       "LS6|(intensity)|4791cd", _
@@ -476,7 +447,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|1d3b53", _
       "LPC5|(intensity)|060d12", _
       "LPC4|(intensity)|4388c2", _
-      "LSC4|(intensity)|4a97d6", _
       "LSC3|(intensity)|000101", _
       "LSC2|(intensity)|010102", _
       "LSC1|(intensity)|4fa2e6", _
@@ -485,8 +455,6 @@ With CreateGlfShow("insert_sparkles")
       "LF1|(intensity)|000001", _
       "LPC2|(intensity)|000001", _
       "LPC1|(intensity)|010202", _
-      "LTW4|(intensity)|030508", _
-      "LTW3|(intensity)|0b161f", _
       "LTW2|(intensity)|3d7cb0", _
       "LTW1|(intensity)|50a2e6", _
       "LCC2|(intensity)|183247", _
@@ -517,8 +485,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|2d5c83", _
       "LS1|(intensity)|0a151e", _
-      "LSwL1|(intensity)|0b1620", _
-      "LSwL2|(intensity)|468eca", _
       "LS3|(intensity)|4995d4", _
       "LS6|(intensity)|4a97d7", _
       "LSwC1|(intensity)|03070a", _
@@ -545,7 +511,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|183145", _
       "LPC5|(intensity)|0a151e", _
       "LPC4|(intensity)|3e7eb3", _
-      "LSC4|(intensity)|4792cf", _
       "LSC2|(intensity)|000101", _
       "LSC1|(intensity)|50a3e7", _
       "LF3|(intensity)|4083ba", _
@@ -553,8 +518,6 @@ With CreateGlfShow("insert_sparkles")
       "LF1|(intensity)|000000", _
       "LPC2|(intensity)|000000", _
       "LPC1|(intensity)|000000", _
-      "LTW4|(intensity)|04090c", _
-      "LTW3|(intensity)|081117", _
       "LTW2|(intensity)|37709f", _
       "LTW1|(intensity)|50a3e7", _
       "LCC2|(intensity)|132737", _
@@ -587,8 +550,6 @@ With CreateGlfShow("insert_sparkles")
       "LPF|(intensity)|50a3e8", _
       "LS5|(intensity)|346995", _
       "LS1|(intensity)|070e14", _
-      "LSwL1|(intensity)|081016", _
-      "LSwL2|(intensity)|4995d3", _
       "LS3|(intensity)|468eca", _
       "LS6|(intensity)|4c9cdd", _
       "LSwC2|(intensity)|50a3e7", _
@@ -613,13 +574,10 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|142a3b", _
       "LPC5|(intensity)|0f1f2c", _
       "LPC4|(intensity)|3873a3", _
-      "LSC4|(intensity)|448ac4", _
       "LSC3|(intensity)|000000", _
       "LSC2|(intensity)|010203", _
       "LF3|(intensity)|3b78aa", _
       "LF2|(intensity)|346995", _
-      "LTW4|(intensity)|070d13", _
-      "LTW3|(intensity)|050b10", _
       "LTW2|(intensity)|31648e", _
       "LCC2|(intensity)|0e1c28", _
       "LCC1|(intensity)|4e9fe2", _
@@ -650,8 +608,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|3a76a8", _
       "LS1|(intensity)|04090c", _
-      "LSwL1|(intensity)|050a0e", _
-      "LSwL2|(intensity)|4c9adb", _
       "LS3|(intensity)|4083ba", _
       "LS6|(intensity)|4e9fe1", _
       "LSwC1|(intensity)|09131a", _
@@ -676,12 +632,9 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|132737", _
       "LPC5|(intensity)|152a3c", _
       "LPC4|(intensity)|326691", _
-      "LSC4|(intensity)|4082b9", _
       "LSC2|(intensity)|020507", _
       "LF3|(intensity)|356c99", _
       "LF2|(intensity)|3a77a9", _
-      "LTW4|(intensity)|0a141c", _
-      "LTW3|(intensity)|030609", _
       "LTW2|(intensity)|2a567a", _
       "LTW1|(intensity)|50a3e8", _
       "LCC2|(intensity)|0a141c", _
@@ -713,8 +666,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|3f81b7", _
       "LS1|(intensity)|030508", _
-      "LSwL1|(intensity)|030609", _
-      "LSwL2|(intensity)|4d9ee0", _
       "LS2|(intensity)|000101", _
       "LS3|(intensity)|3b79ac", _
       "LS6|(intensity)|4fa1e4", _
@@ -737,13 +688,10 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|14293a", _
       "LPC5|(intensity)|1a364d", _
       "LPC4|(intensity)|2c597e", _
-      "LSC4|(intensity)|3b79ab", _
       "LSC2|(intensity)|04080b", _
       "LSC1|(intensity)|50a3e8", _
       "LF3|(intensity)|2e5e86", _
       "LF2|(intensity)|4083bb", _
-      "LTW4|(intensity)|0e1c28", _
-      "LTW3|(intensity)|020305", _
       "LTW2|(intensity)|244968", _
       "LCC2|(intensity)|060d13", _
       "LCC1|(intensity)|4b99d9", _
@@ -777,8 +725,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|438ac3", _
       "LS1|(intensity)|010304", _
-      "LSwL1|(intensity)|020406", _
-      "LSwL2|(intensity)|4fa1e4", _
       "LS2|(intensity)|000000", _
       "LS3|(intensity)|366f9d", _
       "LS6|(intensity)|50a2e7", _
@@ -806,13 +752,10 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|172e42", _
       "LPC5|(intensity)|20415c", _
       "LPC4|(intensity)|254c6c", _
-      "LSC4|(intensity)|356c99", _
       "LSC2|(intensity)|060c11", _
       "LF3|(intensity)|275071", _
       "LF2|(intensity)|458cc7", _
       "LPC3|(intensity)|000101", _
-      "LTW4|(intensity)|122636", _
-      "LTW3|(intensity)|010203", _
       "LTW2|(intensity)|1d3c55", _
       "LTW1|(intensity)|50a3e7", _
       "LCC3|(intensity)|50a3e7", _
@@ -847,8 +790,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|4792cf", _
       "LS1|(intensity)|000101", _
-      "LSwL1|(intensity)|010304", _
-      "LSwL2|(intensity)|4fa2e5", _
       "LS3|(intensity)|2f6189", _
       "LS6|(intensity)|50a3e8", _
       "LSwC1|(intensity)|183045", _
@@ -870,13 +811,10 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|1b374e", _
       "LPC5|(intensity)|254b6b", _
       "LPC4|(intensity)|1f3f59", _
-      "LSC4|(intensity)|2f5f87", _
       "LSC2|(intensity)|091219", _
       "LF3|(intensity)|21435f", _
       "LF2|(intensity)|4894d1", _
       "LPC3|(intensity)|000000", _
-      "LTW4|(intensity)|183146", _
-      "LTW3|(intensity)|010202", _
       "LTW2|(intensity)|172f43", _
       "LCC2|(intensity)|030608", _
       "LCC1|(intensity)|448bc6", _
@@ -906,8 +844,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|4a98d8", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|010102", _
-      "LSwL2|(intensity)|50a2e7", _
       "LS3|(intensity)|285274", _
       "LSwC3|(intensity)|4fa2e6", _
       "LSwC1|(intensity)|1e3d57", _
@@ -932,12 +868,9 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|214460", _
       "LPC5|(intensity)|285173", _
       "LPC4|(intensity)|183247", _
-      "LSC4|(intensity)|285274", _
       "LSC2|(intensity)|0d1a24", _
       "LF3|(intensity)|1a364d", _
       "LF2|(intensity)|4b9ada", _
-      "LTW4|(intensity)|1e3e58", _
-      "LTW3|(intensity)|000001", _
       "LTW2|(intensity)|112433", _
       "LTW1|(intensity)|50a3e8", _
       "LCC3|(intensity)|4fa2e6", _
@@ -968,8 +901,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.46667, Null, Null)
     .Lights = Array( _
       "LS5|(intensity)|4d9dde", _
-      "LSwL1|(intensity)|000101", _
-      "LSwL2|(intensity)|50a3e8", _
       "LS3|(intensity)|214460", _
       "LS6|(intensity)|50a2e6", _
       "LSwC3|(intensity)|4fa2e5", _
@@ -994,12 +925,9 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|285173", _
       "LPC5|(intensity)|285274", _
       "LPC4|(intensity)|132737", _
-      "LSC4|(intensity)|214460", _
       "LSC2|(intensity)|112332", _
       "LF3|(intensity)|152a3c", _
       "LF2|(intensity)|4d9ee0", _
-      "LTW4|(intensity)|244a6a", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|0d1b26", _
       "LCC2|(intensity)|010203", _
       "LCC1|(intensity)|3b78aa", _
@@ -1028,7 +956,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.50000, Null, Null)
     .Lights = Array( _
       "LS5|(intensity)|4e9ee1", _
-      "LSwL1|(intensity)|000000", _
       "LS3|(intensity)|1b374e", _
       "LS6|(intensity)|50a3e7", _
       "LSwC3|(intensity)|4fa0e4", _
@@ -1054,13 +981,11 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|2e5e86", _
       "LPC5|(intensity)|274f70", _
       "LPC4|(intensity)|0e1c28", _
-      "LSC4|(intensity)|1b384f", _
       "LSC2|(intensity)|162e41", _
       "LF3|(intensity)|10202d", _
       "LF2|(intensity)|4e9fe2", _
       "LPC3|(intensity)|010203", _
       "LPC2|(intensity)|000102", _
-      "LTW4|(intensity)|2b577b", _
       "LTW2|(intensity)|09131b", _
       "LCC2|(intensity)|010102", _
       "LCC1|(intensity)|346b98", _
@@ -1088,7 +1013,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|50a3e7", _
       "LS5|(intensity)|4ea0e3", _
-      "LSwL2|(intensity)|50a3e7", _
       "LS3|(intensity)|152b3d", _
       "LSwC3|(intensity)|4d9ee0", _
       "LSwC1|(intensity)|336894", _
@@ -1114,13 +1038,11 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|356c99", _
       "LPC5|(intensity)|224664", _
       "LPC4|(intensity)|0a151d", _
-      "LSC4|(intensity)|152b3e", _
       "LSC2|(intensity)|1d3b54", _
       "LF3|(intensity)|0b1720", _
       "LF2|(intensity)|4fa1e5", _
       "LPC3|(intensity)|010304", _
       "LPC2|(intensity)|000101", _
-      "LTW4|(intensity)|31658f", _
       "LTW2|(intensity)|060c12", _
       "LCC3|(intensity)|50a2e6", _
       "LCC2|(intensity)|000101", _
@@ -1174,11 +1096,9 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|3a77a9", _
       "LPC5|(intensity)|1d3a53", _
       "LPC4|(intensity)|070e14", _
-      "LSC4|(intensity)|0f1f2c", _
       "LSC2|(intensity)|234867", _
       "LF3|(intensity)|070f15", _
       "LF2|(intensity)|50a3e8", _
-      "LTW4|(intensity)|3872a2", _
       "LTW2|(intensity)|03070a", _
       "LCC3|(intensity)|4fa2e5", _
       "LCC1|(intensity)|274f70", _
@@ -1207,8 +1127,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|4fa1e5", _
       "LS5|(intensity)|50a3e7", _
-      "LSwL1|(intensity)|000001", _
-      "LSwL2|(intensity)|4fa1e5", _
       "LS3|(intensity)|0b161f", _
       "LS6|(intensity)|50a3e8", _
       "LSwC3|(intensity)|4894d2", _
@@ -1233,12 +1151,10 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4082b8", _
       "LPC5|(intensity)|162c3f", _
       "LPC4|(intensity)|04080c", _
-      "LSC4|(intensity)|0c1822", _
       "LSC2|(intensity)|2b577b", _
       "LF3|(intensity)|050b0f", _
       "LPC3|(intensity)|030508", _
       "LPC2|(intensity)|010102", _
-      "LTW4|(intensity)|3d7db2", _
       "LTW2|(intensity)|030508", _
       "LCC3|(intensity)|4e9fe2", _
       "LCC2|(intensity)|000000", _
@@ -1266,8 +1182,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|4fa0e4", _
       "LS5|(intensity)|50a3e8", _
-      "LSwL1|(intensity)|000000", _
-      "LSwL2|(intensity)|4e9fe2", _
       "LS3|(intensity)|081017", _
       "LSwC3|(intensity)|468eca", _
       "LSwC1|(intensity)|448bc5", _
@@ -1293,13 +1207,11 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|448bc6", _
       "LPC5|(intensity)|112231", _
       "LPC4|(intensity)|020507", _
-      "LSC4|(intensity)|081118", _
       "LSC2|(intensity)|31648e", _
       "LF3|(intensity)|04070a", _
       "LF2|(intensity)|50a3e7", _
       "LPC3|(intensity)|04090d", _
       "LPC2|(intensity)|020406", _
-      "LTW4|(intensity)|4186be", _
       "LTW2|(intensity)|020405", _
       "LCC3|(intensity)|4e9ee1", _
       "LCC1|(intensity)|193348", _
@@ -1329,7 +1241,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.66667, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|4e9ee1", _
-      "LSwL2|(intensity)|4d9cde", _
       "LS3|(intensity)|050b0f", _
       "LSwC3|(intensity)|4184bc", _
       "LSwC1|(intensity)|4893d1", _
@@ -1355,13 +1266,11 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4792cf", _
       "LPC5|(intensity)|0c1924", _
       "LPC4|(intensity)|020405", _
-      "LSC4|(intensity)|050b10", _
       "LSC2|(intensity)|3771a0", _
       "LF3|(intensity)|020507", _
       "LF2|(intensity)|50a2e6", _
       "LPC3|(intensity)|070e14", _
       "LPC2|(intensity)|03070a", _
-      "LTW4|(intensity)|458dc8", _
       "LTW2|(intensity)|010204", _
       "LCC3|(intensity)|4d9ddf", _
       "LCC1|(intensity)|132636", _
@@ -1388,7 +1297,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.70000, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|4c9bdc", _
-      "LSwL2|(intensity)|4b98d8", _
       "LS3|(intensity)|030609", _
       "LSwC3|(intensity)|3b79ac", _
       "LSwC1|(intensity)|4b9ada", _
@@ -1412,14 +1320,12 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4a98d7", _
       "LPC5|(intensity)|081118", _
       "LPC4|(intensity)|010304", _
-      "LSC4|(intensity)|03070a", _
       "LSC2|(intensity)|3d7db2", _
       "LF3|(intensity)|020506", _
       "LF2|(intensity)|50a3e8", _
       "LPC3|(intensity)|0a141d", _
       "LPC2|(intensity)|050a0f", _
       "LPC1|(intensity)|000101", _
-      "LTW4|(intensity)|4892d0", _
       "LTW2|(intensity)|010102", _
       "LCC3|(intensity)|4b9adb", _
       "LCC1|(intensity)|0e1d29", _
@@ -1450,7 +1356,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.73333, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|4995d4", _
-      "LSwL2|(intensity)|4892d0", _
       "LS3|(intensity)|020305", _
       "LSwC3|(intensity)|356d9b", _
       "LSwC1|(intensity)|4d9ddf", _
@@ -1475,13 +1380,11 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4d9ddf", _
       "LPC5|(intensity)|04090c", _
       "LPC4|(intensity)|010102", _
-      "LSC4|(intensity)|020406", _
       "LSC2|(intensity)|4287bf", _
       "LF3|(intensity)|030508", _
       "LPC3|(intensity)|0e1d2a", _
       "LPC2|(intensity)|081017", _
       "LPC1|(intensity)|010102", _
-      "LTW4|(intensity)|4995d3", _
       "LTW2|(intensity)|000101", _
       "LCC3|(intensity)|4893d1", _
       "LCC1|(intensity)|0a151e", _
@@ -1514,7 +1417,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.76667, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|468fca", _
-      "LSwL2|(intensity)|448ac4", _
       "LS3|(intensity)|010304", _
       "LSwC3|(intensity)|2f6088", _
       "LSwC1|(intensity)|4ea0e2", _
@@ -1539,7 +1441,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4e9fe2", _
       "LPC5|(intensity)|030608", _
       "LPC4|(intensity)|000101", _
-      "LSC4|(intensity)|010204", _
       "LSC2|(intensity)|468fca", _
       "LF3|(intensity)|04070a", _
       "LF2|(intensity)|50a3e7", _
@@ -1580,7 +1481,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.80000, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|4287bf", _
-      "LSwL2|(intensity)|3e7fb4", _
       "LS3|(intensity)|010203", _
       "LSwC3|(intensity)|285274", _
       "LSwC1|(intensity)|4fa2e5", _
@@ -1604,14 +1504,12 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|1c3951", _
       "LMR|(intensity)|4fa1e4", _
       "LPC5|(intensity)|020406", _
-      "LSC4|(intensity)|010102", _
       "LSC2|(intensity)|4995d4", _
       "LF3|(intensity)|050b10", _
       "LF2|(intensity)|4fa1e5", _
       "LPC3|(intensity)|1a344a", _
       "LPC2|(intensity)|102130", _
       "LPC1|(intensity)|020304", _
-      "LTW4|(intensity)|4790cd", _
       "LTW2|(intensity)|010202", _
       "LCC3|(intensity)|3f81b7", _
       "LCC1|(intensity)|04090c", _
@@ -1644,7 +1542,6 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.83333, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|3d7db1", _
-      "LSwL2|(intensity)|3973a4", _
       "LS3|(intensity)|000102", _
       "LSwC3|(intensity)|214360", _
       "LSwC1|(intensity)|50a2e7", _
@@ -1670,7 +1567,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|4fa2e5", _
       "LPC5|(intensity)|010203", _
       "LPC4|(intensity)|000000", _
-      "LSC4|(intensity)|000001", _
       "LSC2|(intensity)|4c9adb", _
       "LF3|(intensity)|09121a", _
       "LF2|(intensity)|4ea0e3", _
@@ -1678,8 +1574,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|20425d", _
       "LPC2|(intensity)|162c3f", _
       "LPC1|(intensity)|030609", _
-      "LTW4|(intensity)|448ac4", _
-      "LTW3|(intensity)|010102", _
       "LTW2|(intensity)|020305", _
       "LCC3|(intensity)|3975a6", _
       "LCC1|(intensity)|030508", _
@@ -1715,7 +1609,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|3771a1", _
       "LX|(intensity)|010102", _
-      "LSwL2|(intensity)|326792", _
       "LS3|(intensity)|000000", _
       "LSwC3|(intensity)|1a354b", _
       "LSwC1|(intensity)|50a3e7", _
@@ -1739,7 +1632,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|10202d", _
       "LMR|(intensity)|50a3e7", _
       "LPC5|(intensity)|000101", _
-      "LSC4|(intensity)|000000", _
       "LSC2|(intensity)|4d9ee0", _
       "LF3|(intensity)|0d1a25", _
       "LF2|(intensity)|4d9ee0", _
@@ -1747,8 +1639,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|285173", _
       "LPC2|(intensity)|1c3a52", _
       "LPC1|(intensity)|060c11", _
-      "LTW4|(intensity)|4082b9", _
-      "LTW3|(intensity)|010202", _
       "LTW2|(intensity)|030508", _
       "LCC3|(intensity)|336995", _
       "LCC1|(intensity)|010304", _
@@ -1784,7 +1674,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|31658f", _
       "LX|(intensity)|000001", _
-      "LSwL2|(intensity)|2b587d", _
       "LS4|(intensity)|000001", _
       "LSwC3|(intensity)|152b3d", _
       "LSwC1|(intensity)|50a2e7", _
@@ -1815,8 +1704,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|2f6088", _
       "LPC2|(intensity)|234866", _
       "LPC1|(intensity)|091219", _
-      "LTW4|(intensity)|3b78aa", _
-      "LTW3|(intensity)|000101", _
       "LTW2|(intensity)|050a0e", _
       "LCC3|(intensity)|2e5e85", _
       "LCC1|(intensity)|010102", _
@@ -1854,7 +1741,6 @@ With CreateGlfShow("insert_sparkles")
       "LPF|(intensity)|2b587c", _
       "LX|(intensity)|000000", _
       "LS1|(intensity)|010102", _
-      "LSwL2|(intensity)|244968", _
       "LS4|(intensity)|010102", _
       "LSwC3|(intensity)|112433", _
       "LSwC1|(intensity)|4fa2e6", _
@@ -1884,7 +1770,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|366e9c", _
       "LPC2|(intensity)|2a567a", _
       "LPC1|(intensity)|0c1924", _
-      "LTW4|(intensity)|346a96", _
       "LTW2|(intensity)|080f16", _
       "LCC3|(intensity)|2a5579", _
       "LCC1|(intensity)|000101", _
@@ -1921,7 +1806,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|244a69", _
       "LS1|(intensity)|010304", _
-      "LSwL2|(intensity)|1d3b54", _
       "LS4|(intensity)|020405", _
       "LSwC3|(intensity)|0f1f2c", _
       "LCWiz|(intensity)|132737", _
@@ -1948,8 +1832,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|3c7baf", _
       "LPC2|(intensity)|31648d", _
       "LPC1|(intensity)|122433", _
-      "LTW4|(intensity)|2d5c83", _
-      "LTW3|(intensity)|010202", _
       "LTW2|(intensity)|0a151e", _
       "LTW1|(intensity)|50a3e7", _
       "LCC3|(intensity)|275172", _
@@ -1988,7 +1870,6 @@ With CreateGlfShow("insert_sparkles")
       "LPF|(intensity)|1e3c56", _
       "LX|(intensity)|000001", _
       "LS1|(intensity)|030608", _
-      "LSwL2|(intensity)|172e41", _
       "LS4|(intensity)|030609", _
       "LSwC3|(intensity)|0f1e2a", _
       "LCWiz|(intensity)|183246", _
@@ -2018,8 +1899,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4286be", _
       "LPC2|(intensity)|3771a0", _
       "LPC1|(intensity)|173044", _
-      "LTW4|(intensity)|274f70", _
-      "LTW3|(intensity)|020405", _
       "LTW2|(intensity)|0f1e2b", _
       "LTW1|(intensity)|4fa2e6", _
       "LCC3|(intensity)|285173", _
@@ -2059,7 +1938,6 @@ With CreateGlfShow("insert_sparkles")
       "LPF|(intensity)|173044", _
       "LX|(intensity)|000101", _
       "LS1|(intensity)|04090d", _
-      "LSwL2|(intensity)|112331", _
       "LS4|(intensity)|050a0e", _
       "LSwC3|(intensity)|10202e", _
       "LSwC2|(intensity)|50a3e7", _
@@ -2090,8 +1968,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|468fcb", _
       "LPC2|(intensity)|3d7db1", _
       "LPC1|(intensity)|1e3d57", _
-      "LTW4|(intensity)|1f3f5a", _
-      "LTW3|(intensity)|020507", _
       "LTW2|(intensity)|14293a", _
       "LCC3|(intensity)|2a577b", _
       "LCC1|(intensity)|020305", _
@@ -2128,7 +2004,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|122534", _
       "LS1|(intensity)|070e15", _
-      "LSwL2|(intensity)|0c1822", _
       "LS4|(intensity)|081017", _
       "LSwC3|(intensity)|122535", _
       "LSwC2|(intensity)|50a2e6", _
@@ -2160,8 +2035,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4a97d7", _
       "LPC2|(intensity)|4287c0", _
       "LPC1|(intensity)|254c6c", _
-      "LTW4|(intensity)|183146", _
-      "LTW3|(intensity)|04080b", _
       "LTW2|(intensity)|1a354b", _
       "LTW1|(intensity)|4fa0e4", _
       "LCC3|(intensity)|2f5f87", _
@@ -2199,8 +2072,6 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|0d1b27", _
       "LS1|(intensity)|0b161f", _
-      "LSwL1|(intensity)|010102", _
-      "LSwL2|(intensity)|081017", _
       "LS2|(intensity)|000101", _
       "LS4|(intensity)|0c1822", _
       "LS6|(intensity)|50a3e7", _
@@ -2232,8 +2103,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4c9bdc", _
       "LPC2|(intensity)|468fcb", _
       "LPC1|(intensity)|2c5a80", _
-      "LTW4|(intensity)|122534", _
-      "LTW3|(intensity)|060c10", _
       "LTW2|(intensity)|20415c", _
       "LTW1|(intensity)|4d9ee0", _
       "LCC3|(intensity)|346b98", _
@@ -2274,8 +2143,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|010203", _
       "LS5|(intensity)|50a3e7", _
       "LS1|(intensity)|0e1e2a", _
-      "LSwL1|(intensity)|020305", _
-      "LSwL2|(intensity)|060c10", _
       "LS2|(intensity)|010202", _
       "LS4|(intensity)|10212f", _
       "LSwC3|(intensity)|1b384f", _
@@ -2306,8 +2173,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4d9ee0", _
       "LPC2|(intensity)|4996d4", _
       "LPC1|(intensity)|336994", _
-      "LTW4|(intensity)|0d1b26", _
-      "LTW3|(intensity)|091219", _
       "LTW2|(intensity)|275071", _
       "LTW1|(intensity)|4b9adb", _
       "LCC3|(intensity)|3b78ab", _
@@ -2348,8 +2213,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|020406", _
       "LS5|(intensity)|4fa2e6", _
       "LS1|(intensity)|122636", _
-      "LSwL1|(intensity)|030609", _
-      "LSwL2|(intensity)|03070a", _
       "LS2|(intensity)|010304", _
       "LS3|(intensity)|000001", _
       "LS4|(intensity)|152c3e", _
@@ -2380,8 +2243,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4ea0e3", _
       "LPC2|(intensity)|4c9bdc", _
       "LPC1|(intensity)|3a76a8", _
-      "LTW4|(intensity)|09131b", _
-      "LTW3|(intensity)|0c1924", _
       "LTW2|(intensity)|2e5f87", _
       "LTW1|(intensity)|4996d5", _
       "LCC3|(intensity)|4083ba", _
@@ -2423,8 +2284,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|030609", _
       "LS5|(intensity)|4fa2e5", _
       "LS1|(intensity)|193348", _
-      "LSwL1|(intensity)|050a0e", _
-      "LSwL2|(intensity)|020305", _
       "LS2|(intensity)|020406", _
       "LS3|(intensity)|000000", _
       "LS4|(intensity)|1c3a52", _
@@ -2450,8 +2309,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4fa1e4", _
       "LPC2|(intensity)|4e9fe2", _
       "LPC1|(intensity)|3f81b6", _
-      "LTW4|(intensity)|060d12", _
-      "LTW3|(intensity)|112331", _
       "LTW2|(intensity)|356d9a", _
       "LTW1|(intensity)|4790cd", _
       "LCC3|(intensity)|458dc8", _
@@ -2491,8 +2348,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|04090d", _
       "LS5|(intensity)|4fa0e4", _
       "LS1|(intensity)|1f405b", _
-      "LSwL1|(intensity)|081016", _
-      "LSwL2|(intensity)|010102", _
       "LS2|(intensity)|04080b", _
       "LS4|(intensity)|234866", _
       "LSwC3|(intensity)|2f6088", _
@@ -2519,8 +2374,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4fa0e4", _
       "LPC2|(intensity)|4fa1e4", _
       "LPC1|(intensity)|448bc5", _
-      "LTW4|(intensity)|04070a", _
-      "LTW3|(intensity)|172e41", _
       "LTW2|(intensity)|3b78ab", _
       "LTW1|(intensity)|4287c0", _
       "LCC3|(intensity)|4a96d5", _
@@ -2561,7 +2414,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|070e15", _
       "LS5|(intensity)|4d9ee0", _
       "LS1|(intensity)|264d6d", _
-      "LSwL1|(intensity)|0c1822", _
       "LS2|(intensity)|070e13", _
       "LS4|(intensity)|2a567a", _
       "LS6|(intensity)|50a3e8", _
@@ -2593,8 +2445,6 @@ With CreateGlfShow("insert_sparkles")
       "LF1|(intensity)|2b587d", _
       "LPC3|(intensity)|4e9fe2", _
       "LPC1|(intensity)|4893d1", _
-      "LTW4|(intensity)|020507", _
-      "LTW3|(intensity)|1d3b53", _
       "LTW2|(intensity)|4084bb", _
       "LTW1|(intensity)|3d7db1", _
       "LCC3|(intensity)|4c9cdd", _
@@ -2637,8 +2487,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|0b1721", _
       "LS5|(intensity)|4b9ada", _
       "LS1|(intensity)|2d5b81", _
-      "LSwL1|(intensity)|112331", _
-      "LSwL2|(intensity)|000101", _
       "LS2|(intensity)|0a151d", _
       "LS4|(intensity)|326590", _
       "LS6|(intensity)|50a2e6", _
@@ -2658,7 +2506,6 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|060d12", _
       "LEBR|(intensity)|000001", _
       "LPC4|(intensity)|234866", _
-      "LSC4|(intensity)|010102", _
       "LSC3|(intensity)|010203", _
       "LSC2|(intensity)|50a2e6", _
       "LSC1|(intensity)|50a2e6", _
@@ -2668,8 +2515,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4d9ddf", _
       "LPC2|(intensity)|50a3e7", _
       "LPC1|(intensity)|4b9ada", _
-      "LTW4|(intensity)|010304", _
-      "LTW3|(intensity)|234866", _
       "LTW2|(intensity)|458dc9", _
       "LTW1|(intensity)|3872a2", _
       "LCC3|(intensity)|4e9fe2", _
@@ -2709,8 +2554,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|10202e", _
       "LS5|(intensity)|4994d3", _
       "LS1|(intensity)|336894", _
-      "LSwL1|(intensity)|172e42", _
-      "LSwL2|(intensity)|000001", _
       "LS2|(intensity)|0e1c28", _
       "LS4|(intensity)|3771a0", _
       "LSwC3|(intensity)|4083ba", _
@@ -2738,8 +2581,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4b9adb", _
       "LPC2|(intensity)|50a3e8", _
       "LPC1|(intensity)|4d9ddf", _
-      "LTW4|(intensity)|000102", _
-      "LTW3|(intensity)|295477", _
       "LTW2|(intensity)|4893d1", _
       "LTW1|(intensity)|326590", _
       "LCC3|(intensity)|4fa2e5", _
@@ -2782,8 +2623,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|152a3c", _
       "LS5|(intensity)|468eca", _
       "LS1|(intensity)|3975a6", _
-      "LSwL1|(intensity)|1d3b54", _
-      "LSwL2|(intensity)|000000", _
       "LS2|(intensity)|132838", _
       "LS4|(intensity)|3d7cb0", _
       "LS6|(intensity)|50a3e7", _
@@ -2804,7 +2643,6 @@ With CreateGlfShow("insert_sparkles")
       "LW1|(intensity)|132738", _
       "LMLR|(intensity)|0c1923", _
       "LPC4|(intensity)|31648d", _
-      "LSC4|(intensity)|000101", _
       "LSC3|(intensity)|020406", _
       "LSC2|(intensity)|50a2e7", _
       "LF3|(intensity)|50a3e8", _
@@ -2812,8 +2650,6 @@ With CreateGlfShow("insert_sparkles")
       "LF1|(intensity)|3d7eb2", _
       "LPC3|(intensity)|4994d2", _
       "LPC1|(intensity)|4e9fe2", _
-      "LTW4|(intensity)|000101", _
-      "LTW3|(intensity)|30618a", _
       "LTW2|(intensity)|4b99d9", _
       "LTW1|(intensity)|2b587d", _
       "LCC3|(intensity)|50a2e7", _
@@ -2856,7 +2692,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|1b364d", _
       "LS5|(intensity)|4186be", _
       "LS1|(intensity)|3f80b6", _
-      "LSwL1|(intensity)|244968", _
       "LS2|(intensity)|193349", _
       "LS3|(intensity)|000101", _
       "LS4|(intensity)|4185bd", _
@@ -2875,7 +2710,6 @@ With CreateGlfShow("insert_sparkles")
       "LW1|(intensity)|0f1f2c", _
       "LMLR|(intensity)|112331", _
       "LPC4|(intensity)|3771a0", _
-      "LSC4|(intensity)|010102", _
       "LSC3|(intensity)|04090d", _
       "LSC2|(intensity)|4fa2e6", _
       "LSC1|(intensity)|4fa1e5", _
@@ -2884,7 +2718,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|458ec9", _
       "LPC2|(intensity)|4fa2e5", _
       "LPC1|(intensity)|4fa1e4", _
-      "LTW3|(intensity)|366e9d", _
       "LTW2|(intensity)|4d9ddf", _
       "LTW1|(intensity)|244b6a", _
       "LCC3|(intensity)|50a3e7", _
@@ -2926,7 +2759,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|214360", _
       "LS5|(intensity)|3c7aad", _
       "LS1|(intensity)|4389c3", _
-      "LSwL1|(intensity)|2b587d", _
       "LS2|(intensity)|1f3f59", _
       "LS4|(intensity)|4389c3", _
       "LS6|(intensity)|4fa1e4", _
@@ -2947,7 +2779,6 @@ With CreateGlfShow("insert_sparkles")
       "LW1|(intensity)|0b1721", _
       "LMLR|(intensity)|172e41", _
       "LPC4|(intensity)|3d7db1", _
-      "LSC4|(intensity)|010304", _
       "LSC3|(intensity)|070e14", _
       "LSC2|(intensity)|4fa0e4", _
       "LSC1|(intensity)|4ea0e3", _
@@ -2957,7 +2788,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|4185bd", _
       "LPC2|(intensity)|4ea0e2", _
       "LPC1|(intensity)|4fa2e6", _
-      "LTW3|(intensity)|3c7bae", _
       "LTW2|(intensity)|4ea0e3", _
       "LTW1|(intensity)|1e3c56", _
       "LCC3|(intensity)|4fa2e6", _
@@ -2997,7 +2827,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|274f70", _
       "LS5|(intensity)|356d9b", _
       "LS1|(intensity)|4790cd", _
-      "LSwL1|(intensity)|326691", _
       "LS2|(intensity)|264e6e", _
       "LS4|(intensity)|448bc5", _
       "LS6|(intensity)|4e9fe2", _
@@ -3020,7 +2849,6 @@ With CreateGlfShow("insert_sparkles")
       "LW1|(intensity)|081016", _
       "LMLR|(intensity)|1d3b53", _
       "LPC4|(intensity)|4287c0", _
-      "LSC4|(intensity)|020406", _
       "LSC3|(intensity)|0a151e", _
       "LSC2|(intensity)|4e9fe1", _
       "LSC1|(intensity)|4d9ee0", _
@@ -3029,8 +2857,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|3d7cb0", _
       "LPC2|(intensity)|4e9ee1", _
       "LPC1|(intensity)|50a3e7", _
-      "LTW4|(intensity)|000000", _
-      "LTW3|(intensity)|4185bc", _
       "LTW2|(intensity)|4fa1e4", _
       "LTW1|(intensity)|183145", _
       "LCC3|(intensity)|50a3e7", _
@@ -3072,7 +2898,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|2b587d", _
       "LS5|(intensity)|2f5f87", _
       "LS1|(intensity)|4a97d6", _
-      "LSwL1|(intensity)|3974a5", _
       "LS2|(intensity)|2d5b81", _
       "LS3|(intensity)|010102", _
       "LS4|(intensity)|4389c2", _
@@ -3096,7 +2921,6 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|244967", _
       "LMR|(intensity)|50a3e7", _
       "LPC4|(intensity)|468fcb", _
-      "LSC4|(intensity)|030609", _
       "LSC3|(intensity)|0f1e2b", _
       "LSC2|(intensity)|4d9ddf", _
       "LSC1|(intensity)|4c9bdc", _
@@ -3106,7 +2930,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|37709f", _
       "LPC2|(intensity)|4c9bdb", _
       "LPC1|(intensity)|4fa2e6", _
-      "LTW3|(intensity)|458dc8", _
       "LTW2|(intensity)|4fa2e5", _
       "LTW1|(intensity)|132637", _
       "LCC3|(intensity)|50a3e8", _
@@ -3148,8 +2971,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|2e5e85", _
       "LS5|(intensity)|275071", _
       "LS1|(intensity)|4c9bdc", _
-      "LSwL1|(intensity)|3f80b5", _
-      "LSwL2|(intensity)|000001", _
       "LS2|(intensity)|326590", _
       "LS3|(intensity)|020405", _
       "LS4|(intensity)|4083ba", _
@@ -3176,7 +2997,6 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|2a567b", _
       "LMR|(intensity)|4fa2e6", _
       "LPC4|(intensity)|4996d4", _
-      "LSC4|(intensity)|050a0e", _
       "LSC3|(intensity)|152b3c", _
       "LSC2|(intensity)|4b9ada", _
       "LSC1|(intensity)|4893d1", _
@@ -3185,7 +3005,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|30638c", _
       "LPC2|(intensity)|4a96d5", _
       "LPC1|(intensity)|4fa1e5", _
-      "LTW3|(intensity)|4994d2", _
       "LTW2|(intensity)|4fa2e6", _
       "LTW1|(intensity)|0f1e2b", _
       "LCC2|(intensity)|0a141c", _
@@ -3224,8 +3043,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|2f6088", _
       "LS5|(intensity)|20415d", _
       "LS1|(intensity)|4d9ee0", _
-      "LSwL1|(intensity)|448ac4", _
-      "LSwL2|(intensity)|000000", _
       "LS2|(intensity)|366d9b", _
       "LS3|(intensity)|030609", _
       "LS4|(intensity)|3b79ac", _
@@ -3248,7 +3065,6 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|31648d", _
       "LMR|(intensity)|50a2e7", _
       "LPC4|(intensity)|4c9bdc", _
-      "LSC4|(intensity)|081016", _
       "LSC3|(intensity)|1b374e", _
       "LSC2|(intensity)|4994d2", _
       "LSC1|(intensity)|448bc5", _
@@ -3257,7 +3073,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|2a5579", _
       "LPC2|(intensity)|4790cc", _
       "LPC1|(intensity)|4fa1e4", _
-      "LTW3|(intensity)|4b9ada", _
       "LTW2|(intensity)|50a3e7", _
       "LTW1|(intensity)|0d1a25", _
       "LCC2|(intensity)|0e1c28", _
@@ -3294,7 +3109,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|2d5d83", _
       "LS5|(intensity)|19344a", _
       "LS1|(intensity)|4e9ee1", _
-      "LSwL1|(intensity)|4893d1", _
       "LS2|(intensity)|3872a1", _
       "LS3|(intensity)|04090d", _
       "LS4|(intensity)|366f9d", _
@@ -3320,7 +3134,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|000001", _
       "LMR|(intensity)|50a3e7", _
       "LPC4|(intensity)|4e9fe2", _
-      "LSC4|(intensity)|0b1620", _
       "LSC3|(intensity)|20425e", _
       "LSC2|(intensity)|458dc8", _
       "LSC1|(intensity)|3f81b7", _
@@ -3329,7 +3142,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|244968", _
       "LPC2|(intensity)|4287c0", _
       "LPC1|(intensity)|4d9ee0", _
-      "LTW3|(intensity)|4d9cde", _
       "LTW2|(intensity)|50a3e8", _
       "LTW1|(intensity)|0c1923", _
       "LCC2|(intensity)|132637", _
@@ -3365,7 +3177,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|295477", _
       "LS5|(intensity)|132737", _
       "LS1|(intensity)|4fa0e3", _
-      "LSwL1|(intensity)|4a98d7", _
       "LS2|(intensity)|3771a0", _
       "LS3|(intensity)|060d13", _
       "LS4|(intensity)|326590", _
@@ -3391,7 +3202,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|000000", _
       "LMR|(intensity)|50a2e7", _
       "LPC4|(intensity)|4fa1e4", _
-      "LSC4|(intensity)|0f1f2d", _
       "LSC3|(intensity)|264e6e", _
       "LSC2|(intensity)|4185bd", _
       "LSC1|(intensity)|3a76a7", _
@@ -3399,7 +3209,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|1d3c55", _
       "LPC2|(intensity)|3d7cb0", _
       "LPC1|(intensity)|4b9ada", _
-      "LTW3|(intensity)|4d9ddf", _
       "LTW1|(intensity)|0e1c28", _
       "LCC2|(intensity)|1a344a", _
       "LCC1|(intensity)|4d9ddf", _
@@ -3436,7 +3245,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|244968", _
       "LS5|(intensity)|0e1c28", _
       "LS1|(intensity)|4fa1e5", _
-      "LSwL1|(intensity)|4c9cdd", _
       "LS2|(intensity)|356b98", _
       "LS3|(intensity)|0a141c", _
       "LS4|(intensity)|2a567a", _
@@ -3460,7 +3268,6 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|4287bf", _
       "LMR|(intensity)|4fa2e6", _
       "LPC4|(intensity)|4fa2e6", _
-      "LSC4|(intensity)|152b3d", _
       "LSC3|(intensity)|2a567b", _
       "LSC2|(intensity)|3b79ac", _
       "LSC1|(intensity)|346b97", _
@@ -3468,7 +3275,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|172f43", _
       "LPC2|(intensity)|37709f", _
       "LPC1|(intensity)|4995d4", _
-      "LTW3|(intensity)|4e9fe1", _
       "LTW1|(intensity)|112332", _
       "LCC2|(intensity)|20415c", _
       "LCC1|(intensity)|4e9fe1", _
@@ -3504,8 +3310,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|1e3d57", _
       "LS5|(intensity)|09131b", _
       "LS1|(intensity)|4fa1e4", _
-      "LSwL1|(intensity)|4d9ee0", _
-      "LSwL2|(intensity)|000101", _
       "LS2|(intensity)|31638d", _
       "LS3|(intensity)|0e1c28", _
       "LS4|(intensity)|244968", _
@@ -3530,7 +3334,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|000101", _
       "LMR|(intensity)|50a2e7", _
       "LPC4|(intensity)|50a3e7", _
-      "LSC4|(intensity)|1b384f", _
       "LSC3|(intensity)|2c5a80", _
       "LSC2|(intensity)|356c99", _
       "LSC1|(intensity)|2f5f87", _
@@ -3538,7 +3341,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|122433", _
       "LPC2|(intensity)|30628b", _
       "LPC1|(intensity)|4690cc", _
-      "LTW3|(intensity)|4e9ee1", _
       "LTW1|(intensity)|162c3f", _
       "LCC2|(intensity)|274f70", _
       "LCC1|(intensity)|4fa1e4", _
@@ -3573,7 +3375,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|173043", _
       "LS5|(intensity)|060c10", _
       "LS1|(intensity)|4d9ee0", _
-      "LSwL1|(intensity)|4ea0e3", _
       "LS2|(intensity)|2b597e", _
       "LS3|(intensity)|132737", _
       "LS4|(intensity)|1d3c55", _
@@ -3599,7 +3400,6 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|4996d4", _
       "LEBR|(intensity)|010203", _
       "LMR|(intensity)|50a2e6", _
-      "LSC4|(intensity)|224562", _
       "LSC3|(intensity)|2b597e", _
       "LSC2|(intensity)|2e5f86", _
       "LSC1|(intensity)|2b577b", _
@@ -3608,7 +3408,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|0d1a25", _
       "LPC2|(intensity)|295477", _
       "LPC1|(intensity)|4388c1", _
-      "LTW3|(intensity)|4c9cde", _
       "LTW1|(intensity)|1c3850", _
       "LCC2|(intensity)|2e5e86", _
       "LCC1|(intensity)|4fa2e6", _
@@ -3643,7 +3442,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|112230", _
       "LS5|(intensity)|04080b", _
       "LS1|(intensity)|4c9adb", _
-      "LSwL2|(intensity)|010102", _
       "LS2|(intensity)|244a69", _
       "LS3|(intensity)|183247", _
       "LS4|(intensity)|173044", _
@@ -3669,7 +3467,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|020405", _
       "LMR|(intensity)|4fa1e5", _
       "LPC4|(intensity)|50a3e8", _
-      "LSC4|(intensity)|285275", _
       "LSC3|(intensity)|285274", _
       "LSC2|(intensity)|285274", _
       "LSC1|(intensity)|285275", _
@@ -3678,7 +3475,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|09121a", _
       "LPC2|(intensity)|224664", _
       "LPC1|(intensity)|3e7fb4", _
-      "LTW3|(intensity)|4a97d6", _
       "LTW1|(intensity)|224664", _
       "LCC2|(intensity)|356d9a", _
       "LMet4|(intensity)|0b1620", _
@@ -3715,8 +3511,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|0c1822", _
       "LS5|(intensity)|020507", _
       "LS1|(intensity)|4996d4", _
-      "LSwL1|(intensity)|4e9fe2", _
-      "LSwL2|(intensity)|010304", _
       "LS2|(intensity)|1e3d56", _
       "LS3|(intensity)|1e3e57", _
       "LS4|(intensity)|122534", _
@@ -3742,7 +3536,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|030609", _
       "LMR|(intensity)|4e9fe1", _
       "LPC4|(intensity)|50a3e7", _
-      "LSC4|(intensity)|2f6089", _
       "LSC3|(intensity)|234866", _
       "LSC2|(intensity)|214460", _
       "LSC1|(intensity)|295376", _
@@ -3750,7 +3543,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|060c11", _
       "LPC2|(intensity)|1b384f", _
       "LPC1|(intensity)|3974a4", _
-      "LTW3|(intensity)|4791ce", _
       "LTW1|(intensity)|295477", _
       "LCC2|(intensity)|3c7aad", _
       "LCC1|(intensity)|50a2e6", _
@@ -3785,8 +3577,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|081118", _
       "LS5|(intensity)|020305", _
       "LS1|(intensity)|468fcb", _
-      "LSwL1|(intensity)|4d9dde", _
-      "LSwL2|(intensity)|030608", _
       "LS2|(intensity)|183045", _
       "LS3|(intensity)|254c6c", _
       "LS4|(intensity)|0e1c28", _
@@ -3813,7 +3603,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|050a0f", _
       "LMR|(intensity)|4c9cdd", _
       "LPC4|(intensity)|50a2e7", _
-      "LSC4|(intensity)|366f9e", _
       "LSC3|(intensity)|1d3b54", _
       "LSC2|(intensity)|1a364c", _
       "LSC1|(intensity)|2a567a", _
@@ -3822,7 +3611,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|04080b", _
       "LPC2|(intensity)|152b3d", _
       "LPC1|(intensity)|336793", _
-      "LTW3|(intensity)|438ac3", _
       "LTW1|(intensity)|30638c", _
       "LCC2|(intensity)|4083ba", _
       "LCC1|(intensity)|50a3e7", _
@@ -3860,8 +3648,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|050b0f", _
       "LS5|(intensity)|010304", _
       "LS1|(intensity)|4286bf", _
-      "LSwL1|(intensity)|4b9ada", _
-      "LSwL2|(intensity)|050a0e", _
       "LS2|(intensity)|122434", _
       "LS3|(intensity)|2c5a7f", _
       "LS4|(intensity)|0a141c", _
@@ -3887,7 +3673,6 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|081017", _
       "LMR|(intensity)|4a98d7", _
       "LPC4|(intensity)|50a3e8", _
-      "LSC4|(intensity)|3d7caf", _
       "LSC3|(intensity)|162e41", _
       "LSC2|(intensity)|14293b", _
       "LSC1|(intensity)|2e5e85", _
@@ -3896,7 +3681,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|020507", _
       "LPC2|(intensity)|10202d", _
       "LPC1|(intensity)|2c5a80", _
-      "LTW3|(intensity)|3e7fb5", _
       "LTW1|(intensity)|3770a0", _
       "LCC2|(intensity)|448ac4", _
       "LCC1|(intensity)|50a3e8", _
@@ -3933,8 +3717,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|030608", _
       "LS5|(intensity)|020305", _
       "LS1|(intensity)|3d7cb0", _
-      "LSwL1|(intensity)|4995d4", _
-      "LSwL2|(intensity)|070f15", _
       "LS2|(intensity)|0d1a25", _
       "LS3|(intensity)|326792", _
       "LS4|(intensity)|060d12", _
@@ -3958,7 +3740,6 @@ With CreateGlfShow("insert_sparkles")
       "LW1|(intensity)|3974a5", _
       "LEBR|(intensity)|0c1822", _
       "LMR|(intensity)|4892cf", _
-      "LSC4|(intensity)|4185bd", _
       "LSC3|(intensity)|112331", _
       "LSC2|(intensity)|0f1f2b", _
       "LSC1|(intensity)|346b97", _
@@ -3967,7 +3748,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|020405", _
       "LPC2|(intensity)|0b1720", _
       "LPC1|(intensity)|264d6d", _
-      "LTW3|(intensity)|3974a4", _
       "LTW2|(intensity)|50a3e7", _
       "LTW1|(intensity)|3d7db1", _
       "LCC2|(intensity)|468fca", _
@@ -4002,8 +3782,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|020406", _
       "LS5|(intensity)|020406", _
       "LS1|(intensity)|366f9e", _
-      "LSwL1|(intensity)|468fcb", _
-      "LSwL2|(intensity)|0b161f", _
       "LS2|(intensity)|091219", _
       "LS3|(intensity)|3873a3", _
       "LS4|(intensity)|04080b", _
@@ -4030,7 +3808,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|438ac3", _
       "LPC5|(intensity)|000001", _
       "LPC4|(intensity)|50a3e7", _
-      "LSC4|(intensity)|458ec9", _
       "LSC3|(intensity)|0c1923", _
       "LSC2|(intensity)|0b161f", _
       "LSC1|(intensity)|3a77a8", _
@@ -4039,7 +3816,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|010202", _
       "LPC2|(intensity)|080f16", _
       "LPC1|(intensity)|1f3f5a", _
-      "LTW3|(intensity)|326792", _
       "LTW2|(intensity)|4fa2e6", _
       "LTW1|(intensity)|4388c2", _
       "LCC2|(intensity)|4790cc", _
@@ -4073,8 +3849,6 @@ With CreateGlfShow("insert_sparkles")
       "LX|(intensity)|010304", _
       "LS5|(intensity)|03070a", _
       "LS1|(intensity)|30628b", _
-      "LSwL1|(intensity)|4286be", _
-      "LSwL2|(intensity)|0f1e2b", _
       "LS2|(intensity)|050b10", _
       "LS3|(intensity)|3e7eb3", _
       "LS4|(intensity)|030608", _
@@ -4101,7 +3875,6 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|3f80b6", _
       "LPC5|(intensity)|000000", _
       "LPC4|(intensity)|4fa2e6", _
-      "LSC4|(intensity)|4994d2", _
       "LSC3|(intensity)|081016", _
       "LSC2|(intensity)|070e14", _
       "LSC1|(intensity)|3f81b8", _
@@ -4110,8 +3883,6 @@ With CreateGlfShow("insert_sparkles")
       "LPC3|(intensity)|000000", _
       "LPC2|(intensity)|05090d", _
       "LPC1|(intensity)|183247", _
-      "LTW4|(intensity)|000001", _
-      "LTW3|(intensity)|2b587d", _
       "LTW1|(intensity)|4790cd", _
       "LCC2|(intensity)|4690cc", _
       "LMet4|(intensity)|30618a", _
@@ -4235,7 +4006,6 @@ With CreateGlfShow("meteor_fall_center")
       "LPC3|(intensity)|fe3827", _
       "LPC2|(intensity)|7b1e17", _
       "LPC1|(intensity)|000000", _
-      "LTW3|(intensity)|7b221b", _
       "LTW2|(intensity)|8c251d", _
       "LM4|(intensity)|000000", _
       "LM3|(intensity)|fe3d2d", _
@@ -4260,7 +4030,6 @@ With CreateGlfShow("meteor_fall_center")
       "LPC4|(intensity)|000000", _
       "LPC3|(intensity)|991b10", _
       "LPC2|(intensity)|310b07", _
-      "LTW3|(intensity)|9f291f", _
       "LTW2|(intensity)|260c0c", _
       "LMet2|(intensity)|7e211b", _
       "LM3|(intensity)|f53e2c", _
@@ -4284,7 +4053,6 @@ With CreateGlfShow("meteor_fall_center")
       "LPC5|(intensity)|000000", _
       "LPC3|(intensity)|f32f21", _
       "LPC2|(intensity)|450b07", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LMet3|(intensity)|fc3725", _
       "LMet2|(intensity)|fc3724", _
@@ -4752,7 +4520,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi12|(intensity)|f43727", _
       "gi11|(intensity)|fd3522", _
       "LS2|(intensity)|5a1916", _
-      "LTW4|(intensity)|83221b", _
       "LTW1|(intensity)|9e281f", _
       "LCC3|(intensity)|fd3724", _
       "LCC2|(intensity)|fe311b", _
@@ -4765,9 +4532,7 @@ With CreateGlfShow("meteor_fall_left")
       "gi16|(intensity)|010000", _
       "gi12|(intensity)|7f170e", _
       "gi11|(intensity)|fe311c", _
-      "LSwL2|(intensity)|fe331f", _
       "LS2|(intensity)|fa3725", _
-      "LTW4|(intensity)|030101", _
       "LTW1|(intensity)|000000", _
       "LCC3|(intensity)|ec3627", _
       "LCC2|(intensity)|671a13", _
@@ -4780,10 +4545,7 @@ With CreateGlfShow("meteor_fall_left")
       "gi16|(intensity)|070201", _
       "gi12|(intensity)|de2a1d", _
       "gi11|(intensity)|ee3623", _
-      "LSwL1|(intensity)|671c18", _
-      "LSwL2|(intensity)|fe321d", _
       "LS2|(intensity)|4b1512", _
-      "LTW4|(intensity)|000000", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|0c0302", _
       "LCC1|(intensity)|4c1310" _
@@ -4797,8 +4559,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi11|(intensity)|ff3d27", _
       "gi09|(intensity)|c83125", _
       "LS1|(intensity)|a02920", _
-      "LSwL1|(intensity)|fe290f", _
-      "LSwL2|(intensity)|fd3c29", _
       "LS2|(intensity)|000000", _
       "LCC3|(intensity)|1b0605", _
       "LCC2|(intensity)|330b08", _
@@ -4813,8 +4573,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi11|(intensity)|ff3b27", _
       "gi09|(intensity)|fe2d16", _
       "LS1|(intensity)|fe2f18", _
-      "LSwL1|(intensity)|fe3b2b", _
-      "LSwL2|(intensity)|fb3d28", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
       "LCC1|(intensity)|000000", _
@@ -4829,8 +4587,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi11|(intensity)|f63624", _
       "gi09|(intensity)|b82618", _
       "LS1|(intensity)|842017", _
-      "LSwL1|(intensity)|fa3d28", _
-      "LSwL2|(intensity)|fd3d2d", _
       "LCWiz|(intensity)|4f1713", _
       "LM1|(intensity)|000000", _
       "LLI|(intensity)|3f1311" _
@@ -4844,8 +4600,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi09|(intensity)|76140b", _
       "gi04|(intensity)|cf3125", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|f93e2d", _
-      "LSwL2|(intensity)|fd3d2a", _
       "LCWiz|(intensity)|000000", _
       "LM1|(intensity)|300b0a", _
       "LLI|(intensity)|fe2e16", _
@@ -4860,8 +4614,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi03|(intensity)|d53225", _
       "gi02|(intensity)|9b281f", _
       "LS1|(intensity)|3d0c08", _
-      "LSwL1|(intensity)|fe3d2a", _
-      "LSwL2|(intensity)|571407", _
       "LM1|(intensity)|000000", _
       "LLI|(intensity)|f43828", _
       "LLO|(intensity)|fe3725", _
@@ -4877,8 +4629,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi02|(intensity)|fe2a12", _
       "gi01|(intensity)|e63627", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|fe3d1c", _
-      "LSwL2|(intensity)|1f0603", _
       "LLI|(intensity)|500f0b", _
       "LLO|(intensity)|6f1711", _
       "LSL|(intensity)|fe2c14" _
@@ -4891,8 +4641,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi03|(intensity)|000000", _
       "gi02|(intensity)|bf2b1f", _
       "gi01|(intensity)|c02f23", _
-      "LSwL1|(intensity)|fc3d1c", _
-      "LSwL2|(intensity)|120402", _
       "LLI|(intensity)|862322", _
       "LLO|(intensity)|b91e14", _
       "LSL|(intensity)|d02c1c" _
@@ -4904,8 +4652,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi09|(intensity)|000000", _
       "gi02|(intensity)|520f09", _
       "gi01|(intensity)|000000", _
-      "LSwL1|(intensity)|cb1d0e", _
-      "LSwL2|(intensity)|b12b1c", _
       "LLI|(intensity)|2d0b06", _
       "LLO|(intensity)|71140a", _
       "LSL|(intensity)|821609" _
@@ -4916,8 +4662,6 @@ With CreateGlfShow("meteor_fall_left")
       "gi11|(intensity)|000000", _
       "gi09|(intensity)|210705", _
       "gi02|(intensity)|661611", _
-      "LSwL1|(intensity)|210705", _
-      "LSwL2|(intensity)|000000", _
       "LLI|(intensity)|210705", _
       "LLO|(intensity)|3d0b08", _
       "LSL|(intensity)|d62510" _
@@ -4927,7 +4671,6 @@ With CreateGlfShow("meteor_fall_left")
     .Lights = Array( _
       "gi09|(intensity)|000000", _
       "gi02|(intensity)|2d0907", _
-      "LSwL1|(intensity)|000000", _
       "LLI|(intensity)|000000", _
       "LLO|(intensity)|1e0605", _
       "LSL|(intensity)|5d0f08" _
@@ -5076,7 +4819,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi13|(intensity)|7f170d", _
       "gi10|(intensity)|fe2e17", _
       "LS6|(intensity)|bf2419", _
-      "LSC4|(intensity)|ee3728", _
       "LSC3|(intensity)|fe2f18", _
       "LSC2|(intensity)|fe2f18", _
       "LSC1|(intensity)|f33727", _
@@ -5092,7 +4834,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi13|(intensity)|610f02", _
       "gi10|(intensity)|cb3023", _
       "LS6|(intensity)|660f09", _
-      "LSC4|(intensity)|fe2f19", _
       "LSC3|(intensity)|f03626", _
       "LSC2|(intensity)|a82112", _
       "LSC1|(intensity)|73140c", _
@@ -5108,7 +4849,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi13|(intensity)|440a05", _
       "gi10|(intensity)|3a0c08", _
       "LS6|(intensity)|3d0c06", _
-      "LSC4|(intensity)|a62014", _
       "LSC3|(intensity)|70140c", _
       "LSC2|(intensity)|be200f", _
       "LSC1|(intensity)|db2618", _
@@ -5124,7 +4864,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi08|(intensity)|fe3725", _
       "gi07|(intensity)|521715", _
       "LS6|(intensity)|2e0a06", _
-      "LSC4|(intensity)|c32411", _
       "LSC3|(intensity)|e22819", _
       "LSC2|(intensity)|d22413", _
       "LSC1|(intensity)|6c110b", _
@@ -5141,7 +4880,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi06|(intensity)|fe3725", _
       "gi05|(intensity)|481513", _
       "LS6|(intensity)|000000", _
-      "LSC4|(intensity)|d12413", _
       "LSC3|(intensity)|7d120b", _
       "LSC2|(intensity)|69130b", _
       "LSC1|(intensity)|1e0503", _
@@ -5157,7 +4895,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi07|(intensity)|260c0b", _
       "gi06|(intensity)|fe3522", _
       "gi05|(intensity)|ee3727", _
-      "LSC4|(intensity)|6a130a", _
       "LSC3|(intensity)|4a0b06", _
       "LSC2|(intensity)|c62f27", _
       "LSC1|(intensity)|70130a", _
@@ -5172,7 +4909,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi07|(intensity)|000000", _
       "gi06|(intensity)|6b1711", _
       "gi05|(intensity)|320e0e", _
-      "LSC4|(intensity)|ba2b21", _
       "LSC3|(intensity)|6f120a", _
       "LSC2|(intensity)|010000", _
       "LSC1|(intensity)|811d14", _
@@ -5186,7 +4922,6 @@ With CreateGlfShow("meteor_fall_right")
       "gi08|(intensity)|000000", _
       "gi06|(intensity)|b11d13", _
       "gi05|(intensity)|000000", _
-      "LSC4|(intensity)|0e0202", _
       "LSC3|(intensity)|320b07", _
       "LSC2|(intensity)|8a2012", _
       "LSC1|(intensity)|000000", _
@@ -5198,7 +4933,6 @@ With CreateGlfShow("meteor_fall_right")
   With .AddStep(0.63333, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|731309", _
-      "LSC4|(intensity)|8e1f11", _
       "LSC3|(intensity)|000000", _
       "LSC2|(intensity)|200503", _
       "LSC1|(intensity)|100305", _
@@ -5209,7 +4943,6 @@ With CreateGlfShow("meteor_fall_right")
   With .AddStep(0.66667, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|420a08", _
-      "LSC4|(intensity)|2a0604", _
       "LSC3|(intensity)|340b0e", _
       "LSC2|(intensity)|000000", _
       "LSC1|(intensity)|000000", _
@@ -5220,7 +4953,6 @@ With CreateGlfShow("meteor_fall_right")
   With .AddStep(0.70000, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|3a0805", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LSC1|(intensity)|0e0303", _
       "LRI|(intensity)|8f2014" _

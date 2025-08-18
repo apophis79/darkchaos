@@ -300,8 +300,7 @@ Sub CreateMeteorWaveShows()
       End With
       .Lights = Array( _
         "LS2|100|(color)", _
-        "LW3|100|(color)", _
-        "LTW3|100|(color)" _
+        "LW3|100|(color)" _
         )
     End With
     With .AddStep(0.06667, Null, Null)
@@ -309,7 +308,6 @@ Sub CreateMeteorWaveShows()
         "LS2|100|000000", _
         "LW3|100|000000", _
         "LW1|100|(color)", _
-        "LTW3|100|000000", _
         "LTW2|100|(color)", _
         "LTW1|100|(color)", _
         "LB1|100|(color)" _
@@ -386,7 +384,6 @@ Sub CreateMeteorWaveShows()
         "LMR|100|000000", _
         "LPC5|100|(color)", _
         "LPC4|100|(color)", _
-        "LSC4|100|(color)", _
         "LSC3|100|000000", _
         "LSC2|100|000000", _
         "LF3|100|(color)", _
@@ -411,7 +408,6 @@ Sub CreateMeteorWaveShows()
         "LSwC1|100|(color)", _
         "LPC5|100|000000", _
         "LPC4|100|000000", _
-        "LSC4|100|000000", _
         "LF3|100|000000", _
         "LF2|100|000000", _
         "LF1|100|(color)", _
@@ -597,8 +593,7 @@ Sub CreateMeteorWaveShows()
         "LW8|100|000000", _
         "LW1|100|(color)", _
         "LSC3|100|(color)", _
-        "LSC1|100|000000", _
-        "LTW3|100|(color)" _
+        "LSC1|100|000000" _
         )
     End With
     With .AddStep(0.13333, Null, Null)
@@ -614,7 +609,6 @@ Sub CreateMeteorWaveShows()
         "LSC3|100|000000", _
         "LF3|100|(color)", _
         "LPC3|100|(color)", _
-        "LTW3|100|000000", _
         "LTW2|100|(color)", _
         "LTW1|100|(color)", _
         "LCC3|100|(color)", _
@@ -631,8 +625,6 @@ Sub CreateMeteorWaveShows()
         "gi10|100|000000", _
         "LX|100|000000", _
         "LS1|100|(color)", _
-        "LSwL1|100|(color)", _
-        "LSwL2|100|(color)", _
         "LCWiz|100|(color)", _
         "LLWiz|100|000000", _
         "LWiz|100|000000", _
@@ -663,8 +655,6 @@ Sub CreateMeteorWaveShows()
         "gi09|100|(color)", _
         "LPF|100|(color)", _
         "LS1|100|000000", _
-        "LSwL1|100|000000", _
-        "LSwL2|100|000000", _
         "LCWiz|100|000000", _
         "LMR|100|000000", _
         "LPC5|100|(color)", _
@@ -903,8 +893,6 @@ Sub CreateMeteorWaveShows()
         "LW1|100|(color)", _
         "LMLR|100|(color)", _
         "LF3|100|(color)", _
-        "LTW4|100|(color)", _
-        "LTW3|100|(color)", _
         "LM5|100|(color)", _
         "LM1|100|(color)", _
         "LPR1|100|(color)", _
@@ -924,8 +912,6 @@ Sub CreateMeteorWaveShows()
         "gi07|100|(color)", _
         "LX|100|(color)", _
         "LS1|100|000000", _
-        "LSwL1|100|(color)", _
-        "LSwL2|100|(color)", _
         "LS2|100|000000", _
         "LS4|100|000000", _
         "LW1|100|000000", _
@@ -935,8 +921,6 @@ Sub CreateMeteorWaveShows()
         "LF2|100|(color)", _
         "LF1|100|(color)", _
         "LPC3|100|(color)", _
-        "LTW4|100|000000", _
-        "LTW3|100|000000", _
         "LTW2|100|(color)", _
         "LTW1|100|(color)", _
         "LCC3|100|(color)", _
@@ -968,8 +952,6 @@ Sub CreateMeteorWaveShows()
         "gi03|100|(color)", _
         "LPF|100|dadada", _
         "LX|100|000000", _
-        "LSwL1|100|000000", _
-        "LSwL2|100|000000", _
         "LC1|100|f4f4f4", _
         "LC2|100|(color)", _
         "LC3|100|(color)", _

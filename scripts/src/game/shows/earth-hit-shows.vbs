@@ -230,7 +230,6 @@ With CreateGlfShow("earth_hit_center")
       "LC6|100|e67e12", _
       "LC7|100|db7324", _
       "LC8|100|d55e07", _
-      "LSC4|100|010101", _
       "LSA|100|dd7e1a", _
       "LH9|100|dc731f", _
       "LH8|100|ba4f19", _
@@ -340,7 +339,6 @@ With CreateGlfShow("earth_hit_center")
       "LWiz|100|983a02", _
       "LW9|100|602707", _
       "LW8|100|070500", _
-      "LSC4|100|150000", _
       "LSC3|100|020001", _
       "LSC1|100|010101", _
       "LMet4|100|010101", _
@@ -387,7 +385,6 @@ With CreateGlfShow("earth_hit_center")
       "gi02|100|da6806", _
       "gi01|100|fbc432", _
       "LS1|100|40150a", _
-      "LSwL1|100|040301", _
       "LCWiz|100|9d2703", _
       "LLWiz|100|c15a02", _
       "LC1|100|fcd635", _
@@ -402,7 +399,6 @@ With CreateGlfShow("earth_hit_center")
       "LW9|100|af4d03", _
       "LW8|100|8e3b02", _
       "LW7|100|491c08", _
-      "LSC4|100|5e260e", _
       "LSC3|100|330e01", _
       "LSC2|100|130100", _
       "LSC1|100|020001", _
@@ -453,7 +449,6 @@ With CreateGlfShow("earth_hit_center")
       "gi02|100|fdc423", _
       "gi01|100|fbe23d", _
       "LS1|100|f1970d", _
-      "LSwL1|100|7f2c05", _
       "LS6|100|010101", _
       "LSwC2|100|000000", _
       "LCWiz|100|d87501", _
@@ -472,7 +467,6 @@ With CreateGlfShow("earth_hit_center")
       "LW7|100|983e02", _
       "LW6|100|883e00", _
       "LW5|100|1a0d07", _
-      "LSC4|100|9a4919", _
       "LSC3|100|712504", _
       "LSC2|100|5f2207", _
       "LSC1|100|260a03", _
@@ -527,8 +521,6 @@ With CreateGlfShow("earth_hit_center")
       "gi01|100|ae4f05", _
       "LS5|100|010101", _
       "LS1|100|a74819", _
-      "LSwL1|100|7b2f0c", _
-      "LSwL2|100|080100", _
       "LS2|100|030001", _
       "LS3|100|0b0100", _
       "LS6|100|010000", _
@@ -549,7 +541,6 @@ With CreateGlfShow("earth_hit_center")
       "LW6|100|b75108", _
       "LW5|100|8e3e03", _
       "LW4|100|471908", _
-      "LSC4|100|f6c42b", _
       "LSC3|100|d86624", _
       "LSC2|100|86330b", _
       "LSC1|100|6b2a07", _
@@ -608,8 +599,6 @@ With CreateGlfShow("earth_hit_center")
       "gi01|100|ae5539", _
       "LX|100|010101", _
       "LS1|100|e5a40a", _
-      "LSwL1|100|ea990d", _
-      "LSwL2|100|ad4f19", _
       "LS2|100|c86a0d", _
       "LS3|100|501801", _
       "LS4|100|0d0300", _
@@ -635,14 +624,11 @@ With CreateGlfShow("earth_hit_center")
       "LW2|100|4d1a05", _
       "LW1|100|050001", _
       "LMLR|100|010101", _
-      "LSC4|100|fcc124", _
       "LSC3|100|f5aa1f", _
       "LSC2|100|f7e649", _
       "LSC1|100|c04c09", _
       "LF2|100|010101", _
       "LF1|100|010101", _
-      "LTW4|100|120804", _
-      "LTW3|100|3f1505", _
       "LTW2|100|090001", _
       "LTW1|100|010001", _
       "LCC3|100|150e08", _
@@ -701,8 +687,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|1a0b02", _
       "LS5|100|381009", _
       "LS1|100|e8610f", _
-      "LSwL1|100|dd8004", _
-      "LSwL2|100|ad5624", _
       "LS2|100|973414", _
       "LS3|100|872408", _
       "LS4|100|7b3e0a", _
@@ -730,7 +714,6 @@ With CreateGlfShow("earth_hit_center")
       "LMLR|100|120705", _
       "LEBR|100|010101", _
       "LMR|100|010101", _
-      "LSC4|100|fdde3f", _
       "LSC3|100|fccb2c", _
       "LSC2|100|f4a518", _
       "LSC1|100|faa728", _
@@ -738,8 +721,6 @@ With CreateGlfShow("earth_hit_center")
       "LF2|100|030102", _
       "LPC3|100|4b2109", _
       "LPC2|100|010101", _
-      "LTW4|100|420e01", _
-      "LTW3|100|7b2703", _
       "LTW2|100|451501", _
       "LTW1|100|3a1303", _
       "LCC3|100|bf4507", _
@@ -804,8 +785,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|652400", _
       "LS5|100|842c04", _
       "LS1|100|f9bf27", _
-      "LSwL1|100|f8be10", _
-      "LSwL2|100|d67104", _
       "LS2|100|e57c25", _
       "LS3|100|f98506", _
       "LS4|100|d16700", _
@@ -834,7 +813,6 @@ With CreateGlfShow("earth_hit_center")
       "LEBR|100|4b1c04", _
       "LMR|100|0a0504", _
       "LPC5|100|010101", _
-      "LSC4|100|fcdb2d", _
       "LSC3|100|ffa714", _
       "LSC2|100|ffe94c", _
       "LSC1|100|fec025", _
@@ -844,8 +822,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|9f4c0f", _
       "LPC2|100|662506", _
       "LPC1|100|491704", _
-      "LTW4|100|9b2601", _
-      "LTW3|100|cb4507", _
       "LTW2|100|b44207", _
       "LTW1|100|942a0c", _
       "LCC3|100|a83d07", _
@@ -910,8 +886,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|bc530d", _
       "LS5|100|903407", _
       "LS1|100|ebbf42", _
-      "LSwL1|100|f8f084", _
-      "LSwL2|100|eb940b", _
       "LS2|100|f4d12f", _
       "LS3|100|f8c025", _
       "LS4|100|cf5c14", _
@@ -942,7 +916,6 @@ With CreateGlfShow("earth_hit_center")
       "LMR|100|551301", _
       "LPC5|100|3f1708", _
       "LPC4|100|4c1d09", _
-      "LSC4|100|fabb1b", _
       "LSC3|100|fefaaa", _
       "LSC2|100|fdda39", _
       "LSC1|100|fda01a", _
@@ -952,8 +925,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|e6761b", _
       "LPC2|100|9f3e09", _
       "LPC1|100|e76515", _
-      "LTW4|100|f69f11", _
-      "LTW3|100|f49f0a", _
       "LTW2|100|e36408", _
       "LTW1|100|cb4d0b", _
       "LCC3|100|f6c40c", _
@@ -1015,8 +986,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|b84911", _
       "LS5|100|f9ae14", _
       "LS1|100|994508", _
-      "LSwL1|100|b34b04", _
-      "LSwL2|100|fcc813", _
       "LS2|100|ffef70", _
       "LS3|100|fec724", _
       "LS4|100|f3ae1b", _
@@ -1041,7 +1010,6 @@ With CreateGlfShow("earth_hit_center")
       "LMR|100|82340b", _
       "LPC5|100|a74706", _
       "LPC4|100|983102", _
-      "LSC4|100|5c1e12", _
       "LSC3|100|f18911", _
       "LSC2|100|f4b71c", _
       "LSC1|100|fdf9b8", _
@@ -1051,8 +1019,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|c45608", _
       "LPC2|100|ba3a02", _
       "LPC1|100|972705", _
-      "LTW4|100|fadb52", _
-      "LTW3|100|f7de4e", _
       "LTW2|100|e1a908", _
       "LTW1|100|fcef86", _
       "LCC3|100|f49604", _
@@ -1100,8 +1066,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|fcda3e", _
       "LS5|100|f2bc18", _
       "LS1|100|855c43", _
-      "LSwL1|100|a43e0d", _
-      "LSwL2|100|feec5d", _
       "LS2|100|fee454", _
       "LS3|100|fdf686", _
       "LS4|100|fdf36b", _
@@ -1126,7 +1090,6 @@ With CreateGlfShow("earth_hit_center")
       "LMR|100|e57316", _
       "LPC5|100|c34c16", _
       "LPC4|100|a03502", _
-      "LSC4|100|1c0603", _
       "LSC3|100|290702", _
       "LSC2|100|632720", _
       "LSC1|100|f18d0f", _
@@ -1136,8 +1099,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|df9c0e", _
       "LPC2|100|d3641a", _
       "LPC1|100|ed8e0c", _
-      "LTW4|100|fdc72f", _
-      "LTW3|100|f6941d", _
       "LTW2|100|fef0c9", _
       "LTW1|100|f6ea65", _
       "LCC3|100|fda31d", _
@@ -1178,8 +1139,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|fcdf3c", _
       "LS5|100|ffc025", _
       "LS1|100|2f0e06", _
-      "LSwL1|100|290e05", _
-      "LSwL2|100|ce5b04", _
       "LS2|100|fae764", _
       "LS3|100|f9e348", _
       "LS4|100|fbfeea", _
@@ -1204,7 +1163,6 @@ With CreateGlfShow("earth_hit_center")
       "LMR|100|fcd94a", _
       "LPC5|100|d35c0e", _
       "LPC4|100|e67405", _
-      "LSC4|100|000000", _
       "LSC3|100|170302", _
       "LSC2|100|1c0503", _
       "LSC1|100|1b0403", _
@@ -1214,8 +1172,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|fae34f", _
       "LPC2|100|fde450", _
       "LPC1|100|f4a909", _
-      "LTW4|100|fff7a3", _
-      "LTW3|100|fef383", _
       "LTW2|100|fdf59e", _
       "LTW1|100|f1cd26", _
       "LCC3|100|ffe83c", _
@@ -1254,8 +1210,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|ffc92e", _
       "LS5|100|fde549", _
       "LS1|100|130401", _
-      "LSwL1|100|1e0a02", _
-      "LSwL2|100|5c1803", _
       "LS2|100|8d3e04", _
       "LS3|100|a73b06", _
       "LS4|100|fac71c", _
@@ -1286,8 +1240,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|fee960", _
       "LPC2|100|fff18b", _
       "LPC1|100|ed9725", _
-      "LTW4|100|f4c54d", _
-      "LTW3|100|fed85b", _
       "LTW2|100|fbf268", _
       "LTW1|100|faed67", _
       "LCC3|100|ac561b", _
@@ -1326,8 +1278,6 @@ With CreateGlfShow("earth_hit_center")
       "LX|100|fce736", _
       "LS5|100|fdcc37", _
       "LS1|100|000000", _
-      "LSwL1|100|0a0200", _
-      "LSwL2|100|250d03", _
       "LS2|100|916d61", _
       "LS3|100|843009", _
       "LS4|100|fcd942", _
@@ -1355,8 +1305,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|f4dd40", _
       "LPC2|100|fbf6c8", _
       "LPC1|100|ffee4b", _
-      "LTW4|100|9f4e0c", _
-      "LTW3|100|912a01", _
       "LTW2|100|7d2803", _
       "LTW1|100|c7640b", _
       "LCC3|100|8d3d0d", _
@@ -1392,8 +1340,6 @@ With CreateGlfShow("earth_hit_center")
       "LPF|100|f6ce23", _
       "LX|100|bc5902", _
       "LS5|100|763313", _
-      "LSwL1|100|000000", _
-      "LSwL2|100|170600", _
       "LS2|100|290800", _
       "LS3|100|541607", _
       "LS4|100|d97001", _
@@ -1418,8 +1364,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|f3981f", _
       "LPC2|100|fddd3d", _
       "LPC1|100|f7b01c", _
-      "LTW4|100|511a05", _
-      "LTW3|100|632106", _
       "LTW2|100|842f02", _
       "LTW1|100|6d2c13", _
       "LCC3|100|280c01", _
@@ -1453,7 +1397,6 @@ With CreateGlfShow("earth_hit_center")
       "LPF|100|fdbd38", _
       "LX|100|210203", _
       "LS5|100|37120a", _
-      "LSwL2|100|000000", _
       "LS2|100|130400", _
       "LS3|100|1e0a01", _
       "LS4|100|3b1205", _
@@ -1477,8 +1420,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|8f310d", _
       "LPC2|100|9a3714", _
       "LPC1|100|832b03", _
-      "LTW4|100|250800", _
-      "LTW3|100|36120a", _
       "LTW2|100|673018", _
       "LTW1|100|340e00", _
       "LCC3|100|240d05", _
@@ -1529,8 +1470,6 @@ With CreateGlfShow("earth_hit_center")
       "LPC3|100|260902", _
       "LPC2|100|5e1806", _
       "LPC1|100|5d1a06", _
-      "LTW4|100|000000", _
-      "LTW3|100|000000", _
       "LTW2|100|200601", _
       "LTW1|100|210a04", _
       "LCC3|100|000000", _
@@ -1764,7 +1703,6 @@ With CreateGlfShow("earth_hit_left")
       "gi02|100|e2ed76", _
       "gi01|100|fae674", _
       "LS1|100|0c0201", _
-      "LSwL1|100|010102", _
       "LSwC2|100|050401", _
       "LCWiz|100|7f3208", _
       "LC1|100|983901", _
@@ -1812,7 +1750,6 @@ With CreateGlfShow("earth_hit_left")
       "gi02|100|fcc433", _
       "gi01|100|fcd238", _
       "LS1|100|590b06", _
-      "LSwL1|100|4a1004", _
       "LCWiz|100|cb5f19", _
       "LLWiz|100|010101", _
       "LC1|100|dca94d", _
@@ -1866,8 +1803,6 @@ With CreateGlfShow("earth_hit_left")
       "gi02|100|fbcf3c", _
       "gi01|100|fade3b", _
       "LS1|100|ae2d05", _
-      "LSwL1|100|e68104", _
-      "LSwL2|100|110302", _
       "LS2|100|010000", _
       "LCWiz|100|dd6d05", _
       "LLWiz|100|1e0301", _
@@ -1883,7 +1818,6 @@ With CreateGlfShow("earth_hit_left")
       "LW9|100|a24b16", _
       "LW8|100|712605", _
       "LW7|100|3f1404", _
-      "LSC4|100|010101", _
       "LMet1|100|1c0501", _
       "LM1|100|922503", _
       "LSA|100|ef8802", _
@@ -1928,8 +1862,6 @@ With CreateGlfShow("earth_hit_left")
       "gi02|100|fff68a", _
       "gi01|100|fcdb47", _
       "LS1|100|f3c305", _
-      "LSwL1|100|be6618", _
-      "LSwL2|100|58270e", _
       "LS2|100|1f0906", _
       "LS3|100|060201", _
       "LCWiz|100|df7619", _
@@ -1948,11 +1880,9 @@ With CreateGlfShow("earth_hit_left")
       "LW7|100|c75307", _
       "LW6|100|5b250c", _
       "LW5|100|050100", _
-      "LSC4|100|090001", _
       "LSC3|100|010101", _
       "LSC2|100|010101", _
       "LSC1|100|010101", _
-      "LTW4|100|010101", _
       "LCC3|100|0d0201", _
       "LCC2|100|010101", _
       "LMet4|100|321003", _
@@ -2001,8 +1931,6 @@ With CreateGlfShow("earth_hit_left")
       "gi02|100|ffe23e", _
       "gi01|100|f3ab17", _
       "LS1|100|fecc29", _
-      "LSwL1|100|ee9815", _
-      "LSwL2|100|652006", _
       "LS2|100|913d11", _
       "LS3|100|8c2f02", _
       "LSwC2|100|000000", _
@@ -2025,12 +1953,9 @@ With CreateGlfShow("earth_hit_left")
       "LW4|100|0b0402", _
       "LW3|100|020100", _
       "LW2|100|010101", _
-      "LSC4|100|5a1e03", _
       "LSC3|100|5d270a", _
       "LSC2|100|1d0001", _
       "LSC1|100|050100", _
-      "LTW4|100|35150b", _
-      "LTW3|100|0b0000", _
       "LTW2|100|070001", _
       "LTW1|100|170403", _
       "LCC3|100|381b12", _
@@ -2089,8 +2014,6 @@ With CreateGlfShow("earth_hit_left")
       "gi01|100|360b04", _
       "LS5|100|050000", _
       "LS1|100|fae14a", _
-      "LSwL1|100|fcfbfe", _
-      "LSwL2|100|f99f26", _
       "LS2|100|b45b0e", _
       "LS3|100|c35b07", _
       "LS4|100|070100", _
@@ -2115,15 +2038,12 @@ With CreateGlfShow("earth_hit_left")
       "LW3|100|b14205", _
       "LW2|100|1a0903", _
       "LW1|100|0b0101", _
-      "LSC4|100|8c3500", _
       "LSC3|100|a0420b", _
       "LSC2|100|601603", _
       "LSC1|100|964a16", _
       "LPC3|100|030001", _
       "LPC2|100|010101", _
       "LPC1|100|010101", _
-      "LTW4|100|621d05", _
-      "LTW3|100|99400a", _
       "LTW2|100|5a270c", _
       "LTW1|100|180b02", _
       "LCC3|100|4b180a", _
@@ -2185,8 +2105,6 @@ With CreateGlfShow("earth_hit_left")
       "LX|100|010102", _
       "LS5|100|511500", _
       "LS1|100|fff188", _
-      "LSwL1|100|fef266", _
-      "LSwL2|100|ffd52b", _
       "LS2|100|fbd52f", _
       "LS3|100|d89e25", _
       "LS4|100|d37c05", _
@@ -2214,7 +2132,6 @@ With CreateGlfShow("earth_hit_left")
       "LMLR|100|240e04", _
       "LEBR|100|0b0704", _
       "LPC4|100|010101", _
-      "LSC4|100|c45112", _
       "LSC3|100|d2500b", _
       "LSC2|100|9d420a", _
       "LSC1|100|c06026", _
@@ -2222,8 +2139,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|3c1904", _
       "LPC2|100|200d09", _
       "LPC1|100|080200", _
-      "LTW4|100|f0aa1f", _
-      "LTW3|100|591302", _
       "LTW2|100|56220b", _
       "LTW1|100|390e0b", _
       "LCC3|100|b95800", _
@@ -2291,8 +2206,6 @@ With CreateGlfShow("earth_hit_left")
       "LX|100|d6650b", _
       "LS5|100|912200", _
       "LS1|100|c04b06", _
-      "LSwL1|100|c34f02", _
-      "LSwL2|100|fbeb5b", _
       "LS2|100|ed8c12", _
       "LS3|100|feda2f", _
       "LS4|100|b64c0b", _
@@ -2323,7 +2236,6 @@ With CreateGlfShow("earth_hit_left")
       "LMR|100|170202", _
       "LPC5|100|090100", _
       "LPC4|100|010003", _
-      "LSC4|100|febd17", _
       "LSC3|100|f09619", _
       "LSC2|100|d77304", _
       "LSC1|100|ffe258", _
@@ -2333,8 +2245,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|8c3f1c", _
       "LPC2|100|3a1506", _
       "LPC1|100|3b140a", _
-      "LTW4|100|f1c61e", _
-      "LTW3|100|edc425", _
       "LTW2|100|f7c62a", _
       "LTW1|100|c66908", _
       "LCC3|100|ffd14e", _
@@ -2401,8 +2311,6 @@ With CreateGlfShow("earth_hit_left")
       "LX|100|c75207", _
       "LS5|100|eb7f07", _
       "LS1|100|74260b", _
-      "LSwL1|100|601a00", _
-      "LSwL2|100|ca6202", _
       "LS2|100|fbcc22", _
       "LS3|100|feb92f", _
       "LS4|100|f6ed71", _
@@ -2434,7 +2342,6 @@ With CreateGlfShow("earth_hit_left")
       "LMR|100|924412", _
       "LPC5|100|170807", _
       "LPC4|100|170701", _
-      "LSC4|100|fcc829", _
       "LSC3|100|f8b415", _
       "LSC2|100|f9d12c", _
       "LSC1|100|fbe647", _
@@ -2444,8 +2351,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|ea8813", _
       "LPC2|100|632703", _
       "LPC1|100|5c2111", _
-      "LTW4|100|f8b015", _
-      "LTW3|100|f59624", _
       "LTW2|100|fedc43", _
       "LTW1|100|fddf40", _
       "LCC3|100|fff9b3", _
@@ -2506,8 +2411,6 @@ With CreateGlfShow("earth_hit_left")
       "LX|100|efcc2b", _
       "LS5|100|f1b612", _
       "LS1|100|431101", _
-      "LSwL1|100|471608", _
-      "LSwL2|100|652804", _
       "LS2|100|be650c", _
       "LS3|100|fee240", _
       "LS4|100|fec934", _
@@ -2532,7 +2435,6 @@ With CreateGlfShow("earth_hit_left")
       "LMR|100|b4531b", _
       "LPC5|100|69381f", _
       "LPC4|100|5b1700", _
-      "LSC4|100|feec60", _
       "LSC3|100|ffc529", _
       "LSC2|100|fce34e", _
       "LSC1|100|fec728", _
@@ -2542,8 +2444,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|f7b30f", _
       "LPC2|100|f1aa11", _
       "LPC1|100|d97408", _
-      "LTW4|100|feea4a", _
-      "LTW3|100|fea80c", _
       "LTW2|100|fdc220", _
       "LTW1|100|fec410", _
       "LCC3|100|bc5505", _
@@ -2589,8 +2489,6 @@ With CreateGlfShow("earth_hit_left")
       "LX|100|fff27a", _
       "LS5|100|eb9815", _
       "LS1|100|000000", _
-      "LSwL1|100|1c0902", _
-      "LSwL2|100|2a0f09", _
       "LS2|100|ba5b23", _
       "LS3|100|99480c", _
       "LS4|100|f7d655", _
@@ -2615,7 +2513,6 @@ With CreateGlfShow("earth_hit_left")
       "LMR|100|f5b41b", _
       "LPC5|100|943606", _
       "LPC4|100|bf4600", _
-      "LSC4|100|f48a0b", _
       "LSC3|100|eb7d0f", _
       "LSC2|100|fff58d", _
       "LSC1|100|f9c747", _
@@ -2625,8 +2522,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|eb8709", _
       "LPC2|100|fde95d", _
       "LPC1|100|f9ba35", _
-      "LTW4|100|c16217", _
-      "LTW3|100|8d3d03", _
       "LTW2|100|ad480e", _
       "LTW1|100|cf5e05", _
       "LCC3|100|9a3f0f", _
@@ -2664,8 +2559,6 @@ With CreateGlfShow("earth_hit_left")
       "LPF|100|fbbb1b", _
       "LX|100|fbf266", _
       "LS5|100|fef5ae", _
-      "LSwL1|100|000000", _
-      "LSwL2|100|1f0702", _
       "LS2|100|321205", _
       "LS3|100|f2b9cd", _
       "LS4|100|fdee51", _
@@ -2689,7 +2582,6 @@ With CreateGlfShow("earth_hit_left")
       "LMR|100|fae357", _
       "LPC5|100|f9ab09", _
       "LPC4|100|6d2907", _
-      "LSC4|100|140202", _
       "LSC3|100|430601", _
       "LSC2|100|ea8b1b", _
       "LSC1|100|faa91c", _
@@ -2699,8 +2591,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|fff397", _
       "LPC2|100|9e3e0c", _
       "LPC1|100|833204", _
-      "LTW4|100|5b2208", _
-      "LTW3|100|a04214", _
       "LTW2|100|a2480a", _
       "LTW1|100|551b00", _
       "LCC3|100|1e0b00", _
@@ -2738,7 +2628,6 @@ With CreateGlfShow("earth_hit_left")
       "LPF|100|913605", _
       "LX|100|fedc3c", _
       "LS5|100|fed42e", _
-      "LSwL2|100|000000", _
       "LS2|100|160700", _
       "LS3|100|270502", _
       "LS4|100|913c09", _
@@ -2759,7 +2648,6 @@ With CreateGlfShow("earth_hit_left")
       "LMR|100|feda2e", _
       "LPC5|100|fedc2a", _
       "LPC4|100|24110a", _
-      "LSC4|100|000000", _
       "LSC3|100|130101", _
       "LSC2|100|1c0202", _
       "LSC1|100|4f0d01", _
@@ -2769,8 +2657,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|b35b0f", _
       "LPC2|100|c05301", _
       "LPC1|100|a23c00", _
-      "LTW4|100|2e1005", _
-      "LTW3|100|270902", _
       "LTW2|100|2e1209", _
       "LTW1|100|190802", _
       "LCC3|100|180700", _
@@ -2832,8 +2718,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|5e2805", _
       "LPC2|100|441e0c", _
       "LPC1|100|190902", _
-      "LTW4|100|160702", _
-      "LTW3|100|230d06", _
       "LTW2|100|250c04", _
       "LTW1|100|150600", _
       "LCC3|100|000000", _
@@ -2885,8 +2769,6 @@ With CreateGlfShow("earth_hit_left")
       "LPC3|100|2d0b03", _
       "LPC2|100|1f0700", _
       "LPC1|100|210d02", _
-      "LTW4|100|000000", _
-      "LTW3|100|000000", _
       "LTW2|100|000000", _
       "LTW1|100|000000", _
       "LCC2|100|000000", _
@@ -3130,7 +3012,6 @@ With CreateGlfShow("earth_hit_right")
       "LC6|100|250a02", _
       "LC7|100|7f3d13", _
       "LC8|100|742503", _
-      "LSC4|100|010101", _
       "LSA|100|6a2403", _
       "LH9|100|a14a12", _
       "LH8|100|541502", _
@@ -3179,7 +3060,6 @@ With CreateGlfShow("earth_hit_right")
       "LC7|100|e9ab3f", _
       "LC8|100|fcda36", _
       "LWiz|100|030200", _
-      "LSC4|100|6d2404", _
       "LSC3|100|4d2c14", _
       "LSC2|100|010101", _
       "LSA|100|d26503", _
@@ -3233,7 +3113,6 @@ With CreateGlfShow("earth_hit_right")
       "LC8|100|ea9f17", _
       "LWiz|100|150600", _
       "LW9|100|020000", _
-      "LSC4|100|a94502", _
       "LSC3|100|6c3203", _
       "LSC2|100|491d01", _
       "LSC1|100|150502", _
@@ -3291,7 +3170,6 @@ With CreateGlfShow("earth_hit_right")
       "LW9|100|a23205", _
       "LW8|100|0c0200", _
       "LW7|100|090302", _
-      "LSC4|100|c64f01", _
       "LSC3|100|933508", _
       "LSC2|100|903a0f", _
       "LSC1|100|602a06", _
@@ -3339,7 +3217,6 @@ With CreateGlfShow("earth_hit_right")
       "gi02|100|582308", _
       "gi01|100|632707", _
       "LS1|100|160503", _
-      "LSwL1|100|010101", _
       "LS6|100|010101", _
       "LSwC2|100|000000", _
       "LCWiz|100|904b2f", _
@@ -3358,7 +3235,6 @@ With CreateGlfShow("earth_hit_right")
       "LW7|100|983703", _
       "LW6|100|501c05", _
       "LW5|100|0d0503", _
-      "LSC4|100|c4500f", _
       "LSC3|100|f18b15", _
       "LSC2|100|a03907", _
       "LSC1|100|421205", _
@@ -3413,7 +3289,6 @@ With CreateGlfShow("earth_hit_right")
       "gi01|100|512003", _
       "LS5|100|010101", _
       "LS1|100|6e2b0f", _
-      "LSwL1|100|190502", _
       "LS6|100|180300", _
       "LCWiz|100|efc826", _
       "LLWiz|100|fdf68c", _
@@ -3433,7 +3308,6 @@ With CreateGlfShow("earth_hit_right")
       "LW5|100|722b07", _
       "LW4|100|431903", _
       "LMLR|100|010101", _
-      "LSC4|100|f8b71b", _
       "LSC3|100|ffefa1", _
       "LSC2|100|ba5a27", _
       "LSC1|100|9c4215", _
@@ -3494,8 +3368,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|010101", _
       "LS5|100|090100", _
       "LS1|100|d66d0f", _
-      "LSwL1|100|762e10", _
-      "LSwL2|100|0f0103", _
       "LS2|100|080100", _
       "LS3|100|541c04", _
       "LS4|100|010101", _
@@ -3521,12 +3393,9 @@ With CreateGlfShow("earth_hit_right")
       "LW2|100|351506", _
       "LW1|100|010101", _
       "LEBR|100|010101", _
-      "LSC4|100|faba20", _
       "LSC3|100|f3b818", _
       "LSC2|100|fdb71d", _
       "LSC1|100|ba5a03", _
-      "LTW4|100|0b0201", _
-      "LTW3|100|321505", _
       "LCC3|100|030104", _
       "LMet4|100|fef69c", _
       "LMet3|100|de6019", _
@@ -3582,8 +3451,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|020101", _
       "LS5|100|310500", _
       "LS1|100|f7b61c", _
-      "LSwL1|100|b33e03", _
-      "LSwL2|100|dd7b03", _
       "LS2|100|621200", _
       "LS3|100|c15b0a", _
       "LS4|100|130904", _
@@ -3610,15 +3477,12 @@ With CreateGlfShow("earth_hit_right")
       "LW1|100|5c1a03", _
       "LMLR|100|180504", _
       "LMR|100|010101", _
-      "LSC4|100|fce041", _
       "LSC3|100|f6ab0f", _
       "LSC2|100|ffba17", _
       "LSC1|100|fcc21d", _
       "LF3|100|000000", _
       "LPC3|100|010101", _
       "LPC2|100|010101", _
-      "LTW4|100|8d3f1c", _
-      "LTW3|100|883605", _
       "LTW2|100|5b2504", _
       "LTW1|100|562006", _
       "LCC3|100|60230a", _
@@ -3682,8 +3546,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|180001", _
       "LS5|100|4f1509", _
       "LS1|100|f1f37c", _
-      "LSwL1|100|fdb720", _
-      "LSwL2|100|bf4712", _
       "LS2|100|b73906", _
       "LS3|100|e06a0a", _
       "LS4|100|471601", _
@@ -3712,7 +3574,6 @@ With CreateGlfShow("earth_hit_right")
       "LEBR|100|120400", _
       "LMR|100|060000", _
       "LPC5|100|010101", _
-      "LSC4|100|ffee63", _
       "LSC3|100|facb29", _
       "LSC2|100|fab622", _
       "LSC1|100|eba710", _
@@ -3720,8 +3581,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|411b07", _
       "LPC2|100|030100", _
       "LPC1|100|010101", _
-      "LTW4|100|b64602", _
-      "LTW3|100|ee8b10", _
       "LTW2|100|a64301", _
       "LTW1|100|9f3d01", _
       "LCC3|100|ab4112", _
@@ -3784,8 +3643,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|4b1401", _
       "LS5|100|85420d", _
       "LS1|100|f8f99b", _
-      "LSwL1|100|f7b32b", _
-      "LSwL2|100|f9a825", _
       "LS2|100|cd5505", _
       "LS3|100|d4600e", _
       "LS4|100|a04716", _
@@ -3817,7 +3674,6 @@ With CreateGlfShow("earth_hit_right")
       "LMR|100|0f0101", _
       "LPC5|100|020001", _
       "LPC4|100|010101", _
-      "LSC4|100|bf5a02", _
       "LSC3|100|e46209", _
       "LSC2|100|f8af1e", _
       "LSC1|100|f8c61a", _
@@ -3825,8 +3681,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|792808", _
       "LPC2|100|2e0915", _
       "LPC1|100|2d0e0c", _
-      "LTW4|100|ec740b", _
-      "LTW3|100|b64604", _
       "LTW2|100|ca4e0f", _
       "LTW1|100|b03207", _
       "LCC3|100|c04206", _
@@ -3885,8 +3739,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|672f08", _
       "LS5|100|a04302", _
       "LS1|100|f1c225", _
-      "LSwL1|100|fdfb7c", _
-      "LSwL2|100|f6de35", _
       "LS2|100|ffe143", _
       "LS3|100|fcd235", _
       "LS4|100|df681c", _
@@ -3914,7 +3766,6 @@ With CreateGlfShow("earth_hit_right")
       "LMR|100|291107", _
       "LPC5|100|0d0000", _
       "LPC4|100|1d0604", _
-      "LSC4|100|230b00", _
       "LSC3|100|a63204", _
       "LSC2|100|ab2e0a", _
       "LSC1|100|9c3205", _
@@ -3922,8 +3773,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|ae4e14", _
       "LPC2|100|ac5b3d", _
       "LPC1|100|540b04", _
-      "LTW4|100|fcd71d", _
-      "LTW3|100|fcf07e", _
       "LTW2|100|ee7a27", _
       "LTW1|100|b34c10", _
       "LCC3|100|bf3f0e", _
@@ -3975,8 +3824,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|a85809", _
       "LS5|100|db560b", _
       "LS1|100|e28002", _
-      "LSwL1|100|fdde78", _
-      "LSwL2|100|fbed5c", _
       "LS2|100|fafffb", _
       "LS3|100|ffca29", _
       "LS4|100|e3881b", _
@@ -3999,15 +3846,12 @@ With CreateGlfShow("earth_hit_right")
       "LMR|100|55260a", _
       "LPC5|100|040000", _
       "LPC4|100|300d03", _
-      "LSC4|100|010101", _
       "LSC3|100|100501", _
       "LSC2|100|300c05", _
       "LSC1|100|560e00", _
       "LPC3|100|c75211", _
       "LPC2|100|903f04", _
       "LPC1|100|993f06", _
-      "LTW4|100|fed034", _
-      "LTW3|100|fae343", _
       "LTW2|100|fac520", _
       "LTW1|100|fed12f", _
       "LCC3|100|fddf3b", _
@@ -4051,8 +3895,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|f69507", _
       "LS5|100|a33602", _
       "LS1|100|8e3a15", _
-      "LSwL1|100|f08d15", _
-      "LSwL2|100|fdf27b", _
       "LS2|100|f1bd23", _
       "LS3|100|f7d748", _
       "LS4|100|f2bd13", _
@@ -4076,7 +3918,6 @@ With CreateGlfShow("earth_hit_right")
       "LMR|100|431700", _
       "LPC5|100|361301", _
       "LPC4|100|522003", _
-      "LSC4|100|000000", _
       "LSC3|100|000000", _
       "LSC2|100|000000", _
       "LSC1|100|230901", _
@@ -4084,8 +3925,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|f4e248", _
       "LPC2|100|e08c23", _
       "LPC1|100|c56217", _
-      "LTW4|100|fec31b", _
-      "LTW3|100|fcaf12", _
       "LTW2|100|feb71e", _
       "LTW1|100|fbc42c", _
       "LCC3|100|f9cf2b", _
@@ -4118,8 +3957,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|a23200", _
       "LS5|100|621704", _
       "LS1|100|3e1406", _
-      "LSwL1|100|671705", _
-      "LSwL2|100|facf48", _
       "LS2|100|fff270", _
       "LS3|100|fef16d", _
       "LS4|100|f0a703", _
@@ -4147,8 +3984,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|f7d22d", _
       "LPC2|100|fddb32", _
       "LPC1|100|fef281", _
-      "LTW4|100|fec233", _
-      "LTW3|100|fcbe20", _
       "LTW2|100|ffd643", _
       "LTW1|100|ffcf31", _
       "LCC3|100|febb1a", _
@@ -4181,8 +4016,6 @@ With CreateGlfShow("earth_hit_right")
       "LX|100|661901", _
       "LS5|100|360c00", _
       "LS1|100|000000", _
-      "LSwL1|100|190200", _
-      "LSwL2|100|ba5202", _
       "LS2|100|fdd435", _
       "LS3|100|e38307", _
       "LS4|100|c54f0d", _
@@ -4205,8 +4038,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|f0ab03", _
       "LPC2|100|fcbe11", _
       "LPC1|100|ffe342", _
-      "LTW4|100|fdf875", _
-      "LTW3|100|fce23f", _
       "LTW2|100|f9d52e", _
       "LTW1|100|f7e345", _
       "LCC3|100|fce146", _
@@ -4237,8 +4068,6 @@ With CreateGlfShow("earth_hit_right")
       "LPF|100|731200", _
       "LX|100|370900", _
       "LS5|100|010101", _
-      "LSwL1|100|000000", _
-      "LSwL2|100|592109", _
       "LS2|100|691904", _
       "LS3|100|350d0c", _
       "LS4|100|591703", _
@@ -4258,8 +4087,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|b64611", _
       "LPC2|100|f18003", _
       "LPC1|100|fee144", _
-      "LTW4|100|ae3c02", _
-      "LTW3|100|ad4519", _
       "LTW2|100|da6007", _
       "LTW1|100|d45803", _
       "LCC3|100|df6c15", _
@@ -4286,7 +4113,6 @@ With CreateGlfShow("earth_hit_right")
       "LPF|100|531600", _
       "LX|100|010101", _
       "LS5|100|000000", _
-      "LSwL2|100|2d110c", _
       "LS2|100|210500", _
       "LS3|100|0a0200", _
       "LS4|100|1d0902", _
@@ -4305,8 +4131,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|490f00", _
       "LPC2|100|963f03", _
       "LPC1|100|d4650c", _
-      "LTW4|100|281410", _
-      "LTW3|100|090102", _
       "LTW2|100|340a03", _
       "LTW1|100|63270f", _
       "LCC3|100|210907", _
@@ -4330,7 +4154,6 @@ With CreateGlfShow("earth_hit_right")
       "gi12|100|e7820c", _
       "gi11|100|2c0c06", _
       "LPF|100|220d05", _
-      "LSwL2|100|000000", _
       "LS2|100|000000", _
       "LS3|100|000000", _
       "LS4|100|000000", _
@@ -4344,8 +4167,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|1b0700", _
       "LPC2|100|37150c", _
       "LPC1|100|4c1104", _
-      "LTW4|100|030502", _
-      "LTW3|100|000000", _
       "LTW2|100|010101", _
       "LTW1|100|0c0101", _
       "LCC3|100|160301", _
@@ -4373,7 +4194,6 @@ With CreateGlfShow("earth_hit_right")
       "LPC3|100|000000", _
       "LPC2|100|010101", _
       "LPC1|100|1e0b02", _
-      "LTW4|100|000000", _
       "LTW2|100|000000", _
       "LTW1|100|000000", _
       "LCC3|100|000000", _

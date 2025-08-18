@@ -28,7 +28,7 @@
     "is_image_mode": false,
     "show_bulb_mesh": false,
     "has_static_bulb_mesh": true,
-    "show_reflection_on_ball": false,
+    "show_reflection_on_ball": true,
     "mesh_radius": 20.0,
     "bulb_modulate_vs_add": 0.9,
     "bulb_halo_height": 28.0,

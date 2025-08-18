@@ -104,7 +104,7 @@ Sub CreateTrainingShieldsMode
 
 
         'Define our shots
-        For x = 1 to 4
+        For x = 1 to 3
             With .Shots("training_shield_charge"&x)
                 .Switch = "s_TargetShield"&x
                 .Profile = "train_shields"

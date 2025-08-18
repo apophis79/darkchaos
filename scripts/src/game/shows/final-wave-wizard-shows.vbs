@@ -55,7 +55,6 @@ With CreateGlfShow("asteroid_hit_single")
       "LW2|(intensity)|000000", _
       "LMLR|(intensity)|000000", _
       "LF3|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
       "LTW2|(intensity)|000000", _
       "LCC3|(intensity)|(color)", _
       "LCC2|(intensity)|(color)" _
@@ -75,7 +74,6 @@ With CreateGlfShow("asteroid_hit_single")
       "LW5|(intensity)|(color)", _
       "LW4|(intensity)|000000", _
       "LF3|(intensity)|000000", _
-      "LTW4|(intensity)|000000", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
       "LMet3|(intensity)|(color)", _
@@ -87,7 +85,6 @@ With CreateGlfShow("asteroid_hit_single")
       "gi19|(intensity)|000000", _
       "gi14|(intensity)|(color)", _
       "gi11|(intensity)|000000", _
-      "LSwL2|(intensity)|8a8a8a", _
       "LS2|(intensity)|000000", _
       "LS6|(intensity)|000000", _
       "LW7|(intensity)|(color)", _
@@ -105,8 +102,6 @@ With CreateGlfShow("asteroid_hit_single")
       "gi14|(intensity)|000000", _
       "gi10|(intensity)|(color)", _
       "LS1|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
-      "LSwL2|(intensity)|000000", _
       "LW9|(intensity)|(color)", _
       "LW8|(intensity)|(color)", _
       "LW7|(intensity)|000000", _
@@ -120,13 +115,11 @@ With CreateGlfShow("asteroid_hit_single")
   With .AddStep(0.26667, Null, Null)
     .Lights = Array( _
       "gi09|(intensity)|(color)", _
-      "LSwL1|(intensity)|000000", _
       "LCWiz|(intensity)|(color)", _
       "LLWiz|(intensity)|(color)", _
       "LWiz|(intensity)|(color)", _
       "LW9|(intensity)|000000", _
       "LW8|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC3|(intensity)|0f0f0f", _
       "LSC2|(intensity)|000000", _
       "LMet4|(intensity)|000000", _
@@ -139,7 +132,6 @@ With CreateGlfShow("asteroid_hit_single")
       "gi09|(intensity)|000000", _
       "LS1|(intensity)|000000", _
       "LWiz|(intensity)|000000", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LMR1|(intensity)|d9d9d9", _
       "LCR1|(intensity)|ececec" _

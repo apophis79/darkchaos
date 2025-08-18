@@ -1155,20 +1155,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Light.LTW3.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Light.LTW4.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Light.LPC1.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -1226,13 +1212,6 @@
   },
   {
     "file_name": "Light.LSC3.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Light.LSC4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
@@ -1729,20 +1708,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Light.LSwL2.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Light.LSwL1.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Lights Inserts",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Light.LS1.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -1978,13 +1943,6 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "GI",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Light.FL7.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Lights Flasher",
     "editor_layer_visibility": false
   },
   {
@@ -18627,21 +18585,21 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LEBR_Parts.json",
+    "file_name": "Primitive.LM_L_LMR_Parts.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LEBR_Playfield.json",
+    "file_name": "Primitive.LM_L_LMR_Playfield.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LEBR_UnderPF.json",
+    "file_name": "Primitive.LM_L_LMR_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
@@ -19439,35 +19397,35 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_GateR.json",
+    "file_name": "Primitive.LM_L_LX_GateR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_Parts.json",
+    "file_name": "Primitive.LM_L_LX_Parts.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_Playfield.json",
+    "file_name": "Primitive.LM_L_LX_Playfield.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_TM4.json",
+    "file_name": "Primitive.LM_L_LX_TM4.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_UnderPF.json",
+    "file_name": "Primitive.LM_L_LX_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
@@ -21056,21 +21014,21 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LX_Parts.json",
+    "file_name": "Primitive.LM_L_LEBR_Parts.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LX_Playfield.json",
+    "file_name": "Primitive.LM_L_LEBR_Playfield.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LX_UnderPF.json",
+    "file_name": "Primitive.LM_L_LEBR_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",

@@ -29,8 +29,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|08041c", _
             "gi02|100|09041f", _
             "gi01|100|000000", _
-            "LTW4|100|1826e7", _
-            "LTW3|100|1b27e1", _
             "LTW2|100|1b28cd", _
             "LTW1|100|1827e6" _
             )
@@ -54,7 +52,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|080516", _
             "gi02|100|050214", _
             "gi01|100|010101", _
-            "LTW3|100|1927e3", _
             "LTW2|100|1a26d3" _
             )
         End With
@@ -78,7 +75,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0a0814", _
             "gi02|100|03020b", _
             "gi01|100|040404", _
-            "LTW3|100|1926e6", _
             "LTW2|100|1726db", _
             "LTW1|100|1826e7" _
             )
@@ -103,7 +99,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0f0e13", _
             "gi02|100|010006", _
             "gi01|100|0a0a0a", _
-            "LTW3|100|1826e6", _
             "LTW2|100|1725de" _
             )
         End With
@@ -126,7 +121,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|17161b", _
             "gi02|100|010103", _
             "gi01|100|131313", _
-            "LTW3|100|1827e6", _
             "LTW2|100|1825e3" _
             )
         End With
@@ -175,7 +169,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|343434", _
             "gi02|100|010101", _
             "gi01|100|353535", _
-            "LTW3|100|1826e7", _
             "LTW2|100|1827e6" _
             )
         End With
@@ -350,8 +343,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|949494", _
             "gi03|100|eaeaea", _
             "gi02|100|757575", _
-            "gi01|100|f9f9f9", _
-            "LTW4|100|1726e5" _
+            "gi01|100|f9f9f9" _
             )
         End With
         With .AddStep(0.46667, Null, Null)
@@ -397,8 +389,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|c9c9c9", _
             "gi03|100|fbfbfb", _
             "gi02|100|bebebe", _
-            "gi01|100|ffffff", _
-            "LTW4|100|1825e4" _
+            "gi01|100|ffffff" _
             )
         End With
         With .AddStep(0.53333, Null, Null)
@@ -419,8 +410,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|1421c4", _
             "gi04|100|dddddd", _
             "gi03|100|fefefe", _
-            "gi02|100|dbdbdb", _
-            "LTW4|100|1927e1" _
+            "gi02|100|dbdbdb" _
             )
         End With
         With .AddStep(0.56667, Null, Null)
@@ -439,7 +429,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|ebebeb", _
             "gi03|100|ffffff", _
             "gi02|100|eeeeee", _
-            "LTW4|100|1a28e0", _
             "LTW1|100|1826e1" _
             )
         End With
@@ -457,7 +446,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1725de", _
             "gi04|100|f5f5f5", _
             "gi02|100|f9f9f9", _
-            "LTW4|100|1d27de", _
             "LTW1|100|1925dd" _
             )
         End With
@@ -475,7 +463,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1825e3", _
             "gi04|100|fbfbfb", _
             "gi02|100|fdfdfd", _
-            "LTW4|100|202cda", _
             "LTW1|100|1924d6" _
             )
         End With
@@ -493,7 +480,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1827e6", _
             "gi04|100|fdfdfd", _
             "gi02|100|ffffff", _
-            "LTW4|100|2330d7", _
             "LTW1|100|1925cf" _
             )
         End With
@@ -512,8 +498,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1826e7", _
             "gi04|100|ffffff", _
             "gi01|100|fefefe", _
-            "LTW4|100|2b36d4", _
-            "LTW3|100|1827e6", _
             "LTW1|100|1a27ca" _
             )
         End With
@@ -531,7 +515,6 @@ Sub CreateTimeWarpShows()
             "gi10|100|f2f1f9", _
             "gi06|100|1827e6", _
             "gi01|100|fdfdfd", _
-            "LTW4|100|343ed3", _
             "LTW2|100|1826e6", _
             "LTW1|100|1e2ac1" _
             )
@@ -551,7 +534,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|1825e3", _
             "gi06|100|1726e3", _
             "gi01|100|f7f7f7", _
-            "LTW4|100|3f49d4", _
             "LTW2|100|1926e4", _
             "LTW1|100|2630ba" _
             )
@@ -571,8 +553,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|1724dc", _
             "gi03|100|fefefe", _
             "gi01|100|ebebeb", _
-            "LTW4|100|4d56d8", _
-            "LTW3|100|1a28e3", _
             "LTW2|100|1826df", _
             "LTW1|100|2f38b3" _
             )
@@ -591,8 +571,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|1722d3", _
             "gi06|100|1623d2", _
             "gi01|100|d5d5d5", _
-            "LTW4|100|5b65d8", _
-            "LTW3|100|1c27e1", _
             "LTW2|100|1827dd", _
             "LTW1|100|3941ae" _
             )
@@ -615,8 +593,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|1320c1", _
             "gi03|100|fafafa", _
             "gi01|100|b7b7b7", _
-            "LTW4|100|6e76da", _
-            "LTW3|100|1e2ae1", _
             "LTW2|100|1a27d7", _
             "LTW1|100|484eaf" _
             )
@@ -642,8 +618,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|f4f4f4", _
             "gi02|100|fdfdfd", _
             "gi01|100|929292", _
-            "LTW4|100|7e85de", _
-            "LTW3|100|212cde", _
             "LTW2|100|1b27d2", _
             "LTW1|100|585fb2" _
             )
@@ -669,8 +643,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|e8e8e8", _
             "gi02|100|fafafa", _
             "gi01|100|6d6d6d", _
-            "LTW4|100|9096e3", _
-            "LTW3|100|2430dc", _
             "LTW2|100|1e29ca", _
             "LTW1|100|6d71b9" _
             )
@@ -697,8 +669,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|d6d6d6", _
             "gi02|100|efefef", _
             "gi01|100|4d4d4d", _
-            "LTW4|100|9ea4ea", _
-            "LTW3|100|2a37dc", _
             "LTW2|100|262fc4", _
             "LTW1|100|8186bf" _
             )
@@ -727,8 +697,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|bdbdbd", _
             "gi02|100|dedede", _
             "gi01|100|313131", _
-            "LTW4|100|afb4ed", _
-            "LTW3|100|333edc", _
             "LTW2|100|2c35bf", _
             "LTW1|100|9699c6" _
             )
@@ -756,8 +724,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|a0a0a0", _
             "gi02|100|c3c3c3", _
             "gi01|100|1e1e1e", _
-            "LTW4|100|bdc0f3", _
-            "LTW3|100|3b48dc", _
             "LTW2|100|3640b9", _
             "LTW1|100|aaacd2" _
             )
@@ -784,8 +750,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|818181", _
             "gi02|100|a0a0a0", _
             "gi01|100|101010", _
-            "LTW4|100|c6c9f3", _
-            "LTW3|100|4953dd", _
             "LTW2|100|454dbc", _
             "LTW1|100|bebfde" _
             )
@@ -810,8 +774,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|606060", _
             "gi02|100|7d7d7d", _
             "gi01|100|080808", _
-            "LTW4|100|d0d4f8", _
-            "LTW3|100|565fdf", _
             "LTW2|100|535aba", _
             "LTW1|100|cdcee5" _
             )
@@ -837,8 +799,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|484848", _
             "gi02|100|5b5b5b", _
             "gi01|100|040404", _
-            "LTW4|100|dcddfc", _
-            "LTW3|100|646de1", _
             "LTW2|100|656bbd", _
             "LTW1|100|dadbed" _
             )
@@ -863,8 +823,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|313133", _
             "gi02|100|3d3d3d", _
             "gi01|100|000000", _
-            "LTW4|100|e2e4fb", _
-            "LTW3|100|757ce5", _
             "LTW2|100|7a7ec5", _
             "LTW1|100|e4e6f4" _
             )
@@ -888,8 +846,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|b5b5b5", _
             "gi03|100|222127", _
             "gi02|100|252525", _
-            "LTW4|100|e5e8fa", _
-            "LTW3|100|848ae8", _
             "LTW2|100|8e92cc", _
             "LTW1|100|ebebf7" _
             )
@@ -913,8 +869,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|16151b", _
             "gi02|100|161616", _
             "gi01|100|000002", _
-            "LTW4|100|eceefd", _
-            "LTW3|100|9299eb", _
             "LTW2|100|9fa5d2", _
             "LTW1|100|f3f3fb" _
             )
@@ -937,8 +891,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0d0f1b", _
             "gi02|100|0b0b0b", _
             "gi01|100|010207", _
-            "LTW4|100|f0f2ff", _
-            "LTW3|100|a0a7ee", _
             "LTW2|100|b4b8de", _
             "LTW1|100|f7f8fd" _
             )
@@ -964,8 +916,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|090a1b", _
             "gi02|100|050505", _
             "gi01|100|01030f", _
-            "LTW4|100|f3f3fd", _
-            "LTW3|100|aeb3f3", _
             "LTW2|100|c6c7e8", _
             "LTW1|100|fafbfd" _
             )
@@ -992,8 +942,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|050926", _
             "gi02|100|010101", _
             "gi01|100|03051c", _
-            "LTW4|100|f6f6fc", _
-            "LTW3|100|babef5", _
             "LTW2|100|d3d5ef", _
             "LTW1|100|fcfbff" _
             )
@@ -1020,8 +968,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|050830", _
             "gi02|100|010102", _
             "gi01|100|03082e", _
-            "LTW4|100|f8f9fd", _
-            "LTW3|100|c5c9f8", _
             "LTW2|100|dddff2", _
             "LTW1|100|fdfcff" _
             )
@@ -1045,8 +991,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|090b46", _
             "gi02|100|010104", _
             "gi01|100|080b47", _
-            "LTW4|100|f7f8fd", _
-            "LTW3|100|ced2fa", _
             "LTW2|100|e5e7f6", _
             "LTW1|100|ffffff" _
             )
@@ -1071,8 +1015,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|090f5c", _
             "gi02|100|02020a", _
             "gi01|100|0a1162", _
-            "LTW4|100|f9fafd", _
-            "LTW3|100|d5d8fb", _
             "LTW2|100|edeffb" _
             )
         End With
@@ -1097,8 +1039,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0c1478", _
             "gi02|100|020411", _
             "gi01|100|0e1685", _
-            "LTW4|100|f9f8fd", _
-            "LTW3|100|dbdffb", _
             "LTW2|100|f2f2fa" _
             )
         End With
@@ -1124,7 +1064,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|101893", _
             "gi02|100|03051d", _
             "gi01|100|121ca5", _
-            "LTW3|100|e4e5fb", _
             "LTW2|100|f6f7fc" _
             )
         End With
@@ -1149,8 +1088,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|121eaf", _
             "gi02|100|04072e", _
             "gi01|100|1320c0", _
-            "LTW4|100|f8f7fc", _
-            "LTW3|100|e9e9fc", _
             "LTW2|100|fafaff" _
             )
         End With
@@ -1176,8 +1113,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1420c3", _
             "gi02|100|070d49", _
             "gi01|100|1623d5", _
-            "LTW4|100|f7f6fc", _
-            "LTW3|100|ebecfd", _
             "LTW2|100|fcfbff" _
             )
         End With
@@ -1205,8 +1140,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1623d4", _
             "gi02|100|0a1163", _
             "gi01|100|1924de", _
-            "LTW4|100|f5f4fa", _
-            "LTW3|100|edeffc", _
             "LTW2|100|fcfbfe" _
             )
         End With
@@ -1233,8 +1166,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1824dc", _
             "gi02|100|0e1685", _
             "gi01|100|1825e3", _
-            "LTW4|100|f4f3fa", _
-            "LTW3|100|efeffa", _
             "LTW2|100|fefefe" _
             )
         End With
@@ -1261,8 +1192,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1724e2", _
             "gi02|100|121ca7", _
             "gi01|100|1827e6", _
-            "LTW4|100|eeecf8", _
-            "LTW3|100|f0f0fa", _
             "LTW2|100|ffffff" _
             )
         End With
@@ -1288,9 +1217,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|1421c8", _
             "gi03|100|1926e4", _
             "gi02|100|1320c0", _
-            "gi01|100|1826e7", _
-            "LTW4|100|e9e7f5", _
-            "LTW3|100|f1f1fb" _
+            "gi01|100|1826e7" _
             )
         End With
         With .AddStep(1.73333, Null, Null)
@@ -1314,8 +1241,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|1722d5", _
             "gi03|100|1826e7", _
             "gi02|100|1424d3", _
-            "LTW4|100|e5e2f4", _
-            "LTW3|100|f3f3fd", _
             "LTW1|100|fbfbfe" _
             )
         End With
@@ -1338,8 +1263,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|9a9a9a", _
             "gi04|100|1725de", _
             "gi02|100|1624dc", _
-            "LTW4|100|dedbf0", _
-            "LTW3|100|f2f2fc", _
             "LTW1|100|faf9fe" _
             )
         End With
@@ -1358,8 +1281,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|b9b9b9", _
             "gi04|100|1825e5", _
             "gi02|100|1825e4", _
-            "LTW4|100|d6d1ef", _
-            "LTW3|100|f0f0fb", _
             "LTW1|100|f6f5fa" _
             )
         End With
@@ -1378,8 +1299,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|ffffff", _
             "gi05|100|d6d6d6", _
             "gi02|100|1827e6", _
-            "LTW4|100|cbc5e6", _
-            "LTW3|100|efedfa", _
             "LTW1|100|f3f2f8" _
             )
         End With
@@ -1397,8 +1316,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|eaeaea", _
             "gi04|100|1826e7", _
             "gi02|100|1826e7", _
-            "LTW4|100|c1bae0", _
-            "LTW3|100|eceaf7", _
             "LTW1|100|ecebf3" _
             )
         End With
@@ -1414,8 +1331,6 @@ Sub CreateTimeWarpShows()
             "gi07|100|ffffff", _
             "gi05|100|f5f5f5", _
             "gi01|100|1826e6", _
-            "LTW4|100|b5acda", _
-            "LTW3|100|ebe8f7", _
             "LTW2|100|fdfdff", _
             "LTW1|100|e3e1ee" _
             )
@@ -1431,8 +1346,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|100c25", _
             "gi05|100|fbfbfb", _
             "gi01|100|1825e3", _
-            "LTW4|100|a59bcf", _
-            "LTW3|100|e6e3f6", _
             "LTW2|100|fbfaff", _
             "LTW1|100|d9d7e4" _
             )
@@ -1449,8 +1362,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|0d072c", _
             "gi05|100|fefefe", _
             "gi01|100|1824dc", _
-            "LTW4|100|958ac6", _
-            "LTW3|100|e0ddf2", _
             "LTW2|100|faf9fe", _
             "LTW1|100|ccc9dc" _
             )
@@ -1469,8 +1380,6 @@ Sub CreateTimeWarpShows()
             "gi11|100|2f12a8", _
             "gi05|100|ffffff", _
             "gi01|100|1623d2", _
-            "LTW4|100|8678be", _
-            "LTW3|100|dad6ef", _
             "LTW2|100|f5f4fc", _
             "LTW1|100|bbb8cd" _
             )
@@ -1491,8 +1400,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|fefefe", _
             "gi03|100|1926e4", _
             "gi01|100|131fbc", _
-            "LTW4|100|7566b7", _
-            "LTW3|100|d2cdec", _
             "LTW2|100|f4f3fb", _
             "LTW1|100|a8a3c1" _
             )
@@ -1513,8 +1420,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1724e2", _
             "gi02|100|1827e6", _
             "gi01|100|101a9f", _
-            "LTW4|100|6454ad", _
-            "LTW3|100|c9c3e7", _
             "LTW2|100|edecf4", _
             "LTW1|100|968fb3" _
             )
@@ -1535,8 +1440,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1824d9", _
             "gi02|100|1827e5", _
             "gi01|100|0d147e", _
-            "LTW4|100|5746a7", _
-            "LTW3|100|bfb7e3", _
             "LTW2|100|e4e2ef", _
             "LTW1|100|8279a5" _
             )
@@ -1559,8 +1462,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1522ce", _
             "gi02|100|1725de", _
             "gi01|100|0a105e", _
-            "LTW4|100|4d3aa2", _
-            "LTW3|100|b4aade", _
             "LTW2|100|dcd9e9", _
             "LTW1|100|6e6497" _
             )
@@ -1586,8 +1487,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|121fbb", _
             "gi02|100|1723d5", _
             "gi01|100|060b42", _
-            "LTW4|100|452ea2", _
-            "LTW3|100|a79cd5", _
             "LTW2|100|cfcce0", _
             "LTW1|100|5d518e" _
             )
@@ -1615,8 +1514,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|121ba2", _
             "gi02|100|1521c6", _
             "gi01|100|040729", _
-            "LTW4|100|3c249f", _
-            "LTW3|100|988ccc", _
             "LTW2|100|bfbad1", _
             "LTW1|100|4e408a" _
             )
@@ -1645,8 +1542,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0d1788", _
             "gi02|100|101baa", _
             "gi01|100|020518", _
-            "LTW4|100|371e9f", _
-            "LTW3|100|897bc7", _
             "LTW2|100|aea7c8", _
             "LTW1|100|423386" _
             )
@@ -1675,8 +1570,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0b126d", _
             "gi02|100|0f188d", _
             "gi01|100|01030f", _
-            "LTW4|100|341aa1", _
-            "LTW3|100|7b6cbf", _
             "LTW2|100|9d95bd", _
             "LTW1|100|392889" _
             )
@@ -1703,8 +1596,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|090d53", _
             "gi02|100|0c116c", _
             "gi01|100|010109", _
-            "LTW4|100|3217a2", _
-            "LTW3|100|6d5cb7", _
             "LTW2|100|8a81b1", _
             "LTW1|100|331e8a" _
             )
@@ -1731,8 +1622,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|050b3d", _
             "gi02|100|080b4d", _
             "gi01|100|000002", _
-            "LTW4|100|3015a4", _
-            "LTW3|100|5f4db2", _
             "LTW2|100|766ba3", _
             "LTW1|100|30198c" _
             )
@@ -1758,7 +1647,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|06062a", _
             "gi02|100|030931", _
             "gi01|100|000000", _
-            "LTW3|100|553fad", _
             "LTW2|100|64579a", _
             "LTW1|100|2f1794" _
             )
@@ -1783,8 +1671,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|101a99", _
             "gi03|100|03051e", _
             "gi02|100|040522", _
-            "LTW4|100|3014a7", _
-            "LTW3|100|4a33a6", _
             "LTW2|100|564894", _
             "LTW1|100|2f1499" _
             )
@@ -1809,7 +1695,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|0e1684", _
             "gi03|100|010311", _
             "gi02|100|010311", _
-            "LTW3|100|422aa6", _
             "LTW2|100|483890", _
             "LTW1|100|2e139d" _
             )
@@ -1833,8 +1718,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|0a1169", _
             "gi03|100|03040d", _
             "gi02|100|02020c", _
-            "LTW4|100|2f13a6", _
-            "LTW3|100|3c23a3", _
             "LTW2|100|402c8f", _
             "LTW1|100|2e13a0" _
             )
@@ -1859,7 +1742,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|06070c", _
             "gi02|100|000106", _
             "gi01|100|010101", _
-            "LTW3|100|371da4", _
             "LTW2|100|39238f", _
             "LTW1|100|2e13a2" _
             )
@@ -1883,8 +1765,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0b0b0d", _
             "gi02|100|010102", _
             "gi01|100|050505", _
-            "LTW4|100|2f12a7", _
-            "LTW3|100|3419a4", _
             "LTW2|100|331c90", _
             "LTW1|100|2e12a5" _
             )
@@ -1908,8 +1788,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|101012", _
             "gi02|100|000000", _
             "gi01|100|0b0b0b", _
-            "LTW4|100|2f12a8", _
-            "LTW3|100|3217a3", _
             "LTW2|100|311994", _
             "LTW1|100|2f13a6" _
             )
@@ -1932,7 +1810,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|0a0b26", _
             "gi03|100|1b1b1b", _
             "gi01|100|141414", _
-            "LTW3|100|3116a4", _
             "LTW2|100|2f1699" _
             )
         End With
@@ -1955,7 +1832,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|0e1122", _
             "gi03|100|272727", _
             "gi01|100|222222", _
-            "LTW3|100|3014a7", _
             "LTW2|100|2e139d" _
             )
         End With
@@ -1979,7 +1855,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|3b3b3b", _
             "gi02|100|010101", _
             "gi01|100|373737", _
-            "LTW3|100|3013a7", _
             "LTW2|100|2e13a1", _
             "LTW1|100|2f12a8" _
             )
@@ -2004,7 +1879,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|4f4f4f", _
             "gi02|100|070707", _
             "gi01|100|515151", _
-            "LTW3|100|2f13a6", _
             "LTW2|100|2f13a5" _
             )
         End With
@@ -2075,8 +1949,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|4c4c4c", _
             "gi03|100|a3a3a3", _
             "gi02|100|252525", _
-            "gi01|100|b6b6b6", _
-            "LTW3|100|2f12a8" _
+            "gi01|100|b6b6b6" _
             )
         End With
         With .AddStep(2.83333, Null, Null)
@@ -2202,8 +2075,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|c8c8c8", _
             "gi03|100|f9f9f9", _
             "gi02|100|b6b6b6", _
-            "gi01|100|fefefe", _
-            "LTW4|100|2f13a6" _
+            "gi01|100|fefefe" _
             )
         End With
         With .AddStep(3.00000, Null, Null)
@@ -2289,8 +2161,7 @@ Sub CreateTimeWarpShows()
             "gi06|100|2f12a8", _
             "gi05|100|230f7f", _
             "gi04|100|fafafa", _
-            "gi02|100|fbfbfb", _
-            "LTW4|100|3115a6" _
+            "gi02|100|fbfbfb" _
             )
         End With
         With .AddStep(3.13333, Null, Null)
@@ -2306,7 +2177,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|280f8e", _
             "gi04|100|fdfdfd", _
             "gi02|100|fdfdfd", _
-            "LTW4|100|3116a5", _
             "LTW1|100|2e12a4" _
             )
         End With
@@ -2323,7 +2193,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|2d119d", _
             "gi04|100|fefefe", _
             "gi02|100|ffffff", _
-            "LTW4|100|3318a3", _
             "LTW1|100|2e13a1" _
             )
         End With
@@ -2338,7 +2207,6 @@ Sub CreateTimeWarpShows()
             "gi07|100|2f12a8", _
             "gi05|100|2e12a3", _
             "gi04|100|ffffff", _
-            "LTW4|100|351ba2", _
             "LTW1|100|2e139e" _
             )
         End With
@@ -2354,7 +2222,6 @@ Sub CreateTimeWarpShows()
             "gi10|100|edeffc", _
             "gi05|100|2f13a6", _
             "gi01|100|fdfdfd", _
-            "LTW4|100|3a20a4", _
             "LTW1|100|2f159c" _
             )
         End With
@@ -2372,8 +2239,6 @@ Sub CreateTimeWarpShows()
             "gi10|100|eaecfb", _
             "gi09|100|1827e6", _
             "gi01|100|f9f9f9", _
-            "LTW4|100|4028a4", _
-            "LTW3|100|2f13a6", _
             "LTW2|100|2f13a6", _
             "LTW1|100|331a9a" _
             )
@@ -2393,7 +2258,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|2f13a6", _
             "gi05|100|2f12a8", _
             "gi01|100|ededed", _
-            "LTW4|100|4932a7", _
             "LTW1|100|341c94" _
             )
         End With
@@ -2413,8 +2277,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|2f13a6", _
             "gi03|100|fdfdfd", _
             "gi01|100|dcdcdc", _
-            "LTW4|100|553eae", _
-            "LTW3|100|3014a7", _
             "LTW1|100|3a2493" _
             )
         End With
@@ -2433,8 +2295,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|2f13a5", _
             "gi03|100|fbfbfb", _
             "gi01|100|c1c1c1", _
-            "LTW4|100|624db1", _
-            "LTW3|100|3013a7", _
             "LTW2|100|2f13a5", _
             "LTW1|100|412f93" _
             )
@@ -2456,8 +2316,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|f5f5f5", _
             "gi02|100|fdfdfd", _
             "gi01|100|9f9f9f", _
-            "LTW4|100|6e5db8", _
-            "LTW3|100|3116a5", _
             "LTW2|100|2f14a1", _
             "LTW1|100|4d3d95" _
             )
@@ -2480,8 +2338,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|eaeaea", _
             "gi02|100|fafafa", _
             "gi01|100|7c7c7c", _
-            "LTW4|100|7d6ebf", _
-            "LTW3|100|3318a4", _
             "LTW2|100|30169e", _
             "LTW1|100|5d4f9e" _
             )
@@ -2506,8 +2362,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|dbdbdb", _
             "gi02|100|f2f2f2", _
             "gi01|100|5a5a5a", _
-            "LTW4|100|8e81c8", _
-            "LTW3|100|351ba5", _
             "LTW2|100|31179e", _
             "LTW1|100|6e61a4" _
             )
@@ -2535,8 +2389,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|c5c5c5", _
             "gi02|100|e3e3e3", _
             "gi01|100|3d3d3d", _
-            "LTW4|100|9c90d0", _
-            "LTW3|100|3a20a7", _
             "LTW2|100|341b99", _
             "LTW1|100|8378b0" _
             )
@@ -2566,8 +2418,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|acacac", _
             "gi02|100|cdcdcd", _
             "gi01|100|272727", _
-            "LTW4|100|aca2d7", _
-            "LTW3|100|4027a9", _
             "LTW2|100|382196", _
             "LTW1|100|968dbc" _
             )
@@ -2596,8 +2446,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|8e8e8e", _
             "gi02|100|aeaeae", _
             "gi01|100|171717", _
-            "LTW4|100|b9b0df", _
-            "LTW3|100|472fac", _
             "LTW2|100|3f2b98", _
             "LTW1|100|aaa2ca" _
             )
@@ -2625,8 +2473,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|707070", _
             "gi02|100|8a8a8a", _
             "gi01|100|0d0d0d", _
-            "LTW4|100|c4bce5", _
-            "LTW3|100|5039ae", _
             "LTW2|100|49379a", _
             "LTW1|100|bdb6d6" _
             )
@@ -2652,8 +2498,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|555555", _
             "gi02|100|686868", _
             "gi01|100|060606", _
-            "LTW4|100|cec6e9", _
-            "LTW3|100|5946b3", _
             "LTW2|100|57479f", _
             "LTW1|100|ccc8e1" _
             )
@@ -2679,8 +2523,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|3e3e3e", _
             "gi02|100|494949", _
             "gi01|100|020202", _
-            "LTW4|100|d6d1ee", _
-            "LTW3|100|6654b8", _
             "LTW2|100|675aa5", _
             "LTW1|100|d9d6e9" _
             )
@@ -2706,8 +2548,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2a2a2a", _
             "gi02|100|323232", _
             "gi01|100|010101", _
-            "LTW4|100|dcd8f1", _
-            "LTW3|100|7464be", _
             "LTW2|100|7b6eb1", _
             "LTW1|100|e4e1f2" _
             )
@@ -2733,8 +2573,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1c1c1c", _
             "gi02|100|202020", _
             "gi01|100|000000", _
-            "LTW4|100|e3e0f4", _
-            "LTW3|100|8273c7", _
             "LTW2|100|8e83ba", _
             "LTW1|100|ebe9f6" _
             )
@@ -2758,8 +2596,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|8b8b8b", _
             "gi03|100|141416", _
             "gi02|100|131313", _
-            "LTW4|100|e6e3f4", _
-            "LTW3|100|9082cd", _
             "LTW2|100|a198c8", _
             "LTW1|100|f3f1f8" _
             )
@@ -2782,8 +2618,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|707070", _
             "gi03|100|0d0c11", _
             "gi02|100|0a0a0a", _
-            "LTW4|100|eae9f8", _
-            "LTW3|100|9e92d2", _
             "LTW2|100|b4acd4", _
             "LTW1|100|f5f4fa" _
             )
@@ -2808,8 +2642,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|08070c", _
             "gi02|100|040404", _
             "gi01|100|010005", _
-            "LTW4|100|e9e8f8", _
-            "LTW3|100|aa9fda", _
             "LTW2|100|c3bde0", _
             "LTW1|100|f8f7fc" _
             )
@@ -2835,8 +2667,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|05030d", _
             "gi02|100|010101", _
             "gi01|100|020109", _
-            "LTW4|100|edecfb", _
-            "LTW3|100|b5abe0", _
             "LTW2|100|d2cee8", _
             "LTW1|100|faf9fe" _
             )
@@ -2859,8 +2689,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|323232", _
             "gi03|100|040210", _
             "gi01|100|04020d", _
-            "LTW4|100|eeedfb", _
-            "LTW3|100|bdb5e5", _
             "LTW2|100|dcd9ec", _
             "LTW1|100|fcfbff" _
             )
@@ -2886,7 +2714,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|060318", _
             "gi02|100|000000", _
             "gi01|100|050214", _
-            "LTW3|100|c8c1e9", _
             "LTW2|100|e4e1f1", _
             "LTW1|100|fefeff" _
             )
@@ -2911,8 +2738,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0b0426", _
             "gi02|100|010103", _
             "gi01|100|0a0524", _
-            "LTW4|100|eaecf9", _
-            "LTW3|100|cfc9ec", _
             "LTW2|100|ebe9f5", _
             "LTW1|100|ffffff" _
             )
@@ -2938,8 +2763,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0f0635", _
             "gi02|100|000004", _
             "gi01|100|0e0535", _
-            "LTW4|100|e9eafc", _
-            "LTW3|100|d5d0f0", _
             "LTW2|100|f0eff7" _
             )
         End With
@@ -2965,8 +2788,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|130745", _
             "gi02|100|020109", _
             "gi01|100|15084d", _
-            "LTW4|100|e7e6fb", _
-            "LTW3|100|dad6f1", _
             "LTW2|100|f5f4f9" _
             )
         End With
@@ -2990,8 +2811,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|190b57", _
             "gi02|100|04020f", _
             "gi01|100|1c0c64", _
-            "LTW4|100|e4e4fd", _
-            "LTW3|100|dddbf1", _
             "LTW2|100|f7f6fb", _
             "LTW1|100|fdfdff" _
             )
@@ -3018,8 +2837,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1e0d6e", _
             "gi02|100|060316", _
             "gi01|100|220e7d", _
-            "LTW4|100|dde1fb", _
-            "LTW3|100|e0def4", _
             "LTW2|100|faf9fe", _
             "LTW1|100|fcfcfe" _
             )
@@ -3046,8 +2863,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|250f82", _
             "gi02|100|0a0325", _
             "gi01|100|28108c", _
-            "LTW4|100|d5dafa", _
-            "LTW3|100|dfdef5", _
             "LTW2|100|fcfcfe", _
             "LTW1|100|f9faff" _
             )
@@ -3075,8 +2890,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|28108e", _
             "gi02|100|0f0536", _
             "gi01|100|2c119e", _
-            "LTW4|100|cfd2fb", _
-            "LTW3|100|e0e0f8", _
             "LTW2|100|fdfdff", _
             "LTW1|100|f8f9fe" _
             )
@@ -3103,7 +2916,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2c119c", _
             "gi02|100|15094b", _
             "gi01|100|2e13a2", _
-            "LTW4|100|c4c8f8", _
             "LTW1|100|f3f3fd" _
             )
         End With
@@ -3130,8 +2942,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2d129f", _
             "gi02|100|1b0b64", _
             "gi01|100|2f13a6", _
-            "LTW4|100|babff6", _
-            "LTW3|100|dddff7", _
             "LTW1|100|f2f2fe" _
             )
         End With
@@ -3155,8 +2965,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|260f85", _
             "gi03|100|2f13a6", _
             "gi02|100|220f7a", _
-            "LTW4|100|acb3f3", _
-            "LTW3|100|dcddf9", _
             "LTW2|100|fbfcff", _
             "LTW1|100|e9ebf8" _
             )
@@ -3178,8 +2986,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|2a1193", _
             "gi02|100|28108d", _
             "gi01|100|2f12a8", _
-            "LTW4|100|9ea2f0", _
-            "LTW3|100|d7d8f8", _
             "LTW2|100|fafbff", _
             "LTW1|100|e4e5f7" _
             )
@@ -3200,8 +3006,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|c9c9c9", _
             "gi04|100|2c119b", _
             "gi02|100|2c119b", _
-            "LTW4|100|8f94ee", _
-            "LTW3|100|d2d4f9", _
             "LTW2|100|f8f9fd", _
             "LTW1|100|d8daf3" _
             )
@@ -3221,8 +3025,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|2e13a2", _
             "gi03|100|2f12a8", _
             "gi02|100|2e12a3", _
-            "LTW4|100|8086e8", _
-            "LTW3|100|cbd0fa", _
             "LTW2|100|f6f6fe", _
             "LTW1|100|ccccee" _
             )
@@ -3241,8 +3043,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|f3f3f3", _
             "gi04|100|2f13a6", _
             "gi02|100|2f13a6", _
-            "LTW4|100|6d75e5", _
-            "LTW3|100|c3c7f7", _
             "LTW2|100|f1f4fd", _
             "LTW1|100|bcbee5" _
             )
@@ -3258,8 +3058,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|0e1476", _
             "gi05|100|fafafa", _
             "gi02|100|2f12a8", _
-            "LTW4|100|5c65e0", _
-            "LTW3|100|b9bef7", _
             "LTW2|100|edeffc", _
             "LTW1|100|a9acde" _
             )
@@ -3276,8 +3074,6 @@ Sub CreateTimeWarpShows()
             "gi13|100|2f12a8", _
             "gi12|100|0e188f", _
             "gi05|100|fdfdfd", _
-            "LTW4|100|4e57de", _
-            "LTW3|100|b0b4f6", _
             "LTW2|100|e6e9fa", _
             "LTW1|100|9599d6" _
             )
@@ -3296,8 +3092,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|ffffff", _
             "gi04|100|2f12a8", _
             "gi01|100|2f13a6", _
-            "LTW4|100|3f49df", _
-            "LTW3|100|a5aaf5", _
             "LTW2|100|dfe1fa", _
             "LTW1|100|7e84ce" _
             )
@@ -3315,8 +3109,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|131fbc", _
             "gi08|100|fdfdfd", _
             "gi06|100|fefefe", _
-            "LTW4|100|343fdc", _
-            "LTW3|100|989ef3", _
             "LTW2|100|d6d9f7", _
             "LTW1|100|696fc7" _
             )
@@ -3336,8 +3128,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|fbfbfb", _
             "gi06|100|fcfcfc", _
             "gi01|100|2d129f", _
-            "LTW4|100|2b38dd", _
-            "LTW3|100|8a90ef", _
             "LTW2|100|c8ccf0", _
             "LTW1|100|555dc2" _
             )
@@ -3359,8 +3149,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|f6f6f6", _
             "gi03|100|2f13a6", _
             "gi01|100|2b1197", _
-            "LTW4|100|2330dc", _
-            "LTW3|100|7c82ee", _
             "LTW2|100|bcbfea", _
             "LTW1|100|454cc1" _
             )
@@ -3381,8 +3169,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|ececec", _
             "gi06|100|e9e9e9", _
             "gi01|100|260f84", _
-            "LTW4|100|202ddf", _
-            "LTW3|100|6e76ea", _
             "LTW2|100|a8ade3", _
             "LTW1|100|373fc1" _
             )
@@ -3408,8 +3194,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2e12a3", _
             "gi02|100|2f13a6", _
             "gi01|100|1f0d72", _
-            "LTW4|100|1d29e1", _
-            "LTW3|100|5f67e6", _
             "LTW2|100|969cde", _
             "LTW1|100|2b35c5" _
             )
@@ -3433,8 +3217,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|b8b8b8", _
             "gi03|100|2d129d", _
             "gi01|100|180a56", _
-            "LTW4|100|1a28e3", _
-            "LTW3|100|5059e6", _
             "LTW2|100|8389d6", _
             "LTW1|100|232eca" _
             )
@@ -3461,8 +3243,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2a1193", _
             "gi02|100|2e13a2", _
             "gi01|100|130843", _
-            "LTW4|100|1a27e6", _
-            "LTW3|100|424de2", _
             "LTW2|100|6e73d0", _
             "LTW1|100|1e2bd2" _
             )
@@ -3491,8 +3271,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|270f87", _
             "gi02|100|2c1299", _
             "gi01|100|0c042c", _
-            "LTW4|100|1726e5", _
-            "LTW3|100|3542e0", _
             "LTW2|100|5b62cc", _
             "LTW1|100|1c28d7" _
             )
@@ -3518,8 +3296,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|200e72", _
             "gi02|100|28108b", _
             "gi01|100|07041a", _
-            "LTW4|100|1826e7", _
-            "LTW3|100|2d3be2", _
             "LTW2|100|4851cb", _
             "LTW1|100|1a26db" _
             )
@@ -3546,7 +3322,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1b0c61", _
             "gi02|100|210e78", _
             "gi01|100|050311", _
-            "LTW3|100|2733e1", _
             "LTW2|100|3a43c9", _
             "LTW1|100|1826df" _
             )
@@ -3574,7 +3349,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|16094e", _
             "gi02|100|1a0b62", _
             "gi01|100|03020a", _
-            "LTW3|100|222ee2", _
             "LTW2|100|2e38cc", _
             "LTW1|100|1825e3" _
             )
@@ -3600,7 +3374,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|11073b", _
             "gi02|100|140848", _
             "gi01|100|010005", _
-            "LTW3|100|1f2be1", _
             "LTW2|100|2531ce", _
             "LTW1|100|1825e6" _
             )
@@ -3625,7 +3398,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0b0529", _
             "gi02|100|0f0536", _
             "gi01|100|010103", _
-            "LTW3|100|1b29e3", _
             "LTW2|100|202bd3", _
             "LTW1|100|1827e6" _
             )
@@ -3650,7 +3422,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|08041e", _
             "gi02|100|0a0525", _
             "gi01|100|000001", _
-            "LTW3|100|1a27e5", _
             "LTW2|100|1c28d7" _
             )
         End With
@@ -3674,7 +3445,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|070415", _
             "gi02|100|060315", _
             "gi01|100|000000", _
-            "LTW3|100|1927e7", _
             "LTW2|100|1b27dc", _
             "LTW1|100|1826e7" _
             )
@@ -3700,7 +3470,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|080612", _
             "gi02|100|04020e", _
             "gi01|100|010101", _
-            "LTW3|100|1826e7", _
             "LTW2|100|1a25df" _
             )
         End With
@@ -3888,8 +3657,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|37363c", _
             "gi03|100|8f8f8f", _
             "gi02|100|181818", _
-            "gi01|100|a4a4a4", _
-            "LTW4|100|1827e6" _
+            "gi01|100|a4a4a4" _
             )
         End With
         With .AddStep(5.33333, Null, Null)
@@ -3967,8 +3735,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|828282", _
             "gi03|100|dfdfdf", _
             "gi02|100|5b5b5b", _
-            "gi01|100|f1f1f1", _
-            "LTW4|100|1827e4" _
+            "gi01|100|f1f1f1" _
             )
         End With
         With .AddStep(5.43333, Null, Null)
@@ -3993,8 +3760,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|9c9c9c", _
             "gi03|100|eeeeee", _
             "gi02|100|7f7f7f", _
-            "gi01|100|fafafa", _
-            "LTW4|100|1825e3" _
+            "gi01|100|fafafa" _
             )
         End With
         With .AddStep(5.46667, Null, Null)
@@ -4018,7 +3784,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|f7f7f7", _
             "gi02|100|a3a3a3", _
             "gi01|100|fdfdfd", _
-            "LTW4|100|1826df", _
             "LTW1|100|1825e5" _
             )
         End With
@@ -4043,7 +3808,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|fcfcfc", _
             "gi02|100|c5c5c5", _
             "gi01|100|ffffff", _
-            "LTW4|100|1b27dd", _
             "LTW1|100|1826e0" _
             )
         End With
@@ -4065,7 +3829,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|e2e2e2", _
             "gi03|100|fefefe", _
             "gi02|100|e0e0e0", _
-            "LTW4|100|1d2adb", _
             "LTW1|100|1725dd" _
             )
         End With
@@ -4085,7 +3848,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|eeeeee", _
             "gi03|100|ffffff", _
             "gi02|100|f0f0f0", _
-            "LTW4|100|1f2cd9", _
             "LTW1|100|1825d4" _
             )
         End With
@@ -4104,8 +3866,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1623d2", _
             "gi04|100|f7f7f7", _
             "gi02|100|fafafa", _
-            "LTW4|100|2431d5", _
-            "LTW3|100|1827e6", _
             "LTW1|100|1826cf" _
             )
         End With
@@ -4124,7 +3884,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1725de", _
             "gi04|100|fcfcfc", _
             "gi02|100|fdfdfd", _
-            "LTW4|100|2b36d0", _
             "LTW2|100|1726e3", _
             "LTW1|100|1a26c6" _
             )
@@ -4143,7 +3902,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1825e3", _
             "gi04|100|fdfdfd", _
             "gi02|100|ffffff", _
-            "LTW4|100|363ece", _
             "LTW1|100|1d27bc" _
             )
         End With
@@ -4162,8 +3920,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1826e7", _
             "gi04|100|ffffff", _
             "gi01|100|fefefe", _
-            "LTW4|100|3e48cd", _
-            "LTW3|100|1926e5", _
             "LTW1|100|242bb6" _
             )
         End With
@@ -4180,8 +3936,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|838383", _
             "gi10|100|f8f7fd", _
             "gi01|100|fcfcfc", _
-            "LTW4|100|4d55cf", _
-            "LTW3|100|1a28e3", _
             "LTW2|100|1825df", _
             "LTW1|100|2832af" _
             )
@@ -4200,8 +3954,6 @@ Sub CreateTimeWarpShows()
             "gi10|100|f4f3fa", _
             "gi08|100|1726e5", _
             "gi01|100|f5f5f5", _
-            "LTW4|100|5a62ce", _
-            "LTW3|100|1a28e0", _
             "LTW2|100|1925dc", _
             "LTW1|100|323aa6" _
             )
@@ -4221,8 +3973,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|1826e5", _
             "gi03|100|fefefe", _
             "gi01|100|e7e7e7", _
-            "LTW4|100|6c74d6", _
-            "LTW3|100|1f2be1", _
             "LTW2|100|1926d6", _
             "LTW1|100|4047a3" _
             )
@@ -4243,8 +3993,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|1725dd", _
             "gi03|100|fdfdfd", _
             "gi01|100|d0d0d0", _
-            "LTW4|100|7f85d9", _
-            "LTW3|100|212edc", _
             "LTW2|100|1a27cd", _
             "LTW1|100|4e55a3" _
             )
@@ -4266,8 +4014,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|1722d6", _
             "gi03|100|f9f9f9", _
             "gi01|100|b0b0b0", _
-            "LTW4|100|8f95dd", _
-            "LTW3|100|2631d9", _
             "LTW2|100|1e29c5", _
             "LTW1|100|6166a8" _
             )
@@ -4291,8 +4037,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|f1f1f1", _
             "gi02|100|fdfdfd", _
             "gi01|100|898989", _
-            "LTW4|100|a2a6e6", _
-            "LTW3|100|2b37d7", _
             "LTW2|100|212dc1", _
             "LTW1|100|7479b1" _
             )
@@ -4317,8 +4061,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|e4e4e4", _
             "gi02|100|f9f9f9", _
             "gi01|100|656565", _
-            "LTW4|100|b3b6ec", _
-            "LTW3|100|353fd8", _
             "LTW2|100|2731b7", _
             "LTW1|100|8b8dba" _
             )
@@ -4345,8 +4087,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|d0d0d0", _
             "gi02|100|ededed", _
             "gi01|100|444444", _
-            "LTW4|100|bfc1ee", _
-            "LTW3|100|4149d8", _
             "LTW2|100|313ab1", _
             "LTW1|100|9ea1c4" _
             )
@@ -4374,8 +4114,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|b6b6b6", _
             "gi02|100|d9d9d9", _
             "gi01|100|2b2b2b", _
-            "LTW4|100|cacef2", _
-            "LTW3|100|4b56d8", _
             "LTW2|100|3b44ae", _
             "LTW1|100|b2b4cf" _
             )
@@ -4403,8 +4141,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|979797", _
             "gi02|100|bdbdbd", _
             "gi01|100|191919", _
-            "LTW4|100|d6d8f7", _
-            "LTW3|100|5962db", _
             "LTW2|100|4c53ae", _
             "LTW1|100|c5c7db" _
             )
@@ -4431,8 +4167,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|787878", _
             "gi02|100|999999", _
             "gi01|100|0d0d0d", _
-            "LTW4|100|dfe1f9", _
-            "LTW3|100|6971dd", _
             "LTW2|100|5c63b1", _
             "LTW1|100|d1d4e4" _
             )
@@ -4458,8 +4192,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|5a5a5a", _
             "gi02|100|737373", _
             "gi01|100|050505", _
-            "LTW4|100|e5e8fa", _
-            "LTW3|100|7880e2", _
             "LTW2|100|7075b8", _
             "LTW1|100|e0e0ee" _
             )
@@ -4483,8 +4215,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|404040", _
             "gi02|100|525252", _
             "gi01|100|020202", _
-            "LTW4|100|eaecfb", _
-            "LTW3|100|898fe6", _
             "LTW2|100|8689c1", _
             "LTW1|100|eaeaf6" _
             )
@@ -4509,8 +4239,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2c2c2c", _
             "gi02|100|343434", _
             "gi01|100|000000", _
-            "LTW4|100|eef0fd", _
-            "LTW3|100|989ee7", _
             "LTW2|100|9a9dca", _
             "LTW1|100|f0f1f8" _
             )
@@ -4534,8 +4262,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|adadad", _
             "gi03|100|1c1c1e", _
             "gi02|100|1f1f1f", _
-            "LTW4|100|f2f4ff", _
-            "LTW3|100|a7acec", _
             "LTW2|100|aeaed3", _
             "LTW1|100|f6f7fc" _
             )
@@ -4559,8 +4285,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|121214", _
             "gi02|100|141414", _
             "gi01|100|000002", _
-            "LTW4|100|f7f7ff", _
-            "LTW3|100|b5b8f1", _
             "LTW2|100|bfc0dd", _
             "LTW1|100|f9fafe" _
             )
@@ -4584,8 +4308,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0b0c10", _
             "gi02|100|090909", _
             "gi01|100|010005", _
-            "LTW4|100|f9faff", _
-            "LTW3|100|c2c4f6", _
             "LTW2|100|cdcfe6", _
             "LTW1|100|fdfdff" _
             )
@@ -4610,7 +4332,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|050811", _
             "gi02|100|040404", _
             "gi01|100|010107", _
-            "LTW3|100|c9cdf4", _
             "LTW2|100|dadcee", _
             "LTW1|100|fefeff" _
             )
@@ -4635,8 +4356,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|030514", _
             "gi02|100|010101", _
             "gi01|100|03030f", _
-            "LTW4|100|f9fafe", _
-            "LTW3|100|d4d7f9", _
             "LTW2|100|e4e6f3", _
             "LTW1|100|ffffff" _
             )
@@ -4663,8 +4382,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|03051d", _
             "gi02|100|000000", _
             "gi01|100|02041a", _
-            "LTW4|100|fafbff", _
-            "LTW3|100|dddefb", _
             "LTW2|100|eceff9" _
             )
         End With
@@ -4687,8 +4404,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|21212d", _
             "gi03|100|04072a", _
             "gi01|100|040729", _
-            "LTW4|100|fbfaff", _
-            "LTW3|100|e3e5fd", _
             "LTW2|100|f2f2fa" _
             )
         End With
@@ -4713,7 +4428,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|040a3f", _
             "gi02|100|000003", _
             "gi01|100|080b42", _
-            "LTW3|100|e7e9fe", _
             "LTW2|100|f8f9fd" _
             )
         End With
@@ -4739,8 +4453,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|090d53", _
             "gi02|100|010108", _
             "gi01|100|09105d", _
-            "LTW4|100|f9f8fd", _
-            "LTW3|100|eaebfd", _
             "LTW2|100|f9fafe" _
             )
         End With
@@ -4765,8 +4477,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0c136c", _
             "gi02|100|02030f", _
             "gi01|100|0d1581", _
-            "LTW4|100|f7f6fb", _
-            "LTW3|100|eef0fe", _
             "LTW2|100|fcfdff" _
             )
         End With
@@ -4792,8 +4502,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0e178b", _
             "gi02|100|03051b", _
             "gi01|100|111ba2", _
-            "LTW4|100|f5f4f9", _
-            "LTW3|100|eff1fe", _
             "LTW2|100|fefeff" _
             )
         End With
@@ -4819,8 +4527,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|121ca6", _
             "gi02|100|07072c", _
             "gi01|100|151fbe", _
-            "LTW4|100|f2f1f9", _
-            "LTW3|100|f3f3fd", _
             "LTW2|100|ffffff" _
             )
         End With
@@ -4847,9 +4553,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|0a1162", _
             "gi03|100|151fbe", _
             "gi02|100|080a43", _
-            "gi01|100|1422d1", _
-            "LTW4|100|eeecf8", _
-            "LTW3|100|f4f4fe" _
+            "gi01|100|1422d1" _
             )
         End With
         With .AddStep(6.63333, Null, Null)
@@ -4876,8 +4580,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1522ce", _
             "gi02|100|0a105e", _
             "gi01|100|1725dd", _
-            "LTW4|100|eae8f5", _
-            "LTW3|100|f3f2fd", _
             "LTW1|100|fefeff" _
             )
         End With
@@ -4905,8 +4607,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1625da", _
             "gi02|100|0e157f", _
             "gi01|100|1825e3", _
-            "LTW4|100|e6e3f3", _
-            "LTW3|100|f4f2fd", _
             "LTW1|100|fdfdff" _
             )
         End With
@@ -4932,8 +4632,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1826e1", _
             "gi02|100|101aa0", _
             "gi01|100|1826e7", _
-            "LTW4|100|dfdcef", _
-            "LTW3|100|f3f1fc", _
             "LTW1|100|fcfbff" _
             )
         End With
@@ -4958,8 +4656,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|1420c0", _
             "gi03|100|1826e5", _
             "gi02|100|121fbc", _
-            "LTW4|100|d9d5ed", _
-            "LTW3|100|f0eefa", _
             "LTW1|100|f9f8fd" _
             )
         End With
@@ -4982,7 +4678,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|1522cf", _
             "gi03|100|1826e7", _
             "gi02|100|1522cf", _
-            "LTW4|100|d0cbec", _
             "LTW1|100|f6f5fa" _
             )
         End With
@@ -5002,8 +4697,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|aaaaaa", _
             "gi04|100|1625da", _
             "gi02|100|1824df", _
-            "LTW4|100|c5bde2", _
-            "LTW3|100|eeecf9", _
             "LTW1|100|f1f0f6" _
             )
         End With
@@ -5022,8 +4715,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|c9c9c9", _
             "gi04|100|1725e0", _
             "gi02|100|1825e3", _
-            "LTW4|100|bab1db", _
-            "LTW3|100|eae8f6", _
             "LTW2|100|fdfdff", _
             "LTW1|100|ebe9f2" _
             )
@@ -5041,8 +4732,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|e1e1e1", _
             "gi04|100|1726e5", _
             "gi02|100|1726e5", _
-            "LTW4|100|aca2d5", _
-            "LTW3|100|e5e2f3", _
             "LTW2|100|fcfcfe", _
             "LTW1|100|e1dfec" _
             )
@@ -5059,8 +4748,6 @@ Sub CreateTimeWarpShows()
             "gi07|100|ffffff", _
             "gi05|100|f0f0f0", _
             "gi02|100|1826e7", _
-            "LTW4|100|9d92cb", _
-            "LTW3|100|e0ddf1", _
             "LTW2|100|fbfafe", _
             "LTW1|100|d6d3e4" _
             )
@@ -5077,8 +4764,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|0e082c", _
             "gi05|100|f9f9f9", _
             "gi04|100|1826e7", _
-            "LTW4|100|8e81c4", _
-            "LTW3|100|d8d4ed", _
             "LTW2|100|f7f6fc", _
             "LTW1|100|c8c5d9" _
             )
@@ -5097,8 +4782,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|0f0735", _
             "gi05|100|fdfdfd", _
             "gi01|100|1926e6", _
-            "LTW4|100|7c6eba", _
-            "LTW3|100|d1cced", _
             "LTW2|100|f4f3f9", _
             "LTW1|100|b6b2cd" _
             )
@@ -5117,8 +4800,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|130843", _
             "gi05|100|ffffff", _
             "gi01|100|1624dc", _
-            "LTW4|100|6d5eb3", _
-            "LTW3|100|ccc4e9", _
             "LTW2|100|f0eff7", _
             "LTW1|100|a69fbe" _
             )
@@ -5135,8 +4816,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|180a59", _
             "gi08|100|fefefe", _
             "gi01|100|1722d2", _
-            "LTW4|100|5f4dad", _
-            "LTW3|100|c1b8e3", _
             "LTW2|100|eae8f3", _
             "LTW1|100|938bb2" _
             )
@@ -5155,8 +4834,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|fdfdfd", _
             "gi06|100|fefefe", _
             "gi01|100|131fbf", _
-            "LTW4|100|533fa6", _
-            "LTW3|100|b7aedd", _
             "LTW2|100|e3e1ee", _
             "LTW1|100|8076a8" _
             )
@@ -5177,8 +4854,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|fbfbfb", _
             "gi03|100|1825e3", _
             "gi01|100|121ba4", _
-            "LTW4|100|4831a4", _
-            "LTW3|100|aa9fd7", _
             "LTW2|100|d8d5e6", _
             "LTW1|100|6c619a" _
             )
@@ -5202,8 +4877,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1624dc", _
             "gi02|100|1726e5", _
             "gi01|100|0e1683", _
-            "LTW4|100|4129a2", _
-            "LTW3|100|9d91d1", _
             "LTW2|100|cbc8dd", _
             "LTW1|100|5b4f90" _
             )
@@ -5228,8 +4901,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1722d2", _
             "gi02|100|1725e0", _
             "gi01|100|091063", _
-            "LTW4|100|3b22a2", _
-            "LTW3|100|8f82c9", _
             "LTW2|100|bcb8d3", _
             "LTW1|100|4b3d8a" _
             )
@@ -5256,8 +4927,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1320c2", _
             "gi02|100|1524d8", _
             "gi01|100|090b43", _
-            "LTW4|100|351ca1", _
-            "LTW3|100|8072c0", _
             "LTW2|100|aba5c7", _
             "LTW1|100|403089" _
             )
@@ -5285,8 +4954,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|121dac", _
             "gi02|100|1421c8", _
             "gi01|100|04062d", _
-            "LTW4|100|3419a3", _
-            "LTW3|100|7261bc", _
             "LTW2|100|988fbb", _
             "LTW1|100|3a2589" _
             )
@@ -5315,8 +4982,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0f1793", _
             "gi02|100|121cae", _
             "gi01|100|02041a", _
-            "LTW4|100|3116a1", _
-            "LTW3|100|6551b4", _
             "LTW2|100|867cb1", _
             "LTW1|100|351f8f" _
             )
@@ -5342,8 +5007,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0c1478", _
             "gi02|100|0f1891", _
             "gi01|100|030210", _
-            "LTW4|100|3015a4", _
-            "LTW3|100|5843ad", _
             "LTW2|100|7368a4", _
             "LTW1|100|301893" _
             )
@@ -5370,8 +5033,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|090f5f", _
             "gi02|100|0c126e", _
             "gi01|100|010207", _
-            "LTW4|100|3014a6", _
-            "LTW3|100|4e37ac", _
             "LTW2|100|60539b", _
             "LTW1|100|2f1696" _
             )
@@ -5397,8 +5058,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|080b44", _
             "gi02|100|080d50", _
             "gi01|100|010103", _
-            "LTW4|100|2f13a6", _
-            "LTW3|100|462ea7", _
             "LTW2|100|524396", _
             "LTW1|100|2e149b" _
             )
@@ -5424,7 +5083,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|040830", _
             "gi02|100|060937", _
             "gi01|100|000000", _
-            "LTW3|100|3e25a4", _
             "LTW2|100|463590", _
             "LTW1|100|2f149f" _
             )
@@ -5449,7 +5107,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|111ba8", _
             "gi03|100|040522", _
             "gi02|100|050523", _
-            "LTW3|100|391fa6", _
             "LTW2|100|3c2992", _
             "LTW1|100|2e13a1" _
             )
@@ -5473,8 +5130,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|0e178f", _
             "gi03|100|030416", _
             "gi02|100|020316", _
-            "LTW4|100|2f12a8", _
-            "LTW3|100|351ba3", _
             "LTW2|100|382093", _
             "LTW1|100|2f13a5" _
             )
@@ -5499,7 +5154,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|0c1376", _
             "gi03|100|060612", _
             "gi02|100|02020c", _
-            "LTW3|100|3318a5", _
             "LTW2|100|331b95", _
             "LTW1|100|2f13a6" _
             )
@@ -5524,7 +5178,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|07080d", _
             "gi02|100|000009", _
             "gi01|100|030303", _
-            "LTW3|100|3116a5", _
             "LTW2|100|301798" _
             )
         End With
@@ -5547,7 +5200,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0d0e10", _
             "gi02|100|000003", _
             "gi01|100|090909", _
-            "LTW3|100|3014a7", _
             "LTW2|100|2f159b", _
             "LTW1|100|2f12a8" _
             )
@@ -5593,7 +5245,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|212121", _
             "gi02|100|010101", _
             "gi01|100|1a1a1a", _
-            "LTW3|100|2f13a6", _
             "LTW2|100|2e13a1" _
             )
         End With
@@ -5637,7 +5288,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|424242", _
             "gi02|100|040404", _
             "gi01|100|434343", _
-            "LTW3|100|2f12a8", _
             "LTW2|100|2f13a6" _
             )
         End With
@@ -5812,8 +5462,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|a1a1a1", _
             "gi03|100|ededed", _
             "gi02|100|828282", _
-            "gi01|100|f9f9f9", _
-            "LTW4|100|2f13a6" _
+            "gi01|100|f9f9f9" _
             )
         End With
         With .AddStep(7.96667, Null, Null)
@@ -5908,8 +5557,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|180a55", _
             "gi04|100|eeeeee", _
             "gi03|100|ffffff", _
-            "gi02|100|efefef", _
-            "LTW4|100|3116a5" _
+            "gi02|100|efefef" _
             )
         End With
         With .AddStep(8.10000, Null, Null)
@@ -5927,7 +5575,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|1e0c70", _
             "gi04|100|f7f7f7", _
             "gi02|100|f8f8f8", _
-            "LTW4|100|3116a4", _
             "LTW1|100|2e13a3" _
             )
         End With
@@ -5946,7 +5593,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|250e82", _
             "gi04|100|fbfbfb", _
             "gi02|100|fdfdfd", _
-            "LTW4|100|3217a2", _
             "LTW1|100|2e13a2" _
             )
         End With
@@ -5963,8 +5609,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|2a1095", _
             "gi04|100|fdfdfd", _
             "gi02|100|ffffff", _
-            "LTW4|100|361c9f", _
-            "LTW3|100|2f13a6", _
             "LTW1|100|2e139d" _
             )
         End With
@@ -5980,7 +5624,6 @@ Sub CreateTimeWarpShows()
             "gi07|100|2f12a8", _
             "gi05|100|2d129f", _
             "gi04|100|fefefe", _
-            "LTW4|100|3c23a2", _
             "LTW2|100|2f13a7", _
             "LTW1|100|2f1699" _
             )
@@ -5998,7 +5641,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|2f13a6", _
             "gi04|100|ffffff", _
             "gi01|100|fefefe", _
-            "LTW4|100|4129a1", _
             "LTW2|100|2f13a6", _
             "LTW1|100|301893" _
             )
@@ -6016,7 +5658,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|898989", _
             "gi10|100|dbdcfb", _
             "gi01|100|fbfbfb", _
-            "LTW4|100|4a36a4", _
             "LTW1|100|341d92" _
             )
         End With
@@ -6034,8 +5675,6 @@ Sub CreateTimeWarpShows()
             "gi10|100|d0d4f7", _
             "gi05|100|2f12a8", _
             "gi01|100|f4f4f4", _
-            "LTW4|100|5543a7", _
-            "LTW3|100|3014a7", _
             "LTW1|100|38238e" _
             )
         End With
@@ -6054,8 +5693,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|2f13a6", _
             "gi03|100|fefefe", _
             "gi01|100|e7e7e7", _
-            "LTW4|100|6251b0", _
-            "LTW3|100|3014a5", _
             "LTW2|100|2f14a1", _
             "LTW1|100|412e8e" _
             )
@@ -6075,8 +5712,6 @@ Sub CreateTimeWarpShows()
             "gi09|100|1726e5", _
             "gi03|100|fcfcfc", _
             "gi01|100|cfcfcf", _
-            "LTW4|100|7364b6", _
-            "LTW3|100|3116a6", _
             "LTW2|100|2f14a0", _
             "LTW1|100|4c3d8f" _
             )
@@ -6098,8 +5733,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|f9f9f9", _
             "gi02|100|fefefe", _
             "gi01|100|b1b1b1", _
-            "LTW4|100|8376c0", _
-            "LTW3|100|3419a6", _
             "LTW2|100|2f159d", _
             "LTW1|100|594c93" _
             )
@@ -6123,8 +5756,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|f2f2f2", _
             "gi02|100|fcfcfc", _
             "gi01|100|8e8e8e", _
-            "LTW4|100|9387c8", _
-            "LTW3|100|371da5", _
             "LTW2|100|31189a", _
             "LTW1|100|6a5f9b" _
             )
@@ -6150,8 +5781,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|e6e6e6", _
             "gi02|100|f7f7f7", _
             "gi01|100|6b6b6b", _
-            "LTW4|100|a398d0", _
-            "LTW3|100|3c23a5", _
             "LTW2|100|331b97", _
             "LTW1|100|8076aa" _
             )
@@ -6179,8 +5808,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|d4d4d4", _
             "gi02|100|ececec", _
             "gi01|100|4b4b4b", _
-            "LTW4|100|b1a7d9", _
-            "LTW3|100|4129a4", _
             "LTW2|100|3a2395", _
             "LTW1|100|938ab5" _
             )
@@ -6209,8 +5836,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|bdbdbd", _
             "gi02|100|d8d8d8", _
             "gi01|100|313131", _
-            "LTW4|100|c0b8e1", _
-            "LTW3|100|4b33ab", _
             "LTW2|100|3f2996", _
             "LTW1|100|a9a2c5" _
             )
@@ -6240,8 +5865,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|a0a0a0", _
             "gi02|100|bebebe", _
             "gi01|100|1e1e1e", _
-            "LTW4|100|cac4e5", _
-            "LTW3|100|5440b2", _
             "LTW2|100|493894", _
             "LTW1|100|bbb7d1" _
             )
@@ -6267,8 +5890,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|828282", _
             "gi02|100|9d9d9d", _
             "gi01|100|111111", _
-            "LTW4|100|d3ceec", _
-            "LTW3|100|604eb5", _
             "LTW2|100|57489b", _
             "LTW1|100|cac7dc" _
             )
@@ -6294,8 +5915,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|676767", _
             "gi02|100|7b7b7b", _
             "gi01|100|0a0a0a", _
-            "LTW4|100|dbd7f0", _
-            "LTW3|100|6e5dba", _
             "LTW2|100|675aa3", _
             "LTW1|100|dad6e7" _
             )
@@ -6321,8 +5940,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|4d4d4d", _
             "gi02|100|595959", _
             "gi01|100|040404", _
-            "LTW4|100|e2dff2", _
-            "LTW3|100|7c6dc0", _
             "LTW2|100|7a6fac", _
             "LTW1|100|e4e2ef" _
             )
@@ -6348,8 +5965,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|373737", _
             "gi02|100|3e3e3e", _
             "gi01|100|010101", _
-            "LTW4|100|e9e7f5", _
-            "LTW3|100|8a7dc6", _
             "LTW2|100|8d83b7", _
             "LTW1|100|edecf4" _
             )
@@ -6374,8 +5989,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|262626", _
             "gi02|100|262626", _
             "gi01|100|000000", _
-            "LTW4|100|eceaf8", _
-            "LTW3|100|998dd0", _
             "LTW2|100|a198c4", _
             "LTW1|100|f2f1f9" _
             )
@@ -6399,8 +6012,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|9c9c9c", _
             "gi03|100|181818", _
             "gi02|100|181818", _
-            "LTW4|100|f1eff9", _
-            "LTW3|100|a79cd7", _
             "LTW2|100|b4add0", _
             "LTW1|100|f6f5fa" _
             )
@@ -6424,8 +6035,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|818181", _
             "gi03|100|101012", _
             "gi02|100|0e0e0e", _
-            "LTW4|100|f5f4fa", _
-            "LTW3|100|b4abdc", _
             "LTW2|100|c2bddb", _
             "LTW1|100|f9f8fd" _
             )
@@ -6451,8 +6060,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|09080c", _
             "gi02|100|070707", _
             "gi01|100|010103", _
-            "LTW4|100|f6f5fb", _
-            "LTW3|100|bfb6e1", _
             "LTW2|100|d1cee3", _
             "LTW1|100|fbfbfe" _
             )
@@ -6478,8 +6085,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|07060c", _
             "gi02|100|030303", _
             "gi01|100|000003", _
-            "LTW4|100|f7f6fc", _
-            "LTW3|100|cac2e7", _
             "LTW2|100|dfdced", _
             "LTW1|100|fdfdff" _
             )
@@ -6503,7 +6108,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|05040c", _
             "gi02|100|000000", _
             "gi01|100|020109", _
-            "LTW3|100|d1cceb", _
             "LTW2|100|e6e4f2", _
             "LTW1|100|fefeff" _
             )
@@ -6527,7 +6131,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|2c2c2e", _
             "gi03|100|050311", _
             "gi01|100|04020f", _
-            "LTW3|100|d8d4ed", _
             "LTW2|100|eeecf7", _
             "LTW1|100|ffffff" _
             )
@@ -6549,8 +6152,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|1f1e24", _
             "gi03|100|07031a", _
             "gi01|100|070419", _
-            "LTW4|100|f6f7fc", _
-            "LTW3|100|dfdcf2", _
             "LTW2|100|f3f2f9" _
             )
         End With
@@ -6575,8 +6176,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0b0426", _
             "gi02|100|010103", _
             "gi01|100|0b0426", _
-            "LTW4|100|f5f5fd", _
-            "LTW3|100|e4e1f5", _
             "LTW2|100|f5f4fa" _
             )
         End With
@@ -6601,8 +6200,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0f0635", _
             "gi02|100|010005", _
             "gi01|100|11073c", _
-            "LTW4|100|f3f4fe", _
-            "LTW3|100|e9e6f6", _
             "LTW2|100|f8f7fd" _
             )
         End With
@@ -6627,8 +6224,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|130845", _
             "gi02|100|03020a", _
             "gi01|100|170a51", _
-            "LTW4|100|f0f2ff", _
-            "LTW3|100|eae8f6", _
             "LTW2|100|fbfaff" _
             )
         End With
@@ -6655,8 +6250,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|190a5c", _
             "gi02|100|040210", _
             "gi01|100|1d0c6b", _
-            "LTW4|100|eceefb", _
-            "LTW3|100|edebf9", _
             "LTW2|100|fdfcff" _
             )
         End With
@@ -6682,8 +6275,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|200c72", _
             "gi02|100|060319", _
             "gi01|100|250e81", _
-            "LTW4|100|e6e9fc", _
-            "LTW3|100|eeecfa", _
             "LTW2|100|fdfdff", _
             "LTW1|100|fefeff" _
             )
@@ -6711,8 +6302,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|250e82", _
             "gi02|100|0b052a", _
             "gi01|100|291092", _
-            "LTW4|100|e2e4fd", _
-            "LTW3|100|efeefc", _
             "LTW2|100|ffffff", _
             "LTW1|100|fdfdff" _
             )
@@ -6740,7 +6329,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|291092", _
             "gi02|100|10063a", _
             "gi01|100|2d129e", _
-            "LTW4|100|dddcfb", _
             "LTW1|100|f9f8fd" _
             )
         End With
@@ -6767,8 +6355,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2c129a", _
             "gi02|100|170a51", _
             "gi01|100|2f13a6", _
-            "LTW4|100|d2d4f7", _
-            "LTW3|100|eeedfa", _
             "LTW1|100|f7f6fd" _
             )
         End With
@@ -6793,8 +6379,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|210c76", _
             "gi03|100|2e12a3", _
             "gi02|100|1d0c6a", _
-            "LTW4|100|c7cbf3", _
-            "LTW3|100|edecfd", _
             "LTW1|100|f3f3fb" _
             )
         End With
@@ -6818,8 +6402,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2f13a6", _
             "gi02|100|250e7f", _
             "gi01|100|2f12a8", _
-            "LTW4|100|bbbef0", _
-            "LTW3|100|eaeafe", _
             "LTW2|100|fefeff", _
             "LTW1|100|ededf9" _
             )
@@ -6840,8 +6422,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|c3c3c3", _
             "gi04|100|291093", _
             "gi02|100|291092", _
-            "LTW4|100|acafee", _
-            "LTW3|100|e5e7fd", _
             "LTW2|100|fcfdff", _
             "LTW1|100|e3e5f3" _
             )
@@ -6862,8 +6442,6 @@ Sub CreateTimeWarpShows()
             "gi04|100|2d129c", _
             "gi03|100|2f12a8", _
             "gi02|100|2d129d", _
-            "LTW4|100|9da2e6", _
-            "LTW3|100|e1e3fc", _
             "LTW2|100|fafbff", _
             "LTW1|100|d7d9ee" _
             )
@@ -6881,8 +6459,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|f0f0f0", _
             "gi04|100|2e12a2", _
             "gi02|100|2e12a4", _
-            "LTW4|100|8a8fe1", _
-            "LTW3|100|dcddfb", _
             "LTW2|100|f9fafe", _
             "LTW1|100|cbcce3" _
             )
@@ -6899,8 +6475,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|f9f9f9", _
             "gi04|100|2f13a6", _
             "gi02|100|2f13a6", _
-            "LTW4|100|787fdb", _
-            "LTW3|100|d7d7fc", _
             "LTW2|100|f6f7fd", _
             "LTW1|100|b8bcda" _
             )
@@ -6918,8 +6492,6 @@ Sub CreateTimeWarpShows()
             "gi12|100|0b116c", _
             "gi10|100|1726e3", _
             "gi05|100|fdfdfd", _
-            "LTW4|100|666dd5", _
-            "LTW3|100|cecef8", _
             "LTW2|100|f0f3fc", _
             "LTW1|100|a6a8cf" _
             )
@@ -6938,8 +6510,6 @@ Sub CreateTimeWarpShows()
             "gi05|100|ffffff", _
             "gi04|100|2f13a7", _
             "gi02|100|2f12a8", _
-            "LTW4|100|545ed4", _
-            "LTW3|100|c1c5f7", _
             "LTW2|100|eaecf8", _
             "LTW1|100|8f92c5" _
             )
@@ -6959,8 +6529,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|fefefe", _
             "gi04|100|2f12a8", _
             "gi01|100|2f13a6", _
-            "LTW4|100|464fd0", _
-            "LTW3|100|b5bbf4", _
             "LTW2|100|e2e4f4", _
             "LTW1|100|787ebb" _
             )
@@ -6980,8 +6548,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|fbfbfb", _
             "gi06|100|fdfdfd", _
             "gi01|100|2f13a4", _
-            "LTW4|100|3a43d1", _
-            "LTW3|100|abaff0", _
             "LTW2|100|d8daf0", _
             "LTW1|100|636ab2" _
             )
@@ -7000,8 +6566,6 @@ Sub CreateTimeWarpShows()
             "gi08|100|f7f7f7", _
             "gi06|100|f7f7f7", _
             "gi01|100|2d129e", _
-            "LTW4|100|2e38d1", _
-            "LTW3|100|9ba1ed", _
             "LTW2|100|cdceea", _
             "LTW1|100|5056ae" _
             )
@@ -7022,8 +6586,6 @@ Sub CreateTimeWarpShows()
             "gi06|100|ececec", _
             "gi03|100|2f13a6", _
             "gi01|100|2a1191", _
-            "LTW4|100|2832d3", _
-            "LTW3|100|8d93e9", _
             "LTW2|100|bfbfe2", _
             "LTW1|100|4146a9" _
             )
@@ -7046,8 +6608,6 @@ Sub CreateTimeWarpShows()
             "gi07|100|fefefe", _
             "gi06|100|dadada", _
             "gi01|100|250e82", _
-            "LTW4|100|202dd5", _
-            "LTW3|100|7d83e3", _
             "LTW2|100|aaadda", _
             "LTW1|100|333aab" _
             )
@@ -7072,8 +6632,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2e13a3", _
             "gi02|100|2f13a6", _
             "gi01|100|1f0c69", _
-            "LTW4|100|1d2ad9", _
-            "LTW3|100|6c73e1", _
             "LTW2|100|9798ce", _
             "LTW1|100|2830b1" _
             )
@@ -7101,8 +6659,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2c119c", _
             "gi02|100|2f12a8", _
             "gi01|100|170954", _
-            "LTW4|100|1c28de", _
-            "LTW3|100|5c64df", _
             "LTW2|100|8185c5", _
             "LTW1|100|212bbc" _
             )
@@ -7129,8 +6685,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|2a1191", _
             "gi02|100|2d129f", _
             "gi01|100|10063a", _
-            "LTW4|100|1927e0", _
-            "LTW3|100|4e56dc", _
             "LTW2|100|6d72bc", _
             "LTW1|100|1d28c2" _
             )
@@ -7156,8 +6710,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|260f84", _
             "gi02|100|2b1197", _
             "gi01|100|0b0428", _
-            "LTW4|100|1726e3", _
-            "LTW3|100|3f49dc", _
             "LTW2|100|585eba", _
             "LTW1|100|1c25cb" _
             )
@@ -7185,7 +6737,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|210c72", _
             "gi02|100|270f89", _
             "gi01|100|060318", _
-            "LTW3|100|3540da", _
             "LTW2|100|464eb6", _
             "LTW1|100|1826d1" _
             )
@@ -7211,7 +6762,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|1a0b5f", _
             "gi02|100|220d77", _
             "gi01|100|040210", _
-            "LTW3|100|2c35d8", _
             "LTW2|100|3841b5", _
             "LTW1|100|1824da" _
             )
@@ -7237,8 +6787,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|15084c", _
             "gi02|100|190a5b", _
             "gi01|100|020107", _
-            "LTW4|100|1827e6", _
-            "LTW3|100|2532d9", _
             "LTW2|100|2c35b8", _
             "LTW1|100|1824df" _
             )
@@ -7263,8 +6811,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|10063a", _
             "gi02|100|130845", _
             "gi01|100|010005", _
-            "LTW4|100|1826e7", _
-            "LTW3|100|202ddb", _
             "LTW2|100|242ebe", _
             "LTW1|100|1825e3" _
             )
@@ -7289,7 +6835,6 @@ Sub CreateTimeWarpShows()
             "gi03|100|0c0429", _
             "gi02|100|0e0530", _
             "gi01|100|010103", _
-            "LTW3|100|1d29e0", _
             "LTW2|100|1e2ac6" _
             )
         End With

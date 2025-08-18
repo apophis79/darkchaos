@@ -593,9 +593,7 @@ With CreateGlfShow("cluster_bomb_acquired")
   With .AddStep(1.06667, Null, Null)
     .Lights = Array( _
       "gi12|(intensity)|000000", _
-      "LW3|(intensity)|f2f2f2", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)" _
+      "LW3|(intensity)|f2f2f2" _
       )
   End With
   With .AddStep(1.10000, Null, Null)
@@ -628,16 +626,13 @@ With CreateGlfShow("cluster_bomb_acquired")
   End With
   With .AddStep(1.20000, Null, Null)
     .Lights = Array( _
-      "LS2|(intensity)|(color)", _
-      "LTW3|(intensity)|000000" _
+      "LS2|(intensity)|(color)" _
       )
   End With
   With .AddStep(1.23333, Null, Null)
     .Lights = Array( _
       "gi11|(intensity)|000000", _
-      "LSwL2|(intensity)|(color)", _
       "LW3|(intensity)|000000", _
-      "LTW4|(intensity)|000000", _
       "LCC3|(intensity)|000000" _
       )
   End With
@@ -666,7 +661,6 @@ With CreateGlfShow("cluster_bomb_acquired")
   End With
   With .AddStep(1.36667, Null, Null)
     .Lights = Array( _
-      "LSwL2|(intensity)|000000", _
       "LW6|(intensity)|(color)", _
       "LSC3|(intensity)|(color)", _
       "LSC1|(intensity)|0d0d0d" _
@@ -685,7 +679,6 @@ With CreateGlfShow("cluster_bomb_acquired")
   With .AddStep(1.43333, Null, Null)
     .Lights = Array( _
       "giapron|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC2|(intensity)|000000", _
       "LRO|(intensity)|fefefe", _
       "LSR|(intensity)|(color)" _
@@ -693,7 +686,6 @@ With CreateGlfShow("cluster_bomb_acquired")
   End With
   With .AddStep(1.46667, Null, Null)
     .Lights = Array( _
-      "LSwL1|(intensity)|(color)", _
       "LW7|(intensity)|(color)", _
       "LW6|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
@@ -710,7 +702,6 @@ With CreateGlfShow("cluster_bomb_acquired")
     .Lights = Array( _
       "gi09|(intensity)|(color)", _
       "gi06|(intensity)|(color)", _
-      "LSC4|(intensity)|000000", _
       "LM1|(intensity)|(color)", _
       "LRO|(intensity)|000000", _
       "LSR|(intensity)|000000" _
@@ -719,7 +710,6 @@ With CreateGlfShow("cluster_bomb_acquired")
   With .AddStep(1.56667, Null, Null)
     .Lights = Array( _
       "gi05|(intensity)|(color)", _
-      "LSwL1|(intensity)|000000", _
       "LW8|(intensity)|(color)", _
       "LW7|(intensity)|000000", _
       "LMet1|(intensity)|000000", _

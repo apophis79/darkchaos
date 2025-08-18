@@ -15660,18 +15660,18 @@ Dim glf_LPC5_lmarr : glf_LPC5_lmarr = BL_L_LPC5
 glf_lightMaps.Add "LPC5", glf_LPC5_lmarr
 Dim glf_LPC4_lmarr : glf_LPC4_lmarr = BL_L_LPC4
 glf_lightMaps.Add "LPC4", glf_LPC4_lmarr
-Dim glf_LSC4_lmarr : glf_LSC4_lmarr = Array()
-glf_lightMaps.Add "LSC4", glf_LSC4_lmarr
+' Dim glf_LSC4_lmarr : glf_LSC4_lmarr = Array()
+' glf_lightMaps.Add "LSC4", glf_LSC4_lmarr
 Dim glf_LSC3_lmarr : glf_LSC3_lmarr = BL_L_LSC3
 glf_lightMaps.Add "LSC3", glf_LSC3_lmarr
 Dim glf_LSC2_lmarr : glf_LSC2_lmarr = BL_L_LSC2
 glf_lightMaps.Add "LSC2", glf_LSC2_lmarr
 Dim glf_LSC1_lmarr : glf_LSC1_lmarr = BL_L_LSC1
 glf_lightMaps.Add "LSC1", glf_LSC1_lmarr
-Dim glf_LSwL2_lmarr : glf_LSwL2_lmarr = Array()
-glf_lightMaps.Add "LSwL2", glf_LSwL2_lmarr
-Dim glf_LSwL1_lmarr : glf_LSwL1_lmarr = Array()
-glf_lightMaps.Add "LSwL1", glf_LSwL1_lmarr
+' Dim glf_LSwL2_lmarr : glf_LSwL2_lmarr = Array()
+' glf_lightMaps.Add "LSwL2", glf_LSwL2_lmarr
+' Dim glf_LSwL1_lmarr : glf_LSwL1_lmarr = Array()
+' glf_lightMaps.Add "LSwL1", glf_LSwL1_lmarr
 Dim glf_LF3_lmarr : glf_LF3_lmarr = BL_L_LF3
 glf_lightMaps.Add "LF3", glf_LF3_lmarr
 Dim glf_LF2_lmarr : glf_LF2_lmarr = BL_L_LF2
@@ -15684,10 +15684,10 @@ Dim glf_LPC2_lmarr : glf_LPC2_lmarr = BL_L_LPC2
 glf_lightMaps.Add "LPC2", glf_LPC2_lmarr
 Dim glf_LPC1_lmarr : glf_LPC1_lmarr = BL_L_LPC1
 glf_lightMaps.Add "LPC1", glf_LPC1_lmarr
-Dim glf_LTW4_lmarr : glf_LTW4_lmarr = Array()
-glf_lightMaps.Add "LTW4", glf_LTW4_lmarr
-Dim glf_LTW3_lmarr : glf_LTW3_lmarr = Array()
-glf_lightMaps.Add "LTW3", glf_LTW3_lmarr
+' Dim glf_LTW4_lmarr : glf_LTW4_lmarr = Array()
+' glf_lightMaps.Add "LTW4", glf_LTW4_lmarr
+' Dim glf_LTW3_lmarr : glf_LTW3_lmarr = Array()
+' glf_lightMaps.Add "LTW3", glf_LTW3_lmarr
 Dim glf_LTW2_lmarr : glf_LTW2_lmarr = BL_L_LTW2
 glf_lightMaps.Add "LTW2", glf_LTW2_lmarr
 Dim glf_LTW1_lmarr : glf_LTW1_lmarr = BL_L_LTW1
@@ -15786,8 +15786,8 @@ Dim glf_LB4_lmarr : glf_LB4_lmarr = Array()
 glf_lightMaps.Add "LB4", glf_LB4_lmarr
 Dim glf_FL6_lmarr : glf_FL6_lmarr = Array()
 glf_lightMaps.Add "FL6", glf_FL6_lmarr
-Dim glf_FL7_lmarr : glf_FL7_lmarr = Array()
-glf_lightMaps.Add "FL7", glf_FL7_lmarr
+' Dim glf_FL7_lmarr : glf_FL7_lmarr = Array()
+' glf_lightMaps.Add "FL7", glf_FL7_lmarr
 Dim glf_FL4_lmarr : glf_FL4_lmarr = BL_F_FL4
 glf_lightMaps.Add "FL4", glf_FL4_lmarr
 Dim glf_FL5_lmarr : glf_FL5_lmarr = Array()

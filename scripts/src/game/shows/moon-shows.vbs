@@ -250,8 +250,6 @@ Sub CreateMoonShows()
             "LW2|(intensity)|dddddd", _
             "LF2|(intensity)|000000", _
             "LPC3|(intensity)|fbfbfb", _
-            "LTW4|(intensity)|(color)", _
-            "LTW3|(intensity)|(color)", _
             "LCC3|(intensity)|(color)", _
             "LM2|(intensity)|cdcdcd" _
             )
@@ -275,7 +273,6 @@ Sub CreateMoonShows()
         End With
         With .AddStep(1.10000, Null, Null)
             .Lights = Array( _
-            "LSwL2|(intensity)|(color)", _
             "LS2|(intensity)|(color)", _
             "LS3|(intensity)|(color)", _
             "LS4|(intensity)|000000", _
@@ -300,8 +297,6 @@ Sub CreateMoonShows()
             "gi14|(intensity)|(color)", _
             "LW4|(intensity)|(color)", _
             "LW2|(intensity)|000000", _
-            "LTW4|(intensity)|000000", _
-            "LTW3|(intensity)|000000", _
             "LCC3|(intensity)|000000" _
             )
         End With
@@ -318,7 +313,6 @@ Sub CreateMoonShows()
         End With
         With .AddStep(1.26667, Null, Null)
             .Lights = Array( _
-            "LSwL2|(intensity)|000000", _
             "LS2|(intensity)|000000", _
             "LS6|(intensity)|000000", _
             "LW5|(intensity)|(color)" _
@@ -327,7 +321,6 @@ Sub CreateMoonShows()
         With .AddStep(1.30000, Null, Null)
             .Lights = Array( _
             "gi14|(intensity)|000000", _
-            "LSwL1|(intensity)|(color)", _
             "LW4|(intensity)|000000" _
             )
         End With
@@ -347,7 +340,6 @@ Sub CreateMoonShows()
         End With
         With .AddStep(1.40000, Null, Null)
             .Lights = Array( _
-            "LSwL1|(intensity)|000000", _
             "LW5|(intensity)|000000", _
             "LSC1|(intensity)|(color)", _
             "LMet1|(intensity)|(color)" _
@@ -402,7 +394,6 @@ Sub CreateMoonShows()
             .Lights = Array( _
             "gi02|(intensity)|000000", _
             "gi01|(intensity)|(color)", _
-            "LSC4|(intensity)|070707", _
             "LMet4|(intensity)|000000" _
             )
         End With
@@ -410,7 +401,6 @@ Sub CreateMoonShows()
             .Lights = Array( _
             "gi04|(intensity)|(color)", _
             "LW8|(intensity)|000000", _
-            "LSC4|(intensity)|(color)", _
             "LSC3|(intensity)|000000", _
             "LLI|(intensity)|000000" _
             )
@@ -428,7 +418,6 @@ Sub CreateMoonShows()
         With .AddStep(1.70000, Null, Null)
             .Lights = Array( _
             "gi04|(intensity)|000000", _
-            "LSC4|(intensity)|000000", _
             "LH1|(intensity)|(color)" _
             )
         End With

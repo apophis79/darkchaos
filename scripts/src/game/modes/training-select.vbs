@@ -177,7 +177,7 @@ Sub CreateTrainingSelectMode
                 End With
             End With
         Next
-        For x = 1 to 4
+        For x = 1 to 3
             With .Shots("training_select_shield_charge"&x)
                 '.Debug = True
                 .Profile = "training_select"

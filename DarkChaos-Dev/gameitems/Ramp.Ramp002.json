@@ -1,6 +1,6 @@
 {
   "Ramp": {
-    "height_bottom": 65.0,
+    "height_bottom": 75.0,
     "height_top": 115.0,
     "width_bottom": 55.0,
     "width_top": 55.0,
@@ -32,8 +32,8 @@
     "overwrite_physics": false,
     "drag_points": [
       {
-        "x": 130.3499,
-        "y": 1483.9386,
+        "x": 129.41342,
+        "y": 1448.8187,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -45,8 +45,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 125.09226,
-        "y": 1364.311,
+        "x": 123.45352,
+        "y": 1329.4257,
         "z": -4.0,
         "smooth": true,
         "is_slingshot": false,
@@ -58,8 +58,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 74.425026,
-        "y": 1222.6641,
+        "x": 77.70257,
+        "y": 1226.6442,
         "z": -3.0,
         "smooth": true,
         "is_slingshot": false,
@@ -71,8 +71,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 56.0553,
-        "y": 1052.079,
+        "x": 57.22586,
+        "y": 1055.5908,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,
@@ -84,8 +84,8 @@
         "editor_layer_visibility": true
       },
       {
-        "x": 54.84837,
-        "y": 990.5572,
+        "x": 55.784813,
+        "y": 991.49365,
         "z": 0.0,
         "smooth": true,
         "is_slingshot": false,

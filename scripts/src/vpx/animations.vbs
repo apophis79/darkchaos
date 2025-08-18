@@ -401,6 +401,11 @@ Sub DrawAsteroid(a)
 		LM.Opacity = op24
 		LM.RotZ = a
 	Next
+	LM_F_FL7a_Asteroid1.opacity = LM_F_FL7a_Asteroid1.opacity*8 'Glllowwwwwwww
+	LM_F_FL7a_Asteroid2.opacity = LM_F_FL7a_Asteroid2.opacity*8
+	LM_F_FL7a_Asteroid3.opacity = LM_F_FL7a_Asteroid3.opacity*8
+	LM_F_FL7a_Asteroid4.opacity = LM_F_FL7a_Asteroid4.opacity*8
+
 '	debug.print "AstAngle = "&a
 '	debug.print "Asteroid1  Visible = "&v1&"  Opacity = "&op13
 '	debug.print "Asteroid2  Visible = "&v2&"  Opacity = "&op24

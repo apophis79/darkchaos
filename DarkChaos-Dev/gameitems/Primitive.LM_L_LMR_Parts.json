@@ -52,7 +52,7 @@
     "object_space_normal_map": true,
     "min_aa_bound": null,
     "max_aa_bound": null,
-    "mesh_file_name": "VLM.LM.L-LMR.Parts",
+    "mesh_file_name": "VLM.LM.L-LEBR.Parts",
     "depth_bias": 0.0,
     "add_blend": true,
     "use_depth_mask": false,

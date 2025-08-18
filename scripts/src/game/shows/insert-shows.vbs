@@ -11,8 +11,6 @@ With CreateGlfShow("insert_swap2")
         "LX|(intensity)|(color2)", _
         "LS5|(intensity)|(color1)", _
         "LS1|(intensity)|(color2)", _
-        "LSwL1|(intensity)|(color1)", _
-        "LSwL2|(intensity)|(color2)", _
         "LS2|(intensity)|(color1)", _
         "LS3|(intensity)|(color2)", _
         "LS4|(intensity)|(color1)", _
@@ -45,7 +43,6 @@ With CreateGlfShow("insert_swap2")
         "LMR|(intensity)|(color2)", _
         "LPC5|(intensity)|(color1)", _
         "LPC4|(intensity)|(color2)", _
-        "LSC4|(intensity)|(color1)", _
         "LSC3|(intensity)|(color2)", _
         "LSC2|(intensity)|(color1)", _
         "LSC1|(intensity)|(color2)", _
@@ -55,8 +52,6 @@ With CreateGlfShow("insert_swap2")
         "LPC3|(intensity)|(color2)", _
         "LPC2|(intensity)|(color1)", _
         "LPC1|(intensity)|(color2)", _
-        "LTW4|(intensity)|(color1)", _
-        "LTW3|(intensity)|(color2)", _
         "LTW2|(intensity)|(color1)", _
         "LTW1|(intensity)|(color2)", _
         "LCC3|(intensity)|(color1)", _
@@ -105,8 +100,6 @@ With CreateGlfShow("insert_swap2")
         "LX|(intensity)|(color1)", _
         "LS5|(intensity)|(color2)", _
         "LS1|(intensity)|(color1)", _
-        "LSwL1|(intensity)|(color2)", _
-        "LSwL2|(intensity)|(color1)", _
         "LS2|(intensity)|(color2)", _
         "LS3|(intensity)|(color1)", _
         "LS4|(intensity)|(color2)", _
@@ -139,7 +132,6 @@ With CreateGlfShow("insert_swap2")
         "LMR|(intensity)|(color1)", _
         "LPC5|(intensity)|(color2)", _
         "LPC4|(intensity)|(color1)", _
-        "LSC4|(intensity)|(color2)", _
         "LSC3|(intensity)|(color1)", _
         "LSC2|(intensity)|(color2)", _
         "LSC1|(intensity)|(color1)", _
@@ -149,8 +141,6 @@ With CreateGlfShow("insert_swap2")
         "LPC3|(intensity)|(color1)", _
         "LPC2|(intensity)|(color2)", _
         "LPC1|(intensity)|(color1)", _
-        "LTW4|(intensity)|(color2)", _
-        "LTW3|(intensity)|(color1)", _
         "LTW2|(intensity)|(color2)", _
         "LTW1|(intensity)|(color1)", _
         "LCC3|(intensity)|(color2)", _
@@ -203,8 +193,6 @@ With CreateGlfShow("insert_swap3")
         "LX|(intensity)|(color2)", _
         "LS5|(intensity)|(color3)", _
         "LS1|(intensity)|(color1)", _
-        "LSwL1|(intensity)|(color2)", _
-        "LSwL2|(intensity)|(color3)", _
         "LS2|(intensity)|(color1)", _
         "LS3|(intensity)|(color2)", _
         "LS4|(intensity)|(color3)", _
@@ -237,7 +225,6 @@ With CreateGlfShow("insert_swap3")
         "LMR|(intensity)|(color3)", _
         "LPC5|(intensity)|(color1)", _
         "LPC4|(intensity)|(color2)", _
-        "LSC4|(intensity)|(color3)", _
         "LSC3|(intensity)|(color1)", _
         "LSC2|(intensity)|(color2)", _
         "LSC1|(intensity)|(color3)", _
@@ -247,8 +234,6 @@ With CreateGlfShow("insert_swap3")
         "LPC3|(intensity)|(color1)", _
         "LPC2|(intensity)|(color2)", _
         "LPC1|(intensity)|(color3)", _
-        "LTW4|(intensity)|(color1)", _
-        "LTW3|(intensity)|(color2)", _
         "LTW2|(intensity)|(color3)", _
         "LTW1|(intensity)|(color1)", _
         "LCC3|(intensity)|(color2)", _
@@ -297,8 +282,6 @@ With CreateGlfShow("insert_swap3")
         "LX|(intensity)|(color1)", _
         "LS5|(intensity)|(color2)", _
         "LS1|(intensity)|(color3)", _
-        "LSwL1|(intensity)|(color1)", _
-        "LSwL2|(intensity)|(color2)", _
         "LS2|(intensity)|(color3)", _
         "LS3|(intensity)|(color1)", _
         "LS4|(intensity)|(color2)", _
@@ -331,7 +314,6 @@ With CreateGlfShow("insert_swap3")
         "LMR|(intensity)|(color2)", _
         "LPC5|(intensity)|(color3)", _
         "LPC4|(intensity)|(color1)", _
-        "LSC4|(intensity)|(color2)", _
         "LSC3|(intensity)|(color3)", _
         "LSC2|(intensity)|(color1)", _
         "LSC1|(intensity)|(color2)", _
@@ -341,8 +323,6 @@ With CreateGlfShow("insert_swap3")
         "LPC3|(intensity)|(color3)", _
         "LPC2|(intensity)|(color1)", _
         "LPC1|(intensity)|(color2)", _
-        "LTW4|(intensity)|(color3)", _
-        "LTW3|(intensity)|(color1)", _
         "LTW2|(intensity)|(color2)", _
         "LTW1|(intensity)|(color3)", _
         "LCC3|(intensity)|(color1)", _
@@ -391,8 +371,6 @@ With CreateGlfShow("insert_swap3")
         "LX|(intensity)|(color3)", _
         "LS5|(intensity)|(color1)", _
         "LS1|(intensity)|(color2)", _
-        "LSwL1|(intensity)|(color3)", _
-        "LSwL2|(intensity)|(color1)", _
         "LS2|(intensity)|(color2)", _
         "LS3|(intensity)|(color3)", _
         "LS4|(intensity)|(color1)", _
@@ -425,7 +403,6 @@ With CreateGlfShow("insert_swap3")
         "LMR|(intensity)|(color1)", _
         "LPC5|(intensity)|(color2)", _
         "LPC4|(intensity)|(color3)", _
-        "LSC4|(intensity)|(color1)", _
         "LSC3|(intensity)|(color2)", _
         "LSC2|(intensity)|(color3)", _
         "LSC1|(intensity)|(color1)", _
@@ -435,8 +412,6 @@ With CreateGlfShow("insert_swap3")
         "LPC3|(intensity)|(color2)", _
         "LPC2|(intensity)|(color3)", _
         "LPC1|(intensity)|(color1)", _
-        "LTW4|(intensity)|(color2)", _
-        "LTW3|(intensity)|(color3)", _
         "LTW2|(intensity)|(color1)", _
         "LTW1|(intensity)|(color2)", _
         "LCC3|(intensity)|(color3)", _
@@ -519,7 +494,6 @@ With CreateGlfShow("insert_gi_spin_center")
   With .AddStep(0.10000, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
       "LM1|(intensity)|(color)", _
       "LRI|(intensity)|000000", _
       "LRO|(intensity)|000000" _
@@ -530,7 +504,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi09|(intensity)|000000", _
       "gi08|(intensity)|000000", _
       "gi05|(intensity)|(color)", _
-      "LSwL2|(intensity)|(color)", _
       "LC8|(intensity)|(color)", _
       "LWiz|(intensity)|(color)", _
       "LPR1|(intensity)|(color)", _
@@ -544,7 +517,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi07|(intensity)|000000", _
       "gi06|(intensity)|000000", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|000000", _
       "LS2|(intensity)|(color)", _
       "LCWiz|(intensity)|000000", _
       "LC6|(intensity)|(color)", _
@@ -567,13 +539,10 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi12|(intensity)|000000", _
       "gi11|(intensity)|000000", _
       "gi05|(intensity)|000000", _
-      "LSwL2|(intensity)|000000", _
       "LS3|(intensity)|(color)", _
       "LC5|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
       "LW8|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LTW2|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
@@ -609,7 +578,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "LPC3|(intensity)|(color)", _
       "LPC2|(intensity)|(color)", _
       "LPC1|(intensity)|(color)", _
-      "LTW4|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
@@ -641,7 +609,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "LPC3|(intensity)|000000", _
       "LPC2|(intensity)|000000", _
       "LPC1|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LMet3|(intensity)|(color)", _
       "LMet2|(intensity)|000000", _
@@ -743,7 +710,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi04|(intensity)|(color)", _
       "gi01|(intensity)|000000", _
       "LWiz|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC1|(intensity)|000000", _
       "LMet4|(intensity)|000000", _
       "LPR1|(intensity)|000000", _
@@ -765,7 +731,6 @@ With CreateGlfShow("insert_gi_spin_center")
     .Lights = Array( _
       "gi10|(intensity)|000000", _
       "gi03|(intensity)|000000", _
-      "LSC4|(intensity)|000000", _
       "LCR2|(intensity)|000000" _
       )
   End With
@@ -799,7 +764,6 @@ With CreateGlfShow("insert_gi_spin_center")
   With .AddStep(0.60000, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
       "LM1|(intensity)|(color)", _
       "LRI|(intensity)|000000", _
       "LRO|(intensity)|000000" _
@@ -810,7 +774,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi09|(intensity)|000000", _
       "gi08|(intensity)|000000", _
       "gi05|(intensity)|(color)", _
-      "LSwL2|(intensity)|(color)", _
       "LC8|(intensity)|(color)", _
       "LWiz|(intensity)|(color)", _
       "LPR1|(intensity)|(color)", _
@@ -824,7 +787,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi07|(intensity)|000000", _
       "gi06|(intensity)|000000", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|000000", _
       "LS2|(intensity)|(color)", _
       "LCWiz|(intensity)|000000", _
       "LC6|(intensity)|(color)", _
@@ -847,13 +809,10 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi12|(intensity)|000000", _
       "gi11|(intensity)|000000", _
       "gi05|(intensity)|000000", _
-      "LSwL2|(intensity)|000000", _
       "LS3|(intensity)|(color)", _
       "LC5|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
       "LW8|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LTW2|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
@@ -889,7 +848,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "LPC3|(intensity)|(color)", _
       "LPC2|(intensity)|(color)", _
       "LPC1|(intensity)|(color)", _
-      "LTW4|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
@@ -921,7 +879,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "LPC3|(intensity)|000000", _
       "LPC2|(intensity)|000000", _
       "LPC1|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LMet3|(intensity)|(color)", _
       "LMet2|(intensity)|000000", _
@@ -1023,7 +980,6 @@ With CreateGlfShow("insert_gi_spin_center")
       "gi04|(intensity)|(color)", _
       "gi01|(intensity)|000000", _
       "LWiz|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC1|(intensity)|000000", _
       "LMet4|(intensity)|000000", _
       "LPR1|(intensity)|000000", _
@@ -1045,7 +1001,6 @@ With CreateGlfShow("insert_gi_spin_center")
     .Lights = Array( _
       "gi10|(intensity)|000000", _
       "gi03|(intensity)|000000", _
-      "LSC4|(intensity)|000000", _
       "LCR2|(intensity)|000000" _
       )
   End With
@@ -1060,10 +1015,8 @@ With CreateGlfShow("insert_gi_spin_right")
       "LMet3|(intensity)|000000", _
       "LMet1|(intensity)|000000", _
       "LM1|(intensity)|000000", _
-      "LSwL1|(intensity)|000000", _
       "LW5|(intensity)|000000", _
       "gi14|(intensity)|(color)", _
-      "LSwL2|(intensity)|(color)", _
       "LS2|(intensity)|(color)", _
       "LW6|(intensity)|(color)", _
       "LW5|(intensity)|(color)", _
@@ -1075,13 +1028,10 @@ With CreateGlfShow("insert_gi_spin_right")
   With .AddStep(0.03333, Null, Null)
     .Lights = Array( _
       "gi11|(intensity)|(color)", _
-      "LSwL2|(intensity)|000000", _
       "LS3|(intensity)|(color)", _
       "LS6|(intensity)|(color)", _
       "LW6|(intensity)|000000", _
       "LW3|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LCC3|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
@@ -1099,7 +1049,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "LW5|(intensity)|000000", _
       "LW2|(intensity)|(color)", _
       "LW1|(intensity)|(color)", _
-      "LTW4|(intensity)|000000", _
       "LTW2|(intensity)|(color)", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
@@ -1118,7 +1067,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "LPC3|(intensity)|(color)", _
       "LPC2|(intensity)|(color)", _
       "LPC1|(intensity)|(color)", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LCC1|(intensity)|000000", _
@@ -1198,7 +1146,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "gi07|(intensity)|(color)", _
       "gi06|(intensity)|(color)", _
       "gi05|(intensity)|(color)", _
-      "LSC4|(intensity)|(color)", _
       "LSC3|(intensity)|(color)", _
       "LSC2|(intensity)|(color)", _
       "LSC1|(intensity)|(color)", _
@@ -1279,7 +1226,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "LC5|(intensity)|000000", _
       "LWiz|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LH5|(intensity)|000000", _
       "LH4|(intensity)|000000", _
@@ -1335,7 +1281,6 @@ With CreateGlfShow("insert_gi_spin_right")
     .Lights = Array( _
       "gi09|(intensity)|000000", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|(color)", _
       "LW8|(intensity)|000000", _
       "LW5|(intensity)|(color)", _
       "LSC1|(intensity)|000000", _
@@ -1344,8 +1289,6 @@ With CreateGlfShow("insert_gi_spin_right")
   End With
   With .AddStep(0.50000, Null, Null)
     .Lights = Array( _
-      "LSwL1|(intensity)|000000", _
-      "LSwL2|(intensity)|(color)", _
       "LS2|(intensity)|(color)", _
       "LW7|(intensity)|000000", _
       "LW4|(intensity)|(color)", _
@@ -1357,13 +1300,10 @@ With CreateGlfShow("insert_gi_spin_right")
   With .AddStep(0.53333, Null, Null)
     .Lights = Array( _
       "gi11|(intensity)|(color)", _
-      "LSwL2|(intensity)|000000", _
       "LS3|(intensity)|(color)", _
       "LS6|(intensity)|(color)", _
       "LW6|(intensity)|000000", _
       "LW3|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LCC3|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
@@ -1381,7 +1321,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "LW5|(intensity)|000000", _
       "LW2|(intensity)|(color)", _
       "LW1|(intensity)|(color)", _
-      "LTW4|(intensity)|000000", _
       "LTW2|(intensity)|(color)", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
@@ -1400,7 +1339,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "LPC3|(intensity)|(color)", _
       "LPC2|(intensity)|(color)", _
       "LPC1|(intensity)|(color)", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LCC1|(intensity)|000000", _
@@ -1480,7 +1418,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "gi07|(intensity)|(color)", _
       "gi06|(intensity)|(color)", _
       "gi05|(intensity)|(color)", _
-      "LSC4|(intensity)|(color)", _
       "LSC3|(intensity)|(color)", _
       "LSC2|(intensity)|(color)", _
       "LSC1|(intensity)|(color)", _
@@ -1561,7 +1498,6 @@ With CreateGlfShow("insert_gi_spin_right")
       "LC5|(intensity)|000000", _
       "LWiz|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LH5|(intensity)|000000", _
       "LH4|(intensity)|000000", _
@@ -1617,7 +1553,6 @@ With CreateGlfShow("insert_gi_spin_right")
     .Lights = Array( _
       "gi09|(intensity)|000000", _
       "LS1|(intensity)|000000", _
-      "LSwL1|(intensity)|(color)", _
       "LW8|(intensity)|000000", _
       "LW5|(intensity)|(color)", _
       "LSC1|(intensity)|000000", _
@@ -1699,8 +1634,6 @@ With CreateGlfShow("insert_gi_slide_diag")
       "LMLR|(intensity)|000000", _
       "LF2|(intensity)|000000", _
       "LPC3|(intensity)|000000", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LCC3|(intensity)|(color)", _
       "LM2|(intensity)|000000" _
       )
@@ -1724,12 +1657,9 @@ With CreateGlfShow("insert_gi_slide_diag")
     .Lights = Array( _
       "gi19|(intensity)|000000", _
       "gi14|(intensity)|(color)", _
-      "LSwL2|(intensity)|(color)", _
       "LW5|(intensity)|(color)", _
       "LW3|(intensity)|000000", _
       "LW2|(intensity)|000000", _
-      "LTW4|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
       "LMet3|(intensity)|(color)", _
@@ -1751,8 +1681,6 @@ With CreateGlfShow("insert_gi_slide_diag")
   With .AddStep(0.26667, Null, Null)
     .Lights = Array( _
       "gi14|(intensity)|000000", _
-      "LSwL1|(intensity)|(color)", _
-      "LSwL2|(intensity)|000000", _
       "LW7|(intensity)|(color)", _
       "LW5|(intensity)|000000", _
       "LSC2|(intensity)|(color)", _
@@ -1776,7 +1704,6 @@ With CreateGlfShow("insert_gi_slide_diag")
   With .AddStep(0.33333, Null, Null)
     .Lights = Array( _
       "LW7|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC2|(intensity)|000000", _
       "LSC1|(intensity)|000000", _
       "LMet4|(intensity)|000000", _
@@ -1786,7 +1713,6 @@ With CreateGlfShow("insert_gi_slide_diag")
   With .AddStep(0.36667, Null, Null)
     .Lights = Array( _
       "gi10|(intensity)|000000", _
-      "LSwL1|(intensity)|000000", _
       "LCWiz|(intensity)|(color)", _
       "LLWiz|(intensity)|(color)", _
       "LWiz|(intensity)|(color)", _
@@ -1799,8 +1725,7 @@ With CreateGlfShow("insert_gi_slide_diag")
     .Lights = Array( _
       "gi09|(intensity)|000000", _
       "LS1|(intensity)|000000", _
-      "LW9|(intensity)|000000", _
-      "LSC4|(intensity)|000000" _
+      "LW9|(intensity)|000000" _
       )
   End With
   With .AddStep(0.43333, Null, Null)
@@ -2047,7 +1972,6 @@ With CreateGlfShow("insert_gi_slide_up")
       "LS1|(intensity)|(color)", _
       "LWiz|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
-      "LSC4|(intensity)|(color)", _
       "LRI|(intensity)|000000", _
       "LLI|(intensity)|000000" _
       )
@@ -2055,7 +1979,6 @@ With CreateGlfShow("insert_gi_slide_up")
   With .AddStep(0.30000, Null, Null)
     .Lights = Array( _
       "gi10|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
       "LCWiz|(intensity)|000000", _
       "LLWiz|(intensity)|000000", _
       "LWiz|(intensity)|000000", _
@@ -2074,7 +1997,6 @@ With CreateGlfShow("insert_gi_slide_up")
       "LW9|(intensity)|000000", _
       "LW7|(intensity)|(color)", _
       "LW6|(intensity)|(color)", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LSC1|(intensity)|(color)", _
       "LMet1|(intensity)|(color)" _
@@ -2083,8 +2005,6 @@ With CreateGlfShow("insert_gi_slide_up")
   With .AddStep(0.36667, Null, Null)
     .Lights = Array( _
       "gi14|(intensity)|(color)", _
-      "LSwL1|(intensity)|000000", _
-      "LSwL2|(intensity)|(color)", _
       "LS2|(intensity)|(color)", _
       "LW8|(intensity)|000000", _
       "LW7|(intensity)|000000", _
@@ -2103,7 +2023,6 @@ With CreateGlfShow("insert_gi_slide_up")
       "gi19|(intensity)|(color)", _
       "gi14|(intensity)|000000", _
       "gi11|(intensity)|(color)", _
-      "LSwL2|(intensity)|000000", _
       "LS3|(intensity)|(color)", _
       "LS6|(intensity)|(color)", _
       "LW6|(intensity)|000000", _
@@ -2111,8 +2030,6 @@ With CreateGlfShow("insert_gi_slide_up")
       "LW4|(intensity)|(color)", _
       "LW3|(intensity)|(color)", _
       "LW2|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LCC3|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
       "LMet3|(intensity)|000000" _
@@ -2155,8 +2072,6 @@ With CreateGlfShow("insert_gi_slide_up")
       "LPC3|(intensity)|(color)", _
       "LPC2|(intensity)|(color)", _
       "LPC1|(intensity)|(color)", _
-      "LTW4|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
@@ -2247,8 +2162,6 @@ With CreateGlfShow("insert_gi_slide_right")
       "gi16|(intensity)|(color)", _
       "gi11|(intensity)|(color)", _
       "gi02|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
-      "LSwL2|(intensity)|(color)", _
       "LLI|(intensity)|(color)" _
       )
   End With
@@ -2274,10 +2187,7 @@ With CreateGlfShow("insert_gi_slide_right")
       "gi11|(intensity)|000000", _
       "gi09|(intensity)|000000", _
       "gi03|(intensity)|(color)", _
-      "LSwL1|(intensity)|000000", _
-      "LSwL2|(intensity)|000000", _
       "LCWiz|(intensity)|(color)", _
-      "LTW4|(intensity)|(color)", _
       "LTW2|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LMet1|(intensity)|(color)", _
@@ -2297,7 +2207,6 @@ With CreateGlfShow("insert_gi_slide_right")
       "LPC4|(intensity)|(color)", _
       "LPC2|(intensity)|(color)", _
       "LPC1|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LCC3|(intensity)|000000", _
       "LCC2|(intensity)|000000", _
       "LCC1|(intensity)|000000", _
@@ -2336,7 +2245,6 @@ With CreateGlfShow("insert_gi_slide_right")
       "LW2|(intensity)|(color)", _
       "LW1|(intensity)|(color)", _
       "LPC3|(intensity)|(color)", _
-      "LTW4|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LM3|(intensity)|(color)", _
       "LSA|(intensity)|(color)", _
@@ -2360,7 +2268,6 @@ With CreateGlfShow("insert_gi_slide_right")
       "LC7|(intensity)|(color)", _
       "LPC5|(intensity)|(color)", _
       "LPC1|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LMet1|(intensity)|000000", _
       "LH7|(intensity)|(color)", _
@@ -2446,7 +2353,6 @@ With CreateGlfShow("insert_gi_slide_right")
       "LC7|(intensity)|000000", _
       "LC8|(intensity)|000000", _
       "LEBR|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC3|(intensity)|(color)", _
       "LSC2|(intensity)|(color)", _
       "LSC1|(intensity)|(color)", _
@@ -2494,7 +2400,6 @@ With CreateGlfShow("insert_gi_slide_right")
       "gi13|(intensity)|000000", _
       "gi06|(intensity)|000000", _
       "LS6|(intensity)|000000", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LSC2|(intensity)|000000", _
       "LSC1|(intensity)|000000", _
@@ -2663,7 +2568,6 @@ With CreateGlfShow("insert_gi_slide_midright")
       "LC8|(intensity)|000000", _
       "LEBR|(intensity)|000000", _
       "LMR|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC3|(intensity)|(color)", _
       "LSC2|(intensity)|(color)", _
       "LSC1|(intensity)|(color)", _
@@ -2704,7 +2608,6 @@ With CreateGlfShow("insert_gi_slide_midright")
       "gi15|(intensity)|(color)", _
       "gi06|(intensity)|000000", _
       "LS6|(intensity)|000000", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LSC2|(intensity)|000000", _
       "LSC1|(intensity)|000000", _
@@ -2794,7 +2697,6 @@ With CreateGlfShow("insert_gi_slide_midleft")
       "LC7|(intensity)|000000", _
       "LPC5|(intensity)|000000", _
       "LPC1|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LH7|(intensity)|000000", _
       "LH2|(intensity)|(color)", _
       "LPR6|(intensity)|000000", _
@@ -2831,7 +2733,6 @@ With CreateGlfShow("insert_gi_slide_midleft")
       "LW3|(intensity)|000000", _
       "LW2|(intensity)|000000", _
       "LW1|(intensity)|000000", _
-      "LTW4|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LM3|(intensity)|000000", _
       "LSA|(intensity)|000000", _
@@ -2884,9 +2785,7 @@ With CreateGlfShow("insert_gi_slide_midleft")
   End With
   With .AddStep(0.23333, Null, Null)
     .Lights = Array( _
-      "LSwL2|(intensity)|(color)", _
       "LS3|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LMet1|(intensity)|000000", _
       "LH1|(intensity)|000000" _
@@ -2897,9 +2796,7 @@ With CreateGlfShow("insert_gi_slide_midleft")
       "gi16|(intensity)|(color)", _
       "gi12|(intensity)|(color)", _
       "gi11|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
       "LCWiz|(intensity)|000000", _
-      "LTW4|(intensity)|000000", _
       "LLO|(intensity)|(color)", _
       "LSL|(intensity)|(color)" _
       )
@@ -2934,14 +2831,12 @@ With CreateGlfShow("insert_gi_slide_midleft")
   End With
   With .AddStep(0.40000, Null, Null)
     .Lights = Array( _
-      "LSwL2|(intensity)|000000" _
       )
   End With
   With .AddStep(0.43333, Null, Null)
     .Lights = Array( _
       "gi16|(intensity)|000000", _
-      "gi11|(intensity)|000000", _
-      "LSwL1|(intensity)|000000" _
+      "gi11|(intensity)|000000" _
       )
   End With
   With .AddStep(0.46667, Null, 0.03333)
@@ -2979,7 +2874,6 @@ With CreateGlfShow("insert_gi_slide_left")
       "gi13|(intensity)|(color)", _
       "gi06|(intensity)|(color)", _
       "LS6|(intensity)|(color)", _
-      "LSC4|(intensity)|(color)", _
       "LSC3|(intensity)|(color)", _
       "LSC2|(intensity)|(color)", _
       "LSC1|(intensity)|(color)", _
@@ -3028,7 +2922,6 @@ With CreateGlfShow("insert_gi_slide_left")
       "LC8|(intensity)|(color)", _
       "LEBR|(intensity)|(color)", _
       "LPC5|(intensity)|(color)", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000", _
       "LSC2|(intensity)|000000", _
       "LSC1|(intensity)|000000", _
@@ -3116,7 +3009,6 @@ With CreateGlfShow("insert_gi_slide_left")
       "LC7|(intensity)|000000", _
       "LPC5|(intensity)|000000", _
       "LPC1|(intensity)|(color)", _
-      "LTW3|(intensity)|(color)", _
       "LTW2|(intensity)|(color)", _
       "LMet1|(intensity)|(color)", _
       "LH7|(intensity)|000000", _
@@ -3152,7 +3044,6 @@ With CreateGlfShow("insert_gi_slide_left")
       "LW2|(intensity)|000000", _
       "LW1|(intensity)|000000", _
       "LPC3|(intensity)|000000", _
-      "LTW4|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LM3|(intensity)|000000", _
       "LSA|(intensity)|000000", _
@@ -3176,7 +3067,6 @@ With CreateGlfShow("insert_gi_slide_left")
       "LPC4|(intensity)|000000", _
       "LPC2|(intensity)|000000", _
       "LPC1|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LCC3|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
       "LCC1|(intensity)|(color)", _
@@ -3199,10 +3089,7 @@ With CreateGlfShow("insert_gi_slide_left")
       "gi11|(intensity)|(color)", _
       "gi09|(intensity)|(color)", _
       "gi03|(intensity)|000000", _
-      "LSwL1|(intensity)|(color)", _
-      "LSwL2|(intensity)|(color)", _
       "LCWiz|(intensity)|000000", _
-      "LTW4|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LMet1|(intensity)|000000", _
@@ -3229,8 +3116,6 @@ With CreateGlfShow("insert_gi_slide_left")
       "gi16|(intensity)|000000", _
       "gi11|(intensity)|000000", _
       "gi02|(intensity)|000000", _
-      "LSwL1|(intensity)|000000", _
-      "LSwL2|(intensity)|000000", _
       "LLI|(intensity)|000000" _
       )
   End With
@@ -3324,7 +3209,6 @@ With CreateGlfShow("insert_gi_slide_down")
       "LF1|(intensity)|000000", _
       "LPC2|(intensity)|000000", _
       "LPC1|(intensity)|000000", _
-      "LTW3|(intensity)|(color)", _
       "LTW2|(intensity)|(color)", _
       "LTW1|(intensity)|(color)", _
       "LCC2|(intensity)|(color)", _
@@ -3348,7 +3232,6 @@ With CreateGlfShow("insert_gi_slide_down")
       "LF3|(intensity)|000000", _
       "LF2|(intensity)|000000", _
       "LPC3|(intensity)|000000", _
-      "LTW4|(intensity)|(color)", _
       "LCC3|(intensity)|(color)", _
       "LCC1|(intensity)|000000", _
       "LM5|(intensity)|000000", _
@@ -3360,12 +3243,9 @@ With CreateGlfShow("insert_gi_slide_down")
       "gi19|(intensity)|000000", _
       "gi14|(intensity)|(color)", _
       "LS5|(intensity)|000000", _
-      "LSwL2|(intensity)|(color)", _
       "LW5|(intensity)|(color)", _
       "LW3|(intensity)|000000", _
       "LW2|(intensity)|000000", _
-      "LTW4|(intensity)|000000", _
-      "LTW3|(intensity)|000000", _
       "LTW2|(intensity)|000000", _
       "LTW1|(intensity)|000000", _
       "LCC3|(intensity)|000000", _
@@ -3394,8 +3274,6 @@ With CreateGlfShow("insert_gi_slide_down")
       "gi14|(intensity)|000000", _
       "gi10|(intensity)|(color)", _
       "gi09|(intensity)|(color)", _
-      "LSwL1|(intensity)|(color)", _
-      "LSwL2|(intensity)|000000", _
       "LW8|(intensity)|(color)", _
       "LW6|(intensity)|000000", _
       "LW5|(intensity)|000000", _
@@ -3408,11 +3286,9 @@ With CreateGlfShow("insert_gi_slide_down")
   With .AddStep(0.40000, Null, Null)
     .Lights = Array( _
       "LS1|(intensity)|(color)", _
-      "LSwL1|(intensity)|000000", _
       "LWiz|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
       "LW7|(intensity)|000000", _
-      "LSC4|(intensity)|(color)", _
       "LSC2|(intensity)|000000", _
       "LSC1|(intensity)|000000", _
       "LMet4|(intensity)|000000", _
@@ -3429,7 +3305,6 @@ With CreateGlfShow("insert_gi_slide_down")
       "LLWiz|(intensity)|(color)", _
       "LW9|(intensity)|000000", _
       "LW8|(intensity)|000000", _
-      "LSC4|(intensity)|000000", _
       "LSC3|(intensity)|000000" _
       )
   End With

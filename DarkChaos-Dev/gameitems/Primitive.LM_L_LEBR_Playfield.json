@@ -52,7 +52,7 @@
     "object_space_normal_map": true,
     "min_aa_bound": null,
     "max_aa_bound": null,
-    "mesh_file_name": "VLM.LM.L-LEBR.Playfield",
+    "mesh_file_name": "VLM.LM.L-LX.Playfield",
     "depth_bias": -1.0,
     "add_blend": true,
     "use_depth_mask": false,
