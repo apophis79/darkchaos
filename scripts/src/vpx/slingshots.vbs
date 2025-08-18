@@ -32,14 +32,15 @@ End Sub
 
 Sub s_LeftSlingshot_Timer
 	Dim BL
-	Dim x1, x2, y: x1 = True:x2 = False:y = 20
+	Dim x1, x2, x3, y: x1 = True: x2 = False: x3 = False: y = 20
     Select Case LStep
-        Case 3:x1 = False:x2 = True:y = 10
-        Case 4:x1 = False:x2 = False:y = 0: s_LeftSlingshot.TimerEnabled = 0
+        Case 3: x1 = False: x2 = True:  x3 = False: y = 10
+        Case 4: x1 = False: x2 = False: x3 = True:  y = 0: s_LeftSlingshot.TimerEnabled = 0
     End Select
 	
 	For Each BL in BP_LSling1 : BL.Visible = x1: Next
 	For Each BL in BP_LSling2 : BL.Visible = x2: Next
+	For Each BL in BP_LSling3 : BL.Visible = x3: Next
 	For Each BL in BP_LArm : BL.transx = y: Next
 
     LStep = LStep + 1
@@ -72,14 +73,15 @@ End Sub
 
 Sub s_RightSlingshot_Timer
 	Dim BL
-	Dim x1, x2, y: x1 = True:x2 = False:y = 20
-    Select Case RStep
-        Case 2:x1 = False:x2 = True:y = 10
-        Case 3:x1 = False:x2 = False:y = 0: s_RightSlingshot.TimerEnabled = 0
+	Dim x1, x2, x3, y: x1 = True: x2 = False: x3 = False: y = 20
+    Select Case LStep
+        Case 3: x1 = False: x2 = True:  x3 = False: y = 10
+        Case 4: x1 = False: x2 = False: x3 = True:  y = 0: s_RightSlingshot.TimerEnabled = 0
     End Select
 
 	For Each BL in BP_RSling1 : BL.Visible = x1: Next
 	For Each BL in BP_RSling2 : BL.Visible = x2: Next
+	For Each BL in BP_RSling3 : BL.Visible = x3: Next
 	For Each BL in BP_RArm : BL.transx = y: Next
 
     RStep = RStep + 1

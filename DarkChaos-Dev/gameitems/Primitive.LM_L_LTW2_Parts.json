@@ -1,9 +1,9 @@
 {
   "Primitive": {
     "position": {
-      "x": 477.7194,
-      "y": 1082.8854,
-      "z": 149.39964
+      "x": 696.0004,
+      "y": 335.77982,
+      "z": -35.487114
     },
     "size": {
       "x": 1.0,
@@ -12,22 +12,22 @@
     },
     "rot_and_tra": [
       0.0,
-      -0.0,
-      -0.0,
       0.0,
       0.0,
       0.0,
       0.0,
       0.0,
-      0.0
+      -5.2455954e-14,
+      0.0000060184634,
+      -48.436802
     ],
-    "image": "VLM.Nestmap5",
+    "image": "VLM.Nestmap4",
     "normal_map": "",
     "sides": 4,
     "name": "LM_L_LTW2_Parts",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

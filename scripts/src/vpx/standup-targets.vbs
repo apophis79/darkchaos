@@ -65,12 +65,11 @@ Set ST5 = (new StandupTarget)(s_TargetMystery5, BM_TM5, 5, 0)
 Set ST6 = (new StandupTarget)(s_TargetShield1, BM_TS1, 6, 0)
 Set ST7 = (new StandupTarget)(s_TargetShield2, BM_TS2, 7, 0)
 Set ST8 = (new StandupTarget)(s_TargetShield3, BM_TS3, 8, 0)
-'Set ST9 = (new StandupTarget)(s_TargetShield4, BM_TS4, 9, 0)
 
 'Add all the Stand-up Target Arrays to Stand-up Target Animation Array
 '   STAnimationArray = Array(ST1, ST2, ....)
 Dim STArray
-STArray = Array(ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8) ', ST9)
+STArray = Array(ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8) 
 
 'Configure the behavior of Stand-up Targets
 Const STAnimStep = 1.5  'vpunits per animation step (control return to Start)

@@ -27,7 +27,7 @@
     "name": "PlungerLine",
     "material": "Metal Red",
     "side_color": "#96009696",
-    "is_visible": true,
+    "is_visible": false,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 2.0,

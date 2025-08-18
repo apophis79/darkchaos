@@ -12,8 +12,8 @@ Sub swGateSfx_hit
 End Sub
 
 
-'brighten the meteor drop targets
-BM_TMet1.blenddisablelighting = 10
-BM_TMet2.blenddisablelighting = 10
-BM_TMet3.blenddisablelighting = 10
-BM_TMet4.blenddisablelighting = 10
+' 'brighten the meteor drop targets
+' BM_TMet1.blenddisablelighting = 10
+' BM_TMet2.blenddisablelighting = 10
+' BM_TMet3.blenddisablelighting = 10
+' BM_TMet4.blenddisablelighting = 10

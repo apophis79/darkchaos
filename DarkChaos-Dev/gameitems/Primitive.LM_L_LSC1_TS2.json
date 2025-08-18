@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 782.9967,
-      "y": 1119.7107,
+      "x": 789.6022,
+      "y": 1148.8087,
       "z": -11.685708
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_L_LSC1_TS2",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

@@ -21,7 +21,7 @@
     "friction": 0.02,
     "damping": 0.984,
     "gravity_factor": 1.0,
-    "is_visible": true,
+    "is_visible": false,
     "name": "GateL",
     "two_way": true,
     "is_reflection_enabled": false,

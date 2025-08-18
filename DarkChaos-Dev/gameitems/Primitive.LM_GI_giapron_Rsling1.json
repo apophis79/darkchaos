@@ -1,18 +1,18 @@
 {
   "Primitive": {
     "position": {
-      "x": 671.9019,
-      "y": 1580.0771,
-      "z": 30.997694
+      "x": 627.08887,
+      "y": 1644.2596,
+      "z": 60.93131
     },
     "size": {
-      "x": -1.0,
-      "y": -1.0,
-      "z": -1.0
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
     },
     "rot_and_tra": [
-      180.0,
-      -0.000006018463,
+      0.0,
+      -0.0,
       -0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "LM_GI_giapron_Rsling1",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

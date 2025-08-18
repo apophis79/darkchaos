@@ -903,7 +903,8 @@
       "LBG04",
       "LBG03",
       "LBG02",
-      "LBG01"
+      "LBG01",
+      "LL"
     ],
     "fire_events": false,
     "stop_single_events": false,

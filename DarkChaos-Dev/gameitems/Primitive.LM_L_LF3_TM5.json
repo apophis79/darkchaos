@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 735.1734,
-      "y": 630.69714,
+      "x": 747.06915,
+      "y": 596.3414,
       "z": -8.183053
     },
     "size": {
@@ -13,7 +13,7 @@
     "rot_and_tra": [
       0.0,
       0.0,
-      13.211593,
+      15.3903885,
       0.0,
       0.0,
       0.0,
@@ -21,13 +21,13 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap0",
+    "image": "VLM.Nestmap4",
     "normal_map": "",
     "sides": 4,
     "name": "LM_L_LF3_TM5",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

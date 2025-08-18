@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 110.98481,
-      "y": 523.5687,
+      "x": 99.3601,
+      "y": 529.7406,
       "z": 0.0
     },
     "size": {
@@ -13,7 +13,7 @@
     "rot_and_tra": [
       0.0,
       -0.0,
-      -11.0,
+      -11.214598,
       0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "BM_swL1",
     "material": "VLM.Bake.Solid",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

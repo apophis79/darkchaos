@@ -45,13 +45,11 @@ Sub Table1_OptionEvent(ByVal eventId)
     v = Table1.Option("Clear Plastic Refractions", 0, 1, 1, 1, 0, Array("Disabled", "Enabled"))
 	If v = 0 Then
 		BM_BmpBot.RefractionProbe = ""
-		BM_BmpTopB.RefractionProbe = ""
-		BM_BmpTopR.RefractionProbe = ""
+		BM_BmpTop.RefractionProbe = ""
 		BM_Layer1.RefractionProbe = ""
 	Else
 		BM_BmpBot.RefractionProbe = "Refraction Pass 1"
-		BM_BmpTopB.RefractionProbe = "Refraction Pass 2"
-		BM_BmpTopR.RefractionProbe = "Refraction Pass 2"
+		BM_BmpTop.RefractionProbe = "Refraction Pass 2"
 		BM_Layer1.RefractionProbe = "Refraction Pass 3"
 	End If
 	

@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 903.51746,
-      "y": 1610.6183,
+      "x": 899.5455,
+      "y": 1522.0122,
       "z": 0.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "BM_swP2",
     "material": "VLM.Bake.Solid",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

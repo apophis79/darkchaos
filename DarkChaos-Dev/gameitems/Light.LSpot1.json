@@ -24,7 +24,7 @@
     "depth_bias": 0.0,
     "fade_speed_up": 0.075,
     "fade_speed_down": 0.075,
-    "is_bulb_light": true,
+    "is_bulb_light": false,
     "is_image_mode": false,
     "show_bulb_mesh": false,
     "has_static_bulb_mesh": true,
@@ -34,7 +34,7 @@
     "bulb_halo_height": 1.0,
     "shadows": "raytraced_ball_shadows",
     "fader": "none",
-    "visible": true,
+    "visible": false,
     "drag_points": [
       {
         "x": 303.98547,

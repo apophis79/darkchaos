@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 437.22897,
-      "y": 1916.7562,
+      "x": 435.31345,
+      "y": 1904.3789,
       "z": -0.0012339791
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_GI_giapron_TrustPost",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

@@ -1,19 +1,19 @@
 {
   "Primitive": {
     "position": {
-      "x": 201.01546,
-      "y": 1580.8916,
-      "z": 30.997694
+      "x": 243.62506,
+      "y": 1643.7764,
+      "z": -1.5527248
     },
     "size": {
-      "x": -1.0,
-      "y": -1.0,
-      "z": -1.0
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
     },
     "rot_and_tra": [
       0.0,
-      -0.000005008956,
-      -180.0,
+      -0.0,
+      -0.0,
       0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "BM_Lsling2",
     "material": "VLM.Bake.Solid",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

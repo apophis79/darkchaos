@@ -27,7 +27,7 @@
     "name": "zCol_Rubber_Post015",
     "material": "zCol_RubberPosts",
     "side_color": "#96009696",
-    "is_visible": true,
+    "is_visible": false,
     "draw_textures_inside": false,
     "hit_event": true,
     "threshold": 0.5,

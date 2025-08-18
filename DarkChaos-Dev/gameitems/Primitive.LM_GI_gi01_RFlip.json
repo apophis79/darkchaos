@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 596.26056,
-      "y": 1802.6636,
+      "x": 593.7712,
+      "y": 1785.5702,
       "z": 26.085299
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_GI_gi01_RFlip",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

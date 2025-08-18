@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 158.20776,
-      "y": 1105.6046,
+      "x": 156.38718,
+      "y": 1110.8063,
       "z": -8.183053
     },
     "size": {
@@ -13,7 +13,7 @@
     "rot_and_tra": [
       0.0,
       -0.0,
-      -15.768122,
+      -21.22934,
       0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "LM_L_LS1_TM1",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

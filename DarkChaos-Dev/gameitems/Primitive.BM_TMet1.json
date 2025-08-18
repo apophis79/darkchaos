@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 271.36337,
-      "y": 1030.0592,
+      "x": 272.71164,
+      "y": 1034.104,
       "z": -11.584006
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "BM_TMet1",
     "material": "VLM.Bake.Solid",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

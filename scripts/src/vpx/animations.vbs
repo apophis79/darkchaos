@@ -139,7 +139,7 @@ End Sub
 
 Sub s_LeftBumper1_Animate
 	Dim z : z = s_LeftBumper1.CurrentAnimOffset
-	Dim BP : For Each BP in BP_swLB1 : BP.transz = z: Next
+	Dim BP : For Each BP in BP_swLB : BP.transz = z: Next
 End Sub
 
 Sub s_LeftInlane_Animate
@@ -210,9 +210,6 @@ Sub UpdateStandupTargets
 
     ty = BM_TS3.transy
 	For each BP in BP_TS3 : BP.transy = ty: Next
-
-    ty = BM_TS4.transy
-	For each BP in BP_TS4 : BP.transy = ty: Next
 
 End Sub
 
@@ -326,10 +323,10 @@ Sub InitAsteroid
 '	For i = 0 to (UBound(BP_Asteroid2)-1): Set LMs_Asteroid2(i) = BP_Asteroid2(i+1): Next
 '	For i = 0 to (UBound(BP_Asteroid3)-1): Set LMs_Asteroid3(i) = BP_Asteroid3(i+1): Next
 '	For i = 0 to (UBound(BP_Asteroid4)-1): Set LMs_Asteroid4(i) = BP_Asteroid4(i+1): Next
-	LM_F_FL7_Asteroid1.Visible = 1
-	LM_F_FL7_Asteroid2.Visible = 0
-	LM_F_FL7_Asteroid3.Visible = 0
-	LM_F_FL7_Asteroid4.Visible = 0
+	LM_F_FL7a_Asteroid1.Visible = 1
+	LM_F_FL7a_Asteroid2.Visible = 0
+	LM_F_FL7a_Asteroid3.Visible = 0
+	LM_F_FL7a_Asteroid4.Visible = 0
 	' Adjust size to eliminate zfighting
 	BM_Asteroid1.Size_X = BM_Asteroid1.Size_X*0.999 '0.998
 	BM_Asteroid1.Size_Y = BM_Asteroid1.Size_Y*0.999 '0.998
@@ -382,7 +379,7 @@ Sub DrawAsteroid(a)
 '	BM_Asteroid3.Visible = v3
 '	BM_Asteroid3.Opacity = op13
 
-	LM_F_FL7_Asteroid1.RotZ = a
+	LM_F_FL7a_Asteroid1.RotZ = a
 
 	For each LM in LMs_Asteroid1
 		LM.Visible = v1

@@ -9,7 +9,7 @@
     "rotation": -70.0,
     "material": "_noXtraShadingVR",
     "is_timer_enabled": false,
-    "show_bracket": true,
+    "show_bracket": false,
     "is_collidable": true,
     "timer_interval": 100,
     "imgf": null,
@@ -21,10 +21,10 @@
     "friction": 0.02,
     "damping": 0.985,
     "gravity_factor": 0.25,
-    "is_visible": true,
+    "is_visible": false,
     "name": "Gate2",
     "two_way": false,
-    "is_reflection_enabled": true,
+    "is_reflection_enabled": false,
     "gate_type": "WireW"
   }
 }

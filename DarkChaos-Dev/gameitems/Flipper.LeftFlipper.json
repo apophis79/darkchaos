@@ -33,7 +33,7 @@
     "torque_damping": 0.375,
     "torque_damping_angle": 6.0,
     "flipper_radius_min": 0.0,
-    "is_visible": true,
+    "is_visible": false,
     "is_enabled": true,
     "height": 50.0,
     "image": "",

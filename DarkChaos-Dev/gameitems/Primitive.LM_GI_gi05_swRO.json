@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 821.94055,
-      "y": 1588.3301,
+      "x": 818.88513,
+      "y": 1545.0455,
       "z": 0.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_GI_gi05_swRO",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

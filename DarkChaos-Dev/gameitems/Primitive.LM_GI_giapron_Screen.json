@@ -2,7 +2,7 @@
   "Primitive": {
     "position": {
       "x": 718.7612,
-      "y": 2038.4535,
+      "y": 2033.3851,
       "z": 114.54564
     },
     "size": {
@@ -21,13 +21,13 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap2",
+    "image": "VLM.Nestmap4",
     "normal_map": "",
     "sides": 4,
     "name": "LM_GI_giapron_Screen",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

@@ -2,7 +2,7 @@
   "Trigger": {
     "center": {
       "x": 900.9944,
-      "y": 622.24054
+      "y": 608.8078
     },
     "radius": 24.0,
     "rotation": 0.0,
@@ -13,7 +13,7 @@
     "timer_interval": 100,
     "material": "",
     "surface": "75h",
-    "is_visible": true,
+    "is_visible": false,
     "is_enabled": true,
     "hit_height": 50.0,
     "name": "s_Lock2",
@@ -23,7 +23,7 @@
     "drag_points": [
       {
         "x": 870.99426,
-        "y": 592.24054,
+        "y": 578.8078,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -36,7 +36,7 @@
       },
       {
         "x": 870.99426,
-        "y": 652.24054,
+        "y": 638.8078,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -49,7 +49,7 @@
       },
       {
         "x": 930.9944,
-        "y": 652.24054,
+        "y": 638.8078,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,
@@ -62,7 +62,7 @@
       },
       {
         "x": 930.9944,
-        "y": 592.24054,
+        "y": 578.8078,
         "z": 0.0,
         "smooth": false,
         "is_slingshot": false,

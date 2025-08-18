@@ -1,9 +1,9 @@
 {
   "Primitive": {
     "position": {
-      "x": 0.0,
-      "y": -0.0,
-      "z": -0.01
+      "x": 476.62872,
+      "y": 1058.823,
+      "z": 0.0
     },
     "size": {
       "x": 1.0,
@@ -27,7 +27,7 @@
     "name": "LM_L_LMR_Playfield",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,
@@ -52,7 +52,7 @@
     "object_space_normal_map": true,
     "min_aa_bound": null,
     "max_aa_bound": null,
-    "mesh_file_name": "VLM.LM.L-LEBR.Playfield",
+    "mesh_file_name": "VLM.LM.L-LMR.Playfield",
     "depth_bias": -1.0,
     "add_blend": true,
     "use_depth_mask": false,

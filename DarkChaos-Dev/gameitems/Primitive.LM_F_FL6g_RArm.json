@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 659.0684,
-      "y": 1564.6171,
+      "x": 664.60474,
+      "y": 1544.9137,
       "z": -35.487114
     },
     "size": {
@@ -21,13 +21,13 @@
       0.000006018462,
       -159.75
     ],
-    "image": "VLM.Nestmap5",
+    "image": "VLM.Nestmap4",
     "normal_map": "",
     "sides": 4,
     "name": "LM_F_FL6g_RArm",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

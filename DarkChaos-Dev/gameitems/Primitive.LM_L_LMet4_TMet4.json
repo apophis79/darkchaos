@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 632.49133,
-      "y": 1061.4299,
+      "x": 632.761,
+      "y": 1065.2051,
       "z": -11.584006
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_L_LMet4_TMet4",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

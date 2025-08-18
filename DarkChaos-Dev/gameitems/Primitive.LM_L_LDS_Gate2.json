@@ -3,7 +3,7 @@
     "position": {
       "x": 814.13586,
       "y": 982.8795,
-      "z": 64.19102
+      "z": 67.52562
     },
     "size": {
       "x": 0.9999999,
@@ -27,7 +27,7 @@
     "name": "LM_L_LDS_Gate2",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

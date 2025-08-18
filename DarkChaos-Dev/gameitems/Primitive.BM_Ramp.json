@@ -27,7 +27,7 @@
     "name": "BM_Ramp",
     "material": "VLM.Bake.Ramp",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,
@@ -61,7 +61,7 @@
     "light_map": "",
     "reflection_probe": "",
     "reflection_strength": 0.3,
-    "refraction_probe": "<None>",
+    "refraction_probe": "Refraction Pass 3",
     "refraction_thickness": 4.0
   }
 }

@@ -13,7 +13,7 @@
     "timer_interval": 100,
     "material": "",
     "surface": "100h",
-    "is_visible": true,
+    "is_visible": false,
     "is_enabled": true,
     "hit_height": 100.0,
     "name": "swRamp5",

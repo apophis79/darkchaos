@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 549.05383,
-      "y": 414.12238,
+      "x": 550.94806,
+      "y": 416.39554,
       "z": -8.183053
     },
     "size": {
@@ -13,7 +13,7 @@
     "rot_and_tra": [
       0.0,
       0.0,
-      9.782111,
+      14.907273,
       0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "LM_L_LMR_TM4",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,
@@ -52,7 +52,7 @@
     "object_space_normal_map": true,
     "min_aa_bound": null,
     "max_aa_bound": null,
-    "mesh_file_name": "VLM.LM.L-LEBR.TM4",
+    "mesh_file_name": "VLM.LM.L-LMR.TM4",
     "depth_bias": 0.0,
     "add_blend": true,
     "use_depth_mask": false,

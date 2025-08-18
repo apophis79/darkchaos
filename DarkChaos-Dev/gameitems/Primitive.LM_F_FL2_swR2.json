@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 902.476,
-      "y": 210.4417,
+      "x": 887.59094,
+      "y": 164.49225,
       "z": 0.0
     },
     "size": {
@@ -13,7 +13,7 @@
     "rot_and_tra": [
       0.0,
       -0.0,
-      -0.0,
+      -25.199656,
       0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "LM_F_FL2_swR2",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

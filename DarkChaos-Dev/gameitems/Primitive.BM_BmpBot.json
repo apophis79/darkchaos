@@ -1,9 +1,9 @@
 {
   "Primitive": {
     "position": {
-      "x": 467.37738,
-      "y": 610.66705,
-      "z": 66.66227
+      "x": 466.98984,
+      "y": 610.89996,
+      "z": 72.82862
     },
     "size": {
       "x": 1.0,
@@ -21,13 +21,13 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap6",
-    "normal_map": "VLM.Nestmap6 - NM",
+    "image": "VLM.Nestmap5",
+    "normal_map": "VLM.Nestmap5 - NM",
     "sides": 4,
     "name": "BM_BmpBot",
     "material": "VLM.Bake.Bumper",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,
@@ -62,6 +62,6 @@
     "reflection_probe": "",
     "reflection_strength": 0.3,
     "refraction_probe": "Refraction Pass 1",
-    "refraction_thickness": 10.0
+    "refraction_thickness": 7.0
   }
 }

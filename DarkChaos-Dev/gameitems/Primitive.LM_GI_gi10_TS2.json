@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 782.9967,
-      "y": 1119.7107,
+      "x": 789.6022,
+      "y": 1148.8087,
       "z": -11.685708
     },
     "size": {
@@ -21,13 +21,13 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap5",
+    "image": "VLM.Nestmap0",
     "normal_map": "",
     "sides": 4,
     "name": "LM_GI_gi10_TS2",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 0.0,
-      "y": -0.0,
+      "x": 6.391025,
+      "y": -13.273665,
       "z": 80.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_F_FL1_LockPin",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

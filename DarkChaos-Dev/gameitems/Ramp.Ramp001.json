@@ -22,7 +22,7 @@
     "friction": 0.3,
     "scatter": 0.0,
     "is_collidable": true,
-    "is_visible": true,
+    "is_visible": false,
     "depth_bias": 0.0,
     "wire_diameter": 8.0,
     "wire_distance_x": 38.0,

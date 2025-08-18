@@ -3,7 +3,7 @@
     "position": {
       "x": 620.31134,
       "y": 305.55307,
-      "z": 79.31441
+      "z": 85.28299
     },
     "size": {
       "x": 1.0,
@@ -27,7 +27,7 @@
     "name": "BM_Layer1",
     "material": "VLM.Bake.Active",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

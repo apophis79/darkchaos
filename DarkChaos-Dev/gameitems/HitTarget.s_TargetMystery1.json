@@ -15,7 +15,7 @@
     "target_type": "hit_fat_target_slim",
     "name": "s_TargetMystery1",
     "material": "",
-    "is_visible": true,
+    "is_visible": false,
     "is_legacy": false,
     "use_hit_event": true,
     "threshold": 2.0,

@@ -3,7 +3,7 @@
     "position": {
       "x": 620.31134,
       "y": 305.55307,
-      "z": 79.31441
+      "z": 85.28299
     },
     "size": {
       "x": 1.0,
@@ -21,13 +21,13 @@
       0.0,
       0.0
     ],
-    "image": "VLM.Nestmap5",
+    "image": "VLM.Nestmap4",
     "normal_map": "",
     "sides": 4,
     "name": "LM_L_LB3_Layer1",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 240.01216,
-      "y": 311.29077,
+      "x": 235.06847,
+      "y": 303.8752,
       "z": 0.0
     },
     "size": {
@@ -27,7 +27,7 @@
     "name": "LM_F_FL7a_swI1",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

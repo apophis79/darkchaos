@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 549.05383,
-      "y": 414.12238,
+      "x": 550.94806,
+      "y": 416.39554,
       "z": -8.183053
     },
     "size": {
@@ -13,7 +13,7 @@
     "rot_and_tra": [
       0.0,
       0.0,
-      9.782111,
+      14.907273,
       0.0,
       0.0,
       0.0,
@@ -27,7 +27,7 @@
     "name": "LM_GI_gi13_TM4",
     "material": "",
     "side_color": "#ff00ffff",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,

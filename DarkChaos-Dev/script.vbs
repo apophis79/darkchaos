@@ -1,4 +1,3 @@
-
 Option Explicit
 
 Include("scripts\dest\vpx\tablescript.vbs")
