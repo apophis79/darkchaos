@@ -2601,5 +2601,24 @@
     "fire_events": false,
     "stop_single_events": false,
     "group_elements": false
+  },
+  {
+    "name": "VR_Planet",
+    "items": [
+      "VR_EarthClouds",
+      "VR_MeteorShards004",
+      "VR_MeteorShards003",
+      "VR_MeteorShards002",
+      "VR_MeteorShards001",
+      "VR_Meteor",
+      "VR_Earth",
+      "VR_DamageEarth",
+      "VR_AsteroidFire",
+      "VR_AsteroidEffect001",
+      "VR_AsteroidCircleEffect"
+    ],
+    "fire_events": false,
+    "stop_single_events": false,
+    "group_elements": false
   }
 ]

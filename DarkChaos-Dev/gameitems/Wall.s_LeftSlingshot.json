@@ -6,7 +6,7 @@
     "is_bottom_solid": false,
     "is_collidable": true,
     "is_timer_enabled": false,
-    "timer_interval": 10,
+    "timer_interval": 20,
     "threshold": 2.0,
     "image": "",
     "side_image": "",

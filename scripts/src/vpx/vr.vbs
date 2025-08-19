@@ -18,24 +18,28 @@ Sub SetupRoom
 
 		'Asteroid Room
 		If VRRoom = 1 Then 
+			For Each VRThing in VR_Planet: VRThing.visible = VREarthVisible: Next
 			For Each VRThing in VR_Mega: VRThing.visible = 1: Next
 			For Each VRThing in VR_Min: VRThing.visible = 0: Next
 		End If
 
 		'Minimal Room
 		If VRRoom = 2 Then
+			For Each VRThing in VR_Planet: VRThing.visible = 0: Next
 			For Each VRThing in VR_Mega: VRThing.visible = 0: Next
 			For Each VRThing in VR_Min: VRThing.visible = 1: Next
 		End If
 
 		'Ultra Minimal Room
 		If VRRoom = 3 Then
+			For Each VRThing in VR_Planet: VRThing.visible = 0: Next
 			For Each VRThing in VR_Mega: VRThing.visible = 0: Next
 			For Each VRThing in VR_Min: VRThing.visible = 0: Next
 		End If
 
 	Else
 		For Each VRThing in VR_Mega: VRThing.visible = 0: Next
+		For Each VRThing in VR_Planet: VRThing.visible = 0: Next
 		For Each VRThing in VR_Min: VRThing.visible = 0: Next
 		For Each VRThing in VR_Cab: VRThing.visible = 0: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 0: Next
@@ -94,12 +98,19 @@ Sub NewSkyAngle
 End Sub
 
 Sub RotateSky
+	Dim obj
 	if VRRoom <> 1 Or VRRotateRate = 0 Then Exit Sub
     'Randomize VR starry sky angles
 	Select Case VRRoomRotate
-		Case 1: VRSphere.objrotx = VRSphere.objrotx + FrameTime*VRRotateRate*0.0001
-		Case 2: VRSphere.objroty = VRSphere.objroty + FrameTime*VRRotateRate*0.0001
-		Case 3: VRSphere.objrotz = VRSphere.objrotz + FrameTime*VRRotateRate*0.0001
+		Case 1 
+			VRSphere.objrotx = VRSphere.objrotx + FrameTime*VRRotateRate*0.0001
+			For each obj in VR_Planet: obj.objrotx = obj.objrotx + FrameTime*VRRotateRate*0.0001: Next
+		Case 2
+			VRSphere.objroty = VRSphere.objroty + FrameTime*VRRotateRate*0.0001
+			For each obj in VR_Planet: obj.objroty = obj.objroty + FrameTime*VRRotateRate*0.0001: Next
+		Case 3
+			VRSphere.objrotz = VRSphere.objrotz + FrameTime*VRRotateRate*0.0001
+			For each obj in VR_Planet: obj.objrotz = obj.objrotz + FrameTime*VRRotateRate*0.0001: Next
 	End Select
 End Sub
 

@@ -55,12 +55,12 @@
     "mesh_file_name": "VLM.BM.Playfield",
     "depth_bias": 0.0,
     "add_blend": false,
-    "use_depth_mask": false,
+    "use_depth_mask": true,
     "alpha": 100.0,
     "color": "#ff00ffff",
     "light_map": "",
     "reflection_probe": "Playfield Reflections",
-    "reflection_strength": 0.15,
+    "reflection_strength": 0.1,
     "refraction_probe": "",
     "refraction_thickness": 10.0
   }
