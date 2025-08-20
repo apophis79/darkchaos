@@ -1,0 +1,35 @@
+<B2STableSettings>
+  <ArePluginsOn>0</ArePluginsOn>
+  <DefaultStartMode>2</DefaultStartMode>
+  <DisableFuzzyMatching>1</DisableFuzzyMatching>
+  <LogPath>
+  </LogPath>
+  <IsLampsStateLogOn>0</IsLampsStateLogOn>
+  <IsSolenoidsStateLogOn>0</IsSolenoidsStateLogOn>
+  <IsGIStringsStateLogOn>0</IsGIStringsStateLogOn>
+  <IsLEDsStateLogOn>0</IsLEDsStateLogOn>
+  <IsPaintingLogOn>0</IsPaintingLogOn>
+  <IsStatisticsBackglassOn>0</IsStatisticsBackglassOn>
+  <ShowStartupError>0</ShowStartupError>
+  <ScreenshotPath>
+  </ScreenshotPath>
+  <ScreenshotFileType>0</ScreenshotFileType>
+  <darkchaos>
+    <HideGrill>0</HideGrill>
+    <HideB2SDMD>0</HideB2SDMD>
+    <HideB2SBackglass>0</HideB2SBackglass>
+    <HideDMD>2</HideDMD>
+    <LampsSkipFrames>1</LampsSkipFrames>
+    <SolenoidsSkipFrames>3</SolenoidsSkipFrames>
+    <GIStringsSkipFrames>3</GIStringsSkipFrames>
+    <LEDsSkipFrames>0</LEDsSkipFrames>
+    <UsedLEDType>2</UsedLEDType>
+    <IsGlowBulbOn>0</IsGlowBulbOn>
+    <GlowIndex>-1</GlowIndex>
+    <StartAsEXE>1</StartAsEXE>
+    <FormToFront>1</FormToFront>
+    <FormToBack>0</FormToBack>
+    <FormNoFocus>0</FormNoFocus>
+    <Animations />
+  </darkchaos>
+</B2STableSettings>
