@@ -271,6 +271,16 @@ Sub CreateMoonMultiballQualifyMode
                     .Add "intensity", 100
                 End With
             End With
+            With .EventName("s_GateR_active")
+                .Key = "key_moon_launch_gate"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 9
+                With .Tokens()
+                    .Add "lights", "LL"
+                    .Add "color", MoonColor
+                End With
+            End With
 
         End With
 
