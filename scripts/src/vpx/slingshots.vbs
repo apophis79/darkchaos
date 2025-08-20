@@ -22,11 +22,11 @@ Sub LeftSlingshotAction(args)
 	End If
 End Sub
 
-Sub LeftSlingshotDisabled()
+Sub LeftSlingshotDisabled(args)
 	s_LeftSlingshot.Disabled = True
 End Sub
 
-Sub LeftSlingshotEnabled()
+Sub LeftSlingshotEnabled(args)
 	s_LeftSlingshot.Disabled = False
 End Sub
 
@@ -63,11 +63,11 @@ Sub RightSlingshotAction(args)
 	End If
 End Sub
 
-Sub RightSlingshotDisabled()
+Sub RightSlingshotDisabled(args)
 	s_RightSlingshot.Disabled = True
 End Sub
 
-Sub RightSlingshotEnabled()
+Sub RightSlingshotEnabled(args)
 	s_RightSlingshot.Disabled = False
 End Sub
 
@@ -105,11 +105,11 @@ Sub TopSlingshotAction(args)
 	End If
 End Sub
 
-Sub TopSlingshotDisabled()
+Sub TopSlingshotDisabled(args)
 	s_TopSlingshot.Disabled = True
 End Sub
 
-Sub TopSlingshotEnabled()
+Sub TopSlingshotEnabled(args)
 	s_TopSlingshot.Disabled = False
 End Sub
 

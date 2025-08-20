@@ -3,11 +3,6 @@
 '  ZDRT : DROP TARGETS by Rothbauerw
 '******************************************************
 
-Sub s_DTMeteor1_Hit: 	DTHit 1 : End Sub
-Sub s_DTMeteor2_Hit: 	DTHit 2 : End Sub
-Sub s_DTMeteor3_Hit: 	DTHit 3 : End Sub
-Sub s_DTMeteor4_Hit: 	DTHit 4 : End Sub
-
 
 '  DROP TARGETS INITIALIZATION
 

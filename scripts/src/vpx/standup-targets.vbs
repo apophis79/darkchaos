@@ -5,15 +5,6 @@
 '	ZSUT: STAND-UP TARGETS by Rothbauerw
 '******************************************************
 
-Sub s_TargetMystery1_Hit: STHit 1 : End Sub
-Sub s_TargetMystery2_Hit: STHit 2 : End Sub
-Sub s_TargetMystery3_Hit: STHit 3 : End Sub
-Sub s_TargetMystery4_Hit: STHit 4 : End Sub
-Sub s_TargetMystery5_Hit: STHit 5 : End Sub
-Sub s_TargetShield1_Hit:  STHit 6 : End Sub
-Sub s_TargetShield2_Hit:  STHit 7 : End Sub
-Sub s_TargetShield3_Hit:  STHit 8 : End Sub
-'Sub s_TargetShield4_Hit:  STHit 9 : End Sub
 
 Class StandupTarget
     Private m_primary, m_prim, m_sw, m_animate
@@ -41,7 +32,7 @@ Class StandupTarget
 End Class
   
 'Define a variable for each stand-up target
-Dim ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8', ST9
+Dim ST1, ST2, ST3, ST4, ST5, ST6, ST7, ST8
 
 'Set array with stand-up target objects
 '

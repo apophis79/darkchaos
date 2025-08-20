@@ -20,7 +20,7 @@ Sub Table1_Init
 
 	' GLF
 	ConfigureGlfDevices
-	Glf_Init
+	Glf_Init(Table1)
 
 	' Ball rolling sounds
 	InitRolling

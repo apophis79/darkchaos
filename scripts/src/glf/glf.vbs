@@ -1,9 +1,3 @@
-
-
-'-------------------------------------
-' ZGLF : Game Logic Framework (GLF)
-'-------------------------------------
-
 'VPX Game Logic Framework (https://mpcarr.github.io/vpx-glf/)
 
 '
@@ -44,7 +38,7 @@ Dim glf_lightTags : Set glf_lightTags = CreateObject("Scripting.Dictionary")
 Dim glf_lightNames : Set glf_lightNames = CreateObject("Scripting.Dictionary")
 Dim glf_modes : Set glf_modes = CreateObject("Scripting.Dictionary")
 Dim glf_timers : Set glf_timers = CreateObject("Scripting.Dictionary")
-Dim glf_funcRefMap : Set glf_funcRefMap = CreateObject("Scripting.Dictionary")
+Dim glf_codestr : glf_codestr = ""
 Dim glf_state_machines : Set glf_state_machines = CreateObject("Scripting.Dictionary")
 Dim glf_ball_devices : Set glf_ball_devices = CreateObject("Scripting.Dictionary")
 Dim glf_diverters : Set glf_diverters = CreateObject("Scripting.Dictionary")
@@ -53,7 +47,8 @@ Dim glf_autofiredevices : Set glf_autofiredevices = CreateObject("Scripting.Dict
 Dim glf_ball_holds : Set glf_ball_holds = CreateObject("Scripting.Dictionary")
 Dim glf_magnets : Set glf_magnets = CreateObject("Scripting.Dictionary")
 Dim glf_segment_displays : Set glf_segment_displays = CreateObject("Scripting.Dictionary")
-Dim glf_droptargets : Set glf_droptargets = CreateObject("Scripting.Dictionary")
+Dim glf_drop_targets : Set glf_drop_targets = CreateObject("Scripting.Dictionary")
+Dim glf_standup_targets : Set glf_standup_targets = CreateObject("Scripting.Dictionary")
 Dim glf_multiball_locks : Set glf_multiball_locks = CreateObject("Scripting.Dictionary")
 Dim glf_multiballs : Set glf_multiballs = CreateObject("Scripting.Dictionary")
 Dim glf_shows : Set glf_shows = CreateObject("Scripting.Dictionary")
@@ -67,7 +62,7 @@ Dim glf_achievements : Set glf_achievements = CreateObject("Scripting.Dictionary
 Dim glf_sound_buses : Set glf_sound_buses = CreateObject("Scripting.Dictionary")
 Dim glf_sounds : Set glf_sounds = CreateObject("Scripting.Dictionary")
 Dim glf_combo_switches : Set glf_combo_switches = CreateObject("Scripting.Dictionary")
-
+Dim glf_funcRefMap : Set glf_funcRefMap = CreateObject("Scripting.Dictionary")
 Dim bcpController : bcpController = Null
 Dim glf_debugBcpController : glf_debugBcpController = Null
 Dim glf_hasDebugController : glf_hasDebugController = False
@@ -75,13 +70,14 @@ Dim glf_monitor_player_state : glf_monitor_player_state = ""
 Dim glf_monitor_modes : glf_monitor_modes = ""
 Dim glf_monitor_event_stream : glf_monitor_event_stream = ""
 Dim glf_running_modes : glf_running_modes = ""
-
+Dim glf_production_mode : glf_production_mode = False
 Dim useGlfBCPMonitor : useGlfBCPMonitor = False
 Dim useBCP : useBCP = False
 Dim bcpPort : bcpPort = 5050
-Dim bcpExeName : bcpExeName = ""
+Dim bcpExeName : bcpExeName = CGameName & "_gmc.exe"
+Dim glf_monitor_player_vars : glf_monitor_player_vars = false
 Dim glf_BIP : glf_BIP = 0
-Dim glf_FuncCount : glf_FuncCount = 2000
+Dim glf_FuncCount : glf_FuncCount = 0
 Dim glf_SeqCount : glf_SeqCount = 0
 Dim glf_max_dispatch : glf_max_dispatch = 25
 Dim glf_max_lightmap_sync : glf_max_lightmap_sync = -1
@@ -90,19 +86,31 @@ Dim glf_max_lights_test : glf_max_lights_test = 0
 
 Dim glf_master_volume : glf_master_volume = 0.8
 
-Dim glf_ballsPerGame : glf_ballsPerGame = 3
+
 Dim glf_troughSize : glf_troughSize = tnob
 Dim glf_lastTroughSw : glf_lastTroughSw = Null
+Dim glf_game
 
 Dim glf_debugLog : Set glf_debugLog = (new GlfDebugLogFile)()
 Dim glf_debugEnabled : glf_debugEnabled = False
 Dim glf_debug_level : glf_debug_level = "Info"
 
+Dim glf_table
 
 Dim glf_ball1, glf_ball2, glf_ball3, glf_ball4, glf_ball5, glf_ball6, glf_ball7, glf_ball8	
 
 Public Sub Glf_ConnectToBCPMediaController(args)
-    Set bcpController = (new GlfVpxBcpController)(bcpPort, bcpExeName)
+	If glf_production_mode = True Then
+		Dim fso
+		Set fso = CreateObject("Scripting.FileSystemObject")
+		If fso.FileExists(bcpExeName) Then
+			Set bcpController = (new GlfVpxBcpController)(bcpPort, bcpExeName)	
+		Else
+			MsgBox "Missing GMCDisplay file"
+		End If
+	Else
+		Set bcpController = (new GlfVpxBcpController)(bcpPort, "")
+	End If
 End Sub
 
 Public Sub Glf_ConnectToDebugBCPMediaController(args)
@@ -127,9 +135,13 @@ Public Function SwitchHandler(handler, args)
 
 End Function
 
-Public Sub Glf_Init()
+Public Sub Glf_Init(ByRef table)
+    Set glf_table = table
+	With GlfGameSettings()
+		.BallsPerGame = 3
+	End With
 	Glf_Options Null 'Force Options Check
-    Glf_RegisterLights()
+	Glf_RegisterLights()
 	glf_debugLog.WriteToLog "Init", "Start"
 	If glf_troughSize > 0 Then : swTrough1.DestroyBall : Set glf_ball1 = swTrough1.CreateSizedballWithMass(Ballsize / 2,Ballmass) : gBot = Array(glf_ball1) : Set glf_lastTroughSw = swTrough1 : End If
 	If glf_troughSize > 1 Then : swTrough2.DestroyBall : Set glf_ball2 = swTrough2.CreateSizedballWithMass(Ballsize / 2,Ballmass) : gBot = Array(glf_ball1, glf_ball2) : Set glf_lastTroughSw = swTrough2 : End If
@@ -140,29 +152,47 @@ Public Sub Glf_Init()
 	If glf_troughSize > 6 Then : swTrough7.DestroyBall : Set glf_ball7 = swTrough7.CreateSizedballWithMass(Ballsize / 2,Ballmass) : gBot = Array(glf_ball1, glf_ball2, glf_ball3, glf_ball4, glf_ball5, glf_ball6, glf_ball7) : Set glf_lastTroughSw = swTrough7 : End If
 	If glf_troughSize > 7 Then : Drain.DestroyBall : Set glf_ball8 = Drain.CreateSizedballWithMass(Ballsize / 2,Ballmass) : gBot = Array(glf_ball1, glf_ball2, glf_ball3, glf_ball4, glf_ball5, glf_ball6, glf_ball7, glf_ball8) : End If
 	
-	Dim switch, switchHitSubs
-	switchHitSubs = ""
+	
+    Dim codestr : codestr = ""
+	Dim switch
 	For Each switch in Glf_Switches
-		switchHitSubs = switchHitSubs & "Sub " & switch.Name & "_Hit() : If Not glf_gameTilted Then : DispatchPinEvent """ & switch.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& switch.Name &""": End If : End Sub" & vbCrLf
-		switchHitSubs = switchHitSubs & "Sub " & switch.Name & "_UnHit() : If Not glf_gameTilted Then : DispatchPinEvent """ & switch.Name & "_inactive"", ActiveBall : End If  : End Sub" & vbCrLf
+		codestr = codestr & "Sub " & switch.Name & "_Hit() : If Not glf_gameTilted Then : DispatchPinEvent """ & switch.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& switch.Name &""": End If : End Sub" & vbCrLf
+		codestr = codestr & "Sub " & switch.Name & "_UnHit() : If Not glf_gameTilted Then : DispatchPinEvent """ & switch.Name & "_inactive"", ActiveBall : End If  : End Sub" & vbCrLf
 	Next
 	
-	ExecuteGlobal switchHitSubs
+    codestr = codestr & vbCrLf
 
-	Dim slingshot, slingshotHitSubs
-	slingshotHitSubs = ""
+	Dim slingshot
 	For Each slingshot in Glf_Slingshots
-		slingshotHitSubs = slingshotHitSubs & "Sub " & slingshot.Name & "_Slingshot() : If Not glf_gameTilted Then : DispatchPinEvent """ & slingshot.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& slingshot.Name &""": End If  : End Sub" & vbCrLf
+		codestr = codestr & "Sub " & slingshot.Name & "_Slingshot() : If Not glf_gameTilted Then : DispatchPinEvent """ & slingshot.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& slingshot.Name &""": End If  : End Sub" & vbCrLf
 	Next
-	ExecuteGlobal slingshotHitSubs
+	
+    codestr = codestr & vbCrLf
 
-	Dim spinner, spinnerHitSubs
-	spinnerHitSubs = ""
+	Dim spinner
 	For Each spinner in Glf_Spinners
-		spinnerHitSubs = spinnerHitSubs & "Sub " & spinner.Name & "_Spin() : If Not glf_gameTilted Then : DispatchPinEvent """ & spinner.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& spinner.Name &""": End If  : End Sub" & vbCrLf
+		codestr = codestr & "Sub " & spinner.Name & "_Spin() : If Not glf_gameTilted Then : DispatchPinEvent """ & spinner.Name & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& spinner.Name &""": End If  : End Sub" & vbCrLf
 	Next
-	ExecuteGlobal spinnerHitSubs
 
+	Dim drop_target
+	Dim drop_array, using_roth_drops
+	using_roth_drops = False
+	drop_array = Array()
+	For Each drop_target in glf_drop_targets.Items()
+		codestr = codestr & "Sub " & drop_target.Switch & "_Hit() : If Not glf_gameTilted Then : If glf_drop_targets(""" & drop_target.Name & """).UseRothDroptarget = True Then : DTHit glf_drop_targets(""" & drop_target.Name & """).RothDTSwitchID : Else : DispatchPinEvent """ & drop_target.Switch & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& drop_target.Switch &""": End If : End If : End Sub" & vbCrLf
+		codestr = codestr & "Sub " & drop_target.Switch & "_UnHit() : If Not glf_gameTilted Then : If glf_drop_targets(""" & drop_target.Name & """).UseRothDroptarget = False Then : DispatchPinEvent """ & drop_target.Switch & "_inactive"", ActiveBall : End If : End If : End Sub" & vbCrLf
+	Next
+
+	Dim standup_target
+	For Each standup_target in glf_standup_targets.Items()
+		codestr = codestr & "Sub " & standup_target.Switch & "_Hit() : If Not glf_gameTilted Then : If glf_standup_targets(""" & standup_target.Name & """).UseRothStanduptarget = True Then : STHit glf_standup_targets(""" & standup_target.Name & """).RothSTSwitchID : Else : DispatchPinEvent """ & standup_target.Switch & "_active"", ActiveBall : glf_last_switch_hit_time = gametime : glf_last_switch_hit = """& standup_target.Switch &""": End If : End If : End Sub" & vbCrLf
+		codestr = codestr & "Sub " & standup_target.Switch & "_UnHit() : If Not glf_gameTilted Then : If glf_standup_targets(""" & standup_target.Name & """).UseRothStanduptarget = False Then : DispatchPinEvent """ & standup_target.Switch & "_inactive"", ActiveBall : End If : End If : End Sub" & vbCrLf
+	Next
+	
+    codestr = codestr & vbCrLf
+
+	ExecuteGlobal codestr
+	
 	If glf_debugEnabled = True Then
 
 		'***GLFMPF_EXPORT_START***
@@ -178,6 +208,8 @@ Public Sub Glf_Init()
 		Dim switchesYaml : switchesYaml = "#config_version=6" & vbCrLf & vbCrLf
 		Dim coilsYaml : coilsYaml = "#config_version=6" & vbCrLf & vbCrLf
 		coilsYaml = coilsYaml + "coils:" & vbCrLf
+		Dim shotProfilesYaml : shotProfilesYaml = "#config_version=6" & vbCrLf & vbCrLf
+		shotProfilesYaml = shotProfilesYaml + "shot_profiles:" & vbCrLf
 		Dim ballDevicesYaml : ballDevicesYaml = "#config_version=6" & vbCrLf & vbCrLf
 		ballDevicesYaml = ballDevicesYaml + "ball_devices:" & vbCrLf
 		Dim configYaml : configYaml = "#config_version=6" & vbCrLf & vbCrLf
@@ -194,7 +226,7 @@ Public Sub Glf_Init()
 
 		Dim lightsYaml : lightsYaml = "#config_version=6" & vbCrLf & vbCrLf
 		lightsYaml = lightsYaml + "lights:" & vbCrLf
-		Dim monitorYaml : monitorYaml = "light:" & vbCrLf
+		Dim monitorYaml : monitorYaml = "lights:" & vbCrLf
 		Dim godotLightScene : godotLightScene = ""
 		For Each light in glf_lights
 			monitorYaml = monitorYaml + "  " & light.name & ":"&vbCrLf
@@ -207,6 +239,8 @@ Public Sub Glf_Init()
 			lightsYaml = lightsYaml + "    subtype: led" & vbCrLf
 			lightsYaml = lightsYaml + "    type: rgb" & vbCrLf
 			lightsYaml = lightsYaml + "    tags: " & light.BlinkPattern & vbCrLf
+			lightsYaml = lightsYaml + "    x: "& light.x/tablewidth & vbCrLf
+			lightsYaml = lightsYaml + "    y: "& light.y/tableheight & vbCrLf
 			lightsNumber = lightsNumber + 1
 
 			godotLightScene = godotLightScene + "[node name="""&light.name&""" type=""Sprite2D"" parent=""lights""]" & vbCrLf
@@ -228,7 +262,7 @@ Public Sub Glf_Init()
 		Next
 
 		monitorYaml = monitorYaml + vbCrLf
-		monitorYaml = monitorYaml + "switch:" & vbCrLf
+		monitorYaml = monitorYaml + "switches:" & vbCrLf
 		switchesYaml = switchesYaml + "switches:" & vbCrLf
 
 		For Each switch in glf_switches
@@ -240,6 +274,8 @@ Public Sub Glf_Init()
 			switchesYaml = switchesYaml + "  " & switch.name & ":"&vbCrLf
 			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
 			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchesYaml = switchesYaml + "    x: "& switch.x/tablewidth & vbCrLf
+			switchesYaml = switchesYaml + "    y: "& switch.y/tableheight & vbCrLf
 			switchNumber = switchNumber + 1
 		Next
 		For Each switch in glf_spinners
@@ -317,10 +353,14 @@ Public Sub Glf_Init()
 			coilsYaml = coilsYaml + "    number: " & coilsNumber & vbCrLf 
 			coilsNumber = coilsNumber + 1
 		Next
+		For Each device in Glf_ShotProfiles.Items()
+			shotProfilesYaml = shotProfilesYaml + device.ToYaml()
+		Next
 
-		Dim fso, modesFolder, TxtFileStream, monitorFolder, configFolder
+		Dim fso, modesFolder, TxtFileStream, monitorFolder, configFolder, showsFolder
 		Set fso = CreateObject("Scripting.FileSystemObject")
 		monitorFolder = "glf_mpf\monitor\"
+		showsFolder = "glf_mpf\shows\"
 		configFolder = "glf_mpf\config\"
 		If Not fso.FolderExists("glf_mpf") Then
 			fso.CreateFolder "glf_mpf"
@@ -330,6 +370,9 @@ Public Sub Glf_Init()
 		End If
 		If Not fso.FolderExists("glf_mpf\config") Then
 			fso.CreateFolder "glf_mpf\config"
+		End If
+		If Not fso.FolderExists("glf_mpf\shows") Then
+			fso.CreateFolder "glf_mpf\shows"
 		End If
 		Set TxtFileStream = fso.OpenTextFile(monitorFolder & "\monitor.yaml", 2, True)
 		TxtFileStream.WriteLine monitorYaml
@@ -343,6 +386,9 @@ Public Sub Glf_Init()
 		Set TxtFileStream = fso.OpenTextFile(configFolder & "\coils.yaml", 2, True)
 		TxtFileStream.WriteLine coilsYaml
 		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\shot_profiles.yaml", 2, True)
+		TxtFileStream.WriteLine shotProfilesYaml
+		TxtFileStream.Close
 		Set TxtFileStream = fso.OpenTextFile(configFolder & "\switches.yaml", 2, True)
 		TxtFileStream.WriteLine switchesYaml
 		TxtFileStream.Close
@@ -352,6 +398,14 @@ Public Sub Glf_Init()
 		Set TxtFileStream = fso.OpenTextFile(monitorFolder & "\gotdotlights.txt", 2, True)
 		TxtFileStream.WriteLine godotLightScene
 		TxtFileStream.Close
+		Dim showsYaml
+		For Each device in glf_shows.Items()
+			showsYaml = "#show_version=6" & vbCrLf & vbCrLf
+			showsYaml = showsYaml + device.ToYaml()
+			Set TxtFileStream = fso.OpenTextFile(showsFolder & "\" & device.Name & ".yaml", 2, True)
+			TxtFileStream.WriteLine showsYaml
+			TxtFileStream.Close
+		Next
 		glf_debugLog.WriteToLog "Init", "Finished MPF Config"
 
 		'***GLFMPF_EXPORT_END***
@@ -403,8 +457,9 @@ Public Sub Glf_Init()
 					Dim key
 					Dim mergedTokens : Set mergedTokens = CreateObject("Scripting.Dictionary")
 					If Not IsNull(state.Tokens) Then
-						For Each key In state.Tokens.Keys()
-							mergedTokens.Add key, state.Tokens()(key)
+						Dim state_tokens : Set state_tokens = state.Tokens()
+						For Each key In state_tokens.Keys()
+							mergedTokens.Add key, state_tokens(key)
 						Next
 					End If
 					Dim tokens
@@ -428,9 +483,9 @@ Public Sub Glf_Init()
 			Dim mode_state_machine,state_count
 			state_count = 0
 			For Each mode_state_machine in mode.ModeStateMachines
-				
-				For x=0 to UBound(mode_state_machine.StateItems)
-					Set state = mode_state_machine.StateItems()(x)
+				Dim state_items : state_items = mode_state_machine.StateItems
+				For x=0 to UBound(state_items)
+					Set state = state_items(x)
 					If state.InternalCacheId = -1 Then
 						state.InternalCacheId = CStr(state_count)
 						state_count = state_count + 1
@@ -478,34 +533,39 @@ Public Sub Glf_Init()
 	Glf_ReadMachineVars("MachineVars")
 	Glf_ReadMachineVars("HighScores")
 	glf_debugLog.WriteToLog "Init", "Finished Creating Machine Vars"
+	'glf_debugLog.WriteToLog "Code String", glf_codestr
+	If glf_production_mode = False Then
+		Dim fso1, TxtFileStream1
+		Set fso1 = CreateObject("Scripting.FileSystemObject")
+		Set TxtFileStream1 = fso1.OpenTextFile("cached-functions.vbs", 2, True)
+		TxtFileStream1.WriteLine glf_codestr
+		TxtFileStream1.Close
+	End If
 
-	
-    ' With CreateGlfMode("glf_game_mode", 10)
-    '     .StartEvents = Array("reset_complete")
-
-    '     With .ComboSwitches("flipper_cancel")
-    '         .Switch1 = "s_left_flipper"
-    '         .Switch2 = "s_start"
-    '         .HoldTime = 5000
-    '         .EventsWhenBoth = Array("glf_game_cancel")
-    '     End With
-    ' End With
-
-	Glf_Reset()
+	SetDelay "reset", "Glf_Reset", Null, 1000
 End Sub
 
-Sub Glf_Reset()
+Sub Glf_Reset(args)
 	DispatchQueuePinEvent "reset_complete", Null
 End Sub
 
 AddPinEventListener "reset_complete", "initial_segment_displays", "Glf_SegmentInit", 100, Null
 AddPinEventListener "reset_virtual_segment_lights", "reset_segment_displays", "Glf_SegmentInit", 100, Null
-Sub Glf_SegmentInit(args)
+Function Glf_SegmentInit(args)
 	Dim segment_display
 	For Each segment_display in glf_segment_displays.Items()	
 		segment_display.SetVirtualDMDLights Not glf_flex_alphadmd_enabled
 	Next
-End Sub
+	If Not IsNull(args) Then
+		If IsObject(args(1)) Then
+			Set Glf_SegmentInit = args(1)
+		Else
+			Glf_SegmentInit = args(1)
+		End If
+	Else
+		Glf_SegmentInit = Null
+	End If
+End Function
 
 Sub Glf_ReadMachineVars(section)
     Dim objFSO, objFile, arrLines, line, inSection
@@ -523,12 +583,13 @@ Sub Glf_ReadMachineVars(section)
         If Left(line, 1) = "[" And Right(line, 1) = "]" Then
             inSection = (LCase(Mid(line, 2, Len(line) - 2)) = LCase(section))
         ElseIf inSection And InStr(line, "=") > 0 Then
-			Dim key : key = Trim(Split(line, "=")(0))
+			Dim split_key : split_key = Split(line, "=")
+			Dim key : key = Trim(split_key(0))
 			If glf_machine_vars.Exists(key) Then
-	            glf_machine_vars(key).Value = Trim(Split(line, "=")(1))
+	            glf_machine_vars(key).Value = Trim(split_key(1))
 			Else	
 				With CreateMachineVar(key)
-					.InitialValue = Trim(Split(line, "=")(1))
+					.InitialValue = Trim(split_key(1))
 					.ValueType = "int"
 					.Persist = False
 				End With
@@ -593,7 +654,8 @@ Sub Glf_WriteMachineVars(section)
         End If
         
         If inSection And InStr(line, "=") > 0 Then
-            key = Trim(Split(line, "=")(0))
+			Dim split_key : split_key = Split(line, "=")
+            key = Trim(split_key(0))
             If glf_machine_vars.Exists(key) Then
 				If glf_machine_vars(key).Persist = True Then
                 	line = key & "=" & glf_machine_vars(key).Value
@@ -634,6 +696,7 @@ End Sub
 
 Sub Glf_Options(ByVal eventId)
 	
+	Dim glfMaxDispatch : glfMaxDispatch = 1
 
 	'***GLF_DEBUG_OPTIONS_START***
 	Dim glfDebug : glfDebug = Table1.Option("Glf Debug Log", 0, 1, 1, 0, 0, Array("Off", "On"))
@@ -671,11 +734,19 @@ Sub Glf_Options(ByVal eventId)
 		End If
 	End If
 	'***GLF_DEBUG_OPTIONS_END***
+	Dim ballsPerGame : ballsPerGame = Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))
+	If ballsPerGame = 1 Then
+		glf_game.BallsPerGame = 3
+	Else
+		glf_game.BallsPerGame = 5
+	End If
+	Dim tilt_sensitivity : tilt_sensitivity = Table1.Option("Tilt Sensitivity (digital nudge)", 1, 10, 1, 5, 0, Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
+	glf_tilt_sensitivity = tilt_sensitivity
 
-
+	glf_max_dispatch = glfMaxDispatch*5
 
 	glf_debugLog.WriteToLog "Options", "BCP Check"
-	Dim glfuseBCP : glfuseBCP = 0 'Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))   'apophis mod
+	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
 	If glfuseBCP = 1 Then
 		If IsNull(bcpController) Then
 			SetDelay "start_glf_bcp", "Glf_ConnectToBCPMediaController", Null, 500
@@ -706,20 +777,6 @@ Sub Glf_Options(ByVal eventId)
         Case 5: glf_max_lightmap_sync = 7 : glf_max_lightmap_sync_enabled = True
         Case 6: glf_max_lightmap_sync = 6 : glf_max_lightmap_sync_enabled = True
     End Select
-
-    Dim glfMaxDispatch : glfMaxDispatch = 1 'Table1.Option("Monitor Refresh Rate", 1, 2, 1, 1, 0, Array("120Hz or greater", "60 Hz"))   'apophis mod
-    glf_max_dispatch = glfMaxDispatch*5
-    
-
-    Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))   'apophis mod
-	If ballsPerGame = 1 Then
-		glf_ballsPerGame = 3
-	Else
-		glf_ballsPerGame = 5
-	End If
-
-	Dim tilt_sensitivity : tilt_sensitivity = Table1.Option("Tilt Sensitivity (digital nudge)", 1, 10, 1, 5, 0, Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
-	glf_tilt_sensitivity = tilt_sensitivity
 	
 End Sub
 
@@ -988,6 +1045,16 @@ End Function
 Dim glf_tmp_lmarr
 Public Function Glf_RegisterLights()
 
+	If glf_production_mode = False Then
+		Dim elementDict : Set elementDict = CreateObject("Scripting.Dictionary")
+
+		For Each e in GetElements()
+			If typename(e) = "Primitive" or typename(e) = "Flasher"  Then
+				elementDict.Add LCase(e.Name), True
+			End If
+		Next
+	End If
+
 	Dim light, tags, tag
 	For Each light In Glf_Lights
 		tags = Split(light.BlinkPattern, ",")
@@ -1002,7 +1069,28 @@ Public Function Glf_RegisterLights()
 			End If
 		Next
 		glf_lightPriority.Add light.Name, 0
-		
+		If glf_production_mode = False Then
+			Dim e, lmStr: lmStr = "Dim glf_" & light.name & "_lmarr : glf_" & light.name & "_lmarr = Array("    
+			For Each e in elementDict.Keys
+				If InStr(e, LCase("_" & light.Name & "_")) Then
+					lmStr = lmStr & e & ","
+				End If
+				For Each tag in tags
+					tag = "T_" & Trim(tag)
+					If InStr(e, LCase("_" & tag & "_")) Then
+						lmStr = lmStr & e & ","
+					End If
+				Next
+			Next
+			lmStr = lmStr & "Null)"
+			lmStr = Replace(lmStr, ",Null)", ")")
+			lmStr = Replace(lmStr, "Null)", ")")
+			ExecuteGlobal lmStr
+			glf_lightMaps.Add light.Name, Eval("glf_" & light.name & "_lmarr")
+			glf_codestr = glf_codestr & lmStr & vbCrLf
+			glf_codestr = glf_codestr & "glf_lightMaps.Add """ & light.name & """, glf_" & light.Name & "_lmarr" & vbCrLf
+		End If
+
 		glf_lightNames.Add light.Name, light
 		Dim lightStack : Set lightStack = (new GlfLightStack)()
 		glf_lightStacks.Add light.Name, lightStack
@@ -1054,7 +1142,7 @@ Public Function Glf_ParseInput(value)
 				tmp = Glf_ReplaceKwargsAttributes(tmp)
 				'msgbox tmp
 				If InStr(tmp, " if ") Then
-					templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
+					templateCode = "Function Glf_" & glf_FuncCount & "(args)" & vbCrLf
 					templateCode = templateCode & vbTab & Glf_ConvertIf(tmp, "Glf_" & glf_FuncCount) & vbCrLf
 					templateCode = templateCode & "End Function"
 				Else
@@ -1066,12 +1154,12 @@ Public Function Glf_ParseInput(value)
 							tmp = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
 						End If
 					End If
-					templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
+					templateCode = "Function Glf_" & glf_FuncCount & "(args)" & vbCrLf
 					templateCode = templateCode & vbTab & "Glf_" & glf_FuncCount & " = " & tmp & vbCrLf
 					templateCode = templateCode & "End Function"
 				End IF
 			Case Else
-				templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf			
+				templateCode = "Function Glf_" & glf_FuncCount & "(args)" & vbCrLf			
 				isVariable = Glf_IsCondition(tmp)
 				If Not IsNull(isVariable) Then
 					'The input needs formatting
@@ -1085,8 +1173,10 @@ Public Function Glf_ParseInput(value)
 		End Select
 		'msgbox templateCode
 		ExecuteGlobal templateCode
+		glf_codestr = glf_codestr & templateCode & vbCrLf
 		Dim funcRef : funcRef = "Glf_" & glf_FuncCount
 		If Not glf_funcRefMap.Exists(CStr(value)) Then
+			glf_codestr = glf_codestr & "glf_funcRefMap.Add """ & Replace(value, """", """""") & """, """ & funcRef & """" & vbCrLf
 			glf_funcRefMap.Add CStr(value), funcRef
 		End If
 		glf_FuncCount = glf_FuncCount + 1
@@ -1134,15 +1224,17 @@ Public Function Glf_ParseEventInput(value)
 		conditionReplaced = Glf_ReplaceGameAttributes(conditionReplaced)
 
 		conditionReplaced = Glf_ReplaceKwargsAttributes(conditionReplaced)
-		templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
+		templateCode = "Function Glf_" & glf_FuncCount & "(args)" & vbCrLf
 		templateCode = templateCode & vbTab & "On Error Resume Next" & vbCrLf
 		templateCode = templateCode & vbTab & Glf_ConvertCondition(conditionReplaced, "Glf_" & glf_FuncCount) & vbCrLf
 		templateCode = templateCode & vbTab & "If Err Then Glf_" & glf_FuncCount & " = False" & vbCrLf
 		templateCode = templateCode & "End Function"
 		ExecuteGlobal templateCode
+		glf_codestr = glf_codestr & templateCode & vbCrLf
 		Dim funcRef : funcRef = "Glf_" & glf_FuncCount
 		glf_FuncCount = glf_FuncCount + 1
 		If Not glf_funcRefMap.Exists(value) Then
+			glf_codestr = glf_codestr & "glf_funcRefMap.Add """ & Replace(value, """", """""") & """, """ & funcRef & """" & vbCrLf
 			glf_funcRefMap.Add value, funcRef
 		End If
 		value = Replace(value, "{"&condition&"}", "")
@@ -1177,13 +1269,14 @@ Public Function Glf_ParseDispatchEventInput(value)
 		kwargsReplaced = Glf_ReplaceModeAttributes(kwargsReplaced)
 		kwargsReplaced = Glf_ReplaceGameAttributes(kwargsReplaced)
 
-		templateCode = "Function Glf_" & glf_FuncCount & "()" & vbCrLf
+		templateCode = "Function Glf_" & glf_FuncCount & "(args)" & vbCrLf
 		templateCode = templateCode & vbTab & "On Error Resume Next" & vbCrLf
 		templateCode = templateCode & vbTab & Glf_ConvertDynamicKwargs(kwargsReplaced, "Glf_" & glf_FuncCount) & vbCrLf
 		templateCode = templateCode & vbTab & "If Err Then Glf_" & glf_FuncCount & " = Null" & vbCrLf
 		templateCode = templateCode & "End Function"
 		'msgbox templateCode
 		ExecuteGlobal templateCode
+		'glf_codestr = glf_codestr & templateCode & vbCrLf
 		Dim funcRef : funcRef = "Glf_" & glf_FuncCount
 		glf_FuncCount = glf_FuncCount + 1
 
@@ -1191,96 +1284,410 @@ Public Function Glf_ParseDispatchEventInput(value)
 	End If
 End Function
 
+' Function Glf_ReplaceCurrentPlayerAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "current_player\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+'     replacement = "GetPlayerState(""$1"")"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceCurrentPlayerAttributes = outputString
+' End Function
+
 Function Glf_ReplaceCurrentPlayerAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "current_player\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-    replacement = "GetPlayerState(""$1"")"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, attrStart, attrEnd
+    Dim beforeMatch, afterMatch, attribute, replacement
+
+    outputString = inputString
+    startPos = InStr(outputString, "current_player.")
+
+    Do While startPos > 0
+        ' Start of the attribute is just after the dot
+        attrStart = startPos + Len("current_player.")
+        attrEnd = attrStart
+
+        ' Find the end of the attribute (until a non-word character or end of string)
+        Do While attrEnd <= Len(outputString)
+            Dim ch
+            ch = Mid(outputString, attrEnd, 1)
+            If Not (ch >= "a" And ch <= "z") And Not (ch >= "A" And ch <= "Z") And Not (ch >= "0" And ch <= "9") And ch <> "_" Then
+                Exit Do
+            End If
+            attrEnd = attrEnd + 1
+        Loop
+
+        attribute = Mid(outputString, attrStart, attrEnd - attrStart)
+        replacement = "GetPlayerState(""" & attribute & """)"
+
+        beforeMatch = Left(outputString, startPos - 1)
+        afterMatch = Mid(outputString, attrEnd)
+        outputString = beforeMatch & replacement & afterMatch
+
+        ' Search again from just after the replacement
+        startPos = InStr(startPos + Len(replacement), outputString, "current_player.")
+    Loop
+
     Glf_ReplaceCurrentPlayerAttributes = outputString
 End Function
 
+
+' Function Glf_ReplaceAnyPlayerAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "players\[([0-3]+)\]\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+'     replacement = "GetPlayerStateForPlayer($1, ""$2"")"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceAnyPlayerAttributes = outputString
+' End Function
+
 Function Glf_ReplaceAnyPlayerAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "players\[([0-3]+)\]\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-    replacement = "GetPlayerStateForPlayer($1, ""$2"")"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, openBracket, closeBracket, dotPos
+    Dim beforeMatch, afterMatch, indexStr, attribute, replacement
+
+    outputString = inputString
+    startPos = InStr(outputString, "players[")
+
+    Do While startPos > 0
+        openBracket = InStr(startPos, outputString, "[")
+        closeBracket = InStr(openBracket, outputString, "]")
+        dotPos = InStr(closeBracket + 1, outputString, ".")
+
+        If openBracket > 0 And closeBracket > openBracket And dotPos > closeBracket Then
+            indexStr = Mid(outputString, openBracket + 1, closeBracket - openBracket - 1)
+
+            If IsNumeric(indexStr) Then
+                If CInt(indexStr) >= 0 And CInt(indexStr) <= 3 Then
+                    ' Extract attribute
+                    Dim attrStart, attrEnd, ch
+                    attrStart = dotPos + 1
+                    attrEnd = attrStart
+                    Do While attrEnd <= Len(outputString)
+                        ch = Mid(outputString, attrEnd, 1)
+                        If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                            Exit Do
+                        End If
+                        attrEnd = attrEnd + 1
+                    Loop
+                    attribute = Mid(outputString, attrStart, attrEnd - attrStart)
+
+                    replacement = "GetPlayerStateForPlayer(" & indexStr & ", """ & attribute & """)"
+                    beforeMatch = Left(outputString, startPos - 1)
+                    afterMatch = Mid(outputString, attrEnd)
+                    outputString = beforeMatch & replacement & afterMatch
+
+                    startPos = InStr(startPos + Len(replacement), outputString, "players[")
+                Else
+                    ' Invalid index, move past it
+                    startPos = InStr(closeBracket + 1, outputString, "players[")
+                End If
+            Else
+                ' Not numeric index
+                startPos = InStr(closeBracket + 1, outputString, "players[")
+            End If
+        Else
+            Exit Do
+        End If
+    Loop
+
     Glf_ReplaceAnyPlayerAttributes = outputString
 End Function
 
+
+' Function Glf_ReplaceDeviceAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "devices\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+' 	replacement = "glf_$1(""$2"").GetValue(""$3"")"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceDeviceAttributes = outputString
+' End Function
+
 Function Glf_ReplaceDeviceAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "devices\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-	replacement = "glf_$1(""$2"").GetValue(""$3"")"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, endPos, beforeMatch, afterMatch
+    Dim fullMatch, parts, deviceType, deviceId, attribute
+
+    outputString = inputString
+    startPos = InStr(outputString, "devices.")
+
+    Do While startPos > 0
+        ' Find the end of the match by looking for three dots after "devices."
+        Dim firstDot, secondDot, thirdDot
+
+        firstDot = InStr(startPos + 8, outputString, ".")
+        If firstDot = 0 Then Exit Do
+
+        secondDot = InStr(firstDot + 1, outputString, ".")
+        If secondDot = 0 Then Exit Do
+
+        ' Third part ends at the next non-word character or end of string
+        thirdDot = secondDot + 1
+        Do While thirdDot <= Len(outputString)
+            Dim ch
+            ch = Mid(outputString, thirdDot, 1)
+            If Not (ch >= "a" And ch <= "z") And Not (ch >= "A" And ch <= "Z") And Not (ch >= "0" And ch <= "9") And ch <> "_" Then
+                Exit Do
+            End If
+            thirdDot = thirdDot + 1
+        Loop
+        endPos = thirdDot - 1
+
+        ' Extract full match and parts
+        fullMatch = Mid(outputString, startPos, endPos - startPos + 1)
+        parts = Split(fullMatch, ".")
+        If UBound(parts) = 3 Then
+            deviceType = parts(1)
+            deviceId = parts(2)
+            attribute = parts(3)
+
+            ' Build replacement
+            Dim replacement
+            replacement = "glf_" & deviceType & "(""" & deviceId & """).GetValue(""" & attribute & """)"
+
+            ' Replace in outputString
+            beforeMatch = Left(outputString, startPos - 1)
+            afterMatch = Mid(outputString, endPos + 1)
+            outputString = beforeMatch & replacement & afterMatch
+
+            ' Move startPos forward
+            startPos = InStr(startPos + Len(replacement), outputString, "devices.")
+        Else
+            Exit Do
+        End If
+    Loop
+
     Glf_ReplaceDeviceAttributes = outputString
 End Function
 
+
+' Function Glf_ReplaceMachineAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "machine\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+' 	replacement = "glf_machine_vars(""$1"").GetValue()"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceMachineAttributes = outputString
+' End Function
+
 Function Glf_ReplaceMachineAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "machine\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-	replacement = "glf_machine_vars(""$1"").GetValue()"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, attrStart, attrEnd
+    Dim beforeMatch, afterMatch, attribute, replacement
+
+    outputString = inputString
+    startPos = InStr(outputString, "machine.")
+
+    Do While startPos > 0
+        ' Position of attribute name starts after "machine."
+        attrStart = startPos + Len("machine.")
+        attrEnd = attrStart
+
+        ' Read characters in the attribute (letters, digits, or underscore)
+        Do While attrEnd <= Len(outputString)
+            Dim ch
+            ch = Mid(outputString, attrEnd, 1)
+            If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                Exit Do
+            End If
+            attrEnd = attrEnd + 1
+        Loop
+
+        ' Extract attribute name
+        attribute = Mid(outputString, attrStart, attrEnd - attrStart)
+
+        ' Build replacement text
+        replacement = "glf_machine_vars(""" & attribute & """).GetValue()"
+
+        ' Reconstruct string with replacement
+        beforeMatch = Left(outputString, startPos - 1)
+        afterMatch = Mid(outputString, attrEnd)
+        outputString = beforeMatch & replacement & afterMatch
+
+        ' Continue searching after the replacement
+        startPos = InStr(startPos + Len(replacement), outputString, "machine.")
+    Loop
+
     Glf_ReplaceMachineAttributes = outputString
 End Function
 
+
+' Function Glf_ReplaceGameAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "game\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+' 	replacement = "Glf_GameVariable(""$1"")"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceGameAttributes = outputString
+' End Function
+
 Function Glf_ReplaceGameAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "game\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-	replacement = "Glf_GameVariable(""$1"")"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, attrStart, attrEnd
+    Dim beforeMatch, afterMatch, attribute, replacement
+
+    outputString = inputString
+    startPos = InStr(outputString, "game.")
+
+    Do While startPos > 0
+        ' Position of attribute name starts after "game."
+        attrStart = startPos + Len("game.")
+        attrEnd = attrStart
+
+        ' Walk forward while characters are valid for identifier
+        Do While attrEnd <= Len(outputString)
+            Dim ch
+            ch = Mid(outputString, attrEnd, 1)
+            If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                Exit Do
+            End If
+            attrEnd = attrEnd + 1
+        Loop
+
+        attribute = Mid(outputString, attrStart, attrEnd - attrStart)
+        replacement = "Glf_GameVariable(""" & attribute & """)"
+
+        beforeMatch = Left(outputString, startPos - 1)
+        afterMatch = Mid(outputString, attrEnd)
+        outputString = beforeMatch & replacement & afterMatch
+
+        startPos = InStr(startPos + Len(replacement), outputString, "game.")
+    Loop
+
     Glf_ReplaceGameAttributes = outputString
 End Function
 
+
+' Function Glf_ReplaceModeAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "modes\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+' 	replacement = "glf_modes(""$1"").GetValue(""$2"")"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceModeAttributes = outputString
+' End Function
+
 Function Glf_ReplaceModeAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "modes\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-	replacement = "glf_modes(""$1"").GetValue(""$2"")"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, modeStart, modeEnd, attrStart, attrEnd
+    Dim beforeMatch, afterMatch, modeName, attribute, replacement
+
+    outputString = inputString
+    startPos = InStr(outputString, "modes.")
+
+    Do While startPos > 0
+        modeStart = startPos + Len("modes.")
+        modeEnd = modeStart
+
+        ' Read the mode name
+        Do While modeEnd <= Len(outputString)
+            Dim ch
+            ch = Mid(outputString, modeEnd, 1)
+            If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                Exit Do
+            End If
+            modeEnd = modeEnd + 1
+        Loop
+
+        ' Ensure there's a dot after mode name
+        If Mid(outputString, modeEnd, 1) = "." Then
+            ' Now read the attribute
+            attrStart = modeEnd + 1
+            attrEnd = attrStart
+
+            Do While attrEnd <= Len(outputString)
+                ch = Mid(outputString, attrEnd, 1)
+                If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                    Exit Do
+                End If
+                attrEnd = attrEnd + 1
+            Loop
+
+            modeName = Mid(outputString, modeStart, modeEnd - modeStart)
+            attribute = Mid(outputString, attrStart, attrEnd - attrStart)
+
+            replacement = "glf_modes(""" & modeName & """).GetValue(""" & attribute & """)"
+
+            beforeMatch = Left(outputString, startPos - 1)
+            afterMatch = Mid(outputString, attrEnd)
+            outputString = beforeMatch & replacement & afterMatch
+
+            startPos = InStr(startPos + Len(replacement), outputString, "modes.")
+        Else
+            ' Not a valid modes.mode.attribute, skip ahead
+            startPos = InStr(modeEnd + 1, outputString, "modes.")
+        End If
+    Loop
+
     Glf_ReplaceModeAttributes = outputString
 End Function
 
+' Function Glf_ReplaceKwargsAttributes(inputString)
+'     Dim pattern, replacement, regex, outputString
+'     pattern = "kwargs\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = True
+'     replacement = "glf_dispatch_current_kwargs(""$1"")"
+'     outputString = regex.Replace(inputString, replacement)
+'     Set regex = Nothing
+'     Glf_ReplaceKwargsAttributes = outputString
+' End Function
+
 Function Glf_ReplaceKwargsAttributes(inputString)
-    Dim pattern, replacement, regex, outputString
-    pattern = "kwargs\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = True
-    replacement = "glf_dispatch_current_kwargs(""$1"")"
-    outputString = regex.Replace(inputString, replacement)
-    Set regex = Nothing
+    Dim outputString, startPos, attrStart, attrEnd
+    Dim beforeMatch, afterMatch, attribute, replacement
+
+    outputString = inputString
+    startPos = InStr(outputString, "kwargs.")
+
+    Do While startPos > 0
+        attrStart = startPos + Len("kwargs.")
+        attrEnd = attrStart
+
+        ' Walk forward through the attribute name
+        Do While attrEnd <= Len(outputString)
+            Dim ch
+            ch = Mid(outputString, attrEnd, 1)
+            If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                Exit Do
+            End If
+            attrEnd = attrEnd + 1
+        Loop
+
+        attribute = Mid(outputString, attrStart, attrEnd - attrStart)
+
+        replacement = "glf_dispatch_current_kwargs(""" & attribute & """)"
+
+        beforeMatch = Left(outputString, startPos - 1)
+        afterMatch = Mid(outputString, attrEnd)
+        outputString = beforeMatch & replacement & afterMatch
+
+        startPos = InStr(startPos + Len(replacement), outputString, "kwargs.")
+    Loop
+
     Glf_ReplaceKwargsAttributes = outputString
 End Function
+
 
 Function Glf_GameVariable(value)
 	Glf_GameVariable = False
@@ -1288,82 +1695,185 @@ Function Glf_GameVariable(value)
 		Case "tilted"
 			Glf_GameVariable = glf_gameTilted
 		Case "balls_per_game"
-			Glf_GameVariable = glf_ballsPerGame
+			Glf_GameVariable = glf_game.BallsPerGame()
 		Case "balls_in_play"
 			Glf_GameVariable = glf_BIP
 	End Select
 End Function
 
+' Function Glf_CheckForGetPlayerState(inputString)
+'     Dim pattern, regex, matches, match, hasGetPlayerState, attribute, playerNumber
+' 	inputString = Glf_ReplaceCurrentPlayerAttributes(inputString)
+' 	inputString = Glf_ReplaceAnyPlayerAttributes(inputString)
+'     pattern = "GetPlayerState\(""([a-zA-Z0-9_]+)""\)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = False
+    
+'     Set matches = regex.Execute(inputString)
+'     If matches.Count > 0 Then
+'         hasGetPlayerState = True
+' 		playerNumber = -1 'Current Player
+'         attribute = matches(0).SubMatches(0)
+'     Else
+'         hasGetPlayerState = False
+'         attribute = ""
+' 		playerNumber = Null
+'     End If
+
+
+' 	pattern = "GetPlayerStateForPlayer\(([0-3]), ""([a-zA-Z0-9_]+)""\)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = False
+    
+'     Set matches = regex.Execute(inputString)
+'     If matches.Count > 0 Then
+'         hasGetPlayerState = True
+' 		playerNumber = Int(matches(0).SubMatches(0))
+'         attribute = matches(0).SubMatches(1)
+'     Else
+'         hasGetPlayerState = False
+'         attribute = ""
+' 		playerNumber = Null
+'     End If
+
+'     Set regex = Nothing
+'     Set matches = Nothing
+    
+'     Glf_CheckForGetPlayerState = Array(hasGetPlayerState, attribute, playerNumber)
+' End Function
+
 Function Glf_CheckForGetPlayerState(inputString)
-    Dim pattern, regex, matches, match, hasGetPlayerState, attribute, playerNumber
-	inputString = Glf_ReplaceCurrentPlayerAttributes(inputString)
-	inputString = Glf_ReplaceAnyPlayerAttributes(inputString)
-    pattern = "GetPlayerState\(""([a-zA-Z0-9_]+)""\)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = False
-    
-    Set matches = regex.Execute(inputString)
-    If matches.Count > 0 Then
+    Dim hasGetPlayerState, attribute, playerNumber
+    Dim pos, startAttr, endAttr, ch, temp
+
+    ' First, apply replacements
+    inputString = Glf_ReplaceCurrentPlayerAttributes(inputString)
+    inputString = Glf_ReplaceAnyPlayerAttributes(inputString)
+
+    ' Check for GetPlayerState("...")
+    pos = InStr(inputString, "GetPlayerState(""")
+    If pos > 0 Then
+        startAttr = pos + Len("GetPlayerState(""")
+        endAttr = startAttr
+        Do While endAttr <= Len(inputString)
+            ch = Mid(inputString, endAttr, 1)
+            If ch = """" Then Exit Do
+            endAttr = endAttr + 1
+        Loop
+
+        attribute = Mid(inputString, startAttr, endAttr - startAttr)
         hasGetPlayerState = True
-		playerNumber = -1 'Current Player
-        attribute = matches(0).SubMatches(0)
+        playerNumber = -1 ' current player
     Else
-        hasGetPlayerState = False
-        attribute = ""
-		playerNumber = Null
+        ' Check for GetPlayerStateForPlayer(n, "...")
+        pos = InStr(inputString, "GetPlayerStateForPlayer(")
+        If pos > 0 Then
+            ' Extract player number
+            startAttr = pos + Len("GetPlayerStateForPlayer(")
+            endAttr = InStr(startAttr, inputString, ",")
+            temp = Trim(Mid(inputString, startAttr, endAttr - startAttr))
+            If IsNumeric(temp) Then
+                playerNumber = CInt(temp)
+            Else
+                playerNumber = Null
+            End If
+
+            ' Extract attribute name
+            startAttr = InStr(endAttr, inputString, """") + 1
+            endAttr = InStr(startAttr, inputString, """")
+            attribute = Mid(inputString, startAttr, endAttr - startAttr)
+
+            hasGetPlayerState = True
+        Else
+            hasGetPlayerState = False
+            attribute = ""
+            playerNumber = Null
+        End If
     End If
 
-
-	pattern = "GetPlayerStateForPlayer\(([0-3]), ""([a-zA-Z0-9_]+)""\)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = False
-    
-    Set matches = regex.Execute(inputString)
-    If matches.Count > 0 Then
-        hasGetPlayerState = True
-		playerNumber = Int(matches(0).SubMatches(0))
-        attribute = matches(0).SubMatches(1)
-    Else
-        hasGetPlayerState = False
-        attribute = ""
-		playerNumber = Null
-    End If
-
-    Set regex = Nothing
-    Set matches = Nothing
-    
     Glf_CheckForGetPlayerState = Array(hasGetPlayerState, attribute, playerNumber)
 End Function
 
+' Function Glf_CheckForDeviceState(inputString)
+'     Dim pattern, regex, matches, match, hasDeviceState, attribute, deviceType, deviceName
+'     pattern = "devices\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
+'     Set regex = New RegExp
+'     regex.Pattern = pattern
+'     regex.IgnoreCase = True
+'     regex.Global = False
+'     Set matches = regex.Execute(inputString)
+'     If matches.Count > 0 Then
+'         hasDeviceState = True
+' 		deviceType = matches(0).SubMatches(0)
+' 		deviceType = Left(deviceType, Len(deviceType)-1)
+'         deviceName = matches(0).SubMatches(1)
+' 		attribute = matches(0).SubMatches(2)
+' 		attribute = Left(attribute, Len(attribute)-1)
+'     Else
+'         hasDeviceState = False
+'         deviceType = Empty
+' 		deviceName = Empty
+' 		attribute = Empty
+'     End If
+
+'     Set regex = Nothing
+'     Set matches = Nothing
+    
+'     Glf_CheckForDeviceState = Array(hasDeviceState, deviceType, deviceName, attribute)
+' End Function
+
 Function Glf_CheckForDeviceState(inputString)
-    Dim pattern, regex, matches, match, hasDeviceState, attribute, deviceType, deviceName
-    pattern = "devices\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_]+)"
-    Set regex = New RegExp
-    regex.Pattern = pattern
-    regex.IgnoreCase = True
-    regex.Global = False
-    Set matches = regex.Execute(inputString)
-    If matches.Count > 0 Then
-        hasDeviceState = True
-		deviceType = matches(0).SubMatches(0)
-		deviceType = Left(deviceType, Len(deviceType)-1)
-        deviceName = matches(0).SubMatches(1)
-		attribute = matches(0).SubMatches(2)
-		attribute = Left(attribute, Len(attribute)-1)
-    Else
-        hasDeviceState = False
-        deviceType = Empty
-		deviceName = Empty
-		attribute = Empty
+    Dim hasDeviceState, deviceType, deviceName, attribute
+    Dim pos, segStart, segEnd, part1, part2, part3
+    Dim tempStr
+
+    hasDeviceState = False
+    deviceType = Empty
+    deviceName = Empty
+    attribute = Empty
+
+    pos = InStr(inputString, "devices.")
+    If pos > 0 Then
+        segStart = pos + Len("devices.")
+        
+        ' Get first segment (deviceType)
+        segEnd = InStr(segStart, inputString, ".")
+        If segEnd > 0 Then
+            part1 = Mid(inputString, segStart, segEnd - segStart)
+            segStart = segEnd + 1
+
+            ' Get second segment (deviceName)
+            segEnd = InStr(segStart, inputString, ".")
+            If segEnd > 0 Then
+                part2 = Mid(inputString, segStart, segEnd - segStart)
+                segStart = segEnd + 1
+
+                ' Get third segment (attribute)
+                segEnd = segStart
+                Do While segEnd <= Len(inputString)
+                    Dim ch
+                    ch = Mid(inputString, segEnd, 1)
+                    If Not ((ch >= "a" And ch <= "z") Or (ch >= "A" And ch <= "Z") Or (ch >= "0" And ch <= "9") Or ch = "_") Then
+                        Exit Do
+                    End If
+                    segEnd = segEnd + 1
+                Loop
+                part3 = Mid(inputString, segStart, segEnd - segStart)
+
+                If part1 <> "" And part2 <> "" And part3 <> "" Then
+                    hasDeviceState = True
+                    deviceType = Left(part1, Len(part1) - 1) ' mimic your original trimming
+                    deviceName = part2
+                    attribute = Left(part3, Len(part3) - 1)  ' mimic your original trimming
+                End If
+            End If
+        End If
     End If
 
-    Set regex = Nothing
-    Set matches = Nothing
-    
     Glf_CheckForDeviceState = Array(hasDeviceState, deviceType, deviceName, attribute)
 End Function
 
@@ -1405,6 +1915,7 @@ Function Glf_ConvertCondition(value, retName)
 	value = Replace(value, "==", "=")
 	value = Replace(value, "!=", "<>")
 	value = Replace(value, "&&", "And")
+	value = Replace(value, "||", "Or")
 	Glf_ConvertCondition = "    "&retName&" = " & value
 End Function
 
@@ -1416,8 +1927,10 @@ Function Glf_ConvertDynamicKwargs(input, retName)
 	templateCode = templateCode & vbTab & "Dim kwargs : Set kwargs = GlfKwargs()" & vbCrLf 
 	For Each kvp in arrayOfValues
 		Dim key,value
-		key = Split(kvp, ":")(0)
-		value = Split(kvp, ":")(1)
+		Dim split_key : split_key = Split(kvp, ":")
+		key = split_key(0)
+		split_key = Split(kvp, ":")
+		value = split_key(1)
 		templateCode = templateCode & vbTab & "kwargs.Add """ & key & """, " & value & vbCrLf
 	Next
 
@@ -1580,7 +2093,8 @@ Sub glf_ConvertYamlShowToGlfShow(yamlFilePath)
 
         ' Identify time steps
         If InStr(line, "- time:") = 1 Then
-            stepTime = Trim(Split(line, ":")(1))
+			Dim split_key : split_key = Split(line, ":")
+            stepTime = Trim(split_key(1))
             output = output & vbTab & "With .AddStep(" & stepTime & ", Null, Null)" & vbCrLf
         
 		ElseIf InStr(line, "lights:") = 1 Then
@@ -1970,13 +2484,14 @@ Class GlfInput
   
     Public Property Get Value() 
 		If m_isGetRef = True Then
-			Value = GetRef(m_value)()
+			Value = GetRef(m_value)(Null)
 		Else
 			Value = m_value
 		End If
 	End Property
 
     Public Property Get Raw() : Raw = m_raw : End Property
+	Public Property Get RawMValue() : RawMValue = m_value : End Property
 
 	Public Property Get IsPlayerState() : IsPlayerState = m_isPlayerState : End Property
 	Public Property Get PlayerStateValue() : PlayerStateValue = m_playerStateValue : End Property		
@@ -2175,7 +2690,6 @@ Function PadHex(hexValue)
     End If
 End Function
 
-
 '******************************************************
 '*****   GLF Pin Events                            ****
 '******************************************************
@@ -2296,7 +2810,7 @@ Class GlfBallSearch
                     SetDelay "ball_search_next_device" , "BallSearchHandler", Array(Array("next_device", Me, 0), Null), m_search_interval.Value
                 End If
             ElseIf m_current_device_type = "balldevices" Then
-                m_devices = glf_droptargets.Items()
+                m_devices = glf_drop_targets.Items()
                 m_current_device_type = "droptargets"
                 If UBound(m_devices) > -1 Then
                     m_devices(0).BallSearch(m_phase)
@@ -2377,6 +2891,13 @@ Class GlfVpxBcpController
         m_connected = True
         useBcp = True
         m_mode_list = ""
+        If backboxCommand = "" Then
+            m_bcpController.EnableLogging()
+        End If
+        AddPinEventListener "player_added", "bcp_player_added", "GlfVpxBcpControllerEventHandler", 50, Array("player_added")
+        AddPinEventListener "next_player", "bcp_player_next_player", "GlfVpxBcpControllerEventHandler", 50, Array("next_player")
+        AddPinEventListener "game_started", "bcp_player_next_player", "GlfVpxBcpControllerEventHandler", 50, Array("next_player")
+        AddPinEventListener "ball_ended", "bcp_player_ball_end", "GlfVpxBcpControllerEventHandler", 50, Array("ball_end")
         If Err Then MsgBox("Can not start VPX BCP Controller") : m_connected = False
         Set Init = Me
 	End Function
@@ -2396,12 +2917,19 @@ Class GlfVpxBcpController
     Public Sub Reset()
 		If m_connected Then
             m_bcpController.Send "reset"
+            m_bcpController.Send "trigger?name=windowtitle"
         End If
 	End Sub
     
     Public Sub PlaySlide(slide, context, calling_context, priorty)
 		If m_connected Then
             m_bcpController.Send "trigger?json={""name"": ""slides_play"", ""settings"": {""" & slide & """: {""action"": ""play"", ""expire"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
+        End If
+	End Sub
+
+    Public Sub PlayWidget(widget, context, calling_context, priorty, expire)
+		If m_connected Then
+            m_bcpController.Send "trigger?json={""name"": ""widgets_play"", ""settings"": {""" & widget & """: {""action"": ""play"", ""expire"": " & expire & " , ""x"": 0, ""y"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
         End If
 	End Sub
 
@@ -2414,9 +2942,28 @@ Class GlfVpxBcpController
         End If
     End Sub
 
+    Public Sub SlidesClear(context)
+        If m_connected Then
+            m_bcpController.Send "trigger?name=slides_clear&context=" & context
+        End If
+    End Sub
+
+    Public Sub ModeStart(name, priority)
+        If m_connected Then
+            m_bcpController.Send "mode_start?priority=int:" & priority & "&name=" & name
+        End If
+    End Sub
+
+    Public Sub ModeStop(name)
+        If m_connected Then
+            m_bcpController.Send "mode_stop?name=" & name
+        End If
+    End Sub
+
+
     Public Sub SendPlayerVariable(name, value, prevValue)
 		If m_connected Then
-            m_bcpController.Send "player_variable?name=" & name & "&value=" & EncodeVariable(value) & "&prev_value=" & EncodeVariable(prevValue) & "&change=" & EncodeVariable(VariableVariance(value, prevValue)) & "&player_num=int:" & Getglf_currentPlayerNumber
+            m_bcpController.Send "player_variable?name=" & name & "&value=" & EncodeVariable(value) & "&prev_value=" & EncodeVariable(prevValue) & "&change=" & EncodeVariable(VariableVariance(value, prevValue)) & "&player_num=int:" & Getglf_currentPlayerNumber+1
         End If
 	End Sub
 
@@ -2428,7 +2975,7 @@ Class GlfVpxBcpController
             Case vbSingle, vbDouble
                 retValue = "float:" & value
             Case vbString
-                retValue = "string:" & value
+                retValue = value
             Case vbBoolean
                 retValue = "bool:" & CStr(value)
             Case Else
@@ -2468,9 +3015,32 @@ Sub Glf_BcpSendPlayerVar(args)
     bcpController.SendPlayerVariable player_var, value, prevValue
 End Sub
 
+Sub Glf_BcpSendEvent(evt)
+    If useBcp=False Then
+        Exit Sub
+    End If
+    bcpController.Send "trigger?name=" & evt
+End Sub
+
 Sub Glf_BcpAddPlayer(playerNum)
     If useBcp Then
         bcpController.Send("player_added?player_num=int:"&playerNum)
+        dim p
+        Select Case playerNum
+            Case 1:
+                p = "PLAYER 1"
+            Case 2:
+                p = "PLAYER 2"
+            Case 3:
+                p = "PLAYER 3"
+            Case 4:
+                p = "PLAYER 4"
+        End Select
+        Dim key, player_state
+        Set player_state = glf_playerState(p)
+        For Each key in player_state.Keys()
+            Glf_BcpSendPlayerVar Array(Null, Array(key, player_state(key), Empty))
+        Next
     End If
 End Sub
 
@@ -2492,8 +3062,9 @@ Sub Glf_BcpUpdate()
                 case "monitor_start"
                     Dim category : category = message.GetValue("category")
                     If category = "player_vars" Then
-                        AddPlayerStateEventListener "score", "bcp_player_var_score_0", 0, "Glf_BcpSendPlayerVar", 1000, Null
-                        AddPlayerStateEventListener "current_ball", "bcp_player_var_ball_0", 0, "Glf_BcpSendPlayerVar", 1000, Null
+                        glf_monitor_player_vars = True
+                        'AddPlayerStateEventListener "score", "bcp_player_var_score_0", 0, "Glf_BcpSendPlayerVar", 1000, Null
+                        'AddPlayerStateEventListener "current_ball", "bcp_player_var_ball_0", 0, "Glf_BcpSendPlayerVar", 1000, Null
                     End If
                 case "register_trigger"
                     eventName = message.GetValue("event")
@@ -2502,6 +3073,35 @@ Sub Glf_BcpUpdate()
     End If
     bcpController.ModeList()
 End Sub
+
+Function GlfVpxBcpControllerEventHandler(args)
+    
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1) 
+    Else
+        kwargs = args(1)
+    End If
+    Dim evt : evt = ownProps(0)
+    Select Case evt
+        Case "player_added"
+            bcpController.Send "player_added?player_num=int:" & kwargs("num")
+        Case "next_player"
+            Dim p_num : p_num = Getglf_currentPlayerNumber() + 1
+            bcpController.Send "player_turn_start?player_num=int:" & p_num
+            bcpController.Send "ball_start?player_num=int:" & p_num & "&ball=int:" & GetPlayerState("ball")
+            bcpController.SendPlayerVariable "number", p_num, p_num-1
+            'bcpController.SendPlayerVariable "number", 1, 0
+        Case "ball_end"
+            bcpController.Send "ball_end"
+    End Select
+    If IsObject(args(1)) Then
+        Set GlfVpxBcpControllerEventHandler = kwargs
+    Else
+        GlfVpxBcpControllerEventHandler = kwargs
+    End If
+    
+End Function
 
 '*****************************************************************************************************************************************
 '  Vpx Glf Bcp Controller
@@ -2934,7 +3534,7 @@ Class GlfBallHold
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_release_all_events.Add newEvent.Name, newEvent
+            m_release_all_events.Add newEvent.Raw, newEvent
         Next
     End Property
 
@@ -2943,7 +3543,7 @@ Class GlfBallHold
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_release_one_events.Add newEvent.Name, newEvent
+            m_release_one_events.Add newEvent.Raw, newEvent
         Next
     End Property
 
@@ -2952,7 +3552,7 @@ Class GlfBallHold
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_release_one_if_full_events.Add newEvent.Name, newEvent
+            m_release_one_if_full_events.Add newEvent.Raw, newEvent
         Next
     End Property
 
@@ -3155,24 +3755,28 @@ Class GlfBallHold
         Dim yaml
         Dim evt, x
         yaml = "  " & Replace(m_name, "ball_hold_", "") & ":" & vbCrLf
-        If UBound(m_base_device.EnableEvents().Keys) > -1 Then
+        Dim enable_events_keys : enable_events_keys = m_base_device.EnableEvents().Keys
+        Dim enable_events : Set enable_events = m_base_device.EnableEvents()
+        If UBound(enable_events_keys) > -1 Then
             yaml = yaml & "    enable_events: "
             x=0
-            For Each key in m_base_device.EnableEvents().keys
-                yaml = yaml & m_base_device.EnableEvents()(key).Raw
-                If x <> UBound(m_base_device.EnableEvents().Keys) Then
+            For Each key in enable_events_keys
+                yaml = yaml & enable_events(key).Raw
+                If x <> UBound(enable_events_keys) Then
                     yaml = yaml & ", "
                 End If
                 x = x + 1
             Next
             yaml = yaml & vbCrLf
         End If
-        If UBound(m_base_device.DisableEvents().Keys) > -1 Then
+        Dim disable_events_keys : disable_events_keys = m_base_device.DisableEvents().Keys
+        Dim disable_events : Set disable_events = m_base_device.DisableEvents()
+        If UBound(disable_events_keys) > -1 Then
             yaml = yaml & "    disable_events: "
             x=0
-            For Each key in m_base_device.DisableEvents().keys
-                yaml = yaml & m_base_device.DisableEvents()(key).Raw
-                If x <> UBound(m_base_device.DisableEvents().Keys) Then
+            For Each key in disable_events_keys
+                yaml = yaml & disable_events(key).Raw
+                If x <> UBound(disable_events_keys) Then
                     yaml = yaml & ", "
                 End If
                 x = x + 1
@@ -3299,7 +3903,7 @@ Class BallSave
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_timer_start_events.Add newEvent.Name, newEvent
+            m_timer_start_events.Add newEvent.Raw, newEvent
         Next
     End Property
     Public Property Let AutoLaunch(value) : m_auto_launch = value : End Property
@@ -3399,15 +4003,15 @@ Class BallSave
         m_timer_started=True
         DispatchPinEvent m_name&"_timer_start", Null
         If Not IsNull(m_active_time) Then
-            Dim active_time : active_time = GetRef(m_active_time(0))()
+            Dim active_time : active_time = GetRef(m_active_time(0))(Null)
             Dim grace_period, hurry_up_time
             If Not IsNull(m_grace_period) Then
-                grace_period = GetRef(m_grace_period(0))()
+                grace_period = GetRef(m_grace_period(0))(Null)
             Else
                 grace_period = 0
             End If
             If Not IsNull(m_hurry_up_time) Then
-                hurry_up_time = GetRef(m_hurry_up_time(0))()
+                hurry_up_time = GetRef(m_hurry_up_time(0))(Null)
             Else
                 hurry_up_time = 0
             End If
@@ -3461,6 +4065,82 @@ Class BallSave
         yaml = yaml & vbCrLf
         yaml = yaml & "    auto_launch: " & LCase(m_auto_launch) & vbCrLf
         yaml = yaml & "    balls_to_save: " & m_balls_to_save & vbCrLf
+        
+        ' Add disable_events if any exist
+        If m_disable_events.Count > 0 Then
+            yaml = yaml & "    disable_events: "
+            x = 0
+            For Each evt in m_disable_events.Keys
+                yaml = yaml & m_disable_events(evt).Raw
+                If x <> UBound(m_disable_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        
+        ' Add timer_stop_events if any exist
+        If m_timer_stop_events.Count > 0 Then
+            yaml = yaml & "    timer_stop_events: "
+            x = 0
+            For Each evt in m_timer_stop_events.Keys
+                yaml = yaml & m_timer_stop_events(evt).Raw
+                If x <> UBound(m_timer_stop_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        
+        ' Add timer_complete_events if any exist
+        If m_timer_complete_events.Count > 0 Then
+            yaml = yaml & "    timer_complete_events: "
+            x = 0
+            For Each evt in m_timer_complete_events.Keys
+                yaml = yaml & m_timer_complete_events(evt).Raw
+                If x <> UBound(m_timer_complete_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        
+        ' Add ball_save_events if any exist
+        If m_ball_save_events.Count > 0 Then
+            yaml = yaml & "    ball_save_events: "
+            x = 0
+            For Each evt in m_ball_save_events.Keys
+                yaml = yaml & m_ball_save_events(evt).Raw
+                If x <> UBound(m_ball_save_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        
+        ' Add ball_save_complete_events if any exist
+        If m_ball_save_complete_events.Count > 0 Then
+            yaml = yaml & "    ball_save_complete_events: "
+            x = 0
+            For Each evt in m_ball_save_complete_events.Keys
+                yaml = yaml & m_ball_save_complete_events(evt).Raw
+                If x <> UBound(m_ball_save_complete_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        
+        ' Add debug setting if enabled
+        If m_debug Then
+            yaml = yaml & "    debug: true" & vbCrLf
+        End If
+        
         ToYaml = yaml
     End Function
 End Class
@@ -3620,8 +4300,6 @@ Class GlfComboSwitches
 
     Public Sub Activate()
         Log "Activating Combo Switch"
-        m_switch_1_active = 0
-        m_switch_2_active = 0
         AddPinEventListener m_switch_1 & "_active" , m_name & "_switch1_active" , "ComboSwitchEventHandler", m_priority, Array("switch1_active", Me, m_switch_1)
         AddPinEventListener m_switch_1 & "_inactive" , m_name & "_switch1_inactive" , "ComboSwitchEventHandler", m_priority, Array("switch1_inactive", Me, m_switch_1)
         AddPinEventListener m_switch_2 & "_active" , m_name & "_switch2_active" , "ComboSwitchEventHandler", m_priority, Array("switch2_active", Me, m_switch_2)
@@ -3630,8 +4308,6 @@ Class GlfComboSwitches
 
     Public Sub Deactivate()
         Log "Deactivating Combo Switch"
-        m_switch_1_active = 0
-        m_switch_2_active = 0
         RemovePinEventListener m_switch_1 & "_active" , m_name & "_switch1_active"
         RemovePinEventListener m_switch_1 & "_inactive" , m_name & "_switch1_inactive"
         RemovePinEventListener m_switch_2 & "_active" , m_name & "_switch2_active"
@@ -3793,6 +4469,58 @@ Class GlfComboSwitches
 
     End Sub
 
+    Public Function ToYaml()
+        Dim yaml, key, x
+        yaml = "  " & Replace(m_name, "combo_switch_", "") & ":" & vbCrLf
+        If Not IsEmpty(m_switch_1) Then
+            yaml = yaml & "    switches_1: " & m_switch_1 & vbCrLf
+        End If
+        If Not IsEmpty(m_switch_2) Then
+            yaml = yaml & "    switches_2: " & m_switch_2 & vbCrLf
+        End If
+        If UBound(m_events_when_both.Keys()) > -1 Then
+            yaml = yaml & "    events_when_both: " & vbCrLf
+            For Each key in m_events_when_both.Keys()
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_events_when_inactive.Keys()) > -1 Then
+            yaml = yaml & "    events_when_inactive: " & vbCrLf
+            For Each key in m_events_when_inactive.Keys()
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_events_when_switch_1.Keys()) > -1 Then
+            yaml = yaml & "    events_when_switches_1: " & vbCrLf
+            For Each key in m_events_when_switch_1.Keys()
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_events_when_switch_2.Keys()) > -1 Then
+            yaml = yaml & "    events_when_switches_2: " & vbCrLf
+            For Each key in m_events_when_switch_2.Keys()
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_events_when_switch_2.Keys()) > -1 Then
+            yaml = yaml & "    events_when_switches_2: " & vbCrLf
+            For Each key in m_events_when_switch_2.Keys()
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If m_hold_time.Raw <> 0 Then
+            yaml = yaml & "    hold_time: " & m_hold_time.Raw & vbCrLf
+        End If
+        If m_max_offset_time.Raw <> 0 Then
+            yaml = yaml & "    max_offset_time: " & m_max_offset_time.Raw & vbCrLf
+        End If
+        If m_release_time.Raw <> 0 Then
+            yaml = yaml & "    release_time: " & m_release_time.Raw & vbCrLf
+        End If
+
+        ToYaml = yaml
+    End Function
+
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message
@@ -3861,14 +4589,14 @@ Class GlfCounter
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_enable_events.Add newEvent.Name, newEvent
+            m_enable_events.Add newEvent.Raw, newEvent
         Next
     End Property
     Public Property Let CountEvents(value)
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_count_events.Add newEvent.Name, newEvent
+            m_count_events.Add newEvent.Raw, newEvent
         Next
     End Property
     Public Property Let CountCompleteValue(value) : m_count_complete_value = value : End Property
@@ -4160,8 +4888,8 @@ Class GlfEventPlayer
 
     Public Sub Add(key, value)
         Dim newEvent : Set newEvent = (new GlfEvent)(key)
-        m_events.Add newEvent.Name, newEvent
-        'msgbox newEvent.Name
+        m_events.Add newEvent.Raw, newEvent
+        
         Dim evtValue, evtValues(), i
         Redim evtValues(UBound(value))
         i=0
@@ -4170,7 +4898,7 @@ Class GlfEventPlayer
             Set evtValues(i) = newEventValue
             i=i+1
         Next
-        m_eventValues.Add newEvent.Name, evtValues  
+        m_eventValues.Add newEvent.Raw, evtValues  
     End Sub
 
     Public Sub Activate()
@@ -4192,13 +4920,14 @@ Class GlfEventPlayer
         Log "Dispatching Event: " & evt
         If Not IsNull(m_events(evt).Condition) Then
             'msgbox m_events(evt).Condition
-            If GetRef(m_events(evt).Condition)() = False Then
+            If GetRef(m_events(evt).Condition)(Null) = False Then
                 Exit Sub
             End If
         End If
         Dim evtValue
         For Each evtValue In m_eventValues(evt)
             Log "Dispatching Event: " & evtValue.EventName
+            Glf_BcpSendEvent evtValue.EventName
             DispatchPinEvent evtValue.EventName, evtValue.Kwargs
         Next
     End Sub
@@ -4364,6 +5093,35 @@ Function ExtraBallsHandler(args)
         ExtraBallsHandler = kwargs
     End If
 End Function
+Function GlfGameSettings()
+    Set glf_game = (new GlfGame)()
+	Set GlfGameSettings = glf_game
+End Function
+
+Class GlfGame
+
+    Private m_balls_per_game
+
+    Public Property Get BallsPerGame()
+        BallsPerGame = m_balls_per_game.Value()
+    End Property
+    Public Property Let BallsPerGame(input)
+        Set m_balls_per_game = CreateGlfInput(input)
+    End Property
+
+	Public default Function init()
+
+        Set m_balls_per_game = CreateGlfInput(3)
+       
+        Set Init = Me
+	End Function
+
+    Public Function ToYaml()
+        Dim yaml : yaml = ""
+        ToYaml = yaml
+    End Function
+
+End Class
 Function EnableGlfHighScores()
     Dim high_score_mode : Set high_score_mode = CreateGlfMode("glf_high_scores", 80)
     high_score_mode.StartEvents = Array("game_ending")
@@ -4371,7 +5129,7 @@ Function EnableGlfHighScores()
     high_score_mode.UseWaitQueue = True
     Dim high_score : Set high_score = (new GlfHighScore)(high_score_mode)
     high_score.Debug = True
-    high_score_mode.HighScore = high_score
+    Set high_score_mode.HighScore = high_score
     Set glf_highscore = high_score
 	Set EnableGlfHighScores = glf_highscore
 End Function
@@ -4474,28 +5232,29 @@ Class GlfHighScore
                 player_values(p) = GetPlayerStateForPlayer(p, category)
                 player_numbers(p) = p+1
             Next
-            'Sort the values high to low.
-            Dim n, i, j, temp, swapped
-            n = UBound(player_values) - LBound(player_values) + 1 
-            For i = 0 To n - 1
-                swapped = False
-                For j = 0 To n - i - 2 
-                    If player_values(j) < player_values(j + 1) Then 
-                        temp = player_values(j)
-                        player_values(j) = player_values(j + 1)
-                        player_values(j + 1) = temp
-
-                        temp = player_numbers(j)
-                        player_numbers(j) = player_numbers(j + 1)
-                        player_numbers(j + 1) = temp
-
-                        swapped = True 
-                    End If
-                Next
-                If Not swapped Then
-                    Exit For
-                End If
-            Next
+            
+             'Sort the values high to low.
+             Dim n, i, j, temp, swapped
+             n = UBound(player_values) - LBound(player_values) + 1 
+             For i = 0 To n - 1
+                 swapped = False
+                 For j = 0 To n - i - 2 
+                     If player_values(j) < player_values(j + 1) Then 
+                         temp = player_values(j)
+                         player_values(j) = player_values(j + 1)
+                         player_values(j + 1) = temp
+ 
+                         temp = player_numbers(j)
+                         player_numbers(j) = player_numbers(j + 1)
+                         player_numbers(j + 1) = temp
+ 
+                         swapped = True 
+                     End If
+                 Next
+                 If Not swapped Then
+                     Exit For
+                 End If
+             Next
 
             'msgbox player_values(0)
             
@@ -4507,8 +5266,8 @@ Class GlfHighScore
                     'msgbox "Category: " & category
                     high_score = m_highscores(category)(CStr(position+1))("value")
                     high_score = CLng(high_score)
-                    'msgbox "HighScore: " & ">" & high_score & "<"
-                    'msgbox "PlayerScore: " & CLng(player_values(i))
+                    ''msgbox "HighScore: " & ">" & high_score & "<"
+                    ''msgbox "PlayerScore: " & CInt(player_values(i))
                     'msgbox typename(high_score)
                     'msgbox typename(player_values(i))
                     If player_values(i) > high_score Then
@@ -4571,13 +5330,12 @@ Class GlfHighScore
 
         'Ask for Initials
         If Ubound(m_initials_needed.Keys())>-1 Then
-            'msgbox "Asking For Initials"
-            'msgbox m_initials_needed.Items()(0)("position")
             Log "Asking for Initials"
             m_current_initials = 0
-            AddPinEventListener "text_input_high_score_complete", "text_input_high_score_complete", "HighScoreEventHandler", m_priority, Array("initials_complete", Me, m_initials_needed.Items()(0))
-            DispatchPinEvent "high_score_enter_initials", m_initials_needed.Items()(0)
-            SetDelay "enter_initials_timeout", "HighScoreEventHandler", Array(Array("initials_complete", Me, m_initials_needed.Items()(0)), Null), m_enter_initials_timeout.Value
+            Dim initials_needed_items : initials_needed_items = m_initials_needed.Items()
+            AddPinEventListener "text_input_high_score_complete", "text_input_high_score_complete", "HighScoreEventHandler", m_priority, Array("initials_complete", Me, initials_needed_items(0))
+            DispatchPinEvent "high_score_enter_initials", initials_needed_items(0)
+            SetDelay "enter_initials_timeout", "HighScoreEventHandler", Array(Array("initials_complete", Me, initials_needed_items(0)), Null), m_enter_initials_timeout.Value
         Else
             'No New High Scores, End Mode
             Log "No High Score, Ending"
@@ -4600,7 +5358,6 @@ Class GlfHighScore
         RemovePinEventListener "text_input_high_score_complete", "text_input_high_score_complete"
 
         'm_highscores(initials_item("category"))(CStr(initials_item("position")))("player_name") = text
-        'msgbox "Player="&CStr(initials_item("player_num"))&" position="&CStr(initials_item("position")) 
 
         Dim text : text = ""
         If Not IsNull(kwargs) Then
@@ -4614,9 +5371,10 @@ Class GlfHighScore
         For Each key in keys
             Dim s
             For Each s in m_highscores(key).Keys()
-                If m_highscores(key)(s)("player_num") = initials_item("player_num") Then
+                Dim high_scores_item : Set high_scores_item = m_highscores(key)
+                If high_scores_item(s)("player_num") = initials_item("player_num") Then
                     'msgbox "Setting Player " & m_current_initials+1 & " Name to >" & text & "<"
-                    m_highscores(key)(s)("player_name") = text
+                    high_scores_item(s)("player_name") = text
                 End If
             Next
         Next
@@ -4636,9 +5394,10 @@ Class GlfHighScore
         If Ubound(m_initials_needed.Keys())>m_current_initials Then
             Log "Asking for Next Initials"
             m_current_initials = m_current_initials + 1
-            AddPinEventListener "text_input_high_score_complete", "text_input_high_score_complete", "HighScoreEventHandler", m_priority, Array("initials_complete", Me, m_initials_needed.Items()(m_current_initials))
-            DispatchPinEvent "high_score_enter_initials", m_initials_needed.Items()(m_current_initials)
-            SetDelay "enter_initials_timeout", "HighScoreEventHandler", Array(Array("initials_complete", Me, m_initials_needed.Items()(m_current_initials)), Null), m_enter_initials_timeout.Value
+            Dim initials_needed_items : initials_needed_items = m_initials_needed.Items()
+            AddPinEventListener "text_input_high_score_complete", "text_input_high_score_complete", "HighScoreEventHandler", m_priority, Array("initials_complete", Me, initials_needed_items(m_current_initials))
+            DispatchPinEvent "high_score_enter_initials", initials_needed_items(m_current_initials)
+            SetDelay "enter_initials_timeout", "HighScoreEventHandler", Array(Array("initials_complete", Me, initials_needed_items(m_current_initials)), Null), m_enter_initials_timeout.Value
         Else
             Log "Writing High Scores"
             Dim keys, key
@@ -4649,10 +5408,11 @@ Class GlfHighScore
                 i=1
                 'msgbox "Key Count" & ubound(m_highscores(key).Keys())
                 For Each s in m_highscores(key).Keys()
+                    Dim high_scores_item : Set high_scores_item = m_highscores(key)
                     'msgbox s
                     tmp.Add key & "_" & i & "_label", m_categories(key)(i-1)
-                    tmp.Add key & "_" & i &"_name", m_highscores(key)(s)("player_name")
-                    tmp.Add key & "_" & i &"_value", m_highscores(key)(s)("value")
+                    tmp.Add key & "_" & i &"_name", high_scores_item(s)("player_name")
+                    tmp.Add key & "_" & i &"_value", high_scores_item(s)("value")
                     i=i+1
                 Next
                 WriteHighScores "HighScores", tmp
@@ -4670,17 +5430,20 @@ Class GlfHighScore
         keys = m_defaults.Keys()
         Dim tmp : Set tmp = CreateObject("Scripting.Dictionary")
         For Each key in keys
-            For i=0 to UBound(m_defaults(key).Keys())
+            Dim default_keys : default_keys = m_defaults(key).Keys()
+            For i=0 to UBound(default_keys)
+                Dim default_value_item : Set default_value_item = m_defaults(key)
+                Dim cat_a1 : cat_a1 = m_categories(key)
                 If m_highscores.Exists(key) Then
                     If Not m_highscores(key).Exists(CStr(i+1)) Then
-                        tmp.Add key & "_" & i+1 &"_label", m_categories(key)(i)
-                        tmp.Add key & "_" & i+1 &"_name", m_defaults(key).Keys()(i)
-                        tmp.Add key & "_" & i+1 &"_value", m_defaults(key)(m_defaults(key).Keys()(i))
+                        tmp.Add key & "_" & i+1 &"_label", cat_a1(i)
+                        tmp.Add key & "_" & i+1 &"_name", default_keys(i)
+                        tmp.Add key & "_" & i+1 &"_value", default_value_item(default_keys(i))
                     End If
                 Else
-                    tmp.Add key & "_" & i+1 & "_label", m_categories(key)(i)
-                    tmp.Add key & "_" & i+1 &"_name", m_defaults(key).Keys()(i)
-                    tmp.Add key & "_" & i+1 &"_value", m_defaults(key)(m_defaults(key).Keys()(i))
+                    tmp.Add key & "_" & i+1 & "_label", cat_a1(i)
+                    tmp.Add key & "_" & i+1 &"_name", default_keys(i)
+                    tmp.Add key & "_" & i+1 &"_value", default_value_item(default_keys(i))
                 End If
             Next
             WriteHighScores "HighScores", tmp
@@ -4712,7 +5475,8 @@ Class GlfHighScore
             End If
             
             If inSection And InStr(line, "=") > 0 Then
-                key = Trim(Split(line, "=")(0))
+                Dim split_key : split_key = Split(line, "=")
+                key = Trim(split_key(0))
                 If scores.Exists(key) Then
                     line = key & "=" & scores(key)
                     scores.Remove key
@@ -4952,12 +5716,11 @@ Class GlfLightPlayer
         Log "Reloading Lights"
         Dim evt
         For Each evt in m_events.Keys()
-            Dim lightName, light
+            Dim lightName, light,lightsCount,x,tagLight, tagLights
             'First get light counts
+            lightsCount = 0
             For Each lightName in m_events(evt).LightNames
                 Set light = m_events(evt).Lights(lightName)
-                Dim lightsCount, x,tagLight, tagLights
-                lightsCount = 0
                 If Not glf_lightNames.Exists(lightName) Then
                     tagLights = glf_lightTags("T_"&lightName).Keys()
                     Log "Tag Lights: " & Join(tagLights)
@@ -5008,7 +5771,7 @@ Class GlfLightPlayer
 
     Public Function ToYaml()
         Dim yaml
-        Dim evt
+        Dim evt, key
         If UBound(m_events.Keys) > -1 Then
             For Each key in m_events.keys
                 yaml = yaml & "  " & key & ": " & vbCrLf
@@ -5038,7 +5801,7 @@ Class GlfLightPlayerEventItem
     Public Property Let LightSeq(input) : m_lightSeq = input : End Property
 
     Public Function ToYaml()
-        Dim yaml
+        Dim yaml, key
         If UBound(m_lights.Keys) > -1 Then
             For Each key in m_lights.keys
                 yaml = yaml & "    " & key & ": " & vbCrLf
@@ -5121,10 +5884,12 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed, co
                 End If
             End If
         Next
+        LightPlayerCallbackHandler = Array(Null)
         Exit Function
         'glf_debugLog.WriteToLog "LightPlayer", "Removing Light Seq" & mode & "_" & key
     Else
         If UBound(lights) = -1 Then
+            LightPlayerCallbackHandler = Array(Null)
             Exit Function
         End If
         If IsArray(lights) Then
@@ -5173,9 +5938,6 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed, co
                     shows_added.Add cache_name, True
                     
                     If glf_cached_shows.Exists(cache_name & "__-1") Then
-                        'msgbox ubound(glf_cached_shows(cache_name & "__-1")(0))
-                        'msgbox ubound(fade_seq)
-                        'msgbox "Converted show: " & cache_name & ", steps: " & ubound(glf_cached_shows(cache_name & "__-1")(0)) & ". Fade Replacements: " & ubound(fade_seq) & ". Extracted Step Number: " & lightParts(4) 
                         Set show_settings = (new GlfShowPlayerItem)()
                         show_settings.Show = cache_name
                         show_settings.Loops = 1
@@ -5186,8 +5948,8 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed, co
                 End If
             End If
         Next
+        LightPlayerCallbackHandler = Array(shows_added)
     End If
-    Set LightPlayerCallbackHandler = shows_added
 End Function
 
 Function LightPlayerEventHandler(args)
@@ -5332,7 +6094,7 @@ Class GlfBaseModeDevice
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_enable_events.Add newEvent.Name, newEvent
+            m_enable_events.Add newEvent.Raw, newEvent
         Next
     End Property
     Public Property Get DisableEvents(): Set DisableEvents = m_disable_events: End Property
@@ -5340,7 +6102,7 @@ Class GlfBaseModeDevice
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_disable_events.Add newEvent.Name, newEvent
+            m_disable_events.Add newEvent.Raw, newEvent
         Next
     End Property
 
@@ -5463,6 +6225,7 @@ Class Mode
     Private m_sound_player
     Private m_dof_player
     Private m_slide_player
+    Private m_widget_player
     Private m_shot_profiles
     Private m_sequence_shots
     Private m_state_machines
@@ -5473,7 +6236,8 @@ Class Mode
     Private m_high_score
     Private m_use_wait_queue
 
-    Public Property Get Name(): Name = m_name: End Property
+    Public Property Get Name(): Name = m_name : End Property
+    Public Property Get ModeName(): ModeName = m_modename : End Property
     Public Property Get GetValue(value)
         Select Case value
             Case "active":
@@ -5518,6 +6282,7 @@ Class Mode
     Public Property Get SoundPlayer() : Set SoundPlayer = m_sound_player : End Property
     Public Property Get DOFPlayer() : Set DOFPlayer = m_dof_player : End Property
     Public Property Get SlidePlayer() : Set SlidePlayer = m_slide_player : End Property
+    Public Property Get WidgetPlayer() : Set WidgetPlayer = m_widget_player : End Property
 
     Public Property Get ShotProfiles(name)
         If m_shot_profiles.Exists(name) Then
@@ -5643,7 +6408,7 @@ Class Mode
         End If
     End Property
 
-    Public Property Let HighScore(value) : Set m_high_score = value : End Property
+    Public Property Set HighScore(value) : Set m_high_score = value : End Property
     Public Property Get HighScore()
         If Not IsNull(m_high_score) Then
             Set HighScore = m_high_score
@@ -5701,7 +6466,7 @@ Class Mode
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_start_events.Add newEvent.Name, newEvent
+            m_start_events.Add newEvent.Raw, newEvent
             AddPinEventListener newEvent.EventName, m_name & "_start", "ModeEventHandler", m_priority+newEvent.Priority, Array("start", Me, newEvent)
         Next
     End Property
@@ -5710,7 +6475,7 @@ Class Mode
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_stop_events.Add newEvent.Name, newEvent
+            m_stop_events.Add newEvent.Raw, newEvent
             AddPinEventListener newEvent.EventName, m_name & "_stop", "ModeEventHandler", m_priority+newEvent.Priority+1, Array("stop", Me, newEvent)
         Next
     End Property
@@ -5794,6 +6559,9 @@ Class Mode
         If Not IsNull(m_slide_player) Then
             m_slide_player.Debug = value
         End If
+        If Not IsNull(m_widget_player) Then
+            m_widget_player.Debug = value
+        End If
         If Not IsNull(m_showplayer) Then
             m_showplayer.Debug = value
         End If
@@ -5841,6 +6609,7 @@ Class Mode
         Set m_sound_player = (new GlfSoundPlayer)(Me)
         Set m_dof_player = (new GlfDofPlayer)(Me)
         Set m_slide_player = (new GlfSlidePlayer)(Me)
+        Set m_widget_player = (new GlfWidgetPlayer)(Me)
         Set m_variableplayer = (new GlfVariablePlayer)(Me)
         Glf_MonitorModeUpdate Me
         AddPinEventListener m_name & "_starting", m_name & "_starting_end", "ModeEventHandler", -99, Array("started", Me, "")
@@ -5851,6 +6620,9 @@ Class Mode
     Public Sub StartMode()
         Log "Starting"
         m_started=True
+        If useBcp Then
+            bcpController.ModeStart m_modename, m_priority
+        End If
         DispatchQueuePinEvent m_name & "_starting", Null
     End Sub
 
@@ -5858,6 +6630,10 @@ Class Mode
         If m_started = True Then
             m_started = False
             Log "Stopping"
+            If useBcp Then
+                bcpController.SlidesClear(m_modename)
+                bcpController.ModeStop(m_modename)
+            End If
             DispatchQueuePinEvent m_name & "_stopping", Null
         End If
     End Sub
@@ -5884,7 +6660,8 @@ Class Mode
     End Sub
 
     Public Function ToYaml()
-        dim yaml, child
+        dim yaml, child,x, key
+
         yaml = "#config_version=6" & vbCrLf & vbCrLf
 
         yaml = yaml & "mode:" & vbCrLf
@@ -5913,7 +6690,6 @@ Class Mode
             Next
             yaml = yaml & vbCrLf
         End If
-
         yaml = yaml & "  priority: " & m_priority & vbCrLf
         
         If UBound(m_ballsaves.Keys)>-1 Then
@@ -5921,6 +6697,22 @@ Class Mode
             yaml = yaml & "ball_saves: " & vbCrLf
             For Each child in m_ballsaves.Keys
                 yaml = yaml & m_ballsaves(child).ToYaml
+            Next
+        End If
+
+        If UBound(m_combo_switches.Keys)>-1 Then
+            yaml = yaml & vbCrLf
+            yaml = yaml & "combo_switches: " & vbCrLf
+            For Each child in m_combo_switches.Keys
+                yaml = yaml & m_combo_switches(child).ToYaml
+            Next
+        End If
+
+        If UBound(m_sequence_shots.Keys)>-1 Then
+            yaml = yaml & vbCrLf
+            yaml = yaml & "sequence_shots: " & vbCrLf
+            For Each child in m_sequence_shots.Keys
+                yaml = yaml & m_sequence_shots(child).ToYaml
             Next
         End If
         
@@ -5966,9 +6758,39 @@ Class Mode
             If UBound(m_lightplayer.EventNames)>-1 Then
                 yaml = yaml & vbCrLf
                 yaml = yaml & "light_player: " & vbCrLf
-                For Each child in m_lightplayer.EventNames
-                    yaml = yaml & m_lightplayer.ToYaml()
-                Next
+                yaml = yaml & m_lightplayer.ToYaml()
+            End If
+        End If
+
+        If Not IsNull(m_slide_player) Then
+            If UBound(m_slide_player.EventNames)>-1 Then
+                yaml = yaml & vbCrLf
+                yaml = yaml & "slide_player: " & vbCrLf
+                yaml = yaml & m_slide_player.ToYaml()
+            End If
+        End If
+
+        If Not IsNull(m_widget_player) Then
+            If UBound(m_widget_player.EventNames)>-1 Then
+                yaml = yaml & vbCrLf
+                yaml = yaml & "widget_player: " & vbCrLf
+                yaml = yaml & m_widget_player.ToYaml()
+            End If
+        End If
+
+        If Not IsNull(m_variableplayer) Then
+            If UBound(m_variableplayer.EventNames)>-1 Then
+                yaml = yaml & vbCrLf
+                yaml = yaml & "variable_player: " & vbCrLf
+                yaml = yaml & m_variableplayer.ToYaml()
+            End If
+        End If
+
+        If Not IsNull(m_random_event_player) Then
+            If UBound(m_random_event_player.EventNames)>-1 Then
+                yaml = yaml & vbCrLf
+                yaml = yaml & "random_event_player: " & vbCrLf
+                yaml = yaml & m_random_event_player.ToYaml()
             End If
         End If
 
@@ -5990,6 +6812,7 @@ Class Mode
             Next
         End If
         yaml = yaml & vbCrLf
+        
         
         Dim fso, modesFolder, TxtFileStream
         Set fso = CreateObject("Scripting.FileSystemObject")
@@ -6028,6 +6851,7 @@ Class Mode
 End Class
 
 Function ModeEventHandler(args)
+    
     Dim ownProps, kwargs : ownProps = args(0)
     If IsObject(args(1)) Then
         Set kwargs = args(1)
@@ -6041,6 +6865,11 @@ Function ModeEventHandler(args)
         Case "start"
             Set glfEvent = ownProps(2)
             If glfEvent.Evaluate() = False Then
+                If IsObject(args(1)) Then
+                    Set ModeEventHandler = kwargs
+                Else
+                    ModeEventHandler = kwargs
+                End If
                 Exit Function
             End If
             mode.StartMode
@@ -6050,6 +6879,11 @@ Function ModeEventHandler(args)
         Case "stop"
             Set glfEvent = ownProps(2)
             If glfEvent.Evaluate() = False Then
+                If IsObject(args(1)) Then
+                    Set ModeEventHandler = kwargs
+                Else
+                    ModeEventHandler = kwargs
+                End If
                 Exit Function
             End If
             mode.StopMode
@@ -6068,7 +6902,7 @@ End Function
 Class GlfMultiballLocks
 
     Private m_name
-    Private m_lock_device
+    Private m_lock_devices
     Private m_priority
     Private m_mode
     Private m_base_device
@@ -6091,8 +6925,8 @@ Class GlfMultiballLocks
                 GetValue = m_balls_locked
         End Select
     End Property
-    Public Property Get LockDevice() : LockDevice = m_lock_device : End Property
-    Public Property Let LockDevice(value) : m_lock_device = value : End Property
+    Public Property Get LockDevices() : LockDevices = m_lock_devices : End Property
+    Public Property Let LockDevices(value) : m_lock_devices = value : End Property
     Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
     Public Property Let DisableEvents(value) : m_base_device.DisableEvents = value : End Property
     Public Property Let BallsToLock(value) : m_balls_to_lock = value : End Property
@@ -6113,7 +6947,7 @@ Class GlfMultiballLocks
         m_priority = mode.Priority
         m_lock_events = Array()
         m_reset_events = Array()
-        m_lock_device = Empty
+        m_lock_devices = Array()
         m_balls_to_lock = 0
         m_balls_to_replace = -1
         m_enabled = False
@@ -6136,9 +6970,10 @@ Class GlfMultiballLocks
     Public Sub Enable()
         Log "Enabling"
         m_enabled = True
-        If Not IsEmpty(m_lock_device) Then
-            AddPinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock", "MultiballLocksHandler", m_priority, Array("lock", me, m_lock_device)
-        End If
+        Dim lock_device
+        For Each lock_device in m_lock_devices
+            AddPinEventListener "balldevice_" & lock_device & "_ball_enter", m_mode & "_" & name & "_lock", "MultiballLocksHandler", m_priority, Array("lock", me, lock_device)
+        Next
         Dim evt
         For Each evt in m_lock_events
             AddPinEventListener evt, m_name & "_ball_locked", "MultiballLocksHandler", m_priority, Array("virtual_lock", Me, Null)
@@ -6151,9 +6986,10 @@ Class GlfMultiballLocks
     Public Sub Disable()
         Log "Disabling"
         m_enabled = False
-        If Not IsEmpty(m_lock_device) Then
-            RemovePinEventListener "balldevice_" & m_lock_device & "_ball_enter", m_mode & "_" & name & "_lock"
-        End If
+        Dim lock_device
+        For Each lock_device in m_lock_devices
+            RemovePinEventListener "balldevice_" & lock_device & "_ball_enter", m_mode & "_" & name & "_lock"
+        Next
         Dim evt
         For Each evt in m_lock_events
             RemovePinEventListener evt, m_name & "_ball_locked"
@@ -6164,7 +7000,7 @@ Class GlfMultiballLocks
     End Sub
 
     Public Function Lock(device, unclaimed_balls)
-        
+        Log "Locking for device: " & device & ". Unclaimed Balls: " & unclaimed_balls
         If unclaimed_balls <= 0 Then
             Lock = unclaimed_balls
             Exit Function
@@ -6272,7 +7108,7 @@ Class GlfMultiballs
     Private m_priority
     Private m_base_device
     Private m_ball_count
-    Private m_ball_lock
+    Private m_ball_locks
     Private m_add_a_ball_events
     Private m_add_a_ball_grace_period
     Private m_add_a_ball_hurry_up_time
@@ -6317,7 +7153,7 @@ Class GlfMultiballs
     Public Property Let AddABallHurryUpTime(value): Set m_add_a_ball_hurry_up_time = CreateGlfInput(value): End Property
     Public Property Let AddABallShootAgain(value): Set m_add_a_ball_shoot_again = CreateGlfInput(value): End Property
     Public Property Let BallCountType(value): m_ball_count_type = value: End Property
-    Public Property Let BallLock(value): m_ball_lock = value: End Property
+    Public Property Let BallLocks(value): m_ball_locks = value: End Property
     Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
     Public Property Let DisableEvents(value) : m_base_device.DisableEvents = value : End Property
     Public Property Let GracePeriod(value): Set m_grace_period = CreateGlfInput(value): End Property
@@ -6365,7 +7201,7 @@ Class GlfMultiballs
         Set m_add_a_ball_hurry_up_time = CreateGlfInput(0)
         Set m_add_a_ball_shoot_again = CreateGlfInput(5000)
         m_ball_count_type = "total"
-        m_ball_lock = Empty
+        m_ball_locks = Array()
         Set m_grace_period = CreateGlfInput(0)
         Set m_hurry_up = CreateGlfInput(0)
         m_replace_balls_in_play = False
@@ -6491,13 +7327,14 @@ Class GlfMultiballs
         Dim balls_added : balls_added = 0
 
         'eject balls from locks
-        If Not IsEmpty(m_ball_lock) Then
-            Dim available_balls : available_balls = glf_ball_devices(m_ball_lock).Balls()
+        Dim ball_lock
+        For Each ball_lock in m_ball_locks
+            Dim available_balls : available_balls = glf_ball_devices(ball_lock).Balls()
             If available_balls > 0 Then
-                glf_ball_devices(m_ball_lock).EjectAll()
+                glf_ball_devices(ball_lock).EjectAll()
             End If
-            balls_added = available_balls
-        End If
+            balls_added = balls_added + available_balls
+        Next
 
         glf_BIP = m_balls_live_target
 
@@ -6785,9 +7622,9 @@ Class GlfQueueEventPlayer
 
     Public Sub Add(key, value)
         Dim newEvent : Set newEvent = (new GlfEvent)(key)
-        m_events.Add newEvent.Name, newEvent
+        m_events.Add newEvent.Raw, newEvent
         'msgbox newEvent.Name
-        m_eventValues.Add newEvent.Name, value  
+        m_eventValues.Add newEvent.Raw, value  
     End Sub
 
     Public Sub Activate()
@@ -7009,6 +7846,7 @@ Class GlfRandomEventPlayer
         If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
     End Property
 
+    Public Property Get EventNames() : EventNames = m_events.Keys : End Property
     Public Property Get EventName(value)
         
         Dim newEvent : Set newEvent = (new GlfEvent)(value)
@@ -7066,7 +7904,15 @@ Class GlfRandomEventPlayer
     End Sub
 
     Public Function ToYaml()
-        Dim yaml : yaml = ""
+            Dim yaml
+        Dim evt
+        If UBound(m_eventValues.Keys) > -1 Then
+            For Each key in m_eventValues.keys
+                yaml = yaml & "  " & key & ": " & vbCrLf
+                yaml = yaml & m_eventValues(key).ToYaml 
+            Next
+            yaml = yaml & vbCrLf
+        End If
         ToYaml = yaml
     End Function
 
@@ -7157,15 +8003,17 @@ Class GlfSegmentDisplayPlayer
 
     Public Sub Play(evt, segment_event)
         Dim i
-        For i=0 to UBound(segment_event.Displays())
-            SegmentPlayerCallbackHandler evt, segment_event.Displays()(i), m_mode, m_priority
+        Dim segment_event_displays : segment_event_displays = segment_event.Displays()
+        For i=0 to UBound(segment_event_displays)
+            SegmentPlayerCallbackHandler evt, segment_event_displays(i), m_mode, m_priority
         Next
     End Sub
 
     Public Function PlayOff(evt, segment_event, displays_to_update)
         Dim i, segment_item
-        For i=0 to UBound(segment_event.Displays())
-            Set segment_item = segment_event.Displays()(i)
+        Dim segment_event_displays : segment_event_displays = segment_event.Displays()
+        For i=0 to UBound(segment_event_displays)
+            Set segment_item = segment_event_displays(i)
             Dim key
             key = m_mode & "." & "segment_player_player." & segment_item.Display
             If Not IsEmpty(segment_item.Key) Then
@@ -7504,7 +8352,7 @@ Class GlfSequenceShots
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_cancel_events.Add newEvent.Name, newEvent
+            m_cancel_events.Add newEvent.Raw, newEvent
         Next
     End Property
     Public Property Let CancelSwitches(value): m_cancel_switches = value: End Property
@@ -7512,7 +8360,7 @@ Class GlfSequenceShots
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_delay_event_list.Add newEvent.Name, newEvent
+            m_delay_event_list.Add newEvent.Raw, newEvent
         Next
     End Property
     Public Property Let DelaySwitchList(value): m_delay_switch_list = value: End Property
@@ -7733,6 +8581,46 @@ Class GlfSequenceShots
         m_active_sequences.Remove seq_id
         DispatchPinEvent m_name & "_timeout", Null
     End Sub
+
+     Public Function ToYaml()
+        Dim yaml, key, x
+        yaml = "  " & Replace(m_name, "sequence_shot_", "") & ":" & vbCrLf
+        If UBound(m_switch_sequence) > -1 Then
+            yaml = yaml & "    switch_sequence: " & vbCrLf
+            For Each key in m_switch_sequence
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_event_sequence) > -1 Then
+            yaml = yaml & "    event_sequence: " & vbCrLf
+            For Each key in m_event_sequence
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_cancel_events.Keys) > -1 Then
+            yaml = yaml & "    cancel_events: " & vbCrLf
+            For Each key in m_cancel_events.Keys
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_cancel_switches) > -1 Then
+            yaml = yaml & "    cancel_swithces: " & vbCrLf
+            For Each key in m_cancel_switches
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If UBound(m_delay_event_list.Keys()) > -1 Then
+            yaml = yaml & "    delay_event_list: " & vbCrLf
+            For Each key in m_delay_event_list.Keys()
+                yaml = yaml & "      - " & key & vbCrLf
+            Next
+        End If
+        If m_sequence_timeout.Raw <> 0 Then
+            yaml = yaml & "    sequence_timeout: " & m_sequence_timeout.Raw & vbCrLf
+        End If
+
+        ToYaml = yaml
+    End Function
 
     Private Sub Log(message)
         If m_debug = True Then
@@ -8345,11 +9233,15 @@ Class GlfShotProfile
             yaml = yaml & "       loops: " & m_states(evt).Loops & vbCrLf
             yaml = yaml & "       speed: " & m_states(evt).Speed & vbCrLf
             yaml = yaml & "       sync_ms: " & m_states(evt).SyncMs & vbCrLf
+            If UBound(m_states(evt).EventsWhenCompleted) > -1 Then
+                yaml = yaml & "       events_when_completed: " & Join(m_states(evt).EventsWhenCompleted, ",") & vbCrLf
+            End If
 
             If Ubound(state.Tokens().Keys)>-1 Then
                 yaml = yaml & "       show_tokens: " & vbCrLf
-                For Each token in state.Tokens().Keys()
-                    yaml = yaml & "         " & token & ": " & state.Tokens()(token) & vbCrLf
+                Dim state_tokens : Set state_tokens = state.Tokens()
+                For Each token in state_tokens.Keys()
+                    yaml = yaml & "         " & token & ": " & state_tokens(token) & vbCrLf
                 Next
             End If
 
@@ -8512,7 +9404,8 @@ Class GlfShot
         For Each evt in m_control_events.Keys
             Dim cEvt
             For Each cEvt in m_control_events(evt).Events().Keys
-                RemovePinEventListener m_control_events(evt).Events()(cEvt).EventName, m_mode & "_" & m_name & "_control_" & cEvt
+                Dim control_events_events : Set control_events_events = m_control_events(evt).Events()
+                RemovePinEventListener control_events_events(cEvt).EventName, m_mode & "_" & m_name & "_control_" & cEvt
             Next
         Next
         For Each evt in m_reset_events.Keys
@@ -8539,7 +9432,8 @@ Class GlfShot
         For Each evt in m_control_events.Keys
             Dim cEvt
             For Each cEvt in m_control_events(evt).Events().Keys
-                AddPinEventListener m_control_events(evt).Events()(cEvt).EventName, m_mode & "_" & m_name & "_control_" & cEvt, "ShotEventHandler", m_priority+m_control_events(evt).Events()(cEvt).Priority, Array("control", Me, m_control_events(evt).Events()(cEvt), m_control_events(evt))
+                Dim control_events_events : Set control_events_events = m_control_events(evt).Events()
+                AddPinEventListener control_events_events(cEvt).EventName, m_mode & "_" & m_name & "_control_" & cEvt, "ShotEventHandler", m_priority+control_events_events(cEvt).Priority, Array("control", Me, control_events_events(cEvt), m_control_events(evt))
             Next
         Next
         For Each evt in m_reset_events.Keys
@@ -8715,25 +9609,28 @@ Class GlfShot
             End If
         Next
 
-        If UBound(m_base_device.EnableEvents().Keys) > -1 Then
+        Dim enable_events_keys : enable_events_keys = m_base_device.EnableEvents().Keys
+        Dim enable_events : Set enable_events = m_base_device.EnableEvents()
+        If UBound(enable_events_keys) > -1 Then
             yaml = yaml & "    enable_events: "
             x=0
-            For Each key in m_base_device.EnableEvents().keys
-                yaml = yaml & m_base_device.EnableEvents()(key).Raw
-                If x <> UBound(m_base_device.EnableEvents().Keys) Then
+            For Each key in enable_events_keys
+                yaml = yaml & enable_events(key).Raw
+                If x <> UBound(enable_events_keys) Then
                     yaml = yaml & ", "
                 End If
                 x = x + 1
             Next
             yaml = yaml & vbCrLf
         End If
-
-        If UBound(m_base_device.DisableEvents().Keys) > -1 Then
+        Dim disable_events_keys : disable_events_keys = m_base_device.DisableEvents().Keys
+        Dim disable_events : Set disable_events = m_base_device.DisableEvents()
+        If UBound(disable_events_keys) > -1 Then
             yaml = yaml & "    disable_events: "
             x=0
-            For Each key in m_base_device.DisableEvents().keys
-                yaml = yaml & m_base_device.DisableEvents()(key).Raw
-                If x <> UBound(m_base_device.DisableEvents().Keys) Then
+            For Each key in disable_events_keys
+                yaml = yaml & disable_events(key).Raw
+                If x <> UBound(disable_events_keys) Then
                     yaml = yaml & ", "
                 End If
                 x = x + 1
@@ -8877,7 +9774,7 @@ Class GlfShotControlEvent
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_events.Add newEvent.Name, newEvent
+            m_events.Add newEvent.Raw, newEvent
         Next
     End Property
 
@@ -8986,10 +9883,10 @@ Class GlfShowPlayer
     Public Function ToYaml()
         Dim yaml
         Dim evt
-        If UBound(m_events.Keys) > -1 Then
-            For Each key in m_events.keys
+        If UBound(m_eventValues.Keys) > -1 Then
+            For Each key in m_eventValues.keys
                 yaml = yaml & "  " & key & ": " & vbCrLf
-                yaml = yaml & m_events(key).ToYaml
+                yaml = yaml & m_eventValues(key).ToYaml
             Next
             yaml = yaml & vbCrLf
         End If
@@ -9105,6 +10002,11 @@ Class GlfShowPlayerItem
                 yaml = yaml & "        " & key & ": " & m_tokens(key) & vbCrLf
             Next
         End If
+
+        If UBound(m_events_when_completed) > -1 Then
+            yaml = yaml & "      events_when_completed: " & Join(m_events_when_completed, ",") & vbCrLf
+        End If
+
         If m_syncms > 0 Then
             yaml = yaml & "      sync_ms: " & m_syncms & vbCrLf
         End If
@@ -9140,7 +10042,10 @@ Class GlfShow
     
     Public Property Get Steps() : Set Steps = m_steps : End Property
 
-    Public Function StepAtIndex(index) : Set StepAtIndex = m_steps.Items()(index) : End Function
+    Public Function StepAtIndex(index)
+        Dim step_at_index_items : step_at_index_items = m_steps.Items()
+        Set StepAtIndex = step_at_index_items(index)
+    End Function
     
     Public default Function init(name)
         m_name = name
@@ -9170,7 +10075,8 @@ Class GlfShow
         
 
         If UBound(m_steps.Keys()) > -1 Then
-            Dim prevStep : Set prevStep = m_steps.Items()(UBound(m_steps.Keys()))
+            Dim steps_items : steps_items = m_steps.Items()
+            Dim prevStep : Set prevStep = steps_items(UBound(m_steps.Keys()))
             prevStep.IsLastStep = False
             'need to work out previous steps duration.
             If IsNull(prevStep.Duration) Then
@@ -9200,33 +10106,22 @@ Class GlfShow
     End Function
 
     Public Function ToYaml()
-        'Dim yaml
-        'yaml = yaml & "  " & Replace(m_name, "shotprofile_", "") & ":" & vbCrLf
-        'yaml = yaml & "    states: " & vbCrLf
-        'Dim token,evt,x : x = 0
-        'For Each evt in m_states.Keys
-        '    yaml = yaml & "     - name: " & StateName(x) & vbCrLf
-            'yaml = yaml & "       show: " & m_states(evt).Show & vbCrLf
-            'yaml = yaml & "       loops: " & m_states(evt).Loops & vbCrLf
-            'yaml = yaml & "       speed: " & m_states(evt).Speed & vbCrLf
-            'yaml = yaml & "       sync_ms: " & m_states(evt).SyncMs & vbCrLf
-
-            'If Ubound(m_states(evt).Tokens().Keys)>-1 Then
-            '    yaml = yaml & "       show_tokens: " & vbCrLf
-            '    For Each token in m_states(evt).Tokens().Keys()
-            '        yaml = yaml & "         " & token & ": " & m_states(evt).Tokens(token) & vbCrLf
-            '    Next
-            'End If
-
-            'yaml = yaml & "     block: " & m_block & vbCrLf
-            'yaml = yaml & "     advance_on_hit: " & m_advance_on_hit & vbCrLf
-            'yaml = yaml & "     loop: " & m_loop & vbCrLf
-            'yaml = yaml & "     rotation_pattern: " & m_rotation_pattern & vbCrLf
-            'yaml = yaml & "     state_names_to_not_rotate: " & m_states_not_to_rotate & vbCrLf
-            'yaml = yaml & "     state_names_to_rotate: " & m_states_to_rotate & vbCrLf
-         '   x = x +1
-        'Next
-        'ToYaml = yaml
+        Dim yaml, show_step
+        For Each show_step in m_steps.Items()
+            If Not IsNull(show_step.Duration) Then
+                yaml = yaml & "- duration: " & show_step.Duration & "s" & vbCrLf
+            Else
+                If Not IsNull(show_step.AbsoluteTime) Then
+                    yaml = yaml & "- time: " & show_step.AbsoluteTime & "s" & vbCrLf
+                End If
+                If Not IsNull(show_step.RelativeTime) Then
+                    yaml = yaml & "- time: +" & show_step.RelativeTime & "s" & vbCrLf
+                End If
+            End If
+            
+            yaml = yaml & show_step.toYaml() & vbCrLf
+        Next
+        ToYaml = yaml
     End Function
 
 End Class
@@ -9278,13 +10173,14 @@ Class GlfRunningShow
             Set ShowsAdded = m_shows_added
         End If
     End Property
-    Public Property Let ShowsAdded(input)
-        If IsNull(input) Then
-            m_shows_added = Null
-        Else
-            Set m_shows_added = input
-        End If
-    End Property
+
+    Public Sub SetShowsAdded(shows)
+        Set m_shows_added = shows
+    End Sub
+
+    Public Sub ClearShowsAdded()
+        m_shows_added = Null
+    End Sub
     
     Public default Function init(rname, rkey, show_settings, priority, tokens, cache_id)
         m_show_name = rname
@@ -9298,8 +10194,9 @@ Class GlfRunningShow
         Dim key
         Dim mergedTokens : Set mergedTokens = CreateObject("Scripting.Dictionary")
         If Not IsNull(m_show_settings.Tokens) Then
-            For Each key In m_show_settings.Tokens.Keys()
-                mergedTokens.Add key, m_show_settings.Tokens()(key)
+            Dim show_settings_tokens : Set show_settings_tokens = m_show_settings.Tokens()
+            For Each key In show_settings_tokens.Keys()
+                mergedTokens.Add key, show_settings_tokens(key)
             Next
         End If
         If Not IsNull(tokens) Then
@@ -9389,27 +10286,26 @@ Function GlfShowStepHandler(args)
             msgbox running_show.CacheName & " show not cached! Problem with caching"
         End If
 
-        If Not IsNull(running_show.ShowsAdded) Then
+        If Not IsNull(running_show.ShowsAdded()) Then
             Dim show_added
-            For Each show_added in running_show.ShowsAdded.Keys()
+            For Each show_added in running_show.ShowsAdded().Keys()
                 If glf_running_shows.Exists(show_added) Then 
                     glf_running_shows(show_added).StopRunningShow()
                 End If
             Next
-            running_show.ShowsAdded = Null
+            running_show.ClearShowsAdded()
         End If  
 
         Dim shows_added, replacement_color
         replacement_color = Empty
         If Not IsEmpty(running_show.ShowSettings.ColorLookup) Then
-            'msgbox ubound(running_show.ShowSettings.ColorLookup())
-            'MsgBox UBound(cached_show_seq)
-            replacement_color = running_show.ShowSettings.ColorLookup()(running_show.CurrentStep)
+            Dim show_settings_color_lookup : show_settings_color_lookup = running_show.ShowSettings.ColorLookup()
+            replacement_color = show_settings_color_lookup(running_show.CurrentStep)
         End If
-        Set shows_added = LightPlayerCallbackHandler(running_show.Key, Array(cached_show_seq(running_show.CurrentStep)), running_show.ShowName, running_show.Priority + running_show.ShowSettings.Priority, True, running_show.ShowSettings.Speed, replacement_color)
-        If IsObject(shows_added) Then
+        shows_added = LightPlayerCallbackHandler(running_show.Key, Array(cached_show_seq(running_show.CurrentStep)), running_show.ShowName, running_show.Priority + running_show.ShowSettings.Priority, True, running_show.ShowSettings.Speed, replacement_color)
+        If Not IsNull(shows_added(0)) Then
             'Fade shows were added, log them agains the current show.
-            running_show.ShowsAdded = shows_added
+            running_show.SetShowsAdded(shows_added(0))
         End If
     End If
     If UBound(nextStep.ShowsInStep().Keys())>-1 Then
@@ -9439,6 +10335,13 @@ Function GlfShowStepHandler(args)
         Dim slide_item
         Dim slide_items : slide_items = nextStep.SlidesInStep().Items()
         For Each slide_item in slide_items
+            
+        Next
+    End If
+    If UBound(nextStep.WidgetsInStep().Keys())>-1 Then
+        Dim widget_item
+        Dim widget_items : widget_items = nextStep.WidgetsInStep().Items()
+        For Each widget_item in widget_items
             
         Next
     End If
@@ -9483,7 +10386,7 @@ End Function
 
 Class GlfShowStep
 
-    Private m_lights, m_shows, m_dofs, m_slides, m_time, m_duration, m_isLastStep, m_absTime, m_relTime
+    Private m_lights, m_shows, m_dofs, m_slides, m_widgets, m_time, m_duration, m_isLastStep, m_absTime, m_relTime
 
     Public Property Get Lights(): Lights = m_lights: End Property
     Public Property Let Lights(input) : m_lights = input: End Property
@@ -9505,12 +10408,20 @@ Class GlfShowStep
     End Property
 
     Public Property Get SlidesInStep(): Set SlidesInStep = m_slides: End Property
-        Public Property Get Slides(slide)
-            Dim new_slide : Set new_slide = (new GlfSlidePlayerItem)()
-            new_slide.Slide = slide
-            m_slides.Add slide & CStr(UBound(m_slides.Keys)), new_slide
-            Set Slides = new_slide
-        End Property
+    Public Property Get Slides(slide)
+        Dim new_slide : Set new_slide = (new GlfSlidePlayerItem)()
+        new_slide.Slide = slide
+        m_slides.Add slide & CStr(UBound(m_slides.Keys)), new_slide
+        Set Slides = new_slide
+    End Property
+
+    Public Property Get WidgetsInStep(): Set WidgetsInStep = m_widgets: End Property
+    Public Property Get Widgets(widget)
+        Dim new_widget : Set new_widget = (new GlfWidgetPlayerItem)()
+        new_widget.Widget = widget
+        m_widgets.Add widget & CStr(UBound(m_widgets.Keys)), new_widget
+        Set Widgets = new_widget
+    End Property
 
     Public Property Get Time()
         If IsNull(m_relTime) Then
@@ -9528,7 +10439,9 @@ Class GlfShowStep
         End If
     End Property
 
+    Public Property Get RelativeTime() : RelativeTime = m_relTime: End Property
     Public Property Let RelativeTime(input) : m_relTime = input: End Property
+    Public Property Get AbsoluteTime() : AbsoluteTime = m_absTime: End Property
     Public Property Let AbsoluteTime(input) : m_absTime = input: End Property
 
     Public Property Get Duration(): Duration = m_duration: End Property
@@ -9547,37 +10460,26 @@ Class GlfShowStep
         Set m_shows = CreateObject("Scripting.Dictionary")
         Set m_dofs = CreateObject("Scripting.Dictionary")
         Set m_slides = CreateObject("Scripting.Dictionary")
+        Set m_widgets = CreateObject("Scripting.Dictionary")
         Set Init = Me
 	End Function
 
     Public Function ToYaml()
-        'Dim yaml
-        'yaml = yaml & "  " & Replace(m_name, "shotprofile_", "") & ":" & vbCrLf
-        'yaml = yaml & "    states: " & vbCrLf
-        'Dim token,evt,x : x = 0
-        'For Each evt in m_states.Keys
-        '    yaml = yaml & "     - name: " & StateName(x) & vbCrLf
-            'yaml = yaml & "       show: " & m_states(evt).Show & vbCrLf
-            'yaml = yaml & "       loops: " & m_states(evt).Loops & vbCrLf
-            'yaml = yaml & "       speed: " & m_states(evt).Speed & vbCrLf
-            'yaml = yaml & "       sync_ms: " & m_states(evt).SyncMs & vbCrLf
-
-            'If Ubound(m_states(evt).Tokens().Keys)>-1 Then
-            '    yaml = yaml & "       show_tokens: " & vbCrLf
-            '    For Each token in m_states(evt).Tokens().Keys()
-            '        yaml = yaml & "         " & token & ": " & m_states(evt).Tokens(token) & vbCrLf
-            '    Next
-            'End If
-
-            'yaml = yaml & "     block: " & m_block & vbCrLf
-            'yaml = yaml & "     advance_on_hit: " & m_advance_on_hit & vbCrLf
-            'yaml = yaml & "     loop: " & m_loop & vbCrLf
-            'yaml = yaml & "     rotation_pattern: " & m_rotation_pattern & vbCrLf
-            'yaml = yaml & "     state_names_to_not_rotate: " & m_states_not_to_rotate & vbCrLf
-            'yaml = yaml & "     state_names_to_rotate: " & m_states_to_rotate & vbCrLf
-         '   x = x +1
-        'Next
-        'ToYaml = yaml
+        Dim yaml
+        If UBound(m_lights) > -1 Then
+            yaml = yaml & "  lights:" & vbCrLf
+            Dim light
+            For Each light in m_lights
+                Dim light_parts
+                light_parts = Split(light, "|")
+                If UBound(light_parts) = 1 Then
+                    yaml = yaml & "    " & light_parts(0) & ": ffffff%" & light_parts(1) & vbCrLf
+                Else
+                    yaml = yaml & "    " & light_parts(0) & ": " & light_parts(2) & "%" & light_parts(1) & vbCrLf
+                End If
+            Next
+        End If
+        ToYaml = yaml
     End Function
 
 End Class
@@ -9595,6 +10497,7 @@ Class GlfSlidePlayer
 
     Public Property Get Name() : Name = "slide_player" : End Property
 
+    Public Property Get EventNames() : EventNames = m_events.Keys() : End Property   
     Public Property Get EventName(name)
         Dim newEvent : Set newEvent = (new GlfEvent)(name)
         m_events.Add newEvent.Raw, newEvent
@@ -9613,7 +10516,7 @@ Class GlfSlidePlayer
 
 	Public default Function init(mode)
         m_name = "slide_player_" & mode.name
-        m_mode = mode.Name
+        m_mode = mode.ModeName
         m_priority = mode.Priority
         m_debug = False
         Set m_events = CreateObject("Scripting.Dictionary")
@@ -9640,7 +10543,9 @@ Class GlfSlidePlayer
         Play = Empty
         If m_events(evt).Evaluate() Then
             'Fire Slide
-            bcpController.PlaySlide m_eventValues(evt).Slide, m_mode, m_events(evt).EventName, m_priority
+            If useBcp = True Then
+                bcpController.PlaySlide m_eventValues(evt).Slide, m_mode, m_events(evt).EventName, m_priority+m_eventValues(evt).Priority
+            End If
         End If
     End Function
 
@@ -9652,11 +10557,11 @@ Class GlfSlidePlayer
 
     Public Function ToYaml()
         Dim yaml
-        Dim evt
+        Dim key
         If UBound(m_events.Keys) > -1 Then
             For Each key in m_events.keys
                 yaml = yaml & "  " & key & ": " & vbCrLf
-                yaml = yaml & m_events(key).ToYaml
+                yaml = yaml & m_eventValues(key).ToYaml
             Next
             yaml = yaml & vbCrLf
         End If
@@ -9707,42 +10612,31 @@ Class GlfSlidePlayerItem
         m_expire = input
     End Property
 
-    Public Property Get MaxQueueTime(): MaxQueueTime = m_max_queue_time: End Property
-    Public Property Let MaxQueueTime(input)
-        m_max_queue_time = input
-    End Property
-
-    Public Property Get Method(): Method = m_method: End Property
-    Public Property Let Method(input)
-        m_method = input
-    End Property
-
     Public Property Get Priority(): Priority = m_priority: End Property
     Public Property Let Priority(input)
         m_priority = input
-    End Property
-
-    Public Property Get Target(): Target = m_target: End Property
-    Public Property Let Target(input)
-        m_target = input
-    End Property
-
-    Public Property Get Tokens(): Tokens = m_tokens: End Property
-    Public Property Let Tokens(input)
-        m_tokens = input
     End Property
 
 	Public default Function init()
         m_action = "play"
         m_slide = Empty
         m_expire = Empty
-        m_max_queue_time = Empty
-        m_method = Empty
-        m_priority = Empty
-        m_target = Empty
-        m_tokens = Empty
+        m_priority = 0
         Set Init = Me
 	End Function
+
+    Public Function ToYaml()
+        Dim yaml
+        yaml = yaml & "    "& m_slide & ":" & vbCrLf
+        yaml = yaml & "      action: " & m_action & vbCrLf
+        If Not IsEmpty(m_expire) Then
+            yaml = yaml & "      expire: " & m_expire & "ms" & vbCrLf
+        End If
+        If m_priority <> 0 Then
+            yaml = yaml & "      priority: " & m_priority & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
 
 End Class
 
@@ -10052,6 +10946,9 @@ Class GlfStateMachine
     Public Sub StopCurrentState()
         Log "Stopping state " & State()
         RemoveHandlers()
+        If IsNull(state) Then
+            Exit Sub
+        End If
         Dim state_config : Set state_config = m_states(state)
 
         If UBound(state_config.EventsWhenStopped().Keys()) > -1 Then
@@ -10069,6 +10966,9 @@ Class GlfStateMachine
     End Sub
 
     Public Sub RunShowForCurrentState()
+        If IsNull(state) Then
+            Exit Sub
+        End If
         Log state
         Dim state_config : Set state_config = m_states(state)
         If Not IsNull(state_config.ShowWhenActive().Show) Then
@@ -10080,6 +10980,9 @@ Class GlfStateMachine
     End Sub
 
     Public Sub StopShowForCurrentState()
+        If IsNull(state) Then
+            Exit Sub
+        End If
         Dim state_config : Set state_config = m_states(state)
         If Not IsNull(state_config.ShowWhenActive().Show) Then
             Dim show : Set show = state_config.ShowWhenActive
@@ -10158,7 +11061,7 @@ Class GlfStateMachineState
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_events_when_started.Add newEvent.Name, newEvent
+            m_events_when_started.Add newEvent.Raw, newEvent
         Next    
     End Property
  
@@ -10167,7 +11070,7 @@ Class GlfStateMachineState
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_events_when_stopped.Add newEvent.Name, newEvent
+            m_events_when_stopped.Add newEvent.Raw, newEvent
         Next
     End Property
  
@@ -10202,7 +11105,7 @@ Class GlfStateMachineTranistion
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_events.Add newEvent.Name, newEvent
+            m_events.Add newEvent.Raw, newEvent
         Next    
     End Property
  
@@ -10211,7 +11114,7 @@ Class GlfStateMachineTranistion
         Dim x
         For x=0 to UBound(value)
             Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-            m_events_when_transitioning.Add newEvent.Name, newEvent
+            m_events_when_transitioning.Add newEvent.Raw, newEvent
         Next    
     End Property
  
@@ -10291,33 +11194,9 @@ Class GlfTilt
             m_reset_warnings_events.Add newEvent.Raw, newEvent
         Next
     End Property
-    'Public Property Let TiltEvents(value)
-    '    Dim x
-    '    For x=0 to UBound(value)
-    '        Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-    '        m_tilt_events.Add newEvent.Raw, newEvent
-    '    Next
-    'End Property
-    'Public Property Let TiltWarningEvents(value)
-    '    Dim x
-    '    For x=0 to UBound(value)
-    '        Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-    '        m_tilt_warning_events.Add newEvent.Raw, newEvent
-    '    Next
-    'End Property
-    'Public Property Let SlamTiltEvents(value)
-    '    Dim x
-    '    For x=0 to UBound(value)
-    '        Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
-    '        m_tilt_slam_tilt_events.Add newEvent.Raw, newEvent
-    '    Next
-    'End Property
     Public Property Let SettleTime(value): Set m_settle_time = CreateGlfInput(value): End Property
     Public Property Let WarningsToTilt(value): Set m_warnings_to_tilt = CreateGlfInput(value): End Property
     Public Property Let MultipleHitWindow(value): Set m_multiple_hit_window = CreateGlfInput(value): End Property
-    'Public Property Let TiltWarningSwitch(value): m_tilt_warning_switch = value: End Property
-    'Public Property Let TiltSwitch(value): m_tilt_switch = value: End Property
-    'Public Property Let SlamTiltSwitch(value): m_slam_tilt_switch = value: End Property
 
     Private Property Get TiltSettleMsRemaining()
         TiltSettleMsRemaining = 0
@@ -11013,7 +11892,6 @@ Class GlfTimer
         m_ticks = new_value
         timer_value = new_value - timer_value
 
-        Dim kwargs : Set kwargs = GlfKwargs()
         With kwargs
             .Add "ticks", m_ticks
             .Add "ticks_added", timer_value
@@ -11112,7 +11990,7 @@ Class GlfVariablePlayer
     Private m_value
 
     Public Property Get Name() : Name = m_name : End Property
-
+    Public Property Get EventNames() : EventNames = m_events.Keys() : End Property 
     Public Property Get EventName(name)
         Dim newEvent : Set newEvent = (new GlfVariablePlayerEvent)(name)
         m_events.Add newEvent.BaseEvent.Raw, newEvent
@@ -11181,6 +12059,19 @@ Class GlfVariablePlayer
         Next
     End Sub
 
+    Public Function ToYaml()
+        Dim yaml
+        Dim key
+        If UBound(m_events.Keys) > -1 Then
+            For Each key in m_events.keys
+                yaml = yaml & "  " & key & ": " & vbCrLf
+                yaml = yaml & m_events(key).ToYaml
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_mode & "_variable_player", message
@@ -11213,6 +12104,19 @@ Class GlfVariablePlayerEvent
 	    Set Init = Me
 	End Function
 
+    Public Function ToYaml()
+        Dim yaml
+        Dim key
+        If UBound(m_variables.Keys) > -1 Then
+            For Each key in m_variables.keys
+                yaml = yaml & "    " & key & ": " & vbCrLf
+                yaml = yaml & m_variables(key).ToYaml
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
 End Class
 
 Class GlfVariablePlayerItem
@@ -11224,21 +12128,21 @@ Class GlfVariablePlayerItem
     Public Property Get Block(): Block = m_block End Property
     Public Property Let Block(input): m_block = input End Property
 
-	Public Property Let Float(input): m_float = Glf_ParseInput(input): m_type = "float" : End Property
+	Public Property Let Float(input): Set m_float = CreateGlfInput(input): m_type = "float" : End Property
   
-	Public Property Let Int(input): m_int = Glf_ParseInput(input): m_type = "int" : End Property
+	Public Property Let Int(input): Set m_int = CreateGlfInput(input): m_type = "int" : End Property
   
-	Public Property Let String(input) : m_string = Glf_ParseInput(input) : m_type = "string" : End Property
+	Public Property Let String(input) : Set m_string = CreateGlfInput(input) : m_type = "string" : End Property
 
     Public Property Get VariableType(): VariableType = m_type: End Property
     Public Property Get VariableValue()
         Select Case m_type
             Case "float"
-                VariableValue = GetRef(m_float(0))()
+                VariableValue = m_float.Value()
             Case "int"
-                VariableValue = GetRef(m_int(0))()
+                VariableValue = m_int.Value()
             Case "string"
-                VariableValue = GetRef(m_string(0))()
+                VariableValue = m_string.Value()
             Case Else
                 VariableValue = Empty
         End Select
@@ -11257,6 +12161,27 @@ Class GlfVariablePlayerItem
         m_player = Empty
 	    Set Init = Me
 	End Function
+
+    Public Function ToYaml()
+        Dim yaml
+        yaml = yaml & "      "& "action" & ": " & m_action & vbCrLf
+        If m_block = True Then
+            yaml = yaml & "      "& "block" & ": true" & vbCrLf
+        End If
+        If Not IsEmpty(m_int) Then
+            yaml = yaml & "      "& "int" & ": " & m_int.Raw & vbCrLf
+        End If
+        If Not IsEmpty(m_float) Then
+            yaml = yaml & "      "& "float" & ": " & m_float.Raw & vbCrLf
+        End If
+        If Not IsEmpty(m_string) Then
+            yaml = yaml & "      "& "string" & ": " & m_string.Raw & vbCrLf
+        End If
+        If Not IsEmpty(m_player) Then
+            yaml = yaml & "      "& "player" & ": " & m_strinm_playerg & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
 
 End Class
 
@@ -11324,6 +12249,163 @@ Function VariablePlayerEventHandler(args)
     End If
     
 End Function
+
+
+Class GlfWidgetPlayer
+
+    Private m_name
+    Private m_priority
+    Private m_mode
+    Private m_debug
+    private m_base_device
+    Private m_events
+    Private m_eventValues
+
+    Public Property Get Name() : Name = "widget_player" : End Property
+
+    Public Property Get EventNames() : EventNames = m_events.Keys() : End Property   
+    Public Property Get EventName(name)
+        Dim newEvent : Set newEvent = (new GlfEvent)(name)
+        m_events.Add newEvent.Raw, newEvent
+        Dim new_slide : Set new_slide = (new GlfWidgetPlayerItem)()
+        m_eventValues.Add newEvent.Raw, new_slide
+        Set EventName = new_slide
+    End Property
+    
+    Public Property Let Debug(value)
+        m_debug = value
+        m_base_device.Debug = value
+    End Property
+    Public Property Get IsDebug()
+        If m_debug Then : IsDebug = 1 : Else : IsDebug = 0 : End If
+    End Property
+
+	Public default Function init(mode)
+        m_name = "widget_player_" & mode.name
+        m_mode = mode.ModeName
+        m_priority = mode.Priority
+        m_debug = False
+        Set m_events = CreateObject("Scripting.Dictionary")
+        Set m_eventValues = CreateObject("Scripting.Dictionary")
+        Set m_base_device = (new GlfBaseModeDevice)(mode, "widget_player", Me)
+        Set Init = Me
+	End Function
+
+    Public Sub Activate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            AddPinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_widget_player_play", "WidgetPlayerEventHandler", m_priority+m_events(evt).Priority, Array("play", Me, evt)
+        Next
+    End Sub
+
+    Public Sub Deactivate()
+        Dim evt
+        For Each evt In m_events.Keys()
+            RemovePinEventListener m_events(evt).EventName, m_mode & "_" & evt & "_widget_player_play"
+        Next
+    End Sub
+
+    Public Function Play(evt)
+        Play = Empty
+        If m_events(evt).Evaluate() Then
+            'Fire Widget
+            If useBcp = True Then
+                bcpController.PlayWidget m_eventValues(evt).Widget, m_mode, m_events(evt).EventName, m_priority+m_eventValues(evt).Priority, m_eventValues(evt).Expire
+            End If
+        End If
+    End Function
+
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_mode & "_widget_player", message
+        End If
+    End Sub
+
+    Public Function ToYaml()
+        Dim yaml
+        Dim key
+        If UBound(m_events.Keys) > -1 Then
+            For Each key in m_events.keys
+                yaml = yaml & "  " & key & ": " & vbCrLf
+                yaml = yaml & m_eventValues(key).ToYaml
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
+End Class
+
+Function WidgetPlayerEventHandler(args)
+    Dim ownProps, kwargs : ownProps = args(0)
+    If IsObject(args(1)) Then
+        Set kwargs = args(1)
+    Else
+        kwargs = args(1) 
+    End If
+    Dim evt : evt = ownProps(0)
+    Dim widget_player : Set widget_player = ownProps(1)
+    Select Case evt
+        Case "activate"
+            widget_player.Activate
+        Case "deactivate"
+            widget_player.Deactivate
+        Case "play"
+            widget_player.Play(ownProps(2))
+    End Select
+    If IsObject(args(1)) Then
+        Set WidgetPlayerEventHandler = kwargs
+    Else
+        WidgetPlayerEventHandler = kwargs
+    End If
+End Function
+
+Class GlfWidgetPlayerItem
+	Private m_slide, m_action, m_expire, m_max_queue_time, m_method, m_priority, m_target, m_tokens
+    
+    Public Property Get Widget(): Widget = m_slide: End Property
+    Public Property Let Widget(input)
+        m_slide = input
+    End Property
+    
+    Public Property Get Action(): Action = m_action: End Property
+    Public Property Let Action(input)
+        m_action = input
+    End Property
+
+    Public Property Get Expire(): Expire = m_expire: End Property
+    Public Property Let Expire(input)
+        m_expire = input
+    End Property
+
+    Public Property Get Priority(): Priority = m_priority: End Property
+    Public Property Let Priority(input)
+        m_priority = input
+    End Property
+
+	Public default Function init()
+        m_action = "play"
+        m_slide = Empty
+        m_expire = Empty
+        m_priority = 0
+        Set Init = Me
+	End Function
+
+    Public Function ToYaml()
+        Dim yaml
+        yaml = yaml & "    "& m_slide & ":" & vbCrLf
+        yaml = yaml & "      action: " & m_action & vbCrLf
+        If Not IsEmpty(m_expire) Then
+            yaml = yaml & "      expire: " & m_expire & "ms" & vbCrLf
+        End If
+        If m_priority <> 0 Then
+            yaml = yaml & "      priority: " & m_priority & vbCrLf
+        End If
+        ToYaml = yaml
+    End Function
+
+End Class
+
 
 
 Class DelayObject
@@ -11422,6 +12504,7 @@ End Function
 Class GlfAutoFireDevice
 
     Private m_name
+    Private m_device_name
     Private m_enable_events
     Private m_disable_events
     Private m_enabled
@@ -11467,6 +12550,7 @@ Class GlfAutoFireDevice
 
 	Public default Function init(name)
         m_name = "auto_fire_coil_" & name
+        m_device_name = name
         EnableEvents = Array("ball_started")
         DisableEvents = Array("ball_will_end", "service_mode_entered")
         m_enabled = False
@@ -11484,7 +12568,7 @@ Class GlfAutoFireDevice
         Log "Enabling"
         m_enabled = True
         If Not IsEmpty(m_enabled_cb) Then
-            GetRef(m_enabled_cb)()
+            GetRef(m_enabled_cb)(Null)
         End If
         If Not IsEmpty(m_switch) Then
             AddPinEventListener m_switch & "_active", m_name & "_active", "AutoFireDeviceEventHandler", 1000, Array("activate", Me)
@@ -11496,7 +12580,7 @@ Class GlfAutoFireDevice
         Log "Disabling"
         m_enabled = False
         If Not IsEmpty(m_disabled_cb) Then
-            GetRef(m_disabled_cb)()
+            GetRef(m_disabled_cb)(Null)
         End If
         Deactivate(Null)
         RemovePinEventListener m_switch & "_active", m_name & "_active"
@@ -11588,6 +12672,7 @@ Class GlfBallDevice
     Private m_incoming_balls
     Private m_lost_balls
     Private m_exclude_from_ball_search
+    Private m_auto_fire_on_unexpected_ball
     Private m_debug
 
     Public Property Get Name(): Name = m_name : End Property
@@ -11647,6 +12732,7 @@ Class GlfBallDevice
     End Property
     Public Property Let MechanicalEject(value) : m_mechanical_eject = value : End Property
     Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
+    Public Property Let AutoFireOnUnexpectedBall(value) : m_auto_fire_on_unexpected_ball = value : End Property
 
     Public Property Let Debug(value) : m_debug = value : End Property
         
@@ -11670,6 +12756,7 @@ Class GlfBallDevice
         m_entrance_count_delay = 500
         m_incoming_balls = 0
         m_exclude_from_ball_search = False
+        m_auto_fire_on_unexpected_ball = True
         glf_ball_devices.Add name, Me
 	    Set Init = Me
 	End Function
@@ -11706,7 +12793,7 @@ Class GlfBallDevice
         End If        
         Log "Unclaimed Balls: " & unclaimed_balls
         DispatchPinEvent m_name & "_ball_entered", Null
-        If unclaimed_balls > 0 Then
+        If unclaimed_balls > 0 And m_auto_fire_on_unexpected_ball = True Then
             SetDelay m_name & "_eject_attempt", "BallDeviceEventHandler", Array(Array("ball_eject", Me), ball), 500
         End If
     End Sub
@@ -11735,6 +12822,7 @@ Class GlfBallDevice
         End If
         DispatchPinEvent m_name & "_ball_eject_success", Null
         Log "Ball successfully exited"
+        RemoveDelay m_name & "_eject_attempt"
         If m_ejecting_all = True Then
             If m_balls_to_eject = 0 Then
                 m_ejecting_all = False
@@ -12082,15 +13170,23 @@ Class GlfDroptarget
 	Private m_reset_events
     Private m_complete
     Private m_exclude_from_ball_search
-
+    Private m_use_roth
+    Private m_roth_array_index
     
     Private m_debug
 
+
+    Public Property Get Name()
+        Name = Replace(m_name, "drop_target_", "")
+    End Property
 	Public Property Let Switch(value)
 		m_switch = value
 		AddPinEventListener m_switch & "_active", m_name & "_switch_active", "DroptargetEventHandler", 1000, Array("switch_active", Me)
 		AddPinEventListener m_switch & "_inactive", m_name & "_switch_inactive", "DroptargetEventHandler", 1000, Array("switch_inactive", Me)
 	End Property
+    Public Property Get Switch()
+        Switch = m_switch
+    End Property
     Public Property Let EnableKeepUpEvents(value)
         Dim evt
         If IsArray(m_enable_keep_up_events) Then
@@ -12142,6 +13238,19 @@ Class GlfDroptarget
 		Next
 	End Property
     Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
+    Public Property Get UseRothDroptarget()
+        UseRothDroptarget = m_use_roth
+    End Property
+    Public Property Let UseRothDroptarget(value)
+        m_use_roth = value
+    End Property
+    Public Property Get RothDTSwitchID()
+        RothDTSwitchID = m_roth_array_index
+    End Property
+    Public Property Let RothDTSwitchID(value)
+        m_roth_array_index = value
+    End Property
+    
     Public Property Let Debug(value) : m_debug = value : End Property
 
 	Public default Function init(name)
@@ -12154,8 +13263,10 @@ Class GlfDroptarget
 		ResetEvents = Array()
         m_complete = 0
 		m_debug = False
+        m_use_roth = False
+        m_roth_array_index = -1
         m_exclude_from_ball_search = False
-        glf_droptargets.Add name, Me
+        glf_drop_targets.Add name, Me
         Set Init = Me
 	End Function
 
@@ -12275,15 +13386,6 @@ Class GlfFlipper
     Private m_switch
     Private m_action_cb
     Private m_debug
-
-    Public Property Get GetValue(value)
-        Select Case value
-            Case "enabled":
-                GetValue = m_enabled
-            Case "active":
-                GetValue = m_active
-        End Select
-    End Property
 
     Public Property Let Switch(value)
         m_switch = value
@@ -12428,6 +13530,7 @@ Class GlfLightSegmentDisplay
     private m_default_transition_update_hz
     private m_color
     private m_flex_dmd_index
+    private m_b2s_dmd_index
 
     Public Property Get Name() : Name = m_name : End Property
 
@@ -12479,6 +13582,10 @@ Class GlfLightSegmentDisplay
         m_flex_dmd_index = input
     End Property
 
+    Public Property Let ExternalB2SSegmentIndex(input)
+        m_b2s_dmd_index = input
+    End Property
+
     Public Property Get DefaultTransitionUpdateHz() : DefaultTransitionUpdateHz = m_default_transition_update_hz : End Property
     Public Property Let DefaultTransitionUpdateHz(input) : m_default_transition_update_hz = input : End Property
 
@@ -12506,6 +13613,7 @@ Class GlfLightSegmentDisplay
         m_integrated_dots = False
         m_use_dots_for_commas = False
         m_flex_dmd_index = -1
+        m_b2s_dmd_index = -1
 
         m_display_flash_duty = 30
         m_default_transition_update_hz = 30
@@ -12557,11 +13665,13 @@ Class GlfLightSegmentDisplay
     End Sub
 
     Public Sub SetVirtualDMDLights(input)
-        If m_flex_dmd_index>-1 Then
-            Dim x
-            For x=0 to UBound(m_lights)
-                glf_lightNames(m_lights(x)).Visible = input
-            Next
+        If glf_table.ShowDT Then
+            If m_flex_dmd_index>-1 Then
+                Dim x
+                For x=0 to UBound(m_lights)
+                    glf_lightNames(m_lights(x)).Visible = input
+                Next
+            End If
         End If
     End Sub
 
@@ -12644,6 +13754,13 @@ Class GlfLightSegmentDisplay
 				    If Err Then Debug.Print "Error: " & Err
                     'glf_flex_alphadmd_segments(m_flex_dmd_index+i) = segment.CharMapping '&h2A0F '0010101000001111
                     glf_flex_alphadmd.Segments = glf_flex_alphadmd_segments
+                End If
+                If m_b2s_dmd_index > -1 Then
+                    dim b2sChar
+                    b2sChar = segment.B2SLEDValue
+                    On Error Resume Next
+				    controller.B2SSetLED m_b2s_dmd_index+i, b2sChar
+				    If Err Then Debug.Print "Error: " & Err
                 End If
                 segment_idx = segment_idx + 15
             ElseIf m_segment_type = "7Segment" Then
@@ -13016,6 +14133,63 @@ Class FourteenSegments
         Else
             CharMapping = hexcode
         End If
+    End Property
+
+    Public Property Get B2SLEDValue()						'to be used with dB2S 15-segments-LED used in Herweh's Designer
+        B2SLEDValue = 0									'default for unknown characters
+        select case char
+            Case "","":	B2SLEDValue = 0
+            Case "0":	B2SLEDValue = 63	
+            Case "1":	B2SLEDValue = 8704
+            Case "2":	B2SLEDValue = 2139
+            Case "3":	B2SLEDValue = 2127	
+            Case "4":	B2SLEDValue = 2150
+            Case "5":	B2SLEDValue = 2157
+            Case "6":	B2SLEDValue = 2172
+            Case "7":	B2SLEDValue = 7
+            Case "8":	B2SLEDValue = 2175
+            Case "9":	B2SLEDValue = 2159
+            Case "A":	B2SLEDValue = 2167
+            Case "B":	B2SLEDValue = 10767
+            Case "C":	B2SLEDValue = 57
+            Case "D":	B2SLEDValue = 8719
+            Case "E":	B2SLEDValue = 121
+            Case "F":	B2SLEDValue = 2161
+            Case "G":	B2SLEDValue = 2109
+            Case "H":	B2SLEDValue = 2166
+            Case "I":	B2SLEDValue = 8713
+            Case "J":	B2SLEDValue = 31
+            Case "K":	B2SLEDValue = 5232
+            Case "L":	B2SLEDValue = 56
+            Case "M":	B2SLEDValue = 1334
+            Case "N":	B2SLEDValue = 4406
+            Case "O":	B2SLEDValue = 63
+            Case "P":	B2SLEDValue = 2163
+            Case "Q":	B2SLEDValue = 4287
+            Case "R":	B2SLEDValue = 6259
+            Case "S":	B2SLEDValue = 2157
+            Case "T":	B2SLEDValue = 8705
+            Case "U":	B2SLEDValue = 62
+            Case "V":	B2SLEDValue = 17456
+            Case "W":	B2SLEDValue = 20534
+            Case "X":	B2SLEDValue = 21760
+            Case "Y":	B2SLEDValue = 9472
+            Case "Z":	B2SLEDValue = 17417
+            Case "<":	B2SLEDValue = 5120
+            Case ">":	B2SLEDValue = 16640
+            Case "^":	B2SLEDValue = 17414
+            Case ".":	B2SLEDValue = 8
+            Case "!":	B2SLEDValue = 0
+            Case ".":	B2SLEDValue = 128
+            Case "*":	B2SLEDValue = 32576
+            Case "/":	B2SLEDValue = 17408
+            Case "\":	B2SLEDValue = 4352
+            Case "|":	B2SLEDValue = 8704
+            Case "=":	B2SLEDValue = 2120
+            Case "+":	B2SLEDValue = 10816
+            Case "-":	B2SLEDValue = 2112
+        End Select			
+        B2SLEDValue = cint(B2SLEDValue)
     End Property
 
     Public default Function init(dp, l, m, n, k, j, h, g2, g1, f, e, d, c, b, a, char)
@@ -14216,6 +15390,60 @@ Class GlfSound
     End Sub
 
 End Class
+Function CreateGlfStanduptarget(name)
+	Dim standuptarget : Set standuptarget = (new GlfStandupTarget)(name)
+	Set CreateGlfStanduptarget = standuptarget
+End Function
+
+Class GlfStandupTarget
+
+    Private m_name
+	Private m_switch
+    Private m_use_roth
+    Private m_roth_array_index
+    
+    Private m_debug
+
+    Public Property Get Name()
+        Name = Replace(m_name, "standup_target_", "")
+    End Property
+	Public Property Let Switch(value)
+		m_switch = value
+	End Property
+    Public Property Get Switch()
+        Switch = m_switch
+    End Property
+    Public Property Get UseRothStanduptarget()
+        UseRothStanduptarget = m_use_roth
+    End Property
+    Public Property Let UseRothStanduptarget(value)
+        m_use_roth = value
+    End Property
+    Public Property Get RothSTSwitchID()
+        RothSTSwitchID = m_roth_array_index
+    End Property
+    Public Property Let RothSTSwitchID(value)
+        m_roth_array_index = value
+    End Property
+    
+    Public Property Let Debug(value) : m_debug = value : End Property
+
+	Public default Function init(name)
+        m_name = "standup_target_" & name
+		m_switch = Empty
+		m_debug = False
+        m_use_roth = False
+        m_roth_array_index = -1
+        glf_standup_targets.Add name, Me
+        Set Init = Me
+	End Function
+ 
+    Private Sub Log(message)
+        If m_debug = True Then
+            glf_debugLog.WriteToLog m_name, message
+        End If
+    End Sub
+End Class
 
 Class GlfEvent
 	Private m_raw, m_name, m_event, m_condition, m_delay, m_priority, has_condition
@@ -14229,7 +15457,7 @@ Class GlfEvent
 
     Public Function Evaluate()
         If has_condition = True Then
-            Evaluate = GetRef(m_condition)()
+            Evaluate = GetRef(m_condition)(Null)
         Else
             Evaluate = True
         End If
@@ -14261,7 +15489,7 @@ Class GlfEventDispatch
         If IsEmpty(m_kwargs_ref) Then
             Kwargs = Null
         Else
-            Set Kwargs = GetRef(m_kwargs_ref)()
+            Set Kwargs = GetRef(m_kwargs_ref)(Null)
         End If
     End Property
     Public Property Get Raw() : Raw = m_raw : End Property
@@ -14405,7 +15633,8 @@ Class GlfRandomEvent
                     End If
                 End If
             Next
-            chosenKey = valid_events.keys()(0)
+            Dim valid_event_keys : valid_event_keys = valid_events.keys()
+            chosenKey = valid_event_keys(0)
         End If
         
         SetPlayerState "random_" & m_mode & "_" & m_key & "_last", valid_events(chosenKey).Raw
@@ -14438,6 +15667,16 @@ Class GlfRandomEvent
         Else
             CheckFallback = Empty
         End If
+    End Function
+
+    Public Function ToYaml
+        Dim yaml
+        yaml = yaml & "    events:" & vbCrLf
+        For Each evt in m_events.Keys
+            yaml = yaml & "      " & evt & ": " & m_weights(evt) & vbCrLf
+        Next
+        ToYaml = yaml
+
     End Function
 
 End Class
@@ -14503,9 +15742,11 @@ Function Glf_InitNewPlayer()
     state.Add "extra_balls", 0
     Glf_MonitorPlayerStateUpdate "extra_balls", 0
     Dim i
-    For i=0 To UBound(glf_initialVars.Keys())
-        state.Add glf_initialVars.Keys()(i), glf_initialVars.Items()(i)
-        Glf_MonitorPlayerStateUpdate glf_initialVars.Keys()(i), glf_initialVars.Items()(i)
+    Dim init_var_keys : init_var_keys = glf_initialVars.Keys()
+    Dim init_var_items : init_var_items = glf_initialVars.Items()
+    For i=0 To UBound(init_var_keys)
+        state.Add init_var_keys(i), init_var_items(i)
+        Glf_MonitorPlayerStateUpdate init_var_keys(i), init_var_items(i)
     Next
     Set Glf_InitNewPlayer = state
 End Function
@@ -14599,11 +15840,6 @@ Function Glf_StartGame(args)
         glf_gameStarted = True
         glf_canAddPlayers = True
         DispatchPinEvent GLF_GAME_START, Null
-        If useBcp Then
-            bcpController.Send "player_turn_start?player_num=int:1"
-            bcpController.Send "ball_start?player_num=int:1&ball=int:1"
-            bcpController.SendPlayerVariable "number", 1, 0
-        End If
         SetDelay GLF_GAME_STARTED, "Glf_DispatchGameStarted", Null, 50
     End If
 End Function
@@ -14676,6 +15912,15 @@ Function Glf_TroughReleaseBall(args)
     swTrough1.kick 90, 10
     DispatchPinEvent "trough_eject", Null
     Glf_WriteDebugLog "Release Ball", "Just Kicked"
+    If Not IsNull(args) Then
+		If IsObject(args(1)) Then
+			Set Glf_TroughReleaseBall = args(1)
+		Else
+			Glf_TroughReleaseBall = args(1)
+		End If
+	Else
+		Glf_TroughReleaseBall = Null
+	End If
 End Function
 
 '****************************
@@ -14715,6 +15960,15 @@ AddPinEventListener GLF_BALL_ENDING, "ball_will_end", "Glf_BallWillEnd", 10, Nul
 '*****************************
 Function Glf_BallWillEnd(args)
     DispatchPinEvent GLF_BALL_ENDED, Null
+    If Not IsNull(args) Then
+		If IsObject(args(1)) Then
+			Set Glf_BallWillEnd = args(1)
+		Else
+			Glf_BallWillEnd = args(1)
+		End If
+	Else
+		Glf_BallWillEnd = Null
+	End If
 End Function
 
 '****************************
@@ -14757,10 +16011,7 @@ Function Glf_EndOfBall(args)
             glf_currentPlayer = "PLAYER 1"
     End Select
     
-    If useBcp Then
-        bcpController.SendPlayerVariable "number", Getglf_currentPlayerNumber(), previousPlayerNumber
-    End If
-    If GetPlayerState(GLF_CURRENT_BALL) > glf_ballsPerGame Then
+    If GetPlayerState(GLF_CURRENT_BALL) > glf_game.BallsPerGame() Then
         Dim device
         For Each device in glf_ball_devices.Items()
             If device.HasBall() Then
@@ -14773,6 +16024,8 @@ Function Glf_EndOfBall(args)
         SetDelay "end_of_ball_delay", "EndOfBallNextPlayer", Null, 1000 
     End If
     
+
+
 End Function
 
 '****************************
@@ -14807,6 +16060,15 @@ Function Glf_EndGame(args)
     glf_playerState.RemoveAll()
 
     DispatchPinEvent "game_ended", Null
+    If Not IsNull(args) Then
+		If IsObject(args(1)) Then
+			Set Glf_EndGame = args(1)
+		Else
+			Glf_EndGame = args(1)
+		End If
+	Else
+		Glf_EndGame = Null
+	End If
 End Function
 
 AddPinEventListener "glf_game_cancel", "glf_game_cancel", "Glf_GameCancel", 20, Null
@@ -14832,7 +16094,7 @@ Function Glf_GameCancel(args)
     Next
     glf_bip = 0
     Glf_EndGame Null
-    Glf_Reset()
+    Glf_Reset(Null)
 End Function
 
 Public Function EndOfBallNextPlayer(args)
@@ -14949,16 +16211,16 @@ Function DispatchPinHandlers(e, args)
     If IsNull(event_args(0)) Then
         Set retArgs = GlfKwargs()
     Else
-        On Error Resume Next
-        retArgs = event_args(0)
-        If Err Then 
-        Set retArgs = event_args(0)
+        If IsObject(event_args(0)) Then
+            Set retArgs = event_args(0)
+        Else
+            retArgs = event_args(0)
         End If
     End If
-    On Error Resume Next
-        glf_dispatch_current_kwargs = retArgs	
-    If Err Then 
-        Set glf_dispatch_current_kwargs = retArgs
+    If IsObject(retArgs) Then
+        Set glf_dispatch_current_kwargs = retArgs	
+    Else
+        glf_dispatch_current_kwargs = retArgs
     End If
     If event_args(1) = 2 Then 'Queue Event
         Set retArgs = GetRef(handler(0))(Array(handler(2), retArgs, args(2)))
@@ -14974,7 +16236,8 @@ End Function
 
 Sub RunDispatchPinEvent(eKey, kwargs)
     Dim e
-    e=Split(eKey,";")(0)
+    Dim split_key : split_key = Split(eKey, ";")
+    e=split_key(0)
     If Not glf_pinEvents.Exists(e) Then
         Glf_WriteDebugLog "DispatchPinEvent", e & " has no listeners"
         Exit Sub
@@ -15050,7 +16313,8 @@ Function DispatchRelayPinEvent(e, kwargs)
     Glf_WriteDebugLog "DispatchReplayPinEvent", e
     For Each k In glf_pinEventsOrder(e)
         Glf_WriteDebugLog "DispatchReplayPinEvent_"&e, "key: " & k(1) & ", priority: " & k(0)
-        kwargs = GetRef(handlers(k(1))(0))(Array(handlers(k(1))(2), kwargs, e))
+        Dim handlers_a1 : handlers_a1 = handlers(k(1))
+        kwargs = GetRef(handlers_a1(0))(Array(handlers_a1(2), kwargs, e))
     Next
     DispatchRelayPinEvent = kwargs
     Glf_EventBlocks(e).RemoveAll
@@ -15079,13 +16343,12 @@ Function DispatchQueuePinEvent(e, kwargs)
     For i=0 to UBound(glf_dis_events)
         k = glf_dis_events(i)
         Glf_WriteDebugLog "DispatchQueuePinEvent"&e, "key: " & k(1) & ", priority: " & k(0)
-        'msgbox "DispatchQueuePinEvent: " & e & " , key: " & k(1) & ", priority: " & k(0)
-        'msgbox handlers(k(1))(0)
         'Call the handlers.
         'The handlers might return a waitfor command.
         'If NO wait for command, continue calling handlers.
         'IF wait for command, then AddPinEventListener for the waitfor event. The callback handler needs to be ContinueDispatchQueuePinEvent.
-        Set retArgs = GetRef(handlers(k(1))(0))(Array(handlers(k(1))(2), kwargs, e))
+        Dim handlers_a1 : handlers_a1 = handlers(k(1))
+        Set retArgs = GetRef(handlers_a1(0))(Array(handlers_a1(2), kwargs, e))
         If retArgs.Exists("wait_for") And i<Ubound(glf_dis_events) Then
             'pause execution of handlers at index I. 
             Glf_WriteDebugLog "DispatchQueuePinEvent"&e, k(1) & "_wait_for"
@@ -15167,7 +16430,8 @@ Sub Sortglf_pinEventsByPriority(evt, priority, key, isAdding)
             inserted = False
             
             For i = 0 To UBound(tempArray) - 1
-                If priority > tempArray(i)(0) Then ' Compare priorities
+                Dim temp_a1 : temp_a1 = tempArray(i)
+                If priority > temp_a1(0) Then ' Compare priorities
                     ' Move existing elements to insert the new callback at the correct position
                     Dim j
                     For j = UBound(tempArray) To i + 1 Step -1
@@ -15190,7 +16454,8 @@ Sub Sortglf_pinEventsByPriority(evt, priority, key, isAdding)
             
             ' First, find the element's index
             For i = 0 To UBound(tempArray)
-                If tempArray(i)(1) = key Then
+                Dim temp_a2 : temp_a2 = tempArray(i)
+                If temp_a2(1) = key Then
                     foundIndex = i
                     Exit For
                 End If
@@ -15302,6 +16567,9 @@ Function SetPlayerState(key, value)
         Glf_WriteDebugLog "Player State", "Variable "& key &" changed from " & CStr(p) & " to " & CStr(v)
     End If
     Glf_MonitorPlayerStateUpdate key, value
+    If glf_monitor_player_vars = True Then
+        Glf_BcpSendPlayerVar Array(Null, Array(key, value, prevValue))
+    End If
     If glf_playerEvents.Exists(key) Then
         SetDelay "FirePlayerEventHandlers_" & key, "FirePlayerEventHandlersProxy",  Array(key, value, prevValue, -1), 200
         'FirePlayerEventHandlers key, value, prevValue, -1
@@ -15348,8 +16616,9 @@ Sub FirePlayerEventHandlers(evt, value, prevValue, player)
     Dim k
     Dim handlers : Set handlers = glf_playerEvents(evt)
     For Each k In glf_playerEventsOrder(evt)
-        If handlers(k(1))(3) = player or handlers(k(1))(3) = Getglf_currentPlayerNumber() Then
-            GetRef(handlers(k(1))(0))(Array(handlers(k(1))(2), Array(evt,value,prevValue)))
+        Dim handlers_a1 : handlers_a1 = handlers(k(1))
+        If handlers_a1(3) = player or handlers_a1(3) = Getglf_currentPlayerNumber() Then
+            GetRef(handlers_a1(0))(Array(handlers_a1(2), Array(evt,value,prevValue)))
         End If
     Next
 End Sub
@@ -15390,7 +16659,8 @@ Sub Sortglf_playerEventsByPriority(evt, priority, key, isAdding)
             inserted = False
             
             For i = 0 To UBound(tempArray) - 1
-                If priority > tempArray(i)(0) Then ' Compare priorities
+                Dim temp_a3 : temp_a3 = tempArray(i)
+                If priority > temp_a3(0) Then ' Compare priorities
                     ' Move existing elements to insert the new callback at the correct position
                     Dim j
                     For j = UBound(tempArray) To i + 1 Step -1
@@ -15413,7 +16683,8 @@ Sub Sortglf_playerEventsByPriority(evt, priority, key, isAdding)
             
             ' First, find the element's index
             For i = 0 To UBound(tempArray)
-                If tempArray(i)(1) = key Then
+                Dim temp_a4 : temp_a4 = tempArray(i)
+                If temp_a4(1) = key Then
                     foundIndex = i
                     Exit For
                 End If
@@ -15536,1415 +16807,3 @@ Sub UpdateTroughDebounced(args)
 
 	If glf_lastTroughSw.BallCntOver = 0 Then Drain.kick 57, 10
 End Sub
-
-
-Dim glf_gi17_lmarr : glf_gi17_lmarr = BL_GI_gi17
-glf_lightMaps.Add "gi17", glf_gi17_lmarr
-Dim glf_giapron_lmarr : glf_giapron_lmarr = BL_GI_giapron
-glf_lightMaps.Add "giapron", glf_giapron_lmarr
-Dim glf_gi22_lmarr : glf_gi22_lmarr = BL_GI_gi22
-glf_lightMaps.Add "gi22", glf_gi22_lmarr
-Dim glf_LStars_lmarr : glf_LStars_lmarr = BL_Stars
-glf_lightMaps.Add "LStars", glf_LStars_lmarr
-Dim glf_gi20_lmarr : glf_gi20_lmarr = BL_GI_gi20
-glf_lightMaps.Add "gi20", glf_gi20_lmarr
-Dim glf_gi21_lmarr : glf_gi21_lmarr = BL_GI_gi21
-glf_lightMaps.Add "gi21", glf_gi21_lmarr
-Dim glf_gi19_lmarr : glf_gi19_lmarr = BL_GI_gi19
-glf_lightMaps.Add "gi19", glf_gi19_lmarr
-Dim glf_gi18_lmarr : glf_gi18_lmarr = BL_GI_gi18
-glf_lightMaps.Add "gi18", glf_gi18_lmarr
-Dim glf_gi16_lmarr : glf_gi16_lmarr = BL_GI_gi16
-glf_lightMaps.Add "gi16", glf_gi16_lmarr
-Dim glf_gi15_lmarr : glf_gi15_lmarr = BL_GI_gi15
-glf_lightMaps.Add "gi15", glf_gi15_lmarr
-Dim glf_gi14_lmarr : glf_gi14_lmarr = BL_GI_gi14
-glf_lightMaps.Add "gi14", glf_gi14_lmarr
-Dim glf_gi13_lmarr : glf_gi13_lmarr = BL_GI_gi13
-glf_lightMaps.Add "gi13", glf_gi13_lmarr
-Dim glf_gi12_lmarr : glf_gi12_lmarr = BL_GI_gi12
-glf_lightMaps.Add "gi12", glf_gi12_lmarr
-Dim glf_gi11_lmarr : glf_gi11_lmarr = BL_GI_gi11
-glf_lightMaps.Add "gi11", glf_gi11_lmarr
-Dim glf_gi10_lmarr : glf_gi10_lmarr = BL_GI_gi10
-glf_lightMaps.Add "gi10", glf_gi10_lmarr
-Dim glf_gi09_lmarr : glf_gi09_lmarr = BL_GI_gi09
-glf_lightMaps.Add "gi09", glf_gi09_lmarr
-Dim glf_gi08_lmarr : glf_gi08_lmarr = BL_GI_gi08
-glf_lightMaps.Add "gi08", glf_gi08_lmarr
-Dim glf_gi07_lmarr : glf_gi07_lmarr = BL_GI_gi07
-glf_lightMaps.Add "gi07", glf_gi07_lmarr
-Dim glf_gi06_lmarr : glf_gi06_lmarr = BL_GI_gi06
-glf_lightMaps.Add "gi06", glf_gi06_lmarr
-Dim glf_gi05_lmarr : glf_gi05_lmarr = BL_GI_gi05
-glf_lightMaps.Add "gi05", glf_gi05_lmarr
-Dim glf_gi04_lmarr : glf_gi04_lmarr = BL_GI_gi04
-glf_lightMaps.Add "gi04", glf_gi04_lmarr
-Dim glf_gi03_lmarr : glf_gi03_lmarr = BL_GI_gi03
-glf_lightMaps.Add "gi03", glf_gi03_lmarr
-Dim glf_gi02_lmarr : glf_gi02_lmarr = BL_GI_gi02
-glf_lightMaps.Add "gi02", glf_gi02_lmarr
-Dim glf_gi01_lmarr : glf_gi01_lmarr = BL_GI_gi01
-glf_lightMaps.Add "gi01", glf_gi01_lmarr
-Dim glf_LPF_lmarr : glf_LPF_lmarr = BL_L_LPF
-glf_lightMaps.Add "LPF", glf_LPF_lmarr
-Dim glf_LEBR_lmarr : glf_LEBR_lmarr = BL_L_LEBR
-glf_lightMaps.Add "LEBR", glf_LEBR_lmarr
-Dim glf_LL_lmarr : glf_LL_lmarr = BL_L_LL
-glf_lightMaps.Add "LL", glf_LL_lmarr
-Dim glf_LS5_lmarr : glf_LS5_lmarr = BL_L_LS5
-glf_lightMaps.Add "LS5", glf_LS5_lmarr
-Dim glf_LS1_lmarr : glf_LS1_lmarr = BL_L_LS1
-glf_lightMaps.Add "LS1", glf_LS1_lmarr
-Dim glf_LS2_lmarr : glf_LS2_lmarr = BL_L_LS2
-glf_lightMaps.Add "LS2", glf_LS2_lmarr
-Dim glf_LS3_lmarr : glf_LS3_lmarr = BL_L_LS3
-glf_lightMaps.Add "LS3", glf_LS3_lmarr
-Dim glf_LS4_lmarr : glf_LS4_lmarr = BL_L_LS4
-glf_lightMaps.Add "LS4", glf_LS4_lmarr
-Dim glf_LS6_lmarr : glf_LS6_lmarr = BL_L_LS6
-glf_lightMaps.Add "LS6", glf_LS6_lmarr
-Dim glf_LSwC3_lmarr : glf_LSwC3_lmarr = BL_L_LSwC3
-glf_lightMaps.Add "LSwC3", glf_LSwC3_lmarr
-Dim glf_LSwC2_lmarr : glf_LSwC2_lmarr = BL_L_LSwC2
-glf_lightMaps.Add "LSwC2", glf_LSwC2_lmarr
-Dim glf_LSwC1_lmarr : glf_LSwC1_lmarr = BL_L_LSwC1
-glf_lightMaps.Add "LSwC1", glf_LSwC1_lmarr
-Dim glf_LCWiz_lmarr : glf_LCWiz_lmarr = BL_L_LCWiz
-glf_lightMaps.Add "LCWiz", glf_LCWiz_lmarr
-Dim glf_LLWiz_lmarr : glf_LLWiz_lmarr = BL_L_LLWiz
-glf_lightMaps.Add "LLWiz", glf_LLWiz_lmarr
-Dim glf_LC1_lmarr : glf_LC1_lmarr = BL_L_LC1
-glf_lightMaps.Add "LC1", glf_LC1_lmarr
-Dim glf_LC2_lmarr : glf_LC2_lmarr = BL_L_LC2
-glf_lightMaps.Add "LC2", glf_LC2_lmarr
-Dim glf_LC3_lmarr : glf_LC3_lmarr = BL_L_LC3
-glf_lightMaps.Add "LC3", glf_LC3_lmarr
-Dim glf_LC4_lmarr : glf_LC4_lmarr = BL_L_LC4
-glf_lightMaps.Add "LC4", glf_LC4_lmarr
-Dim glf_LC5_lmarr : glf_LC5_lmarr = BL_L_LC5
-glf_lightMaps.Add "LC5", glf_LC5_lmarr
-Dim glf_LC6_lmarr : glf_LC6_lmarr = BL_L_LC6
-glf_lightMaps.Add "LC6", glf_LC6_lmarr
-Dim glf_LC7_lmarr : glf_LC7_lmarr = BL_L_LC7
-glf_lightMaps.Add "LC7", glf_LC7_lmarr
-Dim glf_LC8_lmarr : glf_LC8_lmarr = BL_L_LC8
-glf_lightMaps.Add "LC8", glf_LC8_lmarr
-Dim glf_LWiz_lmarr : glf_LWiz_lmarr = BL_L_LWiz
-glf_lightMaps.Add "LWiz", glf_LWiz_lmarr
-Dim glf_LW9_lmarr : glf_LW9_lmarr = BL_L_LW9
-glf_lightMaps.Add "LW9", glf_LW9_lmarr
-Dim glf_LW8_lmarr : glf_LW8_lmarr = BL_L_LW8
-glf_lightMaps.Add "LW8", glf_LW8_lmarr
-Dim glf_LW7_lmarr : glf_LW7_lmarr = BL_L_LW7
-glf_lightMaps.Add "LW7", glf_LW7_lmarr
-Dim glf_LW6_lmarr : glf_LW6_lmarr = BL_L_LW6
-glf_lightMaps.Add "LW6", glf_LW6_lmarr
-Dim glf_LW5_lmarr : glf_LW5_lmarr = BL_L_LW5
-glf_lightMaps.Add "LW5", glf_LW5_lmarr
-Dim glf_LW4_lmarr : glf_LW4_lmarr = BL_L_LW4
-glf_lightMaps.Add "LW4", glf_LW4_lmarr
-Dim glf_LW3_lmarr : glf_LW3_lmarr = BL_L_LW3
-glf_lightMaps.Add "LW3", glf_LW3_lmarr
-Dim glf_LW2_lmarr : glf_LW2_lmarr = BL_L_LW2
-glf_lightMaps.Add "LW2", glf_LW2_lmarr
-Dim glf_LW1_lmarr : glf_LW1_lmarr = BL_L_LW1
-glf_lightMaps.Add "LW1", glf_LW1_lmarr
-Dim glf_LMLR_lmarr : glf_LMLR_lmarr = BL_L_LMLR
-glf_lightMaps.Add "LMLR", glf_LMLR_lmarr
-Dim glf_LMR_lmarr : glf_LMR_lmarr = BL_L_LMR
-glf_lightMaps.Add "LMR", glf_LMR_lmarr
-Dim glf_LX_lmarr : glf_LX_lmarr = BL_L_LX
-glf_lightMaps.Add "LX", glf_LX_lmarr
-Dim glf_LPC5_lmarr : glf_LPC5_lmarr = BL_L_LPC5
-glf_lightMaps.Add "LPC5", glf_LPC5_lmarr
-Dim glf_LPC4_lmarr : glf_LPC4_lmarr = BL_L_LPC4
-glf_lightMaps.Add "LPC4", glf_LPC4_lmarr
-' Dim glf_LSC4_lmarr : glf_LSC4_lmarr = Array()
-' glf_lightMaps.Add "LSC4", glf_LSC4_lmarr
-Dim glf_LSC3_lmarr : glf_LSC3_lmarr = BL_L_LSC3
-glf_lightMaps.Add "LSC3", glf_LSC3_lmarr
-Dim glf_LSC2_lmarr : glf_LSC2_lmarr = BL_L_LSC2
-glf_lightMaps.Add "LSC2", glf_LSC2_lmarr
-Dim glf_LSC1_lmarr : glf_LSC1_lmarr = BL_L_LSC1
-glf_lightMaps.Add "LSC1", glf_LSC1_lmarr
-' Dim glf_LSwL2_lmarr : glf_LSwL2_lmarr = Array()
-' glf_lightMaps.Add "LSwL2", glf_LSwL2_lmarr
-' Dim glf_LSwL1_lmarr : glf_LSwL1_lmarr = Array()
-' glf_lightMaps.Add "LSwL1", glf_LSwL1_lmarr
-Dim glf_LF3_lmarr : glf_LF3_lmarr = BL_L_LF3
-glf_lightMaps.Add "LF3", glf_LF3_lmarr
-Dim glf_LF2_lmarr : glf_LF2_lmarr = BL_L_LF2
-glf_lightMaps.Add "LF2", glf_LF2_lmarr
-Dim glf_LF1_lmarr : glf_LF1_lmarr = BL_L_LF1
-glf_lightMaps.Add "LF1", glf_LF1_lmarr
-Dim glf_LPC3_lmarr : glf_LPC3_lmarr = BL_L_LPC3
-glf_lightMaps.Add "LPC3", glf_LPC3_lmarr
-Dim glf_LPC2_lmarr : glf_LPC2_lmarr = BL_L_LPC2
-glf_lightMaps.Add "LPC2", glf_LPC2_lmarr
-Dim glf_LPC1_lmarr : glf_LPC1_lmarr = BL_L_LPC1
-glf_lightMaps.Add "LPC1", glf_LPC1_lmarr
-' Dim glf_LTW4_lmarr : glf_LTW4_lmarr = Array()
-' glf_lightMaps.Add "LTW4", glf_LTW4_lmarr
-' Dim glf_LTW3_lmarr : glf_LTW3_lmarr = Array()
-' glf_lightMaps.Add "LTW3", glf_LTW3_lmarr
-Dim glf_LTW2_lmarr : glf_LTW2_lmarr = BL_L_LTW2
-glf_lightMaps.Add "LTW2", glf_LTW2_lmarr
-Dim glf_LTW1_lmarr : glf_LTW1_lmarr = BL_L_LTW1
-glf_lightMaps.Add "LTW1", glf_LTW1_lmarr
-Dim glf_LCC3_lmarr : glf_LCC3_lmarr = BL_L_LCC3
-glf_lightMaps.Add "LCC3", glf_LCC3_lmarr
-Dim glf_LCC2_lmarr : glf_LCC2_lmarr = BL_L_LCC2
-glf_lightMaps.Add "LCC2", glf_LCC2_lmarr
-Dim glf_LCC1_lmarr : glf_LCC1_lmarr = BL_L_LCC1
-glf_lightMaps.Add "LCC1", glf_LCC1_lmarr
-Dim glf_LMet4_lmarr : glf_LMet4_lmarr = BL_L_LMet4
-glf_lightMaps.Add "LMet4", glf_LMet4_lmarr
-Dim glf_LMet3_lmarr : glf_LMet3_lmarr = BL_L_LMet3
-glf_lightMaps.Add "LMet3", glf_LMet3_lmarr
-Dim glf_LMet2_lmarr : glf_LMet2_lmarr = BL_L_LMet2
-glf_lightMaps.Add "LMet2", glf_LMet2_lmarr
-Dim glf_LMet1_lmarr : glf_LMet1_lmarr = BL_L_LMet1
-glf_lightMaps.Add "LMet1", glf_LMet1_lmarr
-Dim glf_LM5_lmarr : glf_LM5_lmarr = BL_L_LM5
-glf_lightMaps.Add "LM5", glf_LM5_lmarr
-Dim glf_LM4_lmarr : glf_LM4_lmarr = BL_L_LM4
-glf_lightMaps.Add "LM4", glf_LM4_lmarr
-Dim glf_LM3_lmarr : glf_LM3_lmarr = BL_L_LM3
-glf_lightMaps.Add "LM3", glf_LM3_lmarr
-Dim glf_LM2_lmarr : glf_LM2_lmarr = BL_L_LM2
-glf_lightMaps.Add "LM2", glf_LM2_lmarr
-Dim glf_LM1_lmarr : glf_LM1_lmarr = BL_L_LM1
-glf_lightMaps.Add "LM1", glf_LM1_lmarr
-Dim glf_LSA_lmarr : glf_LSA_lmarr = BL_L_LSA
-glf_lightMaps.Add "LSA", glf_LSA_lmarr
-Dim glf_LH9_lmarr : glf_LH9_lmarr = BL_L_LH9
-glf_lightMaps.Add "LH9", glf_LH9_lmarr
-Dim glf_LH8_lmarr : glf_LH8_lmarr = BL_L_LH8
-glf_lightMaps.Add "LH8", glf_LH8_lmarr
-Dim glf_LH7_lmarr : glf_LH7_lmarr = BL_L_LH7
-glf_lightMaps.Add "LH7", glf_LH7_lmarr
-Dim glf_LH6_lmarr : glf_LH6_lmarr = BL_L_LH6
-glf_lightMaps.Add "LH6", glf_LH6_lmarr
-Dim glf_LH5_lmarr : glf_LH5_lmarr = BL_L_LH5
-glf_lightMaps.Add "LH5", glf_LH5_lmarr
-Dim glf_LH4_lmarr : glf_LH4_lmarr = BL_L_LH4
-glf_lightMaps.Add "LH4", glf_LH4_lmarr
-Dim glf_LH3_lmarr : glf_LH3_lmarr = BL_L_LH3
-glf_lightMaps.Add "LH3", glf_LH3_lmarr
-Dim glf_LH2_lmarr : glf_LH2_lmarr = BL_L_LH2
-glf_lightMaps.Add "LH2", glf_LH2_lmarr
-Dim glf_LH1_lmarr : glf_LH1_lmarr = BL_L_LH1
-glf_lightMaps.Add "LH1", glf_LH1_lmarr
-Dim glf_LPR1_lmarr : glf_LPR1_lmarr = BL_L_LPR1
-glf_lightMaps.Add "LPR1", glf_LPR1_lmarr
-Dim glf_LPR3_lmarr : glf_LPR3_lmarr = BL_L_LPR3
-glf_lightMaps.Add "LPR3", glf_LPR3_lmarr
-Dim glf_LPR2_lmarr : glf_LPR2_lmarr = BL_L_LPR2
-glf_lightMaps.Add "LPR2", glf_LPR2_lmarr
-Dim glf_LPR6_lmarr : glf_LPR6_lmarr = BL_L_LPR6
-glf_lightMaps.Add "LPR6", glf_LPR6_lmarr
-Dim glf_LPR5_lmarr : glf_LPR5_lmarr = BL_L_LPR5
-glf_lightMaps.Add "LPR5", glf_LPR5_lmarr
-Dim glf_LPR4_lmarr : glf_LPR4_lmarr = BL_L_LPR4
-glf_lightMaps.Add "LPR4", glf_LPR4_lmarr
-Dim glf_LMR2_lmarr : glf_LMR2_lmarr = BL_L_LMR2
-glf_lightMaps.Add "LMR2", glf_LMR2_lmarr
-Dim glf_LMR1_lmarr : glf_LMR1_lmarr = BL_L_LMR1
-glf_lightMaps.Add "LMR1", glf_LMR1_lmarr
-Dim glf_LCR2_lmarr : glf_LCR2_lmarr = BL_L_LCR2
-glf_lightMaps.Add "LCR2", glf_LCR2_lmarr
-Dim glf_LCR1_lmarr : glf_LCR1_lmarr = BL_L_LCR1
-glf_lightMaps.Add "LCR1", glf_LCR1_lmarr
-Dim glf_LRI_lmarr : glf_LRI_lmarr = BL_L_LRI
-glf_lightMaps.Add "LRI", glf_LRI_lmarr
-Dim glf_LRO_lmarr : glf_LRO_lmarr = BL_L_LRO
-glf_lightMaps.Add "LRO", glf_LRO_lmarr
-Dim glf_LLI_lmarr : glf_LLI_lmarr = BL_L_LLI
-glf_lightMaps.Add "LLI", glf_LLI_lmarr
-Dim glf_LLO_lmarr : glf_LLO_lmarr = BL_L_LLO
-glf_lightMaps.Add "LLO", glf_LLO_lmarr
-Dim glf_LSR_lmarr : glf_LSR_lmarr = BL_L_LSR
-glf_lightMaps.Add "LSR", glf_LSR_lmarr
-Dim glf_LSL_lmarr : glf_LSL_lmarr = BL_L_LSL
-glf_lightMaps.Add "LSL", glf_LSL_lmarr
-Dim glf_LB2_lmarr : glf_LB2_lmarr = BL_L_LB2
-glf_lightMaps.Add "LB2", glf_LB2_lmarr
-Dim glf_LB3_lmarr : glf_LB3_lmarr = BL_L_LB3
-glf_lightMaps.Add "LB3", glf_LB3_lmarr
-Dim glf_LShip_lmarr : glf_LShip_lmarr = BL_L_LShip
-glf_lightMaps.Add "LShip", glf_LShip_lmarr
-Dim glf_LSpot2_lmarr : glf_LSpot2_lmarr = Array()
-glf_lightMaps.Add "LSpot2", glf_LSpot2_lmarr
-Dim glf_LSpot2a_lmarr : glf_LSpot2a_lmarr = Array()
-glf_lightMaps.Add "LSpot2a", glf_LSpot2a_lmarr
-Dim glf_LSpot1_lmarr : glf_LSpot1_lmarr = BL_L_LSpot1
-glf_lightMaps.Add "LSpot1", glf_LSpot1_lmarr
-Dim glf_LB1_lmarr : glf_LB1_lmarr = BL_L_LB1
-glf_lightMaps.Add "LB1", glf_LB1_lmarr
-Dim glf_LB4_lmarr : glf_LB4_lmarr = Array()
-glf_lightMaps.Add "LB4", glf_LB4_lmarr
-Dim glf_FL6_lmarr : glf_FL6_lmarr = Array()
-glf_lightMaps.Add "FL6", glf_FL6_lmarr
-' Dim glf_FL7_lmarr : glf_FL7_lmarr = Array()
-' glf_lightMaps.Add "FL7", glf_FL7_lmarr
-Dim glf_FL4_lmarr : glf_FL4_lmarr = BL_F_FL4
-glf_lightMaps.Add "FL4", glf_FL4_lmarr
-Dim glf_FL5_lmarr : glf_FL5_lmarr = Array()
-glf_lightMaps.Add "FL5", glf_FL5_lmarr
-Dim glf_FL1_lmarr : glf_FL1_lmarr = BL_F_FL1
-glf_lightMaps.Add "FL1", glf_FL1_lmarr
-Dim glf_FL2_lmarr : glf_FL2_lmarr = BL_F_FL2
-glf_lightMaps.Add "FL2", glf_FL2_lmarr
-Dim glf_FL3_lmarr : glf_FL3_lmarr = BL_F_FL3
-glf_lightMaps.Add "FL3", glf_FL3_lmarr
-Dim glf_LDS_lmarr : glf_LDS_lmarr = BL_L_LDS
-glf_lightMaps.Add "LDS", glf_LDS_lmarr
-Dim glf_LDP_lmarr : glf_LDP_lmarr = BL_L_LDP
-glf_lightMaps.Add "LDP", glf_LDP_lmarr
-Dim glf_FL7a_lmarr : glf_FL7a_lmarr = BL_F_FL7a
-glf_lightMaps.Add "FL7a", glf_FL7a_lmarr
-Dim glf_FL5a_lmarr : glf_FL5a_lmarr = BL_F_FL5a
-glf_lightMaps.Add "FL5a", glf_FL5a_lmarr
-Dim glf_FL6a_lmarr : glf_FL6a_lmarr = BL_F_FL6a
-glf_lightMaps.Add "FL6a", glf_FL6a_lmarr
-Dim glf_FL6h_lmarr : glf_FL6h_lmarr = BL_F_FL6h
-glf_lightMaps.Add "FL6h", glf_FL6h_lmarr
-Dim glf_FL6g_lmarr : glf_FL6g_lmarr = BL_F_FL6g
-glf_lightMaps.Add "FL6g", glf_FL6g_lmarr
-Dim glf_FL6f_lmarr : glf_FL6f_lmarr = BL_F_FL6f
-glf_lightMaps.Add "FL6f", glf_FL6f_lmarr
-Dim glf_FL6e_lmarr : glf_FL6e_lmarr = BL_F_FL6e
-glf_lightMaps.Add "FL6e", glf_FL6e_lmarr
-Dim glf_FL6d_lmarr : glf_FL6d_lmarr = BL_F_FL6d
-glf_lightMaps.Add "FL6d", glf_FL6d_lmarr
-Dim glf_FL6c_lmarr : glf_FL6c_lmarr = BL_F_FL6c
-glf_lightMaps.Add "FL6c", glf_FL6c_lmarr
-Dim glf_FL6b_lmarr : glf_FL6b_lmarr = BL_F_FL6b
-glf_lightMaps.Add "FL6b", glf_FL6b_lmarr
-Dim glf_FL5h_lmarr : glf_FL5h_lmarr = BL_F_FL5h
-glf_lightMaps.Add "FL5h", glf_FL5h_lmarr
-Dim glf_FL5g_lmarr : glf_FL5g_lmarr = BL_F_FL5g
-glf_lightMaps.Add "FL5g", glf_FL5g_lmarr
-Dim glf_FL5f_lmarr : glf_FL5f_lmarr = BL_F_FL5f
-glf_lightMaps.Add "FL5f", glf_FL5f_lmarr
-Dim glf_FL5e_lmarr : glf_FL5e_lmarr = BL_F_FL5e
-glf_lightMaps.Add "FL5e", glf_FL5e_lmarr
-Dim glf_FL5d_lmarr : glf_FL5d_lmarr = BL_F_FL5d
-glf_lightMaps.Add "FL5d", glf_FL5d_lmarr
-Dim glf_FL5c_lmarr : glf_FL5c_lmarr = BL_F_FL5c
-glf_lightMaps.Add "FL5c", glf_FL5c_lmarr
-Dim glf_FL5b_lmarr : glf_FL5b_lmarr = BL_F_FL5b
-glf_lightMaps.Add "FL5b", glf_FL5b_lmarr
-Dim glf_ball_seg30_lmarr : glf_ball_seg30_lmarr = Array(p_ball_seg30_vr)
-glf_lightMaps.Add "ball_seg30", glf_ball_seg30_lmarr
-Dim glf_p4_seg120_lmarr : glf_p4_seg120_lmarr = Array(p_p4_seg120_,p_p4_seg120_vr)
-glf_lightMaps.Add "p4_seg120", glf_p4_seg120_lmarr
-Dim glf_p4_seg119_lmarr : glf_p4_seg119_lmarr = Array(p_p4_seg119_,p_p4_seg119_vr)
-glf_lightMaps.Add "p4_seg119", glf_p4_seg119_lmarr
-Dim glf_p4_seg118_lmarr : glf_p4_seg118_lmarr = Array(p_p4_seg118_,p_p4_seg118_vr)
-glf_lightMaps.Add "p4_seg118", glf_p4_seg118_lmarr
-Dim glf_p4_seg117_lmarr : glf_p4_seg117_lmarr = Array(p_p4_seg117_,p_p4_seg117_vr)
-glf_lightMaps.Add "p4_seg117", glf_p4_seg117_lmarr
-Dim glf_p4_seg116_lmarr : glf_p4_seg116_lmarr = Array(p_p4_seg116_,p_p4_seg116_vr)
-glf_lightMaps.Add "p4_seg116", glf_p4_seg116_lmarr
-Dim glf_p4_seg115_lmarr : glf_p4_seg115_lmarr = Array(p_p4_seg115_,p_p4_seg115_vr)
-glf_lightMaps.Add "p4_seg115", glf_p4_seg115_lmarr
-Dim glf_p4_seg114_lmarr : glf_p4_seg114_lmarr = Array(p_p4_seg114_,p_p4_seg114_vr)
-glf_lightMaps.Add "p4_seg114", glf_p4_seg114_lmarr
-Dim glf_p4_seg113_lmarr : glf_p4_seg113_lmarr = Array(p_p4_seg113_,p_p4_seg113_vr)
-glf_lightMaps.Add "p4_seg113", glf_p4_seg113_lmarr
-Dim glf_p4_seg112_lmarr : glf_p4_seg112_lmarr = Array(p_p4_seg112_,p_p4_seg112_vr)
-glf_lightMaps.Add "p4_seg112", glf_p4_seg112_lmarr
-Dim glf_p4_seg111_lmarr : glf_p4_seg111_lmarr = Array(p_p4_seg111_,p_p4_seg111_vr)
-glf_lightMaps.Add "p4_seg111", glf_p4_seg111_lmarr
-Dim glf_p4_seg110_lmarr : glf_p4_seg110_lmarr = Array(p_p4_seg110_,p_p4_seg110_vr)
-glf_lightMaps.Add "p4_seg110", glf_p4_seg110_lmarr
-Dim glf_p4_seg109_lmarr : glf_p4_seg109_lmarr = Array(p_p4_seg109_,p_p4_seg109_vr)
-glf_lightMaps.Add "p4_seg109", glf_p4_seg109_lmarr
-Dim glf_p4_seg108_lmarr : glf_p4_seg108_lmarr = Array(p_p4_seg108_,p_p4_seg108_vr)
-glf_lightMaps.Add "p4_seg108", glf_p4_seg108_lmarr
-Dim glf_p4_seg107_lmarr : glf_p4_seg107_lmarr = Array(p_p4_seg107_,p_p4_seg107_vr)
-glf_lightMaps.Add "p4_seg107", glf_p4_seg107_lmarr
-Dim glf_p4_seg106_lmarr : glf_p4_seg106_lmarr = Array(p_p4_seg106_,p_p4_seg106_vr)
-glf_lightMaps.Add "p4_seg106", glf_p4_seg106_lmarr
-Dim glf_p3_seg120_lmarr : glf_p3_seg120_lmarr = Array(p_p3_seg120_,p_p3_seg120_vr)
-glf_lightMaps.Add "p3_seg120", glf_p3_seg120_lmarr
-Dim glf_p3_seg119_lmarr : glf_p3_seg119_lmarr = Array(p_p3_seg119_,p_p3_seg119_vr)
-glf_lightMaps.Add "p3_seg119", glf_p3_seg119_lmarr
-Dim glf_p3_seg118_lmarr : glf_p3_seg118_lmarr = Array(p_p3_seg118_,p_p3_seg118_vr)
-glf_lightMaps.Add "p3_seg118", glf_p3_seg118_lmarr
-Dim glf_p3_seg117_lmarr : glf_p3_seg117_lmarr = Array(p_p3_seg117_,p_p3_seg117_vr)
-glf_lightMaps.Add "p3_seg117", glf_p3_seg117_lmarr
-Dim glf_p3_seg116_lmarr : glf_p3_seg116_lmarr = Array(p_p3_seg116_,p_p3_seg116_vr)
-glf_lightMaps.Add "p3_seg116", glf_p3_seg116_lmarr
-Dim glf_p3_seg115_lmarr : glf_p3_seg115_lmarr = Array(p_p3_seg115_,p_p3_seg115_vr)
-glf_lightMaps.Add "p3_seg115", glf_p3_seg115_lmarr
-Dim glf_p3_seg114_lmarr : glf_p3_seg114_lmarr = Array(p_p3_seg114_,p_p3_seg114_vr)
-glf_lightMaps.Add "p3_seg114", glf_p3_seg114_lmarr
-Dim glf_p3_seg113_lmarr : glf_p3_seg113_lmarr = Array(p_p3_seg113_,p_p3_seg113_vr)
-glf_lightMaps.Add "p3_seg113", glf_p3_seg113_lmarr
-Dim glf_p3_seg112_lmarr : glf_p3_seg112_lmarr = Array(p_p3_seg112_,p_p3_seg112_vr)
-glf_lightMaps.Add "p3_seg112", glf_p3_seg112_lmarr
-Dim glf_p3_seg111_lmarr : glf_p3_seg111_lmarr = Array(p_p3_seg111_,p_p3_seg111_vr)
-glf_lightMaps.Add "p3_seg111", glf_p3_seg111_lmarr
-Dim glf_p3_seg110_lmarr : glf_p3_seg110_lmarr = Array(p_p3_seg110_,p_p3_seg110_vr)
-glf_lightMaps.Add "p3_seg110", glf_p3_seg110_lmarr
-Dim glf_p3_seg109_lmarr : glf_p3_seg109_lmarr = Array(p_p3_seg109_,p_p3_seg109_vr)
-glf_lightMaps.Add "p3_seg109", glf_p3_seg109_lmarr
-Dim glf_p3_seg108_lmarr : glf_p3_seg108_lmarr = Array(p_p3_seg108_,p_p3_seg108_vr)
-glf_lightMaps.Add "p3_seg108", glf_p3_seg108_lmarr
-Dim glf_p3_seg107_lmarr : glf_p3_seg107_lmarr = Array(p_p3_seg107_,p_p3_seg107_vr)
-glf_lightMaps.Add "p3_seg107", glf_p3_seg107_lmarr
-Dim glf_p3_seg106_lmarr : glf_p3_seg106_lmarr = Array(p_p3_seg106_,p_p3_seg106_vr)
-glf_lightMaps.Add "p3_seg106", glf_p3_seg106_lmarr
-Dim glf_p2_seg120_lmarr : glf_p2_seg120_lmarr = Array(p_p2_seg120_,p_p2_seg120_vr)
-glf_lightMaps.Add "p2_seg120", glf_p2_seg120_lmarr
-Dim glf_p2_seg119_lmarr : glf_p2_seg119_lmarr = Array(p_p2_seg119_,p_p2_seg119_vr)
-glf_lightMaps.Add "p2_seg119", glf_p2_seg119_lmarr
-Dim glf_p2_seg118_lmarr : glf_p2_seg118_lmarr = Array(p_p2_seg118_,p_p2_seg118_vr)
-glf_lightMaps.Add "p2_seg118", glf_p2_seg118_lmarr
-Dim glf_p2_seg117_lmarr : glf_p2_seg117_lmarr = Array(p_p2_seg117_,p_p2_seg117_vr)
-glf_lightMaps.Add "p2_seg117", glf_p2_seg117_lmarr
-Dim glf_p2_seg116_lmarr : glf_p2_seg116_lmarr = Array(p_p2_seg116_,p_p2_seg116_vr)
-glf_lightMaps.Add "p2_seg116", glf_p2_seg116_lmarr
-Dim glf_p2_seg115_lmarr : glf_p2_seg115_lmarr = Array(p_p2_seg115_,p_p2_seg115_vr)
-glf_lightMaps.Add "p2_seg115", glf_p2_seg115_lmarr
-Dim glf_p2_seg114_lmarr : glf_p2_seg114_lmarr = Array(p_p2_seg114_,p_p2_seg114_vr)
-glf_lightMaps.Add "p2_seg114", glf_p2_seg114_lmarr
-Dim glf_p2_seg113_lmarr : glf_p2_seg113_lmarr = Array(p_p2_seg113_,p_p2_seg113_vr)
-glf_lightMaps.Add "p2_seg113", glf_p2_seg113_lmarr
-Dim glf_p2_seg112_lmarr : glf_p2_seg112_lmarr = Array(p_p2_seg112_,p_p2_seg112_vr)
-glf_lightMaps.Add "p2_seg112", glf_p2_seg112_lmarr
-Dim glf_p2_seg111_lmarr : glf_p2_seg111_lmarr = Array(p_p2_seg111_,p_p2_seg111_vr)
-glf_lightMaps.Add "p2_seg111", glf_p2_seg111_lmarr
-Dim glf_p2_seg110_lmarr : glf_p2_seg110_lmarr = Array(p_p2_seg110_,p_p2_seg110_vr)
-glf_lightMaps.Add "p2_seg110", glf_p2_seg110_lmarr
-Dim glf_p2_seg109_lmarr : glf_p2_seg109_lmarr = Array(p_p2_seg109_,p_p2_seg109_vr)
-glf_lightMaps.Add "p2_seg109", glf_p2_seg109_lmarr
-Dim glf_p2_seg108_lmarr : glf_p2_seg108_lmarr = Array(p_p2_seg108_,p_p2_seg108_vr)
-glf_lightMaps.Add "p2_seg108", glf_p2_seg108_lmarr
-Dim glf_p2_seg107_lmarr : glf_p2_seg107_lmarr = Array(p_p2_seg107_,p_p2_seg107_vr)
-glf_lightMaps.Add "p2_seg107", glf_p2_seg107_lmarr
-Dim glf_p2_seg106_lmarr : glf_p2_seg106_lmarr = Array(p_p2_seg106_,p_p2_seg106_vr)
-glf_lightMaps.Add "p2_seg106", glf_p2_seg106_lmarr
-Dim glf_p1_seg120_lmarr : glf_p1_seg120_lmarr = Array(p_p1_seg120_,p_p1_seg120_vr)
-glf_lightMaps.Add "p1_seg120", glf_p1_seg120_lmarr
-Dim glf_p1_seg119_lmarr : glf_p1_seg119_lmarr = Array(p_p1_seg119_,p_p1_seg119_vr)
-glf_lightMaps.Add "p1_seg119", glf_p1_seg119_lmarr
-Dim glf_p1_seg118_lmarr : glf_p1_seg118_lmarr = Array(p_p1_seg118_,p_p1_seg118_vr)
-glf_lightMaps.Add "p1_seg118", glf_p1_seg118_lmarr
-Dim glf_p1_seg117_lmarr : glf_p1_seg117_lmarr = Array(p_p1_seg117_,p_p1_seg117_vr)
-glf_lightMaps.Add "p1_seg117", glf_p1_seg117_lmarr
-Dim glf_p1_seg116_lmarr : glf_p1_seg116_lmarr = Array(p_p1_seg116_,p_p1_seg116_vr)
-glf_lightMaps.Add "p1_seg116", glf_p1_seg116_lmarr
-Dim glf_p1_seg115_lmarr : glf_p1_seg115_lmarr = Array(p_p1_seg115_,p_p1_seg115_vr)
-glf_lightMaps.Add "p1_seg115", glf_p1_seg115_lmarr
-Dim glf_p1_seg114_lmarr : glf_p1_seg114_lmarr = Array(p_p1_seg114_,p_p1_seg114_vr)
-glf_lightMaps.Add "p1_seg114", glf_p1_seg114_lmarr
-Dim glf_p1_seg113_lmarr : glf_p1_seg113_lmarr = Array(p_p1_seg113_,p_p1_seg113_vr)
-glf_lightMaps.Add "p1_seg113", glf_p1_seg113_lmarr
-Dim glf_p1_seg112_lmarr : glf_p1_seg112_lmarr = Array(p_p1_seg112_,p_p1_seg112_vr)
-glf_lightMaps.Add "p1_seg112", glf_p1_seg112_lmarr
-Dim glf_p1_seg111_lmarr : glf_p1_seg111_lmarr = Array(p_p1_seg111_,p_p1_seg111_vr)
-glf_lightMaps.Add "p1_seg111", glf_p1_seg111_lmarr
-Dim glf_p1_seg110_lmarr : glf_p1_seg110_lmarr = Array(p_p1_seg110_,p_p1_seg110_vr)
-glf_lightMaps.Add "p1_seg110", glf_p1_seg110_lmarr
-Dim glf_p1_seg109_lmarr : glf_p1_seg109_lmarr = Array(p_p1_seg109_,p_p1_seg109_vr)
-glf_lightMaps.Add "p1_seg109", glf_p1_seg109_lmarr
-Dim glf_p1_seg108_lmarr : glf_p1_seg108_lmarr = Array(p_p1_seg108_,p_p1_seg108_vr)
-glf_lightMaps.Add "p1_seg108", glf_p1_seg108_lmarr
-Dim glf_p1_seg107_lmarr : glf_p1_seg107_lmarr = Array(p_p1_seg107_,p_p1_seg107_vr)
-glf_lightMaps.Add "p1_seg107", glf_p1_seg107_lmarr
-Dim glf_p1_seg106_lmarr : glf_p1_seg106_lmarr = Array(p_p1_seg106_,p_p1_seg106_vr)
-glf_lightMaps.Add "p1_seg106", glf_p1_seg106_lmarr
-Dim glf_p4_seg105_lmarr : glf_p4_seg105_lmarr = Array(p_p4_seg105_,p_p4_seg105_vr)
-glf_lightMaps.Add "p4_seg105", glf_p4_seg105_lmarr
-Dim glf_p3_seg105_lmarr : glf_p3_seg105_lmarr = Array(p_p3_seg105_,p_p3_seg105_vr)
-glf_lightMaps.Add "p3_seg105", glf_p3_seg105_lmarr
-Dim glf_p2_seg105_lmarr : glf_p2_seg105_lmarr = Array(p_p2_seg105_,p_p2_seg105_vr)
-glf_lightMaps.Add "p2_seg105", glf_p2_seg105_lmarr
-Dim glf_p4_seg104_lmarr : glf_p4_seg104_lmarr = Array(p_p4_seg104_,p_p4_seg104_vr)
-glf_lightMaps.Add "p4_seg104", glf_p4_seg104_lmarr
-Dim glf_p3_seg104_lmarr : glf_p3_seg104_lmarr = Array(p_p3_seg104_,p_p3_seg104_vr)
-glf_lightMaps.Add "p3_seg104", glf_p3_seg104_lmarr
-Dim glf_p2_seg104_lmarr : glf_p2_seg104_lmarr = Array(p_p2_seg104_,p_p2_seg104_vr)
-glf_lightMaps.Add "p2_seg104", glf_p2_seg104_lmarr
-Dim glf_p4_seg103_lmarr : glf_p4_seg103_lmarr = Array(p_p4_seg103_,p_p4_seg103_vr)
-glf_lightMaps.Add "p4_seg103", glf_p4_seg103_lmarr
-Dim glf_p3_seg103_lmarr : glf_p3_seg103_lmarr = Array(p_p3_seg103_,p_p3_seg103_vr)
-glf_lightMaps.Add "p3_seg103", glf_p3_seg103_lmarr
-Dim glf_p2_seg103_lmarr : glf_p2_seg103_lmarr = Array(p_p2_seg103_,p_p2_seg103_vr)
-glf_lightMaps.Add "p2_seg103", glf_p2_seg103_lmarr
-Dim glf_p4_seg102_lmarr : glf_p4_seg102_lmarr = Array(p_p4_seg102_,p_p4_seg102_vr)
-glf_lightMaps.Add "p4_seg102", glf_p4_seg102_lmarr
-Dim glf_p3_seg102_lmarr : glf_p3_seg102_lmarr = Array(p_p3_seg102_,p_p3_seg102_vr)
-glf_lightMaps.Add "p3_seg102", glf_p3_seg102_lmarr
-Dim glf_p2_seg102_lmarr : glf_p2_seg102_lmarr = Array(p_p2_seg102_,p_p2_seg102_vr)
-glf_lightMaps.Add "p2_seg102", glf_p2_seg102_lmarr
-Dim glf_p4_seg101_lmarr : glf_p4_seg101_lmarr = Array(p_p4_seg101_,p_p4_seg101_vr)
-glf_lightMaps.Add "p4_seg101", glf_p4_seg101_lmarr
-Dim glf_p3_seg101_lmarr : glf_p3_seg101_lmarr = Array(p_p3_seg101_,p_p3_seg101_vr)
-glf_lightMaps.Add "p3_seg101", glf_p3_seg101_lmarr
-Dim glf_p2_seg101_lmarr : glf_p2_seg101_lmarr = Array(p_p2_seg101_,p_p2_seg101_vr)
-glf_lightMaps.Add "p2_seg101", glf_p2_seg101_lmarr
-Dim glf_p4_seg100_lmarr : glf_p4_seg100_lmarr = Array(p_p4_seg100_,p_p4_seg100_vr)
-glf_lightMaps.Add "p4_seg100", glf_p4_seg100_lmarr
-Dim glf_p3_seg100_lmarr : glf_p3_seg100_lmarr = Array(p_p3_seg100_,p_p3_seg100_vr)
-glf_lightMaps.Add "p3_seg100", glf_p3_seg100_lmarr
-Dim glf_p2_seg100_lmarr : glf_p2_seg100_lmarr = Array(p_p2_seg100_,p_p2_seg100_vr)
-glf_lightMaps.Add "p2_seg100", glf_p2_seg100_lmarr
-Dim glf_p4_seg99_lmarr : glf_p4_seg99_lmarr = Array(p_p4_seg99_,p_p4_seg99_vr)
-glf_lightMaps.Add "p4_seg99", glf_p4_seg99_lmarr
-Dim glf_p3_seg99_lmarr : glf_p3_seg99_lmarr = Array(p_p3_seg99_,p_p3_seg99_vr)
-glf_lightMaps.Add "p3_seg99", glf_p3_seg99_lmarr
-Dim glf_p2_seg99_lmarr : glf_p2_seg99_lmarr = Array(p_p2_seg99_,p_p2_seg99_vr)
-glf_lightMaps.Add "p2_seg99", glf_p2_seg99_lmarr
-Dim glf_p4_seg98_lmarr : glf_p4_seg98_lmarr = Array(p_p4_seg98_,p_p4_seg98_vr)
-glf_lightMaps.Add "p4_seg98", glf_p4_seg98_lmarr
-Dim glf_p3_seg98_lmarr : glf_p3_seg98_lmarr = Array(p_p3_seg98_,p_p3_seg98_vr)
-glf_lightMaps.Add "p3_seg98", glf_p3_seg98_lmarr
-Dim glf_p2_seg98_lmarr : glf_p2_seg98_lmarr = Array(p_p2_seg98_,p_p2_seg98_vr)
-glf_lightMaps.Add "p2_seg98", glf_p2_seg98_lmarr
-Dim glf_p4_seg97_lmarr : glf_p4_seg97_lmarr = Array(p_p4_seg97_,p_p4_seg97_vr)
-glf_lightMaps.Add "p4_seg97", glf_p4_seg97_lmarr
-Dim glf_p3_seg97_lmarr : glf_p3_seg97_lmarr = Array(p_p3_seg97_,p_p3_seg97_vr)
-glf_lightMaps.Add "p3_seg97", glf_p3_seg97_lmarr
-Dim glf_p2_seg97_lmarr : glf_p2_seg97_lmarr = Array(p_p2_seg97_,p_p2_seg97_vr)
-glf_lightMaps.Add "p2_seg97", glf_p2_seg97_lmarr
-Dim glf_p4_seg96_lmarr : glf_p4_seg96_lmarr = Array(p_p4_seg96_,p_p4_seg96_vr)
-glf_lightMaps.Add "p4_seg96", glf_p4_seg96_lmarr
-Dim glf_p3_seg96_lmarr : glf_p3_seg96_lmarr = Array(p_p3_seg96_,p_p3_seg96_vr)
-glf_lightMaps.Add "p3_seg96", glf_p3_seg96_lmarr
-Dim glf_p2_seg96_lmarr : glf_p2_seg96_lmarr = Array(p_p2_seg96_,p_p2_seg96_vr)
-glf_lightMaps.Add "p2_seg96", glf_p2_seg96_lmarr
-Dim glf_p4_seg95_lmarr : glf_p4_seg95_lmarr = Array(p_p4_seg95_,p_p4_seg95_vr)
-glf_lightMaps.Add "p4_seg95", glf_p4_seg95_lmarr
-Dim glf_p3_seg95_lmarr : glf_p3_seg95_lmarr = Array(p_p3_seg95_,p_p3_seg95_vr)
-glf_lightMaps.Add "p3_seg95", glf_p3_seg95_lmarr
-Dim glf_p2_seg95_lmarr : glf_p2_seg95_lmarr = Array(p_p2_seg95_,p_p2_seg95_vr)
-glf_lightMaps.Add "p2_seg95", glf_p2_seg95_lmarr
-Dim glf_p4_seg94_lmarr : glf_p4_seg94_lmarr = Array(p_p4_seg94_,p_p4_seg94_vr)
-glf_lightMaps.Add "p4_seg94", glf_p4_seg94_lmarr
-Dim glf_p3_seg94_lmarr : glf_p3_seg94_lmarr = Array(p_p3_seg94_,p_p3_seg94_vr)
-glf_lightMaps.Add "p3_seg94", glf_p3_seg94_lmarr
-Dim glf_p2_seg94_lmarr : glf_p2_seg94_lmarr = Array(p_p2_seg94_,p_p2_seg94_vr)
-glf_lightMaps.Add "p2_seg94", glf_p2_seg94_lmarr
-Dim glf_p4_seg93_lmarr : glf_p4_seg93_lmarr = Array(p_p4_seg93_,p_p4_seg93_vr)
-glf_lightMaps.Add "p4_seg93", glf_p4_seg93_lmarr
-Dim glf_p3_seg93_lmarr : glf_p3_seg93_lmarr = Array(p_p3_seg93_,p_p3_seg93_vr)
-glf_lightMaps.Add "p3_seg93", glf_p3_seg93_lmarr
-Dim glf_p2_seg93_lmarr : glf_p2_seg93_lmarr = Array(p_p2_seg93_,p_p2_seg93_vr)
-glf_lightMaps.Add "p2_seg93", glf_p2_seg93_lmarr
-Dim glf_p4_seg92_lmarr : glf_p4_seg92_lmarr = Array(p_p4_seg92_,p_p4_seg92_vr)
-glf_lightMaps.Add "p4_seg92", glf_p4_seg92_lmarr
-Dim glf_p3_seg92_lmarr : glf_p3_seg92_lmarr = Array(p_p3_seg92_,p_p3_seg92_vr)
-glf_lightMaps.Add "p3_seg92", glf_p3_seg92_lmarr
-Dim glf_p2_seg92_lmarr : glf_p2_seg92_lmarr = Array(p_p2_seg92_,p_p2_seg92_vr)
-glf_lightMaps.Add "p2_seg92", glf_p2_seg92_lmarr
-Dim glf_p4_seg91_lmarr : glf_p4_seg91_lmarr = Array(p_p4_seg91_,p_p4_seg91_vr)
-glf_lightMaps.Add "p4_seg91", glf_p4_seg91_lmarr
-Dim glf_p3_seg91_lmarr : glf_p3_seg91_lmarr = Array(p_p3_seg91_,p_p3_seg91_vr)
-glf_lightMaps.Add "p3_seg91", glf_p3_seg91_lmarr
-Dim glf_p2_seg91_lmarr : glf_p2_seg91_lmarr = Array(p_p2_seg91_,p_p2_seg91_vr)
-glf_lightMaps.Add "p2_seg91", glf_p2_seg91_lmarr
-Dim glf_p4_seg90_lmarr : glf_p4_seg90_lmarr = Array(p_p4_seg90_,p_p4_seg90_vr)
-glf_lightMaps.Add "p4_seg90", glf_p4_seg90_lmarr
-Dim glf_p3_seg90_lmarr : glf_p3_seg90_lmarr = Array(p_p3_seg90_,p_p3_seg90_vr)
-glf_lightMaps.Add "p3_seg90", glf_p3_seg90_lmarr
-Dim glf_p2_seg90_lmarr : glf_p2_seg90_lmarr = Array(p_p2_seg90_,p_p2_seg90_vr)
-glf_lightMaps.Add "p2_seg90", glf_p2_seg90_lmarr
-Dim glf_p4_seg89_lmarr : glf_p4_seg89_lmarr = Array(p_p4_seg89_,p_p4_seg89_vr)
-glf_lightMaps.Add "p4_seg89", glf_p4_seg89_lmarr
-Dim glf_p3_seg89_lmarr : glf_p3_seg89_lmarr = Array(p_p3_seg89_,p_p3_seg89_vr)
-glf_lightMaps.Add "p3_seg89", glf_p3_seg89_lmarr
-Dim glf_p2_seg89_lmarr : glf_p2_seg89_lmarr = Array(p_p2_seg89_,p_p2_seg89_vr)
-glf_lightMaps.Add "p2_seg89", glf_p2_seg89_lmarr
-Dim glf_p4_seg88_lmarr : glf_p4_seg88_lmarr = Array(p_p4_seg88_,p_p4_seg88_vr)
-glf_lightMaps.Add "p4_seg88", glf_p4_seg88_lmarr
-Dim glf_p3_seg88_lmarr : glf_p3_seg88_lmarr = Array(p_p3_seg88_,p_p3_seg88_vr)
-glf_lightMaps.Add "p3_seg88", glf_p3_seg88_lmarr
-Dim glf_p2_seg88_lmarr : glf_p2_seg88_lmarr = Array(p_p2_seg88_,p_p2_seg88_vr)
-glf_lightMaps.Add "p2_seg88", glf_p2_seg88_lmarr
-Dim glf_p4_seg87_lmarr : glf_p4_seg87_lmarr = Array(p_p4_seg87_,p_p4_seg87_vr)
-glf_lightMaps.Add "p4_seg87", glf_p4_seg87_lmarr
-Dim glf_p3_seg87_lmarr : glf_p3_seg87_lmarr = Array(p_p3_seg87_,p_p3_seg87_vr)
-glf_lightMaps.Add "p3_seg87", glf_p3_seg87_lmarr
-Dim glf_p2_seg87_lmarr : glf_p2_seg87_lmarr = Array(p_p2_seg87_,p_p2_seg87_vr)
-glf_lightMaps.Add "p2_seg87", glf_p2_seg87_lmarr
-Dim glf_p4_seg86_lmarr : glf_p4_seg86_lmarr = Array(p_p4_seg86_,p_p4_seg86_vr)
-glf_lightMaps.Add "p4_seg86", glf_p4_seg86_lmarr
-Dim glf_p3_seg86_lmarr : glf_p3_seg86_lmarr = Array(p_p3_seg86_,p_p3_seg86_vr)
-glf_lightMaps.Add "p3_seg86", glf_p3_seg86_lmarr
-Dim glf_p2_seg86_lmarr : glf_p2_seg86_lmarr = Array(p_p2_seg86_,p_p2_seg86_vr)
-glf_lightMaps.Add "p2_seg86", glf_p2_seg86_lmarr
-Dim glf_p4_seg85_lmarr : glf_p4_seg85_lmarr = Array(p_p4_seg85_,p_p4_seg85_vr)
-glf_lightMaps.Add "p4_seg85", glf_p4_seg85_lmarr
-Dim glf_p3_seg85_lmarr : glf_p3_seg85_lmarr = Array(p_p3_seg85_,p_p3_seg85_vr)
-glf_lightMaps.Add "p3_seg85", glf_p3_seg85_lmarr
-Dim glf_p2_seg85_lmarr : glf_p2_seg85_lmarr = Array(p_p2_seg85_,p_p2_seg85_vr)
-glf_lightMaps.Add "p2_seg85", glf_p2_seg85_lmarr
-Dim glf_p4_seg84_lmarr : glf_p4_seg84_lmarr = Array(p_p4_seg84_,p_p4_seg84_vr)
-glf_lightMaps.Add "p4_seg84", glf_p4_seg84_lmarr
-Dim glf_p3_seg84_lmarr : glf_p3_seg84_lmarr = Array(p_p3_seg84_,p_p3_seg84_vr)
-glf_lightMaps.Add "p3_seg84", glf_p3_seg84_lmarr
-Dim glf_p2_seg84_lmarr : glf_p2_seg84_lmarr = Array(p_p2_seg84_,p_p2_seg84_vr)
-glf_lightMaps.Add "p2_seg84", glf_p2_seg84_lmarr
-Dim glf_p4_seg83_lmarr : glf_p4_seg83_lmarr = Array(p_p4_seg83_,p_p4_seg83_vr)
-glf_lightMaps.Add "p4_seg83", glf_p4_seg83_lmarr
-Dim glf_p3_seg83_lmarr : glf_p3_seg83_lmarr = Array(p_p3_seg83_,p_p3_seg83_vr)
-glf_lightMaps.Add "p3_seg83", glf_p3_seg83_lmarr
-Dim glf_p2_seg83_lmarr : glf_p2_seg83_lmarr = Array(p_p2_seg83_,p_p2_seg83_vr)
-glf_lightMaps.Add "p2_seg83", glf_p2_seg83_lmarr
-Dim glf_p4_seg82_lmarr : glf_p4_seg82_lmarr = Array(p_p4_seg82_,p_p4_seg82_vr)
-glf_lightMaps.Add "p4_seg82", glf_p4_seg82_lmarr
-Dim glf_p3_seg82_lmarr : glf_p3_seg82_lmarr = Array(p_p3_seg82_,p_p3_seg82_vr)
-glf_lightMaps.Add "p3_seg82", glf_p3_seg82_lmarr
-Dim glf_p2_seg82_lmarr : glf_p2_seg82_lmarr = Array(p_p2_seg82_,p_p2_seg82_vr)
-glf_lightMaps.Add "p2_seg82", glf_p2_seg82_lmarr
-Dim glf_p4_seg81_lmarr : glf_p4_seg81_lmarr = Array(p_p4_seg81_,p_p4_seg81_vr)
-glf_lightMaps.Add "p4_seg81", glf_p4_seg81_lmarr
-Dim glf_p3_seg81_lmarr : glf_p3_seg81_lmarr = Array(p_p3_seg81_,p_p3_seg81_vr)
-glf_lightMaps.Add "p3_seg81", glf_p3_seg81_lmarr
-Dim glf_p2_seg81_lmarr : glf_p2_seg81_lmarr = Array(p_p2_seg81_,p_p2_seg81_vr)
-glf_lightMaps.Add "p2_seg81", glf_p2_seg81_lmarr
-Dim glf_p4_seg80_lmarr : glf_p4_seg80_lmarr = Array(p_p4_seg80_,p_p4_seg80_vr)
-glf_lightMaps.Add "p4_seg80", glf_p4_seg80_lmarr
-Dim glf_p3_seg80_lmarr : glf_p3_seg80_lmarr = Array(p_p3_seg80_,p_p3_seg80_vr)
-glf_lightMaps.Add "p3_seg80", glf_p3_seg80_lmarr
-Dim glf_p2_seg80_lmarr : glf_p2_seg80_lmarr = Array(p_p2_seg80_,p_p2_seg80_vr)
-glf_lightMaps.Add "p2_seg80", glf_p2_seg80_lmarr
-Dim glf_p4_seg79_lmarr : glf_p4_seg79_lmarr = Array(p_p4_seg79_,p_p4_seg79_vr)
-glf_lightMaps.Add "p4_seg79", glf_p4_seg79_lmarr
-Dim glf_p3_seg79_lmarr : glf_p3_seg79_lmarr = Array(p_p3_seg79_,p_p3_seg79_vr)
-glf_lightMaps.Add "p3_seg79", glf_p3_seg79_lmarr
-Dim glf_p2_seg79_lmarr : glf_p2_seg79_lmarr = Array(p_p2_seg79_,p_p2_seg79_vr)
-glf_lightMaps.Add "p2_seg79", glf_p2_seg79_lmarr
-Dim glf_p4_seg78_lmarr : glf_p4_seg78_lmarr = Array(p_p4_seg78_,p_p4_seg78_vr)
-glf_lightMaps.Add "p4_seg78", glf_p4_seg78_lmarr
-Dim glf_p3_seg78_lmarr : glf_p3_seg78_lmarr = Array(p_p3_seg78_,p_p3_seg78_vr)
-glf_lightMaps.Add "p3_seg78", glf_p3_seg78_lmarr
-Dim glf_p2_seg78_lmarr : glf_p2_seg78_lmarr = Array(p_p2_seg78_,p_p2_seg78_vr)
-glf_lightMaps.Add "p2_seg78", glf_p2_seg78_lmarr
-Dim glf_p4_seg77_lmarr : glf_p4_seg77_lmarr = Array(p_p4_seg77_,p_p4_seg77_vr)
-glf_lightMaps.Add "p4_seg77", glf_p4_seg77_lmarr
-Dim glf_p3_seg77_lmarr : glf_p3_seg77_lmarr = Array(p_p3_seg77_,p_p3_seg77_vr)
-glf_lightMaps.Add "p3_seg77", glf_p3_seg77_lmarr
-Dim glf_p2_seg77_lmarr : glf_p2_seg77_lmarr = Array(p_p2_seg77_,p_p2_seg77_vr)
-glf_lightMaps.Add "p2_seg77", glf_p2_seg77_lmarr
-Dim glf_p4_seg76_lmarr : glf_p4_seg76_lmarr = Array(p_p4_seg76_,p_p4_seg76_vr)
-glf_lightMaps.Add "p4_seg76", glf_p4_seg76_lmarr
-Dim glf_p3_seg76_lmarr : glf_p3_seg76_lmarr = Array(p_p3_seg76_,p_p3_seg76_vr)
-glf_lightMaps.Add "p3_seg76", glf_p3_seg76_lmarr
-Dim glf_p2_seg76_lmarr : glf_p2_seg76_lmarr = Array(p_p2_seg76_,p_p2_seg76_vr)
-glf_lightMaps.Add "p2_seg76", glf_p2_seg76_lmarr
-Dim glf_p4_seg75_lmarr : glf_p4_seg75_lmarr = Array(p_p4_seg75_,p_p4_seg75_vr)
-glf_lightMaps.Add "p4_seg75", glf_p4_seg75_lmarr
-Dim glf_p3_seg75_lmarr : glf_p3_seg75_lmarr = Array(p_p3_seg75_,p_p3_seg75_vr)
-glf_lightMaps.Add "p3_seg75", glf_p3_seg75_lmarr
-Dim glf_p2_seg75_lmarr : glf_p2_seg75_lmarr = Array(p_p2_seg75_,p_p2_seg75_vr)
-glf_lightMaps.Add "p2_seg75", glf_p2_seg75_lmarr
-Dim glf_p4_seg74_lmarr : glf_p4_seg74_lmarr = Array(p_p4_seg74_,p_p4_seg74_vr)
-glf_lightMaps.Add "p4_seg74", glf_p4_seg74_lmarr
-Dim glf_p3_seg74_lmarr : glf_p3_seg74_lmarr = Array(p_p3_seg74_,p_p3_seg74_vr)
-glf_lightMaps.Add "p3_seg74", glf_p3_seg74_lmarr
-Dim glf_p2_seg74_lmarr : glf_p2_seg74_lmarr = Array(p_p2_seg74_,p_p2_seg74_vr)
-glf_lightMaps.Add "p2_seg74", glf_p2_seg74_lmarr
-Dim glf_p4_seg73_lmarr : glf_p4_seg73_lmarr = Array(p_p4_seg73_,p_p4_seg73_vr)
-glf_lightMaps.Add "p4_seg73", glf_p4_seg73_lmarr
-Dim glf_p3_seg73_lmarr : glf_p3_seg73_lmarr = Array(p_p3_seg73_,p_p3_seg73_vr)
-glf_lightMaps.Add "p3_seg73", glf_p3_seg73_lmarr
-Dim glf_p2_seg73_lmarr : glf_p2_seg73_lmarr = Array(p_p2_seg73_,p_p2_seg73_vr)
-glf_lightMaps.Add "p2_seg73", glf_p2_seg73_lmarr
-Dim glf_p4_seg72_lmarr : glf_p4_seg72_lmarr = Array(p_p4_seg72_,p_p4_seg72_vr)
-glf_lightMaps.Add "p4_seg72", glf_p4_seg72_lmarr
-Dim glf_p3_seg72_lmarr : glf_p3_seg72_lmarr = Array(p_p3_seg72_,p_p3_seg72_vr)
-glf_lightMaps.Add "p3_seg72", glf_p3_seg72_lmarr
-Dim glf_p2_seg72_lmarr : glf_p2_seg72_lmarr = Array(p_p2_seg72_,p_p2_seg72_vr)
-glf_lightMaps.Add "p2_seg72", glf_p2_seg72_lmarr
-Dim glf_p4_seg71_lmarr : glf_p4_seg71_lmarr = Array(p_p4_seg71_,p_p4_seg71_vr)
-glf_lightMaps.Add "p4_seg71", glf_p4_seg71_lmarr
-Dim glf_p3_seg71_lmarr : glf_p3_seg71_lmarr = Array(p_p3_seg71_,p_p3_seg71_vr)
-glf_lightMaps.Add "p3_seg71", glf_p3_seg71_lmarr
-Dim glf_p2_seg71_lmarr : glf_p2_seg71_lmarr = Array(p_p2_seg71_,p_p2_seg71_vr)
-glf_lightMaps.Add "p2_seg71", glf_p2_seg71_lmarr
-Dim glf_p4_seg70_lmarr : glf_p4_seg70_lmarr = Array(p_p4_seg70_,p_p4_seg70_vr)
-glf_lightMaps.Add "p4_seg70", glf_p4_seg70_lmarr
-Dim glf_p3_seg70_lmarr : glf_p3_seg70_lmarr = Array(p_p3_seg70_,p_p3_seg70_vr)
-glf_lightMaps.Add "p3_seg70", glf_p3_seg70_lmarr
-Dim glf_p2_seg70_lmarr : glf_p2_seg70_lmarr = Array(p_p2_seg70_,p_p2_seg70_vr)
-glf_lightMaps.Add "p2_seg70", glf_p2_seg70_lmarr
-Dim glf_p4_seg69_lmarr : glf_p4_seg69_lmarr = Array(p_p4_seg69_,p_p4_seg69_vr)
-glf_lightMaps.Add "p4_seg69", glf_p4_seg69_lmarr
-Dim glf_p3_seg69_lmarr : glf_p3_seg69_lmarr = Array(p_p3_seg69_,p_p3_seg69_vr)
-glf_lightMaps.Add "p3_seg69", glf_p3_seg69_lmarr
-Dim glf_p2_seg69_lmarr : glf_p2_seg69_lmarr = Array(p_p2_seg69_,p_p2_seg69_vr)
-glf_lightMaps.Add "p2_seg69", glf_p2_seg69_lmarr
-Dim glf_p4_seg68_lmarr : glf_p4_seg68_lmarr = Array(p_p4_seg68_,p_p4_seg68_vr)
-glf_lightMaps.Add "p4_seg68", glf_p4_seg68_lmarr
-Dim glf_p3_seg68_lmarr : glf_p3_seg68_lmarr = Array(p_p3_seg68_,p_p3_seg68_vr)
-glf_lightMaps.Add "p3_seg68", glf_p3_seg68_lmarr
-Dim glf_p2_seg68_lmarr : glf_p2_seg68_lmarr = Array(p_p2_seg68_,p_p2_seg68_vr)
-glf_lightMaps.Add "p2_seg68", glf_p2_seg68_lmarr
-Dim glf_p4_seg67_lmarr : glf_p4_seg67_lmarr = Array(p_p4_seg67_,p_p4_seg67_vr)
-glf_lightMaps.Add "p4_seg67", glf_p4_seg67_lmarr
-Dim glf_p3_seg67_lmarr : glf_p3_seg67_lmarr = Array(p_p3_seg67_,p_p3_seg67_vr)
-glf_lightMaps.Add "p3_seg67", glf_p3_seg67_lmarr
-Dim glf_p2_seg67_lmarr : glf_p2_seg67_lmarr = Array(p_p2_seg67_,p_p2_seg67_vr)
-glf_lightMaps.Add "p2_seg67", glf_p2_seg67_lmarr
-Dim glf_p4_seg66_lmarr : glf_p4_seg66_lmarr = Array(p_p4_seg66_,p_p4_seg66_vr)
-glf_lightMaps.Add "p4_seg66", glf_p4_seg66_lmarr
-Dim glf_p3_seg66_lmarr : glf_p3_seg66_lmarr = Array(p_p3_seg66_,p_p3_seg66_vr)
-glf_lightMaps.Add "p3_seg66", glf_p3_seg66_lmarr
-Dim glf_p2_seg66_lmarr : glf_p2_seg66_lmarr = Array(p_p2_seg66_,p_p2_seg66_vr)
-glf_lightMaps.Add "p2_seg66", glf_p2_seg66_lmarr
-Dim glf_p4_seg65_lmarr : glf_p4_seg65_lmarr = Array(p_p4_seg65_,p_p4_seg65_vr)
-glf_lightMaps.Add "p4_seg65", glf_p4_seg65_lmarr
-Dim glf_p3_seg65_lmarr : glf_p3_seg65_lmarr = Array(p_p3_seg65_,p_p3_seg65_vr)
-glf_lightMaps.Add "p3_seg65", glf_p3_seg65_lmarr
-Dim glf_p2_seg65_lmarr : glf_p2_seg65_lmarr = Array(p_p2_seg65_,p_p2_seg65_vr)
-glf_lightMaps.Add "p2_seg65", glf_p2_seg65_lmarr
-Dim glf_p4_seg64_lmarr : glf_p4_seg64_lmarr = Array(p_p4_seg64_,p_p4_seg64_vr)
-glf_lightMaps.Add "p4_seg64", glf_p4_seg64_lmarr
-Dim glf_p3_seg64_lmarr : glf_p3_seg64_lmarr = Array(p_p3_seg64_,p_p3_seg64_vr)
-glf_lightMaps.Add "p3_seg64", glf_p3_seg64_lmarr
-Dim glf_p2_seg64_lmarr : glf_p2_seg64_lmarr = Array(p_p2_seg64_,p_p2_seg64_vr)
-glf_lightMaps.Add "p2_seg64", glf_p2_seg64_lmarr
-Dim glf_p4_seg63_lmarr : glf_p4_seg63_lmarr = Array(p_p4_seg63_,p_p4_seg63_vr)
-glf_lightMaps.Add "p4_seg63", glf_p4_seg63_lmarr
-Dim glf_p3_seg63_lmarr : glf_p3_seg63_lmarr = Array(p_p3_seg63_,p_p3_seg63_vr)
-glf_lightMaps.Add "p3_seg63", glf_p3_seg63_lmarr
-Dim glf_p2_seg63_lmarr : glf_p2_seg63_lmarr = Array(p_p2_seg63_,p_p2_seg63_vr)
-glf_lightMaps.Add "p2_seg63", glf_p2_seg63_lmarr
-Dim glf_p4_seg62_lmarr : glf_p4_seg62_lmarr = Array(p_p4_seg62_,p_p4_seg62_vr)
-glf_lightMaps.Add "p4_seg62", glf_p4_seg62_lmarr
-Dim glf_p3_seg62_lmarr : glf_p3_seg62_lmarr = Array(p_p3_seg62_,p_p3_seg62_vr)
-glf_lightMaps.Add "p3_seg62", glf_p3_seg62_lmarr
-Dim glf_p2_seg62_lmarr : glf_p2_seg62_lmarr = Array(p_p2_seg62_,p_p2_seg62_vr)
-glf_lightMaps.Add "p2_seg62", glf_p2_seg62_lmarr
-Dim glf_p4_seg61_lmarr : glf_p4_seg61_lmarr = Array(p_p4_seg61_,p_p4_seg61_vr)
-glf_lightMaps.Add "p4_seg61", glf_p4_seg61_lmarr
-Dim glf_p3_seg61_lmarr : glf_p3_seg61_lmarr = Array(p_p3_seg61_,p_p3_seg61_vr)
-glf_lightMaps.Add "p3_seg61", glf_p3_seg61_lmarr
-Dim glf_p2_seg61_lmarr : glf_p2_seg61_lmarr = Array(p_p2_seg61_,p_p2_seg61_vr)
-glf_lightMaps.Add "p2_seg61", glf_p2_seg61_lmarr
-Dim glf_p4_seg60_lmarr : glf_p4_seg60_lmarr = Array(p_p4_seg60_,p_p4_seg60_vr)
-glf_lightMaps.Add "p4_seg60", glf_p4_seg60_lmarr
-Dim glf_p3_seg60_lmarr : glf_p3_seg60_lmarr = Array(p_p3_seg60_,p_p3_seg60_vr)
-glf_lightMaps.Add "p3_seg60", glf_p3_seg60_lmarr
-Dim glf_p2_seg60_lmarr : glf_p2_seg60_lmarr = Array(p_p2_seg60_,p_p2_seg60_vr)
-glf_lightMaps.Add "p2_seg60", glf_p2_seg60_lmarr
-Dim glf_p4_seg59_lmarr : glf_p4_seg59_lmarr = Array(p_p4_seg59_,p_p4_seg59_vr)
-glf_lightMaps.Add "p4_seg59", glf_p4_seg59_lmarr
-Dim glf_p3_seg59_lmarr : glf_p3_seg59_lmarr = Array(p_p3_seg59_,p_p3_seg59_vr)
-glf_lightMaps.Add "p3_seg59", glf_p3_seg59_lmarr
-Dim glf_p2_seg59_lmarr : glf_p2_seg59_lmarr = Array(p_p2_seg59_,p_p2_seg59_vr)
-glf_lightMaps.Add "p2_seg59", glf_p2_seg59_lmarr
-Dim glf_p4_seg58_lmarr : glf_p4_seg58_lmarr = Array(p_p4_seg58_,p_p4_seg58_vr)
-glf_lightMaps.Add "p4_seg58", glf_p4_seg58_lmarr
-Dim glf_p3_seg58_lmarr : glf_p3_seg58_lmarr = Array(p_p3_seg58_,p_p3_seg58_vr)
-glf_lightMaps.Add "p3_seg58", glf_p3_seg58_lmarr
-Dim glf_p2_seg58_lmarr : glf_p2_seg58_lmarr = Array(p_p2_seg58_,p_p2_seg58_vr)
-glf_lightMaps.Add "p2_seg58", glf_p2_seg58_lmarr
-Dim glf_p4_seg57_lmarr : glf_p4_seg57_lmarr = Array(p_p4_seg57_,p_p4_seg57_vr)
-glf_lightMaps.Add "p4_seg57", glf_p4_seg57_lmarr
-Dim glf_p3_seg57_lmarr : glf_p3_seg57_lmarr = Array(p_p3_seg57_,p_p3_seg57_vr)
-glf_lightMaps.Add "p3_seg57", glf_p3_seg57_lmarr
-Dim glf_p2_seg57_lmarr : glf_p2_seg57_lmarr = Array(p_p2_seg57_,p_p2_seg57_vr)
-glf_lightMaps.Add "p2_seg57", glf_p2_seg57_lmarr
-Dim glf_p4_seg56_lmarr : glf_p4_seg56_lmarr = Array(p_p4_seg56_,p_p4_seg56_vr)
-glf_lightMaps.Add "p4_seg56", glf_p4_seg56_lmarr
-Dim glf_p3_seg56_lmarr : glf_p3_seg56_lmarr = Array(p_p3_seg56_,p_p3_seg56_vr)
-glf_lightMaps.Add "p3_seg56", glf_p3_seg56_lmarr
-Dim glf_p2_seg56_lmarr : glf_p2_seg56_lmarr = Array(p_p2_seg56_,p_p2_seg56_vr)
-glf_lightMaps.Add "p2_seg56", glf_p2_seg56_lmarr
-Dim glf_p4_seg55_lmarr : glf_p4_seg55_lmarr = Array(p_p4_seg55_,p_p4_seg55_vr)
-glf_lightMaps.Add "p4_seg55", glf_p4_seg55_lmarr
-Dim glf_p3_seg55_lmarr : glf_p3_seg55_lmarr = Array(p_p3_seg55_,p_p3_seg55_vr)
-glf_lightMaps.Add "p3_seg55", glf_p3_seg55_lmarr
-Dim glf_p2_seg55_lmarr : glf_p2_seg55_lmarr = Array(p_p2_seg55_,p_p2_seg55_vr)
-glf_lightMaps.Add "p2_seg55", glf_p2_seg55_lmarr
-Dim glf_p4_seg54_lmarr : glf_p4_seg54_lmarr = Array(p_p4_seg54_,p_p4_seg54_vr)
-glf_lightMaps.Add "p4_seg54", glf_p4_seg54_lmarr
-Dim glf_p3_seg54_lmarr : glf_p3_seg54_lmarr = Array(p_p3_seg54_,p_p3_seg54_vr)
-glf_lightMaps.Add "p3_seg54", glf_p3_seg54_lmarr
-Dim glf_p2_seg54_lmarr : glf_p2_seg54_lmarr = Array(p_p2_seg54_,p_p2_seg54_vr)
-glf_lightMaps.Add "p2_seg54", glf_p2_seg54_lmarr
-Dim glf_p4_seg53_lmarr : glf_p4_seg53_lmarr = Array(p_p4_seg53_,p_p4_seg53_vr)
-glf_lightMaps.Add "p4_seg53", glf_p4_seg53_lmarr
-Dim glf_p3_seg53_lmarr : glf_p3_seg53_lmarr = Array(p_p3_seg53_,p_p3_seg53_vr)
-glf_lightMaps.Add "p3_seg53", glf_p3_seg53_lmarr
-Dim glf_p2_seg53_lmarr : glf_p2_seg53_lmarr = Array(p_p2_seg53_,p_p2_seg53_vr)
-glf_lightMaps.Add "p2_seg53", glf_p2_seg53_lmarr
-Dim glf_p4_seg52_lmarr : glf_p4_seg52_lmarr = Array(p_p4_seg52_,p_p4_seg52_vr)
-glf_lightMaps.Add "p4_seg52", glf_p4_seg52_lmarr
-Dim glf_p3_seg52_lmarr : glf_p3_seg52_lmarr = Array(p_p3_seg52_,p_p3_seg52_vr)
-glf_lightMaps.Add "p3_seg52", glf_p3_seg52_lmarr
-Dim glf_p2_seg52_lmarr : glf_p2_seg52_lmarr = Array(p_p2_seg52_,p_p2_seg52_vr)
-glf_lightMaps.Add "p2_seg52", glf_p2_seg52_lmarr
-Dim glf_p4_seg51_lmarr : glf_p4_seg51_lmarr = Array(p_p4_seg51_,p_p4_seg51_vr)
-glf_lightMaps.Add "p4_seg51", glf_p4_seg51_lmarr
-Dim glf_p3_seg51_lmarr : glf_p3_seg51_lmarr = Array(p_p3_seg51_,p_p3_seg51_vr)
-glf_lightMaps.Add "p3_seg51", glf_p3_seg51_lmarr
-Dim glf_p2_seg51_lmarr : glf_p2_seg51_lmarr = Array(p_p2_seg51_,p_p2_seg51_vr)
-glf_lightMaps.Add "p2_seg51", glf_p2_seg51_lmarr
-Dim glf_p4_seg50_lmarr : glf_p4_seg50_lmarr = Array(p_p4_seg50_,p_p4_seg50_vr)
-glf_lightMaps.Add "p4_seg50", glf_p4_seg50_lmarr
-Dim glf_p3_seg50_lmarr : glf_p3_seg50_lmarr = Array(p_p3_seg50_,p_p3_seg50_vr)
-glf_lightMaps.Add "p3_seg50", glf_p3_seg50_lmarr
-Dim glf_p2_seg50_lmarr : glf_p2_seg50_lmarr = Array(p_p2_seg50_,p_p2_seg50_vr)
-glf_lightMaps.Add "p2_seg50", glf_p2_seg50_lmarr
-Dim glf_p4_seg49_lmarr : glf_p4_seg49_lmarr = Array(p_p4_seg49_,p_p4_seg49_vr)
-glf_lightMaps.Add "p4_seg49", glf_p4_seg49_lmarr
-Dim glf_p3_seg49_lmarr : glf_p3_seg49_lmarr = Array(p_p3_seg49_,p_p3_seg49_vr)
-glf_lightMaps.Add "p3_seg49", glf_p3_seg49_lmarr
-Dim glf_p2_seg49_lmarr : glf_p2_seg49_lmarr = Array(p_p2_seg49_,p_p2_seg49_vr)
-glf_lightMaps.Add "p2_seg49", glf_p2_seg49_lmarr
-Dim glf_p4_seg48_lmarr : glf_p4_seg48_lmarr = Array(p_p4_seg48_,p_p4_seg48_vr)
-glf_lightMaps.Add "p4_seg48", glf_p4_seg48_lmarr
-Dim glf_p3_seg48_lmarr : glf_p3_seg48_lmarr = Array(p_p3_seg48_,p_p3_seg48_vr)
-glf_lightMaps.Add "p3_seg48", glf_p3_seg48_lmarr
-Dim glf_p2_seg48_lmarr : glf_p2_seg48_lmarr = Array(p_p2_seg48_,p_p2_seg48_vr)
-glf_lightMaps.Add "p2_seg48", glf_p2_seg48_lmarr
-Dim glf_p4_seg47_lmarr : glf_p4_seg47_lmarr = Array(p_p4_seg47_,p_p4_seg47_vr)
-glf_lightMaps.Add "p4_seg47", glf_p4_seg47_lmarr
-Dim glf_p3_seg47_lmarr : glf_p3_seg47_lmarr = Array(p_p3_seg47_,p_p3_seg47_vr)
-glf_lightMaps.Add "p3_seg47", glf_p3_seg47_lmarr
-Dim glf_p2_seg47_lmarr : glf_p2_seg47_lmarr = Array(p_p2_seg47_,p_p2_seg47_vr)
-glf_lightMaps.Add "p2_seg47", glf_p2_seg47_lmarr
-Dim glf_p4_seg46_lmarr : glf_p4_seg46_lmarr = Array(p_p4_seg46_,p_p4_seg46_vr)
-glf_lightMaps.Add "p4_seg46", glf_p4_seg46_lmarr
-Dim glf_p3_seg46_lmarr : glf_p3_seg46_lmarr = Array(p_p3_seg46_,p_p3_seg46_vr)
-glf_lightMaps.Add "p3_seg46", glf_p3_seg46_lmarr
-Dim glf_p2_seg46_lmarr : glf_p2_seg46_lmarr = Array(p_p2_seg46_,p_p2_seg46_vr)
-glf_lightMaps.Add "p2_seg46", glf_p2_seg46_lmarr
-Dim glf_p4_seg45_lmarr : glf_p4_seg45_lmarr = Array(p_p4_seg45_,p_p4_seg45_vr)
-glf_lightMaps.Add "p4_seg45", glf_p4_seg45_lmarr
-Dim glf_p3_seg45_lmarr : glf_p3_seg45_lmarr = Array(p_p3_seg45_,p_p3_seg45_vr)
-glf_lightMaps.Add "p3_seg45", glf_p3_seg45_lmarr
-Dim glf_p2_seg45_lmarr : glf_p2_seg45_lmarr = Array(p_p2_seg45_,p_p2_seg45_vr)
-glf_lightMaps.Add "p2_seg45", glf_p2_seg45_lmarr
-Dim glf_p4_seg44_lmarr : glf_p4_seg44_lmarr = Array(p_p4_seg44_,p_p4_seg44_vr)
-glf_lightMaps.Add "p4_seg44", glf_p4_seg44_lmarr
-Dim glf_p3_seg44_lmarr : glf_p3_seg44_lmarr = Array(p_p3_seg44_,p_p3_seg44_vr)
-glf_lightMaps.Add "p3_seg44", glf_p3_seg44_lmarr
-Dim glf_p2_seg44_lmarr : glf_p2_seg44_lmarr = Array(p_p2_seg44_,p_p2_seg44_vr)
-glf_lightMaps.Add "p2_seg44", glf_p2_seg44_lmarr
-Dim glf_p4_seg43_lmarr : glf_p4_seg43_lmarr = Array(p_p4_seg43_,p_p4_seg43_vr)
-glf_lightMaps.Add "p4_seg43", glf_p4_seg43_lmarr
-Dim glf_p3_seg43_lmarr : glf_p3_seg43_lmarr = Array(p_p3_seg43_,p_p3_seg43_vr)
-glf_lightMaps.Add "p3_seg43", glf_p3_seg43_lmarr
-Dim glf_p2_seg43_lmarr : glf_p2_seg43_lmarr = Array(p_p2_seg43_,p_p2_seg43_vr)
-glf_lightMaps.Add "p2_seg43", glf_p2_seg43_lmarr
-Dim glf_p4_seg42_lmarr : glf_p4_seg42_lmarr = Array(p_p4_seg42_,p_p4_seg42_vr)
-glf_lightMaps.Add "p4_seg42", glf_p4_seg42_lmarr
-Dim glf_p3_seg42_lmarr : glf_p3_seg42_lmarr = Array(p_p3_seg42_,p_p3_seg42_vr)
-glf_lightMaps.Add "p3_seg42", glf_p3_seg42_lmarr
-Dim glf_p2_seg42_lmarr : glf_p2_seg42_lmarr = Array(p_p2_seg42_,p_p2_seg42_vr)
-glf_lightMaps.Add "p2_seg42", glf_p2_seg42_lmarr
-Dim glf_p4_seg41_lmarr : glf_p4_seg41_lmarr = Array(p_p4_seg41_,p_p4_seg41_vr)
-glf_lightMaps.Add "p4_seg41", glf_p4_seg41_lmarr
-Dim glf_p3_seg41_lmarr : glf_p3_seg41_lmarr = Array(p_p3_seg41_,p_p3_seg41_vr)
-glf_lightMaps.Add "p3_seg41", glf_p3_seg41_lmarr
-Dim glf_p2_seg41_lmarr : glf_p2_seg41_lmarr = Array(p_p2_seg41_,p_p2_seg41_vr)
-glf_lightMaps.Add "p2_seg41", glf_p2_seg41_lmarr
-Dim glf_p4_seg40_lmarr : glf_p4_seg40_lmarr = Array(p_p4_seg40_,p_p4_seg40_vr)
-glf_lightMaps.Add "p4_seg40", glf_p4_seg40_lmarr
-Dim glf_p3_seg40_lmarr : glf_p3_seg40_lmarr = Array(p_p3_seg40_,p_p3_seg40_vr)
-glf_lightMaps.Add "p3_seg40", glf_p3_seg40_lmarr
-Dim glf_p2_seg40_lmarr : glf_p2_seg40_lmarr = Array(p_p2_seg40_,p_p2_seg40_vr)
-glf_lightMaps.Add "p2_seg40", glf_p2_seg40_lmarr
-Dim glf_p4_seg39_lmarr : glf_p4_seg39_lmarr = Array(p_p4_seg39_,p_p4_seg39_vr)
-glf_lightMaps.Add "p4_seg39", glf_p4_seg39_lmarr
-Dim glf_p3_seg39_lmarr : glf_p3_seg39_lmarr = Array(p_p3_seg39_,p_p3_seg39_vr)
-glf_lightMaps.Add "p3_seg39", glf_p3_seg39_lmarr
-Dim glf_p2_seg39_lmarr : glf_p2_seg39_lmarr = Array(p_p2_seg39_,p_p2_seg39_vr)
-glf_lightMaps.Add "p2_seg39", glf_p2_seg39_lmarr
-Dim glf_p4_seg38_lmarr : glf_p4_seg38_lmarr = Array(p_p4_seg38_,p_p4_seg38_vr)
-glf_lightMaps.Add "p4_seg38", glf_p4_seg38_lmarr
-Dim glf_p3_seg38_lmarr : glf_p3_seg38_lmarr = Array(p_p3_seg38_,p_p3_seg38_vr)
-glf_lightMaps.Add "p3_seg38", glf_p3_seg38_lmarr
-Dim glf_p2_seg38_lmarr : glf_p2_seg38_lmarr = Array(p_p2_seg38_,p_p2_seg38_vr)
-glf_lightMaps.Add "p2_seg38", glf_p2_seg38_lmarr
-Dim glf_p4_seg37_lmarr : glf_p4_seg37_lmarr = Array(p_p4_seg37_,p_p4_seg37_vr)
-glf_lightMaps.Add "p4_seg37", glf_p4_seg37_lmarr
-Dim glf_p3_seg37_lmarr : glf_p3_seg37_lmarr = Array(p_p3_seg37_,p_p3_seg37_vr)
-glf_lightMaps.Add "p3_seg37", glf_p3_seg37_lmarr
-Dim glf_p2_seg37_lmarr : glf_p2_seg37_lmarr = Array(p_p2_seg37_,p_p2_seg37_vr)
-glf_lightMaps.Add "p2_seg37", glf_p2_seg37_lmarr
-Dim glf_p4_seg36_lmarr : glf_p4_seg36_lmarr = Array(p_p4_seg36_,p_p4_seg36_vr)
-glf_lightMaps.Add "p4_seg36", glf_p4_seg36_lmarr
-Dim glf_p3_seg36_lmarr : glf_p3_seg36_lmarr = Array(p_p3_seg36_,p_p3_seg36_vr)
-glf_lightMaps.Add "p3_seg36", glf_p3_seg36_lmarr
-Dim glf_p2_seg36_lmarr : glf_p2_seg36_lmarr = Array(p_p2_seg36_,p_p2_seg36_vr)
-glf_lightMaps.Add "p2_seg36", glf_p2_seg36_lmarr
-Dim glf_p4_seg35_lmarr : glf_p4_seg35_lmarr = Array(p_p4_seg35_,p_p4_seg35_vr)
-glf_lightMaps.Add "p4_seg35", glf_p4_seg35_lmarr
-Dim glf_p3_seg35_lmarr : glf_p3_seg35_lmarr = Array(p_p3_seg35_,p_p3_seg35_vr)
-glf_lightMaps.Add "p3_seg35", glf_p3_seg35_lmarr
-Dim glf_p2_seg35_lmarr : glf_p2_seg35_lmarr = Array(p_p2_seg35_,p_p2_seg35_vr)
-glf_lightMaps.Add "p2_seg35", glf_p2_seg35_lmarr
-Dim glf_p4_seg34_lmarr : glf_p4_seg34_lmarr = Array(p_p4_seg34_,p_p4_seg34_vr)
-glf_lightMaps.Add "p4_seg34", glf_p4_seg34_lmarr
-Dim glf_p3_seg34_lmarr : glf_p3_seg34_lmarr = Array(p_p3_seg34_,p_p3_seg34_vr)
-glf_lightMaps.Add "p3_seg34", glf_p3_seg34_lmarr
-Dim glf_p2_seg34_lmarr : glf_p2_seg34_lmarr = Array(p_p2_seg34_,p_p2_seg34_vr)
-glf_lightMaps.Add "p2_seg34", glf_p2_seg34_lmarr
-Dim glf_p4_seg33_lmarr : glf_p4_seg33_lmarr = Array(p_p4_seg33_,p_p4_seg33_vr)
-glf_lightMaps.Add "p4_seg33", glf_p4_seg33_lmarr
-Dim glf_p3_seg33_lmarr : glf_p3_seg33_lmarr = Array(p_p3_seg33_,p_p3_seg33_vr)
-glf_lightMaps.Add "p3_seg33", glf_p3_seg33_lmarr
-Dim glf_p2_seg33_lmarr : glf_p2_seg33_lmarr = Array(p_p2_seg33_,p_p2_seg33_vr)
-glf_lightMaps.Add "p2_seg33", glf_p2_seg33_lmarr
-Dim glf_p4_seg32_lmarr : glf_p4_seg32_lmarr = Array(p_p4_seg32_,p_p4_seg32_vr)
-glf_lightMaps.Add "p4_seg32", glf_p4_seg32_lmarr
-Dim glf_p3_seg32_lmarr : glf_p3_seg32_lmarr = Array(p_p3_seg32_,p_p3_seg32_vr)
-glf_lightMaps.Add "p3_seg32", glf_p3_seg32_lmarr
-Dim glf_p2_seg32_lmarr : glf_p2_seg32_lmarr = Array(p_p2_seg32_,p_p2_seg32_vr)
-glf_lightMaps.Add "p2_seg32", glf_p2_seg32_lmarr
-Dim glf_p4_seg31_lmarr : glf_p4_seg31_lmarr = Array(p_p4_seg31_,p_p4_seg31_vr)
-glf_lightMaps.Add "p4_seg31", glf_p4_seg31_lmarr
-Dim glf_p3_seg31_lmarr : glf_p3_seg31_lmarr = Array(p_p3_seg31_,p_p3_seg31_vr)
-glf_lightMaps.Add "p3_seg31", glf_p3_seg31_lmarr
-Dim glf_p2_seg31_lmarr : glf_p2_seg31_lmarr = Array(p_p2_seg31_,p_p2_seg31_vr)
-glf_lightMaps.Add "p2_seg31", glf_p2_seg31_lmarr
-Dim glf_p4_seg30_lmarr : glf_p4_seg30_lmarr = Array(p_p4_seg30_,p_p4_seg30_vr)
-glf_lightMaps.Add "p4_seg30", glf_p4_seg30_lmarr
-Dim glf_p3_seg30_lmarr : glf_p3_seg30_lmarr = Array(p_p3_seg30_,p_p3_seg30_vr)
-glf_lightMaps.Add "p3_seg30", glf_p3_seg30_lmarr
-Dim glf_p2_seg30_lmarr : glf_p2_seg30_lmarr = Array(p_p2_seg30_,p_p2_seg30_vr)
-glf_lightMaps.Add "p2_seg30", glf_p2_seg30_lmarr
-Dim glf_p4_seg29_lmarr : glf_p4_seg29_lmarr = Array(p_p4_seg29_,p_p4_seg29_vr)
-glf_lightMaps.Add "p4_seg29", glf_p4_seg29_lmarr
-Dim glf_p3_seg29_lmarr : glf_p3_seg29_lmarr = Array(p_p3_seg29_,p_p3_seg29_vr)
-glf_lightMaps.Add "p3_seg29", glf_p3_seg29_lmarr
-Dim glf_p2_seg29_lmarr : glf_p2_seg29_lmarr = Array(p_p2_seg29_,p_p2_seg29_vr)
-glf_lightMaps.Add "p2_seg29", glf_p2_seg29_lmarr
-Dim glf_p4_seg28_lmarr : glf_p4_seg28_lmarr = Array(p_p4_seg28_,p_p4_seg28_vr)
-glf_lightMaps.Add "p4_seg28", glf_p4_seg28_lmarr
-Dim glf_p3_seg28_lmarr : glf_p3_seg28_lmarr = Array(p_p3_seg28_,p_p3_seg28_vr)
-glf_lightMaps.Add "p3_seg28", glf_p3_seg28_lmarr
-Dim glf_p2_seg28_lmarr : glf_p2_seg28_lmarr = Array(p_p2_seg28_,p_p2_seg28_vr)
-glf_lightMaps.Add "p2_seg28", glf_p2_seg28_lmarr
-Dim glf_p4_seg27_lmarr : glf_p4_seg27_lmarr = Array(p_p4_seg27_,p_p4_seg27_vr)
-glf_lightMaps.Add "p4_seg27", glf_p4_seg27_lmarr
-Dim glf_p3_seg27_lmarr : glf_p3_seg27_lmarr = Array(p_p3_seg27_,p_p3_seg27_vr)
-glf_lightMaps.Add "p3_seg27", glf_p3_seg27_lmarr
-Dim glf_p2_seg27_lmarr : glf_p2_seg27_lmarr = Array(p_p2_seg27_,p_p2_seg27_vr)
-glf_lightMaps.Add "p2_seg27", glf_p2_seg27_lmarr
-Dim glf_p4_seg26_lmarr : glf_p4_seg26_lmarr = Array(p_p4_seg26_,p_p4_seg26_vr)
-glf_lightMaps.Add "p4_seg26", glf_p4_seg26_lmarr
-Dim glf_p3_seg26_lmarr : glf_p3_seg26_lmarr = Array(p_p3_seg26_,p_p3_seg26_vr)
-glf_lightMaps.Add "p3_seg26", glf_p3_seg26_lmarr
-Dim glf_p2_seg26_lmarr : glf_p2_seg26_lmarr = Array(p_p2_seg26_,p_p2_seg26_vr)
-glf_lightMaps.Add "p2_seg26", glf_p2_seg26_lmarr
-Dim glf_p4_seg25_lmarr : glf_p4_seg25_lmarr = Array(p_p4_seg25_,p_p4_seg25_vr)
-glf_lightMaps.Add "p4_seg25", glf_p4_seg25_lmarr
-Dim glf_p3_seg25_lmarr : glf_p3_seg25_lmarr = Array(p_p3_seg25_,p_p3_seg25_vr)
-glf_lightMaps.Add "p3_seg25", glf_p3_seg25_lmarr
-Dim glf_p2_seg25_lmarr : glf_p2_seg25_lmarr = Array(p_p2_seg25_,p_p2_seg25_vr)
-glf_lightMaps.Add "p2_seg25", glf_p2_seg25_lmarr
-Dim glf_p4_seg24_lmarr : glf_p4_seg24_lmarr = Array(p_p4_seg24_,p_p4_seg24_vr)
-glf_lightMaps.Add "p4_seg24", glf_p4_seg24_lmarr
-Dim glf_p3_seg24_lmarr : glf_p3_seg24_lmarr = Array(p_p3_seg24_,p_p3_seg24_vr)
-glf_lightMaps.Add "p3_seg24", glf_p3_seg24_lmarr
-Dim glf_p2_seg24_lmarr : glf_p2_seg24_lmarr = Array(p_p2_seg24_,p_p2_seg24_vr)
-glf_lightMaps.Add "p2_seg24", glf_p2_seg24_lmarr
-Dim glf_p4_seg23_lmarr : glf_p4_seg23_lmarr = Array(p_p4_seg23_,p_p4_seg23_vr)
-glf_lightMaps.Add "p4_seg23", glf_p4_seg23_lmarr
-Dim glf_p3_seg23_lmarr : glf_p3_seg23_lmarr = Array(p_p3_seg23_,p_p3_seg23_vr)
-glf_lightMaps.Add "p3_seg23", glf_p3_seg23_lmarr
-Dim glf_p2_seg23_lmarr : glf_p2_seg23_lmarr = Array(p_p2_seg23_,p_p2_seg23_vr)
-glf_lightMaps.Add "p2_seg23", glf_p2_seg23_lmarr
-Dim glf_p4_seg22_lmarr : glf_p4_seg22_lmarr = Array(p_p4_seg22_,p_p4_seg22_vr)
-glf_lightMaps.Add "p4_seg22", glf_p4_seg22_lmarr
-Dim glf_p3_seg22_lmarr : glf_p3_seg22_lmarr = Array(p_p3_seg22_,p_p3_seg22_vr)
-glf_lightMaps.Add "p3_seg22", glf_p3_seg22_lmarr
-Dim glf_p2_seg22_lmarr : glf_p2_seg22_lmarr = Array(p_p2_seg22_,p_p2_seg22_vr)
-glf_lightMaps.Add "p2_seg22", glf_p2_seg22_lmarr
-Dim glf_p4_seg21_lmarr : glf_p4_seg21_lmarr = Array(p_p4_seg21_,p_p4_seg21_vr)
-glf_lightMaps.Add "p4_seg21", glf_p4_seg21_lmarr
-Dim glf_p3_seg21_lmarr : glf_p3_seg21_lmarr = Array(p_p3_seg21_,p_p3_seg21_vr)
-glf_lightMaps.Add "p3_seg21", glf_p3_seg21_lmarr
-Dim glf_p2_seg21_lmarr : glf_p2_seg21_lmarr = Array(p_p2_seg21_,p_p2_seg21_vr)
-glf_lightMaps.Add "p2_seg21", glf_p2_seg21_lmarr
-Dim glf_p4_seg20_lmarr : glf_p4_seg20_lmarr = Array(p_p4_seg20_,p_p4_seg20_vr)
-glf_lightMaps.Add "p4_seg20", glf_p4_seg20_lmarr
-Dim glf_p3_seg20_lmarr : glf_p3_seg20_lmarr = Array(p_p3_seg20_,p_p3_seg20_vr)
-glf_lightMaps.Add "p3_seg20", glf_p3_seg20_lmarr
-Dim glf_p2_seg20_lmarr : glf_p2_seg20_lmarr = Array(p_p2_seg20_,p_p2_seg20_vr)
-glf_lightMaps.Add "p2_seg20", glf_p2_seg20_lmarr
-Dim glf_p4_seg19_lmarr : glf_p4_seg19_lmarr = Array(p_p4_seg19_,p_p4_seg19_vr)
-glf_lightMaps.Add "p4_seg19", glf_p4_seg19_lmarr
-Dim glf_p3_seg19_lmarr : glf_p3_seg19_lmarr = Array(p_p3_seg19_,p_p3_seg19_vr)
-glf_lightMaps.Add "p3_seg19", glf_p3_seg19_lmarr
-Dim glf_p2_seg19_lmarr : glf_p2_seg19_lmarr = Array(p_p2_seg19_,p_p2_seg19_vr)
-glf_lightMaps.Add "p2_seg19", glf_p2_seg19_lmarr
-Dim glf_p4_seg18_lmarr : glf_p4_seg18_lmarr = Array(p_p4_seg18_,p_p4_seg18_vr)
-glf_lightMaps.Add "p4_seg18", glf_p4_seg18_lmarr
-Dim glf_p3_seg18_lmarr : glf_p3_seg18_lmarr = Array(p_p3_seg18_,p_p3_seg18_vr)
-glf_lightMaps.Add "p3_seg18", glf_p3_seg18_lmarr
-Dim glf_p2_seg18_lmarr : glf_p2_seg18_lmarr = Array(p_p2_seg18_,p_p2_seg18_vr)
-glf_lightMaps.Add "p2_seg18", glf_p2_seg18_lmarr
-Dim glf_p4_seg17_lmarr : glf_p4_seg17_lmarr = Array(p_p4_seg17_,p_p4_seg17_vr)
-glf_lightMaps.Add "p4_seg17", glf_p4_seg17_lmarr
-Dim glf_p3_seg17_lmarr : glf_p3_seg17_lmarr = Array(p_p3_seg17_,p_p3_seg17_vr)
-glf_lightMaps.Add "p3_seg17", glf_p3_seg17_lmarr
-Dim glf_p2_seg17_lmarr : glf_p2_seg17_lmarr = Array(p_p2_seg17_,p_p2_seg17_vr)
-glf_lightMaps.Add "p2_seg17", glf_p2_seg17_lmarr
-Dim glf_p4_seg16_lmarr : glf_p4_seg16_lmarr = Array(p_p4_seg16_,p_p4_seg16_vr)
-glf_lightMaps.Add "p4_seg16", glf_p4_seg16_lmarr
-Dim glf_p3_seg16_lmarr : glf_p3_seg16_lmarr = Array(p_p3_seg16_,p_p3_seg16_vr)
-glf_lightMaps.Add "p3_seg16", glf_p3_seg16_lmarr
-Dim glf_p2_seg16_lmarr : glf_p2_seg16_lmarr = Array(p_p2_seg16_,p_p2_seg16_vr)
-glf_lightMaps.Add "p2_seg16", glf_p2_seg16_lmarr
-Dim glf_p4_seg15_lmarr : glf_p4_seg15_lmarr = Array(p_p4_seg15_,p_p4_seg15_vr)
-glf_lightMaps.Add "p4_seg15", glf_p4_seg15_lmarr
-Dim glf_p3_seg15_lmarr : glf_p3_seg15_lmarr = Array(p_p3_seg15_,p_p3_seg15_vr)
-glf_lightMaps.Add "p3_seg15", glf_p3_seg15_lmarr
-Dim glf_p2_seg15_lmarr : glf_p2_seg15_lmarr = Array(p_p2_seg15_,p_p2_seg15_vr)
-glf_lightMaps.Add "p2_seg15", glf_p2_seg15_lmarr
-Dim glf_p4_seg14_lmarr : glf_p4_seg14_lmarr = Array(p_p4_seg14_,p_p4_seg14_vr)
-glf_lightMaps.Add "p4_seg14", glf_p4_seg14_lmarr
-Dim glf_p3_seg14_lmarr : glf_p3_seg14_lmarr = Array(p_p3_seg14_,p_p3_seg14_vr)
-glf_lightMaps.Add "p3_seg14", glf_p3_seg14_lmarr
-Dim glf_p2_seg14_lmarr : glf_p2_seg14_lmarr = Array(p_p2_seg14_,p_p2_seg14_vr)
-glf_lightMaps.Add "p2_seg14", glf_p2_seg14_lmarr
-Dim glf_p4_seg13_lmarr : glf_p4_seg13_lmarr = Array(p_p4_seg13_,p_p4_seg13_vr)
-glf_lightMaps.Add "p4_seg13", glf_p4_seg13_lmarr
-Dim glf_p3_seg13_lmarr : glf_p3_seg13_lmarr = Array(p_p3_seg13_,p_p3_seg13_vr)
-glf_lightMaps.Add "p3_seg13", glf_p3_seg13_lmarr
-Dim glf_p2_seg13_lmarr : glf_p2_seg13_lmarr = Array(p_p2_seg13_,p_p2_seg13_vr)
-glf_lightMaps.Add "p2_seg13", glf_p2_seg13_lmarr
-Dim glf_p4_seg12_lmarr : glf_p4_seg12_lmarr = Array(p_p4_seg12_,p_p4_seg12_vr)
-glf_lightMaps.Add "p4_seg12", glf_p4_seg12_lmarr
-Dim glf_p3_seg12_lmarr : glf_p3_seg12_lmarr = Array(p_p3_seg12_,p_p3_seg12_vr)
-glf_lightMaps.Add "p3_seg12", glf_p3_seg12_lmarr
-Dim glf_p2_seg12_lmarr : glf_p2_seg12_lmarr = Array(p_p2_seg12_,p_p2_seg12_vr)
-glf_lightMaps.Add "p2_seg12", glf_p2_seg12_lmarr
-Dim glf_p4_seg11_lmarr : glf_p4_seg11_lmarr = Array(p_p4_seg11_,p_p4_seg11_vr)
-glf_lightMaps.Add "p4_seg11", glf_p4_seg11_lmarr
-Dim glf_p3_seg11_lmarr : glf_p3_seg11_lmarr = Array(p_p3_seg11_,p_p3_seg11_vr)
-glf_lightMaps.Add "p3_seg11", glf_p3_seg11_lmarr
-Dim glf_p2_seg11_lmarr : glf_p2_seg11_lmarr = Array(p_p2_seg11_,p_p2_seg11_vr)
-glf_lightMaps.Add "p2_seg11", glf_p2_seg11_lmarr
-Dim glf_p4_seg10_lmarr : glf_p4_seg10_lmarr = Array(p_p4_seg10_,p_p4_seg10_vr)
-glf_lightMaps.Add "p4_seg10", glf_p4_seg10_lmarr
-Dim glf_p3_seg10_lmarr : glf_p3_seg10_lmarr = Array(p_p3_seg10_,p_p3_seg10_vr)
-glf_lightMaps.Add "p3_seg10", glf_p3_seg10_lmarr
-Dim glf_p2_seg10_lmarr : glf_p2_seg10_lmarr = Array(p_p2_seg10_,p_p2_seg10_vr)
-glf_lightMaps.Add "p2_seg10", glf_p2_seg10_lmarr
-Dim glf_p4_seg9_lmarr : glf_p4_seg9_lmarr = Array(p_p4_seg9_,p_p4_seg9_vr)
-glf_lightMaps.Add "p4_seg9", glf_p4_seg9_lmarr
-Dim glf_p3_seg9_lmarr : glf_p3_seg9_lmarr = Array(p_p3_seg9_,p_p3_seg9_vr)
-glf_lightMaps.Add "p3_seg9", glf_p3_seg9_lmarr
-Dim glf_p2_seg9_lmarr : glf_p2_seg9_lmarr = Array(p_p2_seg9_,p_p2_seg9_vr)
-glf_lightMaps.Add "p2_seg9", glf_p2_seg9_lmarr
-Dim glf_p4_seg8_lmarr : glf_p4_seg8_lmarr = Array(p_p4_seg8_,p_p4_seg8_vr)
-glf_lightMaps.Add "p4_seg8", glf_p4_seg8_lmarr
-Dim glf_p3_seg8_lmarr : glf_p3_seg8_lmarr = Array(p_p3_seg8_,p_p3_seg8_vr)
-glf_lightMaps.Add "p3_seg8", glf_p3_seg8_lmarr
-Dim glf_p2_seg8_lmarr : glf_p2_seg8_lmarr = Array(p_p2_seg8_,p_p2_seg8_vr)
-glf_lightMaps.Add "p2_seg8", glf_p2_seg8_lmarr
-Dim glf_p4_seg7_lmarr : glf_p4_seg7_lmarr = Array(p_p4_seg7_,p_p4_seg7_vr)
-glf_lightMaps.Add "p4_seg7", glf_p4_seg7_lmarr
-Dim glf_p3_seg7_lmarr : glf_p3_seg7_lmarr = Array(p_p3_seg7_,p_p3_seg7_vr)
-glf_lightMaps.Add "p3_seg7", glf_p3_seg7_lmarr
-Dim glf_p2_seg7_lmarr : glf_p2_seg7_lmarr = Array(p_p2_seg7_,p_p2_seg7_vr)
-glf_lightMaps.Add "p2_seg7", glf_p2_seg7_lmarr
-Dim glf_p4_seg6_lmarr : glf_p4_seg6_lmarr = Array(p_p4_seg6_,p_p4_seg6_vr)
-glf_lightMaps.Add "p4_seg6", glf_p4_seg6_lmarr
-Dim glf_p3_seg6_lmarr : glf_p3_seg6_lmarr = Array(p_p3_seg6_,p_p3_seg6_vr)
-glf_lightMaps.Add "p3_seg6", glf_p3_seg6_lmarr
-Dim glf_p2_seg6_lmarr : glf_p2_seg6_lmarr = Array(p_p2_seg6_,p_p2_seg6_vr)
-glf_lightMaps.Add "p2_seg6", glf_p2_seg6_lmarr
-Dim glf_p4_seg5_lmarr : glf_p4_seg5_lmarr = Array(p_p4_seg5_,p_p4_seg5_vr)
-glf_lightMaps.Add "p4_seg5", glf_p4_seg5_lmarr
-Dim glf_p3_seg5_lmarr : glf_p3_seg5_lmarr = Array(p_p3_seg5_,p_p3_seg5_vr)
-glf_lightMaps.Add "p3_seg5", glf_p3_seg5_lmarr
-Dim glf_p2_seg5_lmarr : glf_p2_seg5_lmarr = Array(p_p2_seg5_,p_p2_seg5_vr)
-glf_lightMaps.Add "p2_seg5", glf_p2_seg5_lmarr
-Dim glf_p4_seg4_lmarr : glf_p4_seg4_lmarr = Array(p_p4_seg4_,p_p4_seg4_vr)
-glf_lightMaps.Add "p4_seg4", glf_p4_seg4_lmarr
-Dim glf_p3_seg4_lmarr : glf_p3_seg4_lmarr = Array(p_p3_seg4_,p_p3_seg4_vr)
-glf_lightMaps.Add "p3_seg4", glf_p3_seg4_lmarr
-Dim glf_p2_seg4_lmarr : glf_p2_seg4_lmarr = Array(p_p2_seg4_,p_p2_seg4_vr)
-glf_lightMaps.Add "p2_seg4", glf_p2_seg4_lmarr
-Dim glf_p4_seg3_lmarr : glf_p4_seg3_lmarr = Array(p_p4_seg3_,p_p4_seg3_vr)
-glf_lightMaps.Add "p4_seg3", glf_p4_seg3_lmarr
-Dim glf_p3_seg3_lmarr : glf_p3_seg3_lmarr = Array(p_p3_seg3_,p_p3_seg3_vr)
-glf_lightMaps.Add "p3_seg3", glf_p3_seg3_lmarr
-Dim glf_p2_seg3_lmarr : glf_p2_seg3_lmarr = Array(p_p2_seg3_,p_p2_seg3_vr)
-glf_lightMaps.Add "p2_seg3", glf_p2_seg3_lmarr
-Dim glf_p4_seg2_lmarr : glf_p4_seg2_lmarr = Array(p_p4_seg2_,p_p4_seg2_vr)
-glf_lightMaps.Add "p4_seg2", glf_p4_seg2_lmarr
-Dim glf_p3_seg2_lmarr : glf_p3_seg2_lmarr = Array(p_p3_seg2_,p_p3_seg2_vr)
-glf_lightMaps.Add "p3_seg2", glf_p3_seg2_lmarr
-Dim glf_p2_seg2_lmarr : glf_p2_seg2_lmarr = Array(p_p2_seg2_,p_p2_seg2_vr)
-glf_lightMaps.Add "p2_seg2", glf_p2_seg2_lmarr
-Dim glf_p4_seg1_lmarr : glf_p4_seg1_lmarr = Array(p_p4_seg1_,p_p4_seg1_vr)
-glf_lightMaps.Add "p4_seg1", glf_p4_seg1_lmarr
-Dim glf_p3_seg1_lmarr : glf_p3_seg1_lmarr = Array(p_p3_seg1_,p_p3_seg1_vr)
-glf_lightMaps.Add "p3_seg1", glf_p3_seg1_lmarr
-Dim glf_p2_seg1_lmarr : glf_p2_seg1_lmarr = Array(p_p2_seg1_,p_p2_seg1_vr)
-glf_lightMaps.Add "p2_seg1", glf_p2_seg1_lmarr
-Dim glf_ball_seg29_lmarr : glf_ball_seg29_lmarr = Array(p_ball_seg29_vr)
-glf_lightMaps.Add "ball_seg29", glf_ball_seg29_lmarr
-Dim glf_ball_seg28_lmarr : glf_ball_seg28_lmarr = Array(p_ball_seg28_vr)
-glf_lightMaps.Add "ball_seg28", glf_ball_seg28_lmarr
-Dim glf_ball_seg27_lmarr : glf_ball_seg27_lmarr = Array(p_ball_seg27_vr)
-glf_lightMaps.Add "ball_seg27", glf_ball_seg27_lmarr
-Dim glf_ball_seg26_lmarr : glf_ball_seg26_lmarr = Array(p_ball_seg26_vr)
-glf_lightMaps.Add "ball_seg26", glf_ball_seg26_lmarr
-Dim glf_ball_seg25_lmarr : glf_ball_seg25_lmarr = Array(p_ball_seg25_vr)
-glf_lightMaps.Add "ball_seg25", glf_ball_seg25_lmarr
-Dim glf_ball_seg24_lmarr : glf_ball_seg24_lmarr = Array(p_ball_seg24_vr)
-glf_lightMaps.Add "ball_seg24", glf_ball_seg24_lmarr
-Dim glf_ball_seg23_lmarr : glf_ball_seg23_lmarr = Array(p_ball_seg23_vr)
-glf_lightMaps.Add "ball_seg23", glf_ball_seg23_lmarr
-Dim glf_ball_seg22_lmarr : glf_ball_seg22_lmarr = Array(p_ball_seg22_vr)
-glf_lightMaps.Add "ball_seg22", glf_ball_seg22_lmarr
-Dim glf_ball_seg21_lmarr : glf_ball_seg21_lmarr = Array(p_ball_seg21_vr)
-glf_lightMaps.Add "ball_seg21", glf_ball_seg21_lmarr
-Dim glf_ball_seg20_lmarr : glf_ball_seg20_lmarr = Array(p_ball_seg20_vr)
-glf_lightMaps.Add "ball_seg20", glf_ball_seg20_lmarr
-Dim glf_ball_seg19_lmarr : glf_ball_seg19_lmarr = Array(p_ball_seg19_vr)
-glf_lightMaps.Add "ball_seg19", glf_ball_seg19_lmarr
-Dim glf_ball_seg18_lmarr : glf_ball_seg18_lmarr = Array(p_ball_seg18_vr)
-glf_lightMaps.Add "ball_seg18", glf_ball_seg18_lmarr
-Dim glf_ball_seg17_lmarr : glf_ball_seg17_lmarr = Array(p_ball_seg17_vr)
-glf_lightMaps.Add "ball_seg17", glf_ball_seg17_lmarr
-Dim glf_ball_seg16_lmarr : glf_ball_seg16_lmarr = Array(p_ball_seg16_vr)
-glf_lightMaps.Add "ball_seg16", glf_ball_seg16_lmarr
-Dim glf_ball_seg15_lmarr : glf_ball_seg15_lmarr = Array(p_ball_seg15_vr)
-glf_lightMaps.Add "ball_seg15", glf_ball_seg15_lmarr
-Dim glf_ball_seg14_lmarr : glf_ball_seg14_lmarr = Array(p_ball_seg14_vr)
-glf_lightMaps.Add "ball_seg14", glf_ball_seg14_lmarr
-Dim glf_ball_seg13_lmarr : glf_ball_seg13_lmarr = Array(p_ball_seg13_vr)
-glf_lightMaps.Add "ball_seg13", glf_ball_seg13_lmarr
-Dim glf_ball_seg12_lmarr : glf_ball_seg12_lmarr = Array(p_ball_seg12_vr)
-glf_lightMaps.Add "ball_seg12", glf_ball_seg12_lmarr
-Dim glf_ball_seg11_lmarr : glf_ball_seg11_lmarr = Array(p_ball_seg11_vr)
-glf_lightMaps.Add "ball_seg11", glf_ball_seg11_lmarr
-Dim glf_ball_seg10_lmarr : glf_ball_seg10_lmarr = Array(p_ball_seg10_vr)
-glf_lightMaps.Add "ball_seg10", glf_ball_seg10_lmarr
-Dim glf_ball_seg9_lmarr : glf_ball_seg9_lmarr = Array(p_ball_seg9_vr)
-glf_lightMaps.Add "ball_seg9", glf_ball_seg9_lmarr
-Dim glf_ball_seg8_lmarr : glf_ball_seg8_lmarr = Array(p_ball_seg8_vr)
-glf_lightMaps.Add "ball_seg8", glf_ball_seg8_lmarr
-Dim glf_ball_seg7_lmarr : glf_ball_seg7_lmarr = Array(p_ball_seg7_vr)
-glf_lightMaps.Add "ball_seg7", glf_ball_seg7_lmarr
-Dim glf_ball_seg6_lmarr : glf_ball_seg6_lmarr = Array(p_ball_seg6_vr)
-glf_lightMaps.Add "ball_seg6", glf_ball_seg6_lmarr
-Dim glf_ball_seg5_lmarr : glf_ball_seg5_lmarr = Array(p_ball_seg5_vr)
-glf_lightMaps.Add "ball_seg5", glf_ball_seg5_lmarr
-Dim glf_ball_seg4_lmarr : glf_ball_seg4_lmarr = Array(p_ball_seg4_vr)
-glf_lightMaps.Add "ball_seg4", glf_ball_seg4_lmarr
-Dim glf_ball_seg3_lmarr : glf_ball_seg3_lmarr = Array(p_ball_seg3_vr)
-glf_lightMaps.Add "ball_seg3", glf_ball_seg3_lmarr
-Dim glf_ball_seg2_lmarr : glf_ball_seg2_lmarr = Array(p_ball_seg2_vr)
-glf_lightMaps.Add "ball_seg2", glf_ball_seg2_lmarr
-Dim glf_ball_seg1_lmarr : glf_ball_seg1_lmarr = Array(p_ball_seg1_vr)
-glf_lightMaps.Add "ball_seg1", glf_ball_seg1_lmarr
-Dim glf_p1_seg105_lmarr : glf_p1_seg105_lmarr = Array(p_p1_seg105_,p_p1_seg105_vr)
-glf_lightMaps.Add "p1_seg105", glf_p1_seg105_lmarr
-Dim glf_p1_seg104_lmarr : glf_p1_seg104_lmarr = Array(p_p1_seg104_,p_p1_seg104_vr)
-glf_lightMaps.Add "p1_seg104", glf_p1_seg104_lmarr
-Dim glf_p1_seg103_lmarr : glf_p1_seg103_lmarr = Array(p_p1_seg103_,p_p1_seg103_vr)
-glf_lightMaps.Add "p1_seg103", glf_p1_seg103_lmarr
-Dim glf_p1_seg102_lmarr : glf_p1_seg102_lmarr = Array(p_p1_seg102_,p_p1_seg102_vr)
-glf_lightMaps.Add "p1_seg102", glf_p1_seg102_lmarr
-Dim glf_p1_seg101_lmarr : glf_p1_seg101_lmarr = Array(p_p1_seg101_,p_p1_seg101_vr)
-glf_lightMaps.Add "p1_seg101", glf_p1_seg101_lmarr
-Dim glf_p1_seg100_lmarr : glf_p1_seg100_lmarr = Array(p_p1_seg100_,p_p1_seg100_vr)
-glf_lightMaps.Add "p1_seg100", glf_p1_seg100_lmarr
-Dim glf_p1_seg99_lmarr : glf_p1_seg99_lmarr = Array(p_p1_seg99_,p_p1_seg99_vr)
-glf_lightMaps.Add "p1_seg99", glf_p1_seg99_lmarr
-Dim glf_p1_seg98_lmarr : glf_p1_seg98_lmarr = Array(p_p1_seg98_,p_p1_seg98_vr)
-glf_lightMaps.Add "p1_seg98", glf_p1_seg98_lmarr
-Dim glf_p1_seg97_lmarr : glf_p1_seg97_lmarr = Array(p_p1_seg97_,p_p1_seg97_vr)
-glf_lightMaps.Add "p1_seg97", glf_p1_seg97_lmarr
-Dim glf_p1_seg96_lmarr : glf_p1_seg96_lmarr = Array(p_p1_seg96_,p_p1_seg96_vr)
-glf_lightMaps.Add "p1_seg96", glf_p1_seg96_lmarr
-Dim glf_p1_seg95_lmarr : glf_p1_seg95_lmarr = Array(p_p1_seg95_,p_p1_seg95_vr)
-glf_lightMaps.Add "p1_seg95", glf_p1_seg95_lmarr
-Dim glf_p1_seg94_lmarr : glf_p1_seg94_lmarr = Array(p_p1_seg94_,p_p1_seg94_vr)
-glf_lightMaps.Add "p1_seg94", glf_p1_seg94_lmarr
-Dim glf_p1_seg93_lmarr : glf_p1_seg93_lmarr = Array(p_p1_seg93_,p_p1_seg93_vr)
-glf_lightMaps.Add "p1_seg93", glf_p1_seg93_lmarr
-Dim glf_p1_seg92_lmarr : glf_p1_seg92_lmarr = Array(p_p1_seg92_,p_p1_seg92_vr)
-glf_lightMaps.Add "p1_seg92", glf_p1_seg92_lmarr
-Dim glf_p1_seg91_lmarr : glf_p1_seg91_lmarr = Array(p_p1_seg91_,p_p1_seg91_vr)
-glf_lightMaps.Add "p1_seg91", glf_p1_seg91_lmarr
-Dim glf_p1_seg90_lmarr : glf_p1_seg90_lmarr = Array(p_p1_seg90_,p_p1_seg90_vr)
-glf_lightMaps.Add "p1_seg90", glf_p1_seg90_lmarr
-Dim glf_p1_seg89_lmarr : glf_p1_seg89_lmarr = Array(p_p1_seg89_,p_p1_seg89_vr)
-glf_lightMaps.Add "p1_seg89", glf_p1_seg89_lmarr
-Dim glf_p1_seg88_lmarr : glf_p1_seg88_lmarr = Array(p_p1_seg88_,p_p1_seg88_vr)
-glf_lightMaps.Add "p1_seg88", glf_p1_seg88_lmarr
-Dim glf_p1_seg87_lmarr : glf_p1_seg87_lmarr = Array(p_p1_seg87_,p_p1_seg87_vr)
-glf_lightMaps.Add "p1_seg87", glf_p1_seg87_lmarr
-Dim glf_p1_seg86_lmarr : glf_p1_seg86_lmarr = Array(p_p1_seg86_,p_p1_seg86_vr)
-glf_lightMaps.Add "p1_seg86", glf_p1_seg86_lmarr
-Dim glf_p1_seg85_lmarr : glf_p1_seg85_lmarr = Array(p_p1_seg85_,p_p1_seg85_vr)
-glf_lightMaps.Add "p1_seg85", glf_p1_seg85_lmarr
-Dim glf_p1_seg84_lmarr : glf_p1_seg84_lmarr = Array(p_p1_seg84_,p_p1_seg84_vr)
-glf_lightMaps.Add "p1_seg84", glf_p1_seg84_lmarr
-Dim glf_p1_seg83_lmarr : glf_p1_seg83_lmarr = Array(p_p1_seg83_,p_p1_seg83_vr)
-glf_lightMaps.Add "p1_seg83", glf_p1_seg83_lmarr
-Dim glf_p1_seg82_lmarr : glf_p1_seg82_lmarr = Array(p_p1_seg82_,p_p1_seg82_vr)
-glf_lightMaps.Add "p1_seg82", glf_p1_seg82_lmarr
-Dim glf_p1_seg81_lmarr : glf_p1_seg81_lmarr = Array(p_p1_seg81_,p_p1_seg81_vr)
-glf_lightMaps.Add "p1_seg81", glf_p1_seg81_lmarr
-Dim glf_p1_seg80_lmarr : glf_p1_seg80_lmarr = Array(p_p1_seg80_,p_p1_seg80_vr)
-glf_lightMaps.Add "p1_seg80", glf_p1_seg80_lmarr
-Dim glf_p1_seg79_lmarr : glf_p1_seg79_lmarr = Array(p_p1_seg79_,p_p1_seg79_vr)
-glf_lightMaps.Add "p1_seg79", glf_p1_seg79_lmarr
-Dim glf_p1_seg78_lmarr : glf_p1_seg78_lmarr = Array(p_p1_seg78_,p_p1_seg78_vr)
-glf_lightMaps.Add "p1_seg78", glf_p1_seg78_lmarr
-Dim glf_p1_seg77_lmarr : glf_p1_seg77_lmarr = Array(p_p1_seg77_,p_p1_seg77_vr)
-glf_lightMaps.Add "p1_seg77", glf_p1_seg77_lmarr
-Dim glf_p1_seg76_lmarr : glf_p1_seg76_lmarr = Array(p_p1_seg76_,p_p1_seg76_vr)
-glf_lightMaps.Add "p1_seg76", glf_p1_seg76_lmarr
-Dim glf_p1_seg75_lmarr : glf_p1_seg75_lmarr = Array(p_p1_seg75_,p_p1_seg75_vr)
-glf_lightMaps.Add "p1_seg75", glf_p1_seg75_lmarr
-Dim glf_p1_seg74_lmarr : glf_p1_seg74_lmarr = Array(p_p1_seg74_,p_p1_seg74_vr)
-glf_lightMaps.Add "p1_seg74", glf_p1_seg74_lmarr
-Dim glf_p1_seg73_lmarr : glf_p1_seg73_lmarr = Array(p_p1_seg73_,p_p1_seg73_vr)
-glf_lightMaps.Add "p1_seg73", glf_p1_seg73_lmarr
-Dim glf_p1_seg72_lmarr : glf_p1_seg72_lmarr = Array(p_p1_seg72_,p_p1_seg72_vr)
-glf_lightMaps.Add "p1_seg72", glf_p1_seg72_lmarr
-Dim glf_p1_seg71_lmarr : glf_p1_seg71_lmarr = Array(p_p1_seg71_,p_p1_seg71_vr)
-glf_lightMaps.Add "p1_seg71", glf_p1_seg71_lmarr
-Dim glf_p1_seg70_lmarr : glf_p1_seg70_lmarr = Array(p_p1_seg70_,p_p1_seg70_vr)
-glf_lightMaps.Add "p1_seg70", glf_p1_seg70_lmarr
-Dim glf_p1_seg69_lmarr : glf_p1_seg69_lmarr = Array(p_p1_seg69_,p_p1_seg69_vr)
-glf_lightMaps.Add "p1_seg69", glf_p1_seg69_lmarr
-Dim glf_p1_seg68_lmarr : glf_p1_seg68_lmarr = Array(p_p1_seg68_,p_p1_seg68_vr)
-glf_lightMaps.Add "p1_seg68", glf_p1_seg68_lmarr
-Dim glf_p1_seg67_lmarr : glf_p1_seg67_lmarr = Array(p_p1_seg67_,p_p1_seg67_vr)
-glf_lightMaps.Add "p1_seg67", glf_p1_seg67_lmarr
-Dim glf_p1_seg66_lmarr : glf_p1_seg66_lmarr = Array(p_p1_seg66_,p_p1_seg66_vr)
-glf_lightMaps.Add "p1_seg66", glf_p1_seg66_lmarr
-Dim glf_p1_seg65_lmarr : glf_p1_seg65_lmarr = Array(p_p1_seg65_,p_p1_seg65_vr)
-glf_lightMaps.Add "p1_seg65", glf_p1_seg65_lmarr
-Dim glf_p1_seg64_lmarr : glf_p1_seg64_lmarr = Array(p_p1_seg64_,p_p1_seg64_vr)
-glf_lightMaps.Add "p1_seg64", glf_p1_seg64_lmarr
-Dim glf_p1_seg63_lmarr : glf_p1_seg63_lmarr = Array(p_p1_seg63_,p_p1_seg63_vr)
-glf_lightMaps.Add "p1_seg63", glf_p1_seg63_lmarr
-Dim glf_p1_seg62_lmarr : glf_p1_seg62_lmarr = Array(p_p1_seg62_,p_p1_seg62_vr)
-glf_lightMaps.Add "p1_seg62", glf_p1_seg62_lmarr
-Dim glf_p1_seg61_lmarr : glf_p1_seg61_lmarr = Array(p_p1_seg61_,p_p1_seg61_vr)
-glf_lightMaps.Add "p1_seg61", glf_p1_seg61_lmarr
-Dim glf_p1_seg60_lmarr : glf_p1_seg60_lmarr = Array(p_p1_seg60_,p_p1_seg60_vr)
-glf_lightMaps.Add "p1_seg60", glf_p1_seg60_lmarr
-Dim glf_p1_seg59_lmarr : glf_p1_seg59_lmarr = Array(p_p1_seg59_,p_p1_seg59_vr)
-glf_lightMaps.Add "p1_seg59", glf_p1_seg59_lmarr
-Dim glf_p1_seg58_lmarr : glf_p1_seg58_lmarr = Array(p_p1_seg58_,p_p1_seg58_vr)
-glf_lightMaps.Add "p1_seg58", glf_p1_seg58_lmarr
-Dim glf_p1_seg57_lmarr : glf_p1_seg57_lmarr = Array(p_p1_seg57_,p_p1_seg57_vr)
-glf_lightMaps.Add "p1_seg57", glf_p1_seg57_lmarr
-Dim glf_p1_seg56_lmarr : glf_p1_seg56_lmarr = Array(p_p1_seg56_,p_p1_seg56_vr)
-glf_lightMaps.Add "p1_seg56", glf_p1_seg56_lmarr
-Dim glf_p1_seg55_lmarr : glf_p1_seg55_lmarr = Array(p_p1_seg55_,p_p1_seg55_vr)
-glf_lightMaps.Add "p1_seg55", glf_p1_seg55_lmarr
-Dim glf_p1_seg54_lmarr : glf_p1_seg54_lmarr = Array(p_p1_seg54_,p_p1_seg54_vr)
-glf_lightMaps.Add "p1_seg54", glf_p1_seg54_lmarr
-Dim glf_p1_seg53_lmarr : glf_p1_seg53_lmarr = Array(p_p1_seg53_,p_p1_seg53_vr)
-glf_lightMaps.Add "p1_seg53", glf_p1_seg53_lmarr
-Dim glf_p1_seg52_lmarr : glf_p1_seg52_lmarr = Array(p_p1_seg52_,p_p1_seg52_vr)
-glf_lightMaps.Add "p1_seg52", glf_p1_seg52_lmarr
-Dim glf_p1_seg51_lmarr : glf_p1_seg51_lmarr = Array(p_p1_seg51_,p_p1_seg51_vr)
-glf_lightMaps.Add "p1_seg51", glf_p1_seg51_lmarr
-Dim glf_p1_seg50_lmarr : glf_p1_seg50_lmarr = Array(p_p1_seg50_,p_p1_seg50_vr)
-glf_lightMaps.Add "p1_seg50", glf_p1_seg50_lmarr
-Dim glf_p1_seg49_lmarr : glf_p1_seg49_lmarr = Array(p_p1_seg49_,p_p1_seg49_vr)
-glf_lightMaps.Add "p1_seg49", glf_p1_seg49_lmarr
-Dim glf_p1_seg48_lmarr : glf_p1_seg48_lmarr = Array(p_p1_seg48_,p_p1_seg48_vr)
-glf_lightMaps.Add "p1_seg48", glf_p1_seg48_lmarr
-Dim glf_p1_seg47_lmarr : glf_p1_seg47_lmarr = Array(p_p1_seg47_,p_p1_seg47_vr)
-glf_lightMaps.Add "p1_seg47", glf_p1_seg47_lmarr
-Dim glf_p1_seg46_lmarr : glf_p1_seg46_lmarr = Array(p_p1_seg46_,p_p1_seg46_vr)
-glf_lightMaps.Add "p1_seg46", glf_p1_seg46_lmarr
-Dim glf_p1_seg45_lmarr : glf_p1_seg45_lmarr = Array(p_p1_seg45_,p_p1_seg45_vr)
-glf_lightMaps.Add "p1_seg45", glf_p1_seg45_lmarr
-Dim glf_p1_seg44_lmarr : glf_p1_seg44_lmarr = Array(p_p1_seg44_,p_p1_seg44_vr)
-glf_lightMaps.Add "p1_seg44", glf_p1_seg44_lmarr
-Dim glf_p1_seg43_lmarr : glf_p1_seg43_lmarr = Array(p_p1_seg43_,p_p1_seg43_vr)
-glf_lightMaps.Add "p1_seg43", glf_p1_seg43_lmarr
-Dim glf_p1_seg42_lmarr : glf_p1_seg42_lmarr = Array(p_p1_seg42_,p_p1_seg42_vr)
-glf_lightMaps.Add "p1_seg42", glf_p1_seg42_lmarr
-Dim glf_p1_seg41_lmarr : glf_p1_seg41_lmarr = Array(p_p1_seg41_,p_p1_seg41_vr)
-glf_lightMaps.Add "p1_seg41", glf_p1_seg41_lmarr
-Dim glf_p1_seg40_lmarr : glf_p1_seg40_lmarr = Array(p_p1_seg40_,p_p1_seg40_vr)
-glf_lightMaps.Add "p1_seg40", glf_p1_seg40_lmarr
-Dim glf_p1_seg39_lmarr : glf_p1_seg39_lmarr = Array(p_p1_seg39_,p_p1_seg39_vr)
-glf_lightMaps.Add "p1_seg39", glf_p1_seg39_lmarr
-Dim glf_p1_seg38_lmarr : glf_p1_seg38_lmarr = Array(p_p1_seg38_,p_p1_seg38_vr)
-glf_lightMaps.Add "p1_seg38", glf_p1_seg38_lmarr
-Dim glf_p1_seg37_lmarr : glf_p1_seg37_lmarr = Array(p_p1_seg37_,p_p1_seg37_vr)
-glf_lightMaps.Add "p1_seg37", glf_p1_seg37_lmarr
-Dim glf_p1_seg36_lmarr : glf_p1_seg36_lmarr = Array(p_p1_seg36_,p_p1_seg36_vr)
-glf_lightMaps.Add "p1_seg36", glf_p1_seg36_lmarr
-Dim glf_p1_seg35_lmarr : glf_p1_seg35_lmarr = Array(p_p1_seg35_,p_p1_seg35_vr)
-glf_lightMaps.Add "p1_seg35", glf_p1_seg35_lmarr
-Dim glf_p1_seg34_lmarr : glf_p1_seg34_lmarr = Array(p_p1_seg34_,p_p1_seg34_vr)
-glf_lightMaps.Add "p1_seg34", glf_p1_seg34_lmarr
-Dim glf_p1_seg33_lmarr : glf_p1_seg33_lmarr = Array(p_p1_seg33_,p_p1_seg33_vr)
-glf_lightMaps.Add "p1_seg33", glf_p1_seg33_lmarr
-Dim glf_p1_seg32_lmarr : glf_p1_seg32_lmarr = Array(p_p1_seg32_,p_p1_seg32_vr)
-glf_lightMaps.Add "p1_seg32", glf_p1_seg32_lmarr
-Dim glf_p1_seg31_lmarr : glf_p1_seg31_lmarr = Array(p_p1_seg31_,p_p1_seg31_vr)
-glf_lightMaps.Add "p1_seg31", glf_p1_seg31_lmarr
-Dim glf_p1_seg30_lmarr : glf_p1_seg30_lmarr = Array(p_p1_seg30_,p_p1_seg30_vr)
-glf_lightMaps.Add "p1_seg30", glf_p1_seg30_lmarr
-Dim glf_p1_seg29_lmarr : glf_p1_seg29_lmarr = Array(p_p1_seg29_,p_p1_seg29_vr)
-glf_lightMaps.Add "p1_seg29", glf_p1_seg29_lmarr
-Dim glf_p1_seg28_lmarr : glf_p1_seg28_lmarr = Array(p_p1_seg28_,p_p1_seg28_vr)
-glf_lightMaps.Add "p1_seg28", glf_p1_seg28_lmarr
-Dim glf_p1_seg27_lmarr : glf_p1_seg27_lmarr = Array(p_p1_seg27_,p_p1_seg27_vr)
-glf_lightMaps.Add "p1_seg27", glf_p1_seg27_lmarr
-Dim glf_p1_seg26_lmarr : glf_p1_seg26_lmarr = Array(p_p1_seg26_,p_p1_seg26_vr)
-glf_lightMaps.Add "p1_seg26", glf_p1_seg26_lmarr
-Dim glf_p1_seg25_lmarr : glf_p1_seg25_lmarr = Array(p_p1_seg25_,p_p1_seg25_vr)
-glf_lightMaps.Add "p1_seg25", glf_p1_seg25_lmarr
-Dim glf_p1_seg24_lmarr : glf_p1_seg24_lmarr = Array(p_p1_seg24_,p_p1_seg24_vr)
-glf_lightMaps.Add "p1_seg24", glf_p1_seg24_lmarr
-Dim glf_p1_seg23_lmarr : glf_p1_seg23_lmarr = Array(p_p1_seg23_,p_p1_seg23_vr)
-glf_lightMaps.Add "p1_seg23", glf_p1_seg23_lmarr
-Dim glf_p1_seg22_lmarr : glf_p1_seg22_lmarr = Array(p_p1_seg22_,p_p1_seg22_vr)
-glf_lightMaps.Add "p1_seg22", glf_p1_seg22_lmarr
-Dim glf_p1_seg21_lmarr : glf_p1_seg21_lmarr = Array(p_p1_seg21_,p_p1_seg21_vr)
-glf_lightMaps.Add "p1_seg21", glf_p1_seg21_lmarr
-Dim glf_p1_seg20_lmarr : glf_p1_seg20_lmarr = Array(p_p1_seg20_,p_p1_seg20_vr)
-glf_lightMaps.Add "p1_seg20", glf_p1_seg20_lmarr
-Dim glf_p1_seg19_lmarr : glf_p1_seg19_lmarr = Array(p_p1_seg19_,p_p1_seg19_vr)
-glf_lightMaps.Add "p1_seg19", glf_p1_seg19_lmarr
-Dim glf_p1_seg18_lmarr : glf_p1_seg18_lmarr = Array(p_p1_seg18_,p_p1_seg18_vr)
-glf_lightMaps.Add "p1_seg18", glf_p1_seg18_lmarr
-Dim glf_p1_seg17_lmarr : glf_p1_seg17_lmarr = Array(p_p1_seg17_,p_p1_seg17_vr)
-glf_lightMaps.Add "p1_seg17", glf_p1_seg17_lmarr
-Dim glf_p1_seg16_lmarr : glf_p1_seg16_lmarr = Array(p_p1_seg16_,p_p1_seg16_vr)
-glf_lightMaps.Add "p1_seg16", glf_p1_seg16_lmarr
-Dim glf_p1_seg15_lmarr : glf_p1_seg15_lmarr = Array(p_p1_seg15_,p_p1_seg15_vr)
-glf_lightMaps.Add "p1_seg15", glf_p1_seg15_lmarr
-Dim glf_p1_seg14_lmarr : glf_p1_seg14_lmarr = Array(p_p1_seg14_,p_p1_seg14_vr)
-glf_lightMaps.Add "p1_seg14", glf_p1_seg14_lmarr
-Dim glf_p1_seg13_lmarr : glf_p1_seg13_lmarr = Array(p_p1_seg13_,p_p1_seg13_vr)
-glf_lightMaps.Add "p1_seg13", glf_p1_seg13_lmarr
-Dim glf_p1_seg12_lmarr : glf_p1_seg12_lmarr = Array(p_p1_seg12_,p_p1_seg12_vr)
-glf_lightMaps.Add "p1_seg12", glf_p1_seg12_lmarr
-Dim glf_p1_seg11_lmarr : glf_p1_seg11_lmarr = Array(p_p1_seg11_,p_p1_seg11_vr)
-glf_lightMaps.Add "p1_seg11", glf_p1_seg11_lmarr
-Dim glf_p1_seg10_lmarr : glf_p1_seg10_lmarr = Array(p_p1_seg10_,p_p1_seg10_vr)
-glf_lightMaps.Add "p1_seg10", glf_p1_seg10_lmarr
-Dim glf_p1_seg9_lmarr : glf_p1_seg9_lmarr = Array(p_p1_seg9_,p_p1_seg9_vr)
-glf_lightMaps.Add "p1_seg9", glf_p1_seg9_lmarr
-Dim glf_p1_seg8_lmarr : glf_p1_seg8_lmarr = Array(p_p1_seg8_,p_p1_seg8_vr)
-glf_lightMaps.Add "p1_seg8", glf_p1_seg8_lmarr
-Dim glf_p1_seg7_lmarr : glf_p1_seg7_lmarr = Array(p_p1_seg7_,p_p1_seg7_vr)
-glf_lightMaps.Add "p1_seg7", glf_p1_seg7_lmarr
-Dim glf_p1_seg6_lmarr : glf_p1_seg6_lmarr = Array(p_p1_seg6_,p_p1_seg6_vr)
-glf_lightMaps.Add "p1_seg6", glf_p1_seg6_lmarr
-Dim glf_p1_seg5_lmarr : glf_p1_seg5_lmarr = Array(p_p1_seg5_,p_p1_seg5_vr)
-glf_lightMaps.Add "p1_seg5", glf_p1_seg5_lmarr
-Dim glf_p1_seg4_lmarr : glf_p1_seg4_lmarr = Array(p_p1_seg4_,p_p1_seg4_vr)
-glf_lightMaps.Add "p1_seg4", glf_p1_seg4_lmarr
-Dim glf_p1_seg3_lmarr : glf_p1_seg3_lmarr = Array(p_p1_seg3_,p_p1_seg3_vr)
-glf_lightMaps.Add "p1_seg3", glf_p1_seg3_lmarr
-Dim glf_p1_seg2_lmarr : glf_p1_seg2_lmarr = Array(p_p1_seg2_,p_p1_seg2_vr)
-glf_lightMaps.Add "p1_seg2", glf_p1_seg2_lmarr
-Dim glf_p1_seg1_lmarr : glf_p1_seg1_lmarr = Array(p_p1_seg1_,p_p1_seg1_vr)
-glf_lightMaps.Add "p1_seg1", glf_p1_seg1_lmarr
-Dim glf_pf_seg30_lmarr : glf_pf_seg30_lmarr = Array(p_pf_seg30_)
-glf_lightMaps.Add "pf_seg30", glf_pf_seg30_lmarr
-Dim glf_pf_seg29_lmarr : glf_pf_seg29_lmarr = Array(p_pf_seg29_)
-glf_lightMaps.Add "pf_seg29", glf_pf_seg29_lmarr
-Dim glf_pf_seg28_lmarr : glf_pf_seg28_lmarr = Array(p_pf_seg28_)
-glf_lightMaps.Add "pf_seg28", glf_pf_seg28_lmarr
-Dim glf_pf_seg27_lmarr : glf_pf_seg27_lmarr = Array(p_pf_seg27_)
-glf_lightMaps.Add "pf_seg27", glf_pf_seg27_lmarr
-Dim glf_pf_seg26_lmarr : glf_pf_seg26_lmarr = Array(p_pf_seg26_)
-glf_lightMaps.Add "pf_seg26", glf_pf_seg26_lmarr
-Dim glf_pf_seg25_lmarr : glf_pf_seg25_lmarr = Array(p_pf_seg25_)
-glf_lightMaps.Add "pf_seg25", glf_pf_seg25_lmarr
-Dim glf_pf_seg24_lmarr : glf_pf_seg24_lmarr = Array(p_pf_seg24_)
-glf_lightMaps.Add "pf_seg24", glf_pf_seg24_lmarr
-Dim glf_pf_seg23_lmarr : glf_pf_seg23_lmarr = Array(p_pf_seg23_)
-glf_lightMaps.Add "pf_seg23", glf_pf_seg23_lmarr
-Dim glf_pf_seg22_lmarr : glf_pf_seg22_lmarr = Array(p_pf_seg22_)
-glf_lightMaps.Add "pf_seg22", glf_pf_seg22_lmarr
-Dim glf_pf_seg21_lmarr : glf_pf_seg21_lmarr = Array(p_pf_seg21_)
-glf_lightMaps.Add "pf_seg21", glf_pf_seg21_lmarr
-Dim glf_pf_seg20_lmarr : glf_pf_seg20_lmarr = Array(p_pf_seg20_)
-glf_lightMaps.Add "pf_seg20", glf_pf_seg20_lmarr
-Dim glf_pf_seg19_lmarr : glf_pf_seg19_lmarr = Array(p_pf_seg19_)
-glf_lightMaps.Add "pf_seg19", glf_pf_seg19_lmarr
-Dim glf_pf_seg18_lmarr : glf_pf_seg18_lmarr = Array(p_pf_seg18_)
-glf_lightMaps.Add "pf_seg18", glf_pf_seg18_lmarr
-Dim glf_pf_seg17_lmarr : glf_pf_seg17_lmarr = Array(p_pf_seg17_)
-glf_lightMaps.Add "pf_seg17", glf_pf_seg17_lmarr
-Dim glf_pf_seg16_lmarr : glf_pf_seg16_lmarr = Array(p_pf_seg16_)
-glf_lightMaps.Add "pf_seg16", glf_pf_seg16_lmarr
-Dim glf_pf_seg15_lmarr : glf_pf_seg15_lmarr = Array(p_pf_seg15_)
-glf_lightMaps.Add "pf_seg15", glf_pf_seg15_lmarr
-Dim glf_pf_seg14_lmarr : glf_pf_seg14_lmarr = Array(p_pf_seg14_)
-glf_lightMaps.Add "pf_seg14", glf_pf_seg14_lmarr
-Dim glf_pf_seg13_lmarr : glf_pf_seg13_lmarr = Array(p_pf_seg13_)
-glf_lightMaps.Add "pf_seg13", glf_pf_seg13_lmarr
-Dim glf_pf_seg12_lmarr : glf_pf_seg12_lmarr = Array(p_pf_seg12_)
-glf_lightMaps.Add "pf_seg12", glf_pf_seg12_lmarr
-Dim glf_pf_seg11_lmarr : glf_pf_seg11_lmarr = Array(p_pf_seg11_)
-glf_lightMaps.Add "pf_seg11", glf_pf_seg11_lmarr
-Dim glf_pf_seg10_lmarr : glf_pf_seg10_lmarr = Array(p_pf_seg10_)
-glf_lightMaps.Add "pf_seg10", glf_pf_seg10_lmarr
-Dim glf_pf_seg9_lmarr : glf_pf_seg9_lmarr = Array(p_pf_seg9_)
-glf_lightMaps.Add "pf_seg9", glf_pf_seg9_lmarr
-Dim glf_pf_seg8_lmarr : glf_pf_seg8_lmarr = Array(p_pf_seg8_)
-glf_lightMaps.Add "pf_seg8", glf_pf_seg8_lmarr
-Dim glf_pf_seg7_lmarr : glf_pf_seg7_lmarr = Array(p_pf_seg7_)
-glf_lightMaps.Add "pf_seg7", glf_pf_seg7_lmarr
-Dim glf_pf_seg6_lmarr : glf_pf_seg6_lmarr = Array(p_pf_seg6_)
-glf_lightMaps.Add "pf_seg6", glf_pf_seg6_lmarr
-Dim glf_pf_seg5_lmarr : glf_pf_seg5_lmarr = Array(p_pf_seg5_)
-glf_lightMaps.Add "pf_seg5", glf_pf_seg5_lmarr
-Dim glf_pf_seg4_lmarr : glf_pf_seg4_lmarr = Array(p_pf_seg4_)
-glf_lightMaps.Add "pf_seg4", glf_pf_seg4_lmarr
-Dim glf_pf_seg3_lmarr : glf_pf_seg3_lmarr = Array(p_pf_seg3_)
-glf_lightMaps.Add "pf_seg3", glf_pf_seg3_lmarr
-Dim glf_pf_seg2_lmarr : glf_pf_seg2_lmarr = Array(p_pf_seg2_)
-glf_lightMaps.Add "pf_seg2", glf_pf_seg2_lmarr
-Dim glf_pf_seg1_lmarr : glf_pf_seg1_lmarr = Array(p_pf_seg1_)
-glf_lightMaps.Add "pf_seg1", glf_pf_seg1_lmarr
-Dim glf_LBG08_lmarr : glf_LBG08_lmarr = Array(f_lbg08_)
-glf_lightMaps.Add "LBG08", glf_LBG08_lmarr
-Dim glf_LBG16_lmarr : glf_LBG16_lmarr = Array(f_lbg16_)
-glf_lightMaps.Add "LBG16", glf_LBG16_lmarr
-Dim glf_LBG15_lmarr : glf_LBG15_lmarr = Array(f_lbg15_)
-glf_lightMaps.Add "LBG15", glf_LBG15_lmarr
-Dim glf_LBG14_lmarr : glf_LBG14_lmarr = Array(f_lbg14_)
-glf_lightMaps.Add "LBG14", glf_LBG14_lmarr
-Dim glf_LBG13_lmarr : glf_LBG13_lmarr = Array(f_lbg13_)
-glf_lightMaps.Add "LBG13", glf_LBG13_lmarr
-Dim glf_LBG12_lmarr : glf_LBG12_lmarr = Array(f_lbg12_)
-glf_lightMaps.Add "LBG12", glf_LBG12_lmarr
-Dim glf_LBG11_lmarr : glf_LBG11_lmarr = Array(f_lbg11_)
-glf_lightMaps.Add "LBG11", glf_LBG11_lmarr
-Dim glf_LBG10_lmarr : glf_LBG10_lmarr = Array(f_lbg10_)
-glf_lightMaps.Add "LBG10", glf_LBG10_lmarr
-Dim glf_LBG09_lmarr : glf_LBG09_lmarr = Array(f_lbg09_)
-glf_lightMaps.Add "LBG09", glf_LBG09_lmarr
-Dim glf_LBG07_lmarr : glf_LBG07_lmarr = Array(f_lbg07_)
-glf_lightMaps.Add "LBG07", glf_LBG07_lmarr
-Dim glf_LBG06_lmarr : glf_LBG06_lmarr = Array(f_lbg06_)
-glf_lightMaps.Add "LBG06", glf_LBG06_lmarr
-Dim glf_LBG05_lmarr : glf_LBG05_lmarr = Array(f_lbg05_)
-glf_lightMaps.Add "LBG05", glf_LBG05_lmarr
-Dim glf_LBG04_lmarr : glf_LBG04_lmarr = Array(f_lbg04_)
-glf_lightMaps.Add "LBG04", glf_LBG04_lmarr
-Dim glf_LBG03_lmarr : glf_LBG03_lmarr = Array(f_lbg03_)
-glf_lightMaps.Add "LBG03", glf_LBG03_lmarr
-Dim glf_LBG02_lmarr : glf_LBG02_lmarr = Array(f_lbg02_a,f_lbg02_b,f_lbg02_c,f_lbg02_d)
-glf_lightMaps.Add "LBG02", glf_LBG02_lmarr
-Dim glf_LBG01_lmarr : glf_LBG01_lmarr = Array(f_lbg01_a,f_lbg01_b,f_lbg01_c,f_lbg01_d)
-glf_lightMaps.Add "LBG01", glf_LBG01_lmarr

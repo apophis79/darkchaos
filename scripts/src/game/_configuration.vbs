@@ -167,6 +167,8 @@ Const BonusPerProtonRound = 50000
 
 Sub ConfigureGlfDevices
 
+    '*********** INITALIZE SHOWS ***********
+
     ' Load up the shows
     CreateGeneralShows()
     CreateGIShows()
@@ -190,6 +192,12 @@ Sub ConfigureGlfDevices
     CreatePostGameShows()
     CreateNukeShows()
 
+    ' Load shared shot profiles
+    CreateSharedShotProfiles
+
+
+    '*********** INITALIZE SOUND EFFECTS ***********
+
     ' Sound effects bus
     CreateSounds()
    
@@ -208,6 +216,80 @@ Sub ConfigureGlfDevices
         .Volume = 0.8
     End With
 
+
+    ' Trough sound effects
+    AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
+    AddPinEventListener GLF_BALL_DRAIN, "ball_drain_sound", "BallDrainSound", 100, Null
+
+
+    '*********** INITALIZE MODES ***********
+    'Note, modes must be created after sounds and shows
+
+
+    ' Modes                         Priority        Active during waves
+    '-------                        --------        -------------------
+    CreateBasementMode              ' 100           Active all the time
+    CreateAttractMode               ' 120           No
+    CreateBonusMode                 ' 150           No
+    CreatePostGameMode              ' 180           No
+    CreateScoreMode                 ' 2000          Always active during a game
+    CreateHighScoreMode             ' 120
+
+    CreateBaseMode                  ' 200           Yes
+    CreateInstantInfoMode           ' 300           Yes
+    CreateNukeMode                  ' 400           Yes
+    CreateSkillshotsMode            ' 500           No
+    CreateAlienAttackMode           ' 500           No
+    CreateShieldsMode               ' 510           No
+    CreateShipSaveMode              ' 520           No
+    CreateCombosMode                ' 530           No
+    CreateTimewarpMode              ' 550           No
+    CreateExtraBallMode             ' 560           No
+    CreateMysteryMode               ' 580           No
+    CreateMoonMultiballQualifyMode  ' 590           No
+    CreateMoonMultiballMode         ' 600           Yes
+    CreateDoubleScoringMode         ' 700           Yes
+    CreateSuperSpinnerMode          ' 700           Yes
+    CreateSuperPopsMode             ' 700           Yes
+    CreateHealthMode                ' 800           Yes
+    CreateProtonCannonMode          ' 900           Yes
+    CreateClusterBombMode           ' 1000          Yes
+
+    CreateTrainingQualifyMode       ' 513           No
+    CreateTrainingSelectMode        ' 600           No
+    CreateTrainingHealMode          ' 700           No
+    CreateTrainingClusterBombMode   ' 700           No
+    CreateTrainingProtonCannonMode  ' 700           No
+    CreateTrainingMoonMissileMode   ' 700           No
+    CreateTrainingShipSaveMode      ' 700           No
+    CreateTrainingShieldsMode       ' 700           No
+
+    CreateMeteorWaveQualifyMode     ' 1100          No
+    CreateMeteorWaveMode            ' 1000          Yes
+    CreateMeteorMultiballMode       ' 1000          Yes
+
+    CreateFullyLoadedWizardMode     ' 2000          No
+    CreateComboCommandWizardMode    ' 3000          No
+    CreateFinalWaveWizardMode       ' 4000          No
+    CreateVictoryLapMode            ' 9999          No
+
+    CreateTiltMode                  ' 10000         Yes
+
+
+    ' Ball search
+    With EnableGlfBallSearch()
+        .Timeout = 20000
+        .SearchInterval = 300
+        .BallSearchWaitAfterIteration = 5000
+        '.Debug = True
+    End With
+
+
+
+    '*********** INITALIZE HIGH SCORES ***********
+    ' These high scores are tracked for this machine. 
+    ' Initial values are set first time the machine turns on. After that, values are read from the machines ini file.
+
     With EnableGlfHighScores()
         With .Categories()
             .Add "score", Array("GRAND CHAMPION", "HIGH SCORE 1", "HIGH SCORE 2", "HIGH SCORE 3") 
@@ -222,16 +304,117 @@ Sub ConfigureGlfDevices
     End With
 
 
-    ' Ball search
-    With EnableGlfBallSearch()
-        .Timeout = 15000
-        .SearchInterval = 300
-        .BallSearchWaitAfterIteration = 5000
-        '.Debug = True
+
+    '*********** INITALIZE MACHINE VARIABLES ***********
+    ' These variables are tracked for this machine. 
+    ' Initial values are set first time the machine turns on. After that, values are read from the machines ini file.
+
+
+    
+    ' Machine variables
+    With CreateMachineVar("high_score_initials")
+        .InitialValue = ""
+        .ValueType = "string"
+        .Persist = False
+    End With
+    With CreateMachineVar("high_score_initials_index")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = False
+    End With
+    With CreateMachineVar("high_score_initials_chars")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = False
+    End With
+    
+    With CreateMachineVar("won_game")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
+    End With
+    With CreateMachineVar("message_num")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = True
     End With
 
 
+
+    '*********** INITALIZE PLAYER VARIABLES ***********
+    ' These variables are tracked per player. 
+    'Initial values set at the beginning of each game.
+
+    ' Initial Vars
+    Glf_SetInitialPlayerVar "flag_ss", 0
+    Glf_SetInitialPlayerVar "flag_sss_mystery", 0
+    Glf_SetInitialPlayerVar "num_skillshots", 0
+    Glf_SetInitialPlayerVar "ball_cradled", 0
+    Glf_SetInitialPlayerVar "ball_just_started", 1
+    Glf_SetInitialPlayerVar "meteor_wave_running", 0
+    Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
+    Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
+    Glf_SetInitialPlayerVar "num_training_shots", 2
+    Glf_SetInitialPlayerVar "num_waves_completed", 0
+    Glf_SetInitialPlayerVar "num_waves_completed_this_ball", 0
+    Glf_SetInitialPlayerVar "num_training_shots_hit", 2
+    Glf_SetInitialPlayerVar "meteors_per_wave", 7
+    Glf_SetInitialPlayerVar "disable_moon_launch", 0
+    ' Glf_SetInitialPlayerVar "s_Lock1_on", 0
+    ' Glf_SetInitialPlayerVar "s_Lock2_on", 0
+    ' Glf_SetInitialPlayerVar "s_Lock3_on", 0
+    Glf_SetInitialPlayerVar "warping", 0
+    Glf_SetInitialPlayerVar "light_the_eb", 0
+    Glf_SetInitialPlayerVar "alien_tick_count", -1
+    Glf_SetInitialPlayerVar "alien_attack_dir", 0
+    Glf_SetInitialPlayerVar "alien_attack_done", 0
+    Glf_SetInitialPlayerVar "alien_grace_time", 0
+    Glf_SetInitialPlayerVar "scoring_multiplier", 1
+    Glf_SetInitialPlayerVar "pop_multiplier", 1
+    Glf_SetInitialPlayerVar "spin_multiplier", 1
+    Glf_SetInitialPlayerVar "bonus_multiplier", 1
+    Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
+    Glf_SetInitialPlayerVar "combo_decay_ticks", CombosDecayTickLimit
+    Glf_SetInitialPlayerVar "training_just_finished", 0
+    Glf_SetInitialPlayerVar "training_heal_achieved", 0
+    Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
+    Glf_SetInitialPlayerVar "training_proton_cannon_achieved", 0
+    Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
+    Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
+    Glf_SetInitialPlayerVar "training_shields_achieved", 0
+    Glf_SetInitialPlayerVar "training_total_achieved", 0
+    Glf_SetInitialPlayerVar "training_moon_missile_used", 0
+    Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
+    Glf_SetInitialPlayerVar "wizard_mode_running", 0
+    Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
+    Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
+    Glf_SetInitialPlayerVar "fwwiz_add_ball_ready", 0
+    Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
+    Glf_SetInitialPlayerVar "flwiz_super_jp", 0
+    Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
+    Glf_SetInitialPlayerVar "victory", 0
+    Glf_SetInitialPlayerVar "bonus_waves", 0
+    Glf_SetInitialPlayerVar "bonus_training", 0
+    Glf_SetInitialPlayerVar "bonus_bombs", 0
+    Glf_SetInitialPlayerVar "bonus_missiles", 0
+    Glf_SetInitialPlayerVar "bonus_protons", 0
+    Glf_SetInitialPlayerVar "bonus_total", 0
+    Glf_SetInitialPlayerVar "flippers_are_dead", 0
+    Glf_SetInitialPlayerVar "hs_input_ready", 1
+    Glf_SetInitialPlayerVar "nuke_acquired", 0
+    Glf_SetInitialPlayerVar "nuke_used", 0
+    Glf_SetInitialPlayerVar "nuke_just_used", 0
+
+    'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0
+    'Glf_SetInitialPlayerVar "debug_multiball_lock_moon_launch_balls_locked", 0
+    'Glf_SetInitialPlayerVar "debug_leftover_balls_in_lock", 0
+
+
+
+   '*********** DEVICE CONFIGS ***********
+
     ' Plunger
+    'NOTE: Plunger switch SHOULD be added to the glf_switches collection (along with all other rollover switches) 
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("s_Plunger1")
         .EjectTimeout = 10
@@ -242,7 +425,33 @@ Sub ConfigureGlfDevices
     End With
 
 
+    ' Flippers
+    'NOTE: Flippers SHOULD NOT be added to the glf_switches collection nor any other collection. 
+    With CreateGlfFlipper("left")
+        .Switch = "s_left_flipper"
+        .ActionCallback = "LeftFlipperAction"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+    With CreateGlfFlipper("right")
+        .Switch = "s_right_flipper"
+        .ActionCallback = "RightFlipperAction"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+    With CreateGlfFlipper("upper_right")
+        .Switch = "s_right_staged_flipper_key"
+        .ActionCallback = "RightFlipper1Action"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+
+
     ' Scoop
+    'NOTE: Scoop switches SHOULD be added to the glf_switches collection. 
     With CreateGlfBallDevice("scoop")
         .BallSwitches = Array("s_Scoop")
         .EjectTimeout = 2000
@@ -251,11 +460,171 @@ Sub ConfigureGlfDevices
     End With
 
 
-    ' Moon Lock
-    With CreateGlfBallDevice("moon_lock")
-        .BallSwitches = Array("s_Lock1","s_Lock2", "s_Lock3")
+
+    ' Drop Targets
+    'NOTE: Drop targets SHOULD NOT be added to the glf_switches collection nor any other collection. 
+    With CreateGlfDroptarget("drop1")
+        .Switch = "s_DTMeteor1"
+        .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor1_raise")
+        .ActionCallback = "DTMeteor1Callback"
+        .ExcludeFromBallSearch = True
+        .UseRothDroptarget = True
+        .RothDTSwitchID = 1
     End With
 
+    With CreateGlfDroptarget("drop2")
+        .Switch = "s_DTMeteor2"
+        .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor2_raise")
+        .ActionCallback = "DTMeteor2Callback"
+        .ExcludeFromBallSearch = True
+        .UseRothDroptarget = True
+        .RothDTSwitchID = 2
+    End With
+
+    With CreateGlfDroptarget("drop3")
+        .Switch = "s_DTMeteor3"
+        .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor3_raise")
+        .ActionCallback = "DTMeteor3Callback"
+        .ExcludeFromBallSearch = True
+        .UseRothDroptarget = True
+        .RothDTSwitchID = 3
+    End With
+
+    With CreateGlfDroptarget("drop4")
+        .Switch = "s_DTMeteor4"
+        .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
+        .ResetEvents = Array("meteor4_raise")
+        .ActionCallback = "DTMeteor4Callback"
+        .ExcludeFromBallSearch = True
+        .UseRothDroptarget = True
+        .RothDTSwitchID = 4
+    End With
+
+
+
+    'Standup Targets
+    'NOTE: Stand-up targets SHOULD NOT be added to the glf_switches collection nor any other collection. 
+    With CreateGlfStanduptarget("target1")
+        .Switch = "s_TargetMystery1"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 1
+    End With
+
+    With CreateGlfStanduptarget("target2")
+        .Switch = "s_TargetMystery2"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 2
+    End With
+
+    With CreateGlfStanduptarget("target3")
+        .Switch = "s_TargetMystery3"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 3
+    End With
+
+    With CreateGlfStanduptarget("target4")
+        .Switch = "s_TargetMystery4"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 4
+    End With
+
+    With CreateGlfStanduptarget("target5")
+        .Switch = "s_TargetMystery5"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 5
+    End With
+
+    With CreateGlfStanduptarget("target6")
+        .Switch = "s_TargetShield1"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 6
+    End With
+
+    With CreateGlfStanduptarget("target7")
+        .Switch = "s_TargetShield2"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 7
+    End With
+
+    With CreateGlfStanduptarget("target8")
+        .Switch = "s_TargetShield3"
+        .UseRothStanduptarget = True
+        .RothSTSwitchID = 8
+    End With
+
+
+    ' Slingshots
+    'NOTE: Slingshots SHOULD be added to the glf_slingshots collection. 
+    With CreateGlfAutoFireDevice("left_sling")
+        .Switch = "s_LeftSlingshot"
+        .ActionCallback = "LeftSlingshotAction"
+        .DisabledCallback = "LeftSlingshotDisabled"
+        .EnabledCallback = "LeftSlingshotEnabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+    With CreateGlfAutoFireDevice("right_sling")
+        .Switch = "s_RightSlingshot"
+        .ActionCallback = "RightSlingshotAction"
+        .DisabledCallback = "RightSlingshotDisabled"
+        .EnabledCallback = "RightSlingshotEnabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+    With CreateGlfAutoFireDevice("top_sling")
+        .Switch = "s_TopSlingshot"
+        .ActionCallback = "TopSlingshotAction"
+        .DisabledCallback = "TopSlingshotDisabled"
+        .EnabledCallback = "TopSlingshotEnabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+
+    ' Bumpers
+    'NOTE: Slingshots SHOULD be added to the glf_switches collection. 
+    With CreateGlfAutoFireDevice("bumper1")
+        .Switch = "s_Bumper1"
+        .ActionCallback = "Bumper1Action"
+        .DisabledCallback = "Bumper1Disabled"
+        .EnabledCallback = "Bumper1Enabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+    With CreateGlfAutoFireDevice("bumper2")
+        .Switch = "s_Bumper2"
+        .ActionCallback = "Bumper2Action"
+        .DisabledCallback = "Bumper2Disabled"
+        .EnabledCallback = "Bumper2Enabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+    With CreateGlfAutoFireDevice("bumper3")
+        .Switch = "s_Bumper3"
+        .ActionCallback = "Bumper3Action"
+        .DisabledCallback = "Bumper3Disabled"
+        .EnabledCallback = "Bumper3Enabled"
+        .DisableEvents = Array("kill_flippers")
+        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
+    End With
+
+
+    ' Ball Devices
+    ' Moon Lock
+    With CreateGlfBallDevice("moon_lock")
+        .BallSwitches = Array("s_Lock1","s_Lock2","s_Lock3")
+    End With
+
+
+    ' Diverters
+    ' Lock pin
     With CreateGlfDiverter("lock_pin")
         .EnableEvents = Array(GLF_BALL_STARTED)
         .ActivateEvents = Array("release_moon_ball", "multiball_moon_started")
@@ -293,95 +662,6 @@ Sub ConfigureGlfDevices
     End With
 
 
-    ' Flippers
-    With CreateGlfFlipper("left")
-        .Switch = "s_left_flipper"
-        .ActionCallback = "LeftFlipperAction"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    With CreateGlfFlipper("right")
-        .Switch = "s_right_flipper"
-        .ActionCallback = "RightFlipperAction"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    With CreateGlfFlipper("upper_right")
-        .Switch = "s_right_staged_flipper_key"
-        .ActionCallback = "RightFlipper1Action"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-
-    ' Slingshots
-    With CreateGlfAutoFireDevice("left_sling")
-        .Switch = "s_LeftSlingshot"
-        .ActionCallback = "LeftSlingshotAction"
-        .DisabledCallback = "LeftSlingshotDisabled"
-        .EnabledCallback = "LeftSlingshotEnabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    With CreateGlfAutoFireDevice("right_sling")
-        .Switch = "s_RightSlingshot"
-        .ActionCallback = "RightSlingshotAction"
-        .DisabledCallback = "RightSlingshotDisabled"
-        .EnabledCallback = "RightSlingshotEnabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    With CreateGlfAutoFireDevice("top_sling")
-        .Switch = "s_TopSlingshot"
-        .ActionCallback = "TopSlingshotAction"
-        .DisabledCallback = "TopSlingshotDisabled"
-        .EnabledCallback = "TopSlingshotEnabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-
-    ' Bumpers
-    With CreateGlfAutoFireDevice("bumper1")
-        .Switch = "s_Bumper1"
-        .ActionCallback = "Bumper1Action"
-        .DisabledCallback = "Bumper1Disabled"
-        .EnabledCallback = "Bumper1Enabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    With CreateGlfAutoFireDevice("bumper2")
-        .Switch = "s_Bumper2"
-        .ActionCallback = "Bumper2Action"
-        .DisabledCallback = "Bumper2Disabled"
-        .EnabledCallback = "Bumper2Enabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    With CreateGlfAutoFireDevice("bumper3")
-        .Switch = "s_Bumper3"
-        .ActionCallback = "Bumper3Action"
-        .DisabledCallback = "Bumper3Disabled"
-        .EnabledCallback = "Bumper3Enabled"
-        .DisableEvents = Array("kill_flippers")
-        .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-    ' With CreateGlfAutoFireDevice("bumper4")
-    '     .Switch = "s_Bumper4"
-    '     .ActionCallback = "Bumper4Action"
-    '     .DisabledCallback = "Bumper4Disabled"
-    '     .EnabledCallback = "Bumper4Enabled"
-    '     .DisableEvents = Array("kill_flippers")
-    '     .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    ' End With
-
 
     ' Magnet
     With CreateGlfMagnet("mag1")
@@ -392,41 +672,11 @@ Sub ConfigureGlfDevices
     End With
 
 
-    ' Drop Targets
-    With CreateGlfDroptarget("drop1")
-        .Switch = "s_DTMeteor1"
-        .KnockdownEvents = Array("meteor1_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor1_raise")
-        .ActionCallback = "DTMeteor1Callback"
-        .ExcludeFromBallSearch = True
-    End With
-
-    With CreateGlfDroptarget("drop2")
-        .Switch = "s_DTMeteor2"
-        .KnockdownEvents = Array("meteor2_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor2_raise")
-        .ActionCallback = "DTMeteor2Callback"
-        .ExcludeFromBallSearch = True
-    End With
-
-    With CreateGlfDroptarget("drop3")
-        .Switch = "s_DTMeteor3"
-        .KnockdownEvents = Array("meteor3_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor3_raise")
-        .ActionCallback = "DTMeteor3Callback"
-        .ExcludeFromBallSearch = True
-    End With
-
-    With CreateGlfDroptarget("drop4")
-        .Switch = "s_DTMeteor4"
-        .KnockdownEvents = Array("meteor4_knockdown",GLF_GAME_START)
-        .ResetEvents = Array("meteor4_raise")
-        .ActionCallback = "DTMeteor4Callback"
-        .ExcludeFromBallSearch = True
-    End With
 
 
-    ' Alphanumeric displays
+
+    '*********** INITALIZE ALPHANUMERIC DISPLAYS ***********
+
 
     Dim segment_display_pf
     Set segment_display_pf = (New GlfLightSegmentDisplay)("pf")
@@ -522,164 +772,14 @@ Sub ConfigureGlfDevices
     ' segment_display_p3p4.UseDotsForCommas = True
     ' segment_display_p3p4.DefaultTransitionUpdateHz = 10
     ' segment_display_p3p4.ExternalFlexDmdSegmentIndex = 0
+   
 
-
-    ' Trough sound effects
-    AddPinEventListener "trough_eject",  "on_trough_eject",  "OnTroughEject", 2000, Null
-    AddPinEventListener GLF_BALL_DRAIN, "ball_drain_sound", "BallDrainSound", 100, Null
-
-    
-    ' Machine variables
-    With CreateMachineVar("high_score_initials")
-        .InitialValue = ""
-        .ValueType = "string"
-        .Persist = False
-    End With
-    With CreateMachineVar("high_score_initials_index")
-        .InitialValue = 0
-        .ValueType = "int"
-        .Persist = False
-    End With
-    With CreateMachineVar("high_score_initials_chars")
-        .InitialValue = 0
-        .ValueType = "int"
-        .Persist = False
-    End With
-    
-    With CreateMachineVar("won_game")
-        .InitialValue = 0
-        .ValueType = "int"
-        .Persist = True
-    End With
-    With CreateMachineVar("message_num")
-        .InitialValue = 0
-        .ValueType = "int"
-        .Persist = True
-    End With
-
-
-    ' Initial Vars
-    Glf_SetInitialPlayerVar "flag_ss", 0
-    Glf_SetInitialPlayerVar "flag_sss_mystery", 0
-    Glf_SetInitialPlayerVar "num_skillshots", 0
-    Glf_SetInitialPlayerVar "ball_cradled", 0
-    Glf_SetInitialPlayerVar "ball_just_started", 1
-    Glf_SetInitialPlayerVar "meteor_wave_running", 0
-    Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
-    Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
-    Glf_SetInitialPlayerVar "num_training_shots", 2
-    Glf_SetInitialPlayerVar "num_waves_completed", 0
-    Glf_SetInitialPlayerVar "num_waves_completed_this_ball", 0
-    Glf_SetInitialPlayerVar "num_training_shots_hit", 2
-    Glf_SetInitialPlayerVar "meteors_per_wave", 7
-    Glf_SetInitialPlayerVar "disable_moon_launch", 0
-    ' Glf_SetInitialPlayerVar "s_Lock1_on", 0
-    ' Glf_SetInitialPlayerVar "s_Lock2_on", 0
-    ' Glf_SetInitialPlayerVar "s_Lock3_on", 0
-    Glf_SetInitialPlayerVar "warping", 0
-    Glf_SetInitialPlayerVar "light_the_eb", 0
-    Glf_SetInitialPlayerVar "alien_tick_count", -1
-    Glf_SetInitialPlayerVar "alien_attack_dir", 0
-    Glf_SetInitialPlayerVar "alien_attack_done", 0
-    Glf_SetInitialPlayerVar "alien_grace_time", 0
-    Glf_SetInitialPlayerVar "scoring_multiplier", 1
-    Glf_SetInitialPlayerVar "pop_multiplier", 1
-    Glf_SetInitialPlayerVar "spin_multiplier", 1
-    Glf_SetInitialPlayerVar "bonus_multiplier", 1
-    Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
-    Glf_SetInitialPlayerVar "combo_decay_ticks", CombosDecayTickLimit
-    Glf_SetInitialPlayerVar "training_just_finished", 0
-    Glf_SetInitialPlayerVar "training_heal_achieved", 0
-    Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
-    Glf_SetInitialPlayerVar "training_proton_cannon_achieved", 0
-    Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
-    Glf_SetInitialPlayerVar "training_ship_save_achieved", 0
-    Glf_SetInitialPlayerVar "training_shields_achieved", 0
-    Glf_SetInitialPlayerVar "training_total_achieved", 0
-    Glf_SetInitialPlayerVar "training_moon_missile_used", 0
-    Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
-    Glf_SetInitialPlayerVar "wizard_mode_running", 0
-    Glf_SetInitialPlayerVar "wizard_combo_command_phase", 0
-    Glf_SetInitialPlayerVar "wizard_fully_loaded_phase", 0
-    Glf_SetInitialPlayerVar "fwwiz_add_ball_ready", 0
-    Glf_SetInitialPlayerVar "ccwiz_super_jp", 0
-    Glf_SetInitialPlayerVar "flwiz_super_jp", 0
-    Glf_SetInitialPlayerVar "wizard_final_hit_count", FWWizMaxAsteroidHits
-    Glf_SetInitialPlayerVar "victory", 0
-    Glf_SetInitialPlayerVar "bonus_waves", 0
-    Glf_SetInitialPlayerVar "bonus_training", 0
-    Glf_SetInitialPlayerVar "bonus_bombs", 0
-    Glf_SetInitialPlayerVar "bonus_missiles", 0
-    Glf_SetInitialPlayerVar "bonus_protons", 0
-    Glf_SetInitialPlayerVar "bonus_total", 0
-    Glf_SetInitialPlayerVar "flippers_are_dead", 0
-    Glf_SetInitialPlayerVar "hs_input_ready", 1
-    Glf_SetInitialPlayerVar "nuke_acquired", 0
-    Glf_SetInitialPlayerVar "nuke_used", 0
-    Glf_SetInitialPlayerVar "nuke_just_used", 0
-
-    'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0
-    'Glf_SetInitialPlayerVar "debug_multiball_lock_moon_launch_balls_locked", 0
-    'Glf_SetInitialPlayerVar "debug_leftover_balls_in_lock", 0
-    
-
-
-    'Shot Profiles
-    CreateSharedShotProfiles
-
-    ' Modes                         Priority        Active during waves
-    '-------                        --------        -------------------
-    CreateBasementMode              ' 100           Active all the time
-    CreateAttractMode               ' 120           No
-    CreateBonusMode                 ' 150           No
-    CreatePostGameMode              ' 180           No
-    CreateScoreMode                 ' 2000          Always active during a game
-    CreateHighScoreMode             ' 120
-
-    CreateBaseMode                  ' 200           Yes
-    CreateInstantInfoMode           ' 300           Yes
-    CreateNukeMode                  ' 400           Yes
-    CreateSkillshotsMode            ' 500           No
-    CreateAlienAttackMode           ' 500           No
-    CreateShieldsMode               ' 510           No
-    CreateShipSaveMode              ' 520           No
-    CreateCombosMode                ' 530           No
-    CreateTimewarpMode              ' 550           No
-    CreateExtraBallMode             ' 560           No
-    CreateMysteryMode               ' 580           No
-    CreateMoonMultiballQualifyMode  ' 590           No
-    CreateMoonMultiballMode         ' 600           Yes
-    CreateDoubleScoringMode         ' 700           Yes
-    CreateSuperSpinnerMode          ' 700           Yes
-    CreateSuperPopsMode             ' 700           Yes
-    CreateHealthMode                ' 800           Yes
-    CreateProtonCannonMode          ' 900           Yes
-    CreateClusterBombMode           ' 1000          Yes
-
-    CreateTrainingQualifyMode       ' 513           No
-    CreateTrainingSelectMode        ' 600           No
-    CreateTrainingHealMode          ' 700           No
-    CreateTrainingClusterBombMode   ' 700           No
-    CreateTrainingProtonCannonMode  ' 700           No
-    CreateTrainingMoonMissileMode   ' 700           No
-    CreateTrainingShipSaveMode      ' 700           No
-    CreateTrainingShieldsMode       ' 700           No
-
-    CreateMeteorWaveQualifyMode     ' 1100          No
-    CreateMeteorWaveMode            ' 1000          Yes
-    CreateMeteorMultiballMode       ' 1000          Yes
-
-    CreateFullyLoadedWizardMode     ' 2000          No
-    CreateComboCommandWizardMode    ' 3000          No
-    CreateFinalWaveWizardMode       ' 4000          No
-    CreateVictoryLapMode            ' 9999          No
-
-    CreateTiltMode                  ' 10000         Yes
     
 End Sub
 
 
-' Event callbacks
+
+' Event callbacks used for trough sound effects and DOF
 Function OnTroughEject(args)
 	RandomSoundBallRelease swTrough1
 	DOF 110, DOFPulse

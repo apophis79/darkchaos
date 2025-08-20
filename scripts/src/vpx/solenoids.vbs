@@ -138,11 +138,11 @@ Sub Bumper1Action(args)
 	End If
 End Sub
 
-Sub Bumper1Disabled()
+Sub Bumper1Disabled(args)
 	s_Bumper1.Threshold = 100
 End Sub
 
-Sub Bumper1Enabled()
+Sub Bumper1Enabled(args)
 	s_Bumper1.Threshold = 1.5
 End Sub
 
@@ -158,11 +158,11 @@ Sub Bumper2Action(args)
 	End If
 End Sub
 
-Sub Bumper2Disabled()
+Sub Bumper2Disabled(args)
 	s_Bumper2.Threshold = 100
 End Sub
 
-Sub Bumper2Enabled()
+Sub Bumper2Enabled(args)
 	s_Bumper2.Threshold = 1.5
 End Sub
 
@@ -178,11 +178,11 @@ Sub Bumper3Action(args)
 	End If
 End Sub
 
-Sub Bumper3Disabled()
+Sub Bumper3Disabled(args)
 	s_Bumper3.Threshold = 100
 End Sub
 
-Sub Bumper3Enabled()
+Sub Bumper3Enabled(args)
 	s_Bumper3.Threshold = 1.5
 End Sub
 

@@ -16,8 +16,10 @@ Sub CreateMoonMultiballMode
     With CreateGlfMode("moon_multiball", 600)
         .StartEvents = Array("new_ball_started","mode_moon_multiball_qualify_started") '"stop_training",
         .StopEvents = Array("mode_base_stopping","wizard_mode_ended")  '"start_training_select",
+        '.Debug=True
 
         With .EventPlayer()
+            '.Debug=True
             'Launch
             .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 && current_player.disable_moon_launch==0 && current_player.wizard_mode_running==0}", Array("launch_moon_missiles","restart_moon_qualify_shots","backglass_moon_off")
             .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
@@ -28,12 +30,12 @@ Sub CreateMoonMultiballMode
 
 
         With .Multiballs("moon")
-            '.Debug = True
+            '.Debug=True
             .StartEvents = Array("start_moon_multiball.3")
             .BallCount = "current_player.multiball_lock_moon_launch_balls_locked"
             .BallCountType = "add"
             .ShootAgain = 0
-            .BallLock = "moon_lock"
+            .BallLocks = Array("moon_lock")
         End With
 
         With .Timers("pause_moon_launch")
@@ -104,6 +106,7 @@ Sub CreateMoonMultiballMode
         End With
 
         With .VariablePlayer()
+            '.Debug=True
             With .EventName("start_moon_multiball.1{current_player.wizard_mode_running == 0}")
                 With .Variable("multiball_lock_moon_launch_balls_locked")
                     .Action = "set"
