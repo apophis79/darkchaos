@@ -49,13 +49,13 @@ Sub CreateBaseMode()
                   "stop_flash_player1_score","stop_flash_player2_score","stop_flash_player3_score","stop_flash_player4_score")
 
             'stopping stuff
-            .Add "mode_base_stopping", Array("training_music_alt_stop")
+            .Add "mode_base_stopping", Array("training_music_stop")
             
             'wave ended
             .Add "mode_meteor_wave_stopped", Array("backglass_dark_on","backglass_chaos_on","backglass_wave_off")
             
             'restarting waves
-            .Add "stop_training", Array("check_base_restart","training_music_alt_stop")
+            .Add "stop_training", Array("check_base_restart","training_music_stop")
 
             .Add "check_base_restart{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", Array("activate_nuke")
 
@@ -889,15 +889,18 @@ Sub CreateBaseMode()
             End With
 
             'Training
-            With .EventName("training_music_alt_start")
-                .Key = "key_mus_training_alt"
-                .Sound = "mus_training_alt"
-            End With
-            With .EventName("training_music_alt_stop")
-                .Key = "key_mus_training_alt"
-                .Sound = "mus_training_alt"
-                .Action = "stop"
-            End With
+            For x = 1 to 5
+                With .EventName("training_music_"&x&"_start")
+                    .Key = "key_mus_training_"&x
+                    .Sound = "mus_training_"&x
+                End With
+                With .EventName("training_music_"&x&"_stop")
+                    .Key = "key_mus_training_"&x
+                    .Sound = "mus_training_"&x
+                    .Action = "stop"
+                End With
+            Next
+
             With .EventName("play_voc_training_canceled")
                 .Key = "key_voc_training_canceled"
                 .Sound = "voc_training_canceled"
@@ -907,8 +910,6 @@ Sub CreateBaseMode()
                 .Sound = "voc_training_incomplete"
             End With
 
-            
-            
 
             'Wizard music
             With .EventName("fwwiz_music_start")

@@ -19,7 +19,8 @@ Sub CreateBasementMode()
             'clear won_game flag at start of new game
             .Add GLF_GAME_START, Array("reset_won_game")
             'handle tilt
-            .Add "tilt", Array("kill_flippers","training_music_alt_stop","meteor_wave_music_stop","fwwiz_music_stop","flwiz_music_stop","ccwiz_music_stop")
+            .Add "tilt", Array("kill_flippers","training_music_stop","meteor_wave_music_stop","fwwiz_music_stop","flwiz_music_stop","ccwiz_music_stop")
+            .Add "training_music_stop", Array("training_music_1_stop","training_music_2_stop","training_music_3_stop","training_music_4_stop","training_music_5_stop")
             'ball search ejects from plunger for this table (special case)
             '.Add "ball_search_started", Array("plunger_eject")
         End With

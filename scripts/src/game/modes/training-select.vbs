@@ -46,11 +46,22 @@ Sub CreateTrainingSelectMode
             .Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stopping_training_select")
             .Add "make_selection{devices.state_machines.training_select.state==""shields""}", Array("start_training_shields","stopping_training_select")
             .Add "make_selection{devices.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
-            .Add "stopping_training_select", Array("training_music_alt_start","meteor_wave_music_stop","stop_training_select")
+            .Add "stopping_training_select", Array("training_music_start","meteor_wave_music_stop","stop_training_select")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
 
+        With .RandomEventPlayer()
+            With .EventName("training_music_start")
+                .Add "training_music_1_start", 1
+                .Add "training_music_2_start", 1
+                .Add "training_music_3_start", 1
+                .Add "training_music_4_start", 1
+                .Add "training_music_5_start", 1
+                .ForceAll = True
+                .ForceDifferent = True
+            End With
+        End With
 
         With .SoundPlayer()
             With .EventName("mode_training_select_started")
