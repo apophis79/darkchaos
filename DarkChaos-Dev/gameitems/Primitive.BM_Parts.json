@@ -44,7 +44,7 @@
     "disable_lighting_top_old": null,
     "disable_lighting_top": 1.0,
     "disable_lighting_below": 1.0,
-    "is_reflection_enabled": true,
+    "is_reflection_enabled": false,
     "backfaces_enabled": false,
     "physics_material": "",
     "overwrite_physics": false,

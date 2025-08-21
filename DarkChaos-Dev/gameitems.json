@@ -319,14 +319,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp1.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.RampRoll.json",
@@ -445,7 +445,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.FlipperR1Sh.json",
@@ -466,42 +466,42 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp003.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp004.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp005.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall006.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall008.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "HitTarget.s_TargetMystery4.json",
@@ -515,14 +515,14 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall011.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.zCol_Rubber_Peg003.json",
@@ -676,21 +676,21 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp4.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp5.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.100h.json",
@@ -704,14 +704,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp7.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Spinner.s_spinner.json",
@@ -844,7 +844,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Primitive.playfield_mesh.json",
@@ -858,21 +858,21 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.ScoopWalls.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.ScoopFloor.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.LSL.json",
@@ -1334,21 +1334,21 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.s_Lock1.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.s_Lock2.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Light.LC8.json",
@@ -1425,14 +1425,14 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.swRamp9.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall018.json",
@@ -2006,28 +2006,28 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Ramp.Ramp006.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall004.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall013.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Timer.Glf_GameTimer.json",
@@ -2104,14 +2104,14 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Trigger.s_TimewarpRamp.json",
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.130h.json",
@@ -5310,7 +5310,7 @@
     "is_locked": true,
     "editor_layer": 2,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall022.json",
@@ -13731,7 +13731,7 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Ramps",
-    "editor_layer_visibility": false
+    "editor_layer_visibility": true
   },
   {
     "file_name": "Wall.Wall009.json",
@@ -13787,6 +13787,90 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "Lights Inserts",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_AsteroidCircleEffect.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_AsteroidEffect001.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_AsteroidFire.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_DamageEarth.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_Earth.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_EarthClouds.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_Meteor.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_MeteorShards001.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_MeteorShards002.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_MeteorShards003.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.VR_MeteorShards004.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VR Planet Earth",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Flasher.DarkChaos.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Title",
     "editor_layer_visibility": false
   },
   {
@@ -15092,13 +15176,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_F_FL5c_RFlipU.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VLM.Lightmaps",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Primitive.LM_F_FL5c_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
@@ -15842,13 +15919,6 @@
   },
   {
     "file_name": "Primitive.LM_F_FL6g_RArm.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VLM.Lightmaps",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.LM_F_FL6g_RFlip.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
@@ -18585,21 +18655,21 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_Parts.json",
+    "file_name": "Primitive.LM_L_LEBR_Parts.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_Playfield.json",
+    "file_name": "Primitive.LM_L_LEBR_Playfield.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LMR_UnderPF.json",
+    "file_name": "Primitive.LM_L_LEBR_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
@@ -19397,35 +19467,21 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LX_GateR.json",
+    "file_name": "Primitive.LM_L_LMR_Parts.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LX_Parts.json",
+    "file_name": "Primitive.LM_L_LMR_Playfield.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LX_Playfield.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VLM.Lightmaps",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.LM_L_LX_TM4.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VLM.Lightmaps",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.LM_L_LX_UnderPF.json",
+    "file_name": "Primitive.LM_L_LMR_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
@@ -21014,21 +21070,35 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LEBR_Parts.json",
+    "file_name": "Primitive.LM_L_LX_GateR.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LEBR_Playfield.json",
+    "file_name": "Primitive.LM_L_LX_Parts.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Primitive.LM_L_LEBR_UnderPF.json",
+    "file_name": "Primitive.LM_L_LX_Playfield.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VLM.Lightmaps",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.LM_L_LX_TM4.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "VLM.Lightmaps",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Primitive.LM_L_LX_UnderPF.json",
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
@@ -21200,90 +21270,6 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_AsteroidCircleEffect.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_AsteroidEffect001.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_AsteroidFire.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_DamageEarth.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_Earth.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_EarthClouds.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_Meteor.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_MeteorShards001.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_MeteorShards002.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_MeteorShards003.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Primitive.VR_MeteorShards004.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "VR Planet Earth",
-    "editor_layer_visibility": false
-  },
-  {
-    "file_name": "Flasher.DarkChaos.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Title",
     "editor_layer_visibility": false
   }
 ]

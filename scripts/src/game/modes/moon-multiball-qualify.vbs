@@ -278,7 +278,7 @@ Sub CreateMoonMultiballQualifyMode
                 .Loops = 9
                 With .Tokens()
                     .Add "lights", "LL"
-                    .Add "color", MoonColor
+                    .Add "color", MeteorWaveColor
                 End With
             End With
 

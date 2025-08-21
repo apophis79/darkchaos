@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.00075,
+    "alpha_test_value": 200.0008,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
@@ -336,104 +336,6 @@
     "bits": false
   },
   {
-    "name": "VLM.Nestmap0",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 0.webp",
-    "width": 7296,
-    "height": 8192,
-    "alpha_test_value": 1.0,
-    "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 0.webp",
-      "name": "VLM.Nestmap0"
-    },
-    "bits": false
-  },
-  {
-    "name": "VLM.Nestmap1",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 1.exr",
-    "width": 8192,
-    "height": 8192,
-    "alpha_test_value": 1.0,
-    "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 1.exr",
-      "name": "VLM.Nestmap1"
-    },
-    "bits": false
-  },
-  {
-    "name": "VLM.Nestmap2",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 2.exr",
-    "width": 8192,
-    "height": 8192,
-    "alpha_test_value": 1.0,
-    "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 2.exr",
-      "name": "VLM.Nestmap2"
-    },
-    "bits": false
-  },
-  {
-    "name": "VLM.Nestmap3",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 3.exr",
-    "width": 8192,
-    "height": 8192,
-    "alpha_test_value": 1.0,
-    "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 3.exr",
-      "name": "VLM.Nestmap3"
-    },
-    "bits": false
-  },
-  {
-    "name": "VLM.Nestmap4",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 4.exr",
-    "width": 5952,
-    "height": 8192,
-    "alpha_test_value": 1.0,
-    "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 4.exr",
-      "name": "VLM.Nestmap4"
-    },
-    "bits": false
-  },
-  {
-    "name": "VLM.Nestmap5",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 5.webp",
-    "width": 448,
-    "height": 2432,
-    "alpha_test_value": 1.0,
-    "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 5.webp",
-      "name": "VLM.Nestmap5"
-    },
-    "bits": false
-  },
-  {
-    "name": "VLM.Nestmap5 - NM",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 5 - NM.webp",
-    "width": 448,
-    "height": 2432,
-    "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_25d - Bakes/Export/Nestmap 5 - NM.webp",
-      "name": "VLM.Nestmap5 - NM"
-    },
-    "bits": false
-  },
-  {
     "name": "VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1.webp",
     "width": 1000,
@@ -598,6 +500,104 @@
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Release\\Dark_Chaos_Logo.png",
       "name": "Dark_Chaos_Logo"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap0",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 0.webp",
+    "width": 7296,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 0.webp",
+      "name": "VLM.Nestmap0"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap1",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 1.exr",
+    "width": 8192,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 1.exr",
+      "name": "VLM.Nestmap1"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap2",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 2.exr",
+    "width": 8128,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 2.exr",
+      "name": "VLM.Nestmap2"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap3",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap3a.exr",
+    "width": 8192,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap3a.exr",
+      "name": "VLM.Nestmap3a"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap4",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 4.exr",
+    "width": 5568,
+    "height": 8192,
+    "alpha_test_value": 1.0,
+    "is_opaque": true,
+    "is_signed": true,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 4.exr",
+      "name": "VLM.Nestmap4"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap5",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5.webp",
+    "width": 448,
+    "height": 2432,
+    "alpha_test_value": 1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5.webp",
+      "name": "VLM.Nestmap5"
+    },
+    "bits": false
+  },
+  {
+    "name": "VLM.Nestmap5 - NM",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5 - NM.webp",
+    "width": 448,
+    "height": 2432,
+    "alpha_test_value": 1.0,
+    "is_opaque": null,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5 - NM.webp",
+      "name": "VLM.Nestmap5 - NM"
     },
     "bits": false
   }
