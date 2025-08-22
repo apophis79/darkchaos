@@ -2044,7 +2044,7 @@
   },
   {
     "name": "mfx_DropTarget_Down",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\DropTarget_Down.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\DropTarget_Down.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2053,7 +2053,7 @@
   },
   {
     "name": "mfx_DropTarget_Up",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Example Table\\DropTarget_Up.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\DropTarget_Up.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2062,7 +2062,7 @@
   },
   {
     "name": "mfx_WireRamp_Stop",
-    "path": "C:\\Users\\georg\\Desktop\\FleepCode\\RampLoopSounds\\TFTC Ramp Sounds\\WireRamp_Stop.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\WireRamp_Stop.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2269,7 +2269,7 @@
   },
   {
     "name": "mfx_RampLoop1",
-    "path": "C:\\Users\\sacam\\Downloads\\Ball__Ramp_Sounds_Amp9\\Ball & Ramp Sounds Amp9\\RampLoop1.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\RampLoop1.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2278,7 +2278,7 @@
   },
   {
     "name": "mfx_RampLoop2",
-    "path": "C:\\Users\\sacam\\Downloads\\Ball__Ramp_Sounds_Amp9\\Ball & Ramp Sounds Amp9\\RampLoop2.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\RampLoop2.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2287,7 +2287,7 @@
   },
   {
     "name": "mfx_RampLoop3",
-    "path": "C:\\Users\\sacam\\Downloads\\Ball__Ramp_Sounds_Amp9\\Ball & Ramp Sounds Amp9\\RampLoop3.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\RampLoop3.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2296,7 +2296,7 @@
   },
   {
     "name": "mfx_RampLoop4",
-    "path": "C:\\Users\\sacam\\Downloads\\Ball__Ramp_Sounds_Amp9\\Ball & Ramp Sounds Amp9\\RampLoop4.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\RampLoop4.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2305,7 +2305,7 @@
   },
   {
     "name": "mfx_RampLoop5",
-    "path": "C:\\Users\\sacam\\Downloads\\Ball__Ramp_Sounds_Amp9\\Ball & Ramp Sounds Amp9\\RampLoop5.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\RampLoop5.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2359,7 +2359,7 @@
   },
   {
     "name": "mfx_Motor",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Street Fighter II\\Motor.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\Motor.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2368,7 +2368,7 @@
   },
   {
     "name": "mfx_ScoopHit1",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Mech Sounds\\mfx_ScoopHit1.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\mfx_ScoopHit1.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -2377,7 +2377,7 @@
   },
   {
     "name": "mfx_ScoopHit2",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Mech Sounds\\mfx_ScoopHit2.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\mfx_ScoopHit2.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
@@ -3853,7 +3853,7 @@
   },
   {
     "name": "mfx_RampLoop6",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\RampLoop6.wav",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\MFX\\RampLoop6.wav",
     "internal_name": "",
     "fade": 0,
     "volume": 0,
