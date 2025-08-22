@@ -18,7 +18,7 @@ Sub CreateSuperPopsMode
         With .SoundPlayer()
             With .EventName("mode_super_pops_started")
                 .Key = "key_voc_super_pops"
-                .Sound = "voc_super_pops"
+                .Sound = "voc_super_pop_bumpers"
             End With
         End With
 
