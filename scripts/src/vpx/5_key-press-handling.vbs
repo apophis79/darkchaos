@@ -45,12 +45,6 @@ Sub Table1_KeyDown(ByVal keycode)
 		SoundNudgeCenter
 	End If
 
-	'DEBUG - Wizard mode tests 
-	If keycode = 33 Then DispatchPinEvent "activate_combo_command_wizard", NULL    	'F key
-	If keycode = 34 Then DispatchPinEvent "prime_fully_loaded_wizard", NULL    		'G key
-	If keycode = 35 Then DispatchPinEvent "activate_final_wave_wizard", NULL    	'H key
-	If keycode = 36 Then DispatchPinEvent "debug_increase_wave", NULL    			'J key
-
 End Sub
 
 
