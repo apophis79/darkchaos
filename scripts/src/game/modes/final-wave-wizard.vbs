@@ -745,11 +745,11 @@ Sub CreateFinalWaveWizardMode
 					.Color = "000000"
 				End With
 			End With
-            With .EventName("mode_final_wave_wizard_stopping")
-                With .Lights("GI")
-                    .Color = GIColor3000k
-                End With
-            End With
+            ' With .EventName("mode_final_wave_wizard_stopping")
+            '     With .Lights("GI")
+            '         .Color = GIColor3000k
+            '     End With
+            ' End With
 
             With .EventName("asteroid_off")
                 With .Lights("tAsteroid")
