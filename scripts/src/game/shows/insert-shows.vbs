@@ -2830,14 +2830,10 @@ With CreateGlfShow("insert_gi_slide_midleft")
       )
   End With
   With .AddStep(0.40000, Null, Null)
-    .Lights = Array( _
-      )
+    .Lights = Array()
   End With
   With .AddStep(0.43333, Null, Null)
-    .Lights = Array( _
-      "gi16|(intensity)|000000", _
-      "gi11|(intensity)|000000" _
-      )
+    .Lights = Array("gi16|(intensity)|000000","gi11|(intensity)|000000")
   End With
   With .AddStep(0.46667, Null, 0.03333)
     .Lights = Array( _
