@@ -15,7 +15,7 @@
   </ScreenshotPath>
   <ScreenshotFileType>0</ScreenshotFileType>
   <darkchaos>
-    <HideGrill>0</HideGrill>
+    <HideGrill>1</HideGrill>
     <HideB2SDMD>0</HideB2SDMD>
     <HideB2SBackglass>0</HideB2SBackglass>
     <HideDMD>2</HideDMD>
