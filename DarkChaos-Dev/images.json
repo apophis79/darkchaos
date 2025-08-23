@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.00089,
+    "alpha_test_value": 200.00093,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
@@ -505,15 +505,15 @@
   },
   {
     "name": "VLM.Nestmap0",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 0.webp",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap0a.webp",
     "width": 7296,
     "height": 8192,
     "alpha_test_value": 1.0,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 0.webp",
-      "name": "VLM.Nestmap0"
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap0a.webp",
+      "name": "VLM.Nestmap0a"
     },
     "bits": false
   },
