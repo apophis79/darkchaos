@@ -163,6 +163,7 @@ Sub CreatePostGameMode()
             .Add "check_winner_message6{machine.won_game == 1}", Array("display_winner_message6","play_voc_winners_poem6")
             'stop post game
             .Add "mus_post_game_stopped", Array("start_attract_mode")
+            .Add "mus_post_game_heavier_stopped", Array("start_attract_mode")
             .Add "start_attract_mode", Array("stop_post_game_mode")
 
         End With
