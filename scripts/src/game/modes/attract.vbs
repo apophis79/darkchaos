@@ -459,7 +459,7 @@ Sub CreateAttractMode()
                 End With
                 With .Display("player3")
                     .Key = "key_score_1_name"
-                    .Text = "machine.score_1_name"
+                    .Text = "machine.score_1_name & "" """
                     .Expire = 3000
                     .Priority = 3
                 End With
@@ -480,7 +480,7 @@ Sub CreateAttractMode()
                 End With
                 With .Display("player3")
                     .Key = "key_score_2_name"
-                    .Text = "machine.score_2_name"
+                    .Text = "machine.score_2_name & "" """
                     .Expire = 3000
                     .Priority = 4
                 End With
@@ -501,7 +501,7 @@ Sub CreateAttractMode()
                 End With
                 With .Display("player3")
                     .Key = "key_score_3_name"
-                    .Text = "machine.score_3_name"
+                    .Text = "machine.score_3_name & "" """
                     .Expire = 3000
                     .Priority = 5
                 End With
@@ -522,7 +522,7 @@ Sub CreateAttractMode()
                 End With
                 With .Display("player3")
                     .Key = "key_score_4_name"
-                    .Text = "machine.score_4_name"
+                    .Text = "machine.score_4_name & "" """
                     .Expire = 3000
                     .Priority = 6
                 End With
