@@ -181,7 +181,7 @@ Sub CreateShieldsMode
 
         ' Shield qualifying shot group
         With .ShotGroups("qualify_shields")
-            .Shots = Array("shield_charge1", "shield_charge2", "shield_charge3") ', "shield_charge4")
+            .Shots = Array("shield_charge1", "shield_charge2", "shield_charge3") 
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
             .RestartEvents = Array("restart_qualify_shields")

@@ -33,8 +33,6 @@ Sub CreateTrainingShieldsMode
             .Add "update_training_select_shields{current_player.shot_training_shield_charge2==1}", Array("update_training_select_shield2b")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge3==0}", Array("update_training_select_shield3a")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge3==1}", Array("update_training_select_shield3b")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge4==0}", Array("update_training_select_shield4a")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge4==1}", Array("update_training_select_shield4b")
             'handle gi flicker shows
             .Add "timer_training_shields_tick", Array("flicker_gi")
             'Handle moon ramp
@@ -139,7 +137,7 @@ Sub CreateTrainingShieldsMode
         ' Shield qualifying shot group
         With .ShotGroups("training_shield_group")
             '.Debug = True
-            .Shots = Array("training_shield_charge1", "training_shield_charge2", "training_shield_charge3", "training_shield_charge4")
+            .Shots = Array("training_shield_charge1", "training_shield_charge2", "training_shield_charge3")
             .RotateLeftEvents = Array("s_left_flipper_active")
             .RotateRightEvents = Array("s_right_flipper_active")
         End With
@@ -183,19 +181,6 @@ Sub CreateTrainingShieldsMode
             End With
             With .EventName("update_training_select_shield3b")
 				With .Variable("shot_training_select_shield_charge3")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            'update the training select shots 4
-            With .EventName("update_training_select_shield4a")
-				With .Variable("shot_training_select_shield_charge4")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_shield4b")
-				With .Variable("shot_training_select_shield_charge4")
                     .Action = "set"
 					.Int = 3  
 				End With
