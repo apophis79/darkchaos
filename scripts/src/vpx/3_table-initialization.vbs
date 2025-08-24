@@ -28,10 +28,10 @@ Sub Table1_Init
 	' Flipper and sling corrections
 	InitPolarity
 	InitSlingCorrection
-	LStep = 0 : s_LeftSlingshot.TimerEnabled = 1
-	RStep = 0 : s_RightSlingshot.TimerEnabled = 1
-	TStep = 0 : s_TopSlingshot.TimerEnabled = 1
 
+	' Init some other things
+	InitSomeThings
+	
 	' Init VR things
 	InitVR
 
