@@ -32,11 +32,31 @@ jobs:
           npm install -g grunt-cli
         shell: pwsh
 
-      - name: Run Grunt to Concat vpx Files
+      - name: Run Grunt to Concat VPX Files and Set Production Mode
         run: |
           cd scripts
           npm install
           grunt concat:vpx
+
+          # Replace the exact line only
+          $lines = Get-Content dest/vpx/tablescript.vbs
+          $lines = $lines | ForEach-Object {
+            if ($_ -eq 'Dim glf_production_mode : glf_production_mode = False') {
+              'Dim glf_production_mode : glf_production_mode = True'
+            } else {
+              $_
+            }
+          }
+          $lines = $lines | ForEach-Object {
+            if ($_ -eq 'Dim glf_FuncCount : glf_FuncCount = 0') {
+              'Dim glf_FuncCount : glf_FuncCount = 9999'
+            } else {
+              $_
+            }
+          }
+          $lines | Set-Content dest/vpx/tablescript.vbs
+
+          # Move modified script into game folder
           Move-Item -Path dest/vpx/tablescript.vbs -Destination ../DarkChaos-Dev/script.vbs -Force
         shell: pwsh
 
