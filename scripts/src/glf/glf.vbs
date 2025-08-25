@@ -716,7 +716,7 @@ Sub Glf_Options(ByVal eventId)
 		glf_debug_level = "Info"
 	End If
 
-	glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
+	glfMaxDispatch = 1 'Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))   'apophis mod
 
 	glf_debugLog.WriteToLog "Options", "GLF Monitor Check"
 	Dim glfuseDebugBCP : glfuseDebugBCP = Table1.Option("Glf Monitor", 0, 1, 1, 0, 0, Array("Off", "On"))
@@ -734,7 +734,7 @@ Sub Glf_Options(ByVal eventId)
 		End If
 	End If
 	'***GLF_DEBUG_OPTIONS_END***
-	Dim ballsPerGame : ballsPerGame = Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))
+	Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))    'apophis mod
 	If ballsPerGame = 1 Then
 		glf_game.BallsPerGame = 3
 	Else
@@ -746,7 +746,7 @@ Sub Glf_Options(ByVal eventId)
 	glf_max_dispatch = glfMaxDispatch*5
 
 	glf_debugLog.WriteToLog "Options", "BCP Check"
-	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
+	Dim glfuseBCP : glfuseBCP = 0 'Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))  'apophis mod
 	If glfuseBCP = 1 Then
 		If IsNull(bcpController) Then
 			SetDelay "start_glf_bcp", "Glf_ConnectToBCPMediaController", Null, 500

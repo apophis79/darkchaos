@@ -122,7 +122,7 @@
   "use_trail_for_balls": null,
   "ball_decal_mode": false,
   "ball_playfield_reflection_strength": 0.5,
-  "default_bulb_intensity_scale_on_ball": 1.0,
+  "default_bulb_intensity_scale_on_ball": 0.5,
   "ball_trail_strength": null,
   "user_detail_level": null,
   "overwrite_global_detail_level": null,
@@ -155,5 +155,5 @@
     "#00000000"
   ],
   "protection_data": null,
-  "locked": 5
+  "locked": 8
 }
