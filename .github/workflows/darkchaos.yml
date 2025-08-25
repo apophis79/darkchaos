@@ -36,7 +36,7 @@ jobs:
         run: |
           cd scripts
           npm install
-          grunt concat:vpx
+          grunt concat:prod
 
           # Replace the exact line only
           $lines = Get-Content dest/vpx/tablescript.vbs
