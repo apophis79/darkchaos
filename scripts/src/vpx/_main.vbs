@@ -20,7 +20,7 @@
 '   * DaRdog: help on VR room.
 '   * Niwak: Blender toolkit.
 '   * VPW testers: Bug hunting and advice.
-'   * The VP dev team
+'   * The VP dev team: for making this all possible
 '
 ' ------------------------------------------------------------------------------
 '
