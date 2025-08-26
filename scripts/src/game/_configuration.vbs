@@ -200,20 +200,20 @@ Sub ConfigureGlfDevices
 
     ' Sound effects bus
     CreateSounds()
-   
+
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
-        .Volume = 0.5
+        .Volume = Volume_GameSoundEffects
     End With
 
     With CreateGlfSoundBus("voc")
         .SimultaneousSounds = 2
-        .Volume = 1
+        .Volume = Volume_GameCallouts
     End With
 
     With CreateGlfSoundBus("mus")
         .SimultaneousSounds = 4
-        .Volume = 0.8
+        .Volume = Volume_GameMusic
     End With
 
 
