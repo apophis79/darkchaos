@@ -3,9 +3,10 @@
 
 ' Post Game Mode.
 
-Const NumLoserMessages = 20
+Const NumLoserMessages = 24
 Dim LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10
 Dim LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20
+Dim LoserMessage21,LoserMessage22,LoserMessage23,LoserMessage24
 LoserMessage1 = Array("""YOU""","""FAILED""","""WE ALL""","""DIED""")
 LoserMessage2 = Array("""PLAY""","""BETTER""","""NEXT""","""TIME""")
 LoserMessage3 = Array("""EARTH""","""DIED""","""THANKS""","""TO YOU""")
@@ -15,7 +16,7 @@ LoserMessage6 = Array("""OH WOW ""","""YOU LOST""","""AGAIN ""","""SURPRISE""")
 LoserMessage7 = Array("""ITS EASY""","""YOU JUST""","""NEED TO ""","""NOT SUCK""")
 LoserMessage8 = Array("""PRACTICE""","""PRACTICE""","""PRACTICE""","""PRACTICE""")
 LoserMessage9 = Array("""DAMN""","""LUCKILY""","""THIS IS ""","""NOT REAL""")
-LoserMessage10 = Array("""GAMEOVER""","""MAN""","""WE ALL ""","""DEAD NOW""")
+LoserMessage10 = Array("""GAMEOVER""","""MAN   ""","""WE ALL ""","""DEAD NOW""")
 LoserMessage11 = Array("""MORE""","""BEER""","""MIGHT""","""HELP""")
 LoserMessage12 = Array("""UNLUCKY""","""SHOT""","""EARTH-""","""LING""")
 LoserMessage13 = Array("""THE""","""DINOS""","""LASTED""","""LONGER""")
@@ -26,10 +27,15 @@ LoserMessage17 = Array("""THE DARK""","""CHAOS""","""GOD IS""","""HAPPY""")
 LoserMessage18 = Array("""TRY JUST""","""ONE""","""MORE""","""TIME""")
 LoserMessage19 = Array("""YOU ARE""","""LUCKY""","""ITS ON ""","""FREEPLAY""")
 LoserMessage20 = Array("""KEEP""","""CALM""","""PLAY""","""PINBALL""")
+LoserMessage21 = Array("""WE NEED""","""A HERO ""","""NOT A""","""ZERO  """)
+LoserMessage22 = Array("""THIS WAS ""","""PRACTICE""","""NEXT IS ""","""FOR REAL""")
+LoserMessage23 = Array("""THE SKYS""","""FALLING""","""THE SKYS""","""FALLING""")
+LoserMessage24 = Array("""OUR END""","""BEGINS ""","""APRIL""","""13 2029""")
 
 Dim LoserMessages
 LoserMessages = Array(LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10, _
-                      LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20)
+                      LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20, _ 
+                      LoserMessage21,LoserMessage22,LoserMessage23,LoserMessage24)
 
 Dim WinnerMessage1,WinnerMessage2,WinnerMessage3,WinnerMessage4,WinnerMessage5,WinnerMessage6
 WinnerMessage1 = Array("""A VILE""","""DARK""","""CHAOS""","""LOOMED""")
