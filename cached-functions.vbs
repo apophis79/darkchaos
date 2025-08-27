@@ -7416,7 +7416,7 @@ Dim glf_LSpot2_lmarr : glf_LSpot2_lmarr = Array()
 glf_lightMaps.Add "LSpot2", glf_LSpot2_lmarr
 Dim glf_LSpot2a_lmarr : glf_LSpot2a_lmarr = Array()
 glf_lightMaps.Add "LSpot2a", glf_LSpot2a_lmarr
-Dim glf_LSpot1_lmarr : glf_LSpot1_lmarr = Array(lm_l_lspot1_asteroid1,lm_l_lspot1_asteroid2,lm_l_lspot1_asteroid3,lm_l_lspot1_asteroid4,lm_l_lspot1_br2,lm_l_lspot1_bs3,lm_l_lspot1_bmpbot,lm_l_lspot1_gater,lm_l_lspot1_layer1,lm_l_lspot1_parts,lm_l_lspot1_playfield,lm_l_lspot1_ramp,lm_l_lspot1_spin,lm_l_lspot1_spinu,lm_l_lspot1_spinwire,lm_l_lspot1_tm3,lm_l_lspot1_tm4,lm_l_lspot1_underpf,lm_l_lspot1_swc1,lm_l_lspot1_swc2,lm_l_lspot1_swc3,lm_l_lspot1_swi2)
+Dim glf_LSpot1_lmarr : glf_LSpot1_lmarr = Array(lm_l_lspot1_swi2,lm_l_lspot1_swc3,lm_l_lspot1_swc2,lm_l_lspot1_swc1,lm_l_lspot1_underpf,lm_l_lspot1_asteroid1,lm_l_lspot1_asteroid2,lm_l_lspot1_asteroid3,lm_l_lspot1_asteroid4,lm_l_lspot1_br2,lm_l_lspot1_bs3,lm_l_lspot1_bmpbot,lm_l_lspot1_gater,lm_l_lspot1_layer1,lm_l_lspot1_parts,lm_l_lspot1_playfield,lm_l_lspot1_ramp,lm_l_lspot1_spin,lm_l_lspot1_spinu,lm_l_lspot1_spinwire,lm_l_lspot1_tm3,lm_l_lspot1_tm4)
 glf_lightMaps.Add "LSpot1", glf_LSpot1_lmarr
 Dim glf_LB1_lmarr : glf_LB1_lmarr = Array(lm_l_lb1_br1,lm_l_lb1_bs1,lm_l_lb1_bmpbot,lm_l_lb1_parts,lm_l_lb1_playfield,lm_l_lb1_ship,lm_l_lb1_tm1,lm_l_lb1_swlb)
 glf_lightMaps.Add "LB1", glf_LB1_lmarr
