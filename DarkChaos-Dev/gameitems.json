@@ -434,13 +434,6 @@
     "editor_layer_visibility": false
   },
   {
-    "file_name": "Wall.Wall003.json",
-    "is_locked": true,
-    "editor_layer": 0,
-    "editor_layer_name": "Main",
-    "editor_layer_visibility": false
-  },
-  {
     "file_name": "Trigger.swRamp3.json",
     "is_locked": true,
     "editor_layer": 2,
@@ -21270,6 +21263,13 @@
     "is_locked": true,
     "editor_layer": 0,
     "editor_layer_name": "VLM.Lightmaps",
+    "editor_layer_visibility": false
+  },
+  {
+    "file_name": "Wall.Wall003.json",
+    "is_locked": true,
+    "editor_layer": 0,
+    "editor_layer_name": "Main",
     "editor_layer_visibility": false
   }
 ]

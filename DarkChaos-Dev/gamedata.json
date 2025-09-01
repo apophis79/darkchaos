@@ -85,7 +85,7 @@
   "stereo_zero_parallax_displacement": 0.1,
   "stereo_offset": 0.0,
   "overwrite_global_stereo3d": false,
-  "image": "DC-updated-layout",
+  "image": "<None>",
   "backglass_image_full_desktop": "stars",
   "backglass_image_full_fullscreen": "",
   "backglass_image_full_single_screen": "",
