@@ -33,12 +33,12 @@ Sub CreateFullyLoadedWizardMode
             .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
-            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
-            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", Array("flwiz_proton2_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
-            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", Array("flwiz_proton3_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
-            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", Array("flwiz_proton4_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
-            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", Array("flwiz_proton5_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
-            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6==1}", Array("flwiz_proton6_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", Array("flwiz_proton2_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", Array("flwiz_proton3_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", Array("flwiz_proton4_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", Array("flwiz_proton5_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
+            .Add         "shield_bank_hit{current_player.shot_flwiz_proton6==1}", Array("flwiz_proton6_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
             .Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_cluster_hit","cluster_bomb_fired","cluster_bomb_flash","play_sfx_jackpot","play_sfx_cluster_fired","score_200000")
             .Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_phase1_moon_hit","moon_missile_fired","play_sfx_jackpot","score_200000")
             'Phase 1 shots completed, so activate the scoop for Super JPs
@@ -164,7 +164,7 @@ Sub CreateFullyLoadedWizardMode
                     .State = 1
                 End With
                 With .ControlEvents()
-                    .Events = Array("flwiz_proton"&x&"_hit")
+                    .Events = Array("flwiz_proton"&x&"_shot_hit")
                     .State = 2
                 End With
             End With
@@ -180,7 +180,7 @@ Sub CreateFullyLoadedWizardMode
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("flwiz_proton6_hit")
+                .Events = Array("flwiz_proton6_shot_hit")
                 .State = 2
             End With
         End With
@@ -193,7 +193,7 @@ Sub CreateFullyLoadedWizardMode
                     .Add "color", ProtonColor
                 End With
                 With .ControlEvents()
-                    .Events = Array("flwiz_proton"&x&"_hit")
+                    .Events = Array("flwiz_proton"&x&"_shot_hit")
                     .State = 0
                 End With
                 With .ControlEvents()
@@ -209,7 +209,7 @@ Sub CreateFullyLoadedWizardMode
                 .Add "color", ProtonColor
             End With
             With .ControlEvents()
-                .Events = Array("flwiz_proton6_hit")
+                .Events = Array("flwiz_proton6_shot_hit")
                 .State = 0
             End With
             With .ControlEvents()
