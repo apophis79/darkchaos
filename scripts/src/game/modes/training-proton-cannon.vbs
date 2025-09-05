@@ -27,6 +27,7 @@ Sub CreateTrainingProtonCannonMode
             .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 && current_player.shot_training_proton_charge2 == 0}", Array("light_proton_charge2","flash_gi","play_sfx_LS","score_300000")
             .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3","play_sfx_LS","score_500000") ',"flash_gi")
             .Add "light_proton_charge3", Array("training_achieved")
+            .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
             'Stop the training
             .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot","training_stopped")
             .Add "timer_training_proton_cannon_complete", Array("stop_training","training_stopped","play_voc_training_incomplete")
@@ -37,16 +38,16 @@ Sub CreateTrainingProtonCannonMode
         End With
 
         With .RandomEventPlayer()
-            With .EventName("play_sfx_LS")
-                .Add "play_sfx_LS1", 1
-                .Add "play_sfx_LS2", 1
-                .Add "play_sfx_LS3", 1
-                .Add "play_sfx_LS4", 1
-                .Add "play_sfx_LS5", 1
-                .Add "play_sfx_LS6", 1
-                .ForceAll = True
-                .ForceDifferent = True
-            End With
+            ' With .EventName("play_sfx_LS")
+            '     .Add "play_sfx_LS1", 1
+            '     .Add "play_sfx_LS2", 1
+            '     .Add "play_sfx_LS3", 1
+            '     .Add "play_sfx_LS4", 1
+            '     .Add "play_sfx_LS5", 1
+            '     .Add "play_sfx_LS6", 1
+            '     .ForceAll = True
+            '     .ForceDifferent = True
+            ' End With
             With .EventName("flicker_gi")
                 .Add "play_flicker_gi01", 1
                 .Add "play_flicker_gi02", 1

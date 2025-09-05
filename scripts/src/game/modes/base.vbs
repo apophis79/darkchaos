@@ -1015,24 +1015,31 @@ Sub CreateBaseMode()
             End With
 
             'training shots
-            With .EventName("play_sfx_LS1")
-                .Sound = "sfx_LS1"
+            With .EventName("play_sfx_LS_between_waves_updated")
+                .Sound = "sfx_LS_between_waves_updated"
             End With
-            With .EventName("play_sfx_LS2")
-                .Sound = "sfx_LS2"
+            With .EventName("play_sfx_LS_during_training")
+                .Sound = "sfx_LS_during_training"
             End With
-            With .EventName("play_sfx_LS3")
-                .Sound = "sfx_LS3"
-            End With
-            With .EventName("play_sfx_LS4")
-                .Sound = "sfx_LS4"
-            End With
-            With .EventName("play_sfx_LS5")
-                .Sound = "sfx_LS5"
-            End With
-            With .EventName("play_sfx_LS6")
-                .Sound = "sfx_LS6"
-            End With
+
+            ' With .EventName("play_sfx_LS1")
+            '     .Sound = "sfx_LS1"
+            ' End With
+            ' With .EventName("play_sfx_LS2")
+            '     .Sound = "sfx_LS2"
+            ' End With
+            ' With .EventName("play_sfx_LS3")
+            '     .Sound = "sfx_LS3"
+            ' End With
+            ' With .EventName("play_sfx_LS4")
+            '     .Sound = "sfx_LS4"
+            ' End With
+            ' With .EventName("play_sfx_LS5")
+            '     .Sound = "sfx_LS5"
+            ' End With
+            ' With .EventName("play_sfx_LS6")
+            '     .Sound = "sfx_LS6"
+            ' End With
 
             'Meteor wave sounds (needed here so they dont stop when meteor wave mode stops)
             With .EventName("play_sfx_LMet1")

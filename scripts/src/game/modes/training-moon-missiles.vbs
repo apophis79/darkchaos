@@ -27,6 +27,7 @@ Sub CreateTrainingMoonMissileMode
             .Add "training_moon_missile_completed", Array("stop_training","training_stopped")
             'Update the training select shots
             .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi","play_sfx_LS","score_200000")
+            .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==1}", Array("update_training_select_moon_lane1b")
             .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane2==0}", Array("update_training_select_moon_lane2a")
@@ -42,16 +43,16 @@ Sub CreateTrainingMoonMissileMode
         End With
 
         With .RandomEventPlayer()
-            With .EventName("play_sfx_LS")
-                .Add "play_sfx_LS1", 1
-                .Add "play_sfx_LS2", 1
-                .Add "play_sfx_LS3", 1
-                .Add "play_sfx_LS4", 1
-                .Add "play_sfx_LS5", 1
-                .Add "play_sfx_LS6", 1
-                .ForceAll = True
-                .ForceDifferent = True
-            End With
+            ' With .EventName("play_sfx_LS")
+            '     .Add "play_sfx_LS1", 1
+            '     .Add "play_sfx_LS2", 1
+            '     .Add "play_sfx_LS3", 1
+            '     .Add "play_sfx_LS4", 1
+            '     .Add "play_sfx_LS5", 1
+            '     .Add "play_sfx_LS6", 1
+            '     .ForceAll = True
+            '     .ForceDifferent = True
+            ' End With
             With .EventName("flicker_gi")
                 .Add "play_flicker_gi01", 1
                 .Add "play_flicker_gi02", 1

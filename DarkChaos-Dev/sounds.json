@@ -3913,5 +3913,23 @@
     "volume": 50,
     "balance": 0,
     "output_target": 1
+  },
+  {
+    "name": "sfx_LS_between_waves_updated",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS_between_waves_updated.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
+  },
+  {
+    "name": "sfx_LS_during_training",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\SFX\\sfx_LS_during_training.mp3",
+    "internal_name": "",
+    "fade": 0,
+    "volume": 0,
+    "balance": 0,
+    "output_target": 1
   }
 ]

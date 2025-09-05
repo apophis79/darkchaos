@@ -104,6 +104,8 @@ Sub CreateSounds()
     AddSoundEffect "sfx_alien_ship_crash", 4.467 
     AddSoundEffect "sfx_hs_initial", 0.139
     AddSoundEffect "sfx_final_wave_scoop", 10.316
+    AddSoundEffect "sfx_LS_between_waves_updated", 4.519
+    AddSoundEffect "sfx_LS_during_training", 3.030
 
     'Add callout tracks here. Provied track name and duration (seconds)
     AddCallout "voc_AlienAlert", 6.000

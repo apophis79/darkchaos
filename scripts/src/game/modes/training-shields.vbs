@@ -27,6 +27,7 @@ Sub CreateTrainingShieldsMode
             .Add "training_shields_completed", Array("stop_training","training_stopped")
             'Update the training select shots
             .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi","play_sfx_LS","score_200000")
+            .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge1==1}", Array("update_training_select_shield1b")
             .Add "update_training_select_shields{current_player.shot_training_shield_charge2==0}", Array("update_training_select_shield2a")
@@ -40,16 +41,16 @@ Sub CreateTrainingShieldsMode
         End With
 
         With .RandomEventPlayer()
-            With .EventName("play_sfx_LS")
-                .Add "play_sfx_LS1", 1
-                .Add "play_sfx_LS2", 1
-                .Add "play_sfx_LS3", 1
-                .Add "play_sfx_LS4", 1
-                .Add "play_sfx_LS5", 1
-                .Add "play_sfx_LS6", 1
-                .ForceAll = True
-                .ForceDifferent = True
-            End With
+            ' With .EventName("play_sfx_LS")
+            '     .Add "play_sfx_LS1", 1
+            '     .Add "play_sfx_LS2", 1
+            '     .Add "play_sfx_LS3", 1
+            '     .Add "play_sfx_LS4", 1
+            '     .Add "play_sfx_LS5", 1
+            '     .Add "play_sfx_LS6", 1
+            '     .ForceAll = True
+            '     .ForceDifferent = True
+            ' End With
             With .EventName("flicker_gi")
                 .Add "play_flicker_gi01", 1
                 .Add "play_flicker_gi02", 1
