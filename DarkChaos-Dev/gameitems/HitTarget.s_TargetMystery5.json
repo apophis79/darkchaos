@@ -10,7 +10,7 @@
       "y": 32.0,
       "z": 32.0
     },
-    "rot_z": 13.0,
+    "rot_z": 0.0,
     "image": "",
     "target_type": "hit_fat_target_rectangle",
     "name": "s_TargetMystery5",
