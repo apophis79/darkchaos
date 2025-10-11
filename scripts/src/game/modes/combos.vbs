@@ -75,7 +75,7 @@ Sub CreateCombosMode
                     .Key = "key_combo"&x
                     .Show = "flash_color"
                     .Speed = 15
-                    .Loops = 5
+                    .Loops = 4
                     With .Tokens()
                         .Add "lights", MainShotLightNames(x-1)
                         .Add "color", CombosColor
@@ -87,7 +87,7 @@ Sub CreateCombosMode
                 .Key = "key_combos_relaxed"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tCombos"
                     .Add "color", CombosColor
@@ -116,7 +116,7 @@ Sub CreateCombosMode
                     .Key = "key_combo"&x&"_charged"
                     .Show = "flash_color"
                     .Speed = 15
-                    .Loops = 5
+                    .Loops = 4
                     With .Tokens()
                         .Add "lights", "LC"&x
                         .Add "color", CombosColor

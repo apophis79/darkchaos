@@ -374,19 +374,19 @@ Sub CreatePostGameMode()
                 .Key = "key_proton_big_charge_fire"
                 .Show = "proton_big_charge_fire" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
 
             With .EventName("play_earth_hit_center")   
                 .Key = "key_earth_hit_center"
                 .Show = "earth_hit_center"
-                .Loops = 1
+                .Loops = 0
                 .Speed = 1
             End With
             With .EventName("play_earth_hit_center2")   
                 .Key = "key_earth_hit_center2"
                 .Show = "earth_hit_center2"
-                .Loops = 1
+                .Loops = 0
                 .Speed = 1
             End With
 
@@ -394,21 +394,21 @@ Sub CreatePostGameMode()
                 .Key = "key_asteroid_hit"
                 .Show = "asteroid_hit" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             
             With .EventName("play_meteor_wave_fall")   
                 .Key = "key_meteor_wave_fall"
                 .Show = "meteor_wave_fall" 
                 .Speed = 2
-                .Loops = 20
+                .Loops = 19
             End With
 
             With .EventName("play_meteors_sweep")   
                 .Key = "key_meteors_sweep"
                 .Show = "meteors_sweep" 
                 .Speed = 1
-                .Loops = 20
+                .Loops = 19
             End With           
 
             
@@ -416,7 +416,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_training"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tTrain"
@@ -427,7 +427,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_cluster"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tClusterAll"
@@ -438,7 +438,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_moon"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tMoonAll"
@@ -449,7 +449,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_proton"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tProtonAll"
@@ -460,7 +460,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_shields"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tShields"
@@ -471,7 +471,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_saver"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tSaver"
@@ -482,7 +482,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_timewarp"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tTimewarp"
@@ -493,7 +493,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_health"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tHealth"
@@ -504,7 +504,7 @@ Sub CreatePostGameMode()
                 .Key = "key_powerup_health"
                 .Show = "flash_color_fadeout"
                 .Speed = 6
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10
                 With .Tokens()
                     .Add "lights", "tCombos"
@@ -518,7 +518,7 @@ Sub CreatePostGameMode()
                 .Key = "key_insert_gi_slide_left"
                 .Show = "insert_gi_slide_left" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", "ffffff"
                     .Add "intensity", 100
@@ -528,7 +528,7 @@ Sub CreatePostGameMode()
                 .Key = "key_insert_gi_slide_up"
                 .Show = "insert_gi_slide_up" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", "ffffff"
                     .Add "intensity", 100
@@ -538,7 +538,7 @@ Sub CreatePostGameMode()
                 .Key = "key_insert_gi_slide_right"
                 .Show = "insert_gi_slide_right" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", "ffffff"
                     .Add "intensity", 100
@@ -548,7 +548,7 @@ Sub CreatePostGameMode()
             '     .Key = "key_insert_gi_slide_down"
             '     .Show = "insert_gi_slide_down" 
             '     .Speed = 1
-            '     .Loops = 1
+            '     .Loops = 0
             '     With .Tokens()
             '         .Add "color", "ffffff"
             '         .Add "intensity", 100
@@ -557,7 +557,7 @@ Sub CreatePostGameMode()
             With .EventName("play_slide_down6")   
                 .Key = "key_slide_down6"
                 .Show = "slide_down6"
-                .Loops = 1
+                .Loops = 0
                 .Speed = 1
             End With
 
@@ -566,7 +566,7 @@ Sub CreatePostGameMode()
                 .Key = "key_final_flash1"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", MeteorFlashColor
@@ -576,7 +576,7 @@ Sub CreatePostGameMode()
                 .Key = "key_final_flash2"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", MeteorFlashColor
@@ -586,7 +586,7 @@ Sub CreatePostGameMode()
                 .Key = "key_final_flash3"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", MeteorFlashColor
@@ -596,7 +596,7 @@ Sub CreatePostGameMode()
                 .Key = "key_final_flash4"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "tFL5"
                     .Add "color", MeteorFlashColor
@@ -606,7 +606,7 @@ Sub CreatePostGameMode()
                 .Key = "key_final_flash5"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "tFL6"
                     .Add "color", MeteorFlashColor
@@ -620,7 +620,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher1_flash_magenta"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", ClusterBombColor
@@ -630,7 +630,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher1_flash_3000k"
                 .Show = "flash_color_fadeout" 
                 .Speed = 4
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", GIColor3000k
@@ -640,7 +640,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher1_flash_white"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", TimewarpColor
@@ -653,7 +653,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher2_flash_3000k"
                 .Show = "flash_color_fadeout" 
                 .Speed = 4
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", GIColor3000k
@@ -663,7 +663,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher2_flash_white"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", TimewarpColor
@@ -673,7 +673,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher2_flash_yellow"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", MoonColor
@@ -683,7 +683,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher2_flash_blue"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", ShieldsColor
@@ -693,7 +693,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher2_flash_purple"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", ShipSaveColor
@@ -706,7 +706,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher3_flash_hot"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", MeteorHotColor
@@ -716,7 +716,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher3_flash_3000k"
                 .Show = "flash_color_fadeout" 
                 .Speed = 4
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", GIColor3000k
@@ -726,7 +726,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher3_flash_green"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", "05ff05"
@@ -736,7 +736,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher3_flash_cyan"
                 .Show = "flash_color_fadeout" 
                 .Speed = 8
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", ProtonColor
@@ -750,7 +750,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flasher4_flash_hot"
                 .Show = "flash_color_fadeout" 
                 .Speed = 13
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL4"
                     .Add "color", MeteorHotColor
@@ -765,7 +765,7 @@ Sub CreatePostGameMode()
                     .Key = "key_flash_gi0"&x
                     .Show = "flash_color_fadeout" 
                     .Speed = 3
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", GIColor3000k
@@ -777,7 +777,7 @@ Sub CreatePostGameMode()
                     .Key = "key_flash_gi"&x
                     .Show = "flash_color_fadeout" 
                     .Speed = 3
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", GIColor3000k
@@ -788,7 +788,7 @@ Sub CreatePostGameMode()
                 .Key = "key_flash_giapron"
                 .Show = "flash_color_fadeout" 
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "giapron"
                     .Add "color", GIColor3000k
@@ -805,7 +805,7 @@ Sub CreatePostGameMode()
                 .Key = "key_meteor1_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", MeteorFlashColor
@@ -816,7 +816,7 @@ Sub CreatePostGameMode()
                 .Key = "key_meteor2_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", MeteorFlashColor
@@ -827,7 +827,7 @@ Sub CreatePostGameMode()
                 .Key = "key_meteor3_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", MeteorFlashColor
@@ -838,7 +838,7 @@ Sub CreatePostGameMode()
                 .Key = "key_meteor4_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", MeteorFlashColor
@@ -851,7 +851,7 @@ Sub CreatePostGameMode()
                     .Key = "key_meteor"&x&"_blink"
                     .Show = "flash_color"
                     .Speed = 22
-                    .Loops = 4
+                    .Loops = 3
                     With .Tokens()
                         .Add "lights", "LMet"&x
                         .Add "color", "ffffff"
@@ -862,7 +862,7 @@ Sub CreatePostGameMode()
                     .Key = "key_meteor"&x&"_explodes"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", "ffffff"
                     End With    
@@ -871,7 +871,7 @@ Sub CreatePostGameMode()
                     .Key = "key_meteor"&x&"_explodes_red"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", "ff0000"
                     End With    
@@ -880,7 +880,7 @@ Sub CreatePostGameMode()
                     .Key = "key_meteor"&x&"_explodes_hot"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", MeteorHotColor
                     End With    
@@ -894,7 +894,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_magenta"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ClusterBombColor
@@ -904,7 +904,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_yellow"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", MoonColor
@@ -914,7 +914,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_cyan"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ProtonColor
@@ -924,7 +924,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_blue"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShieldsColor
@@ -934,7 +934,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_white"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", TimewarpColor
@@ -944,7 +944,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_purple"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShipSaveColor
@@ -954,7 +954,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_green"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", HealthColor1
@@ -964,7 +964,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_white"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", TimewarpColor
@@ -974,7 +974,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_hot"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", TrainingColor
@@ -984,7 +984,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_magenta"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ClusterBombColor
@@ -994,7 +994,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_yellow"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", MoonColor
@@ -1004,7 +1004,7 @@ Sub CreatePostGameMode()
                 .Key = "key_rsling_cyan"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ProtonColor
@@ -1014,7 +1014,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_blue"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShieldsColor
@@ -1024,7 +1024,7 @@ Sub CreatePostGameMode()
                 .Key = "key_lsling_purple"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 2
+                .Loops = 1
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShipSaveColor
@@ -1036,7 +1036,7 @@ Sub CreatePostGameMode()
                 .Key = "key_spotlight_on"
                 .Show = "flicker_color_on"
                 .Speed = 5
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LSpot1"
                     .Add "color", "ffffff"
@@ -1046,7 +1046,7 @@ Sub CreatePostGameMode()
                 .Key = "key_spotlight_off"
                 .Show = "flicker_color_off"
                 .Speed = 5
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LSpot1"
                     .Add "color", "ffffff"

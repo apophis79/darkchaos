@@ -145,7 +145,7 @@ Sub CreateHealthMode
                 .Key = "key_health_charge1"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tHealth"
                     .Add "color", HealthColor1
@@ -155,7 +155,7 @@ Sub CreateHealthMode
                 .Key = "key_health_charge2"
                 .Show = "insert_gi_spin_center"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 .Priority = 1000
                 With .Tokens()
                     .Add "intensity", 100
@@ -166,7 +166,7 @@ Sub CreateHealthMode
                 .Key = "key_health_full_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 15
+                .Loops = 14
                 With .Tokens()
                     .Add "lights", "tHealth"
                     .Add "color", HealthColor1
@@ -187,7 +187,7 @@ Sub CreateHealthMode
                 .Key = "key_lsling_powerup_h"
                 .Show = "lsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", HealthColor1
                     .Add "color2", HealthColor1
@@ -198,7 +198,7 @@ Sub CreateHealthMode
                 .Key = "key_rsling_powerup_h"
                 .Show = "rsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", HealthColor1
                     .Add "color2", HealthColor1
@@ -211,7 +211,7 @@ Sub CreateHealthMode
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 2000
                     With .Tokens()
                         .Add "lights", "LB"&x

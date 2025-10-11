@@ -170,7 +170,7 @@ Sub CreateTrainingQualifyMode
                 .Key = "key_loaded_wiz_ready"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", TrainingColor

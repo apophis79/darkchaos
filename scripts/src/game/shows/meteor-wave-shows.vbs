@@ -7,7 +7,7 @@ Sub CreateMeteorWaveShows()
         With .Shows("flash_color")
             .Key = "key_DOF13"
             .Speed = 20
-            .Loops = 10
+            .Loops = 9
             With .Tokens()
                 .Add "color", GIColor3000k
                 .Add "lights", "LBG13"
@@ -287,7 +287,7 @@ Sub CreateMeteorWaveShows()
         With .Shows("flash_color")
             .Key = "key_DOF10"
             .Speed = 20
-            .Loops = 10
+            .Loops = 9
             With .Tokens()
                 .Add "color", GIColor3000k
                 .Add "lights", "LBG10"
@@ -561,7 +561,7 @@ Sub CreateMeteorWaveShows()
         With .Shows("flash_color")
             .Key = "key_DOF15"
             .Speed = 20
-            .Loops = 10
+            .Loops = 9
             With .Tokens()
                 .Add "color", GIColor3000k
                 .Add "lights", "LBG15"
@@ -832,7 +832,7 @@ Sub CreateMeteorWaveShows()
         With .Shows("flash_color")
             .Key = "key_DOF11"
             .Speed = 20
-            .Loops = 10
+            .Loops = 9
             With .Tokens()
                 .Add "color", GIColor3000k
                 .Add "lights", "LBG11"

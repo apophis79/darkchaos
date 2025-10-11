@@ -252,7 +252,7 @@ Sub CreateTrainingMoonMissileMode
                 .BlockQueue = True
                 .Show = "flicker_color"
                 .Speed = 5
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", MoonColor
@@ -264,7 +264,7 @@ Sub CreateTrainingMoonMissileMode
                 .Key = "key_training_flash"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", MoonColor
@@ -277,7 +277,7 @@ Sub CreateTrainingMoonMissileMode
                     .Key = "key_flicker_gi0"&x
                     .Show = "flicker2_color_on_intensity" 
                     .Speed = 2
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", MoonColor
@@ -290,7 +290,7 @@ Sub CreateTrainingMoonMissileMode
                     .Key = "key_flicker_gi"&x
                     .Show = "flicker2_color_on_intensity" 
                     .Speed = 2
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", MoonColor
@@ -325,7 +325,7 @@ Sub CreateTrainingMoonMissileMode
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 2000
                     With .Tokens()
                         .Add "lights", "LB"&x
@@ -340,7 +340,7 @@ Sub CreateTrainingMoonMissileMode
                 .Key = "key_training_cancel_mm_warning"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 15
+                .Loops = 14
                 .Priority = 100
                 With .Tokens()
                     .Add "lights", "tInlaneGI"
@@ -351,7 +351,7 @@ Sub CreateTrainingMoonMissileMode
                 .Key = "key_training_cancel_mm_warning"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 15
+                .Loops = 14
                 .Priority = 100
                 .Action = "stop"
                 With .Tokens()

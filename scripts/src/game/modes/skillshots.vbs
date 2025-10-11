@@ -150,7 +150,7 @@ Sub CreateSkillshotsMode
                 .Key = "key_ss_achieved"
                 .Show = "insert_swap2"
                 .Speed = 1.5
-                .Loops = 2
+                .Loops = 1
                 .Priority = 3000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -162,7 +162,7 @@ Sub CreateSkillshotsMode
                 .Key = "key_sss_achieved"
                 .Show = "insert_swap3"
                 .Speed = 1.5
-                .Loops = 2
+                .Loops = 1
                 .Priority = 3000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -175,7 +175,7 @@ Sub CreateSkillshotsMode
                 .Key = "key_ssss_achieved"
                 .Show = "insert_swap3"
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 3000
                 With .Tokens()
                     .Add "color1", ProtonColor
@@ -188,7 +188,7 @@ Sub CreateSkillshotsMode
                 .Key = "key_sdsss_achieved"
                 .Show = "insert_swap3"
                 .Speed = 1.5
-                .Loops = 4
+                .Loops = 3
                 .Priority = 3000
                 With .Tokens()
                     .Add "color1", MeteorHotColor

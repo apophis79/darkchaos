@@ -199,7 +199,7 @@ Sub CreateAttractMode()
             With .EventName("play_meteor_fall_left")   
                 .Key = "key_meteor_fall_left"
                 .Show = "meteor_fall_left"
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "intensity", 100
                 End With
@@ -207,7 +207,7 @@ Sub CreateAttractMode()
             With .EventName("play_meteor_fall_center")   
                 .Key = "key_meteor_fall_center"
                 .Show = "meteor_fall_center"
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "intensity", 100
                 End With
@@ -215,7 +215,7 @@ Sub CreateAttractMode()
             With .EventName("play_meteor_fall_right")   
                 .Key = "key_meteor_fall_right"
                 .Show = "meteor_fall_right"
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "intensity", 100
                 End With
@@ -223,19 +223,19 @@ Sub CreateAttractMode()
             With .EventName("play_earth_hit_center")   
                 .Key = "key_earth_hit_center"
                 .Show = "earth_hit_center"
-                .Loops = 1
+                .Loops = 0
                 .Speed = 2
             End With
             With .EventName("play_earth_hit_left")   
                 .Key = "key_earth_hit_left"
                 .Show = "earth_hit_left"
-                .Loops = 1
+                .Loops = 0
                 .Speed = 2
             End With
             With .EventName("play_earth_hit_right")   
                 .Key = "key_earth_hit_right"
                 .Show = "earth_hit_right"
-                .Loops = 1
+                .Loops = 0
                 .Speed = 2
             End With
 
@@ -243,7 +243,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show1"
                 .Show = "lsling_swap_2_2_b"
                 .Speed = 1
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "color1", "ff0000"
                     .Add "color2", "ff9900"
@@ -254,7 +254,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rling_show1"
                 .Show = "rsling_swap_2_2_a"
                 .Speed = 1
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "color1", "ff0000"
                     .Add "color2", "ff9900"
@@ -266,7 +266,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show2"
                 .Show = "lsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color", "ffffff"
@@ -276,7 +276,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show2"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color", "ffffff"
@@ -287,7 +287,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show3"
                 .Show = "lsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color1", "00ffee"
@@ -298,7 +298,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show3"
                 .Show = "rsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color1", "00ffee"
@@ -310,7 +310,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show4"
                 .Show = "lsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color", "05ff05"
@@ -320,7 +320,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show4"
                 .Show = "rsling_rotate1_cw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color", "05ff05"
@@ -332,7 +332,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show5"
                 .Show = "lsling_rotate1_cw_skip1"
                 .Speed = 1
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShieldsColor
@@ -342,7 +342,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show5"
                 .Show = "rsling_rotate1_cw_skip1"
                 .Speed = 1
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", ShieldsColor
@@ -354,7 +354,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show6"
                 .Show = "lsling_rotate2_ccw_skip1"
                 .Speed = 1
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color1", HealthColor3
@@ -365,7 +365,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show6"
                 .Show = "rsling_rotate2_ccw_skip1"
                 .Speed = 1
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color1", HealthColor3
@@ -377,7 +377,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show7"
                 .Show = "lsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color", MoonColor
@@ -387,7 +387,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show7"
                 .Show = "rsling_rotate1_ccw"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color", MoonColor
@@ -398,7 +398,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_lsling_show8"
                 .Show = "lsling_rotate4_ccw"
                 .Speed = 1
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color1", MoonColor
@@ -411,7 +411,7 @@ Sub CreateAttractMode()
                 .Key = "key_att_rsling_show8"
                 .Show = "rsling_rotate4_cw"
                 .Speed = 1
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "intensity", 80
                     .Add "color1", MoonColor

@@ -353,7 +353,7 @@ Sub CreateBasementMode()
                 .Key = "key_tilted_gi"
                 .Show = "flicker_color_off" 
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
                 With .Tokens()
                     .Add "lights", "GI"
@@ -364,7 +364,7 @@ Sub CreateBasementMode()
                 .Key = "key_tilt_warning_gi"
                 .Show = "flash_color" 
                 .Speed = 9
-                .Loops = 9
+                .Loops = 8
                 .Priority = 10000
                 With .Tokens()
                     .Add "lights", "tInlaneGI"
@@ -375,7 +375,7 @@ Sub CreateBasementMode()
                 .Key = "key_tilted_gi"
                 .Show = "flicker_color_off" 
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
                 .Action = "stop"
                 With .Tokens()
@@ -388,19 +388,19 @@ Sub CreateBasementMode()
                 .Key = "key_bumper_bg_show1"
                 .Show = "bumper_bg_show1"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("s_Bumper3_active") 
                 .Key = "key_bumper_bg_show2"
                 .Show = "bumper_bg_show2"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("s_TargetMystery5_active") 
                 .Key = "key_bumper_bg_show3"
                 .Show = "bumper_bg_show3"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
 
 
@@ -410,7 +410,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_dark_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG01"
                     .Add "color", GIColor3000k
@@ -421,7 +421,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_dark_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG01"
                     .Add "color", GIColor3000k
@@ -433,7 +433,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_chaos_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG02"
                     .Add "color", GIColor3000k
@@ -444,7 +444,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_chaos_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG02"
                     .Add "color", GIColor3000k
@@ -456,7 +456,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_clusters_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG03"
                     .Add "color", GIColor3000k
@@ -467,7 +467,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_clusters_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG03"
                     .Add "color", GIColor3000k
@@ -479,7 +479,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_shields_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG04"
                     .Add "color", GIColor3000k
@@ -490,7 +490,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_shields_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG04"
                     .Add "color", GIColor3000k
@@ -502,7 +502,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_wave_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG05"
                     .Add "color", GIColor3000k
@@ -513,7 +513,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_wave_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG05"
                     .Add "color", GIColor3000k
@@ -524,7 +524,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_wave_flash"
                 .Show = "flash_color"
                 .Speed = 20
-                .Loops = 10
+                .Loops = 9
                 With .Tokens()
                     .Add "lights", "LBG05"
                     .Add "color", GIColor3000k
@@ -535,7 +535,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_ball_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG06"
                     .Add "color", GIColor3000k
@@ -546,7 +546,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_ball_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG06"
                     .Add "color", GIColor3000k
@@ -558,7 +558,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_moon_on"
                 .Show = "flicker_color_on"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG07"
                     .Add "color", GIColor3000k
@@ -569,7 +569,7 @@ Sub CreateBasementMode()
                 .Key = "key_backglass_moon_off"
                 .Show = "flicker_color_off"
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LBG07"
                     .Add "color", GIColor3000k
@@ -583,14 +583,14 @@ Sub CreateBasementMode()
             '     .Key = "key_test_show1"
             '     .Show = "ship_saver_acquired"
             '     .Speed = 1
-            '     .Loops = 1
+            '     .Loops = 0
             '     .Priority = 20000
             ' End With
             ' With .EventName("test_show2")
             '     .Key = "key_test_show2"
             '     .Show = "shields_down"
             '     .Speed = 1
-            '     .Loops = 1
+            '     .Loops = 0
             '     .Priority = 10000
             ' End With
             '  With .EventName("test_show1") 

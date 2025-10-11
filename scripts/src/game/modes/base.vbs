@@ -479,7 +479,7 @@ Sub CreateBaseMode()
                     .Key = "key_rollover"&x&"_flash"
                     .Show = "flash_color" 
                     .Speed = 20
-                    .Loops = 4
+                    .Loops = 3
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", RolloverLightNames(x)
@@ -492,7 +492,7 @@ Sub CreateBaseMode()
                 .Key = "key_ts_mag_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 7
+                .Loops = 6
                 .Priority = 100
                 With .Tokens()
                     .Add "lights", "FL1"
@@ -506,7 +506,7 @@ Sub CreateBaseMode()
                 .Key = "key_ts_scoop_gi"
                 .Show = "flash_color" '_with_fade"
                 .Speed = 15
-                .Loops = 7
+                .Loops = 6
                 .Priority = 1000
                 With .Tokens()
                     .Add "lights", "gi22" 
@@ -520,14 +520,14 @@ Sub CreateBaseMode()
                 .Key = "key_lsling_base_show"
                 .Show = "lsling_base_show"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
             End With
             With .EventName("play_rsling_base_show")
                 .Key = "key_rsling_base_show"
                 .Show = "rsling_base_show"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
             End With
 
@@ -558,7 +558,7 @@ Sub CreateBaseMode()
                 .Key = "key_scoop_fire_blast"
                 .Show = "insert_gi_slide_diag"
                 .Speed = 2.5
-                .Loops = 1
+                .Loops = 0
                 .Priority = 2000
                 With .Tokens()
                     .Add "color", MeteorHotColor
@@ -642,7 +642,7 @@ Sub CreateBaseMode()
                 .Key = "key_pc_lsling1_show"
                 .Show = "flash_color_with_fade" 
                 .Speed = 9
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "gi04"
                     .Add "color", GIColor3000k
@@ -653,7 +653,7 @@ Sub CreateBaseMode()
                 .Key = "key_pc_lsling2_show"
                 .Show = "flash_color_with_fade" 
                 .Speed = 4
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "gi03"
                     .Add "color", GIColor3000k
@@ -664,7 +664,7 @@ Sub CreateBaseMode()
                 .Key = "key_pu_rsling1_show"
                 .Show = "flash_color_with_fade" 
                 .Speed = 9
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "gi08"
                     .Add "color", GIColor3000k
@@ -675,7 +675,7 @@ Sub CreateBaseMode()
                 .Key = "key_pu_rsling2_show"
                 .Show = "flash_color_with_fade" 
                 .Speed = 4
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "gi07"
                     .Add "color", GIColor3000k
@@ -688,14 +688,14 @@ Sub CreateBaseMode()
                 .Show = "gi_cracked" 
                 .Priority = 200
                 .Speed = 1.3
-                .Loops = 1
+                .Loops = 0
             End With
 
             With .EventName("activate_combo_command_wizard")   
                 .Key = "key_combo_wiz_ready"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", CombosColor
@@ -706,7 +706,7 @@ Sub CreateBaseMode()
                 .Key = "key_loaded_wiz_ready"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", ProtonColor

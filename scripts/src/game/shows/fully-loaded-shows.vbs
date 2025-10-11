@@ -72,7 +72,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_p_show1"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 100
@@ -83,7 +83,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_p_show2"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 100
@@ -95,7 +95,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_p_show3"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ProtonColor
                 .Add "intensity", 100
@@ -106,7 +106,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_p_show4"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ProtonColor
                 .Add "intensity", 100
@@ -118,7 +118,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_p_show5"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ProtonColor
                 .Add "intensity", 5
@@ -129,7 +129,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_p_show6"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ProtonColor
                 .Add "intensity", 5
@@ -146,7 +146,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_c_show1"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 100
@@ -157,7 +157,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_c_show2"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 100
@@ -169,7 +169,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_c_show3"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ClusterBombColor
                 .Add "intensity", 100
@@ -180,7 +180,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_c_show4"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ClusterBombColor
                 .Add "intensity", 100
@@ -192,7 +192,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_c_show5"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ClusterBombColor
                 .Add "intensity", 5
@@ -203,7 +203,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_c_show6"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ClusterBombColor
                 .Add "intensity", 5
@@ -220,7 +220,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_m_show1"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 100
@@ -231,7 +231,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_m_show2"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 100
@@ -243,7 +243,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_m_show3"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", MoonColor
                 .Add "intensity", 100
@@ -254,7 +254,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_m_show4"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", MoonColor
                 .Add "intensity", 100
@@ -266,7 +266,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_m_show5"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", MoonColor
                 .Add "intensity", 5
@@ -277,7 +277,7 @@ Sub CreateFullyLoadedShows()
             With .Shows("insert_gi_slide_midright")
             .Key = "key_flwiz_m_show6"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", MoonColor
                 .Add "intensity", 5

@@ -7,7 +7,7 @@ With CreateGlfShow("ship_saver_acquired")
         With .Shows("insert_gi_slide_down")
             .Key = "insert_saver_acquiredA"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", ShipSaveColor
                 .Add "intensity", 100
@@ -18,7 +18,7 @@ With CreateGlfShow("ship_saver_acquired")
     '     With .Shows("insert_gi_slide_down")
     '         .Key = "insert_saver_acquiredB"
     '         .Speed = 1
-    '         .Loops = 1
+    '         .Loops = 0
     '         With .Tokens()
     '             .Add "color", ShipSaveColor
     '             .Add "intensity", 30
@@ -29,7 +29,7 @@ With CreateGlfShow("ship_saver_acquired")
     '     With .Shows("insert_gi_slide_down")
     '         .Key = "insert_saver_acquiredC"
     '         .Speed = 1
-    '         .Loops = 1
+    '         .Loops = 0
     '         With .Tokens()
     '             .Add "color", ShipSaveColor
     '             .Add "intensity", 5

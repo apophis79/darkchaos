@@ -570,7 +570,7 @@ Sub CreateRightSlingShows()
             With .Shows("rsling_rotate1_cw")
                 .Key = "key_rsling_base_show1"
                 .Speed = 7
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", "ffffff"
@@ -584,7 +584,7 @@ Sub CreateRightSlingShows()
             With .Shows("flash_color")
                 .Key = "key_rsling_base_show2"
                 .Speed = 15
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "tRSling"
                     .Add "color", GIColor3000k
@@ -595,7 +595,7 @@ Sub CreateRightSlingShows()
         With .Shows("flash_color_fadeout")
             .Key = "key_DOF14"
             .Speed = 10
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", GIColor3000k
                 .Add "lights", "LBG14"

@@ -202,7 +202,7 @@ Sub CreateShieldsMode
                 .Key = "key_shields_qualified"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tShields"
                     .Add "color", ShieldsColor
@@ -213,7 +213,7 @@ Sub CreateShieldsMode
                 .Key = "key_lsling_powerup_sh"
                 .Show = "lsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ShieldsColor
                     .Add "color2", ShieldsColor
@@ -224,7 +224,7 @@ Sub CreateShieldsMode
                 .Key = "key_rsling_powerup_sh"
                 .Show = "rsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ShieldsColor
                     .Add "color2", ShieldsColor
@@ -236,14 +236,14 @@ Sub CreateShieldsMode
                 .Key = "key_shields_up"
                 .Show = "shields_up"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 1000
             End With
             With .EventName("play_shields_down")
                 .Key = "key_shields_down"
                 .Show = "shields_down"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 1000
             End With
             

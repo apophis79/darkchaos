@@ -139,7 +139,7 @@ Sub CreateProtonCannonMode
                     .Key = "key_proton"&x&"_charged"
                     .Show = "flash_color"
                     .Speed = 15
-                    .Loops = 5
+                    .Loops = 4
                     With .Tokens()
                         .Add "lights", "LPR"&x
                         .Add "color", ProtonColor
@@ -154,7 +154,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_proton_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tProton"
                     .Add "color", ProtonColor
@@ -164,7 +164,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_all_proton_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 15
+                .Loops = 14
                 .Priority = 2000
                 With .Tokens()
                     .Add "lights", "tProtonAll"
@@ -175,7 +175,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_all_proton_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 13
+                .Loops = 12
                 .Priority = 100
                 With .Tokens()
                     .Add "lights", "tInlaneGI"
@@ -186,7 +186,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_spinner_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 15
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "FL4"
                     .Add "color", ProtonColor
@@ -199,7 +199,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_lsling_powerup_pc"
                 .Show = "lsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ProtonColor
                     .Add "color2", ProtonColor
@@ -210,7 +210,7 @@ Sub CreateProtonCannonMode
                 .Key = "key_rsling_powerup_pc"
                 .Show = "rsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ProtonColor
                     .Add "color2", ProtonColor

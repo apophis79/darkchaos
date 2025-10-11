@@ -147,7 +147,7 @@ Sub CreateClusterBombMode
                 .Key = "key_cluster_panic_penalty"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tClusterAll"
                     .Add "color", MeteorWaveColor
@@ -158,7 +158,7 @@ Sub CreateClusterBombMode
                 .Key = "key_clusters_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tCluster"
                     .Add "color", ClusterBombColor
@@ -168,7 +168,7 @@ Sub CreateClusterBombMode
                 .Key = "key_cluster1_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "LCR1"
                     .Add "color", ClusterBombColor
@@ -178,7 +178,7 @@ Sub CreateClusterBombMode
                 .Key = "key_cluster2_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "LCR2"
                     .Add "color", ClusterBombColor
@@ -189,13 +189,13 @@ Sub CreateClusterBombMode
                 .Priority = 5
                 .Show = "cluster_explodes"  'the cluster color is included in the show
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("cluster_bomb_flash")
                 .Key = "key_cluster_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", ClusterBombColor
@@ -208,7 +208,7 @@ Sub CreateClusterBombMode
                 .Key = "key_lsling_powerup_cb"
                 .Show = "lsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ClusterBombColor
                     .Add "color2", ClusterBombColor
@@ -219,7 +219,7 @@ Sub CreateClusterBombMode
                 .Key = "key_rsling_powerup_cb"
                 .Show = "rsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ClusterBombColor
                     .Add "color2", ClusterBombColor
@@ -230,7 +230,7 @@ Sub CreateClusterBombMode
                 .Key = "key_cb_acquired"
                 .Show = "cluster_bomb_acquired" 
                 .Speed = 4
-                .Loops = 1
+                .Loops = 0
                 .Priority = 1000
                 With .Tokens()
                     .Add "color", ClusterBombColor

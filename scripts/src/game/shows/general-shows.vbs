@@ -246,7 +246,7 @@ Sub CreateGeneralShows()
             With .Shows("flash_color_fadeout")
                 .Key = "key_DOF8"
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", GIColor3000k
                     .Add "lights", "LBG08"
@@ -272,7 +272,7 @@ Sub CreateGeneralShows()
             With .Shows("flash_color_fadeout")
                 .Key = "key_DOF9"
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", GIColor3000k
                     .Add "lights", "LBG09"
@@ -298,7 +298,7 @@ Sub CreateGeneralShows()
             With .Shows("flash_color_fadeout")
                 .Key = "key_DOF12"
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", GIColor3000k
                     .Add "lights", "LBG12"

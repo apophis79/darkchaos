@@ -480,7 +480,7 @@ Sub CreateVictoryLapMode
             '     .BlockQueue = True
             '     .Show = "flash_color"
             '     .Speed = 1
-            '     .Loops = 7
+            '     .Loops = 6
             '     With .Tokens()
             '         .Add "lights", "tShip"
             '         .Add "color", "ffffff"
@@ -519,7 +519,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_red"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", MeteorWaveColor   'red
@@ -531,7 +531,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_orange"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", TrainingColor     'orange
@@ -543,7 +543,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_yellow"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", MoonColor         'yellow
@@ -555,7 +555,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_green"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", HealthColor1      'green
@@ -567,7 +567,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_cyan"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", ProtonColor       'cyan
@@ -579,7 +579,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_blue"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", ShieldsColor      'blue
@@ -591,7 +591,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_magenta"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", ClusterBombColor  'magenta
@@ -603,7 +603,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_bumper"&x&"_show_white"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", TimewarpColor 'white
@@ -617,7 +617,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_red"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", MeteorWaveColor
                     End With    
@@ -628,7 +628,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_orange"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", TrainingColor
                     End With    
@@ -639,7 +639,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_yellow"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", MoonColor
                     End With    
@@ -650,7 +650,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_green"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", HealthColor1
                     End With    
@@ -661,7 +661,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_cyan"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", ProtonColor
                     End With    
@@ -672,7 +672,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_blue"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", ShieldsColor
                     End With    
@@ -683,7 +683,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_magenta"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", ClusterBombColor
                     End With    
@@ -694,7 +694,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_firework"&x&"_show_white"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", TimewarpColor
                     End With    
@@ -707,7 +707,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_flasher_show_"&x
                     .Show = "flash_color" 
                     .Speed = 20
-                    .Loops = 3
+                    .Loops = 2
                     With .Tokens()
                         .Add "lights", "tFlasherU"
                         .Add "color", RainbowColors(x-1)
@@ -722,7 +722,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_gi0"&x&"_show1"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi0"&x
@@ -737,7 +737,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_gi"&x&"_show1"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi"&x
@@ -754,7 +754,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_gi0"&x&"_show2"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi0"&x
@@ -769,7 +769,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_gi"&x&"_show2"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi"&x
@@ -786,7 +786,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_gi0"&x&"_show3"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi0"&x
@@ -801,7 +801,7 @@ Sub CreateVictoryLapMode
                     .Key = "key_v_gi"&x&"_show3"
                     .Show = "flash_color_fadeout" 
                     .Speed = 5
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 1000
                     With .Tokens()
                         .Add "lights", "gi"&x

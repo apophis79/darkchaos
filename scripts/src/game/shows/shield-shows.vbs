@@ -204,7 +204,7 @@ With CreateGlfShow("shields_up")
     With .Shows("flash_color_with_fade")
       .Key = "key_shield_up1"
       .Speed = 10
-      .Loops = 5
+      .Loops = 4
       With .Tokens()
           .Add "lights", "tWiz"
           .Add "color", "ffffff"
@@ -216,7 +216,7 @@ With CreateGlfShow("shields_up")
     With .Shows("flash_color_with_fade")
       .Key = "key_shield_up2"
       .Speed = 10
-      .Loops = 5
+      .Loops = 4
       With .Tokens()
           .Add "lights", "LLO"
           .Add "color", "ffffff"
@@ -228,7 +228,7 @@ With CreateGlfShow("shields_up")
     With .Shows("flash_color_with_fade")
       .Key = "key_shield_up3"
       .Speed = 10
-      .Loops = 5
+      .Loops = 4
       With .Tokens()
           .Add "lights", "LRO"
           .Add "color", "ffffff"
@@ -241,7 +241,7 @@ With CreateGlfShow("shields_up")
     With .Shows("shields_up_interior")
       .Key = "key_shield_up4"
       .Speed = 1
-      .Loops = 2
+      .Loops = 1
       With .Tokens()
           .Add "intensity", 100
           .Add "color", ShieldsColor
@@ -258,7 +258,7 @@ With CreateGlfShow("shields_down")
     With .Shows("flash_color")
       .Key = "key_shield_down1"
       .Speed = 15
-      .Loops = 9
+      .Loops = 8
       With .Tokens()
           .Add "lights", "tWiz"
           .Add "color", "ffffff"
@@ -269,7 +269,7 @@ With CreateGlfShow("shields_down")
     With .Shows("flash_color")
       .Key = "key_shield_down2"
       .Speed = 15
-      .Loops = 9
+      .Loops = 8
       With .Tokens()
           .Add "lights", "LLO"
           .Add "color", "ffffff"
@@ -280,7 +280,7 @@ With CreateGlfShow("shields_down")
     With .Shows("flash_color")
       .Key = "key_shield_down3"
       .Speed = 15
-      .Loops = 9
+      .Loops = 8
       With .Tokens()
           .Add "lights", "LRO"
           .Add "color", "ffffff"
@@ -292,7 +292,7 @@ With CreateGlfShow("shields_down")
     With .Shows("shields_down_interior")
       .Key = "key_shield_down4"
       .Speed = 1
-      .Loops = 1
+      .Loops = 0
       With .Tokens()
           .Add "intensity", 100
           .Add "color", ShieldsColor

@@ -329,13 +329,13 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_asteroid_hit"
                 .Show = "asteroid_hit" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("asteroid_flash3")   
                 .Key = "key_asteroid_flash3"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", GIColor3000k
@@ -345,7 +345,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_asteroid_flicker1"
                 .Show = "flicker_color"
                 .Speed = 5
-                .Loops = 1
+                .Loops = 0
                 .EventsWhenCompleted = Array("update_asteroid_glow")
                 With .Tokens()
                     .Add "lights", "tAsteroid"
@@ -356,7 +356,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_asteroid_flicker2"
                 .Show = "flicker_color"
                 .Speed = 8
-                .Loops = 2
+                .Loops = 1
                 .EventsWhenCompleted = Array("update_asteroid_glow")
                 With .Tokens()
                     .Add "lights", "tAsteroid"
@@ -367,7 +367,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_asteroid_flicker3"
                 .Show = "flicker2_color"
                 .Speed = 4
-                .Loops = 1
+                .Loops = 0
                 .EventsWhenCompleted = Array("update_asteroid_glow")
                 With .Tokens()
                     .Add "lights", "tAsteroid"
@@ -378,7 +378,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_asteroid_flicker4"
                 .Show = "flicker2_color"
                 .Speed = 7
-                .Loops = 2
+                .Loops = 1
                 .EventsWhenCompleted = Array("update_asteroid_glow")
                 With .Tokens()
                     .Add "lights", "tAsteroid"
@@ -390,7 +390,7 @@ Sub CreateFinalWaveWizardMode
             With .EventName("asteroid_destroyed")
                 .Key = "key_asteroid_explodes_show"
                 .Show = "asteroid_explodes_show" 
-                .Loops = 1
+                .Loops = 0
             End With
 
 
@@ -400,7 +400,7 @@ Sub CreateFinalWaveWizardMode
                     .Key = "key_flash_gi0"&x
                     .Show = "flash_color_fadeout" 
                     .Speed = 3
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", GIColor3000k
@@ -412,7 +412,7 @@ Sub CreateFinalWaveWizardMode
                     .Key = "key_flash_gi"&x
                     .Show = "flash_color_fadeout" 
                     .Speed = 3
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", GIColor3000k
@@ -423,7 +423,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_flash_giapron"
                 .Show = "flash_color_fadeout" 
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "giapron"
                     .Add "color", GIColor3000k
@@ -436,7 +436,7 @@ Sub CreateFinalWaveWizardMode
                     .Key = "key_meteor"&x&"_explodes"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", "ffffff"
                     End With    
@@ -445,7 +445,7 @@ Sub CreateFinalWaveWizardMode
                     .Key = "key_meteor"&x&"_blink"
                     .Show = "flash_color"
                     .Speed = 22
-                    .Loops = 4
+                    .Loops = 3
                     With .Tokens()
                         .Add "lights", "LMet"&x
                         .Add "color", "ff1100"
@@ -457,7 +457,7 @@ Sub CreateFinalWaveWizardMode
                 .Key = "key_final_flash3"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 6
+                .Loops = 5
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", MeteorFlashColor
@@ -470,7 +470,7 @@ Sub CreateFinalWaveWizardMode
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 2000
                     With .Tokens()
                         .Add "lights", "LB"&x

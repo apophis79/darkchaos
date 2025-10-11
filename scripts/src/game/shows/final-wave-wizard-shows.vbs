@@ -24,7 +24,7 @@ With CreateGlfShow("asteroid_hit_single")
       "LM4|(intensity)|000000", _
       "LM2|(intensity)|(color)" _
       )
-  End With
+  End With 
   With .AddStep(0.10000, Null, Null)
     .Lights = Array( _
       "gi20|(intensity)|000000", _
@@ -264,7 +264,7 @@ With CreateGlfShow("asteroid_hit")
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single1"
       .Speed = 1.5
-      .Loops = 1
+      .Loops = 0
       .Priority = 1000
       With .Tokens()
           .Add "color", "ffffff"
@@ -276,7 +276,7 @@ With CreateGlfShow("asteroid_hit")
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single2"
       .Speed = 1.5
-      .Loops = 1
+      .Loops = 0
       .Priority = 1000
       With .Tokens()
           .Add "color", MeteorWarmColor
@@ -288,7 +288,7 @@ With CreateGlfShow("asteroid_hit")
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single3"
       .Speed = 1.5
-      .Loops = 1
+      .Loops = 0
       .Priority = 1000
       With .Tokens()
           .Add "color", MeteorHotColor
@@ -306,7 +306,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld1"
       .Speed = 1.5
-      .Loops = 3
+      .Loops = 2
       .Priority = 20000
       With .Tokens()
           .Add "color1", "ffffff"
@@ -321,7 +321,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld2"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       With .Tokens()
           .Add "lights", "tAsteroid"
           .Add "color", "ffffff"
@@ -333,7 +333,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("asteroid_hit")
       .Key = "key_ass_xpld3"
       .Speed = 1
-      .Loops = 1
+      .Loops = 0
       .Priority = 20000
     End With
   End With
@@ -342,7 +342,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld4"
       .Speed = 1.5
-      .Loops = 3
+      .Loops = 2
       .Priority = 20000
       With .Tokens()
           .Add "color1", "000000"
@@ -357,7 +357,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld5"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       With .Tokens()
           .Add "lights", "tAsteroid"
           .Add "color", "aaaaaa"
@@ -369,7 +369,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("asteroid_hit_single")
       .Key = "key_ass_xpld6"
       .Speed = 1.5
-      .Loops = 1
+      .Loops = 0
       .Priority = 20000
       With .Tokens()
           .Add "color", MeteorWarmColor
@@ -382,7 +382,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("insert_swap2")
       .Key = "key_ass_xpld7"
       .Speed = 1.5
-      .Loops = 4
+      .Loops = 3
       .Priority = 20000
       With .Tokens()
           .Add "color1", "000000"
@@ -396,7 +396,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld8"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       With .Tokens()
           .Add "lights", "tAsteroid"
           .Add "color", "555555"
@@ -408,7 +408,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("asteroid_hit_single")
       .Key = "key_ass_xpld9"
       .Speed = 1.5
-      .Loops = 1
+      .Loops = 0
       .Priority = 20000
       With .Tokens()
           .Add "color", MeteorHotColor
@@ -421,7 +421,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("flicker_color_off")
       .Key = "key_ass_xpld8"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       With .Tokens()
           .Add "lights", "tAsteroid"
           .Add "color", "111111"
@@ -433,7 +433,7 @@ With CreateGlfShow("asteroid_explodes_show")
     With .Shows("asteroid_hit_single")
       .Key = "key_ass_xpld9"
       .Speed = 1.5
-      .Loops = 1
+      .Loops = 0
       .Priority = 20000
       With .Tokens()
           .Add "color", MeteorHotColor

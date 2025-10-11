@@ -8,7 +8,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("insert_swap2")
       .Key = "key_cb_xpl_inserts"
       .Speed = 1.5
-      .Loops = 4
+      .Loops = 3
       .Priority = 10000
       With .Tokens()
           .Add "color1", "ffffff"
@@ -22,7 +22,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi1a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi04"
@@ -34,7 +34,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi1"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi04"
@@ -47,7 +47,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi2a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi07"
@@ -59,7 +59,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi2"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi07"
@@ -72,7 +72,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi3a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi10"
@@ -84,7 +84,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi3"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi10"
@@ -97,7 +97,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi4a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi09"
@@ -109,7 +109,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi4"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi09"
@@ -122,7 +122,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi5a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi11"
@@ -134,7 +134,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi5"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi11"
@@ -147,7 +147,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi6a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi20"
@@ -159,7 +159,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi6"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi20"
@@ -172,7 +172,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi7a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi13"
@@ -184,7 +184,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi7"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi13"
@@ -197,7 +197,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi8a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi03"
@@ -209,7 +209,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi8"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi03"
@@ -222,7 +222,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi9a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi08"
@@ -234,7 +234,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi9"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi08"
@@ -247,7 +247,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi10a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi19"
@@ -259,7 +259,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi10"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi19"
@@ -272,7 +272,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi11a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi02"
@@ -284,7 +284,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi11"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi02"
@@ -297,7 +297,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi12a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi12"
@@ -309,7 +309,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi12"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi12"
@@ -322,7 +322,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi13a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi05"
@@ -334,7 +334,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi13"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi05"
@@ -347,7 +347,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi14a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi22"
@@ -359,7 +359,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi14"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi22"
@@ -372,7 +372,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color")
       .Key = "key_cb_xpl_gi15a"
       .Speed = 15
-      .Loops = 3
+      .Loops = 2
       .Priority = 10010
       With .Tokens()
           .Add "lights", "gi20"
@@ -384,7 +384,7 @@ With CreateGlfShow("cluster_explodes")
     With .Shows("flash_color_fadeout")
       .Key = "key_cb_xpl_gi15"
       .Speed = 4
-      .Loops = 1
+      .Loops = 0
       .Priority = 10000
       With .Tokens()
           .Add "lights", "gi20"

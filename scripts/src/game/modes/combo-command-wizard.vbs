@@ -297,7 +297,7 @@ Sub CreateComboCommandWizardMode
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 2000
                     With .Tokens()
                         .Add "lights", "LB"&x
@@ -310,7 +310,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_bumpers_show1"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tBumper"
                     .Add "color", "555555"
@@ -320,7 +320,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_bumper1_show2"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LB1"
                     .Add "color", "555555"
@@ -330,7 +330,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_bumper2_show2"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LB2"
                     .Add "color", "555555"
@@ -340,7 +340,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_bumper3_show2"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "LB3"
                     .Add "color", "555555"
@@ -350,7 +350,7 @@ Sub CreateComboCommandWizardMode
             '     .Key = "key_bumper4_show2"
             '     .Show = "flash_color_fadeout" 
             '     .Speed = 10
-            '     .Loops = 1
+            '     .Loops = 0
             '     With .Tokens()
             '         .Add "lights", "LB4"
             '         .Add "color", "555555"
@@ -363,7 +363,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase1_show"
                 .Show = "insert_swap2" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -375,7 +375,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase1_show"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", CombosColor
@@ -388,7 +388,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show1"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -401,7 +401,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show1"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", MeteorWaveColor
@@ -412,7 +412,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show2"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -425,7 +425,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show2"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", TrainingColor
@@ -436,7 +436,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show3"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -449,7 +449,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show3"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", MoonColor
@@ -460,7 +460,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show4"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -473,7 +473,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show4"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", HealthColor1
@@ -484,7 +484,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show5"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -497,7 +497,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show5"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", ProtonColor
@@ -508,7 +508,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show6"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -521,7 +521,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show6"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", ShieldsColor
@@ -532,7 +532,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show7"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -545,7 +545,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show7"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", ShipSaveColor
@@ -556,7 +556,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_shot_phase2_show8"
                 .Show = "insert_swap3" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", "000000"
@@ -569,7 +569,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_flash_phase2_show8"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", ClusterBombColor
@@ -581,7 +581,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_sjp1_show1"
                 .Show = "insert_gi_spin_center"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "intensity", 100
@@ -592,7 +592,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_sjp1_show2"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", CombosColor
@@ -604,7 +604,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_sjp2_show1"
                 .Show = "insert_gi_spin_center"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 .Priority = 1000
                 .EventsWhenCompleted = Array("ccwiz_finalize")
                 With .Tokens()
@@ -616,7 +616,7 @@ Sub CreateComboCommandWizardMode
                 .Key = "key_ccwiz_sjp2_show2"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", MeteorWaveColor

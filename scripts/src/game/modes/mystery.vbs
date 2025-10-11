@@ -204,7 +204,7 @@ Sub CreateMysteryMode
                 .Key = "key_mystery_qualified"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tMystery"
                     .Add "color", MysteryColor
@@ -215,7 +215,7 @@ Sub CreateMysteryMode
                 .Key = "key_loaded_wiz_ready"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", MysteryColor
@@ -226,7 +226,7 @@ Sub CreateMysteryMode
                 .Key = "key_mystery_show"
                 .Show = "gi_spin1_cw"
                 .Speed = 1
-                .Loops = 2
+                .Loops = 1
                 .EventsWhenCompleted = Array("restart_qualify_mystery")
                 With .Tokens()
                     .Add "intensity", 100

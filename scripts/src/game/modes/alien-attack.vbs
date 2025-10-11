@@ -340,13 +340,13 @@ Sub CreateAlienAttackMode
                 .Priority = 15
                 .Show = "earth_hit"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("alien_hit_show")
                 .Key = "key_alien_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", AlienFlashColor
@@ -357,7 +357,7 @@ Sub CreateAlienAttackMode
                 .Key = "key_alien_flash2"
                 .Show = "insert_swap2" 
                 .Speed = 1.5
-                .Loops = 3
+                .Loops = 2
                 .Priority = 1000
                 With .Tokens()
                     .Add "color1", DoubleScoringColor

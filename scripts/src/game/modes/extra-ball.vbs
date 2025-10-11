@@ -53,7 +53,7 @@ Sub CreateExtraBallMode
                 .Key = "key_eb_show"
                 .Show = "eb_show"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
                 .EventsWhenCompleted = Array("eb_complete")
             End With

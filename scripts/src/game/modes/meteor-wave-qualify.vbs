@@ -118,7 +118,7 @@ Sub CreateMeteorWaveQualifyMode
                 .Key = "key_meteor_wave_alert_show1"
                 .Show = "lsling_swap_2_2_b"
                 .Speed = 1
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "color1", "ff0000"
                     .Add "color2", "ff9900"
@@ -129,7 +129,7 @@ Sub CreateMeteorWaveQualifyMode
                 .Key = "key_meteor_wave_alert_show2"
                 .Show = "rsling_swap_2_2_a"
                 .Speed = 1
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "color1", "ff0000"
                     .Add "color2", "ff9900"
@@ -140,7 +140,7 @@ Sub CreateMeteorWaveQualifyMode
                 .Key = "key_meteor_wave_alert_show3"
                 .Show = "lsling_swap_2_2_a"
                 .Speed = 1
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "color1", "ff0000"
                     .Add "color2", "ff9900"
@@ -151,7 +151,7 @@ Sub CreateMeteorWaveQualifyMode
                 .Key = "key_meteor_wave_alert_show4"
                 .Show = "rsling_swap_2_2_b"
                 .Speed = 1
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "color1", "ff0000"
                     .Add "color2", "ff9900"
@@ -162,7 +162,7 @@ Sub CreateMeteorWaveQualifyMode
                 .Key = "key_ts_mag_gi"
                 .Show = "flash_color_fadeout" 
                 .Speed = 4.6
-                .Loops = 3
+                .Loops = 2
                 .Priority = 100
                 With .Tokens()
                     .Add "lights", "GI"
@@ -197,7 +197,7 @@ Sub CreateMeteorWaveQualifyMode
             '     .Show = "gi_cracked" 
             '     .Priority = 10
             '     .Speed = 1.3
-            '     .Loops = 1
+            '     .Loops = 0
             ' End With
         End With
 

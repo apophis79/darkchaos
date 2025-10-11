@@ -64,7 +64,7 @@ Sub CreateTimewarpMode
                 .Key = "key_timewarp_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tTimewarp"
                     .Add "color", TimewarpColor
@@ -75,7 +75,7 @@ Sub CreateTimewarpMode
                 .Priority = 10
                 .Show = "timewarp"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
         End With
 

@@ -94,7 +94,7 @@ Sub CreateBonusMode
                 .Key = "key_tally1_show"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tWaves"
                     .Add "color", MeteorWaveColor
@@ -104,7 +104,7 @@ Sub CreateBonusMode
                 .Key = "key_tally2_show"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "LX"
                     .Add "color", TrainingColor
@@ -114,7 +114,7 @@ Sub CreateBonusMode
                 .Key = "key_tally3_show"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tClusterAll"
                     .Add "color", ClusterBombColor
@@ -124,7 +124,7 @@ Sub CreateBonusMode
                 .Key = "key_tally4_show"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tMoonAll"
                     .Add "color", MoonColor
@@ -134,7 +134,7 @@ Sub CreateBonusMode
                 .Key = "key_tally5_show"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tProtonAll"
                     .Add "color", ProtonColor

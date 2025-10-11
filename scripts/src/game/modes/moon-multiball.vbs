@@ -97,7 +97,7 @@ Sub CreateMoonMultiballMode
                 .Key = "key_launch_panic_penalty"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tMoonAll"
                     .Add "color", MeteorWaveColor

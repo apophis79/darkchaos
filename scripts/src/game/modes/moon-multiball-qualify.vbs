@@ -225,13 +225,13 @@ Sub CreateMoonMultiballQualifyMode
                 .Show = "moon_launch"
                 .Priority = 50
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("qualify_lock_on_complete")
                 .Key = "key_moon_qualified"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 7
+                .Loops = 6
                 With .Tokens()
                     .Add "lights", "tMoon"
                     .Add "color", MoonColor
@@ -242,7 +242,7 @@ Sub CreateMoonMultiballQualifyMode
                 .Key = "key_lsling_powerup_mm"
                 .Show = "lsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", MoonColor
                     .Add "color2", MoonColor
@@ -253,7 +253,7 @@ Sub CreateMoonMultiballQualifyMode
                 .Key = "key_rsling_powerup_mm"
                 .Show = "rsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", MoonColor
                     .Add "color2", MoonColor
@@ -264,7 +264,7 @@ Sub CreateMoonMultiballQualifyMode
                 .Key = "key_mm_acquired"
                 .Show = "moon_missile_acquired" 
                 .Speed = 4
-                .Loops = 1
+                .Loops = 0
                 .Priority = 1000
                 With .Tokens()
                     .Add "color", MoonColor
@@ -275,7 +275,7 @@ Sub CreateMoonMultiballQualifyMode
                 .Key = "key_moon_launch_gate"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 9
+                .Loops = 8
                 With .Tokens()
                     .Add "lights", "LL"
                     .Add "color", MeteorWaveColor

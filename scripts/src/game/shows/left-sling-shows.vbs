@@ -571,7 +571,7 @@ Sub CreateLeftSlingShows()
             With .Shows("lsling_rotate1_ccw")
                 .Key = "key_lsling_base_show1"
                 .Speed = 7
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "intensity", 100
                     .Add "color", "ffffff"
@@ -585,7 +585,7 @@ Sub CreateLeftSlingShows()
             With .Shows("flash_color")
                 .Key = "key_lsling_base_show2"
                 .Speed = 15
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "tLSling"
                     .Add "color", GIColor3000k
@@ -596,7 +596,7 @@ Sub CreateLeftSlingShows()
             With .Shows("flash_color_fadeout")
                 .Key = "key_DOF16"
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "color", GIColor3000k
                     .Add "lights", "LBG16"

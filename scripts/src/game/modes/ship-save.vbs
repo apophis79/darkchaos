@@ -98,7 +98,7 @@ Sub CreateShipSaveMode
                 .Key = "key_ship_saves_charged"
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tSaver"
                     .Add "color", ShipSaveColor
@@ -109,7 +109,7 @@ Sub CreateShipSaveMode
                 .Key = "key_lsling_powerup_sa"
                 .Show = "lsling_rotate2_cw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ShipSaveColor
                     .Add "color2", ShipSaveColor
@@ -120,7 +120,7 @@ Sub CreateShipSaveMode
                 .Key = "key_rsling_powerup_sa"
                 .Show = "rsling_rotate2_ccw"
                 .Speed = 2
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "color1", ShipSaveColor
                     .Add "color2", ShipSaveColor
@@ -131,7 +131,7 @@ Sub CreateShipSaveMode
                 .Key = "key_saver_acquired"
                 .Show = "ship_saver_acquired" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 1000
             End With
         End With

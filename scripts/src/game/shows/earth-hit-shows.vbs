@@ -13,7 +13,7 @@ With CreateGlfShow("earth_hit_bg")
       With .Shows("flash_color_fadeout")
           .Key = "key_DOF2"
           .Speed = 10
-          .Loops = 1
+          .Loops = 0
           With .Tokens()
               .Add "color", GIColor3000k
               .Add "lights", "LBG02"
@@ -29,7 +29,7 @@ With CreateGlfShow("earth_hit_bg")
       With .Shows("flash_color_fadeout")
           .Key = "key_DOF1"
           .Speed = 10
-          .Loops = 1
+          .Loops = 0
           With .Tokens()
               .Add "color", GIColor3000k
               .Add "lights", "LBG01"
@@ -56,7 +56,7 @@ With CreateGlfShow("earth_hit")
         With .Shows("insert_gi_slide_up")
             .Key = "insert_earth_hit_A"
             .Speed = 1
-            .Loops = 1
+            .Loops = 0
             With .Tokens()
                 .Add "color", MeteorHotColor
                 .Add "intensity", 100
@@ -67,7 +67,7 @@ With CreateGlfShow("earth_hit")
     '     With .Shows("insert_gi_slide_up")
     '         .Key = "insert_earth_hit_B"
     '         .Speed = 1
-    '         .Loops = 1
+    '         .Loops = 0
     '         With .Tokens()
     '             .Add "color", MeteorHotColor
     '             .Add "intensity", 10

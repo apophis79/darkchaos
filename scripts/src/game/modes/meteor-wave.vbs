@@ -407,7 +407,7 @@ Sub CreateMeteorWaveMode
                     .Key = "key_meteor"&x&"_explodes"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", "ffffff"
                     End With    
@@ -416,7 +416,7 @@ Sub CreateMeteorWaveMode
                     .Key = "key_meteor"&x&"_blink"
                     .Show = "flash_color"
                     .Speed = 22
-                    .Loops = 4
+                    .Loops = 3
                     With .Tokens()
                         .Add "lights", "LMet"&x
                         .Add "color", ProtonColor
@@ -426,7 +426,7 @@ Sub CreateMeteorWaveMode
                     .Key = "key_meteor"&x&"_proton_hit"
                     .Show = "meteor"&x&"_explodes"
                     .Speed = 1
-				    .Loops = 1
+				    .Loops = 0
                     With .Tokens()
                         .Add "color", ProtonColor
                     End With    
@@ -485,7 +485,7 @@ Sub CreateMeteorWaveMode
                 .Priority = 10
                 .Show = "flash_color"
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tBlast"
                     .Add "color", ProtonColor
@@ -495,7 +495,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_meteor1_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", MeteorFlashColor
@@ -506,7 +506,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_meteor2_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL2"
                     .Add "color", MeteorFlashColor
@@ -517,7 +517,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_meteor3_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", MeteorFlashColor
@@ -528,7 +528,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_meteor4_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL1"
                     .Add "color", MeteorFlashColor
@@ -539,7 +539,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_proton_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "FL3"
                     .Add "color", ProtonColor
@@ -552,21 +552,21 @@ Sub CreateMeteorWaveMode
                 .Priority = 15
                 .Show = "earth_hit"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("earth_bg")
                 .Key = "key_earth_bg"
                 .Priority = 15
                 .Show = "earth_hit_bg"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("earth_flash")
                 .Key = "key_earth_flash"
                 .Priority = 15
                 .Show = "flash_color"
                 .Speed = 15
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", EarthHitColor
@@ -576,7 +576,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_mw_lsing_earth_hit"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 6
+                .Loops = 5
                 With .Tokens()
                     .Add "lights", "tFL5"
                     .Add "color", EarthHitColor
@@ -586,7 +586,7 @@ Sub CreateMeteorWaveMode
                 .Key = "key_mw_rsling_earth_hit"
                 .Show = "flash_color"
                 .Speed = 13
-                .Loops = 6
+                .Loops = 5
                 With .Tokens()
                     .Add "lights", "tFL6"
                     .Add "color", EarthHitColor
@@ -596,7 +596,7 @@ Sub CreateMeteorWaveMode
             '     .Key = "key_mw_lsing_earth_hit"
             '     .Show = "lsling_swap_2_2_b"
             '     .Speed = 2
-            '     .Loops = 7
+            '     .Loops = 6
             '     With .Tokens()
             '         .Add "color1", "ff1100"
             '         .Add "color2", "001122"
@@ -607,7 +607,7 @@ Sub CreateMeteorWaveMode
             '     .Key = "key_mw_rsling_earth_hit"
             '     .Show = "rsling_swap_2_2_b"
             '     .Speed = 2
-            '     .Loops = 7
+            '     .Loops = 6
             '     With .Tokens()
             '         .Add "color1", "ff1100"
             '         .Add "color2", "001122"

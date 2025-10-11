@@ -102,7 +102,7 @@ Sub CreateNukeMode
                 .Key = "key_acquire_nuke_show1"
                 .Show = "cluster_bomb_acquired" 
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 .Priority = 4000
                 With .Tokens()
                     .Add "color", MeteorHotColor
@@ -114,7 +114,7 @@ Sub CreateNukeMode
                 .Key = "key_acquire_nuke_show2"
                 .Show = "moon_missile_acquired" 
                 .Speed = 3
-                .Loops = 1
+                .Loops = 0
                 .Priority = 4000
                 With .Tokens()
                     .Add "color", MeteorHotColor
@@ -127,7 +127,7 @@ Sub CreateNukeMode
                 .Key = "key_nuke_explodes"
                 .Show = "nuke_explodes" 
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .EventsWhenCompleted = Array("deactivate_nuke")
             End With
 

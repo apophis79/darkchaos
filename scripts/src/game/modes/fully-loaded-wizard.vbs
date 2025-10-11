@@ -481,7 +481,7 @@ Sub CreateFullyLoadedWizardMode
                     .Key = "key_bumper"&x&"_flash"
                     .Show = "flash_color_with_fade" 
                     .Speed = 15
-                    .Loops = 1
+                    .Loops = 0
                     .Priority = 2000
                     With .Tokens()
                         .Add "lights", "LB"&x
@@ -494,7 +494,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_bumpers_show1"
                 .Show = "flash_color_fadeout" 
                 .Speed = 10
-                .Loops = 1
+                .Loops = 0
                 With .Tokens()
                     .Add "lights", "tBumper"
                     .Add "color", "555555"
@@ -506,7 +506,7 @@ Sub CreateFullyLoadedWizardMode
                     .Key = "key_bumper"&x&"_show2p"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", ProtonColor
@@ -518,7 +518,7 @@ Sub CreateFullyLoadedWizardMode
                     .Key = "key_bumper"&x&"_show2c"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", ClusterBombColor
@@ -530,7 +530,7 @@ Sub CreateFullyLoadedWizardMode
                     .Key = "key_bumper"&x&"_show2m"
                     .Show = "flash_color_fadeout" 
                     .Speed = 10
-                    .Loops = 1
+                    .Loops = 0
                     With .Tokens()
                         .Add "lights", "LB"&x
                         .Add "color", MoonColor
@@ -545,7 +545,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_sjp1_show1"
                 .Show = "insert_gi_spin_center"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 .Priority = 1000
                 With .Tokens()
                     .Add "intensity", 100
@@ -556,7 +556,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_sjp1_show2"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", MoonColor
@@ -568,7 +568,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_sjp2_show1"
                 .Show = "insert_gi_spin_center"
                 .Speed = 2
-                .Loops = 4
+                .Loops = 3
                 .Priority = 1000
                 .EventsWhenCompleted = Array("flwiz_finalize")
                 With .Tokens()
@@ -580,7 +580,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_sjp2_show2"
                 .Show = "flash_color" 
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tFlasher"
                     .Add "color", MeteorWaveColor
@@ -593,7 +593,7 @@ Sub CreateFullyLoadedWizardMode
                 .Priority = 10
                 .Show = "flash_color"
                 .Speed = 20
-                .Loops = 5
+                .Loops = 4
                 With .Tokens()
                     .Add "lights", "tBlast"
                     .Add "color", ProtonColor
@@ -603,7 +603,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_proton_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 3
+                .Loops = 2
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", ProtonColor
@@ -614,7 +614,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_proton_show"
                 .Show = "flwiz_proton_show"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
             End With
 
@@ -624,13 +624,13 @@ Sub CreateFullyLoadedWizardMode
                 .Priority = 5
                 .Show = "cluster_explodes"  'the cluster color is included in the show
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("cluster_bomb_flash")
                 .Key = "key_flwiz_cluster_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 20
-                .Loops = 4
+                .Loops = 3
                 With .Tokens()
                     .Add "lights", "tFlasherU"
                     .Add "color", ClusterBombColor
@@ -641,7 +641,7 @@ Sub CreateFullyLoadedWizardMode
                 .Key = "key_flwiz_cluster_show"
                 .Show = "flwiz_cluster_show"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
             End With
 
@@ -651,13 +651,13 @@ Sub CreateFullyLoadedWizardMode
                 .Show = "moon_launch"
                 .Priority = 50
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
             End With
             With .EventName("play_flwiz_moon_show")
                 .Key = "key_flwiz_moon_show"
                 .Show = "flwiz_moon_show"
                 .Speed = 1
-                .Loops = 1
+                .Loops = 0
                 .Priority = 10000
             End With
 
