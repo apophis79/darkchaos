@@ -287,8 +287,7 @@ With CreateGlfShow("shields_down")
       End With
     End With
   End With
-
-  With .AddStep(0.03, Null, Null)
+  With .AddStep(0.04, Null, Null)
     With .Shows("shields_down_interior")
       .Key = "key_shield_down4"
       .Speed = 1
