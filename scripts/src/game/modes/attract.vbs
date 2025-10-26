@@ -114,6 +114,7 @@ Sub CreateAttractMode()
                 .ForceAll = True
                 .ForceDifferent = True
             End With
+            .Scope = "Machine"
         End With
 
         With .DOFPlayer()
