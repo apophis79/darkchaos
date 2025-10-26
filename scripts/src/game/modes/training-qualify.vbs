@@ -188,12 +188,12 @@ Sub CreateTrainingQualifyMode
         With .SegmentDisplayPlayer()
             With .EventName("training_shots_completed")
                 With .Display("player2")
-                    .Text = """START"""
+                    .Text = "START"
                     .Flashing = "all"
                     .Expire = 2000
                 End With
                 With .Display("player3")
-                    .Text = """TRAINER"""
+                    .Text = "TRAINER"
                     .Flashing = "all"
                     .Expire = 2000
                 End With

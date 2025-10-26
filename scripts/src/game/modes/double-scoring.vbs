@@ -95,21 +95,21 @@ Sub CreateDoubleScoringMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_double_scoring_started")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = DoubleScoringShowLength
                 End With
                 With .Display("player2")
-                    .Text = """ DOUBLE """
+                    .Text = " DOUBLE "
                     .Flashing = "all"
                     .Expire = DoubleScoringShowLength
                 End With
                 With .Display("player3")
-                    .Text = """SCORING"""
+                    .Text = "SCORING"
                     .Flashing = "all"
                     .Expire = DoubleScoringShowLength
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = DoubleScoringShowLength
                 End With
             End With

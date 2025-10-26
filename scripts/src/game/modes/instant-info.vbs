@@ -73,7 +73,7 @@ Sub CreateInstantInfoMode
             With .EventName("info_ball_num{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player3")
                     .key = "p3_ball_num"
-                    .Text = """BALL"""
+                    .Text = "BALL"
                     .Expire = 2000
                     .Priority = 20000
                 End With
@@ -88,7 +88,7 @@ Sub CreateInstantInfoMode
             With .EventName("info_ball_num{current_player.number == 3 or current_player.number == 4}")
                 With .Display("player1")
                     .key = "p1_ball_num"
-                    .Text = """BALL"""
+                    .Text = "BALL"
                     .Expire = 2000
                     .Priority = 20000
                 End With
@@ -104,7 +104,7 @@ Sub CreateInstantInfoMode
             With .EventName("info_trained_num{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player3")
                     .key = "p3_ball_num"
-                    .Text = """TRAINED"""
+                    .Text = "TRAINED"
                     .Expire = 2000
                     .Priority = 20010
                 End With
@@ -119,7 +119,7 @@ Sub CreateInstantInfoMode
             With .EventName("info_trained_num{current_player.number == 3 or current_player.number == 4}")
                 With .Display("player1")
                     .key = "p1_ball_num"
-                    .Text = """TRAINED"""
+                    .Text = "TRAINED"
                     .Expire = 2000
                     .Priority = 20010
                 End With
@@ -135,7 +135,7 @@ Sub CreateInstantInfoMode
             With .EventName("info_eb_num{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player3")
                     .key = "p3_ball_num"
-                    .Text = """EB NUM"""
+                    .Text = "EB NUM"
                     .Expire = 2000
                     .Priority = 20020
                 End With
@@ -150,7 +150,7 @@ Sub CreateInstantInfoMode
             With .EventName("info_eb_num{current_player.number == 3 or current_player.number == 4}")
                 With .Display("player1")
                     .key = "p1_ball_num"
-                    .Text = """EB NUM"""
+                    .Text = "EB NUM"
                     .Expire = 2000
                     .Priority = 20020
                 End With

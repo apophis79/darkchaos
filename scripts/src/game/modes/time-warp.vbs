@@ -124,7 +124,7 @@ Sub CreateTimewarpMode
                     .Expire = TimeWarpPauseTicks*TimeWarpTickInterval
                 End With
                 With .Display("player4")
-                    .Text = """WARPING"""
+                    .Text = "WARPING"
                     .Flashing = "all"
                     .Expire = 2000
                 End With

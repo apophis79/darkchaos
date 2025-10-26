@@ -386,61 +386,61 @@ Sub CreateFullyLoadedWizardMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_fully_loaded_wizard_started")
                 With .Display("player1")
-                    .Text = """ FULLY """
+                    .Text = " FULLY "
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """ LOADED """
+                    .Text = " LOADED "
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """ WIZARD """
+                    .Text = " WIZARD "
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """  MODE  """
+                    .Text = "  MODE  "
                     .Expire = flwizMessageInterval
                 End With
             End With
 
             With .EventName("timer_fully_loaded_message_tick{devices.timers.fully_loaded_message.ticks == 1}")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """   EB   """
+                    .Text = "   EB   "
                     .Flashing = "all"
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """  ADDED """
+                    .Text = "  ADDED "
                     .Flashing = "all"
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = flwizMessageInterval
                 End With
             End With
 
             With .EventName("timer_fully_loaded_message_tick{devices.timers.fully_loaded_message.ticks == 2}")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """HIT ALL"""
+                    .Text = "HIT ALL"
                     .Flashing = "all"
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """  SHOTS """
+                    .Text = "  SHOTS "
                     .Flashing = "all"
                     .Expire = flwizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = flwizMessageInterval
                 End With
             End With

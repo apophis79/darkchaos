@@ -300,7 +300,7 @@ Sub CreateBaseMode()
             With .EventName("display34_ball_num")
                 With .Display("player3")
                     .key = "p3_ball_num"
-                    .Text = """BALL"""
+                    .Text = "BALL"
                     .Priority = 10000
                 End With
                 With .Display("player4")
@@ -323,7 +323,7 @@ Sub CreateBaseMode()
             With .EventName("display12_ball_num")
                 With .Display("player1")
                     .key = "p1_ball_num"
-                    .Text = """BALL"""
+                    .Text = "BALL"
                     .Priority = 10000
                 End With
                 With .Display("player2")

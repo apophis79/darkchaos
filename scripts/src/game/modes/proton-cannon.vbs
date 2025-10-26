@@ -223,7 +223,7 @@ Sub CreateProtonCannonMode
         With .SegmentDisplayPlayer()
             With .EventName("light_proton_charge3")
                 With .Display("player4")
-                    .Text = """PROTON"""
+                    .Text = "PROTON"
                     .Flashing = "all"
                     .Expire = 2000
                 End With

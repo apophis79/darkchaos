@@ -630,61 +630,61 @@ Sub CreateComboCommandWizardMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_combo_command_wizard_started")
                 With .Display("player1")
-                    .Text = """ COMBO """
+                    .Text = " COMBO "
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """COMMAND"""
+                    .Text = "COMMAND"
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """ WIZARD """
+                    .Text = " WIZARD "
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """  MODE  """
+                    .Text = "  MODE  "
                     .Expire = CCWizMessageInterval
                 End With
             End With
 
             With .EventName("timer_combo_command_message_tick{devices.timers.combo_command_message.ticks == 1}")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """   EB   """
+                    .Text = "   EB   "
                     .Flashing = "all"
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """  ADDED """
+                    .Text = "  ADDED "
                     .Flashing = "all"
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = CCWizMessageInterval
                 End With
             End With
 
             With .EventName("timer_combo_command_message_tick{devices.timers.combo_command_message.ticks == 2}")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """HIT ALL"""
+                    .Text = "HIT ALL"
                     .Flashing = "all"
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """  SHOTS """
+                    .Text = "  SHOTS "
                     .Flashing = "all"
                     .Expire = CCWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = CCWizMessageInterval
                 End With
             End With

@@ -643,20 +643,20 @@ Sub CreateFinalWaveWizardMode
         With .SegmentDisplayPlayer()
             With .EventName("begin_fwwiz")
                 With .Display("player1")
-                    .Text = """  THE  """
+                    .Text = "  THE  "
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """ FINAL """
+                    .Text = " FINAL "
                     
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """  WAVE  """
+                    .Text = "  WAVE  "
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """IS HERE """
+                    .Text = "IS HERE "
                     .Expire = FWWizMessageInterval
                 End With
             End With
@@ -678,7 +678,7 @@ Sub CreateFinalWaveWizardMode
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With

@@ -420,19 +420,19 @@ Sub CreateVictoryLapMode
         With .SegmentDisplayPlayer()
             With .EventName("init_victory_lap")
                 With .Display("player1")
-                    .Text = """ YOU """
+                    .Text = " YOU "
                     .Flashing = "all"
                 End With
                 With .Display("player2")
-                    .Text = """ SAVED """
+                    .Text = " SAVED "
                     .Flashing = "all"
                 End With
                 With .Display("player3")
-                    .Text = """US  """
+                    .Text = "US  "
                     .Flashing = "all"
                 End With
                 With .Display("player4")
-                    .Text = """ALL """
+                    .Text = "ALL "
                     .Flashing = "all"
                 End With
             End With
@@ -457,7 +457,7 @@ Sub CreateVictoryLapMode
 
             With .EventName("timer_victory_countdown_complete")
                 With .Display("pf")
-                    .Text = """00"""
+                    .Text = "00"
                     .Priority = 100
                 End With
             End With

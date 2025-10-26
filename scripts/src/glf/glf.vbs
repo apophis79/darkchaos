@@ -86,6 +86,7 @@ Dim glf_max_lights_test : glf_max_lights_test = 0
 
 Dim glf_master_volume : glf_master_volume = 0.8
 
+Dim glf_table
 
 Dim glf_troughSize : glf_troughSize = tnob
 Dim glf_lastTroughSw : glf_lastTroughSw = Null
@@ -95,7 +96,6 @@ Dim glf_debugLog : Set glf_debugLog = (new GlfDebugLogFile)()
 Dim glf_debugEnabled : glf_debugEnabled = False
 Dim glf_debug_level : glf_debug_level = "Info"
 
-Dim glf_table
 
 Dim glf_ball1, glf_ball2, glf_ball3, glf_ball4, glf_ball5, glf_ball6, glf_ball7, glf_ball8	
 
@@ -317,8 +317,6 @@ Public Sub Glf_Init(ByRef table)
 			configYaml = configYaml + "  - s_trough" & troughCount & vbCrLf
 		Next
 
-		
-
 		switchesYaml = switchesYaml + "  s_trough_jam" & ":"&vbCrLf
 		switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
 		switchesYaml = switchesYaml + "    tags: " & vbCrLf
@@ -406,6 +404,11 @@ Public Sub Glf_Init(ByRef table)
 			TxtFileStream.WriteLine showsYaml
 			TxtFileStream.Close
 		Next
+		
+		For Each device in glf_modes.Items()
+			device.ToYaml()
+		Next
+
 		glf_debugLog.WriteToLog "Init", "Finished MPF Config"
 
 		'***GLFMPF_EXPORT_END***
@@ -716,7 +719,7 @@ Sub Glf_Options(ByVal eventId)
 		glf_debug_level = "Info"
 	End If
 
-	glfMaxDispatch = 1 'Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))   'apophis mod
+	glfMaxDispatch = Table1.Option("Glf Frame Dispatch", 1, 10, 1, 1, 0, Array("5", "10", "15", "20", "25", "30", "35", "40", "45", "50"))
 
 	glf_debugLog.WriteToLog "Options", "GLF Monitor Check"
 	Dim glfuseDebugBCP : glfuseDebugBCP = Table1.Option("Glf Monitor", 0, 1, 1, 0, 0, Array("Off", "On"))
@@ -734,7 +737,7 @@ Sub Glf_Options(ByVal eventId)
 		End If
 	End If
 	'***GLF_DEBUG_OPTIONS_END***
-	Dim ballsPerGame : ballsPerGame = 1 'Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))    'apophis mod
+	Dim ballsPerGame : ballsPerGame = Table1.Option("Balls Per Game", 1, 2, 1, 1, 0, Array("3 Balls", "5 Balls"))
 	If ballsPerGame = 1 Then
 		glf_game.BallsPerGame = 3
 	Else
@@ -746,7 +749,7 @@ Sub Glf_Options(ByVal eventId)
 	glf_max_dispatch = glfMaxDispatch*5
 
 	glf_debugLog.WriteToLog "Options", "BCP Check"
-	Dim glfuseBCP : glfuseBCP = 0 'Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))  'apophis mod
+	Dim glfuseBCP : glfuseBCP = Table1.Option("Glf Backbox Control Protocol", 0, 1, 1, 0, 0, Array("Off", "On"))
 	If glfuseBCP = 1 Then
 		If IsNull(bcpController) Then
 			SetDelay "start_glf_bcp", "Glf_ConnectToBCPMediaController", Null, 500
@@ -1076,7 +1079,7 @@ Public Function Glf_RegisterLights()
 					lmStr = lmStr & e & ","
 				End If
 				For Each tag in tags
-					tag = "T_" & Trim(tag)
+					'tag = "T_" & Trim(tag)
 					If InStr(e, LCase("_" & tag & "_")) Then
 						lmStr = lmStr & e & ","
 					End If
@@ -1152,6 +1155,8 @@ Public Function Glf_ParseInput(value)
 						parts = Split(isVariable, ":")
 						If UBound(parts) = 1 Then
 							tmp = "Glf_FormatValue(" & parts(0) & ", """ & parts(1) & """)"
+						Else
+							tmp = parts(0)
 						End If
 					End If
 					templateCode = "Function Glf_" & glf_FuncCount & "(args)" & vbCrLf
@@ -2890,10 +2895,10 @@ Class GlfVpxBcpController
         m_bcpController.Connect port, backboxCommand
         m_connected = True
         useBcp = True
-        m_mode_list = ""
         If backboxCommand = "" Then
             m_bcpController.EnableLogging()
         End If
+        m_mode_list = ""
         AddPinEventListener "player_added", "bcp_player_added", "GlfVpxBcpControllerEventHandler", 50, Array("player_added")
         AddPinEventListener "next_player", "bcp_player_next_player", "GlfVpxBcpControllerEventHandler", 50, Array("next_player")
         AddPinEventListener "game_started", "bcp_player_next_player", "GlfVpxBcpControllerEventHandler", 50, Array("next_player")
@@ -3753,7 +3758,7 @@ Class GlfBallHold
 
     Public Function ToYaml()
         Dim yaml
-        Dim evt, x
+        Dim evt, x, key
         yaml = "  " & Replace(m_name, "ball_hold_", "") & ":" & vbCrLf
         Dim enable_events_keys : enable_events_keys = m_base_device.EnableEvents().Keys
         Dim enable_events : Set enable_events = m_base_device.EnableEvents()
@@ -3877,7 +3882,6 @@ Class BallSave
     Private m_priority
     Private m_active_time
     Private m_grace_period
-    Private m_enable_events
     Private m_timer_start_events
     Private m_auto_launch
     Private m_balls_to_save
@@ -3923,7 +3927,6 @@ Class BallSave
         m_active_time = Null
 	    m_grace_period = Null
         m_hurry_up_time = Null
-        Set m_enable_events = CreateObject("Scripting.Dictionary")
         Set m_timer_start_events = CreateObject("Scripting.Dictionary")
 	    m_auto_launch = False
 	    m_balls_to_save = 1
@@ -4040,95 +4043,45 @@ Class BallSave
     Public Function ToYaml
         Dim yaml
         yaml = "  " & Replace(m_name, "ball_save_", "") & ":" & vbCrLf
-        yaml = yaml & "    active_time: " & m_active_time(1) & "s" & vbCrLf
-        yaml = yaml & "    grace_period: " & m_grace_period(1) & "s" & vbCrLf
-        yaml = yaml & "    hurry_up_time: " & m_hurry_up_time(1) & "s" & vbCrLf
+        yaml = yaml & "    active_time: " & m_active_time(1) & "ms" & vbCrLf
+        If Not IsNull(m_grace_period) Then
+            yaml = yaml & "    grace_period: " & m_grace_period(1) & "ms" & vbCrLf        
+        End If
+        If Not IsNull(m_grace_period) Then
+            yaml = yaml & "    hurry_up_time: " & m_hurry_up_time(1) & "ms" & vbCrLf
+        End If
         yaml = yaml & "    enable_events: "
         Dim evt,x : x = 0
-        For Each evt in m_enable_events.Keys
-            yaml = yaml & m_enable_events(evt).Raw
-            If x <> UBound(m_enable_events.Keys) Then
+        For Each evt in m_base_device.EnableEvents.Keys
+            yaml = yaml & m_base_device.EnableEvents()(evt).Raw
+            If x <> UBound(m_base_device.EnableEvents.Keys) Then
                 yaml = yaml & ", "
             End If
             x = x +1
         Next
         yaml = yaml & vbCrLf
-        yaml = yaml & "    timer_start_events: "
-        x=0
-        For Each evt in m_timer_start_events.Keys
-            yaml = yaml & m_timer_start_events(evt).Raw
-            If x <> UBound(m_timer_start_events.Keys) Then
-                yaml = yaml & ", "
-            End If
-            x = x +1
-        Next
-        yaml = yaml & vbCrLf
+        If UBound(m_timer_start_events.Keys) > -1 Then
+            yaml = yaml & "    timer_start_events: "
+            x=0
+            For Each evt in m_timer_start_events.Keys
+                yaml = yaml & m_timer_start_events(evt).Raw
+                If x <> UBound(m_timer_start_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x +1
+            Next
+            yaml = yaml & vbCrLf
+        End If
         yaml = yaml & "    auto_launch: " & LCase(m_auto_launch) & vbCrLf
         yaml = yaml & "    balls_to_save: " & m_balls_to_save & vbCrLf
         
         ' Add disable_events if any exist
-        If m_disable_events.Count > 0 Then
+        If m_base_device.DisableEvents.Count > 0 Then
             yaml = yaml & "    disable_events: "
             x = 0
-            For Each evt in m_disable_events.Keys
-                yaml = yaml & m_disable_events(evt).Raw
-                If x <> UBound(m_disable_events.Keys) Then
-                    yaml = yaml & ", "
-                End If
-                x = x + 1
-            Next
-            yaml = yaml & vbCrLf
-        End If
-        
-        ' Add timer_stop_events if any exist
-        If m_timer_stop_events.Count > 0 Then
-            yaml = yaml & "    timer_stop_events: "
-            x = 0
-            For Each evt in m_timer_stop_events.Keys
-                yaml = yaml & m_timer_stop_events(evt).Raw
-                If x <> UBound(m_timer_stop_events.Keys) Then
-                    yaml = yaml & ", "
-                End If
-                x = x + 1
-            Next
-            yaml = yaml & vbCrLf
-        End If
-        
-        ' Add timer_complete_events if any exist
-        If m_timer_complete_events.Count > 0 Then
-            yaml = yaml & "    timer_complete_events: "
-            x = 0
-            For Each evt in m_timer_complete_events.Keys
-                yaml = yaml & m_timer_complete_events(evt).Raw
-                If x <> UBound(m_timer_complete_events.Keys) Then
-                    yaml = yaml & ", "
-                End If
-                x = x + 1
-            Next
-            yaml = yaml & vbCrLf
-        End If
-        
-        ' Add ball_save_events if any exist
-        If m_ball_save_events.Count > 0 Then
-            yaml = yaml & "    ball_save_events: "
-            x = 0
-            For Each evt in m_ball_save_events.Keys
-                yaml = yaml & m_ball_save_events(evt).Raw
-                If x <> UBound(m_ball_save_events.Keys) Then
-                    yaml = yaml & ", "
-                End If
-                x = x + 1
-            Next
-            yaml = yaml & vbCrLf
-        End If
-        
-        ' Add ball_save_complete_events if any exist
-        If m_ball_save_complete_events.Count > 0 Then
-            yaml = yaml & "    ball_save_complete_events: "
-            x = 0
-            For Each evt in m_ball_save_complete_events.Keys
-                yaml = yaml & m_ball_save_complete_events(evt).Raw
-                If x <> UBound(m_ball_save_complete_events.Keys) Then
+            For Each evt in m_base_device.DisableEvents.Keys
+                yaml = yaml & m_base_device.DisableEvents()(evt).Raw
+                If x <> UBound(m_base_device.DisableEvents.Keys) Then
                     yaml = yaml & ", "
                 End If
                 x = x + 1
@@ -4502,20 +4455,14 @@ Class GlfComboSwitches
                 yaml = yaml & "      - " & key & vbCrLf
             Next
         End If
-        If UBound(m_events_when_switch_2.Keys()) > -1 Then
-            yaml = yaml & "    events_when_switches_2: " & vbCrLf
-            For Each key in m_events_when_switch_2.Keys()
-                yaml = yaml & "      - " & key & vbCrLf
-            Next
-        End If
         If m_hold_time.Raw <> 0 Then
-            yaml = yaml & "    hold_time: " & m_hold_time.Raw & vbCrLf
+            yaml = yaml & "    hold_time: " & m_hold_time.Raw & "ms" & vbCrLf
         End If
-        If m_max_offset_time.Raw <> 0 Then
-            yaml = yaml & "    max_offset_time: " & m_max_offset_time.Raw & vbCrLf
+        If m_max_offset_time.Raw <> -1 Then
+            yaml = yaml & "    max_offset_time: " & m_max_offset_time.Raw & "ms"  & vbCrLf
         End If
         If m_release_time.Raw <> 0 Then
-            yaml = yaml & "    release_time: " & m_release_time.Raw & vbCrLf
+            yaml = yaml & "    release_time: " & m_release_time.Raw & "ms"  & vbCrLf
         End If
 
         ToYaml = yaml
@@ -4940,12 +4887,12 @@ Class GlfEventPlayer
 
     Public Function ToYaml()
         Dim yaml
-        Dim evt
+        Dim evt,key
         If UBound(m_events.Keys) > -1 Then
             For Each key in m_events.keys
-                yaml = yaml & "  " & m_events(key).Raw & ": " & vbCrLf
+                yaml = yaml & "  " & Replace(Replace(m_events(key).Raw, "&&", "and"), "||", "or") & ": " & vbCrLf
                 For Each evt in m_eventValues(key)
-                    yaml = yaml & "    - " & evt & vbCrLf
+                    yaml = yaml & "    - " & Replace(Replace(evt.Raw, "&&", "and"), "||", "or") & vbCrLf
                 Next
             Next
             yaml = yaml & vbCrLf
@@ -5940,7 +5887,7 @@ Function LightPlayerCallbackHandler(key, lights, mode, priority, play, speed, co
                     If glf_cached_shows.Exists(cache_name & "__-1") Then
                         Set show_settings = (new GlfShowPlayerItem)()
                         show_settings.Show = cache_name
-                        show_settings.Loops = 1
+                        show_settings.Loops = 0
                         show_settings.Speed = speed
                         show_settings.ColorLookup = fade_seq
                         Set new_running_show = (new GlfRunningShow)(cache_name, show_settings.Key, show_settings, priority+1, Null, Null)
@@ -6798,9 +6745,7 @@ Class Mode
             If UBound(m_segment_display_player.EventNames)>-1 Then
                 yaml = yaml & vbCrLf
                 yaml = yaml & "segment_display_player: " & vbCrLf
-                For Each child in m_segment_display_player.EventNames
-                    yaml = yaml & m_segment_display_player.ToYaml()
-                Next
+                yaml = yaml & m_segment_display_player.ToYaml()
             End If
         End If
         
@@ -7904,8 +7849,8 @@ Class GlfRandomEventPlayer
     End Sub
 
     Public Function ToYaml()
-            Dim yaml
-        Dim evt
+        Dim yaml
+        Dim evt, key
         If UBound(m_eventValues.Keys) > -1 Then
             For Each key in m_eventValues.keys
                 yaml = yaml & "  " & key & ": " & vbCrLf
@@ -8037,13 +7982,12 @@ Class GlfSegmentDisplayPlayer
 
     Public Function ToYaml()
         Dim yaml
-        Dim evt
+        Dim evt, key
         If UBound(m_events.Keys) > -1 Then
-            For Each key in m_events.keys
-                yaml = yaml & "  " & key & ": " & vbCrLf
+            For Each key in m_events.Keys()
+                yaml = yaml & "  " & Replace(key, "kwargs.", "") & ": " & vbCrLf
                 yaml = yaml & m_events(key).ToYaml()
             Next
-            yaml = yaml & vbCrLf
         End If
         ToYaml = yaml
     End Function
@@ -8076,11 +8020,26 @@ Class GlfSegmentDisplayPlayerEvent
         Set Init = Me
 	End Function
 
+    Public Function ToYaml()
+        Dim yaml : yaml = ""
+        Dim evt, key
+        If UBound(m_items.Keys) > -1 Then
+            For Each key in m_items.Keys()
+                yaml = yaml & "    " & Replace(key, "kwargs", "") & ": " & vbCrLf
+                yaml = yaml & m_items(key).ToYaml()
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        'TODO Yaml Export
+        ToYaml = yaml
+    End Function
+
 End Class
 
 Class GlfSegmentPlayerEventItem
 	
     private m_display
+    private m_raw_text
     private m_text
     private m_priority
     private m_action
@@ -8095,6 +8054,7 @@ Class GlfSegmentPlayerEventItem
     Public Property Get Display() : Display = m_display : End Property
     Public Property Let Display(input) : m_display = input : End Property
     
+    Public Property Get RawText() : RawText = m_raw_text : End Property
     Public Property Get Text()
         If Not IsNull(m_text) Then
             Set Text = m_text
@@ -8103,7 +8063,9 @@ Class GlfSegmentPlayerEventItem
         End If
     End Property
     Public Property Let Text(input) 
-        Set m_text = (new GlfInput)(input)
+        m_raw_text = input
+        Dim convertedText : convertedText = ConvertPythonFormat(input)
+        Set m_text = (new GlfInput)(convertedText)
     End Property
 
     Public Property Get Priority() : Priority = m_priority : End Property
@@ -8151,6 +8113,7 @@ Class GlfSegmentPlayerEventItem
 	Public default Function init()
         m_display = Empty
         m_text = Null
+        m_raw_text = Null
         m_priority = 0
         m_action = "add"
         m_expire = 0
@@ -8165,33 +8128,33 @@ Class GlfSegmentPlayerEventItem
 
     Public Function ToYaml()
         Dim yaml
-        If Not IsEmpty(m_display) Then
-            yaml = yaml & "    " & m_display & ": " & vbCrLf
+        'If Not IsEmpty(m_display) Then
+        '    yaml = yaml & "      " & m_display & ": " & vbCrLf
+        'End If
+        If Not IsEmpty(m_key) Then
+            yaml = yaml & "      key: " & m_key & vbCrLf
         End If
         If Not IsNull(m_text) Then
-            yaml = yaml & "    " & m_text.Raw() & ": " & vbCrLf
+            yaml = yaml & "      text: " & m_raw_text & vbCrLf
         End If
         If m_priority > 0 Then
-            yaml = yaml & "    " & m_priority & ": " & vbCrLf
+            yaml = yaml & "      priority: " & m_priority & vbCrLf
         End If
         If m_action <> "add" Then
-            yaml = yaml & "    " & m_action & ": " & vbCrLf
+            yaml = yaml & "      action: " & m_action & vbCrLf
         End If
         If m_expire > 0 Then
-            yaml = yaml & "    " & m_expire & ": " & vbCrLf
+            yaml = yaml & "      expire: " & m_expire & "ms" & vbCrLf
         End If
         If Not IsEmpty(m_flash_mask) Then
-            yaml = yaml & "    " & m_flash_mask & ": " & vbCrLf
+            yaml = yaml & "      flash_mask: " & m_flash_mask & vbCrLf
         End If
         If m_flashing <> "not_set" Then
-            yaml = yaml & "    " & m_flashing & ": " & vbCrLf
+            yaml = yaml & "      flashing: " & m_flashing & vbCrLf
         End If
-        If Not IsEmpty(m_key) Then
-            yaml = yaml & "    " & m_key & ": " & vbCrLf
-        End If
-        If Not IsEmpty(m_color) Then
-            yaml = yaml & "    " & m_color & ": " & vbCrLf
-        End If
+        'If Not IsEmpty(m_color) Then
+        '    yaml = yaml & "      color: " & m_color & vbCrLf
+        'End If
         If Not IsNull(m_transition) Then
             yaml = yaml & m_transition.ToYaml()
         End If
@@ -8200,6 +8163,92 @@ Class GlfSegmentPlayerEventItem
         End If
         ToYaml = yaml
     End Function
+
+    Function ConvertPythonFormat(expr)
+        Dim i, posOpen, posClose, literal, field, colonPos
+        Dim varName, fmt, piece, result, first, literalEsc
+
+        If expr = "" Then
+            ConvertPythonFormat = """"""
+            Exit Function
+        End If
+
+        result = ""
+        first = True
+        i = 1
+
+        Do
+            posOpen = InStr(i, expr, "{")
+            If posOpen = 0 Then
+                ' trailing literal
+                literal = Mid(expr, i)
+                If literal <> "" Then
+                    literalEsc = Replace(literal, """", """""")
+                    If first Then
+                        result = """" & literalEsc & """"
+                        first = False
+                    Else
+                        result = result & " & """ & literalEsc & """"
+                    End If
+                End If
+                Exit Do
+            End If
+
+            ' literal before {
+            literal = Mid(expr, i, posOpen - i)
+            If literal <> "" Then
+                literalEsc = Replace(literal, """", """""")
+                If first Then
+                    result = """" & literalEsc & """"
+                    first = False
+                Else
+                    result = result & " & """ & literalEsc & """"
+                End If
+            End If
+
+            ' find closing }
+            posClose = InStr(posOpen + 1, expr, "}")
+            If posClose = 0 Then
+                ' no closing brace; treat the rest as literal
+                piece = Mid(expr, posOpen)
+                piece = Replace(piece, """", """""")
+                If first Then
+                    result = """" & piece & """"
+                    first = False
+                Else
+                    result = result & " & """ & piece & """"
+                End If
+                Exit Do
+            End If
+
+            ' parse field content between { and }
+            field = Mid(expr, posOpen + 1, posClose - posOpen - 1)
+            colonPos = InStr(field, ":")
+
+            If colonPos > 0 Then
+                varName = Trim(Left(field, colonPos - 1))
+                fmt = Mid(field, colonPos + 1)
+                piece = "Glf_FormatValue(" & varName & ",""" & fmt & """)"
+            Else
+                varName = Trim(field)
+                piece = varName
+            End If
+
+            If first Then
+                result = piece
+                first = False
+            Else
+                result = result & " & " & piece
+            End If
+
+            i = posClose + 1
+        Loop
+
+        If result = "" Then result = """"""
+        ConvertPythonFormat = result
+    End Function
+
+
 
 End Class
 
@@ -8231,10 +8280,12 @@ Class GlfSegmentPlayerTransition
 
     Public Function ToYaml()
         Dim yaml
-        yaml = yaml & "    transition:" & vbCrLf
-        yaml = yaml & "      " & m_type & ": " & vbCrLf
-        yaml = yaml & "      " & m_direction & ": " & vbCrLf
-        yaml = yaml & "      " & m_text & ": " & vbCrLf
+        yaml = yaml & "      transition:" & vbCrLf
+        yaml = yaml & "        type: " & m_type & vbCrLf
+        yaml = yaml & "        direction: " & m_direction & vbCrLf
+        If Not IsEmpty(m_text) Then
+            yaml = yaml & "        text: " & m_text & vbCrLf
+        End If
         ToYaml = yaml
     End Function
 
@@ -8616,7 +8667,7 @@ Class GlfSequenceShots
             Next
         End If
         If m_sequence_timeout.Raw <> 0 Then
-            yaml = yaml & "    sequence_timeout: " & m_sequence_timeout.Raw & vbCrLf
+            yaml = yaml & "    sequence_timeout: " & m_sequence_timeout.Raw & "ms" & vbCrLf
         End If
 
         ToYaml = yaml
@@ -8983,7 +9034,7 @@ Class GlfShotGroup
     End Sub
  
     Public Function ToYaml
-        Dim yaml
+        Dim yaml, x, key
         yaml = "  " & m_name & ":" & vbCrLf
         yaml = yaml & "    shots: " & Join(m_shots, ",") & vbCrLf
  
@@ -9082,7 +9133,7 @@ Class GlfShotGroup
             yaml = yaml & "    enable_events: "
             x=0
             For Each key in m_base_device.EnableEvents.keys
-                yaml = yaml & m_base_device.EnableEvents(key).Raw
+                yaml = yaml & m_base_device.EnableEvents()(key).Raw
                 If x <> UBound(m_base_device.EnableEvents.Keys) Then
                     yaml = yaml & ", "
                 End If
@@ -9095,7 +9146,7 @@ Class GlfShotGroup
             yaml = yaml & "    disable_events: "
             x=0
             For Each key in m_base_device.DisableEvents.keys
-                yaml = yaml & m_base_device.DisableEvents(key).Raw
+                yaml = yaml & m_base_device.DisableEvents()(key).Raw
                 If x <> UBound(m_base_device.DisableEvents.Keys) Then
                     yaml = yaml & ", "
                 End If
@@ -9592,13 +9643,31 @@ Class GlfShot
     End Sub
 
     Public Function ToYaml
-        Dim yaml
+        Dim yaml,x
         yaml = "  " & Replace(m_name, "shot_", "") & ":" & vbCrLf
         If UBound(m_switches) = 0 Then
             yaml = yaml & "    switch: " & m_switches(0) & vbCrLf
         ElseIf UBound(m_switches) > 0 Then
             yaml = yaml & "    switches: " & Join(m_switches, ",") & vbCrLf
         End If
+
+        yaml = yaml & "    profile: " & m_profile & vbCrLf
+        If Not IsEmpty(m_start_enabled) Then
+            yaml = yaml & "    start_enabled: " & m_start_enabled & vbCrLf
+        End If
+        If UBound(m_restart_events.Keys) > -1 Then
+            yaml = yaml & "    restart_events: "
+            x=0
+            For Each key in m_restart_events.keys
+                yaml = yaml & m_restart_events(key).Raw
+                If x <> UBound(m_restart_events.Keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+
         yaml = yaml & "    show_tokens: " & vbCrLf
         dim key
         For Each key in m_tokens.keys
@@ -9664,22 +9733,7 @@ Class GlfShot
             yaml = yaml & vbCrLf
         End If
 
-        yaml = yaml & "    profile: " & m_profile & vbCrLf
-        If Not IsEmpty(m_start_enabled) Then
-            yaml = yaml & "    start_enabled: " & m_start_enabled & vbCrLf
-        End If
-        If UBound(m_restart_events.Keys) > -1 Then
-            yaml = yaml & "    restart_events: "
-            x=0
-            For Each key in m_restart_events.keys
-                yaml = yaml & m_restart_events(key).Raw
-                If x <> UBound(m_restart_events.Keys) Then
-                    yaml = yaml & ", "
-                End If
-                x = x + 1
-            Next
-            yaml = yaml & vbCrLf
-        End If
+        
 
         If UBound(m_reset_events.Keys) > -1 Then
             yaml = yaml & "    reset_events: "
@@ -9700,9 +9754,9 @@ Class GlfShot
                 yaml = yaml & "      - events: "
                 Dim cEvt
                 x=0
-                For Each cEvt in m_control_events(key).Events
-                    yaml = yaml & cEvt
-                    If x <> UBound(m_control_events(key).Events) Then
+                For Each cEvt in m_control_events(key).Events.Items
+                    yaml = yaml & cEvt.Raw
+                    If x <> UBound(m_control_events(key).Events.Keys) Then
                         yaml = yaml & ", "
                     End If
                     x = x + 1
@@ -9882,7 +9936,7 @@ Class GlfShowPlayer
 
     Public Function ToYaml()
         Dim yaml
-        Dim evt
+        Dim evt,key
         If UBound(m_eventValues.Keys) > -1 Then
             For Each key in m_eventValues.keys
                 yaml = yaml & "  " & key & ": " & vbCrLf
@@ -10055,24 +10109,30 @@ Class GlfShow
 	End Function
 
     Public Function AddStep(absolute_time, relative_time, duration)
+        
         Dim new_step : Set new_step = (new GlfShowStep)()
         new_step.Duration = duration
         new_step.RelativeTime = relative_time
         new_step.AbsoluteTime = absolute_time
         new_step.IsLastStep = True
-        
+        If IsNull(duration) Then
+            new_step.Raw = "time"
+        Else
+            new_step.Raw = "duration"
+        End If
+
         'Add a empty first step if if show does not start right away
         If UBound(m_steps.Keys) = -1 Then
             If Not IsNull(new_step.Time) And new_step.Time <> 0 Then
                 Dim empty_step : Set empty_step = (new GlfShowStep)()
                 empty_step.Duration = new_step.Time
-                m_total_step_time = new_step.Time
+                'm_total_step_time = new_step.Time
                 m_steps.Add CStr(UBound(m_steps.Keys())+1), empty_step        
             End If
         End If
         
 
-        
+        glf_debugLog.WriteToLog "Show:" & m_name, "Adding Step. Abs: " & absolute_time & ". Rel: " & relative_time & ". Duration: " & duration
 
         If UBound(m_steps.Keys()) > -1 Then
             Dim steps_items : steps_items = m_steps.Items()
@@ -10086,21 +10146,25 @@ Class GlfShow
                     If new_step.IsRelativeTime Then
                         prevStep.Duration = new_step.Time
                     Else
-                        prevStep.Duration = new_step.Time - m_total_step_time
+                        prevStep.Duration = Round(new_step.Time - m_total_step_time, 2)
+                        glf_debugLog.WriteToLog "Show:" & m_name, new_step.Time
+                        glf_debugLog.WriteToLog "Show:" & m_name, m_total_step_time
+                        glf_debugLog.WriteToLog "Show:" & m_name, prevStep.Duration
                     End If
                 Else
+                    glf_debugLog.WriteToLog "Show:" & m_name, "Setting Duration to 1"
                     prevStep.Duration = 1
                 End If
             End If
             m_total_step_time = m_total_step_time + prevStep.Duration
         Else
             If IsNull(new_step.Duration) Then
-                m_total_step_time = m_total_step_time + 1
-            Else
                 m_total_step_time = m_total_step_time + new_step.Time
+            Else
+                m_total_step_time = m_total_step_time + new_step.Duration
             End If
         End If
-
+        glf_debugLog.WriteToLog "Show:" & m_name, "TOTAL STEP TIME: " & m_total_step_time
         m_steps.Add CStr(UBound(m_steps.Keys())+1), new_step
         Set AddStep = new_step
     End Function
@@ -10108,7 +10172,7 @@ Class GlfShow
     Public Function ToYaml()
         Dim yaml, show_step
         For Each show_step in m_steps.Items()
-            If Not IsNull(show_step.Duration) Then
+            If Not IsNull(show_step.Duration) And show_step.Raw = "duration" Then
                 yaml = yaml & "- duration: " & show_step.Duration & "s" & vbCrLf
             Else
                 If Not IsNull(show_step.AbsoluteTime) Then
@@ -10361,8 +10425,8 @@ Function GlfShowStepHandler(args)
     If running_show.CurrentStep > running_show.TotalSteps Then
         'End of Show
         'glf_debugLog.WriteToLog "Running Show", "END OF SHOW"
-        If running_show.Loops = -1 Or running_show.Loops > 1 Then
-            If running_show.Loops > 1 Then
+        If running_show.Loops = -1 Or running_show.Loops > 0 Then
+            If running_show.Loops > 0 Then
                 running_show.Loops = running_show.Loops - 1
             End If
             running_show.CurrentStep = 0
@@ -10386,10 +10450,12 @@ End Function
 
 Class GlfShowStep
 
-    Private m_lights, m_shows, m_dofs, m_slides, m_widgets, m_time, m_duration, m_isLastStep, m_absTime, m_relTime
+    Private m_lights, m_shows, m_dofs, m_slides, m_widgets, m_time, m_duration, m_isLastStep, m_absTime, m_relTime, m_raw
 
     Public Property Get Lights(): Lights = m_lights: End Property
     Public Property Let Lights(input) : m_lights = input: End Property
+    Public Property Get Raw(): Raw = m_raw: End Property
+    Public Property Let Raw(input) : m_raw = input: End Property
 
     Public Property Get ShowsInStep(): Set ShowsInStep = m_shows: End Property
     Public Property Get Shows(name)
@@ -10477,6 +10543,13 @@ Class GlfShowStep
                 Else
                     yaml = yaml & "    " & light_parts(0) & ": " & light_parts(2) & "%" & light_parts(1) & vbCrLf
                 End If
+            Next
+        End If
+        If UBound(m_shows.Keys()) > -1 Then
+            yaml = yaml & "  shows:" & vbCrLf
+            Dim show
+            For Each show in m_shows.Items()
+                yaml = yaml & show.ToYaml()
             Next
         End If
         ToYaml = yaml
@@ -15670,7 +15743,7 @@ Class GlfRandomEvent
     End Function
 
     Public Function ToYaml
-        Dim yaml
+        Dim yaml,evt
         yaml = yaml & "    events:" & vbCrLf
         For Each evt in m_events.Keys
             yaml = yaml & "      " & evt & ": " & m_weights(evt) & vbCrLf

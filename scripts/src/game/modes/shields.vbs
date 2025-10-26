@@ -253,7 +253,7 @@ Sub CreateShieldsMode
         With .SegmentDisplayPlayer()
             With .EventName("qualify_shields_on_complete")
                 With .Display("player3")
-                    .Text = """SHIELDS"""
+                    .Text = "SHIELDS"
                     .Flashing = "all"
                     .Expire = 2000
                 End With

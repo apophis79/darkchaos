@@ -724,33 +724,33 @@ Sub CreateMeteorWaveMode
             With .EventName("detonate_nuke")
                 With .Display("pf")
                     .Key = "key_mw_pf3"
-                    .Text = """00"""
+                    .Text = "00"
                     .Expire = 11000
                     .Priority = 11000
                 End With
                 With .Display("player1")
                     .Key = "key_mw_nuke1"
-                    .Text = """"""
+                    .Text = ""
                     .Expire = 11000
                     .Priority = 11000
                 End With
                 With .Display("player2")
                     .Key = "key_mw_nuke2"
-                    .Text = """  NUKED """
+                    .Text = "  NUKED "
                     .Flashing = "all"
                     .Expire = 11000
                     .Priority = 11000
                 End With
                 With .Display("player3")
                     .Key = "key_mw_nuke3"
-                    .Text = """ NUKED  """
+                    .Text = " NUKED  "
                     .Flashing = "all"
                     .Expire = 11000
                     .Priority = 11000
                 End With
                 With .Display("player4")
                     .Key = "key_mw_nuke4"
-                    .Text = """"""
+                    .Text = ""
                     .Expire = 11000
                     .Priority = 11000
                 End With
@@ -759,19 +759,19 @@ Sub CreateMeteorWaveMode
         
             With .EventName("mode_meteor_wave_started{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player1")
-                    .Text = """METEOR """
+                    .Text = "METEOR "
                     .Flashing = "all"
                     .Expire = 4000
                     .Priority = 1000
                 End With
                 With .Display("player2")
-                    .Text = """WAVE  """
+                    .Text = "WAVE  "
                     .Flashing = "all"
                     .Expire = 4000
                     .Priority = 1000
                 End With
                 With .Display("player3")
-                    .Text = """METEORS"""
+                    .Text = "METEORS"
                     .Priority = 10000
                 End With
                 With .Display("player4")
@@ -781,20 +781,20 @@ Sub CreateMeteorWaveMode
 
             With .EventName("mode_meteor_wave_started{current_player.number == 3 or current_player.number == 4}")
                 With .Display("player1")
-                    .Text = """METEORS"""
+                    .Text = "METEORS"
                     .Priority = 10000
                 End With
                 With .Display("player2")
                     .Text = "{current_player.num_meteors_to_drop:0>2}"
                 End With
                 With .Display("player3")
-                    .Text = """METEOR """
+                    .Text = "METEOR "
                     .Flashing = "all"
                     .Expire = 4000
                     .Priority = 1000
                 End With
                 With .Display("player4")
-                    .Text = """WAVE  """
+                    .Text = "WAVE  "
                     .Flashing = "all"
                     .Expire = 4000
                     .Priority = 1000
@@ -803,7 +803,7 @@ Sub CreateMeteorWaveMode
 
             With .EventName("check_meteor_wave.2{current_player.number == 1 or current_player.number == 2}")
                 With .Display("player3")
-                    .Text = """METEORS"""
+                    .Text = "METEORS"
                     .Priority = 10000
                 End With
                 With .Display("player4")
@@ -813,7 +813,7 @@ Sub CreateMeteorWaveMode
             End With
             With .EventName("check_meteor_wave.2{current_player.number == 3 or current_player.number == 4}")
                 With .Display("player1")
-                    .Text = """METEORS"""
+                    .Text = "METEORS"
                     .Priority = 10000
                 End With
                 With .Display("player2")

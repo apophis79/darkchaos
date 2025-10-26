@@ -405,48 +405,48 @@ Sub CreateTrainingSelectMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_training_select_started")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                 End With
                 With .Display("player2")
-                    .Text = """SELECT"""
+                    .Text = "SELECT"
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                 End With
             End With
             With .EventName("heal_selected{current_player.training_heal_achieved==0}")
                 With .Display("player3")
-                    .Text = """HEAL """
+                    .Text = "HEAL "
                 End With
             End With
             With .EventName("cluster_bomb_selected{current_player.training_cluster_bomb_achieved==0}")
                 With .Display("player3")
-                    .Text = """CLUSTER"""
+                    .Text = "CLUSTER"
                 End With
             End With
             With .EventName("proton_cannon_selected{current_player.training_proton_cannon_achieved==0}")
                 With .Display("player3")
-                    .Text = """PROTON"""
+                    .Text = "PROTON"
                 End With
             End With
             With .EventName("moon_missile_selected{current_player.training_moon_missile_achieved==0}")
                 With .Display("player3")
-                    .Text = """MOON """
+                    .Text = "MOON "
                 End With
             End With
             With .EventName("ship_save_selected{current_player.training_ship_save_achieved==0}")
                 With .Display("player3")
-                    .Text = """SAVER """
+                    .Text = "SAVER "
                 End With
             End With
             With .EventName("shields_selected{current_player.training_shields_achieved==0}")
                 With .Display("player3")
-                    .Text = """SHIELDS"""
+                    .Text = "SHIELDS"
                 End With
             End With
             With .EventName("skip_selected")
                 With .Display("player3")
-                    .Text = """SKIP """
+                    .Text = "SKIP "
                 End With
             End With
         End With

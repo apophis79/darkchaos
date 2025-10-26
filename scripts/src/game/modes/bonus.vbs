@@ -265,30 +265,30 @@ Sub CreateBonusMode
         With .SegmentDisplayPlayer()
             With .EventName("run_bonus_started")
                 With .Display("player1")
-                    .Text = """BONUS  """
+                    .Text = "BONUS  "
                 End With
                 With .Display("player2")
-                    .Text = """"""
+                    .Text = ""
                 End With
                 With .Display("player3")
-                    .Text = """"""
+                    .Text = ""
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                 End With
             End With
 
             With .EventName("bonus_2x")
                 With .Display("player4")
                     .Priority = 5005
-                    .Text = """ X 2  """
+                    .Text = " X 2  "
                 End With
             End With
 
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 3}")
                 With .Display("player2")
                     .Priority = 5010
-                    .Text = """WAVES"""
+                    .Text = "WAVES"
                     .Flashing = "all"
                     '.Expire = BonusTimerTickInterval
                 End With
@@ -303,7 +303,7 @@ Sub CreateBonusMode
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 6}")
                 With .Display("player2")
                     .Priority = 5020
-                    .Text = """TRAINING"""
+                    .Text = "TRAINING"
                     .Flashing = "all"
                     '.Expire = BonusTimerTickInterval
                 End With
@@ -318,7 +318,7 @@ Sub CreateBonusMode
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 9}")
                 With .Display("player2")
                     .Priority = 5030
-                    .Text = """BOMBS"""
+                    .Text = "BOMBS"
                     .Flashing = "all"
                     '.Expire = BonusTimerTickInterval
                 End With
@@ -333,7 +333,7 @@ Sub CreateBonusMode
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 12}")
                 With .Display("player2")
                     .Priority = 5040
-                    .Text = """MISSILES"""
+                    .Text = "MISSILES"
                     .Flashing = "all"
                     '.Expire = BonusTimerTickInterval
                 End With
@@ -348,7 +348,7 @@ Sub CreateBonusMode
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 15}")
                 With .Display("player2")
                     .Priority = 5050
-                    .Text = """PROTONS"""
+                    .Text = "PROTONS"
                     .Flashing = "all"
                     '.Expire = BonusTimerTickInterval
                 End With
@@ -363,7 +363,7 @@ Sub CreateBonusMode
             With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 18}")
                 With .Display("player2")
                     .Priority = 5060
-                    .Text = """TOTAL"""
+                    .Text = "TOTAL"
                 End With
                 With .Display("player3")
                     .Priority = 5060
@@ -372,7 +372,7 @@ Sub CreateBonusMode
                 End With
                 With .Display("player4")
                     .Priority = 5060
-                    .Text = """"""
+                    .Text = ""
                 End With
             End With
 

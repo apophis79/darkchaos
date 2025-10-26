@@ -19,6 +19,8 @@ Sub Table1_Init
     End With
 
 	' GLF
+	glf_debugEnabled = True
+	glf_debugLog.EnableLogs
 	ConfigureGlfDevices
 	Glf_Init(Table1)
 

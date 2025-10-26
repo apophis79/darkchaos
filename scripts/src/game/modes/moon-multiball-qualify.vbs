@@ -307,24 +307,24 @@ Sub CreateMoonMultiballQualifyMode
         With .SegmentDisplayPlayer()
             With .EventName("start_moon_multiball")
                 With .Display("player2")
-                    .Text = """MOON"""
+                    .Text = "MOON"
                     .Flashing = "all"
                     .Expire = 2000
                 End With
                 With .Display("player3")
-                    .Text = """LAUNCH"""
+                    .Text = "LAUNCH"
                     .Flashing = "all"
                     .Expire = 2000
                 End With
             End With
             With .EventName("enable_moon_mb_locking")
                 With .Display("player2")
-                    .Text = """LOCK"""
+                    .Text = "LOCK"
                     .Flashing = "all"
                     .Expire = 2000
                 End With
                 With .Display("player3")
-                    .Text = """BALL"""
+                    .Text = "BALL"
                     .Flashing = "all"
                     .Expire = 2000
                 End With

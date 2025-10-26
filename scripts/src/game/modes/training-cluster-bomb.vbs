@@ -312,19 +312,19 @@ Sub CreateTrainingClusterBombMode
         With .SegmentDisplayPlayer()
             With .EventName("init_training")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = 5000
                 End With
                 With .Display("player2")
-                    .Text = """TRAIN """
+                    .Text = "TRAIN "
                     .Expire = 5000
                 End With
                 With .Display("player3")
-                    .Text = """CLUSTER"""
+                    .Text = "CLUSTER"
                     .Expire = 5000
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = 5000
                 End With
                 With .Display("pf")

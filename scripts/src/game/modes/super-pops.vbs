@@ -98,21 +98,21 @@ Sub CreateSuperPopsMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_super_pops_started")
                 With .Display("player1")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = SuperPopsShowLength
                 End With
                 With .Display("player2")
-                    .Text = """ SUPER """
+                    .Text = " SUPER "
                     .Flashing = "all"
                     .Expire = SuperPopsShowLength
                 End With
                 With .Display("player3")
-                    .Text = """  POPS  """
+                    .Text = "  POPS  "
                     .Flashing = "all"
                     .Expire = SuperPopsShowLength
                 End With
                 With .Display("player4")
-                    .Text = """"""
+                    .Text = ""
                     .Expire = SuperPopsShowLength
                 End With
             End With
