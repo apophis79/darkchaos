@@ -123,19 +123,6 @@ With CreateGlfShow("nuke_explodes")
     End With
   End With
 
-  With .AddStep(4.3, Null, Null)
-    With .Shows("flash_color_fadeout")
-      .Key = "key_nuke_fired3b"
-      .Speed = 2
-      .Loops = 0
-      .Priority = 10000
-       With .Tokens()
-            .Add "lights", "tFlasher"
-            .Add "color", "ffffff"
-        End With
-    End With
-  End With
-
   With .AddStep(4.02, Null, Null)
     With .Shows("flash_color_fadeout")
       .Key = "key_nuke_fired4"
@@ -144,6 +131,19 @@ With CreateGlfShow("nuke_explodes")
       .Priority = 11000
        With .Tokens()
             .Add "lights", "GI"
+            .Add "color", "ffffff"
+        End With
+    End With
+  End With
+
+  With .AddStep(4.3, Null, Null)
+    With .Shows("flash_color_fadeout")
+      .Key = "key_nuke_fired3b"
+      .Speed = 2
+      .Loops = 0
+      .Priority = 10000
+       With .Tokens()
+            .Add "lights", "tFlasher"
             .Add "color", "ffffff"
         End With
     End With
