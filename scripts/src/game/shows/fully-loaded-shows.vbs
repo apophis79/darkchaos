@@ -68,7 +68,7 @@ Sub CreateFullyLoadedShows()
 
     With CreateGlfShow("flwiz_proton_show")
     
-        With .AddStep(0.01, Null, Null)
+        With .AddStep(0.0, Null, Null)
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_p_show1"
             .Speed = 1
@@ -142,7 +142,7 @@ Sub CreateFullyLoadedShows()
 
     With CreateGlfShow("flwiz_cluster_show")
     
-        With .AddStep(0.01, Null, Null)
+        With .AddStep(0.0, Null, Null)
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_c_show1"
             .Speed = 1
@@ -216,7 +216,7 @@ Sub CreateFullyLoadedShows()
 
     With CreateGlfShow("flwiz_moon_show")
     
-        With .AddStep(0.01, Null, Null)
+        With .AddStep(0.0, Null, Null)
             With .Shows("insert_gi_slide_midleft")
             .Key = "key_flwiz_m_show1"
             .Speed = 1

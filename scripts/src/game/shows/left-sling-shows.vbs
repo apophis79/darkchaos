@@ -567,7 +567,7 @@ Sub CreateLeftSlingShows()
 
 
     With CreateGlfShow("lsling_base_show")
-        With .AddStep(0.01, Null, Null)
+        With .AddStep(0.0, Null, Null)
             With .Shows("lsling_rotate1_ccw")
                 .Key = "key_lsling_base_show1"
                 .Speed = 7

@@ -4,7 +4,7 @@ Sub CreateClusterBombShows()
 
 With CreateGlfShow("cluster_explodes")
  
-  With .AddStep(0.1, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("insert_swap2")
       .Key = "key_cb_xpl_inserts"
       .Speed = 1.5

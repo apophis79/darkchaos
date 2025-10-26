@@ -4,7 +4,7 @@ Sub CreateNukeShows()
 
 
 With CreateGlfShow("nuke_inserts_show")
-    With .AddStep(0.01, Null, Null)
+    With .AddStep(0.0, Null, Null)
         .Lights = Array("(lights)|100|(color)|300")
     End With
     With .AddStep(0.3, Null, Null)
@@ -30,7 +30,7 @@ End With
 
 With CreateGlfShow("nuke_explodes")
 
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi1"
         .Speed = 1

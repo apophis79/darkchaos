@@ -460,8 +460,6 @@ End With
 With CreateGlfShow("insert_gi_spin_center")
   With .AddStep(0.00000, Null, Null)
     .Lights = Array( _
-       "LLI|(intensity)|000000", _
-      "LLO|(intensity)|000000", _
       "gi04|(intensity)|000000", _
       "LCWiz|(intensity)|(color)", _
       "LLWiz|(intensity)|(color)", _
@@ -1011,11 +1009,8 @@ With CreateGlfShow("insert_gi_spin_right")
   With .AddStep(0.00000, Null, Null)
     .Lights = Array( _
       "LW7|(intensity)|000000", _
-      "LW6|(intensity)|000000", _
-      "LMet3|(intensity)|000000", _
       "LMet1|(intensity)|000000", _
       "LM1|(intensity)|000000", _
-      "LW5|(intensity)|000000", _
       "gi14|(intensity)|(color)", _
       "LS2|(intensity)|(color)", _
       "LW6|(intensity)|(color)", _

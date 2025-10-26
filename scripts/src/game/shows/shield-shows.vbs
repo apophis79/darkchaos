@@ -200,7 +200,7 @@ End With
 
 With CreateGlfShow("shields_up")
  
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("flash_color_with_fade")
       .Key = "key_shield_up1"
       .Speed = 10
@@ -254,7 +254,7 @@ End With
 
 With CreateGlfShow("shields_down")
  
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("flash_color")
       .Key = "key_shield_down1"
       .Speed = 15

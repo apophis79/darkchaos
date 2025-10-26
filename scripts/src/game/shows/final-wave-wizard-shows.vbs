@@ -260,7 +260,7 @@ End With
 
 
 With CreateGlfShow("asteroid_hit")
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("asteroid_hit_single")
       .Key = "key_asteroid_hit_single1"
       .Speed = 1.5
@@ -302,7 +302,7 @@ End With
 
 With CreateGlfShow("asteroid_explodes_show")
 
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("insert_swap3")
       .Key = "key_ass_xpld1"
       .Speed = 1.5

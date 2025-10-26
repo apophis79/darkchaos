@@ -4,7 +4,7 @@ Sub CreateEarthHitShows()
 
 
 With CreateGlfShow("earth_hit_bg")
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
       With .DOFEvent("2")
           .Action = "DOF_ON"
       End With

@@ -566,7 +566,7 @@ Sub CreateRightSlingShows()
 
 
     With CreateGlfShow("rsling_base_show")
-        With .AddStep(0.01, Null, Null)
+        With .AddStep(0.0, Null, Null)
             With .Shows("rsling_rotate1_cw")
                 .Key = "key_rsling_base_show1"
                 .Speed = 7

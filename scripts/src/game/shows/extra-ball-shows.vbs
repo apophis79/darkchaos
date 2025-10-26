@@ -4,7 +4,7 @@ Sub CreateExtraBallShows()
 
 With CreateGlfShow("eb_show")
  
-  With .AddStep(0.01, Null, Null)
+  With .AddStep(0.0, Null, Null)
     With .Shows("insert_gi_slide_midleft")
       .Key = "key_eb_show1"
       .Speed = 1
