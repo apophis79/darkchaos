@@ -787,7 +787,7 @@ Sub CreateBaseMode()
                     .Int = 0
                 End With
                 With .Variable("flippers_are_dead")
-                    .Action = "set"
+                    .Action = "set_machine"
                     .Int = 0
                 End With
 			End With

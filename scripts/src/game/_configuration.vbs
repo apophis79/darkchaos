@@ -339,6 +339,12 @@ Sub ConfigureGlfDevices
         .Persist = True
     End With
 
+    With CreateMachineVar("flippers_are_dead")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = False
+    End With
+
 
 
     '*********** INITALIZE PLAYER VARIABLES ***********
@@ -399,7 +405,6 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "bonus_missiles", 0
     Glf_SetInitialPlayerVar "bonus_protons", 0
     Glf_SetInitialPlayerVar "bonus_total", 0
-    Glf_SetInitialPlayerVar "flippers_are_dead", 0
     Glf_SetInitialPlayerVar "hs_input_ready", 1
     Glf_SetInitialPlayerVar "nuke_acquired", 0
     Glf_SetInitialPlayerVar "nuke_used", 0
