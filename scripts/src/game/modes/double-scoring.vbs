@@ -29,7 +29,7 @@ Sub CreateDoubleScoringMode
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("timer_double_scoring_tick{devices.timers.double_scoring.ticks == "&(DoubleScoringMaxTicks-5)&"}")
+                .Events = Array("timer_double_scoring_tick{device.timers.double_scoring.ticks == "&(DoubleScoringMaxTicks-5)&"}")
                 .State = 2
             End With
             .ResetEvents = Array("mode_double_scoring_stopping")

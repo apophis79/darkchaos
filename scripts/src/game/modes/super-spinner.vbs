@@ -29,7 +29,7 @@ Sub CreateSuperSpinnerMode
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("timer_super_spinner_tick{devices.timers.super_spinner.ticks == "&(SuperSpinnerMaxTicks-5)&"}")
+                .Events = Array("timer_super_spinner_tick{device.timers.super_spinner.ticks == "&(SuperSpinnerMaxTicks-5)&"}")
                 .State = 2
             End With
             .ResetEvents = Array("mode_super_spinner_stopping")

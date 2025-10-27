@@ -34,7 +34,7 @@ Sub CreateTrainingClusterBombMode
             'handle gi flicker shows
             .Add "timer_training_cluster_bomb_tick", Array("flicker_gi")
             'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
 
         With .RandomEventPlayer()
@@ -328,7 +328,7 @@ Sub CreateTrainingClusterBombMode
                     .Expire = 5000
                 End With
                 With .Display("pf")
-                    .Text = "{devices.timers.training_cluster_bomb.ticks:0>2}"
+                    .Text = "{device.timers.training_cluster_bomb.ticks:0>2}"
                 End With
             End With
         End With

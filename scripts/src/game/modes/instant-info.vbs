@@ -19,10 +19,10 @@ Sub CreateInstantInfoMode
             .Add "s_right_staged_flipper_key_active{current_player.ball_cradled == 1}", Array("info_stop")
 
             'show info
-            .Add "timer_info_tick{devices.timers.info.ticks == 0}", Array("info_ball_num")
-            .Add "timer_info_tick{devices.timers.info.ticks == 1}", Array("info_trained_num")
-            .Add "timer_info_tick{devices.timers.info.ticks == 2}", Array("info_eb_num")
-            .Add "timer_info_tick{devices.timers.info.ticks == 3}", Array("info_restart")
+            .Add "timer_info_tick{device.timers.info.ticks == 0}", Array("info_ball_num")
+            .Add "timer_info_tick{device.timers.info.ticks == 1}", Array("info_trained_num")
+            .Add "timer_info_tick{device.timers.info.ticks == 2}", Array("info_eb_num")
+            .Add "timer_info_tick{device.timers.info.ticks == 3}", Array("info_restart")
         End With
 
 

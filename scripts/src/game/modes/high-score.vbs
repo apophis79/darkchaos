@@ -144,7 +144,7 @@ Sub CreateHighScoreMode
         With .SegmentDisplayPlayer()
             With .EventName("timer_high_score_timeout_tick")
                 With .Display("player4")
-                    .Text = "{devices.timers.high_score_timeout.ticks:0>2}"
+                    .Text = "{device.timers.high_score_timeout.ticks:0>2}"
                 End With
             End With
 

@@ -29,7 +29,7 @@ Sub CreateSuperPopsMode
                 .State = 1
             End With
             With .ControlEvents()
-                .Events = Array("timer_super_pops_tick{devices.timers.super_pops.ticks == "&(SuperPopsMaxTicks-5)&"}")
+                .Events = Array("timer_super_pops_tick{device.timers.super_pops.ticks == "&(SuperPopsMaxTicks-5)&"}")
                 .State = 2
             End With
             .ResetEvents = Array("mode_super_pops_stopping")

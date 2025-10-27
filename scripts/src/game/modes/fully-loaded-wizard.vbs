@@ -403,7 +403,7 @@ Sub CreateFullyLoadedWizardMode
                 End With
             End With
 
-            With .EventName("timer_fully_loaded_message_tick{devices.timers.fully_loaded_message.ticks == 1}")
+            With .EventName("timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 1}")
                 With .Display("player1")
                     .Text = ""
                     .Expire = flwizMessageInterval
@@ -424,7 +424,7 @@ Sub CreateFullyLoadedWizardMode
                 End With
             End With
 
-            With .EventName("timer_fully_loaded_message_tick{devices.timers.fully_loaded_message.ticks == 2}")
+            With .EventName("timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 2}")
                 With .Display("player1")
                     .Text = ""
                     .Expire = flwizMessageInterval

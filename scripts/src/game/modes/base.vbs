@@ -683,7 +683,7 @@ Sub CreateBaseMode()
                 End With
             End With
 
-            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 3}")   
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}")   
                 .Key = "key_gi_cracked"
                 .Show = "gi_cracked" 
                 .Priority = 200
@@ -745,7 +745,7 @@ Sub CreateBaseMode()
             .HurryUpTime = 0
             .GracePeriod = 500
             .AutoLaunch = True
-            .EnableEvents = Array("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}")
+            .EnableEvents = Array("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}")
         End With
 
         'Scoop ball hold

@@ -42,16 +42,16 @@ Sub CreateBonusMode
             .Add "check_bonus_waves{current_player.shot_meteor_wave8 == 2}", Array("bonus_light_w8")
             .Add "check_bonus_waves{current_player.shot_meteor_wave9 == 2}", Array("bonus_light_w9")
             'add total bonus to player's score
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 17}", Array("calc_bonus_total")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 17}", Array("calc_bonus_total")
             .Add "calc_bonus_total", Array("score_bonus_total")
             'handle bonus tally show
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", Array("bonus_2x")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 3}", Array("bonus_tally1","restart_sfx_tally_alt")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 6}", Array("bonus_tally2","restart_sfx_tally_alt")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 9}", Array("bonus_tally3","restart_sfx_tally_alt")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 12}", Array("bonus_tally4","restart_sfx_tally_alt")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 15}", Array("bonus_tally5","restart_sfx_tally_alt")
-            .Add "timer_bonus_tick{devices.timers.bonus.ticks == 18}", Array("bonus_tally6","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", Array("bonus_2x")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 3}", Array("bonus_tally1","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 6}", Array("bonus_tally2","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 9}", Array("bonus_tally3","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 12}", Array("bonus_tally4","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 15}", Array("bonus_tally5","restart_sfx_tally_alt")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 18}", Array("bonus_tally6","restart_sfx_tally_alt")
             .Add "restart_sfx_tally_alt", Array("stop_sfx_tally_alt")
             .Add "stop_sfx_tally_alt", Array("play_sfx_tally_alt")
             'finish up bonus mode
@@ -256,7 +256,7 @@ Sub CreateBonusMode
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "skip_bonus_tally{current_player.bonus_comboflip_block==0 && devices.timers.bonus.ticks < 16}"
+                .EventName = "skip_bonus_tally{current_player.bonus_comboflip_block==0 && device.timers.bonus.ticks < 16}"
                 .Action = "jump"
                 .Value = 16  'bonus total
             End With
@@ -285,7 +285,7 @@ Sub CreateBonusMode
                 End With
             End With
 
-            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 3}")
+            With .EventName("timer_bonus_tick{device.timers.bonus.ticks == 3}")
                 With .Display("player2")
                     .Priority = 5010
                     .Text = "WAVES"
@@ -300,7 +300,7 @@ Sub CreateBonusMode
                 End With
             End With
 
-            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 6}")
+            With .EventName("timer_bonus_tick{device.timers.bonus.ticks == 6}")
                 With .Display("player2")
                     .Priority = 5020
                     .Text = "TRAINING"
@@ -315,7 +315,7 @@ Sub CreateBonusMode
                 End With
             End With
 
-            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 9}")
+            With .EventName("timer_bonus_tick{device.timers.bonus.ticks == 9}")
                 With .Display("player2")
                     .Priority = 5030
                     .Text = "BOMBS"
@@ -330,7 +330,7 @@ Sub CreateBonusMode
                 End With
             End With
 
-            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 12}")
+            With .EventName("timer_bonus_tick{device.timers.bonus.ticks == 12}")
                 With .Display("player2")
                     .Priority = 5040
                     .Text = "MISSILES"
@@ -345,7 +345,7 @@ Sub CreateBonusMode
                 End With
             End With
 
-            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 15}")
+            With .EventName("timer_bonus_tick{device.timers.bonus.ticks == 15}")
                 With .Display("player2")
                     .Priority = 5050
                     .Text = "PROTONS"
@@ -360,7 +360,7 @@ Sub CreateBonusMode
                 End With
             End With
 
-            With .EventName("timer_bonus_tick{devices.timers.bonus.ticks == 18}")
+            With .EventName("timer_bonus_tick{device.timers.bonus.ticks == 18}")
                 With .Display("player2")
                     .Priority = 5060
                     .Text = "TOTAL"

@@ -24,9 +24,9 @@ Sub CreateMeteorWaveQualifyMode
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
 
-            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
-            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
-            .Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold","start_mwq_timer") 'stop these early to prevent scoop issues
+            .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
+            .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
+            .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold","start_mwq_timer") 'stop these early to prevent scoop issues
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
 
             .Add "meteor_wave_alert_show", Array("meteor_wave_alert_show1","meteor_wave_alert_show2","meteor_wave_alert_show3","meteor_wave_alert_show4")
@@ -35,13 +35,13 @@ Sub CreateMeteorWaveQualifyMode
         With .SegmentDisplayPlayer()
             With .EventName("init_pf_display")
                 With .Display("pf")
-                    .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
+                    .Text = "{device.timers.meteor_countdown.ticks:0>2}"
                 End With
             End With
             With .EventName("flash_mwq_display")
                 With .Display("pf")
                     .Key = "key_flash_mwq_display"
-                    .Text = "{devices.timers.meteor_countdown.ticks:0>2}"
+                    .Text = "{device.timers.meteor_countdown.ticks:0>2}"
                     .Flashing = "all"
                     .Priority = 100
                 End With
@@ -55,18 +55,18 @@ Sub CreateMeteorWaveQualifyMode
         End With
 
         With .SoundPlayer()
-            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}")
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}")
                 .Key = "key_voc_wave_incoming"
                 .Sound = "voc_wave_incoming"
             End With
         End With
 
         With .DOFPlayer()
-            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}")
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}")
                 .Action = "DOF_PULSE"
                 .DOFEvent = 139
             End With
-            With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}")
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}")
                 .Action = "DOF_PULSE"
                 .DOFEvent = 139
             End With
@@ -102,7 +102,7 @@ Sub CreateMeteorWaveQualifyMode
             With .EventName("timer_meteor_countdown_tick")
                 With .Variable("meteor_countdown_value")
                     .Action = "set"
-					.Int = "devices.timers.meteor_countdown.ticks" 
+					.Int = "device.timers.meteor_countdown.ticks" 
 				End With
 			End With
             With .EventName("timer_meteor_countdown_complete")
@@ -192,7 +192,7 @@ Sub CreateMeteorWaveQualifyMode
                 End With
             End With
 
-            ' With .EventName("timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 3}")   
+            ' With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}")   
             '     .Key = "key_gi_cracked"
             '     .Show = "gi_cracked" 
             '     .Priority = 10

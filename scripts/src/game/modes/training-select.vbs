@@ -36,19 +36,19 @@ Sub CreateTrainingSelectMode
             .Add "make_selection", Array("release_scoop_hold","start_training")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
-            .Add "timer_training_select_tick{devices.timers.training_select.ticks == 7}", Array("selection_hurry_up")
-            '.Add "timer_training_select_tick{devices.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
+            .Add "timer_training_select_tick{device.timers.training_select.ticks == 7}", Array("selection_hurry_up")
+            '.Add "timer_training_select_tick{device.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
             'start requested training
-            .Add "make_selection{devices.state_machines.training_select.state==""heal""}", Array("start_training_heal","stopping_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""cluster_bomb""}", Array("start_training_cluster_bomb","stopping_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""proton_cannon""}", Array("start_training_proton_cannon","stopping_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stopping_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stopping_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""shields""}", Array("start_training_shields","stopping_training_select")
-            .Add "make_selection{devices.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
+            .Add "make_selection{device.state_machines.training_select.state==""heal""}", Array("start_training_heal","stopping_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""cluster_bomb""}", Array("start_training_cluster_bomb","stopping_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""proton_cannon""}", Array("start_training_proton_cannon","stopping_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stopping_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stopping_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""shields""}", Array("start_training_shields","stopping_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
             .Add "stopping_training_select", Array("training_music_start","meteor_wave_music_stop","stop_training_select")
             'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
         End With
 
         With .RandomEventPlayer()
@@ -215,7 +215,7 @@ Sub CreateTrainingSelectMode
                 End With
                 With .ControlEvents()
                     .Events = Array(TrainingSelectionNames(x)&"_selected{current_player.ts_hurry_up==1}", _
-                                    "selection_hurry_up{devices.state_machines.training_select.state=="""&TrainingSelectionNames(x)&"""}")
+                                    "selection_hurry_up{device.state_machines.training_select.state=="""&TrainingSelectionNames(x)&"""}")
                     .State = 2
                 End With
                 .RestartEvents = Array(TrainingSelectionNames(x)&"_unselected","make_selection") 

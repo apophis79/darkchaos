@@ -157,7 +157,7 @@ Sub CreateMoonMultiballMode
             ' With .EventName("timer_moon_debug_tick")
             '     With .Variable("debug_ball_devices_moon_lock_balls")
             '         .Action = "set"
-			' 		.Int = "devices.ball_devices.moon_lock.balls"
+			' 		.Int = "device.ball_devices.moon_lock.balls"
 			' 	End With
             '     With .Variable("debug_multiball_lock_moon_launch_balls_locked")
             '         .Action = "set"

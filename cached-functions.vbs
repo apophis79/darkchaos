@@ -55,337 +55,337 @@ Function Glf_11(args)
 	    Glf_11 = glf_timers("attract_shows").GetValue("ticks") = 8
 	If Err Then Glf_11 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 8}", "Glf_11"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 8}", "Glf_11"
 Function Glf_12(args)
 	On Error Resume Next
 	    Glf_12 = glf_timers("attract_shows").GetValue("ticks") = 16
 	If Err Then Glf_12 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 16}", "Glf_12"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 16}", "Glf_12"
 Function Glf_13(args)
 	On Error Resume Next
 	    Glf_13 = glf_timers("attract_shows").GetValue("ticks") = 26
 	If Err Then Glf_13 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 26}", "Glf_13"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 26}", "Glf_13"
 Function Glf_14(args)
 	On Error Resume Next
 	    Glf_14 = glf_timers("attract_shows").GetValue("ticks") = 30
 	If Err Then Glf_14 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 30}", "Glf_14"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 30}", "Glf_14"
 Function Glf_15(args)
 	On Error Resume Next
 	    Glf_15 = glf_timers("attract_shows").GetValue("ticks") = 38
 	If Err Then Glf_15 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 38}", "Glf_15"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 38}", "Glf_15"
 Function Glf_16(args)
 	On Error Resume Next
 	    Glf_16 = glf_timers("attract_shows").GetValue("ticks") = 42
 	If Err Then Glf_16 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 42}", "Glf_16"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 42}", "Glf_16"
 Function Glf_17(args)
 	On Error Resume Next
 	    Glf_17 = glf_timers("attract_shows").GetValue("ticks") = 44
 	If Err Then Glf_17 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 44}", "Glf_17"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 44}", "Glf_17"
 Function Glf_18(args)
 	On Error Resume Next
 	    Glf_18 = glf_timers("attract_shows").GetValue("ticks") = 45
 	If Err Then Glf_18 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 45}", "Glf_18"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 45}", "Glf_18"
 Function Glf_19(args)
 	On Error Resume Next
 	    Glf_19 = glf_timers("attract_shows").GetValue("ticks") = 54
 	If Err Then Glf_19 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 54}", "Glf_19"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 54}", "Glf_19"
 Function Glf_20(args)
 	On Error Resume Next
 	    Glf_20 = glf_timers("attract_shows").GetValue("ticks") = 60
 	If Err Then Glf_20 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 60}", "Glf_20"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 60}", "Glf_20"
 Function Glf_21(args)
 	On Error Resume Next
 	    Glf_21 = glf_timers("attract_shows").GetValue("ticks") = 61
 	If Err Then Glf_21 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 61}", "Glf_21"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 61}", "Glf_21"
 Function Glf_22(args)
 	On Error Resume Next
 	    Glf_22 = glf_timers("attract_shows").GetValue("ticks") = 70
 	If Err Then Glf_22 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 70}", "Glf_22"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 70}", "Glf_22"
 Function Glf_23(args)
 	On Error Resume Next
 	    Glf_23 = glf_timers("attract_shows").GetValue("ticks") = 71
 	If Err Then Glf_23 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 71}", "Glf_23"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 71}", "Glf_23"
 Function Glf_24(args)
 	On Error Resume Next
 	    Glf_24 = glf_timers("attract_shows").GetValue("ticks") = 80
 	If Err Then Glf_24 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 80}", "Glf_24"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 80}", "Glf_24"
 Function Glf_25(args)
 	On Error Resume Next
 	    Glf_25 = glf_timers("attract_shows").GetValue("ticks") = 88
 	If Err Then Glf_25 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 88}", "Glf_25"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 88}", "Glf_25"
 Function Glf_26(args)
 	On Error Resume Next
 	    Glf_26 = glf_timers("attract_shows").GetValue("ticks") = 98
 	If Err Then Glf_26 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 98}", "Glf_26"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 98}", "Glf_26"
 Function Glf_27(args)
 	On Error Resume Next
 	    Glf_27 = glf_timers("attract_shows").GetValue("ticks") = 102
 	If Err Then Glf_27 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 102}", "Glf_27"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 102}", "Glf_27"
 Function Glf_28(args)
 	On Error Resume Next
 	    Glf_28 = glf_timers("attract_shows").GetValue("ticks") = 103
 	If Err Then Glf_28 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 103}", "Glf_28"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 103}", "Glf_28"
 Function Glf_29(args)
 	On Error Resume Next
 	    Glf_29 = glf_timers("attract_shows").GetValue("ticks") = 116
 	If Err Then Glf_29 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 116}", "Glf_29"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 116}", "Glf_29"
 Function Glf_30(args)
 	On Error Resume Next
 	    Glf_30 = glf_timers("attract_shows").GetValue("ticks") = 126
 	If Err Then Glf_30 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 126}", "Glf_30"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 126}", "Glf_30"
 Function Glf_31(args)
 	On Error Resume Next
 	    Glf_31 = glf_timers("attract_shows").GetValue("ticks") = 128
 	If Err Then Glf_31 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 128}", "Glf_31"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 128}", "Glf_31"
 Function Glf_32(args)
 	On Error Resume Next
 	    Glf_32 = glf_timers("attract_shows").GetValue("ticks") = 132
 	If Err Then Glf_32 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 132}", "Glf_32"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 132}", "Glf_32"
 Function Glf_33(args)
 	On Error Resume Next
 	    Glf_33 = glf_timers("attract_shows").GetValue("ticks") = 133
 	If Err Then Glf_33 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 133}", "Glf_33"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 133}", "Glf_33"
 Function Glf_34(args)
 	On Error Resume Next
 	    Glf_34 = glf_timers("attract_shows").GetValue("ticks") = 150
 	If Err Then Glf_34 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 150}", "Glf_34"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 150}", "Glf_34"
 Function Glf_35(args)
 	On Error Resume Next
 	    Glf_35 = glf_timers("attract_shows").GetValue("ticks") = 151
 	If Err Then Glf_35 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 151}", "Glf_35"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 151}", "Glf_35"
 Function Glf_36(args)
 	On Error Resume Next
 	    Glf_36 = glf_timers("attract_shows").GetValue("ticks") = 164
 	If Err Then Glf_36 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 164}", "Glf_36"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 164}", "Glf_36"
 Function Glf_37(args)
 	On Error Resume Next
 	    Glf_37 = glf_timers("attract_shows").GetValue("ticks") = 178
 	If Err Then Glf_37 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 178}", "Glf_37"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 178}", "Glf_37"
 Function Glf_38(args)
 	On Error Resume Next
 	    Glf_38 = glf_timers("attract_shows").GetValue("ticks") = 182
 	If Err Then Glf_38 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 182}", "Glf_38"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 182}", "Glf_38"
 Function Glf_39(args)
 	On Error Resume Next
 	    Glf_39 = glf_timers("attract_shows").GetValue("ticks") = 184
 	If Err Then Glf_39 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 184}", "Glf_39"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 184}", "Glf_39"
 Function Glf_40(args)
 	On Error Resume Next
 	    Glf_40 = glf_timers("attract_shows").GetValue("ticks") = 198
 	If Err Then Glf_40 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 198}", "Glf_40"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 198}", "Glf_40"
 Function Glf_41(args)
 	On Error Resume Next
 	    Glf_41 = glf_timers("attract_shows").GetValue("ticks") = 202
 	If Err Then Glf_41 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 202}", "Glf_41"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 202}", "Glf_41"
 Function Glf_42(args)
 	On Error Resume Next
 	    Glf_42 = glf_timers("attract_shows").GetValue("ticks") = 203
 	If Err Then Glf_42 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 203}", "Glf_42"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 203}", "Glf_42"
 Function Glf_43(args)
 	On Error Resume Next
 	    Glf_43 = glf_timers("attract_shows").GetValue("ticks") = 208
 	If Err Then Glf_43 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 208}", "Glf_43"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 208}", "Glf_43"
 Function Glf_44(args)
 	On Error Resume Next
 	    Glf_44 = glf_timers("attract_shows").GetValue("ticks") = 209
 	If Err Then Glf_44 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 209}", "Glf_44"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 209}", "Glf_44"
 Function Glf_45(args)
 	On Error Resume Next
 	    Glf_45 = glf_timers("attract_shows").GetValue("ticks") = 216
 	If Err Then Glf_45 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 216}", "Glf_45"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 216}", "Glf_45"
 Function Glf_46(args)
 	On Error Resume Next
 	    Glf_46 = glf_timers("attract_shows").GetValue("ticks") = 218
 	If Err Then Glf_46 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 218}", "Glf_46"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 218}", "Glf_46"
 Function Glf_47(args)
 	On Error Resume Next
 	    Glf_47 = glf_timers("attract_shows").GetValue("ticks") = 224
 	If Err Then Glf_47 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 224}", "Glf_47"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 224}", "Glf_47"
 Function Glf_48(args)
 	On Error Resume Next
 	    Glf_48 = glf_timers("attract_shows").GetValue("ticks") = 225
 	If Err Then Glf_48 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 225}", "Glf_48"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 225}", "Glf_48"
 Function Glf_49(args)
 	On Error Resume Next
 	    Glf_49 = glf_timers("attract_shows").GetValue("ticks") = 228
 	If Err Then Glf_49 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 228}", "Glf_49"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 228}", "Glf_49"
 Function Glf_50(args)
 	On Error Resume Next
 	    Glf_50 = glf_timers("attract_shows").GetValue("ticks") = 229
 	If Err Then Glf_50 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 229}", "Glf_50"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 229}", "Glf_50"
 Function Glf_51(args)
 	On Error Resume Next
 	    Glf_51 = glf_timers("attract_shows").GetValue("ticks") = 232
 	If Err Then Glf_51 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 232}", "Glf_51"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 232}", "Glf_51"
 Function Glf_52(args)
 	On Error Resume Next
 	    Glf_52 = glf_timers("attract_shows").GetValue("ticks") = 233
 	If Err Then Glf_52 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 233}", "Glf_52"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 233}", "Glf_52"
 Function Glf_53(args)
 	On Error Resume Next
 	    Glf_53 = glf_timers("attract_shows").GetValue("ticks") = 238
 	If Err Then Glf_53 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 238}", "Glf_53"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 238}", "Glf_53"
 Function Glf_54(args)
 	On Error Resume Next
 	    Glf_54 = glf_timers("attract_shows").GetValue("ticks") = 239
 	If Err Then Glf_54 = False
 End Function
-glf_funcRefMap.Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 239}", "Glf_54"
+glf_funcRefMap.Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 239}", "Glf_54"
 Function Glf_55(args)
 	On Error Resume Next
 	    Glf_55 = glf_timers("attract_display").GetValue("ticks") = 1
 	If Err Then Glf_55 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 1}", "Glf_55"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 1}", "Glf_55"
 Function Glf_56(args)
 	On Error Resume Next
 	    Glf_56 = glf_timers("attract_display").GetValue("ticks") = 7
 	If Err Then Glf_56 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 7}", "Glf_56"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 7}", "Glf_56"
 Function Glf_57(args)
 	On Error Resume Next
 	    Glf_57 = glf_timers("attract_display").GetValue("ticks") = 17
 	If Err Then Glf_57 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 17}", "Glf_57"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 17}", "Glf_57"
 Function Glf_58(args)
 	On Error Resume Next
 	    Glf_58 = glf_timers("attract_display").GetValue("ticks") = 21
 	If Err Then Glf_58 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 21}", "Glf_58"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 21}", "Glf_58"
 Function Glf_59(args)
 	On Error Resume Next
 	    Glf_59 = glf_timers("attract_display").GetValue("ticks") = 25
 	If Err Then Glf_59 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 25}", "Glf_59"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 25}", "Glf_59"
 Function Glf_60(args)
 	On Error Resume Next
 	    Glf_60 = glf_timers("attract_display").GetValue("ticks") = 29
 	If Err Then Glf_60 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 29}", "Glf_60"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 29}", "Glf_60"
 Function Glf_61(args)
 	On Error Resume Next
 	    Glf_61 = glf_timers("attract_display").GetValue("ticks") = 33
 	If Err Then Glf_61 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 33}", "Glf_61"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 33}", "Glf_61"
 Function Glf_62(args)
 	On Error Resume Next
 	    Glf_62 = glf_timers("attract_display").GetValue("ticks") = 36
 	If Err Then Glf_62 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 36}", "Glf_62"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 36}", "Glf_62"
 Function Glf_63(args)
 	On Error Resume Next
 	    Glf_63 = glf_timers("attract_display").GetValue("ticks") = 40
 	If Err Then Glf_63 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 40}", "Glf_63"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 40}", "Glf_63"
 Function Glf_64(args)
 	On Error Resume Next
 	    Glf_64 = glf_timers("attract_display").GetValue("ticks") = 46
 	If Err Then Glf_64 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 46}", "Glf_64"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 46}", "Glf_64"
 Function Glf_65(args)
 	On Error Resume Next
 	    Glf_65 = glf_timers("attract_display").GetValue("ticks") = 48
 	If Err Then Glf_65 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 48}", "Glf_65"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 48}", "Glf_65"
 Function Glf_66(args)
 	On Error Resume Next
 	    Glf_66 = glf_timers("attract_display").GetValue("ticks") = 50
 	If Err Then Glf_66 = False
 End Function
-glf_funcRefMap.Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 50}", "Glf_66"
+glf_funcRefMap.Add "timer_attract_display_tick{device.timers.attract_display.ticks == 50}", "Glf_66"
 Function Glf_67(args)
 	Glf_67 = 3
 End Function
@@ -615,49 +615,49 @@ Function Glf_113(args)
 	    Glf_113 = glf_timers("bonus").GetValue("ticks") = 17
 	If Err Then Glf_113 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 17}", "Glf_113"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 17}", "Glf_113"
 Function Glf_114(args)
 	On Error Resume Next
 	    Glf_114 = glf_timers("bonus").GetValue("ticks") = 2 And GetPlayerState("bonus_multiplier") = 2
 	If Err Then Glf_114 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", "Glf_114"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", "Glf_114"
 Function Glf_115(args)
 	On Error Resume Next
 	    Glf_115 = glf_timers("bonus").GetValue("ticks") = 3
 	If Err Then Glf_115 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 3}", "Glf_115"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 3}", "Glf_115"
 Function Glf_116(args)
 	On Error Resume Next
 	    Glf_116 = glf_timers("bonus").GetValue("ticks") = 6
 	If Err Then Glf_116 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 6}", "Glf_116"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 6}", "Glf_116"
 Function Glf_117(args)
 	On Error Resume Next
 	    Glf_117 = glf_timers("bonus").GetValue("ticks") = 9
 	If Err Then Glf_117 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 9}", "Glf_117"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 9}", "Glf_117"
 Function Glf_118(args)
 	On Error Resume Next
 	    Glf_118 = glf_timers("bonus").GetValue("ticks") = 12
 	If Err Then Glf_118 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 12}", "Glf_118"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 12}", "Glf_118"
 Function Glf_119(args)
 	On Error Resume Next
 	    Glf_119 = glf_timers("bonus").GetValue("ticks") = 15
 	If Err Then Glf_119 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 15}", "Glf_119"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 15}", "Glf_119"
 Function Glf_120(args)
 	On Error Resume Next
 	    Glf_120 = glf_timers("bonus").GetValue("ticks") = 18
 	If Err Then Glf_120 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{devices.timers.bonus.ticks == 18}", "Glf_120"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 18}", "Glf_120"
 Function Glf_121(args)
 	Glf_121 = 24
 End Function
@@ -667,7 +667,7 @@ Function Glf_122(args)
 	    Glf_122 = GetPlayerState("bonus_comboflip_block")=0 And glf_timers("bonus").GetValue("ticks") < 16
 	If Err Then Glf_122 = False
 End Function
-glf_funcRefMap.Add "skip_bonus_tally{current_player.bonus_comboflip_block==0 && devices.timers.bonus.ticks < 16}", "Glf_122"
+glf_funcRefMap.Add "skip_bonus_tally{current_player.bonus_comboflip_block==0 && device.timers.bonus.ticks < 16}", "Glf_122"
 Function Glf_123(args)
 	Glf_123 = 16
 End Function
@@ -769,451 +769,451 @@ Function Glf_146(args)
 	    Glf_146 = glf_timers("post_game_show").GetValue("ticks") = 1
 	If Err Then Glf_146 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 1}", "Glf_146"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 1}", "Glf_146"
 Function Glf_147(args)
 	On Error Resume Next
 	    Glf_147 = glf_timers("post_game_show").GetValue("ticks") = 2
 	If Err Then Glf_147 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 2}", "Glf_147"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 2}", "Glf_147"
 Function Glf_148(args)
 	On Error Resume Next
 	    Glf_148 = glf_timers("post_game_show").GetValue("ticks") = 4
 	If Err Then Glf_148 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 4}", "Glf_148"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 4}", "Glf_148"
 Function Glf_149(args)
 	On Error Resume Next
 	    Glf_149 = glf_timers("post_game_show").GetValue("ticks") = 8
 	If Err Then Glf_149 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 8}", "Glf_149"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 8}", "Glf_149"
 Function Glf_150(args)
 	On Error Resume Next
 	    Glf_150 = glf_timers("post_game_show").GetValue("ticks") = 10
 	If Err Then Glf_150 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 10}", "Glf_150"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 10}", "Glf_150"
 Function Glf_151(args)
 	On Error Resume Next
 	    Glf_151 = glf_timers("post_game_show").GetValue("ticks") = 12
 	If Err Then Glf_151 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 12}", "Glf_151"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 12}", "Glf_151"
 Function Glf_152(args)
 	On Error Resume Next
 	    Glf_152 = glf_timers("post_game_show").GetValue("ticks") = 16
 	If Err Then Glf_152 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 16}", "Glf_152"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 16}", "Glf_152"
 Function Glf_153(args)
 	On Error Resume Next
 	    Glf_153 = glf_timers("post_game_show").GetValue("ticks") = 17
 	If Err Then Glf_153 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 17}", "Glf_153"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 17}", "Glf_153"
 Function Glf_154(args)
 	On Error Resume Next
 	    Glf_154 = glf_timers("post_game_show").GetValue("ticks") = 18
 	If Err Then Glf_154 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 18}", "Glf_154"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 18}", "Glf_154"
 Function Glf_155(args)
 	On Error Resume Next
 	    Glf_155 = glf_timers("post_game_show").GetValue("ticks") = 19
 	If Err Then Glf_155 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 19}", "Glf_155"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 19}", "Glf_155"
 Function Glf_156(args)
 	On Error Resume Next
 	    Glf_156 = glf_timers("post_game_show").GetValue("ticks") = 20
 	If Err Then Glf_156 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 20}", "Glf_156"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 20}", "Glf_156"
 Function Glf_157(args)
 	On Error Resume Next
 	    Glf_157 = glf_timers("post_game_show").GetValue("ticks") = 24
 	If Err Then Glf_157 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 24}", "Glf_157"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 24}", "Glf_157"
 Function Glf_158(args)
 	On Error Resume Next
 	    Glf_158 = glf_timers("post_game_show").GetValue("ticks") = 25
 	If Err Then Glf_158 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 25}", "Glf_158"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 25}", "Glf_158"
 Function Glf_159(args)
 	On Error Resume Next
 	    Glf_159 = glf_timers("post_game_show").GetValue("ticks") = 26
 	If Err Then Glf_159 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 26}", "Glf_159"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 26}", "Glf_159"
 Function Glf_160(args)
 	On Error Resume Next
 	    Glf_160 = glf_timers("post_game_show").GetValue("ticks") = 27
 	If Err Then Glf_160 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 27}", "Glf_160"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 27}", "Glf_160"
 Function Glf_161(args)
 	On Error Resume Next
 	    Glf_161 = glf_timers("post_game_show").GetValue("ticks") = 28
 	If Err Then Glf_161 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 28}", "Glf_161"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 28}", "Glf_161"
 Function Glf_162(args)
 	On Error Resume Next
 	    Glf_162 = glf_timers("post_game_show").GetValue("ticks") = 29
 	If Err Then Glf_162 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 29}", "Glf_162"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 29}", "Glf_162"
 Function Glf_163(args)
 	On Error Resume Next
 	    Glf_163 = glf_timers("post_game_show").GetValue("ticks") = 30
 	If Err Then Glf_163 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 30}", "Glf_163"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 30}", "Glf_163"
 Function Glf_164(args)
 	On Error Resume Next
 	    Glf_164 = glf_timers("post_game_show").GetValue("ticks") = 31
 	If Err Then Glf_164 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 31}", "Glf_164"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 31}", "Glf_164"
 Function Glf_165(args)
 	On Error Resume Next
 	    Glf_165 = glf_timers("post_game_show").GetValue("ticks") = 32
 	If Err Then Glf_165 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 32}", "Glf_165"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 32}", "Glf_165"
 Function Glf_166(args)
 	On Error Resume Next
 	    Glf_166 = glf_timers("post_game_show").GetValue("ticks") = 33
 	If Err Then Glf_166 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 33}", "Glf_166"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 33}", "Glf_166"
 Function Glf_167(args)
 	On Error Resume Next
 	    Glf_167 = glf_timers("post_game_show").GetValue("ticks") = 34
 	If Err Then Glf_167 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 34}", "Glf_167"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 34}", "Glf_167"
 Function Glf_168(args)
 	On Error Resume Next
 	    Glf_168 = glf_timers("post_game_show").GetValue("ticks") = 35
 	If Err Then Glf_168 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 35}", "Glf_168"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 35}", "Glf_168"
 Function Glf_169(args)
 	On Error Resume Next
 	    Glf_169 = glf_timers("post_game_show").GetValue("ticks") = 36
 	If Err Then Glf_169 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 36}", "Glf_169"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 36}", "Glf_169"
 Function Glf_170(args)
 	On Error Resume Next
 	    Glf_170 = glf_timers("post_game_show").GetValue("ticks") = 37
 	If Err Then Glf_170 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 37}", "Glf_170"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 37}", "Glf_170"
 Function Glf_171(args)
 	On Error Resume Next
 	    Glf_171 = glf_timers("post_game_show").GetValue("ticks") = 38
 	If Err Then Glf_171 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 38}", "Glf_171"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 38}", "Glf_171"
 Function Glf_172(args)
 	On Error Resume Next
 	    Glf_172 = glf_timers("post_game_show").GetValue("ticks") = 39
 	If Err Then Glf_172 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 39}", "Glf_172"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 39}", "Glf_172"
 Function Glf_173(args)
 	On Error Resume Next
 	    Glf_173 = glf_timers("post_game_show").GetValue("ticks") = 40
 	If Err Then Glf_173 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 40}", "Glf_173"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 40}", "Glf_173"
 Function Glf_174(args)
 	On Error Resume Next
 	    Glf_174 = glf_timers("post_game_show").GetValue("ticks") = 41
 	If Err Then Glf_174 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 41}", "Glf_174"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 41}", "Glf_174"
 Function Glf_175(args)
 	On Error Resume Next
 	    Glf_175 = glf_timers("post_game_show").GetValue("ticks") = 42
 	If Err Then Glf_175 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 42}", "Glf_175"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 42}", "Glf_175"
 Function Glf_176(args)
 	On Error Resume Next
 	    Glf_176 = glf_timers("post_game_show").GetValue("ticks") = 43
 	If Err Then Glf_176 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 43}", "Glf_176"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 43}", "Glf_176"
 Function Glf_177(args)
 	On Error Resume Next
 	    Glf_177 = glf_timers("post_game_show").GetValue("ticks") = 44
 	If Err Then Glf_177 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 44}", "Glf_177"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 44}", "Glf_177"
 Function Glf_178(args)
 	On Error Resume Next
 	    Glf_178 = glf_timers("post_game_show").GetValue("ticks") = 45
 	If Err Then Glf_178 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 45}", "Glf_178"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 45}", "Glf_178"
 Function Glf_179(args)
 	On Error Resume Next
 	    Glf_179 = glf_timers("post_game_show").GetValue("ticks") = 46
 	If Err Then Glf_179 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 46}", "Glf_179"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 46}", "Glf_179"
 Function Glf_180(args)
 	On Error Resume Next
 	    Glf_180 = glf_timers("post_game_show").GetValue("ticks") = 47
 	If Err Then Glf_180 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 47}", "Glf_180"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 47}", "Glf_180"
 Function Glf_181(args)
 	On Error Resume Next
 	    Glf_181 = glf_timers("post_game_show").GetValue("ticks") = 48
 	If Err Then Glf_181 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 48}", "Glf_181"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 48}", "Glf_181"
 Function Glf_182(args)
 	On Error Resume Next
 	    Glf_182 = glf_timers("post_game_show").GetValue("ticks") = 49
 	If Err Then Glf_182 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 49}", "Glf_182"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 49}", "Glf_182"
 Function Glf_183(args)
 	On Error Resume Next
 	    Glf_183 = glf_timers("post_game_show").GetValue("ticks") = 50
 	If Err Then Glf_183 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 50}", "Glf_183"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 50}", "Glf_183"
 Function Glf_184(args)
 	On Error Resume Next
 	    Glf_184 = glf_timers("post_game_show").GetValue("ticks") = 51
 	If Err Then Glf_184 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 51}", "Glf_184"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 51}", "Glf_184"
 Function Glf_185(args)
 	On Error Resume Next
 	    Glf_185 = glf_timers("post_game_show").GetValue("ticks") = 52
 	If Err Then Glf_185 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 52}", "Glf_185"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 52}", "Glf_185"
 Function Glf_186(args)
 	On Error Resume Next
 	    Glf_186 = glf_timers("post_game_show").GetValue("ticks") = 53
 	If Err Then Glf_186 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 53}", "Glf_186"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 53}", "Glf_186"
 Function Glf_187(args)
 	On Error Resume Next
 	    Glf_187 = glf_timers("post_game_show").GetValue("ticks") = 54
 	If Err Then Glf_187 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 54}", "Glf_187"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 54}", "Glf_187"
 Function Glf_188(args)
 	On Error Resume Next
 	    Glf_188 = glf_timers("post_game_show").GetValue("ticks") = 55
 	If Err Then Glf_188 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 55}", "Glf_188"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 55}", "Glf_188"
 Function Glf_189(args)
 	On Error Resume Next
 	    Glf_189 = glf_timers("post_game_show").GetValue("ticks") = 56
 	If Err Then Glf_189 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 56}", "Glf_189"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 56}", "Glf_189"
 Function Glf_190(args)
 	On Error Resume Next
 	    Glf_190 = glf_timers("post_game_show").GetValue("ticks") = 57
 	If Err Then Glf_190 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 57}", "Glf_190"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 57}", "Glf_190"
 Function Glf_191(args)
 	On Error Resume Next
 	    Glf_191 = glf_timers("post_game_show").GetValue("ticks") = 58
 	If Err Then Glf_191 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 58}", "Glf_191"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 58}", "Glf_191"
 Function Glf_192(args)
 	On Error Resume Next
 	    Glf_192 = glf_timers("post_game_show").GetValue("ticks") = 59
 	If Err Then Glf_192 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 59}", "Glf_192"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 59}", "Glf_192"
 Function Glf_193(args)
 	On Error Resume Next
 	    Glf_193 = glf_timers("post_game_show").GetValue("ticks") = 60
 	If Err Then Glf_193 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 60}", "Glf_193"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 60}", "Glf_193"
 Function Glf_194(args)
 	On Error Resume Next
 	    Glf_194 = glf_timers("post_game_show").GetValue("ticks") = 61
 	If Err Then Glf_194 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 61}", "Glf_194"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 61}", "Glf_194"
 Function Glf_195(args)
 	On Error Resume Next
 	    Glf_195 = glf_timers("post_game_show").GetValue("ticks") = 62
 	If Err Then Glf_195 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 62}", "Glf_195"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 62}", "Glf_195"
 Function Glf_196(args)
 	On Error Resume Next
 	    Glf_196 = glf_timers("post_game_show").GetValue("ticks") = 63
 	If Err Then Glf_196 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 63}", "Glf_196"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 63}", "Glf_196"
 Function Glf_197(args)
 	On Error Resume Next
 	    Glf_197 = glf_timers("post_game_show").GetValue("ticks") = 64
 	If Err Then Glf_197 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 64}", "Glf_197"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 64}", "Glf_197"
 Function Glf_198(args)
 	On Error Resume Next
 	    Glf_198 = glf_timers("post_game_show").GetValue("ticks") = 65
 	If Err Then Glf_198 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 65}", "Glf_198"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 65}", "Glf_198"
 Function Glf_199(args)
 	On Error Resume Next
 	    Glf_199 = glf_timers("post_game_show").GetValue("ticks") = 66
 	If Err Then Glf_199 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 66}", "Glf_199"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 66}", "Glf_199"
 Function Glf_200(args)
 	On Error Resume Next
 	    Glf_200 = glf_timers("post_game_show").GetValue("ticks") = 67
 	If Err Then Glf_200 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 67}", "Glf_200"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 67}", "Glf_200"
 Function Glf_201(args)
 	On Error Resume Next
 	    Glf_201 = glf_timers("post_game_show").GetValue("ticks") = 68
 	If Err Then Glf_201 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 68}", "Glf_201"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 68}", "Glf_201"
 Function Glf_202(args)
 	On Error Resume Next
 	    Glf_202 = glf_timers("post_game_show").GetValue("ticks") = 69
 	If Err Then Glf_202 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 69}", "Glf_202"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 69}", "Glf_202"
 Function Glf_203(args)
 	On Error Resume Next
 	    Glf_203 = glf_timers("post_game_show").GetValue("ticks") = 70
 	If Err Then Glf_203 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 70}", "Glf_203"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 70}", "Glf_203"
 Function Glf_204(args)
 	On Error Resume Next
 	    Glf_204 = glf_timers("post_game_show").GetValue("ticks") = 71
 	If Err Then Glf_204 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 71}", "Glf_204"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 71}", "Glf_204"
 Function Glf_205(args)
 	On Error Resume Next
 	    Glf_205 = glf_timers("post_game_show").GetValue("ticks") = 72
 	If Err Then Glf_205 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 72}", "Glf_205"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 72}", "Glf_205"
 Function Glf_206(args)
 	On Error Resume Next
 	    Glf_206 = glf_timers("post_game_show").GetValue("ticks") = 73
 	If Err Then Glf_206 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 73}", "Glf_206"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 73}", "Glf_206"
 Function Glf_207(args)
 	On Error Resume Next
 	    Glf_207 = glf_timers("post_game_show").GetValue("ticks") = 74
 	If Err Then Glf_207 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 74}", "Glf_207"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 74}", "Glf_207"
 Function Glf_208(args)
 	On Error Resume Next
 	    Glf_208 = glf_timers("post_game_show").GetValue("ticks") = 75
 	If Err Then Glf_208 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 75}", "Glf_208"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 75}", "Glf_208"
 Function Glf_209(args)
 	On Error Resume Next
 	    Glf_209 = glf_timers("post_game_show").GetValue("ticks") = 76
 	If Err Then Glf_209 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 76}", "Glf_209"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 76}", "Glf_209"
 Function Glf_210(args)
 	On Error Resume Next
 	    Glf_210 = glf_timers("post_game_show").GetValue("ticks") = 78
 	If Err Then Glf_210 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 78}", "Glf_210"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 78}", "Glf_210"
 Function Glf_211(args)
 	On Error Resume Next
 	    Glf_211 = glf_timers("post_game_show").GetValue("ticks") = 79
 	If Err Then Glf_211 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 79}", "Glf_211"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 79}", "Glf_211"
 Function Glf_212(args)
 	On Error Resume Next
 	    Glf_212 = glf_timers("post_game_show").GetValue("ticks") = 80
 	If Err Then Glf_212 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 80}", "Glf_212"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 80}", "Glf_212"
 Function Glf_213(args)
 	On Error Resume Next
 	    Glf_213 = glf_timers("post_game_show").GetValue("ticks") = 81
 	If Err Then Glf_213 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 81}", "Glf_213"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 81}", "Glf_213"
 Function Glf_214(args)
 	On Error Resume Next
 	    Glf_214 = glf_timers("post_game_show").GetValue("ticks") = 82
 	If Err Then Glf_214 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 82}", "Glf_214"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 82}", "Glf_214"
 Function Glf_215(args)
 	On Error Resume Next
 	    Glf_215 = glf_timers("post_game_show").GetValue("ticks") = 83
 	If Err Then Glf_215 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 83}", "Glf_215"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 83}", "Glf_215"
 Function Glf_216(args)
 	On Error Resume Next
 	    Glf_216 = glf_timers("post_game_show").GetValue("ticks") = 84
 	If Err Then Glf_216 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 84}", "Glf_216"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 84}", "Glf_216"
 Function Glf_217(args)
 	On Error Resume Next
 	    Glf_217 = glf_timers("post_game_show").GetValue("ticks") = 85
 	If Err Then Glf_217 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 85}", "Glf_217"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 85}", "Glf_217"
 Function Glf_218(args)
 	On Error Resume Next
 	    Glf_218 = glf_timers("post_game_show").GetValue("ticks") = 86
 	If Err Then Glf_218 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 86}", "Glf_218"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 86}", "Glf_218"
 Function Glf_219(args)
 	On Error Resume Next
 	    Glf_219 = glf_timers("post_game_show").GetValue("ticks") = 87
 	If Err Then Glf_219 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 87}", "Glf_219"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 87}", "Glf_219"
 Function Glf_220(args)
 	On Error Resume Next
 	    Glf_220 = glf_timers("post_game_show").GetValue("ticks") = 88
 	If Err Then Glf_220 = False
 End Function
-glf_funcRefMap.Add "timer_post_game_show_tick{devices.timers.post_game_show.ticks == 88}", "Glf_220"
+glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 88}", "Glf_220"
 Function Glf_221(args)
 	On Error Resume Next
 	    Glf_221 = glf_machine_vars("message_num").GetValue() = 1 And glf_machine_vars("won_game").GetValue() = 0
@@ -2523,7 +2523,7 @@ glf_funcRefMap.Add "60", "Glf_510"
 Function Glf_511(args)
 	Glf_511 = Glf_FormatValue(glf_timers("high_score_timeout").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.high_score_timeout.ticks,""0>2"")", "Glf_511"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.high_score_timeout.ticks,""0>2"")", "Glf_511"
 Function Glf_512(args)
 	On Error Resume Next
 	    Glf_512 = glf_dispatch_current_kwargs("player_num")=1
@@ -3535,7 +3535,7 @@ Function Glf_701(args)
 	    Glf_701 = glf_timers("meteor_countdown").GetValue("ticks") = 3
 	If Err Then Glf_701 = False
 End Function
-glf_funcRefMap.Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 3}", "Glf_701"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}", "Glf_701"
 Function Glf_702(args)
 	Glf_702 = 6000
 End Function
@@ -3557,7 +3557,7 @@ Function Glf_706(args)
 	    Glf_706 = glf_timers("meteor_countdown").GetValue("ticks") = 1
 	If Err Then Glf_706 = False
 End Function
-glf_funcRefMap.Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 1}", "Glf_706"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", "Glf_706"
 Function Glf_707(args)
 	On Error Resume Next
 	    Glf_707 = Glf_GameVariable("balls_in_play") = 1 And GetPlayerState("ball_just_started") = 0
@@ -3587,25 +3587,25 @@ Function Glf_711(args)
 	    Glf_711 = glf_timers("info").GetValue("ticks") = 0
 	If Err Then Glf_711 = False
 End Function
-glf_funcRefMap.Add "timer_info_tick{devices.timers.info.ticks == 0}", "Glf_711"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 0}", "Glf_711"
 Function Glf_712(args)
 	On Error Resume Next
 	    Glf_712 = glf_timers("info").GetValue("ticks") = 1
 	If Err Then Glf_712 = False
 End Function
-glf_funcRefMap.Add "timer_info_tick{devices.timers.info.ticks == 1}", "Glf_712"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 1}", "Glf_712"
 Function Glf_713(args)
 	On Error Resume Next
 	    Glf_713 = glf_timers("info").GetValue("ticks") = 2
 	If Err Then Glf_713 = False
 End Function
-glf_funcRefMap.Add "timer_info_tick{devices.timers.info.ticks == 2}", "Glf_713"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 2}", "Glf_713"
 Function Glf_714(args)
 	On Error Resume Next
 	    Glf_714 = glf_timers("info").GetValue("ticks") = 3
 	If Err Then Glf_714 = False
 End Function
-glf_funcRefMap.Add "timer_info_tick{devices.timers.info.ticks == 3}", "Glf_714"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 3}", "Glf_714"
 Function Glf_715(args)
 	On Error Resume Next
 	    Glf_715 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
@@ -3753,13 +3753,13 @@ Function Glf_740(args)
 	    Glf_740 = glf_timers("alien_attack").GetValue("ticks") > 0
 	If Err Then Glf_740 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{devices.timers.alien_attack.ticks > 0}", "Glf_740"
+glf_funcRefMap.Add "timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}", "Glf_740"
 Function Glf_741(args)
 	On Error Resume Next
 	    Glf_741 = glf_timers("timewarp").GetValue("ticks")=1
 	If Err Then Glf_741 = False
 End Function
-glf_funcRefMap.Add "timer_timewarp_tick{devices.timers.timewarp.ticks==1}", "Glf_741"
+glf_funcRefMap.Add "timer_timewarp_tick{device.timers.timewarp.ticks==1}", "Glf_741"
 Function Glf_742(args)
 	On Error Resume Next
 	    Glf_742 = GetPlayerState("alien_attack_dir") = 0
@@ -3777,85 +3777,85 @@ Function Glf_744(args)
 	    Glf_744 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_744 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 2}", "Glf_744"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 2}", "Glf_744"
 Function Glf_745(args)
 	On Error Resume Next
 	    Glf_745 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_745 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 3}", "Glf_745"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 3}", "Glf_745"
 Function Glf_746(args)
 	On Error Resume Next
 	    Glf_746 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_746 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 4}", "Glf_746"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 4}", "Glf_746"
 Function Glf_747(args)
 	On Error Resume Next
 	    Glf_747 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_747 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 5}", "Glf_747"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 5}", "Glf_747"
 Function Glf_748(args)
 	On Error Resume Next
 	    Glf_748 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_748 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 6}", "Glf_748"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 6}", "Glf_748"
 Function Glf_749(args)
 	On Error Resume Next
 	    Glf_749 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_749 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 7}", "Glf_749"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 7}", "Glf_749"
 Function Glf_750(args)
 	On Error Resume Next
 	    Glf_750 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_750 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == 8}", "Glf_750"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 8}", "Glf_750"
 Function Glf_751(args)
 	On Error Resume Next
 	    Glf_751 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_751 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 8}", "Glf_751"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 8}", "Glf_751"
 Function Glf_752(args)
 	On Error Resume Next
 	    Glf_752 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_752 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 7}", "Glf_752"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 7}", "Glf_752"
 Function Glf_753(args)
 	On Error Resume Next
 	    Glf_753 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_753 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 6}", "Glf_753"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 6}", "Glf_753"
 Function Glf_754(args)
 	On Error Resume Next
 	    Glf_754 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_754 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 5}", "Glf_754"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 5}", "Glf_754"
 Function Glf_755(args)
 	On Error Resume Next
 	    Glf_755 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_755 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 4}", "Glf_755"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 4}", "Glf_755"
 Function Glf_756(args)
 	On Error Resume Next
 	    Glf_756 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_756 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 3}", "Glf_756"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 3}", "Glf_756"
 Function Glf_757(args)
 	On Error Resume Next
 	    Glf_757 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_757 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == 2}", "Glf_757"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 2}", "Glf_757"
 Function Glf_758(args)
 	On Error Resume Next
 	    Glf_758 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
@@ -3947,7 +3947,7 @@ glf_funcRefMap.Add "current_player.alien_tick_count", "Glf_772"
 Function Glf_773(args)
 	Glf_773 = glf_timers("alien_attack").GetValue("ticks")
 End Function
-glf_funcRefMap.Add "devices.timers.alien_attack.ticks", "Glf_773"
+glf_funcRefMap.Add "device.timers.alien_attack.ticks", "Glf_773"
 Function Glf_774(args)
 	On Error Resume Next
 	    Glf_774 = GetPlayerState("training_shields_achieved")=1
@@ -4245,7 +4245,7 @@ glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 && current_p
 Function Glf_825(args)
 	Glf_825 = Glf_FormatValue(glf_timers("meteor_countdown").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.meteor_countdown.ticks,""0>2"")", "Glf_825"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.meteor_countdown.ticks,""0>2"")", "Glf_825"
 Function Glf_826(args)
 	Glf_826 = "WARPING"
 End Function
@@ -4359,7 +4359,7 @@ Function Glf_845(args)
 	    Glf_845 = GetPlayerState("shot_moon_missile2") = 0 And glf_state_machines("moon_mb").GetValue("state")<>"locking"
 	If Err Then Glf_845 = False
 End Function
-glf_funcRefMap.Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && devices.state_machines.moon_mb.state!=""locking""}", "Glf_845"
+glf_funcRefMap.Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && device.state_machines.moon_mb.state!=""locking""}", "Glf_845"
 Function Glf_846(args)
 	On Error Resume Next
 	    Glf_846 = GetPlayerState("scoring_multiplier") = 1
@@ -4489,7 +4489,7 @@ Function Glf_873(args)
 	    Glf_873 = GetPlayerState("training_moon_missile_achieved")=1 And glf_state_machines("moon_mb").GetValue("state")<>"locking" And GetPlayerState("shot_moon_missile2") = 0
 	If Err Then Glf_873 = False
 End Function
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && devices.state_machines.moon_mb.state!=""locking"" && current_player.shot_moon_missile2 == 0}", "Glf_873"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && device.state_machines.moon_mb.state!=""locking"" && current_player.shot_moon_missile2 == 0}", "Glf_873"
 Function Glf_874(args)
 	On Error Resume Next
 	    Glf_874 = GetPlayerState("training_moon_missile_achieved")=1
@@ -4507,25 +4507,25 @@ Function Glf_876(args)
 	    Glf_876 = glf_state_machines("moon_mb").GetValue("state")<>"locking" And glf_ball_devices("moon_lock").GetValue("balls")=0
 	If Err Then Glf_876 = False
 End Function
-glf_funcRefMap.Add "s_MoonRamp_active{devices.state_machines.moon_mb.state!=""locking"" && devices.ball_devices.moon_lock.balls==0}", "Glf_876"
+glf_funcRefMap.Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" && device.ball_devices.moon_lock.balls==0}", "Glf_876"
 Function Glf_877(args)
 	On Error Resume Next
 	    Glf_877 = glf_state_machines("moon_mb").GetValue("state")<>"locking" And glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked") And glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
 	If Err Then Glf_877 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{devices.state_machines.moon_mb.state!=""locking"" && devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && devices.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_877"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" && device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_877"
 Function Glf_878(args)
 	On Error Resume Next
 	    Glf_878 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
 	If Err Then Glf_878 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{devices.state_machines.moon_mb.state==""in_progress""}", "Glf_878"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", "Glf_878"
 Function Glf_879(args)
 	On Error Resume Next
 	    Glf_879 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked")
 	If Err Then Glf_879 = False
 End Function
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", "Glf_879"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", "Glf_879"
 Function Glf_880(args)
 	On Error Resume Next
 	    Glf_880 = GetPlayerState("multiball_lock_moon_launch_balls_locked")=1
@@ -4549,7 +4549,7 @@ Function Glf_883(args)
 	    Glf_883 = glf_state_machines("moon_mb").GetValue("state")="locking"
 	If Err Then Glf_883 = False
 End Function
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{devices.state_machines.moon_mb.state==""locking""}", "Glf_883"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_883"
 Function Glf_884(args)
 	On Error Resume Next
 	    Glf_884 = GetPlayerState("ball_just_started") = 0
@@ -4559,7 +4559,7 @@ glf_funcRefMap.Add "restart_moon_qualify_shots{current_player.ball_just_started 
 Function Glf_885(args)
 	Glf_885 = glf_ball_devices("moon_lock").GetValue("balls")
 End Function
-glf_funcRefMap.Add "devices.ball_devices.moon_lock.balls", "Glf_885"
+glf_funcRefMap.Add "device.ball_devices.moon_lock.balls", "Glf_885"
 Function Glf_886(args)
 	Glf_886 = "MOON"
 End Function
@@ -4603,7 +4603,7 @@ Function Glf_894(args)
 	    Glf_894 = glf_timers("double_scoring").GetValue("ticks") = 55
 	If Err Then Glf_894 = False
 End Function
-glf_funcRefMap.Add "timer_double_scoring_tick{devices.timers.double_scoring.ticks == 55}", "Glf_894"
+glf_funcRefMap.Add "timer_double_scoring_tick{device.timers.double_scoring.ticks == 55}", "Glf_894"
 Function Glf_895(args)
 	Glf_895 = " DOUBLE "
 End Function
@@ -4613,7 +4613,7 @@ Function Glf_896(args)
 	    Glf_896 = glf_timers("super_spinner").GetValue("ticks") = 55
 	If Err Then Glf_896 = False
 End Function
-glf_funcRefMap.Add "timer_super_spinner_tick{devices.timers.super_spinner.ticks == 55}", "Glf_896"
+glf_funcRefMap.Add "timer_super_spinner_tick{device.timers.super_spinner.ticks == 55}", "Glf_896"
 Function Glf_897(args)
 	Glf_897 = 69
 End Function
@@ -4623,7 +4623,7 @@ Function Glf_898(args)
 	    Glf_898 = glf_timers("super_pops").GetValue("ticks") = 55
 	If Err Then Glf_898 = False
 End Function
-glf_funcRefMap.Add "timer_super_pops_tick{devices.timers.super_pops.ticks == 55}", "Glf_898"
+glf_funcRefMap.Add "timer_super_pops_tick{device.timers.super_pops.ticks == 55}", "Glf_898"
 Function Glf_899(args)
 	On Error Resume Next
 	    Glf_899 = GetPlayerState("ball_just_started")=1
@@ -5085,55 +5085,55 @@ Function Glf_976(args)
 	    Glf_976 = glf_timers("training_select").GetValue("ticks") = 7
 	If Err Then Glf_976 = False
 End Function
-glf_funcRefMap.Add "timer_training_select_tick{devices.timers.training_select.ticks == 7}", "Glf_976"
+glf_funcRefMap.Add "timer_training_select_tick{device.timers.training_select.ticks == 7}", "Glf_976"
 Function Glf_977(args)
 	On Error Resume Next
 	    Glf_977 = glf_state_machines("training_select").GetValue("state")="heal"
 	If Err Then Glf_977 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""heal""}", "Glf_977"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""heal""}", "Glf_977"
 Function Glf_978(args)
 	On Error Resume Next
 	    Glf_978 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
 	If Err Then Glf_978 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""cluster_bomb""}", "Glf_978"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_978"
 Function Glf_979(args)
 	On Error Resume Next
 	    Glf_979 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
 	If Err Then Glf_979 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""proton_cannon""}", "Glf_979"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""proton_cannon""}", "Glf_979"
 Function Glf_980(args)
 	On Error Resume Next
 	    Glf_980 = glf_state_machines("training_select").GetValue("state")="moon_missile"
 	If Err Then Glf_980 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""moon_missile""}", "Glf_980"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""moon_missile""}", "Glf_980"
 Function Glf_981(args)
 	On Error Resume Next
 	    Glf_981 = glf_state_machines("training_select").GetValue("state")="ship_save"
 	If Err Then Glf_981 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""ship_save""}", "Glf_981"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""ship_save""}", "Glf_981"
 Function Glf_982(args)
 	On Error Resume Next
 	    Glf_982 = glf_state_machines("training_select").GetValue("state")="shields"
 	If Err Then Glf_982 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""shields""}", "Glf_982"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""shields""}", "Glf_982"
 Function Glf_983(args)
 	On Error Resume Next
 	    Glf_983 = glf_state_machines("training_select").GetValue("state")="skip"
 	If Err Then Glf_983 = False
 End Function
-glf_funcRefMap.Add "make_selection{devices.state_machines.training_select.state==""skip""}", "Glf_983"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""skip""}", "Glf_983"
 Function Glf_984(args)
 	On Error Resume Next
 	    Glf_984 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked")
 	If Err Then Glf_984 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{devices.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", "Glf_984"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", "Glf_984"
 Function Glf_985(args)
 	Glf_985 = "right"
 End Function
@@ -5159,7 +5159,7 @@ Function Glf_989(args)
 	    Glf_989 = glf_state_machines("training_select").GetValue("state")="heal"
 	If Err Then Glf_989 = False
 End Function
-glf_funcRefMap.Add "selection_hurry_up{devices.state_machines.training_select.state==""heal""}", "Glf_989"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""heal""}", "Glf_989"
 Function Glf_990(args)
 	On Error Resume Next
 	    Glf_990 = GetPlayerState("ts_hurry_up")=0
@@ -5177,7 +5177,7 @@ Function Glf_992(args)
 	    Glf_992 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
 	If Err Then Glf_992 = False
 End Function
-glf_funcRefMap.Add "selection_hurry_up{devices.state_machines.training_select.state==""cluster_bomb""}", "Glf_992"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_992"
 Function Glf_993(args)
 	On Error Resume Next
 	    Glf_993 = GetPlayerState("ts_hurry_up")=0
@@ -5195,7 +5195,7 @@ Function Glf_995(args)
 	    Glf_995 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
 	If Err Then Glf_995 = False
 End Function
-glf_funcRefMap.Add "selection_hurry_up{devices.state_machines.training_select.state==""proton_cannon""}", "Glf_995"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""proton_cannon""}", "Glf_995"
 Function Glf_996(args)
 	On Error Resume Next
 	    Glf_996 = GetPlayerState("ts_hurry_up")=0
@@ -5213,7 +5213,7 @@ Function Glf_998(args)
 	    Glf_998 = glf_state_machines("training_select").GetValue("state")="moon_missile"
 	If Err Then Glf_998 = False
 End Function
-glf_funcRefMap.Add "selection_hurry_up{devices.state_machines.training_select.state==""moon_missile""}", "Glf_998"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""moon_missile""}", "Glf_998"
 Function Glf_999(args)
 	On Error Resume Next
 	    Glf_999 = GetPlayerState("ts_hurry_up")=0
@@ -5231,7 +5231,7 @@ Function Glf_1001(args)
 	    Glf_1001 = glf_state_machines("training_select").GetValue("state")="ship_save"
 	If Err Then Glf_1001 = False
 End Function
-glf_funcRefMap.Add "selection_hurry_up{devices.state_machines.training_select.state==""ship_save""}", "Glf_1001"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""ship_save""}", "Glf_1001"
 Function Glf_1002(args)
 	On Error Resume Next
 	    Glf_1002 = GetPlayerState("ts_hurry_up")=0
@@ -5249,7 +5249,7 @@ Function Glf_1004(args)
 	    Glf_1004 = glf_state_machines("training_select").GetValue("state")="shields"
 	If Err Then Glf_1004 = False
 End Function
-glf_funcRefMap.Add "selection_hurry_up{devices.state_machines.training_select.state==""shields""}", "Glf_1004"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""shields""}", "Glf_1004"
 Function Glf_1005(args)
 	On Error Resume Next
 	    Glf_1005 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_heal_achieved")=1
@@ -5457,7 +5457,7 @@ glf_funcRefMap.Add """TRAIN """, "Glf_1040"
 Function Glf_1041(args)
 	Glf_1041 = Glf_FormatValue(glf_timers("training_heal").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.training_heal.ticks,""0>2"")", "Glf_1041"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_heal.ticks,""0>2"")", "Glf_1041"
 Function Glf_1042(args)
 	On Error Resume Next
 	    Glf_1042 = GetPlayerState("shot_training_cluster_charge1") = 0
@@ -5479,7 +5479,7 @@ glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge2 
 Function Glf_1045(args)
 	Glf_1045 = Glf_FormatValue(glf_timers("training_cluster_bomb").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.training_cluster_bomb.ticks,""0>2"")", "Glf_1045"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_cluster_bomb.ticks,""0>2"")", "Glf_1045"
 Function Glf_1046(args)
 	On Error Resume Next
 	    Glf_1046 = GetPlayerState("shot_training_proton_charge1") = 0
@@ -5501,7 +5501,7 @@ glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge2 
 Function Glf_1049(args)
 	Glf_1049 = Glf_FormatValue(glf_timers("training_proton_cannon").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.training_proton_cannon.ticks,""0>2"")", "Glf_1049"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_proton_cannon.ticks,""0>2"")", "Glf_1049"
 Function Glf_1050(args)
 	On Error Resume Next
 	    Glf_1050 = GetPlayerState("shot_training_moon_lane1")=0
@@ -5553,7 +5553,7 @@ glf_funcRefMap.Add "update_training_select_moon_lane{current_player.shot_trainin
 Function Glf_1058(args)
 	Glf_1058 = Glf_FormatValue(glf_timers("training_moon_missile").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.training_moon_missile.ticks,""0>2"")", "Glf_1058"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_moon_missile.ticks,""0>2"")", "Glf_1058"
 Function Glf_1059(args)
 	On Error Resume Next
 	    Glf_1059 = GetPlayerState("shot_training_ship_charge1") = 0
@@ -5579,7 +5579,7 @@ glf_funcRefMap.Add """SAVER""", "Glf_1062"
 Function Glf_1063(args)
 	Glf_1063 = Glf_FormatValue(glf_timers("training_ship_save").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.training_ship_save.ticks,""0>2"")", "Glf_1063"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_ship_save.ticks,""0>2"")", "Glf_1063"
 Function Glf_1064(args)
 	On Error Resume Next
 	    Glf_1064 = GetPlayerState("shot_training_shield_charge1")=0
@@ -5619,7 +5619,7 @@ glf_funcRefMap.Add "update_training_select_shields{current_player.shot_training_
 Function Glf_1070(args)
 	Glf_1070 = Glf_FormatValue(glf_timers("training_shields").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.training_shields.ticks,""0>2"")", "Glf_1070"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_shields.ticks,""0>2"")", "Glf_1070"
 Function Glf_1071(args)
 	On Error Resume Next
 	    Glf_1071 = GetPlayerState("meteor_countdown_value") = 0
@@ -5649,13 +5649,13 @@ Function Glf_1075(args)
 	    Glf_1075 = glf_timers("meteor_countdown").GetValue("ticks") = 4
 	If Err Then Glf_1075 = False
 End Function
-glf_funcRefMap.Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 4}", "Glf_1075"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", "Glf_1075"
 Function Glf_1076(args)
 	On Error Resume Next
 	    Glf_1076 = glf_timers("meteor_countdown").GetValue("ticks") = 2
 	If Err Then Glf_1076 = False
 End Function
-glf_funcRefMap.Add "timer_meteor_countdown_tick{devices.timers.meteor_countdown.ticks == 2}", "Glf_1076"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", "Glf_1076"
 Function Glf_1077(args)
 	Glf_1077 = GetPlayerState("meteor_countdown_value")
 End Function
@@ -5667,7 +5667,7 @@ glf_funcRefMap.Add "45", "Glf_1078"
 Function Glf_1079(args)
 	Glf_1079 = glf_timers("meteor_countdown").GetValue("ticks")
 End Function
-glf_funcRefMap.Add "devices.timers.meteor_countdown.ticks", "Glf_1079"
+glf_funcRefMap.Add "device.timers.meteor_countdown.ticks", "Glf_1079"
 Function Glf_1080(args)
 	On Error Resume Next
 	    Glf_1080 = GetPlayerState("shot_meteor_wave1") = 0
@@ -5955,73 +5955,73 @@ Function Glf_1127(args)
 	    Glf_1127 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor1").GetValue("ticks")=2
 	If Err Then Glf_1127 = False
 End Function
-glf_funcRefMap.Add "timer_meteor1_tick{current_player.num_meteors_to_raise>0 && devices.timers.meteor1.ticks==2}", "Glf_1127"
+glf_funcRefMap.Add "timer_meteor1_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor1.ticks==2}", "Glf_1127"
 Function Glf_1128(args)
 	On Error Resume Next
 	    Glf_1128 = glf_timers("meteor1").GetValue("ticks")=6
 	If Err Then Glf_1128 = False
 End Function
-glf_funcRefMap.Add "timer_meteor1_tick{devices.timers.meteor1.ticks==6}", "Glf_1128"
+glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==6}", "Glf_1128"
 Function Glf_1129(args)
 	On Error Resume Next
 	    Glf_1129 = glf_timers("meteor1").GetValue("ticks")=10
 	If Err Then Glf_1129 = False
 End Function
-glf_funcRefMap.Add "timer_meteor1_tick{devices.timers.meteor1.ticks==10}", "Glf_1129"
+glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==10}", "Glf_1129"
 Function Glf_1130(args)
 	On Error Resume Next
 	    Glf_1130 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor2").GetValue("ticks")=2
 	If Err Then Glf_1130 = False
 End Function
-glf_funcRefMap.Add "timer_meteor2_tick{current_player.num_meteors_to_raise>0 && devices.timers.meteor2.ticks==2}", "Glf_1130"
+glf_funcRefMap.Add "timer_meteor2_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor2.ticks==2}", "Glf_1130"
 Function Glf_1131(args)
 	On Error Resume Next
 	    Glf_1131 = glf_timers("meteor2").GetValue("ticks")=6
 	If Err Then Glf_1131 = False
 End Function
-glf_funcRefMap.Add "timer_meteor2_tick{devices.timers.meteor2.ticks==6}", "Glf_1131"
+glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==6}", "Glf_1131"
 Function Glf_1132(args)
 	On Error Resume Next
 	    Glf_1132 = glf_timers("meteor2").GetValue("ticks")=10
 	If Err Then Glf_1132 = False
 End Function
-glf_funcRefMap.Add "timer_meteor2_tick{devices.timers.meteor2.ticks==10}", "Glf_1132"
+glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==10}", "Glf_1132"
 Function Glf_1133(args)
 	On Error Resume Next
 	    Glf_1133 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor3").GetValue("ticks")=2
 	If Err Then Glf_1133 = False
 End Function
-glf_funcRefMap.Add "timer_meteor3_tick{current_player.num_meteors_to_raise>0 && devices.timers.meteor3.ticks==2}", "Glf_1133"
+glf_funcRefMap.Add "timer_meteor3_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor3.ticks==2}", "Glf_1133"
 Function Glf_1134(args)
 	On Error Resume Next
 	    Glf_1134 = glf_timers("meteor3").GetValue("ticks")=6
 	If Err Then Glf_1134 = False
 End Function
-glf_funcRefMap.Add "timer_meteor3_tick{devices.timers.meteor3.ticks==6}", "Glf_1134"
+glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==6}", "Glf_1134"
 Function Glf_1135(args)
 	On Error Resume Next
 	    Glf_1135 = glf_timers("meteor3").GetValue("ticks")=10
 	If Err Then Glf_1135 = False
 End Function
-glf_funcRefMap.Add "timer_meteor3_tick{devices.timers.meteor3.ticks==10}", "Glf_1135"
+glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==10}", "Glf_1135"
 Function Glf_1136(args)
 	On Error Resume Next
 	    Glf_1136 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor4").GetValue("ticks")=2
 	If Err Then Glf_1136 = False
 End Function
-glf_funcRefMap.Add "timer_meteor4_tick{current_player.num_meteors_to_raise>0 && devices.timers.meteor4.ticks==2}", "Glf_1136"
+glf_funcRefMap.Add "timer_meteor4_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor4.ticks==2}", "Glf_1136"
 Function Glf_1137(args)
 	On Error Resume Next
 	    Glf_1137 = glf_timers("meteor4").GetValue("ticks")=6
 	If Err Then Glf_1137 = False
 End Function
-glf_funcRefMap.Add "timer_meteor4_tick{devices.timers.meteor4.ticks==6}", "Glf_1137"
+glf_funcRefMap.Add "timer_meteor4_tick{device.timers.meteor4.ticks==6}", "Glf_1137"
 Function Glf_1138(args)
 	On Error Resume Next
 	    Glf_1138 = glf_timers("meteor4").GetValue("ticks")=10
 	If Err Then Glf_1138 = False
 End Function
-glf_funcRefMap.Add "timer_meteor4_tick{devices.timers.meteor4.ticks==10}", "Glf_1138"
+glf_funcRefMap.Add "timer_meteor4_tick{device.timers.meteor4.ticks==10}", "Glf_1138"
 Function Glf_1139(args)
 	On Error Resume Next
 	    Glf_1139 = GetPlayerState("nuke_just_used") = 0
@@ -6299,7 +6299,7 @@ Function Glf_1189(args)
 	    Glf_1189 = glf_timers("fully_loaded_message").GetValue("ticks") = 1
 	If Err Then Glf_1189 = False
 End Function
-glf_funcRefMap.Add "timer_fully_loaded_message_tick{devices.timers.fully_loaded_message.ticks == 1}", "Glf_1189"
+glf_funcRefMap.Add "timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 1}", "Glf_1189"
 Function Glf_1190(args)
 	Glf_1190 = "   EB   "
 End Function
@@ -6313,7 +6313,7 @@ Function Glf_1192(args)
 	    Glf_1192 = glf_timers("fully_loaded_message").GetValue("ticks") = 2
 	If Err Then Glf_1192 = False
 End Function
-glf_funcRefMap.Add "timer_fully_loaded_message_tick{devices.timers.fully_loaded_message.ticks == 2}", "Glf_1192"
+glf_funcRefMap.Add "timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 2}", "Glf_1192"
 Function Glf_1193(args)
 	Glf_1193 = "HIT ALL"
 End Function
@@ -6563,13 +6563,13 @@ Function Glf_1235(args)
 	    Glf_1235 = glf_timers("combo_command_message").GetValue("ticks") = 1
 	If Err Then Glf_1235 = False
 End Function
-glf_funcRefMap.Add "timer_combo_command_message_tick{devices.timers.combo_command_message.ticks == 1}", "Glf_1235"
+glf_funcRefMap.Add "timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 1}", "Glf_1235"
 Function Glf_1236(args)
 	On Error Resume Next
 	    Glf_1236 = glf_timers("combo_command_message").GetValue("ticks") = 2
 	If Err Then Glf_1236 = False
 End Function
-glf_funcRefMap.Add "timer_combo_command_message_tick{devices.timers.combo_command_message.ticks == 2}", "Glf_1236"
+glf_funcRefMap.Add "timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 2}", "Glf_1236"
 Function Glf_1237(args)
 	On Error Resume Next
 	    Glf_1237 = GetPlayerState("wizard_final_hit_count") = 20
@@ -6887,361 +6887,361 @@ Function Glf_1289(args)
 	    Glf_1289 = glf_timers("asteroid_explodes").GetValue("ticks") = 4
 	If Err Then Glf_1289 = False
 End Function
-glf_funcRefMap.Add "timer_asteroid_explodes_tick{devices.timers.asteroid_explodes.ticks == 4}", "Glf_1289"
+glf_funcRefMap.Add "timer_asteroid_explodes_tick{device.timers.asteroid_explodes.ticks == 4}", "Glf_1289"
 Function Glf_1290(args)
 	On Error Resume Next
 	    Glf_1290 = glf_timers("final_wave_gi").GetValue("ticks") = 1
 	If Err Then Glf_1290 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 1}", "Glf_1290"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 1}", "Glf_1290"
 Function Glf_1291(args)
 	On Error Resume Next
 	    Glf_1291 = glf_timers("final_wave_gi").GetValue("ticks") = 2
 	If Err Then Glf_1291 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 2}", "Glf_1291"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 2}", "Glf_1291"
 Function Glf_1292(args)
 	On Error Resume Next
 	    Glf_1292 = glf_timers("final_wave_gi").GetValue("ticks") = 3
 	If Err Then Glf_1292 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 3}", "Glf_1292"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 3}", "Glf_1292"
 Function Glf_1293(args)
 	On Error Resume Next
 	    Glf_1293 = glf_timers("final_wave_gi").GetValue("ticks") = 4
 	If Err Then Glf_1293 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 4}", "Glf_1293"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 4}", "Glf_1293"
 Function Glf_1294(args)
 	On Error Resume Next
 	    Glf_1294 = glf_timers("final_wave_gi").GetValue("ticks") = 5
 	If Err Then Glf_1294 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 5}", "Glf_1294"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 5}", "Glf_1294"
 Function Glf_1295(args)
 	On Error Resume Next
 	    Glf_1295 = glf_timers("final_wave_gi").GetValue("ticks") = 6
 	If Err Then Glf_1295 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 6}", "Glf_1295"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 6}", "Glf_1295"
 Function Glf_1296(args)
 	On Error Resume Next
 	    Glf_1296 = glf_timers("final_wave_gi").GetValue("ticks") = 7
 	If Err Then Glf_1296 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 7}", "Glf_1296"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 7}", "Glf_1296"
 Function Glf_1297(args)
 	On Error Resume Next
 	    Glf_1297 = glf_timers("final_wave_gi").GetValue("ticks") = 8
 	If Err Then Glf_1297 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 8}", "Glf_1297"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 8}", "Glf_1297"
 Function Glf_1298(args)
 	On Error Resume Next
 	    Glf_1298 = glf_timers("final_wave_gi").GetValue("ticks") = 9
 	If Err Then Glf_1298 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 9}", "Glf_1298"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 9}", "Glf_1298"
 Function Glf_1299(args)
 	On Error Resume Next
 	    Glf_1299 = glf_timers("final_wave_gi").GetValue("ticks") = 10
 	If Err Then Glf_1299 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 10}", "Glf_1299"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 10}", "Glf_1299"
 Function Glf_1300(args)
 	On Error Resume Next
 	    Glf_1300 = glf_timers("final_wave_gi").GetValue("ticks") = 11
 	If Err Then Glf_1300 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 11}", "Glf_1300"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 11}", "Glf_1300"
 Function Glf_1301(args)
 	On Error Resume Next
 	    Glf_1301 = glf_timers("final_wave_gi").GetValue("ticks") = 12
 	If Err Then Glf_1301 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 12}", "Glf_1301"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 12}", "Glf_1301"
 Function Glf_1302(args)
 	On Error Resume Next
 	    Glf_1302 = glf_timers("final_wave_gi").GetValue("ticks") = 13
 	If Err Then Glf_1302 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 13}", "Glf_1302"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 13}", "Glf_1302"
 Function Glf_1303(args)
 	On Error Resume Next
 	    Glf_1303 = glf_timers("final_wave_gi").GetValue("ticks") = 14
 	If Err Then Glf_1303 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 14}", "Glf_1303"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 14}", "Glf_1303"
 Function Glf_1304(args)
 	On Error Resume Next
 	    Glf_1304 = glf_timers("final_wave_gi").GetValue("ticks") = 15
 	If Err Then Glf_1304 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 15}", "Glf_1304"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 15}", "Glf_1304"
 Function Glf_1305(args)
 	On Error Resume Next
 	    Glf_1305 = glf_timers("final_wave_gi").GetValue("ticks") = 16
 	If Err Then Glf_1305 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 16}", "Glf_1305"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 16}", "Glf_1305"
 Function Glf_1306(args)
 	On Error Resume Next
 	    Glf_1306 = glf_timers("final_wave_gi").GetValue("ticks") = 17
 	If Err Then Glf_1306 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 17}", "Glf_1306"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 17}", "Glf_1306"
 Function Glf_1307(args)
 	On Error Resume Next
 	    Glf_1307 = glf_timers("final_wave_gi").GetValue("ticks") = 18
 	If Err Then Glf_1307 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 18}", "Glf_1307"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 18}", "Glf_1307"
 Function Glf_1308(args)
 	On Error Resume Next
 	    Glf_1308 = glf_timers("final_wave_gi").GetValue("ticks") = 19
 	If Err Then Glf_1308 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 19}", "Glf_1308"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 19}", "Glf_1308"
 Function Glf_1309(args)
 	On Error Resume Next
 	    Glf_1309 = glf_timers("final_wave_gi").GetValue("ticks") = 20
 	If Err Then Glf_1309 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 20}", "Glf_1309"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 20}", "Glf_1309"
 Function Glf_1310(args)
 	On Error Resume Next
 	    Glf_1310 = glf_timers("final_wave_gi").GetValue("ticks") = 21
 	If Err Then Glf_1310 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 21}", "Glf_1310"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 21}", "Glf_1310"
 Function Glf_1311(args)
 	On Error Resume Next
 	    Glf_1311 = glf_timers("final_wave_gi").GetValue("ticks") = 22
 	If Err Then Glf_1311 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 22}", "Glf_1311"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 22}", "Glf_1311"
 Function Glf_1312(args)
 	On Error Resume Next
 	    Glf_1312 = glf_timers("final_wave_gi").GetValue("ticks") = 23
 	If Err Then Glf_1312 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 23}", "Glf_1312"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 23}", "Glf_1312"
 Function Glf_1313(args)
 	On Error Resume Next
 	    Glf_1313 = glf_timers("final_wave_gi").GetValue("ticks") = 24
 	If Err Then Glf_1313 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 24}", "Glf_1313"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 24}", "Glf_1313"
 Function Glf_1314(args)
 	On Error Resume Next
 	    Glf_1314 = glf_timers("final_wave_gi").GetValue("ticks") = 25
 	If Err Then Glf_1314 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 25}", "Glf_1314"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 25}", "Glf_1314"
 Function Glf_1315(args)
 	On Error Resume Next
 	    Glf_1315 = glf_timers("final_wave_gi").GetValue("ticks") = 26
 	If Err Then Glf_1315 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 26}", "Glf_1315"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 26}", "Glf_1315"
 Function Glf_1316(args)
 	On Error Resume Next
 	    Glf_1316 = glf_timers("final_wave_gi").GetValue("ticks") = 27
 	If Err Then Glf_1316 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 27}", "Glf_1316"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 27}", "Glf_1316"
 Function Glf_1317(args)
 	On Error Resume Next
 	    Glf_1317 = glf_timers("final_wave_gi").GetValue("ticks") = 28
 	If Err Then Glf_1317 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 28}", "Glf_1317"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 28}", "Glf_1317"
 Function Glf_1318(args)
 	On Error Resume Next
 	    Glf_1318 = glf_timers("final_wave_gi").GetValue("ticks") = 29
 	If Err Then Glf_1318 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 29}", "Glf_1318"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 29}", "Glf_1318"
 Function Glf_1319(args)
 	On Error Resume Next
 	    Glf_1319 = glf_timers("final_wave_gi").GetValue("ticks") = 30
 	If Err Then Glf_1319 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 30}", "Glf_1319"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 30}", "Glf_1319"
 Function Glf_1320(args)
 	On Error Resume Next
 	    Glf_1320 = glf_timers("final_wave_gi").GetValue("ticks") = 31
 	If Err Then Glf_1320 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 31}", "Glf_1320"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 31}", "Glf_1320"
 Function Glf_1321(args)
 	On Error Resume Next
 	    Glf_1321 = glf_timers("final_wave_gi").GetValue("ticks") = 32
 	If Err Then Glf_1321 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 32}", "Glf_1321"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 32}", "Glf_1321"
 Function Glf_1322(args)
 	On Error Resume Next
 	    Glf_1322 = glf_timers("final_wave_gi").GetValue("ticks") = 33
 	If Err Then Glf_1322 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 33}", "Glf_1322"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 33}", "Glf_1322"
 Function Glf_1323(args)
 	On Error Resume Next
 	    Glf_1323 = glf_timers("final_wave_gi").GetValue("ticks") = 34
 	If Err Then Glf_1323 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 34}", "Glf_1323"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 34}", "Glf_1323"
 Function Glf_1324(args)
 	On Error Resume Next
 	    Glf_1324 = glf_timers("final_wave_gi").GetValue("ticks") = 35
 	If Err Then Glf_1324 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 35}", "Glf_1324"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 35}", "Glf_1324"
 Function Glf_1325(args)
 	On Error Resume Next
 	    Glf_1325 = glf_timers("final_wave_gi").GetValue("ticks") = 36
 	If Err Then Glf_1325 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 36}", "Glf_1325"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 36}", "Glf_1325"
 Function Glf_1326(args)
 	On Error Resume Next
 	    Glf_1326 = glf_timers("final_wave_gi").GetValue("ticks") = 37
 	If Err Then Glf_1326 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 37}", "Glf_1326"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 37}", "Glf_1326"
 Function Glf_1327(args)
 	On Error Resume Next
 	    Glf_1327 = glf_timers("final_wave_gi").GetValue("ticks") = 38
 	If Err Then Glf_1327 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 38}", "Glf_1327"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 38}", "Glf_1327"
 Function Glf_1328(args)
 	On Error Resume Next
 	    Glf_1328 = glf_timers("final_wave_gi").GetValue("ticks") = 39
 	If Err Then Glf_1328 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 39}", "Glf_1328"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 39}", "Glf_1328"
 Function Glf_1329(args)
 	On Error Resume Next
 	    Glf_1329 = glf_timers("final_wave_gi").GetValue("ticks") = 40
 	If Err Then Glf_1329 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 40}", "Glf_1329"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 40}", "Glf_1329"
 Function Glf_1330(args)
 	On Error Resume Next
 	    Glf_1330 = glf_timers("final_wave_gi").GetValue("ticks") = 41
 	If Err Then Glf_1330 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 41}", "Glf_1330"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 41}", "Glf_1330"
 Function Glf_1331(args)
 	On Error Resume Next
 	    Glf_1331 = glf_timers("final_wave_gi").GetValue("ticks") = 42
 	If Err Then Glf_1331 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 42}", "Glf_1331"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 42}", "Glf_1331"
 Function Glf_1332(args)
 	On Error Resume Next
 	    Glf_1332 = glf_timers("final_wave_gi").GetValue("ticks") = 43
 	If Err Then Glf_1332 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 43}", "Glf_1332"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 43}", "Glf_1332"
 Function Glf_1333(args)
 	On Error Resume Next
 	    Glf_1333 = glf_timers("final_wave_gi").GetValue("ticks") = 44
 	If Err Then Glf_1333 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 44}", "Glf_1333"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 44}", "Glf_1333"
 Function Glf_1334(args)
 	On Error Resume Next
 	    Glf_1334 = glf_timers("final_wave_gi").GetValue("ticks") = 45
 	If Err Then Glf_1334 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 45}", "Glf_1334"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 45}", "Glf_1334"
 Function Glf_1335(args)
 	On Error Resume Next
 	    Glf_1335 = glf_timers("final_wave_gi").GetValue("ticks") = 46
 	If Err Then Glf_1335 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 46}", "Glf_1335"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 46}", "Glf_1335"
 Function Glf_1336(args)
 	On Error Resume Next
 	    Glf_1336 = glf_timers("final_wave_gi").GetValue("ticks") = 47
 	If Err Then Glf_1336 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 47}", "Glf_1336"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 47}", "Glf_1336"
 Function Glf_1337(args)
 	On Error Resume Next
 	    Glf_1337 = glf_timers("final_wave_gi").GetValue("ticks") = 48
 	If Err Then Glf_1337 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 48}", "Glf_1337"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 48}", "Glf_1337"
 Function Glf_1338(args)
 	On Error Resume Next
 	    Glf_1338 = glf_timers("final_wave_gi").GetValue("ticks") = 49
 	If Err Then Glf_1338 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 49}", "Glf_1338"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 49}", "Glf_1338"
 Function Glf_1339(args)
 	On Error Resume Next
 	    Glf_1339 = glf_timers("final_wave_gi").GetValue("ticks") = 50
 	If Err Then Glf_1339 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 50}", "Glf_1339"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 50}", "Glf_1339"
 Function Glf_1340(args)
 	On Error Resume Next
 	    Glf_1340 = glf_timers("final_wave_gi").GetValue("ticks") = 51
 	If Err Then Glf_1340 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 51}", "Glf_1340"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 51}", "Glf_1340"
 Function Glf_1341(args)
 	On Error Resume Next
 	    Glf_1341 = glf_timers("final_wave_gi").GetValue("ticks") = 52
 	If Err Then Glf_1341 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_gi_tick{devices.timers.final_wave_gi.ticks == 52}", "Glf_1341"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 52}", "Glf_1341"
 Function Glf_1342(args)
 	On Error Resume Next
 	    Glf_1342 = glf_timers("final_wave_flicker").GetValue("ticks") = 1
 	If Err Then Glf_1342 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 1}", "Glf_1342"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 1}", "Glf_1342"
 Function Glf_1343(args)
 	On Error Resume Next
 	    Glf_1343 = glf_timers("final_wave_flicker").GetValue("ticks") = 7
 	If Err Then Glf_1343 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 7}", "Glf_1343"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 7}", "Glf_1343"
 Function Glf_1344(args)
 	On Error Resume Next
 	    Glf_1344 = glf_timers("final_wave_flicker").GetValue("ticks") = 10
 	If Err Then Glf_1344 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 10}", "Glf_1344"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 10}", "Glf_1344"
 Function Glf_1345(args)
 	On Error Resume Next
 	    Glf_1345 = glf_timers("final_wave_flicker").GetValue("ticks") = 15
 	If Err Then Glf_1345 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 15}", "Glf_1345"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 15}", "Glf_1345"
 Function Glf_1346(args)
 	On Error Resume Next
 	    Glf_1346 = glf_timers("final_wave_flicker").GetValue("ticks") = 22
 	If Err Then Glf_1346 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 22}", "Glf_1346"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 22}", "Glf_1346"
 Function Glf_1347(args)
 	On Error Resume Next
 	    Glf_1347 = glf_timers("final_wave_flicker").GetValue("ticks") = 24
 	If Err Then Glf_1347 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 24}", "Glf_1347"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 24}", "Glf_1347"
 Function Glf_1348(args)
 	On Error Resume Next
 	    Glf_1348 = glf_timers("final_wave_flicker").GetValue("ticks") = 29
 	If Err Then Glf_1348 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{devices.timers.final_wave_flicker.ticks == 29}", "Glf_1348"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 29}", "Glf_1348"
 Function Glf_1349(args)
 	On Error Resume Next
 	    Glf_1349 = GetPlayerState("shot_fwwiz_meteor1") = 0
@@ -7281,7 +7281,7 @@ Function Glf_1355(args)
 	    Glf_1355 = glf_timers("final_wave_message").GetValue("ticks") = 2
 	If Err Then Glf_1355 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_message_tick{devices.timers.final_wave_message.ticks == 2}", "Glf_1355"
+glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 2}", "Glf_1355"
 Function Glf_1356(args)
 	Glf_1356 = -10
 End Function
@@ -7325,7 +7325,7 @@ Function Glf_1365(args)
 	    Glf_1365 = glf_timers("final_wave_message").GetValue("ticks") = 1
 	If Err Then Glf_1365 = False
 End Function
-glf_funcRefMap.Add "timer_final_wave_message_tick{devices.timers.final_wave_message.ticks == 1}", "Glf_1365"
+glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 1}", "Glf_1365"
 Function Glf_1366(args)
 	Glf_1366 = """ RAMPS """
 End Function
@@ -7403,7 +7403,7 @@ glf_funcRefMap.Add """ALL """, "Glf_1382"
 Function Glf_1383(args)
 	Glf_1383 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(devices.timers.victory_countdown.ticks,""0>2"")", "Glf_1383"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks,""0>2"")", "Glf_1383"
 Function Glf_1384(args)
 	Glf_1384 = 150
 End Function
@@ -7425,7 +7425,7 @@ Function Glf_1388(args)
 	    Glf_1388 = glf_ball_devices("moon_lock").GetValue("balls") > 0
 	If Err Then Glf_1388 = False
 End Function
-glf_funcRefMap.Add "game_ended{devices.ball_devices.moon_lock.balls > 0}", "Glf_1388"
+glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1388"
 Function Glf_1389(args)
 	Glf_1389 = 250
 End Function

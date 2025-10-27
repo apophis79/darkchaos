@@ -49,7 +49,7 @@ Sub CreateMysteryMode
                 .Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", 0.8
                 .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
                 .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
-                .Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && devices.state_machines.moon_mb.state!=""locking""}", 1
+                .Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && device.state_machines.moon_mb.state!=""locking""}", 1
                 '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
                 .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5
                 .Add "mystery_super_spinner{current_player.spin_multiplier == 1}", 0.5

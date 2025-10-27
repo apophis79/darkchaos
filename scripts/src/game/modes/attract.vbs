@@ -8,7 +8,7 @@ Sub CreateAttractMode()
     Dim x
 
     With CreateGlfMode("attract", 120)
-        .StartEvents = Array("start_attract_mode")
+        .StartEvents = Array("start_attract_mode", "reset_complete")
         .StopEvents = Array("stop_attract_mode",GLF_BALL_STARTED)
 
         With .EventPlayer()
@@ -16,64 +16,64 @@ Sub CreateAttractMode()
             .Add "timer_attract_voc_complete", Array("play_attract_voc")
             .Add "mode_attract_stopping", Array("drop_diverter")
             'main attract show timing
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 8}", Array("play_meteor_fall_left")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 16}", Array("play_meteor_fall_right","play_att_lsling_show1","play_att_rsling_show1")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 26}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 30}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 38}", Array("play_meteor_fall_left","play_att_lsling_show2","play_att_rsling_show2")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 42}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 44}", Array("play_meteor_fall_left")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 45}", Array("play_earth_hit_left","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 54}", Array("play_meteor_fall_center","play_att_lsling_show3","play_att_rsling_show3")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 60}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 61}", Array("play_earth_hit_right","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 70}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 71}", Array("play_earth_hit_center","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 80}", Array("play_meteor_fall_left","play_att_lsling_show4","play_att_rsling_show4")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 88}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 98}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 102}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 103}", Array("play_earth_hit_right","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 116}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 126}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 128}", Array("play_meteor_fall_left")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 132}", Array("play_meteor_fall_center","play_att_lsling_show5","play_att_rsling_show5")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 133}", Array("play_earth_hit_center","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 150}", Array("play_meteor_fall_left")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 151}", Array("play_earth_hit_left","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 164}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 178}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 182}", Array("play_meteor_fall_center","play_att_lsling_show2","play_att_rsling_show2")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 184}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 198}", Array("play_meteor_fall_left")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 202}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 203}", Array("play_earth_hit_center","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 208}", Array("play_meteor_fall_left","play_att_lsling_show6","play_att_rsling_show6")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 209}", Array("play_earth_hit_left","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 216}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 218}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 224}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 225}", Array("play_earth_hit_right","play_att_lsling_show7","play_att_rsling_show7","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 228}", Array("play_meteor_fall_center")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 229}", Array("play_earth_hit_center","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 232}", Array("play_meteor_fall_right")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 233}", Array("play_earth_hit_right","play_attract_boom")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 238}", Array("play_meteor_fall_left","play_att_lsling_show8","play_att_rsling_show8")
-            .Add "timer_attract_shows_tick{devices.timers.attract_shows.ticks == 239}", Array("play_earth_hit_left","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 8}", Array("play_meteor_fall_left")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 16}", Array("play_meteor_fall_right","play_att_lsling_show1","play_att_rsling_show1")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 26}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 30}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 38}", Array("play_meteor_fall_left","play_att_lsling_show2","play_att_rsling_show2")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 42}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 44}", Array("play_meteor_fall_left")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 45}", Array("play_earth_hit_left","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 54}", Array("play_meteor_fall_center","play_att_lsling_show3","play_att_rsling_show3")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 60}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 61}", Array("play_earth_hit_right","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 70}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 71}", Array("play_earth_hit_center","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 80}", Array("play_meteor_fall_left","play_att_lsling_show4","play_att_rsling_show4")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 88}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 98}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 102}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 103}", Array("play_earth_hit_right","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 116}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 126}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 128}", Array("play_meteor_fall_left")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 132}", Array("play_meteor_fall_center","play_att_lsling_show5","play_att_rsling_show5")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 133}", Array("play_earth_hit_center","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 150}", Array("play_meteor_fall_left")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 151}", Array("play_earth_hit_left","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 164}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 178}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 182}", Array("play_meteor_fall_center","play_att_lsling_show2","play_att_rsling_show2")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 184}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 198}", Array("play_meteor_fall_left")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 202}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 203}", Array("play_earth_hit_center","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 208}", Array("play_meteor_fall_left","play_att_lsling_show6","play_att_rsling_show6")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 209}", Array("play_earth_hit_left","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 216}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 218}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 224}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 225}", Array("play_earth_hit_right","play_att_lsling_show7","play_att_rsling_show7","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 228}", Array("play_meteor_fall_center")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 229}", Array("play_earth_hit_center","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 232}", Array("play_meteor_fall_right")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 233}", Array("play_earth_hit_right","play_attract_boom")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 238}", Array("play_meteor_fall_left","play_att_lsling_show8","play_att_rsling_show8")
+            .Add "timer_attract_shows_tick{device.timers.attract_shows.ticks == 239}", Array("play_earth_hit_left","play_attract_boom")
 
 
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 1}", Array("show_attract_title")   '5 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 7}", Array("show_attract_message") '9 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 17}", Array("show_attract_hs1")    '3 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 21}", Array("show_attract_hs2")    '3 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 25}", Array("show_attract_hs3")    '3 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 29}", Array("show_attract_hs4")    '3 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 33}", Array("show_attract_lastscores1")    '2 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 36}", Array("show_attract_lastscores2")    '3 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 40}", Array("show_attract_credits1") '5 + 1 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 46}", Array("show_attract_credits2") '2 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 48}", Array("show_attract_credits3") '2 sec
-            .Add "timer_attract_display_tick{devices.timers.attract_display.ticks == 50}", Array("show_attract_credits4") '4 + 1 sec = 55
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 1}", Array("show_attract_title")   '5 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 7}", Array("show_attract_message") '9 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 17}", Array("show_attract_hs1")    '3 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 21}", Array("show_attract_hs2")    '3 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 25}", Array("show_attract_hs3")    '3 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 29}", Array("show_attract_hs4")    '3 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 33}", Array("show_attract_lastscores1")    '2 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 36}", Array("show_attract_lastscores2")    '3 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 40}", Array("show_attract_credits1") '5 + 1 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 46}", Array("show_attract_credits2") '2 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 48}", Array("show_attract_credits3") '2 sec
+            .Add "timer_attract_display_tick{device.timers.attract_display.ticks == 50}", Array("show_attract_credits4") '4 + 1 sec = 55
         End With
 
         With .RandomEventPlayer()
@@ -85,6 +85,7 @@ Sub CreateAttractMode()
                 .Add "play_voc_attract5", 1
                 .ForceAll = True
                 .ForceDifferent = True
+                .Scope = "Machine"
             End With
             With .EventName("play_attract_boom")
                 .Add "play_sfx_boom1", 1
@@ -95,6 +96,7 @@ Sub CreateAttractMode()
                 .Add "play_sfx_boom6", 1
                 .ForceAll = True
                 .ForceDifferent = True
+                .Scope = "Machine"
             End With
             With .EventName("show_attract_message")
                 .Add "show_attract_message1", 1
@@ -113,8 +115,8 @@ Sub CreateAttractMode()
                 .Add "show_attract_message14", 1
                 .ForceAll = True
                 .ForceDifferent = True
+                .Scope = "Machine"
             End With
-            .Scope = "Machine"
         End With
 
         With .DOFPlayer()

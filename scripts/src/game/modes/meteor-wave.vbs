@@ -301,17 +301,17 @@ Sub CreateMeteorWaveMode
                 With .Transitions()
                     .Source = Array("down")
                     .Target = "up_cool"
-                    .Events = Array("timer_meteor"&x&"_tick{current_player.num_meteors_to_raise>0 && devices.timers.meteor"&x&".ticks=="&MeteorDropTicks&"}")
+                    .Events = Array("timer_meteor"&x&"_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor"&x&".ticks=="&MeteorDropTicks&"}")
                 End With
                 With .Transitions()
                     .Source = Array("up_cool")
                     .Target = "up_warm"
-                    .Events = Array("timer_meteor"&x&"_tick{devices.timers.meteor"&x&".ticks=="&MeteorDropTicks+MeteorCoolTicks&"}")
+                    .Events = Array("timer_meteor"&x&"_tick{device.timers.meteor"&x&".ticks=="&MeteorDropTicks+MeteorCoolTicks&"}")
                 End With
                 With .Transitions()
                     .Source = Array("up_warm")
                     .Target = "up_hot"
-                    .Events = Array("timer_meteor"&x&"_tick{devices.timers.meteor"&x&".ticks=="&MeteorDropTicks+MeteorCoolTicks+MeteorWarmTicks&"}")
+                    .Events = Array("timer_meteor"&x&"_tick{device.timers.meteor"&x&".ticks=="&MeteorDropTicks+MeteorCoolTicks+MeteorWarmTicks&"}")
                 End With
                 With .Transitions()  'earth hit
                     .Source = Array("up_hot")

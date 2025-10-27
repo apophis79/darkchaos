@@ -647,7 +647,7 @@ Sub CreateComboCommandWizardMode
                 End With
             End With
 
-            With .EventName("timer_combo_command_message_tick{devices.timers.combo_command_message.ticks == 1}")
+            With .EventName("timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 1}")
                 With .Display("player1")
                     .Text = ""
                     .Expire = CCWizMessageInterval
@@ -668,7 +668,7 @@ Sub CreateComboCommandWizardMode
                 End With
             End With
 
-            With .EventName("timer_combo_command_message_tick{devices.timers.combo_command_message.ticks == 2}")
+            With .EventName("timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 2}")
                 With .Display("player1")
                     .Text = ""
                     .Expire = CCWizMessageInterval

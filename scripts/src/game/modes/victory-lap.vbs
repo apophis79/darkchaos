@@ -451,7 +451,7 @@ Sub CreateVictoryLapMode
                 End With
 
                 With .Display("pf")
-                    .Text = "{devices.timers.victory_countdown.ticks:0>2}"
+                    .Text = "{device.timers.victory_countdown.ticks:0>2}"
                 End With
             End With
 

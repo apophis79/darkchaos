@@ -138,13 +138,13 @@ Sub CreateAlienAttackMode
             With .Transitions()
                 .Source = Array("start_attacking")
                 .Target = "attacking"
-                .Events = Array("timer_alien_attack_tick{devices.timers.alien_attack.ticks > 0}")
+                .Events = Array("timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}")
                 .EventsWhenTransitioning = Array("alien_attacking")
             End With
             With .Transitions() 'pause between modes and during timewarp
                 .Source = Array("start_attacking","attacking")
                 .Target = "attack_paused"
-                .Events = Array("timer_timewarp_tick{devices.timers.timewarp.ticks==1}")  '"mode_alien_attack_stopping"
+                .Events = Array("timer_timewarp_tick{device.timers.timewarp.ticks==1}")  '"mode_alien_attack_stopping"
             End With
             With .Transitions() 
                 .Source = Array("attack_paused")
@@ -210,7 +210,7 @@ Sub CreateAlienAttackMode
                 With .Transitions()  'move alien from left to right
                     .Source = Array("shot"&x)
                     .Target = "shot"&(x+1)
-                    .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 0 && devices.timers.alien_attack.ticks == "&(x+1)&"}") 
+                    .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == "&(x+1)&"}") 
                     .EventsWhenTransitioning = Array("reset_alien_shot"&x,"restart_alien_grace_timer")
                 End With
             Next
@@ -218,7 +218,7 @@ Sub CreateAlienAttackMode
                 With .Transitions()  'move alien from right to left
                     .Source = Array("shot"&x)
                     .Target = "shot"&(x-1)
-                    .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 1 && devices.timers.alien_attack.ticks == "&(10-x)&"}") 
+                    .Events = Array("timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == "&(10-x)&"}") 
                     .EventsWhenTransitioning = Array("reset_alien_shot"&x,"restart_alien_grace_timer")
                 End With
             Next
@@ -304,7 +304,7 @@ Sub CreateAlienAttackMode
             With .EventName("timer_alien_attack_tick")
 				With .Variable("alien_tick_count")
                     .Action = "set"
-					.Int = "devices.timers.alien_attack.ticks"
+					.Int = "device.timers.alien_attack.ticks"
 				End With
 			End With
             With .EventName("alien_attack_from_left")
