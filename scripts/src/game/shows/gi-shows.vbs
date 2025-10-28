@@ -7,29 +7,29 @@ Sub CreateGIShows()
 With CreateGlfShow("gi_spin1_cw")
     With .AddStep(0.00000, Null, Null)
         .Lights = Array( _
-        "gi17|(intensity)|000000", _
-        "giapron|(intensity)|000000", _
-        "gi22|(intensity)|000000", _
-        "gi20|(intensity)|000000", _
-        "gi21|(intensity)|000000", _
+        "gi17|(intensity)|stop", _
+        "giapron|(intensity)|stop", _
+        "gi22|(intensity)|stop", _
+        "gi20|(intensity)|stop", _
+        "gi21|(intensity)|stop", _
         "gi19|(intensity)|47321f", _
-        "gi18|(intensity)|000000", _
-        "gi16|(intensity)|000000", _
-        "gi15|(intensity)|000000", _
+        "gi18|(intensity)|stop", _
+        "gi16|(intensity)|stop", _
+        "gi15|(intensity)|stop", _
         "gi14|(intensity)|c58d54", _
-        "gi13|(intensity)|000000", _
+        "gi13|(intensity)|stop", _
         "gi12|(intensity)|130c06", _
         "gi11|(intensity)|795532", _
         "gi10|(intensity)|ffb36b", _
         "gi09|(intensity)|f9af68", _
         "gi08|(intensity)|160f07", _
-        "gi07|(intensity)|000000", _
-        "gi06|(intensity)|000000", _
-        "gi05|(intensity)|000000", _
+        "gi07|(intensity)|stop", _
+        "gi06|(intensity)|stop", _
+        "gi05|(intensity)|stop", _
         "gi04|(intensity)|180f08", _
-        "gi03|(intensity)|000000", _
-        "gi02|(intensity)|000000", _
-        "gi01|(intensity)|000000" _
+        "gi03|(intensity)|stop", _
+        "gi02|(intensity)|stop", _
+        "gi01|(intensity)|stop" _
         )
     End With
     With .AddStep(0.03333, Null, Null)
@@ -52,7 +52,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi09|(intensity)|c38952", _
         "gi08|(intensity)|352516", _
         "gi07|(intensity)|070302", _
-        "gi04|(intensity)|000000" _
+        "gi04|(intensity)|stop" _
         )
     End With
     With .AddStep(0.10000, Null, Null)
@@ -85,7 +85,7 @@ With CreateGlfShow("gi_spin1_cw")
     With .AddStep(0.16667, Null, Null)
         .Lights = Array( _
         "gi20|(intensity)|1d140b", _
-        "gi19|(intensity)|000000", _
+        "gi19|(intensity)|stop", _
         "gi18|(intensity)|5b4126", _
         "gi14|(intensity)|49331f", _
         "gi12|(intensity)|c48c53", _
@@ -300,8 +300,8 @@ With CreateGlfShow("gi_spin1_cw")
         "gi20|(intensity)|48321f", _
         "gi21|(intensity)|251b11", _
         "gi19|(intensity)|3c2a1a", _
-        "gi18|(intensity)|000000", _
-        "gi16|(intensity)|000000", _
+        "gi18|(intensity)|stop", _
+        "gi16|(intensity)|stop", _
         "gi15|(intensity)|3b2a1a", _
         "gi14|(intensity)|362617", _
         "gi13|(intensity)|aa7747", _
@@ -329,7 +329,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi15|(intensity)|65472b", _
         "gi14|(intensity)|46311e", _
         "gi13|(intensity)|d29459", _
-        "gi12|(intensity)|000000", _
+        "gi12|(intensity)|stop", _
         "gi11|(intensity)|0e0a07", _
         "gi09|(intensity)|2f2114", _
         "gi08|(intensity)|6b4c2d", _
@@ -348,7 +348,7 @@ With CreateGlfShow("gi_spin1_cw")
         "giapron|(intensity)|7a5531", _
         "gi22|(intensity)|e2a160", _
         "gi20|(intensity)|040303", _
-        "gi21|(intensity)|000000", _
+        "gi21|(intensity)|stop", _
         "gi19|(intensity)|7c5733", _
         "gi15|(intensity)|966940", _
         "gi14|(intensity)|583e25", _
@@ -371,7 +371,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi17|(intensity)|ffb36b", _
         "giapron|(intensity)|342415", _
         "gi22|(intensity)|a67646", _
-        "gi20|(intensity)|000000", _
+        "gi20|(intensity)|stop", _
         "gi19|(intensity)|9f7042", _
         "gi15|(intensity)|c38b53", _
         "gi14|(intensity)|715031", _
@@ -395,20 +395,20 @@ With CreateGlfShow("gi_spin1_cw")
         "gi19|(intensity)|c28952", _
         "gi15|(intensity)|eba663", _
         "gi14|(intensity)|8b613b", _
-        "gi11|(intensity)|000000", _
+        "gi11|(intensity)|stop", _
         "gi10|(intensity)|503721", _
         "gi09|(intensity)|6a4a2d", _
         "gi08|(intensity)|271b0f", _
         "gi07|(intensity)|1e150c", _
-        "gi06|(intensity)|000000", _
-        "gi05|(intensity)|000000", _
+        "gi06|(intensity)|stop", _
+        "gi05|(intensity)|stop", _
         "gi01|(intensity)|f5ae66" _
         )
     End With
     With .AddStep(0.70000, Null, Null)
         .Lights = Array( _
         "gi17|(intensity)|855e37", _
-        "giapron|(intensity)|000000", _
+        "giapron|(intensity)|stop", _
         "gi22|(intensity)|322316", _
         "gi19|(intensity)|e39f5e", _
         "gi15|(intensity)|ffb36b", _
@@ -434,7 +434,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi10|(intensity)|66482c", _
         "gi09|(intensity)|a37345", _
         "gi08|(intensity)|0e0906", _
-        "gi07|(intensity)|000000", _
+        "gi07|(intensity)|stop", _
         "gi04|(intensity)|f4ae66", _
         "gi03|(intensity)|d19358", _
         "gi02|(intensity)|d69659", _
@@ -443,8 +443,8 @@ With CreateGlfShow("gi_spin1_cw")
     End With
     With .AddStep(0.76667, Null, Null)
         .Lights = Array( _
-        "gi17|(intensity)|000000", _
-        "gi22|(intensity)|000000", _
+        "gi17|(intensity)|stop", _
+        "gi22|(intensity)|stop", _
         "gi19|(intensity)|ffb36b", _
         "gi15|(intensity)|fbb168", _
         "gi14|(intensity)|d99a5c", _
@@ -483,7 +483,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi11|(intensity)|150e08", _
         "gi10|(intensity)|9c6d41", _
         "gi09|(intensity)|fab067", _
-        "gi08|(intensity)|000000", _
+        "gi08|(intensity)|stop", _
         "gi04|(intensity)|976a40", _
         "gi03|(intensity)|5d4227", _
         "gi02|(intensity)|46311e", _
@@ -514,20 +514,20 @@ With CreateGlfShow("gi_spin1_cw")
         "gi04|(intensity)|543c24", _
         "gi03|(intensity)|1f160d", _
         "gi02|(intensity)|060503", _
-        "gi01|(intensity)|000000" _
+        "gi01|(intensity)|stop" _
         )
     End With
     With .AddStep(0.93333, Null, Null)
         .Lights = Array( _
         "gi19|(intensity)|986c3f", _
         "gi15|(intensity)|1e150c", _
-        "gi13|(intensity)|000000", _
+        "gi13|(intensity)|stop", _
         "gi11|(intensity)|48321d", _
         "gi10|(intensity)|da9a5c", _
         "gi08|(intensity)|030102", _
         "gi04|(intensity)|382819", _
         "gi03|(intensity)|0d0805", _
-        "gi02|(intensity)|000000" _
+        "gi02|(intensity)|stop" _
         )
     End With
     With .AddStep(0.96667, Null, Null)
@@ -541,13 +541,13 @@ With CreateGlfShow("gi_spin1_cw")
         "gi09|(intensity)|faaf6b", _
         "gi08|(intensity)|0a0604", _
         "gi04|(intensity)|21170d", _
-        "gi03|(intensity)|000000" _
+        "gi03|(intensity)|stop" _
         )
     End With
     With .AddStep(1.00000, Null, Null)
         .Lights = Array( _
         "gi19|(intensity)|513921", _
-        "gi15|(intensity)|000000", _
+        "gi15|(intensity)|stop", _
         "gi14|(intensity)|d9995b", _
         "gi12|(intensity)|170e07", _
         "gi11|(intensity)|845e36", _
@@ -578,7 +578,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi09|(intensity)|b07d4a", _
         "gi08|(intensity)|2d2013", _
         "gi07|(intensity)|030200", _
-        "gi04|(intensity)|000000" _
+        "gi04|(intensity)|stop" _
         )
     End With
     With .AddStep(1.10000, Null, Null)
@@ -610,7 +610,7 @@ With CreateGlfShow("gi_spin1_cw")
     With .AddStep(1.16667, Null, Null)
         .Lights = Array( _
         "gi20|(intensity)|24180f", _
-        "gi19|(intensity)|000000", _
+        "gi19|(intensity)|stop", _
         "gi18|(intensity)|65472a", _
         "gi14|(intensity)|523a22", _
         "gi12|(intensity)|d8995b", _
@@ -827,8 +827,8 @@ With CreateGlfShow("gi_spin1_cw")
         "gi20|(intensity)|412d1c", _
         "gi21|(intensity)|20170d", _
         "gi19|(intensity)|442f1e", _
-        "gi18|(intensity)|000000", _
-        "gi16|(intensity)|000000", _
+        "gi18|(intensity)|stop", _
+        "gi16|(intensity)|stop", _
         "gi15|(intensity)|442f1e", _
         "gi14|(intensity)|3e2b1a", _
         "gi13|(intensity)|ba844e", _
@@ -852,12 +852,12 @@ With CreateGlfShow("gi_spin1_cw")
         "giapron|(intensity)|d5975a", _
         "gi22|(intensity)|f9af68", _
         "gi20|(intensity)|1c130c", _
-        "gi21|(intensity)|000000", _
+        "gi21|(intensity)|stop", _
         "gi19|(intensity)|634529", _
         "gi15|(intensity)|704f2e", _
         "gi14|(intensity)|4f3620", _
         "gi13|(intensity)|e6a261", _
-        "gi12|(intensity)|000000", _
+        "gi12|(intensity)|stop", _
         "gi11|(intensity)|0b0704", _
         "gi10|(intensity)|4a341f", _
         "gi09|(intensity)|291d13", _
@@ -898,11 +898,11 @@ With CreateGlfShow("gi_spin1_cw")
         .Lights = Array( _
         "giapron|(intensity)|3c2a1a", _
         "gi22|(intensity)|986b41", _
-        "gi20|(intensity)|000000", _
+        "gi20|(intensity)|stop", _
         "gi19|(intensity)|b07c4c", _
         "gi15|(intensity)|d6975a", _
         "gi14|(intensity)|7a5632", _
-        "gi11|(intensity)|000000", _
+        "gi11|(intensity)|stop", _
         "gi10|(intensity)|513921", _
         "gi09|(intensity)|49331f", _
         "gi08|(intensity)|402d1c", _
@@ -927,7 +927,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi09|(intensity)|5e4326", _
         "gi08|(intensity)|2c1f12", _
         "gi07|(intensity)|24180f", _
-        "gi06|(intensity)|000000", _
+        "gi06|(intensity)|stop", _
         "gi05|(intensity)|020202", _
         "gi04|(intensity)|ffb36b", _
         "gi02|(intensity)|ffb36b" _
@@ -936,7 +936,7 @@ With CreateGlfShow("gi_spin1_cw")
     With .AddStep(1.70000, Null, Null)
         .Lights = Array( _
         "gi17|(intensity)|795732", _
-        "giapron|(intensity)|000000", _
+        "giapron|(intensity)|stop", _
         "gi22|(intensity)|2a1e12", _
         "gi19|(intensity)|f6ad68", _
         "gi15|(intensity)|ffb36b", _
@@ -946,7 +946,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi09|(intensity)|795532", _
         "gi08|(intensity)|1c130c", _
         "gi07|(intensity)|100b07", _
-        "gi05|(intensity)|000000", _
+        "gi05|(intensity)|stop", _
         "gi01|(intensity)|e2a160" _
         )
     End With
@@ -968,8 +968,8 @@ With CreateGlfShow("gi_spin1_cw")
     End With
     With .AddStep(1.76667, Null, Null)
         .Lights = Array( _
-        "gi17|(intensity)|000000", _
-        "gi22|(intensity)|000000", _
+        "gi17|(intensity)|stop", _
+        "gi22|(intensity)|stop", _
         "gi15|(intensity)|eaa562", _
         "gi14|(intensity)|eea864", _
         "gi13|(intensity)|986b41", _
@@ -977,7 +977,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi10|(intensity)|805a35", _
         "gi09|(intensity)|b07c4a", _
         "gi08|(intensity)|0b0704", _
-        "gi07|(intensity)|000000", _
+        "gi07|(intensity)|stop", _
         "gi04|(intensity)|eea966", _
         "gi03|(intensity)|bc854f", _
         "gi02|(intensity)|b8834f", _
@@ -1041,7 +1041,7 @@ With CreateGlfShow("gi_spin1_cw")
         "gi04|(intensity)|5d4227", _
         "gi03|(intensity)|241a10", _
         "gi02|(intensity)|0b0704", _
-        "gi01|(intensity)|000000" _
+        "gi01|(intensity)|stop" _
         )
     End With
     With .AddStep(1.93333, Null, 0.03333)
@@ -1049,13 +1049,13 @@ With CreateGlfShow("gi_spin1_cw")
         "gi19|(intensity)|8c613b", _
         "gi15|(intensity)|1a110a", _
         "gi14|(intensity)|f3ad67", _
-        "gi13|(intensity)|000000", _
+        "gi13|(intensity)|stop", _
         "gi11|(intensity)|432e1d", _
         "gi10|(intensity)|eea965", _
         "gi08|(intensity)|060503", _
         "gi04|(intensity)|412e1d", _
         "gi03|(intensity)|0f0a07", _
-        "gi02|(intensity)|000000" _
+        "gi02|(intensity)|stop" _
         )
     End With
     ' With .AddStep(1.96667, Null, Null)
@@ -1165,7 +1165,7 @@ With CreateGlfShow("gi_cracked")
   End With
   With .AddStep(0.46667, Null, Null)
     .Lights = Array( _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi06|100|ab7848", _
       "gi01|100|feb46b" _
       )
@@ -1181,7 +1181,7 @@ With CreateGlfShow("gi_cracked")
   End With
   With .AddStep(0.53333, Null, Null)
     .Lights = Array( _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi07|100|ffb46b", _
       "gi06|100|735130", _
       "gi05|100|0c0805", _
@@ -1267,16 +1267,16 @@ With CreateGlfShow("gi_cracked")
       "gi04|100|ffb46b", _
       "gi03|100|a77646", _
       "gi02|100|a07143", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(0.80000, Null, Null)
     .Lights = Array( _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi09|100|fab069", _
       "gi07|100|271c10", _
       "gi06|100|ffb46b", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|0b0805", _
       "gi03|100|010100", _
       "gi02|100|7e5935", _
@@ -1302,11 +1302,11 @@ With CreateGlfShow("gi_cracked")
       "gi08|100|65472a", _
       "gi07|100|a87746", _
       "gi06|100|d39559", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|feb36a", _
       "gi03|100|2a1e12", _
       "gi02|100|040302", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(0.90000, Null, Null)
@@ -1315,11 +1315,11 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|855e38", _
       "gi09|100|875f38", _
       "gi08|100|5b4026", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|070503", _
       "gi05|100|010100", _
       "gi04|100|010100", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|f6ae67" _
       )
   End With
@@ -1332,7 +1332,7 @@ With CreateGlfShow("gi_cracked")
       "gi07|100|030201", _
       "gi06|100|775432", _
       "gi05|100|030201", _
-      "gi04|100|000000", _
+      "gi04|100|stop", _
       "gi03|100|020101", _
       "gi02|100|010100", _
       "gi01|100|040302" _
@@ -1347,7 +1347,7 @@ With CreateGlfShow("gi_cracked")
       "gi06|100|feb36a", _
       "gi05|100|010000", _
       "gi04|100|020201", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|4e3721", _
       "gi01|100|ffb46b" _
       )
@@ -1373,10 +1373,10 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|f9af68", _
       "gi09|100|ffb46b", _
       "gi08|100|93673e", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|010101", _
       "gi05|100|090704", _
-      "gi04|100|000000", _
+      "gi04|100|stop", _
       "gi03|100|030201", _
       "gi02|100|ffb46b", _
       "gi01|100|010100" _
@@ -1449,7 +1449,7 @@ With CreateGlfShow("gi_cracked")
   End With
   With .AddStep(1.20000, Null, Null)
     .Lights = Array( _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi14|100|95693e", _
       "gi11|100|eba663", _
       "gi10|100|694a2c", _
@@ -1458,10 +1458,10 @@ With CreateGlfShow("gi_cracked")
       "gi07|100|18110a", _
       "gi06|100|2d2013", _
       "gi05|100|090604", _
-      "gi04|100|000000", _
+      "gi04|100|stop", _
       "gi03|100|ffb46b", _
       "gi02|100|5a3f26", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(1.23333, Null, Null)
@@ -1474,7 +1474,7 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|bb844f", _
       "gi09|100|030201", _
       "gi08|100|795633", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|e9a562", _
       "gi05|100|bf8750", _
       "gi04|100|090604", _
@@ -1511,12 +1511,12 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|715030", _
       "gi08|100|110c07", _
       "gi07|100|46311d", _
-      "gi06|100|000000", _
+      "gi06|100|stop", _
       "gi05|100|010100", _
       "gi04|100|23180e", _
       "gi03|100|010000", _
       "gi02|100|362617", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(1.33333, Null, Null)
@@ -1532,7 +1532,7 @@ With CreateGlfShow("gi_cracked")
       "gi08|100|271b10", _
       "gi07|100|4f3821", _
       "gi06|100|4c3620", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|010100", _
       "gi03|100|422f1c", _
       "gi02|100|050402", _
@@ -1550,7 +1550,7 @@ With CreateGlfShow("gi_cracked")
       "gi11|100|fbb169", _
       "gi10|100|ffb46b", _
       "gi09|100|44301d", _
-      "gi08|100|000000", _
+      "gi08|100|stop", _
       "gi07|100|040302", _
       "gi06|100|45311d", _
       "gi03|100|050302", _
@@ -1561,7 +1561,7 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(1.40000, Null, Null)
     .Lights = Array( _
       "giapron|100|020101", _
-      "gi19|100|000000", _
+      "gi19|100|stop", _
       "gi18|100|5c4126", _
       "gi15|100|5d4227", _
       "gi14|100|eda763", _
@@ -1574,7 +1574,7 @@ With CreateGlfShow("gi_cracked")
       "gi06|100|ffb46b", _
       "gi05|100|020201", _
       "gi04|100|19120a", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|010000", _
       "gi01|100|261b10" _
       )
@@ -1595,15 +1595,15 @@ With CreateGlfShow("gi_cracked")
       "gi07|100|b07c4a", _
       "gi06|100|845d37", _
       "gi05|100|010000", _
-      "gi04|100|000000", _
+      "gi04|100|stop", _
       "gi03|100|422f1c", _
       "gi02|100|5e4227", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(1.46667, Null, Null)
     .Lights = Array( _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi20|100|5c4126", _
       "gi19|100|7a5633", _
       "gi18|100|a07143", _
@@ -1616,7 +1616,7 @@ With CreateGlfShow("gi_cracked")
       "gi09|100|91663d", _
       "gi08|100|f7ae68", _
       "gi07|100|090604", _
-      "gi06|100|000000", _
+      "gi06|100|stop", _
       "gi05|100|ca8f55", _
       "gi03|100|ffb46b", _
       "gi02|100|010100", _
@@ -1636,12 +1636,12 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|b17d4a", _
       "gi09|100|5d4127", _
       "gi08|100|1b130b", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|ae7b49", _
       "gi05|100|020101", _
       "gi04|100|fcb26a", _
-      "gi02|100|000000", _
-      "gi01|100|000000" _
+      "gi02|100|stop", _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(1.53333, Null, Null)
@@ -1658,10 +1658,10 @@ With CreateGlfShow("gi_cracked")
       "gi09|100|feb46b", _
       "gi08|100|050302", _
       "gi07|100|010100", _
-      "gi06|100|000000", _
+      "gi06|100|stop", _
       "gi05|100|694a2c", _
       "gi04|100|e19f5e", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|010101", _
       "gi01|100|0c0805" _
       )
@@ -1677,7 +1677,7 @@ With CreateGlfShow("gi_cracked")
       "gi14|100|0b0805", _
       "gi13|100|ffb46b", _
       "gi12|100|fdb26a", _
-      "gi11|100|000000", _
+      "gi11|100|stop", _
       "gi10|100|543c23", _
       "gi09|100|835c37", _
       "gi08|100|060402", _
@@ -1705,7 +1705,7 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|020201", _
       "gi09|100|140e08", _
       "gi08|100|010100", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|ffb46b", _
       "gi05|100|ffb46b", _
       "gi04|100|020201", _
@@ -1736,24 +1736,24 @@ With CreateGlfShow("gi_cracked")
   End With
   With .AddStep(1.66667, Null, Null)
     .Lights = Array( _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi22|100|feb36b", _
       "gi20|100|fdb36a", _
       "gi21|100|8b623a", _
       "gi19|100|ae7b49", _
       "gi18|100|ca8f55", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi14|100|624629", _
       "gi13|100|ffb46b", _
       "gi12|100|050302", _
       "gi11|100|64462a", _
       "gi10|100|060402", _
-      "gi09|100|000000", _
-      "gi08|100|000000", _
+      "gi09|100|stop", _
+      "gi08|100|stop", _
       "gi07|100|e9a562", _
       "gi06|100|fbb169", _
       "gi05|100|9b6d41", _
-      "gi04|100|000000", _
+      "gi04|100|stop", _
       "gi03|100|fdb26a", _
       "gi02|100|5f4328", _
       "gi01|100|c78d54" _
@@ -1769,13 +1769,13 @@ With CreateGlfShow("gi_cracked")
       "gi18|100|fcb26a", _
       "gi16|100|fcb26a", _
       "gi14|100|070503", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|020201", _
       "gi10|100|68492c", _
       "gi09|100|1a130b", _
       "gi08|100|745231", _
       "gi07|100|ffb46b", _
-      "gi06|100|000000", _
+      "gi06|100|stop", _
       "gi05|100|22180e", _
       "gi04|100|f5ad67", _
       "gi03|100|010000", _
@@ -1818,19 +1818,19 @@ With CreateGlfShow("gi_cracked")
       "gi18|100|af7c4a", _
       "gi16|100|725130", _
       "gi15|100|010100", _
-      "gi14|100|000000", _
+      "gi14|100|stop", _
       "gi13|100|ab7948", _
       "gi12|100|040302", _
-      "gi11|100|000000", _
+      "gi11|100|stop", _
       "gi10|100|050302", _
       "gi09|100|040302", _
       "gi07|100|604328", _
       "gi06|100|402d1b", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|010100", _
       "gi03|100|19120b", _
-      "gi02|100|000000", _
-      "gi01|100|000000" _
+      "gi02|100|stop", _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(1.80000, Null, Null)
@@ -1846,10 +1846,10 @@ With CreateGlfShow("gi_cracked")
       "gi15|100|4f3821", _
       "gi14|100|010100", _
       "gi13|100|020101", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|66482b", _
       "gi10|100|f9b068", _
-      "gi09|100|000000", _
+      "gi09|100|stop", _
       "gi08|100|0e0a06", _
       "gi07|100|cc9056", _
       "gi06|100|8c633b", _
@@ -1862,24 +1862,24 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(1.83333, Null, Null)
     .Lights = Array( _
       "gi17|100|5b4026", _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi22|100|010100", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|9d6f42", _
       "gi19|100|010100", _
       "gi18|100|010100", _
       "gi16|100|ffb46b", _
-      "gi15|100|000000", _
-      "gi14|100|000000", _
+      "gi15|100|stop", _
+      "gi14|100|stop", _
       "gi13|100|dc9b5c", _
       "gi11|100|050402", _
       "gi10|100|281c11", _
       "gi08|100|fab069", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|010100", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|322315", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|503922", _
       "gi01|100|281d11" _
       )
@@ -1888,10 +1888,10 @@ With CreateGlfShow("gi_cracked")
     .Lights = Array( _
       "gi17|100|3f2c1a", _
       "giapron|100|e8a461", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi21|100|5f4328", _
       "gi19|100|533a23", _
-      "gi18|100|000000", _
+      "gi18|100|stop", _
       "gi15|100|030201", _
       "gi14|100|f5ad67", _
       "gi13|100|ffb46b", _
@@ -1904,7 +1904,7 @@ With CreateGlfShow("gi_cracked")
       "gi04|100|0b0704", _
       "gi03|100|65472a", _
       "gi02|100|feb36b", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(1.90000, Null, Null)
@@ -1925,33 +1925,33 @@ With CreateGlfShow("gi_cracked")
       "gi09|100|020201", _
       "gi08|100|020101", _
       "gi07|100|f7ae68", _
-      "gi06|100|000000", _
+      "gi06|100|stop", _
       "gi05|100|040301", _
-      "gi04|100|000000", _
-      "gi03|100|000000", _
+      "gi04|100|stop", _
+      "gi03|100|stop", _
       "gi02|100|feb46b", _
       "gi01|100|f4ac66" _
       )
   End With
   With .AddStep(1.93333, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
-      "giapron|100|000000", _
-      "gi22|100|000000", _
+      "gi17|100|stop", _
+      "giapron|100|stop", _
+      "gi22|100|stop", _
       "gi20|100|010101", _
       "gi21|100|382717", _
       "gi19|100|66482b", _
-      "gi18|100|000000", _
+      "gi18|100|stop", _
       "gi16|100|5e4328", _
       "gi15|100|4e3721", _
       "gi14|100|160f09", _
-      "gi13|100|000000", _
+      "gi13|100|stop", _
       "gi12|100|f2ab66", _
       "gi11|100|010000", _
       "gi10|100|060403", _
       "gi09|100|0d0905", _
       "gi08|100|010100", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|010100", _
       "gi05|100|573e25", _
       "gi03|100|020101", _
@@ -1980,7 +1980,7 @@ With CreateGlfShow("gi_cracked")
       "gi05|100|040302", _
       "gi04|100|302214", _
       "gi02|100|110c07", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(2.00000, Null, Null)
@@ -1989,7 +1989,7 @@ With CreateGlfShow("gi_cracked")
       "giapron|100|281c11", _
       "gi22|100|130e08", _
       "gi20|100|ffb46b", _
-      "gi21|100|000000", _
+      "gi21|100|stop", _
       "gi19|100|070503", _
       "gi18|100|040302", _
       "gi16|100|5f4328", _
@@ -2012,10 +2012,10 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(2.03333, Null, Null)
     .Lights = Array( _
       "gi17|100|ffb46b", _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi22|100|fab069", _
       "gi20|100|a27244", _
-      "gi19|100|000000", _
+      "gi19|100|stop", _
       "gi18|100|604428", _
       "gi16|100|89613a", _
       "gi15|100|1c130c", _
@@ -2024,13 +2024,13 @@ With CreateGlfShow("gi_cracked")
       "gi12|100|ffb46b", _
       "gi11|100|fcb26a", _
       "gi10|100|fcb26a", _
-      "gi09|100|000000", _
-      "gi08|100|000000", _
+      "gi09|100|stop", _
+      "gi08|100|stop", _
       "gi07|100|4e3721", _
       "gi06|100|f7ae68", _
       "gi05|100|020101", _
       "gi04|100|010100", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|010000", _
       "gi01|100|010100" _
       )
@@ -2052,25 +2052,25 @@ With CreateGlfShow("gi_cracked")
       "gi09|100|22180e", _
       "gi08|100|010100", _
       "gi07|100|090704", _
-      "gi06|100|000000", _
+      "gi06|100|stop", _
       "gi05|100|120c07", _
       "gi04|100|b37e4b", _
       "gi02|100|865f38", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(2.10000, Null, Null)
     .Lights = Array( _
       "gi22|100|171009", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|f3ac66", _
       "gi19|100|020201", _
       "gi18|100|fdb26a", _
       "gi16|100|18110a", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi14|100|382717", _
       "gi13|100|a97747", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|ba834e", _
       "gi10|100|5e4227", _
       "gi09|100|080603", _
@@ -2090,7 +2090,7 @@ With CreateGlfShow("gi_cracked")
       "gi21|100|dd9c5d", _
       "gi19|100|976a3f", _
       "gi18|100|eaa562", _
-      "gi16|100|000000", _
+      "gi16|100|stop", _
       "gi15|100|d6975a", _
       "gi14|100|d8995b", _
       "gi13|100|4e3721", _
@@ -2098,36 +2098,36 @@ With CreateGlfShow("gi_cracked")
       "gi11|100|020101", _
       "gi10|100|3c2a19", _
       "gi09|100|2e2113", _
-      "gi08|100|000000", _
-      "gi07|100|000000", _
+      "gi08|100|stop", _
+      "gi07|100|stop", _
       "gi06|100|010101", _
       "gi05|100|040301", _
       "gi03|100|020101", _
-      "gi02|100|000000", _
+      "gi02|100|stop", _
       "gi01|100|0b0704" _
       )
   End With
   With .AddStep(2.16667, Null, Null)
     .Lights = Array( _
       "gi17|100|010000", _
-      "giapron|100|000000", _
+      "giapron|100|stop", _
       "gi22|100|9f7143", _
       "gi20|100|0d0905", _
-      "gi21|100|000000", _
+      "gi21|100|stop", _
       "gi19|100|030201", _
       "gi18|100|865f38", _
       "gi15|100|18110a", _
-      "gi14|100|000000", _
+      "gi14|100|stop", _
       "gi13|100|1b130b", _
       "gi12|100|ffb46b", _
-      "gi11|100|000000", _
+      "gi11|100|stop", _
       "gi10|100|010100", _
       "gi09|100|18110a", _
       "gi08|100|0f0b06", _
       "gi06|100|0a0704", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|040302", _
-      "gi03|100|000000", _
+      "gi03|100|stop", _
       "gi02|100|010100", _
       "gi01|100|fdb36a" _
       )
@@ -2136,42 +2136,42 @@ With CreateGlfShow("gi_cracked")
     .Lights = Array( _
       "gi17|100|593f25", _
       "gi22|100|040302", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi19|100|fbb169", _
       "gi18|100|2f2114", _
       "gi15|100|130d08", _
       "gi14|100|ffb46b", _
       "gi13|100|010100", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|020101", _
-      "gi10|100|000000", _
-      "gi09|100|000000", _
+      "gi10|100|stop", _
+      "gi09|100|stop", _
       "gi08|100|030201", _
       "gi06|100|3e2b1a", _
       "gi04|100|010100", _
       "gi02|100|010000", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(2.23333, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
-      "gi22|100|000000", _
+      "gi17|100|stop", _
+      "gi22|100|stop", _
       "gi20|100|392818", _
       "gi19|100|f8af68", _
-      "gi18|100|000000", _
+      "gi18|100|stop", _
       "gi16|100|44301c", _
       "gi15|100|010100", _
       "gi14|100|feb36a", _
       "gi13|100|5c4126", _
-      "gi11|100|000000", _
+      "gi11|100|stop", _
       "gi09|100|4d3620", _
-      "gi08|100|000000", _
+      "gi08|100|stop", _
       "gi07|100|040302", _
       "gi06|100|89613a", _
       "gi05|100|2c1f12", _
-      "gi04|100|000000", _
-      "gi02|100|000000", _
+      "gi04|100|stop", _
+      "gi02|100|stop", _
       "gi01|100|140e08" _
       )
   End With
@@ -2191,43 +2191,43 @@ With CreateGlfShow("gi_cracked")
       "gi10|100|030201", _
       "gi09|100|010000", _
       "gi08|100|040302", _
-      "gi07|100|000000", _
+      "gi07|100|stop", _
       "gi06|100|010000", _
       "gi05|100|010000", _
       "gi03|100|feb36a", _
       "gi02|100|010000", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(2.30000, Null, Null)
     .Lights = Array( _
       "gi17|100|ffb46b", _
       "gi22|100|020101", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|100b06", _
-      "gi19|100|000000", _
+      "gi19|100|stop", _
       "gi18|100|ffb46b", _
-      "gi16|100|000000", _
+      "gi16|100|stop", _
       "gi15|100|0b0704", _
-      "gi14|100|000000", _
+      "gi14|100|stop", _
       "gi13|100|c38952", _
       "gi12|100|030201", _
       "gi11|100|ffb46b", _
       "gi10|100|ffb46b", _
-      "gi09|100|000000", _
-      "gi08|100|000000", _
+      "gi09|100|stop", _
+      "gi08|100|stop", _
       "gi07|100|010100", _
       "gi06|100|020101", _
       "gi05|100|050302", _
       "gi04|100|020201", _
-      "gi03|100|000000", _
-      "gi02|100|000000" _
+      "gi03|100|stop", _
+      "gi02|100|stop" _
       )
   End With
   With .AddStep(2.33333, Null, Null)
     .Lights = Array( _
       "gi17|100|d39558", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|1d140c", _
       "gi21|100|100c07", _
       "gi19|100|23190f", _
@@ -2235,13 +2235,13 @@ With CreateGlfShow("gi_cracked")
       "gi16|100|eda763", _
       "gi15|100|d29558", _
       "gi13|100|f6ae67", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|040302", _
       "gi10|100|be8650", _
       "gi08|100|c08851", _
       "gi07|100|fdb36a", _
       "gi06|100|91673d", _
-      "gi05|100|000000", _
+      "gi05|100|stop", _
       "gi04|100|fcb26a", _
       "gi02|100|010101", _
       "gi01|100|fbb169" _
@@ -2254,11 +2254,11 @@ With CreateGlfShow("gi_cracked")
       "gi20|100|ad7a48", _
       "gi21|100|060402", _
       "gi19|100|fdb36a", _
-      "gi18|100|000000", _
+      "gi18|100|stop", _
       "gi16|100|d49659", _
       "gi15|100|040302", _
       "gi14|100|010000", _
-      "gi13|100|000000", _
+      "gi13|100|stop", _
       "gi12|100|030201", _
       "gi11|100|775432", _
       "gi10|100|020101", _
@@ -2274,7 +2274,7 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(2.40000, Null, Null)
     .Lights = Array( _
       "gi17|100|010000", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|8e643c", _
       "gi21|100|553c24", _
       "gi16|100|6c4c2d", _
@@ -2287,9 +2287,9 @@ With CreateGlfShow("gi_cracked")
       "gi09|100|5f4328", _
       "gi08|100|583e25", _
       "gi04|100|886039", _
-      "gi03|100|000000", _
-      "gi02|100|000000", _
-      "gi01|100|000000" _
+      "gi03|100|stop", _
+      "gi02|100|stop", _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(2.43333, Null, Null)
@@ -2297,20 +2297,20 @@ With CreateGlfShow("gi_cracked")
       "gi17|100|040302", _
       "gi22|100|020101", _
       "gi20|100|030201", _
-      "gi21|100|000000", _
+      "gi21|100|stop", _
       "gi19|100|030201", _
       "gi16|100|67492b", _
       "gi15|100|020101", _
       "gi14|100|d8995b", _
       "gi13|100|110c07", _
       "gi12|100|5b4026", _
-      "gi11|100|000000", _
+      "gi11|100|stop", _
       "gi10|100|030201", _
       "gi09|100|020101", _
       "gi08|100|392818", _
-      "gi07|100|000000", _
-      "gi06|100|000000", _
-      "gi04|100|000000", _
+      "gi07|100|stop", _
+      "gi06|100|stop", _
+      "gi04|100|stop", _
       "gi03|100|010100", _
       "gi01|100|020101" _
       )
@@ -2318,29 +2318,29 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(2.46667, Null, Null)
     .Lights = Array( _
       "gi17|100|ae7b49", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|020101", _
       "gi21|100|b27e4b", _
-      "gi19|100|000000", _
+      "gi19|100|stop", _
       "gi16|100|fdb36a", _
       "gi15|100|f6ae67", _
       "gi14|100|010100", _
       "gi13|100|422f1c", _
       "gi12|100|010000", _
       "gi11|100|6b4c2d", _
-      "gi10|100|000000", _
+      "gi10|100|stop", _
       "gi09|100|010100", _
       "gi08|100|0b0805", _
       "gi03|100|010101", _
       "gi02|100|030201", _
-      "gi01|100|000000" _
+      "gi01|100|stop" _
       )
   End With
   With .AddStep(2.50000, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
+      "gi17|100|stop", _
       "gi22|100|46311d", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|91673d", _
       "gi19|100|070503", _
       "gi18|100|0a0704", _
@@ -2351,11 +2351,11 @@ With CreateGlfShow("gi_cracked")
       "gi12|100|f8af68", _
       "gi11|100|986b40", _
       "gi10|100|010100", _
-      "gi09|100|000000", _
+      "gi09|100|stop", _
       "gi08|100|010100", _
       "gi04|100|ffb46b", _
-      "gi03|100|000000", _
-      "gi02|100|000000" _
+      "gi03|100|stop", _
+      "gi02|100|stop" _
       )
   End With
   With .AddStep(2.53333, Null, Null)
@@ -2365,15 +2365,15 @@ With CreateGlfShow("gi_cracked")
       "gi21|100|070503", _
       "gi19|100|e7a361", _
       "gi18|100|af7c4a", _
-      "gi16|100|000000", _
+      "gi16|100|stop", _
       "gi15|100|5e4328", _
       "gi14|100|100b07", _
       "gi13|100|ffb46b", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|010000", _
-      "gi10|100|000000", _
-      "gi08|100|000000", _
-      "gi04|100|000000", _
+      "gi10|100|stop", _
+      "gi08|100|stop", _
+      "gi04|100|stop", _
       "gi02|100|6c4c2d" _
       )
   End With
@@ -2399,22 +2399,22 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(2.60000, Null, Null)
     .Lights = Array( _
       "gi17|100|150f09", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|5e4228", _
-      "gi21|100|000000", _
-      "gi19|100|000000", _
-      "gi18|100|000000", _
+      "gi21|100|stop", _
+      "gi19|100|stop", _
+      "gi18|100|stop", _
       "gi16|100|020201", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi14|100|060402", _
       "gi13|100|2e2113", _
       "gi12|100|271c10", _
       "gi11|100|010101", _
-      "gi10|100|000000", _
+      "gi10|100|stop", _
       "gi06|100|010100", _
       "gi04|100|030201", _
-      "gi03|100|000000", _
-      "gi02|100|000000" _
+      "gi03|100|stop", _
+      "gi02|100|stop" _
       )
   End With
   With .AddStep(2.63333, Null, Null)
@@ -2430,8 +2430,8 @@ With CreateGlfShow("gi_cracked")
       "gi14|100|ffb46b", _
       "gi13|100|fdb26a", _
       "gi12|100|19110a", _
-      "gi11|100|000000", _
-      "gi04|100|000000" _
+      "gi11|100|stop", _
+      "gi04|100|stop" _
       )
   End With
   With .AddStep(2.66667, Null, Null)
@@ -2447,7 +2447,7 @@ With CreateGlfShow("gi_cracked")
       "gi13|100|18110a", _
       "gi12|100|040201", _
       "gi11|100|020201", _
-      "gi06|100|000000" _
+      "gi06|100|stop" _
       )
   End With
   With .AddStep(2.70000, Null, Null)
@@ -2475,10 +2475,10 @@ With CreateGlfShow("gi_cracked")
       "gi21|100|010101", _
       "gi19|100|030201", _
       "gi18|100|503922", _
-      "gi16|100|000000", _
-      "gi15|100|000000", _
-      "gi14|100|000000", _
-      "gi13|100|000000", _
+      "gi16|100|stop", _
+      "gi15|100|stop", _
+      "gi14|100|stop", _
+      "gi13|100|stop", _
       "gi12|100|0e0a06", _
       "gi11|100|050402", _
       "gi10|100|0c0805", _
@@ -2489,17 +2489,17 @@ With CreateGlfShow("gi_cracked")
     .Lights = Array( _
       "gi17|100|1a120b", _
       "gi22|100|feb36a", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|896039", _
-      "gi19|100|000000", _
+      "gi19|100|stop", _
       "gi18|100|020101", _
       "gi16|100|010000", _
       "gi15|100|040302", _
       "gi13|100|010000", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|040302", _
       "gi10|100|040302", _
-      "gi09|100|000000" _
+      "gi09|100|stop" _
       )
   End With
   With .AddStep(2.80000, Null, Null)
@@ -2509,7 +2509,7 @@ With CreateGlfShow("gi_cracked")
       "gi21|100|9b6e41", _
       "gi19|100|b5804c", _
       "gi18|100|261b10", _
-      "gi16|100|000000", _
+      "gi16|100|stop", _
       "gi15|100|1c140c", _
       "gi13|100|010101", _
       "gi12|100|030201", _
@@ -2519,18 +2519,18 @@ With CreateGlfShow("gi_cracked")
   End With
   With .AddStep(2.83333, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
+      "gi17|100|stop", _
       "gi22|100|a07143", _
       "gi20|100|030201", _
-      "gi21|100|000000", _
+      "gi21|100|stop", _
       "gi19|100|392818", _
       "gi18|100|010000", _
       "gi16|100|140e08", _
       "gi15|100|775432", _
       "gi13|100|010000", _
       "gi12|100|0c0805", _
-      "gi11|100|000000", _
-      "gi10|100|000000", _
+      "gi11|100|stop", _
+      "gi10|100|stop", _
       "gi09|100|725030" _
       )
   End With
@@ -2539,24 +2539,24 @@ With CreateGlfShow("gi_cracked")
       "gi17|100|feb36b", _
       "gi22|100|010000", _
       "gi20|100|130e08", _
-      "gi19|100|000000", _
+      "gi19|100|stop", _
       "gi18|100|010100", _
       "gi16|100|f9af68", _
       "gi15|100|010100", _
       "gi13|100|010100", _
       "gi12|100|010100", _
       "gi11|100|010000", _
-      "gi09|100|000000" _
+      "gi09|100|stop" _
       )
   End With
   With .AddStep(2.90000, Null, Null)
     .Lights = Array( _
       "gi17|100|886039", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|fbb169", _
-      "gi18|100|000000", _
+      "gi18|100|stop", _
       "gi16|100|402d1b", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi14|100|010100", _
       "gi13|100|feb36a", _
       "gi12|100|040302", _
@@ -2570,57 +2570,57 @@ With CreateGlfShow("gi_cracked")
       "gi21|100|fcb26a", _
       "gi16|100|48331e", _
       "gi15|100|010101", _
-      "gi14|100|000000", _
+      "gi14|100|stop", _
       "gi13|100|feb46b", _
-      "gi12|100|000000", _
-      "gi11|100|000000", _
-      "gi09|100|000000" _
+      "gi12|100|stop", _
+      "gi11|100|stop", _
+      "gi09|100|stop" _
       )
   End With
   With .AddStep(2.96667, Null, Null)
     .Lights = Array( _
       "gi17|100|0d0905", _
       "gi22|100|030201", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|ffb46b", _
       "gi19|100|010100", _
       "gi18|100|5a4026", _
       "gi16|100|bb844e", _
       "gi15|100|100b07", _
       "gi14|100|040302", _
-      "gi13|100|000000", _
+      "gi13|100|stop", _
       "gi11|100|040302", _
       "gi10|100|030201" _
       )
   End With
   With .AddStep(3.00000, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
+      "gi17|100|stop", _
       "gi22|100|010100", _
       "gi20|100|010100", _
       "gi21|100|fbb169", _
-      "gi19|100|000000", _
-      "gi18|100|000000", _
+      "gi19|100|stop", _
+      "gi18|100|stop", _
       "gi16|100|020101", _
-      "gi15|100|000000", _
-      "gi14|100|000000", _
+      "gi15|100|stop", _
+      "gi14|100|stop", _
       "gi13|100|3d2b19", _
       "gi12|100|271c10", _
       "gi11|100|2f2114", _
-      "gi10|100|000000" _
+      "gi10|100|stop" _
       )
   End With
   With .AddStep(3.03333, Null, Null)
     .Lights = Array( _
       "gi17|100|23190f", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|120d08", _
       "gi21|100|ffb46b", _
       "gi19|100|010100", _
       "gi18|100|010100", _
       "gi16|100|030201", _
       "gi13|100|4c3620", _
-      "gi12|100|000000", _
+      "gi12|100|stop", _
       "gi11|100|010100", _
       "gi10|100|271c10" _
       )
@@ -2629,8 +2629,8 @@ With CreateGlfShow("gi_cracked")
     .Lights = Array( _
       "gi17|100|64472a", _
       "gi20|100|010100", _
-      "gi21|100|000000", _
-      "gi19|100|000000", _
+      "gi21|100|stop", _
+      "gi19|100|stop", _
       "gi16|100|b17d4a", _
       "gi13|100|ad7a49", _
       "gi11|100|020101", _
@@ -2641,24 +2641,24 @@ With CreateGlfShow("gi_cracked")
     .Lights = Array( _
       "gi17|100|050402", _
       "gi22|100|020101", _
-      "gi20|100|000000", _
-      "gi18|100|000000", _
-      "gi16|100|000000", _
-      "gi13|100|000000", _
+      "gi20|100|stop", _
+      "gi18|100|stop", _
+      "gi16|100|stop", _
+      "gi13|100|stop", _
       "gi11|100|65472a", _
-      "gi10|100|000000" _
+      "gi10|100|stop" _
       )
   End With
   With .AddStep(3.13333, Null, Null)
     .Lights = Array( _
       "gi17|100|030201", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi21|100|0b0805", _
       "gi18|100|020101", _
       "gi16|100|392818", _
       "gi15|100|060403", _
       "gi14|100|010100", _
-      "gi11|100|000000" _
+      "gi11|100|stop" _
       )
   End With
   With .AddStep(3.16667, Null, Null)
@@ -2666,10 +2666,10 @@ With CreateGlfShow("gi_cracked")
       "gi17|100|20160d", _
       "gi22|100|030201", _
       "gi20|100|060402", _
-      "gi21|100|000000", _
-      "gi18|100|000000", _
+      "gi21|100|stop", _
+      "gi18|100|stop", _
       "gi16|100|130e08", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi14|100|030201", _
       "gi13|100|010100" _
       )
@@ -2677,12 +2677,12 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(3.20000, Null, Null)
     .Lights = Array( _
       "gi17|100|1e150d", _
-      "gi22|100|000000", _
-      "gi20|100|000000", _
+      "gi22|100|stop", _
+      "gi20|100|stop", _
       "gi21|100|010000", _
-      "gi16|100|000000", _
-      "gi14|100|000000", _
-      "gi13|100|000000", _
+      "gi16|100|stop", _
+      "gi14|100|stop", _
+      "gi13|100|stop", _
       "gi11|100|040302" _
       )
   End With
@@ -2691,34 +2691,34 @@ With CreateGlfShow("gi_cracked")
       "gi17|100|f7af68", _
       "gi22|100|4c3620", _
       "gi20|100|010100", _
-      "gi21|100|000000", _
+      "gi21|100|stop", _
       "gi15|100|090604", _
       "gi13|100|020201", _
       "gi12|100|050402", _
-      "gi11|100|000000" _
+      "gi11|100|stop" _
       )
   End With
   With .AddStep(3.26667, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
+      "gi17|100|stop", _
       "gi22|100|030201", _
       "gi21|100|010101", _
       "gi19|100|010000", _
       "gi18|100|010100", _
       "gi16|100|030201", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi13|100|010100", _
       "gi12|100|100b06" _
       )
   End With
   With .AddStep(3.30000, Null, Null)
     .Lights = Array( _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi21|100|523a23", _
       "gi19|100|030201", _
       "gi18|100|020201", _
-      "gi16|100|000000", _
-      "gi13|100|000000", _
+      "gi16|100|stop", _
+      "gi13|100|stop", _
       "gi12|100|010100" _
       )
   End With
@@ -2727,92 +2727,92 @@ With CreateGlfShow("gi_cracked")
       "gi17|100|020101", _
       "gi22|100|010100", _
       "gi20|100|b7814d", _
-      "gi21|100|000000", _
-      "gi19|100|000000", _
-      "gi18|100|000000", _
+      "gi21|100|stop", _
+      "gi19|100|stop", _
+      "gi18|100|stop", _
       "gi15|100|020201" _
       )
   End With
   With .AddStep(3.36667, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
-      "gi22|100|000000", _
+      "gi17|100|stop", _
+      "gi22|100|stop", _
       "gi20|100|010100", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi13|100|030201", _
-      "gi12|100|000000" _
+      "gi12|100|stop" _
       )
   End With
   With .AddStep(3.40000, Null, Null)
     .Lights = Array( _
       "gi22|100|90663d", _
-      "gi20|100|000000", _
+      "gi20|100|stop", _
       "gi18|100|68492c", _
       "gi15|100|010100", _
-      "gi13|100|000000" _
+      "gi13|100|stop" _
       )
   End With
   With .AddStep(3.43333, Null, Null)
     .Lights = Array( _
       "gi22|100|080503", _
       "gi20|100|010100", _
-      "gi18|100|000000" _
+      "gi18|100|stop" _
       )
   End With
   With .AddStep(3.46667, Null, Null)
     .Lights = Array( _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi20|100|010101", _
       "gi21|100|010101", _
       "gi16|100|5b4026", _
-      "gi15|100|000000", _
+      "gi15|100|stop", _
       "gi13|100|030201" _
       )
   End With
   With .AddStep(3.50000, Null, Null)
     .Lights = Array( _
       "gi22|100|010000", _
-      "gi20|100|000000", _
-      "gi21|100|000000", _
-      "gi16|100|000000", _
+      "gi20|100|stop", _
+      "gi21|100|stop", _
+      "gi16|100|stop", _
       "gi13|100|010101" _
       )
   End With
   With .AddStep(3.53333, Null, Null)
     .Lights = Array( _
       "gi22|100|030201", _
-      "gi13|100|000000" _
+      "gi13|100|stop" _
       )
   End With
   With .AddStep(3.56667, Null, Null)
     .Lights = Array( _
       "gi17|100|010100", _
-      "gi22|100|000000", _
+      "gi22|100|stop", _
       "gi21|100|010101" _
       )
   End With
   With .AddStep(3.60000, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
+      "gi17|100|stop", _
       "gi22|100|332415", _
-      "gi21|100|000000" _
+      "gi21|100|stop" _
       )
   End With
   With .AddStep(3.63333, Null, Null)
     .Lights = Array( _
       "gi17|100|e8a461", _
-      "gi22|100|000000" _
+      "gi22|100|stop" _
       )
   End With
   With .AddStep(3.66667, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000", _
+      "gi17|100|stop", _
       "gi16|100|060402" _
       )
   End With
   With .AddStep(3.70000, Null, Null)
     .Lights = Array( _
-      "gi16|100|000000" _
+      "gi16|100|stop" _
       )
   End With
   With .AddStep(3.73333, Null, Null)
@@ -2833,12 +2833,12 @@ With CreateGlfShow("gi_cracked")
   With .AddStep(3.83333, Null, Null)
     .Lights = Array( _
       "gi17|100|0d0905", _
-      "gi16|100|000000" _
+      "gi16|100|stop" _
       )
   End With
   With .AddStep(3.86667, Null, Null)
     .Lights = Array( _
-      "gi17|100|000000" _
+      "gi17|100|stop" _
       )
   End With
   With .AddStep(3.90000, Null, Null)

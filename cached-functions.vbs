@@ -4252,10 +4252,10 @@ End Function
 glf_funcRefMap.Add """WARPING""", "Glf_826"
 Function Glf_827(args)
 	On Error Resume Next
-	    Glf_827 = GetPlayerState("light_the_eb") = 1 And GetPlayerState("flippers_are_dead")=0
+	    Glf_827 = GetPlayerState("light_the_eb") = 1 And glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_827 = False
 End Function
-glf_funcRefMap.Add "check_eb{current_player.light_the_eb == 1 && current_player.flippers_are_dead==0}", "Glf_827"
+glf_funcRefMap.Add "check_eb{current_player.light_the_eb == 1 && machine.flippers_are_dead==0}", "Glf_827"
 Function Glf_828(args)
 	On Error Resume Next
 	    Glf_828 = GetPlayerState("extra_balls") = 0
@@ -4296,22 +4296,22 @@ End Function
 glf_funcRefMap.Add """ BALL """, "Glf_834"
 Function Glf_835(args)
 	On Error Resume Next
-	    Glf_835 = GetPlayerState("shot_mystery_ready")=1 And GetPlayerState("flippers_are_dead")=0
+	    Glf_835 = GetPlayerState("shot_mystery_ready")=1 And glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_835 = False
 End Function
-glf_funcRefMap.Add "mode_mystery_started{current_player.shot_mystery_ready==1 && current_player.flippers_are_dead==0}", "Glf_835"
+glf_funcRefMap.Add "mode_mystery_started{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", "Glf_835"
 Function Glf_836(args)
 	On Error Resume Next
-	    Glf_836 = GetPlayerState("shot_mystery_ready")=0 And GetPlayerState("flippers_are_dead")=0
+	    Glf_836 = GetPlayerState("shot_mystery_ready")=0 And glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_836 = False
 End Function
-glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==0 && current_player.flippers_are_dead==0}", "Glf_836"
+glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==0 && machine.flippers_are_dead==0}", "Glf_836"
 Function Glf_837(args)
 	On Error Resume Next
-	    Glf_837 = GetPlayerState("shot_mystery_ready")=1 And GetPlayerState("flippers_are_dead")=0
+	    Glf_837 = GetPlayerState("shot_mystery_ready")=1 And glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_837 = False
 End Function
-glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==1 && current_player.flippers_are_dead==0}", "Glf_837"
+glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", "Glf_837"
 Function Glf_838(args)
 	On Error Resume Next
 	    Glf_838 = GetPlayerState("shot_training_ready")=0
@@ -5002,16 +5002,16 @@ End Function
 glf_funcRefMap.Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_961"
 Function Glf_962(args)
 	On Error Resume Next
-	    Glf_962 = GetPlayerState("shot_training_ready") = 1 And GetPlayerState("wizard_mode_is_ready")=0 And GetPlayerState("flippers_are_dead")=0
+	    Glf_962 = GetPlayerState("shot_training_ready") = 1 And GetPlayerState("wizard_mode_is_ready")=0 And glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_962 = False
 End Function
-glf_funcRefMap.Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0 && current_player.flippers_are_dead==0}", "Glf_962"
+glf_funcRefMap.Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0 && machine.flippers_are_dead==0}", "Glf_962"
 Function Glf_963(args)
 	On Error Resume Next
-	    Glf_963 = GetPlayerState("shot_training_ready")=1 And GetPlayerState("flippers_are_dead")=0
+	    Glf_963 = GetPlayerState("shot_training_ready")=1 And glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_963 = False
 End Function
-glf_funcRefMap.Add "check_training{current_player.shot_training_ready==1 && current_player.flippers_are_dead==0}", "Glf_963"
+glf_funcRefMap.Add "check_training{current_player.shot_training_ready==1 && machine.flippers_are_dead==0}", "Glf_963"
 Function Glf_964(args)
 	On Error Resume Next
 	    Glf_964 = GetPlayerState("shot_training_ready") = 0

@@ -11,7 +11,7 @@ With CreateGlfShow("asteroid_hit_single")
   End With
   With .AddStep(0.03333, Null, Null)
     .Lights = Array( _
-      "LSwC2|(intensity)|000000", _
+      "LSwC2|(intensity)|stop", _
       "LM4|(intensity)|(color)" _
       )
   End With
@@ -21,94 +21,94 @@ With CreateGlfShow("asteroid_hit_single")
       "LX|(intensity)|(color)", _
       "LEBR|(intensity)|(color)", _
       "LPC3|(intensity)|(color)", _
-      "LM4|(intensity)|000000", _
+      "LM4|(intensity)|stop", _
       "LM2|(intensity)|(color)" _
       )
   End With 
   With .AddStep(0.10000, Null, Null)
     .Lights = Array( _
-      "gi20|(intensity)|000000", _
+      "gi20|(intensity)|stop", _
       "gi18|(intensity)|(color)", _
       "gi16|(intensity)|(color)", _
       "gi13|(intensity)|(color)", _
-      "LX|(intensity)|000000", _
+      "LX|(intensity)|stop", _
       "LS5|(intensity)|(color)", _
       "LW2|(intensity)|(color)", _
       "LMLR|(intensity)|(color)", _
-      "LEBR|(intensity)|000000", _
-      "LPC3|(intensity)|000000", _
+      "LEBR|(intensity)|stop", _
+      "LPC3|(intensity)|stop", _
       "LTW2|(intensity)|(color)", _
-      "LM2|(intensity)|000000" _
+      "LM2|(intensity)|stop" _
       )
   End With
   With .AddStep(0.13333, Null, Null)
     .Lights = Array( _
       "gi17|(intensity)|(color)", _
-      "gi18|(intensity)|000000", _
-      "gi16|(intensity)|000000", _
+      "gi18|(intensity)|stop", _
+      "gi16|(intensity)|stop", _
       "gi15|(intensity)|(color)", _
-      "gi13|(intensity)|000000", _
+      "gi13|(intensity)|stop", _
       "gi12|(intensity)|(color)", _
-      "LS5|(intensity)|000000", _
+      "LS5|(intensity)|stop", _
       "LS3|(intensity)|(color)", _
       "LW4|(intensity)|(color)", _
-      "LW2|(intensity)|000000", _
-      "LMLR|(intensity)|000000", _
+      "LW2|(intensity)|stop", _
+      "LMLR|(intensity)|stop", _
       "LF3|(intensity)|(color)", _
-      "LTW2|(intensity)|000000", _
+      "LTW2|(intensity)|stop", _
       "LCC3|(intensity)|(color)", _
       "LCC2|(intensity)|(color)" _
       )
   End With
   With .AddStep(0.16667, Null, Null)
     .Lights = Array( _
-      "gi17|(intensity)|000000", _
+      "gi17|(intensity)|stop", _
       "gi19|(intensity)|(color)", _
-      "gi15|(intensity)|000000", _
-      "gi12|(intensity)|000000", _
+      "gi15|(intensity)|stop", _
+      "gi12|(intensity)|stop", _
       "gi11|(intensity)|(color)", _
       "LS2|(intensity)|(color)", _
-      "LS3|(intensity)|000000", _
+      "LS3|(intensity)|stop", _
       "LS6|(intensity)|e7e7e7", _
       "LW6|(intensity)|(color)", _
       "LW5|(intensity)|(color)", _
-      "LW4|(intensity)|000000", _
-      "LF3|(intensity)|000000", _
-      "LCC3|(intensity)|000000", _
-      "LCC2|(intensity)|000000", _
+      "LW4|(intensity)|stop", _
+      "LF3|(intensity)|stop", _
+      "LCC3|(intensity)|stop", _
+      "LCC2|(intensity)|stop", _
       "LMet3|(intensity)|(color)", _
       "LMet2|(intensity)|(color)" _
       )
   End With
   With .AddStep(0.20000, Null, Null)
     .Lights = Array( _
-      "gi19|(intensity)|000000", _
+      "gi19|(intensity)|stop", _
       "gi14|(intensity)|(color)", _
-      "gi11|(intensity)|000000", _
-      "LS2|(intensity)|000000", _
-      "LS6|(intensity)|000000", _
+      "gi11|(intensity)|stop", _
+      "LS2|(intensity)|stop", _
+      "LS6|(intensity)|stop", _
       "LW7|(intensity)|(color)", _
-      "LW6|(intensity)|000000", _
-      "LW5|(intensity)|000000", _
+      "LW6|(intensity)|stop", _
+      "LW5|(intensity)|stop", _
       "LSC1|(intensity)|(color)", _
       "LMet4|(intensity)|(color)", _
-      "LMet3|(intensity)|000000", _
-      "LMet2|(intensity)|000000", _
+      "LMet3|(intensity)|stop", _
+      "LMet2|(intensity)|stop", _
       "LMet1|(intensity)|(color)" _
       )
   End With
   With .AddStep(0.23333, Null, Null)
     .Lights = Array( _
-      "gi14|(intensity)|000000", _
+      "gi14|(intensity)|stop", _
       "gi10|(intensity)|(color)", _
       "LS1|(intensity)|(color)", _
       "LW9|(intensity)|(color)", _
       "LW8|(intensity)|(color)", _
-      "LW7|(intensity)|000000", _
+      "LW7|(intensity)|stop", _
       "LSC3|(intensity)|(color)", _
       "LSC2|(intensity)|(color)", _
-      "LSC1|(intensity)|000000", _
-      "LMet1|(intensity)|000000", _
+      "LSC1|(intensity)|stop", _
+      "LMet1|(intensity)|stop", _
       "LM1|(intensity)|(color)" _
       )
   End With
@@ -118,21 +118,21 @@ With CreateGlfShow("asteroid_hit_single")
       "LCWiz|(intensity)|(color)", _
       "LLWiz|(intensity)|(color)", _
       "LWiz|(intensity)|(color)", _
-      "LW9|(intensity)|000000", _
-      "LW8|(intensity)|000000", _
+      "LW9|(intensity)|stop", _
+      "LW8|(intensity)|stop", _
       "LSC3|(intensity)|0f0f0f", _
-      "LSC2|(intensity)|000000", _
-      "LMet4|(intensity)|000000", _
-      "LM1|(intensity)|000000" _
+      "LSC2|(intensity)|stop", _
+      "LMet4|(intensity)|stop", _
+      "LM1|(intensity)|stop" _
       )
   End With
   With .AddStep(0.30000, Null, Null)
     .Lights = Array( _
-      "gi10|(intensity)|000000", _
-      "gi09|(intensity)|000000", _
-      "LS1|(intensity)|000000", _
-      "LWiz|(intensity)|000000", _
-      "LSC3|(intensity)|000000", _
+      "gi10|(intensity)|stop", _
+      "gi09|(intensity)|stop", _
+      "LS1|(intensity)|stop", _
+      "LWiz|(intensity)|stop", _
+      "LSC3|(intensity)|stop", _
       "LMR1|(intensity)|d9d9d9", _
       "LCR1|(intensity)|ececec" _
       )
@@ -143,8 +143,8 @@ With CreateGlfShow("asteroid_hit_single")
       "gi07|(intensity)|(color)", _
       "gi04|(intensity)|(color)", _
       "gi03|(intensity)|(color)", _
-      "LCWiz|(intensity)|000000", _
-      "LLWiz|(intensity)|000000", _
+      "LCWiz|(intensity)|stop", _
+      "LLWiz|(intensity)|stop", _
       "LPR1|(intensity)|(color)", _
       "LPR3|(intensity)|(color)", _
       "LPR2|(intensity)|(color)", _
@@ -182,69 +182,69 @@ With CreateGlfShow("asteroid_hit_single")
       "LH3|(intensity)|(color)", _
       "LH2|(intensity)|(color)", _
       "LH1|(intensity)|(color)", _
-      "LPR1|(intensity)|000000", _
+      "LPR1|(intensity)|stop", _
       "LPR6|(intensity)|(color)", _
       "LPR5|(intensity)|(color)", _
       "LPR4|(intensity)|(color)", _
-      "LMR1|(intensity)|000000", _
-      "LCR1|(intensity)|000000", _
-      "LRI|(intensity)|000000", _
-      "LLI|(intensity)|000000", _
+      "LMR1|(intensity)|stop", _
+      "LCR1|(intensity)|stop", _
+      "LRI|(intensity)|stop", _
+      "LLI|(intensity)|stop", _
       "LSR|(intensity)|(color)", _
       "LSL|(intensity)|(color)" _
       )
   End With
   With .AddStep(0.40000, Null, Null)
     .Lights = Array( _
-      "gi08|(intensity)|000000", _
-      "gi07|(intensity)|000000", _
+      "gi08|(intensity)|stop", _
+      "gi07|(intensity)|stop", _
       "gi05|(intensity)|(color)", _
-      "gi04|(intensity)|000000", _
-      "gi03|(intensity)|000000", _
+      "gi04|(intensity)|stop", _
+      "gi03|(intensity)|stop", _
       "LSA|(intensity)|(color)", _
-      "LPR3|(intensity)|000000", _
-      "LPR2|(intensity)|000000", _
-      "LPR6|(intensity)|000000", _
-      "LPR5|(intensity)|000000", _
-      "LPR4|(intensity)|000000", _
-      "LMR2|(intensity)|000000", _
-      "LCR2|(intensity)|000000", _
-      "LRO|(intensity)|000000", _
-      "LLO|(intensity)|000000" _
+      "LPR3|(intensity)|stop", _
+      "LPR2|(intensity)|stop", _
+      "LPR6|(intensity)|stop", _
+      "LPR5|(intensity)|stop", _
+      "LPR4|(intensity)|stop", _
+      "LMR2|(intensity)|stop", _
+      "LCR2|(intensity)|stop", _
+      "LRO|(intensity)|stop", _
+      "LLO|(intensity)|stop" _
       )
   End With
   With .AddStep(0.43333, Null, Null)
     .Lights = Array( _
-      "gi06|(intensity)|000000", _
+      "gi06|(intensity)|stop", _
       "gi05|(intensity)|1a1a1a", _
-      "gi02|(intensity)|000000", _
-      "gi01|(intensity)|000000", _
-      "LC1|(intensity)|000000", _
-      "LC2|(intensity)|000000", _
-      "LC3|(intensity)|000000", _
-      "LC4|(intensity)|000000", _
-      "LC5|(intensity)|000000", _
-      "LC6|(intensity)|000000", _
-      "LC7|(intensity)|000000", _
-      "LC8|(intensity)|000000", _
-      "LH9|(intensity)|000000", _
-      "LH8|(intensity)|000000", _
-      "LH7|(intensity)|000000", _
-      "LH6|(intensity)|000000", _
-      "LH5|(intensity)|000000", _
-      "LH4|(intensity)|000000", _
-      "LH3|(intensity)|000000", _
-      "LH2|(intensity)|000000", _
-      "LH1|(intensity)|000000", _
-      "LSR|(intensity)|000000", _
-      "LSL|(intensity)|000000" _
+      "gi02|(intensity)|stop", _
+      "gi01|(intensity)|stop", _
+      "LC1|(intensity)|stop", _
+      "LC2|(intensity)|stop", _
+      "LC3|(intensity)|stop", _
+      "LC4|(intensity)|stop", _
+      "LC5|(intensity)|stop", _
+      "LC6|(intensity)|stop", _
+      "LC7|(intensity)|stop", _
+      "LC8|(intensity)|stop", _
+      "LH9|(intensity)|stop", _
+      "LH8|(intensity)|stop", _
+      "LH7|(intensity)|stop", _
+      "LH6|(intensity)|stop", _
+      "LH5|(intensity)|stop", _
+      "LH4|(intensity)|stop", _
+      "LH3|(intensity)|stop", _
+      "LH2|(intensity)|stop", _
+      "LH1|(intensity)|stop", _
+      "LSR|(intensity)|stop", _
+      "LSL|(intensity)|stop" _
       )
   End With
   With .AddStep(0.46667, Null, Null)
     .Lights = Array( _
       "giapron|(intensity)|(color)", _
-      "gi05|(intensity)|000000", _
-      "LSA|(intensity)|000000" _
+      "gi05|(intensity)|stop", _
+      "LSA|(intensity)|stop" _
       )
   End With
   With .AddStep(0.50000, Null, Null)
@@ -253,7 +253,7 @@ With CreateGlfShow("asteroid_hit_single")
   End With
   With .AddStep(0.56667, Null, Null)
     .Lights = Array( _
-      "giapron|(intensity)|000000" _
+      "giapron|(intensity)|stop" _
       )
   End With
 End With

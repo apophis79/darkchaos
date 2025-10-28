@@ -14,7 +14,7 @@ Sub CreateExtraBallMode
         With .EventPlayer()
             'initialize the EB
             .Add "mode_extra_ball_started", Array("check_eb")
-            .Add "check_eb{current_player.light_the_eb == 1 && current_player.flippers_are_dead==0}", Array("eb_now_lit","enable_scoop_hold")
+            .Add "check_eb{current_player.light_the_eb == 1 && machine.flippers_are_dead==0}", Array("eb_now_lit","enable_scoop_hold")
             .Add "check_eb{current_player.extra_balls == 0}", Array("eb_reset")
             .Add "check_eb{current_player.extra_balls > 0}", Array("eb_lit")
             'handle successful scoop hit

@@ -11,10 +11,10 @@ With CreateGlfShow("nuke_inserts_show")
         .Lights = Array("(lights)|100|000000|300")
     End With
     With .AddStep(1, Null, Null)
-        .Lights = Array("(lights)|100|000000")
+        .Lights = Array("(lights)|100|stop")
     End With
     With .AddStep(3.5, Null, Null)
-        .Lights = Array("(lights)|100|000000")
+        .Lights = Array("(lights)|100|stop")
     End With
     With .AddStep(3.8, Null, Null)
         .Lights = Array("(lights)|100|(color)|300")
@@ -23,7 +23,7 @@ With CreateGlfShow("nuke_inserts_show")
         .Lights = Array("(lights)|100|000000|300")
     End With
     With .AddStep(9, Null, 0.1)
-        .Lights = Array("(lights)|100|000000")
+        .Lights = Array("(lights)|100|stop")
     End With
 End With
     

@@ -39,9 +39,9 @@ With CreateGlfShow("shields_up_interior")
   With .AddStep(Null, Null, 0.03333)
     .Lights = Array( _
       "gi07|(intensity)|(color)", _
-      "gi05|(intensity)|000000", _
+      "gi05|(intensity)|stop", _
       "gi03|(intensity)|(color)", _
-      "LSA|(intensity)|000000", _
+      "LSA|(intensity)|stop", _
       "LPR3|(intensity)|(color)", _
       "LPR2|(intensity)|(color)", _
       "LPR6|(intensity)|(color)", _
@@ -54,58 +54,58 @@ With CreateGlfShow("shields_up_interior")
   With .AddStep(Null, Null, 0.03333)
     .Lights = Array( _
       "gi08|(intensity)|(color)", _
-      "gi06|(intensity)|000000", _
+      "gi06|(intensity)|stop", _
       "gi04|(intensity)|(color)", _
-      "gi02|(intensity)|000000", _
-      "gi01|(intensity)|000000", _
-      "LC1|(intensity)|000000", _
-      "LC2|(intensity)|000000", _
-      "LC3|(intensity)|000000", _
-      "LC4|(intensity)|000000", _
-      "LC5|(intensity)|000000", _
-      "LC6|(intensity)|000000", _
-      "LC7|(intensity)|000000", _
-      "LC8|(intensity)|000000", _
-      "LH9|(intensity)|000000", _
-      "LH8|(intensity)|000000", _
-      "LH7|(intensity)|000000", _
-      "LH6|(intensity)|000000", _
-      "LH5|(intensity)|000000", _
-      "LH4|(intensity)|000000", _
-      "LH3|(intensity)|000000", _
-      "LH2|(intensity)|000000", _
-      "LH1|(intensity)|000000", _
+      "gi02|(intensity)|stop", _
+      "gi01|(intensity)|stop", _
+      "LC1|(intensity)|stop", _
+      "LC2|(intensity)|stop", _
+      "LC3|(intensity)|stop", _
+      "LC4|(intensity)|stop", _
+      "LC5|(intensity)|stop", _
+      "LC6|(intensity)|stop", _
+      "LC7|(intensity)|stop", _
+      "LC8|(intensity)|stop", _
+      "LH9|(intensity)|stop", _
+      "LH8|(intensity)|stop", _
+      "LH7|(intensity)|stop", _
+      "LH6|(intensity)|stop", _
+      "LH5|(intensity)|stop", _
+      "LH4|(intensity)|stop", _
+      "LH3|(intensity)|stop", _
+      "LH2|(intensity)|stop", _
+      "LH1|(intensity)|stop", _
       "LPR1|(intensity)|(color)", _
-      "LPR6|(intensity)|000000", _
-      "LPR5|(intensity)|000000", _
-      "LPR4|(intensity)|000000", _
+      "LPR6|(intensity)|stop", _
+      "LPR5|(intensity)|stop", _
+      "LPR4|(intensity)|stop", _
       "LMR1|(intensity)|(color)", _
       "LCR1|(intensity)|(color)", _
       "LRI|(intensity)|(color)", _
       "LLI|(intensity)|(color)", _
-      "LSR|(intensity)|000000", _
-      "LSL|(intensity)|000000" _
+      "LSR|(intensity)|stop", _
+      "LSL|(intensity)|stop" _
       )
   End With
   With .AddStep(Null, Null, 0.03333)
     .Lights = Array( _
-      "gi08|(intensity)|000000", _
-      "gi07|(intensity)|000000", _
-      "gi04|(intensity)|000000", _
-      "gi03|(intensity)|000000", _
-      "LPR1|(intensity)|000000", _
-      "LPR3|(intensity)|000000", _
-      "LPR2|(intensity)|000000", _
-      "LMR2|(intensity)|000000", _
-      "LMR1|(intensity)|000000", _
-      "LCR2|(intensity)|000000", _
-      "LCR1|(intensity)|000000" _
+      "gi08|(intensity)|stop", _
+      "gi07|(intensity)|stop", _
+      "gi04|(intensity)|stop", _
+      "gi03|(intensity)|stop", _
+      "LPR1|(intensity)|stop", _
+      "LPR3|(intensity)|stop", _
+      "LPR2|(intensity)|stop", _
+      "LMR2|(intensity)|stop", _
+      "LMR1|(intensity)|stop", _
+      "LCR2|(intensity)|stop", _
+      "LCR1|(intensity)|stop" _
       )
   End With
   With .AddStep(Null, Null, 0.03333)
     .Lights = Array( _
-      "LRI|(intensity)|000000", _
-      "LLI|(intensity)|000000" _
+      "LRI|(intensity)|stop", _
+      "LLI|(intensity)|stop" _
       )
   End With
 End With

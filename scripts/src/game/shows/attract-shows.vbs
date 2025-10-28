@@ -17,7 +17,7 @@ With CreateGlfShow("insert_sparkles")
       "LS6|(intensity)|264e6e", _
       "LSwC3|(intensity)|50a3e7", _
       "LSwC2|(intensity)|4c9bdc", _
-      "LSwC1|(intensity)|000000", _
+      "LSwC1|(intensity)|stop", _
       "LCWiz|(intensity)|264e6f", _
       "LLWiz|(intensity)|000101", _
       "LC1|(intensity)|030609", _
@@ -25,9 +25,9 @@ With CreateGlfShow("insert_sparkles")
       "LC3|(intensity)|4082b8", _
       "LC4|(intensity)|010203", _
       "LC5|(intensity)|50a3e8", _
-      "LC6|(intensity)|000000", _
+      "LC6|(intensity)|stop", _
       "LC7|(intensity)|50a3e8", _
-      "LC8|(intensity)|000000", _
+      "LC8|(intensity)|stop", _
       "LWiz|(intensity)|4c9bdc", _
       "LW9|(intensity)|4185bd", _
       "LW8|(intensity)|4186be", _
@@ -49,7 +49,7 @@ With CreateGlfShow("insert_sparkles")
       "LF3|(intensity)|4fa2e5", _
       "LF2|(intensity)|060c10", _
       "LF1|(intensity)|020405", _
-      "LPC3|(intensity)|000000", _
+      "LPC3|(intensity)|stop", _
       "LPC2|(intensity)|020405", _
       "LPC1|(intensity)|0b1721", _
       "LTW2|(intensity)|4ea0e2", _
@@ -58,7 +58,7 @@ With CreateGlfShow("insert_sparkles")
       "LCC2|(intensity)|3c7aad", _
       "LCC1|(intensity)|50a3e7", _
       "LMet4|(intensity)|2c597f", _
-      "LMet3|(intensity)|000000", _
+      "LMet3|(intensity)|stop", _
       "LMet2|(intensity)|3f81b7", _
       "LMet1|(intensity)|50a3e8", _
       "LM5|(intensity)|1d3b54", _
@@ -71,24 +71,24 @@ With CreateGlfShow("insert_sparkles")
       "LH8|(intensity)|14293a", _
       "LH7|(intensity)|1f3f59", _
       "LH6|(intensity)|50a3e8", _
-      "LH5|(intensity)|000000", _
+      "LH5|(intensity)|stop", _
       "LH4|(intensity)|50a3e8", _
-      "LH3|(intensity)|000000", _
+      "LH3|(intensity)|stop", _
       "LH2|(intensity)|50a3e8", _
-      "LH1|(intensity)|000000", _
+      "LH1|(intensity)|stop", _
       "LPR1|(intensity)|50a2e6", _
       "LPR3|(intensity)|3a76a8", _
       "LPR2|(intensity)|2b577b", _
       "LPR6|(intensity)|50a3e8", _
       "LPR5|(intensity)|000102", _
-      "LPR4|(intensity)|000000", _
+      "LPR4|(intensity)|stop", _
       "LMR2|(intensity)|000101", _
       "LMR1|(intensity)|244a69", _
       "LCR2|(intensity)|50a3e8", _
       "LCR1|(intensity)|2c597e", _
       "LRI|(intensity)|081017", _
       "LRO|(intensity)|244a69", _
-      "LLI|(intensity)|000000", _
+      "LLI|(intensity)|stop", _
       "LLO|(intensity)|112331", _
       "LSR|(intensity)|4894d1", _
       "LSL|(intensity)|50a3e8" _
@@ -106,7 +106,7 @@ With CreateGlfShow("insert_sparkles")
       "LS6|(intensity)|2c5a80", _
       "LSwC2|(intensity)|4d9ee0", _
       "LCWiz|(intensity)|1f3f5a", _
-      "LLWiz|(intensity)|000000", _
+      "LLWiz|(intensity)|stop", _
       "LC1|(intensity)|020305", _
       "LC2|(intensity)|1e3d57", _
       "LC3|(intensity)|3a77a9", _
@@ -169,7 +169,7 @@ With CreateGlfShow("insert_sparkles")
       "LS1|(intensity)|274f70", _
       "LS2|(intensity)|020406", _
       "LS3|(intensity)|4d9dde", _
-      "LS4|(intensity)|000000", _
+      "LS4|(intensity)|stop", _
       "LS6|(intensity)|336893", _
       "LSwC2|(intensity)|4fa1e5", _
       "LCWiz|(intensity)|183146", _
@@ -208,7 +208,7 @@ With CreateGlfShow("insert_sparkles")
       "LM4|(intensity)|1a354b", _
       "LM3|(intensity)|346b98", _
       "LM2|(intensity)|010203", _
-      "LM1|(intensity)|000000", _
+      "LM1|(intensity)|stop", _
       "LSA|(intensity)|21435f", _
       "LH9|(intensity)|4e9fe1", _
       "LH8|(intensity)|21435f", _
@@ -216,7 +216,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR1|(intensity)|50a3e8", _
       "LPR3|(intensity)|30638c", _
       "LPR2|(intensity)|1d3c55", _
-      "LPR5|(intensity)|000000", _
+      "LPR5|(intensity)|stop", _
       "LMR2|(intensity)|010203", _
       "LMR1|(intensity)|31648d", _
       "LCR1|(intensity)|1e3d56", _
@@ -339,7 +339,7 @@ With CreateGlfShow("insert_sparkles")
       "LH9|(intensity)|4a98d7", _
       "LH8|(intensity)|2f5f87", _
       "LH7|(intensity)|09131b", _
-      "LH5|(intensity)|000000", _
+      "LH5|(intensity)|stop", _
       "LPR3|(intensity)|244968", _
       "LPR2|(intensity)|112332", _
       "LPR6|(intensity)|50a2e6", _
@@ -355,7 +355,7 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.16667, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|50a3e7", _
-      "LX|(intensity)|000000", _
+      "LX|(intensity)|stop", _
       "LS5|(intensity)|20415d", _
       "LS1|(intensity)|132636", _
       "LS2|(intensity)|000101", _
@@ -365,8 +365,8 @@ With CreateGlfShow("insert_sparkles")
       "LSwC2|(intensity)|50a3e8", _
       "LSwC1|(intensity)|010304", _
       "LCWiz|(intensity)|09131b", _
-      "LLWiz|(intensity)|000000", _
-      "LC1|(intensity)|000000", _
+      "LLWiz|(intensity)|stop", _
+      "LC1|(intensity)|stop", _
       "LC2|(intensity)|3a76a8", _
       "LC3|(intensity)|1f3f5a", _
       "LC4|(intensity)|070e14", _
@@ -421,7 +421,7 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|274f70", _
       "LS1|(intensity)|0e1d29", _
-      "LS2|(intensity)|000000", _
+      "LS2|(intensity)|stop", _
       "LS3|(intensity)|4b99d9", _
       "LS6|(intensity)|4791cd", _
       "LSwC1|(intensity)|020406", _
@@ -515,9 +515,9 @@ With CreateGlfShow("insert_sparkles")
       "LSC1|(intensity)|50a3e7", _
       "LF3|(intensity)|4083ba", _
       "LF2|(intensity)|2c5b81", _
-      "LF1|(intensity)|000000", _
-      "LPC2|(intensity)|000000", _
-      "LPC1|(intensity)|000000", _
+      "LF1|(intensity)|stop", _
+      "LPC2|(intensity)|stop", _
+      "LPC1|(intensity)|stop", _
       "LTW2|(intensity)|37709f", _
       "LTW1|(intensity)|50a3e7", _
       "LCC2|(intensity)|132737", _
@@ -536,7 +536,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR3|(intensity)|112231", _
       "LPR2|(intensity)|060c11", _
       "LPR6|(intensity)|4b9ada", _
-      "LPR5|(intensity)|000000", _
+      "LPR5|(intensity)|stop", _
       "LMR2|(intensity)|0a151e", _
       "LMR1|(intensity)|346a96", _
       "LCR1|(intensity)|060c11", _
@@ -574,7 +574,7 @@ With CreateGlfShow("insert_sparkles")
       "LMR|(intensity)|142a3b", _
       "LPC5|(intensity)|0f1f2c", _
       "LPC4|(intensity)|3873a3", _
-      "LSC3|(intensity)|000000", _
+      "LSC3|(intensity)|stop", _
       "LSC2|(intensity)|010203", _
       "LF3|(intensity)|3b78aa", _
       "LF2|(intensity)|346995", _
@@ -598,7 +598,7 @@ With CreateGlfShow("insert_sparkles")
       "LMR2|(intensity)|0f1e2b", _
       "LMR1|(intensity)|2f5f87", _
       "LCR1|(intensity)|04080b", _
-      "LRI|(intensity)|000000", _
+      "LRI|(intensity)|stop", _
       "LRO|(intensity)|4c9bdc", _
       "LLO|(intensity)|4286be", _
       "LSR|(intensity)|4fa2e6" _
@@ -670,7 +670,7 @@ With CreateGlfShow("insert_sparkles")
       "LS3|(intensity)|3b79ac", _
       "LS6|(intensity)|4fa1e4", _
       "LSwC1|(intensity)|0d1a25", _
-      "LCWiz|(intensity)|000000", _
+      "LCWiz|(intensity)|stop", _
       "LC1|(intensity)|010304", _
       "LC2|(intensity)|4c9cdd", _
       "LC3|(intensity)|070d13", _
@@ -711,7 +711,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR3|(intensity)|060c11", _
       "LPR2|(intensity)|010304", _
       "LPR6|(intensity)|4083b9", _
-      "LPR4|(intensity)|000000", _
+      "LPR4|(intensity)|stop", _
       "LMR2|(intensity)|1a354b", _
       "LMR1|(intensity)|214461", _
       "LCR1|(intensity)|010203", _
@@ -725,7 +725,7 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LS5|(intensity)|438ac3", _
       "LS1|(intensity)|010304", _
-      "LS2|(intensity)|000000", _
+      "LS2|(intensity)|stop", _
       "LS3|(intensity)|366f9d", _
       "LS6|(intensity)|50a2e7", _
       "LSwC3|(intensity)|50a3e7", _
@@ -744,7 +744,7 @@ With CreateGlfShow("insert_sparkles")
       "LW8|(intensity)|50a3e7", _
       "LW5|(intensity)|4fa0e3", _
       "LW4|(intensity)|3d7caf", _
-      "LW3|(intensity)|000000", _
+      "LW3|(intensity)|stop", _
       "LW2|(intensity)|0a151e", _
       "LW1|(intensity)|50a3e7", _
       "LMLR|(intensity)|20415d", _
@@ -770,7 +770,7 @@ With CreateGlfShow("insert_sparkles")
       "LSA|(intensity)|010203", _
       "LH9|(intensity)|234866", _
       "LH8|(intensity)|4d9ddf", _
-      "LH7|(intensity)|000000", _
+      "LH7|(intensity)|stop", _
       "LH3|(intensity)|000101", _
       "LH1|(intensity)|030507", _
       "LPR1|(intensity)|50a3e7", _
@@ -779,7 +779,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR6|(intensity)|3b78ab", _
       "LMR2|(intensity)|21435f", _
       "LMR1|(intensity)|1a364c", _
-      "LCR1|(intensity)|000000", _
+      "LCR1|(intensity)|stop", _
       "LRO|(intensity)|50a3e7", _
       "LLO|(intensity)|4c9bdb", _
       "LSR|(intensity)|4ea0e2", _
@@ -814,7 +814,7 @@ With CreateGlfShow("insert_sparkles")
       "LSC2|(intensity)|091219", _
       "LF3|(intensity)|21435f", _
       "LF2|(intensity)|4894d1", _
-      "LPC3|(intensity)|000000", _
+      "LPC3|(intensity)|stop", _
       "LTW2|(intensity)|172f43", _
       "LCC2|(intensity)|030608", _
       "LCC1|(intensity)|448bc6", _
@@ -843,12 +843,12 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.43333, Null, Null)
     .Lights = Array( _
       "LS5|(intensity)|4a98d8", _
-      "LS1|(intensity)|000000", _
+      "LS1|(intensity)|stop", _
       "LS3|(intensity)|285274", _
       "LSwC3|(intensity)|4fa2e6", _
       "LSwC1|(intensity)|1e3d57", _
-      "LCWiz|(intensity)|000000", _
-      "LLWiz|(intensity)|000000", _
+      "LCWiz|(intensity)|stop", _
+      "LLWiz|(intensity)|stop", _
       "LC1|(intensity)|060c11", _
       "LC2|(intensity)|4e9fe2", _
       "LC3|(intensity)|020406", _
@@ -881,13 +881,13 @@ With CreateGlfShow("insert_sparkles")
       "LM4|(intensity)|000101", _
       "LM3|(intensity)|020507", _
       "LM2|(intensity)|336995", _
-      "LSA|(intensity)|000000", _
+      "LSA|(intensity)|stop", _
       "LH9|(intensity)|162c3e", _
       "LH8|(intensity)|4fa1e5", _
       "LH1|(intensity)|070e14", _
       "LPR1|(intensity)|4fa1e5", _
       "LPR3|(intensity)|010202", _
-      "LPR2|(intensity)|000000", _
+      "LPR2|(intensity)|stop", _
       "LPR6|(intensity)|2d5b81", _
       "LPR5|(intensity)|010102", _
       "LPR4|(intensity)|000101", _
@@ -934,7 +934,7 @@ With CreateGlfShow("insert_sparkles")
       "LMet4|(intensity)|50a3e7", _
       "LMet3|(intensity)|254b6b", _
       "LM5|(intensity)|1c3a52", _
-      "LM4|(intensity)|000000", _
+      "LM4|(intensity)|stop", _
       "LM3|(intensity)|020305", _
       "LM2|(intensity)|3a76a8", _
       "LH9|(intensity)|10202e", _
@@ -1001,8 +1001,8 @@ With CreateGlfShow("insert_sparkles")
       "LPR4|(intensity)|020305", _
       "LMR2|(intensity)|3b79ab", _
       "LMR1|(intensity)|070f15", _
-      "LCR1|(intensity)|000000", _
-      "LRI|(intensity)|000000", _
+      "LCR1|(intensity)|stop", _
+      "LRI|(intensity)|stop", _
       "LLI|(intensity)|000101", _
       "LLO|(intensity)|50a3e7", _
       "LSR|(intensity)|438ac3", _
@@ -1016,7 +1016,7 @@ With CreateGlfShow("insert_sparkles")
       "LS3|(intensity)|152b3d", _
       "LSwC3|(intensity)|4d9ee0", _
       "LSwC1|(intensity)|336894", _
-      "LCWiz|(intensity)|000000", _
+      "LCWiz|(intensity)|stop", _
       "LLWiz|(intensity)|000101", _
       "LC1|(intensity)|112332", _
       "LC2|(intensity)|4a96d5", _
@@ -1089,7 +1089,7 @@ With CreateGlfShow("insert_sparkles")
       "LW6|(intensity)|4fa0e4", _
       "LW5|(intensity)|3e7eb3", _
       "LW4|(intensity)|173044", _
-      "LW3|(intensity)|000000", _
+      "LW3|(intensity)|stop", _
       "LW2|(intensity)|2e5d84", _
       "LMLR|(intensity)|04080c", _
       "LEBR|(intensity)|4791cd", _
@@ -1113,7 +1113,7 @@ With CreateGlfShow("insert_sparkles")
       "LH3|(intensity)|000101", _
       "LH1|(intensity)|1a344a", _
       "LPR1|(intensity)|4b99d9", _
-      "LPR3|(intensity)|000000", _
+      "LPR3|(intensity)|stop", _
       "LPR6|(intensity)|142a3b", _
       "LPR5|(intensity)|04090d", _
       "LPR4|(intensity)|04080c", _
@@ -1157,7 +1157,7 @@ With CreateGlfShow("insert_sparkles")
       "LPC2|(intensity)|010102", _
       "LTW2|(intensity)|030508", _
       "LCC3|(intensity)|4e9fe2", _
-      "LCC2|(intensity)|000000", _
+      "LCC2|(intensity)|stop", _
       "LCC1|(intensity)|20415c", _
       "LMet3|(intensity)|21425e", _
       "LM5|(intensity)|3872a2", _
@@ -1221,7 +1221,7 @@ With CreateGlfShow("insert_sparkles")
       "LM2|(intensity)|4c9cdd", _
       "LH9|(intensity)|020406", _
       "LH8|(intensity)|50a3e7", _
-      "LH7|(intensity)|000000", _
+      "LH7|(intensity)|stop", _
       "LH6|(intensity)|50a3e7", _
       "LH5|(intensity)|000001", _
       "LH3|(intensity)|010202", _
@@ -1261,7 +1261,7 @@ With CreateGlfShow("insert_sparkles")
       "LW5|(intensity)|2c597e", _
       "LW4|(intensity)|09121a", _
       "LW2|(intensity)|3f81b7", _
-      "LMLR|(intensity)|000000", _
+      "LMLR|(intensity)|stop", _
       "LEBR|(intensity)|3771a1", _
       "LMR|(intensity)|4792cf", _
       "LPC5|(intensity)|0c1924", _
@@ -1332,7 +1332,7 @@ With CreateGlfShow("insert_sparkles")
       "LMet3|(intensity)|0f202d", _
       "LM5|(intensity)|4792cf", _
       "LM4|(intensity)|04090c", _
-      "LM3|(intensity)|000000", _
+      "LM3|(intensity)|stop", _
       "LM2|(intensity)|4d9ee0", _
       "LH8|(intensity)|4ea0e3", _
       "LH6|(intensity)|4ea0e3", _
@@ -1464,12 +1464,12 @@ With CreateGlfShow("insert_sparkles")
       "LH2|(intensity)|4a97d6", _
       "LH1|(intensity)|3e7fb4", _
       "LPR1|(intensity)|2f6089", _
-      "LPR2|(intensity)|000000", _
+      "LPR2|(intensity)|stop", _
       "LPR6|(intensity)|1d3c55", _
       "LPR5|(intensity)|1d3c55", _
       "LPR4|(intensity)|20415c", _
       "LMR2|(intensity)|4fa2e6", _
-      "LMR1|(intensity)|000000", _
+      "LMR1|(intensity)|stop", _
       "LCR2|(intensity)|4fa1e5", _
       "LCR1|(intensity)|010203", _
       "LLI|(intensity)|020406", _
@@ -1566,7 +1566,7 @@ With CreateGlfShow("insert_sparkles")
       "LEBR|(intensity)|152c3e", _
       "LMR|(intensity)|4fa2e5", _
       "LPC5|(intensity)|010203", _
-      "LPC4|(intensity)|000000", _
+      "LPC4|(intensity)|stop", _
       "LSC2|(intensity)|4c9adb", _
       "LF3|(intensity)|09121a", _
       "LF2|(intensity)|4ea0e3", _
@@ -1609,7 +1609,7 @@ With CreateGlfShow("insert_sparkles")
     .Lights = Array( _
       "LPF|(intensity)|3771a1", _
       "LX|(intensity)|010102", _
-      "LS3|(intensity)|000000", _
+      "LS3|(intensity)|stop", _
       "LSwC3|(intensity)|1a354b", _
       "LSwC1|(intensity)|50a3e7", _
       "LCWiz|(intensity)|070e14", _
@@ -1628,7 +1628,7 @@ With CreateGlfShow("insert_sparkles")
       "LW6|(intensity)|2d5c83", _
       "LW5|(intensity)|0a151d", _
       "LW2|(intensity)|4fa1e5", _
-      "LMLR|(intensity)|000000", _
+      "LMLR|(intensity)|stop", _
       "LEBR|(intensity)|10202d", _
       "LMR|(intensity)|50a3e7", _
       "LPC5|(intensity)|000101", _
@@ -1692,7 +1692,7 @@ With CreateGlfShow("insert_sparkles")
       "LW7|(intensity)|20415c", _
       "LW6|(intensity)|274f70", _
       "LW5|(intensity)|070f15", _
-      "LW4|(intensity)|000000", _
+      "LW4|(intensity)|stop", _
       "LW2|(intensity)|4fa2e6", _
       "LW1|(intensity)|4fa2e6", _
       "LEBR|(intensity)|0b1721", _
@@ -1729,7 +1729,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR4|(intensity)|2a567a", _
       "LCR2|(intensity)|4892cf", _
       "LCR1|(intensity)|09131a", _
-      "LRI|(intensity)|000000", _
+      "LRI|(intensity)|stop", _
       "LLI|(intensity)|0d1b27", _
       "LLO|(intensity)|4e9fe1", _
       "LSR|(intensity)|050b0f", _
@@ -1739,7 +1739,7 @@ With CreateGlfShow("insert_sparkles")
   With .AddStep(0.93333, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|2b587c", _
-      "LX|(intensity)|000000", _
+      "LX|(intensity)|stop", _
       "LS1|(intensity)|010102", _
       "LS4|(intensity)|010102", _
       "LSwC3|(intensity)|112433", _
@@ -1777,7 +1777,7 @@ With CreateGlfShow("insert_sparkles")
       "LMet1|(intensity)|4ea0e3", _
       "LM4|(intensity)|254c6c", _
       "LM2|(intensity)|3e7eb3", _
-      "LSA|(intensity)|000000", _
+      "LSA|(intensity)|stop", _
       "LH9|(intensity)|162d40", _
       "LH8|(intensity)|3a76a7", _
       "LH7|(intensity)|081118", _
@@ -1903,7 +1903,7 @@ With CreateGlfShow("insert_sparkles")
       "LTW1|(intensity)|4fa2e6", _
       "LCC3|(intensity)|285173", _
       "LCC1|(intensity)|010203", _
-      "LMet3|(intensity)|000000", _
+      "LMet3|(intensity)|stop", _
       "LMet2|(intensity)|4994d2", _
       "LMet1|(intensity)|4c9bdd", _
       "LM5|(intensity)|50a3e7", _
@@ -1959,7 +1959,7 @@ With CreateGlfShow("insert_sparkles")
       "LW5|(intensity)|010203", _
       "LW1|(intensity)|4a97d6", _
       "LEBR|(intensity)|020406", _
-      "LPC5|(intensity)|000000", _
+      "LPC5|(intensity)|stop", _
       "LPC4|(intensity)|020406", _
       "LSC2|(intensity)|50a3e8", _
       "LF3|(intensity)|2d5b82", _
@@ -2154,7 +2154,7 @@ With CreateGlfShow("insert_sparkles")
       "LC3|(intensity)|50a2e6", _
       "LC4|(intensity)|000101", _
       "LC5|(intensity)|50a3e7", _
-      "LC6|(intensity)|000000", _
+      "LC6|(intensity)|stop", _
       "LC7|(intensity)|4082b9", _
       "LC8|(intensity)|2a567a", _
       "LWiz|(intensity)|030508", _
@@ -2162,7 +2162,7 @@ With CreateGlfShow("insert_sparkles")
       "LW8|(intensity)|0a141d", _
       "LW7|(intensity)|03070a", _
       "LW6|(intensity)|050a0e", _
-      "LW5|(intensity)|000000", _
+      "LW5|(intensity)|stop", _
       "LW1|(intensity)|3f81b7", _
       "LEBR|(intensity)|000001", _
       "LPC4|(intensity)|081017", _
@@ -2178,7 +2178,7 @@ With CreateGlfShow("insert_sparkles")
       "LCC3|(intensity)|3b78ab", _
       "LCC1|(intensity)|060c11", _
       "LMet4|(intensity)|4d9ee0", _
-      "LMet3|(intensity)|000000", _
+      "LMet3|(intensity)|stop", _
       "LMet2|(intensity)|37709f", _
       "LMet1|(intensity)|3d7db1", _
       "LM4|(intensity)|4790cd", _
@@ -2203,7 +2203,7 @@ With CreateGlfShow("insert_sparkles")
       "LRI|(intensity)|04080b", _
       "LLI|(intensity)|2b587d", _
       "LLO|(intensity)|30628c", _
-      "LSR|(intensity)|000000", _
+      "LSR|(intensity)|stop", _
       "LSL|(intensity)|356b98" _
       )
   End With
@@ -2233,9 +2233,9 @@ With CreateGlfShow("insert_sparkles")
       "LW2|(intensity)|50a3e7", _
       "LW1|(intensity)|3a75a7", _
       "LMLR|(intensity)|000102", _
-      "LEBR|(intensity)|000000", _
+      "LEBR|(intensity)|stop", _
       "LPC4|(intensity)|0c1822", _
-      "LSC3|(intensity)|000000", _
+      "LSC3|(intensity)|stop", _
       "LSC2|(intensity)|50a2e6", _
       "LF3|(intensity)|458cc7", _
       "LF2|(intensity)|264e6e", _
@@ -2263,7 +2263,7 @@ With CreateGlfShow("insert_sparkles")
       "LH3|(intensity)|224663", _
       "LH2|(intensity)|2e5e86", _
       "LH1|(intensity)|0e1e2a", _
-      "LPR1|(intensity)|000000", _
+      "LPR1|(intensity)|stop", _
       "LPR2|(intensity)|142839", _
       "LPR6|(intensity)|4fa2e6", _
       "LPR5|(intensity)|4fa2e5", _
@@ -2285,7 +2285,7 @@ With CreateGlfShow("insert_sparkles")
       "LS5|(intensity)|4fa2e5", _
       "LS1|(intensity)|193348", _
       "LS2|(intensity)|020406", _
-      "LS3|(intensity)|000000", _
+      "LS3|(intensity)|stop", _
       "LS4|(intensity)|1c3a52", _
       "LSwC3|(intensity)|295376", _
       "LSwC2|(intensity)|4ea0e3", _
@@ -2355,8 +2355,8 @@ With CreateGlfShow("insert_sparkles")
       "LSwC1|(intensity)|458cc7", _
       "LCWiz|(intensity)|4389c2", _
       "LLWiz|(intensity)|4b9ada", _
-      "LC2|(intensity)|000000", _
-      "LC4|(intensity)|000000", _
+      "LC2|(intensity)|stop", _
+      "LC4|(intensity)|stop", _
       "LC7|(intensity)|4b99d9", _
       "LC8|(intensity)|152c3e", _
       "LWiz|(intensity)|000101", _
@@ -2425,7 +2425,7 @@ With CreateGlfShow("insert_sparkles")
       "LC3|(intensity)|50a3e8", _
       "LC7|(intensity)|4c9cdd", _
       "LC8|(intensity)|10202d", _
-      "LWiz|(intensity)|000000", _
+      "LWiz|(intensity)|stop", _
       "LW9|(intensity)|3d7db2", _
       "LW8|(intensity)|020405", _
       "LW7|(intensity)|000101", _
@@ -2567,13 +2567,13 @@ With CreateGlfShow("insert_sparkles")
       "LWiz|(intensity)|000101", _
       "LW9|(intensity)|31658f", _
       "LW8|(intensity)|010202", _
-      "LW7|(intensity)|000000", _
-      "LW4|(intensity)|000000", _
-      "LW3|(intensity)|000000", _
+      "LW7|(intensity)|stop", _
+      "LW4|(intensity)|stop", _
+      "LW3|(intensity)|stop", _
       "LW2|(intensity)|50a2e6", _
       "LW1|(intensity)|19344a", _
       "LMLR|(intensity)|091119", _
-      "LEBR|(intensity)|000000", _
+      "LEBR|(intensity)|stop", _
       "LPC4|(intensity)|2a567a", _
       "LF3|(intensity)|4fa1e5", _
       "LF2|(intensity)|0a151e", _
@@ -2590,7 +2590,7 @@ With CreateGlfShow("insert_sparkles")
       "LMet2|(intensity)|112433", _
       "LMet1|(intensity)|285173", _
       "LM4|(intensity)|50a3e7", _
-      "LM3|(intensity)|000000", _
+      "LM3|(intensity)|stop", _
       "LM2|(intensity)|020507", _
       "LM1|(intensity)|0a141d", _
       "LSA|(intensity)|183145", _
@@ -2638,7 +2638,7 @@ With CreateGlfShow("insert_sparkles")
       "LWiz|(intensity)|010203", _
       "LW9|(intensity)|2b587d", _
       "LW8|(intensity)|010102", _
-      "LW6|(intensity)|000000", _
+      "LW6|(intensity)|stop", _
       "LW2|(intensity)|4fa1e5", _
       "LW1|(intensity)|132738", _
       "LMLR|(intensity)|0c1923", _
@@ -2742,7 +2742,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR1|(intensity)|060d12", _
       "LPR2|(intensity)|4185bd", _
       "LPR5|(intensity)|4a96d5", _
-      "LPR4|(intensity)|000000", _
+      "LPR4|(intensity)|stop", _
       "LMR2|(intensity)|3975a7", _
       "LCR2|(intensity)|173043", _
       "LCR1|(intensity)|4fa1e5", _
@@ -2798,7 +2798,7 @@ With CreateGlfShow("insert_sparkles")
       "LMet1|(intensity)|356b98", _
       "LM4|(intensity)|50a3e8", _
       "LM3|(intensity)|000101", _
-      "LM2|(intensity)|000000", _
+      "LM2|(intensity)|stop", _
       "LM1|(intensity)|1a364d", _
       "LSA|(intensity)|2c5a80", _
       "LH7|(intensity)|4e9fe2", _
@@ -2876,7 +2876,7 @@ With CreateGlfShow("insert_sparkles")
       "LH4|(intensity)|4995d3", _
       "LH3|(intensity)|010203", _
       "LH2|(intensity)|4fa0e4", _
-      "LH1|(intensity)|000000", _
+      "LH1|(intensity)|stop", _
       "LPR1|(intensity)|0d1b26", _
       "LPR3|(intensity)|010202", _
       "LPR2|(intensity)|4996d5", _
@@ -2981,7 +2981,7 @@ With CreateGlfShow("insert_sparkles")
       "LCWiz|(intensity)|4fa2e6", _
       "LLWiz|(intensity)|346995", _
       "LC1|(intensity)|448bc5", _
-      "LC2|(intensity)|000000", _
+      "LC2|(intensity)|stop", _
       "LC7|(intensity)|50a3e8", _
       "LC8|(intensity)|000101", _
       "LWiz|(intensity)|09131b", _
@@ -3017,7 +3017,7 @@ With CreateGlfShow("insert_sparkles")
       "LM1|(intensity)|2d5b82", _
       "LSA|(intensity)|3f81b7", _
       "LH9|(intensity)|50a3e8", _
-      "LH8|(intensity)|000000", _
+      "LH8|(intensity)|stop", _
       "LH6|(intensity)|3872a1", _
       "LH5|(intensity)|244967", _
       "LH4|(intensity)|4d9ddf", _
@@ -3026,7 +3026,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR3|(intensity)|010304", _
       "LPR2|(intensity)|4d9ee0", _
       "LPR5|(intensity)|3872a2", _
-      "LPR4|(intensity)|000000", _
+      "LPR4|(intensity)|stop", _
       "LMR2|(intensity)|1f3f5a", _
       "LCR2|(intensity)|31648e", _
       "LRI|(intensity)|3f80b6", _
@@ -3082,7 +3082,7 @@ With CreateGlfShow("insert_sparkles")
       "LMet1|(intensity)|4893d1", _
       "LM4|(intensity)|50a3e8", _
       "LM3|(intensity)|04070b", _
-      "LM2|(intensity)|000000", _
+      "LM2|(intensity)|stop", _
       "LM1|(intensity)|30628b", _
       "LSA|(intensity)|448ac4", _
       "LH6|(intensity)|3e7eb3", _
@@ -3098,7 +3098,7 @@ With CreateGlfShow("insert_sparkles")
       "LRI|(intensity)|4084bb", _
       "LRO|(intensity)|254c6b", _
       "LLI|(intensity)|000101", _
-      "LLO|(intensity)|000000", _
+      "LLO|(intensity)|stop", _
       "LSR|(intensity)|081118", _
       "LSL|(intensity)|50a3e8" _
       )
@@ -3137,7 +3137,7 @@ With CreateGlfShow("insert_sparkles")
       "LSC3|(intensity)|20425e", _
       "LSC2|(intensity)|458dc8", _
       "LSC1|(intensity)|3f81b7", _
-      "LF2|(intensity)|000000", _
+      "LF2|(intensity)|stop", _
       "LF1|(intensity)|4286bf", _
       "LPC3|(intensity)|244968", _
       "LPC2|(intensity)|4287c0", _
@@ -3199,7 +3199,7 @@ With CreateGlfShow("insert_sparkles")
       "LW2|(intensity)|3872a2", _
       "LW1|(intensity)|0a141d", _
       "LMLR|(intensity)|3d7cb1", _
-      "LEBR|(intensity)|000000", _
+      "LEBR|(intensity)|stop", _
       "LMR|(intensity)|50a2e7", _
       "LPC4|(intensity)|4fa1e4", _
       "LSC3|(intensity)|264e6e", _
@@ -3225,7 +3225,7 @@ With CreateGlfShow("insert_sparkles")
       "LH6|(intensity)|4791cd", _
       "LH5|(intensity)|112230", _
       "LH4|(intensity)|50a3e8", _
-      "LH3|(intensity)|000000", _
+      "LH3|(intensity)|stop", _
       "LH2|(intensity)|50a3e8", _
       "LPR1|(intensity)|2c5a80", _
       "LPR3|(intensity)|070e13", _
@@ -3254,7 +3254,7 @@ With CreateGlfShow("insert_sparkles")
       "LCWiz|(intensity)|4d9ddf", _
       "LLWiz|(intensity)|183246", _
       "LC1|(intensity)|2b597e", _
-      "LC8|(intensity)|000000", _
+      "LC8|(intensity)|stop", _
       "LWiz|(intensity)|1e3e58", _
       "LW9|(intensity)|0e1d2a", _
       "LW8|(intensity)|0d1b26", _
@@ -3287,7 +3287,7 @@ With CreateGlfShow("insert_sparkles")
       "LM2|(intensity)|000101", _
       "LM1|(intensity)|2b587d", _
       "LSA|(intensity)|4c9bdc", _
-      "LH8|(intensity)|000000", _
+      "LH8|(intensity)|stop", _
       "LH7|(intensity)|4b99d9", _
       "LH6|(intensity)|4a97d6", _
       "LH5|(intensity)|0c1822", _
@@ -3300,7 +3300,7 @@ With CreateGlfShow("insert_sparkles")
       "LCR2|(intensity)|4690cc", _
       "LRI|(intensity)|3a77a9", _
       "LRO|(intensity)|122534", _
-      "LLI|(intensity)|000000", _
+      "LLI|(intensity)|stop", _
       "LSR|(intensity)|172f42" _
       )
   End With
@@ -3588,7 +3588,7 @@ With CreateGlfShow("insert_sparkles")
       "LC1|(intensity)|0c1822", _
       "LC2|(intensity)|081017", _
       "LC3|(intensity)|4c9bdd", _
-      "LC4|(intensity)|000000", _
+      "LC4|(intensity)|stop", _
       "LWiz|(intensity)|3f80b5", _
       "LW9|(intensity)|2c5a80", _
       "LW8|(intensity)|2c5a80", _
@@ -3620,7 +3620,7 @@ With CreateGlfShow("insert_sparkles")
       "LM5|(intensity)|448ac4", _
       "LM4|(intensity)|3e7fb4", _
       "LM3|(intensity)|2c5a7f", _
-      "LM2|(intensity)|000000", _
+      "LM2|(intensity)|stop", _
       "LM1|(intensity)|10202d", _
       "LSA|(intensity)|4c9adb", _
       "LH9|(intensity)|50a3e7", _
@@ -3653,7 +3653,7 @@ With CreateGlfShow("insert_sparkles")
       "LS4|(intensity)|0a141c", _
       "LS6|(intensity)|193348", _
       "LSwC2|(intensity)|4389c3", _
-      "LSwC1|(intensity)|000000", _
+      "LSwC1|(intensity)|stop", _
       "LCWiz|(intensity)|366f9d", _
       "LLWiz|(intensity)|020406", _
       "LC1|(intensity)|081017", _
@@ -3695,7 +3695,7 @@ With CreateGlfShow("insert_sparkles")
       "LH8|(intensity)|09131a", _
       "LH7|(intensity)|2f6088", _
       "LH6|(intensity)|50a3e8", _
-      "LH5|(intensity)|000000", _
+      "LH5|(intensity)|stop", _
       "LH4|(intensity)|50a3e8", _
       "LPR1|(intensity)|4c9bdc", _
       "LPR3|(intensity)|2a567b", _
@@ -3727,7 +3727,7 @@ With CreateGlfShow("insert_sparkles")
       "LC1|(intensity)|050a0e", _
       "LC2|(intensity)|102130", _
       "LC3|(intensity)|4690cc", _
-      "LC6|(intensity)|000000", _
+      "LC6|(intensity)|stop", _
       "LWiz|(intensity)|4792cf", _
       "LW9|(intensity)|3974a5", _
       "LW8|(intensity)|3975a6", _
@@ -3766,7 +3766,7 @@ With CreateGlfShow("insert_sparkles")
       "LPR3|(intensity)|2e5f86", _
       "LPR2|(intensity)|448bc6", _
       "LPR5|(intensity)|020507", _
-      "LMR2|(intensity)|000000", _
+      "LMR2|(intensity)|stop", _
       "LMR1|(intensity)|0c1923", _
       "LCR2|(intensity)|50a2e7", _
       "LCR1|(intensity)|448cc6", _
@@ -3873,14 +3873,14 @@ With CreateGlfShow("insert_sparkles")
       "LMLR|(intensity)|4e9ee1", _
       "LEBR|(intensity)|162d40", _
       "LMR|(intensity)|3f80b6", _
-      "LPC5|(intensity)|000000", _
+      "LPC5|(intensity)|stop", _
       "LPC4|(intensity)|4fa2e6", _
       "LSC3|(intensity)|081016", _
       "LSC2|(intensity)|070e14", _
       "LSC1|(intensity)|3f81b8", _
       "LF2|(intensity)|081119", _
       "LF1|(intensity)|05090d", _
-      "LPC3|(intensity)|000000", _
+      "LPC3|(intensity)|stop", _
       "LPC2|(intensity)|05090d", _
       "LPC1|(intensity)|183247", _
       "LTW1|(intensity)|4790cd", _
@@ -3895,13 +3895,13 @@ With CreateGlfShow("insert_sparkles")
       "LH9|(intensity)|4fa1e5", _
       "LH8|(intensity)|183145", _
       "LH7|(intensity)|1a354b", _
-      "LH5|(intensity)|000000", _
+      "LH5|(intensity)|stop", _
       "LPR1|(intensity)|50a3e7", _
       "LPR3|(intensity)|31658f", _
       "LPR2|(intensity)|3a77a9", _
       "LPR6|(intensity)|50a3e7", _
-      "LPR5|(intensity)|000000", _
-      "LMR2|(intensity)|000000", _
+      "LPR5|(intensity)|stop", _
+      "LMR2|(intensity)|stop", _
       "LMR1|(intensity)|162c3f", _
       "LCR2|(intensity)|50a3e8", _
       "LCR1|(intensity)|3b78ab", _
@@ -3947,13 +3947,13 @@ With CreateGlfShow("meteor_fall_center")
       "LPC5|(intensity)|e03527", _
       "LPC4|(intensity)|c43024", _
       "LM3|(intensity)|ec3728", _
-      "FL2|(intensity)|000000", _
+      "FL2|(intensity)|stop", _
       "FL3|(intensity)|fe3b1d" _
       )
   End With
   With .AddStep(0.16667, Null, Null)
     .Lights = Array( _
-      "gi22|(intensity)|000000", _
+      "gi22|(intensity)|stop", _
       "LPF|(intensity)|fe2b13", _
       "LSwC3|(intensity)|581612", _
       "LSwC2|(intensity)|fc3d27", _
@@ -3973,9 +3973,9 @@ With CreateGlfShow("meteor_fall_center")
       "LPF|(intensity)|ff3b2a", _
       "LX|(intensity)|e03526", _
       "LS4|(intensity)|88241d", _
-      "LSwC3|(intensity)|000000", _
+      "LSwC3|(intensity)|stop", _
       "LSwC2|(intensity)|f93e2d", _
-      "LSwC1|(intensity)|000000", _
+      "LSwC1|(intensity)|stop", _
       "LW1|(intensity)|7b201a", _
       "LEBR|(intensity)|da3426", _
       "LMR|(intensity)|97261e", _
@@ -4000,14 +4000,14 @@ With CreateGlfShow("meteor_fall_center")
       "LW2|(intensity)|fe321d", _
       "LW1|(intensity)|fe280d", _
       "LEBR|(intensity)|240c0b", _
-      "LMR|(intensity)|000000", _
+      "LMR|(intensity)|stop", _
       "LPC5|(intensity)|3f0c09", _
       "LPC4|(intensity)|330c08", _
       "LPC3|(intensity)|fe3827", _
       "LPC2|(intensity)|7b1e17", _
-      "LPC1|(intensity)|000000", _
+      "LPC1|(intensity)|stop", _
       "LTW2|(intensity)|8c251d", _
-      "LM4|(intensity)|000000", _
+      "LM4|(intensity)|stop", _
       "LM3|(intensity)|fe3d2d", _
       "LM2|(intensity)|c32f23", _
       "FL3|(intensity)|2c0906" _
@@ -4016,7 +4016,7 @@ With CreateGlfShow("meteor_fall_center")
   With .AddStep(0.26667, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|fb3d2d", _
-      "LX|(intensity)|000000", _
+      "LX|(intensity)|stop", _
       "LS3|(intensity)|b72e23", _
       "LS4|(intensity)|9f2418", _
       "LSwC2|(intensity)|fd3d17", _
@@ -4025,16 +4025,16 @@ With CreateGlfShow("meteor_fall_center")
       "LW3|(intensity)|fe2a11", _
       "LW2|(intensity)|fe3623", _
       "LW1|(intensity)|fe3d2c", _
-      "LEBR|(intensity)|000000", _
+      "LEBR|(intensity)|stop", _
       "LPC5|(intensity)|320b06", _
-      "LPC4|(intensity)|000000", _
+      "LPC4|(intensity)|stop", _
       "LPC3|(intensity)|991b10", _
       "LPC2|(intensity)|310b07", _
       "LTW2|(intensity)|260c0c", _
       "LMet2|(intensity)|7e211b", _
       "LM3|(intensity)|f53e2c", _
-      "LM2|(intensity)|000000", _
-      "FL3|(intensity)|000000" _
+      "LM2|(intensity)|stop", _
+      "FL3|(intensity)|stop" _
       )
   End With
   With .AddStep(0.30000, Null, Null)
@@ -4050,10 +4050,10 @@ With CreateGlfShow("meteor_fall_center")
       "LW3|(intensity)|fd3d2a", _
       "LW2|(intensity)|fe3d28", _
       "LW1|(intensity)|fd3d29", _
-      "LPC5|(intensity)|000000", _
+      "LPC5|(intensity)|stop", _
       "LPC3|(intensity)|f32f21", _
       "LPC2|(intensity)|450b07", _
-      "LTW2|(intensity)|000000", _
+      "LTW2|(intensity)|stop", _
       "LMet3|(intensity)|fc3725", _
       "LMet2|(intensity)|fc3724", _
       "LM3|(intensity)|fb3d1e" _
@@ -4062,7 +4062,7 @@ With CreateGlfShow("meteor_fall_center")
   With .AddStep(0.33333, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|fe3c17", _
-      "LS3|(intensity)|000000", _
+      "LS3|(intensity)|stop", _
       "LS4|(intensity)|63110b", _
       "LSwC2|(intensity)|f92b0d", _
       "LW8|(intensity)|f33828", _
@@ -4074,7 +4074,7 @@ With CreateGlfShow("meteor_fall_center")
       "LW2|(intensity)|f73e2e", _
       "LW1|(intensity)|f53e2d", _
       "LPC3|(intensity)|8d160c", _
-      "LPC2|(intensity)|000000", _
+      "LPC2|(intensity)|stop", _
       "LMet3|(intensity)|a72a1f", _
       "LMet2|(intensity)|3e110d", _
       "LMet1|(intensity)|7d211b", _
@@ -4085,8 +4085,8 @@ With CreateGlfShow("meteor_fall_center")
   With .AddStep(0.36667, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|f8390c", _
-      "LS4|(intensity)|000000", _
-      "LSwC2|(intensity)|000000", _
+      "LS4|(intensity)|stop", _
+      "LSwC2|(intensity)|stop", _
       "LWiz|(intensity)|9f2820", _
       "LW9|(intensity)|fe2c14", _
       "LW8|(intensity)|fe2d15", _
@@ -4098,11 +4098,11 @@ With CreateGlfShow("meteor_fall_center")
       "LW2|(intensity)|fe3d2a", _
       "LW1|(intensity)|fe3c2d", _
       "LPC3|(intensity)|500c06", _
-      "LMet3|(intensity)|000000", _
+      "LMet3|(intensity)|stop", _
       "LMet2|(intensity)|1d0605", _
-      "LMet1|(intensity)|000000", _
+      "LMet1|(intensity)|stop", _
       "LM3|(intensity)|99190c", _
-      "FL3|(intensity)|000000" _
+      "FL3|(intensity)|stop" _
       )
   End With
   With .AddStep(0.40000, Null, Null)
@@ -4129,8 +4129,8 @@ With CreateGlfShow("meteor_fall_center")
   With .AddStep(0.43333, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|430c0c", _
-      "LSwC2|(intensity)|000000", _
-      "LCWiz|(intensity)|000000", _
+      "LSwC2|(intensity)|stop", _
+      "LCWiz|(intensity)|stop", _
       "LLWiz|(intensity)|3b1210", _
       "LWiz|(intensity)|fd3d2b", _
       "LW9|(intensity)|fe3c26", _
@@ -4142,9 +4142,9 @@ With CreateGlfShow("meteor_fall_center")
       "LW3|(intensity)|fc3911", _
       "LW2|(intensity)|ff3b12", _
       "LW1|(intensity)|fe320b", _
-      "LPC3|(intensity)|000000", _
-      "LMet2|(intensity)|000000", _
-      "LM3|(intensity)|000000", _
+      "LPC3|(intensity)|stop", _
+      "LMet2|(intensity)|stop", _
+      "LM3|(intensity)|stop", _
       "LPR1|(intensity)|e53627", _
       "LMR2|(intensity)|481613", _
       "LMR1|(intensity)|d23225", _
@@ -4155,7 +4155,7 @@ With CreateGlfShow("meteor_fall_center")
   With .AddStep(0.46667, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|360a06", _
-      "LLWiz|(intensity)|000000", _
+      "LLWiz|(intensity)|stop", _
       "LC3|(intensity)|6e1d18", _
       "LC4|(intensity)|83221b", _
       "LC5|(intensity)|81221b", _
@@ -4204,7 +4204,7 @@ With CreateGlfShow("meteor_fall_center")
       "LW5|(intensity)|e2290b", _
       "LW4|(intensity)|f82c11", _
       "LW3|(intensity)|440b08", _
-      "LW2|(intensity)|000000", _
+      "LW2|(intensity)|stop", _
       "LW1|(intensity)|901a0c", _
       "LPC3|(intensity)|3c100b", _
       "LH9|(intensity)|c22f23", _
@@ -4223,15 +4223,15 @@ With CreateGlfShow("meteor_fall_center")
       "LPR5|(intensity)|fe2e16", _
       "LPR4|(intensity)|fd3624", _
       "LMR2|(intensity)|521512", _
-      "LMR1|(intensity)|000000", _
+      "LMR1|(intensity)|stop", _
       "LCR2|(intensity)|320e0d", _
-      "LCR1|(intensity)|000000" _
+      "LCR1|(intensity)|stop" _
       )
   End With
   With .AddStep(0.53333, Null, Null)
     .Lights = Array( _
       "LPF|(intensity)|1c0705", _
-      "LS4|(intensity)|000000", _
+      "LS4|(intensity)|stop", _
       "LC1|(intensity)|0e0404", _
       "LC2|(intensity)|451411", _
       "LC3|(intensity)|8a2017", _
@@ -4246,11 +4246,11 @@ With CreateGlfShow("meteor_fall_center")
       "LW7|(intensity)|fa340a", _
       "LW6|(intensity)|b61d0c", _
       "LW5|(intensity)|85180b", _
-      "LW4|(intensity)|000000", _
-      "LW3|(intensity)|000000", _
+      "LW4|(intensity)|stop", _
+      "LW3|(intensity)|stop", _
       "LW2|(intensity)|cb2f23", _
-      "LW1|(intensity)|000000", _
-      "LPC3|(intensity)|000000", _
+      "LW1|(intensity)|stop", _
+      "LPC3|(intensity)|stop", _
       "LSA|(intensity)|fe2e17", _
       "LH9|(intensity)|591915", _
       "LH8|(intensity)|9f281e", _
@@ -4267,39 +4267,39 @@ With CreateGlfShow("meteor_fall_center")
       "LPR6|(intensity)|53130d", _
       "LPR5|(intensity)|fd3d28", _
       "LPR4|(intensity)|3d100b", _
-      "LMR2|(intensity)|000000", _
-      "LCR2|(intensity)|000000" _
+      "LMR2|(intensity)|stop", _
+      "LCR2|(intensity)|stop" _
       )
   End With
   With .AddStep(0.56667, Null, Null)
     .Lights = Array( _
-      "LPF|(intensity)|000000", _
-      "LC1|(intensity)|000000", _
-      "LC2|(intensity)|000000", _
+      "LPF|(intensity)|stop", _
+      "LC1|(intensity)|stop", _
+      "LC2|(intensity)|stop", _
       "LC3|(intensity)|400e08", _
       "LC4|(intensity)|f32f17", _
       "LC5|(intensity)|fd3d1f", _
       "LC6|(intensity)|3c0c09", _
       "LC7|(intensity)|090201", _
-      "LC8|(intensity)|000000", _
+      "LC8|(intensity)|stop", _
       "LWiz|(intensity)|fc3818", _
       "LW9|(intensity)|f63609", _
       "LW8|(intensity)|770f06", _
       "LW7|(intensity)|931a11", _
-      "LW6|(intensity)|000000", _
+      "LW6|(intensity)|stop", _
       "LW5|(intensity)|84190f", _
       "LW4|(intensity)|c6301f", _
-      "LW2|(intensity)|000000", _
+      "LW2|(intensity)|stop", _
       "LSA|(intensity)|ff3927", _
-      "LH9|(intensity)|000000", _
-      "LH8|(intensity)|000000", _
+      "LH9|(intensity)|stop", _
+      "LH8|(intensity)|stop", _
       "LH7|(intensity)|330b09", _
       "LH6|(intensity)|64130a", _
       "LH5|(intensity)|fd3d27", _
       "LH4|(intensity)|63110a", _
-      "LH3|(intensity)|000000", _
-      "LH2|(intensity)|000000", _
-      "LH1|(intensity)|000000", _
+      "LH3|(intensity)|stop", _
+      "LH2|(intensity)|stop", _
+      "LH1|(intensity)|stop", _
       "LPR1|(intensity)|f53e2d", _
       "LPR3|(intensity)|fe3e2c", _
       "LPR2|(intensity)|af1d0e", _
@@ -4315,14 +4315,14 @@ With CreateGlfShow("meteor_fall_center")
       "LC4|(intensity)|fe3823", _
       "LC5|(intensity)|ed351b", _
       "LC6|(intensity)|4e0e0b", _
-      "LC7|(intensity)|000000", _
+      "LC7|(intensity)|stop", _
       "LWiz|(intensity)|e92c0d", _
       "LW9|(intensity)|d1240c", _
       "LW8|(intensity)|360a08", _
       "LW7|(intensity)|470907", _
       "LW6|(intensity)|691110", _
-      "LW5|(intensity)|000000", _
-      "LW4|(intensity)|000000", _
+      "LW5|(intensity)|stop", _
+      "LW4|(intensity)|stop", _
       "LSA|(intensity)|fd3d27", _
       "LH7|(intensity)|3a0d0a", _
       "LH6|(intensity)|bc3024", _
@@ -4340,27 +4340,27 @@ With CreateGlfShow("meteor_fall_center")
   With .AddStep(0.63333, Null, Null)
     .Lights = Array( _
       "giapron|(intensity)|ff3a29", _
-      "LC3|(intensity)|000000", _
+      "LC3|(intensity)|stop", _
       "LC4|(intensity)|d3281f", _
       "LC5|(intensity)|f53626", _
-      "LC6|(intensity)|000000", _
+      "LC6|(intensity)|stop", _
       "LWiz|(intensity)|8c190b", _
       "LW9|(intensity)|060101", _
-      "LW8|(intensity)|000000", _
-      "LW7|(intensity)|000000", _
-      "LW6|(intensity)|000000", _
+      "LW8|(intensity)|stop", _
+      "LW7|(intensity)|stop", _
+      "LW6|(intensity)|stop", _
       "LSA|(intensity)|f93e2d", _
-      "LH7|(intensity)|000000", _
+      "LH7|(intensity)|stop", _
       "LH6|(intensity)|410a07", _
       "LH5|(intensity)|fd3e29", _
       "LH4|(intensity)|2d0906", _
-      "LH3|(intensity)|000000", _
+      "LH3|(intensity)|stop", _
       "LPR1|(intensity)|ff3c16", _
       "LPR3|(intensity)|260a03", _
       "LPR2|(intensity)|270903", _
-      "LPR6|(intensity)|000000", _
+      "LPR6|(intensity)|stop", _
       "LPR5|(intensity)|fb3d23", _
-      "LPR4|(intensity)|000000" _
+      "LPR4|(intensity)|stop" _
       )
   End With
   With .AddStep(0.66667, Null, Null)
@@ -4372,12 +4372,12 @@ With CreateGlfShow("meteor_fall_center")
       "LW9|(intensity)|711810", _
       "LW6|(intensity)|1a0505", _
       "LSA|(intensity)|fe3d29", _
-      "LH6|(intensity)|000000", _
+      "LH6|(intensity)|stop", _
       "LH5|(intensity)|fe3c17", _
       "LH4|(intensity)|1d0504", _
       "LPR1|(intensity)|c12211", _
-      "LPR3|(intensity)|000000", _
-      "LPR2|(intensity)|000000", _
+      "LPR3|(intensity)|stop", _
+      "LPR2|(intensity)|stop", _
       "LPR5|(intensity)|fe3d1c" _
       )
   End With
@@ -4385,13 +4385,13 @@ With CreateGlfShow("meteor_fall_center")
     .Lights = Array( _
       "giapron|(intensity)|fb3e2d", _
       "LC4|(intensity)|3c0703", _
-      "LC5|(intensity)|000000", _
-      "LWiz|(intensity)|000000", _
+      "LC5|(intensity)|stop", _
+      "LWiz|(intensity)|stop", _
       "LW9|(intensity)|080202", _
-      "LW6|(intensity)|000000", _
+      "LW6|(intensity)|stop", _
       "LSA|(intensity)|ff3e17", _
       "LH5|(intensity)|ff3b0a", _
-      "LH4|(intensity)|000000", _
+      "LH4|(intensity)|stop", _
       "LPR1|(intensity)|4c0d0a", _
       "LPR2|(intensity)|1e080e", _
       "LPR5|(intensity)|6c0e06" _
@@ -4405,8 +4405,8 @@ With CreateGlfShow("meteor_fall_center")
       "LSA|(intensity)|ff3b09", _
       "LH5|(intensity)|fc2d11", _
       "LH4|(intensity)|160408", _
-      "LPR1|(intensity)|000000", _
-      "LPR2|(intensity)|000000", _
+      "LPR1|(intensity)|stop", _
+      "LPR2|(intensity)|stop", _
       "LPR5|(intensity)|3a0c09" _
       )
   End With
@@ -4415,19 +4415,19 @@ With CreateGlfShow("meteor_fall_center")
       "giapron|(intensity)|fd3c18", _
       "LC4|(intensity)|280604", _
       "LC5|(intensity)|330b06", _
-      "LW9|(intensity)|000000", _
+      "LW9|(intensity)|stop", _
       "LSA|(intensity)|fb2b0d", _
       "LH5|(intensity)|250707", _
-      "LH4|(intensity)|000000", _
-      "LPR5|(intensity)|000000" _
+      "LH4|(intensity)|stop", _
+      "LPR5|(intensity)|stop" _
       )
   End With
   With .AddStep(0.80000, Null, Null)
     .Lights = Array( _
       "giapron|(intensity)|f53a0b", _
-      "LC4|(intensity)|000000", _
-      "LC5|(intensity)|000000", _
-      "LSA|(intensity)|000000", _
+      "LC4|(intensity)|stop", _
+      "LC5|(intensity)|stop", _
+      "LSA|(intensity)|stop", _
       "LH5|(intensity)|63150d" _
       )
   End With
@@ -4435,25 +4435,25 @@ With CreateGlfShow("meteor_fall_center")
     .Lights = Array( _
       "giapron|(intensity)|ee2e14", _
       "LSA|(intensity)|781d10", _
-      "LH5|(intensity)|000000" _
+      "LH5|(intensity)|stop" _
       )
   End With
   With .AddStep(0.86667, Null, Null)
     .Lights = Array( _
       "giapron|(intensity)|350b0b", _
-      "LSA|(intensity)|000000", _
+      "LSA|(intensity)|stop", _
       "LH5|(intensity)|0c0303" _
       )
   End With
   With .AddStep(0.90000, Null, Null)
     .Lights = Array( _
       "giapron|(intensity)|3a0d06", _
-      "LH5|(intensity)|000000" _
+      "LH5|(intensity)|stop" _
       )
   End With
   With .AddStep(0.93333, Null, Null)
     .Lights = Array( _
-      "giapron|(intensity)|000000" _
+      "giapron|(intensity)|stop" _
       )
   End With
   With .AddStep(0.96667, Null, Null)
@@ -4481,7 +4481,7 @@ With CreateGlfShow("meteor_fall_left")
     .Lights = Array( _
       "gi21|(intensity)|fe2f19", _
       "gi16|(intensity)|aa1f12", _
-      "FL2|(intensity)|000000" _
+      "FL2|(intensity)|stop" _
       )
   End With
   With .AddStep(0.16667, Null, Null)
@@ -4502,7 +4502,7 @@ With CreateGlfShow("meteor_fall_left")
   End With
   With .AddStep(0.23333, Null, Null)
     .Lights = Array( _
-      "gi20|(intensity)|000000", _
+      "gi20|(intensity)|stop", _
       "gi21|(intensity)|3c0e0c", _
       "gi18|(intensity)|821b11", _
       "gi16|(intensity)|85170b", _
@@ -4514,7 +4514,7 @@ With CreateGlfShow("meteor_fall_left")
   End With
   With .AddStep(0.26667, Null, Null)
     .Lights = Array( _
-      "gi21|(intensity)|000000", _
+      "gi21|(intensity)|stop", _
       "gi18|(intensity)|7f140a", _
       "gi16|(intensity)|a01d0f", _
       "gi12|(intensity)|f43727", _
@@ -4533,7 +4533,7 @@ With CreateGlfShow("meteor_fall_left")
       "gi12|(intensity)|7f170e", _
       "gi11|(intensity)|fe311c", _
       "LS2|(intensity)|fa3725", _
-      "LTW1|(intensity)|000000", _
+      "LTW1|(intensity)|stop", _
       "LCC3|(intensity)|ec3627", _
       "LCC2|(intensity)|671a13", _
       "LCC1|(intensity)|3d100b" _
@@ -4546,20 +4546,20 @@ With CreateGlfShow("meteor_fall_left")
       "gi12|(intensity)|de2a1d", _
       "gi11|(intensity)|ee3623", _
       "LS2|(intensity)|4b1512", _
-      "LCC3|(intensity)|000000", _
+      "LCC3|(intensity)|stop", _
       "LCC2|(intensity)|0c0302", _
       "LCC1|(intensity)|4c1310" _
       )
   End With
   With .AddStep(0.36667, Null, Null)
     .Lights = Array( _
-      "gi18|(intensity)|000000", _
-      "gi16|(intensity)|000000", _
+      "gi18|(intensity)|stop", _
+      "gi16|(intensity)|stop", _
       "gi12|(intensity)|7b140b", _
       "gi11|(intensity)|ff3d27", _
       "gi09|(intensity)|c83125", _
       "LS1|(intensity)|a02920", _
-      "LS2|(intensity)|000000", _
+      "LS2|(intensity)|stop", _
       "LCC3|(intensity)|1b0605", _
       "LCC2|(intensity)|330b08", _
       "LCC1|(intensity)|2e0b0b", _
@@ -4573,10 +4573,10 @@ With CreateGlfShow("meteor_fall_left")
       "gi11|(intensity)|ff3b27", _
       "gi09|(intensity)|fe2d16", _
       "LS1|(intensity)|fe2f18", _
-      "LCC3|(intensity)|000000", _
-      "LCC2|(intensity)|000000", _
-      "LCC1|(intensity)|000000", _
-      "LMet1|(intensity)|000000", _
+      "LCC3|(intensity)|stop", _
+      "LCC2|(intensity)|stop", _
+      "LCC1|(intensity)|stop", _
+      "LMet1|(intensity)|stop", _
       "LM1|(intensity)|d03225" _
       )
   End With
@@ -4588,19 +4588,19 @@ With CreateGlfShow("meteor_fall_left")
       "gi09|(intensity)|b82618", _
       "LS1|(intensity)|842017", _
       "LCWiz|(intensity)|4f1713", _
-      "LM1|(intensity)|000000", _
+      "LM1|(intensity)|stop", _
       "LLI|(intensity)|3f1311" _
       )
   End With
   With .AddStep(0.46667, Null, Null)
     .Lights = Array( _
-      "gi18|(intensity)|000000", _
-      "gi12|(intensity)|000000", _
+      "gi18|(intensity)|stop", _
+      "gi12|(intensity)|stop", _
       "gi11|(intensity)|ec3623", _
       "gi09|(intensity)|76140b", _
       "gi04|(intensity)|cf3125", _
-      "LS1|(intensity)|000000", _
-      "LCWiz|(intensity)|000000", _
+      "LS1|(intensity)|stop", _
+      "LCWiz|(intensity)|stop", _
       "LM1|(intensity)|300b0a", _
       "LLI|(intensity)|fe2e16", _
       "LLO|(intensity)|fe331f" _
@@ -4614,7 +4614,7 @@ With CreateGlfShow("meteor_fall_left")
       "gi03|(intensity)|d53225", _
       "gi02|(intensity)|9b281f", _
       "LS1|(intensity)|3d0c08", _
-      "LM1|(intensity)|000000", _
+      "LM1|(intensity)|stop", _
       "LLI|(intensity)|f43828", _
       "LLO|(intensity)|fe3725", _
       "LSL|(intensity)|b32d22" _
@@ -4624,11 +4624,11 @@ With CreateGlfShow("meteor_fall_left")
     .Lights = Array( _
       "gi11|(intensity)|aa231c", _
       "gi09|(intensity)|470c07", _
-      "gi04|(intensity)|000000", _
+      "gi04|(intensity)|stop", _
       "gi03|(intensity)|7b211a", _
       "gi02|(intensity)|fe2a12", _
       "gi01|(intensity)|e63627", _
-      "LS1|(intensity)|000000", _
+      "LS1|(intensity)|stop", _
       "LLI|(intensity)|500f0b", _
       "LLO|(intensity)|6f1711", _
       "LSL|(intensity)|fe2c14" _
@@ -4638,7 +4638,7 @@ With CreateGlfShow("meteor_fall_left")
     .Lights = Array( _
       "gi11|(intensity)|290606", _
       "gi09|(intensity)|310806", _
-      "gi03|(intensity)|000000", _
+      "gi03|(intensity)|stop", _
       "gi02|(intensity)|bf2b1f", _
       "gi01|(intensity)|c02f23", _
       "LLI|(intensity)|862322", _
@@ -4649,9 +4649,9 @@ With CreateGlfShow("meteor_fall_left")
   With .AddStep(0.60000, Null, Null)
     .Lights = Array( _
       "gi11|(intensity)|5d120d", _
-      "gi09|(intensity)|000000", _
+      "gi09|(intensity)|stop", _
       "gi02|(intensity)|520f09", _
-      "gi01|(intensity)|000000", _
+      "gi01|(intensity)|stop", _
       "LLI|(intensity)|2d0b06", _
       "LLO|(intensity)|71140a", _
       "LSL|(intensity)|821609" _
@@ -4659,7 +4659,7 @@ With CreateGlfShow("meteor_fall_left")
   End With
   With .AddStep(0.63333, Null, Null)
     .Lights = Array( _
-      "gi11|(intensity)|000000", _
+      "gi11|(intensity)|stop", _
       "gi09|(intensity)|210705", _
       "gi02|(intensity)|661611", _
       "LLI|(intensity)|210705", _
@@ -4669,9 +4669,9 @@ With CreateGlfShow("meteor_fall_left")
   End With
   With .AddStep(0.66667, Null, Null)
     .Lights = Array( _
-      "gi09|(intensity)|000000", _
+      "gi09|(intensity)|stop", _
       "gi02|(intensity)|2d0907", _
-      "LLI|(intensity)|000000", _
+      "LLI|(intensity)|stop", _
       "LLO|(intensity)|1e0605", _
       "LSL|(intensity)|5d0f08" _
       )
@@ -4679,27 +4679,27 @@ With CreateGlfShow("meteor_fall_left")
   With .AddStep(0.70000, Null, Null)
     .Lights = Array( _
       "gi09|(intensity)|020101", _
-      "gi02|(intensity)|000000", _
-      "LLO|(intensity)|000000", _
+      "gi02|(intensity)|stop", _
+      "LLO|(intensity)|stop", _
       "LSL|(intensity)|3b0807" _
       )
   End With
   With .AddStep(0.73333, Null, Null)
     .Lights = Array( _
-      "gi09|(intensity)|000000", _
+      "gi09|(intensity)|stop", _
       "LLO|(intensity)|410c07", _
       "LSL|(intensity)|300705" _
       )
   End With
   With .AddStep(0.76667, Null, Null)
     .Lights = Array( _
-      "LLO|(intensity)|000000", _
+      "LLO|(intensity)|stop", _
       "LSL|(intensity)|b32a20" _
       )
   End With
   With .AddStep(0.80000, Null, Null)
     .Lights = Array( _
-      "LSL|(intensity)|000000" _
+      "LSL|(intensity)|stop" _
       )
   End With
   With .AddStep(0.83333, Null, Null)
@@ -4732,7 +4732,7 @@ With CreateGlfShow("meteor_fall_right")
   End With
   With .AddStep(0.13333, Null, Null)
     .Lights = Array( _
-      "gi17|(intensity)|000000" _
+      "gi17|(intensity)|stop" _
       )
   End With
   With .AddStep(0.16667, Null, Null)
@@ -4770,11 +4770,11 @@ With CreateGlfShow("meteor_fall_right")
   With .AddStep(0.26667, Null, Null)
     .Lights = Array( _
       "gi19|(intensity)|fb3725", _
-      "gi15|(intensity)|000000", _
+      "gi15|(intensity)|stop", _
       "gi13|(intensity)|b8220f", _
       "LS5|(intensity)|3c1210", _
       "LS6|(intensity)|fe321d", _
-      "LMLR|(intensity)|000000", _
+      "LMLR|(intensity)|stop", _
       "LF3|(intensity)|ff3c2c", _
       "LF2|(intensity)|871c0f", _
       "LF1|(intensity)|410e09", _
@@ -4787,7 +4787,7 @@ With CreateGlfShow("meteor_fall_right")
       "gi19|(intensity)|210908", _
       "gi14|(intensity)|fc3725", _
       "gi13|(intensity)|fd3420", _
-      "LS5|(intensity)|000000", _
+      "LS5|(intensity)|stop", _
       "LS6|(intensity)|f93827", _
       "LF3|(intensity)|fc3c1e", _
       "LF2|(intensity)|82180e", _
@@ -4798,7 +4798,7 @@ With CreateGlfShow("meteor_fall_right")
   End With
   With .AddStep(0.33333, Null, Null)
     .Lights = Array( _
-      "gi19|(intensity)|000000", _
+      "gi19|(intensity)|stop", _
       "gi14|(intensity)|a62a1f", _
       "gi13|(intensity)|bd210f", _
       "gi10|(intensity)|421412", _
@@ -4807,7 +4807,7 @@ With CreateGlfShow("meteor_fall_right")
       "LSC1|(intensity)|fe2f19", _
       "LF3|(intensity)|fb3d24", _
       "LF2|(intensity)|74190d", _
-      "LF1|(intensity)|000000", _
+      "LF1|(intensity)|stop", _
       "LMet4|(intensity)|3e1412", _
       "LM5|(intensity)|761409", _
       "FL1|(intensity)|f2371d" _
@@ -4815,7 +4815,7 @@ With CreateGlfShow("meteor_fall_right")
   End With
   With .AddStep(0.36667, Null, Null)
     .Lights = Array( _
-      "gi14|(intensity)|000000", _
+      "gi14|(intensity)|stop", _
       "gi13|(intensity)|7f170d", _
       "gi10|(intensity)|fe2e17", _
       "LS6|(intensity)|bf2419", _
@@ -4838,10 +4838,10 @@ With CreateGlfShow("meteor_fall_right")
       "LSC2|(intensity)|a82112", _
       "LSC1|(intensity)|73140c", _
       "LF3|(intensity)|090201", _
-      "LF2|(intensity)|000000", _
-      "LMet4|(intensity)|000000", _
-      "LM5|(intensity)|000000", _
-      "FL1|(intensity)|000000" _
+      "LF2|(intensity)|stop", _
+      "LMet4|(intensity)|stop", _
+      "LM5|(intensity)|stop", _
+      "FL1|(intensity)|stop" _
       )
   End With
   With .AddStep(0.43333, Null, Null)
@@ -4852,14 +4852,14 @@ With CreateGlfShow("meteor_fall_right")
       "LSC3|(intensity)|70140c", _
       "LSC2|(intensity)|be200f", _
       "LSC1|(intensity)|db2618", _
-      "LF3|(intensity)|000000", _
+      "LF3|(intensity)|stop", _
       "LRI|(intensity)|e43627", _
       "LRO|(intensity)|87231d" _
       )
   End With
   With .AddStep(0.46667, Null, Null)
     .Lights = Array( _
-      "gi13|(intensity)|000000", _
+      "gi13|(intensity)|stop", _
       "gi10|(intensity)|480f0a", _
       "gi08|(intensity)|fe3725", _
       "gi07|(intensity)|521715", _
@@ -4874,12 +4874,12 @@ With CreateGlfShow("meteor_fall_right")
   With .AddStep(0.50000, Null, Null)
     .Lights = Array( _
       "gi13|(intensity)|a92a1a", _
-      "gi10|(intensity)|000000", _
+      "gi10|(intensity)|stop", _
       "gi08|(intensity)|8e241b", _
       "gi07|(intensity)|e13526", _
       "gi06|(intensity)|fe3725", _
       "gi05|(intensity)|481513", _
-      "LS6|(intensity)|000000", _
+      "LS6|(intensity)|stop", _
       "LSC3|(intensity)|7d120b", _
       "LSC2|(intensity)|69130b", _
       "LSC1|(intensity)|1e0503", _
@@ -4890,8 +4890,8 @@ With CreateGlfShow("meteor_fall_right")
   End With
   With .AddStep(0.53333, Null, Null)
     .Lights = Array( _
-      "gi13|(intensity)|000000", _
-      "gi08|(intensity)|000000", _
+      "gi13|(intensity)|stop", _
+      "gi08|(intensity)|stop", _
       "gi07|(intensity)|260c0b", _
       "gi06|(intensity)|fe3522", _
       "gi05|(intensity)|ee3727", _
@@ -4906,7 +4906,7 @@ With CreateGlfShow("meteor_fall_right")
   With .AddStep(0.56667, Null, Null)
     .Lights = Array( _
       "gi08|(intensity)|310b08", _
-      "gi07|(intensity)|000000", _
+      "gi07|(intensity)|stop", _
       "gi06|(intensity)|6b1711", _
       "gi05|(intensity)|320e0e", _
       "LSC3|(intensity)|6f120a", _
@@ -4919,21 +4919,21 @@ With CreateGlfShow("meteor_fall_right")
   End With
   With .AddStep(0.60000, Null, Null)
     .Lights = Array( _
-      "gi08|(intensity)|000000", _
+      "gi08|(intensity)|stop", _
       "gi06|(intensity)|b11d13", _
-      "gi05|(intensity)|000000", _
+      "gi05|(intensity)|stop", _
       "LSC3|(intensity)|320b07", _
       "LSC2|(intensity)|8a2012", _
-      "LSC1|(intensity)|000000", _
+      "LSC1|(intensity)|stop", _
       "LRI|(intensity)|891a11", _
-      "LRO|(intensity)|000000", _
+      "LRO|(intensity)|stop", _
       "LSR|(intensity)|541514" _
       )
   End With
   With .AddStep(0.63333, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|731309", _
-      "LSC3|(intensity)|000000", _
+      "LSC3|(intensity)|stop", _
       "LSC2|(intensity)|200503", _
       "LSC1|(intensity)|100305", _
       "LRI|(intensity)|ec392c", _
@@ -4944,30 +4944,30 @@ With CreateGlfShow("meteor_fall_right")
     .Lights = Array( _
       "gi06|(intensity)|420a08", _
       "LSC3|(intensity)|340b0e", _
-      "LSC2|(intensity)|000000", _
-      "LSC1|(intensity)|000000", _
+      "LSC2|(intensity)|stop", _
+      "LSC1|(intensity)|stop", _
       "LRI|(intensity)|270503", _
-      "LSR|(intensity)|000000" _
+      "LSR|(intensity)|stop" _
       )
   End With
   With .AddStep(0.70000, Null, Null)
     .Lights = Array( _
       "gi06|(intensity)|3a0805", _
-      "LSC3|(intensity)|000000", _
+      "LSC3|(intensity)|stop", _
       "LSC1|(intensity)|0e0303", _
       "LRI|(intensity)|8f2014" _
       )
   End With
   With .AddStep(0.73333, Null, Null)
     .Lights = Array( _
-      "gi06|(intensity)|000000", _
-      "LSC1|(intensity)|000000", _
+      "gi06|(intensity)|stop", _
+      "LSC1|(intensity)|stop", _
       "LRI|(intensity)|2e0704" _
       )
   End With
   With .AddStep(0.76667, Null, Null)
     .Lights = Array( _
-      "LRI|(intensity)|000000" _
+      "LRI|(intensity)|stop" _
       )
   End With
   With .AddStep(0.80000, Null, Null)

@@ -211,6 +211,7 @@ Sub CreateAttractMode()
                 .Key = "key_meteor_fall_center"
                 .Show = "meteor_fall_center"
                 .Loops = 0
+                .Speed = 1
                 With .Tokens()
                     .Add "intensity", 100
                 End With

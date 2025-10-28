@@ -21,11 +21,11 @@ Sub CreateMysteryMode
 
         With .EventPlayer()
             'enable the ball hold if needed
-            .Add "mode_mystery_started{current_player.shot_mystery_ready==1 && current_player.flippers_are_dead==0}", Array("enable_scoop_hold")
+            .Add "mode_mystery_started{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", Array("enable_scoop_hold")
             '.Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
             'run the mystery selection if ready, otherwise move along to training
-            .Add "check_mystery{current_player.shot_mystery_ready==0 && current_player.flippers_are_dead==0}", Array("check_training")
-            .Add "check_mystery{current_player.shot_mystery_ready==1 && current_player.flippers_are_dead==0}", Array("select_random_mystery")
+            .Add "check_mystery{current_player.shot_mystery_ready==0 && machine.flippers_are_dead==0}", Array("check_training")
+            .Add "check_mystery{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", Array("select_random_mystery")
             'select random mystery and run show
             .Add "select_random_mystery", Array("play_mystery_show")
             'release ball hold if training is not ready

@@ -6,14 +6,14 @@ Sub CreateTimeWarpShows()
     With CreateGlfShow("timewarp")
         With .AddStep(0.00000, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|ffffff", _
             "gi22|100|eaeaea", _
             "gi20|100|03051c", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|2d129f", _
             "gi18|100|1725de", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi15|100|2f12a8", _
             "gi14|100|bdbacf", _
             "gi13|100|180a55", _
@@ -28,7 +28,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|250e81", _
             "gi03|100|08041c", _
             "gi02|100|09041f", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|1b28cd", _
             "LTW1|100|1827e6" _
             )
@@ -349,7 +349,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(0.46667, Null, Null)
             .Lights = Array( _
             "gi17|100|d9d9d9", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|c4c4c4", _
             "gi21|100|1726e5", _
             "gi19|100|2f13a6", _
@@ -560,7 +560,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(0.83333, Null, Null)
             .Lights = Array( _
             "gi17|100|a9a9a9", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|111aa3", _
             "gi21|100|111ca9", _
             "gi19|100|251a52", _
@@ -682,7 +682,7 @@ Sub CreateTimeWarpShows()
             "gi21|100|030418", _
             "gi19|100|706e7b", _
             "gi18|100|252525", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi15|100|fcfcfc", _
             "gi14|100|2f13a6", _
             "gi13|100|f9f9f9", _
@@ -703,7 +703,7 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(1.03333, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|0f1893", _
             "gi22|100|060a38", _
             "gi20|100|030418", _
@@ -783,7 +783,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|1825e4", _
             "gi22|100|0e1892", _
             "gi20|100|030208", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|cfced3", _
             "gi18|100|919191", _
             "gi14|100|2e12a3", _
@@ -822,7 +822,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|cdcdcd", _
             "gi03|100|313133", _
             "gi02|100|3d3d3d", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|7a7ec5", _
             "LTW1|100|e4e6f4" _
             )
@@ -863,7 +863,7 @@ Sub CreateTimeWarpShows()
             "gi09|100|302077", _
             "gi08|100|2d2f3b", _
             "gi07|100|060628", _
-            "gi06|100|000000", _
+            "gi06|100|stop", _
             "gi05|100|040522", _
             "gi04|100|9a9a9a", _
             "gi03|100|16151b", _
@@ -963,7 +963,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|828284", _
             "gi07|100|0e0d12", _
             "gi06|100|0e0e0e", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|333542", _
             "gi03|100|050830", _
             "gi02|100|010102", _
@@ -1172,7 +1172,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(1.66667, Null, Null)
             .Lights = Array( _
             "gi17|100|121eb2", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|1522cf", _
             "gi20|100|fefefe", _
             "gi21|100|ebebeb", _
@@ -1387,7 +1387,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(2.03333, Null, Null)
             .Lights = Array( _
             "gi17|100|1420bc", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|efefef", _
             "gi21|100|f8f8f8", _
             "gi19|100|585a6e", _
@@ -1548,7 +1548,7 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(2.26667, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|444444", _
             "gi22|100|242424", _
             "gi20|100|3f3f3f", _
@@ -1608,7 +1608,7 @@ Sub CreateTimeWarpShows()
             "gi21|100|0f0f0f", _
             "gi19|100|131db0", _
             "gi18|100|090322", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi14|100|f0f0f9", _
             "gi13|100|1421c8", _
             "gi11|100|2f13a6", _
@@ -1646,7 +1646,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|121db3", _
             "gi03|100|06062a", _
             "gi02|100|030931", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|64579a", _
             "LTW1|100|2f1794" _
             )
@@ -1680,7 +1680,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|f9f9f9", _
             "gi22|100|b7b7b7", _
             "gi20|100|050505", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|1625da", _
             "gi18|100|1a0c5a", _
             "gi14|100|d1d4e6", _
@@ -1786,7 +1786,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|202020", _
             "gi04|100|080b2f", _
             "gi03|100|101012", _
-            "gi02|100|000000", _
+            "gi02|100|stop", _
             "gi01|100|0b0b0b", _
             "LTW2|100|311994", _
             "LTW1|100|2f13a6" _
@@ -1921,7 +1921,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|270f86", _
             "gi07|100|09051e", _
             "gi06|100|0a0524", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|3a3a39", _
             "gi03|100|878787", _
             "gi02|100|151515", _
@@ -2081,7 +2081,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(3.00000, Null, Null)
             .Lights = Array( _
             "gi17|100|f0f0f0", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|c5c5c5", _
             "gi20|100|2f12a8", _
             "gi21|100|2e12a3", _
@@ -2264,7 +2264,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(3.33333, Null, Null)
             .Lights = Array( _
             "gi17|100|cccccc", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|2c129a", _
             "gi21|100|2d12a0", _
             "gi19|100|22255c", _
@@ -2452,14 +2452,14 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(3.60000, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|15094c", _
             "gi22|100|080321", _
             "gi20|100|050216", _
             "gi21|100|04020e", _
             "gi19|100|bdbdbd", _
             "gi18|100|636363", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi14|100|1924e0", _
             "gi13|100|e8e8e8", _
             "gi11|100|f0f1f6", _
@@ -2557,7 +2557,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|2f13a6", _
             "gi22|100|210c76", _
             "gi20|100|0c0b10", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|f5f5f5", _
             "gi18|100|e1e1e1", _
             "gi14|100|1b27c9", _
@@ -2572,7 +2572,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|a5a5a5", _
             "gi03|100|1c1c1c", _
             "gi02|100|202020", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|8e83ba", _
             "LTW1|100|ebe9f6" _
             )
@@ -2712,7 +2712,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|000004", _
             "gi04|100|232228", _
             "gi03|100|060318", _
-            "gi02|100|000000", _
+            "gi02|100|stop", _
             "gi01|100|050214", _
             "LTW2|100|e4e1f1", _
             "LTW1|100|fefeff" _
@@ -2758,7 +2758,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|cecece", _
             "gi07|100|2e2e2e", _
             "gi06|100|3f3f3f", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|120f20", _
             "gi03|100|0f0635", _
             "gi02|100|000004", _
@@ -2948,7 +2948,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(4.26667, Null, Null)
             .Lights = Array( _
             "gi17|100|28108d", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|28108b", _
             "gi21|100|ffffff", _
             "gi19|100|fbfbfb", _
@@ -3156,7 +3156,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(4.63333, Null, Null)
             .Lights = Array( _
             "gi17|100|230d7c", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|939393", _
             "gi21|100|9a9a9a", _
             "gi19|100|454254", _
@@ -3256,7 +3256,7 @@ Sub CreateTimeWarpShows()
             "gi21|100|1a1a1a", _
             "gi19|100|1f154a", _
             "gi18|100|090d55", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi15|100|2e13a2", _
             "gi14|100|fdfdff", _
             "gi13|100|2f13a6", _
@@ -3328,7 +3328,7 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(4.86667, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|c3c3c3", _
             "gi22|100|656565", _
             "gi20|100|06070c", _
@@ -3358,7 +3358,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|e7e7e7", _
             "gi22|100|898989", _
             "gi20|100|050511", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|240e7b", _
             "gi18|100|1422c8", _
             "gi14|100|eeedf3", _
@@ -3444,7 +3444,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|200c70", _
             "gi03|100|070415", _
             "gi02|100|060315", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|1b27dc", _
             "LTW1|100|1826e7" _
             )
@@ -3537,7 +3537,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|050505", _
             "gi04|100|110930", _
             "gi03|100|1a1a1c", _
-            "gi02|100|000000", _
+            "gi02|100|stop", _
             "gi01|100|161616" _
             )
         End With
@@ -3580,7 +3580,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|121cad", _
             "gi07|100|040723", _
             "gi06|100|05072d", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|161328", _
             "gi03|100|3d3d3d", _
             "gi02|100|010101", _
@@ -3766,7 +3766,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(5.46667, Null, Null)
             .Lights = Array( _
             "gi17|100|d3d3d3", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|cccccc", _
             "gi21|100|1826e7", _
             "gi18|100|101999", _
@@ -3961,11 +3961,11 @@ Sub CreateTimeWarpShows()
         With .AddStep(5.80000, Null, Null)
             .Lights = Array( _
             "gi17|100|dadada", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|10199c", _
             "gi21|100|111caa", _
             "gi19|100|221366", _
-            "gi18|100|000000", _
+            "gi18|100|stop", _
             "gi16|100|0c116c", _
             "gi15|100|858585", _
             "gi12|100|b7b7b7", _
@@ -4074,7 +4074,7 @@ Sub CreateTimeWarpShows()
             "gi21|100|020417", _
             "gi19|100|504c64", _
             "gi18|100|1e1e1e", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi15|100|f6f6f6", _
             "gi12|100|fbfbfb", _
             "gi10|100|cac3e2", _
@@ -4120,7 +4120,7 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(6.03333, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|0b136d", _
             "gi22|100|080e56", _
             "gi20|100|03030f", _
@@ -4176,7 +4176,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|1521c3", _
             "gi22|100|0f1898", _
             "gi20|100|000105", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|b0afb5", _
             "gi18|100|818181", _
             "gi14|100|2f13a6", _
@@ -4238,7 +4238,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|c7c7c7", _
             "gi03|100|2c2c2c", _
             "gi02|100|343434", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|9a9dca", _
             "LTW1|100|f0f1f8" _
             )
@@ -4380,7 +4380,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|010006", _
             "gi04|100|2e2f34", _
             "gi03|100|03051d", _
-            "gi02|100|000000", _
+            "gi02|100|stop", _
             "gi01|100|02041a", _
             "LTW2|100|eceff9" _
             )
@@ -4423,7 +4423,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|a2a2a2", _
             "gi07|100|18191b", _
             "gi06|100|1e1e1e", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|161928", _
             "gi03|100|040a3f", _
             "gi02|100|000003", _
@@ -4586,7 +4586,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(6.66667, Null, Null)
             .Lights = Array( _
             "gi17|100|1422cb", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|121db4", _
             "gi20|100|ffffff", _
             "gi21|100|f2f2f2", _
@@ -4789,7 +4789,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(7.00000, Null, Null)
             .Lights = Array( _
             "gi17|100|1320c3", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|f4f4f4", _
             "gi21|100|fcfcfc", _
             "gi19|100|767891", _
@@ -4960,7 +4960,7 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(7.26667, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|363636", _
             "gi22|100|2c2c2c", _
             "gi20|100|323232", _
@@ -5019,7 +5019,7 @@ Sub CreateTimeWarpShows()
             "gi21|100|0b0b0b", _
             "gi19|100|1523cb", _
             "gi18|100|0d042d", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi14|100|e7e8f8", _
             "gi13|100|121cac", _
             "gi12|100|2f12a8", _
@@ -5082,7 +5082,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|141eba", _
             "gi03|100|040830", _
             "gi02|100|060937", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|463590", _
             "LTW1|100|2f149f" _
             )
@@ -5092,7 +5092,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|f6f6f6", _
             "gi22|100|c6c6c6", _
             "gi20|100|030305", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|1825e5", _
             "gi18|100|1e0c6e", _
             "gi14|100|c3c3e7", _
@@ -5217,11 +5217,11 @@ Sub CreateTimeWarpShows()
             "gi09|100|1f268f", _
             "gi08|100|150d32", _
             "gi07|100|242426", _
-            "gi06|100|000000", _
+            "gi06|100|stop", _
             "gi05|100|181818", _
             "gi04|100|0a0c3b", _
             "gi03|100|131218", _
-            "gi02|100|000000", _
+            "gi02|100|stop", _
             "gi01|100|0f0f0f", _
             "LTW2|100|2e139e" _
             )
@@ -5307,7 +5307,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|1c0c65", _
             "gi07|100|0a0814", _
             "gi06|100|040210", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|21212c", _
             "gi03|100|5b5b5b", _
             "gi02|100|080808", _
@@ -5495,7 +5495,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(8.00000, Null, Null)
             .Lights = Array( _
             "gi17|100|f5f5f5", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|b6b6b6", _
             "gi21|100|2f13a6", _
             "gi19|100|1724d5", _
@@ -5700,7 +5700,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(8.36667, Null, Null)
             .Lights = Array( _
             "gi17|100|8a8a8a", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|250e83", _
             "gi21|100|270f8c", _
             "gi19|100|393b54", _
@@ -5842,14 +5842,14 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(8.56667, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|090423", _
             "gi22|100|08041a", _
             "gi20|100|060316", _
             "gi21|100|050311", _
             "gi19|100|bababc", _
             "gi18|100|4b4b4b", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi15|100|ffffff", _
             "gi14|100|1725dd", _
             "gi13|100|ececec", _
@@ -5949,7 +5949,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|2b1196", _
             "gi22|100|1f0d72", _
             "gi20|100|07070a", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|f4f4f4", _
             "gi18|100|cfcfcf", _
             "gi14|100|1d27be", _
@@ -5988,7 +5988,7 @@ Sub CreateTimeWarpShows()
             "gi04|100|b6b6b6", _
             "gi03|100|262626", _
             "gi02|100|262626", _
-            "gi01|100|000000", _
+            "gi01|100|stop", _
             "LTW2|100|a198c4", _
             "LTW1|100|f2f1f9" _
             )
@@ -6106,7 +6106,7 @@ Sub CreateTimeWarpShows()
             "gi05|100|04030b", _
             "gi04|100|3c3c3e", _
             "gi03|100|05040c", _
-            "gi02|100|000000", _
+            "gi02|100|stop", _
             "gi01|100|020109", _
             "LTW2|100|e6e4f2", _
             "LTW1|100|fefeff" _
@@ -6171,7 +6171,7 @@ Sub CreateTimeWarpShows()
             "gi08|100|c8c8ca", _
             "gi07|100|29292b", _
             "gi06|100|373737", _
-            "gi05|100|000000", _
+            "gi05|100|stop", _
             "gi04|100|17151e", _
             "gi03|100|0b0426", _
             "gi02|100|010103", _
@@ -6385,7 +6385,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(9.30000, Null, Null)
             .Lights = Array( _
             "gi17|100|2e12a3", _
-            "giapron|100|000000", _
+            "giapron|100|stop", _
             "gi22|100|1c0b69", _
             "gi19|100|f2f2f2", _
             "gi18|100|848484", _
@@ -6555,7 +6555,7 @@ Sub CreateTimeWarpShows()
         With .AddStep(9.60000, Null, Null)
             .Lights = Array( _
             "gi17|100|270f87", _
-            "gi22|100|000000", _
+            "gi22|100|stop", _
             "gi20|100|acacac", _
             "gi21|100|bababa", _
             "gi19|100|4a4758", _
@@ -6672,7 +6672,7 @@ Sub CreateTimeWarpShows()
             "gi21|100|171717", _
             "gi19|100|1f1257", _
             "gi18|100|050935", _
-            "gi16|100|000000", _
+            "gi16|100|stop", _
             "gi15|100|2f13a6", _
             "gi14|100|faf9fe", _
             "gi11|100|1726e5", _
@@ -6716,7 +6716,7 @@ Sub CreateTimeWarpShows()
         End With
         With .AddStep(9.83333, Null, Null)
             .Lights = Array( _
-            "gi17|100|000000", _
+            "gi17|100|stop", _
             "giapron|100|868686", _
             "gi22|100|4c4c4c", _
             "gi20|100|0d0d0f", _
@@ -6771,7 +6771,7 @@ Sub CreateTimeWarpShows()
             "giapron|100|e3e3e3", _
             "gi22|100|929292", _
             "gi20|100|030208", _
-            "gi21|100|000000", _
+            "gi21|100|stop", _
             "gi19|100|270f8a", _
             "gi18|100|121dac", _
             "gi14|100|e5e4ee", _
