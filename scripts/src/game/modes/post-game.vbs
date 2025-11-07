@@ -28,7 +28,7 @@ LoserMessage18 = Array("TRY JUST","ONE","MORE","TIME")
 LoserMessage19 = Array("YOU ARE","LUCKY","ITS ON ","FREEPLAY")
 LoserMessage20 = Array("KEEP","CALM","PLAY","PINBALL")
 LoserMessage21 = Array("WE NEED","A HERO ","NOT A","ZERO  ")
-LoserMessage22 = Array("THIS WAS ","PRACTICE","NEXT IS ","FOR REAL")
+LoserMessage22 = Array("THIS WAS","PRACTICE","NEXT IS ","FOR REAL")
 LoserMessage23 = Array("THE SKYS","FALLING","THE SKYS","FALLING")
 LoserMessage24 = Array("OUR END","BEGINS ","APRIL","13 2029")
 
