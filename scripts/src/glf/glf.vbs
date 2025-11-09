@@ -6981,6 +6981,7 @@ End Function
 Class GlfMultiballLocks
 
     Private m_name
+    Private m_local_name
     Private m_lock_devices
     Private m_priority
     Private m_mode
@@ -7022,6 +7023,7 @@ Class GlfMultiballLocks
 
 	Public default Function init(name, mode)
         m_name = "multiball_lock_" & name
+        m_local_name = name
         m_mode = mode.Name
         m_priority = mode.Priority
         m_lock_events = Array()
@@ -7086,10 +7088,10 @@ Class GlfMultiballLocks
         End If
         
         Dim balls_locked
-        If GetPlayerState(m_name & "_balls_locked") = False Then
+        If GetPlayerState(m_local_name & "_locked_balls") = False Then
             balls_locked = 1
         Else
-            balls_locked = GetPlayerState(m_name & "_balls_locked") + 1
+            balls_locked = GetPlayerState(m_local_name & "_locked_balls") + 1
         End If
         If balls_locked > m_balls_to_lock Then
             Log "Cannot lock balls. Lock is full."
@@ -7097,7 +7099,7 @@ Class GlfMultiballLocks
             Exit Function
         End If
 
-        SetPlayerState m_name & "_balls_locked", balls_locked
+        SetPlayerState m_local_name & "_locked_balls", balls_locked
         
 
         If Not IsNull(device) Then
@@ -7123,7 +7125,7 @@ Class GlfMultiballLocks
 
     Public Sub Reset
         Log "Resetting multiball lock count"
-        SetPlayerState m_name & "_balls_locked", 0
+        SetPlayerState m_local_name & "_locked_balls", 0
     End Sub
 
     Public Function ToYaml

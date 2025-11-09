@@ -39,7 +39,7 @@ Sub CreateTrainingMoonMissileMode
             'handle gi flicker shows
             .Add "timer_training_moon_missile_tick", Array("flicker_gi")
             'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", Array("delayed_release_moon_ball")
+            .Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", Array("delayed_release_moon_ball")
         End With
 
         With .RandomEventPlayer()

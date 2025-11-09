@@ -21,10 +21,10 @@ Sub CreateMoonMultiballMode
         With .EventPlayer()
             '.Debug=True
             'Launch
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", Array("launch_moon_missiles","restart_moon_qualify_shots","backglass_moon_off")
+            .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", Array("launch_moon_missiles","restart_moon_qualify_shots","backglass_moon_off")
             .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
             'Panic penalty
-            .Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0 and current_player.disable_moon_launch==0}", Array("launch_panic_penalty")
+            .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", Array("launch_panic_penalty")
             .Add "launch_panic_penalty", Array("score_m100000")
         End With
 
@@ -32,7 +32,7 @@ Sub CreateMoonMultiballMode
         With .Multiballs("moon")
             '.Debug=True
             .StartEvents = Array("start_moon_multiball.3")
-            .BallCount = "current_player.multiball_lock_moon_launch_balls_locked"
+            .BallCount = "current_player.moon_launch_locked_balls"
             .BallCountType = "add"
             .ShootAgain = 0
             .BallLocks = Array("moon_lock")
@@ -108,7 +108,7 @@ Sub CreateMoonMultiballMode
         With .VariablePlayer()
             '.Debug=True
             With .EventName("start_moon_multiball.1{current_player.wizard_mode_running == 0}")
-                With .Variable("multiball_lock_moon_launch_balls_locked")
+                With .Variable("moon_launch_locked_balls")
                     .Action = "set"
 					.Int = 0
 				End With
@@ -159,9 +159,9 @@ Sub CreateMoonMultiballMode
             '         .Action = "set"
 			' 		.Int = "device.ball_devices.moon_lock.balls"
 			' 	End With
-            '     With .Variable("debug_multiball_lock_moon_launch_balls_locked")
+            '     With .Variable("debug_moon_launch_locked_balls")
             '         .Action = "set"
-			' 		.Int = "current_player.multiball_lock_moon_launch_balls_locked"
+			' 		.Int = "current_player.moon_launch_locked_balls"
 			' 	End With
             '     With .Variable("debug_leftover_balls_in_lock")
             '         .Action = "set"

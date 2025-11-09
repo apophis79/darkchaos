@@ -4510,10 +4510,10 @@ End Function
 glf_funcRefMap.Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls==0}", "Glf_876"
 Function Glf_877(args)
 	On Error Resume Next
-	    Glf_877 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
+	    Glf_877 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
 	If Err Then Glf_877 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_877"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_877"
 Function Glf_878(args)
 	On Error Resume Next
 	    Glf_878 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
@@ -4522,22 +4522,22 @@ End Function
 glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", "Glf_878"
 Function Glf_879(args)
 	On Error Resume Next
-	    Glf_879 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked")
+	    Glf_879 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
 	If Err Then Glf_879 = False
 End Function
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", "Glf_879"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_879"
 Function Glf_880(args)
 	On Error Resume Next
-	    Glf_880 = GetPlayerState("multiball_lock_moon_launch_balls_locked")=1
+	    Glf_880 = GetPlayerState("moon_launch_locked_balls")=1
 	If Err Then Glf_880 = False
 End Function
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==1}", "Glf_880"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}", "Glf_880"
 Function Glf_881(args)
 	On Error Resume Next
-	    Glf_881 = GetPlayerState("multiball_lock_moon_launch_balls_locked")=2
+	    Glf_881 = GetPlayerState("moon_launch_locked_balls")=2
 	If Err Then Glf_881 = False
 End Function
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.multiball_lock_moon_launch_balls_locked==2}", "Glf_881"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", "Glf_881"
 Function Glf_882(args)
 	On Error Resume Next
 	    Glf_882 = GetPlayerState("shot_moon_missile2") = 0
@@ -4546,16 +4546,16 @@ End Function
 glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", "Glf_882"
 Function Glf_883(args)
 	On Error Resume Next
-	    Glf_883 = glf_state_machines("moon_mb").GetValue("state")="locking"
+	    Glf_883 = GetPlayerState("ball_just_started") = 0
 	If Err Then Glf_883 = False
 End Function
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_883"
+glf_funcRefMap.Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", "Glf_883"
 Function Glf_884(args)
 	On Error Resume Next
-	    Glf_884 = GetPlayerState("ball_just_started") = 0
+	    Glf_884 = glf_state_machines("moon_mb").GetValue("state")="locking"
 	If Err Then Glf_884 = False
 End Function
-glf_funcRefMap.Add "restart_moon_qualify_shots{current_player.ball_just_started == 0}", "Glf_884"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_884"
 Function Glf_885(args)
 	Glf_885 = glf_ball_devices("moon_lock").GetValue("balls")
 End Function
@@ -4574,24 +4574,24 @@ End Function
 glf_funcRefMap.Add """LOCK""", "Glf_888"
 Function Glf_889(args)
 	On Error Resume Next
-	    Glf_889 = GetPlayerState("multiball_lock_moon_launch_balls_locked")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0
+	    Glf_889 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0
 	If Err Then Glf_889 = False
 End Function
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_889"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_889"
 Function Glf_890(args)
 	On Error Resume Next
-	    Glf_890 = GetPlayerState("multiball_lock_moon_launch_balls_locked")=0 and GetPlayerState("disable_moon_launch")=0
+	    Glf_890 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0
 	If Err Then Glf_890 = False
 End Function
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0 and current_player.disable_moon_launch==0}", "Glf_890"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", "Glf_890"
 Function Glf_891(args)
 	Glf_891 = 10000
 End Function
 glf_funcRefMap.Add "10000", "Glf_891"
 Function Glf_892(args)
-	Glf_892 = GetPlayerState("multiball_lock_moon_launch_balls_locked")
+	Glf_892 = GetPlayerState("moon_launch_locked_balls")
 End Function
-glf_funcRefMap.Add "current_player.multiball_lock_moon_launch_balls_locked", "Glf_892"
+glf_funcRefMap.Add "current_player.moon_launch_locked_balls", "Glf_892"
 Function Glf_893(args)
 	On Error Resume Next
 	    Glf_893 = GetPlayerState("wizard_mode_running") = 0
@@ -5130,10 +5130,10 @@ End Function
 glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""skip""}", "Glf_983"
 Function Glf_984(args)
 	On Error Resume Next
-	    Glf_984 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked")
+	    Glf_984 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
 	If Err Then Glf_984 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked}", "Glf_984"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_984"
 Function Glf_985(args)
 	Glf_985 = "right"
 End Function

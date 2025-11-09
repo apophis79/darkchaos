@@ -22,7 +22,7 @@ Sub CreateBaseMode()
 
     With CreateGlfMode("base", 200)
         .StartEvents = Array(GLF_BALL_STARTED)
-        .StopEvents = Array(GLF_BALL_ENDED,"mode_bonus_started","tilt")
+        .StopEvents = Array(GLF_BALL_ENDED,"mode_eob_bonus_started","tilt")
 
         With .EventPlayer()
 
