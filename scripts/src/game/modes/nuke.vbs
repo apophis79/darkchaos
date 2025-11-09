@@ -20,11 +20,11 @@ Sub CreateNukeMode
         With .EventPlayer()
             'Activate nuke
             .Add "mode_nuke_started{current_player.nuke_acquired == 0}", Array("acquire_nuke","score_1000000","acquire_nuke_show1","play_voc_nuke","nuke_lsling_on","nuke_rsling_on")
-            .Add "mode_nuke_started{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", Array("nuke_lsling_on","nuke_rsling_on")
+            .Add "mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", Array("nuke_lsling_on","nuke_rsling_on")
             'Detonate nuke
             .Add "s_start_active", Array("check_detonate_nuke")
             .Add "s_lockbar_key_active", Array("check_detonate_nuke")
-            .Add "check_detonate_nuke{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", Array("detonate_nuke","score_2000000","nuke_lsling_off","nuke_rsling_off")
+            .Add "check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", Array("detonate_nuke","score_2000000","nuke_lsling_off","nuke_rsling_off")
         End With
 
         With .DOFPlayer()

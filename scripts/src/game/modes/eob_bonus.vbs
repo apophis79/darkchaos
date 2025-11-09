@@ -6,17 +6,17 @@
 
 Sub CreateBonusMode
 
-    With CreateGlfMode("bonus", 150)
+    With CreateGlfMode("eob_bonus", 150)
         .StartEvents = Array("ball_ending{game.tilted == False}")
         .StopEvents = Array("bonus_finished")
         .UseWaitQueue = True
 
         With .EventPlayer()
             'start bonus
-            .Add "mode_bonus_started", Array("run_bonus_started")
+            .Add "mode_eob_bonus_started", Array("run_bonus_started")
             ' .Add "mode_bonus_started{current_player.wizard_final_hit_count > 0}", Array("run_bonus_started") 'normal startup. run bonus
-            ' .Add "mode_bonus_started{current_player.wizard_final_hit_count == 0 && current_player.victory == 0}", Array("bonus_finished") 'final wizard just completed. dont run bonus
-            ' .Add "mode_bonus_started{current_player.wizard_final_hit_count == 0 && current_player.victory == 1}", Array("run_bonus_started") 'victory mode done. run bonus
+            ' .Add "mode_bonus_started{current_player.wizard_final_hit_count == 0 and current_player.victory == 0}", Array("bonus_finished") 'final wizard just completed. dont run bonus
+            ' .Add "mode_bonus_started{current_player.wizard_final_hit_count == 0 and current_player.victory == 1}", Array("run_bonus_started") 'victory mode done. run bonus
             .Add "run_bonus_started", Array("check_bonus_bomb1","check_bonus_missile1","check_bonus_proton1","check_bonus_waves")
             'calculate bomb bonus
             .Add "check_bonus_bomb1{current_player.shot_cluster_bomb1 == 1}", Array("add_bonus_bomb","check_bonus_bomb2","bonus_light_cr1")
@@ -45,7 +45,7 @@ Sub CreateBonusMode
             .Add "timer_bonus_tick{device.timers.bonus.ticks == 17}", Array("calc_bonus_total")
             .Add "calc_bonus_total", Array("score_bonus_total")
             'handle bonus tally show
-            .Add "timer_bonus_tick{device.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", Array("bonus_2x")
+            .Add "timer_bonus_tick{device.timers.bonus.ticks == 2 and current_player.bonus_multiplier == 2}", Array("bonus_2x")
             .Add "timer_bonus_tick{device.timers.bonus.ticks == 3}", Array("bonus_tally1","restart_sfx_tally_alt")
             .Add "timer_bonus_tick{device.timers.bonus.ticks == 6}", Array("bonus_tally2","restart_sfx_tally_alt")
             .Add "timer_bonus_tick{device.timers.bonus.ticks == 9}", Array("bonus_tally3","restart_sfx_tally_alt")
@@ -256,7 +256,7 @@ Sub CreateBonusMode
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "skip_bonus_tally{current_player.bonus_comboflip_block==0 && device.timers.bonus.ticks < 16}"
+                .EventName = "skip_bonus_tally{current_player.bonus_comboflip_block==0 and device.timers.bonus.ticks < 16}"
                 .Action = "jump"
                 .Value = 16  'bonus total
             End With

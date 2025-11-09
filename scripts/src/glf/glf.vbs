@@ -210,6 +210,8 @@ Public Sub Glf_Init(ByRef table)
 		coilsYaml = coilsYaml + "coils:" & vbCrLf
 		Dim shotProfilesYaml : shotProfilesYaml = "#config_version=6" & vbCrLf & vbCrLf
 		shotProfilesYaml = shotProfilesYaml + "shot_profiles:" & vbCrLf
+		Dim playerVarsYaml : playerVarsYaml = "#config_version=6" & vbCrLf & vbCrLf
+		playerVarsYaml = playerVarsYaml + "player_vars:" & vbCrLf
 		Dim ballDevicesYaml : ballDevicesYaml = "#config_version=6" & vbCrLf & vbCrLf
 		ballDevicesYaml = ballDevicesYaml + "ball_devices:" & vbCrLf
 		Dim configYaml : configYaml = "#config_version=6" & vbCrLf & vbCrLf
@@ -277,6 +279,35 @@ Public Sub Glf_Init(ByRef table)
 			switchesYaml = switchesYaml + "    tags: " & vbCrLf
 			switchesYaml = switchesYaml + "    x: "& switch.x/tablewidth & vbCrLf
 			switchesYaml = switchesYaml + "    y: "& switch.y/tableheight & vbCrLf
+			switchNumber = switchNumber + 1
+		Next
+		Dim vpxSwitch
+		For Each switch in glf_standup_targets.Items()
+			Set vpxSwitch = Eval(switch.switch)
+			monitorYaml = monitorYaml + "  " & vpxSwitch.name & ":"&vbCrLf
+			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
+			monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
+			monitorYaml = monitorYaml + "    x: "& vpxSwitch.x/tablewidth & vbCrLf
+			monitorYaml = monitorYaml + "    y: "& vpxSwitch.y/tableheight & vbCrLf
+			switchesYaml = switchesYaml + "  " & vpxSwitch.name & ":"&vbCrLf
+			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchesYaml = switchesYaml + "    x: "& vpxSwitch.x/tablewidth & vbCrLf
+			switchesYaml = switchesYaml + "    y: "& vpxSwitch.y/tableheight & vbCrLf
+			switchNumber = switchNumber + 1
+		Next
+		For Each switch in glf_drop_targets.Items()
+			Set vpxSwitch = Eval(switch.switch)
+			monitorYaml = monitorYaml + "  " & vpxSwitch.name & ":"&vbCrLf
+			monitorYaml = monitorYaml + "    shape: RECTANGLE" & vbCrLf
+			monitorYaml = monitorYaml + "    size: 0.06" & vbCrLf
+			monitorYaml = monitorYaml + "    x: -1" & vbCrLf
+			monitorYaml = monitorYaml + "    y: -1" & vbCrLf
+			switchesYaml = switchesYaml + "  " & vpxSwitch.name & ":"&vbCrLf
+			switchesYaml = switchesYaml + "    number: " & switchNumber & vbCrLf
+			switchesYaml = switchesYaml + "    tags: " & vbCrLf
+			switchesYaml = switchesYaml + "    x: -1" & vbCrLf
+			switchesYaml = switchesYaml + "    y: -1" & vbCrLf
 			switchNumber = switchNumber + 1
 		Next
 		For Each switch in glf_spinners
@@ -356,6 +387,22 @@ Public Sub Glf_Init(ByRef table)
 			shotProfilesYaml = shotProfilesYaml + device.ToYaml()
 		Next
 
+		Dim init_index
+    	Dim init_var_keys : init_var_keys = glf_initialVars.Keys()
+    	Dim init_var_items : init_var_items = glf_initialVars.Items()
+    	For init_index=0 To UBound(init_var_keys)
+			playerVarsYaml = playerVarsYaml + "  " & init_var_keys(init_index) & ":" & vbCrLf
+			playerVarsYaml = playerVarsYaml + "    initial_value: " & init_var_items(init_index) & vbCrLf
+			Select Case VarType(init_var_items(init_index))
+				Case vbInteger, vbLong
+					playerVarsYaml = playerVarsYaml + "    value_type: int" & vbCrLf
+				Case vbSingle, vbDouble
+					playerVarsYaml = playerVarsYaml + "    value_type: float" & vbCrLf
+				Case vbString
+					playerVarsYaml = playerVarsYaml + "    value_type: str" & vbCrLf
+        	End Select
+    	Next
+
 		Dim fso, modesFolder, TxtFileStream, monitorFolder, configFolder, showsFolder
 		Set fso = CreateObject("Scripting.FileSystemObject")
 		monitorFolder = "glf_mpf\monitor\"
@@ -387,6 +434,9 @@ Public Sub Glf_Init(ByRef table)
 		TxtFileStream.Close
 		Set TxtFileStream = fso.OpenTextFile(configFolder & "\shot_profiles.yaml", 2, True)
 		TxtFileStream.WriteLine shotProfilesYaml
+		TxtFileStream.Close
+		Set TxtFileStream = fso.OpenTextFile(configFolder & "\player_vars.yaml", 2, True)
+		TxtFileStream.WriteLine playerVarsYaml
 		TxtFileStream.Close
 		Set TxtFileStream = fso.OpenTextFile(configFolder & "\switches.yaml", 2, True)
 		TxtFileStream.WriteLine switchesYaml
@@ -6685,6 +6735,10 @@ Class Mode
             yaml = yaml & vbCrLf
         End If
         yaml = yaml & "  priority: " & m_priority & vbCrLf
+
+        If m_use_wait_queue Then
+            yaml = yaml & "  use_wait_queue: true" & vbCrLf
+        End If
         
         If UBound(m_ballholds.Keys)>-1 Then
             yaml = yaml & vbCrLf
@@ -6723,6 +6777,14 @@ Class Mode
                 yaml = yaml & m_lightplayer.ToYaml()
             End If
         End If
+        
+        If UBound(m_multiball_locks.Keys)>-1 Then
+            yaml = yaml & vbCrLf
+            yaml = yaml & "multiball_locks: " & vbCrLf
+            For Each child in m_multiball_locks.Keys
+                yaml = yaml & m_multiball_locks(child).ToYaml
+            Next
+        End If
 
         If Not IsNull(m_random_event_player) Then
             If UBound(m_random_event_player.EventNames)>-1 Then
@@ -6748,13 +6810,13 @@ Class Mode
             Next
         End If
         
-        If UBound(m_shot_profiles.Keys)>-1 Then
-            yaml = yaml & vbCrLf
-            yaml = yaml & "shot_profiles: " & vbCrLf
-            For Each child in m_shot_profiles.Keys
-                yaml = yaml & m_shot_profiles(child).ToYaml
-            Next
-        End If
+        'If UBound(m_shot_profiles.Keys)>-1 Then
+        '    yaml = yaml & vbCrLf
+        '    yaml = yaml & "shot_profiles: " & vbCrLf
+        '    For Each child in m_shot_profiles.Keys
+        '        yaml = yaml & m_shot_profiles(child).ToYaml
+        '    Next
+        'End If
         
         If UBound(m_shot_groups.Keys)>-1 Then
             yaml = yaml & vbCrLf
@@ -6794,7 +6856,15 @@ Class Mode
                 yaml = yaml & "sound_player: " & vbCrLf
                 yaml = yaml & m_sound_player.ToYaml()
             End If
-        End If        
+        End If       
+        
+        If UBound(m_state_machines.Keys)>-1 Then
+            yaml = yaml & vbCrLf
+            yaml = yaml & "state_machines: " & vbCrLf
+            For Each child in m_state_machines.Keys
+                yaml = yaml & m_state_machines(child).ToYaml
+            Next
+        End If
 
         If UBound(m_timers.Keys)>-1 Then
             yaml = yaml & vbCrLf
@@ -7055,6 +7125,53 @@ Class GlfMultiballLocks
         Log "Resetting multiball lock count"
         SetPlayerState m_name & "_balls_locked", 0
     End Sub
+
+    Public Function ToYaml
+        Dim yaml, x, key
+        yaml = "  " & Replace(m_name, "multiball_lock_", "") & ":" & vbCrLf
+        yaml = yaml & "    balls_to_lock: " & m_balls_to_lock & vbCrLf
+        yaml = yaml & "    lock_devices: " & Join(m_lock_devices, ",") & vbCrLf
+        If m_balls_to_replace <> -1 Then
+            yaml = yaml & "    balls_to_replace: " & m_balls_to_replace & vbCrLf
+        End If
+
+        Dim enable_events_keys : enable_events_keys = m_base_device.EnableEvents().Keys
+        Dim enable_events : Set enable_events = m_base_device.EnableEvents()
+        If UBound(enable_events_keys) > -1 Then
+            yaml = yaml & "    enable_events: "
+            x=0
+            For Each key in enable_events_keys
+                yaml = yaml & enable_events(key).Raw
+                If x <> UBound(enable_events_keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        Dim disable_events_keys : disable_events_keys = m_base_device.DisableEvents().Keys
+        Dim disable_events : Set disable_events = m_base_device.DisableEvents()
+        If UBound(disable_events_keys) > -1 Then
+            yaml = yaml & "    disable_events: "
+            x=0
+            For Each key in disable_events_keys
+                yaml = yaml & disable_events(key).Raw
+                If x <> UBound(disable_events_keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+
+        If UBound(m_reset_events) > -1 Then
+            yaml = yaml & "    reset_count_for_current_player_events: " & Join(m_reset_events, ",") & vbCrLf
+        End If
+        
+
+        ToYaml = yaml
+    End Function
+
 
     Private Sub Log(message)
         If m_debug = True Then
@@ -11195,6 +11312,75 @@ Class GlfStateMachine
         StartState transition.Target
 
     End Sub
+
+    Public Function ToYaml
+        Dim yaml,x,key,y,cEvt
+        yaml = "  " & m_name & ":" & vbCrLf
+        yaml = yaml & "    starting_state: " & m_starting_state & vbCrLf
+        If m_persist_state Then
+            yaml = yaml & "    persist_state: " & m_persist_state & vbCrLf
+        End If
+        If UBound(m_states.Keys) > -1 Then
+            yaml = yaml & "    states: " & vbCrLf
+            x=0
+            For Each key in m_states.keys
+                yaml = yaml & "      " & m_states(key).Name & ": " & vbCrLf
+                If Not IsEmpty(m_states(key).Label) Then
+                    yaml = yaml & "        label: " & m_states(key).Label & vbCrLf
+                End If
+                
+                If UBound(m_states(key).EventsWhenStarted.Keys) > -1 Then
+                    yaml = yaml & "        events_when_started: "
+                    y=0
+                    For Each cEvt in m_states(key).EventsWhenStarted.Items
+                        yaml = yaml & cEvt.Raw
+                        If y <> UBound(m_states(key).EventsWhenStarted.Keys) Then
+                            yaml = yaml & ", "
+                        End If
+                        y = y + 1
+                    Next
+                    yaml = yaml & vbCrLf
+                End If
+
+                If UBound(m_states(key).EventsWhenStopped.Keys) > -1 Then
+                    yaml = yaml & "        events_when_stopped: "
+                    y=0
+                    For Each cEvt in m_states(key).EventsWhenStopped.Items
+                        yaml = yaml & cEvt.Raw
+                        If y <> UBound(m_states(key).EventsWhenStopped.Keys) Then
+                            yaml = yaml & ", "
+                        End If
+                        y = y + 1
+                    Next
+                    yaml = yaml & vbCrLf
+                End If
+                
+            Next
+            yaml = yaml & "    transitions: " & vbCrLf
+            For Each key in m_transitions.keys
+                yaml = yaml & "      - source: "
+                y=0
+                For Each cEvt in m_transitions(key).Source.Keys
+                    yaml = yaml & cEvt
+                    If y <> UBound(m_transitions(key).Source.Keys) Then
+                        yaml = yaml & ", "
+                    End If
+                    y = y + 1
+                Next
+                yaml = yaml & vbCrLf
+                yaml = yaml & "        target: " & m_transitions(key).Target & vbCrLf
+                yaml = yaml & "        events: " & vbCrLf
+                
+                If UBound(m_transitions(key).Events().Keys) > -1 Then
+                    For Each cEvt in m_transitions(key).Events().keys()
+                        yaml = yaml & "          - " & Replace(Replace(cEvt, "&&", "and"), "||", "or") & vbCrLf
+                    Next
+                End If
+            Next
+        End If
+
+        ToYaml = yaml
+    End Function
 
     
     Private Sub Log(message)

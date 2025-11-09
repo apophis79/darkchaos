@@ -108,7 +108,7 @@ Sub CreatePostGameMode()
             .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 44}", Array("powerup_moon","play_earth_hit_center","play_flash_gi05","play_flash_gi11","play_flash_gi16","play_flash_gi14")
             .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 45}", Array("powerup_proton","play_flash_gi02","play_flash_gi10","play_flash_gi18","play_flash_gi15")
             .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 46}", Array("powerup_shields","play_flash_gi07","play_flash_gi19","play_flash_gi20","play_flash_gi17")
-            .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 47}", Array("powerup_timewarp","play_flash_gi04""play_flash_gi09","play_flash_gi21","play_flash_gi13","play_spotlight_off")
+            .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 47}", Array("powerup_timewarp","play_flash_gi04","play_flash_gi09","play_flash_gi21","play_flash_gi13","play_spotlight_off")
             .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 48}", Array("powerup_saver","display_last_scores","play_flash_gi01","play_flash_gi11","play_flash_gi22","play_flash_gi16","play_flash_gi14","play_flash_giapron")
             .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 49}", Array("powerup_health","play_flash_gi06","play_flash_gi10","play_flash_gi18","play_flash_gi15","play_spotlight_on")
             .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 50}", Array("powerup_combos","play_flash_gi03","play_flash_gi19","play_flash_gi20","play_flash_gi17")
@@ -159,7 +159,7 @@ Sub CreatePostGameMode()
 
             'handle post game messages
             For x = 1 to NumLoserMessages
-                .Add "check_loser_message{machine.message_num == "&x&" && machine.won_game == 0}", Array("display_loser_message"&x)
+                .Add "check_loser_message{machine.message_num == "&x&" and machine.won_game == 0}", Array("display_loser_message"&x)
             Next
             .Add "check_winner_message1{machine.won_game == 1}", Array("display_winner_message1","play_voc_winners_poem1")
             .Add "check_winner_message2{machine.won_game == 1}", Array("display_winner_message2","play_voc_winners_poem2")

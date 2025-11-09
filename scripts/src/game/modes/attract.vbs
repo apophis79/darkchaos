@@ -191,6 +191,13 @@ Sub CreateAttractMode()
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_attract_started")
+                .Slide = "attract"
+                .Action = "play"
+            End With
+        End With
+
         With .ShowPlayer()
             With .EventName("play_attract_show")   
                 .Key = "key_attract_show1"

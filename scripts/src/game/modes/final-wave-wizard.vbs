@@ -204,7 +204,7 @@ Sub CreateFinalWaveWizardMode
         End With
 
         With .QueueRelayPlayer()
-            With .EventName("balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active && current_player.wizard_final_hit_count == 0}")
+            With .EventName("balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active and current_player.wizard_final_hit_count == 0}")
                 .Post = "awaiting_wizard_show"
                 .WaitFor = "explosion_done"
             End With
@@ -663,17 +663,17 @@ Sub CreateFinalWaveWizardMode
 
             With .EventName("timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 1}")
                 With .Display("player1")
-                    .Text = """ RAMPS """
+                    .Text = " RAMPS "
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """ ADD A  """
+                    .Text = " ADD A  "
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """  BALL  """
+                    .Text = "  BALL  "
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
@@ -686,38 +686,38 @@ Sub CreateFinalWaveWizardMode
 
             With .EventName("timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 2}")
                 With .Display("player1")
-                    .Text = """--------"""
+                    .Text = "--------"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player2")
-                    .Text = """DESTROY"""
+                    .Text = "DESTROY"
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player3")
-                    .Text = """ASTEROID"""
+                    .Text = "ASTEROID"
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = """--------"""
+                    .Text = "--------"
                     .Expire = FWWizMessageInterval
                 End With
             End With
 
             With .EventName("display_hit_count")
                 With .Display("player1")
-                    .Text = """--------"""
+                    .Text = "--------"
                 End With
                 With .Display("player2")
-                    .Text = """HITSLEFT"""
+                    .Text = "HITSLEFT"
                 End With
                 With .Display("player3")
                     .Text = "{current_player.wizard_final_hit_count:0>2}"
                     .Flashing = "all"
                 End With
                 With .Display("player4")
-                    .Text = """--------"""
+                    .Text = "--------"
                 End With
                 With .Display("pf")
                     .Text = "{current_player.wizard_final_hit_count:0>2}"

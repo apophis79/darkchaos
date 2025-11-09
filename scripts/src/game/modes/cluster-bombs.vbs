@@ -26,13 +26,13 @@ Sub CreateClusterBombMode
             .Add "mode_cluster_bombs_started{current_player.shot_cluster_bomb1 == 1}", Array("backglass_clusters_on")
             'Successful shot
             .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", Array("light_cluster_charge1","ready_cluster_charge2","play_sfx_LCC")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3","play_sfx_LCC")
-            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3","play_sfx_LCC")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 and current_player.shot_cluster_charge2 == 1}", Array("light_cluster_charge2","ready_cluster_charge3","play_sfx_LCC")
+            .Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 and current_player.shot_cluster_charge3 == 1}", Array("light_cluster_charge3","play_sfx_LCC")
             'Add bombs
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges")
-            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded") 'check for wizard mode qualification
+            .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded") 'check for wizard mode qualification
             'Fire bomb
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash","backglass_clusters_off")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash","backglass_clusters_off")
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Panic penalty
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}", Array("cluster_panic_penalty")

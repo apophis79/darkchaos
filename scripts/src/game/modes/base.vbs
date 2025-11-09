@@ -33,7 +33,7 @@ Sub CreateBaseMode()
             .Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
             .Add "mode_base_started{current_player.number == 3}", Array("flash_player3_score","display12_ball_num")
             .Add "mode_base_started{current_player.number == 4}", Array("flash_player4_score","display12_ball_num")
-            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num", _
+            .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 and current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num", _
                   "stop_flash_player1_score","stop_flash_player2_score","stop_flash_player3_score","stop_flash_player4_score")
 
             'stopping stuff
@@ -45,7 +45,7 @@ Sub CreateBaseMode()
             'restarting waves
             .Add "stop_training", Array("check_base_restart","training_music_stop")
 
-            .Add "check_base_restart{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", Array("activate_nuke")
+            .Add "check_base_restart{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", Array("activate_nuke")
 
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave0_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", Array("meteor_wave1_restart")
@@ -58,25 +58,25 @@ Sub CreateBaseMode()
             .Add "check_base_restart{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_restart")
             .Add "check_base_restart{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_restart")
 
-            .Add "check_base_restart{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
-            .Add "check_base_restart{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", Array("meteor_wave3_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", Array("meteor_wave4_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", Array("meteor_wave5_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", Array("meteor_wave6_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", Array("meteor_wave7_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", Array("meteor_wave8_restart")
+            .Add "check_base_restart{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", Array("meteor_wave9_restart")
 
             'wizard modes
             '   handle case when starting new ball
-            .Add "mode_base_started{current_player.shot_final_wave_wizard == 2 && current_player.victory == 0}", Array("run_final_wave_wizard","wizard_mode_started")
-            .Add "mode_base_started{current_player.shot_final_wave_wizard == 1 && current_player.victory == 0}", Array("activate_final_wave_wizard")
-            .Add "mode_base_started{current_player.shot_combo_command_wizard == 1 && current_player.victory == 0}", Array("activate_combo_command_wizard")
-            .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 && current_player.victory == 0}", Array("activate_fully_loaded_wizard")
+            .Add "mode_base_started{current_player.shot_final_wave_wizard == 2 and current_player.victory == 0}", Array("run_final_wave_wizard","wizard_mode_started")
+            .Add "mode_base_started{current_player.shot_final_wave_wizard == 1 and current_player.victory == 0}", Array("activate_final_wave_wizard")
+            .Add "mode_base_started{current_player.shot_combo_command_wizard == 1 and current_player.victory == 0}", Array("activate_combo_command_wizard")
+            .Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 and current_player.victory == 0}", Array("activate_fully_loaded_wizard")
             'restart victory lap if needed (player had more balls after beating the game)
             .Add "mode_base_started{current_player.victory == 1}", Array("restart_victory")
             '   check if fully loaded is ready
-            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_moon_missile2 == 1}", Array("prime_fully_loaded_wizard")
+            .Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 and current_player.shot_cluster_bomb2 == 1 and current_player.shot_proton_round6 == 1 and  current_player.shot_moon_missile2 == 1}", Array("prime_fully_loaded_wizard")
             .Add "prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}", Array("activate_fully_loaded_wizard")
             '   handle case when starting and finishing a meteor wave
             .Add "start_meteor_wave", Array("disable_scoop_hold","stop_ccwiz_scoop_show","stop_flwiz_scoop_show")
@@ -94,9 +94,9 @@ Sub CreateBaseMode()
             .Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", Array("stop_ccwiz_scoop_show")
             .Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", Array("stop_flwiz_scoop_show")
             '    run the wizard mode when qualified and ball enters the scoop. If more than one wizard is qualified, final wizard is top priority, then combo command, then fully loaded.
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1 && current_player.meteor_wave_running == 0}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","stop_asteroid_spotlight_show","clear_wizard_mode_ready") 
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1 && current_player.meteor_wave_running == 0}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show","clear_wizard_mode_ready") 
-            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1 && current_player.meteor_wave_running == 0}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_final_wave_wizard == 1 and current_player.meteor_wave_running == 0}", Array("run_final_wave_wizard","wizard_mode_started","stop_fwwiz_scoop_show","stop_asteroid_spotlight_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_combo_command_wizard == 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", Array("run_combo_command_wizard","wizard_mode_started","stop_ccwiz_scoop_show","clear_wizard_mode_ready") 
+            .Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_fully_loaded_wizard == 1  and current_player.shot_combo_command_wizard != 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", Array("run_fully_loaded_wizard","wizard_mode_started","stop_flwiz_scoop_show","clear_wizard_mode_ready")
             '    clean up wizard mode
             .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended","check_base_restart")
@@ -139,7 +139,13 @@ Sub CreateBaseMode()
 
         End With
 
-            
+        'Start the base mode slide on the lcd
+        With .SlidePlayer()
+            With .EventName("mode_base_started")
+                .Slide = "base"
+                .Action = "play"
+            End With
+        End With
 
         With .RandomEventPlayer()
             With .EventName("play_sfx_Orb")
@@ -202,21 +208,21 @@ Sub CreateBaseMode()
                     .Text = "{players[0].score:0>2,}"
                 End With
             End With
-            With .EventName("mode_base_started")
-                With .Display("player2")
-                    .Text = "{players[1].score:0>2,}"
-                End With
-            End With
-            With .EventName("mode_base_started")
-                With .Display("player3")
-                    .Text = "{players[2].score:0>2,}"
-                End With
-            End With
-            With .EventName("mode_base_started")
-                With .Display("player4")
-                    .Text = "{players[3].score:0>2,}"
-                End With
-            End With
+            'With .EventName("mode_base_started")
+            '    With .Display("player2")
+            '        .Text = "{players[1].score:0>2,}"
+            '    End With
+            'End With
+            'With .EventName("mode_base_started")
+            '    With .Display("player3")
+            '        .Text = "{players[2].score:0>2,}"
+            '    End With
+            'End With
+            'With .EventName("mode_base_started")
+            '    With .Display("player4")
+            '        .Text = "{players[3].score:0>2,}"
+            '    End With
+            'End With
             With .EventName("mode_base_started")
                 With .Display("ball")
                     .Text = "{current_player.ball:0>2}"

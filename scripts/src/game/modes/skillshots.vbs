@@ -13,12 +13,12 @@ Sub CreateSkillshotsMode
 
         With .EventPlayer()
             'Only start skillshots if starting a new ball
-            .Add "mode_skillshots_started{current_player.ball_just_started==1 && current_player.shot_meteor_wave9 < 2}", Array("init_ss")
+            .Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", Array("init_ss")
             'Handle successful skillshots
             .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
             .Add "left_side_hit{current_player.shot_ss==1}", Array("sss_achieved") 
-            .Add "right_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 1}", Array("ssss_achieved") 
-            .Add "left_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 2}", Array("sdsss_achieved") 
+            .Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", Array("ssss_achieved") 
+            .Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", Array("sdsss_achieved") 
             .Add "ss_achieved", Array("ss_trainer_ready","score_500000")
             .Add "sss_achieved", Array("ss_trainer_ready","sss_mystery_ready","score_1000000")
             .Add "sss_achieved.1{current_player.num_skillshots==3}", Array("activate_nuke")

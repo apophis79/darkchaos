@@ -13,7 +13,7 @@ Sub CreateInstantInfoMode
 
         With .EventPlayer()
             'handle flipper cradle
-            .Add "flipper_cradle{game.balls_in_play == 1 && current_player.ball_just_started == 0}", Array("info_restart","flipper_cradling")   'handle flipper cradle
+            .Add "flipper_cradle{game.balls_in_play == 1 and current_player.ball_just_started == 0}", Array("info_restart","flipper_cradling")   'handle flipper cradle
             .Add "s_left_flipper_active{current_player.ball_cradled == 1}", Array("info_stop")
             .Add "s_right_flipper_active{current_player.ball_cradled == 1}", Array("info_stop")
             .Add "s_right_staged_flipper_key_active{current_player.ball_cradled == 1}", Array("info_stop")

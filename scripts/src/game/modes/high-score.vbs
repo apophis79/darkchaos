@@ -203,12 +203,12 @@ Sub CreateHighScoreMode
 
             
             For i=0 to 36
-                With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " && current_player.hs_input_ready == 1}")
+                With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " and current_player.hs_input_ready == 1}")
                     With .Display("player3")
                         .Text = "{machine.high_score_initials} " & AZLookup(i)
                     End With
                 End With
-                With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " && current_player.hs_input_ready == 1}")
+                With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " and current_player.hs_input_ready == 1}")
                     With .Display("player3")
                         .Text = "{machine.high_score_initials} " & AZLookup(i)
                     End With

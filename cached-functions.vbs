@@ -618,10 +618,10 @@ End Function
 glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 17}", "Glf_113"
 Function Glf_114(args)
 	On Error Resume Next
-	    Glf_114 = glf_timers("bonus").GetValue("ticks") = 2 And GetPlayerState("bonus_multiplier") = 2
+	    Glf_114 = glf_timers("bonus").GetValue("ticks") = 2 and GetPlayerState("bonus_multiplier") = 2
 	If Err Then Glf_114 = False
 End Function
-glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 2 && current_player.bonus_multiplier == 2}", "Glf_114"
+glf_funcRefMap.Add "timer_bonus_tick{device.timers.bonus.ticks == 2 and current_player.bonus_multiplier == 2}", "Glf_114"
 Function Glf_115(args)
 	On Error Resume Next
 	    Glf_115 = glf_timers("bonus").GetValue("ticks") = 3
@@ -664,10 +664,10 @@ End Function
 glf_funcRefMap.Add "24", "Glf_121"
 Function Glf_122(args)
 	On Error Resume Next
-	    Glf_122 = GetPlayerState("bonus_comboflip_block")=0 And glf_timers("bonus").GetValue("ticks") < 16
+	    Glf_122 = GetPlayerState("bonus_comboflip_block")=0 and glf_timers("bonus").GetValue("ticks") < 16
 	If Err Then Glf_122 = False
 End Function
-glf_funcRefMap.Add "skip_bonus_tally{current_player.bonus_comboflip_block==0 && device.timers.bonus.ticks < 16}", "Glf_122"
+glf_funcRefMap.Add "skip_bonus_tally{current_player.bonus_comboflip_block==0 and device.timers.bonus.ticks < 16}", "Glf_122"
 Function Glf_123(args)
 	Glf_123 = 16
 End Function
@@ -1216,148 +1216,148 @@ End Function
 glf_funcRefMap.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 88}", "Glf_220"
 Function Glf_221(args)
 	On Error Resume Next
-	    Glf_221 = glf_machine_vars("message_num").GetValue() = 1 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_221 = glf_machine_vars("message_num").GetValue() = 1 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_221 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 1 && machine.won_game == 0}", "Glf_221"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 1 and machine.won_game == 0}", "Glf_221"
 Function Glf_222(args)
 	On Error Resume Next
-	    Glf_222 = glf_machine_vars("message_num").GetValue() = 2 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_222 = glf_machine_vars("message_num").GetValue() = 2 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_222 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 2 && machine.won_game == 0}", "Glf_222"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 2 and machine.won_game == 0}", "Glf_222"
 Function Glf_223(args)
 	On Error Resume Next
-	    Glf_223 = glf_machine_vars("message_num").GetValue() = 3 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_223 = glf_machine_vars("message_num").GetValue() = 3 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_223 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 3 && machine.won_game == 0}", "Glf_223"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 3 and machine.won_game == 0}", "Glf_223"
 Function Glf_224(args)
 	On Error Resume Next
-	    Glf_224 = glf_machine_vars("message_num").GetValue() = 4 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_224 = glf_machine_vars("message_num").GetValue() = 4 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_224 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 4 && machine.won_game == 0}", "Glf_224"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 4 and machine.won_game == 0}", "Glf_224"
 Function Glf_225(args)
 	On Error Resume Next
-	    Glf_225 = glf_machine_vars("message_num").GetValue() = 5 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_225 = glf_machine_vars("message_num").GetValue() = 5 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_225 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 5 && machine.won_game == 0}", "Glf_225"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 5 and machine.won_game == 0}", "Glf_225"
 Function Glf_226(args)
 	On Error Resume Next
-	    Glf_226 = glf_machine_vars("message_num").GetValue() = 6 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_226 = glf_machine_vars("message_num").GetValue() = 6 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_226 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 6 && machine.won_game == 0}", "Glf_226"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 6 and machine.won_game == 0}", "Glf_226"
 Function Glf_227(args)
 	On Error Resume Next
-	    Glf_227 = glf_machine_vars("message_num").GetValue() = 7 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_227 = glf_machine_vars("message_num").GetValue() = 7 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_227 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 7 && machine.won_game == 0}", "Glf_227"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 7 and machine.won_game == 0}", "Glf_227"
 Function Glf_228(args)
 	On Error Resume Next
-	    Glf_228 = glf_machine_vars("message_num").GetValue() = 8 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_228 = glf_machine_vars("message_num").GetValue() = 8 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_228 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 8 && machine.won_game == 0}", "Glf_228"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 8 and machine.won_game == 0}", "Glf_228"
 Function Glf_229(args)
 	On Error Resume Next
-	    Glf_229 = glf_machine_vars("message_num").GetValue() = 9 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_229 = glf_machine_vars("message_num").GetValue() = 9 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_229 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 9 && machine.won_game == 0}", "Glf_229"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 9 and machine.won_game == 0}", "Glf_229"
 Function Glf_230(args)
 	On Error Resume Next
-	    Glf_230 = glf_machine_vars("message_num").GetValue() = 10 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_230 = glf_machine_vars("message_num").GetValue() = 10 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_230 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 10 && machine.won_game == 0}", "Glf_230"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 10 and machine.won_game == 0}", "Glf_230"
 Function Glf_231(args)
 	On Error Resume Next
-	    Glf_231 = glf_machine_vars("message_num").GetValue() = 11 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_231 = glf_machine_vars("message_num").GetValue() = 11 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_231 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 11 && machine.won_game == 0}", "Glf_231"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 11 and machine.won_game == 0}", "Glf_231"
 Function Glf_232(args)
 	On Error Resume Next
-	    Glf_232 = glf_machine_vars("message_num").GetValue() = 12 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_232 = glf_machine_vars("message_num").GetValue() = 12 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_232 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 12 && machine.won_game == 0}", "Glf_232"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 12 and machine.won_game == 0}", "Glf_232"
 Function Glf_233(args)
 	On Error Resume Next
-	    Glf_233 = glf_machine_vars("message_num").GetValue() = 13 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_233 = glf_machine_vars("message_num").GetValue() = 13 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_233 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 13 && machine.won_game == 0}", "Glf_233"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 13 and machine.won_game == 0}", "Glf_233"
 Function Glf_234(args)
 	On Error Resume Next
-	    Glf_234 = glf_machine_vars("message_num").GetValue() = 14 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_234 = glf_machine_vars("message_num").GetValue() = 14 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_234 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 14 && machine.won_game == 0}", "Glf_234"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 14 and machine.won_game == 0}", "Glf_234"
 Function Glf_235(args)
 	On Error Resume Next
-	    Glf_235 = glf_machine_vars("message_num").GetValue() = 15 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_235 = glf_machine_vars("message_num").GetValue() = 15 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_235 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 15 && machine.won_game == 0}", "Glf_235"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 15 and machine.won_game == 0}", "Glf_235"
 Function Glf_236(args)
 	On Error Resume Next
-	    Glf_236 = glf_machine_vars("message_num").GetValue() = 16 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_236 = glf_machine_vars("message_num").GetValue() = 16 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_236 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 16 && machine.won_game == 0}", "Glf_236"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 16 and machine.won_game == 0}", "Glf_236"
 Function Glf_237(args)
 	On Error Resume Next
-	    Glf_237 = glf_machine_vars("message_num").GetValue() = 17 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_237 = glf_machine_vars("message_num").GetValue() = 17 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_237 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 17 && machine.won_game == 0}", "Glf_237"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 17 and machine.won_game == 0}", "Glf_237"
 Function Glf_238(args)
 	On Error Resume Next
-	    Glf_238 = glf_machine_vars("message_num").GetValue() = 18 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_238 = glf_machine_vars("message_num").GetValue() = 18 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_238 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 18 && machine.won_game == 0}", "Glf_238"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 18 and machine.won_game == 0}", "Glf_238"
 Function Glf_239(args)
 	On Error Resume Next
-	    Glf_239 = glf_machine_vars("message_num").GetValue() = 19 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_239 = glf_machine_vars("message_num").GetValue() = 19 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_239 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 19 && machine.won_game == 0}", "Glf_239"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 19 and machine.won_game == 0}", "Glf_239"
 Function Glf_240(args)
 	On Error Resume Next
-	    Glf_240 = glf_machine_vars("message_num").GetValue() = 20 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_240 = glf_machine_vars("message_num").GetValue() = 20 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_240 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 20 && machine.won_game == 0}", "Glf_240"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 20 and machine.won_game == 0}", "Glf_240"
 Function Glf_241(args)
 	On Error Resume Next
-	    Glf_241 = glf_machine_vars("message_num").GetValue() = 21 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_241 = glf_machine_vars("message_num").GetValue() = 21 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_241 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 21 && machine.won_game == 0}", "Glf_241"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 21 and machine.won_game == 0}", "Glf_241"
 Function Glf_242(args)
 	On Error Resume Next
-	    Glf_242 = glf_machine_vars("message_num").GetValue() = 22 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_242 = glf_machine_vars("message_num").GetValue() = 22 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_242 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 22 && machine.won_game == 0}", "Glf_242"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 22 and machine.won_game == 0}", "Glf_242"
 Function Glf_243(args)
 	On Error Resume Next
-	    Glf_243 = glf_machine_vars("message_num").GetValue() = 23 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_243 = glf_machine_vars("message_num").GetValue() = 23 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_243 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 23 && machine.won_game == 0}", "Glf_243"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 23 and machine.won_game == 0}", "Glf_243"
 Function Glf_244(args)
 	On Error Resume Next
-	    Glf_244 = glf_machine_vars("message_num").GetValue() = 24 And glf_machine_vars("won_game").GetValue() = 0
+	    Glf_244 = glf_machine_vars("message_num").GetValue() = 24 and glf_machine_vars("won_game").GetValue() = 0
 	If Err Then Glf_244 = False
 End Function
-glf_funcRefMap.Add "check_loser_message{machine.message_num == 24 && machine.won_game == 0}", "Glf_244"
+glf_funcRefMap.Add "check_loser_message{machine.message_num == 24 and machine.won_game == 0}", "Glf_244"
 Function Glf_245(args)
 	On Error Resume Next
 	    Glf_245 = glf_machine_vars("won_game").GetValue() = 1
@@ -2574,596 +2574,596 @@ End Function
 glf_funcRefMap.Add """A""", "Glf_521"
 Function Glf_522(args)
 	On Error Resume Next
-	    Glf_522 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 0 And GetPlayerState("hs_input_ready") = 1
+	    Glf_522 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 0 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_522 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 && current_player.hs_input_ready == 1}", "Glf_522"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}", "Glf_522"
 Function Glf_523(args)
 	Glf_523 = glf_machine_vars("high_score_initials").GetValue() & " A"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" A""", "Glf_523"
 Function Glf_524(args)
 	On Error Resume Next
-	    Glf_524 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 0 And GetPlayerState("hs_input_ready") = 1
+	    Glf_524 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 0 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_524 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 && current_player.hs_input_ready == 1}", "Glf_524"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}", "Glf_524"
 Function Glf_525(args)
 	On Error Resume Next
-	    Glf_525 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 1 And GetPlayerState("hs_input_ready") = 1
+	    Glf_525 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 1 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_525 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 && current_player.hs_input_ready == 1}", "Glf_525"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}", "Glf_525"
 Function Glf_526(args)
 	Glf_526 = glf_machine_vars("high_score_initials").GetValue() & " B"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" B""", "Glf_526"
 Function Glf_527(args)
 	On Error Resume Next
-	    Glf_527 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 1 And GetPlayerState("hs_input_ready") = 1
+	    Glf_527 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 1 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_527 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 && current_player.hs_input_ready == 1}", "Glf_527"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}", "Glf_527"
 Function Glf_528(args)
 	On Error Resume Next
-	    Glf_528 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 2 And GetPlayerState("hs_input_ready") = 1
+	    Glf_528 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 2 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_528 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 && current_player.hs_input_ready == 1}", "Glf_528"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}", "Glf_528"
 Function Glf_529(args)
 	Glf_529 = glf_machine_vars("high_score_initials").GetValue() & " C"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" C""", "Glf_529"
 Function Glf_530(args)
 	On Error Resume Next
-	    Glf_530 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 2 And GetPlayerState("hs_input_ready") = 1
+	    Glf_530 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 2 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_530 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 && current_player.hs_input_ready == 1}", "Glf_530"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}", "Glf_530"
 Function Glf_531(args)
 	On Error Resume Next
-	    Glf_531 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 3 And GetPlayerState("hs_input_ready") = 1
+	    Glf_531 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 3 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_531 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 && current_player.hs_input_ready == 1}", "Glf_531"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}", "Glf_531"
 Function Glf_532(args)
 	Glf_532 = glf_machine_vars("high_score_initials").GetValue() & " D"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" D""", "Glf_532"
 Function Glf_533(args)
 	On Error Resume Next
-	    Glf_533 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 3 And GetPlayerState("hs_input_ready") = 1
+	    Glf_533 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 3 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_533 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 && current_player.hs_input_ready == 1}", "Glf_533"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}", "Glf_533"
 Function Glf_534(args)
 	On Error Resume Next
-	    Glf_534 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 4 And GetPlayerState("hs_input_ready") = 1
+	    Glf_534 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 4 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_534 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 && current_player.hs_input_ready == 1}", "Glf_534"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}", "Glf_534"
 Function Glf_535(args)
 	Glf_535 = glf_machine_vars("high_score_initials").GetValue() & " E"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" E""", "Glf_535"
 Function Glf_536(args)
 	On Error Resume Next
-	    Glf_536 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 4 And GetPlayerState("hs_input_ready") = 1
+	    Glf_536 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 4 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_536 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 && current_player.hs_input_ready == 1}", "Glf_536"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}", "Glf_536"
 Function Glf_537(args)
 	On Error Resume Next
-	    Glf_537 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 5 And GetPlayerState("hs_input_ready") = 1
+	    Glf_537 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 5 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_537 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 && current_player.hs_input_ready == 1}", "Glf_537"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}", "Glf_537"
 Function Glf_538(args)
 	Glf_538 = glf_machine_vars("high_score_initials").GetValue() & " F"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" F""", "Glf_538"
 Function Glf_539(args)
 	On Error Resume Next
-	    Glf_539 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 5 And GetPlayerState("hs_input_ready") = 1
+	    Glf_539 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 5 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_539 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 && current_player.hs_input_ready == 1}", "Glf_539"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}", "Glf_539"
 Function Glf_540(args)
 	On Error Resume Next
-	    Glf_540 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 6 And GetPlayerState("hs_input_ready") = 1
+	    Glf_540 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 6 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_540 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 && current_player.hs_input_ready == 1}", "Glf_540"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}", "Glf_540"
 Function Glf_541(args)
 	Glf_541 = glf_machine_vars("high_score_initials").GetValue() & " G"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" G""", "Glf_541"
 Function Glf_542(args)
 	On Error Resume Next
-	    Glf_542 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 6 And GetPlayerState("hs_input_ready") = 1
+	    Glf_542 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 6 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_542 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 && current_player.hs_input_ready == 1}", "Glf_542"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}", "Glf_542"
 Function Glf_543(args)
 	On Error Resume Next
-	    Glf_543 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 7 And GetPlayerState("hs_input_ready") = 1
+	    Glf_543 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 7 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_543 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 && current_player.hs_input_ready == 1}", "Glf_543"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}", "Glf_543"
 Function Glf_544(args)
 	Glf_544 = glf_machine_vars("high_score_initials").GetValue() & " H"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" H""", "Glf_544"
 Function Glf_545(args)
 	On Error Resume Next
-	    Glf_545 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 7 And GetPlayerState("hs_input_ready") = 1
+	    Glf_545 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 7 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_545 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 && current_player.hs_input_ready == 1}", "Glf_545"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}", "Glf_545"
 Function Glf_546(args)
 	On Error Resume Next
-	    Glf_546 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 8 And GetPlayerState("hs_input_ready") = 1
+	    Glf_546 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 8 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_546 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 && current_player.hs_input_ready == 1}", "Glf_546"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}", "Glf_546"
 Function Glf_547(args)
 	Glf_547 = glf_machine_vars("high_score_initials").GetValue() & " I"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" I""", "Glf_547"
 Function Glf_548(args)
 	On Error Resume Next
-	    Glf_548 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 8 And GetPlayerState("hs_input_ready") = 1
+	    Glf_548 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 8 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_548 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 && current_player.hs_input_ready == 1}", "Glf_548"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}", "Glf_548"
 Function Glf_549(args)
 	On Error Resume Next
-	    Glf_549 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 9 And GetPlayerState("hs_input_ready") = 1
+	    Glf_549 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 9 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_549 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 && current_player.hs_input_ready == 1}", "Glf_549"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}", "Glf_549"
 Function Glf_550(args)
 	Glf_550 = glf_machine_vars("high_score_initials").GetValue() & " J"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" J""", "Glf_550"
 Function Glf_551(args)
 	On Error Resume Next
-	    Glf_551 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 9 And GetPlayerState("hs_input_ready") = 1
+	    Glf_551 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 9 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_551 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 && current_player.hs_input_ready == 1}", "Glf_551"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}", "Glf_551"
 Function Glf_552(args)
 	On Error Resume Next
-	    Glf_552 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 10 And GetPlayerState("hs_input_ready") = 1
+	    Glf_552 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 10 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_552 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 && current_player.hs_input_ready == 1}", "Glf_552"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}", "Glf_552"
 Function Glf_553(args)
 	Glf_553 = glf_machine_vars("high_score_initials").GetValue() & " K"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" K""", "Glf_553"
 Function Glf_554(args)
 	On Error Resume Next
-	    Glf_554 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 10 And GetPlayerState("hs_input_ready") = 1
+	    Glf_554 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 10 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_554 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 && current_player.hs_input_ready == 1}", "Glf_554"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}", "Glf_554"
 Function Glf_555(args)
 	On Error Resume Next
-	    Glf_555 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 11 And GetPlayerState("hs_input_ready") = 1
+	    Glf_555 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 11 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_555 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 && current_player.hs_input_ready == 1}", "Glf_555"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}", "Glf_555"
 Function Glf_556(args)
 	Glf_556 = glf_machine_vars("high_score_initials").GetValue() & " L"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" L""", "Glf_556"
 Function Glf_557(args)
 	On Error Resume Next
-	    Glf_557 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 11 And GetPlayerState("hs_input_ready") = 1
+	    Glf_557 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 11 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_557 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 && current_player.hs_input_ready == 1}", "Glf_557"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}", "Glf_557"
 Function Glf_558(args)
 	On Error Resume Next
-	    Glf_558 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 12 And GetPlayerState("hs_input_ready") = 1
+	    Glf_558 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 12 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_558 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 && current_player.hs_input_ready == 1}", "Glf_558"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}", "Glf_558"
 Function Glf_559(args)
 	Glf_559 = glf_machine_vars("high_score_initials").GetValue() & " M"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" M""", "Glf_559"
 Function Glf_560(args)
 	On Error Resume Next
-	    Glf_560 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 12 And GetPlayerState("hs_input_ready") = 1
+	    Glf_560 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 12 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_560 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 && current_player.hs_input_ready == 1}", "Glf_560"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}", "Glf_560"
 Function Glf_561(args)
 	On Error Resume Next
-	    Glf_561 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 13 And GetPlayerState("hs_input_ready") = 1
+	    Glf_561 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 13 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_561 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 && current_player.hs_input_ready == 1}", "Glf_561"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}", "Glf_561"
 Function Glf_562(args)
 	Glf_562 = glf_machine_vars("high_score_initials").GetValue() & " N"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" N""", "Glf_562"
 Function Glf_563(args)
 	On Error Resume Next
-	    Glf_563 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 13 And GetPlayerState("hs_input_ready") = 1
+	    Glf_563 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 13 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_563 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 && current_player.hs_input_ready == 1}", "Glf_563"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}", "Glf_563"
 Function Glf_564(args)
 	On Error Resume Next
-	    Glf_564 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 14 And GetPlayerState("hs_input_ready") = 1
+	    Glf_564 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 14 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_564 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 && current_player.hs_input_ready == 1}", "Glf_564"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}", "Glf_564"
 Function Glf_565(args)
 	Glf_565 = glf_machine_vars("high_score_initials").GetValue() & " O"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" O""", "Glf_565"
 Function Glf_566(args)
 	On Error Resume Next
-	    Glf_566 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 14 And GetPlayerState("hs_input_ready") = 1
+	    Glf_566 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 14 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_566 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 && current_player.hs_input_ready == 1}", "Glf_566"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}", "Glf_566"
 Function Glf_567(args)
 	On Error Resume Next
-	    Glf_567 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 15 And GetPlayerState("hs_input_ready") = 1
+	    Glf_567 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 15 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_567 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 && current_player.hs_input_ready == 1}", "Glf_567"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}", "Glf_567"
 Function Glf_568(args)
 	Glf_568 = glf_machine_vars("high_score_initials").GetValue() & " P"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" P""", "Glf_568"
 Function Glf_569(args)
 	On Error Resume Next
-	    Glf_569 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 15 And GetPlayerState("hs_input_ready") = 1
+	    Glf_569 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 15 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_569 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 && current_player.hs_input_ready == 1}", "Glf_569"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}", "Glf_569"
 Function Glf_570(args)
 	On Error Resume Next
-	    Glf_570 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 16 And GetPlayerState("hs_input_ready") = 1
+	    Glf_570 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 16 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_570 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 && current_player.hs_input_ready == 1}", "Glf_570"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}", "Glf_570"
 Function Glf_571(args)
 	Glf_571 = glf_machine_vars("high_score_initials").GetValue() & " Q"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" Q""", "Glf_571"
 Function Glf_572(args)
 	On Error Resume Next
-	    Glf_572 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 16 And GetPlayerState("hs_input_ready") = 1
+	    Glf_572 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 16 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_572 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 && current_player.hs_input_ready == 1}", "Glf_572"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}", "Glf_572"
 Function Glf_573(args)
 	On Error Resume Next
-	    Glf_573 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 17 And GetPlayerState("hs_input_ready") = 1
+	    Glf_573 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 17 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_573 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 && current_player.hs_input_ready == 1}", "Glf_573"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}", "Glf_573"
 Function Glf_574(args)
 	Glf_574 = glf_machine_vars("high_score_initials").GetValue() & " R"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" R""", "Glf_574"
 Function Glf_575(args)
 	On Error Resume Next
-	    Glf_575 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 17 And GetPlayerState("hs_input_ready") = 1
+	    Glf_575 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 17 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_575 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 && current_player.hs_input_ready == 1}", "Glf_575"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}", "Glf_575"
 Function Glf_576(args)
 	On Error Resume Next
-	    Glf_576 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 18 And GetPlayerState("hs_input_ready") = 1
+	    Glf_576 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 18 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_576 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 && current_player.hs_input_ready == 1}", "Glf_576"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}", "Glf_576"
 Function Glf_577(args)
 	Glf_577 = glf_machine_vars("high_score_initials").GetValue() & " S"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" S""", "Glf_577"
 Function Glf_578(args)
 	On Error Resume Next
-	    Glf_578 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 18 And GetPlayerState("hs_input_ready") = 1
+	    Glf_578 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 18 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_578 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 && current_player.hs_input_ready == 1}", "Glf_578"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}", "Glf_578"
 Function Glf_579(args)
 	On Error Resume Next
-	    Glf_579 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 19 And GetPlayerState("hs_input_ready") = 1
+	    Glf_579 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 19 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_579 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 && current_player.hs_input_ready == 1}", "Glf_579"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}", "Glf_579"
 Function Glf_580(args)
 	Glf_580 = glf_machine_vars("high_score_initials").GetValue() & " T"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" T""", "Glf_580"
 Function Glf_581(args)
 	On Error Resume Next
-	    Glf_581 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 19 And GetPlayerState("hs_input_ready") = 1
+	    Glf_581 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 19 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_581 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 && current_player.hs_input_ready == 1}", "Glf_581"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}", "Glf_581"
 Function Glf_582(args)
 	On Error Resume Next
-	    Glf_582 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 20 And GetPlayerState("hs_input_ready") = 1
+	    Glf_582 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 20 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_582 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 && current_player.hs_input_ready == 1}", "Glf_582"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}", "Glf_582"
 Function Glf_583(args)
 	Glf_583 = glf_machine_vars("high_score_initials").GetValue() & " U"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" U""", "Glf_583"
 Function Glf_584(args)
 	On Error Resume Next
-	    Glf_584 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 20 And GetPlayerState("hs_input_ready") = 1
+	    Glf_584 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 20 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_584 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 && current_player.hs_input_ready == 1}", "Glf_584"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}", "Glf_584"
 Function Glf_585(args)
 	On Error Resume Next
-	    Glf_585 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 21 And GetPlayerState("hs_input_ready") = 1
+	    Glf_585 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 21 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_585 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 && current_player.hs_input_ready == 1}", "Glf_585"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}", "Glf_585"
 Function Glf_586(args)
 	Glf_586 = glf_machine_vars("high_score_initials").GetValue() & " V"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" V""", "Glf_586"
 Function Glf_587(args)
 	On Error Resume Next
-	    Glf_587 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 21 And GetPlayerState("hs_input_ready") = 1
+	    Glf_587 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 21 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_587 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 && current_player.hs_input_ready == 1}", "Glf_587"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}", "Glf_587"
 Function Glf_588(args)
 	On Error Resume Next
-	    Glf_588 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 22 And GetPlayerState("hs_input_ready") = 1
+	    Glf_588 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 22 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_588 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 && current_player.hs_input_ready == 1}", "Glf_588"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}", "Glf_588"
 Function Glf_589(args)
 	Glf_589 = glf_machine_vars("high_score_initials").GetValue() & " W"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" W""", "Glf_589"
 Function Glf_590(args)
 	On Error Resume Next
-	    Glf_590 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 22 And GetPlayerState("hs_input_ready") = 1
+	    Glf_590 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 22 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_590 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 && current_player.hs_input_ready == 1}", "Glf_590"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}", "Glf_590"
 Function Glf_591(args)
 	On Error Resume Next
-	    Glf_591 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 23 And GetPlayerState("hs_input_ready") = 1
+	    Glf_591 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 23 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_591 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 && current_player.hs_input_ready == 1}", "Glf_591"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}", "Glf_591"
 Function Glf_592(args)
 	Glf_592 = glf_machine_vars("high_score_initials").GetValue() & " X"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" X""", "Glf_592"
 Function Glf_593(args)
 	On Error Resume Next
-	    Glf_593 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 23 And GetPlayerState("hs_input_ready") = 1
+	    Glf_593 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 23 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_593 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 && current_player.hs_input_ready == 1}", "Glf_593"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}", "Glf_593"
 Function Glf_594(args)
 	On Error Resume Next
-	    Glf_594 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 24 And GetPlayerState("hs_input_ready") = 1
+	    Glf_594 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 24 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_594 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 && current_player.hs_input_ready == 1}", "Glf_594"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}", "Glf_594"
 Function Glf_595(args)
 	Glf_595 = glf_machine_vars("high_score_initials").GetValue() & " Y"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" Y""", "Glf_595"
 Function Glf_596(args)
 	On Error Resume Next
-	    Glf_596 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 24 And GetPlayerState("hs_input_ready") = 1
+	    Glf_596 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 24 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_596 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 && current_player.hs_input_ready == 1}", "Glf_596"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}", "Glf_596"
 Function Glf_597(args)
 	On Error Resume Next
-	    Glf_597 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 25 And GetPlayerState("hs_input_ready") = 1
+	    Glf_597 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 25 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_597 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 && current_player.hs_input_ready == 1}", "Glf_597"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}", "Glf_597"
 Function Glf_598(args)
 	Glf_598 = glf_machine_vars("high_score_initials").GetValue() & " Z"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" Z""", "Glf_598"
 Function Glf_599(args)
 	On Error Resume Next
-	    Glf_599 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 25 And GetPlayerState("hs_input_ready") = 1
+	    Glf_599 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 25 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_599 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 && current_player.hs_input_ready == 1}", "Glf_599"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}", "Glf_599"
 Function Glf_600(args)
 	On Error Resume Next
-	    Glf_600 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 26 And GetPlayerState("hs_input_ready") = 1
+	    Glf_600 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 26 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_600 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 && current_player.hs_input_ready == 1}", "Glf_600"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}", "Glf_600"
 Function Glf_601(args)
 	Glf_601 = glf_machine_vars("high_score_initials").GetValue() & " 0"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 0""", "Glf_601"
 Function Glf_602(args)
 	On Error Resume Next
-	    Glf_602 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 26 And GetPlayerState("hs_input_ready") = 1
+	    Glf_602 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 26 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_602 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 && current_player.hs_input_ready == 1}", "Glf_602"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}", "Glf_602"
 Function Glf_603(args)
 	On Error Resume Next
-	    Glf_603 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 27 And GetPlayerState("hs_input_ready") = 1
+	    Glf_603 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 27 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_603 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 && current_player.hs_input_ready == 1}", "Glf_603"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}", "Glf_603"
 Function Glf_604(args)
 	Glf_604 = glf_machine_vars("high_score_initials").GetValue() & " 1"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 1""", "Glf_604"
 Function Glf_605(args)
 	On Error Resume Next
-	    Glf_605 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 27 And GetPlayerState("hs_input_ready") = 1
+	    Glf_605 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 27 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_605 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 && current_player.hs_input_ready == 1}", "Glf_605"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}", "Glf_605"
 Function Glf_606(args)
 	On Error Resume Next
-	    Glf_606 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 28 And GetPlayerState("hs_input_ready") = 1
+	    Glf_606 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 28 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_606 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 && current_player.hs_input_ready == 1}", "Glf_606"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}", "Glf_606"
 Function Glf_607(args)
 	Glf_607 = glf_machine_vars("high_score_initials").GetValue() & " 2"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 2""", "Glf_607"
 Function Glf_608(args)
 	On Error Resume Next
-	    Glf_608 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 28 And GetPlayerState("hs_input_ready") = 1
+	    Glf_608 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 28 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_608 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 && current_player.hs_input_ready == 1}", "Glf_608"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}", "Glf_608"
 Function Glf_609(args)
 	On Error Resume Next
-	    Glf_609 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 29 And GetPlayerState("hs_input_ready") = 1
+	    Glf_609 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 29 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_609 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 && current_player.hs_input_ready == 1}", "Glf_609"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}", "Glf_609"
 Function Glf_610(args)
 	Glf_610 = glf_machine_vars("high_score_initials").GetValue() & " 3"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 3""", "Glf_610"
 Function Glf_611(args)
 	On Error Resume Next
-	    Glf_611 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 29 And GetPlayerState("hs_input_ready") = 1
+	    Glf_611 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 29 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_611 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 && current_player.hs_input_ready == 1}", "Glf_611"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}", "Glf_611"
 Function Glf_612(args)
 	On Error Resume Next
-	    Glf_612 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 30 And GetPlayerState("hs_input_ready") = 1
+	    Glf_612 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 30 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_612 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 && current_player.hs_input_ready == 1}", "Glf_612"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}", "Glf_612"
 Function Glf_613(args)
 	Glf_613 = glf_machine_vars("high_score_initials").GetValue() & " 4"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 4""", "Glf_613"
 Function Glf_614(args)
 	On Error Resume Next
-	    Glf_614 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 30 And GetPlayerState("hs_input_ready") = 1
+	    Glf_614 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 30 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_614 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 && current_player.hs_input_ready == 1}", "Glf_614"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}", "Glf_614"
 Function Glf_615(args)
 	On Error Resume Next
-	    Glf_615 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 31 And GetPlayerState("hs_input_ready") = 1
+	    Glf_615 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 31 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_615 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 && current_player.hs_input_ready == 1}", "Glf_615"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}", "Glf_615"
 Function Glf_616(args)
 	Glf_616 = glf_machine_vars("high_score_initials").GetValue() & " 5"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 5""", "Glf_616"
 Function Glf_617(args)
 	On Error Resume Next
-	    Glf_617 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 31 And GetPlayerState("hs_input_ready") = 1
+	    Glf_617 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 31 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_617 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 && current_player.hs_input_ready == 1}", "Glf_617"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}", "Glf_617"
 Function Glf_618(args)
 	On Error Resume Next
-	    Glf_618 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 32 And GetPlayerState("hs_input_ready") = 1
+	    Glf_618 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 32 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_618 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 && current_player.hs_input_ready == 1}", "Glf_618"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}", "Glf_618"
 Function Glf_619(args)
 	Glf_619 = glf_machine_vars("high_score_initials").GetValue() & " 6"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 6""", "Glf_619"
 Function Glf_620(args)
 	On Error Resume Next
-	    Glf_620 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 32 And GetPlayerState("hs_input_ready") = 1
+	    Glf_620 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 32 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_620 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 && current_player.hs_input_ready == 1}", "Glf_620"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}", "Glf_620"
 Function Glf_621(args)
 	On Error Resume Next
-	    Glf_621 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 33 And GetPlayerState("hs_input_ready") = 1
+	    Glf_621 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 33 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_621 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 && current_player.hs_input_ready == 1}", "Glf_621"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}", "Glf_621"
 Function Glf_622(args)
 	Glf_622 = glf_machine_vars("high_score_initials").GetValue() & " 7"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 7""", "Glf_622"
 Function Glf_623(args)
 	On Error Resume Next
-	    Glf_623 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 33 And GetPlayerState("hs_input_ready") = 1
+	    Glf_623 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 33 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_623 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 && current_player.hs_input_ready == 1}", "Glf_623"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}", "Glf_623"
 Function Glf_624(args)
 	On Error Resume Next
-	    Glf_624 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 34 And GetPlayerState("hs_input_ready") = 1
+	    Glf_624 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 34 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_624 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 && current_player.hs_input_ready == 1}", "Glf_624"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}", "Glf_624"
 Function Glf_625(args)
 	Glf_625 = glf_machine_vars("high_score_initials").GetValue() & " 8"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 8""", "Glf_625"
 Function Glf_626(args)
 	On Error Resume Next
-	    Glf_626 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 34 And GetPlayerState("hs_input_ready") = 1
+	    Glf_626 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 34 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_626 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 && current_player.hs_input_ready == 1}", "Glf_626"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}", "Glf_626"
 Function Glf_627(args)
 	On Error Resume Next
-	    Glf_627 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 35 And GetPlayerState("hs_input_ready") = 1
+	    Glf_627 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 35 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_627 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 && current_player.hs_input_ready == 1}", "Glf_627"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}", "Glf_627"
 Function Glf_628(args)
 	Glf_628 = glf_machine_vars("high_score_initials").GetValue() & " 9"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" 9""", "Glf_628"
 Function Glf_629(args)
 	On Error Resume Next
-	    Glf_629 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 35 And GetPlayerState("hs_input_ready") = 1
+	    Glf_629 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 35 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_629 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 && current_player.hs_input_ready == 1}", "Glf_629"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}", "Glf_629"
 Function Glf_630(args)
 	On Error Resume Next
-	    Glf_630 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 36 And GetPlayerState("hs_input_ready") = 1
+	    Glf_630 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 36 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_630 = False
 End Function
-glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 && current_player.hs_input_ready == 1}", "Glf_630"
+glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}", "Glf_630"
 Function Glf_631(args)
 	Glf_631 = glf_machine_vars("high_score_initials").GetValue() & " _"
 End Function
 glf_funcRefMap.Add "machine.high_score_initials & "" _""", "Glf_631"
 Function Glf_632(args)
 	On Error Resume Next
-	    Glf_632 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 36 And GetPlayerState("hs_input_ready") = 1
+	    Glf_632 = (((glf_machine_vars("high_score_initials_index").GetValue() Mod 37) + 37) Mod 37) = 36 and GetPlayerState("hs_input_ready") = 1
 	If Err Then Glf_632 = False
 End Function
-glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 && current_player.hs_input_ready == 1}", "Glf_632"
+glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}", "Glf_632"
 Function Glf_633(args)
 	On Error Resume Next
 	    Glf_633 = glf_machine_vars("high_score_initials_chars").GetValue()<3
@@ -3254,16 +3254,16 @@ End Function
 glf_funcRefMap.Add "mode_base_started{current_player.number == 4}", "Glf_649"
 Function Glf_650(args)
 	On Error Resume Next
-	    Glf_650 = GetPlayerState("wizard_final_hit_count") > 0 And GetPlayerState("ball_just_started")=1
+	    Glf_650 = GetPlayerState("wizard_final_hit_count") > 0 and GetPlayerState("ball_just_started")=1
 	If Err Then Glf_650 = False
 End Function
-glf_funcRefMap.Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 && current_player.ball_just_started==1}", "Glf_650"
+glf_funcRefMap.Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 and current_player.ball_just_started==1}", "Glf_650"
 Function Glf_651(args)
 	On Error Resume Next
-	    Glf_651 = GetPlayerState("nuke_acquired") = 1 And GetPlayerState("nuke_used") = 0
+	    Glf_651 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
 	If Err Then Glf_651 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", "Glf_651"
+glf_funcRefMap.Add "check_base_restart{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_651"
 Function Glf_652(args)
 	On Error Resume Next
 	    Glf_652 = GetPlayerState("shot_meteor_wave1") = 0
@@ -3326,76 +3326,76 @@ End Function
 glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave9 == 1}", "Glf_661"
 Function Glf_662(args)
 	On Error Resume Next
-	    Glf_662 = GetPlayerState("shot_meteor_wave1") = 2 And GetPlayerState("shot_meteor_wave2") = 0
+	    Glf_662 = GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
 	If Err Then Glf_662 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", "Glf_662"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_662"
 Function Glf_663(args)
 	On Error Resume Next
-	    Glf_663 = GetPlayerState("shot_meteor_wave2") = 2 And GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_663 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_663 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", "Glf_663"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_663"
 Function Glf_664(args)
 	On Error Resume Next
-	    Glf_664 = GetPlayerState("shot_meteor_wave3") = 2 And GetPlayerState("shot_meteor_wave4") = 0
+	    Glf_664 = GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
 	If Err Then Glf_664 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", "Glf_664"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_664"
 Function Glf_665(args)
 	On Error Resume Next
-	    Glf_665 = GetPlayerState("shot_meteor_wave4") = 2 And GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_665 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_665 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", "Glf_665"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_665"
 Function Glf_666(args)
 	On Error Resume Next
-	    Glf_666 = GetPlayerState("shot_meteor_wave5") = 2 And GetPlayerState("shot_meteor_wave6") = 0
+	    Glf_666 = GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
 	If Err Then Glf_666 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", "Glf_666"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_666"
 Function Glf_667(args)
 	On Error Resume Next
-	    Glf_667 = GetPlayerState("shot_meteor_wave6") = 2 And GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_667 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_667 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", "Glf_667"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_667"
 Function Glf_668(args)
 	On Error Resume Next
-	    Glf_668 = GetPlayerState("shot_meteor_wave7") = 2 And GetPlayerState("shot_meteor_wave8") = 0
+	    Glf_668 = GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
 	If Err Then Glf_668 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", "Glf_668"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_668"
 Function Glf_669(args)
 	On Error Resume Next
-	    Glf_669 = GetPlayerState("shot_meteor_wave8") = 2 And GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_669 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_669 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", "Glf_669"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_669"
 Function Glf_670(args)
 	On Error Resume Next
-	    Glf_670 = GetPlayerState("shot_final_wave_wizard") = 2 And GetPlayerState("victory") = 0
+	    Glf_670 = GetPlayerState("shot_final_wave_wizard") = 2 and GetPlayerState("victory") = 0
 	If Err Then Glf_670 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 2 && current_player.victory == 0}", "Glf_670"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 2 and current_player.victory == 0}", "Glf_670"
 Function Glf_671(args)
 	On Error Resume Next
-	    Glf_671 = GetPlayerState("shot_final_wave_wizard") = 1 And GetPlayerState("victory") = 0
+	    Glf_671 = GetPlayerState("shot_final_wave_wizard") = 1 and GetPlayerState("victory") = 0
 	If Err Then Glf_671 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 1 && current_player.victory == 0}", "Glf_671"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 1 and current_player.victory == 0}", "Glf_671"
 Function Glf_672(args)
 	On Error Resume Next
-	    Glf_672 = GetPlayerState("shot_combo_command_wizard") = 1 And GetPlayerState("victory") = 0
+	    Glf_672 = GetPlayerState("shot_combo_command_wizard") = 1 and GetPlayerState("victory") = 0
 	If Err Then Glf_672 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_combo_command_wizard == 1 && current_player.victory == 0}", "Glf_672"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_combo_command_wizard == 1 and current_player.victory == 0}", "Glf_672"
 Function Glf_673(args)
 	On Error Resume Next
-	    Glf_673 = GetPlayerState("shot_fully_loaded_wizard") = 1 And GetPlayerState("victory") = 0
+	    Glf_673 = GetPlayerState("shot_fully_loaded_wizard") = 1 and GetPlayerState("victory") = 0
 	If Err Then Glf_673 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 && current_player.victory == 0}", "Glf_673"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 and current_player.victory == 0}", "Glf_673"
 Function Glf_674(args)
 	On Error Resume Next
 	    Glf_674 = GetPlayerState("victory") = 1
@@ -3404,10 +3404,10 @@ End Function
 glf_funcRefMap.Add "mode_base_started{current_player.victory == 1}", "Glf_674"
 Function Glf_675(args)
 	On Error Resume Next
-	    Glf_675 = GetPlayerState("shot_fully_loaded_wizard") = 0 And GetPlayerState("shot_cluster_bomb2") = 1 And GetPlayerState("shot_proton_round6") = 1 And  GetPlayerState("shot_moon_missile2") = 1
+	    Glf_675 = GetPlayerState("shot_fully_loaded_wizard") = 0 and GetPlayerState("shot_cluster_bomb2") = 1 and GetPlayerState("shot_proton_round6") = 1 and  GetPlayerState("shot_moon_missile2") = 1
 	If Err Then Glf_675 = False
 End Function
-glf_funcRefMap.Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 && current_player.shot_cluster_bomb2 == 1 && current_player.shot_proton_round6 == 1 &&  current_player.shot_moon_missile2 == 1}", "Glf_675"
+glf_funcRefMap.Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 and current_player.shot_cluster_bomb2 == 1 and current_player.shot_proton_round6 == 1 and  current_player.shot_moon_missile2 == 1}", "Glf_675"
 Function Glf_676(args)
 	On Error Resume Next
 	    Glf_676 = GetPlayerState("meteor_wave_running") = 0
@@ -3446,22 +3446,22 @@ End Function
 glf_funcRefMap.Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", "Glf_681"
 Function Glf_682(args)
 	On Error Resume Next
-	    Glf_682 = GetPlayerState("wizard_mode_is_ready") = 1 And GetPlayerState("shot_final_wave_wizard") = 1 And GetPlayerState("meteor_wave_running") = 0
+	    Glf_682 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_final_wave_wizard") = 1 and GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_682 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_final_wave_wizard == 1 && current_player.meteor_wave_running == 0}", "Glf_682"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_final_wave_wizard == 1 and current_player.meteor_wave_running == 0}", "Glf_682"
 Function Glf_683(args)
 	On Error Resume Next
-	    Glf_683 = GetPlayerState("wizard_mode_is_ready") = 1 And GetPlayerState("shot_combo_command_wizard") = 1 And GetPlayerState("shot_final_wave_wizard") <> 1 And GetPlayerState("meteor_wave_running") = 0
+	    Glf_683 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_combo_command_wizard") = 1 and GetPlayerState("shot_final_wave_wizard") <> 1 and GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_683 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_combo_command_wizard == 1 && current_player.shot_final_wave_wizard != 1 && current_player.meteor_wave_running == 0}", "Glf_683"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_combo_command_wizard == 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_683"
 Function Glf_684(args)
 	On Error Resume Next
-	    Glf_684 = GetPlayerState("wizard_mode_is_ready") = 1 And GetPlayerState("shot_fully_loaded_wizard") = 1  And GetPlayerState("shot_combo_command_wizard") <> 1 And GetPlayerState("shot_final_wave_wizard") <> 1 And GetPlayerState("meteor_wave_running") = 0
+	    Glf_684 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_fully_loaded_wizard") = 1  and GetPlayerState("shot_combo_command_wizard") <> 1 and GetPlayerState("shot_final_wave_wizard") <> 1 and GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_684 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 && current_player.shot_fully_loaded_wizard == 1  && current_player.shot_combo_command_wizard != 1 && current_player.shot_final_wave_wizard != 1 && current_player.meteor_wave_running == 0}", "Glf_684"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_fully_loaded_wizard == 1  and current_player.shot_combo_command_wizard != 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_684"
 Function Glf_685(args)
 	On Error Resume Next
 	    Glf_685 = GetPlayerState("shot_final_wave_wizard") = 1
@@ -3483,21 +3483,21 @@ Function Glf_688(args)
 End Function
 glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_688"
 Function Glf_689(args)
-	Glf_689 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
+	Glf_689 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_689"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_689"
 Function Glf_690(args)
-	Glf_690 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
+	Glf_690 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_690"
+glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_690"
 Function Glf_691(args)
-	Glf_691 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
+	Glf_691 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_691"
+glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_691"
 Function Glf_692(args)
-	Glf_692 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
+	Glf_692 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_692"
+glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_692"
 Function Glf_693(args)
 	Glf_693 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2")
 End Function
@@ -3560,10 +3560,10 @@ End Function
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", "Glf_706"
 Function Glf_707(args)
 	On Error Resume Next
-	    Glf_707 = Glf_GameVariable("balls_in_play") = 1 And GetPlayerState("ball_just_started") = 0
+	    Glf_707 = Glf_GameVariable("balls_in_play") = 1 and GetPlayerState("ball_just_started") = 0
 	If Err Then Glf_707 = False
 End Function
-glf_funcRefMap.Add "flipper_cradle{game.balls_in_play == 1 && current_player.ball_just_started == 0}", "Glf_707"
+glf_funcRefMap.Add "flipper_cradle{game.balls_in_play == 1 and current_player.ball_just_started == 0}", "Glf_707"
 Function Glf_708(args)
 	On Error Resume Next
 	    Glf_708 = GetPlayerState("ball_cradled") = 1
@@ -3666,22 +3666,22 @@ End Function
 glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 0}", "Glf_725"
 Function Glf_726(args)
 	On Error Resume Next
-	    Glf_726 = GetPlayerState("nuke_acquired") = 1 And GetPlayerState("nuke_used") = 0
+	    Glf_726 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
 	If Err Then Glf_726 = False
 End Function
-glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", "Glf_726"
+glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_726"
 Function Glf_727(args)
 	On Error Resume Next
-	    Glf_727 = GetPlayerState("nuke_acquired") = 1 And GetPlayerState("nuke_used") = 0
+	    Glf_727 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
 	If Err Then Glf_727 = False
 End Function
-glf_funcRefMap.Add "check_detonate_nuke{current_player.nuke_acquired == 1 && current_player.nuke_used == 0}", "Glf_727"
+glf_funcRefMap.Add "check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_727"
 Function Glf_728(args)
 	On Error Resume Next
-	    Glf_728 = GetPlayerState("ball_just_started")=1 And GetPlayerState("shot_meteor_wave9") < 2
+	    Glf_728 = GetPlayerState("ball_just_started")=1 and GetPlayerState("shot_meteor_wave9") < 2
 	If Err Then Glf_728 = False
 End Function
-glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 && current_player.shot_meteor_wave9 < 2}", "Glf_728"
+glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", "Glf_728"
 Function Glf_729(args)
 	On Error Resume Next
 	    Glf_729 = GetPlayerState("shot_ss")=1
@@ -3696,16 +3696,16 @@ End Function
 glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1}", "Glf_730"
 Function Glf_731(args)
 	On Error Resume Next
-	    Glf_731 = GetPlayerState("shot_ss")=1 And GetPlayerState("flag_ss") = 1
+	    Glf_731 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 1
 	If Err Then Glf_731 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 1}", "Glf_731"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", "Glf_731"
 Function Glf_732(args)
 	On Error Resume Next
-	    Glf_732 = GetPlayerState("shot_ss")=1 And GetPlayerState("flag_ss") = 2
+	    Glf_732 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 2
 	If Err Then Glf_732 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 && current_player.flag_ss == 2}", "Glf_732"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_732"
 Function Glf_733(args)
 	On Error Resume Next
 	    Glf_733 = GetPlayerState("num_skillshots")=3
@@ -3726,28 +3726,28 @@ End Function
 glf_funcRefMap.Add "voc_sss_stopped{current_player.num_skillshots==3}", "Glf_735"
 Function Glf_736(args)
 	On Error Resume Next
-	    Glf_736 = GetPlayerState("shot_meteor_wave2") = 2 And GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_736 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_736 = False
 End Function
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", "Glf_736"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_736"
 Function Glf_737(args)
 	On Error Resume Next
-	    Glf_737 = GetPlayerState("shot_meteor_wave4") = 2 And GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_737 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_737 = False
 End Function
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", "Glf_737"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_737"
 Function Glf_738(args)
 	On Error Resume Next
-	    Glf_738 = GetPlayerState("shot_meteor_wave6") = 2 And GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_738 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_738 = False
 End Function
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", "Glf_738"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_738"
 Function Glf_739(args)
 	On Error Resume Next
-	    Glf_739 = GetPlayerState("shot_meteor_wave8") = 2 And GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_739 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_739 = False
 End Function
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", "Glf_739"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_739"
 Function Glf_740(args)
 	On Error Resume Next
 	    Glf_740 = glf_timers("alien_attack").GetValue("ticks") > 0
@@ -3774,172 +3774,172 @@ End Function
 glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 1}", "Glf_743"
 Function Glf_744(args)
 	On Error Resume Next
-	    Glf_744 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 2
+	    Glf_744 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_744 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 2}", "Glf_744"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 2}", "Glf_744"
 Function Glf_745(args)
 	On Error Resume Next
-	    Glf_745 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 3
+	    Glf_745 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_745 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 3}", "Glf_745"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 3}", "Glf_745"
 Function Glf_746(args)
 	On Error Resume Next
-	    Glf_746 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 4
+	    Glf_746 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_746 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 4}", "Glf_746"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 4}", "Glf_746"
 Function Glf_747(args)
 	On Error Resume Next
-	    Glf_747 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 5
+	    Glf_747 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_747 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 5}", "Glf_747"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 5}", "Glf_747"
 Function Glf_748(args)
 	On Error Resume Next
-	    Glf_748 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 6
+	    Glf_748 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_748 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 6}", "Glf_748"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 6}", "Glf_748"
 Function Glf_749(args)
 	On Error Resume Next
-	    Glf_749 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 7
+	    Glf_749 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_749 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 7}", "Glf_749"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}", "Glf_749"
 Function Glf_750(args)
 	On Error Resume Next
-	    Glf_750 = GetPlayerState("alien_attack_dir") = 0 And glf_timers("alien_attack").GetValue("ticks") = 8
+	    Glf_750 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_750 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 && device.timers.alien_attack.ticks == 8}", "Glf_750"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 8}", "Glf_750"
 Function Glf_751(args)
 	On Error Resume Next
-	    Glf_751 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 8
+	    Glf_751 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_751 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 8}", "Glf_751"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 8}", "Glf_751"
 Function Glf_752(args)
 	On Error Resume Next
-	    Glf_752 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 7
+	    Glf_752 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_752 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 7}", "Glf_752"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 7}", "Glf_752"
 Function Glf_753(args)
 	On Error Resume Next
-	    Glf_753 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 6
+	    Glf_753 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_753 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 6}", "Glf_753"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 6}", "Glf_753"
 Function Glf_754(args)
 	On Error Resume Next
-	    Glf_754 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 5
+	    Glf_754 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_754 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 5}", "Glf_754"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 5}", "Glf_754"
 Function Glf_755(args)
 	On Error Resume Next
-	    Glf_755 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 4
+	    Glf_755 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_755 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 4}", "Glf_755"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 4}", "Glf_755"
 Function Glf_756(args)
 	On Error Resume Next
-	    Glf_756 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 3
+	    Glf_756 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_756 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 3}", "Glf_756"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}", "Glf_756"
 Function Glf_757(args)
 	On Error Resume Next
-	    Glf_757 = GetPlayerState("alien_attack_dir") = 1 And glf_timers("alien_attack").GetValue("ticks") = 2
+	    Glf_757 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_757 = False
 End Function
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 && device.timers.alien_attack.ticks == 2}", "Glf_757"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 2}", "Glf_757"
 Function Glf_758(args)
 	On Error Resume Next
-	    Glf_758 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_758 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_758 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_758"
+glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_758"
 Function Glf_759(args)
 	On Error Resume Next
-	    Glf_759 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_759 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_759 = False
 End Function
-glf_funcRefMap.Add "left_side_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_759"
+glf_funcRefMap.Add "left_side_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_759"
 Function Glf_760(args)
 	On Error Resume Next
-	    Glf_760 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_760 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_760 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_760"
+glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_760"
 Function Glf_761(args)
 	On Error Resume Next
-	    Glf_761 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_761 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_761 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_761"
+glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_761"
 Function Glf_762(args)
 	On Error Resume Next
-	    Glf_762 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_762 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_762 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_762"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_762"
 Function Glf_763(args)
 	On Error Resume Next
-	    Glf_763 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_763 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_763 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_763"
+glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_763"
 Function Glf_764(args)
 	On Error Resume Next
-	    Glf_764 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_764 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_764 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_764"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_764"
 Function Glf_765(args)
 	On Error Resume Next
-	    Glf_765 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_765 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_765 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_765"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_765"
 Function Glf_766(args)
 	On Error Resume Next
-	    Glf_766 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_766 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_766 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_766"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_766"
 Function Glf_767(args)
 	On Error Resume Next
-	    Glf_767 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_767 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_767 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_767"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_767"
 Function Glf_768(args)
 	On Error Resume Next
-	    Glf_768 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_768 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_768 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_768"
+glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_768"
 Function Glf_769(args)
 	On Error Resume Next
-	    Glf_769 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_769 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_769 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_769"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_769"
 Function Glf_770(args)
 	On Error Resume Next
-	    Glf_770 = GetPlayerState("alien_attack_dir") = 1 And GetPlayerState("alien_grace_time") = 1
+	    Glf_770 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_770 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.alien_attack_dir == 1 && current_player.alien_grace_time == 1}", "Glf_770"
+glf_funcRefMap.Add "right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_770"
 Function Glf_771(args)
 	On Error Resume Next
-	    Glf_771 = GetPlayerState("alien_attack_dir") = 0 And GetPlayerState("alien_grace_time") = 1
+	    Glf_771 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_771 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 0 && current_player.alien_grace_time == 1}", "Glf_771"
+glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_771"
 Function Glf_772(args)
 	Glf_772 = GetPlayerState("alien_tick_count")
 End Function
@@ -3990,16 +3990,16 @@ End Function
 glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", "Glf_780"
 Function Glf_781(args)
 	On Error Resume Next
-	    Glf_781 = GetPlayerState("training_ship_save_achieved")=1 And GetPlayerState("shot_ship_charge3")<>2
+	    Glf_781 = GetPlayerState("training_ship_save_achieved")=1 and GetPlayerState("shot_ship_charge3")<>2
 	If Err Then Glf_781 = False
 End Function
-glf_funcRefMap.Add "mode_ship_save_started{current_player.training_ship_save_achieved==1 && current_player.shot_ship_charge3!=2}", "Glf_781"
+glf_funcRefMap.Add "mode_ship_save_started{current_player.training_ship_save_achieved==1 and current_player.shot_ship_charge3!=2}", "Glf_781"
 Function Glf_782(args)
 	On Error Resume Next
-	    Glf_782 = GetPlayerState("shot_ship_charge3")=2 And GetPlayerState("meteor_mb_shootagain_time") =6000
+	    Glf_782 = GetPlayerState("shot_ship_charge3")=2 and GetPlayerState("meteor_mb_shootagain_time") =6000
 	If Err Then Glf_782 = False
 End Function
-glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge3==2 && current_player.meteor_mb_shootagain_time ==6000}", "Glf_782"
+glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge3==2 and current_player.meteor_mb_shootagain_time ==6000}", "Glf_782"
 Function Glf_783(args)
 	On Error Resume Next
 	    Glf_783 = GetPlayerState("training_ship_save_achieved")=0
@@ -4026,16 +4026,16 @@ End Function
 glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", "Glf_786"
 Function Glf_787(args)
 	On Error Resume Next
-	    Glf_787 = GetPlayerState("shot_ship_charge1") = 2 And GetPlayerState("shot_ship_charge2") = 1
+	    Glf_787 = GetPlayerState("shot_ship_charge1") = 2 and GetPlayerState("shot_ship_charge2") = 1
 	If Err Then Glf_787 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 && current_player.shot_ship_charge2 == 1}", "Glf_787"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 and current_player.shot_ship_charge2 == 1}", "Glf_787"
 Function Glf_788(args)
 	On Error Resume Next
-	    Glf_788 = GetPlayerState("shot_ship_charge2") = 2 And GetPlayerState("shot_ship_charge3") = 1
+	    Glf_788 = GetPlayerState("shot_ship_charge2") = 2 and GetPlayerState("shot_ship_charge3") = 1
 	If Err Then Glf_788 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 && current_player.shot_ship_charge3 == 1}", "Glf_788"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 and current_player.shot_ship_charge3 == 1}", "Glf_788"
 Function Glf_789(args)
 	Glf_789 = 15000
 End Function
@@ -4232,16 +4232,16 @@ End Function
 glf_funcRefMap.Add "mode_timewarp_started{current_player.ball_just_started==0}", "Glf_822"
 Function Glf_823(args)
 	On Error Resume Next
-	    Glf_823 = GetPlayerState("warping")=0 And GetPlayerState("shot_timewarp1")=1
+	    Glf_823 = GetPlayerState("warping")=0 and GetPlayerState("shot_timewarp1")=1
 	If Err Then Glf_823 = False
 End Function
-glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp1==1}", "Glf_823"
+glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==1}", "Glf_823"
 Function Glf_824(args)
 	On Error Resume Next
-	    Glf_824 = GetPlayerState("warping")=0 And GetPlayerState("shot_timewarp1")=2 And GetPlayerState("shot_timewarp2")=1
+	    Glf_824 = GetPlayerState("warping")=0 and GetPlayerState("shot_timewarp1")=2 and GetPlayerState("shot_timewarp2")=1
 	If Err Then Glf_824 = False
 End Function
-glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 && current_player.shot_timewarp1==2 && current_player.shot_timewarp2==1}", "Glf_824"
+glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==2 and current_player.shot_timewarp2==1}", "Glf_824"
 Function Glf_825(args)
 	Glf_825 = Glf_FormatValue(glf_timers("meteor_countdown").GetValue("ticks"),"0>2")
 End Function
@@ -4252,10 +4252,10 @@ End Function
 glf_funcRefMap.Add """WARPING""", "Glf_826"
 Function Glf_827(args)
 	On Error Resume Next
-	    Glf_827 = GetPlayerState("light_the_eb") = 1 And glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_827 = GetPlayerState("light_the_eb") = 1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_827 = False
 End Function
-glf_funcRefMap.Add "check_eb{current_player.light_the_eb == 1 && machine.flippers_are_dead==0}", "Glf_827"
+glf_funcRefMap.Add "check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}", "Glf_827"
 Function Glf_828(args)
 	On Error Resume Next
 	    Glf_828 = GetPlayerState("extra_balls") = 0
@@ -4270,22 +4270,22 @@ End Function
 glf_funcRefMap.Add "check_eb{current_player.extra_balls > 0}", "Glf_829"
 Function Glf_830(args)
 	On Error Resume Next
-	    Glf_830 = GetPlayerState("shot_eb_ready") = 0 And GetPlayerState("wizard_mode_is_ready")=0
+	    Glf_830 = GetPlayerState("shot_eb_ready") = 0 and GetPlayerState("wizard_mode_is_ready")=0
 	If Err Then Glf_830 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 && current_player.wizard_mode_is_ready==0}", "Glf_830"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 and current_player.wizard_mode_is_ready==0}", "Glf_830"
 Function Glf_831(args)
 	On Error Resume Next
-	    Glf_831 = GetPlayerState("shot_eb_ready") = 1 And GetPlayerState("wizard_mode_is_ready")=0
+	    Glf_831 = GetPlayerState("shot_eb_ready") = 1 and GetPlayerState("wizard_mode_is_ready")=0
 	If Err Then Glf_831 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 && current_player.wizard_mode_is_ready==0}", "Glf_831"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 and current_player.wizard_mode_is_ready==0}", "Glf_831"
 Function Glf_832(args)
 	On Error Resume Next
-	    Glf_832 = GetPlayerState("shot_mystery_ready")=0 And GetPlayerState("shot_training_ready")=0
+	    Glf_832 = GetPlayerState("shot_mystery_ready")=0 and GetPlayerState("shot_training_ready")=0
 	If Err Then Glf_832 = False
 End Function
-glf_funcRefMap.Add "eb_complete{current_player.shot_mystery_ready==0 && current_player.shot_training_ready==0}", "Glf_832"
+glf_funcRefMap.Add "eb_complete{current_player.shot_mystery_ready==0 and current_player.shot_training_ready==0}", "Glf_832"
 Function Glf_833(args)
 	Glf_833 = " EXTRA "
 End Function
@@ -4296,22 +4296,22 @@ End Function
 glf_funcRefMap.Add """ BALL """, "Glf_834"
 Function Glf_835(args)
 	On Error Resume Next
-	    Glf_835 = GetPlayerState("shot_mystery_ready")=1 And glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_835 = GetPlayerState("shot_mystery_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_835 = False
 End Function
-glf_funcRefMap.Add "mode_mystery_started{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", "Glf_835"
+glf_funcRefMap.Add "mode_mystery_started{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", "Glf_835"
 Function Glf_836(args)
 	On Error Resume Next
-	    Glf_836 = GetPlayerState("shot_mystery_ready")=0 And glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_836 = GetPlayerState("shot_mystery_ready")=0 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_836 = False
 End Function
-glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==0 && machine.flippers_are_dead==0}", "Glf_836"
+glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==0 and machine.flippers_are_dead==0}", "Glf_836"
 Function Glf_837(args)
 	On Error Resume Next
-	    Glf_837 = GetPlayerState("shot_mystery_ready")=1 And glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_837 = GetPlayerState("shot_mystery_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_837 = False
 End Function
-glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", "Glf_837"
+glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", "Glf_837"
 Function Glf_838(args)
 	On Error Resume Next
 	    Glf_838 = GetPlayerState("shot_training_ready")=0
@@ -4356,10 +4356,10 @@ End Function
 glf_funcRefMap.Add "mystery_added_shields{current_player.shot_shield_left == 0}", "Glf_844"
 Function Glf_845(args)
 	On Error Resume Next
-	    Glf_845 = GetPlayerState("shot_moon_missile2") = 0 And glf_state_machines("moon_mb").GetValue("state")<>"locking"
+	    Glf_845 = GetPlayerState("shot_moon_missile2") = 0 and glf_state_machines("moon_mb").GetValue("state")<>"locking"
 	If Err Then Glf_845 = False
 End Function
-glf_funcRefMap.Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && device.state_machines.moon_mb.state!=""locking""}", "Glf_845"
+glf_funcRefMap.Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 and device.state_machines.moon_mb.state!=""locking""}", "Glf_845"
 Function Glf_846(args)
 	On Error Resume Next
 	    Glf_846 = GetPlayerState("scoring_multiplier") = 1
@@ -4486,10 +4486,10 @@ End Function
 glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", "Glf_872"
 Function Glf_873(args)
 	On Error Resume Next
-	    Glf_873 = GetPlayerState("training_moon_missile_achieved")=1 And glf_state_machines("moon_mb").GetValue("state")<>"locking" And GetPlayerState("shot_moon_missile2") = 0
+	    Glf_873 = GetPlayerState("training_moon_missile_achieved")=1 and glf_state_machines("moon_mb").GetValue("state")<>"locking" and GetPlayerState("shot_moon_missile2") = 0
 	If Err Then Glf_873 = False
 End Function
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 && device.state_machines.moon_mb.state!=""locking"" && current_player.shot_moon_missile2 == 0}", "Glf_873"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", "Glf_873"
 Function Glf_874(args)
 	On Error Resume Next
 	    Glf_874 = GetPlayerState("training_moon_missile_achieved")=1
@@ -4504,16 +4504,16 @@ End Function
 glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile1 == 1}", "Glf_875"
 Function Glf_876(args)
 	On Error Resume Next
-	    Glf_876 = glf_state_machines("moon_mb").GetValue("state")<>"locking" And glf_ball_devices("moon_lock").GetValue("balls")=0
+	    Glf_876 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls")=0
 	If Err Then Glf_876 = False
 End Function
-glf_funcRefMap.Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" && device.ball_devices.moon_lock.balls==0}", "Glf_876"
+glf_funcRefMap.Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls==0}", "Glf_876"
 Function Glf_877(args)
 	On Error Resume Next
-	    Glf_877 = glf_state_machines("moon_mb").GetValue("state")<>"locking" And glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked") And glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
+	    Glf_877 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("multiball_lock_moon_launch_balls_locked") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
 	If Err Then Glf_877 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" && device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked && device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_877"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.multiball_lock_moon_launch_balls_locked and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_877"
 Function Glf_878(args)
 	On Error Resume Next
 	    Glf_878 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
@@ -4574,16 +4574,16 @@ End Function
 glf_funcRefMap.Add """LOCK""", "Glf_888"
 Function Glf_889(args)
 	On Error Resume Next
-	    Glf_889 = GetPlayerState("multiball_lock_moon_launch_balls_locked")>0 And GetPlayerState("disable_moon_launch")=0 And GetPlayerState("wizard_mode_running")=0
+	    Glf_889 = GetPlayerState("multiball_lock_moon_launch_balls_locked")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0
 	If Err Then Glf_889 = False
 End Function
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 && current_player.disable_moon_launch==0 && current_player.wizard_mode_running==0}", "Glf_889"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_889"
 Function Glf_890(args)
 	On Error Resume Next
-	    Glf_890 = GetPlayerState("multiball_lock_moon_launch_balls_locked")=0 And GetPlayerState("disable_moon_launch")=0
+	    Glf_890 = GetPlayerState("multiball_lock_moon_launch_balls_locked")=0 and GetPlayerState("disable_moon_launch")=0
 	If Err Then Glf_890 = False
 End Function
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0 && current_player.disable_moon_launch==0}", "Glf_890"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.multiball_lock_moon_launch_balls_locked==0 and current_player.disable_moon_launch==0}", "Glf_890"
 Function Glf_891(args)
 	Glf_891 = 10000
 End Function
@@ -4794,16 +4794,16 @@ End Function
 glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", "Glf_926"
 Function Glf_927(args)
 	On Error Resume Next
-	    Glf_927 = GetPlayerState("shot_proton_charge1") = 2 And GetPlayerState("shot_proton_charge2") = 1
+	    Glf_927 = GetPlayerState("shot_proton_charge1") = 2 and GetPlayerState("shot_proton_charge2") = 1
 	If Err Then Glf_927 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 && current_player.shot_proton_charge2 == 1}", "Glf_927"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 and current_player.shot_proton_charge2 == 1}", "Glf_927"
 Function Glf_928(args)
 	On Error Resume Next
-	    Glf_928 = GetPlayerState("shot_proton_charge2") = 2 And GetPlayerState("shot_proton_charge3") = 1
+	    Glf_928 = GetPlayerState("shot_proton_charge2") = 2 and GetPlayerState("shot_proton_charge3") = 1
 	If Err Then Glf_928 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 && current_player.shot_proton_charge3 == 1}", "Glf_928"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 and current_player.shot_proton_charge3 == 1}", "Glf_928"
 Function Glf_929(args)
 	On Error Resume Next
 	    Glf_929 = GetPlayerState("shot_proton_round1") = 0
@@ -4812,34 +4812,34 @@ End Function
 glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", "Glf_929"
 Function Glf_930(args)
 	On Error Resume Next
-	    Glf_930 = GetPlayerState("shot_proton_round1") = 1 And GetPlayerState("shot_proton_round2") = 0
+	    Glf_930 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_930 = False
 End Function
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", "Glf_930"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_930"
 Function Glf_931(args)
 	On Error Resume Next
-	    Glf_931 = GetPlayerState("shot_proton_round2") = 1 And GetPlayerState("shot_proton_round3") = 0
+	    Glf_931 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_931 = False
 End Function
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", "Glf_931"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_931"
 Function Glf_932(args)
 	On Error Resume Next
-	    Glf_932 = GetPlayerState("shot_proton_round3") = 1 And GetPlayerState("shot_proton_round4") = 0
+	    Glf_932 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_932 = False
 End Function
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", "Glf_932"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_932"
 Function Glf_933(args)
 	On Error Resume Next
-	    Glf_933 = GetPlayerState("shot_proton_round4") = 1 And GetPlayerState("shot_proton_round5") = 0
+	    Glf_933 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_933 = False
 End Function
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", "Glf_933"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_933"
 Function Glf_934(args)
 	On Error Resume Next
-	    Glf_934 = GetPlayerState("shot_proton_round5") = 1 And GetPlayerState("shot_proton_round6") = 0
+	    Glf_934 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_934 = False
 End Function
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", "Glf_934"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_934"
 Function Glf_935(args)
 	Glf_935 = "PROTON"
 End Function
@@ -4882,16 +4882,16 @@ End Function
 glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", "Glf_941"
 Function Glf_942(args)
 	On Error Resume Next
-	    Glf_942 = GetPlayerState("shot_cluster_charge1") = 2 And GetPlayerState("shot_cluster_charge2") = 1
+	    Glf_942 = GetPlayerState("shot_cluster_charge1") = 2 and GetPlayerState("shot_cluster_charge2") = 1
 	If Err Then Glf_942 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 && current_player.shot_cluster_charge2 == 1}", "Glf_942"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 and current_player.shot_cluster_charge2 == 1}", "Glf_942"
 Function Glf_943(args)
 	On Error Resume Next
-	    Glf_943 = GetPlayerState("shot_cluster_charge2") = 2 And GetPlayerState("shot_cluster_charge3") = 1
+	    Glf_943 = GetPlayerState("shot_cluster_charge2") = 2 and GetPlayerState("shot_cluster_charge3") = 1
 	If Err Then Glf_943 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 && current_player.shot_cluster_charge3 == 1}", "Glf_943"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 and current_player.shot_cluster_charge3 == 1}", "Glf_943"
 Function Glf_944(args)
 	On Error Resume Next
 	    Glf_944 = GetPlayerState("shot_cluster_bomb1") = 0
@@ -4900,16 +4900,16 @@ End Function
 glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", "Glf_944"
 Function Glf_945(args)
 	On Error Resume Next
-	    Glf_945 = GetPlayerState("shot_cluster_bomb1") = 1 And GetPlayerState("shot_cluster_bomb2") = 0
+	    Glf_945 = GetPlayerState("shot_cluster_bomb1") = 1 and GetPlayerState("shot_cluster_bomb2") = 0
 	If Err Then Glf_945 = False
 End Function
-glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", "Glf_945"
+glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_945"
 Function Glf_946(args)
 	On Error Resume Next
-	    Glf_946 = GetPlayerState("shot_cluster_bomb1") = 1 And GetPlayerState("shot_cluster_bomb2") = 0
+	    Glf_946 = GetPlayerState("shot_cluster_bomb1") = 1 and GetPlayerState("shot_cluster_bomb2") = 0
 	If Err Then Glf_946 = False
 End Function
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 && current_player.shot_cluster_bomb2 == 0}", "Glf_946"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_946"
 Function Glf_947(args)
 	On Error Resume Next
 	    Glf_947 = GetPlayerState("shot_cluster_bomb2") = 1
@@ -5002,16 +5002,16 @@ End Function
 glf_funcRefMap.Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_961"
 Function Glf_962(args)
 	On Error Resume Next
-	    Glf_962 = GetPlayerState("shot_training_ready") = 1 And GetPlayerState("wizard_mode_is_ready")=0 And glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_962 = GetPlayerState("shot_training_ready") = 1 and GetPlayerState("wizard_mode_is_ready")=0 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_962 = False
 End Function
-glf_funcRefMap.Add "s_Scoop_active{current_player.shot_training_ready == 1 && current_player.wizard_mode_is_ready==0 && machine.flippers_are_dead==0}", "Glf_962"
+glf_funcRefMap.Add "s_Scoop_active{current_player.shot_training_ready == 1 and current_player.wizard_mode_is_ready==0 and machine.flippers_are_dead==0}", "Glf_962"
 Function Glf_963(args)
 	On Error Resume Next
-	    Glf_963 = GetPlayerState("shot_training_ready")=1 And glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_963 = GetPlayerState("shot_training_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_963 = False
 End Function
-glf_funcRefMap.Add "check_training{current_player.shot_training_ready==1 && machine.flippers_are_dead==0}", "Glf_963"
+glf_funcRefMap.Add "check_training{current_player.shot_training_ready==1 and machine.flippers_are_dead==0}", "Glf_963"
 Function Glf_964(args)
 	On Error Resume Next
 	    Glf_964 = GetPlayerState("shot_training_ready") = 0
@@ -5252,76 +5252,76 @@ End Function
 glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""shields""}", "Glf_1004"
 Function Glf_1005(args)
 	On Error Resume Next
-	    Glf_1005 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_heal_achieved")=1
+	    Glf_1005 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_heal_achieved")=1
 	If Err Then Glf_1005 = False
 End Function
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" && current_player.training_heal_achieved==1}", "Glf_1005"
+glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", "Glf_1005"
 Function Glf_1006(args)
 	On Error Resume Next
-	    Glf_1006 = GetPlayerState("ts_last_move")="right" And GetPlayerState("training_heal_achieved")=1
+	    Glf_1006 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_heal_achieved")=1
 	If Err Then Glf_1006 = False
 End Function
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" && current_player.training_heal_achieved==1}", "Glf_1006"
+glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}", "Glf_1006"
 Function Glf_1007(args)
 	On Error Resume Next
-	    Glf_1007 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1007 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_1007 = False
 End Function
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" && current_player.training_cluster_bomb_achieved==1}", "Glf_1007"
+glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1007"
 Function Glf_1008(args)
 	On Error Resume Next
-	    Glf_1008 = GetPlayerState("ts_last_move")="right" And GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1008 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_1008 = False
 End Function
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" && current_player.training_cluster_bomb_achieved==1}", "Glf_1008"
+glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1008"
 Function Glf_1009(args)
 	On Error Resume Next
-	    Glf_1009 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1009 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_1009 = False
 End Function
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" && current_player.training_proton_cannon_achieved==1}", "Glf_1009"
+glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", "Glf_1009"
 Function Glf_1010(args)
 	On Error Resume Next
-	    Glf_1010 = GetPlayerState("ts_last_move")="right" And GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1010 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_1010 = False
 End Function
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" && current_player.training_proton_cannon_achieved==1}", "Glf_1010"
+glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}", "Glf_1010"
 Function Glf_1011(args)
 	On Error Resume Next
-	    Glf_1011 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1011 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_1011 = False
 End Function
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" && current_player.training_moon_missile_achieved==1}", "Glf_1011"
+glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", "Glf_1011"
 Function Glf_1012(args)
 	On Error Resume Next
-	    Glf_1012 = GetPlayerState("ts_last_move")="right" And GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1012 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_1012 = False
 End Function
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" && current_player.training_moon_missile_achieved==1}", "Glf_1012"
+glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}", "Glf_1012"
 Function Glf_1013(args)
 	On Error Resume Next
-	    Glf_1013 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1013 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_1013 = False
 End Function
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" && current_player.training_ship_save_achieved==1}", "Glf_1013"
+glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", "Glf_1013"
 Function Glf_1014(args)
 	On Error Resume Next
-	    Glf_1014 = GetPlayerState("ts_last_move")="right" And GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1014 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_1014 = False
 End Function
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" && current_player.training_ship_save_achieved==1}", "Glf_1014"
+glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}", "Glf_1014"
 Function Glf_1015(args)
 	On Error Resume Next
-	    Glf_1015 = GetPlayerState("ts_last_move")="left" And GetPlayerState("training_shields_achieved")=1
+	    Glf_1015 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_1015 = False
 End Function
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" && current_player.training_shields_achieved==1}", "Glf_1015"
+glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", "Glf_1015"
 Function Glf_1016(args)
 	On Error Resume Next
-	    Glf_1016 = GetPlayerState("ts_last_move")="right" And GetPlayerState("training_shields_achieved")=1
+	    Glf_1016 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_1016 = False
 End Function
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" && current_player.training_shields_achieved==1}", "Glf_1016"
+glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}", "Glf_1016"
 Function Glf_1017(args)
 	Glf_1017 = "SELECT"
 End Function
@@ -5398,52 +5398,52 @@ End Function
 glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 0}", "Glf_1030"
 Function Glf_1031(args)
 	On Error Resume Next
-	    Glf_1031 = GetPlayerState("shot_training_health1") = 1 And GetPlayerState("shot_training_health2") = 0
+	    Glf_1031 = GetPlayerState("shot_training_health1") = 1 and GetPlayerState("shot_training_health2") = 0
 	If Err Then Glf_1031 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 1 && current_player.shot_training_health2 == 0}", "Glf_1031"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 1 and current_player.shot_training_health2 == 0}", "Glf_1031"
 Function Glf_1032(args)
 	On Error Resume Next
-	    Glf_1032 = GetPlayerState("shot_training_health2") = 1 And GetPlayerState("shot_training_health3") = 0
+	    Glf_1032 = GetPlayerState("shot_training_health2") = 1 and GetPlayerState("shot_training_health3") = 0
 	If Err Then Glf_1032 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health2 == 1 && current_player.shot_training_health3 == 0}", "Glf_1032"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health2 == 1 and current_player.shot_training_health3 == 0}", "Glf_1032"
 Function Glf_1033(args)
 	On Error Resume Next
-	    Glf_1033 = GetPlayerState("shot_training_health3") = 1 And GetPlayerState("shot_training_health4") = 0
+	    Glf_1033 = GetPlayerState("shot_training_health3") = 1 and GetPlayerState("shot_training_health4") = 0
 	If Err Then Glf_1033 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health3 == 1 && current_player.shot_training_health4 == 0}", "Glf_1033"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health3 == 1 and current_player.shot_training_health4 == 0}", "Glf_1033"
 Function Glf_1034(args)
 	On Error Resume Next
-	    Glf_1034 = GetPlayerState("shot_training_health4") = 1 And GetPlayerState("shot_training_health5") = 0
+	    Glf_1034 = GetPlayerState("shot_training_health4") = 1 and GetPlayerState("shot_training_health5") = 0
 	If Err Then Glf_1034 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health4 == 1 && current_player.shot_training_health5 == 0}", "Glf_1034"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health4 == 1 and current_player.shot_training_health5 == 0}", "Glf_1034"
 Function Glf_1035(args)
 	On Error Resume Next
-	    Glf_1035 = GetPlayerState("shot_training_health5") = 1 And GetPlayerState("shot_training_health6") = 0
+	    Glf_1035 = GetPlayerState("shot_training_health5") = 1 and GetPlayerState("shot_training_health6") = 0
 	If Err Then Glf_1035 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health5 == 1 && current_player.shot_training_health6 == 0}", "Glf_1035"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health5 == 1 and current_player.shot_training_health6 == 0}", "Glf_1035"
 Function Glf_1036(args)
 	On Error Resume Next
-	    Glf_1036 = GetPlayerState("shot_training_health6") = 1 And GetPlayerState("shot_training_health7") = 0
+	    Glf_1036 = GetPlayerState("shot_training_health6") = 1 and GetPlayerState("shot_training_health7") = 0
 	If Err Then Glf_1036 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health6 == 1 && current_player.shot_training_health7 == 0}", "Glf_1036"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health6 == 1 and current_player.shot_training_health7 == 0}", "Glf_1036"
 Function Glf_1037(args)
 	On Error Resume Next
-	    Glf_1037 = GetPlayerState("shot_training_health7") = 1 And GetPlayerState("shot_training_health8") = 0
+	    Glf_1037 = GetPlayerState("shot_training_health7") = 1 and GetPlayerState("shot_training_health8") = 0
 	If Err Then Glf_1037 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health7 == 1 && current_player.shot_training_health8 == 0}", "Glf_1037"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health7 == 1 and current_player.shot_training_health8 == 0}", "Glf_1037"
 Function Glf_1038(args)
 	On Error Resume Next
-	    Glf_1038 = GetPlayerState("shot_training_health8") = 1 And GetPlayerState("shot_training_health9") = 0
+	    Glf_1038 = GetPlayerState("shot_training_health8") = 1 and GetPlayerState("shot_training_health9") = 0
 	If Err Then Glf_1038 = False
 End Function
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health8 == 1 && current_player.shot_training_health9 == 0}", "Glf_1038"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health8 == 1 and current_player.shot_training_health9 == 0}", "Glf_1038"
 Function Glf_1039(args)
 	On Error Resume Next
 	    Glf_1039 = GetPlayerState("training_heal_achieved")=0
@@ -5466,16 +5466,16 @@ End Function
 glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}", "Glf_1042"
 Function Glf_1043(args)
 	On Error Resume Next
-	    Glf_1043 = GetPlayerState("shot_training_cluster_charge1") = 1 And GetPlayerState("shot_training_cluster_charge2") = 0
+	    Glf_1043 = GetPlayerState("shot_training_cluster_charge1") = 1 and GetPlayerState("shot_training_cluster_charge2") = 0
 	If Err Then Glf_1043 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 && current_player.shot_training_cluster_charge2 == 0}", "Glf_1043"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 and current_player.shot_training_cluster_charge2 == 0}", "Glf_1043"
 Function Glf_1044(args)
 	On Error Resume Next
-	    Glf_1044 = GetPlayerState("shot_training_cluster_charge2") = 1 And GetPlayerState("shot_training_cluster_charge3") = 0
+	    Glf_1044 = GetPlayerState("shot_training_cluster_charge2") = 1 and GetPlayerState("shot_training_cluster_charge3") = 0
 	If Err Then Glf_1044 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 && current_player.shot_training_cluster_charge3 == 0}", "Glf_1044"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 and current_player.shot_training_cluster_charge3 == 0}", "Glf_1044"
 Function Glf_1045(args)
 	Glf_1045 = Glf_FormatValue(glf_timers("training_cluster_bomb").GetValue("ticks"),"0>2")
 End Function
@@ -5488,16 +5488,16 @@ End Function
 glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", "Glf_1046"
 Function Glf_1047(args)
 	On Error Resume Next
-	    Glf_1047 = GetPlayerState("shot_training_proton_charge1") = 1 And GetPlayerState("shot_training_proton_charge2") = 0
+	    Glf_1047 = GetPlayerState("shot_training_proton_charge1") = 1 and GetPlayerState("shot_training_proton_charge2") = 0
 	If Err Then Glf_1047 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 && current_player.shot_training_proton_charge2 == 0}", "Glf_1047"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 and current_player.shot_training_proton_charge2 == 0}", "Glf_1047"
 Function Glf_1048(args)
 	On Error Resume Next
-	    Glf_1048 = GetPlayerState("shot_training_proton_charge2") = 1 And GetPlayerState("shot_training_proton_charge3") = 0
+	    Glf_1048 = GetPlayerState("shot_training_proton_charge2") = 1 and GetPlayerState("shot_training_proton_charge3") = 0
 	If Err Then Glf_1048 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", "Glf_1048"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 and current_player.shot_training_proton_charge3 == 0}", "Glf_1048"
 Function Glf_1049(args)
 	Glf_1049 = Glf_FormatValue(glf_timers("training_proton_cannon").GetValue("ticks"),"0>2")
 End Function
@@ -5562,16 +5562,16 @@ End Function
 glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", "Glf_1059"
 Function Glf_1060(args)
 	On Error Resume Next
-	    Glf_1060 = GetPlayerState("shot_training_ship_charge1") = 1 And GetPlayerState("shot_training_ship_charge2") = 0
+	    Glf_1060 = GetPlayerState("shot_training_ship_charge1") = 1 and GetPlayerState("shot_training_ship_charge2") = 0
 	If Err Then Glf_1060 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 && current_player.shot_training_ship_charge2 == 0}", "Glf_1060"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 and current_player.shot_training_ship_charge2 == 0}", "Glf_1060"
 Function Glf_1061(args)
 	On Error Resume Next
-	    Glf_1061 = GetPlayerState("shot_training_ship_charge2") = 1 And GetPlayerState("shot_training_ship_charge3") = 0
+	    Glf_1061 = GetPlayerState("shot_training_ship_charge2") = 1 and GetPlayerState("shot_training_ship_charge3") = 0
 	If Err Then Glf_1061 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 && current_player.shot_training_ship_charge3 == 0}", "Glf_1061"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 and current_player.shot_training_ship_charge3 == 0}", "Glf_1061"
 Function Glf_1062(args)
 	Glf_1062 = "SAVER"
 End Function
@@ -5676,82 +5676,82 @@ End Function
 glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", "Glf_1080"
 Function Glf_1081(args)
 	On Error Resume Next
-	    Glf_1081 = GetPlayerState("shot_meteor_wave1") = 2 And GetPlayerState("shot_meteor_wave2") = 0
+	    Glf_1081 = GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
 	If Err Then Glf_1081 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", "Glf_1081"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_1081"
 Function Glf_1082(args)
 	On Error Resume Next
-	    Glf_1082 = GetPlayerState("shot_meteor_wave2") = 2 And GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_1082 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_1082 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", "Glf_1082"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_1082"
 Function Glf_1083(args)
 	On Error Resume Next
-	    Glf_1083 = GetPlayerState("shot_meteor_wave3") = 2 And GetPlayerState("shot_meteor_wave4") = 0
+	    Glf_1083 = GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
 	If Err Then Glf_1083 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", "Glf_1083"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_1083"
 Function Glf_1084(args)
 	On Error Resume Next
-	    Glf_1084 = GetPlayerState("shot_meteor_wave4") = 2 And GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_1084 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_1084 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", "Glf_1084"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_1084"
 Function Glf_1085(args)
 	On Error Resume Next
-	    Glf_1085 = GetPlayerState("shot_meteor_wave5") = 2 And GetPlayerState("shot_meteor_wave6") = 0
+	    Glf_1085 = GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
 	If Err Then Glf_1085 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", "Glf_1085"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_1085"
 Function Glf_1086(args)
 	On Error Resume Next
-	    Glf_1086 = GetPlayerState("shot_meteor_wave6") = 2 And GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_1086 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_1086 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", "Glf_1086"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_1086"
 Function Glf_1087(args)
 	On Error Resume Next
-	    Glf_1087 = GetPlayerState("shot_meteor_wave7") = 2 And GetPlayerState("shot_meteor_wave8") = 0
+	    Glf_1087 = GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
 	If Err Then Glf_1087 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", "Glf_1087"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_1087"
 Function Glf_1088(args)
 	On Error Resume Next
-	    Glf_1088 = GetPlayerState("shot_meteor_wave8") = 2 And GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_1088 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_1088 = False
 End Function
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", "Glf_1088"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_1088"
 Function Glf_1089(args)
 	On Error Resume Next
-	    Glf_1089 = GetPlayerState("shot_proton_round1") = 1 And GetPlayerState("shot_proton_round2") = 0
+	    Glf_1089 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_1089 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", "Glf_1089"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1089"
 Function Glf_1090(args)
 	On Error Resume Next
-	    Glf_1090 = GetPlayerState("shot_proton_round2") = 1 And GetPlayerState("shot_proton_round3") = 0
+	    Glf_1090 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_1090 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", "Glf_1090"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1090"
 Function Glf_1091(args)
 	On Error Resume Next
-	    Glf_1091 = GetPlayerState("shot_proton_round3") = 1 And GetPlayerState("shot_proton_round4") = 0
+	    Glf_1091 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_1091 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", "Glf_1091"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1091"
 Function Glf_1092(args)
 	On Error Resume Next
-	    Glf_1092 = GetPlayerState("shot_proton_round4") = 1 And GetPlayerState("shot_proton_round5") = 0
+	    Glf_1092 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_1092 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", "Glf_1092"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1092"
 Function Glf_1093(args)
 	On Error Resume Next
-	    Glf_1093 = GetPlayerState("shot_proton_round5") = 1 And GetPlayerState("shot_proton_round6") = 0
+	    Glf_1093 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_1093 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", "Glf_1093"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1093"
 Function Glf_1094(args)
 	On Error Resume Next
 	    Glf_1094 = GetPlayerState("shot_proton_round6") = 1
@@ -5760,34 +5760,34 @@ End Function
 glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", "Glf_1094"
 Function Glf_1095(args)
 	On Error Resume Next
-	    Glf_1095 = GetPlayerState("shot_proton_round1") = 1 And GetPlayerState("shot_proton_round2") = 0
+	    Glf_1095 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_1095 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", "Glf_1095"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1095"
 Function Glf_1096(args)
 	On Error Resume Next
-	    Glf_1096 = GetPlayerState("shot_proton_round2") = 1 And GetPlayerState("shot_proton_round3") = 0
+	    Glf_1096 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_1096 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", "Glf_1096"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1096"
 Function Glf_1097(args)
 	On Error Resume Next
-	    Glf_1097 = GetPlayerState("shot_proton_round3") = 1 And GetPlayerState("shot_proton_round4") = 0
+	    Glf_1097 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_1097 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", "Glf_1097"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1097"
 Function Glf_1098(args)
 	On Error Resume Next
-	    Glf_1098 = GetPlayerState("shot_proton_round4") = 1 And GetPlayerState("shot_proton_round5") = 0
+	    Glf_1098 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_1098 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", "Glf_1098"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1098"
 Function Glf_1099(args)
 	On Error Resume Next
-	    Glf_1099 = GetPlayerState("shot_proton_round5") = 1 And GetPlayerState("shot_proton_round6") = 0
+	    Glf_1099 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_1099 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", "Glf_1099"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1099"
 Function Glf_1100(args)
 	On Error Resume Next
 	    Glf_1100 = GetPlayerState("shot_proton_round6") = 1
@@ -5796,34 +5796,34 @@ End Function
 glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", "Glf_1100"
 Function Glf_1101(args)
 	On Error Resume Next
-	    Glf_1101 = GetPlayerState("shot_proton_round1") = 1 And GetPlayerState("shot_proton_round2") = 0
+	    Glf_1101 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_1101 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 && current_player.shot_proton_round2 == 0}", "Glf_1101"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1101"
 Function Glf_1102(args)
 	On Error Resume Next
-	    Glf_1102 = GetPlayerState("shot_proton_round2") = 1 And GetPlayerState("shot_proton_round3") = 0
+	    Glf_1102 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_1102 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 && current_player.shot_proton_round3 == 0}", "Glf_1102"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1102"
 Function Glf_1103(args)
 	On Error Resume Next
-	    Glf_1103 = GetPlayerState("shot_proton_round3") = 1 And GetPlayerState("shot_proton_round4") = 0
+	    Glf_1103 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_1103 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 && current_player.shot_proton_round4 == 0}", "Glf_1103"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1103"
 Function Glf_1104(args)
 	On Error Resume Next
-	    Glf_1104 = GetPlayerState("shot_proton_round4") = 1 And GetPlayerState("shot_proton_round5") = 0
+	    Glf_1104 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_1104 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 && current_player.shot_proton_round5 == 0}", "Glf_1104"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1104"
 Function Glf_1105(args)
 	On Error Resume Next
-	    Glf_1105 = GetPlayerState("shot_proton_round5") = 1 And GetPlayerState("shot_proton_round6") = 0
+	    Glf_1105 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_1105 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 && current_player.shot_proton_round6 == 0}", "Glf_1105"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1105"
 Function Glf_1106(args)
 	On Error Resume Next
 	    Glf_1106 = GetPlayerState("shot_proton_round6") = 1
@@ -5838,10 +5838,10 @@ End Function
 glf_funcRefMap.Add "check_meteor_wave.4{current_player.num_meteors_to_drop < 0}", "Glf_1107"
 Function Glf_1108(args)
 	On Error Resume Next
-	    Glf_1108 = GetPlayerState("num_meteors_to_drop") <= 0 And GetPlayerState("nuke_just_used") = 0
+	    Glf_1108 = GetPlayerState("num_meteors_to_drop") <= 0 and GetPlayerState("nuke_just_used") = 0
 	If Err Then Glf_1108 = False
 End Function
-glf_funcRefMap.Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0 && current_player.nuke_just_used == 0}", "Glf_1108"
+glf_funcRefMap.Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0 and current_player.nuke_just_used == 0}", "Glf_1108"
 Function Glf_1109(args)
 	On Error Resume Next
 	    Glf_1109 = GetPlayerState("meteor_wave_running") = 1
@@ -5952,10 +5952,10 @@ End Function
 glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_proton_round1==1}", "Glf_1126"
 Function Glf_1127(args)
 	On Error Resume Next
-	    Glf_1127 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor1").GetValue("ticks")=2
+	    Glf_1127 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor1").GetValue("ticks")=2
 	If Err Then Glf_1127 = False
 End Function
-glf_funcRefMap.Add "timer_meteor1_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor1.ticks==2}", "Glf_1127"
+glf_funcRefMap.Add "timer_meteor1_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor1.ticks==2}", "Glf_1127"
 Function Glf_1128(args)
 	On Error Resume Next
 	    Glf_1128 = glf_timers("meteor1").GetValue("ticks")=6
@@ -5970,10 +5970,10 @@ End Function
 glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==10}", "Glf_1129"
 Function Glf_1130(args)
 	On Error Resume Next
-	    Glf_1130 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor2").GetValue("ticks")=2
+	    Glf_1130 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor2").GetValue("ticks")=2
 	If Err Then Glf_1130 = False
 End Function
-glf_funcRefMap.Add "timer_meteor2_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor2.ticks==2}", "Glf_1130"
+glf_funcRefMap.Add "timer_meteor2_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor2.ticks==2}", "Glf_1130"
 Function Glf_1131(args)
 	On Error Resume Next
 	    Glf_1131 = glf_timers("meteor2").GetValue("ticks")=6
@@ -5988,10 +5988,10 @@ End Function
 glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==10}", "Glf_1132"
 Function Glf_1133(args)
 	On Error Resume Next
-	    Glf_1133 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor3").GetValue("ticks")=2
+	    Glf_1133 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor3").GetValue("ticks")=2
 	If Err Then Glf_1133 = False
 End Function
-glf_funcRefMap.Add "timer_meteor3_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor3.ticks==2}", "Glf_1133"
+glf_funcRefMap.Add "timer_meteor3_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor3.ticks==2}", "Glf_1133"
 Function Glf_1134(args)
 	On Error Resume Next
 	    Glf_1134 = glf_timers("meteor3").GetValue("ticks")=6
@@ -6006,10 +6006,10 @@ End Function
 glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==10}", "Glf_1135"
 Function Glf_1136(args)
 	On Error Resume Next
-	    Glf_1136 = GetPlayerState("num_meteors_to_raise")>0 And glf_timers("meteor4").GetValue("ticks")=2
+	    Glf_1136 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor4").GetValue("ticks")=2
 	If Err Then Glf_1136 = False
 End Function
-glf_funcRefMap.Add "timer_meteor4_tick{current_player.num_meteors_to_raise>0 && device.timers.meteor4.ticks==2}", "Glf_1136"
+glf_funcRefMap.Add "timer_meteor4_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor4.ticks==2}", "Glf_1136"
 Function Glf_1137(args)
 	On Error Resume Next
 	    Glf_1137 = glf_timers("meteor4").GetValue("ticks")=6
@@ -6128,16 +6128,16 @@ End Function
 glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6==1}", "Glf_1158"
 Function Glf_1159(args)
 	On Error Resume Next
-	    Glf_1159 = GetPlayerState("shot_flwiz_cluster") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 1
+	    Glf_1159 = GetPlayerState("shot_flwiz_cluster") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 1
 	If Err Then Glf_1159 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 1}", "Glf_1159"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 1}", "Glf_1159"
 Function Glf_1160(args)
 	On Error Resume Next
-	    Glf_1160 = GetPlayerState("shot_flwiz_moon") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 1
+	    Glf_1160 = GetPlayerState("shot_flwiz_moon") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 1
 	If Err Then Glf_1160 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 1}", "Glf_1160"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 1}", "Glf_1160"
 Function Glf_1161(args)
 	On Error Resume Next
 	    Glf_1161 = GetPlayerState("wizard_fully_loaded_phase") = 1
@@ -6146,58 +6146,58 @@ End Function
 glf_funcRefMap.Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}", "Glf_1161"
 Function Glf_1162(args)
 	On Error Resume Next
-	    Glf_1162 = GetPlayerState("wizard_fully_loaded_phase") = 1 And GetPlayerState("flwiz_super_jp") = 1
+	    Glf_1162 = GetPlayerState("wizard_fully_loaded_phase") = 1 and GetPlayerState("flwiz_super_jp") = 1
 	If Err Then Glf_1162 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 && current_player.flwiz_super_jp == 1}", "Glf_1162"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 and current_player.flwiz_super_jp == 1}", "Glf_1162"
 Function Glf_1163(args)
 	On Error Resume Next
-	    Glf_1163 = GetPlayerState("shot_flwiz_proton1") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1163 = GetPlayerState("shot_flwiz_proton1") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1163 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1163"
+glf_funcRefMap.Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1163"
 Function Glf_1164(args)
 	On Error Resume Next
-	    Glf_1164 = GetPlayerState("shot_flwiz_proton2") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1164 = GetPlayerState("shot_flwiz_proton2") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1164 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1164"
+glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1164"
 Function Glf_1165(args)
 	On Error Resume Next
-	    Glf_1165 = GetPlayerState("shot_flwiz_proton3") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1165 = GetPlayerState("shot_flwiz_proton3") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1165 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1165"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1165"
 Function Glf_1166(args)
 	On Error Resume Next
-	    Glf_1166 = GetPlayerState("shot_flwiz_proton4") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1166 = GetPlayerState("shot_flwiz_proton4") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1166 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1166"
+glf_funcRefMap.Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1166"
 Function Glf_1167(args)
 	On Error Resume Next
-	    Glf_1167 = GetPlayerState("shot_flwiz_proton5") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1167 = GetPlayerState("shot_flwiz_proton5") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1167 = False
 End Function
-glf_funcRefMap.Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1167"
+glf_funcRefMap.Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1167"
 Function Glf_1168(args)
 	On Error Resume Next
-	    Glf_1168 = GetPlayerState("shot_flwiz_proton6") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1168 = GetPlayerState("shot_flwiz_proton6") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1168 = False
 End Function
-glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1168"
+glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1168"
 Function Glf_1169(args)
 	On Error Resume Next
-	    Glf_1169 = GetPlayerState("shot_flwiz_cluster") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1169 = GetPlayerState("shot_flwiz_cluster") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1169 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1169"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1169"
 Function Glf_1170(args)
 	On Error Resume Next
-	    Glf_1170 = GetPlayerState("shot_flwiz_moon") = 1 And GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1170 = GetPlayerState("shot_flwiz_moon") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1170 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 && current_player.wizard_fully_loaded_phase == 2}", "Glf_1170"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1170"
 Function Glf_1171(args)
 	On Error Resume Next
 	    Glf_1171 = GetPlayerState("wizard_fully_loaded_phase") = 2
@@ -6324,52 +6324,52 @@ End Function
 glf_funcRefMap.Add """  SHOTS """, "Glf_1194"
 Function Glf_1195(args)
 	On Error Resume Next
-	    Glf_1195 = GetPlayerState("shot_combo_command1") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1195 = GetPlayerState("shot_combo_command1") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1195 = False
 End Function
-glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1195"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1195"
 Function Glf_1196(args)
 	On Error Resume Next
-	    Glf_1196 = GetPlayerState("shot_combo_command2") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1196 = GetPlayerState("shot_combo_command2") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1196 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1196"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1196"
 Function Glf_1197(args)
 	On Error Resume Next
-	    Glf_1197 = GetPlayerState("shot_combo_command3") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1197 = GetPlayerState("shot_combo_command3") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1197 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1197"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1197"
 Function Glf_1198(args)
 	On Error Resume Next
-	    Glf_1198 = GetPlayerState("shot_combo_command4") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1198 = GetPlayerState("shot_combo_command4") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1198 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1198"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1198"
 Function Glf_1199(args)
 	On Error Resume Next
-	    Glf_1199 = GetPlayerState("shot_combo_command5") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1199 = GetPlayerState("shot_combo_command5") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1199 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1199"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1199"
 Function Glf_1200(args)
 	On Error Resume Next
-	    Glf_1200 = GetPlayerState("shot_combo_command6") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1200 = GetPlayerState("shot_combo_command6") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1200 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1200"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1200"
 Function Glf_1201(args)
 	On Error Resume Next
-	    Glf_1201 = GetPlayerState("shot_combo_command7") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1201 = GetPlayerState("shot_combo_command7") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1201 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1201"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1201"
 Function Glf_1202(args)
 	On Error Resume Next
-	    Glf_1202 = GetPlayerState("shot_combo_command8") = 1 And GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1202 = GetPlayerState("shot_combo_command8") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1202 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 1}", "Glf_1202"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1202"
 Function Glf_1203(args)
 	On Error Resume Next
 	    Glf_1203 = GetPlayerState("wizard_combo_command_phase") = 1
@@ -6378,58 +6378,58 @@ End Function
 glf_funcRefMap.Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", "Glf_1203"
 Function Glf_1204(args)
 	On Error Resume Next
-	    Glf_1204 = GetPlayerState("wizard_combo_command_phase") = 1 And GetPlayerState("ccwiz_super_jp") = 1
+	    Glf_1204 = GetPlayerState("wizard_combo_command_phase") = 1 and GetPlayerState("ccwiz_super_jp") = 1
 	If Err Then Glf_1204 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 && current_player.ccwiz_super_jp == 1}", "Glf_1204"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 and current_player.ccwiz_super_jp == 1}", "Glf_1204"
 Function Glf_1205(args)
 	On Error Resume Next
-	    Glf_1205 = GetPlayerState("shot_combo_command1") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1205 = GetPlayerState("shot_combo_command1") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1205 = False
 End Function
-glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1205"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1205"
 Function Glf_1206(args)
 	On Error Resume Next
-	    Glf_1206 = GetPlayerState("shot_combo_command2") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1206 = GetPlayerState("shot_combo_command2") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1206 = False
 End Function
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1206"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1206"
 Function Glf_1207(args)
 	On Error Resume Next
-	    Glf_1207 = GetPlayerState("shot_combo_command3") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1207 = GetPlayerState("shot_combo_command3") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1207 = False
 End Function
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1207"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1207"
 Function Glf_1208(args)
 	On Error Resume Next
-	    Glf_1208 = GetPlayerState("shot_combo_command4") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1208 = GetPlayerState("shot_combo_command4") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1208 = False
 End Function
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1208"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1208"
 Function Glf_1209(args)
 	On Error Resume Next
-	    Glf_1209 = GetPlayerState("shot_combo_command5") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1209 = GetPlayerState("shot_combo_command5") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1209 = False
 End Function
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_combo_command5 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1209"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1209"
 Function Glf_1210(args)
 	On Error Resume Next
-	    Glf_1210 = GetPlayerState("shot_combo_command6") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1210 = GetPlayerState("shot_combo_command6") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1210 = False
 End Function
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_combo_command6 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1210"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1210"
 Function Glf_1211(args)
 	On Error Resume Next
-	    Glf_1211 = GetPlayerState("shot_combo_command7") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1211 = GetPlayerState("shot_combo_command7") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1211 = False
 End Function
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command7 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1211"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1211"
 Function Glf_1212(args)
 	On Error Resume Next
-	    Glf_1212 = GetPlayerState("shot_combo_command8") = 1 And GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1212 = GetPlayerState("shot_combo_command8") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1212 = False
 End Function
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command8 == 1 && current_player.wizard_combo_command_phase == 2}", "Glf_1212"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1212"
 Function Glf_1213(args)
 	On Error Resume Next
 	    Glf_1213 = GetPlayerState("wizard_combo_command_phase") = 2
@@ -7268,10 +7268,10 @@ End Function
 glf_funcRefMap.Add "meteor4_raise{current_player.shot_fwwiz_meteor4 == 0}", "Glf_1352"
 Function Glf_1353(args)
 	On Error Resume Next
-	    Glf_1353 = glf_modes("final_wave_wizard").GetValue("active") And GetPlayerState("wizard_final_hit_count") = 0
+	    Glf_1353 = glf_modes("final_wave_wizard").GetValue("active") and GetPlayerState("wizard_final_hit_count") = 0
 	If Err Then Glf_1353 = False
 End Function
-glf_funcRefMap.Add "balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active && current_player.wizard_final_hit_count == 0}", "Glf_1353"
+glf_funcRefMap.Add "balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active and current_player.wizard_final_hit_count == 0}", "Glf_1353"
 Function Glf_1354(args)
 	Glf_1354 = 60000
 End Function
@@ -7327,109 +7327,105 @@ Function Glf_1365(args)
 End Function
 glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 1}", "Glf_1365"
 Function Glf_1366(args)
-	Glf_1366 = """ RAMPS """
+	Glf_1366 = " RAMPS "
 End Function
-glf_funcRefMap.Add """"""" RAMPS """"""", "Glf_1366"
+glf_funcRefMap.Add """ RAMPS """, "Glf_1366"
 Function Glf_1367(args)
-	Glf_1367 = """ ADD A  """
+	Glf_1367 = " ADD A  "
 End Function
-glf_funcRefMap.Add """"""" ADD A  """"""", "Glf_1367"
+glf_funcRefMap.Add """ ADD A  """, "Glf_1367"
 Function Glf_1368(args)
-	Glf_1368 = """  BALL  """
+	Glf_1368 = "  BALL  "
 End Function
-glf_funcRefMap.Add """""""  BALL  """"""", "Glf_1368"
+glf_funcRefMap.Add """  BALL  """, "Glf_1368"
 Function Glf_1369(args)
-	Glf_1369 = """--------"""
+	Glf_1369 = "--------"
 End Function
-glf_funcRefMap.Add """""""--------""""""", "Glf_1369"
+glf_funcRefMap.Add """--------""", "Glf_1369"
 Function Glf_1370(args)
-	Glf_1370 = """DESTROY"""
+	Glf_1370 = "DESTROY"
 End Function
-glf_funcRefMap.Add """""""DESTROY""""""", "Glf_1370"
+glf_funcRefMap.Add """DESTROY""", "Glf_1370"
 Function Glf_1371(args)
-	Glf_1371 = """ASTEROID"""
+	Glf_1371 = "HITSLEFT"
 End Function
-glf_funcRefMap.Add """""""ASTEROID""""""", "Glf_1371"
+glf_funcRefMap.Add """HITSLEFT""", "Glf_1371"
 Function Glf_1372(args)
-	Glf_1372 = """HITSLEFT"""
+	Glf_1372 = Glf_FormatValue(GetPlayerState("wizard_final_hit_count"),"0>2")
 End Function
-glf_funcRefMap.Add """""""HITSLEFT""""""", "Glf_1372"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.wizard_final_hit_count,""0>2"")", "Glf_1372"
 Function Glf_1373(args)
-	Glf_1373 = Glf_FormatValue(GetPlayerState("wizard_final_hit_count"),"0>2")
+	On Error Resume Next
+	    Glf_1373 = glf_modes("final_wave_wizard").GetValue("active")
+	If Err Then Glf_1373 = False
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(current_player.wizard_final_hit_count,""0>2"")", "Glf_1373"
+glf_funcRefMap.Add "mode_victory_lap_started{modes.final_wave_wizard.active}", "Glf_1373"
 Function Glf_1374(args)
 	On Error Resume Next
-	    Glf_1374 = glf_modes("final_wave_wizard").GetValue("active")
+	    Glf_1374 = GetPlayerState("victory_lap_running") = 0
 	If Err Then Glf_1374 = False
 End Function
-glf_funcRefMap.Add "mode_victory_lap_started{modes.final_wave_wizard.active}", "Glf_1374"
+glf_funcRefMap.Add "ball_launch_hit{current_player.victory_lap_running == 0}", "Glf_1374"
 Function Glf_1375(args)
 	On Error Resume Next
 	    Glf_1375 = GetPlayerState("victory_lap_running") = 0
 	If Err Then Glf_1375 = False
 End Function
-glf_funcRefMap.Add "ball_launch_hit{current_player.victory_lap_running == 0}", "Glf_1375"
+glf_funcRefMap.Add "s_Plunger1_active{current_player.victory_lap_running == 0}", "Glf_1375"
 Function Glf_1376(args)
-	On Error Resume Next
-	    Glf_1376 = GetPlayerState("victory_lap_running") = 0
-	If Err Then Glf_1376 = False
+	Glf_1376 = 13000
 End Function
-glf_funcRefMap.Add "s_Plunger1_active{current_player.victory_lap_running == 0}", "Glf_1376"
+glf_funcRefMap.Add "13000", "Glf_1376"
 Function Glf_1377(args)
-	Glf_1377 = 13000
+	Glf_1377 = 45000
 End Function
-glf_funcRefMap.Add "13000", "Glf_1377"
+glf_funcRefMap.Add "45000", "Glf_1377"
 Function Glf_1378(args)
-	Glf_1378 = 45000
+	Glf_1378 = " YOU "
 End Function
-glf_funcRefMap.Add "45000", "Glf_1378"
+glf_funcRefMap.Add """ YOU """, "Glf_1378"
 Function Glf_1379(args)
-	Glf_1379 = " YOU "
+	Glf_1379 = " SAVED "
 End Function
-glf_funcRefMap.Add """ YOU """, "Glf_1379"
+glf_funcRefMap.Add """ SAVED """, "Glf_1379"
 Function Glf_1380(args)
-	Glf_1380 = " SAVED "
+	Glf_1380 = "US  "
 End Function
-glf_funcRefMap.Add """ SAVED """, "Glf_1380"
+glf_funcRefMap.Add """US  """, "Glf_1380"
 Function Glf_1381(args)
-	Glf_1381 = "US  "
+	Glf_1381 = "ALL "
 End Function
-glf_funcRefMap.Add """US  """, "Glf_1381"
+glf_funcRefMap.Add """ALL """, "Glf_1381"
 Function Glf_1382(args)
-	Glf_1382 = "ALL "
+	Glf_1382 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks"),"0>2")
 End Function
-glf_funcRefMap.Add """ALL """, "Glf_1382"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks,""0>2"")", "Glf_1382"
 Function Glf_1383(args)
-	Glf_1383 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks"),"0>2")
+	Glf_1383 = 150
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks,""0>2"")", "Glf_1383"
+glf_funcRefMap.Add "150", "Glf_1383"
 Function Glf_1384(args)
-	Glf_1384 = 150
+	Glf_1384 = 4000
 End Function
-glf_funcRefMap.Add "150", "Glf_1384"
+glf_funcRefMap.Add "4000", "Glf_1384"
 Function Glf_1385(args)
-	Glf_1385 = 4000
+	Glf_1385 = 65000
 End Function
-glf_funcRefMap.Add "4000", "Glf_1385"
+glf_funcRefMap.Add "65000", "Glf_1385"
 Function Glf_1386(args)
-	Glf_1386 = 65000
+	Glf_1386 = 1000
 End Function
-glf_funcRefMap.Add "65000", "Glf_1386"
+glf_funcRefMap.Add "1000", "Glf_1386"
 Function Glf_1387(args)
-	Glf_1387 = 1000
-End Function
-glf_funcRefMap.Add "1000", "Glf_1387"
-Function Glf_1388(args)
 	On Error Resume Next
-	    Glf_1388 = glf_ball_devices("moon_lock").GetValue("balls") > 0
-	If Err Then Glf_1388 = False
+	    Glf_1387 = glf_ball_devices("moon_lock").GetValue("balls") > 0
+	If Err Then Glf_1387 = False
 End Function
-glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1388"
-Function Glf_1389(args)
-	Glf_1389 = 250
+glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1387"
+Function Glf_1388(args)
+	Glf_1388 = 250
 End Function
-glf_funcRefMap.Add "250", "Glf_1389"
+glf_funcRefMap.Add "250", "Glf_1388"
 Dim glf_gi17_lmarr : glf_gi17_lmarr = Array(lm_gi_gi17_bs2,lm_gi_gi17_bmpbot,lm_gi_gi17_parts,lm_gi_gi17_playfield)
 glf_lightMaps.Add "gi17", glf_gi17_lmarr
 Dim glf_giapron_lmarr : glf_giapron_lmarr = Array(lm_gi_giapron_lflip,lm_gi_giapron_lflipu,lm_gi_giapron_parts,lm_gi_giapron_playfield,lm_gi_giapron_rflip,lm_gi_giapron_rflipu,lm_gi_giapron_rsling1,lm_gi_giapron_rsling2,lm_gi_giapron_rsling3,lm_gi_giapron_screen,lm_gi_giapron_trustpost,lm_gi_giapron_underpf,lm_gi_giapron_swp1)

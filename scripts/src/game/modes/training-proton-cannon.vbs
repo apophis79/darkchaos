@@ -24,8 +24,8 @@ Sub CreateTrainingProtonCannonMode
             .Add "mode_training_proton_cannon_started", Array("init_training","play_lsling_training","play_rsling_training")
             'successfull shot
             .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", Array("light_proton_charge1","flash_gi","play_sfx_LS","score_200000")
-            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 && current_player.shot_training_proton_charge2 == 0}", Array("light_proton_charge2","flash_gi","play_sfx_LS","score_300000")
-            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 && current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3","play_sfx_LS","score_500000") ',"flash_gi")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 and current_player.shot_training_proton_charge2 == 0}", Array("light_proton_charge2","flash_gi","play_sfx_LS","score_300000")
+            .Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 and current_player.shot_training_proton_charge3 == 0}", Array("light_proton_charge3","play_sfx_LS","score_500000") ',"flash_gi")
             .Add "light_proton_charge3", Array("training_achieved")
             .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
             'Stop the training

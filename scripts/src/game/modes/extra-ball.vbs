@@ -14,14 +14,14 @@ Sub CreateExtraBallMode
         With .EventPlayer()
             'initialize the EB
             .Add "mode_extra_ball_started", Array("check_eb")
-            .Add "check_eb{current_player.light_the_eb == 1 && machine.flippers_are_dead==0}", Array("eb_now_lit","enable_scoop_hold")
+            .Add "check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}", Array("eb_now_lit","enable_scoop_hold")
             .Add "check_eb{current_player.extra_balls == 0}", Array("eb_reset")
             .Add "check_eb{current_player.extra_balls > 0}", Array("eb_lit")
             'handle successful scoop hit
-            .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 && current_player.wizard_mode_is_ready==0}", Array("eb_complete") 'EB not available so move on
-            .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 && current_player.wizard_mode_is_ready==0}", Array("play_eb_show","eb_achieved","score_200000") 'Collect the EB
+            .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 and current_player.wizard_mode_is_ready==0}", Array("eb_complete") 'EB not available so move on
+            .Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 and current_player.wizard_mode_is_ready==0}", Array("play_eb_show","eb_achieved","score_200000") 'Collect the EB
             'only release the ball if mystery and training not also qualified (those use the scoop also)
-            .Add "eb_complete{current_player.shot_mystery_ready==0 && current_player.shot_training_ready==0}", Array("release_scoop_hold")
+            .Add "eb_complete{current_player.shot_mystery_ready==0 and current_player.shot_training_ready==0}", Array("release_scoop_hold")
             .Add "release_scoop_hold", Array("disable_scoop_hold","start_mwq_timer")
             .Add "eb_complete", Array("restart_eb","check_mystery") 'restart meteor wave countdown, move on to mystery mode
             'handle mystery award

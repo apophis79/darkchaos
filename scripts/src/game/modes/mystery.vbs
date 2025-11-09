@@ -21,11 +21,11 @@ Sub CreateMysteryMode
 
         With .EventPlayer()
             'enable the ball hold if needed
-            .Add "mode_mystery_started{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", Array("enable_scoop_hold")
-            '.Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 && current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
+            .Add "mode_mystery_started{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", Array("enable_scoop_hold")
+            '.Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 and current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 
             'run the mystery selection if ready, otherwise move along to training
-            .Add "check_mystery{current_player.shot_mystery_ready==0 && machine.flippers_are_dead==0}", Array("check_training")
-            .Add "check_mystery{current_player.shot_mystery_ready==1 && machine.flippers_are_dead==0}", Array("select_random_mystery")
+            .Add "check_mystery{current_player.shot_mystery_ready==0 and machine.flippers_are_dead==0}", Array("check_training")
+            .Add "check_mystery{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", Array("select_random_mystery")
             'select random mystery and run show
             .Add "select_random_mystery", Array("play_mystery_show")
             'release ball hold if training is not ready
@@ -49,8 +49,8 @@ Sub CreateMysteryMode
                 .Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", 0.8
                 .Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", 1
                 .Add "mystery_added_shields{current_player.shot_shield_left == 0}", 1
-                .Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 && device.state_machines.moon_mb.state!=""locking""}", 1
-                '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 && current_player.training_total_achieved < 6}", 1
+                .Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 and device.state_machines.moon_mb.state!=""locking""}", 1
+                '.Add "mystery_trainer_ready{current_player.shot_training_ready == 0 and current_player.training_total_achieved < 6}", 1
                 .Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", 0.5
                 .Add "mystery_super_spinner{current_player.spin_multiplier == 1}", 0.5
                 .Add "mystery_super_pops{current_player.pop_multiplier == 1}", 0.5 
