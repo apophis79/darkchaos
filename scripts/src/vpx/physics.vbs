@@ -153,8 +153,8 @@ Sub InitPolarity()
 		x.AddPt "Polarity", 16, 1.1, 0
 		x.AddPt "Polarity", 17, 1.3, 0
 
-		x.AddPt "Velocity", 0, 0, 0.85
-		x.AddPt "Velocity", 1, 0.23, 0.85
+		x.AddPt "Velocity", 0, 0, 1
+		x.AddPt "Velocity", 1, 0.23, 1
 		x.AddPt "Velocity", 2, 0.27, 1
 		x.AddPt "Velocity", 3, 0.3, 1
 		x.AddPt "Velocity", 4, 0.35, 1

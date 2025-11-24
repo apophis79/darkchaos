@@ -1703,9 +1703,9 @@ Function Glf_327(args)
 End Function
 glf_funcRefMap.Add """ZERO  """, "Glf_327"
 Function Glf_328(args)
-	Glf_328 = "THIS WAS "
+	Glf_328 = "THIS WAS"
 End Function
-glf_funcRefMap.Add """THIS WAS """, "Glf_328"
+glf_funcRefMap.Add """THIS WAS""", "Glf_328"
 Function Glf_329(args)
 	Glf_329 = "NEXT IS "
 End Function
