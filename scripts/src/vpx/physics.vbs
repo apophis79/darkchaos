@@ -31,12 +31,12 @@ Sub InitSlingCorrection
 
 	'Slingshot angle corrections (pt, BallPos in %, Angle in deg)
 	' These values are best guesses. Retune them if needed based on specific table research.
-	AddSlingsPt 0, 0.00,	-4
-	AddSlingsPt 1, 0.45,	-7
-	AddSlingsPt 2, 0.48,	0
-	AddSlingsPt 3, 0.52,	0
-	AddSlingsPt 4, 0.55,	7
-	AddSlingsPt 5, 1.00,	4
+	AddSlingsPt 0, 0.00, - 3
+	AddSlingsPt 1, 0.30, - 5
+	AddSlingsPt 2, 0.40,	-30
+	AddSlingsPt 3, 0.60,	30
+	AddSlingsPt 4, 0.70,	5
+	AddSlingsPt 5, 1.00,	3
 
 End Sub
 
