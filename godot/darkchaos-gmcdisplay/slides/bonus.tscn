@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg4wxtxliacfn"]
+
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_4xgho"]
+[ext_resource type="VideoStream" uid="uid://fu6lwwf1guy6" path="res://resources/bonus.ogv" id="3_fyms0"]
+[ext_resource type="Theme" uid="uid://b1eua1hgsadbh" path="res://resources/Score.tres" id="3_ktofo"]
+[ext_resource type="Script" uid="uid://bnukvjuqkes31" path="res://slides/bonus-events.gd" id="3_vubgl"]
+[ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_vubgl"]
+
+[sub_resource type="Animation" id="Animation_ktofo"]
+resource_name = "flash_bonus"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer/lblBonus:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vubgl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer/lblBonus:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxuqh"]
+_data = {
+&"RESET": SubResource("Animation_vubgl"),
+&"flash_bonus": SubResource("Animation_ktofo")
+}
+
+[node name="Bonus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4xgho")
+metadata/_custom_type_script = "uid://cdwas3gbf7w3g"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("3_fyms0")
+autoplay = true
+loop = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_vubgl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_nxuqh")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 66.33
+offset_bottom = 66.33
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="lblBonus" type="Label" parent="Control/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+theme = ExtResource("3_ktofo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.894118, 0.247059, 0.870588, 1)
+theme_override_font_sizes/font_size = 70
+text = "00"
+horizontal_alignment = 1
+
+[node name="lblBonusTotal" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ktofo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.894118, 0.247059, 0.870588, 1)
+theme_override_font_sizes/font_size = 70
+text = "Bonus Total"
+horizontal_alignment = 1
+
+[node name="bonus_total" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_ktofo")
+theme_override_colors/font_outline_color = Color(0.8944, 0.247186, 0.871801, 1)
+theme_override_font_sizes/font_size = 79
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_vubgl")
+variable_name = "bonus_total"
+comma_separate = true
+min_digits = 2
+initialize_empty = false
+metadata/_custom_type_script = "uid://bojo76gkx41ow"

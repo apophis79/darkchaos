@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://mmkd5l47p7c"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_r1mnt"]
+[ext_resource type="Script" uid="uid://bon56rc28cajl" path="res://slides/attract_video_q.gd" id="2_hhxni"]
+[ext_resource type="VideoStream" uid="uid://fiyncurw0vop" path="res://resources/attract.ogv" id="2_m2s46"]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1mnt")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+script = ExtResource("2_hhxni")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("2_m2s46")
+autoplay = true

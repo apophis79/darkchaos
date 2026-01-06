@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmbdgnuhm7o42"]
+
+[ext_resource type="Script" uid="uid://dwcsp83138nco" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_s4oq6"]
+[ext_resource type="SpriteFrames" uid="uid://bs08bt4pywimq" path="res://resources/super_spinner/super_spinner.tres" id="2_wh4mh"]
+
+[node name="Spinner" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4oq6")
+metadata/_custom_type_script = "uid://dwcsp83138nco"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 254)
+sprite_frames = ExtResource("2_wh4mh")
+autoplay = "default"
+centered = false

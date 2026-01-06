@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xgj3x7iwcts"]
+
+[ext_resource type="Script" uid="uid://dwcsp83138nco" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_kcdr2"]
+[ext_resource type="VideoStream" uid="uid://cpwgbgb72qkqf" path="res://resources/ball_saved.ogv" id="3_d5fb3"]
+
+[node name="BallSave" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kcdr2")
+metadata/_custom_type_script = "uid://dwcsp83138nco"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_d5fb3")
+autoplay = true

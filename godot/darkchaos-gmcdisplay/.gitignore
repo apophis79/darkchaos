@@ -1,0 +1,44 @@
+# Godot-specific files
+.import/
+.export/
+export.cfg
+
+# Godot Mono (C#) files
+.mono/
+data_*/       # Temporary build data for Mono
+*.csproj
+*.sln
+*.user
+*.mono/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build output
+bin/
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+*.apk
+*.aab
+*.pck
+*.zip
+
+# Swap and temporary files
+*.tmp
+*.temp
+*~
+*.swp
+
+# Godot Godot 4.x generated cache
+.godot/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider / IntelliJ
+.idea/

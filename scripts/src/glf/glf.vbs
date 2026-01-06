@@ -75,6 +75,9 @@ Dim useGlfBCPMonitor : useGlfBCPMonitor = False
 Dim useBCP : useBCP = False
 Dim bcpPort : bcpPort = 5050
 Dim bcpExeName : bcpExeName = CGameName & "_gmc.exe"
+Dim bcpLocalPathToGodot : bcpLocalPathToGodot = "C:\Godot\4.5.1\Godot_v4.5.1-stable_win64.exe"
+Dim bcpLocalPathToProject : bcpLocalPathToProject = "C:\Git\darkchaos\godot\darkchaos-gmcdisplay"
+Dim bcpDebug : bcpDebug = False
 Dim glf_monitor_player_vars : glf_monitor_player_vars = false
 Dim glf_BIP : glf_BIP = 0
 Dim glf_FuncCount : glf_FuncCount = 0
@@ -864,7 +867,6 @@ Public Sub Glf_KeyDown(ByVal keycode)
 		End If
 	Else
 		If keycode = StartGameKey Then
-			DispatchRelayPinEvent "request_to_start_game", True
 			DispatchPinEvent "s_start_active", True
 		End If
 	End If
@@ -931,6 +933,7 @@ Public Sub Glf_KeyUp(ByVal keycode)
 	
 
 	If keycode = StartGameKey Then
+		DispatchRelayPinEvent "request_to_start_game", True
 		DispatchPinEvent "s_start_inactive", True
 	End If
 
@@ -2285,7 +2288,7 @@ Function Glf_ConvertShow(show, tokens)
 				token = Glf_IsToken(lightParts(0))
 				If IsNull(token) And Not glf_lightNames.Exists(lightParts(0)) Then
 					tagLights = glf_lightTags("T_"&lightParts(0)).Keys()
-					lightsCount = UBound(tagLights)+1
+					lightsCount = lightsCount + UBound(tagLights)+1
 				Else
 					If IsNull(token) Then
 						lightsCount = lightsCount + 1
@@ -2294,7 +2297,7 @@ Function Glf_ConvertShow(show, tokens)
 						If Not glf_lightNames.Exists(tokens(token)) Then
 							'token is a tag
 							tagLights = glf_lightTags("T_"&tokens(token)).Keys()
-							lightsCount = UBound(tagLights)+1
+							lightsCount = lightsCount + UBound(tagLights)+1
 						Else
 							lightsCount = lightsCount + 1
 						End If
@@ -2948,13 +2951,22 @@ Class GlfVpxBcpController
 
     Public default Function init(port, backboxCommand)
         On Error Resume Next
+
         Set m_bcpController = CreateObject("vpx_bcp_controller.VpxBcpController")
-        m_bcpController.Connect port, backboxCommand
-        m_connected = True
-        useBcp = True
         If backboxCommand = "" Then
             m_bcpController.EnableLogging()
         End If
+
+		If backboxCommand = "" And bcpDebug = False Then
+			m_bcpController.Connect port, bcpLocalPathToGodot, bcpLocalPathToProject            
+		ElseIf backboxCommand = "" Then
+			m_bcpController.ConnectToDebug port
+		Else
+			m_bcpController.ConnectToBuild port, backboxCommand
+        End If
+    
+        m_connected = True
+        useBcp = True    
         m_mode_list = ""
         AddPinEventListener "player_added", "bcp_player_added", "GlfVpxBcpControllerEventHandler", 50, Array("player_added")
         AddPinEventListener "next_player", "bcp_player_next_player", "GlfVpxBcpControllerEventHandler", 50, Array("next_player")
@@ -2983,15 +2995,31 @@ Class GlfVpxBcpController
         End If
 	End Sub
     
-    Public Sub PlaySlide(slide, context, calling_context, priorty)
+    Public Sub PlaySlide(slide, context, calling_context, action, expire, priorty)
 		If m_connected Then
-            m_bcpController.Send "trigger?json={""name"": ""slides_play"", ""settings"": {""" & slide & """: {""action"": ""play"", ""expire"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
+            m_bcpController.Send "trigger?json={""name"": ""slides_play"", ""settings"": {""" & slide & """: {""action"": """ & action & """, ""expire"": " & expire & "}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
+        End If
+	End Sub
+
+    Public Sub RemoveSlide(slide)
+		If m_connected Then
+            m_bcpController.Send "trigger?json={""name"": ""slides_play"", ""settings"": {""" & slide & """: {""action"": ""remove""}}}"
+        End If
+	End Sub
+
+    Public Sub PlaySound(sound, context, calling_context, priorty)
+		If m_connected Then
+            m_bcpController.Send "trigger?json={""name"": ""sounds_play"", ""settings"": {""" & sound & """: {""action"": ""play"", ""expire"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
         End If
 	End Sub
 
     Public Sub PlayWidget(widget, context, calling_context, priorty, expire)
 		If m_connected Then
-            m_bcpController.Send "trigger?json={""name"": ""widgets_play"", ""settings"": {""" & widget & """: {""action"": ""play"", ""expire"": " & expire & " , ""x"": 0, ""y"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
+            If IsEmpty(expire) Then
+                m_bcpController.Send "trigger?json={""name"": ""widgets_play"", ""settings"": {""" & widget & """: {""action"": ""play"", ""expire"": null, ""x"": 0, ""y"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
+            Else
+                m_bcpController.Send "trigger?json={""name"": ""widgets_play"", ""settings"": {""" & widget & """: {""action"": ""play"", ""expire"": " & expire & " , ""x"": 0, ""y"": 0}}, ""context"": """ & context & """, ""calling_context"": """ & calling_context & """, ""priority"": " & priorty & "}"
+            End If
         End If
 	End Sub
 
@@ -3018,6 +3046,7 @@ Class GlfVpxBcpController
 
     Public Sub ModeStop(name)
         If m_connected Then
+            SlidesClear name
             m_bcpController.Send "mode_stop?name=" & name
         End If
     End Sub
@@ -3026,6 +3055,12 @@ Class GlfVpxBcpController
     Public Sub SendPlayerVariable(name, value, prevValue)
 		If m_connected Then
             m_bcpController.Send "player_variable?name=" & name & "&value=" & EncodeVariable(value) & "&prev_value=" & EncodeVariable(prevValue) & "&change=" & EncodeVariable(VariableVariance(value, prevValue)) & "&player_num=int:" & Getglf_currentPlayerNumber+1
+        End If
+	End Sub
+
+    Public Sub SendMachineVariable(name, value, prevValue)
+		If m_connected Then
+            m_bcpController.Send "machine_variable?name=" & name & "&value=" & EncodeVariable(value) & "&prev_value=" & EncodeVariable(prevValue) & "&change=" & EncodeVariable(VariableVariance(value, prevValue))
         End If
 	End Sub
 
@@ -3077,6 +3112,13 @@ Sub Glf_BcpSendPlayerVar(args)
     bcpController.SendPlayerVariable player_var, value, prevValue
 End Sub
 
+Sub Glf_BcpSendMachineVar(key, value, prevValue)
+    If useBcp=False Then
+        Exit Sub
+    End If
+    bcpController.SendMachineVariable key, value, prevValue
+End Sub
+
 Sub Glf_BcpSendEvent(evt)
     If useBcp=False Then
         Exit Sub
@@ -3117,7 +3159,7 @@ Sub Glf_BcpUpdate()
     If IsArray(messages) and UBound(messages)>-1 Then
         Dim message, parameters, parameter, eventName
         For Each message in messages
-            'debug.print(message.Command)
+            glf_debugLog.WriteToLog "BCP Update", message.GetValue("RawMessage")
             Select Case message.Command
                 case "hello"
                     bcpController.Reset
@@ -3130,6 +3172,11 @@ Sub Glf_BcpUpdate()
                     End If
                 case "register_trigger"
                     eventName = message.GetValue("event")
+                    glf_debugLog.WriteToLog "BCP Update: Register Trigger", eventName
+                case "trigger"
+                    eventName = message.GetValue("name")
+                    glf_debugLog.WriteToLog "BCP Update: Trigger", eventName
+                    DispatchPinEvent eventName, Null
             End Select
         Next
     End If
@@ -3166,7 +3213,7 @@ Function GlfVpxBcpControllerEventHandler(args)
 End Function
 
 '*****************************************************************************************************************************************
-'  Vpx Glf Bcp Controller
+'  END Vpx Glf Bcp Controller
 '*****************************************************************************************************************************************
 
 
@@ -4921,10 +4968,11 @@ Class GlfEventPlayer
     End Sub
 
     Public Sub FireEvent(evt)
-        Log "Dispatching Event: " & evt
+        Log "Firing Event Raw Value: " & evt
         If Not IsNull(m_events(evt).Condition) Then
             'msgbox m_events(evt).Condition
             If GetRef(m_events(evt).Condition)(Null) = False Then
+                Log "Event Condition not met for event: " & evt
                 Exit Sub
             End If
         End If
@@ -6675,7 +6723,6 @@ Class Mode
             m_started = False
             Log "Stopping"
             If useBcp Then
-                bcpController.SlidesClear(m_modename)
                 bcpController.ModeStop(m_modename)
             End If
             DispatchQueuePinEvent m_name & "_stopping", Null
@@ -8017,6 +8064,7 @@ Class GlfRandomEventPlayer
             event_to_fire = m_eventValues(evt).GetNextRandomEvent()
             If Not IsEmpty(event_to_fire) Then
                 Log "Dispatching Event: " & event_to_fire
+                Glf_BcpSendEvent event_to_fire
                 DispatchPinEvent event_to_fire, Null
             Else
                 Log "No event available to fire"
@@ -9404,6 +9452,7 @@ Class GlfShotProfile
 
     Public Property Get Name(): Name = m_name: End Property
     Public Property Get AdvanceOnHit(): AdvanceOnHit = m_advance_on_hit: End Property
+    Public Property Let AdvanceOnHit(input): m_advance_on_hit = input: End Property
     Public Property Get Block(): Block = m_block: End Property
     Public Property Let Block(input): m_block = input: End Property
     Public Property Get ProfileLoop(): ProfileLoop = m_loop: End Property
@@ -9479,7 +9528,7 @@ Class GlfShotProfile
             End If
 
             'yaml = yaml & "     block: " & m_block & vbCrLf
-            'yaml = yaml & "     advance_on_hit: " & m_advance_on_hit & vbCrLf
+            yaml = yaml & "     advance_on_hit: " & m_advance_on_hit & vbCrLf
             'yaml = yaml & "     loop: " & m_loop & vbCrLf
             'yaml = yaml & "     rotation_pattern: " & m_rotation_pattern & vbCrLf
             'yaml = yaml & "     state_names_to_not_rotate: " & m_states_not_to_rotate & vbCrLf
@@ -10813,7 +10862,7 @@ Class GlfSlidePlayer
         If m_events(evt).Evaluate() Then
             'Fire Slide
             If useBcp = True Then
-                bcpController.PlaySlide m_eventValues(evt).Slide, m_mode, m_events(evt).EventName, m_priority+m_eventValues(evt).Priority
+                bcpController.PlaySlide m_eventValues(evt).Slide, m_mode, m_events(evt).EventName, m_eventValues(evt).Action, m_eventValues(evt).Expire, m_priority+m_eventValues(evt).Priority
             End If
         End If
     End Function
@@ -10889,7 +10938,7 @@ Class GlfSlidePlayerItem
 	Public default Function init()
         m_action = "play"
         m_slide = Empty
-        m_expire = Empty
+        m_expire = 0
         m_priority = 0
         Set Init = Me
 	End Function
@@ -10899,7 +10948,7 @@ Class GlfSlidePlayerItem
         yaml = yaml & "    "& m_slide & ":" & vbCrLf
         yaml = yaml & "      action: " & m_action & vbCrLf
         If Not IsEmpty(m_expire) Then
-            yaml = yaml & "      expire: " & m_expire & "ms" & vbCrLf
+            yaml = yaml & "      expire: " & m_expire & "s" & vbCrLf
         End If
         If m_priority <> 0 Then
             yaml = yaml & "      priority: " & m_priority & vbCrLf
@@ -11219,6 +11268,7 @@ Class GlfStateMachine
             Dim evt
             For Each evt in state_config.EventsWhenStarted().Items()
                 If evt.Evaluate() = True Then
+                    Glf_BcpSendEvent evt.EventName
                     DispatchPinEvent evt.EventName, Null
                 End If
             Next
@@ -11240,6 +11290,7 @@ Class GlfStateMachine
             Dim evt
             For Each evt in state_config.EventsWhenStopped().Items()
                 If evt.Evaluate() = True Then
+                    Glf_BcpSendEvent evt.EventName
                     DispatchPinEvent evt.EventName, Null
                 End If
             Next
@@ -11306,6 +11357,7 @@ Class GlfStateMachine
             Dim evt
             For Each evt in transition.EventsWhenTransitioning().Items()
                 If evt.Evaluate() = True Then
+                    Glf_BcpSendEvent evt.EventName
                     DispatchPinEvent evt.EventName, Null
                 End If
             Next
@@ -12425,21 +12477,24 @@ Class GlfVariablePlayer
         For Each vKey in m_events(evt).Variables.Keys
             Set v = m_events(evt).Variable(vKey)
             Dim varValue : varValue = v.VariableValue
+            Dim prevValue
             Select Case v.Action
                 Case "add"
                     Log "Add Variable " & vKey & ". New Value: " & CStr(GetPlayerState(vKey) + varValue) & " Old Value: " & CStr(GetPlayerState(vKey))
                     SetPlayerState vKey, GetPlayerState(vKey) + varValue
                 Case "add_machine"
-                    Log "Add Machine Variable " & vKey & ". New Value: " & CStr(GetPlayerState(vKey) + varValue) & " Old Value: " & CStr(GetPlayerState(vKey))
-                    'SetPlayerState vKey, GetPlayerState(vKey) + varValue
+                    Log "Add Machine Variable " & vKey & ". New Value: " & CStr(glf_machine_vars(vkey).Value + varValue) & " Old Value: " & CStr(glf_machine_vars(vkey).Value)
+                    prevValue = glf_machine_vars(vkey).Value
                     glf_machine_vars(vkey).Value = glf_machine_vars(vkey).Value + varValue
+                    Glf_BcpSendMachineVar vKey, glf_machine_vars(vkey).Value, prevValue
                 Case "set"
                     Log "Setting Variable " & vKey & ". New Value: " & CStr(varValue)
                     SetPlayerState vKey, varValue
                 Case "set_machine"
                     Log "Setting Machine Variable " & vKey & ". New Value: " & CStr(varValue)
+                    Glf_BcpSendMachineVar vKey, varValue, glf_machine_vars(vkey).Value
                     glf_machine_vars(vkey).Value = varValue
-        End Select
+            End Select
         Next
     End Sub
 
@@ -12780,7 +12835,7 @@ Class GlfWidgetPlayerItem
         yaml = yaml & "    "& m_slide & ":" & vbCrLf
         yaml = yaml & "      action: " & m_action & vbCrLf
         If Not IsEmpty(m_expire) Then
-            yaml = yaml & "      expire: " & m_expire & "ms" & vbCrLf
+            yaml = yaml & "      expire: " & m_expire & "s" & vbCrLf
         End If
         If m_priority <> 0 Then
             yaml = yaml & "      priority: " & m_priority & vbCrLf
@@ -13117,6 +13172,7 @@ Class GlfBallDevice
     Public Property Let MechanicalEject(value) : m_mechanical_eject = value : End Property
     Public Property Let ExcludeFromBallSearch(value) : m_exclude_from_ball_search = value : End Property
     Public Property Let AutoFireOnUnexpectedBall(value) : m_auto_fire_on_unexpected_ball = value : End Property
+    Public Property Get AutoFireOnUnexpectedBall(): AutoFireOnUnexpectedBall = m_auto_fire_on_unexpected_ball : End Property
 
     Public Property Let Debug(value) : m_debug = value : End Property
         
@@ -13226,6 +13282,7 @@ Class GlfBallDevice
         If Not IsNull(m_eject_callback) Then
             If Not IsNull(m_balls(0)) Then
                 Log "Ejecting."
+                DispatchPinEvent m_name & "_ejecting_ball", Null
                 SetDelay m_name & "_switch0_eject_timeout", "BallDeviceEventHandler", Array(Array("eject_timeout", Me), m_balls(0)), m_eject_timeout
                 m_ejecting = True
             
@@ -15589,6 +15646,7 @@ Class GlfSoundBus
     Private m_simultaneous_sounds
     Private m_current_sounds
     Private m_volume
+    Private m_type
     Private m_debug
 
     Public Property Get Name(): Name = m_name: End Property
@@ -15604,6 +15662,9 @@ Class GlfSoundBus
     Public Property Get SimultaneousSounds(): SimultaneousSounds = m_simultaneous_sounds: End Property
     Public Property Let SimultaneousSounds(input): m_simultaneous_sounds = input: End Property
 
+    Public Property Get SystemType(): SystemType = m_type: End Property
+    Public Property Let SystemType(input): m_type = input: End Property
+
     Public Property Get Volume(): Volume = m_volume: End Property
     Public Property Let Volume(input): m_volume = input: End Property
 
@@ -15615,55 +15676,71 @@ Class GlfSoundBus
         m_name = "sound_bus_" & name
         m_simultaneous_sounds = 8
         m_volume = 0.5
+        m_type = Empty
         Set m_current_sounds = CreateObject("Scripting.Dictionary")
         glf_sound_buses.Add name, Me
         Set Init = Me
     End Function
 
     Public Sub Play(sound_settings)
-        If (UBound(m_current_sounds.Keys)-1) > m_simultaneous_sounds Then
-            'TODO: Queue Sound
-        Else
-            If m_current_sounds.Exists(sound_settings.Sound.File) Then
-                m_current_sounds.Remove sound_settings.Sound.File
-                RemoveDelay m_name & "_stop_sound_" & sound_settings.Sound.File       
-            End If
-            m_current_sounds.Add sound_settings.Sound.File, sound_settings
-            Dim volume : volume = m_volume
-            If Not IsEmpty(sound_settings.Sound.Volume) Then
-                volume = sound_settings.Sound.Volume
-            End If
-            If Not IsEmpty(sound_settings.Volume) Then
-                volume = sound_settings.Volume
-            End If
-            Dim loops : loops = 0
-            If Not IsEmpty(sound_settings.Sound.Loops) Then
-                loops = sound_settings.Sound.Loops
-            End If
-            If Not IsEmpty(sound_settings.Loops) Then
-                loops = sound_settings.Loops
-            End If
 
-            PlaySound sound_settings.Sound.File, loops, volume, 0,0,0,0,0,0
-            If loops = 0 Then
-                SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration
-            ElseIf loops>0 Then
-                SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration*loops
+        If Not IsEmpty(m_type) Then
+            If m_type = "bcp" Then
+                If useBcp=False Then
+                    Exit Sub
+                End If
+                bcpController.PlaySound sound_settings.Sound.NameRaw, "mode", "loobeeloo", 100
+            End If
+        Else
+            If (UBound(m_current_sounds.Keys)-1) > m_simultaneous_sounds Then
+                'TODO: Queue Sound
+            Else
+                If m_current_sounds.Exists(sound_settings.Sound.File) Then
+                    m_current_sounds.Remove sound_settings.Sound.File
+                    RemoveDelay m_name & "_stop_sound_" & sound_settings.Sound.File       
+                End If
+                m_current_sounds.Add sound_settings.Sound.File, sound_settings
+                Dim volume : volume = m_volume
+                If Not IsEmpty(sound_settings.Sound.Volume) Then
+                    volume = sound_settings.Sound.Volume
+                End If
+                If Not IsEmpty(sound_settings.Volume) Then
+                    volume = sound_settings.Volume
+                End If
+                Dim loops : loops = 0
+                If Not IsEmpty(sound_settings.Sound.Loops) Then
+                    loops = sound_settings.Sound.Loops
+                End If
+                If Not IsEmpty(sound_settings.Loops) Then
+                    loops = sound_settings.Loops
+                End If
+
+                PlaySound sound_settings.Sound.File, loops, volume, 0,0,0,0,0,0
+                If loops = 0 Then
+                    SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration
+                ElseIf loops>0 Then
+                    SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration*loops
+                End If
             End If
         End If
     End Sub
 
     Public Sub StopSoundWithKey(sound_key)
-        If m_current_sounds.Exists(sound_key) Then
-            Dim sound_settings : Set sound_settings = m_current_sounds(sound_key)
-            StopSound(sound_key)
-            Dim evt
-            For Each evt in sound_settings.Sound.EventsWhenStopped.Items()
-                If evt.Evaluate() Then
-                    DispatchPinEvent evt.EventName, Null
-                End If
-            Next
-            m_current_sounds.Remove sound_key
+        If Not IsEmpty(m_type) Then
+
+        Else
+
+            If m_current_sounds.Exists(sound_key) Then
+                Dim sound_settings : Set sound_settings = m_current_sounds(sound_key)
+                StopSound(sound_key)
+                Dim evt
+                For Each evt in sound_settings.Sound.EventsWhenStopped.Items()
+                    If evt.Evaluate() Then
+                        DispatchPinEvent evt.EventName, Null
+                    End If
+                Next
+                m_current_sounds.Remove sound_key
+            End If
         End If
     End Sub
 
@@ -16583,6 +16660,9 @@ Dim glf_frame_handler_count : glf_frame_handler_count = 0
 Dim glf_dispatch_queue_int : glf_dispatch_queue_int = 0
 
 Sub DispatchPinEvent(e, kwargs)
+    If e = glf_last_switch_hit & "_active" and (gametime - glf_last_switch_hit_time) < 50 Then
+        Exit Sub
+    End If
     AddToDispatchEvents e, kwargs, 1
 End Sub
 
@@ -16676,18 +16756,12 @@ Sub RunAutoFireDispatchPinEvent(e, kwargs)
         If handlers.Exists(k(1)) Then
             handler = handlers(k(1))
             glf_frame_dispatch_count = glf_frame_dispatch_count + 1
-            'debug.print "Adding Handler for: " & e&"_"&k(1)
-            'glf_dispatch_handlers_await.Add e&"_"&k(1), Array(handler, kwargs, e)
-            'If SwitchHandler(handler(0), Array(handler(2), kwargs, e)) = False Then
-                'debug.print e&"_"&k(1)
-                GetRef(handler(0))(Array(handler(2), kwargs, e))
-            'End If
+            GetRef(handler(0))(Array(handler(2), kwargs, e))
         Else
             Glf_WriteDebugLog "DispatchPinEvent_"&e, "Handler does not exist: " & k(1)
         End If
     Next
     Glf_EventBlocks(e).RemoveAll
-
 End Sub
 
 Function DispatchRelayPinEvent(e, kwargs)

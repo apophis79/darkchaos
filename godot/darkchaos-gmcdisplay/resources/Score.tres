@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b1eua1hgsadbh"]
+
+[ext_resource type="FontFile" uid="uid://dbm82ugw8uhxx" path="res://fonts/impact.ttf" id="1_bwplg"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 35
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 124
+Label/fonts/font = ExtResource("1_bwplg")
+Label/styles/normal = null

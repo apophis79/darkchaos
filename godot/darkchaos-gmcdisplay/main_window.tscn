@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxomb1kyk6cw7"]
+
+[ext_resource type="Script" uid="uid://b7l2vx2o7yb2q" path="res://addons/mpf-gmc/classes/mpf_window.gd" id="1_ni31q"]
+[ext_resource type="Script" uid="uid://cnc7dblwai6nd" path="res://addons/mpf-gmc/classes/mpf_display.gd" id="2_ce758"]
+[ext_resource type="PackedScene" uid="uid://chyyii4xjrs6" path="res://startup_splash.tscn" id="3_iwhwg"]
+[ext_resource type="Shader" uid="uid://2ol6tp0k5xjg" path="res://addons/mpf-gmc/resources/virtual_dmd.gdshader" id="4_g52yu"]
+[ext_resource type="Shader" uid="uid://jeotwb7jhaxr" path="res://addons/mpf-gmc/resources/pixelate.gdshader" id="5_wy3e2"]
+[ext_resource type="Shader" uid="uid://dkgx27pr57puc" path="res://addons/mpf-gmc/resources/dmd_dots.gdshader" id="6_0q738"]
+[ext_resource type="Script" uid="uid://b36mnjsbm1lb" path="res://settings_menu.gd" id="7_guodr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnlqf"]
+shader = ExtResource("4_g52yu")
+shader_parameter/color = Color(0.101961, 0, 0, 1)
+shader_parameter/hardness = 5.0
+shader_parameter/spacing = 2.0
+shader_parameter/columns = 98.0
+shader_parameter/rows = 36.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmaen"]
+shader = ExtResource("5_wy3e2")
+shader_parameter/columns = 128.0
+shader_parameter/rows = 32.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bkj2"]
+shader = ExtResource("6_0q738")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/hardness = 5.0
+shader_parameter/spacing = 2.0
+shader_parameter/columns = 98.0
+shader_parameter/rows = 36.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6y31"]
+
+[node name="MPFWindow" type="Control"]
+custom_minimum_size = Vector2(1920, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ni31q")
+
+[node name="DefaultDisplay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ce758")
+is_default = true
+initial_slide = ExtResource("3_iwhwg")
+
+[node name="filters" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="virtual_dmd" type="ColorRect" parent="filters"]
+visible = false
+z_index = 4096
+material = SubResource("ShaderMaterial_vnlqf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pixelate" type="ColorRect" parent="filters"]
+visible = false
+z_index = 4096
+material = SubResource("ShaderMaterial_gmaen")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dmd_dots" type="ColorRect" parent="filters"]
+visible = false
+top_level = true
+z_index = 4096
+material = SubResource("ShaderMaterial_4bkj2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="custom" type="ColorRect" parent="filters"]
+visible = false
+top_level = true
+z_index = 4096
+material = SubResource("ShaderMaterial_t6y31")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsMenu" type="PopupMenu" parent="."]
+oversampling_override = 1.0
+hide_on_checkable_item_selection = false
+prefer_native_menu = true
+script = ExtResource("7_guodr")

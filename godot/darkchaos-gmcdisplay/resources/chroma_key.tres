@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bckey3p67mngd"]
+
+[ext_resource type="Shader" uid="uid://dr8sxxbmn4c2y" path="res://resources/chroma_key_black.gdshader" id="1_3smsh"]
+
+[resource]
+shader = ExtResource("1_3smsh")
+shader_parameter/key_color = Vector3(0, 1, 0)
+shader_parameter/tolerance = 0.9
