@@ -60,6 +60,13 @@ Sub CreateBonusMode
             .Add "skip_bonus_tally", Array("comboflip_hit")
         End With
 
+        With .SlidePlayer()
+            With .EventName("run_bonus_started.2")
+                .Slide = "bonus"
+                .Action = "play"
+            End With
+        End With
+
         With .ComboSwitches("bonus_skip")
             '.Debug = True
             .Switch1 = "s_left_flipper"

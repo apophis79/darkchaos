@@ -147,6 +147,14 @@ Sub CreateBaseMode()
             End With
         End With
 
+        With .WidgetPlayer()
+            With .EventName("ball_save_new_ball_saving_ball")
+                .Widget = "ball_save"
+                .Action = "play"
+                .Expire = 2
+            End With
+        End With
+
         With .RandomEventPlayer()
             With .EventName("play_sfx_Orb")
                 .Add "play_sfx_Orb1", 1
