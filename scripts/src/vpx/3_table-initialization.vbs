@@ -14,7 +14,7 @@ Sub Table1_Init
     With GrabMag
         .InitMagnet GrabMagnet, 30  
         .GrabCenter = False
-		.strength = 20
+		.strength = 30
         .CreateEvents "GrabMag"
     End With
 
