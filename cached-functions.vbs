@@ -3224,340 +3224,340 @@ End Function
 glf_funcRefMap.Add """SCORE 3 """, "Glf_644"
 Function Glf_645(args)
 	On Error Resume Next
-	    Glf_645 = GetPlayerState("wizard_final_hit_count") > 0
+	    Glf_645 = glf_timers("meteor_countdown").GetValue("ticks") = 1
 	If Err Then Glf_645 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.wizard_final_hit_count > 0}", "Glf_645"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", "Glf_645"
 Function Glf_646(args)
 	On Error Resume Next
-	    Glf_646 = GetPlayerState("number") = 1
+	    Glf_646 = GetPlayerState("wizard_final_hit_count") > 0
 	If Err Then Glf_646 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.number == 1}", "Glf_646"
+glf_funcRefMap.Add "mode_base_started{current_player.wizard_final_hit_count > 0}", "Glf_646"
 Function Glf_647(args)
 	On Error Resume Next
-	    Glf_647 = GetPlayerState("number") = 2
+	    Glf_647 = GetPlayerState("number") = 1
 	If Err Then Glf_647 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.number == 2}", "Glf_647"
+glf_funcRefMap.Add "mode_base_started{current_player.number == 1}", "Glf_647"
 Function Glf_648(args)
 	On Error Resume Next
-	    Glf_648 = GetPlayerState("number") = 3
+	    Glf_648 = GetPlayerState("number") = 2
 	If Err Then Glf_648 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.number == 3}", "Glf_648"
+glf_funcRefMap.Add "mode_base_started{current_player.number == 2}", "Glf_648"
 Function Glf_649(args)
 	On Error Resume Next
-	    Glf_649 = GetPlayerState("number") = 4
+	    Glf_649 = GetPlayerState("number") = 3
 	If Err Then Glf_649 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.number == 4}", "Glf_649"
+glf_funcRefMap.Add "mode_base_started{current_player.number == 3}", "Glf_649"
 Function Glf_650(args)
 	On Error Resume Next
-	    Glf_650 = GetPlayerState("wizard_final_hit_count") > 0 and GetPlayerState("ball_just_started")=1
+	    Glf_650 = GetPlayerState("number") = 4
 	If Err Then Glf_650 = False
 End Function
-glf_funcRefMap.Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 and current_player.ball_just_started==1}", "Glf_650"
+glf_funcRefMap.Add "mode_base_started{current_player.number == 4}", "Glf_650"
 Function Glf_651(args)
 	On Error Resume Next
-	    Glf_651 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
+	    Glf_651 = GetPlayerState("wizard_final_hit_count") > 0 and GetPlayerState("ball_just_started")=1
 	If Err Then Glf_651 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_651"
+glf_funcRefMap.Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 and current_player.ball_just_started==1}", "Glf_651"
 Function Glf_652(args)
 	On Error Resume Next
-	    Glf_652 = GetPlayerState("shot_meteor_wave1") = 0
+	    Glf_652 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
 	If Err Then Glf_652 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", "Glf_652"
+glf_funcRefMap.Add "check_base_restart{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_652"
 Function Glf_653(args)
 	On Error Resume Next
-	    Glf_653 = GetPlayerState("shot_meteor_wave1") = 1
+	    Glf_653 = GetPlayerState("shot_meteor_wave1") = 0
 	If Err Then Glf_653 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", "Glf_653"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 0}", "Glf_653"
 Function Glf_654(args)
 	On Error Resume Next
-	    Glf_654 = GetPlayerState("shot_meteor_wave2") = 1
+	    Glf_654 = GetPlayerState("shot_meteor_wave1") = 1
 	If Err Then Glf_654 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", "Glf_654"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 1}", "Glf_654"
 Function Glf_655(args)
 	On Error Resume Next
-	    Glf_655 = GetPlayerState("shot_meteor_wave3") = 1
+	    Glf_655 = GetPlayerState("shot_meteor_wave2") = 1
 	If Err Then Glf_655 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave3 == 1}", "Glf_655"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave2 == 1}", "Glf_655"
 Function Glf_656(args)
 	On Error Resume Next
-	    Glf_656 = GetPlayerState("shot_meteor_wave4") = 1
+	    Glf_656 = GetPlayerState("shot_meteor_wave3") = 1
 	If Err Then Glf_656 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave4 == 1}", "Glf_656"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave3 == 1}", "Glf_656"
 Function Glf_657(args)
 	On Error Resume Next
-	    Glf_657 = GetPlayerState("shot_meteor_wave5") = 1
+	    Glf_657 = GetPlayerState("shot_meteor_wave4") = 1
 	If Err Then Glf_657 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave5 == 1}", "Glf_657"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave4 == 1}", "Glf_657"
 Function Glf_658(args)
 	On Error Resume Next
-	    Glf_658 = GetPlayerState("shot_meteor_wave6") = 1
+	    Glf_658 = GetPlayerState("shot_meteor_wave5") = 1
 	If Err Then Glf_658 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave6 == 1}", "Glf_658"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave5 == 1}", "Glf_658"
 Function Glf_659(args)
 	On Error Resume Next
-	    Glf_659 = GetPlayerState("shot_meteor_wave7") = 1
+	    Glf_659 = GetPlayerState("shot_meteor_wave6") = 1
 	If Err Then Glf_659 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave7 == 1}", "Glf_659"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave6 == 1}", "Glf_659"
 Function Glf_660(args)
 	On Error Resume Next
-	    Glf_660 = GetPlayerState("shot_meteor_wave8") = 1
+	    Glf_660 = GetPlayerState("shot_meteor_wave7") = 1
 	If Err Then Glf_660 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave8 == 1}", "Glf_660"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave7 == 1}", "Glf_660"
 Function Glf_661(args)
 	On Error Resume Next
-	    Glf_661 = GetPlayerState("shot_meteor_wave9") = 1
+	    Glf_661 = GetPlayerState("shot_meteor_wave8") = 1
 	If Err Then Glf_661 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave9 == 1}", "Glf_661"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave8 == 1}", "Glf_661"
 Function Glf_662(args)
 	On Error Resume Next
-	    Glf_662 = GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
+	    Glf_662 = GetPlayerState("shot_meteor_wave9") = 1
 	If Err Then Glf_662 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_662"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave9 == 1}", "Glf_662"
 Function Glf_663(args)
 	On Error Resume Next
-	    Glf_663 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_663 = GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
 	If Err Then Glf_663 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_663"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_663"
 Function Glf_664(args)
 	On Error Resume Next
-	    Glf_664 = GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
+	    Glf_664 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_664 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_664"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_664"
 Function Glf_665(args)
 	On Error Resume Next
-	    Glf_665 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_665 = GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
 	If Err Then Glf_665 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_665"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_665"
 Function Glf_666(args)
 	On Error Resume Next
-	    Glf_666 = GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
+	    Glf_666 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_666 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_666"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_666"
 Function Glf_667(args)
 	On Error Resume Next
-	    Glf_667 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_667 = GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
 	If Err Then Glf_667 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_667"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_667"
 Function Glf_668(args)
 	On Error Resume Next
-	    Glf_668 = GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
+	    Glf_668 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_668 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_668"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_668"
 Function Glf_669(args)
 	On Error Resume Next
-	    Glf_669 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_669 = GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
 	If Err Then Glf_669 = False
 End Function
-glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_669"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_669"
 Function Glf_670(args)
 	On Error Resume Next
-	    Glf_670 = GetPlayerState("shot_final_wave_wizard") = 2 and GetPlayerState("victory") = 0
+	    Glf_670 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_670 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 2 and current_player.victory == 0}", "Glf_670"
+glf_funcRefMap.Add "check_base_restart{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_670"
 Function Glf_671(args)
 	On Error Resume Next
-	    Glf_671 = GetPlayerState("shot_final_wave_wizard") = 1 and GetPlayerState("victory") = 0
+	    Glf_671 = GetPlayerState("shot_final_wave_wizard") = 2 and GetPlayerState("victory") = 0
 	If Err Then Glf_671 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 1 and current_player.victory == 0}", "Glf_671"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 2 and current_player.victory == 0}", "Glf_671"
 Function Glf_672(args)
 	On Error Resume Next
-	    Glf_672 = GetPlayerState("shot_combo_command_wizard") = 1 and GetPlayerState("victory") = 0
+	    Glf_672 = GetPlayerState("shot_final_wave_wizard") = 1 and GetPlayerState("victory") = 0
 	If Err Then Glf_672 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_combo_command_wizard == 1 and current_player.victory == 0}", "Glf_672"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_final_wave_wizard == 1 and current_player.victory == 0}", "Glf_672"
 Function Glf_673(args)
 	On Error Resume Next
-	    Glf_673 = GetPlayerState("shot_fully_loaded_wizard") = 1 and GetPlayerState("victory") = 0
+	    Glf_673 = GetPlayerState("shot_combo_command_wizard") = 1 and GetPlayerState("victory") = 0
 	If Err Then Glf_673 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 and current_player.victory == 0}", "Glf_673"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_combo_command_wizard == 1 and current_player.victory == 0}", "Glf_673"
 Function Glf_674(args)
 	On Error Resume Next
-	    Glf_674 = GetPlayerState("victory") = 1
+	    Glf_674 = GetPlayerState("shot_fully_loaded_wizard") = 1 and GetPlayerState("victory") = 0
 	If Err Then Glf_674 = False
 End Function
-glf_funcRefMap.Add "mode_base_started{current_player.victory == 1}", "Glf_674"
+glf_funcRefMap.Add "mode_base_started{current_player.shot_fully_loaded_wizard == 1 and current_player.victory == 0}", "Glf_674"
 Function Glf_675(args)
 	On Error Resume Next
-	    Glf_675 = GetPlayerState("shot_fully_loaded_wizard") = 0 and GetPlayerState("shot_cluster_bomb2") = 1 and GetPlayerState("shot_proton_round6") = 1 and  GetPlayerState("shot_moon_missile2") = 1
+	    Glf_675 = GetPlayerState("victory") = 1
 	If Err Then Glf_675 = False
 End Function
-glf_funcRefMap.Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 and current_player.shot_cluster_bomb2 == 1 and current_player.shot_proton_round6 == 1 and  current_player.shot_moon_missile2 == 1}", "Glf_675"
+glf_funcRefMap.Add "mode_base_started{current_player.victory == 1}", "Glf_675"
 Function Glf_676(args)
 	On Error Resume Next
-	    Glf_676 = GetPlayerState("meteor_wave_running") = 0
+	    Glf_676 = GetPlayerState("shot_fully_loaded_wizard") = 0 and GetPlayerState("shot_cluster_bomb2") = 1 and GetPlayerState("shot_proton_round6") = 1 and  GetPlayerState("shot_moon_missile2") = 1
 	If Err Then Glf_676 = False
 End Function
-glf_funcRefMap.Add "prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}", "Glf_676"
+glf_funcRefMap.Add "check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 and current_player.shot_cluster_bomb2 == 1 and current_player.shot_proton_round6 == 1 and  current_player.shot_moon_missile2 == 1}", "Glf_676"
 Function Glf_677(args)
 	On Error Resume Next
-	    Glf_677 = GetPlayerState("shot_final_wave_wizard") = 1
+	    Glf_677 = GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_677 = False
 End Function
-glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_final_wave_wizard == 1}", "Glf_677"
+glf_funcRefMap.Add "prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}", "Glf_677"
 Function Glf_678(args)
 	On Error Resume Next
-	    Glf_678 = GetPlayerState("shot_combo_command_wizard") = 1
+	    Glf_678 = GetPlayerState("shot_final_wave_wizard") = 1
 	If Err Then Glf_678 = False
 End Function
-glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_combo_command_wizard == 1}", "Glf_678"
+glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_final_wave_wizard == 1}", "Glf_678"
 Function Glf_679(args)
 	On Error Resume Next
-	    Glf_679 = GetPlayerState("shot_fully_loaded_wizard") = 1
+	    Glf_679 = GetPlayerState("shot_combo_command_wizard") = 1
 	If Err Then Glf_679 = False
 End Function
-glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}", "Glf_679"
+glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_combo_command_wizard == 1}", "Glf_679"
 Function Glf_680(args)
 	On Error Resume Next
-	    Glf_680 = GetPlayerState("shot_final_wave_wizard") = 1
+	    Glf_680 = GetPlayerState("shot_fully_loaded_wizard") = 1
 	If Err Then Glf_680 = False
 End Function
-glf_funcRefMap.Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", "Glf_680"
+glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}", "Glf_680"
 Function Glf_681(args)
 	On Error Resume Next
-	    Glf_681 = GetPlayerState("shot_combo_command_wizard") = 1 or GetPlayerState("shot_final_wave_wizard") = 1
+	    Glf_681 = GetPlayerState("shot_final_wave_wizard") = 1
 	If Err Then Glf_681 = False
 End Function
-glf_funcRefMap.Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", "Glf_681"
+glf_funcRefMap.Add "run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}", "Glf_681"
 Function Glf_682(args)
 	On Error Resume Next
-	    Glf_682 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_final_wave_wizard") = 1 and GetPlayerState("meteor_wave_running") = 0
+	    Glf_682 = GetPlayerState("shot_combo_command_wizard") = 1 or GetPlayerState("shot_final_wave_wizard") = 1
 	If Err Then Glf_682 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_final_wave_wizard == 1 and current_player.meteor_wave_running == 0}", "Glf_682"
+glf_funcRefMap.Add "run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}", "Glf_682"
 Function Glf_683(args)
 	On Error Resume Next
-	    Glf_683 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_combo_command_wizard") = 1 and GetPlayerState("shot_final_wave_wizard") <> 1 and GetPlayerState("meteor_wave_running") = 0
+	    Glf_683 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_final_wave_wizard") = 1 and GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_683 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_combo_command_wizard == 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_683"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_final_wave_wizard == 1 and current_player.meteor_wave_running == 0}", "Glf_683"
 Function Glf_684(args)
 	On Error Resume Next
-	    Glf_684 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_fully_loaded_wizard") = 1  and GetPlayerState("shot_combo_command_wizard") <> 1 and GetPlayerState("shot_final_wave_wizard") <> 1 and GetPlayerState("meteor_wave_running") = 0
+	    Glf_684 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_combo_command_wizard") = 1 and GetPlayerState("shot_final_wave_wizard") <> 1 and GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_684 = False
 End Function
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_fully_loaded_wizard == 1  and current_player.shot_combo_command_wizard != 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_684"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_combo_command_wizard == 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_684"
 Function Glf_685(args)
 	On Error Resume Next
-	    Glf_685 = GetPlayerState("shot_final_wave_wizard") = 1
+	    Glf_685 = GetPlayerState("wizard_mode_is_ready") = 1 and GetPlayerState("shot_fully_loaded_wizard") = 1  and GetPlayerState("shot_combo_command_wizard") <> 1 and GetPlayerState("shot_final_wave_wizard") <> 1 and GetPlayerState("meteor_wave_running") = 0
 	If Err Then Glf_685 = False
 End Function
-glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", "Glf_685"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_fully_loaded_wizard == 1  and current_player.shot_combo_command_wizard != 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_685"
 Function Glf_686(args)
 	On Error Resume Next
-	    Glf_686 = GetPlayerState("ball_just_started")=0
+	    Glf_686 = GetPlayerState("shot_final_wave_wizard") = 1
 	If Err Then Glf_686 = False
 End Function
-glf_funcRefMap.Add "check_plunger{current_player.ball_just_started==0}", "Glf_686"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", "Glf_686"
 Function Glf_687(args)
-	Glf_687 = 5000
+	On Error Resume Next
+	    Glf_687 = GetPlayerState("ball_just_started")=0
+	If Err Then Glf_687 = False
 End Function
-glf_funcRefMap.Add "5000", "Glf_687"
+glf_funcRefMap.Add "check_plunger{current_player.ball_just_started==0}", "Glf_687"
 Function Glf_688(args)
-	Glf_688 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2,")
+	Glf_688 = 5000
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_688"
+glf_funcRefMap.Add "5000", "Glf_688"
 Function Glf_689(args)
-	Glf_689 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
+	Glf_689 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_689"
+glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_689"
 Function Glf_690(args)
-	Glf_690 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
+	Glf_690 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_690"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_690"
 Function Glf_691(args)
-	Glf_691 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
+	Glf_691 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_691"
+glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_691"
 Function Glf_692(args)
-	Glf_692 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
+	Glf_692 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_692"
+glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_692"
 Function Glf_693(args)
-	Glf_693 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2")
+	Glf_693 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2"")", "Glf_693"
+glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_693"
 Function Glf_694(args)
-	Glf_694 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2")
+	Glf_694 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2"")", "Glf_694"
+glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2"")", "Glf_694"
 Function Glf_695(args)
-	Glf_695 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2")
+	Glf_695 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2"")", "Glf_695"
+glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2"")", "Glf_695"
 Function Glf_696(args)
-	Glf_696 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2")
+	Glf_696 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2"")", "Glf_696"
+glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2"")", "Glf_696"
 Function Glf_697(args)
-	Glf_697 = "BALL"
+	Glf_697 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2")
 End Function
-glf_funcRefMap.Add """BALL""", "Glf_697"
+glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2"")", "Glf_697"
 Function Glf_698(args)
-	Glf_698 = 500
+	Glf_698 = "BALL"
 End Function
-glf_funcRefMap.Add "500", "Glf_698"
+glf_funcRefMap.Add """BALL""", "Glf_698"
 Function Glf_699(args)
-	Glf_699 = 300
+	Glf_699 = 500
 End Function
-glf_funcRefMap.Add "300", "Glf_699"
+glf_funcRefMap.Add "500", "Glf_699"
 Function Glf_700(args)
-	Glf_700 = 600
+	Glf_700 = 300
 End Function
-glf_funcRefMap.Add "600", "Glf_700"
+glf_funcRefMap.Add "300", "Glf_700"
 Function Glf_701(args)
-	On Error Resume Next
-	    Glf_701 = glf_timers("meteor_countdown").GetValue("ticks") = 3
-	If Err Then Glf_701 = False
+	Glf_701 = 600
 End Function
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}", "Glf_701"
+glf_funcRefMap.Add "600", "Glf_701"
 Function Glf_702(args)
-	Glf_702 = 6000
-End Function
-glf_funcRefMap.Add "6000", "Glf_702"
-Function Glf_703(args)
-	Glf_703 = 3000
-End Function
-glf_funcRefMap.Add "3000", "Glf_703"
-Function Glf_704(args)
-	Glf_704 = 2000
-End Function
-glf_funcRefMap.Add "2000", "Glf_704"
-Function Glf_705(args)
-	Glf_705 = 1500
-End Function
-glf_funcRefMap.Add "1500", "Glf_705"
-Function Glf_706(args)
 	On Error Resume Next
-	    Glf_706 = glf_timers("meteor_countdown").GetValue("ticks") = 1
-	If Err Then Glf_706 = False
+	    Glf_702 = glf_timers("meteor_countdown").GetValue("ticks") = 3
+	If Err Then Glf_702 = False
 End Function
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", "Glf_706"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}", "Glf_702"
+Function Glf_703(args)
+	Glf_703 = 6000
+End Function
+glf_funcRefMap.Add "6000", "Glf_703"
+Function Glf_704(args)
+	Glf_704 = 3000
+End Function
+glf_funcRefMap.Add "3000", "Glf_704"
+Function Glf_705(args)
+	Glf_705 = 2000
+End Function
+glf_funcRefMap.Add "2000", "Glf_705"
+Function Glf_706(args)
+	Glf_706 = 1500
+End Function
+glf_funcRefMap.Add "1500", "Glf_706"
 Function Glf_707(args)
 	On Error Resume Next
 	    Glf_707 = Glf_GameVariable("balls_in_play") = 1 and GetPlayerState("ball_just_started") = 0

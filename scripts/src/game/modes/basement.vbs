@@ -13,6 +13,7 @@ Sub CreateBasementMode()
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("test_show1","test_show2") 'DEBUG
+            .Add "s_left_staged_flipper_key_active", Array("play_widget_wave1") 'DEBUG
 
             'initialization
             .Add "timer_table_init_complete", Array("start_attract_mode","turn_on_starlight","turn_on_ship_lights")
