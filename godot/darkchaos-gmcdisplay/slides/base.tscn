@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddkf3rc2mxgof"]
 
-[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_b71wd"]
-[ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_06ewq"]
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_b71wd"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_06ewq"]
 [ext_resource type="Theme" uid="uid://b1eua1hgsadbh" path="res://resources/Score.tres" id="2_mixwp"]
 [ext_resource type="Texture2D" uid="uid://qxl1ofm6bwg7" path="res://resources/frame.png" id="4_myvl5"]
 [ext_resource type="VideoStream" uid="uid://b4bosefxsbg3x" path="res://resources/bg_loop.ogv" id="5_qjsot"]
@@ -14,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b71wd")
-metadata/_custom_type_script = "uid://cdwas3gbf7w3g"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -46,7 +45,6 @@ script = ExtResource("2_06ewq")
 variable_name = "score"
 comma_separate = true
 initialize_empty = false
-metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -62,7 +60,7 @@ expand_mode = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 32.495
+offset_top = 11.0
 offset_bottom = 160.495
 grow_horizontal = 2
 
@@ -78,7 +76,6 @@ script = ExtResource("2_06ewq")
 variable_name = "number"
 template_string = "Player %s"
 initialize_empty = false
-metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="Ball" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -92,7 +89,6 @@ script = ExtResource("2_06ewq")
 variable_name = "ball"
 template_string = "Ball %s"
 initialize_empty = false
-metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -100,6 +96,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -140.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 40
@@ -121,6 +119,7 @@ theme = ExtResource("2_mixwp")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 41
 text = "Player 1"
+horizontal_alignment = 1
 
 [node name="Player1Score" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -134,7 +133,6 @@ script = ExtResource("2_06ewq")
 variable_type = 4
 variable_name = "score"
 comma_separate = true
-metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -147,6 +145,7 @@ theme = ExtResource("2_mixwp")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 41
 text = "Player 2"
+horizontal_alignment = 1
 
 [node name="Player1Score" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -160,7 +159,6 @@ script = ExtResource("2_06ewq")
 variable_type = 5
 variable_name = "score"
 comma_separate = true
-metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -173,6 +171,7 @@ theme = ExtResource("2_mixwp")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 41
 text = "Player 3"
+horizontal_alignment = 1
 
 [node name="Player1Score" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
@@ -186,7 +185,6 @@ script = ExtResource("2_06ewq")
 variable_type = 6
 variable_name = "score"
 comma_separate = true
-metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -199,6 +197,7 @@ theme = ExtResource("2_mixwp")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 41
 text = "Player 4"
+horizontal_alignment = 1
 
 [node name="Player1Score" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
@@ -212,4 +211,3 @@ script = ExtResource("2_06ewq")
 variable_type = 7
 variable_name = "score"
 comma_separate = true
-metadata/_custom_type_script = "uid://bojo76gkx41ow"

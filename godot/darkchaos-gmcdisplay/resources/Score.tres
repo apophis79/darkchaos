@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://b1eua1hgsadbh"]
 
-[ext_resource type="FontFile" uid="uid://dbm82ugw8uhxx" path="res://fonts/impact.ttf" id="1_bwplg"]
+[ext_resource type="FontFile" uid="uid://bjklcbk0rfbkr" path="res://fonts/Orbitron-Black.ttf" id="1_bwplg"]
 
 [resource]
 Label/colors/font_color = Color(1, 1, 1, 1)
