@@ -26,8 +26,6 @@ Sub CreateBaseMode()
 
         With .EventPlayer()
 
-            .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", Array("play_widget_wave1") 'FIXME  this is temporary
-
             'new ball
             .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","run_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
@@ -155,16 +153,50 @@ Sub CreateBaseMode()
                 .Action = "play"
                 .Expire = 2
             End With
-            'With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}")
-            With .EventName("play_widget_wave1")
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave1 == 0}")
                 .Widget = "wave1"
                 .Action = "play"
-                .Expire = 6
+                .Expire = 5
             End With
-            With .EventName("play_widget_wave2")
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}")
                 .Widget = "wave2"
                 .Action = "play"
                 .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}")
+                .Widget = "wave3"
+                .Action = "play"
+                .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}")
+                .Widget = "wave4"
+                .Action = "play"
+                .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}")
+                .Widget = "wave5"
+                .Action = "play"
+                .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}")
+                .Widget = "wave6"
+                .Action = "play"
+                .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}")
+                .Widget = "wave7"
+                .Action = "play"
+                .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}")
+                .Widget = "wave8"
+                .Action = "play"
+                .Expire = 4
+            End With
+            With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}")
+                .Widget = "wave9"
+                .Action = "play"
+                .Expire = 5
             End With
         End With
 
