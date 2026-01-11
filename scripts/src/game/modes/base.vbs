@@ -261,21 +261,21 @@ Sub CreateBaseMode()
                     .Text = "{players[0].score:0>2,}"
                 End With
             End With
-            'With .EventName("mode_base_started")
-            '    With .Display("player2")
-            '        .Text = "{players[1].score:0>2,}"
-            '    End With
-            'End With
-            'With .EventName("mode_base_started")
-            '    With .Display("player3")
-            '        .Text = "{players[2].score:0>2,}"
-            '    End With
-            'End With
-            'With .EventName("mode_base_started")
-            '    With .Display("player4")
-            '        .Text = "{players[3].score:0>2,}"
-            '    End With
-            'End With
+            With .EventName("mode_base_started")
+               With .Display("player2")
+                   .Text = "{players[1].score:0>2,}"
+               End With
+            End With
+            With .EventName("mode_base_started")
+               With .Display("player3")
+                   .Text = "{players[2].score:0>2,}"
+               End With
+            End With
+            With .EventName("mode_base_started")
+               With .Display("player4")
+                   .Text = "{players[3].score:0>2,}"
+               End With
+            End With
             With .EventName("mode_base_started")
                 With .Display("ball")
                     .Text = "{current_player.ball:0>2}"
