@@ -3537,21 +3537,21 @@ Function Glf_697(args)
 End Function
 glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_697"
 Function Glf_698(args)
-	Glf_698 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
+	Glf_698 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_698"
+glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_698"
 Function Glf_699(args)
-	Glf_699 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
+	Glf_699 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_699"
+glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_699"
 Function Glf_700(args)
-	Glf_700 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
+	Glf_700 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_700"
+glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_700"
 Function Glf_701(args)
-	Glf_701 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
+	Glf_701 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
 End Function
-glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_701"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_701"
 Function Glf_702(args)
 	Glf_702 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2")
 End Function

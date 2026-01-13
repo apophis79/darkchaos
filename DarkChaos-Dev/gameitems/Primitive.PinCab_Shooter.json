@@ -1,9 +1,9 @@
 {
   "Primitive": {
     "position": {
-      "x": 12.3,
-      "y": 20.0,
-      "z": 0.0
+      "x": 29.0,
+      "y": -15.0,
+      "z": -8.0
     },
     "size": {
       "x": 959.3,
@@ -27,7 +27,7 @@
     "name": "PinCab_Shooter",
     "material": "VLM.Bake.Metals",
     "side_color": "#96009696",
-    "is_visible": false,
+    "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
     "threshold": 2.0,
@@ -44,7 +44,7 @@
     "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 1.0,
-    "is_reflection_enabled": false,
+    "is_reflection_enabled": true,
     "backfaces_enabled": false,
     "physics_material": "",
     "overwrite_physics": true,

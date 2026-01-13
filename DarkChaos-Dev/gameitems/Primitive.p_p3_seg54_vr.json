@@ -1,8 +1,8 @@
 {
   "Primitive": {
     "position": {
-      "x": 322.39282,
-      "y": -196.67334,
+      "x": 595.6028,
+      "y": -585.4224,
       "z": 0.0
     },
     "size": {
@@ -53,7 +53,7 @@
     "min_aa_bound": null,
     "max_aa_bound": null,
     "mesh_file_name": "NewSeg9.obj",
-    "depth_bias": -50.0,
+    "depth_bias": -5000.0,
     "add_blend": true,
     "use_depth_mask": false,
     "alpha": 100.0,

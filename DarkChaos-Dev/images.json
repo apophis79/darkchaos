@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.00117,
+    "alpha_test_value": 200.00124,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
@@ -341,7 +341,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1.webp",
@@ -355,7 +355,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidEffect001_Bake1_CyclesBake_COMBINED_1.webp",
@@ -369,7 +369,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidFire_Bake1_CyclesBake_COMBINED_1.webp",
@@ -383,7 +383,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_DamageEarth_Bake1_CyclesBake_COMBINED_1.webp",
@@ -397,7 +397,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_EarthClouds_Bake1_CyclesBake_COMBINED_1.webp",
@@ -411,7 +411,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Meteor_Bake1_CyclesBake_COMBINED_1.webp",
@@ -425,7 +425,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards001_Bake1_CyclesBake_COMBINED_1.webp",
@@ -439,7 +439,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards002_Bake1_CyclesBake_COMBINED_1.webp",
@@ -453,7 +453,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards003_Bake1_CyclesBake_COMBINED_1.webp",
@@ -467,7 +467,7 @@
     "width": 1000,
     "height": 1000,
     "alpha_test_value": -1.0,
-    "is_opaque": null,
+    "is_opaque": false,
     "is_signed": false,
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards004_Bake1_CyclesBake_COMBINED_1.webp",
@@ -598,6 +598,62 @@
     "jpeg": {
       "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5 - NM.webp",
       "name": "VLM.Nestmap5 - NM"
+    },
+    "bits": false
+  },
+  {
+    "name": "PinCab_Blades",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Blades.png",
+    "width": 2048,
+    "height": 2048,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Blades.png",
+      "name": "PinCab_Blades"
+    },
+    "bits": false
+  },
+  {
+    "name": "Pincab_DMD",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_DMD.png",
+    "width": 1005,
+    "height": 416,
+    "alpha_test_value": -1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_DMD.png",
+      "name": "Pincab_DMD"
+    },
+    "bits": false
+  },
+  {
+    "name": "PinCab_Quarters",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Quarters.png",
+    "width": 550,
+    "height": 640,
+    "alpha_test_value": -1.0,
+    "is_opaque": true,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Quarters.png",
+      "name": "PinCab_Quarters"
+    },
+    "bits": false
+  },
+  {
+    "name": "Pincab_startbutton",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_startbutton.png",
+    "width": 230,
+    "height": 228,
+    "alpha_test_value": -1.0,
+    "is_opaque": false,
+    "is_signed": false,
+    "jpeg": {
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_startbutton.png",
+      "name": "Pincab_startbutton"
     },
     "bits": false
   }

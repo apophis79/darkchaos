@@ -8,16 +8,21 @@ Sub Table1_KeyDown(ByVal keycode)
 	Glf_KeyDown(keycode)
 
 	If keycode = LeftFlipperKey Then 
-		PinCab_LeftFlipperButton.TransX = -10
+		PinCab_FlipperButtonLeft.TransX = 7
 	End if
     If keycode = RightFlipperKey Then 
-		PinCab_RightFlipperButton.TransX = 10
+		PinCab_FlipperButtonRight.TransX = -7
 	End if
 	If keycode = LeftMagnaSave Then 
-		PinCab_LeftMagnaButton.TransX = -10
+		PinCab_MagnaButtonLeft.TransX = 7
 	End if
     If keycode = RightMagnaSave Then 
-		PinCab_RightMagnaButton.TransX = 10
+		PinCab_MagnaButtonRight.TransX = -7
+	End if
+	If keycode = StartGameKey Then 
+		PinCab_StartButton.TransY = 7
+		PinCab_StartButton2.TransY = 7
+		SoundStartButton
 	End if
 
 	If keycode = AddCreditKey or keycode = AddCreditKey2 Then RandomCoinSound
@@ -28,7 +33,6 @@ Sub Table1_KeyDown(ByVal keycode)
 		TimerPlunger2.Enabled = False
 		PinCab_Shooter.TransZ = 0
 	End If
-	If keycode = StartGameKey Then SoundStartButton
 	If keycode = LeftTiltKey Then 
 		'Nudge 90, 2 'This is set in GLF
 		ShipNudge 1, -1, ShipVelX, ShipTimeX, ShipVelX2, ShipMaxMovement, ShipAcc
@@ -55,16 +59,20 @@ Sub Table1_KeyUp(ByVal keycode)
 	Glf_KeyUp(keycode)
 
 	If keycode = LeftFlipperKey Then 
-		PinCab_LeftFlipperButton.TransX = 0
+		PinCab_FlipperButtonLeft.TransX = 0
 	End if
     If keycode = RightFlipperKey Then 
-		PinCab_RightFlipperButton.TransX = 0
+		PinCab_FlipperButtonRight.TransX = 0
 	End if
 	If keycode = LeftMagnaSave Then 
-		PinCab_LeftMagnaButton.TransX = 0
+		PinCab_MagnaButtonLeft.TransX = 0
 	End if
     If keycode = RightMagnaSave Then 
-		PinCab_RightMagnaButton.TransX = 0
+		PinCab_MagnaButtonRight.TransX = 0
+	End if
+	If keycode = StartGameKey Then 
+		PinCab_StartButton.TransY = 0
+		PinCab_StartButton2.TransY = 0
 	End if
 	
 	If KeyCode = PlungerKey Then

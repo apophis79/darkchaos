@@ -8,8 +8,9 @@ Sub SetupRoom
 	TimerPlunger2.Enabled = True
 
 	If VRRoom <> 0 Then
+		DMD.visible = 1
 		For Each x In DesktopLights: x.visible = 0: Next
-		For Each x in BP_Rails : x.visible = 1: Next  'overrides option menu setting
+		For Each x in BP_Rails : x.visible = 0: Next  'overrides option menu setting
 		For Each VRThing in VR_Cab: VRThing.visible = 1: Next
 		For Each VRThing in VR_Backglass: VRThing.visible = 1: Next
 		For Each VRThing in VR_Flashers: VRThing.visible = 1: Next
@@ -38,6 +39,7 @@ Sub SetupRoom
 		End If
 
 	Else
+		DMD.visible = 0
 		For Each VRThing in VR_Mega: VRThing.visible = 0: Next
 		For Each VRThing in VR_Planet: VRThing.visible = 0: Next
 		For Each VRThing in VR_Min: VRThing.visible = 0: Next
@@ -51,40 +53,47 @@ Sub SetupRoom
 	End if
 End Sub
 
+Const VRBG_height = 445 '375
+Const VRBG_y = -90
+Const VRBG_rot = -86
 
 Sub InitVR
 	Dim obj
 
+	For Each obj in VR_Cab
+		obj.z = obj.z + 20
+	Next
+
 	For Each obj in VR_Backglass
 		obj.x = obj.x + 0
-		obj.height = -obj.y + 375
-		obj.y = 10    'adjusts the distance from the backglass towards the user
-		obj.rotx = -86.5
+		obj.height = -obj.y + VRBG_height
+		obj.y = VRBG_y
+		obj.rotx = VRBG_rot
 	Next
 
 	For Each obj in VR_Flashers
 		obj.x = obj.x + 0
-		obj.height = -obj.y + 375
-		obj.y = 15    'adjusts the distance from the backglass towards the user
-		obj.rotx = -86.5
+		obj.height = -obj.y + VRBG_height
+		obj.y = VRBG_y + 5
+		obj.rotx = VRBG_rot
 	Next
 
 	For Each obj in VR_DisplayBall
 		obj.x = obj.x + 0
-		obj.z = -obj.y + 375
-		obj.y = 25    'adjusts the distance from the backglass towards the user
-		obj.rotx = -86.5
+		obj.z = -obj.y + VRBG_height
+		obj.y = VRBG_y + 10 
+		obj.rotx = VRBG_rot
 	Next
-	BGDisplayBall.y = 20
+	BGDisplayBall.y = VRBG_y + 5
 
 	For Each obj in VR_Display
 		obj.x = obj.x + 0
-		obj.z = -obj.y + 375
-		obj.y = 90    'adjusts the distance from the backglass towards the user
-		obj.rotx = -86.5
+		obj.z = -obj.y + VRBG_height
+		obj.y = VRBG_y + 40
+		obj.rotx = VRBG_rot
 	Next
-	BGDisplay.y = 85
-	
+	'BGDisplay.y = 85
+	BGDisplay.y = VRBG_y + 35
 
 	NewSkyAngle
 End Sub
