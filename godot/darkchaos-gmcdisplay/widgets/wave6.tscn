@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_mfko8"]
 [ext_resource type="VideoStream" uid="uid://dfe2b20ovg316" path="res://resources/wave6.ogv" id="2_mfko8"]
 
-[node name="Wave1" type="Control"]
+[node name="Wave6" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

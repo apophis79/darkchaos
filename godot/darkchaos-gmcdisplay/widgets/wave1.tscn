@@ -4,6 +4,7 @@
 [ext_resource type="VideoStream" uid="uid://byrds2k4a4fc5" path="res://resources/wave1.ogv" id="2_3qi2s"]
 
 [node name="Wave1" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

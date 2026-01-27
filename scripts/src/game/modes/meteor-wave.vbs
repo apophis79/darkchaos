@@ -130,6 +130,13 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
+        With .WidgetPlayer()
+            With .EventName("mode_meteor_wave_started")
+                .Widget = "wave_number"
+                .Action = "play"
+            End With
+        End With
+
 
         With .DOFPlayer()
             With .EventName("proton_fired")
@@ -634,6 +641,10 @@ Sub CreateMeteorWaveMode
                 With .Variable("nuke_just_used")
                     .Action = "set"
                     .Int = 0
+                End With
+                With .Variable("num_wave_current")
+                    .Action = "set"
+                    .Int = "current_player.num_waves_completed + 1"
                 End With
 			End With
             With .EventName("finish_meteor_wave") 
