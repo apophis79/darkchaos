@@ -141,8 +141,12 @@ Sub CreateBaseMode()
 
         'Start the base mode slide on the lcd
         With .SlidePlayer()
-            With .EventName("mode_base_started")
+            With .EventName("mode_base_started.2")
                 .Slide = "base"
+                .Action = "play"
+            End With
+            With .EventName("mode_base_started.1")
+                .Slide = "space_field"
                 .Action = "play"
             End With
         End With

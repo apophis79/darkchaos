@@ -30,6 +30,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/mpf-gmc/plugin.cfg")
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [rendering]
 
 renderer/rendering_method="mobile"

@@ -130,6 +130,13 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_meteor_wave_started")
+                .Slide = "meteor_field"
+                .Action = "play"
+            End With
+        End With
+
         With .WidgetPlayer()
             With .EventName("mode_meteor_wave_started")
                 .Widget = "wave_number"

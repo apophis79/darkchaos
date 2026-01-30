@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cykcgxn7n4deo"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_nycbw"]
+[ext_resource type="VideoStream" uid="uid://b0128dqsmwjhl" path="res://resources/wave-comp1.ogv" id="3_cfhb3"]
+
+[node name="MeteorField" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nycbw")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("3_cfhb3")
+autoplay = true
+loop = true
