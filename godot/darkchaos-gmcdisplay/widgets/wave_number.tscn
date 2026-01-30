@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_68357"]
 
 [node name="WaveNumber" type="Control"]
+z_index = 6
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

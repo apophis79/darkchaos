@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qxl1ofm6bwg7" path="res://resources/frame.png" id="4_myvl5"]
 
 [node name="Base" type="Control"]
-z_index = 9
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
