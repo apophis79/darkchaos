@@ -127,28 +127,28 @@
   },
   {
     "name": "Pincab_Cabinet",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Cabinet.png",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Cabinet.webp",
     "width": 4000,
     "height": 4000,
     "alpha_test_value": 1.0,
     "is_opaque": true,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Cabinet.png",
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Cabinet.webp",
       "name": "Pincab_Cabinet"
     },
     "bits": false
   },
   {
     "name": "Pincab_Backbox",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Backbox.webp",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.00124,
+    "alpha_test_value": 200.00131,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Pincab_Backbox.png",
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Backbox.webp",
       "name": "Pincab_Backbox"
     },
     "bits": false
