@@ -15,22 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b71wd")
 
-[node name="CurrentPlayerScore" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_mixwp")
-text = "00"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_06ewq")
-variable_name = "score"
-comma_separate = true
-initialize_empty = false
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -45,8 +29,10 @@ expand_mode = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 11.0
-offset_bottom = 160.495
+offset_left = 1996.0
+offset_top = 476.0
+offset_right = 342.0
+offset_bottom = 625.495
 grow_horizontal = 2
 
 [node name="CurrentPlayer" type="Label" parent="VBoxContainer"]
@@ -62,64 +48,27 @@ variable_name = "number"
 template_string = "Player %s"
 initialize_empty = false
 
-[node name="Ball" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_mixwp")
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 40
-text = "Ball 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_06ewq")
-variable_name = "ball"
-template_string = "Ball %s"
-initialize_empty = false
-
-[node name="MarginContainerCountdown" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_top = 223.0
-offset_right = 191.0
-offset_bottom = 288.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainerCountdown"]
-layout_mode = 2
-
-[node name="MeteorCountdown" type="Label" parent="MarginContainerCountdown/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_mixwp")
-theme_override_font_sizes/font_size = 45
-text = "00"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_06ewq")
-variable_name = "meteor_countdown_value"
-metadata/_custom_type_script = "uid://bfvhmv2eirpua"
-
 [node name="MarginContainerBottom" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -140.0
-offset_right = -1.0
-offset_bottom = 21.0
+offset_left = 1663.0
+offset_top = -828.0
+offset_right = 427.0
+offset_bottom = -609.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainerBottom"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainerBottom/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainerBottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -128,7 +77,7 @@ theme_override_font_sizes/font_size = 41
 text = "Player 1"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer"]
+[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -141,11 +90,11 @@ variable_type = 4
 variable_name = "score"
 comma_separate = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainerBottom/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainerBottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -154,7 +103,7 @@ theme_override_font_sizes/font_size = 41
 text = "Player 2"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer2"]
+[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -167,11 +116,11 @@ variable_type = 5
 variable_name = "score"
 comma_separate = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainerBottom/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainerBottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -180,7 +129,7 @@ theme_override_font_sizes/font_size = 41
 text = "Player 3"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer3"]
+[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -193,11 +142,11 @@ variable_type = 6
 variable_name = "score"
 comma_separate = true
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainerBottom/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainerBottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer4"]
+[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -206,7 +155,7 @@ theme_override_font_sizes/font_size = 41
 text = "Player 4"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/HBoxContainer/VBoxContainer4"]
+[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_mixwp")
@@ -218,3 +167,56 @@ script = ExtResource("2_06ewq")
 variable_type = 7
 variable_name = "score"
 comma_separate = true
+
+[node name="Ball" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1174.0
+offset_top = 922.0
+offset_right = 1434.0
+offset_bottom = 973.0
+theme = ExtResource("2_mixwp")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Ball 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "ball"
+template_string = "Ball %s"
+initialize_empty = false
+
+[node name="CurrentPlayerScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = -976.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_mixwp")
+theme_override_font_sizes/font_size = 82
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "score"
+comma_separate = true
+initialize_empty = false
+
+[node name="MeteorCountdown" type="Label" parent="."]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 910.0
+offset_right = 1119.0
+offset_bottom = 1074.0
+theme = ExtResource("2_mixwp")
+theme_override_font_sizes/font_size = 130
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "meteor_countdown_value"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"

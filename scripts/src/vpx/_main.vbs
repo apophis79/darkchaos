@@ -140,10 +140,10 @@
 ' E166 2 victory lap blue
 ' E167 2 victory lap purple
 ' E168 2 victory lap magenta
-' E170 2 cluster bomb aquired
-' E171 2 moon missile aquired
-' E172 2 proton round aquired
-' E173 2 ship save aquired
+' E170 2 cluster bomb acquired
+' E171 2 moon missile acquired
+' E172 2 proton round acquired
+' E173 2 ship save acquired
 
 
 
