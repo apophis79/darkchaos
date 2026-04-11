@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://c20yoyk3m323p"]
+
+[ext_resource type="FontFile" uid="uid://dcbult8tkjfa0" path="res://fonts/Orbitron-Regular.ttf" id="1_jv6ar"]
+
+[resource]
+base_font = ExtResource("1_jv6ar")
+spacing_glyph = 14

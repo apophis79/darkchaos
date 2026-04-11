@@ -1116,7 +1116,7 @@ Public Function Glf_RunHandlers(i)
 		If Not IsEmpty(wait_for) Then
 			Dim remaining_handlers_keys : remaining_handlers_keys = glf_dispatch_handlers_await.Keys
 			Dim remaining_handlers_items : remaining_handlers_items = glf_dispatch_handlers_await.Items
-			AddPinEventListener wait_for, key & "_wait_for", "ContinueDispatchQueuePinEvent", 1000, Array(remaining_handlers_keys, remaining_handlers_items)
+			AddPinEventListener wait_for, key & "_wait_for", "ContinueDispatchQueuePinEvent", 1000, Array(remaining_handlers_keys, remaining_handlers_items, null, wait_for, key & "_wait_for")
 			glf_dispatch_handlers_await.RemoveAll
 			Exit For
 		End If
@@ -5143,7 +5143,7 @@ Class GlfEventPlayer
         Dim evt,key
         If UBound(m_events.Keys) > -1 Then
             For Each key in m_events.keys
-                yaml = yaml & "  " & Replace(Replace(m_events(key).Raw, "&&", "and"), "||", "or") & ": " & vbCrLf
+                yaml = yaml & "  " & Replace(Replace(m_events(key).Raw, "&&", "and"), "||", "or") & ":" & vbCrLf
                 For Each evt in m_eventValues(key)
                     yaml = yaml & "    - " & Replace(Replace(evt.Raw, "&&", "and"), "||", "or") & vbCrLf
                 Next
@@ -7051,6 +7051,14 @@ Class Mode
             Next
         End If
 
+        If UBound(m_multiballs.Keys)>-1 Then
+            yaml = yaml & vbCrLf
+            yaml = yaml & "multiballs: " & vbCrLf
+            For Each child in m_multiballs.Keys
+                yaml = yaml & m_multiballs(child).ToYaml
+            Next
+        End If
+
         If Not IsNull(m_random_event_player) Then
             If UBound(m_random_event_player.EventNames)>-1 Then
                 yaml = yaml & vbCrLf
@@ -7265,6 +7273,7 @@ Class GlfMultiballLocks
     Private m_balls_locked
     Private m_balls_to_replace
     Private m_lock_events
+    private m_locked_ball_counting_strategy
     Private m_reset_events
     Private m_enabled
     Private m_debug
@@ -7280,6 +7289,8 @@ Class GlfMultiballLocks
     End Property
     Public Property Get LockDevices() : LockDevices = m_lock_devices : End Property
     Public Property Let LockDevices(value) : m_lock_devices = value : End Property
+    Public Property Get LockedBallCountingStrategy() : LockedBallCountingStrategy = m_locked_ball_counting_strategy : End Property
+    Public Property Let LockedBallCountingStrategy(value) : m_locked_ball_counting_strategy = value : End Property
     Public Property Let EnableEvents(value) : m_base_device.EnableEvents = value : End Property
     Public Property Let DisableEvents(value) : m_base_device.DisableEvents = value : End Property
     Public Property Let BallsToLock(value) : m_balls_to_lock = value : End Property
@@ -7303,6 +7314,7 @@ Class GlfMultiballLocks
         m_reset_events = Array()
         m_lock_devices = Array()
         m_balls_to_lock = 0
+        m_locked_ball_counting_strategy = "virtual_only"
         m_balls_to_replace = -1
         m_enabled = False
         m_balls_locked = 0
@@ -7373,7 +7385,7 @@ Class GlfMultiballLocks
         End If
 
         SetPlayerState m_local_name & "_locked_balls", balls_locked
-        
+        Log "Locked Balls: " & balls_locked
 
         If Not IsNull(device) Then
             
@@ -7381,6 +7393,7 @@ Class GlfMultiballLocks
                 glf_ball_devices(device).Eject()
             Else
                 If m_balls_to_replace = -1 Or balls_locked <= m_balls_to_replace Then
+                    Log "Ball count in device " & device & " is not greater than balls locked. Ejecting ball to replace locked ball."
                     ' glf_BIP = glf_BIP - 1
                     SetDelay m_name & "_queued_release", "MultiballLocksHandler" , Array(Array("queue_release", Me),Null), 1000
                 End If
@@ -7391,7 +7404,7 @@ Class GlfMultiballLocks
         With kwargs
             .Add "total_balls_locked", balls_locked
         End With
-
+        Log "Dispatching " & m_name & "_locked_ball event with total_balls_locked: " & balls_locked
         DispatchPinEvent m_name & "_locked_ball", kwargs
         
         If balls_locked = m_balls_to_lock Then
@@ -7399,6 +7412,7 @@ Class GlfMultiballLocks
             With kwargs
                 .Add "balls", balls_locked
             End With
+            Log "Lock is full. Dispatching " & m_name & "_full event."
             DispatchPinEvent m_name & "_full", kwargs
         End If
 
@@ -7451,7 +7465,9 @@ Class GlfMultiballLocks
         If UBound(m_reset_events) > -1 Then
             yaml = yaml & "    reset_count_for_current_player_events: " & Join(m_reset_events, ",") & vbCrLf
         End If
-        
+        If m_locked_ball_counting_strategy <> "" Then
+            yaml = yaml & "    locked_ball_counting_strategy: " & m_locked_ball_counting_strategy & vbCrLf
+        End If
 
         ToYaml = yaml
     End Function
@@ -7924,6 +7940,35 @@ Class GlfMultiballs
         m_queued_balls = m_queued_balls - 1
         Log "Queued Balls: " & m_queued_balls
         ReleaseQueuedBalls = m_queued_balls
+    End Function
+
+    Public Function ToYaml
+        Dim yaml, x, key
+        yaml = "  " & Replace(m_name, "multiballs", "") & ":" & vbCrLf
+    
+        Dim start_events_keys : start_events_keys = m_start_events.Keys
+        If UBound(start_events_keys) > -1 Then
+            yaml = yaml & "    start_events: "
+            x=0
+            For Each key in start_events_keys
+                yaml = yaml & m_start_events(key).Raw
+                If x <> UBound(start_events_keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+        
+        yaml = yaml & "    ball_count: " & m_ball_count.Raw & vbCrLf
+        yaml = yaml & "    ball_count_type: " & m_ball_count_type & vbCrLf
+        yaml = yaml & "    shoot_again: " & m_shoot_again.Raw & vbCrLf
+        yaml = yaml & "    hurry_up: " & m_hurry_up.Raw & vbCrLf
+        yaml = yaml & "    grace_period: " & m_grace_period.Raw & vbCrLf
+        yaml = yaml & "    ball_locks: " & Join(m_ball_locks, ", ") & vbCrLf
+        
+
+        ToYaml = yaml
     End Function
 
     Private Sub Log(message)
@@ -17144,7 +17189,7 @@ Function DispatchQueuePinEvent(e, kwargs)
             Glf_WriteDebugLog "DispatchQueuePinEvent"&e, k(1) & "_wait_for"
             Dim wait_for : wait_for = retArgs("wait_for")
             kwargs.Remove "wait_for" 
-            AddPinEventListener wait_for, k(1) & "_wait_for", "ContinueDispatchQueuePinEvent", k(0), Array(e, kwargs, i+1)
+            AddPinEventListener wait_for, k(1) & "_wait_for", "ContinueDispatchQueuePinEvent", k(0), Array(e, kwargs, i+1, wait_for, k(1) & "_wait_for")
             Exit For
             'add event listener for the wait_for event.
             'pass in the index and handlers from this.
@@ -17155,8 +17200,8 @@ Function DispatchQueuePinEvent(e, kwargs)
 End Function
 
 
-'args Array(3)
-' Array(original_event, orignal_kwargs, index)
+'args Array(5)
+' Array(original_event, original_kwargs, index, wait_for, key)
 ' wait_for kwargs
 ' event
 Function ContinueDispatchQueuePinEvent(args)
@@ -17169,6 +17214,7 @@ Function ContinueDispatchQueuePinEvent(args)
         kwargs = args(1)
     End If
 
+    RemovePinEventListener ownProps(3), ownProps(4)
 
     Dim i,key,keys,items
     keys=ownProps(0)

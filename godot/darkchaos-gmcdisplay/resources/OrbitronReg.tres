@@ -1,0 +1,40 @@
+[gd_resource type="Theme" format=3 uid="uid://do0kvf6fqvo2n"]
+
+[ext_resource type="FontFile" uid="uid://dcbult8tkjfa0" path="res://fonts/Orbitron-Regular.ttf" id="1_7v3n5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2lnr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t887d"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0.4745098, 0.6313726, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 10
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 124
+Label/fonts/font = ExtResource("1_7v3n5")
+Label/styles/focus = SubResource("StyleBoxFlat_o2lnr")
+Label/styles/normal = SubResource("StyleBoxEmpty_t887d")
