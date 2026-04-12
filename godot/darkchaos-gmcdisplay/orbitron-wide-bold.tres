@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://bjymib6vj56at"]
+
+[ext_resource type="FontFile" uid="uid://ceqpspctwr3ti" path="res://fonts/Orbitron-Bold.ttf" id="1_j2vec"]
+
+[resource]
+base_font = ExtResource("1_j2vec")
+spacing_glyph = 10

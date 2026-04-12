@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_b71wd"]
 [ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_06ewq"]
 [ext_resource type="Theme" uid="uid://b1eua1hgsadbh" path="res://resources/Score.tres" id="2_mixwp"]
+[ext_resource type="FontVariation" uid="uid://bjymib6vj56at" path="res://orbitron-wide-bold.tres" id="4_20xw8"]
 [ext_resource type="Texture2D" uid="uid://qxl1ofm6bwg7" path="res://resources/frame.png" id="4_myvl5"]
 [ext_resource type="Theme" uid="uid://do0kvf6fqvo2n" path="res://resources/OrbitronReg.tres" id="5_6vrr4"]
+[ext_resource type="Texture2D" uid="uid://by6tlyvf64qld" path="res://resources/playerScore.png" id="5_du778"]
 [ext_resource type="FontVariation" uid="uid://c20yoyk3m323p" path="res://orbitron-wide.tres" id="6_6vrr4"]
+[ext_resource type="Texture2D" uid="uid://d4jyc8xyy7lw6" path="res://resources/combos-empty.png" id="9_f5kbb"]
 
 [node name="Base" type="Control" unique_id=483653664]
 z_index = 5
@@ -26,145 +29,173 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_myvl5")
 expand_mode = 2
+metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=607745235]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1996.0
-offset_top = 476.0
-offset_right = 342.0
-offset_bottom = 625.495
-grow_horizontal = 2
+[node name="Player1SideGroup" type="Control" parent="." unique_id=1209593800]
+anchors_preset = 0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = 10.0
 
-[node name="CurrentPlayer" type="Label" parent="VBoxContainer" unique_id=1422957145]
-layout_mode = 2
-theme = ExtResource("2_mixwp")
+[node name="lblPlayer1" type="Label" parent="Player1SideGroup" unique_id=1357218747]
+layout_mode = 0
+offset_left = 1615.925
+offset_top = 64.0
+offset_right = 1908.925
+offset_bottom = 105.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_20xw8")
+theme_override_font_sizes/font_size = 32
+text = "PLAYER 1"
+horizontal_alignment = 1
+
+[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup" unique_id=137520087]
+position = Vector2(1756, 161)
+texture = ExtResource("5_du778")
+
+[node name="Player1Score" type="Label" parent="Player1SideGroup" unique_id=58188374]
+layout_mode = 0
+offset_left = 1615.0
+offset_top = 125.0
+offset_right = 1920.0
+offset_bottom = 190.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 40
-text = "Player 1"
+theme_override_font_sizes/font_size = 32
+text = "12,456,656,455"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_06ewq")
-variable_name = "number"
-template_string = "Player %s"
-initialize_empty = false
-
-[node name="MarginContainerBottom" type="MarginContainer" parent="." unique_id=1975958308]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1663.0
-offset_top = -828.0
-offset_right = 427.0
-offset_bottom = -609.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainerBottom" unique_id=1837719500]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer" unique_id=1698409602]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 41
-text = "Player 1"
-horizontal_alignment = 1
-
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer" unique_id=58188374]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 51
-text = "00"
-horizontal_alignment = 1
 script = ExtResource("2_06ewq")
 variable_type = 4
 variable_name = "score"
 comma_separate = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainerBottom" unique_id=1451012203]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Player1SideGroup2" type="Control" parent="." unique_id=14233017]
+anchors_preset = 0
+offset_top = 120.0
+offset_right = 40.0
+offset_bottom = 160.0
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer2" unique_id=933185942]
-layout_mode = 2
+[node name="lblPlayer2" type="Label" parent="Player1SideGroup2" unique_id=899468148]
+layout_mode = 0
+offset_left = 1615.925
+offset_top = 64.0
+offset_right = 1908.925
+offset_bottom = 105.0
 size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 41
-text = "Player 2"
+theme = ExtResource("5_6vrr4")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_20xw8")
+theme_override_font_sizes/font_size = 32
+text = "PLAYER 2"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer2" unique_id=878132477]
-layout_mode = 2
+[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup2" unique_id=909145868]
+position = Vector2(1756, 161)
+texture = ExtResource("5_du778")
+
+[node name="Player2Score" type="Label" parent="Player1SideGroup2" unique_id=307496413]
+layout_mode = 0
+offset_left = 1615.0
+offset_top = 125.0
+offset_right = 1920.0
+offset_bottom = 190.0
 size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
+theme = ExtResource("5_6vrr4")
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 51
-text = "00"
+theme_override_font_sizes/font_size = 32
+text = "12,456,656,455"
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("2_06ewq")
 variable_type = 5
 variable_name = "score"
 comma_separate = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainerBottom" unique_id=1898118026]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Player1SideGroup3" type="Control" parent="." unique_id=1810328012]
+anchors_preset = 0
+offset_top = 270.0
+offset_right = 40.0
+offset_bottom = 310.0
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer3" unique_id=2033203610]
-layout_mode = 2
+[node name="lblPlayer3" type="Label" parent="Player1SideGroup3" unique_id=1076844999]
+layout_mode = 0
+offset_left = 1615.925
+offset_top = 64.0
+offset_right = 1908.925
+offset_bottom = 105.0
 size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 41
-text = "Player 3"
+theme = ExtResource("5_6vrr4")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_20xw8")
+theme_override_font_sizes/font_size = 32
+text = "PLAYER 3"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer3" unique_id=669852541]
-layout_mode = 2
+[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup3" unique_id=1916854808]
+position = Vector2(1756, 161)
+texture = ExtResource("5_du778")
+
+[node name="Player3Score" type="Label" parent="Player1SideGroup3" unique_id=1614278295]
+layout_mode = 0
+offset_left = 1615.0
+offset_top = 125.0
+offset_right = 1920.0
+offset_bottom = 190.0
 size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
+theme = ExtResource("5_6vrr4")
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 51
-text = "00"
+theme_override_font_sizes/font_size = 32
+text = "12,456,656,455"
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("2_06ewq")
 variable_type = 6
 variable_name = "score"
 comma_separate = true
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainerBottom" unique_id=843469284]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Player1SideGroup4" type="Control" parent="." unique_id=84215437]
+anchors_preset = 0
+offset_top = 420.0
+offset_right = 40.0
+offset_bottom = 460.0
 
-[node name="Label" type="Label" parent="MarginContainerBottom/VBoxContainer4" unique_id=619076849]
-layout_mode = 2
+[node name="lblPlayer4" type="Label" parent="Player1SideGroup4" unique_id=1924647591]
+layout_mode = 0
+offset_left = 1615.925
+offset_top = 64.0
+offset_right = 1908.925
+offset_bottom = 105.0
 size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 41
-text = "Player 4"
+theme = ExtResource("5_6vrr4")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_20xw8")
+theme_override_font_sizes/font_size = 32
+text = "PLAYER 4"
 horizontal_alignment = 1
 
-[node name="Player1Score" type="Label" parent="MarginContainerBottom/VBoxContainer4" unique_id=631277957]
-layout_mode = 2
+[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup4" unique_id=119420136]
+position = Vector2(1756, 161)
+texture = ExtResource("5_du778")
+
+[node name="Player4Score" type="Label" parent="Player1SideGroup4" unique_id=520448203]
+layout_mode = 0
+offset_left = 1615.0
+offset_top = 125.0
+offset_right = 1920.0
+offset_bottom = 190.0
 size_flags_horizontal = 3
-theme = ExtResource("2_mixwp")
+theme = ExtResource("5_6vrr4")
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 51
-text = "00"
+theme_override_font_sizes/font_size = 32
+text = "12,456,656,455"
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("2_06ewq")
 variable_type = 7
 variable_name = "score"
@@ -196,6 +227,20 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_6vrr4")
 theme_override_font_sizes/font_size = 48
 text = "COUNT"
+horizontal_alignment = 1
+
+[node name="lblCombos" type="Label" parent="." unique_id=96408482]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 88.0
+offset_right = 294.0
+offset_bottom = 129.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_20xw8")
+theme_override_font_sizes/font_size = 32
+text = "COMBOS"
 horizontal_alignment = 1
 
 [node name="lblWave" type="Label" parent="." unique_id=1435764846]
@@ -232,6 +277,7 @@ script = ExtResource("2_06ewq")
 variable_name = "score"
 comma_separate = true
 initialize_empty = false
+metadata/_edit_lock_ = true
 
 [node name="MeteorCountdown" type="Label" parent="." unique_id=1710287503]
 layout_mode = 0
@@ -262,3 +308,8 @@ vertical_alignment = 1
 script = ExtResource("2_06ewq")
 variable_name = "ball"
 metadata/_custom_type_script = "uid://bfvhmv2eirpua"
+
+[node name="CombosEmpty" type="Sprite2D" parent="." unique_id=1180011478]
+position = Vector2(0, 158)
+texture = ExtResource("9_f5kbb")
+centered = false
