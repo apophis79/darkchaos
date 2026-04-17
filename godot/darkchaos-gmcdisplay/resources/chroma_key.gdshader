@@ -8,9 +8,11 @@ void fragment() {
     vec4 tex = texture(video_tex, UV);
 
     float diff = distance(tex.rgb, key_color);
+    
     if (diff < tolerance) {
         tex.a = 0.0;
     }
-
+    
     COLOR = tex;
+
 }

@@ -477,6 +477,14 @@ Sub CreateMysteryMode
 
         End With
 
+        With .WidgetPlayer()
+            With .EventName("play_voc_LMR")
+                .Widget = "mystery_ready"
+                .Action = "play"
+                .Expire = 5
+            End With
+        End With
+
 
     End With
 
