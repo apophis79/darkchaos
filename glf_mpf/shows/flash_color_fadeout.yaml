@@ -1,0 +1,91 @@
+#show_version=6
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%50
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%100
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%95
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%90
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%85
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%80
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%75
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%70
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%65
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%60
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%55
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%50
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%45
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%40
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%35
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%30
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%25
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%20
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%15
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%10
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%5
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%0
+
+

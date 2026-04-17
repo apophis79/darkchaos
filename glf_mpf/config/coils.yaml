@@ -1,0 +1,12 @@
+#config_version=6
+
+coils:
+  c_trough_eject:
+    number: 0
+  c_balldevice_plunger_eject:
+    number: 1
+  c_balldevice_scoop_eject:
+    number: 2
+  c_balldevice_moon_lock_eject:
+    number: 3
+

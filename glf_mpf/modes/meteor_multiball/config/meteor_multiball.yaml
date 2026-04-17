@@ -1,0 +1,43 @@
+#config_version=6
+
+mode:
+  start_events: start_meteor_multiball
+  stop_events: mode_base_stopping, kill_flippers, stop_meteor_wave
+  priority: 1000
+
+event_player: 
+  multiball_meteor_shoot_again_ended:
+    - clear_ship_save
+
+
+multiballs: 
+  multiball_meteor:
+    start_events: mode_meteor_multiball_started
+    ball_count: 3
+    ball_count_type: total
+    shoot_again: current_player.meteor_mb_shootagain_time
+    hurry_up: 3000
+    grace_period: 2000
+    ball_locks: 
+
+shots: 
+  meteor_mb_shoot_again:
+    profile: shoot_again
+    show_tokens: 
+      color: 0500ee
+    reset_events: multiball_meteor_shoot_again_ended
+    control_events: 
+      - events: mode_meteor_multiball_started
+        state: 1
+      - events: multiball_meteor_hurry_up
+        state: 2
+
+variable_player: 
+  clear_ship_save: 
+    meteor_mb_shootagain_time: 
+      action: set
+      int: 6000
+
+
+
+

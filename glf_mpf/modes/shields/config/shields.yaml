@@ -1,0 +1,194 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_meteor_wave, stop_training, wizard_mode_ended
+  stop_events: stop_shields, mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 510
+
+ball_saves: 
+  shield:
+    active_time: 5000ms
+    enable_events: shields_used
+    auto_launch: true
+    balls_to_save: 1
+
+event_player: 
+  mode_shields_started{current_player.training_shields_achieved==1}:
+    - restart_qualify_shields
+  restart_qualify_shields{current_player.training_shields_achieved==1}:
+    - boost_qualify_shields
+  mode_shields_started{current_player.shot_shield_left==1}:
+    - backglass_shields_on
+  mode_shields_stopping:
+    - backglass_shields_off
+  s_LeftOutlane_active{current_player.shot_shield_left==1}:
+    - shields_used
+    - restart_qualify_shields
+    - play_shields_down
+    - backglass_shields_off
+  s_RightOutlane_active{current_player.shot_shield_right==1}:
+    - shields_used
+    - restart_qualify_shields
+    - play_shields_down
+    - backglass_shields_off
+  mystery_added_shields:
+    - complete_qualify_shields
+  qualify_shields_on_complete:
+    - slings_powerup_added
+    - lsling_powerup_sh
+    - rsling_powerup_sh
+    - play_shields_up
+    - play_voc_shields_acquired
+    - score_50000
+    - backglass_shields_on
+  qualify_shields_hit:
+    - score_1000
+
+
+random_event_player: 
+  qualify_shields_hit: 
+    events:
+      play_sfx_LSC1: 1
+      play_sfx_LSC2: 1
+      play_sfx_LSC3: 1
+      play_sfx_LSC4: 1
+    scope: player
+  shields_used: 
+    events:
+      play_sfx_LSL: 1
+      play_sfx_LSR: 1
+    scope: player
+
+
+segment_display_player: 
+  qualify_shields_on_complete: 
+    player3: 
+      text: "SHIELDS"
+      expire: 2000ms
+      flashing: all
+
+
+shot_groups: 
+  qualify_shields:
+    shots: shield_charge1,shield_charge2,shield_charge3
+    restart_events: restart_qualify_shields
+    rotate_left_events: s_left_flipper_active
+    rotate_right_events: s_right_flipper_active
+
+shots: 
+  shield_charge1:
+    switch: s_TargetShield1
+    profile: qualify_shields
+    show_tokens: 
+      lights: LSC1
+    control_events: 
+      - events: boost_qualify_shields, complete_qualify_shields
+        state: 1
+  shield_charge2:
+    switch: s_TargetShield2
+    profile: qualify_shields
+    show_tokens: 
+      lights: LSC2
+    control_events: 
+      - events: boost_qualify_shields, complete_qualify_shields
+        state: 1
+  shield_charge3:
+    switch: s_TargetShield3
+    profile: qualify_shields
+    show_tokens: 
+      lights: LSC3
+    control_events: 
+      - events: complete_qualify_shields
+        state: 1
+  shield_left:
+    profile: shields_ready
+    restart_events: restart_qualify_shields
+    show_tokens: 
+      lights: LSL
+    control_events: 
+      - events: qualify_shields_on_complete
+        state: 1
+  shield_right:
+    profile: shields_ready
+    restart_events: restart_qualify_shields
+    show_tokens: 
+      lights: LSR
+    control_events: 
+      - events: qualify_shields_on_complete
+        state: 1
+
+show_player: 
+  qualify_shields_on_complete: 
+    flash_color: 
+      key: key_shields_qualified
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tShields
+        color: 0010cc
+  lsling_powerup_sh: 
+    lsling_rotate2_cw: 
+      key: key_lsling_powerup_sh
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 0010cc
+        color2: 0010cc
+        intensity: 100
+  rsling_powerup_sh: 
+    rsling_rotate2_ccw: 
+      key: key_rsling_powerup_sh
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 0010cc
+        color2: 0010cc
+        intensity: 100
+  play_shields_up: 
+    shields_up: 
+      key: key_shields_up
+      priority: 1000
+      loops: 0
+  play_shields_down: 
+    shields_down: 
+      key: key_shields_down
+      priority: 1000
+      loops: 0
+
+
+sound_player: 
+  play_voc_shields_acquired: 
+    voc_shields_acquired: 
+      key: key_voc_shields_acquired
+      action: play
+  play_sfx_LSC1: 
+    sfx_LSC1: 
+      key: key_sfx_LSC1
+      action: play
+  play_sfx_LSC2: 
+    sfx_LSC2: 
+      key: key_sfx_LSC2
+      action: play
+  play_sfx_LSC3: 
+    sfx_LSC3: 
+      key: key_sfx_LSC3
+      action: play
+  play_sfx_LSC4: 
+    sfx_LSC4: 
+      key: key_sfx_LSC4
+      action: play
+  play_sfx_LSL: 
+    sfx_LSL: 
+      key: key_sfx_LSL
+      action: play
+  play_sfx_LSR: 
+    sfx_LSR: 
+      key: key_sfx_LSR
+      action: play
+  qualify_shields_on_complete: 
+    sfx_LSUp: 
+      key: key_sfx_LSUp
+      action: play
+
+
+

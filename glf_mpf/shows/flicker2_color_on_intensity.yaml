@@ -1,0 +1,51 @@
+#show_version=6
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%15
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%80
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%20
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%70
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%5
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%90
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%35
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%80
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%15
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%65
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%15
+
+- duration: -1s
+  lights:
+    (lights): (color)%(intensity)
+
+

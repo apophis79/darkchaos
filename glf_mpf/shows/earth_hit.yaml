@@ -1,0 +1,12 @@
+#show_version=6
+
+- duration: 0.1s
+  shows:
+    insert_gi_slide_up: 
+      key: insert_earth_hit_A
+      loops: 0
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+
+

@@ -1,0 +1,23 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    FL6a: (color)%0
+    FL6g: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6g: (color)%0
+    FL6e: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6e: (color)%0
+    FL6c: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6c: (color)%0
+    FL6a: (color)%(intensity)
+
+

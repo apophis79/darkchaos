@@ -1,0 +1,680 @@
+#config_version=6
+
+mode:
+  start_events: run_combo_command_wizard
+  stop_events: mode_base_stopping, completed_combo_command_wizard
+  priority: 3000
+
+event_player: 
+  mode_combo_command_wizard_started:
+    - meteor_wave_music_stop
+    - ccwiz_music_start
+    - ccwiz_sjp1_show2
+  mode_combo_command_wizard_stopping:
+    - ccwiz_music_stop
+  timer_combo_command_message_complete:
+    - release_scoop_hold
+    - start_moon_multiball
+    - delayed_release_moon_ball
+  release_scoop_hold:
+    - disable_scoop_hold
+  left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  center_orbit_left_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  center_orbit_right_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  right_ramp_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  right_orbit_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 1}:
+    - play_sfx_jackpot
+    - ccwiz_shot_phase1_show
+    - ccwiz_flash_phase1_show
+    - score_200000
+  ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}:
+    - activate_ccwiz_sjp
+    - run_ccwiz_scoop_show
+  balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 and current_player.ccwiz_super_jp == 1}:
+    - ccwiz_sjp_achieved
+    - stop_ccwiz_scoop_show
+    - restart_combos_command_shots
+  ccwiz_sjp_achieved:
+    - add_ccwiz_phase2_shot
+    - play_sfx_super_jackpot
+    - ccwiz_sjp1_show1
+    - ccwiz_sjp1_show2
+    - score_1000000
+  left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show1
+    - ccwiz_flash_phase2_show1
+    - score_300000
+  left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show8
+    - ccwiz_flash_phase2_show8
+    - score_300000
+  left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show2
+    - ccwiz_flash_phase2_show2
+    - score_300000
+  inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show5
+    - ccwiz_flash_phase2_show5
+    - score_300000
+  center_orbit_left_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show4
+    - ccwiz_flash_phase2_show4
+    - score_300000
+  center_orbit_right_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show6
+    - ccwiz_flash_phase2_show6
+    - score_300000
+  right_ramp_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show3
+    - ccwiz_flash_phase2_show3
+    - score_300000
+  right_orbit_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_add_ball
+    - add_ccwiz_phase2_shot
+    - play_sfx_jackpot
+    - ccwiz_shot_phase2_show7
+    - ccwiz_flash_phase2_show7
+    - score_300000
+  ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}:
+    - activate_ccwiz_sdjp
+    - run_ccwiz_scoop_show
+    - enable_scoop_hold
+  balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}:
+    - ccwiz_sdjp_achieved
+    - stop_ccwiz_scoop_show
+  ccwiz_sdjp_achieved:
+    - play_sfx_super_jackpot
+    - ccwiz_sjp2_show1
+    - ccwiz_sjp2_show2
+    - ccwiz_music_stop
+    - score_2000000
+  ccwiz_finalize:
+    - release_scoop_hold
+    - completed_combo_command_wizard
+  timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 1}:
+    - ccwiz_bumpers_show1
+  timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 2}:
+    - ccwiz_bumpers_show2
+  balldevice_moon_lock_ball_enter:
+    - delayed_release_moon_ball
+  ball_search_started:
+    - release_moon_ball
+
+
+multiballs: 
+  multiball_ccwiz:
+    start_events: timer_combo_command_message_complete
+    ball_count: 5
+    ball_count_type: total
+    shoot_again: 20000
+    hurry_up: 3000
+    grace_period: 2000
+    ball_locks: 
+  multiball_ccwiz_2:
+    start_events: ccwiz_add_ball
+    ball_count: 2
+    ball_count_type: total
+    shoot_again: 0
+    hurry_up: 0
+    grace_period: 0
+    ball_locks: 
+
+random_event_player: 
+  add_ccwiz_phase2_shot: 
+    events:
+      combo_command1_ready{current_player.shot_combo_command1 == 0}: 1
+      combo_command2_ready{current_player.shot_combo_command2 == 0}: 1
+      combo_command3_ready{current_player.shot_combo_command3 == 0}: 1
+      combo_command4_ready{current_player.shot_combo_command4 == 0}: 1
+      combo_command5_ready{current_player.shot_combo_command5 == 0}: 1
+      combo_command6_ready{current_player.shot_combo_command6 == 0}: 1
+      combo_command7_ready{current_player.shot_combo_command7 == 0}: 1
+      combo_command8_ready{current_player.shot_combo_command8 == 0}: 1
+    scope: player
+  ccwiz_bumpers_show2: 
+    events:
+      ccwiz_bumper1_show2: 1
+      ccwiz_bumper2_show2: 1
+      ccwiz_bumper3_show2: 1
+    scope: player
+
+
+segment_display_player: 
+  mode_combo_command_wizard_started: 
+    player1: 
+      text: " COMBO "
+      expire: 3400ms
+      flashing: off
+    player2: 
+      text: "COMMAND"
+      expire: 3400ms
+      flashing: off
+    player3: 
+      text: " WIZARD "
+      expire: 3400ms
+      flashing: off
+    player4: 
+      text: "  MODE  "
+      expire: 3400ms
+      flashing: off
+
+  timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 1}: 
+    player1: 
+      text: ""
+      expire: 3400ms
+      flashing: off
+    player2: 
+      text: "   EB   "
+      expire: 3400ms
+      flashing: all
+    player3: 
+      text: "  ADDED "
+      expire: 3400ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 3400ms
+      flashing: off
+
+  timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 2}: 
+    player1: 
+      text: ""
+      expire: 3400ms
+      flashing: off
+    player2: 
+      text: "HIT ALL"
+      expire: 3400ms
+      flashing: all
+    player3: 
+      text: "  SHOTS "
+      expire: 3400ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 3400ms
+      flashing: off
+
+
+shot_groups: 
+  ccwiz_shots:
+    shots: combo_command1,combo_command2,combo_command3,combo_command4,combo_command5,combo_command6,combo_command7,combo_command8
+    restart_events: restart_combos_command_shots
+
+shots: 
+  ccwiz_shoot_again:
+    profile: shoot_again
+    show_tokens: 
+      color: 0500ee
+    reset_events: multiball_ccwiz_shoot_again_ended
+    control_events: 
+      - events: mode_combo_command_wizard_started
+        state: 1
+      - events: multiball_ccwiz_hurry_up
+        state: 2
+  combo_command1:
+    profile: combo_command
+    show_tokens: 
+      lights: LS1
+      color: ffb46b
+    control_events: 
+      - events: combo_command1_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: left_side_hit{current_player.shot_combo_command1==1}
+        state: 2
+  combo_command2:
+    profile: combo_command
+    show_tokens: 
+      lights: LS2
+      color: ffb46b
+    control_events: 
+      - events: combo_command2_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: left_orbit_hit{current_player.shot_combo_command2==1}
+        state: 2
+  combo_command3:
+    profile: combo_command
+    show_tokens: 
+      lights: LS3
+      color: ffb46b
+    control_events: 
+      - events: combo_command3_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: left_ramp_hit{current_player.shot_combo_command3==1}
+        state: 2
+  combo_command4:
+    profile: combo_command
+    show_tokens: 
+      lights: LS4
+      color: ffb46b
+    control_events: 
+      - events: combo_command4_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: inner_orbit_hit{current_player.shot_combo_command4==1}
+        state: 2
+  combo_command5:
+    profile: combo_command
+    show_tokens: 
+      lights: LPC4
+      color: ffb46b
+    control_events: 
+      - events: combo_command5_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: center_orbit_left_hit{current_player.shot_combo_command5==1}
+        state: 2
+  combo_command6:
+    profile: combo_command
+    show_tokens: 
+      lights: LPC5
+      color: ffb46b
+    control_events: 
+      - events: combo_command6_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: center_orbit_right_hit{current_player.shot_combo_command6==1}
+        state: 2
+  combo_command7:
+    profile: combo_command
+    show_tokens: 
+      lights: LS5
+      color: ffb46b
+    control_events: 
+      - events: combo_command7_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: right_ramp_hit{current_player.shot_combo_command7==1}
+        state: 2
+  combo_command8:
+    profile: combo_command
+    show_tokens: 
+      lights: LS6
+      color: ffb46b
+    control_events: 
+      - events: combo_command8_ready, mode_combo_command_wizard_started
+        state: 1
+      - events: right_orbit_hit{current_player.shot_combo_command8==1}
+        state: 2
+
+show_player: 
+  s_Bumper1_active: 
+    flash_color_with_fade: 
+      key: key_bumper1_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB1
+        color: ffffff
+        fade: 50
+  s_Bumper2_active: 
+    flash_color_with_fade: 
+      key: key_bumper2_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB2
+        color: ffffff
+        fade: 50
+  s_Bumper3_active: 
+    flash_color_with_fade: 
+      key: key_bumper3_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB3
+        color: ffffff
+        fade: 50
+  s_Bumper4_active: 
+    flash_color_with_fade: 
+      key: key_bumper4_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB4
+        color: ffffff
+        fade: 50
+  ccwiz_bumpers_show1: 
+    flash_color_fadeout: 
+      key: key_bumpers_show1
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tBumper
+        color: 555555
+  ccwiz_bumper1_show2: 
+    flash_color_fadeout: 
+      key: key_bumper1_show2
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: 555555
+  ccwiz_bumper2_show2: 
+    flash_color_fadeout: 
+      key: key_bumper2_show2
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: 555555
+  ccwiz_bumper3_show2: 
+    flash_color_fadeout: 
+      key: key_bumper3_show2
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: 555555
+  ccwiz_shot_phase1_show: 
+    insert_swap2: 
+      key: key_ccwiz_shot_phase1_show
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        intensity: 100
+  ccwiz_flash_phase1_show: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase1_show
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: ffb46b
+  ccwiz_shot_phase2_show1: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show1
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: dd0400
+        intensity: 100
+  ccwiz_flash_phase2_show1: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show1
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: dd0400
+  ccwiz_shot_phase2_show2: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show2
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: ff4c00
+        intensity: 100
+  ccwiz_flash_phase2_show2: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show2
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: ff4c00
+  ccwiz_shot_phase2_show3: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show3
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: ccbb00
+        intensity: 100
+  ccwiz_flash_phase2_show3: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show3
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: ccbb00
+  ccwiz_shot_phase2_show4: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show4
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: 00dd00
+        intensity: 100
+  ccwiz_flash_phase2_show4: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show4
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: 00dd00
+  ccwiz_shot_phase2_show5: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show5
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: 00dddd
+        intensity: 100
+  ccwiz_flash_phase2_show5: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show5
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: 00dddd
+  ccwiz_shot_phase2_show6: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show6
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: 0010cc
+        intensity: 100
+  ccwiz_flash_phase2_show6: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show6
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: 0010cc
+  ccwiz_shot_phase2_show7: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show7
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: 0500ee
+        intensity: 100
+  ccwiz_flash_phase2_show7: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show7
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: 0500ee
+  ccwiz_shot_phase2_show8: 
+    insert_swap3: 
+      key: key_ccwiz_shot_phase2_show8
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ffb46b
+        color3: dd00dd
+        intensity: 100
+  ccwiz_flash_phase2_show8: 
+    flash_color_fadeout: 
+      key: key_ccwiz_flash_phase2_show8
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasher
+        color: dd00dd
+  ccwiz_sjp1_show1: 
+    insert_gi_spin_center: 
+      key: key_ccwiz_sjp1_show1
+      priority: 1000
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ffb46b
+  ccwiz_sjp1_show2: 
+    flash_color: 
+      key: key_ccwiz_sjp1_show2
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tFlasher
+        color: ffb46b
+  ccwiz_sjp2_show1: 
+    insert_gi_spin_center: 
+      key: key_ccwiz_sjp2_show1
+      priority: 1000
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ed1800
+      events_when_completed: ccwiz_finalize
+  ccwiz_sjp2_show2: 
+    flash_color: 
+      key: key_ccwiz_sjp2_show2
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tFlasher
+        color: dd0400
+
+
+timers: 
+  combo_command_message:
+    start_value: 0
+    end_value: 3
+    direction: up
+    control_events: 
+      - event: mode_combo_command_wizard_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 3400ms
+  ccwiz_bumper_lights:
+    start_value: 0
+    end_value: 100000
+    direction: up
+    control_events: 
+      - event: mode_combo_command_wizard_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 711ms
+
+variable_player: 
+  mode_combo_command_wizard_started: 
+    wizard_combo_command_phase: 
+      action: set
+      int: 1
+    wizard_mode_running: 
+      action: set
+      int: 1
+
+  mode_combo_command_wizard_stopping: 
+    wizard_mode_running: 
+      action: set
+      int: 0
+
+  activate_ccwiz_sjp: 
+    ccwiz_super_jp: 
+      action: set
+      int: 1
+
+  ccwiz_sjp_achieved: 
+    wizard_combo_command_phase: 
+      action: set
+      int: 2
+
+  activate_ccwiz_sdjp: 
+    ccwiz_super_jp: 
+      action: set
+      int: 2
+
+
+
+

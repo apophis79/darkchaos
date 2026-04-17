@@ -1,0 +1,1206 @@
+#config_version=6
+
+mode:
+  start_events: run_final_wave_wizard
+  stop_events: ball_ending, stop_final_wave_wizard
+  priority: 4000
+
+event_player: 
+  mode_final_wave_wizard_started{current_player.wizard_final_hit_count == 20}:
+    - begin_fwwiz
+  mode_final_wave_wizard_started{current_player.wizard_final_hit_count < 20}:
+    - continue_fwwiz
+    - display_hit_count
+    - update_asteroid_glow
+    - fwwiz_music_start
+  mode_final_wave_wizard_started:
+    - meteor_wave_music_stop
+    - turn_off_gi
+    - final_flash1
+  mode_final_wave_wizard_stopping:
+    - fwwiz_music_stop
+  timer_final_wave_message_complete:
+    - fwwiz_music_start
+    - release_scoop_hold
+    - start_moon_multiball
+    - delayed_release_moon_ball
+    - display_hit_count
+  release_scoop_hold:
+    - disable_scoop_hold
+  left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}:
+    - fwwiz_add_ball
+  right_ramp_hit{current_player.fwwiz_add_ball_ready == 1}:
+    - fwwiz_add_ball
+  left_ramp_hit{current_player.fwwiz_add_ball_ready == 2}:
+    - fwwiz_add_ball_2
+  right_ramp_hit{current_player.fwwiz_add_ball_ready == 2}:
+    - fwwiz_add_ball_2
+  center_orbit_left_hit:
+    - asteroid_hit
+  center_orbit_right_hit:
+    - asteroid_hit
+  s_TargetMystery3_active:
+    - asteroid_hit
+  asteroid_hit:
+    - check_fwwiz_done
+    - asteroid_flash3
+    - asteroid_flicker1
+    - play_asteroid_hit
+  asteroid_hit{current_player.wizard_final_hit_count > 0}:
+    - update_hit_count
+  update_hit_count:
+    - update_fwwiz_score
+  check_fwwiz_done{current_player.wizard_final_hit_count == 3}:
+    - disable_fwwiz_mb
+    - start_add_ball_fwwiz
+  check_fwwiz_done{current_player.wizard_final_hit_count <= 0}:
+    - asteroid_destroyed
+    - asteroid_off
+    - fwwiz_music_stop
+  detonate_nuke.1:
+    - update_hit_count
+    - update_asteroid_glow
+    - check_fwwiz_done
+  update_asteroid_glow{current_player.wizard_final_hit_count == 19}:
+    - asteroid_temp1
+  update_asteroid_glow{current_player.wizard_final_hit_count == 18}:
+    - asteroid_temp2
+  update_asteroid_glow{current_player.wizard_final_hit_count == 17}:
+    - asteroid_temp3
+  update_asteroid_glow{current_player.wizard_final_hit_count == 16}:
+    - asteroid_temp4
+  update_asteroid_glow{current_player.wizard_final_hit_count == 15}:
+    - asteroid_temp5
+  update_asteroid_glow{current_player.wizard_final_hit_count == 14}:
+    - asteroid_temp6
+  update_asteroid_glow{current_player.wizard_final_hit_count == 13}:
+    - asteroid_temp7
+  update_asteroid_glow{current_player.wizard_final_hit_count == 12}:
+    - asteroid_temp8
+  update_asteroid_glow{current_player.wizard_final_hit_count == 11}:
+    - asteroid_temp9
+  update_asteroid_glow{current_player.wizard_final_hit_count == 10}:
+    - asteroid_temp10
+  update_asteroid_glow{current_player.wizard_final_hit_count == 9}:
+    - asteroid_temp11
+  update_asteroid_glow{current_player.wizard_final_hit_count == 8}:
+    - asteroid_temp12
+  update_asteroid_glow{current_player.wizard_final_hit_count == 7}:
+    - asteroid_temp13
+  update_asteroid_glow{current_player.wizard_final_hit_count == 6}:
+    - asteroid_temp14
+  update_asteroid_glow{current_player.wizard_final_hit_count == 5}:
+    - asteroid_temp15
+    - start_asteroid_flicker
+  update_asteroid_glow{current_player.wizard_final_hit_count == 4}:
+    - asteroid_temp16
+  update_asteroid_glow{current_player.wizard_final_hit_count == 3}:
+    - asteroid_temp17
+  update_asteroid_glow{current_player.wizard_final_hit_count == 2}:
+    - asteroid_temp18
+  update_asteroid_glow{current_player.wizard_final_hit_count == 1}:
+    - asteroid_temp19
+  update_fwwiz_score{current_player.wizard_final_hit_count == 19}:
+    - score_100000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 18}:
+    - score_200000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 17}:
+    - score_300000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 16}:
+    - score_400000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 15}:
+    - score_500000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 14}:
+    - score_600000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 13}:
+    - score_700000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 12}:
+    - score_800000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 11}:
+    - score_900000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 10}:
+    - score_1000000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 9}:
+    - score_1100000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 8}:
+    - score_1200000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 7}:
+    - score_1300000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 6}:
+    - score_1400000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 5}:
+    - score_1500000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 4}:
+    - score_1600000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 3}:
+    - score_1700000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 2}:
+    - score_1800000
+  update_fwwiz_score{current_player.wizard_final_hit_count == 1}:
+    - score_1900000
+  s_DTMeteor1_active{current_player.wizard_final_hit_count > 1}:
+    - fwwiz_add_meteor
+    - meteor1_explodes_show
+    - meteor1_blink_show
+    - score_100000
+  s_DTMeteor2_active{current_player.wizard_final_hit_count > 1}:
+    - fwwiz_add_meteor
+    - meteor2_explodes_show
+    - meteor2_blink_show
+    - score_100000
+  s_DTMeteor3_active{current_player.wizard_final_hit_count > 1}:
+    - fwwiz_add_meteor
+    - meteor3_explodes_show
+    - meteor3_blink_show
+    - score_100000
+  s_DTMeteor4_active{current_player.wizard_final_hit_count > 1}:
+    - fwwiz_add_meteor
+    - meteor4_explodes_show
+    - meteor4_blink_show
+    - score_100000
+  timer_fwwiz_add_meteor_complete{current_player.wizard_final_hit_count > 1}:
+    - fwwiz_raise_meteor
+  timer_fwwiz_start_meteors_complete:
+    - fwwiz_raise_meteor
+  continue_fwwiz:
+    - fwwiz_raise_meteor
+  asteroid_destroyed:
+    - knockdown_meteors
+    - score_2000000
+    - deactivate_nuke
+  timer_asteroid_explodes_tick{device.timers.asteroid_explodes.ticks == 4}:
+    - kill_flippers
+  timer_asteroid_explodes_complete:
+    - enable_flippers
+    - explosion_done
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 1}:
+    - play_flash_gi09
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 2}:
+    - play_flash_gi06
+    - play_flash_gi11
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi12
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 3}:
+    - play_flash_gi03
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 4}:
+    - play_flash_gi08
+    - play_flash_gi19
+    - play_flash_gi20
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 5}:
+    - play_flash_gi05
+    - play_flash_gi09
+    - play_flash_gi21
+    - play_flash_gi13
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 6}:
+    - play_flash_gi02
+    - play_flash_gi22
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 7}:
+    - play_flash_gi07
+    - play_flash_gi11
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 8}:
+    - play_flash_gi04
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 9}:
+    - play_flash_gi01
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 10}:
+    - play_flash_gi06
+    - play_flash_gi21
+    - play_flash_gi13
+    - play_flash_gi12
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 11}:
+    - play_flash_gi03
+    - play_flash_gi09
+    - play_flash_gi22
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 12}:
+    - play_flash_gi08
+    - play_flash_gi11
+    - play_flash_gi17
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 13}:
+    - play_flash_gi05
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi13
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 14}:
+    - play_flash_gi02
+    - play_flash_gi20
+    - play_flash_gi22
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 15}:
+    - play_flash_gi07
+    - play_flash_gi21
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 16}:
+    - play_flash_gi04
+    - play_flash_gi09
+    - play_flash_gi16
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 17}:
+    - play_flash_gi01
+    - play_flash_gi11
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 18}:
+    - play_flash_gi06
+    - play_flash_gi19
+    - play_flash_gi18
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 19}:
+    - play_flash_gi03
+    - play_flash_gi20
+    - play_flash_gi13
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 20}:
+    - play_flash_gi09
+    - play_flash_gi08
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi12
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 21}:
+    - play_flash_gi05
+    - play_flash_gi11
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 22}:
+    - play_flash_gi02
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 23}:
+    - play_flash_gi07
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 24}:
+    - play_flash_gi04
+    - play_flash_gi09
+    - play_flash_gi21
+    - play_flash_gi13
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 25}:
+    - play_flash_gi01
+    - play_flash_gi11
+    - play_flash_gi22
+    - play_flash_gi16
+    - play_flash_gi14
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 26}:
+    - play_flash_gi06
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 27}:
+    - play_flash_gi03
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 28}:
+    - play_flash_gi08
+    - play_flash_gi13
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 29}:
+    - play_flash_gi09
+    - play_flash_gi05
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi12
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 30}:
+    - play_flash_gi02
+    - play_flash_gi10
+    - play_flash_gi11
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 31}:
+    - play_flash_gi07
+    - play_flash_gi18
+    - play_flash_gi13
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 32}:
+    - play_flash_gi04
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 33}:
+    - play_flash_gi01
+    - play_flash_gi09
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 34}:
+    - play_flash_gi06
+    - play_flash_gi10
+    - play_flash_gi11
+    - play_flash_gi16
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 35}:
+    - play_flash_gi03
+    - play_flash_gi19
+    - play_flash_gi18
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 36}:
+    - play_flash_gi08
+    - play_flash_gi20
+    - play_flash_gi13
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 37}:
+    - play_flash_gi05
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 38}:
+    - play_flash_gi02
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 39}:
+    - play_flash_gi07
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 40}:
+    - play_flash_gi09
+    - play_flash_gi19
+    - play_flash_gi21
+    - play_flash_gi12
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 41}:
+    - play_flash_gi04
+    - play_flash_gi11
+    - play_flash_gi13
+    - play_flash_gi22
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 42}:
+    - play_flash_gi01
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 43}:
+    - play_flash_gi06
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flash_gi15
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 44}:
+    - play_flash_gi03
+    - play_flash_gi09
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 45}:
+    - play_flash_gi08
+    - play_flash_gi11
+    - play_flash_gi19
+    - play_flash_gi21
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 46}:
+    - play_flash_gi05
+    - play_flash_gi10
+    - play_flash_gi13
+    - play_flash_gi16
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 47}:
+    - play_flash_gi02
+    - play_flash_gi18
+    - play_flash_gi22
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 48}:
+    - play_flash_gi07
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 49}:
+    - play_flash_gi09
+    - play_flash_gi19
+    - play_flash_gi21
+    - play_flash_gi12
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 50}:
+    - play_flash_gi04
+    - play_flash_gi11
+    - play_flash_gi13
+    - play_flash_gi22
+    - play_flash_giapron
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 51}:
+    - play_flash_gi01
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 52}:
+    - play_flash_gi06
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flash_gi15
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 1}:
+    - play_asteroid_flicker
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 7}:
+    - play_asteroid_flicker
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 10}:
+    - play_asteroid_flicker
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 15}:
+    - play_asteroid_flicker
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 22}:
+    - play_asteroid_flicker
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 24}:
+    - play_asteroid_flicker
+  timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 29}:
+    - play_asteroid_flicker
+  balldevice_moon_lock_ball_enter:
+    - delayed_release_moon_ball
+  ball_search_started:
+    - release_moon_ball
+
+
+light_player: 
+  mode_final_wave_wizard_started: 
+    GI: 
+      color: 000000
+
+  asteroid_off: 
+    tAsteroid: 
+      color: 000000
+
+  asteroid_temp1: 
+    tAsteroid: 
+      color: 0d0d0d
+
+  asteroid_temp2: 
+    tAsteroid: 
+      color: 1a1a1a
+
+  asteroid_temp3: 
+    tAsteroid: 
+      color: 272727
+
+  asteroid_temp4: 
+    tAsteroid: 
+      color: 343434
+
+  asteroid_temp5: 
+    tAsteroid: 
+      color: 414141
+
+  asteroid_temp6: 
+    tAsteroid: 
+      color: 4e4e4e
+
+  asteroid_temp7: 
+    tAsteroid: 
+      color: 5b5b5b
+
+  asteroid_temp8: 
+    tAsteroid: 
+      color: 686868
+
+  asteroid_temp9: 
+    tAsteroid: 
+      color: 757575
+
+  asteroid_temp10: 
+    tAsteroid: 
+      color: 828282
+
+  asteroid_temp11: 
+    tAsteroid: 
+      color: 8f8f8f
+
+  asteroid_temp12: 
+    tAsteroid: 
+      color: 9c9c9c
+
+  asteroid_temp13: 
+    tAsteroid: 
+      color: a9a9a9
+
+  asteroid_temp14: 
+    tAsteroid: 
+      color: b6b6b6
+
+  asteroid_temp15: 
+    tAsteroid: 
+      color: c3c3c3
+
+  asteroid_temp16: 
+    tAsteroid: 
+      color: d0d0d0
+
+  asteroid_temp17: 
+    tAsteroid: 
+      color: dddddd
+
+  asteroid_temp18: 
+    tAsteroid: 
+      color: eaeaea
+
+  asteroid_temp19: 
+    tAsteroid: 
+      color: f7f7f7
+
+
+multiballs: 
+  multiball_fwwiz:
+    start_events: timer_final_wave_message_complete
+    ball_count: 5
+    ball_count_type: total
+    shoot_again: 60000
+    hurry_up: 5000
+    grace_period: 500
+    ball_locks: 
+  multiball_fwwiz_2:
+    start_events: fwwiz_add_ball
+    ball_count: 1
+    ball_count_type: add
+    shoot_again: 0
+    hurry_up: 0
+    grace_period: 0
+    ball_locks: 
+
+random_event_player: 
+  fwwiz_raise_meteor: 
+    events:
+      meteor1_raise{current_player.shot_fwwiz_meteor1 == 0}: 1
+      meteor2_raise{current_player.shot_fwwiz_meteor2 == 0}: 1
+      meteor3_raise{current_player.shot_fwwiz_meteor3 == 0}: 1
+      meteor4_raise{current_player.shot_fwwiz_meteor4 == 0}: 1
+    scope: player
+  play_asteroid_flicker: 
+    events:
+      asteroid_flicker1: 1
+      asteroid_flicker2: 1
+      asteroid_flicker3: 1
+      asteroid_flicker4: 1
+    scope: player
+  asteroid_hit: 
+    events:
+      play_sfx_LMet1: 1
+      play_sfx_LMet2: 1
+      play_sfx_LMet3: 1
+      play_sfx_LMet4: 1
+      play_sfx_LMet5: 1
+      play_sfx_LMet6: 1
+      play_sfx_LMet7: 1
+    scope: player
+
+
+queue_relay_player: 
+  balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active and current_player.wizard_final_hit_count == 0}: 
+    post: awaiting_wizard_show
+    wait_for: explosion_done
+
+
+segment_display_player: 
+  begin_fwwiz: 
+    player1: 
+      text: "  THE  "
+      expire: 3000ms
+      flashing: off
+    player2: 
+      text: " FINAL "
+      expire: 3000ms
+      flashing: off
+    player3: 
+      text: "  WAVE  "
+      expire: 3000ms
+      flashing: off
+    player4: 
+      text: "IS HERE "
+      expire: 3000ms
+      flashing: off
+
+  timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 1}: 
+    player1: 
+      text: " RAMPS "
+      expire: 3000ms
+      flashing: all
+    player2: 
+      text: " ADD A  "
+      expire: 3000ms
+      flashing: all
+    player3: 
+      text: "  BALL  "
+      expire: 3000ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 3000ms
+      flashing: all
+
+  timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 2}: 
+    player1: 
+      text: "--------"
+      expire: 3000ms
+      flashing: off
+    player2: 
+      text: "DESTROY"
+      expire: 3000ms
+      flashing: all
+    player3: 
+      text: "ASTEROID"
+      expire: 3000ms
+      flashing: all
+    player4: 
+      text: "--------"
+      expire: 3000ms
+      flashing: off
+
+  display_hit_count: 
+    player1: 
+      text: "--------"
+      flashing: off
+    player2: 
+      text: "HITSLEFT"
+      flashing: off
+    player3: 
+      text: "{current_player.wizard_final_hit_count:0>2}"
+      flashing: all
+    player4: 
+      text: "--------"
+      flashing: off
+    pf: 
+      text: "{current_player.wizard_final_hit_count:0>2}"
+      flashing: all
+
+  update_hit_count: 
+    player3: 
+      text: "{current_player.wizard_final_hit_count:0>2}"
+      flashing: all
+    pf: 
+      text: "{current_player.wizard_final_hit_count:0>2}"
+      flashing: all
+
+
+shots: 
+  fwwiz_shoot_again:
+    profile: shoot_again
+    show_tokens: 
+      color: d14c00
+    reset_events: multiball_fwwiz_shoot_again_ended
+    control_events: 
+      - events: begin_fwwiz
+        state: 1
+      - events: multiball_fwwiz_hurry_up
+        state: 2
+  asteroid:
+    profile: asteroid
+    restart_events: mode_final_wave_wizard_stopping
+    show_tokens: 
+    control_events: 
+      - events: timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 2}, continue_fwwiz
+        state: 1
+  fwwiz_meteor1:
+    profile: fwwiz_meteor
+    restart_events: s_DTMeteor1_active
+    show_tokens: 
+      lights: LMet1
+    control_events: 
+      - events: meteor1_raise
+        state: 1
+  fwwiz_meteor2:
+    profile: fwwiz_meteor
+    restart_events: s_DTMeteor2_active
+    show_tokens: 
+      lights: LMet2
+    control_events: 
+      - events: meteor2_raise
+        state: 1
+  fwwiz_meteor3:
+    profile: fwwiz_meteor
+    restart_events: s_DTMeteor3_active
+    show_tokens: 
+      lights: LMet3
+    control_events: 
+      - events: meteor3_raise
+        state: 1
+  fwwiz_meteor4:
+    profile: fwwiz_meteor
+    restart_events: s_DTMeteor4_active
+    show_tokens: 
+      lights: LMet4
+    control_events: 
+      - events: meteor4_raise
+        state: 1
+
+show_player: 
+  play_asteroid_hit: 
+    asteroid_hit: 
+      key: key_asteroid_hit
+      loops: 0
+  asteroid_flash3: 
+    flash_color_fadeout: 
+      key: key_asteroid_flash3
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tFlasherU
+        color: ffb46b
+  asteroid_flicker1: 
+    flicker_color: 
+      key: key_asteroid_flicker1
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: tAsteroid
+        color: ffffff
+      events_when_completed: update_asteroid_glow
+  asteroid_flicker2: 
+    flicker_color: 
+      key: key_asteroid_flicker2
+      loops: 1
+      speed: 8
+      show_tokens: 
+        lights: tAsteroid
+        color: ffffff
+      events_when_completed: update_asteroid_glow
+  asteroid_flicker3: 
+    flicker2_color: 
+      key: key_asteroid_flicker3
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: tAsteroid
+        color: ffffff
+      events_when_completed: update_asteroid_glow
+  asteroid_flicker4: 
+    flicker2_color: 
+      key: key_asteroid_flicker4
+      loops: 1
+      speed: 7
+      show_tokens: 
+        lights: tAsteroid
+        color: ffffff
+      events_when_completed: update_asteroid_glow
+  asteroid_destroyed: 
+    asteroid_explodes_show: 
+      key: key_asteroid_explodes_show
+      loops: 0
+  play_flash_gi01: 
+    flash_color_fadeout: 
+      key: key_flash_gi01
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi01
+        color: ffb46b
+  play_flash_gi02: 
+    flash_color_fadeout: 
+      key: key_flash_gi02
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi02
+        color: ffb46b
+  play_flash_gi03: 
+    flash_color_fadeout: 
+      key: key_flash_gi03
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi03
+        color: ffb46b
+  play_flash_gi04: 
+    flash_color_fadeout: 
+      key: key_flash_gi04
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi04
+        color: ffb46b
+  play_flash_gi05: 
+    flash_color_fadeout: 
+      key: key_flash_gi05
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi05
+        color: ffb46b
+  play_flash_gi06: 
+    flash_color_fadeout: 
+      key: key_flash_gi06
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi06
+        color: ffb46b
+  play_flash_gi07: 
+    flash_color_fadeout: 
+      key: key_flash_gi07
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi07
+        color: ffb46b
+  play_flash_gi08: 
+    flash_color_fadeout: 
+      key: key_flash_gi08
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi08
+        color: ffb46b
+  play_flash_gi09: 
+    flash_color_fadeout: 
+      key: key_flash_gi09
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi09
+        color: ffb46b
+  play_flash_gi10: 
+    flash_color_fadeout: 
+      key: key_flash_gi10
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi10
+        color: ffb46b
+  play_flash_gi11: 
+    flash_color_fadeout: 
+      key: key_flash_gi11
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi11
+        color: ffb46b
+  play_flash_gi12: 
+    flash_color_fadeout: 
+      key: key_flash_gi12
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi12
+        color: ffb46b
+  play_flash_gi13: 
+    flash_color_fadeout: 
+      key: key_flash_gi13
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi13
+        color: ffb46b
+  play_flash_gi14: 
+    flash_color_fadeout: 
+      key: key_flash_gi14
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi14
+        color: ffb46b
+  play_flash_gi15: 
+    flash_color_fadeout: 
+      key: key_flash_gi15
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi15
+        color: ffb46b
+  play_flash_gi16: 
+    flash_color_fadeout: 
+      key: key_flash_gi16
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi16
+        color: ffb46b
+  play_flash_gi17: 
+    flash_color_fadeout: 
+      key: key_flash_gi17
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi17
+        color: ffb46b
+  play_flash_gi18: 
+    flash_color_fadeout: 
+      key: key_flash_gi18
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi18
+        color: ffb46b
+  play_flash_gi19: 
+    flash_color_fadeout: 
+      key: key_flash_gi19
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi19
+        color: ffb46b
+  play_flash_gi20: 
+    flash_color_fadeout: 
+      key: key_flash_gi20
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi20
+        color: ffb46b
+  play_flash_gi21: 
+    flash_color_fadeout: 
+      key: key_flash_gi21
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi21
+        color: ffb46b
+  play_flash_gi22: 
+    flash_color_fadeout: 
+      key: key_flash_gi22
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi22
+        color: ffb46b
+  play_flash_giapron: 
+    flash_color_fadeout: 
+      key: key_flash_giapron
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: giapron
+        color: ffb46b
+  meteor1_explodes_show: 
+    meteor1_explodes: 
+      key: key_meteor1_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor1_blink_show: 
+    flash_color: 
+      key: key_meteor1_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet1
+        color: ff1100
+  meteor2_explodes_show: 
+    meteor2_explodes: 
+      key: key_meteor2_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor2_blink_show: 
+    flash_color: 
+      key: key_meteor2_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet2
+        color: ff1100
+  meteor3_explodes_show: 
+    meteor3_explodes: 
+      key: key_meteor3_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor3_blink_show: 
+    flash_color: 
+      key: key_meteor3_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet3
+        color: ff1100
+  meteor4_explodes_show: 
+    meteor4_explodes: 
+      key: key_meteor4_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor4_blink_show: 
+    flash_color: 
+      key: key_meteor4_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet4
+        color: ff1100
+  final_flash1: 
+    flash_color: 
+      key: key_final_flash3
+      loops: 5
+      speed: 20
+      show_tokens: 
+        lights: tFlasher
+        color: ffe7a6
+  s_Bumper1_active: 
+    flash_color_with_fade: 
+      key: key_bumper1_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB1
+        color: ed1800
+        fade: 50
+  s_Bumper2_active: 
+    flash_color_with_fade: 
+      key: key_bumper2_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB2
+        color: ed1800
+        fade: 50
+  s_Bumper3_active: 
+    flash_color_with_fade: 
+      key: key_bumper3_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB3
+        color: ed1800
+        fade: 50
+  s_Bumper4_active: 
+    flash_color_with_fade: 
+      key: key_bumper4_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB4
+        color: ed1800
+        fade: 50
+
+
+sound_player: 
+  asteroid_destroyed: 
+    sfx_final_explosion: 
+      key: key_sfx_final_explosion
+      action: play
+  begin_fwwiz: 
+    sfx_final_wave_scoop: 
+      key: key_sfx_final_wave_scoop
+      action: play
+
+
+timers: 
+  final_wave_message:
+    start_value: 0
+    end_value: 3
+    direction: up
+    control_events: 
+      - event: begin_fwwiz
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 3400ms
+  fwwiz_start_meteors:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: timer_final_wave_message_complete
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 30000ms
+  fwwiz_add_meteor:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: timer_fwwiz_start_meteors_complete
+        action: restart
+      - event: continue_fwwiz
+        action: restart
+      - event: fwwiz_add_meteor
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 400ms
+  asteroid_explodes:
+    start_value: 0
+    end_value: 50
+    direction: up
+    control_events: 
+      - event: asteroid_destroyed
+        action: start
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 200ms
+  final_wave_gi:
+    start_value: 0
+    end_value: 53
+    direction: up
+    control_events: 
+      - event: mode_final_wave_wizard_started
+        action: restart
+      - event: timer_final_wave_gi_complete
+        action: restart
+      - event: asteroid_destroyed
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 500ms
+  final_wave_flicker:
+    start_value: 0
+    end_value: 30
+    direction: up
+    control_events: 
+      - event: start_asteroid_flicker
+        action: restart
+      - event: timer_final_wave_flicker_complete
+        action: restart
+      - event: asteroid_destroyed
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  mode_final_wave_wizard_started: 
+    wizard_mode_running: 
+      action: set
+      int: 1
+
+  mode_final_wave_wizard_stopping: 
+    wizard_mode_running: 
+      action: set
+      int: 0
+
+  asteroid_hit{current_player.wizard_final_hit_count > 0}: 
+    wizard_final_hit_count: 
+      action: add
+      int: -1
+
+  detonate_nuke.3: 
+    wizard_final_hit_count: 
+      action: add
+      int: -10
+
+  detonate_nuke.2{current_player.wizard_final_hit_count < 0}: 
+    wizard_final_hit_count: 
+      action: set
+      int: 0
+
+  multiball_fwwiz_shoot_again_ended: 
+    fwwiz_add_ball_ready: 
+      action: set
+      int: 1
+
+  continue_fwwiz: 
+    fwwiz_add_ball_ready: 
+      action: set
+      int: 1
+
+  start_add_ball_fwwiz: 
+    fwwiz_add_ball_ready: 
+      action: set
+      int: 1
+
+  fwwiz_add_ball: 
+    fwwiz_add_ball_ready: 
+      action: set
+      int: 2
+
+  multiball_fwwiz_2_ended: 
+    fwwiz_add_ball_ready: 
+      action: set
+      int: 1
+
+
+
+

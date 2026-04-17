@@ -1,0 +1,5596 @@
+#config_version=6
+
+lights:
+  gi17:
+    number: 0
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.9369241
+    y: 2.773264E-02
+  giapron:
+    number: 1
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.4621586
+    y: 0.9727491
+  gi22:
+    number: 2
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.6054423
+    y: 0.1440044
+  LStars:
+    number: 3
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tStars
+    x: 0.49321
+    y: -4.108334E-02
+  gi20:
+    number: 4
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.1951852
+    y: 0.2126702
+  gi21:
+    number: 5
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.1619484
+    y: 0.1376693
+  gi19:
+    number: 6
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tMoonGI
+    x: 0.9275798
+    y: 0.3553011
+  gi18:
+    number: 7
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 5.008347E-02
+    y: 0.2615481
+  gi16:
+    number: 8
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 6.815305E-02
+    y: 3.165893E-02
+  gi15:
+    number: 9
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tMoonGI
+    x: 0.9472111
+    y: 0.2708856
+  gi14:
+    number: 10
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tMoonGI
+    x: 0.9188547
+    y: 0.4380326
+  gi13:
+    number: 11
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.8037835
+    y: 0.2468074
+  gi12:
+    number: 12
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 6.222843E-02
+    y: 0.329934
+  gi11:
+    number: 13
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 7.687823E-02
+    y: 0.387269
+  gi10:
+    number: 14
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 0.8854848
+    y: 0.5604907
+  gi09:
+    number: 15
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI
+    x: 5.566535E-02
+    y: 0.5736126
+  gi08:
+    number: 16
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tRSling
+    x: 0.721752
+    y: 0.7201294
+  gi07:
+    number: 17
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tRSling
+    x: 0.6797436
+    y: 0.7623914
+  gi06:
+    number: 18
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tInlaneGI
+    x: 0.7598045
+    y: 0.7994253
+  gi05:
+    number: 19
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tInlaneGI
+    x: 0.6929244
+    y: 0.8204752
+  gi04:
+    number: 20
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tLSling
+    x: 0.1908126
+    y: 0.7182457
+  gi03:
+    number: 21
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tLSling
+    x: 0.2323217
+    y: 0.7630694
+  gi02:
+    number: 22
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tInlaneGI
+    x: 0.15374
+    y: 0.7994795
+  gi01:
+    number: 23
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: GI,tInlaneGI
+    x: 0.2195298
+    y: 0.8207088
+  LPF:
+    number: 24
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFire,tInserts
+    x: 0.4520798
+    y: 0.2173602
+  LEBR:
+    number: 25
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoop,tInserts
+    x: 0.5811333
+    y: 0.2877748
+  LS5:
+    number: 26
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTrain,tInserts
+    x: 0.6601004
+    y: 0.3317065
+  LS1:
+    number: 27
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTrain,tInserts
+    x: 0.1621514
+    y: 0.5752184
+  LS2:
+    number: 28
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTrain,tHealth2,tInserts
+    x: 0.2023726
+    y: 0.4122179
+  LS3:
+    number: 29
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTrain,tInserts
+    x: 0.3048953
+    y: 0.3753188
+  LS4:
+    number: 30
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTrain,tInserts
+    x: 0.501605
+    y: 0.3154445
+  LS6:
+    number: 31
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTrain,tHealth2,tInserts
+    x: 0.7796293
+    y: 0.3869204
+  LSwC3:
+    number: 32
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tRollover,tInserts
+    x: 0.5453625
+    y: 0.1342145
+  LSwC2:
+    number: 33
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tRollover,tInserts
+    x: 0.4507938
+    y: 9.633334E-02
+  LSwC1:
+    number: 34
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tRollover,tInserts
+    x: 0.3546914
+    y: 0.1341111
+  LCWiz:
+    number: 35
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWiz,tInserts
+    x: 0.2943563
+    y: 0.6335725
+  LLWiz:
+    number: 36
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWiz,tInserts
+    x: 0.6166352
+    y: 0.6335632
+  LC1:
+    number: 37
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.3335266
+    y: 0.7905717
+  LC2:
+    number: 38
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.3669592
+    y: 0.7897967
+  LC3:
+    number: 39
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.4027705
+    y: 0.7904528
+  LC4:
+    number: 40
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.4393441
+    y: 0.7902429
+  LC5:
+    number: 41
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.4758016
+    y: 0.7901722
+  LC6:
+    number: 42
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.5112355
+    y: 0.7899945
+  LC7:
+    number: 43
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.5449668
+    y: 0.7902287
+  LC8:
+    number: 44
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCombos,tInserts
+    x: 0.581286
+    y: 0.7900733
+  LWiz:
+    number: 45
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tWiz,tInserts
+    x: 0.4553228
+    y: 0.6169242
+  LW9:
+    number: 46
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4568375
+    y: 0.5775305
+  LW8:
+    number: 47
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4566074
+    y: 0.5423059
+  LW7:
+    number: 48
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4566076
+    y: 0.5073914
+  LW6:
+    number: 49
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4568085
+    y: 0.4730853
+  LW5:
+    number: 50
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4565784
+    y: 0.4417942
+  LW4:
+    number: 51
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4577287
+    y: 0.4097783
+  LW3:
+    number: 52
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4568085
+    y: 0.382641
+  LW2:
+    number: 53
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4568663
+    y: 0.3590109
+  LW1:
+    number: 54
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tWaves,tBlast,tInserts
+    x: 0.4571113
+    y: 0.3358422
+  LMLR:
+    number: 55
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoonAll,tInserts
+    x: 0.6771847
+    y: 0.2994079
+  LMR:
+    number: 56
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoop,tInserts
+    x: 0.5916784
+    y: 0.2652172
+  LX:
+    number: 57
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoop,tInserts
+    x: 0.6058652
+    y: 0.2422606
+  LPC5:
+    number: 58
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFire,tInserts
+    x: 0.5249214
+    y: 0.1793529
+  LPC4:
+    number: 59
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFire,tInserts
+    x: 0.381481
+    y: 0.1790943
+  LSC3:
+    number: 60
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tShields,tInserts,tFLWp6
+    x: 0.7709094
+    y: 0.5722313
+  LSC2:
+    number: 61
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tShields,tInserts,tFLWp6
+    x: 0.7697542
+    y: 0.5424848
+  LSC1:
+    number: 62
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tShields,tInserts,tFLWp6
+    x: 0.7695872
+    y: 0.5139068
+  LF3:
+    number: 63
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSaver,tInserts
+    x: 0.8529174
+    y: 0.2819547
+  LF2:
+    number: 64
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSaver,tInserts
+    x: 0.8731619
+    y: 0.2550123
+  LF1:
+    number: 65
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSaver,tInserts
+    x: 0.891835
+    y: 0.2270534
+  LPC3:
+    number: 66
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProton,tProtonAll,tInserts
+    x: 0.4297118
+    y: 0.2795785
+  LPC2:
+    number: 67
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProton,tProtonAll,tInserts
+    x: 0.3875518
+    y: 0.2596116
+  LPC1:
+    number: 68
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProton,tProtonAll,tInserts
+    x: 0.3426277
+    y: 0.2395002
+  LTW2:
+    number: 69
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTimewarp,tInserts
+    x: 0.3112678
+    y: 0.335977
+  LTW1:
+    number: 70
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tTimewarp,tInserts
+    x: 0.2504557
+    y: 0.3435877
+  LCC3:
+    number: 71
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCluster,tClusterAll,tInserts
+    x: 0.1765245
+    y: 0.3724957
+  LCC2:
+    number: 72
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCluster,tClusterAll,tInserts
+    x: 0.1614628
+    y: 0.3445036
+  LCC1:
+    number: 73
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tCluster,tClusterAll,tInserts
+    x: 0.1473756
+    y: 0.3161277
+  LMet4:
+    number: 74
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMeteors,tInserts
+    x: 0.6514528
+    y: 0.5253352
+  LMet3:
+    number: 75
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMeteors,tInserts
+    x: 0.556174
+    y: 0.4615593
+  LMet2:
+    number: 76
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMeteors,tInserts
+    x: 0.364889
+    y: 0.4366232
+  LMet1:
+    number: 77
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMeteors,tInserts
+    x: 0.2999426
+    y: 0.5107504
+  LM5:
+    number: 78
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMystery,tInserts
+    x: 0.7690138
+    y: 0.3030083
+  LM4:
+    number: 79
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMystery,tInserts
+    x: 0.5648369
+    y: 0.2180051
+  LM3:
+    number: 80
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMystery,tInserts
+    x: 0.452411
+    y: 0.1875462
+  LM2:
+    number: 81
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMystery,tInserts
+    x: 0.3728121
+    y: 0.2847045
+  LM1:
+    number: 82
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMystery,tInserts
+    x: 0.1803762
+    y: 0.5448569
+  LSA:
+    number: 83
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSaver,tInserts
+    x: 0.4566212
+    y: 0.8790021
+  LH9:
+    number: 84
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.5995099
+    y: 0.8058759
+  LH8:
+    number: 85
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.5635382
+    y: 0.8057793
+  LH7:
+    number: 86
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.5278798
+    y: 0.8059347
+  LH6:
+    number: 87
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.4918346
+    y: 0.8061469
+  LH5:
+    number: 88
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.4573927
+    y: 0.8063245
+  LH4:
+    number: 89
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.4212658
+    y: 0.8058001
+  LH3:
+    number: 90
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.3860148
+    y: 0.8058612
+  LH2:
+    number: 91
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.3502036
+    y: 0.805949
+  LH1:
+    number: 92
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tHealth,tEarth,tHeal,tInserts
+    x: 0.3154483
+    y: 0.8061289
+  LPR1:
+    number: 93
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProtonAll,tBlast,tInserts
+    x: 0.4562593
+    y: 0.7121443
+  LPR3:
+    number: 94
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProtonAll,tBlast,tInserts
+    x: 0.4923909
+    y: 0.739357
+  LPR2:
+    number: 95
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProtonAll,tBlast,tInserts
+    x: 0.4216574
+    y: 0.7394036
+  LPR6:
+    number: 96
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProtonAll,tBlast,tInserts
+    x: 0.5250084
+    y: 0.766621
+  LPR5:
+    number: 97
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProtonAll,tBlast,tInserts
+    x: 0.4566985
+    y: 0.7666701
+  LPR4:
+    number: 98
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tProtonAll,tBlast,tInserts
+    x: 0.3868435
+    y: 0.7669164
+  LMR2:
+    number: 99
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoonAll,tInserts,tMoonR
+    x: 0.5645111
+    y: 0.7276993
+  LMR1:
+    number: 100
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoonAll,tInserts,tMoonR
+    x: 0.5656169
+    y: 0.7048149
+  LCR2:
+    number: 101
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tClusterAll,tInserts,tClusterR
+    x: 0.3476014
+    y: 0.7272527
+  LCR1:
+    number: 102
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tClusterAll,tInserts,tClusterR
+    x: 0.3476014
+    y: 0.7043683
+  LRI:
+    number: 103
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoon,tMoonAll,tInserts
+    x: 0.777608
+    y: 0.7039837
+  LRO:
+    number: 104
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoon,tMoonAll,tInserts
+    x: 0.8627335
+    y: 0.7159235
+  LLI:
+    number: 105
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoon,tMoonAll,tInserts
+    x: 0.1391688
+    y: 0.7052276
+  LLO:
+    number: 106
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tMoon,tMoonAll,tInserts
+    x: 5.514906E-02
+    y: 0.7151773
+  LSR:
+    number: 107
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tShields,tInserts
+    x: 0.8580106
+    y: 0.7987533
+  LSL:
+    number: 108
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tShields,tInserts
+    x: 5.788127E-02
+    y: 0.7991486
+  LB2:
+    number: 109
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tBumper,tHeal
+    x: 0.8400493
+    y: 9.066667E-02
+  LB3:
+    number: 110
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tBumper,tHeal
+    x: 0.634722
+    y: 9.498623E-02
+  LShip:
+    number: 111
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tShip
+    x: 0.1888889
+    y: 0.3980834
+  LSpot2:
+    number: 112
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSpotL,tEarth
+    x: 0.7680314
+    y: 0.8648309
+  LSpot2a:
+    number: 113
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSpotL,tEarth
+    x: 0.1538707
+    y: 0.8650753
+  LSpot1:
+    number: 114
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tSpotU
+    x: 0.3189972
+    y: 0.2546342
+  LB1:
+    number: 115
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tBumper,tHeal
+    x: 0.1406173
+    y: 0.4854445
+  LB4:
+    number: 116
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 1.10396
+    y: 0.1930672
+  FL6:
+    number: 117
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFlasher,tEarth,tFL6
+    x: 0.7051854
+    y: 0.7428056
+  FL4:
+    number: 118
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: fFlasher
+    x: 0.4491359
+    y: 0.1355278
+  FL5:
+    number: 119
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFlasher,tEarth,tFL5
+    x: 0.2161729
+    y: 0.74375
+  FL1:
+    number: 120
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFlasher,tFlasherU
+    x: 0.8185187
+    y: 0.21675
+  FL2:
+    number: 121
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFlasher,tFlasherU
+    x: 0.2539507
+    y: 6.563889E-02
+  FL3:
+    number: 122
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFlasher,tFlasherU
+    x: 0.4722223
+    y: 1.558333E-02
+  LDS:
+    number: 123
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tInserts
+    x: 0.7542428
+    y: 0.4555745
+  LDP:
+    number: 124
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tInserts
+    x: 0.7317996
+    y: 4.745424E-02
+  FL7a:
+    number: 125
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tAsteroid
+    x: 0.4512347
+    y: 0.1539444
+  FL5a:
+    number: 126
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1672794
+    y: 0.6646733
+  FL6a:
+    number: 127
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1155227
+    y: 0.664813
+  FL6h:
+    number: 128
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156522
+    y: 0.8020256
+  FL6g:
+    number: 129
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156522
+    y: 0.7824371
+  FL6f:
+    number: 130
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156522
+    y: 0.7628486
+  FL6e:
+    number: 131
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156522
+    y: 0.7432601
+  FL6d:
+    number: 132
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156523
+    y: 0.7236717
+  FL6c:
+    number: 133
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156523
+    y: 0.7040833
+  FL6b:
+    number: 134
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL6,tFlasher
+    x: -0.1156522
+    y: 0.6846812
+  FL5h:
+    number: 135
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1674089
+    y: 0.8018859
+  FL5g:
+    number: 136
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1674089
+    y: 0.7822974
+  FL5f:
+    number: 137
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1674089
+    y: 0.7627088
+  FL5e:
+    number: 138
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1674089
+    y: 0.7431204
+  FL5d:
+    number: 139
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1674089
+    y: 0.723532
+  FL5c:
+    number: 140
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.167409
+    y: 0.7039435
+  FL5b:
+    number: 141
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tFL5,tFlasher
+    x: -0.1674089
+    y: 0.6845415
+  ball_seg30:
+    number: 142
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.0602104
+    y: 7.958525E-02
+  p4_seg120:
+    number: 143
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.024964
+    y: 2.648933E-02
+  p4_seg119:
+    number: 144
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.018297
+    y: 2.414194E-02
+  p4_seg118:
+    number: 145
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.015326
+    y: 2.404856E-02
+  p4_seg117:
+    number: 146
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.011775
+    y: 2.443731E-02
+  p4_seg116:
+    number: 147
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.020197
+    y: 1.966462E-02
+  p4_seg115:
+    number: 148
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.017019
+    y: 1.985116E-02
+  p4_seg114:
+    number: 149
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.013947
+    y: 1.955579E-02
+  p4_seg113:
+    number: 150
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.019575
+    y: 0.0219654
+  p4_seg112:
+    number: 151
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.012873
+    y: 2.202766E-02
+  p4_seg111:
+    number: 152
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.0108
+    y: 1.988217E-02
+  p4_seg110:
+    number: 153
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.008796
+    y: 2.449945E-02
+  p4_seg109:
+    number: 154
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.014877
+    y: 2.676925E-02
+  p4_seg108:
+    number: 155
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.021993
+    y: 2.453058E-02
+  p4_seg107:
+    number: 156
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.024001
+    y: 1.983559E-02
+  p4_seg106:
+    number: 157
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.018124
+    y: 0.0173947
+  p3_seg120:
+    number: 158
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8480885
+    y: 2.647593E-02
+  p3_seg119:
+    number: 159
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8414208
+    y: 2.412842E-02
+  p3_seg118:
+    number: 160
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8384497
+    y: 2.403515E-02
+  p3_seg117:
+    number: 161
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8348987
+    y: 2.442379E-02
+  p3_seg116:
+    number: 162
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8433209
+    y: 1.965102E-02
+  p3_seg115:
+    number: 163
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8401426
+    y: 1.983756E-02
+  p3_seg114:
+    number: 164
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8370715
+    y: 1.954225E-02
+  p3_seg113:
+    number: 165
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.842699
+    y: 2.195195E-02
+  p3_seg112:
+    number: 166
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8359968
+    y: 2.201415E-02
+  p3_seg111:
+    number: 167
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.833924
+    y: 1.986868E-02
+  p3_seg110:
+    number: 168
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8319202
+    y: 2.448599E-02
+  p3_seg109:
+    number: 169
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8380006
+    y: 2.675574E-02
+  p3_seg108:
+    number: 170
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8451174
+    y: 2.451706E-02
+  p3_seg107:
+    number: 171
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8471249
+    y: 1.982205E-02
+  p3_seg106:
+    number: 172
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.841248
+    y: 1.738122E-02
+  p2_seg120:
+    number: 173
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3639645
+    y: 0.0264759
+  p2_seg119:
+    number: 174
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3572968
+    y: 2.412842E-02
+  p2_seg118:
+    number: 175
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3543258
+    y: 2.403513E-02
+  p2_seg117:
+    number: 176
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3507747
+    y: 2.442379E-02
+  p2_seg116:
+    number: 177
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3591969
+    y: 1.965101E-02
+  p2_seg115:
+    number: 178
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3560186
+    y: 1.983752E-02
+  p2_seg114:
+    number: 179
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3529475
+    y: 1.954219E-02
+  p2_seg113:
+    number: 180
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.358575
+    y: 2.195193E-02
+  p2_seg112:
+    number: 181
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3518728
+    y: 2.201414E-02
+  p2_seg111:
+    number: 182
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3498
+    y: 1.986864E-02
+  p2_seg110:
+    number: 183
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3477964
+    y: 2.448596E-02
+  p2_seg109:
+    number: 184
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3538766
+    y: 2.675571E-02
+  p2_seg108:
+    number: 185
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3609934
+    y: 0.024517
+  p2_seg107:
+    number: 186
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3630009
+    y: 1.982199E-02
+  p2_seg106:
+    number: 187
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3571241
+    y: 1.738117E-02
+  p1_seg120:
+    number: 188
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1813094
+    y: 2.646913E-02
+  p1_seg119:
+    number: 189
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1746418
+    y: 2.412163E-02
+  p1_seg118:
+    number: 190
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1716707
+    y: 2.402834E-02
+  p1_seg117:
+    number: 191
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1681196
+    y: 2.441705E-02
+  p1_seg116:
+    number: 192
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1765418
+    y: 1.964422E-02
+  p1_seg115:
+    number: 193
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1733635
+    y: 1.983073E-02
+  p1_seg114:
+    number: 194
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1702924
+    y: 1.953541E-02
+  p1_seg113:
+    number: 195
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.17592
+    y: 2.194514E-02
+  p1_seg112:
+    number: 196
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1692177
+    y: 2.200735E-02
+  p1_seg111:
+    number: 197
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1671449
+    y: 1.986186E-02
+  p1_seg110:
+    number: 198
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1651411
+    y: 0.0244792
+  p1_seg109:
+    number: 199
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1712215
+    y: 2.674898E-02
+  p1_seg108:
+    number: 200
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1783383
+    y: 2.451028E-02
+  p1_seg107:
+    number: 201
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1803458
+    y: 1.981521E-02
+  p1_seg106:
+    number: 202
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.174469
+    y: 1.737437E-02
+  p4_seg105:
+    number: 203
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.004204
+    y: 2.648933E-02
+  p3_seg105:
+    number: 204
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8271701
+    y: 2.647593E-02
+  p2_seg105:
+    number: 205
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3431632
+    y: 0.0264759
+  p4_seg104:
+    number: 206
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9975368
+    y: 2.414194E-02
+  p3_seg104:
+    number: 207
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8205024
+    y: 2.412842E-02
+  p2_seg104:
+    number: 208
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3364955
+    y: 2.412842E-02
+  p4_seg103:
+    number: 209
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9945657
+    y: 2.404856E-02
+  p3_seg103:
+    number: 210
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8175313
+    y: 2.403515E-02
+  p2_seg103:
+    number: 211
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3335244
+    y: 2.403513E-02
+  p4_seg102:
+    number: 212
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9910147
+    y: 2.443731E-02
+  p3_seg102:
+    number: 213
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8139803
+    y: 2.442379E-02
+  p2_seg102:
+    number: 214
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3299734
+    y: 2.442379E-02
+  p4_seg101:
+    number: 215
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9994369
+    y: 1.966462E-02
+  p3_seg101:
+    number: 216
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8224025
+    y: 1.965102E-02
+  p2_seg101:
+    number: 217
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3383956
+    y: 1.965101E-02
+  p4_seg100:
+    number: 218
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9962586
+    y: 1.985116E-02
+  p3_seg100:
+    number: 219
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8192242
+    y: 1.983756E-02
+  p2_seg100:
+    number: 220
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3352173
+    y: 1.983752E-02
+  p4_seg99:
+    number: 221
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9931875
+    y: 1.955579E-02
+  p3_seg99:
+    number: 222
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8161531
+    y: 1.954225E-02
+  p2_seg99:
+    number: 223
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3321462
+    y: 1.954219E-02
+  p4_seg98:
+    number: 224
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.998815
+    y: 0.0219654
+  p3_seg98:
+    number: 225
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8217806
+    y: 2.195195E-02
+  p2_seg98:
+    number: 226
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3377737
+    y: 2.195193E-02
+  p4_seg97:
+    number: 227
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9921128
+    y: 2.202766E-02
+  p3_seg97:
+    number: 228
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8150784
+    y: 2.201415E-02
+  p2_seg97:
+    number: 229
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3310715
+    y: 2.201414E-02
+  p4_seg96:
+    number: 230
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9900399
+    y: 1.988217E-02
+  p3_seg96:
+    number: 231
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8130056
+    y: 1.986868E-02
+  p2_seg96:
+    number: 232
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3289987
+    y: 1.986864E-02
+  p4_seg95:
+    number: 233
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9880362
+    y: 2.449945E-02
+  p3_seg95:
+    number: 234
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8110018
+    y: 2.448599E-02
+  p2_seg95:
+    number: 235
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.326995
+    y: 2.448596E-02
+  p4_seg94:
+    number: 236
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9941165
+    y: 2.676925E-02
+  p3_seg94:
+    number: 237
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8170822
+    y: 2.675574E-02
+  p2_seg94:
+    number: 238
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3330753
+    y: 2.675571E-02
+  p4_seg93:
+    number: 239
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.001233
+    y: 2.453058E-02
+  p3_seg93:
+    number: 240
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.824199
+    y: 2.451706E-02
+  p2_seg93:
+    number: 241
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3401921
+    y: 0.024517
+  p4_seg92:
+    number: 242
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 1.003241
+    y: 1.983559E-02
+  p3_seg92:
+    number: 243
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8262064
+    y: 1.982205E-02
+  p2_seg92:
+    number: 244
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3421996
+    y: 1.982199E-02
+  p4_seg91:
+    number: 245
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.997364
+    y: 0.0173947
+  p3_seg91:
+    number: 246
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8203296
+    y: 1.738122E-02
+  p2_seg91:
+    number: 247
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3363228
+    y: 1.738117E-02
+  p4_seg90:
+    number: 248
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9835447
+    y: 2.648933E-02
+  p3_seg90:
+    number: 249
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8065103
+    y: 2.647593E-02
+  p2_seg90:
+    number: 250
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3225036
+    y: 0.0264759
+  p4_seg89:
+    number: 251
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.976877
+    y: 2.414194E-02
+  p3_seg89:
+    number: 252
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7998426
+    y: 2.412842E-02
+  p2_seg89:
+    number: 253
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.315836
+    y: 2.412842E-02
+  p4_seg88:
+    number: 254
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9739059
+    y: 2.404856E-02
+  p3_seg88:
+    number: 255
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7968715
+    y: 2.403515E-02
+  p2_seg88:
+    number: 256
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.312865
+    y: 2.403513E-02
+  p4_seg87:
+    number: 257
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9703549
+    y: 2.443731E-02
+  p3_seg87:
+    number: 258
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7933205
+    y: 2.442379E-02
+  p2_seg87:
+    number: 259
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.309314
+    y: 2.442379E-02
+  p4_seg86:
+    number: 260
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9787772
+    y: 1.966462E-02
+  p3_seg86:
+    number: 261
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8017427
+    y: 1.965102E-02
+  p2_seg86:
+    number: 262
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3177361
+    y: 1.965101E-02
+  p4_seg85:
+    number: 263
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9755988
+    y: 1.985116E-02
+  p3_seg85:
+    number: 264
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7985643
+    y: 1.983756E-02
+  p2_seg85:
+    number: 265
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3145578
+    y: 1.983752E-02
+  p4_seg84:
+    number: 266
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9725277
+    y: 1.955579E-02
+  p3_seg84:
+    number: 267
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7954933
+    y: 1.954225E-02
+  p2_seg84:
+    number: 268
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3114868
+    y: 1.954219E-02
+  p4_seg83:
+    number: 269
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9781553
+    y: 0.0219654
+  p3_seg83:
+    number: 270
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8011208
+    y: 2.195195E-02
+  p2_seg83:
+    number: 271
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3171142
+    y: 2.195193E-02
+  p4_seg82:
+    number: 272
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.971453
+    y: 2.202766E-02
+  p3_seg82:
+    number: 273
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7944186
+    y: 2.201415E-02
+  p2_seg82:
+    number: 274
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3104122
+    y: 2.201414E-02
+  p4_seg81:
+    number: 275
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9693803
+    y: 1.988217E-02
+  p3_seg81:
+    number: 276
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7923457
+    y: 1.986868E-02
+  p2_seg81:
+    number: 277
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3083394
+    y: 1.986864E-02
+  p4_seg80:
+    number: 278
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9673765
+    y: 2.449945E-02
+  p3_seg80:
+    number: 279
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.790342
+    y: 2.448599E-02
+  p2_seg80:
+    number: 280
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3063357
+    y: 2.448596E-02
+  p4_seg79:
+    number: 281
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9734568
+    y: 2.676925E-02
+  p3_seg79:
+    number: 282
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7964224
+    y: 2.675574E-02
+  p2_seg79:
+    number: 283
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3124159
+    y: 2.675571E-02
+  p4_seg78:
+    number: 284
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9805736
+    y: 2.453058E-02
+  p3_seg78:
+    number: 285
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8035392
+    y: 2.451706E-02
+  p2_seg78:
+    number: 286
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3195325
+    y: 0.024517
+  p4_seg77:
+    number: 287
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.982581
+    y: 1.983559E-02
+  p3_seg77:
+    number: 288
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8055466
+    y: 1.982205E-02
+  p2_seg77:
+    number: 289
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.32154
+    y: 1.982199E-02
+  p4_seg76:
+    number: 290
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9767042
+    y: 0.0173947
+  p3_seg76:
+    number: 291
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7996698
+    y: 1.738122E-02
+  p2_seg76:
+    number: 292
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3156633
+    y: 1.738117E-02
+  p4_seg75:
+    number: 293
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.962885
+    y: 2.648933E-02
+  p3_seg75:
+    number: 294
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7858505
+    y: 2.647593E-02
+  p2_seg75:
+    number: 295
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3018443
+    y: 0.0264759
+  p4_seg74:
+    number: 296
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9562173
+    y: 2.414194E-02
+  p3_seg74:
+    number: 297
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7791828
+    y: 2.412842E-02
+  p2_seg74:
+    number: 298
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2951766
+    y: 2.412842E-02
+  p4_seg73:
+    number: 299
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9532462
+    y: 2.404856E-02
+  p3_seg73:
+    number: 300
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7762117
+    y: 2.403515E-02
+  p2_seg73:
+    number: 301
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2922055
+    y: 2.403513E-02
+  p4_seg72:
+    number: 302
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9496952
+    y: 2.443731E-02
+  p3_seg72:
+    number: 303
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7726606
+    y: 2.442379E-02
+  p2_seg72:
+    number: 304
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2886544
+    y: 2.442379E-02
+  p4_seg71:
+    number: 305
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9581174
+    y: 1.966462E-02
+  p3_seg71:
+    number: 306
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7810829
+    y: 1.965102E-02
+  p2_seg71:
+    number: 307
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2970767
+    y: 1.965101E-02
+  p4_seg70:
+    number: 308
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.954939
+    y: 1.985116E-02
+  p3_seg70:
+    number: 309
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7779045
+    y: 1.983756E-02
+  p2_seg70:
+    number: 310
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2938983
+    y: 1.983752E-02
+  p4_seg69:
+    number: 311
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9518679
+    y: 1.955579E-02
+  p3_seg69:
+    number: 312
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7748334
+    y: 1.954225E-02
+  p2_seg69:
+    number: 313
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2908273
+    y: 1.954219E-02
+  p4_seg68:
+    number: 314
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9574955
+    y: 0.0219654
+  p3_seg68:
+    number: 315
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.780461
+    y: 2.195195E-02
+  p2_seg68:
+    number: 316
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2964548
+    y: 2.195193E-02
+  p4_seg67:
+    number: 317
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9507932
+    y: 2.202766E-02
+  p3_seg67:
+    number: 318
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7737587
+    y: 2.201415E-02
+  p2_seg67:
+    number: 319
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2897526
+    y: 2.201414E-02
+  p4_seg66:
+    number: 320
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9487205
+    y: 1.988217E-02
+  p3_seg66:
+    number: 321
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.771686
+    y: 1.986868E-02
+  p2_seg66:
+    number: 322
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2876798
+    y: 1.986864E-02
+  p4_seg65:
+    number: 323
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9467167
+    y: 2.449945E-02
+  p3_seg65:
+    number: 324
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7696822
+    y: 2.448599E-02
+  p2_seg65:
+    number: 325
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.285676
+    y: 2.448596E-02
+  p4_seg64:
+    number: 326
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9527971
+    y: 2.676925E-02
+  p3_seg64:
+    number: 327
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7757626
+    y: 2.675574E-02
+  p2_seg64:
+    number: 328
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2917564
+    y: 2.675571E-02
+  p4_seg63:
+    number: 329
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9599138
+    y: 2.453058E-02
+  p3_seg63:
+    number: 330
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7828795
+    y: 2.451706E-02
+  p2_seg63:
+    number: 331
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2988732
+    y: 0.024517
+  p4_seg62:
+    number: 332
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9619213
+    y: 1.983559E-02
+  p3_seg62:
+    number: 333
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.784887
+    y: 1.982205E-02
+  p2_seg62:
+    number: 334
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.3008806
+    y: 1.982199E-02
+  p4_seg61:
+    number: 335
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9560445
+    y: 0.0173947
+  p3_seg61:
+    number: 336
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7790101
+    y: 1.738122E-02
+  p2_seg61:
+    number: 337
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2950038
+    y: 1.738117E-02
+  p4_seg60:
+    number: 338
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9422252
+    y: 2.648933E-02
+  p3_seg60:
+    number: 339
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7651907
+    y: 2.647593E-02
+  p2_seg60:
+    number: 340
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2811846
+    y: 0.0264759
+  p4_seg59:
+    number: 341
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9355574
+    y: 2.414194E-02
+  p3_seg59:
+    number: 342
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7585229
+    y: 2.412842E-02
+  p2_seg59:
+    number: 343
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2745172
+    y: 2.412842E-02
+  p4_seg58:
+    number: 344
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9325864
+    y: 2.404856E-02
+  p3_seg58:
+    number: 345
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7555519
+    y: 2.403515E-02
+  p2_seg58:
+    number: 346
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2715463
+    y: 2.403513E-02
+  p4_seg57:
+    number: 347
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9290354
+    y: 2.443731E-02
+  p3_seg57:
+    number: 348
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7520009
+    y: 2.442379E-02
+  p2_seg57:
+    number: 349
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2679954
+    y: 2.442379E-02
+  p4_seg56:
+    number: 350
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9374576
+    y: 1.966462E-02
+  p3_seg56:
+    number: 351
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7604231
+    y: 1.965102E-02
+  p2_seg56:
+    number: 352
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2764172
+    y: 1.965101E-02
+  p4_seg55:
+    number: 353
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9342793
+    y: 1.985116E-02
+  p3_seg55:
+    number: 354
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7572447
+    y: 1.983756E-02
+  p2_seg55:
+    number: 355
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.273239
+    y: 1.983752E-02
+  p4_seg54:
+    number: 356
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9312082
+    y: 1.955579E-02
+  p3_seg54:
+    number: 357
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7541736
+    y: 1.954225E-02
+  p2_seg54:
+    number: 358
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2701682
+    y: 1.954219E-02
+  p4_seg53:
+    number: 359
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9368357
+    y: 0.0219654
+  p3_seg53:
+    number: 360
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7598012
+    y: 2.195195E-02
+  p2_seg53:
+    number: 361
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2757954
+    y: 2.195193E-02
+  p4_seg52:
+    number: 362
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9301334
+    y: 2.202766E-02
+  p3_seg52:
+    number: 363
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7530989
+    y: 2.201415E-02
+  p2_seg52:
+    number: 364
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2690935
+    y: 2.201414E-02
+  p4_seg51:
+    number: 365
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9280606
+    y: 1.988217E-02
+  p3_seg51:
+    number: 366
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7510261
+    y: 1.986868E-02
+  p2_seg51:
+    number: 367
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2670208
+    y: 1.986864E-02
+  p4_seg50:
+    number: 368
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9260569
+    y: 2.449945E-02
+  p3_seg50:
+    number: 369
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7490223
+    y: 2.448599E-02
+  p2_seg50:
+    number: 370
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2650171
+    y: 2.448596E-02
+  p4_seg49:
+    number: 371
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9321373
+    y: 2.676925E-02
+  p3_seg49:
+    number: 372
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7551028
+    y: 2.675574E-02
+  p2_seg49:
+    number: 373
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2710972
+    y: 2.675571E-02
+  p4_seg48:
+    number: 374
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9392541
+    y: 2.453058E-02
+  p3_seg48:
+    number: 375
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7622196
+    y: 2.451706E-02
+  p2_seg48:
+    number: 376
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2782136
+    y: 0.024517
+  p4_seg47:
+    number: 377
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9412615
+    y: 1.983559E-02
+  p3_seg47:
+    number: 378
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.764227
+    y: 1.982205E-02
+  p2_seg47:
+    number: 379
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.280221
+    y: 1.982199E-02
+  p4_seg46:
+    number: 380
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9353848
+    y: 0.0173947
+  p3_seg46:
+    number: 381
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7583502
+    y: 1.738122E-02
+  p2_seg46:
+    number: 382
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2743445
+    y: 1.738117E-02
+  p4_seg45:
+    number: 383
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9215654
+    y: 2.648933E-02
+  p3_seg45:
+    number: 384
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7445308
+    y: 2.647593E-02
+  p2_seg45:
+    number: 385
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2605256
+    y: 0.0264759
+  p4_seg44:
+    number: 386
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9148976
+    y: 2.414194E-02
+  p3_seg44:
+    number: 387
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7378631
+    y: 2.412842E-02
+  p2_seg44:
+    number: 388
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2538579
+    y: 2.412842E-02
+  p4_seg43:
+    number: 389
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9119266
+    y: 2.404856E-02
+  p3_seg43:
+    number: 390
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7348921
+    y: 2.403515E-02
+  p2_seg43:
+    number: 391
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2508869
+    y: 2.403513E-02
+  p4_seg42:
+    number: 392
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9083756
+    y: 2.443731E-02
+  p3_seg42:
+    number: 393
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.731341
+    y: 2.442379E-02
+  p2_seg42:
+    number: 394
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2473358
+    y: 2.442379E-02
+  p4_seg41:
+    number: 395
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9167978
+    y: 1.966462E-02
+  p3_seg41:
+    number: 396
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7397632
+    y: 1.965102E-02
+  p2_seg41:
+    number: 397
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.255758
+    y: 1.965101E-02
+  p4_seg40:
+    number: 398
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9136195
+    y: 1.985116E-02
+  p3_seg40:
+    number: 399
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7365849
+    y: 1.983756E-02
+  p2_seg40:
+    number: 400
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2525797
+    y: 1.983752E-02
+  p4_seg39:
+    number: 401
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9105484
+    y: 1.955579E-02
+  p3_seg39:
+    number: 402
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7335138
+    y: 1.954225E-02
+  p2_seg39:
+    number: 403
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2495086
+    y: 1.954219E-02
+  p4_seg38:
+    number: 404
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9161759
+    y: 0.0219654
+  p3_seg38:
+    number: 405
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7391413
+    y: 2.195195E-02
+  p2_seg38:
+    number: 406
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2551362
+    y: 2.195193E-02
+  p4_seg37:
+    number: 407
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9094737
+    y: 2.202766E-02
+  p3_seg37:
+    number: 408
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7324391
+    y: 2.201415E-02
+  p2_seg37:
+    number: 409
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.248434
+    y: 2.201414E-02
+  p4_seg36:
+    number: 410
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9074008
+    y: 1.988217E-02
+  p3_seg36:
+    number: 411
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7303662
+    y: 1.986868E-02
+  p2_seg36:
+    number: 412
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2463611
+    y: 1.986864E-02
+  p4_seg35:
+    number: 413
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9053971
+    y: 2.449945E-02
+  p3_seg35:
+    number: 414
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7283625
+    y: 2.448599E-02
+  p2_seg35:
+    number: 415
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2443574
+    y: 2.448596E-02
+  p4_seg34:
+    number: 416
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9114774
+    y: 2.676925E-02
+  p3_seg34:
+    number: 417
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7344428
+    y: 2.675574E-02
+  p2_seg34:
+    number: 418
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2504377
+    y: 2.675571E-02
+  p4_seg33:
+    number: 419
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9185943
+    y: 2.453058E-02
+  p3_seg33:
+    number: 420
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7415597
+    y: 2.451706E-02
+  p2_seg33:
+    number: 421
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2575545
+    y: 0.024517
+  p4_seg32:
+    number: 422
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9206017
+    y: 1.983559E-02
+  p3_seg32:
+    number: 423
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7435672
+    y: 1.982205E-02
+  p2_seg32:
+    number: 424
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.259562
+    y: 1.982199E-02
+  p4_seg31:
+    number: 425
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9147249
+    y: 0.0173947
+  p3_seg31:
+    number: 426
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7376904
+    y: 1.738122E-02
+  p2_seg31:
+    number: 427
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2536852
+    y: 1.738117E-02
+  p4_seg30:
+    number: 428
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.9009055
+    y: 2.648933E-02
+  p3_seg30:
+    number: 429
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.723871
+    y: 2.647593E-02
+  p2_seg30:
+    number: 430
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2398659
+    y: 0.0264759
+  p4_seg29:
+    number: 431
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.894238
+    y: 2.414194E-02
+  p3_seg29:
+    number: 432
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7172032
+    y: 2.412842E-02
+  p2_seg29:
+    number: 433
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2331983
+    y: 2.412842E-02
+  p4_seg28:
+    number: 434
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8912668
+    y: 2.404856E-02
+  p3_seg28:
+    number: 435
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7142321
+    y: 2.403515E-02
+  p2_seg28:
+    number: 436
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2302272
+    y: 2.403513E-02
+  p4_seg27:
+    number: 437
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8877158
+    y: 2.443731E-02
+  p3_seg27:
+    number: 438
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7106812
+    y: 2.442379E-02
+  p2_seg27:
+    number: 439
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2266762
+    y: 2.442379E-02
+  p4_seg26:
+    number: 440
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8961381
+    y: 1.966462E-02
+  p3_seg26:
+    number: 441
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7191035
+    y: 1.965102E-02
+  p2_seg26:
+    number: 442
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2350983
+    y: 1.965101E-02
+  p4_seg25:
+    number: 443
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8929597
+    y: 1.985116E-02
+  p3_seg25:
+    number: 444
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.715925
+    y: 1.983756E-02
+  p2_seg25:
+    number: 445
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.23192
+    y: 1.983752E-02
+  p4_seg24:
+    number: 446
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8898886
+    y: 1.955579E-02
+  p3_seg24:
+    number: 447
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.712854
+    y: 1.954225E-02
+  p2_seg24:
+    number: 448
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.228849
+    y: 1.954219E-02
+  p4_seg23:
+    number: 449
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8955162
+    y: 0.0219654
+  p3_seg23:
+    number: 450
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7184815
+    y: 2.195195E-02
+  p2_seg23:
+    number: 451
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2344765
+    y: 2.195193E-02
+  p4_seg22:
+    number: 452
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.888814
+    y: 2.202766E-02
+  p3_seg22:
+    number: 453
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7117792
+    y: 2.201415E-02
+  p2_seg22:
+    number: 454
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2277744
+    y: 2.201414E-02
+  p4_seg21:
+    number: 455
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8867412
+    y: 1.988217E-02
+  p3_seg21:
+    number: 456
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7097064
+    y: 1.986868E-02
+  p2_seg21:
+    number: 457
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2257015
+    y: 1.986864E-02
+  p4_seg20:
+    number: 458
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8847374
+    y: 2.449945E-02
+  p3_seg20:
+    number: 459
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7077027
+    y: 2.448599E-02
+  p2_seg20:
+    number: 460
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2236978
+    y: 2.448596E-02
+  p4_seg19:
+    number: 461
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8908178
+    y: 2.676925E-02
+  p3_seg19:
+    number: 462
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.713783
+    y: 2.675574E-02
+  p2_seg19:
+    number: 463
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2297781
+    y: 2.675571E-02
+  p4_seg18:
+    number: 464
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8979345
+    y: 2.453058E-02
+  p3_seg18:
+    number: 465
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7208999
+    y: 2.451706E-02
+  p2_seg18:
+    number: 466
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2368948
+    y: 0.024517
+  p4_seg17:
+    number: 467
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8999419
+    y: 1.983559E-02
+  p3_seg17:
+    number: 468
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7229074
+    y: 1.982205E-02
+  p2_seg17:
+    number: 469
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2389023
+    y: 1.982199E-02
+  p4_seg16:
+    number: 470
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8940651
+    y: 0.0173947
+  p3_seg16:
+    number: 471
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7170305
+    y: 1.738122E-02
+  p2_seg16:
+    number: 472
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2330255
+    y: 1.738117E-02
+  p4_seg15:
+    number: 473
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.880246
+    y: 2.648933E-02
+  p3_seg15:
+    number: 474
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7032112
+    y: 2.647593E-02
+  p2_seg15:
+    number: 475
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2192063
+    y: 0.0264759
+  p4_seg14:
+    number: 476
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8735784
+    y: 2.414194E-02
+  p3_seg14:
+    number: 477
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6965436
+    y: 2.412842E-02
+  p2_seg14:
+    number: 478
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2125387
+    y: 2.412842E-02
+  p4_seg13:
+    number: 479
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8706073
+    y: 2.404856E-02
+  p3_seg13:
+    number: 480
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6935726
+    y: 2.403515E-02
+  p2_seg13:
+    number: 481
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2095677
+    y: 2.403513E-02
+  p4_seg12:
+    number: 482
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8670563
+    y: 2.443731E-02
+  p3_seg12:
+    number: 483
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6900215
+    y: 2.442379E-02
+  p2_seg12:
+    number: 484
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2060167
+    y: 2.442379E-02
+  p4_seg11:
+    number: 485
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8754784
+    y: 1.966462E-02
+  p3_seg11:
+    number: 486
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6984438
+    y: 1.965102E-02
+  p2_seg11:
+    number: 487
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2144388
+    y: 1.965101E-02
+  p4_seg10:
+    number: 488
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8723001
+    y: 1.985116E-02
+  p3_seg10:
+    number: 489
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6952654
+    y: 1.983756E-02
+  p2_seg10:
+    number: 490
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2112605
+    y: 1.983752E-02
+  p4_seg9:
+    number: 491
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8692291
+    y: 1.955579E-02
+  p3_seg9:
+    number: 492
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6921943
+    y: 1.954225E-02
+  p2_seg9:
+    number: 493
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2081895
+    y: 1.954219E-02
+  p4_seg8:
+    number: 494
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8748566
+    y: 0.0219654
+  p3_seg8:
+    number: 495
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6978219
+    y: 2.195195E-02
+  p2_seg8:
+    number: 496
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.213817
+    y: 2.195193E-02
+  p4_seg7:
+    number: 497
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8681544
+    y: 2.202766E-02
+  p3_seg7:
+    number: 498
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6911197
+    y: 2.201415E-02
+  p2_seg7:
+    number: 499
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2071148
+    y: 2.201414E-02
+  p4_seg6:
+    number: 500
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8660816
+    y: 1.988217E-02
+  p3_seg6:
+    number: 501
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6890468
+    y: 1.986868E-02
+  p2_seg6:
+    number: 502
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.205042
+    y: 1.986864E-02
+  p4_seg5:
+    number: 503
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8640779
+    y: 2.449945E-02
+  p3_seg5:
+    number: 504
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6870431
+    y: 2.448599E-02
+  p2_seg5:
+    number: 505
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2030383
+    y: 2.448596E-02
+  p4_seg4:
+    number: 506
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8701582
+    y: 2.676925E-02
+  p3_seg4:
+    number: 507
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6931235
+    y: 2.675574E-02
+  p2_seg4:
+    number: 508
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2091186
+    y: 2.675571E-02
+  p4_seg3:
+    number: 509
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.877275
+    y: 2.453058E-02
+  p3_seg3:
+    number: 510
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7002402
+    y: 2.451706E-02
+  p2_seg3:
+    number: 511
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2162354
+    y: 0.024517
+  p4_seg2:
+    number: 512
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8792824
+    y: 1.983559E-02
+  p3_seg2:
+    number: 513
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.7022476
+    y: 1.982205E-02
+  p2_seg2:
+    number: 514
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.2182427
+    y: 1.982199E-02
+  p4_seg1:
+    number: 515
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.8734056
+    y: 0.0173947
+  p3_seg1:
+    number: 516
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.6963709
+    y: 1.738122E-02
+  p2_seg1:
+    number: 517
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.212366
+    y: 1.738117E-02
+  ball_seg29:
+    number: 518
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.354271E-02
+    y: 7.723784E-02
+  ball_seg28:
+    number: 519
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.057167E-02
+    y: 7.714451E-02
+  ball_seg27:
+    number: 520
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 4.702061E-02
+    y: 0.0775332
+  ball_seg26:
+    number: 521
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.544283E-02
+    y: 7.276048E-02
+  ball_seg25:
+    number: 522
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.226452E-02
+    y: 7.294702E-02
+  ball_seg24:
+    number: 523
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 4.919345E-02
+    y: 7.265165E-02
+  ball_seg23:
+    number: 524
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.482095E-02
+    y: 7.506132E-02
+  ball_seg22:
+    number: 525
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 4.811874E-02
+    y: 7.512358E-02
+  ball_seg21:
+    number: 526
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 4.604594E-02
+    y: 7.297815E-02
+  ball_seg20:
+    number: 527
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 4.404216E-02
+    y: 0.0775954
+  ball_seg19:
+    number: 528
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.012252E-02
+    y: 7.986511E-02
+  ball_seg18:
+    number: 529
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.723932E-02
+    y: 7.762641E-02
+  ball_seg17:
+    number: 530
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.924678E-02
+    y: 7.293145E-02
+  ball_seg16:
+    number: 531
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 5.336998E-02
+    y: 0.0704907
+  ball_seg15:
+    number: 532
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.955068E-02
+    y: 7.958525E-02
+  ball_seg14:
+    number: 533
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.288303E-02
+    y: 7.723784E-02
+  ball_seg13:
+    number: 534
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 2.991199E-02
+    y: 7.714451E-02
+  ball_seg12:
+    number: 535
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 2.636092E-02
+    y: 0.0775332
+  ball_seg11:
+    number: 536
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.478311E-02
+    y: 7.276048E-02
+  ball_seg10:
+    number: 537
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.0316048
+    y: 7.294702E-02
+  ball_seg9:
+    number: 538
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 2.853376E-02
+    y: 7.265165E-02
+  ball_seg8:
+    number: 539
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.416122E-02
+    y: 7.506132E-02
+  ball_seg7:
+    number: 540
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 2.745905E-02
+    y: 7.512358E-02
+  ball_seg6:
+    number: 541
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 2.538625E-02
+    y: 7.297815E-02
+  ball_seg5:
+    number: 542
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.0233825
+    y: 0.0775954
+  ball_seg4:
+    number: 543
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 2.946282E-02
+    y: 7.986511E-02
+  ball_seg3:
+    number: 544
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.657959E-02
+    y: 7.762641E-02
+  ball_seg2:
+    number: 545
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.858706E-02
+    y: 7.293145E-02
+  ball_seg1:
+    number: 546
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 3.271025E-02
+    y: 0.0704907
+  p1_seg105:
+    number: 547
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1605984
+    y: 2.646913E-02
+  p1_seg104:
+    number: 548
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1539307
+    y: 2.412163E-02
+  p1_seg103:
+    number: 549
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1509596
+    y: 2.402834E-02
+  p1_seg102:
+    number: 550
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1474085
+    y: 2.441705E-02
+  p1_seg101:
+    number: 551
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1558308
+    y: 1.964422E-02
+  p1_seg100:
+    number: 552
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1526524
+    y: 1.983073E-02
+  p1_seg99:
+    number: 553
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1495814
+    y: 1.953541E-02
+  p1_seg98:
+    number: 554
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1552089
+    y: 2.194514E-02
+  p1_seg97:
+    number: 555
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1485067
+    y: 2.200735E-02
+  p1_seg96:
+    number: 556
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1464338
+    y: 1.986186E-02
+  p1_seg95:
+    number: 557
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1444301
+    y: 0.0244792
+  p1_seg94:
+    number: 558
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1505105
+    y: 2.674898E-02
+  p1_seg93:
+    number: 559
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1576273
+    y: 2.451028E-02
+  p1_seg92:
+    number: 560
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1596347
+    y: 1.981521E-02
+  p1_seg91:
+    number: 561
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.153758
+    y: 1.737437E-02
+  p1_seg90:
+    number: 562
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1399386
+    y: 2.646913E-02
+  p1_seg89:
+    number: 563
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1332709
+    y: 2.412163E-02
+  p1_seg88:
+    number: 564
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1302999
+    y: 2.402834E-02
+  p1_seg87:
+    number: 565
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1267488
+    y: 2.441705E-02
+  p1_seg86:
+    number: 566
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.135171
+    y: 1.964422E-02
+  p1_seg85:
+    number: 567
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1319927
+    y: 1.983073E-02
+  p1_seg84:
+    number: 568
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1289216
+    y: 1.953541E-02
+  p1_seg83:
+    number: 569
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1345491
+    y: 2.194514E-02
+  p1_seg82:
+    number: 570
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1278469
+    y: 2.200735E-02
+  p1_seg81:
+    number: 571
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1257741
+    y: 1.986186E-02
+  p1_seg80:
+    number: 572
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1237703
+    y: 0.0244792
+  p1_seg79:
+    number: 573
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1298507
+    y: 2.674898E-02
+  p1_seg78:
+    number: 574
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1369675
+    y: 2.451028E-02
+  p1_seg77:
+    number: 575
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.138975
+    y: 1.981521E-02
+  p1_seg76:
+    number: 576
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1330982
+    y: 1.737437E-02
+  p1_seg75:
+    number: 577
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1192789
+    y: 2.646913E-02
+  p1_seg74:
+    number: 578
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1126111
+    y: 2.412163E-02
+  p1_seg73:
+    number: 579
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.10964
+    y: 2.402834E-02
+  p1_seg72:
+    number: 580
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.106089
+    y: 2.441705E-02
+  p1_seg71:
+    number: 581
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1145113
+    y: 1.964422E-02
+  p1_seg70:
+    number: 582
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1113329
+    y: 1.983073E-02
+  p1_seg69:
+    number: 583
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1082618
+    y: 1.953541E-02
+  p1_seg68:
+    number: 584
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1138894
+    y: 2.194514E-02
+  p1_seg67:
+    number: 585
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1071871
+    y: 2.200735E-02
+  p1_seg66:
+    number: 586
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1051143
+    y: 1.986186E-02
+  p1_seg65:
+    number: 587
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1031106
+    y: 0.0244792
+  p1_seg64:
+    number: 588
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1091909
+    y: 2.674898E-02
+  p1_seg63:
+    number: 589
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1163078
+    y: 2.451028E-02
+  p1_seg62:
+    number: 590
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1183152
+    y: 1.981521E-02
+  p1_seg61:
+    number: 591
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.1124384
+    y: 1.737437E-02
+  p1_seg60:
+    number: 592
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.861901E-02
+    y: 2.646913E-02
+  p1_seg59:
+    number: 593
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.195136E-02
+    y: 2.412163E-02
+  p1_seg58:
+    number: 594
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.898029E-02
+    y: 2.402834E-02
+  p1_seg57:
+    number: 595
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.542921E-02
+    y: 2.441705E-02
+  p1_seg56:
+    number: 596
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.385144E-02
+    y: 1.964422E-02
+  p1_seg55:
+    number: 597
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.067312E-02
+    y: 1.983073E-02
+  p1_seg54:
+    number: 598
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.760202E-02
+    y: 1.953541E-02
+  p1_seg53:
+    number: 599
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.322955E-02
+    y: 2.194514E-02
+  p1_seg52:
+    number: 600
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.652733E-02
+    y: 2.200735E-02
+  p1_seg51:
+    number: 601
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.445445E-02
+    y: 1.986186E-02
+  p1_seg50:
+    number: 602
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.245073E-02
+    y: 0.0244792
+  p1_seg49:
+    number: 603
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 8.853115E-02
+    y: 2.674898E-02
+  p1_seg48:
+    number: 604
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.564792E-02
+    y: 2.451028E-02
+  p1_seg47:
+    number: 605
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.765539E-02
+    y: 1.981521E-02
+  p1_seg46:
+    number: 606
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 9.177861E-02
+    y: 1.737437E-02
+  p1_seg45:
+    number: 607
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.795916E-02
+    y: 2.646913E-02
+  p1_seg44:
+    number: 608
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.129148E-02
+    y: 2.412163E-02
+  p1_seg43:
+    number: 609
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 6.832045E-02
+    y: 2.402834E-02
+  p1_seg42:
+    number: 610
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 6.476938E-02
+    y: 2.441705E-02
+  p1_seg41:
+    number: 611
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.319163E-02
+    y: 1.964422E-02
+  p1_seg40:
+    number: 612
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.001326E-02
+    y: 1.983073E-02
+  p1_seg39:
+    number: 613
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 6.694222E-02
+    y: 1.953541E-02
+  p1_seg38:
+    number: 614
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.256969E-02
+    y: 2.194514E-02
+  p1_seg37:
+    number: 615
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.0658675
+    y: 2.200735E-02
+  p1_seg36:
+    number: 616
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 6.379471E-02
+    y: 1.986186E-02
+  p1_seg35:
+    number: 617
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 6.179095E-02
+    y: 0.0244792
+  p1_seg34:
+    number: 618
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.0678713
+    y: 2.674898E-02
+  p1_seg33:
+    number: 619
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.498811E-02
+    y: 2.451028E-02
+  p1_seg32:
+    number: 620
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.699557E-02
+    y: 1.981521E-02
+  p1_seg31:
+    number: 621
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 7.111879E-02
+    y: 1.737437E-02
+  p1_seg30:
+    number: 622
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 5.729945E-02
+    y: 2.646913E-02
+  p1_seg29:
+    number: 623
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 5.063177E-02
+    y: 2.412163E-02
+  p1_seg28:
+    number: 624
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.766072E-02
+    y: 2.402834E-02
+  p1_seg27:
+    number: 625
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.410974E-02
+    y: 2.441705E-02
+  p1_seg26:
+    number: 626
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 5.253188E-02
+    y: 1.964422E-02
+  p1_seg25:
+    number: 627
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.935355E-02
+    y: 1.983073E-02
+  p1_seg24:
+    number: 628
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.628249E-02
+    y: 1.953541E-02
+  p1_seg23:
+    number: 629
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.05191
+    y: 2.194514E-02
+  p1_seg22:
+    number: 630
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.520786E-02
+    y: 2.200735E-02
+  p1_seg21:
+    number: 631
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.313502E-02
+    y: 1.986186E-02
+  p1_seg20:
+    number: 632
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.113129E-02
+    y: 0.0244792
+  p1_seg19:
+    number: 633
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 4.721158E-02
+    y: 2.674898E-02
+  p1_seg18:
+    number: 634
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 5.432837E-02
+    y: 2.451028E-02
+  p1_seg17:
+    number: 635
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 5.633583E-02
+    y: 1.981521E-02
+  p1_seg16:
+    number: 636
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 5.045903E-02
+    y: 1.737437E-02
+  p1_seg15:
+    number: 637
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 3.663979E-02
+    y: 2.646913E-02
+  p1_seg14:
+    number: 638
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.997222E-02
+    y: 2.412163E-02
+  p1_seg13:
+    number: 639
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.700118E-02
+    y: 2.402834E-02
+  p1_seg12:
+    number: 640
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.345009E-02
+    y: 2.441705E-02
+  p1_seg11:
+    number: 641
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 3.187232E-02
+    y: 1.964422E-02
+  p1_seg10:
+    number: 642
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.028694
+    y: 1.983073E-02
+  p1_seg9:
+    number: 643
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.562295E-02
+    y: 1.953541E-02
+  p1_seg8:
+    number: 644
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 3.125044E-02
+    y: 2.194514E-02
+  p1_seg7:
+    number: 645
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.454821E-02
+    y: 2.200735E-02
+  p1_seg6:
+    number: 646
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.247543E-02
+    y: 1.986186E-02
+  p1_seg5:
+    number: 647
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.0204717
+    y: 0.0244792
+  p1_seg4:
+    number: 648
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.655203E-02
+    y: 2.674898E-02
+  p1_seg3:
+    number: 649
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 0.0336688
+    y: 2.451028E-02
+  p1_seg2:
+    number: 650
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 3.567622E-02
+    y: 1.981521E-02
+  p1_seg1:
+    number: 651
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tScoreSegs
+    x: 2.979943E-02
+    y: 1.737437E-02
+  pf_seg30:
+    number: 652
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1444853
+    y: 0.8605166
+  pf_seg29:
+    number: 653
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1554871
+    y: 0.8566435
+  pf_seg28:
+    number: 654
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1603891
+    y: 0.8564896
+  pf_seg27:
+    number: 655
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1662483
+    y: 0.8571309
+  pf_seg26:
+    number: 656
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1523518
+    y: 0.8492559
+  pf_seg25:
+    number: 657
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.157596
+    y: 0.8495637
+  pf_seg24:
+    number: 658
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1626632
+    y: 0.8490763
+  pf_seg23:
+    number: 659
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1533779
+    y: 0.8530521
+  pf_seg22:
+    number: 660
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1644365
+    y: 0.8531548
+  pf_seg21:
+    number: 661
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1678565
+    y: 0.849615
+  pf_seg20:
+    number: 662
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1711628
+    y: 0.8572334
+  pf_seg19:
+    number: 663
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1611302
+    y: 0.8609785
+  pf_seg18:
+    number: 664
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1493876
+    y: 0.8572847
+  pf_seg17:
+    number: 665
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1460753
+    y: 0.8495379
+  pf_seg16:
+    number: 666
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.155772
+    y: 0.8455108
+  pf_seg15:
+    number: 667
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1785737
+    y: 0.8605166
+  pf_seg14:
+    number: 668
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1895749
+    y: 0.8566435
+  pf_seg13:
+    number: 669
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1944771
+    y: 0.8564896
+  pf_seg12:
+    number: 670
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.2003363
+    y: 0.8571309
+  pf_seg11:
+    number: 671
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.18644
+    y: 0.8492559
+  pf_seg10:
+    number: 672
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.191684
+    y: 0.8495637
+  pf_seg9:
+    number: 673
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1967512
+    y: 0.8490763
+  pf_seg8:
+    number: 674
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1874659
+    y: 0.8530521
+  pf_seg7:
+    number: 675
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1985244
+    y: 0.8531548
+  pf_seg6:
+    number: 676
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.2019445
+    y: 0.849615
+  pf_seg5:
+    number: 677
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.2052507
+    y: 0.8572334
+  pf_seg4:
+    number: 678
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1952182
+    y: 0.8609785
+  pf_seg3:
+    number: 679
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1834757
+    y: 0.8572847
+  pf_seg2:
+    number: 680
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.1801637
+    y: 0.8495379
+  pf_seg1:
+    number: 681
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: -0.18986
+    y: 0.8455108
+  LBG08:
+    number: 682
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.9601854
+    y: -0.1638611
+  LBG16:
+    number: 683
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.9119138
+    y: -0.1166389
+  LBG15:
+    number: 684
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.7922841
+    y: -0.1166389
+  LBG14:
+    number: 685
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.6663582
+    y: -0.1166389
+  LBG13:
+    number: 686
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.5467285
+    y: -0.1175833
+  LBG12:
+    number: 687
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.4270988
+    y: -0.1175833
+  LBG11:
+    number: 688
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.3032717
+    y: -0.1194722
+  LBG10:
+    number: 689
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.1815432
+    y: -0.1204167
+  LBG09:
+    number: 690
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.0556173
+    y: -0.1204167
+  LBG07:
+    number: 691
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.838457
+    y: -0.1648056
+  LBG06:
+    number: 692
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.7167286
+    y: -0.1648056
+  LBG05:
+    number: 693
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.5950001
+    y: -0.16575
+  LBG04:
+    number: 694
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.4774692
+    y: -0.1666944
+  LBG03:
+    number: 695
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.3557408
+    y: -0.16575
+  LBG02:
+    number: 696
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.2361112
+    y: -0.1676389
+  LBG01:
+    number: 697
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: 10
+    x: 0.1143827
+    y: -0.1685833
+  LL:
+    number: 698
+    subtype: led
+    size: 0.04
+    type: rgb
+    tags: tInserts
+    x: 0.7098951
+    y: 0.2428255
+

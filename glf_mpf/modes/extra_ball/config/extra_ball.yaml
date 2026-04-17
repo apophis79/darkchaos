@@ -1,0 +1,98 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, mode_meteor_wave_stopped, stop_training, wizard_mode_ended
+  stop_events: stop_extra_ball, mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 560
+
+event_player: 
+  mode_extra_ball_started:
+    - check_eb
+  check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}:
+    - eb_now_lit
+    - enable_scoop_hold
+  check_eb{current_player.extra_balls == 0}:
+    - eb_reset
+  check_eb{current_player.extra_balls > 0}:
+    - eb_lit
+  balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 and current_player.wizard_mode_is_ready==0}:
+    - eb_complete
+  balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 and current_player.wizard_mode_is_ready==0}:
+    - play_eb_show
+    - eb_achieved
+    - score_200000
+  eb_complete{current_player.shot_mystery_ready==0 and current_player.shot_training_ready==0}:
+    - release_scoop_hold
+  release_scoop_hold:
+    - disable_scoop_hold
+    - start_mwq_timer
+  eb_complete:
+    - restart_eb
+    - check_mystery
+  mystery_eb_is_lit:
+    - eb_now_lit
+
+
+segment_display_player: 
+  play_eb_show: 
+    player1: 
+      text: ""
+      expire: 4000ms
+      flashing: off
+    player2: 
+      text: " EXTRA "
+      expire: 4000ms
+      flashing: all
+    player3: 
+      text: " BALL "
+      expire: 4000ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 4000ms
+      flashing: off
+
+
+shots: 
+  eb_ready:
+    profile: qualified_shot
+    restart_events: restart_eb
+    show_tokens: 
+      lights: LEBR
+      color: 00dd00
+    control_events: 
+      - events: eb_now_lit
+        state: 1
+  eb_shoot_again:
+    profile: extraball
+    restart_events: eb_reset
+    show_tokens: 
+    control_events: 
+      - events: eb_achieved, eb_lit
+        state: 1
+
+show_player: 
+  play_eb_show: 
+    eb_show: 
+      key: key_eb_show
+      priority: 10000
+      loops: 0
+      events_when_completed: eb_complete
+
+
+sound_player: 
+  eb_now_lit: 
+    voc_extra_ball_ready: 
+      key: key_voc_extra_ball_ready
+      action: play
+
+
+variable_player: 
+  eb_now_lit: 
+    light_the_eb: 
+      action: set
+      int: 0
+
+
+
+

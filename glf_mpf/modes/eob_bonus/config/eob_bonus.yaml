@@ -1,0 +1,414 @@
+#config_version=6
+
+mode:
+  start_events: ball_ending{game.tilted == False}
+  stop_events: bonus_finished
+  priority: 150
+  use_wait_queue: true
+
+combo_switches: 
+  bonus_skip:
+    switches_1: s_left_flipper
+    switches_2: s_right_flipper
+    events_when_both: 
+      - skip_bonus_tally
+
+event_player: 
+  mode_eob_bonus_started:
+    - run_bonus_started
+  run_bonus_started:
+    - check_bonus_bomb1
+    - check_bonus_missile1
+    - check_bonus_proton1
+    - check_bonus_waves
+  check_bonus_bomb1{current_player.shot_cluster_bomb1 == 1}:
+    - add_bonus_bomb
+    - check_bonus_bomb2
+    - bonus_light_cr1
+  check_bonus_bomb2{current_player.shot_cluster_bomb2 == 1}:
+    - add_bonus_bomb
+    - bonus_light_cr2
+  check_bonus_missile1{current_player.shot_moon_missile1 == 1}:
+    - add_bonus_missile
+    - check_bonus_missile2
+    - bonus_light_mr1
+  check_bonus_missile2{current_player.shot_moon_missile2 == 1}:
+    - add_bonus_missile
+    - bonus_light_mr2
+  check_bonus_proton1{current_player.shot_proton_round1 == 1}:
+    - add_bonus_proton
+    - check_bonus_proton2
+    - bonus_light_pr1
+  check_bonus_proton2{current_player.shot_proton_round2 == 1}:
+    - add_bonus_proton
+    - check_bonus_proton3
+    - bonus_light_pr2
+  check_bonus_proton3{current_player.shot_proton_round3 == 1}:
+    - add_bonus_proton
+    - check_bonus_proton4
+    - bonus_light_pr3
+  check_bonus_proton4{current_player.shot_proton_round4 == 1}:
+    - add_bonus_proton
+    - check_bonus_proton5
+    - bonus_light_pr4
+  check_bonus_proton5{current_player.shot_proton_round5 == 1}:
+    - add_bonus_proton
+    - check_bonus_proton6
+    - bonus_light_pr5
+  check_bonus_proton6{current_player.shot_proton_round6 == 1}:
+    - add_bonus_proton
+    - bonus_light_pr6
+  check_bonus_waves{current_player.shot_meteor_wave1 == 2}:
+    - bonus_light_w1
+  check_bonus_waves{current_player.shot_meteor_wave2 == 2}:
+    - bonus_light_w2
+  check_bonus_waves{current_player.shot_meteor_wave3 == 2}:
+    - bonus_light_w3
+  check_bonus_waves{current_player.shot_meteor_wave4 == 2}:
+    - bonus_light_w4
+  check_bonus_waves{current_player.shot_meteor_wave5 == 2}:
+    - bonus_light_w5
+  check_bonus_waves{current_player.shot_meteor_wave6 == 2}:
+    - bonus_light_w6
+  check_bonus_waves{current_player.shot_meteor_wave7 == 2}:
+    - bonus_light_w7
+  check_bonus_waves{current_player.shot_meteor_wave8 == 2}:
+    - bonus_light_w8
+  check_bonus_waves{current_player.shot_meteor_wave9 == 2}:
+    - bonus_light_w9
+  timer_bonus_tick{device.timers.bonus.ticks == 17}:
+    - calc_bonus_total
+  calc_bonus_total:
+    - score_bonus_total
+  timer_bonus_tick{device.timers.bonus.ticks == 2 and current_player.bonus_multiplier == 2}:
+    - bonus_2x
+  timer_bonus_tick{device.timers.bonus.ticks == 3}:
+    - bonus_tally1
+    - restart_sfx_tally_alt
+  timer_bonus_tick{device.timers.bonus.ticks == 6}:
+    - bonus_tally2
+    - restart_sfx_tally_alt
+  timer_bonus_tick{device.timers.bonus.ticks == 9}:
+    - bonus_tally3
+    - restart_sfx_tally_alt
+  timer_bonus_tick{device.timers.bonus.ticks == 12}:
+    - bonus_tally4
+    - restart_sfx_tally_alt
+  timer_bonus_tick{device.timers.bonus.ticks == 15}:
+    - bonus_tally5
+    - restart_sfx_tally_alt
+  timer_bonus_tick{device.timers.bonus.ticks == 18}:
+    - bonus_tally6
+    - restart_sfx_tally_alt
+  restart_sfx_tally_alt:
+    - stop_sfx_tally_alt
+  stop_sfx_tally_alt:
+    - play_sfx_tally_alt
+  timer_bonus_complete:
+    - bonus_finished
+  skip_bonus_tally:
+    - comboflip_hit
+
+
+light_player: 
+  bonus_light_cr1: 
+    LCR1: 
+      color: dd00dd
+
+  bonus_light_cr2: 
+    LCR2: 
+      color: dd00dd
+
+  bonus_light_mr1: 
+    LMR1: 
+      color: ccbb00
+
+  bonus_light_mr2: 
+    LMR2: 
+      color: ccbb00
+
+  bonus_light_pr1: 
+    LPR1: 
+      color: 00dddd
+
+  bonus_light_pr2: 
+    LPR2: 
+      color: 00dddd
+
+  bonus_light_pr3: 
+    LPR3: 
+      color: 00dddd
+
+  bonus_light_pr4: 
+    LPR4: 
+      color: 00dddd
+
+  bonus_light_pr5: 
+    LPR5: 
+      color: 00dddd
+
+  bonus_light_pr6: 
+    LPR6: 
+      color: 00dddd
+
+  bonus_light_w1: 
+    LW1: 
+      color: dd0400
+
+  bonus_light_w2: 
+    LW2: 
+      color: dd0400
+
+  bonus_light_w3: 
+    LW3: 
+      color: dd0400
+
+  bonus_light_w4: 
+    LW4: 
+      color: dd0400
+
+  bonus_light_w5: 
+    LW5: 
+      color: dd0400
+
+  bonus_light_w6: 
+    LW6: 
+      color: dd0400
+
+  bonus_light_w7: 
+    LW7: 
+      color: dd0400
+
+  bonus_light_w8: 
+    LW8: 
+      color: dd0400
+
+  bonus_light_w9: 
+    LW9: 
+      color: dd0400
+
+
+segment_display_player: 
+  run_bonus_started: 
+    player1: 
+      text: "BONUS  "
+      flashing: off
+    player2: 
+      text: ""
+      flashing: off
+    player3: 
+      text: ""
+      flashing: off
+    player4: 
+      text: ""
+      flashing: off
+
+  bonus_2x: 
+    player4: 
+      text: " X 2  "
+      priority: 5005
+      flashing: off
+
+  timer_bonus_tick{device.timers.bonus.ticks == 3}: 
+    player2: 
+      text: "WAVES"
+      priority: 5010
+      flashing: all
+    player3: 
+      text: "{current_player.bonus_waves:0>2}"
+      priority: 5010
+      flashing: all
+
+  timer_bonus_tick{device.timers.bonus.ticks == 6}: 
+    player2: 
+      text: "TRAINING"
+      priority: 5020
+      flashing: all
+    player3: 
+      text: "{current_player.bonus_training:0>2}"
+      priority: 5020
+      flashing: all
+
+  timer_bonus_tick{device.timers.bonus.ticks == 9}: 
+    player2: 
+      text: "BOMBS"
+      priority: 5030
+      flashing: all
+    player3: 
+      text: "{current_player.bonus_bombs:0>2}"
+      priority: 5030
+      flashing: all
+
+  timer_bonus_tick{device.timers.bonus.ticks == 12}: 
+    player2: 
+      text: "MISSILES"
+      priority: 5040
+      flashing: all
+    player3: 
+      text: "{current_player.bonus_missiles:0>2}"
+      priority: 5040
+      flashing: all
+
+  timer_bonus_tick{device.timers.bonus.ticks == 15}: 
+    player2: 
+      text: "PROTONS"
+      priority: 5050
+      flashing: all
+    player3: 
+      text: "{current_player.bonus_protons:0>2}"
+      priority: 5050
+      flashing: all
+
+  timer_bonus_tick{device.timers.bonus.ticks == 18}: 
+    player2: 
+      text: "TOTAL"
+      priority: 5060
+      flashing: off
+    player3: 
+      text: "{current_player.bonus_total:0>2}"
+      priority: 5060
+      flashing: all
+    player4: 
+      text: ""
+      priority: 5060
+      flashing: off
+
+
+show_player: 
+  run_bonus_started: 
+    gi_spin1_cw: 
+      key: key_bonus_show
+      show_tokens: 
+        intensity: 100
+  bonus_tally1: 
+    flash_color: 
+      key: key_tally1_show
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tWaves
+        color: dd0400
+  bonus_tally2: 
+    flash_color: 
+      key: key_tally2_show
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: LX
+        color: ff4c00
+  bonus_tally3: 
+    flash_color: 
+      key: key_tally3_show
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tClusterAll
+        color: dd00dd
+  bonus_tally4: 
+    flash_color: 
+      key: key_tally4_show
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tMoonAll
+        color: ccbb00
+  bonus_tally5: 
+    flash_color: 
+      key: key_tally5_show
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tProtonAll
+        color: 00dddd
+
+
+slide_player: 
+  run_bonus_started.2: 
+    bonus:
+      action: play
+      expire: 0s
+
+
+sound_player: 
+  stop_sfx_tally_alt: 
+    sfx_tally_alt: 
+      key: key_sfx_tally_alt
+      action: stop
+  play_sfx_tally_alt: 
+    sfx_tally_alt: 
+      key: key_sfx_tally_alt
+      action: play
+
+
+timers: 
+  bonus:
+    start_value: 0
+    end_value: 24
+    direction: up
+    control_events: 
+      - event: run_bonus_started
+        action: restart
+      - event: skip_bonus_tally{current_player.bonus_comboflip_block==0 and device.timers.bonus.ticks < 16}
+        action: jump
+        value: 16
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 333ms
+
+variable_player: 
+  run_bonus_started: 
+    bonus_bombs: 
+      action: set
+      int: 0
+    bonus_missiles: 
+      action: set
+      int: 0
+    bonus_protons: 
+      action: set
+      int: 0
+    bonus_total: 
+      action: set
+      int: 0
+    bonus_waves: 
+      action: set
+      int: 100000 * current_player.num_waves_completed_this_ball * current_player.num_waves_completed
+    bonus_training: 
+      action: set
+      int: 250000 * current_player.training_total_achieved
+    bonus_comboflip_block: 
+      action: set
+      int: 0
+
+  comboflip_hit: 
+    bonus_comboflip_block: 
+      action: set
+      int: 1
+
+  add_bonus_bomb: 
+    bonus_bombs: 
+      action: add
+      int: 250000
+
+  add_bonus_missile: 
+    bonus_missiles: 
+      action: add
+      int: 250000
+
+  add_bonus_proton: 
+    bonus_protons: 
+      action: add
+      int: 50000
+
+  calc_bonus_total: 
+    bonus_total: 
+      action: set
+      int: (current_player.bonus_waves + current_player.bonus_training + current_player.bonus_bombs + current_player.bonus_missiles + current_player.bonus_protons) * current_player.bonus_multiplier
+
+  score_bonus_total: 
+    score: 
+      action: add
+      int: current_player.bonus_total
+
+
+
+

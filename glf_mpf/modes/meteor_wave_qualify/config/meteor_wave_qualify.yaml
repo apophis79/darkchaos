@@ -1,0 +1,175 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_meteor_wave, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, mode_eob_bonus_started, start_meteor_wave, start_training_select, wizard_mode_started
+  priority: 1100
+
+event_player: 
+  mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}:
+    - reset_countdown_value
+  mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}:
+    - init_mwq_timer
+  reset_countdown_value:
+    - init_mwq_timer
+  init_mwq_timer:
+    - init_pf_display
+  init_mwq_timer{current_player.ball_just_started == 0}:
+    - start_mwq_timer
+  s_Plunger1_inactive{current_player.ball_just_started == 1}:
+    - start_mwq_timer
+  restart_tw_timer:
+    - stop_mwq_timer
+  play_mystery_show:
+    - stop_mwq_timer
+  play_eb_show:
+    - stop_mwq_timer
+  stop_mwq_timer:
+    - flash_mwq_display
+  start_mwq_timer:
+    - remove_flash_mwq_display
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}:
+    - meteor_wave_alert_show
+    - backglass_wave_flash
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}:
+    - meteor_wave_alert_show
+    - backglass_wave_flash
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}:
+    - stop_extra_ball
+    - stop_mystery
+    - stop_training_qualify
+    - disable_scoop_hold
+    - start_mwq_timer
+  timer_meteor_countdown_complete:
+    - start_meteor_wave
+  meteor_wave_alert_show:
+    - meteor_wave_alert_show1
+    - meteor_wave_alert_show2
+    - meteor_wave_alert_show3
+    - meteor_wave_alert_show4
+
+
+segment_display_player: 
+  init_pf_display: 
+    pf: 
+      text: "{device.timers.meteor_countdown.ticks:0>2}"
+      flashing: off
+
+  flash_mwq_display: 
+    pf: 
+      key: key_flash_mwq_display
+      text: "{device.timers.meteor_countdown.ticks:0>2}"
+      priority: 100
+      flashing: all
+
+  remove_flash_mwq_display: 
+    pf: 
+      key: key_flash_mwq_display
+      action: remove
+      flashing: off
+
+
+show_player: 
+  meteor_wave_alert_show1: 
+    lsling_swap_2_2_b: 
+      key: key_meteor_wave_alert_show1
+      loops: 4
+      show_tokens: 
+        color1: ff0000
+        color2: ff9900
+        intensity: 30
+  meteor_wave_alert_show2: 
+    rsling_swap_2_2_a: 
+      key: key_meteor_wave_alert_show2
+      loops: 4
+      show_tokens: 
+        color1: ff0000
+        color2: ff9900
+        intensity: 30
+  meteor_wave_alert_show3: 
+    lsling_swap_2_2_a: 
+      key: key_meteor_wave_alert_show3
+      loops: 4
+      show_tokens: 
+        color1: ff0000
+        color2: ff9900
+        intensity: 30
+  meteor_wave_alert_show4: 
+    rsling_swap_2_2_b: 
+      key: key_meteor_wave_alert_show4
+      loops: 4
+      show_tokens: 
+        color1: ff0000
+        color2: ff9900
+        intensity: 30
+  magnet_activated_gi: 
+    flash_color_fadeout: 
+      key: key_ts_mag_gi
+      priority: 100
+      loops: 2
+      speed: 4.6
+      show_tokens: 
+        lights: GI
+        color: ffb46b
+  flipper_cradling: 
+    flash_color: 
+      key: key_flipper_cradling
+      priority: 5000
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: ffb46b
+  flipper_release: 
+    flash_color: 
+      action: stop
+      key: key_flipper_cradling
+      priority: 5000
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: ffb46b
+
+
+sound_player: 
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}: 
+    voc_wave_incoming: 
+      key: key_voc_wave_incoming
+      action: play
+
+
+timers: 
+  meteor_countdown:
+    start_value: current_player.meteor_countdown_value
+    end_value: 0
+    direction: down
+    control_events: 
+      - event: init_mwq_timer
+        action: jump
+        value: current_player.meteor_countdown_value
+      - event: start_mwq_timer
+        action: start
+      - event: stop_mwq_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  reset_countdown_value: 
+    meteor_countdown_value: 
+      action: set
+      int: 45
+
+  timer_meteor_countdown_tick: 
+    meteor_countdown_value: 
+      action: set
+      int: device.timers.meteor_countdown.ticks
+
+  timer_meteor_countdown_complete: 
+    meteor_countdown_value: 
+      action: set
+      int: 0
+
+
+
+

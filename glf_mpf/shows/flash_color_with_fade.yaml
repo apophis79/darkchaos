@@ -1,0 +1,11 @@
+#show_version=6
+
+- duration: 1s
+  lights:
+    (lights): (color)%100
+
+- duration: 1s
+  lights:
+    (lights): 000000%100
+
+

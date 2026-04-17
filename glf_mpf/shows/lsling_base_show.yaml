@@ -1,0 +1,37 @@
+#show_version=6
+
+- time: 0
+  shows:
+    lsling_rotate1_ccw: 
+      key: key_lsling_base_show1
+      loops: 0
+      speed: 7
+      show_tokens: 
+        intensity: 100
+        color: ffffff
+
+- time: 0.02s
+  shows:
+    flash_color: 
+      key: key_lsling_base_show2
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: tLSling
+        color: ffb46b
+
+- time: 0.03s
+  shows:
+    flash_color_fadeout: 
+      key: key_DOF16
+      loops: 0
+      speed: 10
+      show_tokens: 
+        color: ffb46b
+        lights: LBG16
+
+- time: 0.3s
+
+- time: 0.31s
+
+

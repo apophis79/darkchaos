@@ -1,0 +1,181 @@
+#show_version=6
+
+- time: 0
+  shows:
+    nuke_inserts_show: 
+      key: key_nuke_gi1
+      priority: 10000
+      loops: 0
+      show_tokens: 
+        lights: GI
+        color: ffb46b
+
+- time: 0.02s
+  shows:
+    nuke_inserts_show: 
+      key: key_nuke_gi2
+      priority: 9000
+      loops: 0
+      show_tokens: 
+        lights: tInserts
+        color: ffb46b
+
+- time: 0.03s
+  shows:
+    nuke_inserts_show: 
+      key: key_nuke_gi3
+      priority: 9000
+      loops: 0
+      show_tokens: 
+        lights: tBumper
+        color: ffb46b
+
+- time: 0.1s
+  shows:
+    flash_color: 
+      key: key_nuke_fired1
+      priority: 10000
+      loops: 19
+      speed: 20
+      show_tokens: 
+        lights: tBlast
+        color: ed1800
+
+- time: 0.11s
+  shows:
+    flash_color: 
+      key: key_nuke_fired2a
+      priority: 10000
+      loops: 10
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ed1800
+        fade: 300
+
+- time: 1s
+  shows:
+    flash_color_fadeout: 
+      key: key_nuke_fired2b
+      priority: 11000
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: tFlasherU
+        color: ed1800
+
+- time: 3.9s
+  shows:
+    flash_color: 
+      key: key_nuke_fired3a
+      priority: 10000
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tFlasher
+        color: ffffff
+
+- time: 4.02s
+  shows:
+    flash_color_fadeout: 
+      key: key_nuke_fired4
+      priority: 11000
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: GI
+        color: ffffff
+
+- time: 4.3s
+  shows:
+    flash_color_fadeout: 
+      key: key_nuke_fired3b
+      priority: 10000
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: tFlasher
+        color: ffffff
+
+- time: 5s
+  shows:
+    meteor2_explodes: 
+      key: key_nuke_fired5
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ffffff
+
+- time: 5.3s
+  shows:
+    meteor4_explodes: 
+      key: key_nuke_fired6
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ed1800
+
+- time: 5.7s
+  shows:
+    meteor1_explodes: 
+      key: key_nuke_fired7
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ffffff
+
+- time: 6.2s
+  shows:
+    meteor3_explodes: 
+      key: key_nuke_fired8
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ed1800
+
+- time: 6.8s
+  shows:
+    meteor2_explodes: 
+      key: key_nuke_fired9
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ffffff
+
+- time: 7.5s
+  shows:
+    meteor4_explodes: 
+      key: key_nuke_fired10
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ed1800
+
+- time: 8s
+  shows:
+    meteor1_explodes: 
+      key: key_nuke_fired11
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ffffff
+
+- time: 8.5s
+  shows:
+    meteor2_explodes: 
+      key: key_nuke_fired12
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ed1800
+
+- time: 9s
+  shows:
+    meteor3_explodes: 
+      key: key_nuke_fired13
+      priority: 11000
+      loops: 0
+      show_tokens: 
+        color: ffffff
+
+

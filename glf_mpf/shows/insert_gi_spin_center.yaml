@@ -1,0 +1,518 @@
+#show_version=6
+
+- time: 0
+  lights:
+    gi04: stop
+    LCWiz: (color)%(intensity)
+    LLWiz: (color)%(intensity)
+    LMR1: (color)%(intensity)
+    LCR1: (color)%(intensity)
+    LRI: (color)%(intensity)
+    LRO: (color)%(intensity)
+    LLI: (color)%(intensity)
+    LLO: (color)%(intensity)
+
+- time: 0.03333s
+  lights:
+    gi08: (color)%(intensity)
+    LLWiz: stop
+    LCR1: stop
+    LLI: stop
+    LLO: stop
+
+- time: 0.06667s
+  lights:
+    gi09: (color)%(intensity)
+    gi07: (color)%(intensity)
+    LS1: (color)%(intensity)
+    LMR2: (color)%(intensity)
+    LSR: (color)%(intensity)
+
+- time: 0.1s
+  lights:
+    gi06: (color)%(intensity)
+    LM1: (color)%(intensity)
+    LRI: stop
+    LRO: stop
+
+- time: 0.13333s
+  lights:
+    gi09: stop
+    gi08: stop
+    gi05: (color)%(intensity)
+    LC8: (color)%(intensity)
+    LWiz: (color)%(intensity)
+    LPR1: (color)%(intensity)
+    LSR: stop
+
+- time: 0.16667s
+  lights:
+    gi12: (color)%(intensity)
+    gi11: (color)%(intensity)
+    gi07: stop
+    gi06: stop
+    LS1: stop
+    LS2: (color)%(intensity)
+    LCWiz: stop
+    LC6: (color)%(intensity)
+    LC7: (color)%(intensity)
+    LCC3: (color)%(intensity)
+    LMet1: (color)%(intensity)
+    LH9: (color)%(intensity)
+    LH8: (color)%(intensity)
+    LH7: (color)%(intensity)
+    LPR3: (color)%(intensity)
+    LPR6: (color)%(intensity)
+
+- time: 0.2s
+  lights:
+    gi20: (color)%(intensity)
+    gi21: (color)%(intensity)
+    gi18: (color)%(intensity)
+    gi16: (color)%(intensity)
+    gi12: stop
+    gi11: stop
+    gi05: stop
+    LS3: (color)%(intensity)
+    LC5: (color)%(intensity)
+    LW9: (color)%(intensity)
+    LW8: (color)%(intensity)
+    LTW2: (color)%(intensity)
+    LTW1: (color)%(intensity)
+    LCC2: (color)%(intensity)
+    LCC1: (color)%(intensity)
+    LMet2: (color)%(intensity)
+    LM1: stop
+    LH6: (color)%(intensity)
+    LH5: (color)%(intensity)
+    LPR2: (color)%(intensity)
+    LPR5: (color)%(intensity)
+
+- time: 0.23333s
+  lights:
+    giapron: (color)%(intensity)
+    gi20: stop
+    gi21: stop
+    gi18: stop
+    gi16: stop
+    LS2: stop
+    LSwC1: (color)%(intensity)
+    LC3: (color)%(intensity)
+    LC4: (color)%(intensity)
+    LC8: stop
+    LW7: (color)%(intensity)
+    LW6: (color)%(intensity)
+    LW5: (color)%(intensity)
+    LW4: (color)%(intensity)
+    LW3: (color)%(intensity)
+    LW2: (color)%(intensity)
+    LW1: (color)%(intensity)
+    LPC4: (color)%(intensity)
+    LPC3: (color)%(intensity)
+    LPC2: (color)%(intensity)
+    LPC1: (color)%(intensity)
+    LTW1: stop
+    LCC3: stop
+    LCC2: stop
+    LCC1: stop
+    LMet1: stop
+    LM2: (color)%(intensity)
+    LSA: (color)%(intensity)
+    LH9: stop
+    LH4: (color)%(intensity)
+    LPR4: (color)%(intensity)
+    LMR1: stop
+
+- time: 0.26667s
+  lights:
+    gi22: (color)%(intensity)
+    LX: (color)%(intensity)
+    LS3: stop
+    LS4: (color)%(intensity)
+    LSwC3: (color)%(intensity)
+    LSwC1: stop
+    LC1: (color)%(intensity)
+    LC2: (color)%(intensity)
+    LC7: stop
+    LEBR: (color)%(intensity)
+    LMR: (color)%(intensity)
+    LPC5: (color)%(intensity)
+    LPC4: stop
+    LPC3: stop
+    LPC2: stop
+    LPC1: stop
+    LTW2: stop
+    LMet3: (color)%(intensity)
+    LMet2: stop
+    LM4: (color)%(intensity)
+    LM2: stop
+    LH8: stop
+    LH7: stop
+    LH3: (color)%(intensity)
+    LH2: (color)%(intensity)
+    LMR2: stop
+    LCR2: (color)%(intensity)
+
+- time: 0.3s
+  lights:
+    gi17: (color)%(intensity)
+    giapron: stop
+    gi22: stop
+    gi13: (color)%(intensity)
+    LX: stop
+    LS5: (color)%(intensity)
+    LS4: stop
+    LSwC3: stop
+    LC5: stop
+    LC6: stop
+    LW7: stop
+    LW6: stop
+    LW5: stop
+    LW4: stop
+    LW3: stop
+    LW2: stop
+    LW1: stop
+    LMLR: (color)%(intensity)
+    LEBR: stop
+    LMR: stop
+    LPC5: stop
+    LMet4: (color)%(intensity)
+    LM5: (color)%(intensity)
+    LM4: stop
+    LSA: stop
+    LH6: stop
+    LH5: stop
+    LH1: (color)%(intensity)
+    LPR6: stop
+    LCR1: (color)%(intensity)
+
+- time: 0.33333s
+  lights:
+    gi17: stop
+    gi19: (color)%(intensity)
+    gi15: (color)%(intensity)
+    gi13: stop
+    gi03: (color)%(intensity)
+    gi01: (color)%(intensity)
+    LS5: stop
+    LS6: (color)%(intensity)
+    LC3: stop
+    LC4: stop
+    LW9: stop
+    LW8: stop
+    LMLR: stop
+    LSC1: (color)%(intensity)
+    LF3: (color)%(intensity)
+    LF2: (color)%(intensity)
+    LF1: (color)%(intensity)
+    LMet3: stop
+    LM5: stop
+    LH4: stop
+    LH3: stop
+    LPR3: stop
+    LPR5: stop
+
+- time: 0.36667s
+  lights:
+    gi19: stop
+    gi15: stop
+    gi14: (color)%(intensity)
+    gi02: (color)%(intensity)
+    LS6: stop
+    LLWiz: (color)%(intensity)
+    LC1: stop
+    LC2: stop
+    LSC3: (color)%(intensity)
+    LSC2: (color)%(intensity)
+    LF3: stop
+    LF2: stop
+    LF1: stop
+    LH2: stop
+    LH1: stop
+    LPR4: stop
+
+- time: 0.4s
+  lights:
+    gi14: stop
+    gi10: (color)%(intensity)
+    gi04: (color)%(intensity)
+    gi01: stop
+    LWiz: stop
+    LSC1: stop
+    LMet4: stop
+    LPR1: stop
+    LPR2: stop
+    LSL: (color)%(intensity)
+
+- time: 0.43333s
+  lights:
+    gi02: stop
+    LSC3: stop
+    LSC2: stop
+    LLI: (color)%(intensity)
+    LLO: (color)%(intensity)
+    LSL: stop
+
+- time: 0.46667s
+  lights:
+    gi10: stop
+    gi03: stop
+    LCR2: stop
+
+- time: 0.5s
+  lights:
+    gi04: stop
+    LCWiz: (color)%(intensity)
+    LMR1: (color)%(intensity)
+    LRI: (color)%(intensity)
+    LRO: (color)%(intensity)
+
+- time: 0.53333s
+  lights:
+    gi08: (color)%(intensity)
+    LLWiz: stop
+    LCR1: stop
+    LLI: stop
+    LLO: stop
+
+- time: 0.56667s
+  lights:
+    gi09: (color)%(intensity)
+    gi07: (color)%(intensity)
+    LS1: (color)%(intensity)
+    LMR2: (color)%(intensity)
+    LSR: (color)%(intensity)
+
+- time: 0.6s
+  lights:
+    gi06: (color)%(intensity)
+    LM1: (color)%(intensity)
+    LRI: stop
+    LRO: stop
+
+- time: 0.63333s
+  lights:
+    gi09: stop
+    gi08: stop
+    gi05: (color)%(intensity)
+    LC8: (color)%(intensity)
+    LWiz: (color)%(intensity)
+    LPR1: (color)%(intensity)
+    LSR: stop
+
+- time: 0.66667s
+  lights:
+    gi12: (color)%(intensity)
+    gi11: (color)%(intensity)
+    gi07: stop
+    gi06: stop
+    LS1: stop
+    LS2: (color)%(intensity)
+    LCWiz: stop
+    LC6: (color)%(intensity)
+    LC7: (color)%(intensity)
+    LCC3: (color)%(intensity)
+    LMet1: (color)%(intensity)
+    LH9: (color)%(intensity)
+    LH8: (color)%(intensity)
+    LH7: (color)%(intensity)
+    LPR3: (color)%(intensity)
+    LPR6: (color)%(intensity)
+
+- time: 0.7s
+  lights:
+    gi20: (color)%(intensity)
+    gi21: (color)%(intensity)
+    gi18: (color)%(intensity)
+    gi16: (color)%(intensity)
+    gi12: stop
+    gi11: stop
+    gi05: stop
+    LS3: (color)%(intensity)
+    LC5: (color)%(intensity)
+    LW9: (color)%(intensity)
+    LW8: (color)%(intensity)
+    LTW2: (color)%(intensity)
+    LTW1: (color)%(intensity)
+    LCC2: (color)%(intensity)
+    LCC1: (color)%(intensity)
+    LMet2: (color)%(intensity)
+    LM1: stop
+    LH6: (color)%(intensity)
+    LH5: (color)%(intensity)
+    LPR2: (color)%(intensity)
+    LPR5: (color)%(intensity)
+
+- time: 0.73333s
+  lights:
+    giapron: (color)%(intensity)
+    gi20: stop
+    gi21: stop
+    gi18: stop
+    gi16: stop
+    LS2: stop
+    LSwC1: (color)%(intensity)
+    LC3: (color)%(intensity)
+    LC4: (color)%(intensity)
+    LC8: stop
+    LW7: (color)%(intensity)
+    LW6: (color)%(intensity)
+    LW5: (color)%(intensity)
+    LW4: (color)%(intensity)
+    LW3: (color)%(intensity)
+    LW2: (color)%(intensity)
+    LW1: (color)%(intensity)
+    LPC4: (color)%(intensity)
+    LPC3: (color)%(intensity)
+    LPC2: (color)%(intensity)
+    LPC1: (color)%(intensity)
+    LTW1: stop
+    LCC3: stop
+    LCC2: stop
+    LCC1: stop
+    LMet1: stop
+    LM2: (color)%(intensity)
+    LSA: (color)%(intensity)
+    LH9: stop
+    LH4: (color)%(intensity)
+    LPR4: (color)%(intensity)
+    LMR1: stop
+
+- time: 0.76667s
+  lights:
+    gi22: (color)%(intensity)
+    LX: (color)%(intensity)
+    LS3: stop
+    LS4: (color)%(intensity)
+    LSwC3: (color)%(intensity)
+    LSwC1: stop
+    LC1: (color)%(intensity)
+    LC2: (color)%(intensity)
+    LC7: stop
+    LEBR: (color)%(intensity)
+    LMR: (color)%(intensity)
+    LPC5: (color)%(intensity)
+    LPC4: stop
+    LPC3: stop
+    LPC2: stop
+    LPC1: stop
+    LTW2: stop
+    LMet3: (color)%(intensity)
+    LMet2: stop
+    LM4: (color)%(intensity)
+    LM2: stop
+    LH8: stop
+    LH7: stop
+    LH3: (color)%(intensity)
+    LH2: (color)%(intensity)
+    LMR2: stop
+    LCR2: (color)%(intensity)
+
+- time: 0.8s
+  lights:
+    gi17: (color)%(intensity)
+    giapron: stop
+    gi22: stop
+    gi13: (color)%(intensity)
+    LX: stop
+    LS5: (color)%(intensity)
+    LS4: stop
+    LSwC3: stop
+    LC5: stop
+    LC6: stop
+    LW7: stop
+    LW6: stop
+    LW5: stop
+    LW4: stop
+    LW3: stop
+    LW2: stop
+    LW1: stop
+    LMLR: (color)%(intensity)
+    LEBR: stop
+    LMR: stop
+    LPC5: stop
+    LMet4: (color)%(intensity)
+    LM5: (color)%(intensity)
+    LM4: stop
+    LSA: stop
+    LH6: stop
+    LH5: stop
+    LH1: (color)%(intensity)
+    LPR6: stop
+    LCR1: (color)%(intensity)
+
+- time: 0.83333s
+  lights:
+    gi17: stop
+    gi19: (color)%(intensity)
+    gi15: (color)%(intensity)
+    gi13: stop
+    gi03: (color)%(intensity)
+    gi01: (color)%(intensity)
+    LS5: stop
+    LS6: (color)%(intensity)
+    LC3: stop
+    LC4: stop
+    LW9: stop
+    LW8: stop
+    LMLR: stop
+    LSC1: (color)%(intensity)
+    LF3: (color)%(intensity)
+    LF2: (color)%(intensity)
+    LF1: (color)%(intensity)
+    LMet3: stop
+    LM5: stop
+    LH4: stop
+    LH3: stop
+    LPR3: stop
+    LPR5: stop
+
+- time: 0.86667s
+  lights:
+    gi19: stop
+    gi15: stop
+    gi14: (color)%(intensity)
+    gi02: (color)%(intensity)
+    LS6: stop
+    LLWiz: (color)%(intensity)
+    LC1: stop
+    LC2: stop
+    LSC3: (color)%(intensity)
+    LSC2: (color)%(intensity)
+    LF3: stop
+    LF2: stop
+    LF1: stop
+    LH2: stop
+    LH1: stop
+    LPR4: stop
+
+- time: 0.9s
+  lights:
+    gi14: stop
+    gi10: (color)%(intensity)
+    gi04: (color)%(intensity)
+    gi01: stop
+    LWiz: stop
+    LSC1: stop
+    LMet4: stop
+    LPR1: stop
+    LPR2: stop
+    LSL: (color)%(intensity)
+
+- time: 0.93333s
+  lights:
+    gi02: stop
+    LSC3: stop
+    LSC2: stop
+    LLI: (color)%(intensity)
+    LLO: (color)%(intensity)
+    LSL: stop
+
+- time: 0.96667s
+  duration: 0.03333s
+  lights:
+    gi10: stop
+    gi03: stop
+    LCR2: stop
+
+

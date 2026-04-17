@@ -1,0 +1,121 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, mode_moon_multiball_qualify_started
+  stop_events: mode_base_stopping, wizard_mode_ended
+  priority: 600
+
+event_player: 
+  s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}:
+    - launch_moon_missiles
+    - restart_moon_qualify_shots
+    - backglass_moon_off
+  launch_moon_missiles:
+    - start_moon_multiball
+    - delayed_release_moon_ball
+    - play_sfx_launch
+    - score_50000
+  s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}:
+    - launch_panic_penalty
+  launch_panic_penalty:
+    - score_m100000
+
+
+multiballs: 
+  multiball_moon:
+    start_events: start_moon_multiball.3
+    ball_count: current_player.moon_launch_locked_balls
+    ball_count_type: add
+    shoot_again: 0
+    hurry_up: 0
+    grace_period: 0
+    ball_locks: moon_lock
+
+show_player: 
+  launch_panic_penalty: 
+    flash_color: 
+      key: key_launch_panic_penalty
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tMoonAll
+        color: dd0400
+
+
+sound_player: 
+  play_sfx_launch: 
+    sfx_launch: 
+      key: key_sfx_launch
+      action: play
+  launch_panic_penalty: 
+    sfx_error_buzz: 
+      key: key_sfx_error_buzz
+      action: play
+
+
+timers: 
+  pause_moon_launch:
+    start_value: 0
+    end_value: 3
+    direction: up
+    control_events: 
+      - event: ball_drain
+        action: restart
+      - event: mode_training_select_stopping
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 100ms
+  moon_launch_cooldown:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: start_moon_multiball
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 5000ms
+
+variable_player: 
+  start_moon_multiball.1{current_player.wizard_mode_running == 0}: 
+    moon_launch_locked_balls: 
+      action: set
+      int: 0
+
+  start_moon_multiball.1: 
+    leftover_balls_in_lock: 
+      action: set
+      int: 0
+    disable_moon_launch: 
+      action: set
+      int: 1
+
+  ball_drain: 
+    disable_moon_launch: 
+      action: set
+      int: 1
+
+  mode_training_select_started: 
+    disable_moon_launch: 
+      action: set
+      int: 1
+
+  mode_moon_multiball_started: 
+    disable_moon_launch: 
+      action: set
+      int: 0
+
+  timer_pause_moon_launch_complete: 
+    disable_moon_launch: 
+      action: set
+      int: 0
+
+  timer_moon_launch_cooldown_complete: 
+    disable_moon_launch: 
+      action: set
+      int: 0
+
+
+
+

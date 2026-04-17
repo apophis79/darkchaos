@@ -1,0 +1,1280 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended, mode_eob_bonus_started, tilt
+  priority: 200
+
+ball_holds: 
+  scoop_hold:
+    enable_events: enable_scoop_hold
+    disable_events: disable_scoop_hold
+    hold_devices: scoop
+    balls_to_hold: 1
+    release_all_events: tilt, release_scoop_hold
+
+ball_saves: 
+  new_ball:
+    active_time: 6000ms
+    grace_period: 2000ms
+    hurry_up_time: 3000ms
+    enable_events: new_ball_active
+    auto_launch: true
+    balls_to_save: -1
+  wave_coming:
+    active_time: 1500ms
+    grace_period: 500ms
+    hurry_up_time: 0ms
+    enable_events: timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}
+    auto_launch: true
+    balls_to_save: 1
+
+combo_switches: 
+  flipper_cancel:
+    switches_1: s_left_flipper
+    switches_2: s_start
+    events_when_both: 
+      - glf_game_cancel
+    hold_time: 5000ms
+
+event_player: 
+  mode_base_started:
+    - stop_attract_mode
+    - knockdown_meteors
+    - check_base_restart
+    - run_asteroid_motor
+    - backglass_dark_on
+    - backglass_chaos_on
+    - backglass_wave_off
+    - check_plunger
+  mode_base_started{current_player.wizard_final_hit_count > 0}:
+    - new_ball_started
+  mode_base_started{current_player.number == 1}:
+    - flash_player1_score
+    - display34_ball_num
+  mode_base_started{current_player.number == 2}:
+    - flash_player2_score
+    - display34_ball_num
+  mode_base_started{current_player.number == 3}:
+    - flash_player3_score
+    - display12_ball_num
+  mode_base_started{current_player.number == 4}:
+    - flash_player4_score
+    - display12_ball_num
+  s_Plunger2_active{current_player.wizard_final_hit_count > 0 and current_player.ball_just_started==1}:
+    - new_ball_active
+    - remove_display34_ball_num
+    - remove_display12_ball_num
+    - stop_flash_player1_score
+    - stop_flash_player2_score
+    - stop_flash_player3_score
+    - stop_flash_player4_score
+  mode_base_stopping:
+    - training_music_stop
+  mode_meteor_wave_stopped:
+    - backglass_dark_on
+    - backglass_chaos_on
+    - backglass_wave_off
+  stop_training:
+    - check_base_restart
+    - training_music_stop
+  check_base_restart{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}:
+    - activate_nuke
+  check_base_restart{current_player.shot_meteor_wave1 == 0}:
+    - meteor_wave0_restart
+  check_base_restart{current_player.shot_meteor_wave1 == 1}:
+    - meteor_wave1_restart
+  check_base_restart{current_player.shot_meteor_wave2 == 1}:
+    - meteor_wave2_restart
+  check_base_restart{current_player.shot_meteor_wave3 == 1}:
+    - meteor_wave3_restart
+  check_base_restart{current_player.shot_meteor_wave4 == 1}:
+    - meteor_wave4_restart
+  check_base_restart{current_player.shot_meteor_wave5 == 1}:
+    - meteor_wave5_restart
+  check_base_restart{current_player.shot_meteor_wave6 == 1}:
+    - meteor_wave6_restart
+  check_base_restart{current_player.shot_meteor_wave7 == 1}:
+    - meteor_wave7_restart
+  check_base_restart{current_player.shot_meteor_wave8 == 1}:
+    - meteor_wave8_restart
+  check_base_restart{current_player.shot_meteor_wave9 == 1}:
+    - meteor_wave9_restart
+  check_base_restart{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}:
+    - meteor_wave2_restart
+  check_base_restart{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}:
+    - meteor_wave3_restart
+  check_base_restart{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}:
+    - meteor_wave4_restart
+  check_base_restart{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}:
+    - meteor_wave5_restart
+  check_base_restart{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}:
+    - meteor_wave6_restart
+  check_base_restart{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}:
+    - meteor_wave7_restart
+  check_base_restart{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}:
+    - meteor_wave8_restart
+  check_base_restart{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}:
+    - meteor_wave9_restart
+  mode_base_started{current_player.shot_final_wave_wizard == 2 and current_player.victory == 0}:
+    - run_final_wave_wizard
+    - wizard_mode_started
+  mode_base_started{current_player.shot_final_wave_wizard == 1 and current_player.victory == 0}:
+    - activate_final_wave_wizard
+  mode_base_started{current_player.shot_combo_command_wizard == 1 and current_player.victory == 0}:
+    - activate_combo_command_wizard
+  mode_base_started{current_player.shot_fully_loaded_wizard == 1 and current_player.victory == 0}:
+    - activate_fully_loaded_wizard
+  mode_base_started{current_player.victory == 1}:
+    - restart_victory
+  check_fully_loaded{current_player.shot_fully_loaded_wizard == 0 and current_player.shot_cluster_bomb2 == 1 and current_player.shot_proton_round6 == 1 and  current_player.shot_moon_missile2 == 1}:
+    - prime_fully_loaded_wizard
+  prime_fully_loaded_wizard{current_player.meteor_wave_running == 0}:
+    - activate_fully_loaded_wizard
+  start_meteor_wave:
+    - disable_scoop_hold
+    - stop_ccwiz_scoop_show
+    - stop_flwiz_scoop_show
+  stop_meteor_wave{current_player.shot_final_wave_wizard == 1}:
+    - activate_final_wave_wizard
+  stop_meteor_wave{current_player.shot_combo_command_wizard == 1}:
+    - activate_combo_command_wizard
+  stop_meteor_wave{current_player.shot_fully_loaded_wizard == 1}:
+    - activate_fully_loaded_wizard
+  activate_final_wave_wizard:
+    - wizard_mode_ready
+    - run_fwwiz_scoop_show
+    - run_asteroid_spotlight_show
+    - wizard_mode_started
+  activate_combo_command_wizard:
+    - wizard_mode_ready
+    - run_ccwiz_scoop_show
+  activate_fully_loaded_wizard:
+    - wizard_mode_ready
+    - run_flwiz_scoop_show
+  wizard_mode_ready:
+    - enable_scoop_hold
+  run_fwwiz_scoop_show:
+    - stop_flwiz_scoop_show
+    - stop_ccwiz_scoop_show
+  run_ccwiz_scoop_show:
+    - stop_flwiz_scoop_show
+  run_ccwiz_scoop_show{current_player.shot_final_wave_wizard == 1}:
+    - stop_ccwiz_scoop_show
+  run_flwiz_scoop_show{current_player.shot_combo_command_wizard == 1 or current_player.shot_final_wave_wizard == 1}:
+    - stop_flwiz_scoop_show
+  balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_final_wave_wizard == 1 and current_player.meteor_wave_running == 0}:
+    - run_final_wave_wizard
+    - wizard_mode_started
+    - stop_fwwiz_scoop_show
+    - stop_asteroid_spotlight_show
+    - clear_wizard_mode_ready
+  balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_combo_command_wizard == 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}:
+    - run_combo_command_wizard
+    - wizard_mode_started
+    - stop_ccwiz_scoop_show
+    - clear_wizard_mode_ready
+  balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_fully_loaded_wizard == 1  and current_player.shot_combo_command_wizard != 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}:
+    - run_fully_loaded_wizard
+    - wizard_mode_started
+    - stop_flwiz_scoop_show
+    - clear_wizard_mode_ready
+  completed_final_wave_wizard:
+    - wizard_mode_ended
+  completed_combo_command_wizard:
+    - wizard_mode_ended
+    - check_base_restart
+  completed_fully_loaded_wizard:
+    - wizard_mode_ended
+    - check_base_restart
+  center_orbit_left_hit:
+    - play_sfx_Orb
+    - score_2000
+  center_orbit_right_hit:
+    - play_sfx_Orb
+    - score_2000
+  left_side_hit:
+    - play_sfx_Orb
+    - score_2000
+  s_Bumper1_active:
+    - play_sfx_bumper
+    - score_1300
+  s_Bumper2_active:
+    - play_sfx_bumper
+    - score_1300
+  s_Bumper3_active:
+    - play_sfx_bumper
+    - score_1300
+  s_TopSlingshot_active:
+    - play_sfx_bumper
+    - score_1300
+  s_spinner_active:
+    - score_930
+  meteor_wave_music_stop:
+    - meteor_wave0_music_stop
+    - meteor_wave1_music_stop
+    - meteor_wave2_music_stop
+    - meteor_wave3_music_stop
+    - meteor_wave4_music_stop
+    - meteor_wave5_music_stop
+    - meteor_wave6_music_stop
+    - meteor_wave7_music_stop
+    - meteor_wave8_music_stop
+    - meteor_wave9_music_stop
+  s_TargetMystery5_active:
+    - magnet_activated_flash
+    - magnet_activated_gi
+  s_TimewarpRamp_active:
+    - left_ramp_hit
+  s_MoonRamp_active:
+    - right_ramp_hit
+  s_LeftBumper1_active:
+    - left_side_hit
+  knockdown_meteors:
+    - meteor1_knockdown
+    - meteor2_knockdown
+    - meteor3_knockdown
+    - meteor4_knockdown
+  balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}:
+    - delayed_release_moon_ball
+  timer_delay_ball_release_complete:
+    - release_moon_ball
+  s_LockOut_active:
+    - raise_lock_pin
+  s_LeftSlingshot_active:
+    - play_lsling_base_show
+    - score_1000
+  s_RightSlingshot_active:
+    - play_rsling_base_show
+    - score_1000
+  slings_powerup_added:
+    - pu_lsling1_show
+    - pu_lsling2_show
+    - pu_rsling1_show
+    - pu_rsling2_show
+  balldevice_scoop_ball_exiting:
+    - scoop_blast
+  check_plunger{current_player.ball_just_started==0}:
+    - restart_plunger_check
+  timer_plunger_check_complete:
+    - plunger_eject
+
+
+light_player: 
+  mode_base_started: 
+    GI: 
+      color: ffb46b
+      fade: 200
+
+  activate_final_wave_wizard: 
+    GI: 
+      color: 000000
+
+  turn_off_gi: 
+    GI: 
+      color: 000000
+
+
+random_event_player: 
+  play_sfx_Orb: 
+    events:
+      play_sfx_Orb1: 1
+      play_sfx_Orb2: 1
+      play_sfx_Orb3: 1
+    scope: player
+  play_sfx_bumper: 
+    events:
+      play_sfx_bumper1: 1
+      play_sfx_bumper2: 1
+      play_sfx_bumper3: 1
+      play_sfx_bumper4: 1
+    scope: player
+  ball_launch_hit: 
+    events:
+      play_sfx_ball_launch1: 1
+      play_sfx_ball_launch2: 1
+      play_sfx_ball_launch3: 1
+    scope: player
+
+
+segment_display_player: 
+  mode_base_started: 
+    player1: 
+      text: "{players[0].score:0>2,}"
+      flashing: off
+    player2: 
+      text: "{players[1].score:0>2,}"
+      flashing: off
+    player3: 
+      text: "{players[2].score:0>2,}"
+      flashing: off
+    player4: 
+      text: "{players[3].score:0>2,}"
+      flashing: off
+    ball: 
+      text: "{current_player.ball:0>2}"
+      flashing: off
+
+  player_added{num==2}: 
+    player2: 
+      text: "{players[1].score:0>2,}"
+      flashing: off
+
+  player_added{num==3}: 
+    player3: 
+      text: "{players[2].score:0>2,}"
+      flashing: off
+
+  player_added{num==4}: 
+    player4: 
+      text: "{players[3].score:0>2,}"
+      flashing: off
+
+  flash_player1_score: 
+    player1: 
+      key: p1_score_flash
+      text: "{players[0].score:0>2}"
+      priority: 100
+      flashing: all
+
+  stop_flash_player1_score: 
+    player1: 
+      key: p1_score_flash
+      action: remove
+      flashing: off
+
+  flash_player2_score: 
+    player2: 
+      key: p2_score_flash
+      text: "{players[1].score:0>2}"
+      priority: 100
+      flashing: all
+
+  stop_flash_player2_score: 
+    player2: 
+      key: p2_score_flash
+      action: remove
+      flashing: off
+
+  flash_player3_score: 
+    player3: 
+      key: p3_score_flash
+      text: "{players[2].score:0>2}"
+      priority: 100
+      flashing: all
+
+  stop_flash_player3_score: 
+    player3: 
+      key: p3_score_flash
+      action: remove
+      flashing: off
+
+  flash_player4_score: 
+    player4: 
+      key: p4_score_flash
+      text: "{players[3].score:0>2}"
+      priority: 100
+      flashing: all
+
+  stop_flash_player4_score: 
+    player4: 
+      key: p4_score_flash
+      action: remove
+      flashing: off
+
+  display34_ball_num: 
+    player3: 
+      key: p3_ball_num
+      text: "BALL"
+      priority: 10000
+      flashing: off
+    player4: 
+      key: p4_ball_num
+      text: "{current_player.ball:0>2}"
+      priority: 10000
+      flashing: off
+
+  remove_display34_ball_num: 
+    player3: 
+      key: p3_ball_num
+      action: remove
+      flashing: off
+    player4: 
+      key: p4_ball_num
+      action: remove
+      flashing: off
+
+  display12_ball_num: 
+    player1: 
+      key: p1_ball_num
+      text: "BALL"
+      priority: 10000
+      flashing: off
+    player2: 
+      key: p2_ball_num
+      text: "{current_player.ball:0>2}"
+      priority: 10000
+      flashing: off
+
+  remove_display12_ball_num: 
+    player1: 
+      key: p1_ball_num
+      action: remove
+      flashing: off
+    player2: 
+      key: p2_ball_num
+      action: remove
+      flashing: off
+
+
+sequence_shots: 
+  left_orbit:
+    switch_sequence: 
+      - s_LeftOrb1
+      - s_LeftOrb2
+    sequence_timeout: 500ms
+  inner_orbit:
+    switch_sequence: 
+      - s_InnerOrb1
+      - s_InnerOrb2
+    sequence_timeout: 300ms
+  center_orbit_left:
+    switch_sequence: 
+      - s_CenterOrb1
+      - s_CenterOrb2
+      - s_CenterOrb3
+    sequence_timeout: 600ms
+  center_orbit_right:
+    switch_sequence: 
+      - s_CenterOrb3
+      - s_CenterOrb2
+      - s_CenterOrb1
+    sequence_timeout: 600ms
+  right_orbit:
+    switch_sequence: 
+      - s_RightOrb1
+      - s_RightOrb2
+    sequence_timeout: 500ms
+  ball_launch:
+    event_sequence: 
+      - s_Plunger1_inactive
+      - s_Plunger2_inactive
+    sequence_timeout: 300ms
+
+shots: 
+  combo_command_wizard:
+    profile: wizard_ready1
+    restart_events: game_start, run_final_wave_wizard
+    show_tokens: 
+      lights: LCWiz
+      color: ffb46b
+    control_events: 
+      - events: activate_combo_command_wizard
+        state: 1
+      - events: run_combo_command_wizard
+        state: 2
+  fully_loaded_wizard:
+    profile: wizard_ready1
+    restart_events: game_start, run_final_wave_wizard
+    show_tokens: 
+      lights: LLWiz
+      color: ffb46b
+    control_events: 
+      - events: prime_fully_loaded_wizard
+        state: 1
+      - events: run_fully_loaded_wizard
+        state: 2
+  final_wave_wizard:
+    profile: wizard_ready1
+    restart_events: game_start
+    show_tokens: 
+      lights: LWiz
+      color: dd0400
+    control_events: 
+      - events: activate_final_wave_wizard
+        state: 1
+      - events: run_final_wave_wizard
+        state: 2
+  meteor_wave1:
+    profile: powerups
+    restart_events: game_start, meteor_wave1_restart
+    show_tokens: 
+      lights: LW1
+      color: dd0400
+    control_events: 
+      - events: meteor_wave1_running
+        state: 1
+      - events: meteor_wave1_done
+        state: 2
+  meteor_wave2:
+    profile: powerups
+    restart_events: game_start, meteor_wave2_restart
+    show_tokens: 
+      lights: LW2
+      color: dd0400
+    control_events: 
+      - events: meteor_wave2_running
+        state: 1
+      - events: meteor_wave2_done
+        state: 2
+  meteor_wave3:
+    profile: powerups
+    restart_events: game_start, meteor_wave3_restart
+    show_tokens: 
+      lights: LW3
+      color: dd0400
+    control_events: 
+      - events: meteor_wave3_running
+        state: 1
+      - events: meteor_wave3_done
+        state: 2
+  meteor_wave4:
+    profile: powerups
+    restart_events: game_start, meteor_wave4_restart
+    show_tokens: 
+      lights: LW4
+      color: dd0400
+    control_events: 
+      - events: meteor_wave4_running
+        state: 1
+      - events: meteor_wave4_done
+        state: 2
+  meteor_wave5:
+    profile: powerups
+    restart_events: game_start, meteor_wave5_restart
+    show_tokens: 
+      lights: LW5
+      color: dd0400
+    control_events: 
+      - events: meteor_wave5_running
+        state: 1
+      - events: meteor_wave5_done
+        state: 2
+  meteor_wave6:
+    profile: powerups
+    restart_events: game_start, meteor_wave6_restart
+    show_tokens: 
+      lights: LW6
+      color: dd0400
+    control_events: 
+      - events: meteor_wave6_running
+        state: 1
+      - events: meteor_wave6_done
+        state: 2
+  meteor_wave7:
+    profile: powerups
+    restart_events: game_start, meteor_wave7_restart
+    show_tokens: 
+      lights: LW7
+      color: dd0400
+    control_events: 
+      - events: meteor_wave7_running
+        state: 1
+      - events: meteor_wave7_done
+        state: 2
+  meteor_wave8:
+    profile: powerups
+    restart_events: game_start, meteor_wave8_restart
+    show_tokens: 
+      lights: LW8
+      color: dd0400
+    control_events: 
+      - events: meteor_wave8_running
+        state: 1
+      - events: meteor_wave8_done
+        state: 2
+  meteor_wave9:
+    profile: powerups
+    restart_events: game_start, meteor_wave9_restart
+    show_tokens: 
+      lights: LW9
+      color: dd0400
+    control_events: 
+      - events: meteor_wave9_running
+        state: 1
+      - events: meteor_wave9_done
+        state: 2
+  base_shoot_again:
+    profile: shoot_again
+    restart_events: ball_save_new_ball_grace_period
+    show_tokens: 
+      color: 0500ee
+    control_events: 
+      - events: ball_save_new_ball_enabled
+        state: 1
+      - events: ball_save_new_ball_hurry_up
+        state: 2
+
+show_player: 
+  s_CenterOrb1_active: 
+    flash_color: 
+      key: key_rollover0_flash
+      priority: 1000
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: LSwC1
+        color: ffffff
+  s_CenterOrb2_active: 
+    flash_color: 
+      key: key_rollover1_flash
+      priority: 1000
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: LSwC2
+        color: ffffff
+  s_CenterOrb3_active: 
+    flash_color: 
+      key: key_rollover2_flash
+      priority: 1000
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: LSwC3
+        color: ffffff
+  magnet_activated_flash: 
+    flash_color_with_fade: 
+      key: key_ts_mag_flash
+      priority: 100
+      loops: 6
+      speed: 20
+      show_tokens: 
+        lights: FL1
+        color: aaaaaa
+        fade: 200
+  balldevice_scoop_ball_exiting: 
+    flash_color: 
+      key: key_ts_scoop_gi
+      priority: 1000
+      loops: 6
+      speed: 15
+      show_tokens: 
+        lights: gi22
+        color: ffb46b
+  play_lsling_base_show: 
+    lsling_base_show: 
+      key: key_lsling_base_show
+      priority: 10000
+      loops: 0
+  play_rsling_base_show: 
+    rsling_base_show: 
+      key: key_rsling_base_show
+      priority: 10000
+      loops: 0
+  run_ccwiz_scoop_show: 
+    combo_command_scoop: 
+      key: key_combo_command_scoop
+      priority: 2000
+      show_tokens: 
+        intensity1: 20
+        intensity2: 100
+        color: ffb46b
+  stop_ccwiz_scoop_show: 
+    combo_command_scoop: 
+      action: stop
+      key: key_combo_command_scoop
+      priority: 2000
+      show_tokens: 
+        intensity1: 20
+        intensity2: 100
+        color: ffb46b
+  scoop_blast: 
+    insert_gi_slide_diag: 
+      key: key_scoop_fire_blast
+      priority: 2000
+      loops: 0
+      speed: 2.5
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+  run_flwiz_scoop_show: 
+    fully_loaded_scoop: 
+      key: key_fully_loaded_scoop
+      priority: 1000
+      show_tokens: 
+        intensity1: 20
+        intensity2: 100
+  stop_flwiz_scoop_show: 
+    fully_loaded_scoop: 
+      action: stop
+      key: key_fully_loaded_scoop
+      priority: 1000
+      show_tokens: 
+        intensity1: 20
+        intensity2: 100
+  run_fwwiz_scoop_show: 
+    combo_command_scoop: 
+      key: key_final_wave_scoop
+      priority: 3000
+      show_tokens: 
+        intensity1: 20
+        intensity2: 100
+        color: dd0400
+  stop_fwwiz_scoop_show: 
+    combo_command_scoop: 
+      action: stop
+      key: key_final_wave_scoop
+      priority: 3000
+      show_tokens: 
+        intensity1: 20
+        intensity2: 100
+        color: dd0400
+  run_asteroid_spotlight_show: 
+    flash_color_with_fade: 
+      key: key_asteroid_spotlight
+      priority: 3000
+      show_tokens: 
+        lights: LSpot1
+        color: ffffff
+        fade: 700
+  stop_asteroid_spotlight_show: 
+    flash_color_with_fade: 
+      action: stop
+      key: key_asteroid_spotlight
+      priority: 3000
+      show_tokens: 
+        lights: LSpot1
+        color: ffffff
+        fade: 700
+  pu_lsling1_show: 
+    flash_color_with_fade: 
+      key: key_pc_lsling1_show
+      loops: 8
+      speed: 9
+      show_tokens: 
+        lights: gi04
+        color: ffb46b
+        fade: 800
+  pu_lsling2_show: 
+    flash_color_with_fade: 
+      key: key_pc_lsling2_show
+      loops: 3
+      speed: 4
+      show_tokens: 
+        lights: gi03
+        color: ffb46b
+        fade: 800
+  pu_rsling1_show: 
+    flash_color_with_fade: 
+      key: key_pu_rsling1_show
+      loops: 8
+      speed: 9
+      show_tokens: 
+        lights: gi08
+        color: ffb46b
+        fade: 800
+  pu_rsling2_show: 
+    flash_color_with_fade: 
+      key: key_pu_rsling2_show
+      loops: 3
+      speed: 4
+      show_tokens: 
+        lights: gi07
+        color: ffb46b
+        fade: 800
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}: 
+    gi_cracked: 
+      key: key_gi_cracked
+      priority: 200
+      loops: 0
+      speed: 1.3
+  activate_combo_command_wizard: 
+    flash_color: 
+      key: key_combo_wiz_ready
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ffb46b
+  activate_fully_loaded_wizard: 
+    flash_color: 
+      key: key_loaded_wiz_ready
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: 00dddd
+
+
+slide_player: 
+  mode_base_started.2: 
+    base:
+      action: play
+      expire: 0s
+  mode_base_started.1: 
+    space_field:
+      action: play
+      expire: 0s
+
+
+sound_player: 
+  meteor_wave0_restart: 
+    mus_wave0: 
+      key: key_mus_wave0
+      action: play
+  meteor_wave0_music_stop: 
+    mus_wave0: 
+      key: key_mus_wave0
+      action: stop
+  meteor_wave1_running: 
+    mus_wave1: 
+      key: key_mus_wave1
+      action: play
+  meteor_wave1_restart: 
+    mus_wave0: 
+      key: key_mus_wave0
+      action: play
+  meteor_wave1_music_stop: 
+    mus_wave1: 
+      key: key_mus_wave1
+      action: stop
+  meteor_wave2_running: 
+    mus_wave2: 
+      key: key_mus_wave2
+      action: play
+  meteor_wave2_restart: 
+    mus_wave1: 
+      key: key_mus_wave1
+      action: play
+  meteor_wave2_music_stop: 
+    mus_wave2: 
+      key: key_mus_wave2
+      action: stop
+  meteor_wave3_running: 
+    mus_wave3: 
+      key: key_mus_wave3
+      action: play
+  meteor_wave3_restart: 
+    mus_wave2: 
+      key: key_mus_wave2
+      action: play
+  meteor_wave3_music_stop: 
+    mus_wave3: 
+      key: key_mus_wave3
+      action: stop
+  meteor_wave4_running: 
+    mus_wave4: 
+      key: key_mus_wave4
+      action: play
+  meteor_wave4_restart: 
+    mus_wave3: 
+      key: key_mus_wave3
+      action: play
+  meteor_wave4_music_stop: 
+    mus_wave4: 
+      key: key_mus_wave4
+      action: stop
+  meteor_wave5_running: 
+    mus_wave5: 
+      key: key_mus_wave5
+      action: play
+  meteor_wave5_restart: 
+    mus_wave4: 
+      key: key_mus_wave4
+      action: play
+  meteor_wave5_music_stop: 
+    mus_wave5: 
+      key: key_mus_wave5
+      action: stop
+  meteor_wave6_running: 
+    mus_wave6: 
+      key: key_mus_wave6
+      action: play
+  meteor_wave6_restart: 
+    mus_wave5: 
+      key: key_mus_wave5
+      action: play
+  meteor_wave6_music_stop: 
+    mus_wave6: 
+      key: key_mus_wave6
+      action: stop
+  meteor_wave7_running: 
+    mus_wave7: 
+      key: key_mus_wave7
+      action: play
+  meteor_wave7_restart: 
+    mus_wave6: 
+      key: key_mus_wave6
+      action: play
+  meteor_wave7_music_stop: 
+    mus_wave7: 
+      key: key_mus_wave7
+      action: stop
+  meteor_wave8_running: 
+    mus_wave8: 
+      key: key_mus_wave8
+      action: play
+  meteor_wave8_restart: 
+    mus_wave7: 
+      key: key_mus_wave7
+      action: play
+  meteor_wave8_music_stop: 
+    mus_wave8: 
+      key: key_mus_wave8
+      action: stop
+  meteor_wave9_running: 
+    mus_wave9: 
+      key: key_mus_wave9
+      action: play
+  meteor_wave9_restart: 
+    mus_wave8: 
+      key: key_mus_wave8
+      action: play
+  meteor_wave9_music_stop: 
+    mus_wave9: 
+      key: key_mus_wave9
+      action: stop
+  play_voc_wave_completed: 
+    voc_wave_completed: 
+      key: key_voc_wave_completed
+      action: play
+  training_music_1_start: 
+    mus_training_1: 
+      key: key_mus_training_1
+      action: play
+  training_music_1_stop: 
+    mus_training_1: 
+      key: key_mus_training_1
+      action: stop
+  training_music_2_start: 
+    mus_training_2: 
+      key: key_mus_training_2
+      action: play
+  training_music_2_stop: 
+    mus_training_2: 
+      key: key_mus_training_2
+      action: stop
+  training_music_3_start: 
+    mus_training_3: 
+      key: key_mus_training_3
+      action: play
+  training_music_3_stop: 
+    mus_training_3: 
+      key: key_mus_training_3
+      action: stop
+  training_music_4_start: 
+    mus_training_4: 
+      key: key_mus_training_4
+      action: play
+  training_music_4_stop: 
+    mus_training_4: 
+      key: key_mus_training_4
+      action: stop
+  training_music_5_start: 
+    mus_training_5: 
+      key: key_mus_training_5
+      action: play
+  training_music_5_stop: 
+    mus_training_5: 
+      key: key_mus_training_5
+      action: stop
+  play_voc_training_canceled: 
+    voc_training_canceled: 
+      key: key_voc_training_canceled
+      action: play
+  play_voc_training_incomplete: 
+    voc_training_incomplete: 
+      key: key_voc_training_incomplete
+      action: play
+  fwwiz_music_start: 
+    mus_wizard: 
+      key: key_mus_wizard
+      action: play
+  fwwiz_music_stop: 
+    mus_wizard: 
+      key: key_mus_wizard
+      action: stop
+  flwiz_music_start: 
+    mus_wizard2: 
+      key: key_mus_wizard
+      action: play
+  flwiz_music_stop: 
+    mus_wizard2: 
+      key: key_mus_wizard2
+      action: stop
+  ccwiz_music_start: 
+    mus_wizard2: 
+      key: key_mus_wizard2
+      action: play
+  ccwiz_music_stop: 
+    mus_wizard2: 
+      key: key_mus_wizard2
+      action: stop
+  play_sfx_ball_launch1: 
+    sfx_ball_launch1: 
+      key: key_sfx_ball_launch1
+      action: play
+  play_sfx_ball_launch2: 
+    sfx_ball_launch2: 
+      key: key_sfx_ball_launch2
+      action: play
+  play_sfx_ball_launch3: 
+    sfx_ball_launch3: 
+      key: key_sfx_ball_launch3
+      action: play
+  balldevice_scoop_ball_exiting: 
+    sfx_scoop: 
+      key: key_sfx_scoop
+      action: play
+  s_spinner_active: 
+    sfx_Spinner: 
+      key: key_sfx_Spinner
+      action: play
+  s_LeftSlingshot_active: 
+    sfx_left_sling: 
+      key: key_sfx_left_sling
+      action: play
+  s_RightSlingshot_active: 
+    sfx_right_sling: 
+      key: key_sfx_right_sling
+      action: play
+  play_sfx_bumper1: 
+    sfx_bumper1: 
+      key: key_sfx_bumper1
+      action: play
+  play_sfx_bumper2: 
+    sfx_bumper2: 
+      key: key_sfx_bumper2
+      action: play
+  play_sfx_bumper3: 
+    sfx_bumper3: 
+      key: key_sfx_bumper3
+      action: play
+  play_sfx_bumper4: 
+    sfx_bumper4: 
+      key: key_sfx_bumper4
+      action: play
+  s_LeftOutlane_active: 
+    sfx_LLO: 
+      action: play
+  s_LeftInlane_active: 
+    sfx_LLI: 
+      action: play
+  s_RightInlane_active: 
+    sfx_LRI: 
+      action: play
+  s_RightOutlane_active: 
+    sfx_LRO: 
+      action: play
+  play_sfx_Orb1: 
+    sfx_Orb1: 
+      action: play
+  play_sfx_Orb2: 
+    sfx_Orb2: 
+      action: play
+  play_sfx_Orb3: 
+    sfx_Orb3: 
+      action: play
+  magnet_activated_gi: 
+    sfx_mag_cap: 
+      action: play
+  play_sfx_LS_between_waves_updated: 
+    sfx_LS_between_waves_updated: 
+      action: play
+  play_sfx_LS_during_training: 
+    sfx_LS_during_training: 
+      action: play
+  play_sfx_LMet1: 
+    sfx_LMet1: 
+      key: key_sfx_LMet1
+      action: play
+  play_sfx_LMet2: 
+    sfx_LMet2: 
+      key: key_sfx_LMet2
+      action: play
+  play_sfx_LMet3: 
+    sfx_LMet3: 
+      key: key_sfx_LMet3
+      action: play
+  play_sfx_LMet4: 
+    sfx_LMet4: 
+      key: key_sfx_LMet4
+      action: play
+  play_sfx_LMet5: 
+    sfx_LMet5: 
+      key: key_sfx_LMet5
+      action: play
+  play_sfx_LMet6: 
+    sfx_LMet6: 
+      key: key_sfx_LMet6
+      action: play
+  play_sfx_LMet7: 
+    sfx_LMet7: 
+      key: key_sfx_LMet7
+      action: play
+  play_sfx_LMet8: 
+    sfx_LMet8: 
+      key: key_sfx_LMet8
+      action: play
+  play_sfx_EarthHit1: 
+    sfx_EarthHit1: 
+      key: key_sfx_EarthHit1
+      action: play
+  play_sfx_EarthHit2: 
+    sfx_EarthHit2: 
+      key: key_sfx_EarthHit2
+      action: play
+  play_sfx_EarthHit3: 
+    sfx_EarthHit3: 
+      key: key_sfx_EarthHit3
+      action: play
+  play_voc_nuke: 
+    voc_nuke: 
+      key: key_voc_nuke
+      action: play
+  detonate_nuke: 
+    sfx_nuke: 
+      key: key_sfx_nuke
+      action: play
+  play_voc_critically_low_health: 
+    voc_critically_low_health: 
+      key: key_voc_critically_low_health
+      action: play
+  play_voc_imminent_shutdown: 
+    voc_imminent_shutdown: 
+      key: key_voc_imminent_shutdown
+      action: play
+  play_sfx_LPF1: 
+    sfx_LPF1: 
+      key: key_sfx_LPF1
+      action: play
+  play_sfx_LPF2: 
+    sfx_LPF2: 
+      key: key_sfx_LPF2
+      action: play
+  play_sfx_LPF3: 
+    sfx_LPF3: 
+      key: key_sfx_LPF3
+      action: play
+  play_sfx_LPF4: 
+    sfx_LPF4: 
+      key: key_sfx_LPF4
+      action: play
+  play_sfx_LPF5: 
+    sfx_LPF5: 
+      key: key_sfx_LPF5
+      action: play
+  play_sfx_jackpot: 
+    sfx_jackpot: 
+      key: key_sfx_jackpot
+      action: play
+  play_sfx_super_jackpot: 
+    sfx_super_jackpot: 
+      key: key_sfx_super_jackpot
+      action: play
+  activate_combo_command_wizard: 
+    voc_LCWiz: 
+      key: key_voc_LCWiz
+      action: play
+  activate_fully_loaded_wizard: 
+    voc_LLWiz: 
+      key: key_voc_LLWiz
+      action: play
+  activate_final_wave_wizard: 
+    voc_final_wave_ready: 
+      key: key_voc_Wiz
+      action: play
+  eb_achieved: 
+    voc_extra_ball_acheived: 
+      key: key_voc_extra_ball_acheived
+      action: play
+
+
+timers: 
+  delay_ball_release:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: delayed_release_moon_ball
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  plunger_check:
+    start_value: 0
+    end_value: 5
+    direction: up
+    control_events: 
+      - event: restart_plunger_check
+        action: restart
+      - event: s_Plunger1_inactive
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  mode_base_started: 
+    ball_just_started: 
+      action: set
+      int: 1
+    num_waves_completed_this_ball: 
+      action: set
+      int: 0
+    flippers_are_dead: 
+      action: set_machine
+      int: 0
+
+  new_ball_active: 
+    ball_just_started: 
+      action: set
+      int: 0
+
+  wizard_mode_ready: 
+    wizard_mode_is_ready: 
+      action: set
+      int: 1
+
+  clear_wizard_mode_ready: 
+    wizard_mode_is_ready: 
+      action: set
+      int: 0
+
+
+
+widget_player: 
+  ball_save_new_ball_saving_ball: 
+    ball_save:
+      action: play
+      expire: 2s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave1 == 0}: 
+    wave1:
+      action: play
+      expire: 5s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}: 
+    wave2:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}: 
+    wave3:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}: 
+    wave4:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}: 
+    wave5:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}: 
+    wave6:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}: 
+    wave7:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}: 
+    wave8:
+      action: play
+      expire: 4s
+  timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}: 
+    wave9:
+      action: play
+      expire: 5s
+
+
+

@@ -1,0 +1,635 @@
+#config_version=6
+
+mode:
+  start_events: start_training_heal
+  stop_events: mode_base_stopping, stop_training
+  priority: 1300
+
+combo_switches: 
+  cancel_training_h:
+    switches_1: s_left_flipper
+    switches_2: s_right_flipper
+    events_when_both: 
+      - stop_training
+      - play_voc_training_canceled
+      - training_stopped
+    hold_time: 3000ms
+  cancel_training_warning_h:
+    switches_1: s_left_flipper
+    switches_2: s_right_flipper
+    events_when_both: 
+      - training_cancel_warning
+    events_when_inactive: 
+      - training_cancel_warning_stop
+    hold_time: 1500ms
+
+event_player: 
+  mode_training_heal_started:
+    - init_training
+    - raise_diverter
+    - play_lsling_training
+    - play_rsling_training
+  s_Bumper1_active:
+    - check_add_training_health_bump
+  s_Bumper2_active:
+    - check_add_training_health_bump
+  s_Bumper3_active:
+    - check_add_training_health_bump
+  s_TopSlingshot_active:
+    - check_add_training_health_bump
+  check_add_training_health_bump{current_player.training_health_bump_value<3}:
+    - add_training_health_bump
+  check_add_training_health_bump{current_player.training_health_bump_value>=3}:
+    - check_add_training_health
+    - reset_training_health_bump
+  check_add_training_health{current_player.shot_training_health1 == 0}:
+    - light_health1
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health1 == 1 and current_player.shot_training_health2 == 0}:
+    - light_health2
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health2 == 1 and current_player.shot_training_health3 == 0}:
+    - light_health3
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health3 == 1 and current_player.shot_training_health4 == 0}:
+    - light_health4
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health4 == 1 and current_player.shot_training_health5 == 0}:
+    - light_health5
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health5 == 1 and current_player.shot_training_health6 == 0}:
+    - light_health6
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health6 == 1 and current_player.shot_training_health7 == 0}:
+    - light_health7
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health7 == 1 and current_player.shot_training_health8 == 0}:
+    - light_health8
+    - flash_gi
+    - play_sfx_LS
+    - score_90000
+  check_add_training_health{current_player.shot_training_health8 == 1 and current_player.shot_training_health9 == 0}:
+    - light_health9
+    - training_achieved
+    - play_sfx_LS
+    - score_90000
+  play_sfx_LS:
+    - play_sfx_LS_during_training
+  training_achieved:
+    - stop_training
+    - play_sfx_super_jackpot
+    - training_stopped
+  timer_training_heal_complete:
+    - stop_training
+    - training_stopped
+    - play_voc_training_incomplete
+  mode_training_heal_stopping{current_player.training_heal_achieved==0}:
+    - drop_diverter
+  timer_training_heal_tick:
+    - flicker_gi
+  balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
+    - delayed_release_moon_ball
+
+
+random_event_player: 
+  flicker_gi: 
+    events:
+      play_flicker_gi01: 1
+      play_flicker_gi02: 1
+      play_flicker_gi03: 1
+      play_flicker_gi04: 1
+      play_flicker_gi05: 1
+      play_flicker_gi06: 1
+      play_flicker_gi07: 1
+      play_flicker_gi08: 1
+      play_flicker_gi09: 1
+      play_flicker_gi10: 1
+      play_flicker_gi11: 1
+      play_flicker_gi12: 1
+      play_flicker_gi13: 1
+      play_flicker_gi14: 1
+      play_flicker_gi15: 1
+      play_flicker_gi16: 1
+      play_flicker_gi17: 1
+      play_flicker_gi18: 1
+      play_flicker_gi19: 1
+      play_flicker_gi20: 1
+      play_flicker_gi21: 1
+      play_flicker_gi22: 1
+    scope: player
+
+
+segment_display_player: 
+  init_training: 
+    player1: 
+      text: ""
+      expire: 5000ms
+      flashing: off
+    player2: 
+      text: "TRAIN "
+      expire: 5000ms
+      flashing: off
+    player3: 
+      text: "HEALTH"
+      expire: 5000ms
+      flashing: off
+    player4: 
+      text: ""
+      expire: 5000ms
+      flashing: off
+    pf: 
+      text: "{device.timers.training_heal.ticks:0>2}"
+      flashing: off
+
+
+shots: 
+  training_health1:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH1
+      color: 00dd00
+    control_events: 
+      - events: light_health1
+        state: 1
+  training_health2:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH2
+      color: 00dd00
+    control_events: 
+      - events: light_health2
+        state: 1
+  training_health3:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH3
+      color: 00dd00
+    control_events: 
+      - events: light_health3
+        state: 1
+  training_health4:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH4
+      color: 00dd00
+    control_events: 
+      - events: light_health4
+        state: 1
+  training_health5:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH5
+      color: 00dd00
+    control_events: 
+      - events: light_health5
+        state: 1
+  training_health6:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH6
+      color: 00dd00
+    control_events: 
+      - events: light_health6
+        state: 1
+  training_health7:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH7
+      color: 00dd00
+    control_events: 
+      - events: light_health7
+        state: 1
+  training_health8:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH8
+      color: 00dd00
+    control_events: 
+      - events: light_health8
+        state: 1
+  training_health9:
+    profile: training_powerups
+    show_tokens: 
+      lights: LH9
+      color: 00dd00
+    control_events: 
+      - events: light_health9
+        state: 1
+
+show_player: 
+  mode_training_heal_started: 
+    flicker_color_on_intensity: 
+      key: key_training_bumpers
+      priority: 1000
+      speed: 5
+      show_tokens: 
+        lights: tBumper
+        color: 00dd00
+        intensity: 20
+  init_training: 
+    flicker_color_on_intensity: 
+      key: key_training_gi
+      speed: 5
+      show_tokens: 
+        lights: GI
+        color: 00dd00
+        intensity: 10
+  flash_gi: 
+    flicker_color_on_intensity: 
+      key: key_training_gi
+      speed: 5
+      show_tokens: 
+        lights: GI
+        color: 00dd00
+        intensity: 10
+  mode_training_heal_stopping: 
+    flicker_color: 
+      key: key_training_stopping
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: GI
+        color: 00dd00
+        intensity: 10
+  training_achieved: 
+    flash_color: 
+      key: key_training_flash
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: 00dd00
+  play_flicker_gi01: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi01
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi01
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi02: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi02
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi02
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi03: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi03
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi03
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi04: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi04
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi04
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi05: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi05
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi05
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi06: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi06
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi06
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi07: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi07
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi07
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi08: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi08
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi08
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi09: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi09
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi09
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi10: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi10
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi10
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi11: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi11
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi11
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi12: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi12
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi12
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi13: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi13
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi13
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi14: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi14
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi14
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi15: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi15
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi15
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi16: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi16
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi16
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi17: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi17
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi17
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi18: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi18
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi18
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi19: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi19
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi19
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi20: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi20
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi20
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi21: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi21
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi21
+        color: 00dd00
+        intensity: 10
+  play_flicker_gi22: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi22
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi22
+        color: 00dd00
+        intensity: 10
+  play_lsling_training: 
+    lsling_rotate1_cw: 
+      key: key_lsling_training
+      speed: 0.3
+      show_tokens: 
+        color: ffffff
+        intensity: 50
+  play_rsling_training: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_training
+      speed: 0.3
+      show_tokens: 
+        color: ffffff
+        intensity: 50
+  s_Bumper1_active: 
+    flash_color_with_fade: 
+      key: key_bumper1_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB1
+        color: 00dd00
+        fade: 50
+  s_Bumper2_active: 
+    flash_color_with_fade: 
+      key: key_bumper2_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB2
+        color: 00dd00
+        fade: 50
+  s_Bumper3_active: 
+    flash_color_with_fade: 
+      key: key_bumper3_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB3
+        color: 00dd00
+        fade: 50
+  s_Bumper4_active: 
+    flash_color_with_fade: 
+      key: key_bumper4_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB4
+        color: 00dd00
+        fade: 50
+  training_cancel_warning: 
+    flash_color: 
+      key: key_training_cancel_h_warning
+      priority: 100
+      loops: 14
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: ff4c00
+  training_cancel_warning_stop: 
+    flash_color: 
+      action: stop
+      key: key_training_cancel_h_warning
+      priority: 100
+      loops: 14
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: ff4c00
+
+
+timers: 
+  training_heal:
+    start_value: 69
+    end_value: 0
+    direction: down
+    control_events: 
+      - event: init_training
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  light_health1: 
+    shot_training_select_health1: 
+      action: set
+      int: 3
+
+  light_health2: 
+    shot_training_select_health2: 
+      action: set
+      int: 3
+
+  light_health3: 
+    shot_training_select_health3: 
+      action: set
+      int: 3
+
+  light_health4: 
+    shot_training_select_health4: 
+      action: set
+      int: 3
+
+  light_health5: 
+    shot_training_select_health5: 
+      action: set
+      int: 3
+
+  light_health6: 
+    shot_training_select_health6: 
+      action: set
+      int: 3
+
+  light_health7: 
+    shot_training_select_health7: 
+      action: set
+      int: 3
+
+  light_health8: 
+    shot_training_select_health8: 
+      action: set
+      int: 3
+
+  light_health9: 
+    shot_training_select_health9: 
+      action: set
+      int: 3
+
+  reset_training_health_bump: 
+    training_health_bump_value: 
+      action: set
+      int: 0
+
+  add_training_health_bump: 
+    training_health_bump_value: 
+      action: add
+      int: 1
+
+  training_achieved: 
+    training_heal_achieved: 
+      action: set
+      int: 1
+    training_total_achieved: 
+      action: add
+      int: 1
+    training_just_finished: 
+      action: set
+      int: 1
+
+  start_moon_multiball: 
+    training_moon_missile_used: 
+      action: set
+      int: 1
+
+
+
+

@@ -1,0 +1,830 @@
+#config_version=6
+
+mode:
+  start_events: start_attract_mode, reset_complete
+  stop_events: stop_attract_mode, ball_started
+  priority: 120
+
+event_player: 
+  mode_attract_started:
+    - play_attract_show
+    - play_mus_ambient_bg
+    - stop_asteroid_motor
+    - drop_diverter
+    - backglass_dark_on
+    - backglass_chaos_on
+  timer_attract_voc_complete:
+    - play_attract_voc
+  mode_attract_stopping:
+    - drop_diverter
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 8}:
+    - play_meteor_fall_left
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 16}:
+    - play_meteor_fall_right
+    - play_att_lsling_show1
+    - play_att_rsling_show1
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 26}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 30}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 38}:
+    - play_meteor_fall_left
+    - play_att_lsling_show2
+    - play_att_rsling_show2
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 42}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 44}:
+    - play_meteor_fall_left
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 45}:
+    - play_earth_hit_left
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 54}:
+    - play_meteor_fall_center
+    - play_att_lsling_show3
+    - play_att_rsling_show3
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 60}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 61}:
+    - play_earth_hit_right
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 70}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 71}:
+    - play_earth_hit_center
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 80}:
+    - play_meteor_fall_left
+    - play_att_lsling_show4
+    - play_att_rsling_show4
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 88}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 98}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 102}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 103}:
+    - play_earth_hit_right
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 116}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 126}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 128}:
+    - play_meteor_fall_left
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 132}:
+    - play_meteor_fall_center
+    - play_att_lsling_show5
+    - play_att_rsling_show5
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 133}:
+    - play_earth_hit_center
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 150}:
+    - play_meteor_fall_left
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 151}:
+    - play_earth_hit_left
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 164}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 178}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 182}:
+    - play_meteor_fall_center
+    - play_att_lsling_show2
+    - play_att_rsling_show2
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 184}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 198}:
+    - play_meteor_fall_left
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 202}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 203}:
+    - play_earth_hit_center
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 208}:
+    - play_meteor_fall_left
+    - play_att_lsling_show6
+    - play_att_rsling_show6
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 209}:
+    - play_earth_hit_left
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 216}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 218}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 224}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 225}:
+    - play_earth_hit_right
+    - play_att_lsling_show7
+    - play_att_rsling_show7
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 228}:
+    - play_meteor_fall_center
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 229}:
+    - play_earth_hit_center
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 232}:
+    - play_meteor_fall_right
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 233}:
+    - play_earth_hit_right
+    - play_attract_boom
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 238}:
+    - play_meteor_fall_left
+    - play_att_lsling_show8
+    - play_att_rsling_show8
+  timer_attract_shows_tick{device.timers.attract_shows.ticks == 239}:
+    - play_earth_hit_left
+    - play_attract_boom
+  timer_attract_display_tick{device.timers.attract_display.ticks == 1}:
+    - show_attract_title
+  timer_attract_display_tick{device.timers.attract_display.ticks == 7}:
+    - show_attract_message
+  timer_attract_display_tick{device.timers.attract_display.ticks == 17}:
+    - show_attract_hs1
+  timer_attract_display_tick{device.timers.attract_display.ticks == 21}:
+    - show_attract_hs2
+  timer_attract_display_tick{device.timers.attract_display.ticks == 25}:
+    - show_attract_hs3
+  timer_attract_display_tick{device.timers.attract_display.ticks == 29}:
+    - show_attract_hs4
+  timer_attract_display_tick{device.timers.attract_display.ticks == 33}:
+    - show_attract_lastscores1
+  timer_attract_display_tick{device.timers.attract_display.ticks == 36}:
+    - show_attract_lastscores2
+  timer_attract_display_tick{device.timers.attract_display.ticks == 40}:
+    - show_attract_credits1
+  timer_attract_display_tick{device.timers.attract_display.ticks == 46}:
+    - show_attract_credits2
+  timer_attract_display_tick{device.timers.attract_display.ticks == 48}:
+    - show_attract_credits3
+  timer_attract_display_tick{device.timers.attract_display.ticks == 50}:
+    - show_attract_credits4
+
+
+random_event_player: 
+  play_attract_voc: 
+    events:
+      play_voc_attract1: 1
+      play_voc_attract2: 1
+      play_voc_attract3: 1
+      play_voc_attract4: 1
+      play_voc_attract5: 1
+    scope: Machine
+  play_attract_boom: 
+    events:
+      play_sfx_boom1: 1
+      play_sfx_boom2: 1
+      play_sfx_boom3: 1
+      play_sfx_boom4: 1
+      play_sfx_boom5: 1
+      play_sfx_boom6: 1
+    scope: Machine
+  show_attract_message: 
+    events:
+      show_attract_message1: 1
+      show_attract_message2: 1
+      show_attract_message3: 1
+      show_attract_message4: 1
+      show_attract_message5: 1
+      show_attract_message6: 1
+      show_attract_message7: 1
+      show_attract_message8: 1
+      show_attract_message9: 1
+      show_attract_message10: 1
+      show_attract_message11: 1
+      show_attract_message12: 1
+      show_attract_message13: 1
+      show_attract_message14: 1
+    scope: Machine
+
+
+segment_display_player: 
+  show_attract_title: 
+    player2: 
+      key: key_top_show_attract_title
+      text: "DARK "
+      priority: 1
+      expire: 5000ms
+      flashing: off
+      transition:
+        type: push
+        direction: right
+        text: 
+    player3: 
+      key: key_bot_show_attract_title
+      text: "CHAOS   "
+      priority: 1
+      expire: 5000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: 
+
+  show_attract_hs1: 
+    p1p2: 
+      key: key_score_1_label
+      text: "{machine.score_1_label}"
+      priority: 3
+      expire: 3000ms
+      flashing: off
+    player3: 
+      key: key_score_1_name
+      text: "{machine.score_1_name} "
+      priority: 3
+      expire: 3000ms
+      flashing: off
+    player4: 
+      key: key_score_1_value
+      text: "{machine.score_1_value}"
+      priority: 3
+      expire: 3000ms
+      flashing: off
+
+  show_attract_hs2: 
+    p1p2: 
+      key: key_score_2_label
+      text: "{machine.score_2_label}"
+      priority: 4
+      expire: 3000ms
+      flashing: off
+    player3: 
+      key: key_score_2_name
+      text: "{machine.score_2_name} "
+      priority: 4
+      expire: 3000ms
+      flashing: off
+    player4: 
+      key: key_score_2_value
+      text: "{machine.score_2_value}"
+      priority: 4
+      expire: 3000ms
+      flashing: off
+
+  show_attract_hs3: 
+    p1p2: 
+      key: key_score_3_label
+      text: "{machine.score_3_label}"
+      priority: 5
+      expire: 3000ms
+      flashing: off
+    player3: 
+      key: key_score_3_name
+      text: "{machine.score_3_name} "
+      priority: 5
+      expire: 3000ms
+      flashing: off
+    player4: 
+      key: key_score_3_value
+      text: "{machine.score_3_value}"
+      priority: 5
+      expire: 3000ms
+      flashing: off
+
+  show_attract_hs4: 
+    p1p2: 
+      key: key_score_4_label
+      text: "{machine.score_4_label}"
+      priority: 6
+      expire: 3000ms
+      flashing: off
+    player3: 
+      key: key_score_4_name
+      text: "{machine.score_4_name} "
+      priority: 6
+      expire: 3000ms
+      flashing: off
+    player4: 
+      key: key_score_4_value
+      text: "{machine.score_4_value}"
+      priority: 6
+      expire: 3000ms
+      flashing: off
+
+  show_attract_lastscores1: 
+    player2: 
+      key: key_p2_show_last_score
+      text: "LAST "
+      priority: 7
+      expire: 2000ms
+      flashing: off
+      transition:
+        type: push
+        direction: right
+        text: 
+    player3: 
+      key: key_p3_show_last_score
+      text: "SCORES "
+      priority: 7
+      expire: 2000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: 
+
+  show_attract_lastscores2: 
+    player1: 
+      text: "{machine.player1_score}"
+      expire: 3000ms
+      flashing: off
+    player2: 
+      text: "{machine.player2_score}"
+      expire: 3000ms
+      flashing: off
+    player3: 
+      text: "{machine.player3_score}"
+      expire: 3000ms
+      flashing: off
+    player4: 
+      text: "{machine.player4_score}"
+      expire: 3000ms
+      flashing: off
+
+  show_attract_credits1: 
+    all: 
+      key: key_all_show_attract_credits1
+      text: ""
+      priority: 9
+      expire: 5000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: ORIGINAL TABLE BY
+
+  show_attract_credits2: 
+    player2: 
+      key: key_p2_show_attract_credits2
+      text: "APOPHIS"
+      priority: 10
+      expire: 8000ms
+      flashing: off
+      transition:
+        type: push
+        direction: right
+        text: 
+
+  show_attract_credits3: 
+    player3: 
+      key: key_p3_show_attract_credits3
+      text: "FLUX  "
+      priority: 10
+      expire: 6000ms
+      flashing: off
+      transition:
+        type: push
+        direction: right
+        text: 
+
+  show_attract_credits4: 
+    player4: 
+      key: key_p4_show_attract_credits4
+      text: "UNSAVORY"
+      priority: 10
+      expire: 4000ms
+      flashing: off
+      transition:
+        type: push
+        direction: right
+        text: 
+
+  show_attract_message1: 
+    all: 
+      key: key_all_show_attract_message1
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: DESTROY THE ASTEROID AND SAVE EARTH
+
+  show_attract_message2: 
+    all: 
+      key: key_all_show_attract_message2
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: COLLECT POWER UPS TO SURVIVE METEOR WAVES
+
+  show_attract_message3: 
+    all: 
+      key: key_all_show_attract_message3
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: CLUSTER BOMBS DESTROY NEARBY METEORS
+
+  show_attract_message4: 
+    all: 
+      key: key_all_show_attract_message4
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: PROTON CANNON DESTROYS ONE RANDOM METEOR
+
+  show_attract_message5: 
+    all: 
+      key: key_all_show_attract_message5
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: LAUNCH MOON MISSILES FOR INSTANT MULTIBALL
+
+  show_attract_message6: 
+    all: 
+      key: key_all_show_attract_message6
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: COLLECT SHIELDS FOR AN OUTLANE BALL SAVE
+
+  show_attract_message7: 
+    all: 
+      key: key_all_show_attract_message7
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: COLLECT SHIP SAVER TO INCREASE BALLSAVE TIME
+
+  show_attract_message8: 
+    all: 
+      key: key_all_show_attract_message8
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: TIME WARP RAMP PAUSES COUNTDOWN FOR 10 SEC
+
+  show_attract_message9: 
+    all: 
+      key: key_all_show_attract_message9
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: BUMPERS IMPROVE HEALTH METER
+
+  show_attract_message10: 
+    all: 
+      key: key_all_show_attract_message10
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: COMPLETE TRAININGS TO EASILY COLLECT POWER UPS
+
+  show_attract_message11: 
+    all: 
+      key: key_all_show_attract_message11
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: METEORS DO DAMAGE IF THEY MAKE IT THRU DEFENSES
+
+  show_attract_message12: 
+    all: 
+      key: key_all_show_attract_message12
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: COLLECT 8 COMBOS TO START COMBO COMMAND WIZARD
+
+  show_attract_message13: 
+    all: 
+      key: key_all_show_attract_message13
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: COLLECT ALL AMMO TO START FULLY LOADED WIZARD
+
+  show_attract_message14: 
+    all: 
+      key: key_all_show_attract_message14
+      text: ""
+      priority: 2
+      expire: 9000ms
+      flashing: off
+      transition:
+        type: push
+        direction: left
+        text: SURVIVE ALL WAVES TO START FINAL WAVE WIZARD
+
+
+show_player: 
+  play_attract_show: 
+    insert_sparkles: 
+      key: key_attract_show1
+      show_tokens: 
+        intensity: 60
+  play_meteor_fall_left: 
+    meteor_fall_left: 
+      key: key_meteor_fall_left
+      loops: 0
+      show_tokens: 
+        intensity: 100
+  play_meteor_fall_center: 
+    meteor_fall_center: 
+      key: key_meteor_fall_center
+      loops: 0
+      show_tokens: 
+        intensity: 100
+  play_meteor_fall_right: 
+    meteor_fall_right: 
+      key: key_meteor_fall_right
+      loops: 0
+      show_tokens: 
+        intensity: 100
+  play_earth_hit_center: 
+    earth_hit_center: 
+      key: key_earth_hit_center
+      loops: 0
+      speed: 2
+  play_earth_hit_left: 
+    earth_hit_left: 
+      key: key_earth_hit_left
+      loops: 0
+      speed: 2
+  play_earth_hit_right: 
+    earth_hit_right: 
+      key: key_earth_hit_right
+      loops: 0
+      speed: 2
+  play_att_lsling_show1: 
+    lsling_swap_2_2_b: 
+      key: key_att_lsling_show1
+      loops: 4
+      show_tokens: 
+        color1: ff0000
+        color2: ff9900
+        intensity: 50
+  play_att_rsling_show1: 
+    rsling_swap_2_2_a: 
+      key: key_att_rling_show1
+      loops: 4
+      show_tokens: 
+        color1: ff0000
+        color2: ff9900
+        intensity: 50
+  play_att_lsling_show2: 
+    lsling_rotate1_cw: 
+      key: key_att_lsling_show2
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color: ffffff
+  play_att_rsling_show2: 
+    rsling_rotate1_ccw: 
+      key: key_att_rsling_show2
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color: ffffff
+  play_att_lsling_show3: 
+    lsling_rotate2_ccw: 
+      key: key_att_lsling_show3
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color1: 00ffee
+        color2: eeff00
+  play_att_rsling_show3: 
+    rsling_rotate2_cw: 
+      key: key_att_rsling_show3
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color1: 00ffee
+        color2: aa00ff
+  play_att_lsling_show4: 
+    lsling_rotate1_ccw: 
+      key: key_att_lsling_show4
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color: 05ff05
+  play_att_rsling_show4: 
+    rsling_rotate1_cw: 
+      key: key_att_rsling_show4
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color: 05ff05
+  play_att_lsling_show5: 
+    lsling_rotate1_cw_skip1: 
+      key: key_att_lsling_show5
+      loops: 2
+      show_tokens: 
+        intensity: 100
+        color: 0010cc
+  play_att_rsling_show5: 
+    rsling_rotate1_cw_skip1: 
+      key: key_att_rsling_show5
+      loops: 2
+      show_tokens: 
+        intensity: 100
+        color: 0010cc
+  play_att_lsling_show6: 
+    lsling_rotate2_ccw_skip1: 
+      key: key_att_lsling_show6
+      loops: 2
+      show_tokens: 
+        intensity: 80
+        color1: ff0300
+        color2: ff0300
+  play_att_rsling_show6: 
+    rsling_rotate2_ccw_skip1: 
+      key: key_att_rsling_show6
+      loops: 2
+      show_tokens: 
+        intensity: 80
+        color1: ff0300
+        color2: ff0300
+  play_att_lsling_show7: 
+    lsling_rotate1_ccw: 
+      key: key_att_lsling_show7
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color: ccbb00
+  play_att_rsling_show7: 
+    rsling_rotate1_ccw: 
+      key: key_att_rsling_show7
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 80
+        color: ccbb00
+  play_att_lsling_show8: 
+    lsling_rotate4_ccw: 
+      key: key_att_lsling_show8
+      loops: 2
+      show_tokens: 
+        intensity: 80
+        color1: ccbb00
+        color2: 00dd00
+        color3: ff0300
+        color4: 0500ee
+  play_att_rsling_show8: 
+    rsling_rotate4_cw: 
+      key: key_att_rsling_show8
+      loops: 2
+      show_tokens: 
+        intensity: 80
+        color1: ccbb00
+        color2: 00dd00
+        color3: ff0300
+        color4: 0500ee
+
+
+slide_player: 
+  mode_attract_started: 
+    attract:
+      action: play
+      expire: 0s
+
+
+sound_player: 
+  play_voc_attract1: 
+    voc_attract1: 
+      key: key_voc_attract1
+      action: play
+  play_voc_attract2: 
+    voc_attract2: 
+      key: key_voc_attract2
+      action: play
+  play_voc_attract3: 
+    voc_attract3: 
+      key: key_voc_attract3
+      action: play
+  play_voc_attract4: 
+    voc_attract4: 
+      key: key_voc_attract4
+      action: play
+  play_voc_attract5: 
+    voc_attract5: 
+      key: key_voc_attract5
+      action: play
+  play_sfx_boom1: 
+    sfx_boom1: 
+      key: key_sfx_boom1
+      action: play
+  play_sfx_boom2: 
+    sfx_boom2: 
+      key: key_sfx_boom2
+      action: play
+  play_sfx_boom3: 
+    sfx_boom3: 
+      key: key_sfx_boom3
+      action: play
+  play_sfx_boom4: 
+    sfx_boom4: 
+      key: key_sfx_boom4
+      action: play
+  play_sfx_boom5: 
+    sfx_boom5: 
+      key: key_sfx_boom5
+      action: play
+  play_sfx_boom6: 
+    sfx_boom6: 
+      key: key_sfx_boom6
+      action: play
+  play_mus_ambient_bg: 
+    mus_ambient_bg: 
+      key: key_mus_ambient_bg
+      action: play
+
+
+timers: 
+  attract_voc:
+    start_value: 0
+    end_value: 3
+    direction: up
+    control_events: 
+      - event: mode_attract_started
+        action: start
+      - event: play_attract_voc
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 10000ms
+  attract_shows:
+    start_value: 0
+    end_value: 240
+    direction: up
+    control_events: 
+      - event: mode_attract_started
+        action: start
+      - event: timer_attract_shows_complete
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 500ms
+  attract_display:
+    start_value: 0
+    end_value: 55
+    direction: up
+    control_events: 
+      - event: mode_attract_started
+        action: start
+      - event: timer_attract_display_complete
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+

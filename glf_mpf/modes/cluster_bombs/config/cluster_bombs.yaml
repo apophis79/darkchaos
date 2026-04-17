@@ -1,0 +1,263 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 1000
+
+event_player: 
+  mode_cluster_bombs_started{current_player.shot_cluster_charge1==0}:
+    - reset_cluster_charges
+  mode_cluster_bombs_started{current_player.training_cluster_bomb_achieved==1}:
+    - reset_cluster_charges
+  reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}:
+    - ready_cluster_charge1
+  reset_cluster_charges{current_player.training_cluster_bomb_achieved==1}:
+    - light_cluster_charge1
+    - light_cluster_charge2
+    - ready_cluster_charge3
+  mode_cluster_bombs_stopping:
+    - backglass_clusters_off
+  mode_cluster_bombs_started{current_player.shot_cluster_bomb1 == 1}:
+    - backglass_clusters_on
+  left_orbit_hit{current_player.shot_cluster_charge1 == 1}:
+    - light_cluster_charge1
+    - ready_cluster_charge2
+    - play_sfx_LCC
+  left_orbit_hit{current_player.shot_cluster_charge1 == 2 and current_player.shot_cluster_charge2 == 1}:
+    - light_cluster_charge2
+    - ready_cluster_charge3
+    - play_sfx_LCC
+  left_orbit_hit{current_player.shot_cluster_charge2 == 2 and current_player.shot_cluster_charge3 == 1}:
+    - light_cluster_charge3
+    - play_sfx_LCC
+  light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}:
+    - add_cluster_bomb1
+    - reset_cluster_charges
+  light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
+    - add_cluster_bomb2
+    - check_fully_loaded
+  s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
+    - fire_cluster_bomb1
+    - cluster_bomb_fired
+    - cluster_bomb_flash
+    - backglass_clusters_off
+  s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}:
+    - fire_cluster_bomb2
+    - cluster_bomb_fired
+    - cluster_bomb_flash
+    - reset_cluster_charges
+  s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}:
+    - cluster_panic_penalty
+  cluster_panic_penalty:
+    - score_m100000
+  mystery_added_cluster:
+    - complete_cluster_charges
+    - light_cluster_charge3
+    - check_fully_loaded
+    - slings_powerup_added
+    - lsling_powerup_cb
+    - rsling_powerup_cb
+  left_orbit_hit:
+    - score_2000
+  add_cluster_bomb1:
+    - score_50000
+    - slings_powerup_added
+    - lsling_powerup_cb
+    - rsling_powerup_cb
+    - cb_acquired
+    - backglass_clusters_on
+  add_cluster_bomb2:
+    - score_100000
+    - slings_powerup_added
+    - lsling_powerup_cb
+    - rsling_powerup_cb
+    - cb_acquired
+    - backglass_clusters_on
+  complete_cluster_charges:
+    - score_50000
+    - backglass_clusters_on
+  cluster_bomb_fired:
+    - score_50000
+
+
+random_event_player: 
+  play_sfx_LCC: 
+    events:
+      play_sfx_LCC1: 1
+      play_sfx_LCC2: 1
+      play_sfx_LCC3: 1
+    scope: player
+
+
+segment_display_player: 
+  light_cluster_charge3: 
+    player3: 
+      text: "CLUSTER"
+      expire: 2000ms
+      flashing: all
+
+
+shots: 
+  cluster_charge1:
+    profile: powerups
+    restart_events: reset_cluster_charges
+    show_tokens: 
+      lights: LCC1
+      color: dd00dd
+    control_events: 
+      - events: ready_cluster_charge1
+        state: 1
+      - events: light_cluster_charge1, complete_cluster_charges
+        state: 2
+  cluster_charge2:
+    profile: powerups
+    restart_events: reset_cluster_charges
+    show_tokens: 
+      lights: LCC2
+      color: dd00dd
+    control_events: 
+      - events: ready_cluster_charge2
+        state: 1
+      - events: light_cluster_charge2, complete_cluster_charges
+        state: 2
+  cluster_charge3:
+    profile: powerups
+    restart_events: reset_cluster_charges
+    show_tokens: 
+      lights: LCC3
+      color: dd00dd
+    control_events: 
+      - events: ready_cluster_charge3
+        state: 1
+      - events: light_cluster_charge3, complete_cluster_charges
+        state: 2
+  cluster_bomb1:
+    profile: flicker_on
+    show_tokens: 
+      lights: LCR1
+      color: dd00dd
+    control_events: 
+      - events: add_cluster_bomb1, complete_cluster_bombs
+        state: 1
+      - events: fire_cluster_bomb1
+        state: 0
+  cluster_bomb2:
+    profile: flicker_on
+    show_tokens: 
+      lights: LCR2
+      color: dd00dd
+    control_events: 
+      - events: add_cluster_bomb2, complete_cluster_bombs
+        state: 1
+      - events: fire_cluster_bomb2
+        state: 0
+
+show_player: 
+  cluster_panic_penalty: 
+    flash_color: 
+      key: key_cluster_panic_penalty
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tClusterAll
+        color: dd0400
+  light_cluster_charge3: 
+    flash_color: 
+      key: key_clusters_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: tCluster
+        color: dd00dd
+  add_cluster_bomb1: 
+    flash_color: 
+      key: key_cluster1_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LCR1
+        color: dd00dd
+  add_cluster_bomb2: 
+    flash_color: 
+      key: key_cluster2_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LCR2
+        color: dd00dd
+  cluster_bomb_fired: 
+    cluster_explodes: 
+      key: key_cluster_explodes
+      priority: 5
+      loops: 0
+  cluster_bomb_flash: 
+    flash_color_with_fade: 
+      key: key_cluster_flash
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: FL3
+        color: dd00dd
+        fade: 300
+  lsling_powerup_cb: 
+    lsling_rotate2_cw: 
+      key: key_lsling_powerup_cb
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: dd00dd
+        color2: dd00dd
+        intensity: 100
+  rsling_powerup_cb: 
+    rsling_rotate2_ccw: 
+      key: key_rsling_powerup_cb
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: dd00dd
+        color2: dd00dd
+        intensity: 100
+  cb_acquired: 
+    cluster_bomb_acquired: 
+      key: key_cb_acquired
+      priority: 1000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd00dd
+        intensity: 100
+
+
+sound_player: 
+  cluster_bomb_fired: 
+    sfx_cluster_fired: 
+      key: key_sfx_cluster_fired
+      action: play
+  play_sfx_LCC1: 
+    sfx_LCC1: 
+      key: key_sfx_LCC1
+      action: play
+  play_sfx_LCC2: 
+    sfx_LCC2: 
+      key: key_sfx_LCC2
+      action: play
+  play_sfx_LCC3: 
+    sfx_LCC3: 
+      key: key_sfx_LCC3
+      action: play
+  add_cluster_bomb1: 
+    voc_LCR1: 
+      key: key_voc_LCR1
+      action: play
+  add_cluster_bomb2: 
+    voc_LCR2: 
+      key: key_voc_LCR2
+      action: play
+  cluster_panic_penalty: 
+    sfx_error_buzz: 
+      key: key_sfx_error_buzz2
+      action: play
+
+
+

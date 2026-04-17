@@ -1,0 +1,17 @@
+#show_version=6
+
+- duration: 0.3s
+  shows:
+    earth_hit_center: 
+      key: key_earth_hit_centerA
+      loops: 0
+      speed: 2
+
+- duration: 0.3s
+  shows:
+    earth_hit_center: 
+      key: key_earth_hit_centerB
+      loops: 0
+      speed: 2
+
+

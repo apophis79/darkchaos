@@ -1,0 +1,148 @@
+#config_version=6
+
+mode:
+  start_events: mode_meteor_wave_qualify_started
+  stop_events: mode_meteor_wave_qualify_stopping
+  priority: 300
+
+event_player: 
+  flipper_cradle{game.balls_in_play == 1 and current_player.ball_just_started == 0}:
+    - info_restart
+    - flipper_cradling
+  s_left_flipper_active{current_player.ball_cradled == 1}:
+    - info_stop
+  s_right_flipper_active{current_player.ball_cradled == 1}:
+    - info_stop
+  s_right_staged_flipper_key_active{current_player.ball_cradled == 1}:
+    - info_stop
+  timer_info_tick{device.timers.info.ticks == 0}:
+    - info_ball_num
+  timer_info_tick{device.timers.info.ticks == 1}:
+    - info_trained_num
+  timer_info_tick{device.timers.info.ticks == 2}:
+    - info_eb_num
+  timer_info_tick{device.timers.info.ticks == 3}:
+    - info_restart
+
+
+segment_display_player: 
+  info_ball_num{current_player.number == 1 or current_player.number == 2}: 
+    player3: 
+      key: p3_ball_num
+      text: "BALL"
+      priority: 20000
+      expire: 2000ms
+      flashing: off
+    player4: 
+      key: p4_ball_num
+      text: "{current_player.ball:0>2}"
+      priority: 20000
+      expire: 2000ms
+      flashing: off
+
+  info_ball_num{current_player.number == 3 or current_player.number == 4}: 
+    player1: 
+      key: p1_ball_num
+      text: "BALL"
+      priority: 20000
+      expire: 2000ms
+      flashing: off
+    player2: 
+      key: p2_ball_num
+      text: "{current_player.ball:0>2}"
+      priority: 20000
+      expire: 2000ms
+      flashing: off
+
+  info_trained_num{current_player.number == 1 or current_player.number == 2}: 
+    player3: 
+      key: p3_ball_num
+      text: "TRAINED"
+      priority: 20010
+      expire: 2000ms
+      flashing: off
+    player4: 
+      key: p4_ball_num
+      text: "{current_player.training_total_achieved:0>2}"
+      priority: 20010
+      expire: 2000ms
+      flashing: off
+
+  info_trained_num{current_player.number == 3 or current_player.number == 4}: 
+    player1: 
+      key: p1_ball_num
+      text: "TRAINED"
+      priority: 20010
+      expire: 2000ms
+      flashing: off
+    player2: 
+      key: p2_ball_num
+      text: "{current_player.training_total_achieved:0>2}"
+      priority: 20010
+      expire: 2000ms
+      flashing: off
+
+  info_eb_num{current_player.number == 1 or current_player.number == 2}: 
+    player3: 
+      key: p3_ball_num
+      text: "EB NUM"
+      priority: 20020
+      expire: 2000ms
+      flashing: off
+    player4: 
+      key: p4_ball_num
+      text: "{current_player.extra_balls:0>2}"
+      priority: 20020
+      expire: 2000ms
+      flashing: off
+
+  info_eb_num{current_player.number == 3 or current_player.number == 4}: 
+    player1: 
+      key: p1_ball_num
+      text: "EB NUM"
+      priority: 20020
+      expire: 2000ms
+      flashing: off
+    player2: 
+      key: p2_ball_num
+      text: "{current_player.extra_balls:0>2}"
+      priority: 20020
+      expire: 2000ms
+      flashing: off
+
+
+timers: 
+  info:
+    start_value: 0
+    end_value: 10
+    direction: up
+    control_events: 
+      - event: info_restart
+        action: restart
+      - event: flipper_release
+        action: stop
+      - event: info_stop
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 800ms
+
+variable_player: 
+  mode_instant_info_started: 
+    ball_cradled: 
+      action: set
+      int: 0
+
+  flipper_cradling: 
+    ball_cradled: 
+      action: set
+      int: 1
+
+  flipper_release: 
+    ball_cradled: 
+      action: set
+      int: 0
+
+
+
+

@@ -1,0 +1,43 @@
+#show_version=6
+
+- time: 0
+  shows:
+    flash_color: 
+      key: key_shield_down1
+      loops: 8
+      speed: 15
+      show_tokens: 
+        lights: tWiz
+        color: ffffff
+
+- time: 0.02s
+  shows:
+    flash_color: 
+      key: key_shield_down2
+      loops: 8
+      speed: 15
+      show_tokens: 
+        lights: LLO
+        color: ffffff
+
+- time: 0.03s
+  shows:
+    flash_color: 
+      key: key_shield_down3
+      loops: 8
+      speed: 15
+      show_tokens: 
+        lights: LRO
+        color: ffffff
+
+- time: 0.04s
+  shows:
+    shields_down_interior: 
+      key: key_shield_down4
+      loops: 0
+      show_tokens: 
+        intensity: 100
+        color: 0010cc
+        fade: 900
+
+

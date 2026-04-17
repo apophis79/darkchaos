@@ -1,0 +1,63 @@
+#show_version=6
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_sweep1
+      loops: 0
+      speed: 14
+      show_tokens: 
+        color: dd0400
+        lights: LMet1
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_sweep2
+      loops: 0
+      speed: 14
+      show_tokens: 
+        color: dd0400
+        lights: LMet2
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_sweep3
+      loops: 0
+      speed: 14
+      show_tokens: 
+        color: dd0400
+        lights: LMet3
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_sweep4
+      loops: 0
+      speed: 14
+      show_tokens: 
+        color: dd0400
+        lights: LMet4
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_sweep5
+      loops: 0
+      speed: 14
+      show_tokens: 
+        color: dd0400
+        lights: LMet3
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_sweep6
+      loops: 0
+      speed: 14
+      show_tokens: 
+        color: dd0400
+        lights: LMet2
+
+

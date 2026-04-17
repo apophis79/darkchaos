@@ -1,0 +1,463 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_active, stop_meteor_wave, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, recycle_alien_done, start_training_select, wizard_mode_started
+  priority: 500
+
+event_player: 
+  mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}:
+    - start_alien_attack
+  mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}:
+    - start_alien_attack
+  mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}:
+    - start_alien_attack
+  mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}:
+    - start_alien_attack
+  start_meteor_wave:
+    - recycle_alien_attack
+  recycle_alien_attack:
+    - recycle_alien_done
+  alien_hit:
+    - alien_hit_show
+    - alien_hit_show2
+    - play_voc_AlienHit
+    - start_double_scoring
+    - score_400000
+
+
+random_event_player: 
+  reset_alien_attack: 
+    events:
+      alien_attack_from_left: 1
+      alien_attack_from_right: 1
+    scope: player
+
+
+shots: 
+  alien_shot1:
+    profile: alien
+    restart_events: reset_alien_shot1, alien_attack_finished
+    show_tokens: 
+      lights: LS1
+    control_events: 
+      - events: left_side_hit
+        state: 0
+      - events: alien_shot1_lit
+        state: 1
+  alien_shot2:
+    profile: alien
+    restart_events: reset_alien_shot2, alien_attack_finished
+    show_tokens: 
+      lights: LS2
+    control_events: 
+      - events: left_orbit_hit
+        state: 0
+      - events: alien_shot2_lit
+        state: 1
+  alien_shot3:
+    profile: alien
+    restart_events: reset_alien_shot3, alien_attack_finished
+    show_tokens: 
+      lights: LS3
+    control_events: 
+      - events: left_ramp_hit
+        state: 0
+      - events: alien_shot3_lit
+        state: 1
+  alien_shot4:
+    profile: alien
+    restart_events: reset_alien_shot4, alien_attack_finished
+    show_tokens: 
+      lights: LS4
+    control_events: 
+      - events: inner_orbit_hit
+        state: 0
+      - events: alien_shot4_lit
+        state: 1
+  alien_shot5:
+    profile: alien
+    restart_events: reset_alien_shot5, alien_attack_finished
+    show_tokens: 
+      lights: LPC4
+    control_events: 
+      - events: center_orbit_left_hit
+        state: 0
+      - events: alien_shot5_lit
+        state: 1
+  alien_shot6:
+    profile: alien
+    restart_events: reset_alien_shot6, alien_attack_finished
+    show_tokens: 
+      lights: LPC5
+    control_events: 
+      - events: center_orbit_right_hit
+        state: 0
+      - events: alien_shot6_lit
+        state: 1
+  alien_shot7:
+    profile: alien
+    restart_events: reset_alien_shot7, alien_attack_finished
+    show_tokens: 
+      lights: LS5
+    control_events: 
+      - events: right_ramp_hit
+        state: 0
+      - events: alien_shot7_lit
+        state: 1
+  alien_shot8:
+    profile: alien
+    restart_events: reset_alien_shot8, alien_attack_finished
+    show_tokens: 
+      lights: LS6
+    control_events: 
+      - events: right_orbit_hit
+        state: 0
+      - events: alien_shot8_lit
+        state: 1
+
+show_player: 
+  earth_hit: 
+    earth_hit: 
+      key: key_earth_hit
+      priority: 15
+      loops: 0
+  alien_hit_show: 
+    flash_color_with_fade: 
+      key: key_alien_flash
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ffb2a6
+        fade: 300
+  alien_hit_show2: 
+    insert_swap2: 
+      key: key_alien_flash2
+      priority: 1000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: ff3300
+        color2: ff0300
+        intensity: 100
+
+
+sound_player: 
+  alien_attacking: 
+    voc_AlienAlert: 
+      key: key_voc_AlienAlert
+      action: play
+  play_voc_AlienHit: 
+    voc_AlienHit: 
+      key: key_voc_AlienHit
+      action: play
+  earth_hit: 
+    sfx_alien_ship_crash: 
+      key: key_sfx_alien_ship_crash
+      action: play
+
+
+state_machines: 
+  attack_state:
+    starting_state: not_attacking
+    persist_state: True
+    states: 
+      not_attacking: 
+        label: Not Attacking State
+        events_when_started: reset_alien_attack, stop_alien_timer
+      start_attacking: 
+        label: Not Attacking State
+        events_when_started: start_alien_timer
+      attacking: 
+        label: Attacking State
+      attack_paused: 
+        label: Attack Paused State
+        events_when_started: stop_alien_timer
+      attack_done: 
+        label: Attack Done State
+        events_when_started: stop_alien_timer, alien_attack_finished
+    transitions: 
+      - source: not_attacking
+        target: start_attacking
+        events: 
+          - start_alien_attack
+      - source: start_attacking
+        target: attacking
+        events: 
+          - timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}
+      - source: start_attacking, attacking
+        target: attack_paused
+        events: 
+          - timer_timewarp_tick{device.timers.timewarp.ticks==1}
+      - source: attack_paused
+        target: start_attacking
+        events: 
+          - timer_timewarp_complete
+          - mode_alien_attack_started
+      - source: attacking
+        target: start_attacking
+        events: 
+          - mode_alien_attack_started
+      - source: attacking, attack_paused
+        target: attack_done
+        events: 
+          - alien_hit_show
+      - source: attacking
+        target: attack_done
+        events: 
+          - timer_alien_attack_complete
+      - source: attack_done
+        target: not_attacking
+        events: 
+          - recycle_alien_attack
+  alien:
+    starting_state: init
+    persist_state: True
+    states: 
+      init: 
+        label: Init State
+      shot1: 
+        label: Alien Shot 1
+        events_when_started: alien_shot1_lit
+      shot2: 
+        label: Alien Shot 2
+        events_when_started: alien_shot2_lit
+      shot3: 
+        label: Alien Shot 3
+        events_when_started: alien_shot3_lit
+      shot4: 
+        label: Alien Shot 4
+        events_when_started: alien_shot4_lit
+      shot5: 
+        label: Alien Shot 5
+        events_when_started: alien_shot5_lit
+      shot6: 
+        label: Alien Shot 6
+        events_when_started: alien_shot6_lit
+      shot7: 
+        label: Alien Shot 7
+        events_when_started: alien_shot7_lit
+      shot8: 
+        label: Alien Shot 8
+        events_when_started: alien_shot8_lit
+    transitions: 
+      - source: init
+        target: shot1
+        events: 
+          - alien_attacking{current_player.alien_attack_dir == 0}
+      - source: init
+        target: shot8
+        events: 
+          - alien_attacking{current_player.alien_attack_dir == 1}
+      - source: shot1
+        target: shot2
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 2}
+      - source: shot2
+        target: shot3
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 3}
+      - source: shot3
+        target: shot4
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 4}
+      - source: shot4
+        target: shot5
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 5}
+      - source: shot5
+        target: shot6
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 6}
+      - source: shot6
+        target: shot7
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}
+      - source: shot7
+        target: shot8
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 8}
+      - source: shot2
+        target: shot1
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 8}
+      - source: shot3
+        target: shot2
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 7}
+      - source: shot4
+        target: shot3
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 6}
+      - source: shot5
+        target: shot4
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 5}
+      - source: shot6
+        target: shot5
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 4}
+      - source: shot7
+        target: shot6
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}
+      - source: shot8
+        target: shot7
+        events: 
+          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 2}
+      - source: shot1
+        target: init
+        events: 
+          - left_side_hit
+          - left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot2
+        target: init
+        events: 
+          - left_orbit_hit
+          - left_side_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - left_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot3
+        target: init
+        events: 
+          - left_ramp_hit
+          - left_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - inner_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot4
+        target: init
+        events: 
+          - inner_orbit_hit
+          - left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - center_orbit_left_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot5
+        target: init
+        events: 
+          - center_orbit_left_hit
+          - inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - center_orbit_right_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot6
+        target: init
+        events: 
+          - center_orbit_right_hit
+          - center_orbit_left_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot7
+        target: init
+        events: 
+          - right_ramp_hit
+          - center_orbit_right_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot8
+        target: init
+        events: 
+          - right_orbit_hit
+          - right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - cluster_bomb_fired
+          - detonate_nuke
+      - source: shot1
+        target: init
+        events: 
+          - earth_hit
+      - source: shot2
+        target: init
+        events: 
+          - earth_hit
+      - source: shot3
+        target: init
+        events: 
+          - earth_hit
+      - source: shot4
+        target: init
+        events: 
+          - earth_hit
+      - source: shot5
+        target: init
+        events: 
+          - earth_hit
+      - source: shot6
+        target: init
+        events: 
+          - earth_hit
+      - source: shot7
+        target: init
+        events: 
+          - earth_hit
+      - source: shot8
+        target: init
+        events: 
+          - earth_hit
+
+timers: 
+  alien_attack:
+    start_value: current_player.alien_tick_count
+    end_value: 9
+    direction: up
+    control_events: 
+      - event: reset_alien_timer
+        action: reset
+      - event: stop_alien_timer
+        action: stop
+      - event: start_alien_timer
+        action: start
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 3800ms
+  alien_grace:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: restart_alien_grace_timer
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 800ms
+
+variable_player: 
+  reset_alien_attack: 
+    alien_tick_count: 
+      action: set
+      int: -1
+
+  timer_alien_attack_tick: 
+    alien_tick_count: 
+      action: set
+      int: device.timers.alien_attack.ticks
+
+  alien_attack_from_left: 
+    alien_attack_dir: 
+      action: set
+      int: 0
+
+  alien_attack_from_right: 
+    alien_attack_dir: 
+      action: set
+      int: 1
+
+  restart_alien_grace_timer: 
+    alien_grace_time: 
+      action: set
+      int: 1
+
+  timer_alien_grace_complete: 
+    alien_grace_time: 
+      action: set
+      int: 0
+
+
+
+

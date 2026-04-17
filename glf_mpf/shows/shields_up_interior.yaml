@@ -1,0 +1,101 @@
+#show_version=6
+
+- duration: 0.03333s
+  lights:
+    LSA: (color)%(intensity)
+
+- duration: 0.03333s
+  lights:
+    gi06: (color)%(intensity)
+    gi05: (color)%(intensity)
+    gi02: (color)%(intensity)
+    gi01: (color)%(intensity)
+    LC1: (color)%(intensity)
+    LC2: (color)%(intensity)
+    LC3: (color)%(intensity)
+    LC4: (color)%(intensity)
+    LC5: (color)%(intensity)
+    LC6: (color)%(intensity)
+    LC7: (color)%(intensity)
+    LC8: (color)%(intensity)
+    LH9: (color)%(intensity)
+    LH8: (color)%(intensity)
+    LH7: (color)%(intensity)
+    LH6: (color)%(intensity)
+    LH5: (color)%(intensity)
+    LH4: (color)%(intensity)
+    LH3: (color)%(intensity)
+    LH2: (color)%(intensity)
+    LH1: (color)%(intensity)
+    LSR: (color)%(intensity)
+    LSL: (color)%(intensity)
+
+- duration: 0.03333s
+  lights:
+    gi07: (color)%(intensity)
+    gi05: stop
+    gi03: (color)%(intensity)
+    LSA: stop
+    LPR3: (color)%(intensity)
+    LPR2: (color)%(intensity)
+    LPR6: (color)%(intensity)
+    LPR5: (color)%(intensity)
+    LPR4: (color)%(intensity)
+    LMR2: (color)%(intensity)
+    LCR2: (color)%(intensity)
+
+- duration: 0.03333s
+  lights:
+    gi08: (color)%(intensity)
+    gi06: stop
+    gi04: (color)%(intensity)
+    gi02: stop
+    gi01: stop
+    LC1: stop
+    LC2: stop
+    LC3: stop
+    LC4: stop
+    LC5: stop
+    LC6: stop
+    LC7: stop
+    LC8: stop
+    LH9: stop
+    LH8: stop
+    LH7: stop
+    LH6: stop
+    LH5: stop
+    LH4: stop
+    LH3: stop
+    LH2: stop
+    LH1: stop
+    LPR1: (color)%(intensity)
+    LPR6: stop
+    LPR5: stop
+    LPR4: stop
+    LMR1: (color)%(intensity)
+    LCR1: (color)%(intensity)
+    LRI: (color)%(intensity)
+    LLI: (color)%(intensity)
+    LSR: stop
+    LSL: stop
+
+- duration: 0.03333s
+  lights:
+    gi08: stop
+    gi07: stop
+    gi04: stop
+    gi03: stop
+    LPR1: stop
+    LPR3: stop
+    LPR2: stop
+    LMR2: stop
+    LMR1: stop
+    LCR2: stop
+    LCR1: stop
+
+- duration: 0.03333s
+  lights:
+    LRI: stop
+    LLI: stop
+
+

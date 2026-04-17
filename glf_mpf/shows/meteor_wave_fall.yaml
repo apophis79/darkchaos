@@ -1,0 +1,103 @@
+#show_version=6
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall1
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW1
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall2
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW2
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall3
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW3
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall4
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW4
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall5
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW5
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall6
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW6
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall7
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW7
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall8
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW8
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall9
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LW9
+
+- duration: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_mw_fall10
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: dd0400
+        lights: LWiz
+
+

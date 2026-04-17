@@ -1,0 +1,237 @@
+#config_version=6
+
+switches:
+  s_Plunger1:
+    number: 0
+    tags: 
+    x: 0.9432461
+    y: 0.8862687
+  s_RightOrb1:
+    number: 1
+    tags: 
+    x: 0.9260934
+    y: 0.1770225
+  s_RightOrb2:
+    number: 2
+    tags: 
+    x: 0.9309908
+    y: 0.0774753
+  s_InnerOrb2:
+    number: 3
+    tags: 
+    x: 0.433951
+    y: 0.0612324
+  s_InnerOrb1:
+    number: 4
+    tags: 
+    x: 0.2469148
+    y: 0.1429366
+  s_LeftOrb2:
+    number: 5
+    tags: 
+    x: 6.992988E-02
+    y: 0.1015233
+  s_LeftOrb1:
+    number: 6
+    tags: 
+    x: 0.1048189
+    y: 0.2489441
+  s_LeftOutlane:
+    number: 7
+    tags: 
+    x: 5.878289E-02
+    y: 0.7303042
+  s_LeftInlane:
+    number: 8
+    tags: 
+    x: 0.1334046
+    y: 0.7396542
+  s_RightInlane:
+    number: 9
+    tags: 
+    x: 0.7783051
+    y: 0.7386274
+  s_RightOutlane:
+    number: 10
+    tags: 
+    x: 0.8594665
+    y: 0.7297075
+  s_Plunger2:
+    number: 11
+    tags: 
+    x: 0.9439228
+    y: 0.718689
+  s_CenterOrb3:
+    number: 12
+    tags: 
+    x: 0.5464846
+    y: 0.1341753
+  s_CenterOrb2:
+    number: 13
+    tags: 
+    x: 0.4506651
+    y: 9.627642E-02
+  s_CenterOrb1:
+    number: 14
+    tags: 
+    x: 0.3549204
+    y: 0.134125
+  s_LeftBumper1:
+    number: 15
+    tags: 
+    x: 5.602004E-02
+    y: 0.4868343
+  s_Lock1:
+    number: 16
+    tags: 
+    x: 0.9463313
+    y: 0.3110709
+  s_Lock2:
+    number: 17
+    tags: 
+    x: 0.9454882
+    y: 0.2874926
+  s_Lock3:
+    number: 18
+    tags: 
+    x: 0.9459423
+    y: 0.2640205
+  s_GateL:
+    number: 19
+    tags: 
+    x: 0.2081906
+    y: 0.2349203
+  s_GateR:
+    number: 20
+    tags: 
+    x: 0.7253595
+    y: 0.2151354
+  s_Scoop:
+    number: 21
+    tags: 
+    x: 0.6204953
+    y: 0.2177761
+  s_MoonRamp:
+    number: 22
+    tags: 
+    x: 0.9386594
+    y: 0.1005127
+  s_TimewarpRamp:
+    number: 23
+    tags: 
+    x: 5.152348E-02
+    y: 0.1381143
+  s_Bumper1:
+    number: 24
+    tags: 
+    x: 0.139248
+    y: 0.4831038
+  s_Bumper2:
+    number: 25
+    tags: 
+    x: 0.8408913
+    y: 9.121752E-02
+  s_Bumper3:
+    number: 26
+    tags: 
+    x: 0.6369871
+    y: 9.490218E-02
+  s_LockOut:
+    number: 27
+    tags: 
+    x: 0.946815
+    y: 0.3415005
+  s_TargetMystery1:
+    number: 28
+    tags: 
+    x: 0.1618052
+    y: 0.5224789
+  s_TargetMystery2:
+    number: 29
+    tags: 
+    x: 0.3228188
+    y: 0.2842211
+  s_TargetMystery3:
+    number: 30
+    tags: 
+    x: 0.4517314
+    y: 0.1639039
+  s_TargetMystery4:
+    number: 31
+    tags: 
+    x: 0.5760496
+    y: 0.1955457
+  s_TargetMystery5:
+    number: 32
+    tags: 
+    x: 0.7832209
+    y: 0.2804339
+  s_TargetShield1:
+    number: 33
+    tags: 
+    x: 0.8338094
+    y: 0.5135854
+  s_TargetShield2:
+    number: 34
+    tags: 
+    x: 0.8336647
+    y: 0.541997
+  s_TargetShield3:
+    number: 35
+    tags: 
+    x: 0.8339911
+    y: 0.571492
+  s_DTMeteor1:
+    number: 36
+    tags: 
+    x: -1
+    y: -1
+  s_DTMeteor2:
+    number: 37
+    tags: 
+    x: -1
+    y: -1
+  s_DTMeteor3:
+    number: 38
+    tags: 
+    x: -1
+    y: -1
+  s_DTMeteor4:
+    number: 39
+    tags: 
+    x: -1
+    y: -1
+  s_spinner:
+    number: 40
+    tags: 
+  s_RightSlingshot:
+    number: 41
+    tags: 
+  s_LeftSlingshot:
+    number: 42
+    tags: 
+  s_TopSlingshot:
+    number: 43
+    tags: 
+  s_trough1:
+    number: 44
+    tags: 
+  s_trough2:
+    number: 45
+    tags: 
+  s_trough3:
+    number: 46
+    tags: 
+  s_trough4:
+    number: 47
+    tags: 
+  s_trough5:
+    number: 48
+    tags: 
+  s_trough_jam:
+    number: 49
+    tags: 
+  s_start:
+    number: 50
+    tags: start
+

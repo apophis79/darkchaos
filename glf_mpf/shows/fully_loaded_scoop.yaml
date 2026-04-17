@@ -1,0 +1,57 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    LEBR: stop
+    LMR: 00dddd%(intensity2)
+    LX: 00dddd%(intensity1)
+
+- duration: 0.1s
+  lights:
+    LEBR: ccbb00%(intensity1)
+    LMR: stop
+    LX: 00dddd%(intensity2)
+
+- duration: 0.1s
+  lights:
+    LEBR: ccbb00%(intensity2)
+    LMR: ccbb00%(intensity1)
+    LX: stop
+
+- duration: 0.1s
+  lights:
+    LEBR: stop
+    LMR: ccbb00%(intensity2)
+    LX: ccbb00%(intensity1)
+
+- duration: 0.1s
+  lights:
+    LEBR: dd00dd%(intensity1)
+    LMR: stop
+    LX: ccbb00%(intensity2)
+
+- duration: 0.1s
+  lights:
+    LEBR: dd00dd%(intensity2)
+    LMR: dd00dd%(intensity1)
+    LX: stop
+
+- duration: 0.1s
+  lights:
+    LEBR: stop
+    LMR: dd00dd%(intensity2)
+    LX: dd00dd%(intensity1)
+
+- duration: 0.1s
+  lights:
+    LEBR: 00dddd%(intensity1)
+    LMR: stop
+    LX: dd00dd%(intensity2)
+
+- duration: 0.1s
+  lights:
+    LEBR: 00dddd%(intensity2)
+    LMR: 00dddd%(intensity1)
+    LX: stop
+
+

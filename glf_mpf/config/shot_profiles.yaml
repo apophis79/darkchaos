@@ -1,0 +1,598 @@
+#config_version=6
+
+shot_profiles:
+  default:
+    advance_on_hit: True
+    states: 
+     - name: on
+       show: flash
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: off
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  flash_color:
+    advance_on_hit: True
+    states: 
+     - name: off
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: flash_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  off_on_color:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  flicker_on_flicker_off:
+    advance_on_hit: True
+    states: 
+     - name: lit
+       show: flicker_color_on
+       loops: -1
+       speed: 3
+       sync_ms: 0
+     - name: unlit
+       show: flicker_color_off
+       loops: -1
+       speed: 3
+       sync_ms: 0
+  flicker_on:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: flicker_color_on
+       loops: -1
+       speed: 4
+       sync_ms: 0
+  powerups:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 4
+       sync_ms: 0
+       show_tokens: 
+         fade: 400
+     - name: collected
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  training_powerups:
+    advance_on_hit: True
+    states: 
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 12
+       sync_ms: 0
+       show_tokens: 
+         fade: 100
+     - name: collected
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  qualified_shot:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         fade: 100
+  shoot_again:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: LSA
+     - name: flashing
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         lights: LSA
+         fade: 500
+     - name: hurry
+       show: flash_color
+       loops: -1
+       speed: 7
+       sync_ms: 0
+       show_tokens: 
+         lights: LSA
+  health_shot_ready:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: LDP
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         fade: 500
+         color: 00dd00
+         lights: LDP
+  wizard_ready1:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 8
+       sync_ms: 0
+       show_tokens: 
+         fade: 400
+     - name: collected
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  ss_ready:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: LM2
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 3
+       sync_ms: 0
+       show_tokens: 
+         fade: 200
+         color: 33dd33
+         lights: LM2
+  alien:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: lit
+       show: flash_color_with_fade
+       loops: -1
+       speed: 7
+       sync_ms: 0
+       show_tokens: 
+         fade: 200
+         color: ff0300
+     - name: grace
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  qualify_shields:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: flicker_color_on
+       loops: -1
+       speed: 4
+       sync_ms: 0
+       show_tokens: 
+         color: 0010cc
+  shields_ready:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: 0010cc
+  extraball:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: LSA
+     - name: lit
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: LSA
+         color: 0500ee
+  double_scoring:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: LDS
+         color: ff3300
+     - name: flashing
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         lights: LDS
+         fade: 500
+         color: ff3300
+     - name: hurry
+       show: flash_color
+       loops: -1
+       speed: 7
+       sync_ms: 0
+       show_tokens: 
+         lights: LDS
+         color: ff3300
+  super_spinner:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: gi21
+         color: 00dddd
+     - name: flashing
+       show: flash_color_with_fade
+       loops: -1
+       speed: 5
+       sync_ms: 0
+       show_tokens: 
+         lights: gi21
+         fade: 500
+         color: 00dddd
+     - name: hurry
+       show: flash_color
+       loops: -1
+       speed: 10
+       sync_ms: 0
+       show_tokens: 
+         lights: gi21
+         color: 00dddd
+  super_pops:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: tBumper
+         color: 555555
+     - name: flashing
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         lights: tBumper
+         fade: 500
+         color: 555555
+     - name: hurry
+       show: flash_color
+       loops: -1
+       speed: 7
+       sync_ms: 0
+       show_tokens: 
+         lights: tBumper
+         color: 555555
+  health_meter:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: normal
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: 00dd00
+     - name: warning
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: d14c00
+     - name: critical
+       show: flash_color
+       loops: -1
+       speed: 15
+       sync_ms: 0
+       show_tokens: 
+         color: ff0300
+  training_profile:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  training_select:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready1
+       show: flash_color_with_fade
+       loops: -1
+       speed: 3
+       sync_ms: 0
+       show_tokens: 
+         fade: 200
+     - name: ready2
+       show: flash_color_with_fade
+       loops: -1
+       speed: 8
+       sync_ms: 0
+       show_tokens: 
+         fade: 200
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  train_moon_missile:
+    advance_on_hit: True
+    states: 
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 8
+       sync_ms: 0
+       show_tokens: 
+         color: ccbb00
+         fade: 400
+     - name: collected
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: ccbb00
+  train_shields:
+    advance_on_hit: True
+    states: 
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 8
+       sync_ms: 0
+       show_tokens: 
+         color: 0010cc
+         fade: 400
+     - name: collected
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: 0010cc
+  meteor_temp:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: cool
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         color: ffA957
+         fade: 1000
+     - name: warm
+       show: flash_color_with_fade
+       loops: -1
+       speed: 5
+       sync_ms: 0
+       show_tokens: 
+         color: edb600
+         fade: 1000
+     - name: hot
+       show: flash_color
+       loops: -1
+       speed: 12
+       sync_ms: 0
+       show_tokens: 
+         color: ed1800
+  proton_shot_ready:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: tFire
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 2
+       sync_ms: 0
+       show_tokens: 
+         fade: 400
+         color: 00dddd
+         lights: tFire
+  fully_loaded_profile:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color
+       loops: -1
+       speed: 10
+       sync_ms: 0
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+  combo_command:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color
+       loops: -1
+       speed: 10
+       sync_ms: 0
+       show_tokens: 
+         color: ffb46b
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: ffb46b
+  asteroid:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: tFire
+     - name: ready
+       show: flash_color
+       loops: -1
+       speed: 8
+       sync_ms: 0
+       show_tokens: 
+         lights: tFire
+         color: dd0400
+  fwwiz_meteor:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color
+       loops: -1
+       speed: 8
+       sync_ms: 0
+       show_tokens: 
+         color: ed1800
+  victory_shots:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: ready
+       show: flash_color
+       loops: -1
+       speed: 7
+       sync_ms: 0
+       show_tokens: 
+         color: ffffff
+

@@ -1,0 +1,345 @@
+#show_version=6
+
+- time: 0
+  shows:
+    insert_swap2: 
+      key: key_cb_xpl_inserts
+      priority: 10000
+      loops: 3
+      speed: 1.5
+      show_tokens: 
+        color1: ffffff
+        color2: dd00dd
+        intensity: 100
+
+- time: 0.1s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi1a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi04
+        color: ffffff
+
+- time: 0.11s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi1
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi04
+        color: dd00dd
+
+- time: 0.14s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi2a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi07
+        color: ffffff
+
+- time: 0.15s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi2
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi07
+        color: dd00dd
+
+- time: 0.19s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi3a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi10
+        color: ffffff
+
+- time: 0.2s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi3
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi10
+        color: dd00dd
+
+- time: 0.21s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi4a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi09
+        color: ffffff
+
+- time: 0.22s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi4
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi09
+        color: dd00dd
+
+- time: 0.24s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi5a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi11
+        color: ffffff
+
+- time: 0.25s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi5
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi11
+        color: dd00dd
+
+- time: 0.52s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi6a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi20
+        color: ffffff
+
+- time: 0.53s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi6
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi20
+        color: dd00dd
+
+- time: 0.54s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi7a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi13
+        color: ffffff
+
+- time: 0.55s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi7
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi13
+        color: dd00dd
+
+- time: 0.92s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi8a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi03
+        color: ffffff
+
+- time: 0.93s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi8
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi03
+        color: dd00dd
+
+- time: 0.95s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi9a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi08
+        color: ffffff
+
+- time: 0.96s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi9
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi08
+        color: dd00dd
+
+- time: 1.38s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi10a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi19
+        color: ffffff
+
+- time: 1.39s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi10
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi19
+        color: dd00dd
+
+- time: 1.4s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi11a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi02
+        color: ffffff
+
+- time: 1.41s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi11
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi02
+        color: dd00dd
+
+- time: 2.49s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi12a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi12
+        color: ffffff
+
+- time: 2.5s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi12
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi12
+        color: dd00dd
+
+- time: 2.54s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi13a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi05
+        color: ffffff
+
+- time: 2.55s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi13
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi05
+        color: dd00dd
+
+- time: 3.49s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi14a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi22
+        color: ffffff
+
+- time: 3.5s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi14
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi22
+        color: dd00dd
+
+- time: 3.54s
+  shows:
+    flash_color: 
+      key: key_cb_xpl_gi15a
+      priority: 10010
+      loops: 2
+      speed: 15
+      show_tokens: 
+        lights: gi20
+        color: ffffff
+
+- time: 3.55s
+  shows:
+    flash_color_fadeout: 
+      key: key_cb_xpl_gi15
+      priority: 10000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: gi20
+        color: dd00dd
+
+

@@ -1,0 +1,422 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 800
+
+event_player: 
+  mode_health_started{current_player.ball_just_started==1}:
+    - restart_health
+    - reset_health_bump
+  mode_health_started{current_player.training_heal_achieved==1}:
+    - raise_diverter
+  s_Bumper1_active:
+    - check_add_health_bump
+  s_Bumper2_active:
+    - check_add_health_bump
+  s_Bumper3_active:
+    - check_add_health_bump
+  s_TopSlingshot_active:
+    - check_add_health_bump
+  check_add_health_bump{current_player.health_bump_value<9}:
+    - add_health_bump
+  check_add_health_bump{current_player.health_bump_value>=9}:
+    - check_add_health
+    - reset_health_bump
+  check_add_health{current_player.health_value>8}:
+    - health9_norm
+    - health8_norm
+    - health7_norm
+    - health6_norm
+    - health5_norm
+    - health4_norm
+    - health3_norm
+    - health2_norm
+    - health1_norm
+    - restart_health
+  check_add_health{current_player.health_value==8}:
+    - health9_norm
+    - add_health
+  check_add_health{current_player.health_value==7}:
+    - health8_norm
+    - add_health
+  check_add_health{current_player.health_value==6}:
+    - health7_norm
+    - health6_norm
+    - health5_norm
+    - health4_norm
+    - health3_norm
+    - health2_norm
+    - health1_norm
+    - add_health
+  check_add_health{current_player.health_value==5}:
+    - health6_warm
+    - add_health
+  check_add_health{current_player.health_value==4}:
+    - health5_warm
+    - add_health
+  check_add_health{current_player.health_value==3}:
+    - health4_warm
+    - health3_warm
+    - health2_warm
+    - health1_warm
+    - add_health
+  check_add_health{current_player.health_value==2}:
+    - health3_crit
+    - add_health
+  check_add_health{current_player.health_value==1}:
+    - health2_crit
+    - add_health
+  check_remove_health{current_player.health_value==9}:
+    - health9_off
+    - remove_health
+  check_remove_health{current_player.health_value==8}:
+    - health8_off
+    - health9_off
+    - remove_health
+  check_remove_health{current_player.health_value==7}:
+    - health7_off
+    - health8_off
+    - health9_off
+    - health6_warm
+    - health5_warm
+    - health4_warm
+    - health3_warm
+    - health2_warm
+    - health1_warm
+    - remove_health
+  check_remove_health{current_player.health_value==6}:
+    - health6_off
+    - health7_off
+    - health8_off
+    - health9_off
+    - remove_health
+  check_remove_health{current_player.health_value==5}:
+    - health5_off
+    - health6_off
+    - health7_off
+    - health8_off
+    - health9_off
+    - remove_health
+  check_remove_health{current_player.health_value==4}:
+    - health4_off
+    - health5_off
+    - health6_off
+    - health7_off
+    - health8_off
+    - health9_off
+    - health3_crit
+    - health2_crit
+    - health1_crit
+    - remove_health
+    - play_voc_critically_low_health
+  check_remove_health{current_player.health_value==3}:
+    - health3_off
+    - health4_off
+    - health5_off
+    - health6_off
+    - health7_off
+    - health8_off
+    - health9_off
+    - remove_health
+  check_remove_health{current_player.health_value==2}:
+    - health2_off
+    - health3_off
+    - health4_off
+    - health5_off
+    - health6_off
+    - health7_off
+    - health8_off
+    - health9_off
+    - remove_health
+    - play_voc_imminent_shutdown
+  check_remove_health{current_player.health_value==1}:
+    - health1_off
+    - health2_off
+    - health3_off
+    - health4_off
+    - health5_off
+    - health6_off
+    - health7_off
+    - health8_off
+    - health9_off
+    - remove_health
+    - kill_flippers
+    - turn_off_gi
+    - meteor_wave_music_stop
+  add_health:
+    - slings_powerup_added
+    - lsling_powerup_h
+    - rsling_powerup_h
+    - health_charge1
+    - health_charge2
+    - score_50000
+  earth_hit{current_player.health_value>0}:
+    - check_remove_health
+  mystery_full_health:
+    - complete_full_health
+    - restart_health
+    - reset_health_bump
+    - slings_powerup_added
+    - lsling_powerup_h
+    - rsling_powerup_h
+    - score_100000
+
+
+shots: 
+  health1_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH1
+    control_events: 
+      - events: health1_off
+        state: 0
+      - events: restart_health, health1_norm
+        state: 1
+      - events: health1_warm
+        state: 2
+      - events: health1_crit
+        state: 3
+  health2_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH2
+    control_events: 
+      - events: health2_off
+        state: 0
+      - events: restart_health, health2_norm
+        state: 1
+      - events: health2_warm
+        state: 2
+      - events: health2_crit
+        state: 3
+  health3_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH3
+    control_events: 
+      - events: health3_off
+        state: 0
+      - events: restart_health, health3_norm
+        state: 1
+      - events: health3_warm
+        state: 2
+      - events: health3_crit
+        state: 3
+  health4_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH4
+    control_events: 
+      - events: health4_off
+        state: 0
+      - events: restart_health, health4_norm
+        state: 1
+      - events: health4_warm
+        state: 2
+      - events: health4_crit
+        state: 3
+  health5_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH5
+    control_events: 
+      - events: health5_off
+        state: 0
+      - events: restart_health, health5_norm
+        state: 1
+      - events: health5_warm
+        state: 2
+      - events: health5_crit
+        state: 3
+  health6_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH6
+    control_events: 
+      - events: health6_off
+        state: 0
+      - events: restart_health, health6_norm
+        state: 1
+      - events: health6_warm
+        state: 2
+      - events: health6_crit
+        state: 3
+  health7_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH7
+    control_events: 
+      - events: health7_off
+        state: 0
+      - events: restart_health, health7_norm
+        state: 1
+      - events: health7_warm
+        state: 2
+      - events: health7_crit
+        state: 3
+  health8_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH8
+    control_events: 
+      - events: health8_off
+        state: 0
+      - events: restart_health, health8_norm
+        state: 1
+      - events: health8_warm
+        state: 2
+      - events: health8_crit
+        state: 3
+  health9_light:
+    profile: health_meter
+    show_tokens: 
+      lights: LH9
+    control_events: 
+      - events: health9_off
+        state: 0
+      - events: restart_health, health9_norm
+        state: 1
+      - events: health9_warm
+        state: 2
+      - events: health9_crit
+        state: 3
+  health_diverter:
+    profile: health_shot_ready
+    restart_events: drop_diverter, mode_health_stopping
+    show_tokens: 
+    control_events: 
+      - events: raise_diverter
+        state: 1
+
+show_player: 
+  health_charge1: 
+    flash_color: 
+      key: key_health_charge1
+      loops: 6
+      speed: 15
+      show_tokens: 
+        lights: tHealth
+        color: 00dd00
+  health_charge2: 
+    insert_gi_spin_center: 
+      key: key_health_charge2
+      priority: 1000
+      loops: 0
+      speed: 3
+      show_tokens: 
+        intensity: 100
+        color: 00dd00
+  complete_full_health: 
+    flash_color: 
+      key: key_health_full_charged
+      loops: 14
+      speed: 15
+      show_tokens: 
+        lights: tHealth
+        color: 00dd00
+  mode_health_started: 
+    flicker_color_on_intensity: 
+      key: key_bumpers_on
+      speed: 10
+      show_tokens: 
+        lights: tBumper
+        color: ffb46b
+        intensity: 10
+  lsling_powerup_h: 
+    lsling_rotate2_cw: 
+      key: key_lsling_powerup_h
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 00dd00
+        color2: 00dd00
+        intensity: 100
+  rsling_powerup_h: 
+    rsling_rotate2_ccw: 
+      key: key_rsling_powerup_h
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 00dd00
+        color2: 00dd00
+        intensity: 100
+  s_Bumper1_active: 
+    flash_color_with_fade: 
+      key: key_bumper1_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB1
+        color: 05cc05
+        fade: 50
+  s_Bumper2_active: 
+    flash_color_with_fade: 
+      key: key_bumper2_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB2
+        color: 05cc05
+        fade: 50
+  s_Bumper3_active: 
+    flash_color_with_fade: 
+      key: key_bumper3_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB3
+        color: 05cc05
+        fade: 50
+  s_Bumper4_active: 
+    flash_color_with_fade: 
+      key: key_bumper4_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB4
+        color: 05cc05
+        fade: 50
+
+
+sound_player: 
+  add_health: 
+    sfx_LH: 
+      key: key_sfx_LH
+      action: play
+
+
+variable_player: 
+  restart_health: 
+    health_value: 
+      action: set
+      int: 9
+
+  remove_health: 
+    health_value: 
+      action: add
+      int: -1
+
+  add_health: 
+    health_value: 
+      action: add
+      int: 1
+
+  reset_health_bump: 
+    health_bump_value: 
+      action: set
+      int: 0
+
+  add_health_bump: 
+    health_bump_value: 
+      action: add
+      int: 1
+
+
+
+

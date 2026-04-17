@@ -1,0 +1,17 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    FL5b: (color1)%(intensity)
+    FL5d: (color2)%(intensity)
+    FL5f: (color1)%(intensity)
+    FL5h: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL5b: (color2)%(intensity)
+    FL5d: (color1)%(intensity)
+    FL5f: (color2)%(intensity)
+    FL5h: (color1)%(intensity)
+
+

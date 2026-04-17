@@ -1,0 +1,92 @@
+#show_version=6
+
+- duration: 0.96667s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire1
+      loops: 0
+      show_tokens: 
+        color: 00dddd
+        intensity: 10
+
+- duration: 0.644446666666667s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire2
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: 00dddd
+        intensity: 20
+
+- duration: 0.483335s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire3
+      loops: 0
+      speed: 2
+      show_tokens: 
+        color: 00dddd
+        intensity: 40
+
+- duration: 0.322223333333333s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire4
+      loops: 0
+      speed: 3
+      show_tokens: 
+        color: 00dddd
+        intensity: 60
+
+- duration: 0.2416675s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire5
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: 00dddd
+        intensity: 80
+
+- duration: 0.386668s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire6
+      loops: 1
+      speed: 5
+      show_tokens: 
+        color: 00dddd
+        intensity: 100
+
+- duration: 0.414287142857143s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire7
+      loops: 2
+      speed: 7
+      show_tokens: 
+        color: ffffff
+        intensity: 100
+
+- duration: 0.01s
+  shows:
+    insert_gi_spin_center: 
+      key: key_big_charge_fire8
+      loops: 1
+      speed: 8
+      show_tokens: 
+        color: ff0000
+        intensity: 100
+
+- duration: 0.1s
+  shows:
+    flash_color: 
+      key: key_big_charge_fire9
+      loops: 6
+      speed: 20
+      show_tokens: 
+        lights: tBlast
+        color: ffffff
+
+

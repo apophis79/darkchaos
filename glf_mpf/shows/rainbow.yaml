@@ -1,0 +1,31 @@
+#show_version=6
+
+- duration: 1s
+  lights:
+    (lights): e81416%100
+
+- duration: 1s
+  lights:
+    (lights): ffa500%100
+
+- duration: 1s
+  lights:
+    (lights): faeb36%100
+
+- duration: 1s
+  lights:
+    (lights): 79c314%100
+
+- duration: 1s
+  lights:
+    (lights): 487de7%100
+
+- duration: 1s
+  lights:
+    (lights): 4b369d%100
+
+- duration: 1s
+  lights:
+    (lights): 70369d%100
+
+

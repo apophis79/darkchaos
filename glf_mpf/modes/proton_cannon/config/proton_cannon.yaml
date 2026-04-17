@@ -1,0 +1,313 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 900
+
+event_player: 
+  mode_proton_cannon_started{current_player.shot_proton_charge1==0}:
+    - reset_proton_charges
+  mode_proton_cannon_started{current_player.training_proton_cannon_achieved==1}:
+    - reset_proton_charges
+  reset_proton_charges{current_player.training_proton_cannon_achieved==0}:
+    - ready_proton_charge1
+  reset_proton_charges{current_player.training_proton_cannon_achieved==1}:
+    - light_proton_charge1
+    - light_proton_charge2
+    - ready_proton_charge3
+  inner_orbit_hit{current_player.shot_proton_charge1 == 1}:
+    - play_sfx_LPC
+    - light_proton_charge1
+    - ready_proton_charge2
+  inner_orbit_hit{current_player.shot_proton_charge1 == 2 and current_player.shot_proton_charge2 == 1}:
+    - play_sfx_LPC
+    - light_proton_charge2
+    - ready_proton_charge3
+  inner_orbit_hit{current_player.shot_proton_charge2 == 2 and current_player.shot_proton_charge3 == 1}:
+    - play_sfx_LPC
+    - light_proton_charge3
+  light_proton_charge3{current_player.shot_proton_round1 == 0}:
+    - added_proton
+    - add_proton_round1
+    - reset_proton_charges
+  light_proton_charge3{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}:
+    - added_proton
+    - add_proton_round2
+    - reset_proton_charges
+  light_proton_charge3{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}:
+    - added_proton
+    - add_proton_round3
+    - reset_proton_charges
+  light_proton_charge3{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}:
+    - added_proton
+    - add_proton_round4
+    - reset_proton_charges
+  light_proton_charge3{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}:
+    - added_proton
+    - add_proton_round5
+    - reset_proton_charges
+  light_proton_charge3{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}:
+    - added_proton
+    - add_proton_round6
+    - check_fully_loaded
+  added_proton:
+    - slings_powerup_added
+    - lsling_powerup_pc
+    - rsling_powerup_pc
+    - proton_added_show
+  mystery_full_protons:
+    - complete_full_protons
+    - slings_powerup_added
+    - lsling_powerup_pc
+    - rsling_powerup_pc
+  complete_full_protons:
+    - proton_added_show
+    - check_fully_loaded
+    - score_50000
+  inner_orbit_hit:
+    - score_2000
+  light_proton_charge3:
+    - score_5000
+
+
+random_event_player: 
+  play_sfx_LPC: 
+    events:
+      play_sfx_LPC1: 1
+      play_sfx_LPC2: 1
+      play_sfx_LPC3: 1
+      play_sfx_LPC4: 1
+      play_sfx_LPC5: 1
+    scope: player
+
+
+segment_display_player: 
+  light_proton_charge3: 
+    player4: 
+      text: "PROTON"
+      expire: 2000ms
+      flashing: all
+
+
+shots: 
+  proton_charge1:
+    profile: powerups
+    restart_events: reset_proton_charges
+    show_tokens: 
+      lights: LPC1
+      color: 00dddd
+    control_events: 
+      - events: ready_proton_charge1
+        state: 1
+      - events: light_proton_charge1, complete_full_protons
+        state: 2
+  proton_charge2:
+    profile: powerups
+    restart_events: reset_proton_charges
+    show_tokens: 
+      lights: LPC2
+      color: 00dddd
+    control_events: 
+      - events: ready_proton_charge2
+        state: 1
+      - events: light_proton_charge2, complete_full_protons
+        state: 2
+  proton_charge3:
+    profile: powerups
+    restart_events: reset_proton_charges
+    show_tokens: 
+      lights: LPC3
+      color: 00dddd
+    control_events: 
+      - events: ready_proton_charge3
+        state: 1
+      - events: light_proton_charge3, complete_full_protons
+        state: 2
+  proton_round1:
+    profile: off_on_color
+    restart_events: fire_proton_round1
+    show_tokens: 
+      lights: LPR1
+      color: 00dddd
+    control_events: 
+      - events: add_proton_round1, complete_full_protons
+        state: 1
+  proton_round2:
+    profile: off_on_color
+    restart_events: fire_proton_round2
+    show_tokens: 
+      lights: LPR2
+      color: 00dddd
+    control_events: 
+      - events: add_proton_round2, complete_full_protons
+        state: 1
+  proton_round3:
+    profile: off_on_color
+    restart_events: fire_proton_round3
+    show_tokens: 
+      lights: LPR3
+      color: 00dddd
+    control_events: 
+      - events: add_proton_round3, complete_full_protons
+        state: 1
+  proton_round4:
+    profile: off_on_color
+    restart_events: fire_proton_round4
+    show_tokens: 
+      lights: LPR4
+      color: 00dddd
+    control_events: 
+      - events: add_proton_round4, complete_full_protons
+        state: 1
+  proton_round5:
+    profile: off_on_color
+    restart_events: fire_proton_round5
+    show_tokens: 
+      lights: LPR5
+      color: 00dddd
+    control_events: 
+      - events: add_proton_round5, complete_full_protons
+        state: 1
+  proton_round6:
+    profile: off_on_color
+    restart_events: fire_proton_round6
+    show_tokens: 
+      lights: LPR6
+      color: 00dddd
+    control_events: 
+      - events: add_proton_round6, complete_full_protons
+        state: 1
+
+show_player: 
+  add_proton_round1: 
+    flash_color: 
+      key: key_proton1_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPR1
+        color: 00dddd
+  add_proton_round2: 
+    flash_color: 
+      key: key_proton2_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPR2
+        color: 00dddd
+  add_proton_round3: 
+    flash_color: 
+      key: key_proton3_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPR3
+        color: 00dddd
+  add_proton_round4: 
+    flash_color: 
+      key: key_proton4_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPR4
+        color: 00dddd
+  add_proton_round5: 
+    flash_color: 
+      key: key_proton5_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPR5
+        color: 00dddd
+  add_proton_round6: 
+    flash_color: 
+      key: key_proton6_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPR6
+        color: 00dddd
+  light_proton_charge3: 
+    flash_color: 
+      key: key_proton_charged
+      loops: 6
+      speed: 15
+      show_tokens: 
+        lights: tProton
+        color: 00dddd
+  complete_full_protons: 
+    flash_color: 
+      key: key_all_proton_charged
+      priority: 2000
+      loops: 14
+      speed: 15
+      show_tokens: 
+        lights: tProtonAll
+        color: 00dddd
+  proton_added_show: 
+    flash_color: 
+      key: key_all_proton_charged
+      priority: 100
+      loops: 12
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: 00dddd
+  s_spinner_active: 
+    flash_color_with_fade: 
+      key: key_spinner_flash
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: FL4
+        color: 00dddd
+        fade: 300
+  lsling_powerup_pc: 
+    lsling_rotate2_cw: 
+      key: key_lsling_powerup_pc
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 00dddd
+        color2: 00dddd
+        intensity: 100
+  rsling_powerup_pc: 
+    rsling_rotate2_ccw: 
+      key: key_rsling_powerup_pc
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 00dddd
+        color2: 00dddd
+        intensity: 100
+
+
+sound_player: 
+  play_sfx_LPC1: 
+    sfx_LPC1: 
+      key: key_sfx_LPC1
+      action: play
+  play_sfx_LPC2: 
+    sfx_LPC2: 
+      key: key_sfx_LPC2
+      action: play
+  play_sfx_LPC3: 
+    sfx_LPC3: 
+      key: key_sfx_LPC3
+      action: play
+  play_sfx_LPC4: 
+    sfx_LPC4: 
+      key: key_sfx_LPC4
+      action: play
+  play_sfx_LPC5: 
+    sfx_LPC5: 
+      key: key_sfx_LPC5
+      action: play
+  added_proton: 
+    voc_LPR1: 
+      key: key_voc_LPR1
+      action: play
+
+
+

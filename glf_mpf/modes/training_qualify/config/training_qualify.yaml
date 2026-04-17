@@ -1,0 +1,230 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_meteor_wave, stop_training, wizard_mode_ended
+  stop_events: stop_training_qualify, mode_base_stopping, start_training, wizard_mode_started
+  priority: 513
+
+event_player: 
+  mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}:
+    - restart_qualify_training
+  mode_training_qualify_started{current_player.training_just_finished == 1}:
+    - restart_qualify_training
+  restart_qualify_training{current_player.training_total_achieved < 6}:
+    - create_training_shots
+  restart_qualify_training{current_player.training_total_achieved == 3}:
+    - activate_nuke
+  timer_training_shot_add_tick:
+    - add_training_shot
+  left_side_hit{current_player.shot_training_shot1 == 1}:
+    - left_side_training_off
+    - training_shot_hit
+  left_orbit_hit{current_player.shot_training_shot2 == 1}:
+    - left_orbit_training_off
+    - training_shot_hit
+  left_ramp_hit{current_player.shot_training_shot3 == 1}:
+    - left_ramp_training_off
+    - training_shot_hit
+  inner_orbit_hit{current_player.shot_training_shot4 == 1}:
+    - inner_orbit_training_off
+    - training_shot_hit
+  center_orbit_left_hit{current_player.shot_training_shot5 == 1}:
+    - center_orbit_left_training_off
+    - training_shot_hit
+  center_orbit_right_hit{current_player.shot_training_shot6 == 1}:
+    - center_orbit_right_training_off
+    - training_shot_hit
+  right_ramp_hit{current_player.shot_training_shot7 == 1}:
+    - right_ramp_training_off
+    - training_shot_hit
+  right_orbit_hit{current_player.shot_training_shot8 == 1}:
+    - right_orbit_training_off
+    - training_shot_hit
+  training_shot_hit:
+    - check_training_qualify
+    - play_sfx_LS_between_waves_updated
+    - score_70000
+  check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}:
+    - training_shots_completed
+    - play_voc_Training
+    - training_flash
+  s_Scoop_active{current_player.shot_training_ready == 1 and current_player.wizard_mode_is_ready==0 and machine.flippers_are_dead==0}:
+    - enable_scoop_hold
+  check_training{current_player.shot_training_ready==1 and machine.flippers_are_dead==0}:
+    - start_training_select
+  mystery_trainer_ready:
+    - clear_training_shots
+    - training_shots_completed
+  ss_trainer_ready{current_player.shot_training_ready == 0}:
+    - clear_training_shots
+    - training_shots_completed
+  training_shots_completed:
+    - score_200000
+
+
+random_event_player: 
+  add_training_shot: 
+    events:
+      left_side_training_on{current_player.shot_training_shot1 == 0}: 1
+      left_orbit_training_on{current_player.shot_training_shot2 == 0}: 1
+      left_ramp_training_on{current_player.shot_training_shot3 == 0}: 1
+      inner_orbit_training_on{current_player.shot_training_shot4 == 0}: 1
+      center_orbit_left_training_on{current_player.shot_training_shot5 == 0}: 1
+      center_orbit_right_training_on{current_player.shot_training_shot6 == 0}: 1
+      right_ramp_training_on{current_player.shot_training_shot7 == 0}: 1
+      right_orbit_training_on{current_player.shot_training_shot8 == 0}: 1
+    scope: player
+
+
+segment_display_player: 
+  training_shots_completed: 
+    player2: 
+      text: "START"
+      expire: 2000ms
+      flashing: all
+    player3: 
+      text: "TRAINER"
+      expire: 2000ms
+      flashing: all
+
+
+shots: 
+  training_shot1:
+    profile: training_profile
+    restart_events: left_side_training_off, clear_training_shots
+    show_tokens: 
+      lights: LS1
+      color: ff4c00
+    control_events: 
+      - events: left_side_training_on
+        state: 1
+  training_shot2:
+    profile: training_profile
+    restart_events: left_orbit_training_off, clear_training_shots
+    show_tokens: 
+      lights: LS2
+      color: ff4c00
+    control_events: 
+      - events: left_orbit_training_on
+        state: 1
+  training_shot3:
+    profile: training_profile
+    restart_events: left_ramp_training_off, clear_training_shots
+    show_tokens: 
+      lights: LS3
+      color: ff4c00
+    control_events: 
+      - events: left_ramp_training_on
+        state: 1
+  training_shot4:
+    profile: training_profile
+    restart_events: inner_orbit_training_off, clear_training_shots
+    show_tokens: 
+      lights: LS4
+      color: ff4c00
+    control_events: 
+      - events: inner_orbit_training_on
+        state: 1
+  training_shot5:
+    profile: training_profile
+    restart_events: center_orbit_left_training_off, clear_training_shots
+    show_tokens: 
+      lights: LPC4
+      color: ff4c00
+    control_events: 
+      - events: center_orbit_left_training_on
+        state: 1
+  training_shot6:
+    profile: training_profile
+    restart_events: center_orbit_right_training_off, clear_training_shots
+    show_tokens: 
+      lights: LPC5
+      color: ff4c00
+    control_events: 
+      - events: center_orbit_right_training_on
+        state: 1
+  training_shot7:
+    profile: training_profile
+    restart_events: right_ramp_training_off, clear_training_shots
+    show_tokens: 
+      lights: LS5
+      color: ff4c00
+    control_events: 
+      - events: right_ramp_training_on
+        state: 1
+  training_shot8:
+    profile: training_profile
+    restart_events: right_orbit_training_off, clear_training_shots
+    show_tokens: 
+      lights: LS6
+      color: ff4c00
+    control_events: 
+      - events: right_orbit_training_on
+        state: 1
+  training_ready:
+    profile: qualified_shot
+    restart_events: restart_qualify_training
+    show_tokens: 
+      lights: LX
+      color: ff4c00
+    enable_events: mode_training_qualify_started
+    disable_events: start_training_select
+    control_events: 
+      - events: training_shots_completed
+        state: 1
+
+show_player: 
+  training_flash: 
+    flash_color: 
+      key: key_loaded_wiz_ready
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ff4c00
+
+
+sound_player: 
+  play_voc_Training: 
+    voc_Training: 
+      key: key_voc_Training
+      action: play
+
+
+timers: 
+  training_shot_add:
+    start_value: current_player.num_training_shots
+    end_value: 0
+    direction: down
+    control_events: 
+      - event: restart_qualify_training
+        action: jump
+        value: current_player.num_training_shots
+      - event: create_training_shots
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 60ms
+
+variable_player: 
+  training_shots_completed{current_player.num_training_shots < 8}: 
+    num_training_shots: 
+      action: add
+      int: 1
+
+  training_shot_hit: 
+    num_training_shots_hit: 
+      action: add
+      int: 1
+
+  restart_qualify_training: 
+    num_training_shots_hit: 
+      action: set
+      int: 0
+    training_just_finished: 
+      action: set
+      int: 0
+
+
+
+

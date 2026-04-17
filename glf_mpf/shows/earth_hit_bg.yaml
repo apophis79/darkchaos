@@ -1,0 +1,33 @@
+#show_version=6
+
+- time: 0
+
+- time: 0.02s
+  shows:
+    flash_color_fadeout: 
+      key: key_DOF2
+      loops: 0
+      speed: 10
+      show_tokens: 
+        color: ffb46b
+        lights: LBG02
+
+- time: 0.1s
+
+- time: 0.12s
+  shows:
+    flash_color_fadeout: 
+      key: key_DOF1
+      loops: 0
+      speed: 10
+      show_tokens: 
+        color: ffb46b
+        lights: LBG01
+
+- time: 0.3s
+
+- time: 0.4s
+
+- time: 0.41s
+
+

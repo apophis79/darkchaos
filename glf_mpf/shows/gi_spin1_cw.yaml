@@ -1,0 +1,998 @@
+#show_version=6
+
+- time: 0
+  lights:
+    gi17: stop
+    giapron: stop
+    gi22: stop
+    gi20: stop
+    gi21: stop
+    gi19: 47321f%(intensity)
+    gi18: stop
+    gi16: stop
+    gi15: stop
+    gi14: c58d54%(intensity)
+    gi13: stop
+    gi12: 130c06%(intensity)
+    gi11: 795532%(intensity)
+    gi10: ffb36b%(intensity)
+    gi09: f9af68%(intensity)
+    gi08: 160f07%(intensity)
+    gi07: stop
+    gi06: stop
+    gi05: stop
+    gi04: 180f08%(intensity)
+    gi03: stop
+    gi02: stop
+    gi01: stop
+
+- time: 0.03333s
+  lights:
+    gi19: 2e2013%(intensity)
+    gi14: ab7747%(intensity)
+    gi12: 2a1d14%(intensity)
+    gi11: 986b41%(intensity)
+    gi09: e09f5f%(intensity)
+    gi08: 24170e%(intensity)
+    gi04: 0a0603%(intensity)
+
+- time: 0.06667s
+  lights:
+    gi19: 1b120b%(intensity)
+    gi14: 90643d%(intensity)
+    gi12: 4a341f%(intensity)
+    gi11: b9834d%(intensity)
+    gi09: c38952%(intensity)
+    gi08: 352516%(intensity)
+    gi07: 070302%(intensity)
+    gi04: stop
+
+- time: 0.1s
+  lights:
+    gi19: 0c0805%(intensity)
+    gi18: 0d0805%(intensity)
+    gi14: 74522f%(intensity)
+    gi12: 725030%(intensity)
+    gi11: d89a5c%(intensity)
+    gi09: a37345%(intensity)
+    gi08: 4a341f%(intensity)
+    gi07: 150e08%(intensity)
+
+- time: 0.13333s
+  lights:
+    gi20: 030102%(intensity)
+    gi19: 020100%(intensity)
+    gi18: 2c1f13%(intensity)
+    gi14: 5d4227%(intensity)
+    gi12: 9c6d41%(intensity)
+    gi11: f0ab65%(intensity)
+    gi10: f4ae68%(intensity)
+    gi09: 845d38%(intensity)
+    gi08: 67482b%(intensity)
+    gi07: 271c12%(intensity)
+    gi06: 0f0b08%(intensity)
+
+- time: 0.16667s
+  lights:
+    gi20: 1d140b%(intensity)
+    gi19: stop
+    gi18: 5b4126%(intensity)
+    gi14: 49331f%(intensity)
+    gi12: c48c53%(intensity)
+    gi11: ffb36b%(intensity)
+    gi10: e4a160%(intensity)
+    gi09: 6a4a2d%(intensity)
+    gi08: 855e37%(intensity)
+    gi07: 432f1e%(intensity)
+    gi06: 2c1f12%(intensity)
+    gi05: 040303%(intensity)
+
+- time: 0.2s
+  lights:
+    gi20: 442f1c%(intensity)
+    gi21: 080705%(intensity)
+    gi18: 91663d%(intensity)
+    gi14: 382819%(intensity)
+    gi12: e8a463%(intensity)
+    gi10: d09357%(intensity)
+    gi09: 523a22%(intensity)
+    gi08: aa7848%(intensity)
+    gi07: 64462a%(intensity)
+    gi06: 523a22%(intensity)
+    gi05: 1d140b%(intensity)
+
+- time: 0.23333s
+  lights:
+    gi20: 725130%(intensity)
+    gi21: 332316%(intensity)
+    gi18: c68d54%(intensity)
+    gi14: 2a1e12%(intensity)
+    gi12: ffb36b%(intensity)
+    gi10: bc834e%(intensity)
+    gi09: 3f2c1b%(intensity)
+    gi08: ce9155%(intensity)
+    gi07: 89613a%(intensity)
+    gi06: 7f5934%(intensity)
+    gi05: 402d1c%(intensity)
+
+- time: 0.26667s
+  lights:
+    gi20: a57344%(intensity)
+    gi21: 6c4d2e%(intensity)
+    gi18: efaa66%(intensity)
+    gi16: 332316%(intensity)
+    gi14: 21170d%(intensity)
+    gi11: f9b067%(intensity)
+    gi10: a57444%(intensity)
+    gi09: 2f2114%(intensity)
+    gi08: eca762%(intensity)
+    gi07: b4814c%(intensity)
+    gi06: b3804b%(intensity)
+    gi05: 6e4d2c%(intensity)
+
+- time: 0.3s
+  lights:
+    gi20: d69659%(intensity)
+    gi21: ac7848%(intensity)
+    gi18: ffb36b%(intensity)
+    gi16: 7e5b35%(intensity)
+    gi14: 1c130b%(intensity)
+    gi11: dd9d5d%(intensity)
+    gi10: 91663c%(intensity)
+    gi09: 241910%(intensity)
+    gi08: ffb36b%(intensity)
+    gi07: dd9d5d%(intensity)
+    gi06: e2a15f%(intensity)
+    gi05: a47446%(intensity)
+
+- time: 0.33333s
+  lights:
+    gi22: 020100%(intensity)
+    gi20: f9af68%(intensity)
+    gi21: e4a05f%(intensity)
+    gi16: ce9156%(intensity)
+    gi14: 191009%(intensity)
+    gi12: eaa562%(intensity)
+    gi11: b9834d%(intensity)
+    gi10: 7d5a34%(intensity)
+    gi09: 1c130b%(intensity)
+    gi07: fab26a%(intensity)
+    gi06: ffb36b%(intensity)
+    gi05: d7985b%(intensity)
+    gi04: 090603%(intensity)
+    gi03: 010101%(intensity)
+
+- time: 0.36667s
+  lights:
+    giapron: 110c08%(intensity)
+    gi22: 1f160d%(intensity)
+    gi20: ffb36b%(intensity)
+    gi21: ffb36b%(intensity)
+    gi18: eaa562%(intensity)
+    gi16: ffb36b%(intensity)
+    gi14: 15100a%(intensity)
+    gi13: 030200%(intensity)
+    gi12: c08750%(intensity)
+    gi11: 966940%(intensity)
+    gi10: 6e4e2f%(intensity)
+    gi09: 180f08%(intensity)
+    gi07: ffb36b%(intensity)
+    gi05: fdb26a%(intensity)
+    gi04: 160f09%(intensity)
+    gi03: 100b07%(intensity)
+
+- time: 0.4s
+  lights:
+    giapron: 4e3520%(intensity)
+    gi22: 503721%(intensity)
+    gi18: b3804b%(intensity)
+    gi14: 181009%(intensity)
+    gi13: 150f09%(intensity)
+    gi12: 91663c%(intensity)
+    gi11: 72512f%(intensity)
+    gi10: 5f4326%(intensity)
+    gi09: 160f09%(intensity)
+    gi08: fcb26b%(intensity)
+    gi05: ffb36b%(intensity)
+    gi04: 241a10%(intensity)
+    gi03: 241b10%(intensity)
+    gi01: 0b0704%(intensity)
+
+- time: 0.43333s
+  lights:
+    giapron: 9e6f42%(intensity)
+    gi22: 88613a%(intensity)
+    gi20: e5a160%(intensity)
+    gi21: e5a160%(intensity)
+    gi19: 060501%(intensity)
+    gi18: 775431%(intensity)
+    gi16: ca8e54%(intensity)
+    gi14: 1c130c%(intensity)
+    gi13: 302215%(intensity)
+    gi12: 64462a%(intensity)
+    gi11: 563c24%(intensity)
+    gi10: 533b23%(intensity)
+    gi08: e6a362%(intensity)
+    gi07: fbb16a%(intensity)
+    gi06: e4a161%(intensity)
+    gi04: 3e2b1a%(intensity)
+    gi03: 442f1e%(intensity)
+    gi02: 0c0805%(intensity)
+    gi01: 261c12%(intensity)
+
+- time: 0.46667s
+  lights:
+    giapron: eaa562%(intensity)
+    gi22: c08850%(intensity)
+    gi20: b27f4c%(intensity)
+    gi21: a47446%(intensity)
+    gi19: 120d09%(intensity)
+    gi18: 442f1e%(intensity)
+    gi16: 704f2e%(intensity)
+    gi15: 030200%(intensity)
+    gi14: 1f160d%(intensity)
+    gi13: 533b23%(intensity)
+    gi12: 3f2c1b%(intensity)
+    gi11: 3d2a19%(intensity)
+    gi10: 4c3621%(intensity)
+    gi09: 180f08%(intensity)
+    gi08: cb8f55%(intensity)
+    gi07: e4a05f%(intensity)
+    gi06: bb844e%(intensity)
+    gi05: e7a362%(intensity)
+    gi04: 5b4025%(intensity)
+    gi03: 68492c%(intensity)
+    gi02: 261c12%(intensity)
+    gi01: 523a22%(intensity)
+
+- time: 0.5s
+  lights:
+    gi17: 1f160d%(intensity)
+    giapron: ffb36b%(intensity)
+    gi22: efa964%(intensity)
+    gi20: 795533%(intensity)
+    gi21: 5f4329%(intensity)
+    gi19: 261a0e%(intensity)
+    gi18: 19120a%(intensity)
+    gi16: 24190f%(intensity)
+    gi15: 1c130c%(intensity)
+    gi14: 2a1d14%(intensity)
+    gi13: 7d5934%(intensity)
+    gi12: 20160c%(intensity)
+    gi11: 281d11%(intensity)
+    gi10: 46311e%(intensity)
+    gi09: 1c130b%(intensity)
+    gi08: ad7949%(intensity)
+    gi07: c08851%(intensity)
+    gi06: 8f633c%(intensity)
+    gi05: bf8852%(intensity)
+    gi04: 7b5733%(intensity)
+    gi03: 91663b%(intensity)
+    gi02: 513921%(intensity)
+    gi01: 845e36%(intensity)
+
+- time: 0.53333s
+  lights:
+    gi17: 694b2d%(intensity)
+    giapron: fbb16a%(intensity)
+    gi22: ffb36b%(intensity)
+    gi20: 48321f%(intensity)
+    gi21: 251b11%(intensity)
+    gi19: 3c2a1a%(intensity)
+    gi18: stop
+    gi16: stop
+    gi15: 3b2a1a%(intensity)
+    gi14: 362617%(intensity)
+    gi13: aa7747%(intensity)
+    gi12: 0c0805%(intensity)
+    gi11: 19120c%(intensity)
+    gi10: 432e1c%(intensity)
+    gi09: 24190f%(intensity)
+    gi08: 8d633b%(intensity)
+    gi07: 9d6e42%(intensity)
+    gi06: 5f4427%(intensity)
+    gi05: 91653e%(intensity)
+    gi04: a37345%(intensity)
+    gi03: bf874f%(intensity)
+    gi02: 815b35%(intensity)
+    gi01: bd864e%(intensity)
+
+- time: 0.56667s
+  lights:
+    gi17: bb844e%(intensity)
+    giapron: c38a53%(intensity)
+    gi20: 20160c%(intensity)
+    gi21: 010101%(intensity)
+    gi19: 593f25%(intensity)
+    gi15: 65472b%(intensity)
+    gi14: 46311e%(intensity)
+    gi13: d29459%(intensity)
+    gi12: stop
+    gi11: 0e0a07%(intensity)
+    gi09: 2f2114%(intensity)
+    gi08: 6b4c2d%(intensity)
+    gi07: 765331%(intensity)
+    gi06: 382819%(intensity)
+    gi05: 5e4326%(intensity)
+    gi04: cb8e54%(intensity)
+    gi03: e6a261%(intensity)
+    gi02: b9844e%(intensity)
+    gi01: eda864%(intensity)
+
+- time: 0.6s
+  lights:
+    gi17: fab069%(intensity)
+    giapron: 7a5531%(intensity)
+    gi22: e2a160%(intensity)
+    gi20: 040303%(intensity)
+    gi21: stop
+    gi19: 7c5733%(intensity)
+    gi15: 966940%(intensity)
+    gi14: 583e25%(intensity)
+    gi13: f3ad67%(intensity)
+    gi11: 090504%(intensity)
+    gi10: 442f1c%(intensity)
+    gi09: 3f2c19%(intensity)
+    gi08: 513822%(intensity)
+    gi07: 533b23%(intensity)
+    gi06: 191009%(intensity)
+    gi05: 352516%(intensity)
+    gi04: eda762%(intensity)
+    gi03: ffb36b%(intensity)
+    gi02: eaa562%(intensity)
+    gi01: ffb36b%(intensity)
+
+- time: 0.63333s
+  lights:
+    gi17: ffb36b%(intensity)
+    giapron: 342415%(intensity)
+    gi22: a67646%(intensity)
+    gi20: stop
+    gi19: 9f7042%(intensity)
+    gi15: c38b53%(intensity)
+    gi14: 715031%(intensity)
+    gi13: ffb36b%(intensity)
+    gi11: 020202%(intensity)
+    gi10: 47321f%(intensity)
+    gi09: 523a22%(intensity)
+    gi08: 392819%(intensity)
+    gi07: 362617%(intensity)
+    gi06: 030200%(intensity)
+    gi05: 150f09%(intensity)
+    gi04: ffb36b%(intensity)
+    gi02: ffb36b%(intensity)
+
+- time: 0.66667s
+  lights:
+    gi17: de9e5e%(intensity)
+    giapron: 030200%(intensity)
+    gi22: 68492c%(intensity)
+    gi19: c28952%(intensity)
+    gi15: eba663%(intensity)
+    gi14: 8b613b%(intensity)
+    gi11: stop
+    gi10: 503721%(intensity)
+    gi09: 6a4a2d%(intensity)
+    gi08: 271b0f%(intensity)
+    gi07: 1e150c%(intensity)
+    gi06: stop
+    gi05: stop
+    gi01: f5ae66%(intensity)
+
+- time: 0.7s
+  lights:
+    gi17: 855e37%(intensity)
+    giapron: stop
+    gi22: 322316%(intensity)
+    gi19: e39f5e%(intensity)
+    gi15: ffb36b%(intensity)
+    gi14: a37343%(intensity)
+    gi13: fbb16a%(intensity)
+    gi10: 593f25%(intensity)
+    gi09: 845d36%(intensity)
+    gi08: 181009%(intensity)
+    gi07: 0d0906%(intensity)
+    gi03: f0aa65%(intensity)
+    gi02: f9af68%(intensity)
+    gi01: cd9057%(intensity)
+
+- time: 0.73333s
+  lights:
+    gi17: 342417%(intensity)
+    gi22: 0d0905%(intensity)
+    gi19: fbb16a%(intensity)
+    gi14: bf8850%(intensity)
+    gi13: d6985b%(intensity)
+    gi11: 010101%(intensity)
+    gi10: 66482c%(intensity)
+    gi09: a37345%(intensity)
+    gi08: 0e0906%(intensity)
+    gi07: stop
+    gi04: f4ae66%(intensity)
+    gi03: d19358%(intensity)
+    gi02: d69659%(intensity)
+    gi01: 9f7044%(intensity)
+
+- time: 0.76667s
+  lights:
+    gi17: stop
+    gi22: stop
+    gi19: ffb36b%(intensity)
+    gi15: fbb168%(intensity)
+    gi14: d99a5c%(intensity)
+    gi13: a97747%(intensity)
+    gi11: 040303%(intensity)
+    gi10: 745330%(intensity)
+    gi09: c38952%(intensity)
+    gi08: 060503%(intensity)
+    gi04: db9b5d%(intensity)
+    gi03: ac7848%(intensity)
+    gi02: a77445%(intensity)
+    gi01: 6a4b2d%(intensity)
+
+- time: 0.8s
+  lights:
+    gi15: d5975a%(intensity)
+    gi14: f0aa65%(intensity)
+    gi13: 785432%(intensity)
+    gi11: 0c0805%(intensity)
+    gi10: 88613a%(intensity)
+    gi09: e09f5f%(intensity)
+    gi08: 020100%(intensity)
+    gi04: bb844e%(intensity)
+    gi03: 835c38%(intensity)
+    gi02: 745330%(intensity)
+    gi01: 3e2b1a%(intensity)
+
+- time: 0.83333s
+  lights:
+    gi19: ffb36d%(intensity)
+    gi15: a27244%(intensity)
+    gi14: ffb36b%(intensity)
+    gi13: 4f3620%(intensity)
+    gi11: 150e08%(intensity)
+    gi10: 9c6d41%(intensity)
+    gi09: fab067%(intensity)
+    gi08: stop
+    gi04: 976a40%(intensity)
+    gi03: 5d4227%(intensity)
+    gi02: 46311e%(intensity)
+    gi01: 1b120b%(intensity)
+
+- time: 0.86667s
+  lights:
+    gi19: e4a160%(intensity)
+    gi15: 6e4d2d%(intensity)
+    gi13: 2b1f13%(intensity)
+    gi11: 20170d%(intensity)
+    gi10: b07d4a%(intensity)
+    gi09: ffb36b%(intensity)
+    gi04: 73522f%(intensity)
+    gi03: 3a2919%(intensity)
+    gi02: 20170d%(intensity)
+    gi01: 010100%(intensity)
+
+- time: 0.9s
+  lights:
+    gi19: c08750%(intensity)
+    gi15: 402d1c%(intensity)
+    gi13: 100b07%(intensity)
+    gi11: 332316%(intensity)
+    gi10: c58c53%(intensity)
+    gi04: 543c24%(intensity)
+    gi03: 1f160d%(intensity)
+    gi02: 060503%(intensity)
+    gi01: stop
+
+- time: 0.93333s
+  lights:
+    gi19: 986c3f%(intensity)
+    gi15: 1e150c%(intensity)
+    gi13: stop
+    gi11: 48321d%(intensity)
+    gi10: da9a5c%(intensity)
+    gi08: 030102%(intensity)
+    gi04: 382819%(intensity)
+    gi03: 0d0805%(intensity)
+    gi02: stop
+
+- time: 0.96667s
+  lights:
+    gi19: 70502f%(intensity)
+    gi15: 070302%(intensity)
+    gi14: f0ab66%(intensity)
+    gi12: 030303%(intensity)
+    gi11: 64462a%(intensity)
+    gi10: eca762%(intensity)
+    gi09: faaf6b%(intensity)
+    gi08: 0a0604%(intensity)
+    gi04: 21170d%(intensity)
+    gi03: stop
+
+- time: 1s
+  lights:
+    gi19: 513921%(intensity)
+    gi15: stop
+    gi14: d9995b%(intensity)
+    gi12: 170e07%(intensity)
+    gi11: 845e36%(intensity)
+    gi10: fbb16a%(intensity)
+    gi09: e4a361%(intensity)
+    gi08: 130c06%(intensity)
+    gi04: 110c06%(intensity)
+
+- time: 1.03333s
+  lights:
+    gi19: 352516%(intensity)
+    gi14: bc854f%(intensity)
+    gi12: 2f2114%(intensity)
+    gi11: aa7748%(intensity)
+    gi10: ffb36b%(intensity)
+    gi09: cc8f56%(intensity)
+    gi08: 1e150c%(intensity)
+    gi04: 050402%(intensity)
+
+- time: 1.06667s
+  lights:
+    gi19: 1f150c%(intensity)
+    gi14: 9e6f43%(intensity)
+    gi12: 533a22%(intensity)
+    gi11: cd9055%(intensity)
+    gi09: b07d4a%(intensity)
+    gi08: 2d2013%(intensity)
+    gi07: 030200%(intensity)
+    gi04: stop
+
+- time: 1.1s
+  lights:
+    gi19: 0e0a07%(intensity)
+    gi18: 0f0b08%(intensity)
+    gi14: 7f5934%(intensity)
+    gi12: 7b5733%(intensity)
+    gi11: eca762%(intensity)
+    gi09: 94683d%(intensity)
+    gi08: 432e1b%(intensity)
+    gi07: 110b06%(intensity)
+
+- time: 1.13333s
+  lights:
+    gi20: 060503%(intensity)
+    gi19: 030303%(intensity)
+    gi18: 342417%(intensity)
+    gi14: 68492c%(intensity)
+    gi12: ac7948%(intensity)
+    gi11: ffb36b%(intensity)
+    gi09: 785532%(intensity)
+    gi08: 5c4126%(intensity)
+    gi07: 22180e%(intensity)
+    gi06: 0d0805%(intensity)
+
+- time: 1.16667s
+  lights:
+    gi20: 24180f%(intensity)
+    gi19: stop
+    gi18: 65472a%(intensity)
+    gi14: 523a22%(intensity)
+    gi12: d8995b%(intensity)
+    gi10: f7af67%(intensity)
+    gi09: 5e4326%(intensity)
+    gi08: 7a5632%(intensity)
+    gi07: 3b2a1a%(intensity)
+    gi06: 261a0e%(intensity)
+    gi05: 020100%(intensity)
+
+- time: 1.2s
+  lights:
+    gi20: 4b3520%(intensity)
+    gi21: 0d0a05%(intensity)
+    gi18: a07044%(intensity)
+    gi14: 402d1c%(intensity)
+    gi12: fbb168%(intensity)
+    gi10: e3a15f%(intensity)
+    gi09: 49331f%(intensity)
+    gi08: 9a6d41%(intensity)
+    gi07: 5a4025%(intensity)
+    gi06: 49331f%(intensity)
+    gi05: 191009%(intensity)
+
+- time: 1.23333s
+  lights:
+    gi20: 7c5833%(intensity)
+    gi21: 3a2919%(intensity)
+    gi18: d9995b%(intensity)
+    gi16: 010101%(intensity)
+    gi14: 322316%(intensity)
+    gi12: ffb36b%(intensity)
+    gi11: fbb16a%(intensity)
+    gi10: ce9156%(intensity)
+    gi09: 372718%(intensity)
+    gi08: ba834d%(intensity)
+    gi07: 7f5934%(intensity)
+    gi06: 74522f%(intensity)
+    gi05: 3a2919%(intensity)
+
+- time: 1.26667s
+  lights:
+    gi20: b6824d%(intensity)
+    gi21: 765430%(intensity)
+    gi18: ffb36b%(intensity)
+    gi16: 392818%(intensity)
+    gi14: 271c12%(intensity)
+    gi11: e4a361%(intensity)
+    gi10: b6824e%(intensity)
+    gi09: 2a1d13%(intensity)
+    gi08: d89a5c%(intensity)
+    gi07: a37343%(intensity)
+    gi06: a27244%(intensity)
+    gi05: 63472a%(intensity)
+
+- time: 1.3s
+  lights:
+    gi20: e9a461%(intensity)
+    gi21: bc854f%(intensity)
+    gi16: 8b623a%(intensity)
+    gi14: 21170d%(intensity)
+    gi12: f4ae66%(intensity)
+    gi11: c98e54%(intensity)
+    gi10: a17143%(intensity)
+    gi09: 1e150c%(intensity)
+    gi08: f0aa64%(intensity)
+    gi07: c98e54%(intensity)
+    gi06: ce9256%(intensity)
+    gi05: 956940%(intensity)
+
+- time: 1.33333s
+  lights:
+    gi22: 030303%(intensity)
+    gi20: ffb36b%(intensity)
+    gi21: f7ae69%(intensity)
+    gi18: fbb16a%(intensity)
+    gi16: e2a160%(intensity)
+    gi14: 1d140d%(intensity)
+    gi12: d7975a%(intensity)
+    gi11: aa7746%(intensity)
+    gi10: 896139%(intensity)
+    gi09: 16100a%(intensity)
+    gi08: ffb36b%(intensity)
+    gi07: e9a463%(intensity)
+    gi06: f2ac66%(intensity)
+    gi05: c48b53%(intensity)
+    gi04: 050402%(intensity)
+
+- time: 1.36667s
+  lights:
+    giapron: 0e0a06%(intensity)
+    gi22: 241a10%(intensity)
+    gi21: ffb36b%(intensity)
+    gi18: d7975a%(intensity)
+    gi16: ffb36b%(intensity)
+    gi14: 1b120b%(intensity)
+    gi13: 060302%(intensity)
+    gi12: ad7a47%(intensity)
+    gi11: 886039%(intensity)
+    gi10: 775432%(intensity)
+    gi09: 120d08%(intensity)
+    gi07: ffb36b%(intensity)
+    gi06: ffb36b%(intensity)
+    gi05: eca762%(intensity)
+    gi04: 130c06%(intensity)
+    gi03: 0e0906%(intensity)
+
+- time: 1.4s
+  lights:
+    giapron: 46311e%(intensity)
+    gi22: 5a3e26%(intensity)
+    gi20: f7af67%(intensity)
+    gi21: fcb26b%(intensity)
+    gi18: a37345%(intensity)
+    gi16: f7af67%(intensity)
+    gi14: 1c130c%(intensity)
+    gi13: 1a130b%(intensity)
+    gi12: 845c38%(intensity)
+    gi11: 684b2d%(intensity)
+    gi10: 6a492d%(intensity)
+    gi09: 130c06%(intensity)
+    gi05: ffb36b%(intensity)
+    gi04: 1f160d%(intensity)
+    gi03: 20160d%(intensity)
+    gi01: 060501%(intensity)
+
+- time: 1.43333s
+  lights:
+    giapron: 90643d%(intensity)
+    gi22: 966940%(intensity)
+    gi20: d19358%(intensity)
+    gi21: d19358%(intensity)
+    gi19: 0a0603%(intensity)
+    gi18: 6e4e2f%(intensity)
+    gi16: b6814d%(intensity)
+    gi14: 21170d%(intensity)
+    gi13: 372718%(intensity)
+    gi12: 5a4025%(intensity)
+    gi11: 4d351f%(intensity)
+    gi10: 5d4227%(intensity)
+    gi08: fab067%(intensity)
+    gi06: f6ae67%(intensity)
+    gi04: 372718%(intensity)
+    gi03: 3c2a1a%(intensity)
+    gi02: 060503%(intensity)
+    gi01: 21170d%(intensity)
+
+- time: 1.46667s
+  lights:
+    giapron: d7975a%(intensity)
+    gi22: d49659%(intensity)
+    gi20: a17143%(intensity)
+    gi21: 95683f%(intensity)
+    gi19: 191009%(intensity)
+    gi18: 3b2a1a%(intensity)
+    gi16: 64472b%(intensity)
+    gi15: 080403%(intensity)
+    gi14: 241a10%(intensity)
+    gi13: 5d4227%(intensity)
+    gi12: 372718%(intensity)
+    gi11: 362617%(intensity)
+    gi10: 543b24%(intensity)
+    gi09: 120d08%(intensity)
+    gi08: df9e5e%(intensity)
+    gi07: f7ae69%(intensity)
+    gi06: cf9156%(intensity)
+    gi05: fab067%(intensity)
+    gi04: 4f3922%(intensity)
+    gi03: 5e4326%(intensity)
+    gi02: 21170d%(intensity)
+    gi01: 49331f%(intensity)
+
+- time: 1.5s
+  lights:
+    gi17: 241a10%(intensity)
+    giapron: ffb36b%(intensity)
+    gi22: feb46a%(intensity)
+    gi20: 704f30%(intensity)
+    gi21: 553d24%(intensity)
+    gi19: 2b1f13%(intensity)
+    gi18: 140f09%(intensity)
+    gi16: 1e150c%(intensity)
+    gi15: 1f160c%(intensity)
+    gi14: 2f2114%(intensity)
+    gi13: 876037%(intensity)
+    gi12: 1c130b%(intensity)
+    gi11: 22180e%(intensity)
+    gi10: 4f3620%(intensity)
+    gi09: 16100a%(intensity)
+    gi08: bd864f%(intensity)
+    gi07: d5975a%(intensity)
+    gi06: 9c6d41%(intensity)
+    gi05: d29457%(intensity)
+    gi04: 725030%(intensity)
+    gi03: 855e38%(intensity)
+    gi02: 47321f%(intensity)
+    gi01: 785632%(intensity)
+
+- time: 1.53333s
+  lights:
+    gi17: 745230%(intensity)
+    gi22: ffb36b%(intensity)
+    gi20: 412d1c%(intensity)
+    gi21: 20170d%(intensity)
+    gi19: 442f1e%(intensity)
+    gi18: stop
+    gi16: stop
+    gi15: 442f1e%(intensity)
+    gi14: 3e2b1a%(intensity)
+    gi13: ba844e%(intensity)
+    gi12: 060501%(intensity)
+    gi11: 140e09%(intensity)
+    gi10: 4b3520%(intensity)
+    gi09: 1e150c%(intensity)
+    gi08: 996c42%(intensity)
+    gi07: ad7a49%(intensity)
+    gi06: 6b4a2d%(intensity)
+    gi05: 9f7042%(intensity)
+    gi04: 94683e%(intensity)
+    gi03: ad7949%(intensity)
+    gi02: 755431%(intensity)
+    gi01: ac7949%(intensity)
+
+- time: 1.56667s
+  lights:
+    gi17: ce9256%(intensity)
+    giapron: d5975a%(intensity)
+    gi22: f9af68%(intensity)
+    gi20: 1c130c%(intensity)
+    gi21: stop
+    gi19: 634529%(intensity)
+    gi15: 704f2e%(intensity)
+    gi14: 4f3620%(intensity)
+    gi13: e6a261%(intensity)
+    gi12: stop
+    gi11: 0b0704%(intensity)
+    gi10: 4a341f%(intensity)
+    gi09: 291d13%(intensity)
+    gi08: 765431%(intensity)
+    gi07: 815b35%(intensity)
+    gi06: 3f2c1b%(intensity)
+    gi05: 6a4a2d%(intensity)
+    gi04: b7824d%(intensity)
+    gi03: d29459%(intensity)
+    gi02: a77746%(intensity)
+    gi01: d99a5c%(intensity)
+
+- time: 1.6s
+  lights:
+    gi17: ffb36b%(intensity)
+    giapron: 855e37%(intensity)
+    gi22: ce9156%(intensity)
+    gi20: 020100%(intensity)
+    gi19: 865f36%(intensity)
+    gi15: a47446%(intensity)
+    gi14: 624428%(intensity)
+    gi13: ffb36b%(intensity)
+    gi11: 040301%(intensity)
+    gi10: 4c3520%(intensity)
+    gi09: 372718%(intensity)
+    gi08: 5a3f25%(intensity)
+    gi07: 5c4126%(intensity)
+    gi06: 1d140d%(intensity)
+    gi05: 3d2a19%(intensity)
+    gi04: d89b5c%(intensity)
+    gi03: f0aa65%(intensity)
+    gi02: d7975a%(intensity)
+    gi01: fbb16a%(intensity)
+
+- time: 1.63333s
+  lights:
+    giapron: 3c2a1a%(intensity)
+    gi22: 986b41%(intensity)
+    gi20: stop
+    gi19: b07c4c%(intensity)
+    gi15: d6975a%(intensity)
+    gi14: 7a5632%(intensity)
+    gi11: stop
+    gi10: 513921%(intensity)
+    gi09: 49331f%(intensity)
+    gi08: 402d1c%(intensity)
+    gi07: 3d2a19%(intensity)
+    gi06: 070302%(intensity)
+    gi05: 19120a%(intensity)
+    gi04: f4ad67%(intensity)
+    gi03: ffb36b%(intensity)
+    gi02: f9af68%(intensity)
+    gi01: ffb36b%(intensity)
+
+- time: 1.66667s
+  lights:
+    gi17: ca8f55%(intensity)
+    giapron: 080401%(intensity)
+    gi22: 5d4226%(intensity)
+    gi19: d5975a%(intensity)
+    gi15: fcb26b%(intensity)
+    gi14: 976a40%(intensity)
+    gi10: 593d25%(intensity)
+    gi09: 5e4326%(intensity)
+    gi08: 2c1f12%(intensity)
+    gi07: 24180f%(intensity)
+    gi06: stop
+    gi05: 020202%(intensity)
+    gi04: ffb36b%(intensity)
+    gi02: ffb36b%(intensity)
+
+- time: 1.7s
+  lights:
+    gi17: 795732%(intensity)
+    giapron: stop
+    gi22: 2a1e12%(intensity)
+    gi19: f6ad68%(intensity)
+    gi15: ffb36b%(intensity)
+    gi14: b5804c%(intensity)
+    gi13: e8a463%(intensity)
+    gi10: 634529%(intensity)
+    gi09: 795532%(intensity)
+    gi08: 1c130c%(intensity)
+    gi07: 100b07%(intensity)
+    gi05: stop
+    gi01: e2a160%(intensity)
+
+- time: 1.73333s
+  lights:
+    gi17: 2b1f13%(intensity)
+    gi22: 070604%(intensity)
+    gi19: ffb36b%(intensity)
+    gi14: d39558%(intensity)
+    gi13: c38a53%(intensity)
+    gi10: 704f2e%(intensity)
+    gi09: 94683f%(intensity)
+    gi08: 100b07%(intensity)
+    gi07: 030303%(intensity)
+    gi03: e5a160%(intensity)
+    gi02: e9a461%(intensity)
+    gi01: af7b4b%(intensity)
+
+- time: 1.76667s
+  lights:
+    gi17: stop
+    gi22: stop
+    gi15: eaa562%(intensity)
+    gi14: eea864%(intensity)
+    gi13: 986b41%(intensity)
+    gi11: 020001%(intensity)
+    gi10: 805a35%(intensity)
+    gi09: b07c4a%(intensity)
+    gi08: 0b0704%(intensity)
+    gi07: stop
+    gi04: eea966%(intensity)
+    gi03: bc854f%(intensity)
+    gi02: b8834f%(intensity)
+    gi01: 755330%(intensity)
+
+- time: 1.8s
+  lights:
+    gi15: c18851%(intensity)
+    gi14: ffb36b%(intensity)
+    gi13: 6e4e2f%(intensity)
+    gi11: 060501%(intensity)
+    gi10: 96693f%(intensity)
+    gi09: cc8f56%(intensity)
+    gi08: 040303%(intensity)
+    gi04: cf9357%(intensity)
+    gi03: 90653b%(intensity)
+    gi02: 7f5935%(intensity)
+    gi01: 46311e%(intensity)
+
+- time: 1.83333s
+  lights:
+    gi19: eea863%(intensity)
+    gi15: 93683d%(intensity)
+    gi13: 44321e%(intensity)
+    gi11: 110b07%(intensity)
+    gi10: ac7948%(intensity)
+    gi09: e4a361%(intensity)
+    gi08: 020202%(intensity)
+    gi04: a57544%(intensity)
+    gi03: 67482b%(intensity)
+    gi02: 503821%(intensity)
+    gi01: 1e150c%(intensity)
+
+- time: 1.86667s
+  lights:
+    gi19: d09357%(intensity)
+    gi15: 62472a%(intensity)
+    gi13: 261a0e%(intensity)
+    gi11: 1c130b%(intensity)
+    gi10: c38952%(intensity)
+    gi09: fab069%(intensity)
+    gi08: 010101%(intensity)
+    gi04: 7e5833%(intensity)
+    gi03: 422e1d%(intensity)
+    gi02: 251b11%(intensity)
+    gi01: 030303%(intensity)
+
+- time: 1.9s
+  lights:
+    gi19: ad7947%(intensity)
+    gi15: 3a2919%(intensity)
+    gi13: 0d0906%(intensity)
+    gi11: 2b1f12%(intensity)
+    gi10: d9995b%(intensity)
+    gi09: ffb36b%(intensity)
+    gi08: 030303%(intensity)
+    gi04: 5d4227%(intensity)
+    gi03: 241a10%(intensity)
+    gi02: 0b0704%(intensity)
+    gi01: stop
+
+- time: 1.93333s
+  duration: 0.03333s
+  lights:
+    gi19: 8c613b%(intensity)
+    gi15: 1a110a%(intensity)
+    gi14: f3ad67%(intensity)
+    gi13: stop
+    gi11: 432e1d%(intensity)
+    gi10: eea965%(intensity)
+    gi08: 060503%(intensity)
+    gi04: 412e1d%(intensity)
+    gi03: 0f0a07%(intensity)
+    gi02: stop
+
+

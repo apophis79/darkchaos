@@ -1,0 +1,178 @@
+#config_version=6
+
+player_vars:
+  extra_ball_eb_awarded:
+    initial_value: 0
+    value_type: int
+  extra_ball_flwiz_eb_awarded:
+    initial_value: 0
+    value_type: int
+  extra_ball_ccwiz_eb_awarded:
+    initial_value: 0
+    value_type: int
+  flag_ss:
+    initial_value: 0
+    value_type: int
+  flag_sss_mystery:
+    initial_value: 0
+    value_type: int
+  num_skillshots:
+    initial_value: 0
+    value_type: int
+  ball_cradled:
+    initial_value: 0
+    value_type: int
+  ball_just_started:
+    initial_value: 1
+    value_type: int
+  meteor_wave_running:
+    initial_value: 0
+    value_type: int
+  meteor_countdown_value:
+    initial_value: 45
+    value_type: int
+  meteor_mb_shootagain_time:
+    initial_value: 6000
+    value_type: int
+  num_training_shots:
+    initial_value: 2
+    value_type: int
+  num_waves_completed:
+    initial_value: 0
+    value_type: int
+  num_waves_completed_this_ball:
+    initial_value: 0
+    value_type: int
+  num_wave_current:
+    initial_value: 0
+    value_type: int
+  num_training_shots_hit:
+    initial_value: 2
+    value_type: int
+  meteors_per_wave:
+    initial_value: 7
+    value_type: int
+  disable_moon_launch:
+    initial_value: 0
+    value_type: int
+  warping:
+    initial_value: 0
+    value_type: int
+  light_the_eb:
+    initial_value: 0
+    value_type: int
+  alien_tick_count:
+    initial_value: -1
+    value_type: int
+  alien_attack_dir:
+    initial_value: 0
+    value_type: int
+  alien_attack_done:
+    initial_value: 0
+    value_type: int
+  alien_grace_time:
+    initial_value: 0
+    value_type: int
+  scoring_multiplier:
+    initial_value: 1
+    value_type: int
+  pop_multiplier:
+    initial_value: 1
+    value_type: int
+  spin_multiplier:
+    initial_value: 1
+    value_type: int
+  bonus_multiplier:
+    initial_value: 1
+    value_type: int
+  combo_ticks:
+    initial_value: 7
+    value_type: int
+  combo_decay_ticks:
+    initial_value: 4
+    value_type: int
+  training_just_finished:
+    initial_value: 0
+    value_type: int
+  training_heal_achieved:
+    initial_value: 0
+    value_type: int
+  training_cluster_bomb_achieved:
+    initial_value: 0
+    value_type: int
+  training_proton_cannon_achieved:
+    initial_value: 0
+    value_type: int
+  training_moon_missile_achieved:
+    initial_value: 0
+    value_type: int
+  training_ship_save_achieved:
+    initial_value: 0
+    value_type: int
+  training_shields_achieved:
+    initial_value: 0
+    value_type: int
+  training_total_achieved:
+    initial_value: 0
+    value_type: int
+  training_moon_missile_used:
+    initial_value: 0
+    value_type: int
+  wizard_mode_is_ready:
+    initial_value: 0
+    value_type: int
+  wizard_mode_running:
+    initial_value: 0
+    value_type: int
+  wizard_combo_command_phase:
+    initial_value: 0
+    value_type: int
+  wizard_fully_loaded_phase:
+    initial_value: 0
+    value_type: int
+  fwwiz_add_ball_ready:
+    initial_value: 0
+    value_type: int
+  ccwiz_super_jp:
+    initial_value: 0
+    value_type: int
+  flwiz_super_jp:
+    initial_value: 0
+    value_type: int
+  wizard_final_hit_count:
+    initial_value: 20
+    value_type: int
+  victory:
+    initial_value: 0
+    value_type: int
+  bonus_waves:
+    initial_value: 0
+    value_type: int
+  bonus_training:
+    initial_value: 0
+    value_type: int
+  bonus_bombs:
+    initial_value: 0
+    value_type: int
+  bonus_missiles:
+    initial_value: 0
+    value_type: int
+  bonus_protons:
+    initial_value: 0
+    value_type: int
+  bonus_total:
+    initial_value: 0
+    value_type: int
+  hs_input_ready:
+    initial_value: 1
+    value_type: int
+  nuke_acquired:
+    initial_value: 0
+    value_type: int
+  nuke_used:
+    initial_value: 0
+    value_type: int
+  nuke_just_used:
+    initial_value: 0
+    value_type: int
+

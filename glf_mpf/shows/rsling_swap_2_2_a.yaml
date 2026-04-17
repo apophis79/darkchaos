@@ -1,0 +1,17 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    FL6a: (color1)%(intensity)
+    FL6c: (color2)%(intensity)
+    FL6e: (color1)%(intensity)
+    FL6g: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6a: (color2)%(intensity)
+    FL6c: (color1)%(intensity)
+    FL6e: (color2)%(intensity)
+    FL6g: (color1)%(intensity)
+
+

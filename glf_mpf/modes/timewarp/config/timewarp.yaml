@@ -1,0 +1,125 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_meteor_wave, stop_training, wizard_mode_ended
+  stop_events: stop_timewarp, mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 550
+
+event_player: 
+  mode_timewarp_started{current_player.shot_timewarp1==0}:
+    - reset_timewarp
+  mode_timewarp_started{current_player.ball_just_started==0}:
+    - reset_timewarp
+  reset_timewarp:
+    - ready_timewarp1
+  left_ramp_hit:
+    - score_2000
+  s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==1}:
+    - light_timewarp1
+    - ready_timewarp2
+    - restart_tw_timer
+    - score_10000
+  s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==2 and current_player.shot_timewarp2==1}:
+    - light_timewarp2
+    - restart_tw_timer
+    - score_20000
+  timer_timewarp_complete:
+    - start_mwq_timer
+
+
+segment_display_player: 
+  restart_tw_timer: 
+    pf: 
+      text: "{device.timers.meteor_countdown.ticks:0>2}"
+      expire: 10000ms
+      flashing: off
+    player4: 
+      text: "WARPING"
+      expire: 2000ms
+      flashing: all
+
+
+shots: 
+  timewarp1:
+    profile: powerups
+    restart_events: reset_timewarp
+    show_tokens: 
+      lights: LTW1
+      color: ccccdd
+    control_events: 
+      - events: ready_timewarp1
+        state: 1
+      - events: light_timewarp1
+        state: 2
+  timewarp2:
+    profile: powerups
+    restart_events: reset_timewarp
+    show_tokens: 
+      lights: LTW2
+      color: ccccdd
+    control_events: 
+      - events: ready_timewarp2
+        state: 1
+      - events: light_timewarp2
+        state: 2
+
+show_player: 
+  light_timewarp2: 
+    flash_color: 
+      key: key_timewarp_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: tTimewarp
+        color: ccccdd
+  restart_tw_timer: 
+    timewarp: 
+      key: key_timewarp_show
+      priority: 10
+      loops: 0
+
+
+sound_player: 
+  s_GateL_active: 
+    sfx_left_ramp_time_warp: 
+      key: key_sfx_left_ramp_time_warp
+      action: play
+  restart_tw_timer: 
+    sfx_LTW: 
+      key: key_sfx_LTW
+      action: play
+
+
+timers: 
+  timewarp:
+    start_value: 0
+    end_value: 10
+    direction: up
+    control_events: 
+      - event: restart_tw_timer
+        action: restart
+      - event: reset_timewarp
+        action: reset
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  restart_tw_timer: 
+    warping: 
+      action: set
+      int: 1
+
+  timer_timewarp_complete: 
+    warping: 
+      action: set
+      int: 0
+
+  mode_timewarp_started: 
+    warping: 
+      action: set
+      int: 0
+
+
+
+

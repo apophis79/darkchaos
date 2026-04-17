@@ -1,0 +1,1552 @@
+#config_version=6
+
+mode:
+  start_events: asteroid_destroyed, restart_victory
+  stop_events: mode_base_stopping
+  priority: 9999
+
+ball_saves: 
+  victory_startup:
+    active_time: 13000ms
+    enable_events: victory_startup_ballsave
+    auto_launch: false
+    balls_to_save: 1
+
+event_player: 
+  mode_victory_lap_started:
+    - stop_asteroid_motor
+    - set_won_game
+    - meteor_wave_music_stop
+    - turn_off_gi
+  mode_victory_lap_started{modes.final_wave_wizard.active}:
+    - victory_startup_ballsave
+  ball_launch_hit{current_player.victory_lap_running == 0}:
+    - run_victory_lap
+    - enable_flippers
+  s_Plunger1_active{current_player.victory_lap_running == 0}:
+    - init_victory_lap
+    - stop_final_wave_wizard
+    - enable_flippers
+    - deactivate_nuke
+  multiball_victory_shoot_again_ended:
+    - kill_flippers
+  run_victory_lap:
+    - victory_bumpers_show
+    - play_mus_victory
+    - run_victory_lap_show
+    - play_vic_lsling_show
+    - play_vic_rsling_show
+  timer_victory_bumper_lights_tick:
+    - victory_bumpers_show
+    - victory_gi_show1
+    - victory_gi_show2
+    - victory_gi_show3
+  s_TargetMystery1_active:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  s_TargetMystery2_active:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  s_TargetMystery3_active:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  s_TargetMystery4_active:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  s_TargetMystery5_active:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  left_side_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  left_orbit_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  left_ramp_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  inner_orbit_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  center_orbit_left_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  center_orbit_right_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  right_ramp_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  right_orbit_hit:
+    - victory_fireworks_show
+    - victory_flashers_show
+    - score_200000
+  balldevice_moon_lock_ball_enter:
+    - delayed_release_moon_ball
+  ball_search_started:
+    - release_moon_ball
+  mus_victory_stopped:
+    - end_victory_lap
+
+
+multiballs: 
+  multiball_victory:
+    start_events: run_victory_lap
+    ball_count: 5
+    ball_count_type: total
+    shoot_again: 45000
+    hurry_up: 3000
+    grace_period: 0
+    ball_locks: 
+
+random_event_player: 
+  victory_bumpers_show: 
+    events:
+      victory_bumper1_show_red: 1
+      victory_bumper2_show_red: 1
+      victory_bumper3_show_red: 1
+      victory_bumper1_show_orange: 1
+      victory_bumper2_show_orange: 1
+      victory_bumper3_show_orange: 1
+      victory_bumper1_show_yellow: 1
+      victory_bumper2_show_yellow: 1
+      victory_bumper3_show_yellow: 1
+      victory_bumper1_show_green: 1
+      victory_bumper2_show_green: 1
+      victory_bumper3_show_green: 1
+      victory_bumper1_show_cyan: 1
+      victory_bumper2_show_cyan: 1
+      victory_bumper3_show_cyan: 1
+      victory_bumper1_show_blue: 1
+      victory_bumper2_show_blue: 1
+      victory_bumper3_show_blue: 1
+      victory_bumper1_show_magenta: 1
+      victory_bumper2_show_magenta: 1
+      victory_bumper3_show_magenta: 1
+      victory_bumper1_show_white: 1
+      victory_bumper2_show_white: 1
+      victory_bumper3_show_white: 1
+    scope: player
+  victory_fireworks_show: 
+    events:
+      victory_firework1_show_red: 1
+      victory_firework2_show_red: 1
+      victory_firework3_show_red: 1
+      victory_firework4_show_red: 1
+      victory_firework1_show_orange: 1
+      victory_firework2_show_orange: 1
+      victory_firework3_show_orange: 1
+      victory_firework4_show_orange: 1
+      victory_firework1_show_yellow: 1
+      victory_firework2_show_yellow: 1
+      victory_firework3_show_yellow: 1
+      victory_firework4_show_yellow: 1
+      victory_firework1_show_green: 1
+      victory_firework2_show_green: 1
+      victory_firework3_show_green: 1
+      victory_firework4_show_green: 1
+      victory_firework1_show_cyan: 1
+      victory_firework2_show_cyan: 1
+      victory_firework3_show_cyan: 1
+      victory_firework4_show_cyan: 1
+      victory_firework1_show_blue: 1
+      victory_firework2_show_blue: 1
+      victory_firework3_show_blue: 1
+      victory_firework4_show_blue: 1
+      victory_firework1_show_magenta: 1
+      victory_firework2_show_magenta: 1
+      victory_firework3_show_magenta: 1
+      victory_firework4_show_magenta: 1
+      victory_firework1_show_white: 1
+      victory_firework2_show_white: 1
+      victory_firework3_show_white: 1
+      victory_firework4_show_white: 1
+    scope: player
+  victory_flashers_show: 
+    events:
+      victory_flasher_show_1: 1
+      victory_flasher_show_2: 1
+      victory_flasher_show_3: 1
+      victory_flasher_show_4: 1
+      victory_flasher_show_5: 1
+      victory_flasher_show_6: 1
+      victory_flasher_show_7: 1
+      victory_flasher_show_8: 1
+    scope: player
+  victory_gi_show1: 
+    events:
+      victory_gi01_show1: 1
+      victory_gi02_show1: 1
+      victory_gi03_show1: 1
+      victory_gi04_show1: 1
+      victory_gi05_show1: 1
+      victory_gi06_show1: 1
+      victory_gi07_show1: 1
+      victory_gi08_show1: 1
+      victory_gi09_show1: 1
+      victory_gi10_show1: 1
+      victory_gi11_show1: 1
+      victory_gi12_show1: 1
+      victory_gi13_show1: 1
+      victory_gi14_show1: 1
+      victory_gi15_show1: 1
+      victory_gi16_show1: 1
+      victory_gi17_show1: 1
+      victory_gi18_show1: 1
+      victory_gi19_show1: 1
+      victory_gi20_show1: 1
+      victory_gi21_show1: 1
+      victory_gi22_show1: 1
+    scope: player
+  victory_gi_show2: 
+    events:
+      victory_gi01_show2: 1
+      victory_gi02_show2: 1
+      victory_gi03_show2: 1
+      victory_gi04_show2: 1
+      victory_gi05_show2: 1
+      victory_gi06_show2: 1
+      victory_gi07_show2: 1
+      victory_gi08_show2: 1
+      victory_gi09_show2: 1
+      victory_gi10_show2: 1
+      victory_gi11_show2: 1
+      victory_gi12_show2: 1
+      victory_gi13_show2: 1
+      victory_gi14_show2: 1
+      victory_gi15_show2: 1
+      victory_gi16_show2: 1
+      victory_gi17_show2: 1
+      victory_gi18_show2: 1
+      victory_gi19_show2: 1
+      victory_gi20_show2: 1
+      victory_gi21_show2: 1
+      victory_gi22_show2: 1
+    scope: player
+  victory_gi_show3: 
+    events:
+      victory_gi01_show3: 1
+      victory_gi02_show3: 1
+      victory_gi03_show3: 1
+      victory_gi04_show3: 1
+      victory_gi05_show3: 1
+      victory_gi06_show3: 1
+      victory_gi07_show3: 1
+      victory_gi08_show3: 1
+      victory_gi09_show3: 1
+      victory_gi10_show3: 1
+      victory_gi11_show3: 1
+      victory_gi12_show3: 1
+      victory_gi13_show3: 1
+      victory_gi14_show3: 1
+      victory_gi15_show3: 1
+      victory_gi16_show3: 1
+      victory_gi17_show3: 1
+      victory_gi18_show3: 1
+      victory_gi19_show3: 1
+      victory_gi20_show3: 1
+      victory_gi21_show3: 1
+      victory_gi22_show3: 1
+    scope: player
+
+
+queue_relay_player: 
+  ball_ending: 
+    post: awaiting_victory_music_end
+    wait_for: end_victory_lap
+
+
+segment_display_player: 
+  init_victory_lap: 
+    player1: 
+      text: " YOU "
+      flashing: all
+    player2: 
+      text: " SAVED "
+      flashing: all
+    player3: 
+      text: "US  "
+      flashing: all
+    player4: 
+      text: "ALL "
+      flashing: all
+
+  run_victory_lap: 
+    player1: 
+      action: remove
+      flashing: off
+    player2: 
+      action: remove
+      flashing: off
+    player3: 
+      action: remove
+      flashing: off
+    player4: 
+      action: remove
+      flashing: off
+    pf: 
+      text: "{device.timers.victory_countdown.ticks:0>2}"
+      flashing: off
+
+  timer_victory_countdown_complete: 
+    pf: 
+      text: "00"
+      priority: 100
+      flashing: off
+
+
+shots: 
+  victory_shoot_again:
+    profile: shoot_again
+    show_tokens: 
+      color: ffffff
+    reset_events: multiball_victory_shoot_again_ended
+    control_events: 
+      - events: run_victory_lap
+        state: 1
+      - events: multiball_victory_hurry_up
+        state: 2
+  victory_shot1:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LS1
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot2:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LS2
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot3:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LS3
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot4:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LS4
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot5:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LPC4
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot6:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LPC5
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot7:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LS5
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot8:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LS6
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot9:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LM1
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot10:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LM2
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot11:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LM3
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot12:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LM4
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+  victory_shot13:
+    profile: victory_shots
+    restart_events: timer_victory_countdown_complete
+    show_tokens: 
+      lights: LM5
+      color: ffffff
+    control_events: 
+      - events: init_victory_lap
+        state: 1
+
+show_player: 
+  play_vic_lsling_show: 
+    lsling_rotate4_ccw: 
+      key: key_v_lsling_show8
+      show_tokens: 
+        intensity: 50
+        color1: ccbb00
+        color2: 00dd00
+        color3: 0010cc
+        color4: ff0300
+  play_vic_rsling_show: 
+    rsling_rotate4_cw: 
+      key: key_v_rsling_show8
+      show_tokens: 
+        intensity: 50
+        color1: ccbb00
+        color2: 00dd00
+        color3: 0010cc
+        color4: ff0300
+  victory_bumper1_show_red: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_red
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: dd0400
+  victory_bumper2_show_red: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_red
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: dd0400
+  victory_bumper3_show_red: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_red
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: dd0400
+  victory_bumper1_show_orange: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_orange
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: ff4c00
+  victory_bumper2_show_orange: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_orange
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: ff4c00
+  victory_bumper3_show_orange: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_orange
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: ff4c00
+  victory_bumper1_show_yellow: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_yellow
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: ccbb00
+  victory_bumper2_show_yellow: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_yellow
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: ccbb00
+  victory_bumper3_show_yellow: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_yellow
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: ccbb00
+  victory_bumper1_show_green: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_green
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: 00dd00
+  victory_bumper2_show_green: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_green
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: 00dd00
+  victory_bumper3_show_green: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_green
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: 00dd00
+  victory_bumper1_show_cyan: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_cyan
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: 00dddd
+  victory_bumper2_show_cyan: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_cyan
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: 00dddd
+  victory_bumper3_show_cyan: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_cyan
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: 00dddd
+  victory_bumper1_show_blue: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_blue
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: 0010cc
+  victory_bumper2_show_blue: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_blue
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: 0010cc
+  victory_bumper3_show_blue: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_blue
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: 0010cc
+  victory_bumper1_show_magenta: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_magenta
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: dd00dd
+  victory_bumper2_show_magenta: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_magenta
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: dd00dd
+  victory_bumper3_show_magenta: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_magenta
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: dd00dd
+  victory_bumper1_show_white: 
+    flash_color_fadeout: 
+      key: key_v_bumper1_show_white
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: ccccdd
+  victory_bumper2_show_white: 
+    flash_color_fadeout: 
+      key: key_v_bumper2_show_white
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: ccccdd
+  victory_bumper3_show_white: 
+    flash_color_fadeout: 
+      key: key_v_bumper3_show_white
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: ccccdd
+  victory_firework1_show_red: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_red
+      loops: 0
+      show_tokens: 
+        color: dd0400
+  victory_firework2_show_red: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_red
+      loops: 0
+      show_tokens: 
+        color: dd0400
+  victory_firework3_show_red: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_red
+      loops: 0
+      show_tokens: 
+        color: dd0400
+  victory_firework4_show_red: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_red
+      loops: 0
+      show_tokens: 
+        color: dd0400
+  victory_firework1_show_orange: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_orange
+      loops: 0
+      show_tokens: 
+        color: ff4c00
+  victory_firework2_show_orange: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_orange
+      loops: 0
+      show_tokens: 
+        color: ff4c00
+  victory_firework3_show_orange: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_orange
+      loops: 0
+      show_tokens: 
+        color: ff4c00
+  victory_firework4_show_orange: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_orange
+      loops: 0
+      show_tokens: 
+        color: ff4c00
+  victory_firework1_show_yellow: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_yellow
+      loops: 0
+      show_tokens: 
+        color: ccbb00
+  victory_firework2_show_yellow: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_yellow
+      loops: 0
+      show_tokens: 
+        color: ccbb00
+  victory_firework3_show_yellow: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_yellow
+      loops: 0
+      show_tokens: 
+        color: ccbb00
+  victory_firework4_show_yellow: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_yellow
+      loops: 0
+      show_tokens: 
+        color: ccbb00
+  victory_firework1_show_green: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_green
+      loops: 0
+      show_tokens: 
+        color: 00dd00
+  victory_firework2_show_green: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_green
+      loops: 0
+      show_tokens: 
+        color: 00dd00
+  victory_firework3_show_green: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_green
+      loops: 0
+      show_tokens: 
+        color: 00dd00
+  victory_firework4_show_green: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_green
+      loops: 0
+      show_tokens: 
+        color: 00dd00
+  victory_firework1_show_cyan: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_cyan
+      loops: 0
+      show_tokens: 
+        color: 00dddd
+  victory_firework2_show_cyan: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_cyan
+      loops: 0
+      show_tokens: 
+        color: 00dddd
+  victory_firework3_show_cyan: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_cyan
+      loops: 0
+      show_tokens: 
+        color: 00dddd
+  victory_firework4_show_cyan: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_cyan
+      loops: 0
+      show_tokens: 
+        color: 00dddd
+  victory_firework1_show_blue: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_blue
+      loops: 0
+      show_tokens: 
+        color: 0010cc
+  victory_firework2_show_blue: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_blue
+      loops: 0
+      show_tokens: 
+        color: 0010cc
+  victory_firework3_show_blue: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_blue
+      loops: 0
+      show_tokens: 
+        color: 0010cc
+  victory_firework4_show_blue: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_blue
+      loops: 0
+      show_tokens: 
+        color: 0010cc
+  victory_firework1_show_magenta: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_magenta
+      loops: 0
+      show_tokens: 
+        color: dd00dd
+  victory_firework2_show_magenta: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_magenta
+      loops: 0
+      show_tokens: 
+        color: dd00dd
+  victory_firework3_show_magenta: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_magenta
+      loops: 0
+      show_tokens: 
+        color: dd00dd
+  victory_firework4_show_magenta: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_magenta
+      loops: 0
+      show_tokens: 
+        color: dd00dd
+  victory_firework1_show_white: 
+    meteor1_explodes: 
+      key: key_v_firework1_show_white
+      loops: 0
+      show_tokens: 
+        color: ccccdd
+  victory_firework2_show_white: 
+    meteor2_explodes: 
+      key: key_v_firework2_show_white
+      loops: 0
+      show_tokens: 
+        color: ccccdd
+  victory_firework3_show_white: 
+    meteor3_explodes: 
+      key: key_v_firework3_show_white
+      loops: 0
+      show_tokens: 
+        color: ccccdd
+  victory_firework4_show_white: 
+    meteor4_explodes: 
+      key: key_v_firework4_show_white
+      loops: 0
+      show_tokens: 
+        color: ccccdd
+  victory_flasher_show_1: 
+    flash_color: 
+      key: key_v_flasher_show_1
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: dd0400
+  victory_flasher_show_2: 
+    flash_color: 
+      key: key_v_flasher_show_2
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ff4c00
+  victory_flasher_show_3: 
+    flash_color: 
+      key: key_v_flasher_show_3
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ccbb00
+  victory_flasher_show_4: 
+    flash_color: 
+      key: key_v_flasher_show_4
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: 00dd00
+  victory_flasher_show_5: 
+    flash_color: 
+      key: key_v_flasher_show_5
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: 00dddd
+  victory_flasher_show_6: 
+    flash_color: 
+      key: key_v_flasher_show_6
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: 0010cc
+  victory_flasher_show_7: 
+    flash_color: 
+      key: key_v_flasher_show_7
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: dd00dd
+  victory_flasher_show_8: 
+    flash_color: 
+      key: key_v_flasher_show_8
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: ccccdd
+  victory_gi01_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi01_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi01
+        color: dd0400
+  victory_gi02_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi02_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi02
+        color: ff4c00
+  victory_gi03_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi03_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi03
+        color: ccbb00
+  victory_gi04_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi04_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi04
+        color: 00dd00
+  victory_gi05_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi05_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi05
+        color: 00dddd
+  victory_gi06_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi06_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi06
+        color: 0010cc
+  victory_gi07_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi07_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi07
+        color: dd00dd
+  victory_gi08_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi08_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi08
+        color: ccccdd
+  victory_gi09_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi09_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi09
+        color: dd0400
+  victory_gi10_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi10_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi10
+        color: ff4c00
+  victory_gi11_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi11_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi11
+        color: ccbb00
+  victory_gi12_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi12_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi12
+        color: 00dd00
+  victory_gi13_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi13_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi13
+        color: 00dddd
+  victory_gi14_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi14_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi14
+        color: 0010cc
+  victory_gi15_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi15_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi15
+        color: dd00dd
+  victory_gi16_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi16_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi16
+        color: ccccdd
+  victory_gi17_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi17_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi17
+        color: dd0400
+  victory_gi18_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi18_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi18
+        color: ff4c00
+  victory_gi19_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi19_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi19
+        color: ccbb00
+  victory_gi20_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi20_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi20
+        color: 00dd00
+  victory_gi21_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi21_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi21
+        color: 00dddd
+  victory_gi22_show1: 
+    flash_color_fadeout: 
+      key: key_v_gi22_show1
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi22
+        color: 0010cc
+  victory_gi01_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi01_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi01
+        color: 00dd00
+  victory_gi02_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi02_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi02
+        color: 00dddd
+  victory_gi03_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi03_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi03
+        color: 0010cc
+  victory_gi04_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi04_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi04
+        color: dd00dd
+  victory_gi05_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi05_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi05
+        color: ccccdd
+  victory_gi06_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi06_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi06
+        color: dd0400
+  victory_gi07_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi07_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi07
+        color: ff4c00
+  victory_gi08_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi08_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi08
+        color: ccbb00
+  victory_gi09_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi09_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi09
+        color: 00dd00
+  victory_gi10_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi10_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi10
+        color: 00dddd
+  victory_gi11_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi11_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi11
+        color: 0010cc
+  victory_gi12_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi12_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi12
+        color: dd00dd
+  victory_gi13_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi13_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi13
+        color: ccccdd
+  victory_gi14_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi14_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi14
+        color: dd0400
+  victory_gi15_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi15_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi15
+        color: ff4c00
+  victory_gi16_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi16_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi16
+        color: ccbb00
+  victory_gi17_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi17_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi17
+        color: 00dd00
+  victory_gi18_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi18_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi18
+        color: 00dddd
+  victory_gi19_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi19_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi19
+        color: 0010cc
+  victory_gi20_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi20_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi20
+        color: dd00dd
+  victory_gi21_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi21_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi21
+        color: ccccdd
+  victory_gi22_show2: 
+    flash_color_fadeout: 
+      key: key_v_gi22_show2
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi22
+        color: dd0400
+  victory_gi01_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi01_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi01
+        color: 0010cc
+  victory_gi02_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi02_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi02
+        color: dd00dd
+  victory_gi03_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi03_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi03
+        color: ccccdd
+  victory_gi04_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi04_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi04
+        color: dd0400
+  victory_gi05_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi05_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi05
+        color: ff4c00
+  victory_gi06_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi06_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi06
+        color: ccbb00
+  victory_gi07_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi07_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi07
+        color: 00dd00
+  victory_gi08_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi08_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi08
+        color: 00dddd
+  victory_gi09_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi09_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi09
+        color: 0010cc
+  victory_gi10_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi10_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi10
+        color: dd00dd
+  victory_gi11_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi11_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi11
+        color: ccccdd
+  victory_gi12_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi12_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi12
+        color: dd0400
+  victory_gi13_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi13_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi13
+        color: ff4c00
+  victory_gi14_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi14_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi14
+        color: ccbb00
+  victory_gi15_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi15_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi15
+        color: 00dd00
+  victory_gi16_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi16_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi16
+        color: 00dddd
+  victory_gi17_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi17_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi17
+        color: 0010cc
+  victory_gi18_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi18_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi18
+        color: dd00dd
+  victory_gi19_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi19_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi19
+        color: ccccdd
+  victory_gi20_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi20_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi20
+        color: dd0400
+  victory_gi21_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi21_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi21
+        color: ff4c00
+  victory_gi22_show3: 
+    flash_color_fadeout: 
+      key: key_v_gi22_show3
+      priority: 1000
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: gi22
+        color: ccbb00
+
+
+sound_player: 
+  play_mus_victory: 
+    mus_victory: 
+      key: key_mus_victory
+      action: play
+
+
+timers: 
+  victory_countdown:
+    start_value: 45
+    end_value: 0
+    direction: down
+    control_events: 
+      - event: run_victory_lap
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  victory_bumper_lights:
+    start_value: 0
+    end_value: 500
+    direction: up
+    control_events: 
+      - event: run_victory_lap
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 250ms
+
+variable_player: 
+  mode_victory_lap_started: 
+    victory: 
+      action: set
+      int: 1
+    victory_lap_running: 
+      action: set
+      int: 0
+
+  run_victory_lap: 
+    victory_lap_running: 
+      action: set
+      int: 1
+
+  set_won_game: 
+    won_game: 
+      action: set_machine
+      int: 1
+
+
+
+

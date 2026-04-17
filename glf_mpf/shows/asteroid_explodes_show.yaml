@@ -1,0 +1,121 @@
+#show_version=6
+
+- time: 0
+  shows:
+    insert_swap3: 
+      key: key_ass_xpld1
+      priority: 20000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: ffffff
+        color2: ed1800
+        color3: edb600
+        intensity: 100
+
+- time: 0.02s
+  shows:
+    flicker_color_off: 
+      key: key_ass_xpld2
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: tAsteroid
+        color: ffffff
+
+- time: 0.2s
+  shows:
+    asteroid_hit: 
+      key: key_ass_xpld3
+      priority: 20000
+      loops: 0
+
+- time: 1.7s
+  shows:
+    insert_swap3: 
+      key: key_ass_xpld4
+      priority: 20000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ed1800
+        color3: edb600
+        intensity: 100
+
+- time: 1.71s
+  shows:
+    flicker_color_off: 
+      key: key_ass_xpld5
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: tAsteroid
+        color: aaaaaa
+
+- time: 1.9s
+  shows:
+    asteroid_hit_single: 
+      key: key_ass_xpld6
+      priority: 20000
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: edb600
+        intensity: 100
+
+- time: 4.1s
+  shows:
+    insert_swap2: 
+      key: key_ass_xpld7
+      priority: 20000
+      loops: 3
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: ed1800
+        intensity: 100
+
+- time: 4.11s
+  shows:
+    flicker_color_off: 
+      key: key_ass_xpld8
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: tAsteroid
+        color: 555555
+
+- time: 4.36s
+  shows:
+    asteroid_hit_single: 
+      key: key_ass_xpld9
+      priority: 20000
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+
+- time: 5.4s
+  shows:
+    flicker_color_off: 
+      key: key_ass_xpld8
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: tAsteroid
+        color: 111111
+
+- time: 5.41s
+  shows:
+    asteroid_hit_single: 
+      key: key_ass_xpld9
+      priority: 20000
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+
+

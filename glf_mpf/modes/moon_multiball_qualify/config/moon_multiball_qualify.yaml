@@ -1,0 +1,300 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 590
+
+event_player: 
+  mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}:
+    - disable_moon_qualify_shots
+  mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}:
+    - restart_moon_missiles
+    - restart_moon_qualify_shots
+  mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!="locking" and current_player.shot_moon_missile2 == 0}:
+    - restart_moon_qualify_shots
+  restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}:
+    - boost_qualify_shots
+  mode_moon_multiball_qualify_started{current_player.shot_moon_missile1 == 1}:
+    - backglass_moon_on
+  mode_moon_multiball_qualify_stopping:
+    - backglass_moon_off
+  s_MoonRamp_active{device.state_machines.moon_mb.state!="locking" and device.ball_devices.moon_lock.balls==0}:
+    - release_moon_ball
+  balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!="locking" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}:
+    - release_moon_ball
+  balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state=="in_progress"}:
+    - release_moon_ball
+  multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
+    - release_moon_ball
+  multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}:
+    - light_missile1
+  multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}:
+    - light_missile2
+    - check_fully_loaded
+  start_meteor_wave:
+    - disable_moon_qualify_shots
+  stop_meteor_wave{current_player.shot_moon_missile2 == 0}:
+    - enable_moon_qualify_shots
+  mystery_moon_ready:
+    - complete_moon_qualify_shots
+  right_ramp_hit:
+    - score_2000
+  light_missile1:
+    - score_50000
+    - slings_powerup_added
+    - lsling_powerup_mm
+    - rsling_powerup_mm
+    - mm_acquired
+    - backglass_moon_on
+  light_missile2:
+    - score_100000
+    - slings_powerup_added
+    - lsling_powerup_mm
+    - rsling_powerup_mm
+    - mm_acquired
+    - backglass_moon_on
+  qualify_lock_hit:
+    - score_2000
+  qualify_lock_on_complete:
+    - score_50000
+  restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}:
+    - restart_moon_qualify_shots
+
+
+multiball_locks: 
+  moon_launch:
+    balls_to_lock: 2
+    lock_devices: moon_lock
+    enable_events: enable_moon_mb_locking, mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state=="locking"}
+    disable_events: restart_moon_qualify_shots
+    reset_count_for_current_player_events: start_moon_multiball.2,restart_moon_missiles
+    locked_ball_counting_strategy: virtual_only
+
+segment_display_player: 
+  start_moon_multiball: 
+    player2: 
+      text: "MOON"
+      expire: 2000ms
+      flashing: all
+    player3: 
+      text: "LAUNCH"
+      expire: 2000ms
+      flashing: all
+
+  enable_moon_mb_locking: 
+    player2: 
+      text: "LOCK"
+      expire: 2000ms
+      flashing: all
+    player3: 
+      text: "BALL"
+      expire: 2000ms
+      flashing: all
+
+
+shot_groups: 
+  qualify_lock:
+    shots: moon_lane1,moon_lane2,moon_lane3,moon_lane4
+    restart_events: restart_moon_qualify_shots
+    rotate_left_events: s_left_flipper_active
+    rotate_right_events: s_right_flipper_active
+    enable_events: enable_moon_qualify_shots
+    disable_events: disable_moon_qualify_shots
+
+shots: 
+  moon_lane1:
+    switch: s_LeftOutlane
+    profile: flicker_on
+    show_tokens: 
+      lights: LLO
+      color: ccbb00
+    control_events: 
+      - events: boost_qualify_shots, complete_moon_qualify_shots
+        state: 1
+  moon_lane2:
+    switch: s_LeftInlane
+    profile: flicker_on
+    show_tokens: 
+      lights: LLI
+      color: ccbb00
+    control_events: 
+      - events: boost_qualify_shots, complete_moon_qualify_shots
+        state: 1
+  moon_lane3:
+    switch: s_RightInlane
+    profile: flicker_on
+    show_tokens: 
+      lights: LRI
+      color: ccbb00
+    control_events: 
+      - events: boost_qualify_shots, complete_moon_qualify_shots
+        state: 1
+  moon_lane4:
+    switch: s_RightOutlane
+    profile: flicker_on
+    show_tokens: 
+      lights: LRO
+      color: ccbb00
+    control_events: 
+      - events: complete_moon_qualify_shots
+        state: 1
+  moon_missile1:
+    profile: flicker_on
+    restart_events: multiball_moon_started, restart_moon_missiles
+    show_tokens: 
+      lights: LMR1
+      color: ccbb00
+    control_events: 
+      - events: light_missile1, complete_moon_missiles
+        state: 1
+  moon_missile2:
+    profile: flicker_on
+    restart_events: multiball_moon_started, restart_moon_missiles
+    show_tokens: 
+      lights: LMR2
+      color: ccbb00
+    control_events: 
+      - events: light_missile2, complete_moon_missiles
+        state: 1
+  moon_lock_ready:
+    profile: qualified_shot
+    restart_events: restart_moon_qualify_shots
+    show_tokens: 
+      lights: LMLR
+      color: ccbb00
+    control_events: 
+      - events: qualify_lock_on_complete
+        state: 1
+
+show_player: 
+  start_moon_multiball: 
+    moon_launch: 
+      key: key_moon_launch
+      priority: 50
+      loops: 0
+  qualify_lock_on_complete: 
+    flash_color: 
+      key: key_moon_qualified
+      loops: 6
+      speed: 13
+      show_tokens: 
+        lights: tMoon
+        color: ccbb00
+  lsling_powerup_mm: 
+    lsling_rotate2_cw: 
+      key: key_lsling_powerup_mm
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: ccbb00
+        color2: ccbb00
+        intensity: 100
+  rsling_powerup_mm: 
+    rsling_rotate2_ccw: 
+      key: key_rsling_powerup_mm
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: ccbb00
+        color2: ccbb00
+        intensity: 100
+  mm_acquired: 
+    moon_missile_acquired: 
+      key: key_mm_acquired
+      priority: 1000
+      loops: 0
+      speed: 4
+      show_tokens: 
+        color: ccbb00
+        intensity: 100
+  s_GateR_active: 
+    flash_color: 
+      key: key_moon_launch_gate
+      loops: 8
+      speed: 13
+      show_tokens: 
+        lights: LL
+        color: dd0400
+
+
+sound_player: 
+  qualify_lock_on_complete: 
+    voc_LMLR: 
+      key: key_voc_LMLR
+      action: play
+  light_missile1: 
+    voc_LMR1: 
+      key: key_voc_LMR1
+      action: play
+  light_missile2: 
+    voc_LMR2: 
+      key: key_voc_LMR2
+      action: play
+  s_GateR_active: 
+    sfx_right_ramp_moon_launch: 
+      key: key_sfx_right_ramp_moon_launch
+      action: play
+
+
+state_machines: 
+  moon_mb:
+    starting_state: qualify
+    persist_state: True
+    states: 
+      qualify: 
+        label: Qualify State
+        events_when_started: restart_moon_qualify_shots_proxy
+      locking: 
+        label: Locking State
+        events_when_started: enable_moon_mb_locking
+      in_progress: 
+        label: Multiball In Progress
+        events_when_started: disable_moon_qualify_shots
+      locks_full: 
+        label: Multiball Lock Full
+        events_when_started: disable_moon_qualify_shots
+    transitions: 
+      - source: qualify
+        target: locking
+        events: 
+          - qualify_lock_on_complete
+      - source: locking, qualify, locks_full
+        target: in_progress
+        events: 
+          - start_moon_multiball
+      - source: locking
+        target: qualify
+        events: 
+          - multiball_lock_moon_launch_locked_ball
+      - source: qualify
+        target: locks_full
+        events: 
+          - multiball_lock_moon_launch_full
+          - mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}
+      - source: in_progress
+        target: qualify
+        events: 
+          - multiball_moon_ended
+      - source: locking, in_progress, locks_full
+        target: qualify
+        events: 
+          - restart_moon_missiles
+
+variable_player: 
+  mode_moon_multiball_qualify_started: 
+    leftover_balls_in_lock: 
+      action: set
+      int: device.ball_devices.moon_lock.balls
+
+  restart_moon_missiles: 
+    moon_launch_locked_balls: 
+      action: set
+      int: 0
+    training_moon_missile_used: 
+      action: set
+      int: 0
+
+
+
+

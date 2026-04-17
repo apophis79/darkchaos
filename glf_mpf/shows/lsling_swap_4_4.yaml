@@ -1,0 +1,25 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    FL5a: (color1)%(intensity)
+    FL5b: (color2)%(intensity)
+    FL5c: (color1)%(intensity)
+    FL5d: (color2)%(intensity)
+    FL5e: (color1)%(intensity)
+    FL5f: (color2)%(intensity)
+    FL5g: (color1)%(intensity)
+    FL5h: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL5a: (color2)%(intensity)
+    FL5b: (color1)%(intensity)
+    FL5c: (color2)%(intensity)
+    FL5d: (color1)%(intensity)
+    FL5e: (color2)%(intensity)
+    FL5f: (color1)%(intensity)
+    FL5g: (color2)%(intensity)
+    FL5h: (color1)%(intensity)
+
+

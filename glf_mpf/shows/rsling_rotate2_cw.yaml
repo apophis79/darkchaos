@@ -1,0 +1,59 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    FL6h: (color1)%0
+    FL6a: (color1)%(intensity)
+    FL6d: (color2)%0
+    FL6e: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6a: (color1)%0
+    FL6b: (color1)%(intensity)
+    FL6e: (color2)%0
+    FL6f: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6b: (color1)%0
+    FL6c: (color1)%(intensity)
+    FL6f: (color2)%0
+    FL6g: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6c: (color1)%0
+    FL6d: (color1)%(intensity)
+    FL6g: (color2)%0
+    FL6h: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6d: (color1)%0
+    FL6e: (color1)%(intensity)
+    FL6h: (color2)%0
+    FL6a: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6e: (color1)%0
+    FL6f: (color1)%(intensity)
+    FL6a: (color2)%0
+    FL6b: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6f: (color1)%0
+    FL6g: (color1)%(intensity)
+    FL6b: (color2)%0
+    FL6c: (color2)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6g: (color1)%0
+    FL6h: (color1)%(intensity)
+    FL6c: (color2)%0
+    FL6d: (color2)%(intensity)
+
+

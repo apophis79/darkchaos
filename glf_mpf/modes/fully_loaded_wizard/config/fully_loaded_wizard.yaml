@@ -1,0 +1,731 @@
+#config_version=6
+
+mode:
+  start_events: run_fully_loaded_wizard
+  stop_events: mode_base_stopping, completed_fully_loaded_wizard
+  priority: 2000
+
+event_player: 
+  mode_fully_loaded_wizard_started:
+    - meteor_wave_music_stop
+    - flwiz_music_start
+    - flwiz_sjp1_show2
+  mode_fully_loaded_wizard_stopping:
+    - flwiz_music_stop
+  timer_fully_loaded_message_complete:
+    - release_scoop_hold
+    - start_moon_multiball
+    - delayed_release_moon_ball
+  release_scoop_hold:
+    - disable_scoop_hold
+  s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}:
+    - flwiz_proton1_shot_hit
+    - proton_fired
+    - proton_fired_flash_show
+    - play_sfx_jackpot
+    - score_200000
+  s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}:
+    - flwiz_proton2_shot_hit
+    - proton_fired
+    - proton_fired_flash_show
+    - play_sfx_jackpot
+    - score_200000
+  s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}:
+    - flwiz_proton3_shot_hit
+    - proton_fired
+    - proton_fired_flash_show
+    - play_sfx_jackpot
+    - score_200000
+  s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}:
+    - flwiz_proton4_shot_hit
+    - proton_fired
+    - proton_fired_flash_show
+    - play_sfx_jackpot
+    - score_200000
+  s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}:
+    - flwiz_proton5_shot_hit
+    - proton_fired
+    - proton_fired_flash_show
+    - play_sfx_jackpot
+    - score_200000
+  shield_bank_hit{current_player.shot_flwiz_proton6==1}:
+    - flwiz_proton6_shot_hit
+    - proton_fired
+    - proton_fired_flash_show
+    - play_sfx_jackpot
+    - score_200000
+  left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 1}:
+    - flwiz_phase1_cluster_hit
+    - cluster_bomb_fired
+    - cluster_bomb_flash
+    - play_sfx_jackpot
+    - play_sfx_cluster_fired
+    - score_200000
+  right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 1}:
+    - flwiz_phase1_moon_hit
+    - moon_missile_fired
+    - play_sfx_jackpot
+    - score_200000
+  flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}:
+    - activate_flwiz_sjp
+    - run_flwiz_scoop_show
+  balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 and current_player.flwiz_super_jp == 1}:
+    - flwiz_sjp_achieved
+    - stop_flwiz_scoop_show
+    - restart_fully_loaded_shots
+  flwiz_sjp_achieved:
+    - add_flwiz_phase2_shot
+    - play_sfx_super_jackpot
+    - flwiz_sjp1_show1
+    - flwiz_sjp1_show2
+    - score_1000000
+  s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_proton1_hit
+    - play_flwiz_proton_show
+    - play_sfx_jackpot
+    - score_300000
+  s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_proton2_hit
+    - play_flwiz_proton_show
+    - play_sfx_jackpot
+    - score_300000
+  s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_proton3_hit
+    - play_flwiz_proton_show
+    - play_sfx_jackpot
+    - score_300000
+  s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_proton4_hit
+    - play_flwiz_proton_show
+    - play_sfx_jackpot
+    - score_300000
+  s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_proton5_hit
+    - play_flwiz_proton_show
+    - play_sfx_jackpot
+    - score_300000
+  shield_bank_hit{current_player.shot_flwiz_proton6 == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_proton6_hit
+    - play_flwiz_proton_show
+    - play_sfx_jackpot
+    - score_300000
+  left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_cluster_hit
+    - play_flwiz_cluster_show
+    - play_sfx_jackpot
+    - play_sfx_cluster_fired
+    - score_300000
+  right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_add_ball
+    - add_flwiz_phase2_shot
+    - flwiz_phase2_moon_hit
+    - play_flwiz_moon_show
+    - play_sfx_jackpot
+    - play_sfx_launch
+    - score_300000
+  flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 2}:
+    - activate_flwiz_sdjp
+    - run_flwiz_scoop_show
+    - enable_scoop_hold
+  balldevice_scoop_ball_entered{current_player.flwiz_super_jp == 2}:
+    - flwiz_sdjp_achieved
+    - stop_flwiz_scoop_show
+  flwiz_sdjp_achieved:
+    - play_sfx_super_jackpot
+    - flwiz_sjp2_show1
+    - flwiz_sjp2_show2
+    - flwiz_music_stop
+    - score_2000000
+  flwiz_finalize:
+    - release_scoop_hold
+    - completed_fully_loaded_wizard
+  timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 1}:
+    - flwiz_bumpers_show1
+  timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 2}:
+    - flwiz_bumpers_show2
+  balldevice_moon_lock_ball_enter:
+    - delayed_release_moon_ball
+  ball_search_started:
+    - release_moon_ball
+  s_TargetShield1_active:
+    - shield_bank_hit
+  s_TargetShield2_active:
+    - shield_bank_hit
+  s_TargetShield3_active:
+    - shield_bank_hit
+
+
+multiballs: 
+  multiball_flwiz:
+    start_events: timer_fully_loaded_message_complete
+    ball_count: 5
+    ball_count_type: total
+    shoot_again: 20000
+    hurry_up: 3000
+    grace_period: 2000
+    ball_locks: 
+  multiball_flwiz_2:
+    start_events: flwiz_add_ball
+    ball_count: 2
+    ball_count_type: total
+    shoot_again: 0
+    hurry_up: 0
+    grace_period: 0
+    ball_locks: 
+
+random_event_player: 
+  add_flwiz_phase2_shot: 
+    events:
+      flwiz_proton1_ready{current_player.shot_flwiz_proton1 == 0}: 1
+      flwiz_proton2_ready{current_player.shot_flwiz_proton2 == 0}: 1
+      flwiz_proton3_ready{current_player.shot_flwiz_proton3 == 0}: 1
+      flwiz_proton4_ready{current_player.shot_flwiz_proton4 == 0}: 1
+      flwiz_proton5_ready{current_player.shot_flwiz_proton5 == 0}: 1
+      flwiz_proton6_ready{current_player.shot_flwiz_proton6 == 0}: 1
+      flwiz_cluster_ready{current_player.shot_flwiz_cluster == 0}: 1
+      flwiz_moon_ready{current_player.shot_flwiz_moon == 0}: 1
+    scope: player
+  proton_fired: 
+    events:
+      play_sfx_LPF1: 1
+      play_sfx_LPF2: 1
+      play_sfx_LPF3: 1
+      play_sfx_LPF4: 1
+      play_sfx_LPF5: 1
+    scope: player
+  flwiz_bumpers_show2: 
+    events:
+      flwiz_bumper1_show2p: 1
+      flwiz_bumper2_show2p: 1
+      flwiz_bumper3_show2p: 1
+      flwiz_bumper1_show2c: 1
+      flwiz_bumper2_show2c: 1
+      flwiz_bumper3_show2c: 1
+      flwiz_bumper1_show2m: 1
+      flwiz_bumper2_show2m: 1
+      flwiz_bumper3_show2m: 1
+    scope: player
+
+
+segment_display_player: 
+  mode_fully_loaded_wizard_started: 
+    player1: 
+      text: " FULLY "
+      expire: 3000ms
+      flashing: off
+    player2: 
+      text: " LOADED "
+      expire: 3000ms
+      flashing: off
+    player3: 
+      text: " WIZARD "
+      expire: 3000ms
+      flashing: off
+    player4: 
+      text: "  MODE  "
+      expire: 3000ms
+      flashing: off
+
+  timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 1}: 
+    player1: 
+      text: ""
+      expire: 3000ms
+      flashing: off
+    player2: 
+      text: "   EB   "
+      expire: 3000ms
+      flashing: all
+    player3: 
+      text: "  ADDED "
+      expire: 3000ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 3000ms
+      flashing: off
+
+  timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 2}: 
+    player1: 
+      text: ""
+      expire: 3000ms
+      flashing: off
+    player2: 
+      text: "HIT ALL"
+      expire: 3000ms
+      flashing: all
+    player3: 
+      text: "  SHOTS "
+      expire: 3000ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 3000ms
+      flashing: off
+
+
+shot_groups: 
+  flwiz_shots:
+    shots: flwiz_proton1,flwiz_proton2,flwiz_proton3,flwiz_proton4,flwiz_proton5,flwiz_proton6,flwiz_cluster,flwiz_moon
+    restart_events: restart_fully_loaded_shots
+
+shots: 
+  flwiz_shoot_again:
+    profile: shoot_again
+    show_tokens: 
+      color: 0500ee
+    reset_events: multiball_flwiz_shoot_again_ended
+    control_events: 
+      - events: mode_fully_loaded_wizard_started
+        state: 1
+      - events: multiball_flwiz_hurry_up
+        state: 2
+  flwiz_proton1:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LM1
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton1_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_proton1_shot_hit
+        state: 2
+  flwiz_proton2:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LM2
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton2_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_proton2_shot_hit
+        state: 2
+  flwiz_proton3:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LM3
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton3_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_proton3_shot_hit
+        state: 2
+  flwiz_proton4:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LM4
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton4_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_proton4_shot_hit
+        state: 2
+  flwiz_proton5:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LM5
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton5_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_proton5_shot_hit
+        state: 2
+  flwiz_proton6:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: tFLWp6
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton6_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_proton6_shot_hit
+        state: 2
+  flwiz_proton_round1:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LPR1
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton1_shot_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_proton1_hit
+        state: 2
+  flwiz_proton_round2:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LPR2
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton2_shot_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_proton2_hit
+        state: 2
+  flwiz_proton_round3:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LPR3
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton3_shot_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_proton3_hit
+        state: 2
+  flwiz_proton_round4:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LPR4
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton4_shot_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_proton4_hit
+        state: 2
+  flwiz_proton_round5:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LPR5
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton5_shot_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_proton5_hit
+        state: 2
+  flwiz_proton_round6:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LPR6
+      color: 00dddd
+    control_events: 
+      - events: flwiz_proton6_shot_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_proton6_hit
+        state: 2
+  flwiz_moon:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LS5
+      color: ccbb00
+    control_events: 
+      - events: flwiz_moon_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_phase1_moon_hit, flwiz_phase2_moon_hit
+        state: 2
+  flwiz_moon_rounds:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: tMoonR
+      color: ccbb00
+    control_events: 
+      - events: flwiz_phase1_moon_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_moon_hit
+        state: 2
+  flwiz_cluster:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: LS3
+      color: dd00dd
+    control_events: 
+      - events: flwiz_cluster_ready, mode_fully_loaded_wizard_started
+        state: 1
+      - events: flwiz_phase1_cluster_hit, flwiz_phase2_cluster_hit
+        state: 2
+  flwiz_cluster_rounds:
+    profile: fully_loaded_profile
+    show_tokens: 
+      lights: tClusterR
+      color: dd00dd
+    control_events: 
+      - events: flwiz_phase1_cluster_hit
+        state: 0
+      - events: mode_fully_loaded_wizard_started, flwiz_phase2_cluster_hit
+        state: 2
+
+show_player: 
+  s_Bumper1_active: 
+    flash_color_with_fade: 
+      key: key_bumper1_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB1
+        color: ffffff
+        fade: 50
+  s_Bumper2_active: 
+    flash_color_with_fade: 
+      key: key_bumper2_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB2
+        color: ffffff
+        fade: 50
+  s_Bumper3_active: 
+    flash_color_with_fade: 
+      key: key_bumper3_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB3
+        color: ffffff
+        fade: 50
+  s_Bumper4_active: 
+    flash_color_with_fade: 
+      key: key_bumper4_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB4
+        color: ffffff
+        fade: 50
+  flwiz_bumpers_show1: 
+    flash_color_fadeout: 
+      key: key_bumpers_show1
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: tBumper
+        color: 555555
+  flwiz_bumper1_show2p: 
+    flash_color_fadeout: 
+      key: key_bumper1_show2p
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: 00dddd
+  flwiz_bumper2_show2p: 
+    flash_color_fadeout: 
+      key: key_bumper2_show2p
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: 00dddd
+  flwiz_bumper3_show2p: 
+    flash_color_fadeout: 
+      key: key_bumper3_show2p
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: 00dddd
+  flwiz_bumper1_show2c: 
+    flash_color_fadeout: 
+      key: key_bumper1_show2c
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: dd00dd
+  flwiz_bumper2_show2c: 
+    flash_color_fadeout: 
+      key: key_bumper2_show2c
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: dd00dd
+  flwiz_bumper3_show2c: 
+    flash_color_fadeout: 
+      key: key_bumper3_show2c
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: dd00dd
+  flwiz_bumper1_show2m: 
+    flash_color_fadeout: 
+      key: key_bumper1_show2m
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB1
+        color: ccbb00
+  flwiz_bumper2_show2m: 
+    flash_color_fadeout: 
+      key: key_bumper2_show2m
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB2
+        color: ccbb00
+  flwiz_bumper3_show2m: 
+    flash_color_fadeout: 
+      key: key_bumper3_show2m
+      loops: 0
+      speed: 10
+      show_tokens: 
+        lights: LB3
+        color: ccbb00
+  flwiz_sjp1_show1: 
+    insert_gi_spin_center: 
+      key: key_flwiz_sjp1_show1
+      priority: 1000
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ffffff
+  flwiz_sjp1_show2: 
+    flash_color: 
+      key: key_flwiz_sjp1_show2
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tFlasher
+        color: ccbb00
+  flwiz_sjp2_show1: 
+    insert_gi_spin_center: 
+      key: key_flwiz_sjp2_show1
+      priority: 1000
+      loops: 3
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ed1800
+      events_when_completed: flwiz_finalize
+  flwiz_sjp2_show2: 
+    flash_color: 
+      key: key_flwiz_sjp2_show2
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tFlasher
+        color: dd0400
+  proton_fired: 
+    flash_color: 
+      key: key_flwiz_proton_fired
+      priority: 10
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: tBlast
+        color: 00dddd
+  proton_fired_flash_show: 
+    flash_color_with_fade: 
+      key: key_flwiz_proton_flash
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: 00dddd
+        fade: 300
+  play_flwiz_proton_show: 
+    flwiz_proton_show: 
+      key: key_flwiz_proton_show
+      priority: 10000
+      loops: 0
+  cluster_bomb_fired: 
+    cluster_explodes: 
+      key: key_flwiz_cluster_explodes
+      priority: 5
+      loops: 0
+  cluster_bomb_flash: 
+    flash_color_with_fade: 
+      key: key_flwiz_cluster_flash
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: dd00dd
+        fade: 300
+  play_flwiz_cluster_show: 
+    flwiz_cluster_show: 
+      key: key_flwiz_cluster_show
+      priority: 10000
+      loops: 0
+  moon_missile_fired: 
+    moon_launch: 
+      key: key_flwiz_moon_launch
+      priority: 50
+      loops: 0
+  play_flwiz_moon_show: 
+    flwiz_moon_show: 
+      key: key_flwiz_moon_show
+      priority: 10000
+      loops: 0
+
+
+sound_player: 
+  play_sfx_cluster_fired: 
+    sfx_cluster_fired: 
+      key: key_flwiz_sfx_cluster_fired
+      action: play
+  play_sfx_launch: 
+    sfx_launch: 
+      key: key_flwiz_sfx_launch
+      action: play
+
+
+timers: 
+  fully_loaded_message:
+    start_value: 0
+    end_value: 3
+    direction: up
+    control_events: 
+      - event: mode_fully_loaded_wizard_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 3000ms
+  flwiz_bumper_lights:
+    start_value: 0
+    end_value: 100000
+    direction: up
+    control_events: 
+      - event: mode_fully_loaded_wizard_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 711ms
+
+variable_player: 
+  mode_fully_loaded_wizard_started: 
+    wizard_fully_loaded_phase: 
+      action: set
+      int: 1
+    wizard_mode_running: 
+      action: set
+      int: 1
+
+  mode_fully_loaded_wizard_stopping: 
+    wizard_mode_running: 
+      action: set
+      int: 0
+
+  activate_flwiz_sjp: 
+    flwiz_super_jp: 
+      action: set
+      int: 1
+
+  flwiz_sjp_achieved: 
+    wizard_fully_loaded_phase: 
+      action: set
+      int: 2
+
+  activate_flwiz_sdjp: 
+    flwiz_super_jp: 
+      action: set
+      int: 2
+
+
+
+

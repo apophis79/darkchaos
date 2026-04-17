@@ -1,0 +1,248 @@
+#show_version=6
+
+
+- time: 0.02s
+  shows:
+    flash_color: 
+      key: key_DOF15
+      loops: 9
+      speed: 20
+      show_tokens: 
+        color: ffb46b
+        lights: LBG15
+
+- time: 0.03333s
+  lights:
+    LW7: (color)%100
+    LW4: (color)%100
+    LMet4: (color)%100
+
+- time: 0.06667s
+  lights:
+    LW8: fcfcfc%100
+    LW7: stop
+    LW4: stop
+    LSC1: (color)%100
+    LMet4: stop
+
+- time: 0.1s
+  lights:
+    LS4: (color)%100
+    LW8: stop
+    LW1: (color)%100
+    LSC3: (color)%100
+    LSC1: stop
+
+- time: 0.13333s
+  lights:
+    gi19: (color)%100
+    gi10: c5c5c5%100
+    LX: (color)%100
+    LS4: stop
+    LLWiz: (color)%100
+    LWiz: (color)%100
+    LW1: stop
+    LEBR: (color)%100
+    LSC3: stop
+    LF3: (color)%100
+    LPC3: (color)%100
+    LTW2: (color)%100
+    LTW1: (color)%100
+    LCC3: (color)%100
+    LM2: (color)%100
+    LM1: (color)%100
+    LB1: (color)%100
+
+- time: 0.16667s
+  lights:
+    gi19: stop
+    gi13: (color)%100
+    gi11: (color)%100
+    gi10: stop
+    LX: stop
+    LS1: (color)%100
+    LCWiz: (color)%100
+    LLWiz: stop
+    LWiz: stop
+    LEBR: stop
+    LMR: (color)%100
+    LF3: stop
+    LF2: (color)%100
+    LF1: e5e5e5%100
+    LPC3: stop
+    LPC2: (color)%100
+    LPC1: (color)%100
+    LTW2: stop
+    LTW1: stop
+    LCC3: stop
+    LCC2: (color)%100
+    LCC1: (color)%100
+    LM2: stop
+    LM1: stop
+    LB1: stop
+
+- time: 0.2s
+  lights:
+    gi15: (color)%100
+    gi13: stop
+    gi12: (color)%100
+    gi11: stop
+    gi09: (color)%100
+    LPF: (color)%100
+    LS1: stop
+    LCWiz: stop
+    LMR: stop
+    LPC5: (color)%100
+    LF2: stop
+    LF1: f4f4f4%100
+    LPC2: stop
+    LPC1: stop
+    LCC2: stop
+    LCC1: stop
+    LM4: (color)%100
+    LM3: (color)%100
+    LPR1: (color)%100
+    LMR1: (color)%100
+    LCR1: 656565%100
+    LRI: (color)%100
+
+- time: 0.23333s
+  lights:
+    gi22: (color)%100
+    gi20: (color)%100
+    gi15: stop
+    gi12: stop
+    gi09: stop
+    gi08: (color)%100
+    gi07: (color)%100
+    gi04: (color)%100
+    LPF: stop
+    LSwC3: (color)%100
+    LPC4: (color)%100
+    LF1: stop
+    LM4: stop
+    LPR3: (color)%100
+    LPR2: (color)%100
+    LMR2: (color)%100
+    LMR1: stop
+    LCR2: (color)%100
+    LCR1: (color)%100
+    LRI: stop
+    LRO: (color)%100
+    LLI: (color)%100
+
+- time: 0.26667s
+  lights:
+    gi20: stop
+    gi18: (color)%100
+    gi08: stop
+    gi03: (color)%100
+    LSwC2: 242424%100
+    LSwC1: (color)%100
+    LC2: (color)%100
+    LC3: (color)%100
+    LC4: (color)%100
+    LC5: (color)%100
+    LC6: (color)%100
+    LC7: (color)%100
+    LC8: (color)%100
+    LPC5: stop
+    LPC4: stop
+    LM3: stop
+    LPR1: stop
+    LPR3: stop
+    LPR2: stop
+    LPR6: (color)%100
+    LPR5: (color)%100
+    LPR4: (color)%100
+    LMR2: stop
+    LCR2: stop
+    LCR1: stop
+    LRO: stop
+    LLO: (color)%100
+
+- time: 0.3s
+  lights:
+    gi22: stop
+    gi21: (color)%100
+    gi18: stop
+    gi07: stop
+    gi06: (color)%100
+    gi05: (color)%100
+    gi04: stop
+    gi02: (color)%100
+    LSwC3: stop
+    LSwC2: (color)%100
+    LSwC1: stop
+    LC1: (color)%100
+    LH9: (color)%100
+    LH8: (color)%100
+    LH7: (color)%100
+    LH6: (color)%100
+    LH5: (color)%100
+    LH4: (color)%100
+    LH3: (color)%100
+    LH2: (color)%100
+    LH1: (color)%100
+    LPR6: stop
+    LPR5: stop
+    LPR4: stop
+    LLI: stop
+    LSR: (color)%100
+    LB2: (color)%100
+    LB3: (color)%100
+
+- time: 0.33333s
+  lights:
+    gi21: stop
+    gi06: stop
+    gi03: stop
+    gi01: (color)%100
+    LSwC2: stop
+    LC1: stop
+    LC2: stop
+    LC3: stop
+    LC4: stop
+    LC5: stop
+    LC6: stop
+    LC7: stop
+    LC8: stop
+    LSA: (color)%100
+    LH9: stop
+    LH8: stop
+    LH7: stop
+    LH6: stop
+    LH5: stop
+    LH4: stop
+    LH3: stop
+    LH2: 161616%100
+    LLO: stop
+    LSR: stop
+    LSL: (color)%100
+    LB3: stop
+
+- time: 0.36667s
+  lights:
+    gi17: (color)%100
+    gi16: (color)%100
+    gi05: stop
+    gi02: stop
+    gi01: stop
+    LH2: stop
+    LH1: stop
+    LB2: stop
+
+- time: 0.4s
+  lights:
+    LSA: stop
+    LSL: stop
+
+- time: 0.43333s
+  lights:
+    gi17: stop
+    giapron: (color)%100
+    gi16: stop
+
+- time: 0.46667s
+
+

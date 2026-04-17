@@ -1,0 +1,100 @@
+#config_version=6
+
+mode:
+  start_events: activate_nuke
+  stop_events: deactivate_nuke, mode_base_stopping, start_training_select, mode_combo_command_wizard_started, mode_fully_loaded_wizard_started, mode_victory_lap_started
+  priority: 400
+
+event_player: 
+  mode_nuke_started{current_player.nuke_acquired == 0}:
+    - acquire_nuke
+    - score_1000000
+    - acquire_nuke_show1
+    - play_voc_nuke
+    - nuke_lsling_on
+    - nuke_rsling_on
+  mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}:
+    - nuke_lsling_on
+    - nuke_rsling_on
+  s_start_active:
+    - check_detonate_nuke
+  s_lockbar_key_active:
+    - check_detonate_nuke
+  check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}:
+    - detonate_nuke
+    - score_2000000
+    - nuke_lsling_off
+    - nuke_rsling_off
+
+
+show_player: 
+  nuke_lsling_on: 
+    flash_color_with_fade: 
+      key: key_nuke_lsling_on
+      show_tokens: 
+        lights: tFL5
+        color: ed1800
+        fade: 900
+  nuke_rsling_on: 
+    flash_color_with_fade: 
+      key: key_nuke_rsling_on
+      show_tokens: 
+        lights: tFL6
+        color: ed1800
+        fade: 900
+  nuke_lsling_off: 
+    flash_color_with_fade: 
+      action: stop
+      key: key_nuke_lsling_on
+      show_tokens: 
+        lights: tFL5
+        color: ed1800
+        fade: 900
+  nuke_rsling_off: 
+    flash_color_with_fade: 
+      action: stop
+      key: key_nuke_rsling_on
+      show_tokens: 
+        lights: tFL6
+        color: ed1800
+        fade: 900
+  acquire_nuke_show1: 
+    cluster_bomb_acquired: 
+      key: key_acquire_nuke_show1
+      priority: 4000
+      loops: 0
+      speed: 3
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+      events_when_completed: acquire_nuke_show2
+  acquire_nuke_show2: 
+    moon_missile_acquired: 
+      key: key_acquire_nuke_show2
+      priority: 4000
+      loops: 0
+      speed: 3
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+  detonate_nuke: 
+    nuke_explodes: 
+      key: key_nuke_explodes
+      loops: 0
+      events_when_completed: deactivate_nuke
+
+
+variable_player: 
+  acquire_nuke: 
+    nuke_acquired: 
+      action: set
+      int: 1
+
+  detonate_nuke: 
+    nuke_used: 
+      action: set
+      int: 1
+
+
+
+

@@ -1,0 +1,47 @@
+#show_version=6
+
+- time: 0
+  shows:
+    insert_gi_spin_right: 
+      key: key_moon_launch_spin
+      priority: 5005
+      loops: 1
+      speed: 2
+      show_tokens: 
+        color: ccbb00
+        intensity: 100
+
+- time: 0.01s
+  shows:
+    flash_color: 
+      key: key_moon_lanuch_flash1
+      priority: 5015
+      loops: 7
+      speed: 13
+      show_tokens: 
+        color: ffffff
+        lights: gi15
+
+- time: 0.02s
+  shows:
+    flash_color: 
+      key: key_moon_lanuch_flash2
+      priority: 5015
+      loops: 7
+      speed: 13
+      show_tokens: 
+        color: ffffff
+        lights: gi19
+
+- time: 0.03s
+  shows:
+    flash_color: 
+      key: key_moon_lanuch_flash3
+      priority: 5015
+      loops: 7
+      speed: 13
+      show_tokens: 
+        color: ffffff
+        lights: gi14
+
+

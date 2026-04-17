@@ -1,0 +1,263 @@
+#config_version=6
+
+mode:
+  start_events: game_start
+  stop_events: game_ended
+  priority: 2000
+
+event_player: 
+  score_m100000{current_player.score > -1000000}:
+    - apply_score_m100000
+  apply_score_m100000.1{current_player.score < -1000000}:
+    - set_minimum_score
+
+
+variable_player: 
+  score_wave_count: 
+    score: 
+      action: add
+      int: 1
+
+  set_minimum_score: 
+    score: 
+      action: set
+      int: -1000000
+
+  score_930: 
+    score: 
+      action: add
+      int: 930 * current_player.scoring_multiplier * current_player.spin_multiplier
+
+  score_1000: 
+    score: 
+      action: add
+      int: 1000 * current_player.scoring_multiplier
+
+  score_1300: 
+    score: 
+      action: add
+      int: 1000 * current_player.scoring_multiplier * current_player.pop_multiplier
+
+  score_2000: 
+    score: 
+      action: add
+      int: 2000 * current_player.scoring_multiplier
+
+  score_3000: 
+    score: 
+      action: add
+      int: 3000 * current_player.scoring_multiplier
+
+  score_4000: 
+    score: 
+      action: add
+      int: 4000 * current_player.scoring_multiplier
+
+  score_5000: 
+    score: 
+      action: add
+      int: 5000 * current_player.scoring_multiplier
+
+  score_8000: 
+    score: 
+      action: add
+      int: 8000 * current_player.scoring_multiplier
+
+  score_9000: 
+    score: 
+      action: add
+      int: 9000 * current_player.scoring_multiplier
+
+  score_10000: 
+    score: 
+      action: add
+      int: 10000 * current_player.scoring_multiplier
+
+  score_15000: 
+    score: 
+      action: add
+      int: 15000 * current_player.scoring_multiplier
+
+  score_20000: 
+    score: 
+      action: add
+      int: 20000 * current_player.scoring_multiplier
+
+  score_25000: 
+    score: 
+      action: add
+      int: 25000 * current_player.scoring_multiplier
+
+  score_30000: 
+    score: 
+      action: add
+      int: 30000 * current_player.scoring_multiplier
+
+  score_40000: 
+    score: 
+      action: add
+      int: 40000 * current_player.scoring_multiplier
+
+  score_50000: 
+    score: 
+      action: add
+      int: 50000 * current_player.scoring_multiplier
+
+  score_60000: 
+    score: 
+      action: add
+      int: 60000 * current_player.scoring_multiplier
+
+  score_70000: 
+    score: 
+      action: add
+      int: 70000 * current_player.scoring_multiplier
+
+  score_80000: 
+    score: 
+      action: add
+      int: 80000 * current_player.scoring_multiplier
+
+  score_90000: 
+    score: 
+      action: add
+      int: 90000 * current_player.scoring_multiplier
+
+  score_100000: 
+    score: 
+      action: add
+      int: 100000 * current_player.scoring_multiplier
+
+  apply_score_m100000.2: 
+    score: 
+      action: add
+      int: -100000 * current_player.scoring_multiplier
+
+  score_150000: 
+    score: 
+      action: add
+      int: 150000 * current_player.scoring_multiplier
+
+  score_200000: 
+    score: 
+      action: add
+      int: 200000 * current_player.scoring_multiplier
+
+  score_250000: 
+    score: 
+      action: add
+      int: 250000 * current_player.scoring_multiplier
+
+  score_300000: 
+    score: 
+      action: add
+      int: 300000 * current_player.scoring_multiplier
+
+  score_400000: 
+    score: 
+      action: add
+      int: 400000 * current_player.scoring_multiplier
+
+  score_500000: 
+    score: 
+      action: add
+      int: 500000 * current_player.scoring_multiplier
+
+  score_600000: 
+    score: 
+      action: add
+      int: 600000 * current_player.scoring_multiplier
+
+  score_700000: 
+    score: 
+      action: add
+      int: 700000 * current_player.scoring_multiplier
+
+  score_750000: 
+    score: 
+      action: add
+      int: 750000 * current_player.scoring_multiplier
+
+  score_800000: 
+    score: 
+      action: add
+      int: 800000 * current_player.scoring_multiplier
+
+  score_900000: 
+    score: 
+      action: add
+      int: 900000 * current_player.scoring_multiplier
+
+  score_1000000: 
+    score: 
+      action: add
+      int: 1000000 * current_player.scoring_multiplier
+
+  score_1100000: 
+    score: 
+      action: add
+      int: 1100000 * current_player.scoring_multiplier
+
+  score_1200000: 
+    score: 
+      action: add
+      int: 1200000 * current_player.scoring_multiplier
+
+  score_1300000: 
+    score: 
+      action: add
+      int: 1300000 * current_player.scoring_multiplier
+
+  score_1400000: 
+    score: 
+      action: add
+      int: 1400000 * current_player.scoring_multiplier
+
+  score_1500000: 
+    score: 
+      action: add
+      int: 1500000 * current_player.scoring_multiplier
+
+  score_1600000: 
+    score: 
+      action: add
+      int: 1600000 * current_player.scoring_multiplier
+
+  score_1700000: 
+    score: 
+      action: add
+      int: 1700000 * current_player.scoring_multiplier
+
+  score_1800000: 
+    score: 
+      action: add
+      int: 1800000 * current_player.scoring_multiplier
+
+  score_1900000: 
+    score: 
+      action: add
+      int: 1900000 * current_player.scoring_multiplier
+
+  score_2000000: 
+    score: 
+      action: add
+      int: 2000000 * current_player.scoring_multiplier
+
+  score_3000000: 
+    score: 
+      action: add
+      int: 3000000 * current_player.scoring_multiplier
+
+  ball_started: 
+    bonus_multiplier: 
+      action: set
+      int: 1
+
+  mystery_double_bonus: 
+    bonus_multiplier: 
+      action: set
+      int: 2
+
+
+
+

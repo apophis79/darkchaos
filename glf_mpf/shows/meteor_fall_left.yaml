@@ -1,0 +1,228 @@
+#show_version=6
+
+
+- time: 0.06667s
+  lights:
+    gi16: fe2d15%(intensity)
+
+- time: 0.1s
+  lights:
+    gi21: 3d120f%(intensity)
+    gi16: fb3928%(intensity)
+    FL2: 9a271f%(intensity)
+
+- time: 0.13333s
+  lights:
+    gi21: fe2f19%(intensity)
+    gi16: aa1f12%(intensity)
+    FL2: stop
+
+- time: 0.16667s
+  lights:
+    gi20: f43727%(intensity)
+    gi21: c32f22%(intensity)
+    gi18: f33828%(intensity)
+    gi16: fb3528%(intensity)
+
+- time: 0.2s
+  lights:
+    gi20: e43527%(intensity)
+    gi21: 340b09%(intensity)
+    gi18: fe311b%(intensity)
+    gi16: ba2114%(intensity)
+
+- time: 0.23333s
+  lights:
+    gi20: stop
+    gi21: 3c0e0c%(intensity)
+    gi18: 821b11%(intensity)
+    gi16: 85170b%(intensity)
+    gi12: fe2d16%(intensity)
+    LTW1: 5e1b16%(intensity)
+    LCC2: b62d22%(intensity)
+    LCC1: fe311c%(intensity)
+
+- time: 0.26667s
+  lights:
+    gi21: stop
+    gi18: 7f140a%(intensity)
+    gi16: a01d0f%(intensity)
+    gi12: f43727%(intensity)
+    gi11: fd3522%(intensity)
+    LS2: 5a1916%(intensity)
+    LTW1: 9e281f%(intensity)
+    LCC3: fd3724%(intensity)
+    LCC2: fe311b%(intensity)
+    LCC1: f93827%(intensity)
+
+- time: 0.3s
+  lights:
+    gi18: 91180b%(intensity)
+    gi16: 010000%(intensity)
+    gi12: 7f170e%(intensity)
+    gi11: fe311c%(intensity)
+    LS2: fa3725%(intensity)
+    LTW1: stop
+    LCC3: ec3627%(intensity)
+    LCC2: 671a13%(intensity)
+    LCC1: 3d100b%(intensity)
+
+- time: 0.33333s
+  lights:
+    gi18: 3b0b09%(intensity)
+    gi16: 070201%(intensity)
+    gi12: de2a1d%(intensity)
+    gi11: ee3623%(intensity)
+    LS2: 4b1512%(intensity)
+    LCC3: stop
+    LCC2: 0c0302%(intensity)
+    LCC1: 4c1310%(intensity)
+
+- time: 0.36667s
+  lights:
+    gi18: stop
+    gi16: stop
+    gi12: 7b140b%(intensity)
+    gi11: ff3d27%(intensity)
+    gi09: c83125%(intensity)
+    LS1: a02920%(intensity)
+    LS2: stop
+    LCC3: 1b0605%(intensity)
+    LCC2: 330b08%(intensity)
+    LCC1: 2e0b0b%(intensity)
+    LMet1: 1e0a0a%(intensity)
+    LM1: fe331e%(intensity)
+
+- time: 0.4s
+  lights:
+    gi12: 4b0b05%(intensity)
+    gi11: ff3b27%(intensity)
+    gi09: fe2d16%(intensity)
+    LS1: fe2f18%(intensity)
+    LCC3: stop
+    LCC2: stop
+    LCC1: stop
+    LMet1: stop
+    LM1: d03225%(intensity)
+
+- time: 0.43333s
+  lights:
+    gi18: 23070e%(intensity)
+    gi12: 470b05%(intensity)
+    gi11: f63624%(intensity)
+    gi09: b82618%(intensity)
+    LS1: 842017%(intensity)
+    LCWiz: 4f1713%(intensity)
+    LM1: stop
+    LLI: 3f1311%(intensity)
+
+- time: 0.46667s
+  lights:
+    gi18: stop
+    gi12: stop
+    gi11: ec3623%(intensity)
+    gi09: 76140b%(intensity)
+    gi04: cf3125%(intensity)
+    LS1: stop
+    LCWiz: stop
+    LM1: 300b0a%(intensity)
+    LLI: fe2e16%(intensity)
+    LLO: fe331f%(intensity)
+
+- time: 0.5s
+  lights:
+    gi11: a41c04%(intensity)
+    gi09: be1e0d%(intensity)
+    gi04: f53726%(intensity)
+    gi03: d53225%(intensity)
+    gi02: 9b281f%(intensity)
+    LS1: 3d0c08%(intensity)
+    LM1: stop
+    LLI: f43828%(intensity)
+    LLO: fe3725%(intensity)
+    LSL: b32d22%(intensity)
+
+- time: 0.53333s
+  lights:
+    gi11: aa231c%(intensity)
+    gi09: 470c07%(intensity)
+    gi04: stop
+    gi03: 7b211a%(intensity)
+    gi02: fe2a12%(intensity)
+    gi01: e63627%(intensity)
+    LS1: stop
+    LLI: 500f0b%(intensity)
+    LLO: 6f1711%(intensity)
+    LSL: fe2c14%(intensity)
+
+- time: 0.56667s
+  lights:
+    gi11: 290606%(intensity)
+    gi09: 310806%(intensity)
+    gi03: stop
+    gi02: bf2b1f%(intensity)
+    gi01: c02f23%(intensity)
+    LLI: 862322%(intensity)
+    LLO: b91e14%(intensity)
+    LSL: d02c1c%(intensity)
+
+- time: 0.6s
+  lights:
+    gi11: 5d120d%(intensity)
+    gi09: stop
+    gi02: 520f09%(intensity)
+    gi01: stop
+    LLI: 2d0b06%(intensity)
+    LLO: 71140a%(intensity)
+    LSL: 821609%(intensity)
+
+- time: 0.63333s
+  lights:
+    gi11: stop
+    gi09: 210705%(intensity)
+    gi02: 661611%(intensity)
+    LLI: 210705%(intensity)
+    LLO: 3d0b08%(intensity)
+    LSL: d62510%(intensity)
+
+- time: 0.66667s
+  lights:
+    gi09: stop
+    gi02: 2d0907%(intensity)
+    LLI: stop
+    LLO: 1e0605%(intensity)
+    LSL: 5d0f08%(intensity)
+
+- time: 0.7s
+  lights:
+    gi09: 020101%(intensity)
+    gi02: stop
+    LLO: stop
+    LSL: 3b0807%(intensity)
+
+- time: 0.73333s
+  lights:
+    gi09: stop
+    LLO: 410c07%(intensity)
+    LSL: 300705%(intensity)
+
+- time: 0.76667s
+  lights:
+    LLO: stop
+    LSL: b32a20%(intensity)
+
+- time: 0.8s
+  lights:
+    LSL: stop
+
+- time: 0.83333s
+
+- time: 0.86667s
+
+- time: 0.9s
+
+- time: 0.93333s
+
+- time: 0.96667s
+
+

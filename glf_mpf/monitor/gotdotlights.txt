@@ -1,0 +1,3496 @@
+[node name="gi17" type="Sprite2D" parent="lights"]
+position = Vector2(455.3451, 29.95125)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="giapron" type="Sprite2D" parent="lights"]
+position = Vector2(224.6091, 1050.569)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi22" type="Sprite2D" parent="lights"]
+position = Vector2(294.2449, 155.5248)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="LStars" type="Sprite2D" parent="lights"]
+position = Vector2(239.7, -44.37)
+script = ExtResource("3_qb2nn")
+tags = ["tStars"]
+
+[node name="gi20" type="Sprite2D" parent="lights"]
+position = Vector2(94.86001, 229.6839)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi21" type="Sprite2D" parent="lights"]
+position = Vector2(78.70692, 148.6828)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi19" type="Sprite2D" parent="lights"]
+position = Vector2(450.8037, 383.7252)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tMoonGI"]
+
+[node name="gi18" type="Sprite2D" parent="lights"]
+position = Vector2(24.34056, 282.472)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi16" type="Sprite2D" parent="lights"]
+position = Vector2(33.12238, 34.19164)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi15" type="Sprite2D" parent="lights"]
+position = Vector2(460.3445, 292.5564)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tMoonGI"]
+
+[node name="gi14" type="Sprite2D" parent="lights"]
+position = Vector2(446.5634, 473.0752)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tMoonGI"]
+
+[node name="gi13" type="Sprite2D" parent="lights"]
+position = Vector2(390.6387, 266.552)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi12" type="Sprite2D" parent="lights"]
+position = Vector2(30.24301, 356.3287)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi11" type="Sprite2D" parent="lights"]
+position = Vector2(37.36282, 418.2505)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi10" type="Sprite2D" parent="lights"]
+position = Vector2(430.3456, 605.33)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi09" type="Sprite2D" parent="lights"]
+position = Vector2(27.05336, 619.5016)
+script = ExtResource("3_qb2nn")
+tags = ["GI"]
+
+[node name="gi08" type="Sprite2D" parent="lights"]
+position = Vector2(350.7715, 777.7397)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tRSling"]
+
+[node name="gi07" type="Sprite2D" parent="lights"]
+position = Vector2(330.3554, 823.3828)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tRSling"]
+
+[node name="gi06" type="Sprite2D" parent="lights"]
+position = Vector2(369.265, 863.3793)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tInlaneGI"]
+
+[node name="gi05" type="Sprite2D" parent="lights"]
+position = Vector2(336.7612, 886.1133)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tInlaneGI"]
+
+[node name="gi04" type="Sprite2D" parent="lights"]
+position = Vector2(92.73491, 775.7054)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tLSling"]
+
+[node name="gi03" type="Sprite2D" parent="lights"]
+position = Vector2(112.9083, 824.115)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tLSling"]
+
+[node name="gi02" type="Sprite2D" parent="lights"]
+position = Vector2(74.71764, 863.4379)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tInlaneGI"]
+
+[node name="gi01" type="Sprite2D" parent="lights"]
+position = Vector2(106.6915, 886.3655)
+script = ExtResource("3_qb2nn")
+tags = ["GI", "tInlaneGI"]
+
+[node name="LPF" type="Sprite2D" parent="lights"]
+position = Vector2(219.7108, 234.7491)
+script = ExtResource("3_qb2nn")
+tags = ["tFire", "tInserts"]
+
+[node name="LEBR" type="Sprite2D" parent="lights"]
+position = Vector2(282.4308, 310.7968)
+script = ExtResource("3_qb2nn")
+tags = ["tScoop", "tInserts"]
+
+[node name="LS5" type="Sprite2D" parent="lights"]
+position = Vector2(320.8088, 358.243)
+script = ExtResource("3_qb2nn")
+tags = ["tTrain", "tInserts"]
+
+[node name="LS1" type="Sprite2D" parent="lights"]
+position = Vector2(78.80556, 621.2359)
+script = ExtResource("3_qb2nn")
+tags = ["tTrain", "tInserts"]
+
+[node name="LS2" type="Sprite2D" parent="lights"]
+position = Vector2(98.35307, 445.1954)
+script = ExtResource("3_qb2nn")
+tags = ["tTrain", "tHealth2", "tInserts"]
+
+[node name="LS3" type="Sprite2D" parent="lights"]
+position = Vector2(148.1791, 405.3443)
+script = ExtResource("3_qb2nn")
+tags = ["tTrain", "tInserts"]
+
+[node name="LS4" type="Sprite2D" parent="lights"]
+position = Vector2(243.78, 340.68)
+script = ExtResource("3_qb2nn")
+tags = ["tTrain", "tInserts"]
+
+[node name="LS6" type="Sprite2D" parent="lights"]
+position = Vector2(378.8998, 417.8741)
+script = ExtResource("3_qb2nn")
+tags = ["tTrain", "tHealth2", "tInserts"]
+
+[node name="LSwC3" type="Sprite2D" parent="lights"]
+position = Vector2(265.0462, 144.9517)
+script = ExtResource("3_qb2nn")
+tags = ["tRollover", "tInserts"]
+
+[node name="LSwC2" type="Sprite2D" parent="lights"]
+position = Vector2(219.0858, 104.04)
+script = ExtResource("3_qb2nn")
+tags = ["tRollover", "tInserts"]
+
+[node name="LSwC1" type="Sprite2D" parent="lights"]
+position = Vector2(172.38, 144.84)
+script = ExtResource("3_qb2nn")
+tags = ["tRollover", "tInserts"]
+
+[node name="LCWiz" type="Sprite2D" parent="lights"]
+position = Vector2(143.0571, 684.2582)
+script = ExtResource("3_qb2nn")
+tags = ["tWiz", "tInserts"]
+
+[node name="LLWiz" type="Sprite2D" parent="lights"]
+position = Vector2(299.6847, 684.2482)
+script = ExtResource("3_qb2nn")
+tags = ["tWiz", "tInserts"]
+
+[node name="LC1" type="Sprite2D" parent="lights"]
+position = Vector2(162.0939, 853.8174)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC2" type="Sprite2D" parent="lights"]
+position = Vector2(178.3422, 852.9805)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC3" type="Sprite2D" parent="lights"]
+position = Vector2(195.7464, 853.689)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC4" type="Sprite2D" parent="lights"]
+position = Vector2(213.5212, 853.4624)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC5" type="Sprite2D" parent="lights"]
+position = Vector2(231.2396, 853.386)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC6" type="Sprite2D" parent="lights"]
+position = Vector2(248.4604, 853.1942)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC7" type="Sprite2D" parent="lights"]
+position = Vector2(264.8538, 853.447)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LC8" type="Sprite2D" parent="lights"]
+position = Vector2(282.5049, 853.2792)
+script = ExtResource("3_qb2nn")
+tags = ["tCombos", "tInserts"]
+
+[node name="LWiz" type="Sprite2D" parent="lights"]
+position = Vector2(221.2869, 666.2782)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tWiz", "tInserts"]
+
+[node name="LW9" type="Sprite2D" parent="lights"]
+position = Vector2(222.023, 623.733)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW8" type="Sprite2D" parent="lights"]
+position = Vector2(221.9112, 585.6905)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW7" type="Sprite2D" parent="lights"]
+position = Vector2(221.9113, 547.9827)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW6" type="Sprite2D" parent="lights"]
+position = Vector2(222.0089, 510.9322)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW5" type="Sprite2D" parent="lights"]
+position = Vector2(221.8971, 477.1377)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW4" type="Sprite2D" parent="lights"]
+position = Vector2(222.4561, 442.5606)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW3" type="Sprite2D" parent="lights"]
+position = Vector2(222.0089, 413.2523)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW2" type="Sprite2D" parent="lights"]
+position = Vector2(222.037, 387.7318)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LW1" type="Sprite2D" parent="lights"]
+position = Vector2(222.1561, 362.7096)
+script = ExtResource("3_qb2nn")
+tags = ["tWaves", "tBlast", "tInserts"]
+
+[node name="LMLR" type="Sprite2D" parent="lights"]
+position = Vector2(329.1118, 323.3605)
+script = ExtResource("3_qb2nn")
+tags = ["tMoonAll", "tInserts"]
+
+[node name="LMR" type="Sprite2D" parent="lights"]
+position = Vector2(287.5557, 286.4345)
+script = ExtResource("3_qb2nn")
+tags = ["tScoop", "tInserts"]
+
+[node name="LX" type="Sprite2D" parent="lights"]
+position = Vector2(294.4505, 261.6415)
+script = ExtResource("3_qb2nn")
+tags = ["tScoop", "tInserts"]
+
+[node name="LPC5" type="Sprite2D" parent="lights"]
+position = Vector2(255.1118, 193.7011)
+script = ExtResource("3_qb2nn")
+tags = ["tFire", "tInserts"]
+
+[node name="LPC4" type="Sprite2D" parent="lights"]
+position = Vector2(185.3997, 193.4218)
+script = ExtResource("3_qb2nn")
+tags = ["tFire", "tInserts"]
+
+[node name="LSC3" type="Sprite2D" parent="lights"]
+position = Vector2(374.6619, 618.0098)
+script = ExtResource("3_qb2nn")
+tags = ["tShields", "tInserts", "tFLWp6"]
+
+[node name="LSC2" type="Sprite2D" parent="lights"]
+position = Vector2(374.1005, 585.8836)
+script = ExtResource("3_qb2nn")
+tags = ["tShields", "tInserts", "tFLWp6"]
+
+[node name="LSC1" type="Sprite2D" parent="lights"]
+position = Vector2(374.0193, 555.0193)
+script = ExtResource("3_qb2nn")
+tags = ["tShields", "tInserts", "tFLWp6"]
+
+[node name="LF3" type="Sprite2D" parent="lights"]
+position = Vector2(414.5178, 304.511)
+script = ExtResource("3_qb2nn")
+tags = ["tSaver", "tInserts"]
+
+[node name="LF2" type="Sprite2D" parent="lights"]
+position = Vector2(424.3567, 275.4133)
+script = ExtResource("3_qb2nn")
+tags = ["tSaver", "tInserts"]
+
+[node name="LF1" type="Sprite2D" parent="lights"]
+position = Vector2(433.4318, 245.2177)
+script = ExtResource("3_qb2nn")
+tags = ["tSaver", "tInserts"]
+
+[node name="LPC3" type="Sprite2D" parent="lights"]
+position = Vector2(208.8399, 301.9448)
+script = ExtResource("3_qb2nn")
+tags = ["tProton", "tProtonAll", "tInserts"]
+
+[node name="LPC2" type="Sprite2D" parent="lights"]
+position = Vector2(188.3502, 280.3806)
+script = ExtResource("3_qb2nn")
+tags = ["tProton", "tProtonAll", "tInserts"]
+
+[node name="LPC1" type="Sprite2D" parent="lights"]
+position = Vector2(166.5171, 258.6603)
+script = ExtResource("3_qb2nn")
+tags = ["tProton", "tProtonAll", "tInserts"]
+
+[node name="LTW2" type="Sprite2D" parent="lights"]
+position = Vector2(151.2761, 362.8552)
+script = ExtResource("3_qb2nn")
+tags = ["tTimewarp", "tInserts"]
+
+[node name="LTW1" type="Sprite2D" parent="lights"]
+position = Vector2(121.7215, 371.0747)
+script = ExtResource("3_qb2nn")
+tags = ["tTimewarp", "tInserts"]
+
+[node name="LCC3" type="Sprite2D" parent="lights"]
+position = Vector2(85.7909, 402.2954)
+script = ExtResource("3_qb2nn")
+tags = ["tCluster", "tClusterAll", "tInserts"]
+
+[node name="LCC2" type="Sprite2D" parent="lights"]
+position = Vector2(78.4709, 372.064)
+script = ExtResource("3_qb2nn")
+tags = ["tCluster", "tClusterAll", "tInserts"]
+
+[node name="LCC1" type="Sprite2D" parent="lights"]
+position = Vector2(71.62454, 341.4179)
+script = ExtResource("3_qb2nn")
+tags = ["tCluster", "tClusterAll", "tInserts"]
+
+[node name="LMet4" type="Sprite2D" parent="lights"]
+position = Vector2(316.606, 567.3621)
+script = ExtResource("3_qb2nn")
+tags = ["tMeteors", "tInserts"]
+
+[node name="LMet3" type="Sprite2D" parent="lights"]
+position = Vector2(270.3005, 498.484)
+script = ExtResource("3_qb2nn")
+tags = ["tMeteors", "tInserts"]
+
+[node name="LMet2" type="Sprite2D" parent="lights"]
+position = Vector2(177.336, 471.5531)
+script = ExtResource("3_qb2nn")
+tags = ["tMeteors", "tInserts"]
+
+[node name="LMet1" type="Sprite2D" parent="lights"]
+position = Vector2(145.7721, 551.6104)
+script = ExtResource("3_qb2nn")
+tags = ["tMeteors", "tInserts"]
+
+[node name="LM5" type="Sprite2D" parent="lights"]
+position = Vector2(373.7406, 327.249)
+script = ExtResource("3_qb2nn")
+tags = ["tMystery", "tInserts"]
+
+[node name="LM4" type="Sprite2D" parent="lights"]
+position = Vector2(274.5107, 235.4456)
+script = ExtResource("3_qb2nn")
+tags = ["tMystery", "tInserts"]
+
+[node name="LM3" type="Sprite2D" parent="lights"]
+position = Vector2(219.8717, 202.5499)
+script = ExtResource("3_qb2nn")
+tags = ["tMystery", "tInserts"]
+
+[node name="LM2" type="Sprite2D" parent="lights"]
+position = Vector2(181.1866, 307.4809)
+script = ExtResource("3_qb2nn")
+tags = ["tMystery", "tInserts"]
+
+[node name="LM1" type="Sprite2D" parent="lights"]
+position = Vector2(87.66283, 588.4455)
+script = ExtResource("3_qb2nn")
+tags = ["tMystery", "tInserts"]
+
+[node name="LSA" type="Sprite2D" parent="lights"]
+position = Vector2(221.9179, 949.3223)
+script = ExtResource("3_qb2nn")
+tags = ["tSaver", "tInserts"]
+
+[node name="LH9" type="Sprite2D" parent="lights"]
+position = Vector2(291.3618, 870.346)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH8" type="Sprite2D" parent="lights"]
+position = Vector2(273.8795, 870.2418)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH7" type="Sprite2D" parent="lights"]
+position = Vector2(256.5496, 870.4095)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH6" type="Sprite2D" parent="lights"]
+position = Vector2(239.0316, 870.6387)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH5" type="Sprite2D" parent="lights"]
+position = Vector2(222.2928, 870.8305)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH4" type="Sprite2D" parent="lights"]
+position = Vector2(204.7352, 870.2642)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH3" type="Sprite2D" parent="lights"]
+position = Vector2(187.6032, 870.3301)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH2" type="Sprite2D" parent="lights"]
+position = Vector2(170.1989, 870.425)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LH1" type="Sprite2D" parent="lights"]
+position = Vector2(153.3078, 870.6193)
+script = ExtResource("3_qb2nn")
+tags = ["tHealth", "tEarth", "tHeal", "tInserts"]
+
+[node name="LPR1" type="Sprite2D" parent="lights"]
+position = Vector2(221.742, 769.1158)
+script = ExtResource("3_qb2nn")
+tags = ["tProtonAll", "tBlast", "tInserts"]
+
+[node name="LPR3" type="Sprite2D" parent="lights"]
+position = Vector2(239.302, 798.5056)
+script = ExtResource("3_qb2nn")
+tags = ["tProtonAll", "tBlast", "tInserts"]
+
+[node name="LPR2" type="Sprite2D" parent="lights"]
+position = Vector2(204.9255, 798.5559)
+script = ExtResource("3_qb2nn")
+tags = ["tProtonAll", "tBlast", "tInserts"]
+
+[node name="LPR6" type="Sprite2D" parent="lights"]
+position = Vector2(255.1541, 827.9507)
+script = ExtResource("3_qb2nn")
+tags = ["tProtonAll", "tBlast", "tInserts"]
+
+[node name="LPR5" type="Sprite2D" parent="lights"]
+position = Vector2(221.9555, 828.0038)
+script = ExtResource("3_qb2nn")
+tags = ["tProtonAll", "tBlast", "tInserts"]
+
+[node name="LPR4" type="Sprite2D" parent="lights"]
+position = Vector2(188.006, 828.2698)
+script = ExtResource("3_qb2nn")
+tags = ["tProtonAll", "tBlast", "tInserts"]
+
+[node name="LMR2" type="Sprite2D" parent="lights"]
+position = Vector2(274.3524, 785.9152)
+script = ExtResource("3_qb2nn")
+tags = ["tMoonAll", "tInserts", "tMoonR"]
+
+[node name="LMR1" type="Sprite2D" parent="lights"]
+position = Vector2(274.8898, 761.2001)
+script = ExtResource("3_qb2nn")
+tags = ["tMoonAll", "tInserts", "tMoonR"]
+
+[node name="LCR2" type="Sprite2D" parent="lights"]
+position = Vector2(168.9343, 785.4329)
+script = ExtResource("3_qb2nn")
+tags = ["tClusterAll", "tInserts", "tClusterR"]
+
+[node name="LCR1" type="Sprite2D" parent="lights"]
+position = Vector2(168.9343, 760.7178)
+script = ExtResource("3_qb2nn")
+tags = ["tClusterAll", "tInserts", "tClusterR"]
+
+[node name="LRI" type="Sprite2D" parent="lights"]
+position = Vector2(377.9175, 760.3024)
+script = ExtResource("3_qb2nn")
+tags = ["tMoon", "tMoonAll", "tInserts"]
+
+[node name="LRO" type="Sprite2D" parent="lights"]
+position = Vector2(419.2885, 773.1975)
+script = ExtResource("3_qb2nn")
+tags = ["tMoon", "tMoonAll", "tInserts"]
+
+[node name="LLI" type="Sprite2D" parent="lights"]
+position = Vector2(67.63602, 761.6459)
+script = ExtResource("3_qb2nn")
+tags = ["tMoon", "tMoonAll", "tInserts"]
+
+[node name="LLO" type="Sprite2D" parent="lights"]
+position = Vector2(26.80244, 772.3915)
+script = ExtResource("3_qb2nn")
+tags = ["tMoon", "tMoonAll", "tInserts"]
+
+[node name="LSR" type="Sprite2D" parent="lights"]
+position = Vector2(416.9931, 862.6536)
+script = ExtResource("3_qb2nn")
+tags = ["tShields", "tInserts"]
+
+[node name="LSL" type="Sprite2D" parent="lights"]
+position = Vector2(28.13029, 863.0805)
+script = ExtResource("3_qb2nn")
+tags = ["tShields", "tInserts"]
+
+[node name="LB2" type="Sprite2D" parent="lights"]
+position = Vector2(408.2639, 97.92001)
+script = ExtResource("3_qb2nn")
+tags = ["tBumper", "tHeal"]
+
+[node name="LB3" type="Sprite2D" parent="lights"]
+position = Vector2(308.4749, 102.5851)
+script = ExtResource("3_qb2nn")
+tags = ["tBumper", "tHeal"]
+
+[node name="LShip" type="Sprite2D" parent="lights"]
+position = Vector2(91.80001, 429.9301)
+script = ExtResource("3_qb2nn")
+tags = ["tShip"]
+
+[node name="LSpot2" type="Sprite2D" parent="lights"]
+position = Vector2(373.2632, 934.0174)
+script = ExtResource("3_qb2nn")
+tags = ["tSpotL", "tEarth"]
+
+[node name="LSpot2a" type="Sprite2D" parent="lights"]
+position = Vector2(74.78114, 934.2814)
+script = ExtResource("3_qb2nn")
+tags = ["tSpotL", "tEarth"]
+
+[node name="LSpot1" type="Sprite2D" parent="lights"]
+position = Vector2(155.0326, 275.0049)
+script = ExtResource("3_qb2nn")
+tags = ["tSpotU"]
+
+[node name="LB1" type="Sprite2D" parent="lights"]
+position = Vector2(68.34, 524.28)
+script = ExtResource("3_qb2nn")
+tags = ["tBumper", "tHeal"]
+
+[node name="LB4" type="Sprite2D" parent="lights"]
+position = Vector2(536.5246, 208.5126)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="FL6" type="Sprite2D" parent="lights"]
+position = Vector2(342.72, 802.2301)
+script = ExtResource("3_qb2nn")
+tags = ["tFlasher", "tEarth", "tFL6"]
+
+[node name="FL4" type="Sprite2D" parent="lights"]
+position = Vector2(218.28, 146.37)
+script = ExtResource("3_qb2nn")
+tags = ["fFlasher"]
+
+[node name="FL5" type="Sprite2D" parent="lights"]
+position = Vector2(105.06, 803.2501)
+script = ExtResource("3_qb2nn")
+tags = ["tFlasher", "tEarth", "tFL5"]
+
+[node name="FL1" type="Sprite2D" parent="lights"]
+position = Vector2(397.8, 234.09)
+script = ExtResource("3_qb2nn")
+tags = ["tFlasher", "tFlasherU"]
+
+[node name="FL2" type="Sprite2D" parent="lights"]
+position = Vector2(123.42, 70.89001)
+script = ExtResource("3_qb2nn")
+tags = ["tFlasher", "tFlasherU"]
+
+[node name="FL3" type="Sprite2D" parent="lights"]
+position = Vector2(229.5, 16.83)
+script = ExtResource("3_qb2nn")
+tags = ["tFlasher", "tFlasherU"]
+
+[node name="LDS" type="Sprite2D" parent="lights"]
+position = Vector2(366.562, 492.0204)
+script = ExtResource("3_qb2nn")
+tags = ["tInserts"]
+
+[node name="LDP" type="Sprite2D" parent="lights"]
+position = Vector2(355.6546, 51.25058)
+script = ExtResource("3_qb2nn")
+tags = ["tInserts"]
+
+[node name="FL7a" type="Sprite2D" parent="lights"]
+position = Vector2(219.3, 166.26)
+script = ExtResource("3_qb2nn")
+tags = ["tAsteroid"]
+
+[node name="FL5a" type="Sprite2D" parent="lights"]
+position = Vector2(-81.29779, 717.8472)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL6a" type="Sprite2D" parent="lights"]
+position = Vector2(-56.14405, 717.9981)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6h" type="Sprite2D" parent="lights"]
+position = Vector2(-56.20698, 866.1877)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6g" type="Sprite2D" parent="lights"]
+position = Vector2(-56.20699, 845.0321)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6f" type="Sprite2D" parent="lights"]
+position = Vector2(-56.20697, 823.8765)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6e" type="Sprite2D" parent="lights"]
+position = Vector2(-56.20698, 802.7209)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6d" type="Sprite2D" parent="lights"]
+position = Vector2(-56.207, 781.5655)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6c" type="Sprite2D" parent="lights"]
+position = Vector2(-56.20702, 760.41)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL6b" type="Sprite2D" parent="lights"]
+position = Vector2(-56.20698, 739.4557)
+script = ExtResource("3_qb2nn")
+tags = ["tFL6", "tFlasher"]
+
+[node name="FL5h" type="Sprite2D" parent="lights"]
+position = Vector2(-81.36071, 866.0368)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL5g" type="Sprite2D" parent="lights"]
+position = Vector2(-81.36072, 844.8812)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL5f" type="Sprite2D" parent="lights"]
+position = Vector2(-81.3607, 823.7256)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL5e" type="Sprite2D" parent="lights"]
+position = Vector2(-81.36071, 802.5701)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL5d" type="Sprite2D" parent="lights"]
+position = Vector2(-81.36073, 781.4146)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL5c" type="Sprite2D" parent="lights"]
+position = Vector2(-81.36075, 760.259)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="FL5b" type="Sprite2D" parent="lights"]
+position = Vector2(-81.36071, 739.3048)
+script = ExtResource("3_qb2nn")
+tags = ["tFL5", "tFlasher"]
+
+[node name="ball_seg30" type="Sprite2D" parent="lights"]
+position = Vector2(29.26225, 85.95208)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="p4_seg120" type="Sprite2D" parent="lights"]
+position = Vector2(498.1327, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg119" type="Sprite2D" parent="lights"]
+position = Vector2(494.8922, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg118" type="Sprite2D" parent="lights"]
+position = Vector2(493.4483, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg117" type="Sprite2D" parent="lights"]
+position = Vector2(491.7224, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg116" type="Sprite2D" parent="lights"]
+position = Vector2(495.8156, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg115" type="Sprite2D" parent="lights"]
+position = Vector2(494.271, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg114" type="Sprite2D" parent="lights"]
+position = Vector2(492.7784, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg113" type="Sprite2D" parent="lights"]
+position = Vector2(495.5134, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg112" type="Sprite2D" parent="lights"]
+position = Vector2(492.2561, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg111" type="Sprite2D" parent="lights"]
+position = Vector2(491.2487, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg110" type="Sprite2D" parent="lights"]
+position = Vector2(490.2749, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg109" type="Sprite2D" parent="lights"]
+position = Vector2(493.23, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg108" type="Sprite2D" parent="lights"]
+position = Vector2(496.6888, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg107" type="Sprite2D" parent="lights"]
+position = Vector2(497.6644, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg106" type="Sprite2D" parent="lights"]
+position = Vector2(494.8083, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg120" type="Sprite2D" parent="lights"]
+position = Vector2(412.171, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg119" type="Sprite2D" parent="lights"]
+position = Vector2(408.9305, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg118" type="Sprite2D" parent="lights"]
+position = Vector2(407.4865, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg117" type="Sprite2D" parent="lights"]
+position = Vector2(405.7607, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg116" type="Sprite2D" parent="lights"]
+position = Vector2(409.8539, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg115" type="Sprite2D" parent="lights"]
+position = Vector2(408.3093, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg114" type="Sprite2D" parent="lights"]
+position = Vector2(406.8167, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg113" type="Sprite2D" parent="lights"]
+position = Vector2(409.5517, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg112" type="Sprite2D" parent="lights"]
+position = Vector2(406.2944, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg111" type="Sprite2D" parent="lights"]
+position = Vector2(405.287, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg110" type="Sprite2D" parent="lights"]
+position = Vector2(404.3132, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg109" type="Sprite2D" parent="lights"]
+position = Vector2(407.2682, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg108" type="Sprite2D" parent="lights"]
+position = Vector2(410.727, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg107" type="Sprite2D" parent="lights"]
+position = Vector2(411.7026, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg106" type="Sprite2D" parent="lights"]
+position = Vector2(408.8465, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg120" type="Sprite2D" parent="lights"]
+position = Vector2(176.8867, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg119" type="Sprite2D" parent="lights"]
+position = Vector2(173.6462, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg118" type="Sprite2D" parent="lights"]
+position = Vector2(172.2023, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg117" type="Sprite2D" parent="lights"]
+position = Vector2(170.4765, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg116" type="Sprite2D" parent="lights"]
+position = Vector2(174.5697, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg115" type="Sprite2D" parent="lights"]
+position = Vector2(173.025, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg114" type="Sprite2D" parent="lights"]
+position = Vector2(171.5325, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg113" type="Sprite2D" parent="lights"]
+position = Vector2(174.2675, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg112" type="Sprite2D" parent="lights"]
+position = Vector2(171.0102, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg111" type="Sprite2D" parent="lights"]
+position = Vector2(170.0028, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg110" type="Sprite2D" parent="lights"]
+position = Vector2(169.029, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg109" type="Sprite2D" parent="lights"]
+position = Vector2(171.984, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg108" type="Sprite2D" parent="lights"]
+position = Vector2(175.4428, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg107" type="Sprite2D" parent="lights"]
+position = Vector2(176.4184, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg106" type="Sprite2D" parent="lights"]
+position = Vector2(173.5623, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg120" type="Sprite2D" parent="lights"]
+position = Vector2(88.11637, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg119" type="Sprite2D" parent="lights"]
+position = Vector2(84.87589, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg118" type="Sprite2D" parent="lights"]
+position = Vector2(83.43194, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg117" type="Sprite2D" parent="lights"]
+position = Vector2(81.7061, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg116" type="Sprite2D" parent="lights"]
+position = Vector2(85.79932, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg115" type="Sprite2D" parent="lights"]
+position = Vector2(84.25465, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg114" type="Sprite2D" parent="lights"]
+position = Vector2(82.76212, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg113" type="Sprite2D" parent="lights"]
+position = Vector2(85.49709, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg112" type="Sprite2D" parent="lights"]
+position = Vector2(82.23981, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg111" type="Sprite2D" parent="lights"]
+position = Vector2(81.23241, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg110" type="Sprite2D" parent="lights"]
+position = Vector2(80.25858, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg109" type="Sprite2D" parent="lights"]
+position = Vector2(83.21365, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg108" type="Sprite2D" parent="lights"]
+position = Vector2(86.67242, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg107" type="Sprite2D" parent="lights"]
+position = Vector2(87.64805, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg106" type="Sprite2D" parent="lights"]
+position = Vector2(84.79194, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg105" type="Sprite2D" parent="lights"]
+position = Vector2(488.0433, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg105" type="Sprite2D" parent="lights"]
+position = Vector2(402.0046, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg105" type="Sprite2D" parent="lights"]
+position = Vector2(166.7773, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg104" type="Sprite2D" parent="lights"]
+position = Vector2(484.8028, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg104" type="Sprite2D" parent="lights"]
+position = Vector2(398.7641, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg104" type="Sprite2D" parent="lights"]
+position = Vector2(163.5368, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg103" type="Sprite2D" parent="lights"]
+position = Vector2(483.3589, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg103" type="Sprite2D" parent="lights"]
+position = Vector2(397.3202, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg103" type="Sprite2D" parent="lights"]
+position = Vector2(162.0929, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg102" type="Sprite2D" parent="lights"]
+position = Vector2(481.6331, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg102" type="Sprite2D" parent="lights"]
+position = Vector2(395.5944, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg102" type="Sprite2D" parent="lights"]
+position = Vector2(160.3671, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg101" type="Sprite2D" parent="lights"]
+position = Vector2(485.7263, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg101" type="Sprite2D" parent="lights"]
+position = Vector2(399.6876, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg101" type="Sprite2D" parent="lights"]
+position = Vector2(164.4603, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg100" type="Sprite2D" parent="lights"]
+position = Vector2(484.1816, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg100" type="Sprite2D" parent="lights"]
+position = Vector2(398.1429, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg100" type="Sprite2D" parent="lights"]
+position = Vector2(162.9156, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg99" type="Sprite2D" parent="lights"]
+position = Vector2(482.6891, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg99" type="Sprite2D" parent="lights"]
+position = Vector2(396.6504, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg99" type="Sprite2D" parent="lights"]
+position = Vector2(161.423, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg98" type="Sprite2D" parent="lights"]
+position = Vector2(485.424, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg98" type="Sprite2D" parent="lights"]
+position = Vector2(399.3853, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg98" type="Sprite2D" parent="lights"]
+position = Vector2(164.158, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg97" type="Sprite2D" parent="lights"]
+position = Vector2(482.1667, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg97" type="Sprite2D" parent="lights"]
+position = Vector2(396.1281, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg97" type="Sprite2D" parent="lights"]
+position = Vector2(160.9007, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg96" type="Sprite2D" parent="lights"]
+position = Vector2(481.1594, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg96" type="Sprite2D" parent="lights"]
+position = Vector2(395.1207, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg96" type="Sprite2D" parent="lights"]
+position = Vector2(159.8933, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg95" type="Sprite2D" parent="lights"]
+position = Vector2(480.1855, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg95" type="Sprite2D" parent="lights"]
+position = Vector2(394.1468, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg95" type="Sprite2D" parent="lights"]
+position = Vector2(158.9196, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg94" type="Sprite2D" parent="lights"]
+position = Vector2(483.1406, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg94" type="Sprite2D" parent="lights"]
+position = Vector2(397.1019, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg94" type="Sprite2D" parent="lights"]
+position = Vector2(161.8746, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg93" type="Sprite2D" parent="lights"]
+position = Vector2(486.5994, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg93" type="Sprite2D" parent="lights"]
+position = Vector2(400.5606, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg93" type="Sprite2D" parent="lights"]
+position = Vector2(165.3333, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg92" type="Sprite2D" parent="lights"]
+position = Vector2(487.575, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg92" type="Sprite2D" parent="lights"]
+position = Vector2(401.5363, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg92" type="Sprite2D" parent="lights"]
+position = Vector2(166.309, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg91" type="Sprite2D" parent="lights"]
+position = Vector2(484.7189, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg91" type="Sprite2D" parent="lights"]
+position = Vector2(398.6801, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg91" type="Sprite2D" parent="lights"]
+position = Vector2(163.4528, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg90" type="Sprite2D" parent="lights"]
+position = Vector2(478.0027, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg90" type="Sprite2D" parent="lights"]
+position = Vector2(391.964, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg90" type="Sprite2D" parent="lights"]
+position = Vector2(156.7367, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg89" type="Sprite2D" parent="lights"]
+position = Vector2(474.7622, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg89" type="Sprite2D" parent="lights"]
+position = Vector2(388.7234, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg89" type="Sprite2D" parent="lights"]
+position = Vector2(153.4963, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg88" type="Sprite2D" parent="lights"]
+position = Vector2(473.3182, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg88" type="Sprite2D" parent="lights"]
+position = Vector2(387.2795, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg88" type="Sprite2D" parent="lights"]
+position = Vector2(152.0524, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg87" type="Sprite2D" parent="lights"]
+position = Vector2(471.5924, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg87" type="Sprite2D" parent="lights"]
+position = Vector2(385.5537, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg87" type="Sprite2D" parent="lights"]
+position = Vector2(150.3266, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg86" type="Sprite2D" parent="lights"]
+position = Vector2(475.6856, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg86" type="Sprite2D" parent="lights"]
+position = Vector2(389.6469, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg86" type="Sprite2D" parent="lights"]
+position = Vector2(154.4197, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg85" type="Sprite2D" parent="lights"]
+position = Vector2(474.141, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg85" type="Sprite2D" parent="lights"]
+position = Vector2(388.1022, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg85" type="Sprite2D" parent="lights"]
+position = Vector2(152.8751, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg84" type="Sprite2D" parent="lights"]
+position = Vector2(472.6484, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg84" type="Sprite2D" parent="lights"]
+position = Vector2(386.6097, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg84" type="Sprite2D" parent="lights"]
+position = Vector2(151.3826, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg83" type="Sprite2D" parent="lights"]
+position = Vector2(475.3834, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg83" type="Sprite2D" parent="lights"]
+position = Vector2(389.3447, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg83" type="Sprite2D" parent="lights"]
+position = Vector2(154.1175, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg82" type="Sprite2D" parent="lights"]
+position = Vector2(472.1261, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg82" type="Sprite2D" parent="lights"]
+position = Vector2(386.0874, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg82" type="Sprite2D" parent="lights"]
+position = Vector2(150.8603, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg81" type="Sprite2D" parent="lights"]
+position = Vector2(471.1187, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg81" type="Sprite2D" parent="lights"]
+position = Vector2(385.08, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg81" type="Sprite2D" parent="lights"]
+position = Vector2(149.8529, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg80" type="Sprite2D" parent="lights"]
+position = Vector2(470.1449, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg80" type="Sprite2D" parent="lights"]
+position = Vector2(384.1062, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg80" type="Sprite2D" parent="lights"]
+position = Vector2(148.8791, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg79" type="Sprite2D" parent="lights"]
+position = Vector2(473.0999, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg79" type="Sprite2D" parent="lights"]
+position = Vector2(387.0612, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg79" type="Sprite2D" parent="lights"]
+position = Vector2(151.8341, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg78" type="Sprite2D" parent="lights"]
+position = Vector2(476.5587, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg78" type="Sprite2D" parent="lights"]
+position = Vector2(390.52, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg78" type="Sprite2D" parent="lights"]
+position = Vector2(155.2928, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg77" type="Sprite2D" parent="lights"]
+position = Vector2(477.5343, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg77" type="Sprite2D" parent="lights"]
+position = Vector2(391.4956, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg77" type="Sprite2D" parent="lights"]
+position = Vector2(156.2684, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg76" type="Sprite2D" parent="lights"]
+position = Vector2(474.6782, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg76" type="Sprite2D" parent="lights"]
+position = Vector2(388.6395, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg76" type="Sprite2D" parent="lights"]
+position = Vector2(153.4124, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg75" type="Sprite2D" parent="lights"]
+position = Vector2(467.9621, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg75" type="Sprite2D" parent="lights"]
+position = Vector2(381.9233, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg75" type="Sprite2D" parent="lights"]
+position = Vector2(146.6963, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg74" type="Sprite2D" parent="lights"]
+position = Vector2(464.7216, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg74" type="Sprite2D" parent="lights"]
+position = Vector2(378.6828, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg74" type="Sprite2D" parent="lights"]
+position = Vector2(143.4558, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg73" type="Sprite2D" parent="lights"]
+position = Vector2(463.2776, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg73" type="Sprite2D" parent="lights"]
+position = Vector2(377.2388, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg73" type="Sprite2D" parent="lights"]
+position = Vector2(142.0119, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg72" type="Sprite2D" parent="lights"]
+position = Vector2(461.5518, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg72" type="Sprite2D" parent="lights"]
+position = Vector2(375.513, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg72" type="Sprite2D" parent="lights"]
+position = Vector2(140.286, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg71" type="Sprite2D" parent="lights"]
+position = Vector2(465.645, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg71" type="Sprite2D" parent="lights"]
+position = Vector2(379.6062, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg71" type="Sprite2D" parent="lights"]
+position = Vector2(144.3793, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg70" type="Sprite2D" parent="lights"]
+position = Vector2(464.1003, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg70" type="Sprite2D" parent="lights"]
+position = Vector2(378.0615, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg70" type="Sprite2D" parent="lights"]
+position = Vector2(142.8346, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg69" type="Sprite2D" parent="lights"]
+position = Vector2(462.6078, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg69" type="Sprite2D" parent="lights"]
+position = Vector2(376.569, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg69" type="Sprite2D" parent="lights"]
+position = Vector2(141.342, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg68" type="Sprite2D" parent="lights"]
+position = Vector2(465.3428, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg68" type="Sprite2D" parent="lights"]
+position = Vector2(379.304, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg68" type="Sprite2D" parent="lights"]
+position = Vector2(144.077, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg67" type="Sprite2D" parent="lights"]
+position = Vector2(462.0854, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg67" type="Sprite2D" parent="lights"]
+position = Vector2(376.0467, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg67" type="Sprite2D" parent="lights"]
+position = Vector2(140.8197, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg66" type="Sprite2D" parent="lights"]
+position = Vector2(461.0781, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg66" type="Sprite2D" parent="lights"]
+position = Vector2(375.0393, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg66" type="Sprite2D" parent="lights"]
+position = Vector2(139.8123, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg65" type="Sprite2D" parent="lights"]
+position = Vector2(460.1043, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg65" type="Sprite2D" parent="lights"]
+position = Vector2(374.0655, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg65" type="Sprite2D" parent="lights"]
+position = Vector2(138.8385, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg64" type="Sprite2D" parent="lights"]
+position = Vector2(463.0593, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg64" type="Sprite2D" parent="lights"]
+position = Vector2(377.0206, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg64" type="Sprite2D" parent="lights"]
+position = Vector2(141.7936, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg63" type="Sprite2D" parent="lights"]
+position = Vector2(466.5181, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg63" type="Sprite2D" parent="lights"]
+position = Vector2(380.4794, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg63" type="Sprite2D" parent="lights"]
+position = Vector2(145.2523, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg62" type="Sprite2D" parent="lights"]
+position = Vector2(467.4937, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg62" type="Sprite2D" parent="lights"]
+position = Vector2(381.455, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg62" type="Sprite2D" parent="lights"]
+position = Vector2(146.228, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg61" type="Sprite2D" parent="lights"]
+position = Vector2(464.6376, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg61" type="Sprite2D" parent="lights"]
+position = Vector2(378.5988, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg61" type="Sprite2D" parent="lights"]
+position = Vector2(143.3719, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg60" type="Sprite2D" parent="lights"]
+position = Vector2(457.9214, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg60" type="Sprite2D" parent="lights"]
+position = Vector2(371.8826, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg60" type="Sprite2D" parent="lights"]
+position = Vector2(136.6557, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg59" type="Sprite2D" parent="lights"]
+position = Vector2(454.6808, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg59" type="Sprite2D" parent="lights"]
+position = Vector2(368.6421, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg59" type="Sprite2D" parent="lights"]
+position = Vector2(133.4153, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg58" type="Sprite2D" parent="lights"]
+position = Vector2(453.237, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg58" type="Sprite2D" parent="lights"]
+position = Vector2(367.1982, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg58" type="Sprite2D" parent="lights"]
+position = Vector2(131.9715, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg57" type="Sprite2D" parent="lights"]
+position = Vector2(451.5111, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg57" type="Sprite2D" parent="lights"]
+position = Vector2(365.4724, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg57" type="Sprite2D" parent="lights"]
+position = Vector2(130.2458, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg56" type="Sprite2D" parent="lights"]
+position = Vector2(455.6044, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg56" type="Sprite2D" parent="lights"]
+position = Vector2(369.5656, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg56" type="Sprite2D" parent="lights"]
+position = Vector2(134.3388, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg55" type="Sprite2D" parent="lights"]
+position = Vector2(454.0597, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg55" type="Sprite2D" parent="lights"]
+position = Vector2(368.0209, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg55" type="Sprite2D" parent="lights"]
+position = Vector2(132.7942, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg54" type="Sprite2D" parent="lights"]
+position = Vector2(452.5671, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg54" type="Sprite2D" parent="lights"]
+position = Vector2(366.5284, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg54" type="Sprite2D" parent="lights"]
+position = Vector2(131.3017, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg53" type="Sprite2D" parent="lights"]
+position = Vector2(455.3021, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg53" type="Sprite2D" parent="lights"]
+position = Vector2(369.2633, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg53" type="Sprite2D" parent="lights"]
+position = Vector2(134.0365, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg52" type="Sprite2D" parent="lights"]
+position = Vector2(452.0448, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg52" type="Sprite2D" parent="lights"]
+position = Vector2(366.006, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg52" type="Sprite2D" parent="lights"]
+position = Vector2(130.7794, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg51" type="Sprite2D" parent="lights"]
+position = Vector2(451.0374, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg51" type="Sprite2D" parent="lights"]
+position = Vector2(364.9986, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg51" type="Sprite2D" parent="lights"]
+position = Vector2(129.7721, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg50" type="Sprite2D" parent="lights"]
+position = Vector2(450.0636, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg50" type="Sprite2D" parent="lights"]
+position = Vector2(364.0248, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg50" type="Sprite2D" parent="lights"]
+position = Vector2(128.7983, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg49" type="Sprite2D" parent="lights"]
+position = Vector2(453.0186, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg49" type="Sprite2D" parent="lights"]
+position = Vector2(366.9799, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg49" type="Sprite2D" parent="lights"]
+position = Vector2(131.7532, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg48" type="Sprite2D" parent="lights"]
+position = Vector2(456.4774, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg48" type="Sprite2D" parent="lights"]
+position = Vector2(370.4387, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg48" type="Sprite2D" parent="lights"]
+position = Vector2(135.2118, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg47" type="Sprite2D" parent="lights"]
+position = Vector2(457.4531, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg47" type="Sprite2D" parent="lights"]
+position = Vector2(371.4143, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg47" type="Sprite2D" parent="lights"]
+position = Vector2(136.1874, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg46" type="Sprite2D" parent="lights"]
+position = Vector2(454.5969, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg46" type="Sprite2D" parent="lights"]
+position = Vector2(368.5581, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg46" type="Sprite2D" parent="lights"]
+position = Vector2(133.3314, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg45" type="Sprite2D" parent="lights"]
+position = Vector2(447.8807, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg45" type="Sprite2D" parent="lights"]
+position = Vector2(361.8419, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg45" type="Sprite2D" parent="lights"]
+position = Vector2(126.6154, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg44" type="Sprite2D" parent="lights"]
+position = Vector2(444.6402, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg44" type="Sprite2D" parent="lights"]
+position = Vector2(358.6014, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg44" type="Sprite2D" parent="lights"]
+position = Vector2(123.3749, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg43" type="Sprite2D" parent="lights"]
+position = Vector2(443.1963, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg43" type="Sprite2D" parent="lights"]
+position = Vector2(357.1575, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg43" type="Sprite2D" parent="lights"]
+position = Vector2(121.931, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg42" type="Sprite2D" parent="lights"]
+position = Vector2(441.4705, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg42" type="Sprite2D" parent="lights"]
+position = Vector2(355.4317, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg42" type="Sprite2D" parent="lights"]
+position = Vector2(120.2052, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg41" type="Sprite2D" parent="lights"]
+position = Vector2(445.5637, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg41" type="Sprite2D" parent="lights"]
+position = Vector2(359.5249, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg41" type="Sprite2D" parent="lights"]
+position = Vector2(124.2984, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg40" type="Sprite2D" parent="lights"]
+position = Vector2(444.019, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg40" type="Sprite2D" parent="lights"]
+position = Vector2(357.9802, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg40" type="Sprite2D" parent="lights"]
+position = Vector2(122.7537, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg39" type="Sprite2D" parent="lights"]
+position = Vector2(442.5265, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg39" type="Sprite2D" parent="lights"]
+position = Vector2(356.4877, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg39" type="Sprite2D" parent="lights"]
+position = Vector2(121.2612, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg38" type="Sprite2D" parent="lights"]
+position = Vector2(445.2614, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg38" type="Sprite2D" parent="lights"]
+position = Vector2(359.2226, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg38" type="Sprite2D" parent="lights"]
+position = Vector2(123.9962, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg37" type="Sprite2D" parent="lights"]
+position = Vector2(442.0042, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg37" type="Sprite2D" parent="lights"]
+position = Vector2(355.9654, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg37" type="Sprite2D" parent="lights"]
+position = Vector2(120.7389, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg36" type="Sprite2D" parent="lights"]
+position = Vector2(440.9967, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg36" type="Sprite2D" parent="lights"]
+position = Vector2(354.9579, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg36" type="Sprite2D" parent="lights"]
+position = Vector2(119.7315, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg35" type="Sprite2D" parent="lights"]
+position = Vector2(440.0229, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg35" type="Sprite2D" parent="lights"]
+position = Vector2(353.9841, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg35" type="Sprite2D" parent="lights"]
+position = Vector2(118.7577, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg34" type="Sprite2D" parent="lights"]
+position = Vector2(442.978, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg34" type="Sprite2D" parent="lights"]
+position = Vector2(356.9392, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg34" type="Sprite2D" parent="lights"]
+position = Vector2(121.7127, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg33" type="Sprite2D" parent="lights"]
+position = Vector2(446.4368, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg33" type="Sprite2D" parent="lights"]
+position = Vector2(360.3979, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg33" type="Sprite2D" parent="lights"]
+position = Vector2(125.1715, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg32" type="Sprite2D" parent="lights"]
+position = Vector2(447.4124, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg32" type="Sprite2D" parent="lights"]
+position = Vector2(361.3736, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg32" type="Sprite2D" parent="lights"]
+position = Vector2(126.1471, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg31" type="Sprite2D" parent="lights"]
+position = Vector2(444.5563, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg31" type="Sprite2D" parent="lights"]
+position = Vector2(358.5175, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg31" type="Sprite2D" parent="lights"]
+position = Vector2(123.291, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg30" type="Sprite2D" parent="lights"]
+position = Vector2(437.8401, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg30" type="Sprite2D" parent="lights"]
+position = Vector2(351.8013, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg30" type="Sprite2D" parent="lights"]
+position = Vector2(116.5748, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg29" type="Sprite2D" parent="lights"]
+position = Vector2(434.5996, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg29" type="Sprite2D" parent="lights"]
+position = Vector2(348.5607, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg29" type="Sprite2D" parent="lights"]
+position = Vector2(113.3343, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg28" type="Sprite2D" parent="lights"]
+position = Vector2(433.1556, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg28" type="Sprite2D" parent="lights"]
+position = Vector2(347.1168, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg28" type="Sprite2D" parent="lights"]
+position = Vector2(111.8904, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg27" type="Sprite2D" parent="lights"]
+position = Vector2(431.4298, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg27" type="Sprite2D" parent="lights"]
+position = Vector2(345.391, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg27" type="Sprite2D" parent="lights"]
+position = Vector2(110.1646, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg26" type="Sprite2D" parent="lights"]
+position = Vector2(435.523, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg26" type="Sprite2D" parent="lights"]
+position = Vector2(349.4842, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg26" type="Sprite2D" parent="lights"]
+position = Vector2(114.2578, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg25" type="Sprite2D" parent="lights"]
+position = Vector2(433.9784, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg25" type="Sprite2D" parent="lights"]
+position = Vector2(347.9395, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg25" type="Sprite2D" parent="lights"]
+position = Vector2(112.7131, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg24" type="Sprite2D" parent="lights"]
+position = Vector2(432.4858, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg24" type="Sprite2D" parent="lights"]
+position = Vector2(346.447, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg24" type="Sprite2D" parent="lights"]
+position = Vector2(111.2206, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg23" type="Sprite2D" parent="lights"]
+position = Vector2(435.2208, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg23" type="Sprite2D" parent="lights"]
+position = Vector2(349.182, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg23" type="Sprite2D" parent="lights"]
+position = Vector2(113.9556, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg22" type="Sprite2D" parent="lights"]
+position = Vector2(431.9636, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg22" type="Sprite2D" parent="lights"]
+position = Vector2(345.9247, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg22" type="Sprite2D" parent="lights"]
+position = Vector2(110.6983, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg21" type="Sprite2D" parent="lights"]
+position = Vector2(430.9562, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg21" type="Sprite2D" parent="lights"]
+position = Vector2(344.9173, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg21" type="Sprite2D" parent="lights"]
+position = Vector2(109.6909, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg20" type="Sprite2D" parent="lights"]
+position = Vector2(429.9823, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg20" type="Sprite2D" parent="lights"]
+position = Vector2(343.9435, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg20" type="Sprite2D" parent="lights"]
+position = Vector2(108.7171, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg19" type="Sprite2D" parent="lights"]
+position = Vector2(432.9374, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg19" type="Sprite2D" parent="lights"]
+position = Vector2(346.8985, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg19" type="Sprite2D" parent="lights"]
+position = Vector2(111.6721, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg18" type="Sprite2D" parent="lights"]
+position = Vector2(436.3961, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg18" type="Sprite2D" parent="lights"]
+position = Vector2(350.3573, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg18" type="Sprite2D" parent="lights"]
+position = Vector2(115.1309, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg17" type="Sprite2D" parent="lights"]
+position = Vector2(437.3717, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg17" type="Sprite2D" parent="lights"]
+position = Vector2(351.333, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg17" type="Sprite2D" parent="lights"]
+position = Vector2(116.1065, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg16" type="Sprite2D" parent="lights"]
+position = Vector2(434.5156, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg16" type="Sprite2D" parent="lights"]
+position = Vector2(348.4768, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg16" type="Sprite2D" parent="lights"]
+position = Vector2(113.2504, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg15" type="Sprite2D" parent="lights"]
+position = Vector2(427.7995, 28.60848)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg15" type="Sprite2D" parent="lights"]
+position = Vector2(341.7607, 28.59401)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg15" type="Sprite2D" parent="lights"]
+position = Vector2(106.5343, 28.59398)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg14" type="Sprite2D" parent="lights"]
+position = Vector2(424.5591, 26.0733)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg14" type="Sprite2D" parent="lights"]
+position = Vector2(338.5202, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg14" type="Sprite2D" parent="lights"]
+position = Vector2(103.2938, 26.0587)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg13" type="Sprite2D" parent="lights"]
+position = Vector2(423.1151, 25.97244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg13" type="Sprite2D" parent="lights"]
+position = Vector2(337.0762, 25.95797)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg13" type="Sprite2D" parent="lights"]
+position = Vector2(101.8499, 25.95794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg12" type="Sprite2D" parent="lights"]
+position = Vector2(421.3893, 26.39229)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg12" type="Sprite2D" parent="lights"]
+position = Vector2(335.3504, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg12" type="Sprite2D" parent="lights"]
+position = Vector2(100.1241, 26.3777)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg11" type="Sprite2D" parent="lights"]
+position = Vector2(425.4825, 21.23779)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg11" type="Sprite2D" parent="lights"]
+position = Vector2(339.4436, 21.2231)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg11" type="Sprite2D" parent="lights"]
+position = Vector2(104.2173, 21.22309)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg10" type="Sprite2D" parent="lights"]
+position = Vector2(423.9378, 21.43925)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg10" type="Sprite2D" parent="lights"]
+position = Vector2(337.8989, 21.42456)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg10" type="Sprite2D" parent="lights"]
+position = Vector2(102.6726, 21.42452)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg9" type="Sprite2D" parent="lights"]
+position = Vector2(422.4453, 21.12025)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg9" type="Sprite2D" parent="lights"]
+position = Vector2(336.4064, 21.10563)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg9" type="Sprite2D" parent="lights"]
+position = Vector2(101.1801, 21.10556)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg8" type="Sprite2D" parent="lights"]
+position = Vector2(425.1803, 23.72264)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg8" type="Sprite2D" parent="lights"]
+position = Vector2(339.1414, 23.70811)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg8" type="Sprite2D" parent="lights"]
+position = Vector2(103.915, 23.70808)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg7" type="Sprite2D" parent="lights"]
+position = Vector2(421.923, 23.78988)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg7" type="Sprite2D" parent="lights"]
+position = Vector2(335.8841, 23.77528)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg7" type="Sprite2D" parent="lights"]
+position = Vector2(100.6578, 23.77527)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg6" type="Sprite2D" parent="lights"]
+position = Vector2(420.9156, 21.47274)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg6" type="Sprite2D" parent="lights"]
+position = Vector2(334.8767, 21.45818)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg6" type="Sprite2D" parent="lights"]
+position = Vector2(99.6504, 21.45814)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg5" type="Sprite2D" parent="lights"]
+position = Vector2(419.9418, 26.45941)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg5" type="Sprite2D" parent="lights"]
+position = Vector2(333.9029, 26.44487)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg5" type="Sprite2D" parent="lights"]
+position = Vector2(98.67658, 26.44484)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg4" type="Sprite2D" parent="lights"]
+position = Vector2(422.8969, 28.91079)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg4" type="Sprite2D" parent="lights"]
+position = Vector2(336.858, 28.8962)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg4" type="Sprite2D" parent="lights"]
+position = Vector2(101.6316, 28.89617)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg3" type="Sprite2D" parent="lights"]
+position = Vector2(426.3556, 26.49302)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg3" type="Sprite2D" parent="lights"]
+position = Vector2(340.3167, 26.47843)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg3" type="Sprite2D" parent="lights"]
+position = Vector2(105.0904, 26.47836)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg2" type="Sprite2D" parent="lights"]
+position = Vector2(427.3312, 21.42244)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg2" type="Sprite2D" parent="lights"]
+position = Vector2(341.2923, 21.40782)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg2" type="Sprite2D" parent="lights"]
+position = Vector2(106.066, 21.40775)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p4_seg1" type="Sprite2D" parent="lights"]
+position = Vector2(424.4751, 18.78628)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p3_seg1" type="Sprite2D" parent="lights"]
+position = Vector2(338.4362, 18.77172)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p2_seg1" type="Sprite2D" parent="lights"]
+position = Vector2(103.2099, 18.77167)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="ball_seg29" type="Sprite2D" parent="lights"]
+position = Vector2(26.02176, 83.41687)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg28" type="Sprite2D" parent="lights"]
+position = Vector2(24.57783, 83.31608)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg27" type="Sprite2D" parent="lights"]
+position = Vector2(22.85201, 83.73586)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg26" type="Sprite2D" parent="lights"]
+position = Vector2(26.94521, 78.58132)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg25" type="Sprite2D" parent="lights"]
+position = Vector2(25.40055, 78.78278)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg24" type="Sprite2D" parent="lights"]
+position = Vector2(23.90801, 78.46379)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg23" type="Sprite2D" parent="lights"]
+position = Vector2(26.64298, 81.06623)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg22" type="Sprite2D" parent="lights"]
+position = Vector2(23.3857, 81.13347)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg21" type="Sprite2D" parent="lights"]
+position = Vector2(22.37833, 78.8164)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg20" type="Sprite2D" parent="lights"]
+position = Vector2(21.40449, 83.80303)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg19" type="Sprite2D" parent="lights"]
+position = Vector2(24.35954, 86.25433)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg18" type="Sprite2D" parent="lights"]
+position = Vector2(27.81831, 83.83652)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg17" type="Sprite2D" parent="lights"]
+position = Vector2(28.79393, 78.76598)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg16" type="Sprite2D" parent="lights"]
+position = Vector2(25.93781, 76.12997)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg15" type="Sprite2D" parent="lights"]
+position = Vector2(19.22163, 85.95208)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg14" type="Sprite2D" parent="lights"]
+position = Vector2(15.98115, 83.41687)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg13" type="Sprite2D" parent="lights"]
+position = Vector2(14.53723, 83.31608)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg12" type="Sprite2D" parent="lights"]
+position = Vector2(12.81141, 83.73586)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg11" type="Sprite2D" parent="lights"]
+position = Vector2(16.90459, 78.58132)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg10" type="Sprite2D" parent="lights"]
+position = Vector2(15.35993, 78.78278)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg9" type="Sprite2D" parent="lights"]
+position = Vector2(13.8674, 78.46379)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg8" type="Sprite2D" parent="lights"]
+position = Vector2(16.60235, 81.06623)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg7" type="Sprite2D" parent="lights"]
+position = Vector2(13.3451, 81.13347)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg6" type="Sprite2D" parent="lights"]
+position = Vector2(12.33772, 78.8164)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg5" type="Sprite2D" parent="lights"]
+position = Vector2(11.3639, 83.80303)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg4" type="Sprite2D" parent="lights"]
+position = Vector2(14.31893, 86.25433)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg3" type="Sprite2D" parent="lights"]
+position = Vector2(17.77768, 83.83652)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg2" type="Sprite2D" parent="lights"]
+position = Vector2(18.75331, 78.76598)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="ball_seg1" type="Sprite2D" parent="lights"]
+position = Vector2(15.89718, 76.12997)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="p1_seg105" type="Sprite2D" parent="lights"]
+position = Vector2(78.0508, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg104" type="Sprite2D" parent="lights"]
+position = Vector2(74.81031, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg103" type="Sprite2D" parent="lights"]
+position = Vector2(73.36636, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg102" type="Sprite2D" parent="lights"]
+position = Vector2(71.64053, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg101" type="Sprite2D" parent="lights"]
+position = Vector2(75.73374, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg100" type="Sprite2D" parent="lights"]
+position = Vector2(74.18908, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg99" type="Sprite2D" parent="lights"]
+position = Vector2(72.69654, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg98" type="Sprite2D" parent="lights"]
+position = Vector2(75.43152, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg97" type="Sprite2D" parent="lights"]
+position = Vector2(72.17423, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg96" type="Sprite2D" parent="lights"]
+position = Vector2(71.16683, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg95" type="Sprite2D" parent="lights"]
+position = Vector2(70.19301, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg94" type="Sprite2D" parent="lights"]
+position = Vector2(73.14808, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg93" type="Sprite2D" parent="lights"]
+position = Vector2(76.60685, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg92" type="Sprite2D" parent="lights"]
+position = Vector2(77.58247, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg91" type="Sprite2D" parent="lights"]
+position = Vector2(74.72636, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg90" type="Sprite2D" parent="lights"]
+position = Vector2(68.01015, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg89" type="Sprite2D" parent="lights"]
+position = Vector2(64.76965, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg88" type="Sprite2D" parent="lights"]
+position = Vector2(63.32574, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg87" type="Sprite2D" parent="lights"]
+position = Vector2(61.59991, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg86" type="Sprite2D" parent="lights"]
+position = Vector2(65.69311, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg85" type="Sprite2D" parent="lights"]
+position = Vector2(64.14845, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg84" type="Sprite2D" parent="lights"]
+position = Vector2(62.6559, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg83" type="Sprite2D" parent="lights"]
+position = Vector2(65.39087, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg82" type="Sprite2D" parent="lights"]
+position = Vector2(62.1336, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg81" type="Sprite2D" parent="lights"]
+position = Vector2(61.1262, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg80" type="Sprite2D" parent="lights"]
+position = Vector2(60.15237, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg79" type="Sprite2D" parent="lights"]
+position = Vector2(63.10743, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg78" type="Sprite2D" parent="lights"]
+position = Vector2(66.5662, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg77" type="Sprite2D" parent="lights"]
+position = Vector2(67.54182, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg76" type="Sprite2D" parent="lights"]
+position = Vector2(64.68571, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg75" type="Sprite2D" parent="lights"]
+position = Vector2(57.96952, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg74" type="Sprite2D" parent="lights"]
+position = Vector2(54.729, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg73" type="Sprite2D" parent="lights"]
+position = Vector2(53.28505, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg72" type="Sprite2D" parent="lights"]
+position = Vector2(51.55925, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg71" type="Sprite2D" parent="lights"]
+position = Vector2(55.65247, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg70" type="Sprite2D" parent="lights"]
+position = Vector2(54.10779, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg69" type="Sprite2D" parent="lights"]
+position = Vector2(52.61525, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg68" type="Sprite2D" parent="lights"]
+position = Vector2(55.35023, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg67" type="Sprite2D" parent="lights"]
+position = Vector2(52.09294, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg66" type="Sprite2D" parent="lights"]
+position = Vector2(51.08553, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg65" type="Sprite2D" parent="lights"]
+position = Vector2(50.11172, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg64" type="Sprite2D" parent="lights"]
+position = Vector2(53.06676, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg63" type="Sprite2D" parent="lights"]
+position = Vector2(56.52557, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg62" type="Sprite2D" parent="lights"]
+position = Vector2(57.5012, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg61" type="Sprite2D" parent="lights"]
+position = Vector2(54.64504, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg60" type="Sprite2D" parent="lights"]
+position = Vector2(47.92883, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg59" type="Sprite2D" parent="lights"]
+position = Vector2(44.68835, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg58" type="Sprite2D" parent="lights"]
+position = Vector2(43.24442, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg57" type="Sprite2D" parent="lights"]
+position = Vector2(41.51859, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg56" type="Sprite2D" parent="lights"]
+position = Vector2(45.61179, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg55" type="Sprite2D" parent="lights"]
+position = Vector2(44.06713, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg54" type="Sprite2D" parent="lights"]
+position = Vector2(42.57458, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg53" type="Sprite2D" parent="lights"]
+position = Vector2(45.30956, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg52" type="Sprite2D" parent="lights"]
+position = Vector2(42.05228, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg51" type="Sprite2D" parent="lights"]
+position = Vector2(41.04486, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg50" type="Sprite2D" parent="lights"]
+position = Vector2(40.07105, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg49" type="Sprite2D" parent="lights"]
+position = Vector2(43.02613, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg48" type="Sprite2D" parent="lights"]
+position = Vector2(46.48489, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg47" type="Sprite2D" parent="lights"]
+position = Vector2(47.46051, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg46" type="Sprite2D" parent="lights"]
+position = Vector2(44.6044, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg45" type="Sprite2D" parent="lights"]
+position = Vector2(37.88815, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg44" type="Sprite2D" parent="lights"]
+position = Vector2(34.64766, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg43" type="Sprite2D" parent="lights"]
+position = Vector2(33.20374, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg42" type="Sprite2D" parent="lights"]
+position = Vector2(31.47791, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg41" type="Sprite2D" parent="lights"]
+position = Vector2(35.57113, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg40" type="Sprite2D" parent="lights"]
+position = Vector2(34.02644, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg39" type="Sprite2D" parent="lights"]
+position = Vector2(32.53392, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg38" type="Sprite2D" parent="lights"]
+position = Vector2(35.26887, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg37" type="Sprite2D" parent="lights"]
+position = Vector2(32.0116, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg36" type="Sprite2D" parent="lights"]
+position = Vector2(31.00423, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg35" type="Sprite2D" parent="lights"]
+position = Vector2(30.0304, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg34" type="Sprite2D" parent="lights"]
+position = Vector2(32.98545, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg33" type="Sprite2D" parent="lights"]
+position = Vector2(36.44422, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg32" type="Sprite2D" parent="lights"]
+position = Vector2(37.41985, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg31" type="Sprite2D" parent="lights"]
+position = Vector2(34.56372, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg30" type="Sprite2D" parent="lights"]
+position = Vector2(27.84753, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg29" type="Sprite2D" parent="lights"]
+position = Vector2(24.60704, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg28" type="Sprite2D" parent="lights"]
+position = Vector2(23.16311, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg27" type="Sprite2D" parent="lights"]
+position = Vector2(21.43733, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg26" type="Sprite2D" parent="lights"]
+position = Vector2(25.53049, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg25" type="Sprite2D" parent="lights"]
+position = Vector2(23.98582, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg24" type="Sprite2D" parent="lights"]
+position = Vector2(22.49329, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg23" type="Sprite2D" parent="lights"]
+position = Vector2(25.22826, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg22" type="Sprite2D" parent="lights"]
+position = Vector2(21.97102, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg21" type="Sprite2D" parent="lights"]
+position = Vector2(20.96362, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg20" type="Sprite2D" parent="lights"]
+position = Vector2(19.9898, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg19" type="Sprite2D" parent="lights"]
+position = Vector2(22.94482, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg18" type="Sprite2D" parent="lights"]
+position = Vector2(26.40358, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg17" type="Sprite2D" parent="lights"]
+position = Vector2(27.37921, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg16" type="Sprite2D" parent="lights"]
+position = Vector2(24.52308, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg15" type="Sprite2D" parent="lights"]
+position = Vector2(17.80693, 28.58666)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg14" type="Sprite2D" parent="lights"]
+position = Vector2(14.56649, 26.05137)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg13" type="Sprite2D" parent="lights"]
+position = Vector2(13.12257, 25.95061)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg12" type="Sprite2D" parent="lights"]
+position = Vector2(11.39674, 26.37041)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg11" type="Sprite2D" parent="lights"]
+position = Vector2(15.48995, 21.21576)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg10" type="Sprite2D" parent="lights"]
+position = Vector2(13.94528, 21.41719)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg9" type="Sprite2D" parent="lights"]
+position = Vector2(12.45275, 21.09824)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg8" type="Sprite2D" parent="lights"]
+position = Vector2(15.18771, 23.70075)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg7" type="Sprite2D" parent="lights"]
+position = Vector2(11.93043, 23.76794)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg6" type="Sprite2D" parent="lights"]
+position = Vector2(10.92306, 21.45081)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg5" type="Sprite2D" parent="lights"]
+position = Vector2(9.949246, 26.43753)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg4" type="Sprite2D" parent="lights"]
+position = Vector2(12.90429, 28.8889)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg3" type="Sprite2D" parent="lights"]
+position = Vector2(16.36304, 26.4711)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg2" type="Sprite2D" parent="lights"]
+position = Vector2(17.33864, 21.40043)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="p1_seg1" type="Sprite2D" parent="lights"]
+position = Vector2(14.48252, 18.76432)
+script = ExtResource("3_qb2nn")
+tags = ["tScoreSegs"]
+
+[node name="pf_seg30" type="Sprite2D" parent="lights"]
+position = Vector2(-70.21984, 929.358)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg29" type="Sprite2D" parent="lights"]
+position = Vector2(-75.5667, 925.175)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg28" type="Sprite2D" parent="lights"]
+position = Vector2(-77.94911, 925.0088)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg27" type="Sprite2D" parent="lights"]
+position = Vector2(-80.79668, 925.7015)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg26" type="Sprite2D" parent="lights"]
+position = Vector2(-74.04296, 917.1964)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg25" type="Sprite2D" parent="lights"]
+position = Vector2(-76.59164, 917.5289)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg24" type="Sprite2D" parent="lights"]
+position = Vector2(-79.05432, 917.0024)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg23" type="Sprite2D" parent="lights"]
+position = Vector2(-74.54166, 921.2963)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg22" type="Sprite2D" parent="lights"]
+position = Vector2(-79.91612, 921.4073)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg21" type="Sprite2D" parent="lights"]
+position = Vector2(-81.57826, 917.5843)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg20" type="Sprite2D" parent="lights"]
+position = Vector2(-83.1851, 925.8121)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg19" type="Sprite2D" parent="lights"]
+position = Vector2(-78.30927, 929.8569)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg18" type="Sprite2D" parent="lights"]
+position = Vector2(-72.60238, 925.8676)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg17" type="Sprite2D" parent="lights"]
+position = Vector2(-70.99258, 917.501)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg16" type="Sprite2D" parent="lights"]
+position = Vector2(-75.70519, 913.1517)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg15" type="Sprite2D" parent="lights"]
+position = Vector2(-86.78682, 929.358)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg14" type="Sprite2D" parent="lights"]
+position = Vector2(-92.13338, 925.175)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg13" type="Sprite2D" parent="lights"]
+position = Vector2(-94.51586, 925.0088)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg12" type="Sprite2D" parent="lights"]
+position = Vector2(-97.36343, 925.7015)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg11" type="Sprite2D" parent="lights"]
+position = Vector2(-90.60985, 917.1964)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg10" type="Sprite2D" parent="lights"]
+position = Vector2(-93.1584, 917.5289)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg9" type="Sprite2D" parent="lights"]
+position = Vector2(-95.62107, 917.0024)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg8" type="Sprite2D" parent="lights"]
+position = Vector2(-91.10843, 921.2963)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg7" type="Sprite2D" parent="lights"]
+position = Vector2(-96.48287, 921.4073)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg6" type="Sprite2D" parent="lights"]
+position = Vector2(-98.145, 917.5843)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg5" type="Sprite2D" parent="lights"]
+position = Vector2(-99.7518, 925.8121)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg4" type="Sprite2D" parent="lights"]
+position = Vector2(-94.87604, 929.8569)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg3" type="Sprite2D" parent="lights"]
+position = Vector2(-89.16918, 925.8676)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg2" type="Sprite2D" parent="lights"]
+position = Vector2(-87.55953, 917.501)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="pf_seg1" type="Sprite2D" parent="lights"]
+position = Vector2(-92.27195, 913.1517)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG08" type="Sprite2D" parent="lights"]
+position = Vector2(466.6501, -176.97)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG16" type="Sprite2D" parent="lights"]
+position = Vector2(443.19, -125.97)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG15" type="Sprite2D" parent="lights"]
+position = Vector2(385.05, -125.97)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG14" type="Sprite2D" parent="lights"]
+position = Vector2(323.85, -125.97)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG13" type="Sprite2D" parent="lights"]
+position = Vector2(265.71, -126.99)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG12" type="Sprite2D" parent="lights"]
+position = Vector2(207.57, -126.99)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG11" type="Sprite2D" parent="lights"]
+position = Vector2(147.39, -129.03)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG10" type="Sprite2D" parent="lights"]
+position = Vector2(88.23001, -130.05)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG09" type="Sprite2D" parent="lights"]
+position = Vector2(27.03, -130.05)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG07" type="Sprite2D" parent="lights"]
+position = Vector2(407.4901, -177.99)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG06" type="Sprite2D" parent="lights"]
+position = Vector2(348.33, -177.99)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG05" type="Sprite2D" parent="lights"]
+position = Vector2(289.17, -179.01)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG04" type="Sprite2D" parent="lights"]
+position = Vector2(232.05, -180.03)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG03" type="Sprite2D" parent="lights"]
+position = Vector2(172.89, -179.01)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG02" type="Sprite2D" parent="lights"]
+position = Vector2(114.75, -181.05)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LBG01" type="Sprite2D" parent="lights"]
+position = Vector2(55.59, -182.07)
+script = ExtResource("3_qb2nn")
+tags = ["10"]
+
+[node name="LL" type="Sprite2D" parent="lights"]
+position = Vector2(345.009, 262.2515)
+script = ExtResource("3_qb2nn")
+tags = ["tInserts"]
+
+

@@ -1,0 +1,43 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    FL6b: (color)%0
+    FL6a: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6a: (color)%0
+    FL6h: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6h: (color)%0
+    FL6g: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6g: (color)%0
+    FL6f: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6f: (color)%0
+    FL6e: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6e: (color)%0
+    FL6d: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6d: (color)%0
+    FL6c: (color)%(intensity)
+
+- duration: 0.1s
+  lights:
+    FL6c: (color)%0
+    FL6b: (color)%(intensity)
+
+

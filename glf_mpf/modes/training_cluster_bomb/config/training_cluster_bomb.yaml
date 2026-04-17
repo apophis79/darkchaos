@@ -1,0 +1,493 @@
+#config_version=6
+
+mode:
+  start_events: start_training_cluster_bomb
+  stop_events: mode_base_stopping, stop_training
+  priority: 700
+
+combo_switches: 
+  cancel_training_cb:
+    switches_1: s_left_flipper
+    switches_2: s_right_flipper
+    events_when_both: 
+      - stop_training
+      - play_voc_training_canceled
+      - training_stopped
+    hold_time: 3000ms
+  cancel_training_warning_cb:
+    switches_1: s_left_flipper
+    switches_2: s_right_flipper
+    events_when_both: 
+      - training_cancel_warning
+    events_when_inactive: 
+      - training_cancel_warning_stop
+    hold_time: 1500ms
+
+event_player: 
+  mode_training_cluster_bomb_started:
+    - init_training
+    - play_lsling_training
+    - play_rsling_training
+  left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}:
+    - light_cluster_charge1
+    - flash_gi
+    - play_sfx_LS
+    - score_200000
+  left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 and current_player.shot_training_cluster_charge2 == 0}:
+    - light_cluster_charge2
+    - flash_gi
+    - play_sfx_LS
+    - score_300000
+  left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 and current_player.shot_training_cluster_charge3 == 0}:
+    - light_cluster_charge3
+    - play_sfx_LS
+    - score_500000
+  light_cluster_charge3:
+    - training_achieved
+    - play_sfx_super_jackpot
+  play_sfx_LS:
+    - play_sfx_LS_during_training
+  training_achieved:
+    - stop_training
+    - training_stopped
+  timer_training_cluster_bomb_complete:
+    - stop_training
+    - training_stopped
+    - play_voc_training_incomplete
+  timer_training_cluster_bomb_tick:
+    - flicker_gi
+  balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
+    - delayed_release_moon_ball
+
+
+random_event_player: 
+  flicker_gi: 
+    events:
+      play_flicker_gi01: 1
+      play_flicker_gi02: 1
+      play_flicker_gi03: 1
+      play_flicker_gi04: 1
+      play_flicker_gi05: 1
+      play_flicker_gi06: 1
+      play_flicker_gi07: 1
+      play_flicker_gi08: 1
+      play_flicker_gi09: 1
+      play_flicker_gi10: 1
+      play_flicker_gi11: 1
+      play_flicker_gi12: 1
+      play_flicker_gi13: 1
+      play_flicker_gi14: 1
+      play_flicker_gi15: 1
+      play_flicker_gi16: 1
+      play_flicker_gi17: 1
+      play_flicker_gi18: 1
+      play_flicker_gi19: 1
+      play_flicker_gi20: 1
+      play_flicker_gi21: 1
+      play_flicker_gi22: 1
+    scope: player
+
+
+segment_display_player: 
+  init_training: 
+    player1: 
+      text: ""
+      expire: 5000ms
+      flashing: off
+    player2: 
+      text: "TRAIN "
+      expire: 5000ms
+      flashing: off
+    player3: 
+      text: "CLUSTER"
+      expire: 5000ms
+      flashing: off
+    player4: 
+      text: ""
+      expire: 5000ms
+      flashing: off
+    pf: 
+      text: "{device.timers.training_cluster_bomb.ticks:0>2}"
+      flashing: off
+
+
+shots: 
+  training_cluster_charge1:
+    profile: training_powerups
+    show_tokens: 
+      lights: LCC1
+      color: dd00dd
+    control_events: 
+      - events: light_cluster_charge1
+        state: 1
+  training_cluster_charge2:
+    profile: training_powerups
+    show_tokens: 
+      lights: LCC2
+      color: dd00dd
+    control_events: 
+      - events: light_cluster_charge2
+        state: 1
+  training_cluster_charge3:
+    profile: training_powerups
+    show_tokens: 
+      lights: LCC3
+      color: dd00dd
+    control_events: 
+      - events: light_cluster_charge3
+        state: 1
+
+show_player: 
+  init_training: 
+    flicker_color_on_intensity: 
+      key: key_training_gi
+      speed: 5
+      show_tokens: 
+        lights: GI
+        color: dd00dd
+        intensity: 10
+  flash_gi: 
+    flicker_color_on_intensity: 
+      key: key_training_gi
+      speed: 5
+      show_tokens: 
+        lights: GI
+        color: dd00dd
+        intensity: 10
+  mode_training_cluster_bomb_stopping: 
+    flicker_color: 
+      key: key_training_stopping
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: GI
+        color: dd00dd
+        intensity: 10
+  training_achieved: 
+    flash_color: 
+      key: key_training_flash
+      loops: 3
+      speed: 20
+      show_tokens: 
+        lights: tFlasherU
+        color: dd00dd
+  play_flicker_gi01: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi01
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi01
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi02: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi02
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi02
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi03: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi03
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi03
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi04: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi04
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi04
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi05: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi05
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi05
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi06: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi06
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi06
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi07: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi07
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi07
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi08: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi08
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi08
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi09: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi09
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi09
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi10: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi10
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi10
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi11: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi11
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi11
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi12: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi12
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi12
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi13: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi13
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi13
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi14: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi14
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi14
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi15: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi15
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi15
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi16: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi16
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi16
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi17: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi17
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi17
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi18: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi18
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi18
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi19: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi19
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi19
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi20: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi20
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi20
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi21: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi21
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi21
+        color: dd00dd
+        intensity: 10
+  play_flicker_gi22: 
+    flicker2_color_on_intensity: 
+      key: key_flicker_gi22
+      loops: 0
+      speed: 2
+      show_tokens: 
+        lights: gi22
+        color: dd00dd
+        intensity: 10
+  play_lsling_training: 
+    lsling_rotate1_cw: 
+      key: key_lsling_training
+      speed: 0.3
+      show_tokens: 
+        color: ffffff
+        intensity: 50
+  play_rsling_training: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_training
+      speed: 0.3
+      show_tokens: 
+        color: ffffff
+        intensity: 50
+  s_Bumper1_active: 
+    flash_color_with_fade: 
+      key: key_bumper1_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB1
+        color: ffffff
+        fade: 50
+  s_Bumper2_active: 
+    flash_color_with_fade: 
+      key: key_bumper2_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB2
+        color: ffffff
+        fade: 50
+  s_Bumper3_active: 
+    flash_color_with_fade: 
+      key: key_bumper3_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB3
+        color: ffffff
+        fade: 50
+  s_Bumper4_active: 
+    flash_color_with_fade: 
+      key: key_bumper4_flash
+      priority: 2000
+      loops: 0
+      speed: 15
+      show_tokens: 
+        lights: LB4
+        color: ffffff
+        fade: 50
+  training_cancel_warning: 
+    flash_color: 
+      key: key_training_cancel_cb_warning
+      priority: 100
+      loops: 14
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: ff4c00
+  training_cancel_warning_stop: 
+    flash_color: 
+      action: stop
+      key: key_training_cancel_cb_warning
+      priority: 100
+      loops: 14
+      speed: 15
+      show_tokens: 
+        lights: tInlaneGI
+        color: ff4c00
+
+
+timers: 
+  training_cluster_bomb:
+    start_value: 69
+    end_value: 0
+    direction: down
+    control_events: 
+      - event: init_training
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  light_cluster_charge1: 
+    shot_training_select_cluster_charge1: 
+      action: set
+      int: 3
+
+  light_cluster_charge2: 
+    shot_training_select_cluster_charge2: 
+      action: set
+      int: 3
+
+  light_cluster_charge3: 
+    shot_training_select_cluster_charge3: 
+      action: set
+      int: 3
+
+  training_achieved: 
+    training_cluster_bomb_achieved: 
+      action: set
+      int: 1
+    training_total_achieved: 
+      action: add
+      int: 1
+    training_just_finished: 
+      action: set
+      int: 1
+
+  start_moon_multiball: 
+    training_moon_missile_used: 
+      action: set
+      int: 1
+
+
+
+

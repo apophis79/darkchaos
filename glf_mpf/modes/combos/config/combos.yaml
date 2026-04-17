@@ -1,0 +1,415 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_meteor_wave, training_stopped, wizard_mode_ended
+  stop_events: stop_combos, mode_base_stopping, init_training, wizard_mode_started
+  priority: 530
+
+event_player: 
+  mode_combos_started:
+    - reset_combos
+  mode_combos_started{current_player.ball_just_started==1}:
+    - clear_relaxed_combos
+  timer_combos_complete:
+    - restart_decay_timer
+    - check_subtract_combos
+  timer_decay_combos_complete:
+    - check_subtract_combos
+  left_side_hit:
+    - restart_c_timer
+    - check_add_combos
+  left_orbit_hit:
+    - restart_c_timer
+    - check_add_combos
+  left_ramp_hit:
+    - restart_c_timer
+    - check_add_combos
+  inner_orbit_hit:
+    - restart_c_timer
+    - check_add_combos
+  center_orbit_left_hit:
+    - restart_c_timer
+    - check_add_combos
+  center_orbit_right_hit:
+    - restart_c_timer
+    - check_add_combos
+  right_ramp_hit:
+    - restart_c_timer
+    - check_add_combos
+  right_orbit_hit:
+    - restart_c_timer
+    - check_add_combos
+  check_add_combos{current_player.combos_value==0}:
+    - add_combos
+  check_add_combos{current_player.combos_value==1}:
+    - combos1_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_2000
+  check_add_combos{current_player.combos_value==2}:
+    - combos2_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_4000
+  check_add_combos{current_player.combos_value==3}:
+    - combos3_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_10000
+  check_add_combos{current_player.combos_value==4}:
+    - combos4_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_20000
+  check_add_combos{current_player.combos_value==5}:
+    - combos5_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_50000
+  check_add_combos{current_player.combos_value==6}:
+    - combos6_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_150000
+  check_add_combos{current_player.combos_value==7}:
+    - combos7_lit
+    - add_combos
+    - replay_sfx_combo
+    - flash_combos
+    - score_500000
+  check_add_combos{current_player.combos_value==8}:
+    - combos8_lit
+    - check_combo_command_wizard
+    - replay_sfx_combo
+    - flash_combos
+    - score_1000000
+  check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}:
+    - activate_combo_command_wizard
+  check_subtract_combos{current_player.combos_value==8}:
+    - combos8_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==7}:
+    - combos7_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==6}:
+    - combos6_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==5}:
+    - combos5_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==4}:
+    - combos4_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==3}:
+    - combos3_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==2}:
+    - combos2_unlit
+    - subtract_combos
+    - restart_decay_timer
+  check_subtract_combos{current_player.combos_value==1}:
+    - combos1_unlit
+    - reset_combos
+  mystery_relaxed_combos:
+    - flash_combos
+  replay_sfx_combo:
+    - stop_sfx_combo
+  stop_sfx_combo:
+    - play_sfx_combo
+
+
+shots: 
+  combo1_meter_light:
+    profile: off_on_color
+    restart_events: combos1_unlit, reset_combos
+    show_tokens: 
+      lights: LC1
+      color: ffb46b
+    control_events: 
+      - events: combos1_lit
+        state: 1
+  combo2_meter_light:
+    profile: off_on_color
+    restart_events: combos2_unlit, reset_combos
+    show_tokens: 
+      lights: LC2
+      color: ffb46b
+    control_events: 
+      - events: combos2_lit
+        state: 1
+  combo3_meter_light:
+    profile: off_on_color
+    restart_events: combos3_unlit, reset_combos
+    show_tokens: 
+      lights: LC3
+      color: ffb46b
+    control_events: 
+      - events: combos3_lit
+        state: 1
+  combo4_meter_light:
+    profile: off_on_color
+    restart_events: combos4_unlit, reset_combos
+    show_tokens: 
+      lights: LC4
+      color: ffb46b
+    control_events: 
+      - events: combos4_lit
+        state: 1
+  combo5_meter_light:
+    profile: off_on_color
+    restart_events: combos5_unlit, reset_combos
+    show_tokens: 
+      lights: LC5
+      color: ffb46b
+    control_events: 
+      - events: combos5_lit
+        state: 1
+  combo6_meter_light:
+    profile: off_on_color
+    restart_events: combos6_unlit, reset_combos
+    show_tokens: 
+      lights: LC6
+      color: ffb46b
+    control_events: 
+      - events: combos6_lit
+        state: 1
+  combo7_meter_light:
+    profile: off_on_color
+    restart_events: combos7_unlit, reset_combos
+    show_tokens: 
+      lights: LC7
+      color: ffb46b
+    control_events: 
+      - events: combos7_lit
+        state: 1
+  combo8_meter_light:
+    profile: off_on_color
+    restart_events: combos8_unlit, reset_combos
+    show_tokens: 
+      lights: LC8
+      color: ffb46b
+    control_events: 
+      - events: combos8_lit
+        state: 1
+
+show_player: 
+  left_side_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo1
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LS1
+        color: ffb46b
+  left_orbit_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo2
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LS2
+        color: ffb46b
+  left_ramp_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo3
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LS3
+        color: ffb46b
+  inner_orbit_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo4
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LS4
+        color: ffb46b
+  center_orbit_left_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo5
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPC4
+        color: ffb46b
+  center_orbit_right_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo6
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LPC5
+        color: ffb46b
+  right_ramp_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo7
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LS5
+        color: ffb46b
+  right_orbit_hit{current_player.combos_value>0}: 
+    flash_color: 
+      key: key_combo8
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LS6
+        color: ffb46b
+  flash_combos: 
+    flash_color: 
+      key: key_combos_relaxed
+      loops: 6
+      speed: 15
+      show_tokens: 
+        lights: tCombos
+        color: ffb46b
+  combos1_lit: 
+    flash_color: 
+      key: key_combo1_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC1
+        color: ffb46b
+  combos2_lit: 
+    flash_color: 
+      key: key_combo2_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC2
+        color: ffb46b
+  combos3_lit: 
+    flash_color: 
+      key: key_combo3_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC3
+        color: ffb46b
+  combos4_lit: 
+    flash_color: 
+      key: key_combo4_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC4
+        color: ffb46b
+  combos5_lit: 
+    flash_color: 
+      key: key_combo5_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC5
+        color: ffb46b
+  combos6_lit: 
+    flash_color: 
+      key: key_combo6_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC6
+        color: ffb46b
+  combos7_lit: 
+    flash_color: 
+      key: key_combo7_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC7
+        color: ffb46b
+  combos8_lit: 
+    flash_color: 
+      key: key_combo8_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: LC8
+        color: ffb46b
+
+
+sound_player: 
+  play_sfx_combo: 
+    sfx_combo: 
+      key: key_sfx_combo
+      action: play
+  stop_sfx_combo: 
+    sfx_combo: 
+      key: key_sfx_combo
+      action: stop
+
+
+timers: 
+  combos:
+    start_value: 0
+    end_value: current_player.combo_ticks
+    direction: up
+    control_events: 
+      - event: restart_c_timer
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  decay_combos:
+    start_value: 0
+    end_value: current_player.combo_decay_ticks
+    direction: up
+    control_events: 
+      - event: restart_decay_timer
+        action: restart
+      - event: restart_c_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 200ms
+
+variable_player: 
+  reset_combos: 
+    combos_value: 
+      action: set
+      int: 0
+
+  add_combos: 
+    combos_value: 
+      action: add
+      int: 1
+
+  subtract_combos: 
+    combos_value: 
+      action: add
+      int: -1
+
+  mystery_relaxed_combos: 
+    combo_ticks: 
+      action: set
+      int: 11
+    combo_decay_ticks: 
+      action: set
+      int: 7
+
+  clear_relaxed_combos: 
+    combo_ticks: 
+      action: set
+      int: 7
+    combo_decay_ticks: 
+      action: set
+      int: 4
+
+
+
+

@@ -1,0 +1,19 @@
+#config_version=6
+
+ball_devices:
+  bd_trough:
+    ball_switches: s_trough1,s_trough2,s_trough3,s_trough4,s_trough5, s_trough_jam
+    eject_coil: c_trough_eject
+    tags: trough, home, drain
+    jam_switch: s_trough_jam
+    eject_targets: balldevice_plunger
+  balldevice_plunger:
+    ball_switches: s_Plunger1
+    mechanical_eject: True
+  balldevice_scoop:
+    ball_switches: s_Scoop
+    mechanical_eject: True
+  balldevice_moon_lock:
+    ball_switches: s_Lock1,s_Lock2,s_Lock3
+    mechanical_eject: False
+

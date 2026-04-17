@@ -1,0 +1,20 @@
+#config_version=6
+
+config:
+  - lights.yaml
+  - ball_devices.yaml
+  - coils.yaml
+  - switches.yaml
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: balldevice_plunger
+
+virtual_platform_start_active_switches:
+  - s_trough1
+  - s_trough2
+  - s_trough3
+  - s_trough4
+  - s_trough5
+

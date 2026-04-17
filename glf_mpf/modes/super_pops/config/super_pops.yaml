@@ -1,0 +1,76 @@
+#config_version=6
+
+mode:
+  start_events: start_super_pops, mystery_super_pops
+  stop_events: mode_base_stopping, stop_super_pops, init_training
+  priority: 700
+
+event_player: 
+  timer_super_pops_complete:
+    - stop_super_pops
+
+
+segment_display_player: 
+  mode_super_pops_started: 
+    player1: 
+      text: ""
+      expire: 5000ms
+      flashing: off
+    player2: 
+      text: " SUPER "
+      expire: 5000ms
+      flashing: all
+    player3: 
+      text: "  POPS  "
+      expire: 5000ms
+      flashing: all
+    player4: 
+      text: ""
+      expire: 5000ms
+      flashing: off
+
+
+shots: 
+  super_pops:
+    profile: super_pops
+    show_tokens: 
+    reset_events: mode_super_pops_stopping
+    control_events: 
+      - events: mode_super_pops_started
+        state: 1
+      - events: timer_super_pops_tick{device.timers.super_pops.ticks == 55}
+        state: 2
+
+sound_player: 
+  mode_super_pops_started: 
+    voc_super_pop_bumpers: 
+      key: key_voc_super_pops
+      action: play
+
+
+timers: 
+  super_pops:
+    start_value: 0
+    end_value: 60
+    direction: up
+    control_events: 
+      - event: mode_super_pops_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  mode_super_pops_started: 
+    pop_multiplier: 
+      action: set
+      int: 69
+
+  mode_super_pops_stopping: 
+    pop_multiplier: 
+      action: set
+      int: 1
+
+
+
+

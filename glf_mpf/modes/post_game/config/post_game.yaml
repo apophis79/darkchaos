@@ -1,0 +1,1946 @@
+#config_version=6
+
+mode:
+  start_events: game_ended, test_post_game
+  stop_events: stop_post_game_mode, ball_started
+  priority: 180
+
+event_player: 
+  mode_post_game_started:
+    - select_message_num
+    - meteor1_raise
+    - meteor2_raise
+    - meteor3_raise
+    - meteor4_raise
+    - backglass_dark_on
+    - backglass_chaos_on
+  mode_post_game_started{machine.won_game == 0}:
+    - play_mus_post_game
+  mode_post_game_started{machine.won_game == 1}:
+    - play_mus_post_game_heavier
+  timer_post_game_show_started:
+    - play_flasher1_flash_3000k
+    - play_flasher2_flash_3000k
+    - play_flasher3_flash_3000k
+    - play_asteroid_hit
+  timer_post_game_show_tick:
+    - play_flasher4_flash_hot
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 1}:
+    - display_last_scores
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 2}:
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 4}:
+    - play_flasher1_flash_3000k
+    - play_flasher2_flash_3000k
+    - play_flasher3_flash_3000k
+    - play_asteroid_hit
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 8}:
+    - check_loser_message
+    - check_winner_message1
+    - play_flasher1_flash_3000k
+    - play_flasher2_flash_3000k
+    - play_flasher3_flash_3000k
+    - play_asteroid_hit
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 10}:
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 12}:
+    - play_earth_hit_center2
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 16}:
+    - display_last_scores
+    - play_flasher1_flash_3000k
+    - play_flasher2_flash_3000k
+    - play_flasher3_flash_3000k
+    - play_asteroid_hit
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 17}:
+    - play_slide_left
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 18}:
+    - play_slide_up
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 19}:
+    - play_slide_right
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 20}:
+    - play_slide_down6
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 24}:
+    - powerup_training
+    - check_loser_message
+    - check_winner_message2
+    - play_meteor_wave_fall
+    - play_flash_gi01
+    - play_flash_gi09
+    - play_flash_giapron
+    - play_meteors_sweep
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 25}:
+    - powerup_cluster
+    - play_flash_gi06
+    - play_flash_gi11
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi12
+    - play_flash_gi14
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 26}:
+    - powerup_moon
+    - play_flash_gi03
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 27}:
+    - powerup_proton
+    - play_flash_gi08
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 28}:
+    - powerup_shields
+    - play_flash_gi05
+    - play_flash_gi09
+    - play_flash_gi21
+    - play_flash_gi13
+    - play_flash_gi17
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 29}:
+    - powerup_timewarp
+    - play_flash_gi02
+    - play_flash_gi22
+    - play_flash_gi16
+    - play_flash_gi14
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 30}:
+    - powerup_saver
+    - play_flash_gi07
+    - play_flash_gi11
+    - play_flash_gi15
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 31}:
+    - powerup_health
+    - play_flash_gi04
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi17
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 32}:
+    - powerup_combos
+    - display_last_scores
+    - play_flash_gi01
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_giapron
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 33}:
+    - powerup_training
+    - play_flash_gi06
+    - play_flash_gi21
+    - play_flash_gi13
+    - play_flash_gi12
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 34}:
+    - powerup_cluster
+    - play_flash_gi03
+    - play_flash_gi09
+    - play_flash_gi22
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 35}:
+    - powerup_moon
+    - play_flash_gi08
+    - play_flash_gi11
+    - play_flash_gi17
+    - play_flash_gi15
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 36}:
+    - powerup_proton
+    - play_flash_gi05
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi13
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 37}:
+    - powerup_shields
+    - play_flash_gi02
+    - play_flash_gi20
+    - play_flash_gi22
+    - play_flash_gi14
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 38}:
+    - powerup_timewarp
+    - play_flash_gi07
+    - play_flash_gi21
+    - play_flash_gi15
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 39}:
+    - powerup_saver
+    - play_flash_gi04
+    - play_flash_gi09
+    - play_flash_gi16
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 40}:
+    - powerup_health
+    - check_loser_message
+    - check_winner_message3
+    - play_flash_gi01
+    - play_flash_gi11
+    - play_flash_giapron
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 41}:
+    - powerup_combos
+    - play_flash_gi06
+    - play_flash_gi19
+    - play_flash_gi18
+    - play_flash_gi17
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 42}:
+    - powerup_training
+    - play_flash_gi03
+    - play_flash_gi20
+    - play_flash_gi13
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 43}:
+    - powerup_cluster
+    - play_flash_gi09
+    - play_flash_gi08
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi12
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 44}:
+    - powerup_moon
+    - play_earth_hit_center
+    - play_flash_gi05
+    - play_flash_gi11
+    - play_flash_gi16
+    - play_flash_gi14
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 45}:
+    - powerup_proton
+    - play_flash_gi02
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi15
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 46}:
+    - powerup_shields
+    - play_flash_gi07
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 47}:
+    - powerup_timewarp
+    - play_flash_gi04
+    - play_flash_gi09
+    - play_flash_gi21
+    - play_flash_gi13
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 48}:
+    - powerup_saver
+    - display_last_scores
+    - play_flash_gi01
+    - play_flash_gi11
+    - play_flash_gi22
+    - play_flash_gi16
+    - play_flash_gi14
+    - play_flash_giapron
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 49}:
+    - powerup_health
+    - play_flash_gi06
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi15
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 50}:
+    - powerup_combos
+    - play_flash_gi03
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_gi17
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 51}:
+    - powerup_training
+    - play_flash_gi08
+    - play_flash_gi13
+    - play_flasher3_flash_hot
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 52}:
+    - powerup_cluster
+    - play_slide_down6
+    - play_flash_gi09
+    - play_flash_gi05
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi12
+    - play_flasher1_flash_magenta
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 53}:
+    - powerup_moon
+    - play_flash_gi02
+    - play_flash_gi10
+    - play_flash_gi11
+    - play_flash_gi16
+    - play_flash_gi14
+    - play_flasher2_flash_yellow
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 54}:
+    - powerup_proton
+    - play_flash_gi07
+    - play_flash_gi18
+    - play_flash_gi13
+    - play_flasher3_flash_cyan
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 55}:
+    - powerup_shields
+    - play_flash_gi04
+    - play_flash_gi19
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flasher2_flash_blue
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 56}:
+    - powerup_timewarp
+    - check_loser_message
+    - check_winner_message4
+    - play_flash_gi01
+    - play_flash_gi09
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_giapron
+    - play_flasher1_flash_white
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 57}:
+    - powerup_saver
+    - play_flash_gi06
+    - play_flash_gi10
+    - play_flash_gi11
+    - play_flash_gi16
+    - play_flasher2_flash_purple
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 58}:
+    - powerup_health
+    - play_flash_gi03
+    - play_flash_gi19
+    - play_flash_gi18
+    - play_flash_gi15
+    - play_flasher3_flash_green
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 59}:
+    - powerup_combos
+    - play_flash_gi08
+    - play_flash_gi20
+    - play_flash_gi13
+    - play_flash_gi17
+    - play_flasher2_flash_white
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 60}:
+    - powerup_training
+    - play_flash_gi05
+    - play_flash_gi21
+    - play_flash_gi22
+    - play_flash_gi14
+    - play_flasher3_flash_hot
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 61}:
+    - powerup_cluster
+    - play_flash_gi02
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+    - play_flash_gi15
+    - play_flasher1_flash_magenta
+    - play_lsling_magenta
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 62}:
+    - powerup_moon
+    - play_flash_gi07
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flasher2_flash_yellow
+    - play_rsling_yellow
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 63}:
+    - powerup_proton
+    - play_flash_gi09
+    - play_flash_gi19
+    - play_flash_gi21
+    - play_flash_gi12
+    - play_flasher3_flash_cyan
+    - play_lsling_cyan
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 64}:
+    - powerup_shields
+    - display_last_scores
+    - play_flash_gi04
+    - play_flash_gi11
+    - play_flash_gi13
+    - play_flash_gi22
+    - play_flash_giapron
+    - play_flasher2_flash_blue
+    - play_rsling_blue
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 65}:
+    - powerup_timewarp
+    - play_flash_gi01
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+    - play_flash_gi14
+    - play_flasher1_flash_white
+    - play_lsling_white
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 66}:
+    - powerup_saver
+    - play_flash_gi06
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flash_gi15
+    - play_flasher2_flash_purple
+    - play_rsling_purple
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 67}:
+    - powerup_health
+    - play_flash_gi03
+    - play_flash_gi09
+    - play_flasher3_flash_green
+    - play_lsling_green
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 68}:
+    - powerup_combos
+    - play_flash_gi08
+    - play_flash_gi11
+    - play_flash_gi19
+    - play_flash_gi21
+    - play_flasher2_flash_white
+    - play_rsling_white
+    - play_spotlight_on
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 69}:
+    - powerup_training
+    - play_flash_gi05
+    - play_flash_gi10
+    - play_flash_gi13
+    - play_flash_gi16
+    - play_flasher3_flash_hot
+    - play_lsling_hot
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 70}:
+    - powerup_cluster
+    - play_flash_gi02
+    - play_flash_gi18
+    - play_flash_gi22
+    - play_flash_gi14
+    - play_flasher1_flash_magenta
+    - play_rsling_magenta
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 71}:
+    - powerup_moon
+    - play_flash_gi07
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flasher2_flash_yellow
+    - play_lsling_yellow
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 72}:
+    - powerup_proton
+    - check_loser_message
+    - check_winner_message5
+    - play_flash_gi09
+    - play_flash_gi19
+    - play_flash_gi21
+    - play_flash_gi12
+    - play_flasher3_flash_cyan
+    - play_rsling_cyan
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 73}:
+    - powerup_shields
+    - play_flash_gi04
+    - play_flash_gi11
+    - play_flash_gi13
+    - play_flash_gi22
+    - play_flash_giapron
+    - play_flasher2_flash_blue
+    - play_lsling_blue
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 74}:
+    - powerup_timewarp
+    - play_flash_gi01
+    - play_flash_gi10
+    - play_flash_gi18
+    - play_flash_gi16
+    - play_flash_gi14
+    - play_flasher1_flash_white
+    - play_rsling_white
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 75}:
+    - powerup_saver
+    - play_flash_gi06
+    - play_flash_gi20
+    - play_flash_gi17
+    - play_flash_gi15
+    - play_flasher2_flash_purple
+    - play_lsling_purple
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 76}:
+    - play_earth_hit_center
+    - play_spotlight_off
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 78}:
+    - meteor3_knockdown
+    - meteor3_flash_show
+    - meteor3_blink_show
+    - meteor3_explodes_hot
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 79}:
+    - meteor2_knockdown
+    - meteor2_flash_show
+    - meteor2_blink_show
+    - meteor2_explodes_red
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 80}:
+    - meteor4_knockdown
+    - meteor4_flash_show
+    - meteor4_blink_show
+    - meteor4_explodes_white
+    - meteor3_raise
+    - display_last_scores
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 81}:
+    - meteor1_knockdown
+    - meteor1_flash_show
+    - meteor1_blink_show
+    - meteor1_explodes_hot
+    - meteor2_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 82}:
+    - meteor3_knockdown
+    - meteor3_flash_show
+    - meteor3_blink_show
+    - meteor3_explodes_red
+    - meteor4_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 83}:
+    - meteor2_knockdown
+    - meteor2_flash_show
+    - meteor2_blink_show
+    - meteor2_explodes_white
+    - meteor1_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 84}:
+    - meteor4_knockdown
+    - meteor4_flash_show
+    - meteor4_blink_show
+    - meteor4_explodes_hot
+    - meteor3_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 85}:
+    - meteor1_knockdown
+    - meteor1_flash_show
+    - meteor1_blink_show
+    - meteor1_explodes_red
+    - meteor2_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 86}:
+    - meteor4_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 87}:
+    - play_proton_big_charge_fire
+    - meteor1_raise
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 88}:
+    - check_loser_message
+    - check_winner_message6
+    - meteor3_raise
+  timer_post_game_show_complete:
+    - final_flash1
+    - final_flash2
+    - final_flash3
+    - final_flash4
+    - final_flash5
+  check_loser_message{machine.message_num == 1 and machine.won_game == 0}:
+    - display_loser_message1
+  check_loser_message{machine.message_num == 2 and machine.won_game == 0}:
+    - display_loser_message2
+  check_loser_message{machine.message_num == 3 and machine.won_game == 0}:
+    - display_loser_message3
+  check_loser_message{machine.message_num == 4 and machine.won_game == 0}:
+    - display_loser_message4
+  check_loser_message{machine.message_num == 5 and machine.won_game == 0}:
+    - display_loser_message5
+  check_loser_message{machine.message_num == 6 and machine.won_game == 0}:
+    - display_loser_message6
+  check_loser_message{machine.message_num == 7 and machine.won_game == 0}:
+    - display_loser_message7
+  check_loser_message{machine.message_num == 8 and machine.won_game == 0}:
+    - display_loser_message8
+  check_loser_message{machine.message_num == 9 and machine.won_game == 0}:
+    - display_loser_message9
+  check_loser_message{machine.message_num == 10 and machine.won_game == 0}:
+    - display_loser_message10
+  check_loser_message{machine.message_num == 11 and machine.won_game == 0}:
+    - display_loser_message11
+  check_loser_message{machine.message_num == 12 and machine.won_game == 0}:
+    - display_loser_message12
+  check_loser_message{machine.message_num == 13 and machine.won_game == 0}:
+    - display_loser_message13
+  check_loser_message{machine.message_num == 14 and machine.won_game == 0}:
+    - display_loser_message14
+  check_loser_message{machine.message_num == 15 and machine.won_game == 0}:
+    - display_loser_message15
+  check_loser_message{machine.message_num == 16 and machine.won_game == 0}:
+    - display_loser_message16
+  check_loser_message{machine.message_num == 17 and machine.won_game == 0}:
+    - display_loser_message17
+  check_loser_message{machine.message_num == 18 and machine.won_game == 0}:
+    - display_loser_message18
+  check_loser_message{machine.message_num == 19 and machine.won_game == 0}:
+    - display_loser_message19
+  check_loser_message{machine.message_num == 20 and machine.won_game == 0}:
+    - display_loser_message20
+  check_loser_message{machine.message_num == 21 and machine.won_game == 0}:
+    - display_loser_message21
+  check_loser_message{machine.message_num == 22 and machine.won_game == 0}:
+    - display_loser_message22
+  check_loser_message{machine.message_num == 23 and machine.won_game == 0}:
+    - display_loser_message23
+  check_loser_message{machine.message_num == 24 and machine.won_game == 0}:
+    - display_loser_message24
+  check_winner_message1{machine.won_game == 1}:
+    - display_winner_message1
+    - play_voc_winners_poem1
+  check_winner_message2{machine.won_game == 1}:
+    - display_winner_message2
+    - play_voc_winners_poem2
+  check_winner_message3{machine.won_game == 1}:
+    - display_winner_message3
+    - play_voc_winners_poem3
+  check_winner_message4{machine.won_game == 1}:
+    - display_winner_message4
+    - play_voc_winners_poem4
+  check_winner_message5{machine.won_game == 1}:
+    - display_winner_message5
+    - play_voc_winners_poem5
+  check_winner_message6{machine.won_game == 1}:
+    - display_winner_message6
+    - play_voc_winners_poem6
+  mus_post_game_stopped:
+    - start_attract_mode
+  mus_post_game_heavier_stopped:
+    - start_attract_mode
+  start_attract_mode:
+    - stop_post_game_mode
+
+
+random_event_player: 
+  select_message_num: 
+    events:
+      select_message_1: 1
+      select_message_2: 1
+      select_message_3: 1
+      select_message_4: 1
+      select_message_5: 1
+      select_message_6: 1
+      select_message_7: 1
+      select_message_8: 1
+      select_message_9: 1
+      select_message_10: 1
+      select_message_11: 1
+      select_message_12: 1
+      select_message_13: 1
+      select_message_14: 1
+      select_message_15: 1
+      select_message_16: 1
+      select_message_17: 1
+      select_message_18: 1
+      select_message_19: 1
+      select_message_20: 1
+      select_message_21: 1
+      select_message_22: 1
+      select_message_23: 1
+      select_message_24: 1
+    scope: player
+
+
+segment_display_player: 
+  display_loser_message1: 
+    player1: 
+      text: "YOU"
+      flashing: off
+    player2: 
+      text: "FAILED"
+      flashing: off
+    player3: 
+      text: "WE ALL"
+      flashing: off
+    player4: 
+      text: "DIED"
+      flashing: off
+
+  display_loser_message2: 
+    player1: 
+      text: "PLAY"
+      flashing: off
+    player2: 
+      text: "BETTER"
+      flashing: off
+    player3: 
+      text: "NEXT"
+      flashing: off
+    player4: 
+      text: "TIME"
+      flashing: off
+
+  display_loser_message3: 
+    player1: 
+      text: "EARTH"
+      flashing: off
+    player2: 
+      text: "DIED"
+      flashing: off
+    player3: 
+      text: "THANKS"
+      flashing: off
+    player4: 
+      text: "TO YOU"
+      flashing: off
+
+  display_loser_message4: 
+    player1: 
+      text: "COME ON "
+      flashing: off
+    player2: 
+      text: "HOW HARD"
+      flashing: off
+    player3: 
+      text: "IS IT"
+      flashing: off
+    player4: 
+      text: "REALLY"
+      flashing: off
+
+  display_loser_message5: 
+    player1: 
+      text: "HIT THE"
+      flashing: off
+    player2: 
+      text: "METEORS"
+      flashing: off
+    player3: 
+      text: "NEXTTIME"
+      flashing: off
+    player4: 
+      text: "PLEASE"
+      flashing: off
+
+  display_loser_message6: 
+    player1: 
+      text: "OH WOW "
+      flashing: off
+    player2: 
+      text: "YOU LOST"
+      flashing: off
+    player3: 
+      text: "AGAIN "
+      flashing: off
+    player4: 
+      text: "SURPRISE"
+      flashing: off
+
+  display_loser_message7: 
+    player1: 
+      text: "ITS EASY"
+      flashing: off
+    player2: 
+      text: "YOU JUST"
+      flashing: off
+    player3: 
+      text: "NEED TO "
+      flashing: off
+    player4: 
+      text: "NOT SUCK"
+      flashing: off
+
+  display_loser_message8: 
+    player1: 
+      text: "PRACTICE"
+      flashing: off
+    player2: 
+      text: "PRACTICE"
+      flashing: off
+    player3: 
+      text: "PRACTICE"
+      flashing: off
+    player4: 
+      text: "PRACTICE"
+      flashing: off
+
+  display_loser_message9: 
+    player1: 
+      text: "DAMN"
+      flashing: off
+    player2: 
+      text: "LUCKILY"
+      flashing: off
+    player3: 
+      text: "THIS IS "
+      flashing: off
+    player4: 
+      text: "NOT REAL"
+      flashing: off
+
+  display_loser_message10: 
+    player1: 
+      text: "GAMEOVER"
+      flashing: off
+    player2: 
+      text: "MAN   "
+      flashing: off
+    player3: 
+      text: "WE ALL "
+      flashing: off
+    player4: 
+      text: "DEAD NOW"
+      flashing: off
+
+  display_loser_message11: 
+    player1: 
+      text: "MORE"
+      flashing: off
+    player2: 
+      text: "BEER"
+      flashing: off
+    player3: 
+      text: "MIGHT"
+      flashing: off
+    player4: 
+      text: "HELP"
+      flashing: off
+
+  display_loser_message12: 
+    player1: 
+      text: "UNLUCKY"
+      flashing: off
+    player2: 
+      text: "SHOT"
+      flashing: off
+    player3: 
+      text: "EARTH-"
+      flashing: off
+    player4: 
+      text: "LING"
+      flashing: off
+
+  display_loser_message13: 
+    player1: 
+      text: "THE"
+      flashing: off
+    player2: 
+      text: "DINOS"
+      flashing: off
+    player3: 
+      text: "LASTED"
+      flashing: off
+    player4: 
+      text: "LONGER"
+      flashing: off
+
+  display_loser_message14: 
+    player1: 
+      text: "ASTEROID"
+      flashing: off
+    player2: 
+      text: "+ ONE"
+      flashing: off
+    player3: 
+      text: "HUMANS"
+      flashing: off
+    player4: 
+      text: "ZERO"
+      flashing: off
+
+  display_loser_message15: 
+    player1: 
+      text: "THE ODDS"
+      flashing: off
+    player2: 
+      text: "WERE"
+      flashing: off
+    player3: 
+      text: "3720"
+      flashing: off
+    player4: 
+      text: "TO ONE"
+      flashing: off
+
+  display_loser_message16: 
+    player1: 
+      text: "ONE"
+      flashing: off
+    player2: 
+      text: "GIANT"
+      flashing: off
+    player3: 
+      text: "WEEP FOR"
+      flashing: off
+    player4: 
+      text: "MANKIND"
+      flashing: off
+
+  display_loser_message17: 
+    player1: 
+      text: "THE DARK"
+      flashing: off
+    player2: 
+      text: "CHAOS"
+      flashing: off
+    player3: 
+      text: "GOD IS"
+      flashing: off
+    player4: 
+      text: "HAPPY"
+      flashing: off
+
+  display_loser_message18: 
+    player1: 
+      text: "TRY JUST"
+      flashing: off
+    player2: 
+      text: "ONE"
+      flashing: off
+    player3: 
+      text: "MORE"
+      flashing: off
+    player4: 
+      text: "TIME"
+      flashing: off
+
+  display_loser_message19: 
+    player1: 
+      text: "YOU ARE"
+      flashing: off
+    player2: 
+      text: "LUCKY"
+      flashing: off
+    player3: 
+      text: "ITS ON "
+      flashing: off
+    player4: 
+      text: "FREEPLAY"
+      flashing: off
+
+  display_loser_message20: 
+    player1: 
+      text: "KEEP"
+      flashing: off
+    player2: 
+      text: "CALM"
+      flashing: off
+    player3: 
+      text: "PLAY"
+      flashing: off
+    player4: 
+      text: "PINBALL"
+      flashing: off
+
+  display_loser_message21: 
+    player1: 
+      text: "WE NEED"
+      flashing: off
+    player2: 
+      text: "A HERO "
+      flashing: off
+    player3: 
+      text: "NOT A"
+      flashing: off
+    player4: 
+      text: "ZERO  "
+      flashing: off
+
+  display_loser_message22: 
+    player1: 
+      text: "THIS WAS"
+      flashing: off
+    player2: 
+      text: "PRACTICE"
+      flashing: off
+    player3: 
+      text: "NEXT IS "
+      flashing: off
+    player4: 
+      text: "FOR REAL"
+      flashing: off
+
+  display_loser_message23: 
+    player1: 
+      text: "THE SKYS"
+      flashing: off
+    player2: 
+      text: "FALLING"
+      flashing: off
+    player3: 
+      text: "THE SKYS"
+      flashing: off
+    player4: 
+      text: "FALLING"
+      flashing: off
+
+  display_loser_message24: 
+    player1: 
+      text: "OUR END"
+      flashing: off
+    player2: 
+      text: "BEGINS "
+      flashing: off
+    player3: 
+      text: "APRIL"
+      flashing: off
+    player4: 
+      text: "13 2029"
+      flashing: off
+
+  display_winner_message1: 
+    player1: 
+      text: "A VILE"
+      flashing: off
+    player2: 
+      text: "DARK"
+      flashing: off
+    player3: 
+      text: "CHAOS"
+      flashing: off
+    player4: 
+      text: "LOOMED"
+      flashing: off
+
+  display_winner_message2: 
+    player1: 
+      text: "COSMIC"
+      flashing: off
+    player2: 
+      text: "IMPACTS"
+      flashing: off
+    player3: 
+      text: "TORE AND"
+      flashing: off
+    player4: 
+      text: "BOOMED"
+      flashing: off
+
+  display_winner_message3: 
+    player1: 
+      text: "TURMOIL "
+      flashing: off
+    player2: 
+      text: "AND FEAR"
+      flashing: off
+    player3: 
+      text: "HUMANITY"
+      flashing: off
+    player4: 
+      text: "DOOMED"
+      flashing: off
+
+  display_winner_message4: 
+    player1: 
+      text: "A HERO "
+      flashing: off
+    player2: 
+      text: "ASCENDED"
+      flashing: off
+    player3: 
+      text: "INTO THE"
+      flashing: off
+    player4: 
+      text: "NIGHT"
+      flashing: off
+
+  display_winner_message5: 
+    player1: 
+      text: "A FIERY"
+      flashing: off
+    player2: 
+      text: "BATTLE"
+      flashing: off
+    player3: 
+      text: "WON THE"
+      flashing: off
+    player4: 
+      text: "FIGHT"
+      flashing: off
+
+  display_winner_message6: 
+    player1: 
+      text: "SPARKS"
+      flashing: off
+    player2: 
+      text: "OF HOPE"
+      flashing: off
+    player3: 
+      text: "FLICKER "
+      flashing: off
+    player4: 
+      text: "OF LIGHT"
+      flashing: off
+
+  display_last_scores: 
+    player1: 
+      text: "{machine.player1_score}"
+      flashing: off
+    player2: 
+      text: "{machine.player2_score}"
+      flashing: off
+    player3: 
+      text: "{machine.player3_score}"
+      flashing: off
+    player4: 
+      text: "{machine.player4_score}"
+      flashing: off
+
+
+show_player: 
+  play_proton_big_charge_fire: 
+    proton_big_charge_fire: 
+      key: key_proton_big_charge_fire
+      loops: 0
+  play_earth_hit_center: 
+    earth_hit_center: 
+      key: key_earth_hit_center
+      loops: 0
+  play_earth_hit_center2: 
+    earth_hit_center2: 
+      key: key_earth_hit_center2
+      loops: 0
+  play_asteroid_hit: 
+    asteroid_hit: 
+      key: key_asteroid_hit
+      loops: 0
+  play_meteor_wave_fall: 
+    meteor_wave_fall: 
+      key: key_meteor_wave_fall
+      loops: 19
+      speed: 2
+  play_meteors_sweep: 
+    meteors_sweep: 
+      key: key_meteors_sweep
+      loops: 19
+  powerup_training: 
+    flash_color_fadeout: 
+      key: key_powerup_training
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tTrain
+        color: ff4c00
+  powerup_cluster: 
+    flash_color_fadeout: 
+      key: key_powerup_cluster
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tClusterAll
+        color: dd00dd
+  powerup_moon: 
+    flash_color_fadeout: 
+      key: key_powerup_moon
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tMoonAll
+        color: ccbb00
+  powerup_proton: 
+    flash_color_fadeout: 
+      key: key_powerup_proton
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tProtonAll
+        color: 00dddd
+  powerup_shields: 
+    flash_color_fadeout: 
+      key: key_powerup_shields
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tShields
+        color: 0010cc
+  powerup_saver: 
+    flash_color_fadeout: 
+      key: key_powerup_saver
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tSaver
+        color: 0010cc
+  powerup_timewarp: 
+    flash_color_fadeout: 
+      key: key_powerup_timewarp
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tTimewarp
+        color: ccccdd
+  powerup_health: 
+    flash_color_fadeout: 
+      key: key_powerup_health
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tHealth
+        color: 00dd00
+  powerup_combos: 
+    flash_color_fadeout: 
+      key: key_powerup_health
+      priority: 10
+      loops: 0
+      speed: 6
+      show_tokens: 
+        lights: tCombos
+        color: ffb46b
+  play_slide_left: 
+    insert_gi_slide_left: 
+      key: key_insert_gi_slide_left
+      loops: 0
+      show_tokens: 
+        color: ffffff
+        intensity: 100
+  play_slide_up: 
+    insert_gi_slide_up: 
+      key: key_insert_gi_slide_up
+      loops: 0
+      show_tokens: 
+        color: ffffff
+        intensity: 100
+  play_slide_right: 
+    insert_gi_slide_right: 
+      key: key_insert_gi_slide_right
+      loops: 0
+      show_tokens: 
+        color: ffffff
+        intensity: 100
+  play_slide_down6: 
+    slide_down6: 
+      key: key_slide_down6
+      loops: 0
+  final_flash1: 
+    flash_color: 
+      key: key_final_flash1
+      loops: 8
+      speed: 20
+      show_tokens: 
+        lights: FL1
+        color: ffe7a6
+  final_flash2: 
+    flash_color: 
+      key: key_final_flash2
+      loops: 8
+      speed: 20
+      show_tokens: 
+        lights: FL2
+        color: ffe7a6
+  final_flash3: 
+    flash_color: 
+      key: key_final_flash3
+      loops: 8
+      speed: 20
+      show_tokens: 
+        lights: FL3
+        color: ffe7a6
+  final_flash4: 
+    flash_color: 
+      key: key_final_flash4
+      loops: 8
+      speed: 20
+      show_tokens: 
+        lights: tFL5
+        color: ffe7a6
+  final_flash5: 
+    flash_color: 
+      key: key_final_flash5
+      loops: 8
+      speed: 20
+      show_tokens: 
+        lights: tFL6
+        color: ffe7a6
+  play_flasher1_flash_magenta: 
+    flash_color_fadeout: 
+      key: key_flasher1_flash_magenta
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL1
+        color: dd00dd
+  play_flasher1_flash_3000k: 
+    flash_color_fadeout: 
+      key: key_flasher1_flash_3000k
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: FL1
+        color: ffb46b
+  play_flasher1_flash_white: 
+    flash_color_fadeout: 
+      key: key_flasher1_flash_white
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL1
+        color: ccccdd
+  play_flasher2_flash_3000k: 
+    flash_color_fadeout: 
+      key: key_flasher2_flash_3000k
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: FL2
+        color: ffb46b
+  play_flasher2_flash_white: 
+    flash_color_fadeout: 
+      key: key_flasher2_flash_white
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL2
+        color: ccccdd
+  play_flasher2_flash_yellow: 
+    flash_color_fadeout: 
+      key: key_flasher2_flash_yellow
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL2
+        color: ccbb00
+  play_flasher2_flash_blue: 
+    flash_color_fadeout: 
+      key: key_flasher2_flash_blue
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL2
+        color: 0010cc
+  play_flasher2_flash_purple: 
+    flash_color_fadeout: 
+      key: key_flasher2_flash_purple
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL2
+        color: 0500ee
+  play_flasher3_flash_hot: 
+    flash_color_fadeout: 
+      key: key_flasher3_flash_hot
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL3
+        color: ed1800
+  play_flasher3_flash_3000k: 
+    flash_color_fadeout: 
+      key: key_flasher3_flash_3000k
+      loops: 0
+      speed: 4
+      show_tokens: 
+        lights: FL3
+        color: ffb46b
+  play_flasher3_flash_green: 
+    flash_color_fadeout: 
+      key: key_flasher3_flash_green
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL3
+        color: 05ff05
+  play_flasher3_flash_cyan: 
+    flash_color_fadeout: 
+      key: key_flasher3_flash_cyan
+      loops: 0
+      speed: 8
+      show_tokens: 
+        lights: FL3
+        color: 00dddd
+  play_flasher4_flash_hot: 
+    flash_color_fadeout: 
+      key: key_flasher4_flash_hot
+      loops: 0
+      speed: 13
+      show_tokens: 
+        lights: FL4
+        color: ed1800
+  play_flash_gi01: 
+    flash_color_fadeout: 
+      key: key_flash_gi01
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi01
+        color: ffb46b
+  play_flash_gi02: 
+    flash_color_fadeout: 
+      key: key_flash_gi02
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi02
+        color: ffb46b
+  play_flash_gi03: 
+    flash_color_fadeout: 
+      key: key_flash_gi03
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi03
+        color: ffb46b
+  play_flash_gi04: 
+    flash_color_fadeout: 
+      key: key_flash_gi04
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi04
+        color: ffb46b
+  play_flash_gi05: 
+    flash_color_fadeout: 
+      key: key_flash_gi05
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi05
+        color: ffb46b
+  play_flash_gi06: 
+    flash_color_fadeout: 
+      key: key_flash_gi06
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi06
+        color: ffb46b
+  play_flash_gi07: 
+    flash_color_fadeout: 
+      key: key_flash_gi07
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi07
+        color: ffb46b
+  play_flash_gi08: 
+    flash_color_fadeout: 
+      key: key_flash_gi08
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi08
+        color: ffb46b
+  play_flash_gi09: 
+    flash_color_fadeout: 
+      key: key_flash_gi09
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi09
+        color: ffb46b
+  play_flash_gi10: 
+    flash_color_fadeout: 
+      key: key_flash_gi10
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi10
+        color: ffb46b
+  play_flash_gi11: 
+    flash_color_fadeout: 
+      key: key_flash_gi11
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi11
+        color: ffb46b
+  play_flash_gi12: 
+    flash_color_fadeout: 
+      key: key_flash_gi12
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi12
+        color: ffb46b
+  play_flash_gi13: 
+    flash_color_fadeout: 
+      key: key_flash_gi13
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi13
+        color: ffb46b
+  play_flash_gi14: 
+    flash_color_fadeout: 
+      key: key_flash_gi14
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi14
+        color: ffb46b
+  play_flash_gi15: 
+    flash_color_fadeout: 
+      key: key_flash_gi15
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi15
+        color: ffb46b
+  play_flash_gi16: 
+    flash_color_fadeout: 
+      key: key_flash_gi16
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi16
+        color: ffb46b
+  play_flash_gi17: 
+    flash_color_fadeout: 
+      key: key_flash_gi17
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi17
+        color: ffb46b
+  play_flash_gi18: 
+    flash_color_fadeout: 
+      key: key_flash_gi18
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi18
+        color: ffb46b
+  play_flash_gi19: 
+    flash_color_fadeout: 
+      key: key_flash_gi19
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi19
+        color: ffb46b
+  play_flash_gi20: 
+    flash_color_fadeout: 
+      key: key_flash_gi20
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi20
+        color: ffb46b
+  play_flash_gi21: 
+    flash_color_fadeout: 
+      key: key_flash_gi21
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi21
+        color: ffb46b
+  play_flash_gi22: 
+    flash_color_fadeout: 
+      key: key_flash_gi22
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: gi22
+        color: ffb46b
+  play_flash_giapron: 
+    flash_color_fadeout: 
+      key: key_flash_giapron
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: giapron
+        color: ffb46b
+  meteor1_flash_show: 
+    flash_color_with_fade: 
+      key: key_meteor1_flash
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: FL2
+        color: ffe7a6
+        fade: 300
+  meteor2_flash_show: 
+    flash_color_with_fade: 
+      key: key_meteor2_flash
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: FL2
+        color: ffe7a6
+        fade: 300
+  meteor3_flash_show: 
+    flash_color_with_fade: 
+      key: key_meteor3_flash
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: FL1
+        color: ffe7a6
+        fade: 300
+  meteor4_flash_show: 
+    flash_color_with_fade: 
+      key: key_meteor4_flash
+      loops: 2
+      speed: 20
+      show_tokens: 
+        lights: FL1
+        color: ffe7a6
+        fade: 300
+  meteor1_blink_show: 
+    flash_color: 
+      key: key_meteor1_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet1
+        color: ffffff
+  meteor1_explodes_white: 
+    meteor1_explodes: 
+      key: key_meteor1_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor1_explodes_red: 
+    meteor1_explodes: 
+      key: key_meteor1_explodes_red
+      loops: 0
+      show_tokens: 
+        color: ff0000
+  meteor1_explodes_hot: 
+    meteor1_explodes: 
+      key: key_meteor1_explodes_hot
+      loops: 0
+      show_tokens: 
+        color: ed1800
+  meteor2_blink_show: 
+    flash_color: 
+      key: key_meteor2_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet2
+        color: ffffff
+  meteor2_explodes_white: 
+    meteor2_explodes: 
+      key: key_meteor2_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor2_explodes_red: 
+    meteor2_explodes: 
+      key: key_meteor2_explodes_red
+      loops: 0
+      show_tokens: 
+        color: ff0000
+  meteor2_explodes_hot: 
+    meteor2_explodes: 
+      key: key_meteor2_explodes_hot
+      loops: 0
+      show_tokens: 
+        color: ed1800
+  meteor3_blink_show: 
+    flash_color: 
+      key: key_meteor3_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet3
+        color: ffffff
+  meteor3_explodes_white: 
+    meteor3_explodes: 
+      key: key_meteor3_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor3_explodes_red: 
+    meteor3_explodes: 
+      key: key_meteor3_explodes_red
+      loops: 0
+      show_tokens: 
+        color: ff0000
+  meteor3_explodes_hot: 
+    meteor3_explodes: 
+      key: key_meteor3_explodes_hot
+      loops: 0
+      show_tokens: 
+        color: ed1800
+  meteor4_blink_show: 
+    flash_color: 
+      key: key_meteor4_blink
+      loops: 3
+      speed: 22
+      show_tokens: 
+        lights: LMet4
+        color: ffffff
+  meteor4_explodes_white: 
+    meteor4_explodes: 
+      key: key_meteor4_explodes
+      loops: 0
+      show_tokens: 
+        color: ffffff
+  meteor4_explodes_red: 
+    meteor4_explodes: 
+      key: key_meteor4_explodes_red
+      loops: 0
+      show_tokens: 
+        color: ff0000
+  meteor4_explodes_hot: 
+    meteor4_explodes: 
+      key: key_meteor4_explodes_hot
+      loops: 0
+      show_tokens: 
+        color: ed1800
+  play_lsling_magenta: 
+    lsling_rotate1_cw: 
+      key: key_lsling_magenta
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: dd00dd
+  play_rsling_yellow: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_yellow
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ccbb00
+  play_lsling_cyan: 
+    lsling_rotate1_cw: 
+      key: key_lsling_cyan
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 00dddd
+  play_rsling_blue: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_blue
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 0010cc
+  play_lsling_white: 
+    lsling_rotate1_cw: 
+      key: key_lsling_white
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ccccdd
+  play_rsling_purple: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_purple
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 0500ee
+  play_lsling_green: 
+    lsling_rotate1_cw: 
+      key: key_lsling_green
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 00dd00
+  play_rsling_white: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_white
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ccccdd
+  play_lsling_hot: 
+    lsling_rotate1_cw: 
+      key: key_lsling_hot
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ff4c00
+  play_rsling_magenta: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_magenta
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: dd00dd
+  play_lsling_yellow: 
+    lsling_rotate1_cw: 
+      key: key_lsling_yellow
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: ccbb00
+  play_rsling_cyan: 
+    rsling_rotate1_ccw: 
+      key: key_rsling_cyan
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 00dddd
+  play_lsling_blue: 
+    lsling_rotate1_cw: 
+      key: key_lsling_blue
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 0010cc
+  play_lsling_purple: 
+    lsling_rotate1_cw: 
+      key: key_lsling_purple
+      loops: 1
+      speed: 2
+      show_tokens: 
+        intensity: 100
+        color: 0500ee
+  play_spotlight_on: 
+    flicker_color_on: 
+      key: key_spotlight_on
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: LSpot1
+        color: ffffff
+  play_spotlight_off: 
+    flicker_color_off: 
+      key: key_spotlight_off
+      loops: 0
+      speed: 5
+      show_tokens: 
+        lights: LSpot1
+        color: ffffff
+
+
+sound_player: 
+  play_mus_post_game: 
+    mus_post_game: 
+      key: key_mus_post_game
+      action: play
+  play_mus_post_game_heavier: 
+    mus_post_game_heavier: 
+      key: key_mus_post_game_heavier
+      action: play
+  play_voc_winners_poem1: 
+    voc_winners_poem1: 
+      key: key_voc_winners_poem1
+      action: play
+  play_voc_winners_poem2: 
+    voc_winners_poem2: 
+      key: key_voc_winners_poem2
+      action: play
+  play_voc_winners_poem3: 
+    voc_winners_poem3: 
+      key: key_voc_winners_poem3
+      action: play
+  play_voc_winners_poem4: 
+    voc_winners_poem4: 
+      key: key_voc_winners_poem4
+      action: play
+  play_voc_winners_poem5: 
+    voc_winners_poem5: 
+      key: key_voc_winners_poem5
+      action: play
+  play_voc_winners_poem6: 
+    voc_winners_poem6: 
+      key: key_voc_winners_poem6
+      action: play
+
+
+timers: 
+  post_game_show:
+    start_value: 0
+    end_value: 93
+    direction: up
+    control_events: 
+      - event: mode_post_game_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 541ms
+
+variable_player: 
+  select_message_1: 
+    message_num: 
+      action: set_machine
+      int: 1
+
+  select_message_2: 
+    message_num: 
+      action: set_machine
+      int: 2
+
+  select_message_3: 
+    message_num: 
+      action: set_machine
+      int: 3
+
+  select_message_4: 
+    message_num: 
+      action: set_machine
+      int: 4
+
+  select_message_5: 
+    message_num: 
+      action: set_machine
+      int: 5
+
+  select_message_6: 
+    message_num: 
+      action: set_machine
+      int: 6
+
+  select_message_7: 
+    message_num: 
+      action: set_machine
+      int: 7
+
+  select_message_8: 
+    message_num: 
+      action: set_machine
+      int: 8
+
+  select_message_9: 
+    message_num: 
+      action: set_machine
+      int: 9
+
+  select_message_10: 
+    message_num: 
+      action: set_machine
+      int: 10
+
+  select_message_11: 
+    message_num: 
+      action: set_machine
+      int: 11
+
+  select_message_12: 
+    message_num: 
+      action: set_machine
+      int: 12
+
+  select_message_13: 
+    message_num: 
+      action: set_machine
+      int: 13
+
+  select_message_14: 
+    message_num: 
+      action: set_machine
+      int: 14
+
+  select_message_15: 
+    message_num: 
+      action: set_machine
+      int: 15
+
+  select_message_16: 
+    message_num: 
+      action: set_machine
+      int: 16
+
+  select_message_17: 
+    message_num: 
+      action: set_machine
+      int: 17
+
+  select_message_18: 
+    message_num: 
+      action: set_machine
+      int: 18
+
+  select_message_19: 
+    message_num: 
+      action: set_machine
+      int: 19
+
+  select_message_20: 
+    message_num: 
+      action: set_machine
+      int: 20
+
+  select_message_21: 
+    message_num: 
+      action: set_machine
+      int: 21
+
+  select_message_22: 
+    message_num: 
+      action: set_machine
+      int: 22
+
+  select_message_23: 
+    message_num: 
+      action: set_machine
+      int: 23
+
+  select_message_24: 
+    message_num: 
+      action: set_machine
+      int: 24
+
+
+
+

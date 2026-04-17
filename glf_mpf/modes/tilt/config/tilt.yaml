@@ -1,0 +1,8 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_will_end
+  priority: 10000
+
+

@@ -1,0 +1,47 @@
+#config_version=6
+
+mode:
+  start_events: game_ending
+  stop_events: high_score_complete
+  game_mode: false
+  priority: 1500
+  use_wait_queue: true
+
+event_player: 
+  s_left_flipper_active:
+    - text_input: {action: "left"}
+  s_right_flipper_active:
+    - text_input: {action: "right"}
+  s_start_active:
+    - text_input: {action: "select"}
+
+
+high_score:
+  _overwrite: true
+  categories: 
+    score:
+      - GRAND CHAMPION
+      - HIGH SCORE 1
+      - HIGH SCORE 2
+      - HIGH SCORE 3
+  defaults:
+    score:
+      - DAN: 9000000
+      - MPC: 7000000
+      - AVE: 5000000
+      - DIG: 3000000
+  enter_initials_timeout: 65000ms
+  award_slide_display_time: 4000ms
+
+slide_player: 
+  high_score_enter_initials: 
+    high_score:
+      action: play
+      expire: 0s
+  high_score_award_display: 
+    high_score_award:
+      action: play
+      expire: 0s
+
+
+

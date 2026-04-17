@@ -1,0 +1,325 @@
+#config_version=6
+
+mode:
+  start_events: reset_complete
+  stop_events: when_the_universe_ends
+  priority: 100
+
+event_player: 
+  timer_table_init_complete:
+    - start_attract_mode
+    - turn_on_starlight
+    - turn_on_ship_lights
+  game_start:
+    - reset_won_game
+  tilt:
+    - kill_flippers
+    - training_music_stop
+    - meteor_wave_music_stop
+    - fwwiz_music_stop
+    - flwiz_music_stop
+    - ccwiz_music_stop
+  training_music_stop:
+    - training_music_1_stop
+    - training_music_2_stop
+    - training_music_3_stop
+    - training_music_4_stop
+    - training_music_5_stop
+
+
+light_player: 
+  turn_on_starlight: 
+    LStars: 
+      color: ffffff
+
+  turn_on_ship_lights: 
+    LShip: 
+      color: ffffff
+
+
+segment_display_player: 
+  tilt_warning: 
+    player1: 
+      text: ""
+      priority: 10000
+      expire: 4000ms
+      flashing: off
+    player2: 
+      text: "WARNING"
+      priority: 10000
+      expire: 4000ms
+      flashing: all
+    player3: 
+      text: "WARNING"
+      priority: 10000
+      expire: 4000ms
+      flashing: all
+    player4: 
+      text: ""
+      priority: 10000
+      expire: 4000ms
+      flashing: off
+
+  tilt: 
+    player1: 
+      text: ""
+      priority: 10000
+      expire: 4000ms
+      flashing: off
+    player2: 
+      text: "TILT"
+      priority: 10000
+      expire: 4000ms
+      flashing: off
+    player3: 
+      text: "TILT"
+      priority: 10000
+      expire: 4000ms
+      flashing: off
+    player4: 
+      text: ""
+      priority: 10000
+      expire: 4000ms
+      flashing: off
+
+
+show_player: 
+  tilt: 
+    flicker_color_off: 
+      key: key_tilted_gi
+      priority: 10000
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: GI
+        color: ffb46b
+  tilt_warning: 
+    flash_color: 
+      key: key_tilt_warning_gi
+      priority: 10000
+      loops: 8
+      speed: 9
+      show_tokens: 
+        lights: tInlaneGI
+        color: ffb46b
+  ball_started: 
+    flicker_color_off: 
+      action: stop
+      key: key_tilted_gi
+      priority: 10000
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: GI
+        color: ffb46b
+  s_Bumper1_active: 
+    bumper_bg_show1: 
+      key: key_bumper_bg_show1
+      loops: 0
+  s_Bumper3_active: 
+    bumper_bg_show2: 
+      key: key_bumper_bg_show2
+      loops: 0
+  s_TargetMystery5_active: 
+    bumper_bg_show3: 
+      key: key_bumper_bg_show3
+      loops: 0
+  backglass_dark_on: 
+    flicker_color_on: 
+      key: key_backglass_dark_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG01
+        color: ffb46b
+        fade: 800
+  backglass_dark_off: 
+    flicker_color_off: 
+      key: key_backglass_dark_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG01
+        color: ffb46b
+        fade: 800
+  backglass_chaos_on: 
+    flicker_color_on: 
+      key: key_backglass_chaos_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG02
+        color: ffb46b
+        fade: 800
+  backglass_chaos_off: 
+    flicker_color_off: 
+      key: key_backglass_chaos_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG02
+        color: ffb46b
+        fade: 800
+  backglass_clusters_on: 
+    flicker_color_on: 
+      key: key_backglass_clusters_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG03
+        color: ffb46b
+        fade: 800
+  backglass_clusters_off: 
+    flicker_color_off: 
+      key: key_backglass_clusters_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG03
+        color: ffb46b
+        fade: 800
+  backglass_shields_on: 
+    flicker_color_on: 
+      key: key_backglass_shields_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG04
+        color: ffb46b
+        fade: 800
+  backglass_shields_off: 
+    flicker_color_off: 
+      key: key_backglass_shields_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG04
+        color: ffb46b
+        fade: 800
+  backglass_wave_on: 
+    flicker_color_on: 
+      key: key_backglass_wave_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG05
+        color: ffb46b
+        fade: 800
+  backglass_wave_off: 
+    flicker_color_off: 
+      key: key_backglass_wave_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG05
+        color: ffb46b
+        fade: 800
+  backglass_wave_flash: 
+    flash_color: 
+      key: key_backglass_wave_flash
+      loops: 9
+      speed: 20
+      show_tokens: 
+        lights: LBG05
+        color: ffb46b
+  backglass_ball_on: 
+    flicker_color_on: 
+      key: key_backglass_ball_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG06
+        color: ffb46b
+        fade: 800
+  backglass_ball_off: 
+    flicker_color_off: 
+      key: key_backglass_ball_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG06
+        color: ffb46b
+        fade: 800
+  backglass_moon_on: 
+    flicker_color_on: 
+      key: key_backglass_moon_on
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG07
+        color: ffb46b
+        fade: 800
+  backglass_moon_off: 
+    flicker_color_off: 
+      key: key_backglass_moon_off
+      loops: 0
+      speed: 3
+      show_tokens: 
+        lights: LBG07
+        color: ffb46b
+        fade: 800
+
+
+sound_player: 
+  player_added{kwargs.num==1}: 
+    voc_p1: 
+      key: key_voc_p1
+      action: play
+  player_added{kwargs.num==2}: 
+    voc_p2: 
+      key: key_voc_p2
+      action: play
+  player_added{kwargs.num==3}: 
+    voc_p3: 
+      key: key_voc_p3
+      action: play
+  player_added{kwargs.num==4}: 
+    voc_p4: 
+      key: key_voc_p4
+      action: play
+  health1_off: 
+    sfx_powerdown: 
+      key: key_sfx_powerdown
+      action: play
+  ball_ended: 
+    sfx_ball_drain: 
+      key: key_ball_drain
+      action: play
+  tilt_warning: 
+    sfx_tilt_warning: 
+      key: key_sfx_tilt_warning
+      action: play
+  tilt: 
+    sfx_tilt: 
+      key: key_sfx_tilt
+      action: play
+
+
+timers: 
+  table_init:
+    start_value: 0
+    end_value: 4
+    direction: up
+    control_events: 
+      - event: mode_basement_started
+        action: start
+      - event: ball_started
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 50ms
+
+variable_player: 
+  reset_won_game: 
+    won_game: 
+      action: set_machine
+      int: 0
+
+  kill_flippers: 
+    flippers_are_dead: 
+      action: set_machine
+      int: 1
+
+
+
+

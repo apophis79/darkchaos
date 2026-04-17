@@ -1,0 +1,21 @@
+#show_version=6
+
+- duration: 0.1s
+  lights:
+    LEBR: (color)%0
+    LMR: (color)%(intensity2)
+    LX: (color)%(intensity1)
+
+- duration: 0.1s
+  lights:
+    LEBR: (color)%(intensity1)
+    LMR: (color)%0
+    LX: (color)%(intensity2)
+
+- duration: 0.1s
+  lights:
+    LEBR: (color)%(intensity2)
+    LMR: (color)%(intensity1)
+    LX: (color)%0
+
+

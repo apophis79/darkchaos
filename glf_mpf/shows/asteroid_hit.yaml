@@ -1,0 +1,36 @@
+#show_version=6
+
+- time: 0
+  shows:
+    asteroid_hit_single: 
+      key: key_asteroid_hit_single1
+      priority: 1000
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: ffffff
+        intensity: 100
+
+- time: 0.1s
+  shows:
+    asteroid_hit_single: 
+      key: key_asteroid_hit_single2
+      priority: 1000
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: edb600
+        intensity: 100
+
+- time: 0.2s
+  shows:
+    asteroid_hit_single: 
+      key: key_asteroid_hit_single3
+      priority: 1000
+      loops: 0
+      speed: 1.5
+      show_tokens: 
+        color: ed1800
+        intensity: 100
+
+

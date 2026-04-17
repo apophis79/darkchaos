@@ -1,0 +1,175 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_meteor_wave, stop_training, wizard_mode_ended
+  stop_events: stop_ship_save, mode_base_stopping, start_training_select, wizard_mode_started
+  priority: 520
+
+event_player: 
+  mode_ship_save_started{current_player.shot_ship_charge1==0}:
+    - restart_ship_save
+  mode_ship_save_started{current_player.training_ship_save_achieved==1 and current_player.shot_ship_charge3!=2}:
+    - restart_ship_save
+  mode_ship_save_started{current_player.shot_ship_charge3==2 and current_player.meteor_mb_shootagain_time ==6000}:
+    - restart_ship_save
+  restart_ship_save{current_player.training_ship_save_achieved==0}:
+    - ready_ship_charge1
+    - clear_ship_save
+  restart_ship_save{current_player.training_ship_save_achieved==1}:
+    - light_ship_charge1
+    - light_ship_charge2
+    - ready_ship_charge3
+    - clear_ship_save
+  mode_ship_save_started{current_player.shot_ship_charge3 == 2}:
+    - backglass_ball_on
+  mode_ship_save_stopping:
+    - backglass_ball_off
+  right_orbit_hit{current_player.shot_ship_charge1 == 1}:
+    - light_ship_charge1
+    - ready_ship_charge2
+    - play_sfx_LF
+  right_orbit_hit{current_player.shot_ship_charge1 == 2 and current_player.shot_ship_charge2 == 1}:
+    - light_ship_charge2
+    - ready_ship_charge3
+    - play_sfx_LF
+  right_orbit_hit{current_player.shot_ship_charge2 == 2 and current_player.shot_ship_charge3 == 1}:
+    - light_ship_charge3
+    - play_sfx_LF
+  light_ship_charge3:
+    - slings_powerup_added
+    - lsling_powerup_sa
+    - rsling_powerup_sa
+    - saver_acquired
+    - backglass_ball_on
+  mystery_added_saver:
+    - complete_ship_save
+    - light_ship_charge3
+  right_orbit_hit:
+    - score_2000
+  saver_acquired:
+    - score_50000
+
+
+random_event_player: 
+  play_sfx_LF: 
+    events:
+      play_sfx_LF1: 1
+      play_sfx_LF2: 1
+      play_sfx_LF3: 1
+    scope: player
+
+
+segment_display_player: 
+  light_ship_charge3: 
+    player2: 
+      text: " SHIP "
+      expire: 2000ms
+      flashing: all
+    player3: 
+      text: " SAVER "
+      expire: 2000ms
+      flashing: all
+
+
+shots: 
+  ship_charge1:
+    profile: powerups
+    restart_events: restart_ship_save
+    show_tokens: 
+      lights: LF1
+      color: 0500ee
+    control_events: 
+      - events: ready_ship_charge1
+        state: 1
+      - events: light_ship_charge1, complete_ship_save
+        state: 2
+  ship_charge2:
+    profile: powerups
+    restart_events: restart_ship_save
+    show_tokens: 
+      lights: LF2
+      color: 0500ee
+    control_events: 
+      - events: ready_ship_charge2
+        state: 1
+      - events: light_ship_charge2, complete_ship_save
+        state: 2
+  ship_charge3:
+    profile: powerups
+    restart_events: restart_ship_save
+    show_tokens: 
+      lights: LF3
+      color: 0500ee
+    control_events: 
+      - events: ready_ship_charge3
+        state: 1
+      - events: light_ship_charge3, complete_ship_save
+        state: 2
+
+show_player: 
+  light_ship_charge3: 
+    flash_color: 
+      key: key_ship_saves_charged
+      loops: 4
+      speed: 15
+      show_tokens: 
+        lights: tSaver
+        color: 0500ee
+  lsling_powerup_sa: 
+    lsling_rotate2_cw: 
+      key: key_lsling_powerup_sa
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 0500ee
+        color2: 0500ee
+        intensity: 100
+  rsling_powerup_sa: 
+    rsling_rotate2_ccw: 
+      key: key_rsling_powerup_sa
+      loops: 2
+      speed: 2
+      show_tokens: 
+        color1: 0500ee
+        color2: 0500ee
+        intensity: 100
+  saver_acquired: 
+    ship_saver_acquired: 
+      key: key_saver_acquired
+      priority: 1000
+      loops: 0
+
+
+sound_player: 
+  play_sfx_LF1: 
+    sfx_LF1: 
+      key: key_sfx_LF1
+      action: play
+  play_sfx_LF2: 
+    sfx_LF2: 
+      key: key_sfx_LF2
+      action: play
+  play_sfx_LF3: 
+    sfx_LF3: 
+      key: key_sfx_LF3
+      action: play
+  light_ship_charge3: 
+    voc_ShipSaver: 
+      key: key_voc_ShipSaver
+      action: play
+
+
+variable_player: 
+  clear_ship_save: 
+    meteor_mb_shootagain_time: 
+      action: set
+      int: 6000
+
+  light_ship_charge3: 
+    meteor_mb_shootagain_time: 
+      action: set
+      int: 15000
+
+
+
+

@@ -1,0 +1,12 @@
+#show_version=6
+
+- duration: 0.1s
+  shows:
+    insert_gi_slide_down: 
+      key: insert_saver_acquiredA
+      loops: 0
+      show_tokens: 
+        color: 0500ee
+        intensity: 100
+
+

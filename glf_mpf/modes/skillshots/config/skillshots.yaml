@@ -1,0 +1,163 @@
+#config_version=6
+
+mode:
+  start_events: new_ball_started, stop_training, wizard_mode_ended
+  stop_events: mode_base_stopping, stop_skillshots, start_training_select, wizard_mode_started
+  priority: 500
+
+event_player: 
+  mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}:
+    - init_ss
+  s_TargetMystery2_active{current_player.shot_ss==1}:
+    - ss_achieved
+  left_side_hit{current_player.shot_ss==1}:
+    - sss_achieved
+  right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}:
+    - ssss_achieved
+  left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}:
+    - sdsss_achieved
+  ss_achieved:
+    - ss_trainer_ready
+    - score_500000
+  sss_achieved:
+    - ss_trainer_ready
+    - sss_mystery_ready
+    - score_1000000
+  sss_achieved.1{current_player.num_skillshots==3}:
+    - activate_nuke
+  ssss_achieved:
+    - score_2000000
+  sdsss_achieved:
+    - score_3000000
+  voc_ss_stopped{current_player.num_skillshots==3}:
+    - activate_nuke
+  voc_sss_stopped{current_player.num_skillshots==3}:
+    - activate_nuke
+  timer_skillshots_complete:
+    - stop_skillshots
+  s_InnerOrb1_active:
+    - stop_skillshots
+
+
+shots: 
+  ss:
+    profile: ss_ready
+    show_tokens: 
+    reset_events: stop_skillshots, ss_achieved
+    control_events: 
+      - events: init_ss
+        state: 1
+
+show_player: 
+  ss_achieved: 
+    insert_swap2: 
+      key: key_ss_achieved
+      priority: 3000
+      loops: 1
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: 33dd33
+        intensity: 100
+  sss_achieved: 
+    insert_swap3: 
+      key: key_sss_achieved
+      priority: 3000
+      loops: 1
+      speed: 1.5
+      show_tokens: 
+        color1: 000000
+        color2: 33dd33
+        color3: ff4c00
+        intensity: 100
+  ssss_achieved: 
+    insert_swap3: 
+      key: key_ssss_achieved
+      priority: 3000
+      loops: 2
+      speed: 1.5
+      show_tokens: 
+        color1: 00dddd
+        color2: 33dd33
+        color3: ccbb00
+        intensity: 100
+  sdsss_achieved: 
+    insert_swap3: 
+      key: key_sdsss_achieved
+      priority: 3000
+      loops: 3
+      speed: 1.5
+      show_tokens: 
+        color1: ed1800
+        color2: 33dd33
+        color3: 0010cc
+        intensity: 100
+
+
+sound_player: 
+  ss_achieved.1: 
+    voc_ss: 
+      key: key_voc_ss
+      action: play
+  sss_achieved.1: 
+    voc_sss: 
+      key: key_voc_sss
+      action: play
+  ssss_achieved: 
+    voc_ssss: 
+      key: key_voc_ssss
+      action: play
+  sdsss_achieved: 
+    voc_sdsss: 
+      key: key_voc_sdsss
+      action: play
+
+
+timers: 
+  skillshots:
+    start_value: 0
+    end_value: 5
+    direction: up
+    control_events: 
+      - event: new_ball_active
+        action: restart
+      - event: sss_achieved
+        action: restart
+      - event: ssss_achieved
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+
+variable_player: 
+  init_ss: 
+    flag_ss: 
+      action: set
+      int: 0
+
+  ss_achieved.2: 
+    num_skillshots: 
+      action: add
+      int: 1
+
+  sss_achieved.2: 
+    flag_ss: 
+      action: set
+      int: 1
+    num_skillshots: 
+      action: add
+      int: 1
+
+  ssss_achieved: 
+    flag_ss: 
+      action: set
+      int: 2
+
+  sdsss_achieved: 
+    flag_ss: 
+      action: set
+      int: 0
+
+
+
+

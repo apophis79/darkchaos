@@ -1,0 +1,27 @@
+#show_version=6
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%20
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%50
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%24
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%80
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%10
+
+- duration: 0.16s
+  lights:
+    (lights): (color)%45
+
+
