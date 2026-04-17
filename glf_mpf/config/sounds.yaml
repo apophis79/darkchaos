@@ -1,0 +1,1874 @@
+#config_version=6
+
+sounds:
+  sfx_ball_drain:
+    file: sfx_ball_drain
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4075
+    events_when_stopped: 
+      - sfx_ball_drain_stopped
+    loops: 0
+
+  sfx_bumper1:
+    file: sfx_bumper1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1927
+    events_when_stopped: 
+      - sfx_bumper1_stopped
+    loops: 0
+
+  sfx_bumper2:
+    file: sfx_bumper2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3461
+    events_when_stopped: 
+      - sfx_bumper2_stopped
+    loops: 0
+
+  sfx_bumper3:
+    file: sfx_bumper3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3461
+    events_when_stopped: 
+      - sfx_bumper3_stopped
+    loops: 0
+
+  sfx_bumper4:
+    file: sfx_bumper4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1025
+    events_when_stopped: 
+      - sfx_bumper4_stopped
+    loops: 0
+
+  sfx_button:
+    file: sfx_button
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 451
+    events_when_stopped: 
+      - sfx_button_stopped
+    loops: 0
+
+  sfx_combo:
+    file: sfx_combo
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 6000
+    events_when_stopped: 
+      - sfx_combo_stopped
+    loops: 0
+
+  sfx_EarthHit1:
+    file: sfx_EarthHit1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 6129
+    events_when_stopped: 
+      - sfx_EarthHit1_stopped
+    loops: 0
+
+  sfx_EarthHit2:
+    file: sfx_EarthHit2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2316
+    events_when_stopped: 
+      - sfx_EarthHit2_stopped
+    loops: 0
+
+  sfx_EarthHit3:
+    file: sfx_EarthHit3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3755
+    events_when_stopped: 
+      - sfx_EarthHit3_stopped
+    loops: 0
+
+  sfx_entry:
+    file: sfx_entry
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2270
+    events_when_stopped: 
+      - sfx_entry_stopped
+    loops: 0
+
+  sfx_LCC1:
+    file: sfx_LCC1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 5904
+    events_when_stopped: 
+      - sfx_LCC1_stopped
+    loops: 0
+
+  sfx_LCC2:
+    file: sfx_LCC2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 5904
+    events_when_stopped: 
+      - sfx_LCC2_stopped
+    loops: 0
+
+  sfx_LCC3:
+    file: sfx_LCC3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 5904
+    events_when_stopped: 
+      - sfx_LCC3_stopped
+    loops: 0
+
+  sfx_LDS:
+    file: sfx_LDS
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1730
+    events_when_stopped: 
+      - sfx_LDS_stopped
+    loops: 0
+
+  sfx_left_ramp_time_warp:
+    file: sfx_left_ramp_time_warp
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4049
+    events_when_stopped: 
+      - sfx_left_ramp_time_warp_stopped
+    loops: 0
+
+  sfx_left_sling:
+    file: sfx_left_sling
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2068
+    events_when_stopped: 
+      - sfx_left_sling_stopped
+    loops: 0
+
+  sfx_LF1:
+    file: sfx_LF1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 7731
+    events_when_stopped: 
+      - sfx_LF1_stopped
+    loops: 0
+
+  sfx_LF2:
+    file: sfx_LF2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 8231
+    events_when_stopped: 
+      - sfx_LF2_stopped
+    loops: 0
+
+  sfx_LF3:
+    file: sfx_LF3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 8231
+    events_when_stopped: 
+      - sfx_LF3_stopped
+    loops: 0
+
+  sfx_LH:
+    file: sfx_LH
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 961
+    events_when_stopped: 
+      - sfx_LH_stopped
+    loops: 0
+
+  sfx_LLI:
+    file: sfx_LLI
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1925
+    events_when_stopped: 
+      - sfx_LLI_stopped
+    loops: 0
+
+  sfx_LLO:
+    file: sfx_LLO
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1866
+    events_when_stopped: 
+      - sfx_LLO_stopped
+    loops: 0
+
+  sfx_LM1:
+    file: sfx_LM1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1476
+    events_when_stopped: 
+      - sfx_LM1_stopped
+    loops: 0
+
+  sfx_LM2:
+    file: sfx_LM2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1951
+    events_when_stopped: 
+      - sfx_LM2_stopped
+    loops: 0
+
+  sfx_LM3:
+    file: sfx_LM3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2105
+    events_when_stopped: 
+      - sfx_LM3_stopped
+    loops: 0
+
+  sfx_LM4:
+    file: sfx_LM4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2105
+    events_when_stopped: 
+      - sfx_LM4_stopped
+    loops: 0
+
+  sfx_LM5:
+    file: sfx_LM5
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1951
+    events_when_stopped: 
+      - sfx_LM5_stopped
+    loops: 0
+
+  sfx_LMet1:
+    file: sfx_LMet1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4231
+    events_when_stopped: 
+      - sfx_LMet1_stopped
+    loops: 0
+
+  sfx_LMet2:
+    file: sfx_LMet2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1995
+    events_when_stopped: 
+      - sfx_LMet2_stopped
+    loops: 0
+
+  sfx_LMet3:
+    file: sfx_LMet3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1737
+    events_when_stopped: 
+      - sfx_LMet3_stopped
+    loops: 0
+
+  sfx_LMet4:
+    file: sfx_LMet4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4092
+    events_when_stopped: 
+      - sfx_LMet4_stopped
+    loops: 0
+
+  sfx_LMet5:
+    file: sfx_LMet5
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 908
+    events_when_stopped: 
+      - sfx_LMet5_stopped
+    loops: 0
+
+  sfx_LMet6:
+    file: sfx_LMet6
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1474
+    events_when_stopped: 
+      - sfx_LMet6_stopped
+    loops: 0
+
+  sfx_LMet7:
+    file: sfx_LMet7
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1643
+    events_when_stopped: 
+      - sfx_LMet7_stopped
+    loops: 0
+
+  sfx_LMet8:
+    file: sfx_LMet8
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4461
+    events_when_stopped: 
+      - sfx_LMet8_stopped
+    loops: 0
+
+  sfx_LPC1:
+    file: sfx_LPC1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1901
+    events_when_stopped: 
+      - sfx_LPC1_stopped
+    loops: 0
+
+  sfx_LPC2:
+    file: sfx_LPC2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2107
+    events_when_stopped: 
+      - sfx_LPC2_stopped
+    loops: 0
+
+  sfx_LPC3:
+    file: sfx_LPC3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1793
+    events_when_stopped: 
+      - sfx_LPC3_stopped
+    loops: 0
+
+  sfx_LPC4:
+    file: sfx_LPC4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2000
+    events_when_stopped: 
+      - sfx_LPC4_stopped
+    loops: 0
+
+  sfx_LPC5:
+    file: sfx_LPC5
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1876
+    events_when_stopped: 
+      - sfx_LPC5_stopped
+    loops: 0
+
+  sfx_LPF1:
+    file: sfx_LPF1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2633
+    events_when_stopped: 
+      - sfx_LPF1_stopped
+    loops: 0
+
+  sfx_LPF2:
+    file: sfx_LPF2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2953
+    events_when_stopped: 
+      - sfx_LPF2_stopped
+    loops: 0
+
+  sfx_LPF3:
+    file: sfx_LPF3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2953
+    events_when_stopped: 
+      - sfx_LPF3_stopped
+    loops: 0
+
+  sfx_LPF4:
+    file: sfx_LPF4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2953
+    events_when_stopped: 
+      - sfx_LPF4_stopped
+    loops: 0
+
+  sfx_LPF5:
+    file: sfx_LPF5
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2633
+    events_when_stopped: 
+      - sfx_LPF5_stopped
+    loops: 0
+
+  sfx_LRI:
+    file: sfx_LRI
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1904
+    events_when_stopped: 
+      - sfx_LRI_stopped
+    loops: 0
+
+  sfx_LRO:
+    file: sfx_LRO
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4075
+    events_when_stopped: 
+      - sfx_LRO_stopped
+    loops: 0
+
+  sfx_LS1:
+    file: sfx_LS1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 945
+    events_when_stopped: 
+      - sfx_LS1_stopped
+    loops: 0
+
+  sfx_LS2:
+    file: sfx_LS2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 629
+    events_when_stopped: 
+      - sfx_LS2_stopped
+    loops: 0
+
+  sfx_LS3:
+    file: sfx_LS3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 548
+    events_when_stopped: 
+      - sfx_LS3_stopped
+    loops: 0
+
+  sfx_LS4:
+    file: sfx_LS4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 522
+    events_when_stopped: 
+      - sfx_LS4_stopped
+    loops: 0
+
+  sfx_LS5:
+    file: sfx_LS5
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 586
+    events_when_stopped: 
+      - sfx_LS5_stopped
+    loops: 0
+
+  sfx_LS6:
+    file: sfx_LS6
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 945
+    events_when_stopped: 
+      - sfx_LS6_stopped
+    loops: 0
+
+  sfx_LSC1:
+    file: sfx_LSC1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2363
+    events_when_stopped: 
+      - sfx_LSC1_stopped
+    loops: 0
+
+  sfx_LSC2:
+    file: sfx_LSC2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1918
+    events_when_stopped: 
+      - sfx_LSC2_stopped
+    loops: 0
+
+  sfx_LSC3:
+    file: sfx_LSC3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2502
+    events_when_stopped: 
+      - sfx_LSC3_stopped
+    loops: 0
+
+  sfx_LSC4:
+    file: sfx_LSC4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2155
+    events_when_stopped: 
+      - sfx_LSC4_stopped
+    loops: 0
+
+  sfx_LSL:
+    file: sfx_LSL
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2224
+    events_when_stopped: 
+      - sfx_LSL_stopped
+    loops: 0
+
+  sfx_LSR:
+    file: sfx_LSR
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2224
+    events_when_stopped: 
+      - sfx_LSR_stopped
+    loops: 0
+
+  sfx_LSUp:
+    file: sfx_LSUp
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2803
+    events_when_stopped: 
+      - sfx_LSUp_stopped
+    loops: 0
+
+  sfx_LTW:
+    file: sfx_LTW
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 5410
+    events_when_stopped: 
+      - sfx_LTW_stopped
+    loops: 0
+
+  sfx_mag_cap:
+    file: sfx_mag_cap
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2972
+    events_when_stopped: 
+      - sfx_mag_cap_stopped
+    loops: 0
+
+  sfx_Orb1:
+    file: sfx_Orb1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1543
+    events_when_stopped: 
+      - sfx_Orb1_stopped
+    loops: 0
+
+  sfx_Orb2:
+    file: sfx_Orb2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1713
+    events_when_stopped: 
+      - sfx_Orb2_stopped
+    loops: 0
+
+  sfx_Orb3:
+    file: sfx_Orb3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1571
+    events_when_stopped: 
+      - sfx_Orb3_stopped
+    loops: 0
+
+  sfx_powerdown:
+    file: sfx_powerdown
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3712
+    events_when_stopped: 
+      - sfx_powerdown_stopped
+    loops: 0
+
+  sfx_right_ramp_moon_launch:
+    file: sfx_right_ramp_moon_launch
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3146
+    events_when_stopped: 
+      - sfx_right_ramp_moon_launch_stopped
+    loops: 0
+
+  sfx_right_sling:
+    file: sfx_right_sling
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1957
+    events_when_stopped: 
+      - sfx_right_sling_stopped
+    loops: 0
+
+  sfx_Spinner:
+    file: sfx_Spinner
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 173
+    events_when_stopped: 
+      - sfx_Spinner_stopped
+    loops: 0
+
+  sfx_tally_alt:
+    file: sfx_tally_alt
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2000
+    events_when_stopped: 
+      - sfx_tally_alt_stopped
+    loops: 0
+
+  sfx_cluster_fired:
+    file: sfx_cluster_fired
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4593
+    events_when_stopped: 
+      - sfx_cluster_fired_stopped
+    loops: 0
+
+  sfx_launch:
+    file: sfx_launch
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 7552
+    events_when_stopped: 
+      - sfx_launch_stopped
+    loops: 0
+
+  sfx_ball_launch1:
+    file: sfx_ball_launch1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4736
+    events_when_stopped: 
+      - sfx_ball_launch1_stopped
+    loops: 0
+
+  sfx_ball_launch2:
+    file: sfx_ball_launch2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4736
+    events_when_stopped: 
+      - sfx_ball_launch2_stopped
+    loops: 0
+
+  sfx_ball_launch3:
+    file: sfx_ball_launch3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4736
+    events_when_stopped: 
+      - sfx_ball_launch3_stopped
+    loops: 0
+
+  sfx_scoop:
+    file: sfx_scoop
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2690
+    events_when_stopped: 
+      - sfx_scoop_stopped
+    loops: 0
+
+  sfx_tilt_warning:
+    file: sfx_tilt_warning
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1050
+    events_when_stopped: 
+      - sfx_tilt_warning_stopped
+    loops: 0
+
+  sfx_tilt:
+    file: sfx_tilt
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4714
+    events_when_stopped: 
+      - sfx_tilt_stopped
+    loops: 0
+
+  sfx_boom1:
+    file: sfx_boom1
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 6087
+    events_when_stopped: 
+      - sfx_boom1_stopped
+    loops: 0
+
+  sfx_boom2:
+    file: sfx_boom2
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 6034
+    events_when_stopped: 
+      - sfx_boom2_stopped
+    loops: 0
+
+  sfx_boom3:
+    file: sfx_boom3
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 5851
+    events_when_stopped: 
+      - sfx_boom3_stopped
+    loops: 0
+
+  sfx_boom4:
+    file: sfx_boom4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 5329
+    events_when_stopped: 
+      - sfx_boom4_stopped
+    loops: 0
+
+  sfx_boom5:
+    file: sfx_boom5
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 6322
+    events_when_stopped: 
+      - sfx_boom5_stopped
+    loops: 0
+
+  sfx_boom6:
+    file: sfx_boom6
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 6322
+    events_when_stopped: 
+      - sfx_boom6_stopped
+    loops: 0
+
+  sfx_final_explosion:
+    file: sfx_final_explosion
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 9473
+    events_when_stopped: 
+      - sfx_final_explosion_stopped
+    loops: 0
+
+  sfx_jackpot:
+    file: sfx_jackpot
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 1386
+    events_when_stopped: 
+      - sfx_jackpot_stopped
+    loops: 0
+
+  sfx_super_jackpot:
+    file: sfx_super_jackpot
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3422
+    events_when_stopped: 
+      - sfx_super_jackpot_stopped
+    loops: 0
+
+  sfx_error_buzz:
+    file: sfx_error_buzz
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 506
+    events_when_stopped: 
+      - sfx_error_buzz_stopped
+    loops: 0
+
+  sfx_alien_ship_crash:
+    file: sfx_alien_ship_crash
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4467
+    events_when_stopped: 
+      - sfx_alien_ship_crash_stopped
+    loops: 0
+
+  sfx_hs_initial:
+    file: sfx_hs_initial
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 139
+    events_when_stopped: 
+      - sfx_hs_initial_stopped
+    loops: 0
+
+  sfx_final_wave_scoop:
+    file: sfx_final_wave_scoop
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 10316
+    events_when_stopped: 
+      - sfx_final_wave_scoop_stopped
+    loops: 0
+
+  sfx_LS_between_waves_updated:
+    file: sfx_LS_between_waves_updated
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 4519
+    events_when_stopped: 
+      - sfx_LS_between_waves_updated_stopped
+    loops: 0
+
+  sfx_LS_during_training:
+    file: sfx_LS_during_training
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3030
+    events_when_stopped: 
+      - sfx_LS_during_training_stopped
+    loops: 0
+
+  voc_AlienAlert:
+    file: voc_AlienAlert
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 6000
+    events_when_stopped: 
+      - voc_AlienAlert_stopped
+    loops: 0
+
+  voc_AlienHit:
+    file: voc_AlienHit
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3046
+    events_when_stopped: 
+      - voc_AlienHit_stopped
+    loops: 0
+
+  voc_ball_locked:
+    file: voc_ball_locked
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2316
+    events_when_stopped: 
+      - voc_ball_locked_stopped
+    loops: 0
+
+  voc_extra_ball_acheived:
+    file: voc_extra_ball_acheived
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2847
+    events_when_stopped: 
+      - voc_extra_ball_acheived_stopped
+    loops: 0
+
+  voc_extra_ball_ready:
+    file: voc_extra_ball_ready
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3297
+    events_when_stopped: 
+      - voc_extra_ball_ready_stopped
+    loops: 0
+
+  voc_LCR1:
+    file: voc_LCR1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 5972
+    events_when_stopped: 
+      - voc_LCR1_stopped
+    loops: 0
+
+  voc_LCR2:
+    file: voc_LCR2
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4718
+    events_when_stopped: 
+      - voc_LCR2_stopped
+    loops: 0
+
+  voc_LCWiz:
+    file: voc_LCWiz
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2422
+    events_when_stopped: 
+      - voc_LCWiz_stopped
+    loops: 0
+
+  voc_LLWiz:
+    file: voc_LLWiz
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3252
+    events_when_stopped: 
+      - voc_LLWiz_stopped
+    loops: 0
+
+  voc_LMLR:
+    file: voc_LMLR
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2587
+    events_when_stopped: 
+      - voc_LMLR_stopped
+    loops: 0
+
+  voc_LMR:
+    file: voc_LMR
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4415
+    events_when_stopped: 
+      - voc_LMR_stopped
+    loops: 0
+
+  voc_LMR1:
+    file: voc_LMR1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2362
+    events_when_stopped: 
+      - voc_LMR1_stopped
+    loops: 0
+
+  voc_LMR2:
+    file: voc_LMR2
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2877
+    events_when_stopped: 
+      - voc_LMR2_stopped
+    loops: 0
+
+  voc_LPR1:
+    file: voc_LPR1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2361
+    events_when_stopped: 
+      - voc_LPR1_stopped
+    loops: 0
+
+  voc_p1:
+    file: voc_p1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2926
+    events_when_stopped: 
+      - voc_p1_stopped
+    loops: 0
+
+  voc_p2:
+    file: voc_p2
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2926
+    events_when_stopped: 
+      - voc_p2_stopped
+    loops: 0
+
+  voc_p3:
+    file: voc_p3
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2926
+    events_when_stopped: 
+      - voc_p3_stopped
+    loops: 0
+
+  voc_p4:
+    file: voc_p4
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2926
+    events_when_stopped: 
+      - voc_p4_stopped
+    loops: 0
+
+  voc_select_option:
+    file: voc_select_option
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1784
+    events_when_stopped: 
+      - voc_select_option_stopped
+    loops: 0
+
+  voc_ShipSaver:
+    file: voc_ShipSaver
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2233
+    events_when_stopped: 
+      - voc_ShipSaver_stopped
+    loops: 0
+
+  voc_ss:
+    file: voc_ss
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2331
+    events_when_stopped: 
+      - voc_ss_stopped
+    loops: 0
+
+  voc_sss:
+    file: voc_sss
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2540
+    events_when_stopped: 
+      - voc_sss_stopped
+    loops: 0
+
+  voc_Training:
+    file: voc_Training
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2392
+    events_when_stopped: 
+      - voc_Training_stopped
+    loops: 0
+
+  voc_wave_incoming:
+    file: voc_wave_incoming
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4974
+    events_when_stopped: 
+      - voc_wave_incoming_stopped
+    loops: 0
+
+  voc_Wiz:
+    file: voc_Wiz
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2111
+    events_when_stopped: 
+      - voc_Wiz_stopped
+    loops: 0
+
+  voc_attract1:
+    file: voc_attract1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2423
+    events_when_stopped: 
+      - voc_attract1_stopped
+    loops: 0
+
+  voc_attract2:
+    file: voc_attract2
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2000
+    events_when_stopped: 
+      - voc_attract2_stopped
+    loops: 0
+
+  voc_attract3:
+    file: voc_attract3
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2000
+    events_when_stopped: 
+      - voc_attract3_stopped
+    loops: 0
+
+  voc_attract4:
+    file: voc_attract4
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2362
+    events_when_stopped: 
+      - voc_attract4_stopped
+    loops: 0
+
+  voc_attract5:
+    file: voc_attract5
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2000
+    events_when_stopped: 
+      - voc_attract5_stopped
+    loops: 0
+
+  voc_winners_poem1:
+    file: voc_winners_poem1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4055
+    events_when_stopped: 
+      - voc_winners_poem1_stopped
+    loops: 0
+
+  voc_winners_poem2:
+    file: voc_winners_poem2
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3768
+    events_when_stopped: 
+      - voc_winners_poem2_stopped
+    loops: 0
+
+  voc_winners_poem3:
+    file: voc_winners_poem3
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3768
+    events_when_stopped: 
+      - voc_winners_poem3_stopped
+    loops: 0
+
+  voc_winners_poem4:
+    file: voc_winners_poem4
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2624
+    events_when_stopped: 
+      - voc_winners_poem4_stopped
+    loops: 0
+
+  voc_winners_poem5:
+    file: voc_winners_poem5
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3363
+    events_when_stopped: 
+      - voc_winners_poem5_stopped
+    loops: 0
+
+  voc_winners_poem6:
+    file: voc_winners_poem6
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4055
+    events_when_stopped: 
+      - voc_winners_poem6_stopped
+    loops: 0
+
+  voc_wizard_game:
+    file: voc_wizard_game
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1966
+    events_when_stopped: 
+      - voc_wizard_game_stopped
+    loops: 0
+
+  voc_wave_completed:
+    file: voc_wave_completed
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3579
+    events_when_stopped: 
+      - voc_wave_completed_stopped
+    loops: 0
+
+  voc_super_spinner:
+    file: voc_super_spinner
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2059
+    events_when_stopped: 
+      - voc_super_spinner_stopped
+    loops: 0
+
+  voc_super_pop_bumpers:
+    file: voc_super_pop_bumpers
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2623
+    events_when_stopped: 
+      - voc_super_pop_bumpers_stopped
+    loops: 0
+
+  voc_relaxed_combos:
+    file: voc_relaxed_combos
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1768
+    events_when_stopped: 
+      - voc_relaxed_combos_stopped
+    loops: 0
+
+  voc_imminent_shutdown:
+    file: voc_imminent_shutdown
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2072
+    events_when_stopped: 
+      - voc_imminent_shutdown_stopped
+    loops: 0
+
+  voc_full_protons:
+    file: voc_full_protons
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1962
+    events_when_stopped: 
+      - voc_full_protons_stopped
+    loops: 0
+
+  voc_full_health:
+    file: voc_full_health
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1804
+    events_when_stopped: 
+      - voc_full_health_stopped
+    loops: 0
+
+  voc_double_scoring:
+    file: voc_double_scoring
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1846
+    events_when_stopped: 
+      - voc_double_scoring_stopped
+    loops: 0
+
+  voc_double_bonus:
+    file: voc_double_bonus
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 1879
+    events_when_stopped: 
+      - voc_double_bonus_stopped
+    loops: 0
+
+  voc_critically_low_health:
+    file: voc_critically_low_health
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2417
+    events_when_stopped: 
+      - voc_critically_low_health_stopped
+    loops: 0
+
+  voc_shields_acquired:
+    file: voc_shields_acquired
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2218
+    events_when_stopped: 
+      - voc_shields_acquired_stopped
+    loops: 0
+
+  voc_ssss:
+    file: voc_ssss
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3723
+    events_when_stopped: 
+      - voc_ssss_stopped
+    loops: 0
+
+  voc_sdsss:
+    file: voc_sdsss
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4302
+    events_when_stopped: 
+      - voc_sdsss_stopped
+    loops: 0
+
+  voc_training_canceled:
+    file: voc_training_canceled
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 4415
+    events_when_stopped: 
+      - voc_training_canceled_stopped
+    loops: 0
+
+  voc_final_wave_ready:
+    file: voc_final_wave_ready
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3657
+    events_when_stopped: 
+      - voc_final_wave_ready_stopped
+    loops: 0
+
+  voc_nuke:
+    file: voc_nuke
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 5773
+    events_when_stopped: 
+      - voc_nuke_stopped
+    loops: 0
+
+  voc_training_incomplete:
+    file: voc_training_incomplete
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2668
+    events_when_stopped: 
+      - voc_training_incomplete_stopped
+    loops: 0
+
+  mus_wave0:
+    file: mus_wave0
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 92212
+    events_when_stopped: 
+      - mus_wave0_stopped
+    loops: -1
+
+  mus_wave1:
+    file: mus_wave1
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 53551
+    events_when_stopped: 
+      - mus_wave1_stopped
+    loops: -1
+
+  mus_wave2:
+    file: mus_wave2
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 58018
+    events_when_stopped: 
+      - mus_wave2_stopped
+    loops: -1
+
+  mus_wave3:
+    file: mus_wave3
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 60274
+    events_when_stopped: 
+      - mus_wave3_stopped
+    loops: -1
+
+  mus_wave4:
+    file: mus_wave4
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 60656
+    events_when_stopped: 
+      - mus_wave4_stopped
+    loops: -1
+
+  mus_wave5:
+    file: mus_wave5
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 63447
+    events_when_stopped: 
+      - mus_wave5_stopped
+    loops: -1
+
+  mus_wave6:
+    file: mus_wave6
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 61422
+    events_when_stopped: 
+      - mus_wave6_stopped
+    loops: -1
+
+  mus_wave7:
+    file: mus_wave7
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 56844
+    events_when_stopped: 
+      - mus_wave7_stopped
+    loops: -1
+
+  mus_wave8:
+    file: mus_wave8
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 52863
+    events_when_stopped: 
+      - mus_wave8_stopped
+    loops: -1
+
+  mus_wave9:
+    file: mus_wave9
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 57763
+    events_when_stopped: 
+      - mus_wave9_stopped
+    loops: -1
+
+  mus_ambient_bg:
+    file: mus_ambient_bg
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 58508
+    events_when_stopped: 
+      - mus_ambient_bg_stopped
+    loops: -1
+
+  mus_wizard:
+    file: mus_wizard
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 118143
+    events_when_stopped: 
+      - mus_wizard_stopped
+    loops: -1
+
+  mus_wizard2:
+    file: mus_wizard2
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 79967
+    events_when_stopped: 
+      - mus_wizard2_stopped
+    loops: -1
+
+  mus_training_1:
+    file: mus_training_1
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 70532
+    events_when_stopped: 
+      - mus_training_1_stopped
+    loops: 0
+
+  mus_training_2:
+    file: mus_training_2
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 69160
+    events_when_stopped: 
+      - mus_training_2_stopped
+    loops: 0
+
+  mus_training_3:
+    file: mus_training_3
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 70296
+    events_when_stopped: 
+      - mus_training_3_stopped
+    loops: 0
+
+  mus_training_4:
+    file: mus_training_4
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 74050
+    events_when_stopped: 
+      - mus_training_4_stopped
+    loops: 0
+
+  mus_training_5:
+    file: mus_training_5
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 72831
+    events_when_stopped: 
+      - mus_training_5_stopped
+    loops: 0
+
+  mus_post_game:
+    file: mus_post_game
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 54897
+    events_when_stopped: 
+      - mus_post_game_stopped
+    loops: 0
+
+  mus_post_game_heavier:
+    file: mus_post_game_heavier
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 65358
+    events_when_stopped: 
+      - mus_post_game_heavier_stopped
+    loops: 0
+
+  mus_victory:
+    file: mus_victory
+    volume: 
+    bus: mus
+    priority: 0
+    max_queue_time: -1
+    duration: 65463
+    events_when_stopped: 
+      - mus_victory_stopped
+    loops: 0
+
+  sfx_nuke:
+    file: sfx_nuke
+    volume: 1
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 11860
+    events_when_stopped: 
+      - sfx_nuke_stopped
+    loops: 0
+
+
