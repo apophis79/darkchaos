@@ -1,0 +1,28 @@
+#config_version=6
+
+machine_vars:
+  high_score_initials:
+    initial_value: 
+    persist: False
+    value_type: str
+  high_score_initials_index:
+    initial_value: 0
+    persist: False
+    value_type: int
+  high_score_initials_chars:
+    initial_value: 0
+    persist: False
+    value_type: int
+  won_game:
+    initial_value: 0
+    persist: True
+    value_type: int
+  message_num:
+    initial_value: 0
+    persist: True
+    value_type: int
+  flippers_are_dead:
+    initial_value: 0
+    persist: False
+    value_type: int
+
