@@ -7,16 +7,16 @@ mode:
 
 combo_switches: 
   cancel_training_pc:
-    switches_1: s_left_flipper
-    switches_2: s_right_flipper
+    switches_1: s_LeftFlipperButton
+    switches_2: s_RightFlipperButton
     events_when_both: 
       - stop_training
       - play_voc_training_canceled
       - training_stopped
     hold_time: 3000ms
   cancel_training_warning_pc:
-    switches_1: s_left_flipper
-    switches_2: s_right_flipper
+    switches_1: s_LeftFlipperButton
+    switches_2: s_RightFlipperButton
     events_when_both: 
       - training_cancel_warning
     events_when_inactive: 

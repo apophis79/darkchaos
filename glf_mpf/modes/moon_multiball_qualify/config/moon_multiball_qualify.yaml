@@ -97,8 +97,8 @@ shot_groups:
   qualify_lock:
     shots: moon_lane1,moon_lane2,moon_lane3,moon_lane4
     restart_events: restart_moon_qualify_shots
-    rotate_left_events: s_left_flipper_active
-    rotate_right_events: s_right_flipper_active
+    rotate_left_events: s_LeftFlipperButton_active
+    rotate_right_events: s_RightFlipperButton_active
     enable_events: enable_moon_qualify_shots
     disable_events: disable_moon_qualify_shots
 

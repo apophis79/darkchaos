@@ -8,13 +8,13 @@ mode:
 event_player: 
   mode_training_select_started:
     - enable_scoop_hold
-  s_left_flipper_active:
+  s_LeftFlipperButton_active:
     - training_select_left
-  s_right_flipper_active:
+  s_RightFlipperButton_active:
     - training_select_right
-  s_left_magna_key_active:
+  s_LeftMagnaButton_active:
     - make_selection
-  s_right_magna_key_active:
+  s_RightMagnaButton_active:
     - make_selection
   s_lockbar_key_active:
     - make_selection

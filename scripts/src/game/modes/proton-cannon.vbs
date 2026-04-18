@@ -60,7 +60,7 @@ Sub CreateProtonCannonMode
 
 
         With .DOFPlayer()
-            With .EventName("s_spinner_active")
+            With .EventName("s_Spinner_active")
                 .Action = "DOF_PULSE"
                 .DOFEvent = 135
             End With
@@ -182,7 +182,7 @@ Sub CreateProtonCannonMode
                     .Add "color", ProtonColor
                 End With
             End With
-            With .EventName("s_spinner_active")
+            With .EventName("s_Spinner_active")
                 .Key = "key_spinner_flash"
                 .Show = "flash_color_with_fade" 
                 .Speed = 15

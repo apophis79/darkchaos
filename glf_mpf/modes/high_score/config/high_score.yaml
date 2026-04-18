@@ -6,7 +6,7 @@ mode:
   priority: 120
 
 event_player: 
-  s_right_magna_key_active{current_player.hs_input_ready == 1}:
+  s_RightMagnaButton_active{current_player.hs_input_ready == 1}:
     - text_inputted
   s_plunger_key_active{current_player.hs_input_ready == 1}:
     - text_inputted
@@ -73,372 +73,372 @@ segment_display_player:
       text: "A"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} A"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} A"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} B"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} B"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} C"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} C"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} D"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} D"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} E"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} E"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} F"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} F"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} G"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} G"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} H"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} H"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} I"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} I"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} J"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} J"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} K"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} K"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} L"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} L"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} M"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} M"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} N"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} N"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} O"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} O"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} P"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} P"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} Q"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} Q"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} R"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} R"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} S"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} S"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} T"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} T"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} U"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} U"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} V"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} V"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} W"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} W"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} X"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} X"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} Y"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} Y"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} Z"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} Z"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 0"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 0"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 1"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 1"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 2"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 2"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 3"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 3"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 4"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 4"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 5"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 5"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 6"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 6"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 7"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 7"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 8"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 8"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 9"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} 9"
       flashing: off
 
-  s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} _"
       flashing: off
 
-  s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}: 
     player3: 
       text: "{machine.high_score_initials} _"
       flashing: off
@@ -547,12 +547,12 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  s_left_flipper_active.2{current_player.hs_input_ready == 1}: 
+  s_LeftFlipperButton_active.2{current_player.hs_input_ready == 1}: 
     high_score_initials_index: 
       action: add_machine
       int: -1
 
-  s_right_flipper_active.2{current_player.hs_input_ready == 1}: 
+  s_RightFlipperButton_active.2{current_player.hs_input_ready == 1}: 
     high_score_initials_index: 
       action: add_machine
       int: 1

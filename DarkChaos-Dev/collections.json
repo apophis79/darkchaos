@@ -956,7 +956,7 @@
   {
     "name": "glf_spinners",
     "items": [
-      "s_spinner"
+      "s_Spinner"
     ],
     "fire_events": false,
     "stop_single_events": false,

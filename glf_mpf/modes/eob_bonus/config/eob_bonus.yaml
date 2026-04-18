@@ -8,8 +8,8 @@ mode:
 
 combo_switches: 
   bonus_skip:
-    switches_1: s_left_flipper
-    switches_2: s_right_flipper
+    switches_1: s_LeftFlipperButton
+    switches_2: s_RightFlipperButton
     events_when_both: 
       - skip_bonus_tally
 

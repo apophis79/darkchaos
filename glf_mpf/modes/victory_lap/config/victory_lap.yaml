@@ -107,7 +107,7 @@ multiballs:
     ball_count: 5
     ball_count_type: total
     shoot_again: 45000
-    hurry_up: 3000
+    hurry_up_time: 3000
     grace_period: 0
     ball_locks: 
 

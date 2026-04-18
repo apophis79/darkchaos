@@ -175,7 +175,7 @@ multiballs:
     ball_count: 5
     ball_count_type: total
     shoot_again: 20000
-    hurry_up: 3000
+    hurry_up_time: 3000
     grace_period: 2000
     ball_locks: 
   multiball_flwiz_2:
@@ -183,7 +183,7 @@ multiballs:
     ball_count: 2
     ball_count_type: total
     shoot_again: 0
-    hurry_up: 0
+    hurry_up_time: 0
     grace_period: 0
     ball_locks: 
 

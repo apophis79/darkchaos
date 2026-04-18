@@ -2,11 +2,11 @@
 
 - time: 0
   lights:
-    (lights): (color)%100
+    (lights): (color)-f300ms%100
 
 - time: 0.3s
   lights:
-    (lights): 000000%100
+    (lights): 000000-f300ms%100
 
 - time: 1s
   lights:
@@ -18,11 +18,11 @@
 
 - time: 3.8s
   lights:
-    (lights): (color)%100
+    (lights): (color)-f300ms%100
 
 - time: 4.1s
   lights:
-    (lights): 000000%100
+    (lights): 000000-f300ms%100
 
 - time: 9s
   duration: 0.1s

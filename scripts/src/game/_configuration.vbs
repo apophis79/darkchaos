@@ -662,7 +662,7 @@ Sub ConfigureGlfDevices
     ' Asteroid motor
     With CreateGlfDiverter("asteroid_motor")
         .EnableEvents = Array("reset_complete","enable_asteroid_motor")
-        .ActivateEvents = Array("run_asteroid_motor") '"start_meteor_wave","start_training_heal"
+        .ActivateEvents = Array("start_asteroid_motor") '"start_meteor_wave","start_training_heal"
         .DeactivateEvents = Array("stop_asteroid_motor") '"stop_meteor_wave","stop_training"
         .ActionCallback = "SolSpinAsteroid"
     End With

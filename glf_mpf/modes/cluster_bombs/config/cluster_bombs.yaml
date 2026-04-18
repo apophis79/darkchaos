@@ -37,17 +37,17 @@ event_player:
   light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
     - add_cluster_bomb2
     - check_fully_loaded
-  s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
+  s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
     - fire_cluster_bomb1
     - cluster_bomb_fired
     - cluster_bomb_flash
     - backglass_clusters_off
-  s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}:
+  s_LeftMagnaButton_active{current_player.shot_cluster_bomb2 == 1}:
     - fire_cluster_bomb2
     - cluster_bomb_fired
     - cluster_bomb_flash
     - reset_cluster_charges
-  s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}:
+  s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 0}:
     - cluster_panic_penalty
   cluster_panic_penalty:
     - score_m100000

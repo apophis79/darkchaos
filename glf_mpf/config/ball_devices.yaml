@@ -2,10 +2,10 @@
 
 ball_devices:
   bd_trough:
-    ball_switches: s_trough1,s_trough2,s_trough3,s_trough4,s_trough5, s_trough_jam
+    ball_switches: s_Trough1,s_Trough2,s_Trough3,s_trough4,s_Trough5, s_TroughJam
     eject_coil: c_trough_eject
     tags: trough, home, drain
-    jam_switch: s_trough_jam
+    jam_switch: s_TroughJam
     eject_targets: balldevice_plunger
   balldevice_plunger:
     ball_switches: s_Plunger1

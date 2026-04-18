@@ -261,12 +261,12 @@ Sub InitSpinner
 '		BP.Size_Y = BP.Size_Y * 0.99
 '		BP.Size_Z = BP.Size_Z * 0.99
 '	Next
-	s_spinner_animate
+	s_Spinner_animate
 End Sub
 
-Sub s_spinner_animate
+Sub s_Spinner_animate
 	Dim LM, a, b, c, offset
-	a = -s_spinner.currentangle
+	a = -s_Spinner.currentangle
 	c = 360+a
 	If c >= 0 And c < 60 Then
         b = 0

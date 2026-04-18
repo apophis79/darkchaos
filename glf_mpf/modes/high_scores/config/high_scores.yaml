@@ -8,9 +8,9 @@ mode:
   use_wait_queue: true
 
 event_player: 
-  s_left_flipper_active:
+  s_LeftFlipperButton_active:
     - text_input: {action: "left"}
-  s_right_flipper_active:
+  s_RightFlipperButton_active:
     - text_input: {action: "right"}
   s_start_active:
     - text_input: {action: "select"}

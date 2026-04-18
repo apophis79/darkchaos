@@ -72,8 +72,8 @@ shot_groups:
   qualify_shields:
     shots: shield_charge1,shield_charge2,shield_charge3
     restart_events: restart_qualify_shields
-    rotate_left_events: s_left_flipper_active
-    rotate_right_events: s_right_flipper_active
+    rotate_left_events: s_LeftFlipperButton_active
+    rotate_right_events: s_RightFlipperButton_active
 
 shots: 
   shield_charge1:

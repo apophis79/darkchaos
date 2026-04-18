@@ -254,7 +254,7 @@ show_player:
       show_tokens: 
         lights: tInlaneGI
         color: 00dddd
-  s_spinner_active: 
+  s_Spinner_active: 
     flash_color_with_fade: 
       key: key_spinner_flash
       loops: 0

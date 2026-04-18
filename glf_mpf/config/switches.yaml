@@ -201,7 +201,7 @@ switches:
     tags: 
     x: -1
     y: -1
-  s_spinner:
+  s_Spinner:
     number: 40
     tags: 
   s_RightSlingshot:
@@ -213,22 +213,22 @@ switches:
   s_TopSlingshot:
     number: 43
     tags: 
-  s_trough1:
+  s_Trough1:
     number: 44
     tags: 
-  s_trough2:
+  s_Trough2:
     number: 45
     tags: 
-  s_trough3:
+  s_Trough3:
     number: 46
     tags: 
   s_trough4:
     number: 47
     tags: 
-  s_trough5:
+  s_Trough5:
     number: 48
     tags: 
-  s_trough_jam:
+  s_TroughJam:
     number: 49
     tags: 
   s_start:

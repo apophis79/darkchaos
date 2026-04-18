@@ -6,7 +6,7 @@ mode:
   priority: 600
 
 event_player: 
-  s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}:
+  s_RightMagnaButton_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}:
     - launch_moon_missiles
     - restart_moon_qualify_shots
     - backglass_moon_off
@@ -15,7 +15,7 @@ event_player:
     - delayed_release_moon_ball
     - play_sfx_launch
     - score_50000
-  s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}:
+  s_RightMagnaButton_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}:
     - launch_panic_penalty
   launch_panic_penalty:
     - score_m100000
@@ -27,7 +27,7 @@ multiballs:
     ball_count: current_player.moon_launch_locked_balls
     ball_count_type: add
     shoot_again: 0
-    hurry_up: 0
+    hurry_up_time: 0
     grace_period: 0
     ball_locks: moon_lock
 

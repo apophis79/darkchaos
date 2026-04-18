@@ -2805,47 +2805,47 @@ Function Glf_686(args)
 End Function
 Function Glf_687(args)
 	On Error Resume Next
-	    Glf_687 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave1") = 0
+	    Glf_687 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave1") = 0
 	If Err Then Glf_687 = False
 End Function
 Function Glf_688(args)
 	On Error Resume Next
-	    Glf_688 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave1") = 2 And GetPlayerState("shot_meteor_wave2") = 0
+	    Glf_688 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
 	If Err Then Glf_688 = False
 End Function
 Function Glf_689(args)
 	On Error Resume Next
-	    Glf_689 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave2") = 2 And GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_689 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_689 = False
 End Function
 Function Glf_690(args)
 	On Error Resume Next
-	    Glf_690 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave3") = 2 And GetPlayerState("shot_meteor_wave4") = 0
+	    Glf_690 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
 	If Err Then Glf_690 = False
 End Function
 Function Glf_691(args)
 	On Error Resume Next
-	    Glf_691 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave4") = 2 And GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_691 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_691 = False
 End Function
 Function Glf_692(args)
 	On Error Resume Next
-	    Glf_692 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave5") = 2 And GetPlayerState("shot_meteor_wave6") = 0
+	    Glf_692 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
 	If Err Then Glf_692 = False
 End Function
 Function Glf_693(args)
 	On Error Resume Next
-	    Glf_693 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave6") = 2 And GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_693 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_693 = False
 End Function
 Function Glf_694(args)
 	On Error Resume Next
-	    Glf_694 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave7") = 2 And GetPlayerState("shot_meteor_wave8") = 0
+	    Glf_694 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
 	If Err Then Glf_694 = False
 End Function
 Function Glf_695(args)
 	On Error Resume Next
-	    Glf_695 = glf_timers("meteor_countdown").GetValue("ticks") = 1 And GetPlayerState("shot_meteor_wave8") = 2 And GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_695 = glf_timers("meteor_countdown").GetValue("ticks") = 1 and GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_695 = False
 End Function
 Function Glf_696(args)
@@ -8219,15 +8219,15 @@ glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_
 glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_mode_is_ready == 1 and current_player.shot_fully_loaded_wizard == 1  and current_player.shot_combo_command_wizard != 1 and current_player.shot_final_wave_wizard != 1 and current_player.meteor_wave_running == 0}", "Glf_684"
 glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", "Glf_685"
 glf_funcRefMap.Add "check_plunger{current_player.ball_just_started==0}", "Glf_686"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave1 == 0}", "Glf_687"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave1 == 2 && current_player.shot_meteor_wave2 == 0}", "Glf_688"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave2 == 2 && current_player.shot_meteor_wave3 == 0}", "Glf_689"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave3 == 2 && current_player.shot_meteor_wave4 == 0}", "Glf_690"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave4 == 2 && current_player.shot_meteor_wave5 == 0}", "Glf_691"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave5 == 2 && current_player.shot_meteor_wave6 == 0}", "Glf_692"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave6 == 2 && current_player.shot_meteor_wave7 == 0}", "Glf_693"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave7 == 2 && current_player.shot_meteor_wave8 == 0}", "Glf_694"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 && current_player.shot_meteor_wave8 == 2 && current_player.shot_meteor_wave9 == 0}", "Glf_695"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave1 == 0}", "Glf_687"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_688"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_689"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_690"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_691"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_692"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_693"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_694"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_695"
 glf_funcRefMap.Add "5000", "Glf_696"
 glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_697"
 glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_698"

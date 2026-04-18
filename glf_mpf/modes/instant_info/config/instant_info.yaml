@@ -9,11 +9,11 @@ event_player:
   flipper_cradle{game.balls_in_play == 1 and current_player.ball_just_started == 0}:
     - info_restart
     - flipper_cradling
-  s_left_flipper_active{current_player.ball_cradled == 1}:
+  s_LeftFlipperButton_active{current_player.ball_cradled == 1}:
     - info_stop
-  s_right_flipper_active{current_player.ball_cradled == 1}:
+  s_RightFlipperButton_active{current_player.ball_cradled == 1}:
     - info_stop
-  s_right_staged_flipper_key_active{current_player.ball_cradled == 1}:
+  s_RightFlipper1Button_active{current_player.ball_cradled == 1}:
     - info_stop
   timer_info_tick{device.timers.info.ticks == 0}:
     - info_ball_num
