@@ -29,7 +29,7 @@ Sub CreateMoonMultiballQualifyMode
             .Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile1 == 1}", Array("backglass_moon_on")
             .Add "mode_moon_multiball_qualify_stopping", Array("backglass_moon_off")
             'Release a ball (Lower the diverter pin) if we are not 
-            .Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls==0}", Array("release_moon_ball")
+            ' .Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls==0}", Array("release_moon_ball")
             .Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
             .Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", Array("release_moon_ball")
             'After a ball has been locked, if the number of balls in the lock is greater than the current players locked balls, release one

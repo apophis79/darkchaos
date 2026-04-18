@@ -3,17 +3,17 @@
 Sub CreateMeteorWaveShows()
 
   With CreateGlfShow("meteor1_explodes")
-    With .AddStep(0.02, Null, Null)
-        With .Shows("flash_color")
-            .Key = "key_DOF13"
-            .Speed = 20
-            .Loops = 9
-            With .Tokens()
-                .Add "color", GIColor3000k
-                .Add "lights", "LBG13"
-            End With
-        End With
-    End With
+    ' With .AddStep(0.02, Null, Null)  'FIXME
+    '     With .Shows("flash_color")
+    '         .Key = "key_DOF13"
+    '         .Speed = 20
+    '         .Loops = 9
+    '         With .Tokens()
+    '             .Add "color", GIColor3000k
+    '             .Add "lights", "LBG13"
+    '         End With
+    '     End With
+    ' End With
     With .AddStep(0.03333, Null, Null)
       With .DOFEvent("13")
         .Action = "DOF_ON"
@@ -283,17 +283,17 @@ Sub CreateMeteorWaveShows()
 
 
   With CreateGlfShow("meteor2_explodes")
-    With .AddStep(0.02, Null, Null)
-        With .Shows("flash_color")
-            .Key = "key_DOF10"
-            .Speed = 20
-            .Loops = 9
-            With .Tokens()
-                .Add "color", GIColor3000k
-                .Add "lights", "LBG10"
-            End With
-        End With
-    End With
+    ' With .AddStep(0.02, Null, Null)  'FIXME
+    '     With .Shows("flash_color")
+    '         .Key = "key_DOF10"
+    '         .Speed = 20
+    '         .Loops = 9
+    '         With .Tokens()
+    '             .Add "color", GIColor3000k
+    '             .Add "lights", "LBG10"
+    '         End With
+    '     End With
+    ' End With
     With .AddStep(0.03333, Null, Null)
       With .DOFEvent("10")
         .Action = "DOF_ON"
@@ -557,17 +557,17 @@ Sub CreateMeteorWaveShows()
 
 
   With CreateGlfShow("meteor3_explodes")
-    With .AddStep(0.02, Null, Null)
-        With .Shows("flash_color")
-            .Key = "key_DOF15"
-            .Speed = 20
-            .Loops = 9
-            With .Tokens()
-                .Add "color", GIColor3000k
-                .Add "lights", "LBG15"
-            End With
-        End With
-    End With
+    ' With .AddStep(0.02, Null, Null)  'FIXME
+    '     With .Shows("flash_color")
+    '         .Key = "key_DOF15"
+    '         .Speed = 20
+    '         .Loops = 9
+    '         With .Tokens()
+    '             .Add "color", GIColor3000k
+    '             .Add "lights", "LBG15"
+    '         End With
+    '     End With
+    ' End With
     With .AddStep(0.03333, Null, Null)
       With .DOFEvent("15")
         .Action = "DOF_ON"
@@ -828,17 +828,17 @@ Sub CreateMeteorWaveShows()
 
 
   With CreateGlfShow("meteor4_explodes")
-    With .AddStep(0.02, Null, Null)
-        With .Shows("flash_color")
-            .Key = "key_DOF11"
-            .Speed = 20
-            .Loops = 9
-            With .Tokens()
-                .Add "color", GIColor3000k
-                .Add "lights", "LBG11"
-            End With
-        End With
-    End With
+    ' With .AddStep(0.02, Null, Null)  'FIXME
+    '     With .Shows("flash_color")
+    '         .Key = "key_DOF11"
+    '         .Speed = 20
+    '         .Loops = 9
+    '         With .Tokens()
+    '             .Add "color", GIColor3000k
+    '             .Add "lights", "LBG11"
+    '         End With
+    '     End With
+    ' End With
     With .AddStep(0.03333, Null, Null)
       With .DOFEvent("11")
         .Action = "DOF_ON"
