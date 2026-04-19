@@ -188,7 +188,7 @@ Sub CreateTrainingHealMode
                 With .Tokens()
                     .Add "lights", "tBumper"
                     .Add "color", HealthColor1
-                    .Add "intensity", 20
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("init_training")
@@ -198,7 +198,7 @@ Sub CreateTrainingHealMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", HealthColor1
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("flash_gi")
@@ -208,7 +208,7 @@ Sub CreateTrainingHealMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", HealthColor1
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("mode_training_heal_stopping")
@@ -220,7 +220,7 @@ Sub CreateTrainingHealMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", HealthColor1
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
 
@@ -245,7 +245,7 @@ Sub CreateTrainingHealMode
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", HealthColor1
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
@@ -258,7 +258,7 @@ Sub CreateTrainingHealMode
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", HealthColor1
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next

@@ -219,7 +219,7 @@ Sub CreateTrainingShieldsMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShieldsColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("flash_gi")
@@ -229,7 +229,7 @@ Sub CreateTrainingShieldsMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShieldsColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("mode_training_shields_stopping")
@@ -241,7 +241,7 @@ Sub CreateTrainingShieldsMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShieldsColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
 
@@ -266,7 +266,7 @@ Sub CreateTrainingShieldsMode
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", ShieldsColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
@@ -279,7 +279,7 @@ Sub CreateTrainingShieldsMode
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", ShieldsColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
