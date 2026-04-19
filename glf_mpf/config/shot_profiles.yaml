@@ -471,7 +471,7 @@ shot_profiles:
        speed: 2
        sync_ms: 0
        show_tokens: 
-         color: "ffA957"
+         color: "ffeede"
          fade: "1000"
      - name: warm
        show: flash_color_with_fade
@@ -479,7 +479,7 @@ shot_profiles:
        speed: 5
        sync_ms: 0
        show_tokens: 
-         color: "edb600"
+         color: "ffc400"
          fade: "1000"
      - name: hot
        show: flash_color

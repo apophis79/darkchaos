@@ -1,8 +1,8 @@
 #config_version=6
 
 mode:
-  start_events: game_start
-  stop_events: game_ended
+  start_events: ball_started
+  stop_events: ball_ended
   priority: 2000
 
 event_player: 
@@ -248,7 +248,7 @@ variable_player:
       action: add
       int: 3000000 * current_player.scoring_multiplier
 
-  ball_started: 
+  mode_score_started: 
     bonus_multiplier: 
       action: set
       int: 1

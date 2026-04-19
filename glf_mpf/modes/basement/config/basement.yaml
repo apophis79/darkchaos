@@ -190,19 +190,19 @@ show_player:
 
 
 sound_player: 
-  player_added{kwargs.num==1}: 
+  player_added{num==1}: 
     voc_p1: 
       key: key_voc_p1
       action: play
-  player_added{kwargs.num==2}: 
+  player_added{num==2}: 
     voc_p2: 
       key: key_voc_p2
       action: play
-  player_added{kwargs.num==3}: 
+  player_added{num==3}: 
     voc_p3: 
       key: key_voc_p3
       action: play
-  player_added{kwargs.num==4}: 
+  player_added{num==4}: 
     voc_p4: 
       key: key_voc_p4
       action: play

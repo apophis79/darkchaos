@@ -441,13 +441,11 @@ sequence_shots:
   center_orbit_left:
     switch_sequence: 
       - s_CenterOrb1
-      - s_CenterOrb2
       - s_CenterOrb3
     sequence_timeout: 600ms
   center_orbit_right:
     switch_sequence: 
       - s_CenterOrb3
-      - s_CenterOrb2
       - s_CenterOrb1
     sequence_timeout: 600ms
   right_orbit:
