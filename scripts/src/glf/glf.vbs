@@ -11166,7 +11166,7 @@ Class GlfShowStep
                         If light_parts(2) = "stop" Then
                             yaml = yaml & "    " & light_parts(0) & ": stop" & vbCrLf    
                         Else
-                            yaml = yaml & "    " & light_parts(0) & ": " & light_parts(2) & "-f" & light_parts(3) & "ms%" & light_parts(1) & vbCrLf
+                            yaml = yaml & "    " & light_parts(0) & ": " & light_parts(2) & "%" & light_parts(1) & "-f" & light_parts(3) & vbCrLf
                         End If
                     Else
                         If light_parts(2) = "stop" Then

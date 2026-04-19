@@ -2,30 +2,30 @@
 
 - duration: 1s
   lights:
-    (lights): e81416-f1000ms%100
+    (lights): e81416%100-f1000
 
 - duration: 1s
   lights:
-    (lights): ffa500-f1000ms%100
+    (lights): ffa500%100-f1000
 
 - duration: 1s
   lights:
-    (lights): faeb36-f1000ms%100
+    (lights): faeb36%100-f1000
 
 - duration: 1s
   lights:
-    (lights): 79c314-f1000ms%100
+    (lights): 79c314%100-f1000
 
 - duration: 1s
   lights:
-    (lights): 487de7-f1000ms%100
+    (lights): 487de7%100-f1000
 
 - duration: 1s
   lights:
-    (lights): 4b369d-f1000ms%100
+    (lights): 4b369d%100-f1000
 
 - duration: 1s
   lights:
-    (lights): 70369d-f1000ms%100
+    (lights): 70369d%100-f1000
 
 
