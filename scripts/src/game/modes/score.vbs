@@ -7,8 +7,8 @@ Const MinimumScore = -1000000
 Sub CreateScoreMode
 
     With CreateGlfMode("score", 2000)
-        .StartEvents = Array(GLF_GAME_START)
-        .StopEvents = Array("game_ended")
+        .StartEvents = Array("ball_started")
+        .StopEvents = Array("ball_ended")
 
 
         With .EventPlayer
@@ -309,7 +309,7 @@ Sub CreateScoreMode
             End With
 
             'manage bonus multiplier
-            With .EventName(GLF_BALL_STARTED) 
+            With .EventName("mode_score_started") 
                 With .Variable("bonus_multiplier")
                     .Action = "set"
                     .Int = 1
