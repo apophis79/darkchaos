@@ -90,6 +90,7 @@ Dim glf_max_lightmap_sync_enabled : glf_max_lightmap_sync_enabled = False
 Dim glf_max_lights_test : glf_max_lights_test = 0
 Dim GlfSwitchNameMap
 Set GlfSwitchNameMap = CreateObject("Scripting.Dictionary")
+GlfSwitchNameMap.Add "kwargs.", ""
 Dim soundUidMap : Set soundUidMap = CreateObject("Scripting.Dictionary")
 Dim glf_master_volume : glf_master_volume = 0.8
 
