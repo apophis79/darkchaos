@@ -117,6 +117,7 @@ Sub CreateBaseMode()
             .Add "s_TargetMystery5_active", Array("magnet_activated_flash","magnet_activated_gi")
             .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
             ' .Add "s_MoonRamp_active", Array("right_ramp_hit")
+            .Add "balldevice_moon_lock_ball_entered", Array("right_ramp_hit")
             .Add "s_LeftBumper1_active", Array("left_side_hit")
 
             'knock'em all down

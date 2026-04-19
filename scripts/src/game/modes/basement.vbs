@@ -10,6 +10,7 @@ Sub CreateBasementMode()
     With CreateGlfMode("basement", 100)
         .StartEvents = Array("reset_complete")
         .StopEvents = Array("when_the_universe_ends")
+        .GameMode = False
 
         With .EventPlayer()
             '.Add "s_left_staged_flipper_key_active", Array("test_show1","test_show2") 'DEBUG
