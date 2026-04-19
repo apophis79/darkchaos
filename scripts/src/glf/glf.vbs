@@ -652,6 +652,11 @@ Public Sub Glf_Init(ByRef table)
         .ValueType = "int"
         .Persist = True
     End With
+	With CreateMachineVar("last_game_players")
+        .InitialValue = 0
+        .ValueType = "int"
+        .Persist = False
+    End With
 
 	If Not IsNull(glf_highscore) Then
 		glf_highscore.WriteDefaults()
@@ -16684,6 +16689,8 @@ Sub Glf_AddPlayer()
             SetPlayerStateByPlayer "number", 1, 0
             Glf_BcpAddPlayer 1
             glf_currentPlayer = "PLAYER 1"
+            Glf_BcpSendMachineVar "last_game_players", 1, 0
+            glf_machine_vars("last_game_players").Value = 1
         Case 0:     
             If GetPlayerState(GLF_CURRENT_BALL) = 1 Then
                 kwargs("num") = 2
@@ -16692,6 +16699,8 @@ Sub Glf_AddPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 1
                 SetPlayerStateByPlayer "number", 2, 1
                 Glf_BcpAddPlayer 2
+                Glf_BcpSendMachineVar "last_game_players", 2, 1
+                glf_machine_vars("last_game_players").Value = 2
             End If
         Case 1:
             If GetPlayerState(GLF_CURRENT_BALL) = 1 Then
@@ -16701,6 +16710,8 @@ Sub Glf_AddPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 2
                 SetPlayerStateByPlayer "number", 3, 2
                 Glf_BcpAddPlayer 3
+                Glf_BcpSendMachineVar "last_game_players", 3, 2
+                glf_machine_vars("last_game_players").Value = 3
             End If     
         Case 2:   
             If GetPlayerState(GLF_CURRENT_BALL) = 1 Then
@@ -16710,6 +16721,8 @@ Sub Glf_AddPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 3
                 SetPlayerStateByPlayer "number", 4, 3
                 Glf_BcpAddPlayer 4
+                Glf_BcpSendMachineVar "last_game_players", 4, 3
+                glf_machine_vars("last_game_players").Value = 4
             End If  
             glf_canAddPlayers = False
     End Select

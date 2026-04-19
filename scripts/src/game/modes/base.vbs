@@ -27,7 +27,7 @@ Sub CreateBaseMode()
         With .EventPlayer()
 
             'new ball
-            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","start_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","start_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger", "display_p1_score{machine.last_game_players>0}", "display_p2_score{machine.last_game_players>1}", "display_p3_score{machine.last_game_players>2}", "display_p4_score{machine.last_game_players>3}")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "mode_base_started{current_player.number == 1}", Array("flash_player1_score","display34_ball_num")
             .Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
@@ -261,22 +261,22 @@ Sub CreateBaseMode()
                 
 
         With .SegmentDisplayPlayer()
-            With .EventName("mode_base_started")
+            With .EventName("display_p1_score")
                 With .Display("player1")
                     .Text = "{players[0].score:0>2,}"
                 End With
             End With
-            With .EventName("mode_base_started")
+            With .EventName("display_p2_score")
                With .Display("player2")
                    .Text = "{players[1].score:0>2,}"
                End With
             End With
-            With .EventName("mode_base_started")
+            With .EventName("display_p3_score")
                With .Display("player3")
                    .Text = "{players[2].score:0>2,}"
                End With
             End With
-            With .EventName("mode_base_started")
+            With .EventName("display_p4_score")
                With .Display("player4")
                    .Text = "{players[3].score:0>2,}"
                End With
