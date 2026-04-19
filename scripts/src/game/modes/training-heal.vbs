@@ -21,7 +21,11 @@ Sub CreateTrainingHealMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_heal_started", Array("init_training","raise_diverter","play_lsling_training","play_rsling_training")
+            .Add "mode_training_heal_started", Array("init_training","play_lsling_training","play_rsling_training")
+            'handle health diverter
+            .Add "left_orbit_hit", Array("raise_diverter")
+            .Add "right_orbit_hit", Array("raise_diverter")
+            .Add "timer_tr_health_diverter_complete", Array("drop_diverter")
             'successfull shot
             .Add "s_Bumper1_active", Array("check_add_training_health_bump")
             .Add "s_Bumper2_active", Array("check_add_training_health_bump")
@@ -43,7 +47,7 @@ Sub CreateTrainingHealMode
             'Stop the training
             .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot","training_stopped")
             .Add "timer_training_heal_complete", Array("stop_training","training_stopped","play_voc_training_incomplete")
-            .Add "mode_training_heal_stopping{current_player.training_heal_achieved==0}", Array("drop_diverter")
+            .Add "mode_training_heal_stopping", Array("drop_diverter")
             'handle gi flicker shows
             .Add "timer_training_heal_tick", Array("flicker_gi")
             'Handle moon ramp
@@ -331,6 +335,17 @@ Sub CreateTrainingHealMode
             .EndValue = 0
             With .ControlEvents()
                 .EventName = "init_training"
+                .Action = "restart"
+            End With
+        End With
+
+        'Health diverter
+        With .Timers("tr_health_diverter")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 2
+            With .ControlEvents()
+                .EventName = "raise_diverter"
                 .Action = "restart"
             End With
         End With
