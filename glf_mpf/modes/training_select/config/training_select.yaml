@@ -119,134 +119,134 @@ shots:
   training_select_health1:
     profile: training_select
     show_tokens: 
-      lights: LH1
-      color: 00dd00
+      lights: "LH1"
+      color: "00dd00"
   training_select_health2:
     profile: training_select
     show_tokens: 
-      lights: LH2
-      color: 00dd00
+      lights: "LH2"
+      color: "00dd00"
   training_select_health3:
     profile: training_select
     show_tokens: 
-      lights: LH3
-      color: 00dd00
+      lights: "LH3"
+      color: "00dd00"
   training_select_health4:
     profile: training_select
     show_tokens: 
-      lights: LH4
-      color: 00dd00
+      lights: "LH4"
+      color: "00dd00"
   training_select_health5:
     profile: training_select
     show_tokens: 
-      lights: LH5
-      color: 00dd00
+      lights: "LH5"
+      color: "00dd00"
   training_select_health6:
     profile: training_select
     show_tokens: 
-      lights: LH6
-      color: 00dd00
+      lights: "LH6"
+      color: "00dd00"
   training_select_health7:
     profile: training_select
     show_tokens: 
-      lights: LH7
-      color: 00dd00
+      lights: "LH7"
+      color: "00dd00"
   training_select_health8:
     profile: training_select
     show_tokens: 
-      lights: LH8
-      color: 00dd00
+      lights: "LH8"
+      color: "00dd00"
   training_select_health9:
     profile: training_select
     show_tokens: 
-      lights: LH9
-      color: 00dd00
+      lights: "LH9"
+      color: "00dd00"
   training_select_cluster_charge1:
     profile: training_select
     show_tokens: 
-      lights: LCC1
-      color: dd00dd
+      lights: "LCC1"
+      color: "dd00dd"
   training_select_cluster_charge2:
     profile: training_select
     show_tokens: 
-      lights: LCC2
-      color: dd00dd
+      lights: "LCC2"
+      color: "dd00dd"
   training_select_cluster_charge3:
     profile: training_select
     show_tokens: 
-      lights: LCC3
-      color: dd00dd
+      lights: "LCC3"
+      color: "dd00dd"
   training_select_proton_charge1:
     profile: training_select
     show_tokens: 
-      lights: LPC1
-      color: 00dddd
+      lights: "LPC1"
+      color: "00dddd"
   training_select_proton_charge2:
     profile: training_select
     show_tokens: 
-      lights: LPC2
-      color: 00dddd
+      lights: "LPC2"
+      color: "00dddd"
   training_select_proton_charge3:
     profile: training_select
     show_tokens: 
-      lights: LPC3
-      color: 00dddd
+      lights: "LPC3"
+      color: "00dddd"
   training_select_moon_lane1:
     profile: training_select
     show_tokens: 
-      lights: LLO
-      color: ccbb00
+      lights: "LLO"
+      color: "ccbb00"
   training_select_moon_lane2:
     profile: training_select
     show_tokens: 
-      lights: LLI
-      color: ccbb00
+      lights: "LLI"
+      color: "ccbb00"
   training_select_moon_lane3:
     profile: training_select
     show_tokens: 
-      lights: LRI
-      color: ccbb00
+      lights: "LRI"
+      color: "ccbb00"
   training_select_moon_lane4:
     profile: training_select
     show_tokens: 
-      lights: LRO
-      color: ccbb00
+      lights: "LRO"
+      color: "ccbb00"
   training_select_ship_charge1:
     profile: training_select
     show_tokens: 
-      lights: LF1
-      color: 0500ee
+      lights: "LF1"
+      color: "0500ee"
   training_select_ship_charge2:
     profile: training_select
     show_tokens: 
-      lights: LF2
-      color: 0500ee
+      lights: "LF2"
+      color: "0500ee"
   training_select_ship_charge3:
     profile: training_select
     show_tokens: 
-      lights: LF3
-      color: 0500ee
+      lights: "LF3"
+      color: "0500ee"
   training_select_shield_charge1:
     profile: training_select
     show_tokens: 
-      lights: LSC1
-      color: 0010cc
+      lights: "LSC1"
+      color: "0010cc"
   training_select_shield_charge2:
     profile: training_select
     show_tokens: 
-      lights: LSC2
-      color: 0010cc
+      lights: "LSC2"
+      color: "0010cc"
   training_select_shield_charge3:
     profile: training_select
     show_tokens: 
-      lights: LSC3
-      color: 0010cc
+      lights: "LSC3"
+      color: "0010cc"
   select_heal:
     profile: training_select
     restart_events: heal_unselected, make_selection
     show_tokens: 
-      lights: tHeal
-      color: 00dd00
+      lights: "tHeal"
+      color: "00dd00"
     control_events: 
       - events: heal_selected{current_player.ts_hurry_up==0}
         state: 1
@@ -256,8 +256,8 @@ shots:
     profile: training_select
     restart_events: cluster_bomb_unselected, make_selection
     show_tokens: 
-      lights: tClusterAll
-      color: dd00dd
+      lights: "tClusterAll"
+      color: "dd00dd"
     control_events: 
       - events: cluster_bomb_selected{current_player.ts_hurry_up==0}
         state: 1
@@ -267,8 +267,8 @@ shots:
     profile: training_select
     restart_events: proton_cannon_unselected, make_selection
     show_tokens: 
-      lights: tProtonAll
-      color: 00dddd
+      lights: "tProtonAll"
+      color: "00dddd"
     control_events: 
       - events: proton_cannon_selected{current_player.ts_hurry_up==0}
         state: 1
@@ -278,8 +278,8 @@ shots:
     profile: training_select
     restart_events: moon_missile_unselected, make_selection
     show_tokens: 
-      lights: tMoonAll
-      color: ccbb00
+      lights: "tMoonAll"
+      color: "ccbb00"
     control_events: 
       - events: moon_missile_selected{current_player.ts_hurry_up==0}
         state: 1
@@ -289,8 +289,8 @@ shots:
     profile: training_select
     restart_events: ship_save_unselected, make_selection
     show_tokens: 
-      lights: tSaver
-      color: 0500ee
+      lights: "tSaver"
+      color: "0500ee"
     control_events: 
       - events: ship_save_selected{current_player.ts_hurry_up==0}
         state: 1
@@ -300,8 +300,8 @@ shots:
     profile: training_select
     restart_events: shields_unselected, make_selection
     show_tokens: 
-      lights: tShields
-      color: 0010cc
+      lights: "tShields"
+      color: "0010cc"
     control_events: 
       - events: shields_selected{current_player.ts_hurry_up==0}
         state: 1
@@ -314,25 +314,25 @@ show_player:
       key: key_ts_gi
       speed: 2
       show_tokens: 
-        lights: GI
-        fade: 900
-        color: ffdca3
+        lights: "GI"
+        fade: "900"
+        color: "ffdca3"
   skip_selected: 
     flash_color: 
       key: key_skip_gi
       priority: 100
       speed: 11
       show_tokens: 
-        lights: gi22
-        color: ffffff
+        lights: "gi22"
+        color: "ffffff"
   skip_unselected: 
     flash_color: 
       action: stop
       key: key_skip_gi
       speed: 13
       show_tokens: 
-        lights: gi22
-        color: ffffff
+        lights: "gi22"
+        color: "ffffff"
 
 
 sound_player: 

@@ -286,7 +286,7 @@ shots:
   flwiz_shoot_again:
     profile: shoot_again
     show_tokens: 
-      color: 0500ee
+      color: "0500ee"
     reset_events: multiball_flwiz_shoot_again_ended
     control_events: 
       - events: mode_fully_loaded_wizard_started
@@ -296,8 +296,8 @@ shots:
   flwiz_proton1:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LM1
-      color: 00dddd
+      lights: "LM1"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton1_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -306,8 +306,8 @@ shots:
   flwiz_proton2:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LM2
-      color: 00dddd
+      lights: "LM2"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton2_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -316,8 +316,8 @@ shots:
   flwiz_proton3:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LM3
-      color: 00dddd
+      lights: "LM3"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton3_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -326,8 +326,8 @@ shots:
   flwiz_proton4:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LM4
-      color: 00dddd
+      lights: "LM4"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton4_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -336,8 +336,8 @@ shots:
   flwiz_proton5:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LM5
-      color: 00dddd
+      lights: "LM5"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton5_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -346,8 +346,8 @@ shots:
   flwiz_proton6:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: tFLWp6
-      color: 00dddd
+      lights: "tFLWp6"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton6_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -356,8 +356,8 @@ shots:
   flwiz_proton_round1:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LPR1
-      color: 00dddd
+      lights: "LPR1"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton1_shot_hit
         state: 0
@@ -366,8 +366,8 @@ shots:
   flwiz_proton_round2:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LPR2
-      color: 00dddd
+      lights: "LPR2"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton2_shot_hit
         state: 0
@@ -376,8 +376,8 @@ shots:
   flwiz_proton_round3:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LPR3
-      color: 00dddd
+      lights: "LPR3"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton3_shot_hit
         state: 0
@@ -386,8 +386,8 @@ shots:
   flwiz_proton_round4:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LPR4
-      color: 00dddd
+      lights: "LPR4"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton4_shot_hit
         state: 0
@@ -396,8 +396,8 @@ shots:
   flwiz_proton_round5:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LPR5
-      color: 00dddd
+      lights: "LPR5"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton5_shot_hit
         state: 0
@@ -406,8 +406,8 @@ shots:
   flwiz_proton_round6:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LPR6
-      color: 00dddd
+      lights: "LPR6"
+      color: "00dddd"
     control_events: 
       - events: flwiz_proton6_shot_hit
         state: 0
@@ -416,8 +416,8 @@ shots:
   flwiz_moon:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LS5
-      color: ccbb00
+      lights: "LS5"
+      color: "ccbb00"
     control_events: 
       - events: flwiz_moon_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -426,8 +426,8 @@ shots:
   flwiz_moon_rounds:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: tMoonR
-      color: ccbb00
+      lights: "tMoonR"
+      color: "ccbb00"
     control_events: 
       - events: flwiz_phase1_moon_hit
         state: 0
@@ -436,8 +436,8 @@ shots:
   flwiz_cluster:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: LS3
-      color: dd00dd
+      lights: "LS3"
+      color: "dd00dd"
     control_events: 
       - events: flwiz_cluster_ready, mode_fully_loaded_wizard_started
         state: 1
@@ -446,8 +446,8 @@ shots:
   flwiz_cluster_rounds:
     profile: fully_loaded_profile
     show_tokens: 
-      lights: tClusterR
-      color: dd00dd
+      lights: "tClusterR"
+      color: "dd00dd"
     control_events: 
       - events: flwiz_phase1_cluster_hit
         state: 0
@@ -462,9 +462,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB1
-        color: ffffff
-        fade: 50
+        lights: "LB1"
+        color: "ffffff"
+        fade: "50"
   s_Bumper2_active: 
     flash_color_with_fade: 
       key: key_bumper2_flash
@@ -472,9 +472,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB2
-        color: ffffff
-        fade: 50
+        lights: "LB2"
+        color: "ffffff"
+        fade: "50"
   s_Bumper3_active: 
     flash_color_with_fade: 
       key: key_bumper3_flash
@@ -482,9 +482,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB3
-        color: ffffff
-        fade: 50
+        lights: "LB3"
+        color: "ffffff"
+        fade: "50"
   s_Bumper4_active: 
     flash_color_with_fade: 
       key: key_bumper4_flash
@@ -492,89 +492,89 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB4
-        color: ffffff
-        fade: 50
+        lights: "LB4"
+        color: "ffffff"
+        fade: "50"
   flwiz_bumpers_show1: 
     flash_color_fadeout: 
       key: key_bumpers_show1
       loops: 0
       speed: 10
       show_tokens: 
-        lights: tBumper
-        color: 555555
+        lights: "tBumper"
+        color: "555555"
   flwiz_bumper1_show2p: 
     flash_color_fadeout: 
       key: key_bumper1_show2p
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB1
-        color: 00dddd
+        lights: "LB1"
+        color: "00dddd"
   flwiz_bumper2_show2p: 
     flash_color_fadeout: 
       key: key_bumper2_show2p
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB2
-        color: 00dddd
+        lights: "LB2"
+        color: "00dddd"
   flwiz_bumper3_show2p: 
     flash_color_fadeout: 
       key: key_bumper3_show2p
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB3
-        color: 00dddd
+        lights: "LB3"
+        color: "00dddd"
   flwiz_bumper1_show2c: 
     flash_color_fadeout: 
       key: key_bumper1_show2c
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB1
-        color: dd00dd
+        lights: "LB1"
+        color: "dd00dd"
   flwiz_bumper2_show2c: 
     flash_color_fadeout: 
       key: key_bumper2_show2c
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB2
-        color: dd00dd
+        lights: "LB2"
+        color: "dd00dd"
   flwiz_bumper3_show2c: 
     flash_color_fadeout: 
       key: key_bumper3_show2c
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB3
-        color: dd00dd
+        lights: "LB3"
+        color: "dd00dd"
   flwiz_bumper1_show2m: 
     flash_color_fadeout: 
       key: key_bumper1_show2m
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB1
-        color: ccbb00
+        lights: "LB1"
+        color: "ccbb00"
   flwiz_bumper2_show2m: 
     flash_color_fadeout: 
       key: key_bumper2_show2m
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB2
-        color: ccbb00
+        lights: "LB2"
+        color: "ccbb00"
   flwiz_bumper3_show2m: 
     flash_color_fadeout: 
       key: key_bumper3_show2m
       loops: 0
       speed: 10
       show_tokens: 
-        lights: LB3
-        color: ccbb00
+        lights: "LB3"
+        color: "ccbb00"
   flwiz_sjp1_show1: 
     insert_gi_spin_center: 
       key: key_flwiz_sjp1_show1
@@ -582,16 +582,16 @@ show_player:
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ffffff
+        intensity: "100"
+        color: "ffffff"
   flwiz_sjp1_show2: 
     flash_color: 
       key: key_flwiz_sjp1_show2
       loops: 4
       speed: 20
       show_tokens: 
-        lights: tFlasher
-        color: ccbb00
+        lights: "tFlasher"
+        color: "ccbb00"
   flwiz_sjp2_show1: 
     insert_gi_spin_center: 
       key: key_flwiz_sjp2_show1
@@ -599,8 +599,8 @@ show_player:
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ed1800
+        intensity: "100"
+        color: "ed1800"
       events_when_completed: flwiz_finalize
   flwiz_sjp2_show2: 
     flash_color: 
@@ -608,8 +608,8 @@ show_player:
       loops: 4
       speed: 20
       show_tokens: 
-        lights: tFlasher
-        color: dd0400
+        lights: "tFlasher"
+        color: "dd0400"
   proton_fired: 
     flash_color: 
       key: key_flwiz_proton_fired
@@ -617,17 +617,17 @@ show_player:
       loops: 4
       speed: 20
       show_tokens: 
-        lights: tBlast
-        color: 00dddd
+        lights: "tBlast"
+        color: "00dddd"
   proton_fired_flash_show: 
     flash_color_with_fade: 
       key: key_flwiz_proton_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: 00dddd
-        fade: 300
+        lights: "tFlasherU"
+        color: "00dddd"
+        fade: "300"
   play_flwiz_proton_show: 
     flwiz_proton_show: 
       key: key_flwiz_proton_show
@@ -644,9 +644,9 @@ show_player:
       loops: 3
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: dd00dd
-        fade: 300
+        lights: "tFlasherU"
+        color: "dd00dd"
+        fade: "300"
   play_flwiz_cluster_show: 
     flwiz_cluster_show: 
       key: key_flwiz_cluster_show

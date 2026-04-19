@@ -37,8 +37,8 @@ show_player:
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tMoonAll
-        color: dd0400
+        lights: "tMoonAll"
+        color: "dd0400"
 
 
 sound_player: 

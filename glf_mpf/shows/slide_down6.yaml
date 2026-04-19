@@ -6,8 +6,8 @@
       key: insert_gi_slide_downA
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 100
+        color: "ffffff"
+        intensity: "100"
 
 - duration: 0.1s
   shows:
@@ -15,8 +15,8 @@
       key: insert_gi_slide_downB
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 50
+        color: "ffffff"
+        intensity: "50"
 
 - duration: 0.1s
   shows:
@@ -24,8 +24,8 @@
       key: insert_gi_slide_downC
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 20
+        color: "ffffff"
+        intensity: "20"
 
 - duration: 0.1s
   shows:
@@ -33,8 +33,8 @@
       key: insert_gi_slide_downD
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 10
+        color: "ffffff"
+        intensity: "10"
 
 - duration: 0.1s
   shows:
@@ -42,8 +42,8 @@
       key: insert_gi_slide_downE
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 5
+        color: "ffffff"
+        intensity: "5"
 
 - duration: 0.1s
   shows:
@@ -51,7 +51,7 @@
       key: insert_gi_slide_downF
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 3
+        color: "ffffff"
+        intensity: "3"
 
 

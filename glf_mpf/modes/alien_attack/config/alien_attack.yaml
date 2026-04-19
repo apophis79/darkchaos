@@ -39,7 +39,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot1, alien_attack_finished
     show_tokens: 
-      lights: LS1
+      lights: "LS1"
     control_events: 
       - events: left_side_hit
         state: 0
@@ -49,7 +49,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot2, alien_attack_finished
     show_tokens: 
-      lights: LS2
+      lights: "LS2"
     control_events: 
       - events: left_orbit_hit
         state: 0
@@ -59,7 +59,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot3, alien_attack_finished
     show_tokens: 
-      lights: LS3
+      lights: "LS3"
     control_events: 
       - events: left_ramp_hit
         state: 0
@@ -69,7 +69,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot4, alien_attack_finished
     show_tokens: 
-      lights: LS4
+      lights: "LS4"
     control_events: 
       - events: inner_orbit_hit
         state: 0
@@ -79,7 +79,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot5, alien_attack_finished
     show_tokens: 
-      lights: LPC4
+      lights: "LPC4"
     control_events: 
       - events: center_orbit_left_hit
         state: 0
@@ -89,7 +89,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot6, alien_attack_finished
     show_tokens: 
-      lights: LPC5
+      lights: "LPC5"
     control_events: 
       - events: center_orbit_right_hit
         state: 0
@@ -99,7 +99,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot7, alien_attack_finished
     show_tokens: 
-      lights: LS5
+      lights: "LS5"
     control_events: 
       - events: right_ramp_hit
         state: 0
@@ -109,7 +109,7 @@ shots:
     profile: alien
     restart_events: reset_alien_shot8, alien_attack_finished
     show_tokens: 
-      lights: LS6
+      lights: "LS6"
     control_events: 
       - events: right_orbit_hit
         state: 0
@@ -128,9 +128,9 @@ show_player:
       loops: 4
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: ffb2a6
-        fade: 300
+        lights: "tFlasherU"
+        color: "ffb2a6"
+        fade: "300"
   alien_hit_show2: 
     insert_swap2: 
       key: key_alien_flash2
@@ -138,9 +138,9 @@ show_player:
       loops: 2
       speed: 1.5
       show_tokens: 
-        color1: ff3300
-        color2: ff0300
-        intensity: 100
+        color1: "ff3300"
+        color2: "ff0300"
+        intensity: "100"
 
 
 sound_player: 

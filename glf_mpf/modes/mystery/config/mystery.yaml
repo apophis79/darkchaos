@@ -254,8 +254,8 @@ shots:
     switch: s_TargetMystery1
     profile: flicker_on
     show_tokens: 
-      lights: LM1
-      color: aa33aa
+      lights: "LM1"
+      color: "aa33aa"
     control_events: 
       - events: complete_mystery_shots
         state: 1
@@ -263,8 +263,8 @@ shots:
     switch: s_TargetMystery2
     profile: flicker_on
     show_tokens: 
-      lights: LM2
-      color: aa33aa
+      lights: "LM2"
+      color: "aa33aa"
     control_events: 
       - events: complete_mystery_shots
         state: 1
@@ -272,8 +272,8 @@ shots:
     switch: s_TargetMystery3
     profile: flicker_on
     show_tokens: 
-      lights: LM3
-      color: aa33aa
+      lights: "LM3"
+      color: "aa33aa"
     control_events: 
       - events: complete_mystery_shots
         state: 1
@@ -281,8 +281,8 @@ shots:
     switch: s_TargetMystery4
     profile: flicker_on
     show_tokens: 
-      lights: LM4
-      color: aa33aa
+      lights: "LM4"
+      color: "aa33aa"
     control_events: 
       - events: complete_mystery_shots
         state: 1
@@ -290,8 +290,8 @@ shots:
     switch: s_TargetMystery5
     profile: flicker_on
     show_tokens: 
-      lights: LM5
-      color: aa33aa
+      lights: "LM5"
+      color: "aa33aa"
     control_events: 
       - events: complete_mystery_shots
         state: 1
@@ -299,8 +299,8 @@ shots:
     profile: qualified_shot
     restart_events: restart_qualify_mystery
     show_tokens: 
-      lights: LMR
-      color: aa33aa
+      lights: "LMR"
+      color: "aa33aa"
     control_events: 
       - events: qualify_mystery_on_complete
         state: 1
@@ -312,22 +312,22 @@ show_player:
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tMystery
-        color: aa33aa
+        lights: "tMystery"
+        color: "aa33aa"
   mystery_flash: 
     flash_color: 
       key: key_loaded_wiz_ready
       loops: 3
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: aa33aa
+        lights: "tFlasherU"
+        color: "aa33aa"
   play_mystery_show: 
     gi_spin1_cw: 
       key: key_mystery_show
       loops: 1
       show_tokens: 
-        intensity: 100
+        intensity: "100"
       events_when_completed: restart_qualify_mystery
 
 

@@ -135,8 +135,8 @@ shots:
     profile: off_on_color
     restart_events: combos1_unlit, reset_combos
     show_tokens: 
-      lights: LC1
-      color: ffb46b
+      lights: "LC1"
+      color: "ffb46b"
     control_events: 
       - events: combos1_lit
         state: 1
@@ -144,8 +144,8 @@ shots:
     profile: off_on_color
     restart_events: combos2_unlit, reset_combos
     show_tokens: 
-      lights: LC2
-      color: ffb46b
+      lights: "LC2"
+      color: "ffb46b"
     control_events: 
       - events: combos2_lit
         state: 1
@@ -153,8 +153,8 @@ shots:
     profile: off_on_color
     restart_events: combos3_unlit, reset_combos
     show_tokens: 
-      lights: LC3
-      color: ffb46b
+      lights: "LC3"
+      color: "ffb46b"
     control_events: 
       - events: combos3_lit
         state: 1
@@ -162,8 +162,8 @@ shots:
     profile: off_on_color
     restart_events: combos4_unlit, reset_combos
     show_tokens: 
-      lights: LC4
-      color: ffb46b
+      lights: "LC4"
+      color: "ffb46b"
     control_events: 
       - events: combos4_lit
         state: 1
@@ -171,8 +171,8 @@ shots:
     profile: off_on_color
     restart_events: combos5_unlit, reset_combos
     show_tokens: 
-      lights: LC5
-      color: ffb46b
+      lights: "LC5"
+      color: "ffb46b"
     control_events: 
       - events: combos5_lit
         state: 1
@@ -180,8 +180,8 @@ shots:
     profile: off_on_color
     restart_events: combos6_unlit, reset_combos
     show_tokens: 
-      lights: LC6
-      color: ffb46b
+      lights: "LC6"
+      color: "ffb46b"
     control_events: 
       - events: combos6_lit
         state: 1
@@ -189,8 +189,8 @@ shots:
     profile: off_on_color
     restart_events: combos7_unlit, reset_combos
     show_tokens: 
-      lights: LC7
-      color: ffb46b
+      lights: "LC7"
+      color: "ffb46b"
     control_events: 
       - events: combos7_lit
         state: 1
@@ -198,8 +198,8 @@ shots:
     profile: off_on_color
     restart_events: combos8_unlit, reset_combos
     show_tokens: 
-      lights: LC8
-      color: ffb46b
+      lights: "LC8"
+      color: "ffb46b"
     control_events: 
       - events: combos8_lit
         state: 1
@@ -211,136 +211,136 @@ show_player:
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LS1
-        color: ffb46b
+        lights: "LS1"
+        color: "ffb46b"
   left_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo2
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LS2
-        color: ffb46b
+        lights: "LS2"
+        color: "ffb46b"
   left_ramp_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo3
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LS3
-        color: ffb46b
+        lights: "LS3"
+        color: "ffb46b"
   inner_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo4
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LS4
-        color: ffb46b
+        lights: "LS4"
+        color: "ffb46b"
   center_orbit_left_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo5
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPC4
-        color: ffb46b
+        lights: "LPC4"
+        color: "ffb46b"
   center_orbit_right_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo6
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPC5
-        color: ffb46b
+        lights: "LPC5"
+        color: "ffb46b"
   right_ramp_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo7
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LS5
-        color: ffb46b
+        lights: "LS5"
+        color: "ffb46b"
   right_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo8
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LS6
-        color: ffb46b
+        lights: "LS6"
+        color: "ffb46b"
   flash_combos: 
     flash_color: 
       key: key_combos_relaxed
       loops: 6
       speed: 15
       show_tokens: 
-        lights: tCombos
-        color: ffb46b
+        lights: "tCombos"
+        color: "ffb46b"
   combos1_lit: 
     flash_color: 
       key: key_combo1_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC1
-        color: ffb46b
+        lights: "LC1"
+        color: "ffb46b"
   combos2_lit: 
     flash_color: 
       key: key_combo2_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC2
-        color: ffb46b
+        lights: "LC2"
+        color: "ffb46b"
   combos3_lit: 
     flash_color: 
       key: key_combo3_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC3
-        color: ffb46b
+        lights: "LC3"
+        color: "ffb46b"
   combos4_lit: 
     flash_color: 
       key: key_combo4_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC4
-        color: ffb46b
+        lights: "LC4"
+        color: "ffb46b"
   combos5_lit: 
     flash_color: 
       key: key_combo5_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC5
-        color: ffb46b
+        lights: "LC5"
+        color: "ffb46b"
   combos6_lit: 
     flash_color: 
       key: key_combo6_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC6
-        color: ffb46b
+        lights: "LC6"
+        color: "ffb46b"
   combos7_lit: 
     flash_color: 
       key: key_combo7_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC7
-        color: ffb46b
+        lights: "LC7"
+        color: "ffb46b"
   combos8_lit: 
     flash_color: 
       key: key_combo8_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LC8
-        color: ffb46b
+        lights: "LC8"
+        color: "ffb46b"
 
 
 sound_player: 

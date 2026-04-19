@@ -129,26 +129,26 @@ shots:
     switch: s_LeftOutlane
     profile: train_moon_missile
     show_tokens: 
-      lights: LLO
-      color: ccbb00
+      lights: "LLO"
+      color: "ccbb00"
   training_moon_lane2:
     switch: s_LeftInlane
     profile: train_moon_missile
     show_tokens: 
-      lights: LLI
-      color: ccbb00
+      lights: "LLI"
+      color: "ccbb00"
   training_moon_lane3:
     switch: s_RightInlane
     profile: train_moon_missile
     show_tokens: 
-      lights: LRI
-      color: ccbb00
+      lights: "LRI"
+      color: "ccbb00"
   training_moon_lane4:
     switch: s_RightOutlane
     profile: train_moon_missile
     show_tokens: 
-      lights: LRO
-      color: ccbb00
+      lights: "LRO"
+      color: "ccbb00"
 
 show_player: 
   init_training: 
@@ -156,246 +156,246 @@ show_player:
       key: key_training_gi
       speed: 5
       show_tokens: 
-        lights: GI
-        color: ccbb00
-        intensity: 100
+        lights: "GI"
+        color: "ccbb00"
+        intensity: "100"
   flash_gi: 
     flicker_color_on_intensity: 
       key: key_training_gi
       speed: 5
       show_tokens: 
-        lights: GI
-        color: ccbb00
-        intensity: 100
+        lights: "GI"
+        color: "ccbb00"
+        intensity: "100"
   mode_training_moon_missile_stopping: 
     flicker_color: 
       key: key_training_stopping
       loops: 0
       speed: 5
       show_tokens: 
-        lights: GI
-        color: ccbb00
-        intensity: 100
+        lights: "GI"
+        color: "ccbb00"
+        intensity: "100"
   training_achieved: 
     flash_color: 
       key: key_training_flash
       loops: 3
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: ccbb00
+        lights: "tFlasherU"
+        color: "ccbb00"
   play_flicker_gi01: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi01
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi01
-        color: ccbb00
-        intensity: 100
+        lights: "gi01"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi02: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi02
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi02
-        color: ccbb00
-        intensity: 100
+        lights: "gi02"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi03: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi03
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi03
-        color: ccbb00
-        intensity: 100
+        lights: "gi03"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi04: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi04
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi04
-        color: ccbb00
-        intensity: 100
+        lights: "gi04"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi05: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi05
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi05
-        color: ccbb00
-        intensity: 100
+        lights: "gi05"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi06: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi06
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi06
-        color: ccbb00
-        intensity: 100
+        lights: "gi06"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi07: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi07
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi07
-        color: ccbb00
-        intensity: 100
+        lights: "gi07"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi08: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi08
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi08
-        color: ccbb00
-        intensity: 100
+        lights: "gi08"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi09: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi09
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi09
-        color: ccbb00
-        intensity: 100
+        lights: "gi09"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi10: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi10
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi10
-        color: ccbb00
-        intensity: 100
+        lights: "gi10"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi11: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi11
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi11
-        color: ccbb00
-        intensity: 100
+        lights: "gi11"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi12: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi12
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi12
-        color: ccbb00
-        intensity: 100
+        lights: "gi12"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi13: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi13
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi13
-        color: ccbb00
-        intensity: 100
+        lights: "gi13"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi14: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi14
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi14
-        color: ccbb00
-        intensity: 100
+        lights: "gi14"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi15: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi15
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi15
-        color: ccbb00
-        intensity: 100
+        lights: "gi15"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi16: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi16
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi16
-        color: ccbb00
-        intensity: 100
+        lights: "gi16"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi17: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi17
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi17
-        color: ccbb00
-        intensity: 100
+        lights: "gi17"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi18: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi18
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi18
-        color: ccbb00
-        intensity: 100
+        lights: "gi18"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi19: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi19
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi19
-        color: ccbb00
-        intensity: 100
+        lights: "gi19"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi20: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi20
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi20
-        color: ccbb00
-        intensity: 100
+        lights: "gi20"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi21: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi21
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi21
-        color: ccbb00
-        intensity: 100
+        lights: "gi21"
+        color: "ccbb00"
+        intensity: "100"
   play_flicker_gi22: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi22
       loops: 0
       speed: 2
       show_tokens: 
-        lights: gi22
-        color: ccbb00
-        intensity: 100
+        lights: "gi22"
+        color: "ccbb00"
+        intensity: "100"
   play_lsling_training: 
     lsling_rotate1_cw: 
       key: key_lsling_training
       speed: 0.3
       show_tokens: 
-        color: ffffff
-        intensity: 50
+        color: "ffffff"
+        intensity: "50"
   play_rsling_training: 
     rsling_rotate1_ccw: 
       key: key_rsling_training
       speed: 0.3
       show_tokens: 
-        color: ffffff
-        intensity: 50
+        color: "ffffff"
+        intensity: "50"
   s_Bumper1_active: 
     flash_color_with_fade: 
       key: key_bumper1_flash
@@ -403,9 +403,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB1
-        color: ffffff
-        fade: 50
+        lights: "LB1"
+        color: "ffffff"
+        fade: "50"
   s_Bumper2_active: 
     flash_color_with_fade: 
       key: key_bumper2_flash
@@ -413,9 +413,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB2
-        color: ffffff
-        fade: 50
+        lights: "LB2"
+        color: "ffffff"
+        fade: "50"
   s_Bumper3_active: 
     flash_color_with_fade: 
       key: key_bumper3_flash
@@ -423,9 +423,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB3
-        color: ffffff
-        fade: 50
+        lights: "LB3"
+        color: "ffffff"
+        fade: "50"
   s_Bumper4_active: 
     flash_color_with_fade: 
       key: key_bumper4_flash
@@ -433,9 +433,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB4
-        color: ffffff
-        fade: 50
+        lights: "LB4"
+        color: "ffffff"
+        fade: "50"
   training_cancel_warning: 
     flash_color: 
       key: key_training_cancel_mm_warning
@@ -443,8 +443,8 @@ show_player:
       loops: 14
       speed: 15
       show_tokens: 
-        lights: tInlaneGI
-        color: ffae00
+        lights: "tInlaneGI"
+        color: "ffae00"
   training_cancel_warning_stop: 
     flash_color: 
       action: stop
@@ -453,8 +453,8 @@ show_player:
       loops: 14
       speed: 15
       show_tokens: 
-        lights: tInlaneGI
-        color: ffae00
+        lights: "tInlaneGI"
+        color: "ffae00"
 
 
 timers: 

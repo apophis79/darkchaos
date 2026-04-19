@@ -7,8 +7,8 @@
       loops: 0
       speed: 14
       show_tokens: 
-        color: dd0400
-        lights: LMet1
+        color: "dd0400"
+        lights: "LMet1"
 
 - duration: 0.2s
   shows:
@@ -17,8 +17,8 @@
       loops: 0
       speed: 14
       show_tokens: 
-        color: dd0400
-        lights: LMet2
+        color: "dd0400"
+        lights: "LMet2"
 
 - duration: 0.2s
   shows:
@@ -27,8 +27,8 @@
       loops: 0
       speed: 14
       show_tokens: 
-        color: dd0400
-        lights: LMet3
+        color: "dd0400"
+        lights: "LMet3"
 
 - duration: 0.2s
   shows:
@@ -37,8 +37,8 @@
       loops: 0
       speed: 14
       show_tokens: 
-        color: dd0400
-        lights: LMet4
+        color: "dd0400"
+        lights: "LMet4"
 
 - duration: 0.2s
   shows:
@@ -47,8 +47,8 @@
       loops: 0
       speed: 14
       show_tokens: 
-        color: dd0400
-        lights: LMet3
+        color: "dd0400"
+        lights: "LMet3"
 
 - duration: 0.2s
   shows:
@@ -57,7 +57,7 @@
       loops: 0
       speed: 14
       show_tokens: 
-        color: dd0400
-        lights: LMet2
+        color: "dd0400"
+        lights: "LMet2"
 
 

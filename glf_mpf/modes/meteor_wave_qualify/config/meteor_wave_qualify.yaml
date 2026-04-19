@@ -75,33 +75,33 @@ show_player:
       key: key_meteor_wave_alert_show1
       loops: 4
       show_tokens: 
-        color1: ff0000
-        color2: ff9900
-        intensity: 30
+        color1: "ff0000"
+        color2: "ff9900"
+        intensity: "30"
   meteor_wave_alert_show2: 
     rsling_swap_2_2_a: 
       key: key_meteor_wave_alert_show2
       loops: 4
       show_tokens: 
-        color1: ff0000
-        color2: ff9900
-        intensity: 30
+        color1: "ff0000"
+        color2: "ff9900"
+        intensity: "30"
   meteor_wave_alert_show3: 
     lsling_swap_2_2_a: 
       key: key_meteor_wave_alert_show3
       loops: 4
       show_tokens: 
-        color1: ff0000
-        color2: ff9900
-        intensity: 30
+        color1: "ff0000"
+        color2: "ff9900"
+        intensity: "30"
   meteor_wave_alert_show4: 
     rsling_swap_2_2_b: 
       key: key_meteor_wave_alert_show4
       loops: 4
       show_tokens: 
-        color1: ff0000
-        color2: ff9900
-        intensity: 30
+        color1: "ff0000"
+        color2: "ff9900"
+        intensity: "30"
   magnet_activated_gi: 
     flash_color_fadeout: 
       key: key_ts_mag_gi
@@ -109,16 +109,16 @@ show_player:
       loops: 2
       speed: 4.6
       show_tokens: 
-        lights: GI
-        color: ffdca3
+        lights: "GI"
+        color: "ffdca3"
   flipper_cradling: 
     flash_color: 
       key: key_flipper_cradling
       priority: 5000
       speed: 15
       show_tokens: 
-        lights: tInlaneGI
-        color: ffdca3
+        lights: "tInlaneGI"
+        color: "ffdca3"
   flipper_cradle_release: 
     flash_color: 
       action: stop
@@ -126,8 +126,8 @@ show_player:
       priority: 5000
       speed: 15
       show_tokens: 
-        lights: tInlaneGI
-        color: ffdca3
+        lights: "tInlaneGI"
+        color: "ffdca3"
 
 
 sound_player: 

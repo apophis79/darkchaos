@@ -563,25 +563,25 @@ show_player:
     insert_sparkles: 
       key: key_attract_show1
       show_tokens: 
-        intensity: 60
+        intensity: "60"
   play_meteor_fall_left: 
     meteor_fall_left: 
       key: key_meteor_fall_left
       loops: 0
       show_tokens: 
-        intensity: 100
+        intensity: "100"
   play_meteor_fall_center: 
     meteor_fall_center: 
       key: key_meteor_fall_center
       loops: 0
       show_tokens: 
-        intensity: 100
+        intensity: "100"
   play_meteor_fall_right: 
     meteor_fall_right: 
       key: key_meteor_fall_right
       loops: 0
       show_tokens: 
-        intensity: 100
+        intensity: "100"
   play_earth_hit_center: 
     earth_hit_center: 
       key: key_earth_hit_center
@@ -602,133 +602,133 @@ show_player:
       key: key_att_lsling_show1
       loops: 4
       show_tokens: 
-        color1: ff0000
-        color2: ff9900
-        intensity: 50
+        color1: "ff0000"
+        color2: "ff9900"
+        intensity: "50"
   play_att_rsling_show1: 
     rsling_swap_2_2_a: 
       key: key_att_rling_show1
       loops: 4
       show_tokens: 
-        color1: ff0000
-        color2: ff9900
-        intensity: 50
+        color1: "ff0000"
+        color2: "ff9900"
+        intensity: "50"
   play_att_lsling_show2: 
     lsling_rotate1_cw: 
       key: key_att_lsling_show2
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color: ffffff
+        intensity: "80"
+        color: "ffffff"
   play_att_rsling_show2: 
     rsling_rotate1_ccw: 
       key: key_att_rsling_show2
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color: ffffff
+        intensity: "80"
+        color: "ffffff"
   play_att_lsling_show3: 
     lsling_rotate2_ccw: 
       key: key_att_lsling_show3
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color1: 00ffee
-        color2: eeff00
+        intensity: "80"
+        color1: "00ffee"
+        color2: "eeff00"
   play_att_rsling_show3: 
     rsling_rotate2_cw: 
       key: key_att_rsling_show3
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color1: 00ffee
-        color2: aa00ff
+        intensity: "80"
+        color1: "00ffee"
+        color2: "aa00ff"
   play_att_lsling_show4: 
     lsling_rotate1_ccw: 
       key: key_att_lsling_show4
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color: 05ff05
+        intensity: "80"
+        color: "05ff05"
   play_att_rsling_show4: 
     rsling_rotate1_cw: 
       key: key_att_rsling_show4
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color: 05ff05
+        intensity: "80"
+        color: "05ff05"
   play_att_lsling_show5: 
     lsling_rotate1_cw_skip1: 
       key: key_att_lsling_show5
       loops: 2
       show_tokens: 
-        intensity: 100
-        color: 0010cc
+        intensity: "100"
+        color: "0010cc"
   play_att_rsling_show5: 
     rsling_rotate1_cw_skip1: 
       key: key_att_rsling_show5
       loops: 2
       show_tokens: 
-        intensity: 100
-        color: 0010cc
+        intensity: "100"
+        color: "0010cc"
   play_att_lsling_show6: 
     lsling_rotate2_ccw_skip1: 
       key: key_att_lsling_show6
       loops: 2
       show_tokens: 
-        intensity: 80
-        color1: ff0300
-        color2: ff0300
+        intensity: "80"
+        color1: "ff0300"
+        color2: "ff0300"
   play_att_rsling_show6: 
     rsling_rotate2_ccw_skip1: 
       key: key_att_rsling_show6
       loops: 2
       show_tokens: 
-        intensity: 80
-        color1: ff0300
-        color2: ff0300
+        intensity: "80"
+        color1: "ff0300"
+        color2: "ff0300"
   play_att_lsling_show7: 
     lsling_rotate1_ccw: 
       key: key_att_lsling_show7
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color: ccbb00
+        intensity: "80"
+        color: "ccbb00"
   play_att_rsling_show7: 
     rsling_rotate1_ccw: 
       key: key_att_rsling_show7
       loops: 3
       speed: 2
       show_tokens: 
-        intensity: 80
-        color: ccbb00
+        intensity: "80"
+        color: "ccbb00"
   play_att_lsling_show8: 
     lsling_rotate4_ccw: 
       key: key_att_lsling_show8
       loops: 2
       show_tokens: 
-        intensity: 80
-        color1: ccbb00
-        color2: 00dd00
-        color3: ff0300
-        color4: 0500ee
+        intensity: "80"
+        color1: "ccbb00"
+        color2: "00dd00"
+        color3: "ff0300"
+        color4: "0500ee"
   play_att_rsling_show8: 
     rsling_rotate4_cw: 
       key: key_att_rsling_show8
       loops: 2
       show_tokens: 
-        intensity: 80
-        color1: ccbb00
-        color2: 00dd00
-        color3: ff0300
-        color4: 0500ee
+        intensity: "80"
+        color1: "ccbb00"
+        color2: "00dd00"
+        color3: "ff0300"
+        color4: "0500ee"
 
 
 slide_player: 

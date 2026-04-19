@@ -93,8 +93,8 @@ shots:
     profile: training_profile
     restart_events: left_side_training_off, clear_training_shots
     show_tokens: 
-      lights: LS1
-      color: ffae00
+      lights: "LS1"
+      color: "ffae00"
     control_events: 
       - events: left_side_training_on
         state: 1
@@ -102,8 +102,8 @@ shots:
     profile: training_profile
     restart_events: left_orbit_training_off, clear_training_shots
     show_tokens: 
-      lights: LS2
-      color: ffae00
+      lights: "LS2"
+      color: "ffae00"
     control_events: 
       - events: left_orbit_training_on
         state: 1
@@ -111,8 +111,8 @@ shots:
     profile: training_profile
     restart_events: left_ramp_training_off, clear_training_shots
     show_tokens: 
-      lights: LS3
-      color: ffae00
+      lights: "LS3"
+      color: "ffae00"
     control_events: 
       - events: left_ramp_training_on
         state: 1
@@ -120,8 +120,8 @@ shots:
     profile: training_profile
     restart_events: inner_orbit_training_off, clear_training_shots
     show_tokens: 
-      lights: LS4
-      color: ffae00
+      lights: "LS4"
+      color: "ffae00"
     control_events: 
       - events: inner_orbit_training_on
         state: 1
@@ -129,8 +129,8 @@ shots:
     profile: training_profile
     restart_events: center_orbit_left_training_off, clear_training_shots
     show_tokens: 
-      lights: LPC4
-      color: ffae00
+      lights: "LPC4"
+      color: "ffae00"
     control_events: 
       - events: center_orbit_left_training_on
         state: 1
@@ -138,8 +138,8 @@ shots:
     profile: training_profile
     restart_events: center_orbit_right_training_off, clear_training_shots
     show_tokens: 
-      lights: LPC5
-      color: ffae00
+      lights: "LPC5"
+      color: "ffae00"
     control_events: 
       - events: center_orbit_right_training_on
         state: 1
@@ -147,8 +147,8 @@ shots:
     profile: training_profile
     restart_events: right_ramp_training_off, clear_training_shots
     show_tokens: 
-      lights: LS5
-      color: ffae00
+      lights: "LS5"
+      color: "ffae00"
     control_events: 
       - events: right_ramp_training_on
         state: 1
@@ -156,8 +156,8 @@ shots:
     profile: training_profile
     restart_events: right_orbit_training_off, clear_training_shots
     show_tokens: 
-      lights: LS6
-      color: ffae00
+      lights: "LS6"
+      color: "ffae00"
     control_events: 
       - events: right_orbit_training_on
         state: 1
@@ -165,8 +165,8 @@ shots:
     profile: qualified_shot
     restart_events: restart_qualify_training
     show_tokens: 
-      lights: LX
-      color: ffae00
+      lights: "LX"
+      color: "ffae00"
     enable_events: mode_training_qualify_started
     disable_events: start_training_select
     control_events: 
@@ -180,8 +180,8 @@ show_player:
       loops: 3
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: ffae00
+        lights: "tFlasherU"
+        color: "ffae00"
 
 
 sound_player: 

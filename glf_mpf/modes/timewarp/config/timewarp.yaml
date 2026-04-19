@@ -44,8 +44,8 @@ shots:
     profile: powerups
     restart_events: reset_timewarp
     show_tokens: 
-      lights: LTW1
-      color: ccccdd
+      lights: "LTW1"
+      color: "ccccdd"
     control_events: 
       - events: ready_timewarp1
         state: 1
@@ -55,8 +55,8 @@ shots:
     profile: powerups
     restart_events: reset_timewarp
     show_tokens: 
-      lights: LTW2
-      color: ccccdd
+      lights: "LTW2"
+      color: "ccccdd"
     control_events: 
       - events: ready_timewarp2
         state: 1
@@ -70,8 +70,8 @@ show_player:
       loops: 4
       speed: 15
       show_tokens: 
-        lights: tTimewarp
-        color: ccccdd
+        lights: "tTimewarp"
+        color: "ccccdd"
   restart_tw_timer: 
     timewarp: 
       key: key_timewarp_show

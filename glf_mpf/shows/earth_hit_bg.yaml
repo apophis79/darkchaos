@@ -9,8 +9,8 @@
       loops: 0
       speed: 10
       show_tokens: 
-        color: ff0909
-        lights: LBG02
+        color: "ff0909"
+        lights: "LBG02"
 
 - time: 0.1s
 
@@ -21,8 +21,8 @@
       loops: 0
       speed: 10
       show_tokens: 
-        color: ff0909
-        lights: LBG01
+        color: "ff0909"
+        lights: "LBG01"
 
 - time: 0.3s
 

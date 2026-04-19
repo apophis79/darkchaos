@@ -92,8 +92,8 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        lights: GI
-        color: ffdca3
+        lights: "GI"
+        color: "ffdca3"
   tilt_warning: 
     flash_color: 
       key: key_tilt_warning_gi
@@ -101,8 +101,8 @@ show_player:
       loops: 8
       speed: 9
       show_tokens: 
-        lights: tInlaneGI
-        color: ffdca3
+        lights: "tInlaneGI"
+        color: "ffdca3"
   ball_started: 
     flicker_color_off: 
       action: stop
@@ -111,8 +111,8 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        lights: GI
-        color: ffdca3
+        lights: "GI"
+        color: "ffdca3"
   s_Bumper1_active: 
     bumper_bg_show1: 
       key: key_bumper_bg_show1
@@ -131,62 +131,62 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        lights: LBG01
-        color: ffdca3
-        fade: 800
+        lights: "LBG01"
+        color: "ffdca3"
+        fade: "800"
   backglass_dark_off: 
     flicker_color_off: 
       key: key_backglass_dark_off
       loops: 0
       speed: 3
       show_tokens: 
-        lights: LBG01
-        color: ffdca3
-        fade: 800
+        lights: "LBG01"
+        color: "ffdca3"
+        fade: "800"
   backglass_chaos_on: 
     flicker_color_on: 
       key: key_backglass_chaos_on
       loops: 0
       speed: 3
       show_tokens: 
-        lights: LBG02
-        color: ffdca3
-        fade: 800
+        lights: "LBG02"
+        color: "ffdca3"
+        fade: "800"
   backglass_chaos_off: 
     flicker_color_off: 
       key: key_backglass_chaos_off
       loops: 0
       speed: 3
       show_tokens: 
-        lights: LBG02
-        color: ffdca3
-        fade: 800
+        lights: "LBG02"
+        color: "ffdca3"
+        fade: "800"
   backglass_wave_on: 
     flicker_color_on: 
       key: key_backglass_wave_on
       loops: 0
       speed: 3
       show_tokens: 
-        lights: LBG05
-        color: ffdca3
-        fade: 800
+        lights: "LBG05"
+        color: "ffdca3"
+        fade: "800"
   backglass_wave_off: 
     flicker_color_off: 
       key: key_backglass_wave_off
       loops: 0
       speed: 3
       show_tokens: 
-        lights: LBG05
-        color: ffdca3
-        fade: 800
+        lights: "LBG05"
+        color: "ffdca3"
+        fade: "800"
   backglass_wave_flash: 
     flash_color: 
       key: key_backglass_wave_flash
       loops: 9
       speed: 20
       show_tokens: 
-        lights: LBG05
-        color: ffdca3
+        lights: "LBG05"
+        color: "ffdca3"
 
 
 sound_player: 

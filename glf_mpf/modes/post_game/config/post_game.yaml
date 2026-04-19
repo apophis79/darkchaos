@@ -1076,8 +1076,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tTrain
-        color: ffae00
+        lights: "tTrain"
+        color: "ffae00"
   powerup_cluster: 
     flash_color_fadeout: 
       key: key_powerup_cluster
@@ -1085,8 +1085,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tClusterAll
-        color: dd00dd
+        lights: "tClusterAll"
+        color: "dd00dd"
   powerup_moon: 
     flash_color_fadeout: 
       key: key_powerup_moon
@@ -1094,8 +1094,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tMoonAll
-        color: ccbb00
+        lights: "tMoonAll"
+        color: "ccbb00"
   powerup_proton: 
     flash_color_fadeout: 
       key: key_powerup_proton
@@ -1103,8 +1103,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tProtonAll
-        color: 00dddd
+        lights: "tProtonAll"
+        color: "00dddd"
   powerup_shields: 
     flash_color_fadeout: 
       key: key_powerup_shields
@@ -1112,8 +1112,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tShields
-        color: 0010cc
+        lights: "tShields"
+        color: "0010cc"
   powerup_saver: 
     flash_color_fadeout: 
       key: key_powerup_saver
@@ -1121,8 +1121,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tSaver
-        color: 0010cc
+        lights: "tSaver"
+        color: "0010cc"
   powerup_timewarp: 
     flash_color_fadeout: 
       key: key_powerup_timewarp
@@ -1130,8 +1130,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tTimewarp
-        color: ccccdd
+        lights: "tTimewarp"
+        color: "ccccdd"
   powerup_health: 
     flash_color_fadeout: 
       key: key_powerup_health
@@ -1139,8 +1139,8 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tHealth
-        color: 00dd00
+        lights: "tHealth"
+        color: "00dd00"
   powerup_combos: 
     flash_color_fadeout: 
       key: key_powerup_health
@@ -1148,29 +1148,29 @@ show_player:
       loops: 0
       speed: 6
       show_tokens: 
-        lights: tCombos
-        color: ffb46b
+        lights: "tCombos"
+        color: "ffb46b"
   play_slide_left: 
     insert_gi_slide_left: 
       key: key_insert_gi_slide_left
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 100
+        color: "ffffff"
+        intensity: "100"
   play_slide_up: 
     insert_gi_slide_up: 
       key: key_insert_gi_slide_up
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 100
+        color: "ffffff"
+        intensity: "100"
   play_slide_right: 
     insert_gi_slide_right: 
       key: key_insert_gi_slide_right
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 100
+        color: "ffffff"
+        intensity: "100"
   play_slide_down6: 
     slide_down6: 
       key: key_slide_down6
@@ -1181,596 +1181,596 @@ show_player:
       loops: 8
       speed: 20
       show_tokens: 
-        lights: FL1
-        color: ffe7a6
+        lights: "FL1"
+        color: "ffe7a6"
   final_flash2: 
     flash_color: 
       key: key_final_flash2
       loops: 8
       speed: 20
       show_tokens: 
-        lights: FL2
-        color: ffe7a6
+        lights: "FL2"
+        color: "ffe7a6"
   final_flash3: 
     flash_color: 
       key: key_final_flash3
       loops: 8
       speed: 20
       show_tokens: 
-        lights: FL3
-        color: ffe7a6
+        lights: "FL3"
+        color: "ffe7a6"
   final_flash4: 
     flash_color: 
       key: key_final_flash4
       loops: 8
       speed: 20
       show_tokens: 
-        lights: tFL5
-        color: ffe7a6
+        lights: "tFL5"
+        color: "ffe7a6"
   final_flash5: 
     flash_color: 
       key: key_final_flash5
       loops: 8
       speed: 20
       show_tokens: 
-        lights: tFL6
-        color: ffe7a6
+        lights: "tFL6"
+        color: "ffe7a6"
   play_flasher1_flash_magenta: 
     flash_color_fadeout: 
       key: key_flasher1_flash_magenta
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL1
-        color: dd00dd
+        lights: "FL1"
+        color: "dd00dd"
   play_flasher1_flash_3000k: 
     flash_color_fadeout: 
       key: key_flasher1_flash_3000k
       loops: 0
       speed: 4
       show_tokens: 
-        lights: FL1
-        color: ffdca3
+        lights: "FL1"
+        color: "ffdca3"
   play_flasher1_flash_white: 
     flash_color_fadeout: 
       key: key_flasher1_flash_white
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL1
-        color: ccccdd
+        lights: "FL1"
+        color: "ccccdd"
   play_flasher2_flash_3000k: 
     flash_color_fadeout: 
       key: key_flasher2_flash_3000k
       loops: 0
       speed: 4
       show_tokens: 
-        lights: FL2
-        color: ffdca3
+        lights: "FL2"
+        color: "ffdca3"
   play_flasher2_flash_white: 
     flash_color_fadeout: 
       key: key_flasher2_flash_white
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL2
-        color: ccccdd
+        lights: "FL2"
+        color: "ccccdd"
   play_flasher2_flash_yellow: 
     flash_color_fadeout: 
       key: key_flasher2_flash_yellow
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL2
-        color: ccbb00
+        lights: "FL2"
+        color: "ccbb00"
   play_flasher2_flash_blue: 
     flash_color_fadeout: 
       key: key_flasher2_flash_blue
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL2
-        color: 0010cc
+        lights: "FL2"
+        color: "0010cc"
   play_flasher2_flash_purple: 
     flash_color_fadeout: 
       key: key_flasher2_flash_purple
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL2
-        color: 0500ee
+        lights: "FL2"
+        color: "0500ee"
   play_flasher3_flash_hot: 
     flash_color_fadeout: 
       key: key_flasher3_flash_hot
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL3
-        color: ed1800
+        lights: "FL3"
+        color: "ed1800"
   play_flasher3_flash_3000k: 
     flash_color_fadeout: 
       key: key_flasher3_flash_3000k
       loops: 0
       speed: 4
       show_tokens: 
-        lights: FL3
-        color: ffdca3
+        lights: "FL3"
+        color: "ffdca3"
   play_flasher3_flash_green: 
     flash_color_fadeout: 
       key: key_flasher3_flash_green
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL3
-        color: 05ff05
+        lights: "FL3"
+        color: "05ff05"
   play_flasher3_flash_cyan: 
     flash_color_fadeout: 
       key: key_flasher3_flash_cyan
       loops: 0
       speed: 8
       show_tokens: 
-        lights: FL3
-        color: 00dddd
+        lights: "FL3"
+        color: "00dddd"
   play_flasher4_flash_hot: 
     flash_color_fadeout: 
       key: key_flasher4_flash_hot
       loops: 0
       speed: 13
       show_tokens: 
-        lights: FL4
-        color: ed1800
+        lights: "FL4"
+        color: "ed1800"
   play_flash_gi01: 
     flash_color_fadeout: 
       key: key_flash_gi01
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi01
-        color: ffdca3
+        lights: "gi01"
+        color: "ffdca3"
   play_flash_gi02: 
     flash_color_fadeout: 
       key: key_flash_gi02
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi02
-        color: ffdca3
+        lights: "gi02"
+        color: "ffdca3"
   play_flash_gi03: 
     flash_color_fadeout: 
       key: key_flash_gi03
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi03
-        color: ffdca3
+        lights: "gi03"
+        color: "ffdca3"
   play_flash_gi04: 
     flash_color_fadeout: 
       key: key_flash_gi04
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi04
-        color: ffdca3
+        lights: "gi04"
+        color: "ffdca3"
   play_flash_gi05: 
     flash_color_fadeout: 
       key: key_flash_gi05
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi05
-        color: ffdca3
+        lights: "gi05"
+        color: "ffdca3"
   play_flash_gi06: 
     flash_color_fadeout: 
       key: key_flash_gi06
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi06
-        color: ffdca3
+        lights: "gi06"
+        color: "ffdca3"
   play_flash_gi07: 
     flash_color_fadeout: 
       key: key_flash_gi07
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi07
-        color: ffdca3
+        lights: "gi07"
+        color: "ffdca3"
   play_flash_gi08: 
     flash_color_fadeout: 
       key: key_flash_gi08
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi08
-        color: ffdca3
+        lights: "gi08"
+        color: "ffdca3"
   play_flash_gi09: 
     flash_color_fadeout: 
       key: key_flash_gi09
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi09
-        color: ffdca3
+        lights: "gi09"
+        color: "ffdca3"
   play_flash_gi10: 
     flash_color_fadeout: 
       key: key_flash_gi10
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi10
-        color: ffdca3
+        lights: "gi10"
+        color: "ffdca3"
   play_flash_gi11: 
     flash_color_fadeout: 
       key: key_flash_gi11
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi11
-        color: ffdca3
+        lights: "gi11"
+        color: "ffdca3"
   play_flash_gi12: 
     flash_color_fadeout: 
       key: key_flash_gi12
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi12
-        color: ffdca3
+        lights: "gi12"
+        color: "ffdca3"
   play_flash_gi13: 
     flash_color_fadeout: 
       key: key_flash_gi13
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi13
-        color: ffdca3
+        lights: "gi13"
+        color: "ffdca3"
   play_flash_gi14: 
     flash_color_fadeout: 
       key: key_flash_gi14
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi14
-        color: ffdca3
+        lights: "gi14"
+        color: "ffdca3"
   play_flash_gi15: 
     flash_color_fadeout: 
       key: key_flash_gi15
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi15
-        color: ffdca3
+        lights: "gi15"
+        color: "ffdca3"
   play_flash_gi16: 
     flash_color_fadeout: 
       key: key_flash_gi16
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi16
-        color: ffdca3
+        lights: "gi16"
+        color: "ffdca3"
   play_flash_gi17: 
     flash_color_fadeout: 
       key: key_flash_gi17
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi17
-        color: ffdca3
+        lights: "gi17"
+        color: "ffdca3"
   play_flash_gi18: 
     flash_color_fadeout: 
       key: key_flash_gi18
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi18
-        color: ffdca3
+        lights: "gi18"
+        color: "ffdca3"
   play_flash_gi19: 
     flash_color_fadeout: 
       key: key_flash_gi19
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi19
-        color: ffdca3
+        lights: "gi19"
+        color: "ffdca3"
   play_flash_gi20: 
     flash_color_fadeout: 
       key: key_flash_gi20
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi20
-        color: ffdca3
+        lights: "gi20"
+        color: "ffdca3"
   play_flash_gi21: 
     flash_color_fadeout: 
       key: key_flash_gi21
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi21
-        color: ffdca3
+        lights: "gi21"
+        color: "ffdca3"
   play_flash_gi22: 
     flash_color_fadeout: 
       key: key_flash_gi22
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi22
-        color: ffdca3
+        lights: "gi22"
+        color: "ffdca3"
   play_flash_giapron: 
     flash_color_fadeout: 
       key: key_flash_giapron
       loops: 0
       speed: 3
       show_tokens: 
-        lights: giapron
-        color: ffdca3
+        lights: "giapron"
+        color: "ffdca3"
   meteor1_flash_show: 
     flash_color_with_fade: 
       key: key_meteor1_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL2
-        color: ffe7a6
-        fade: 300
+        lights: "FL2"
+        color: "ffe7a6"
+        fade: "300"
   meteor2_flash_show: 
     flash_color_with_fade: 
       key: key_meteor2_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL2
-        color: ffe7a6
-        fade: 300
+        lights: "FL2"
+        color: "ffe7a6"
+        fade: "300"
   meteor3_flash_show: 
     flash_color_with_fade: 
       key: key_meteor3_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL1
-        color: ffe7a6
-        fade: 300
+        lights: "FL1"
+        color: "ffe7a6"
+        fade: "300"
   meteor4_flash_show: 
     flash_color_with_fade: 
       key: key_meteor4_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL1
-        color: ffe7a6
-        fade: 300
+        lights: "FL1"
+        color: "ffe7a6"
+        fade: "300"
   meteor1_blink_show: 
     flash_color: 
       key: key_meteor1_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet1
-        color: ffffff
+        lights: "LMet1"
+        color: "ffffff"
   meteor1_explodes_white: 
     meteor1_explodes: 
       key: key_meteor1_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor1_explodes_red: 
     meteor1_explodes: 
       key: key_meteor1_explodes_red
       loops: 0
       show_tokens: 
-        color: ff0000
+        color: "ff0000"
   meteor1_explodes_hot: 
     meteor1_explodes: 
       key: key_meteor1_explodes_hot
       loops: 0
       show_tokens: 
-        color: ed1800
+        color: "ed1800"
   meteor2_blink_show: 
     flash_color: 
       key: key_meteor2_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet2
-        color: ffffff
+        lights: "LMet2"
+        color: "ffffff"
   meteor2_explodes_white: 
     meteor2_explodes: 
       key: key_meteor2_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor2_explodes_red: 
     meteor2_explodes: 
       key: key_meteor2_explodes_red
       loops: 0
       show_tokens: 
-        color: ff0000
+        color: "ff0000"
   meteor2_explodes_hot: 
     meteor2_explodes: 
       key: key_meteor2_explodes_hot
       loops: 0
       show_tokens: 
-        color: ed1800
+        color: "ed1800"
   meteor3_blink_show: 
     flash_color: 
       key: key_meteor3_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet3
-        color: ffffff
+        lights: "LMet3"
+        color: "ffffff"
   meteor3_explodes_white: 
     meteor3_explodes: 
       key: key_meteor3_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor3_explodes_red: 
     meteor3_explodes: 
       key: key_meteor3_explodes_red
       loops: 0
       show_tokens: 
-        color: ff0000
+        color: "ff0000"
   meteor3_explodes_hot: 
     meteor3_explodes: 
       key: key_meteor3_explodes_hot
       loops: 0
       show_tokens: 
-        color: ed1800
+        color: "ed1800"
   meteor4_blink_show: 
     flash_color: 
       key: key_meteor4_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet4
-        color: ffffff
+        lights: "LMet4"
+        color: "ffffff"
   meteor4_explodes_white: 
     meteor4_explodes: 
       key: key_meteor4_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor4_explodes_red: 
     meteor4_explodes: 
       key: key_meteor4_explodes_red
       loops: 0
       show_tokens: 
-        color: ff0000
+        color: "ff0000"
   meteor4_explodes_hot: 
     meteor4_explodes: 
       key: key_meteor4_explodes_hot
       loops: 0
       show_tokens: 
-        color: ed1800
+        color: "ed1800"
   play_lsling_magenta: 
     lsling_rotate1_cw: 
       key: key_lsling_magenta
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: dd00dd
+        intensity: "100"
+        color: "dd00dd"
   play_rsling_yellow: 
     rsling_rotate1_ccw: 
       key: key_rsling_yellow
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ccbb00
+        intensity: "100"
+        color: "ccbb00"
   play_lsling_cyan: 
     lsling_rotate1_cw: 
       key: key_lsling_cyan
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 00dddd
+        intensity: "100"
+        color: "00dddd"
   play_rsling_blue: 
     rsling_rotate1_ccw: 
       key: key_rsling_blue
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 0010cc
+        intensity: "100"
+        color: "0010cc"
   play_lsling_white: 
     lsling_rotate1_cw: 
       key: key_lsling_white
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ccccdd
+        intensity: "100"
+        color: "ccccdd"
   play_rsling_purple: 
     rsling_rotate1_ccw: 
       key: key_rsling_purple
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 0500ee
+        intensity: "100"
+        color: "0500ee"
   play_lsling_green: 
     lsling_rotate1_cw: 
       key: key_lsling_green
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 00dd00
+        intensity: "100"
+        color: "00dd00"
   play_rsling_white: 
     rsling_rotate1_ccw: 
       key: key_rsling_white
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ccccdd
+        intensity: "100"
+        color: "ccccdd"
   play_lsling_hot: 
     lsling_rotate1_cw: 
       key: key_lsling_hot
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ffae00
+        intensity: "100"
+        color: "ffae00"
   play_rsling_magenta: 
     rsling_rotate1_ccw: 
       key: key_rsling_magenta
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: dd00dd
+        intensity: "100"
+        color: "dd00dd"
   play_lsling_yellow: 
     lsling_rotate1_cw: 
       key: key_lsling_yellow
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: ccbb00
+        intensity: "100"
+        color: "ccbb00"
   play_rsling_cyan: 
     rsling_rotate1_ccw: 
       key: key_rsling_cyan
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 00dddd
+        intensity: "100"
+        color: "00dddd"
   play_lsling_blue: 
     lsling_rotate1_cw: 
       key: key_lsling_blue
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 0010cc
+        intensity: "100"
+        color: "0010cc"
   play_lsling_purple: 
     lsling_rotate1_cw: 
       key: key_lsling_purple
       loops: 1
       speed: 2
       show_tokens: 
-        intensity: 100
-        color: 0500ee
+        intensity: "100"
+        color: "0500ee"
   play_spotlight_on: 
     flicker_color_on: 
       key: key_spotlight_on
       loops: 0
       speed: 5
       show_tokens: 
-        lights: LSpot1
-        color: ffffff
+        lights: "LSpot1"
+        color: "ffffff"
   play_spotlight_off: 
     flicker_color_off: 
       key: key_spotlight_off
       loops: 0
       speed: 5
       show_tokens: 
-        lights: LSpot1
-        color: ffffff
+        lights: "LSpot1"
+        color: "ffffff"
 
 
 sound_player: 

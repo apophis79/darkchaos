@@ -279,47 +279,47 @@ show_player:
     gi_spin1_cw: 
       key: key_bonus_show
       show_tokens: 
-        intensity: 100
+        intensity: "100"
   bonus_tally1: 
     flash_color: 
       key: key_tally1_show
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tWaves
-        color: dd0400
+        lights: "tWaves"
+        color: "dd0400"
   bonus_tally2: 
     flash_color: 
       key: key_tally2_show
       loops: 6
       speed: 13
       show_tokens: 
-        lights: LX
-        color: ffae00
+        lights: "LX"
+        color: "ffae00"
   bonus_tally3: 
     flash_color: 
       key: key_tally3_show
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tClusterAll
-        color: dd00dd
+        lights: "tClusterAll"
+        color: "dd00dd"
   bonus_tally4: 
     flash_color: 
       key: key_tally4_show
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tMoonAll
-        color: ccbb00
+        lights: "tMoonAll"
+        color: "ccbb00"
   bonus_tally5: 
     flash_color: 
       key: key_tally5_show
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tProtonAll
-        color: 00dddd
+        lights: "tProtonAll"
+        color: "00dddd"
 
 
 slide_player: 

@@ -32,32 +32,32 @@ show_player:
     flash_color_with_fade: 
       key: key_nuke_lsling_on
       show_tokens: 
-        lights: tFL5
-        color: ed1800
-        fade: 900
+        lights: "tFL5"
+        color: "ed1800"
+        fade: "900"
   nuke_rsling_on: 
     flash_color_with_fade: 
       key: key_nuke_rsling_on
       show_tokens: 
-        lights: tFL6
-        color: ed1800
-        fade: 900
+        lights: "tFL6"
+        color: "ed1800"
+        fade: "900"
   nuke_lsling_off: 
     flash_color_with_fade: 
       action: stop
       key: key_nuke_lsling_on
       show_tokens: 
-        lights: tFL5
-        color: ed1800
-        fade: 900
+        lights: "tFL5"
+        color: "ed1800"
+        fade: "900"
   nuke_rsling_off: 
     flash_color_with_fade: 
       action: stop
       key: key_nuke_rsling_on
       show_tokens: 
-        lights: tFL6
-        color: ed1800
-        fade: 900
+        lights: "tFL6"
+        color: "ed1800"
+        fade: "900"
   acquire_nuke_show1: 
     cluster_bomb_acquired: 
       key: key_acquire_nuke_show1
@@ -65,8 +65,8 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        color: ed1800
-        intensity: 100
+        color: "ed1800"
+        intensity: "100"
       events_when_completed: acquire_nuke_show2
   acquire_nuke_show2: 
     moon_missile_acquired: 
@@ -75,8 +75,8 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        color: ed1800
-        intensity: 100
+        color: "ed1800"
+        intensity: "100"
   detonate_nuke: 
     nuke_explodes: 
       key: key_nuke_explodes

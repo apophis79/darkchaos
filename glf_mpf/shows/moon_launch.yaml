@@ -8,8 +8,8 @@
       loops: 1
       speed: 2
       show_tokens: 
-        color: ccbb00
-        intensity: 100
+        color: "ccbb00"
+        intensity: "100"
 
 - time: 0.01s
   shows:
@@ -19,8 +19,8 @@
       loops: 7
       speed: 13
       show_tokens: 
-        color: ffffff
-        lights: gi15
+        color: "ffffff"
+        lights: "gi15"
 
 - time: 0.02s
   shows:
@@ -30,8 +30,8 @@
       loops: 7
       speed: 13
       show_tokens: 
-        color: ffffff
-        lights: gi19
+        color: "ffffff"
+        lights: "gi19"
 
 - time: 0.03s
   shows:
@@ -41,7 +41,7 @@
       loops: 7
       speed: 13
       show_tokens: 
-        color: ffffff
-        lights: gi14
+        color: "ffffff"
+        lights: "gi14"
 
 

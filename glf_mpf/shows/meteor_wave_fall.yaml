@@ -7,8 +7,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW1
+        color: "dd0400"
+        lights: "LW1"
 
 - duration: 0.2s
   shows:
@@ -17,8 +17,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW2
+        color: "dd0400"
+        lights: "LW2"
 
 - duration: 0.2s
   shows:
@@ -27,8 +27,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW3
+        color: "dd0400"
+        lights: "LW3"
 
 - duration: 0.2s
   shows:
@@ -37,8 +37,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW4
+        color: "dd0400"
+        lights: "LW4"
 
 - duration: 0.2s
   shows:
@@ -47,8 +47,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW5
+        color: "dd0400"
+        lights: "LW5"
 
 - duration: 0.2s
   shows:
@@ -57,8 +57,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW6
+        color: "dd0400"
+        lights: "LW6"
 
 - duration: 0.2s
   shows:
@@ -67,8 +67,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW7
+        color: "dd0400"
+        lights: "LW7"
 
 - duration: 0.2s
   shows:
@@ -77,8 +77,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW8
+        color: "dd0400"
+        lights: "LW8"
 
 - duration: 0.2s
   shows:
@@ -87,8 +87,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LW9
+        color: "dd0400"
+        lights: "LW9"
 
 - duration: 0.2s
   shows:
@@ -97,7 +97,7 @@
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd0400
-        lights: LWiz
+        color: "dd0400"
+        lights: "LWiz"
 
 

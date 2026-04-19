@@ -7,8 +7,8 @@
       loops: 0
       speed: 7
       show_tokens: 
-        intensity: 100
-        color: ffffff
+        intensity: "100"
+        color: "ffffff"
 
 - time: 0.02s
   shows:
@@ -17,8 +17,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: tLSling
-        color: ffdca3
+        lights: "tLSling"
+        color: "ffdca3"
 
 - time: 0.3s
 

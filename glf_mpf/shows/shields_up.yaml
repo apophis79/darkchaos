@@ -7,9 +7,9 @@
       loops: 4
       speed: 10
       show_tokens: 
-        lights: tWiz
-        color: ffffff
-        fade: 800
+        lights: "tWiz"
+        color: "ffffff"
+        fade: "800"
 
 - time: 0.02s
   shows:
@@ -18,9 +18,9 @@
       loops: 4
       speed: 10
       show_tokens: 
-        lights: LLO
-        color: ffffff
-        fade: 800
+        lights: "LLO"
+        color: "ffffff"
+        fade: "800"
 
 - time: 0.03s
   shows:
@@ -29,9 +29,9 @@
       loops: 4
       speed: 10
       show_tokens: 
-        lights: LRO
-        color: ffffff
-        fade: 800
+        lights: "LRO"
+        color: "ffffff"
+        fade: "800"
 
 - time: 0.05s
   shows:
@@ -39,7 +39,7 @@
       key: key_shield_up4
       loops: 1
       show_tokens: 
-        intensity: 100
-        color: 0010cc
+        intensity: "100"
+        color: "0010cc"
 
 

@@ -6,8 +6,8 @@
       key: key_flwiz_m_show1
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 100
+        color: "ffffff"
+        intensity: "100"
 
 - time: 0.02s
   shows:
@@ -15,8 +15,8 @@
       key: key_flwiz_m_show2
       loops: 0
       show_tokens: 
-        color: ffffff
-        intensity: 100
+        color: "ffffff"
+        intensity: "100"
 
 - time: 0.21s
   shows:
@@ -24,8 +24,8 @@
       key: key_flwiz_m_show3
       loops: 0
       show_tokens: 
-        color: ccbb00
-        intensity: 100
+        color: "ccbb00"
+        intensity: "100"
 
 - time: 0.22s
   shows:
@@ -33,8 +33,8 @@
       key: key_flwiz_m_show4
       loops: 0
       show_tokens: 
-        color: ccbb00
-        intensity: 100
+        color: "ccbb00"
+        intensity: "100"
 
 - time: 0.31s
   shows:
@@ -42,8 +42,8 @@
       key: key_flwiz_m_show5
       loops: 0
       show_tokens: 
-        color: ccbb00
-        intensity: 5
+        color: "ccbb00"
+        intensity: "5"
 
 - time: 0.32s
   shows:
@@ -51,7 +51,7 @@
       key: key_flwiz_m_show6
       loops: 0
       show_tokens: 
-        color: ccbb00
-        intensity: 5
+        color: "ccbb00"
+        intensity: "5"
 
 

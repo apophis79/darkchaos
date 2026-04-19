@@ -6,7 +6,7 @@
       key: insert_earth_hit_A
       loops: 0
       show_tokens: 
-        color: ed1800
-        intensity: 100
+        color: "ed1800"
+        intensity: "100"
 
 

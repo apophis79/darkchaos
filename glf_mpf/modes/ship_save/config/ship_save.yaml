@@ -71,8 +71,8 @@ shots:
     profile: powerups
     restart_events: restart_ship_save
     show_tokens: 
-      lights: LF1
-      color: 0500ee
+      lights: "LF1"
+      color: "0500ee"
     control_events: 
       - events: ready_ship_charge1
         state: 1
@@ -82,8 +82,8 @@ shots:
     profile: powerups
     restart_events: restart_ship_save
     show_tokens: 
-      lights: LF2
-      color: 0500ee
+      lights: "LF2"
+      color: "0500ee"
     control_events: 
       - events: ready_ship_charge2
         state: 1
@@ -93,8 +93,8 @@ shots:
     profile: powerups
     restart_events: restart_ship_save
     show_tokens: 
-      lights: LF3
-      color: 0500ee
+      lights: "LF3"
+      color: "0500ee"
     control_events: 
       - events: ready_ship_charge3
         state: 1
@@ -108,26 +108,26 @@ show_player:
       loops: 4
       speed: 15
       show_tokens: 
-        lights: tSaver
-        color: 0500ee
+        lights: "tSaver"
+        color: "0500ee"
   lsling_powerup_sa: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_sa
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 0500ee
-        color2: 0500ee
-        intensity: 100
+        color1: "0500ee"
+        color2: "0500ee"
+        intensity: "100"
   rsling_powerup_sa: 
     rsling_rotate2_ccw: 
       key: key_rsling_powerup_sa
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 0500ee
-        color2: 0500ee
-        intensity: 100
+        color1: "0500ee"
+        color2: "0500ee"
+        intensity: "100"
   saver_acquired: 
     ship_saver_acquired: 
       key: key_saver_acquired

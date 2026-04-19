@@ -675,7 +675,7 @@ shots:
   fwwiz_shoot_again:
     profile: shoot_again
     show_tokens: 
-      color: d14c00
+      color: "d14c00"
     reset_events: multiball_fwwiz_shoot_again_ended
     control_events: 
       - events: begin_fwwiz
@@ -693,7 +693,7 @@ shots:
     profile: fwwiz_meteor
     restart_events: s_DTMeteor1_active
     show_tokens: 
-      lights: LMet1
+      lights: "LMet1"
     control_events: 
       - events: meteor1_raise
         state: 1
@@ -701,7 +701,7 @@ shots:
     profile: fwwiz_meteor
     restart_events: s_DTMeteor2_active
     show_tokens: 
-      lights: LMet2
+      lights: "LMet2"
     control_events: 
       - events: meteor2_raise
         state: 1
@@ -709,7 +709,7 @@ shots:
     profile: fwwiz_meteor
     restart_events: s_DTMeteor3_active
     show_tokens: 
-      lights: LMet3
+      lights: "LMet3"
     control_events: 
       - events: meteor3_raise
         state: 1
@@ -717,7 +717,7 @@ shots:
     profile: fwwiz_meteor
     restart_events: s_DTMeteor4_active
     show_tokens: 
-      lights: LMet4
+      lights: "LMet4"
     control_events: 
       - events: meteor4_raise
         state: 1
@@ -733,16 +733,16 @@ show_player:
       loops: 0
       speed: 10
       show_tokens: 
-        lights: tFlasherU
-        color: ffdca3
+        lights: "tFlasherU"
+        color: "ffdca3"
   asteroid_flicker1: 
     flicker_color: 
       key: key_asteroid_flicker1
       loops: 0
       speed: 5
       show_tokens: 
-        lights: tAsteroid
-        color: ffffff
+        lights: "tAsteroid"
+        color: "ffffff"
       events_when_completed: update_asteroid_glow
   asteroid_flicker2: 
     flicker_color: 
@@ -750,8 +750,8 @@ show_player:
       loops: 1
       speed: 8
       show_tokens: 
-        lights: tAsteroid
-        color: ffffff
+        lights: "tAsteroid"
+        color: "ffffff"
       events_when_completed: update_asteroid_glow
   asteroid_flicker3: 
     flicker2_color: 
@@ -759,8 +759,8 @@ show_player:
       loops: 0
       speed: 4
       show_tokens: 
-        lights: tAsteroid
-        color: ffffff
+        lights: "tAsteroid"
+        color: "ffffff"
       events_when_completed: update_asteroid_glow
   asteroid_flicker4: 
     flicker2_color: 
@@ -768,8 +768,8 @@ show_player:
       loops: 1
       speed: 7
       show_tokens: 
-        lights: tAsteroid
-        color: ffffff
+        lights: "tAsteroid"
+        color: "ffffff"
       events_when_completed: update_asteroid_glow
   asteroid_destroyed: 
     asteroid_explodes_show: 
@@ -781,248 +781,248 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi01
-        color: ffdca3
+        lights: "gi01"
+        color: "ffdca3"
   play_flash_gi02: 
     flash_color_fadeout: 
       key: key_flash_gi02
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi02
-        color: ffdca3
+        lights: "gi02"
+        color: "ffdca3"
   play_flash_gi03: 
     flash_color_fadeout: 
       key: key_flash_gi03
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi03
-        color: ffdca3
+        lights: "gi03"
+        color: "ffdca3"
   play_flash_gi04: 
     flash_color_fadeout: 
       key: key_flash_gi04
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi04
-        color: ffdca3
+        lights: "gi04"
+        color: "ffdca3"
   play_flash_gi05: 
     flash_color_fadeout: 
       key: key_flash_gi05
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi05
-        color: ffdca3
+        lights: "gi05"
+        color: "ffdca3"
   play_flash_gi06: 
     flash_color_fadeout: 
       key: key_flash_gi06
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi06
-        color: ffdca3
+        lights: "gi06"
+        color: "ffdca3"
   play_flash_gi07: 
     flash_color_fadeout: 
       key: key_flash_gi07
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi07
-        color: ffdca3
+        lights: "gi07"
+        color: "ffdca3"
   play_flash_gi08: 
     flash_color_fadeout: 
       key: key_flash_gi08
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi08
-        color: ffdca3
+        lights: "gi08"
+        color: "ffdca3"
   play_flash_gi09: 
     flash_color_fadeout: 
       key: key_flash_gi09
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi09
-        color: ffdca3
+        lights: "gi09"
+        color: "ffdca3"
   play_flash_gi10: 
     flash_color_fadeout: 
       key: key_flash_gi10
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi10
-        color: ffdca3
+        lights: "gi10"
+        color: "ffdca3"
   play_flash_gi11: 
     flash_color_fadeout: 
       key: key_flash_gi11
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi11
-        color: ffdca3
+        lights: "gi11"
+        color: "ffdca3"
   play_flash_gi12: 
     flash_color_fadeout: 
       key: key_flash_gi12
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi12
-        color: ffdca3
+        lights: "gi12"
+        color: "ffdca3"
   play_flash_gi13: 
     flash_color_fadeout: 
       key: key_flash_gi13
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi13
-        color: ffdca3
+        lights: "gi13"
+        color: "ffdca3"
   play_flash_gi14: 
     flash_color_fadeout: 
       key: key_flash_gi14
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi14
-        color: ffdca3
+        lights: "gi14"
+        color: "ffdca3"
   play_flash_gi15: 
     flash_color_fadeout: 
       key: key_flash_gi15
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi15
-        color: ffdca3
+        lights: "gi15"
+        color: "ffdca3"
   play_flash_gi16: 
     flash_color_fadeout: 
       key: key_flash_gi16
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi16
-        color: ffdca3
+        lights: "gi16"
+        color: "ffdca3"
   play_flash_gi17: 
     flash_color_fadeout: 
       key: key_flash_gi17
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi17
-        color: ffdca3
+        lights: "gi17"
+        color: "ffdca3"
   play_flash_gi18: 
     flash_color_fadeout: 
       key: key_flash_gi18
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi18
-        color: ffdca3
+        lights: "gi18"
+        color: "ffdca3"
   play_flash_gi19: 
     flash_color_fadeout: 
       key: key_flash_gi19
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi19
-        color: ffdca3
+        lights: "gi19"
+        color: "ffdca3"
   play_flash_gi20: 
     flash_color_fadeout: 
       key: key_flash_gi20
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi20
-        color: ffdca3
+        lights: "gi20"
+        color: "ffdca3"
   play_flash_gi21: 
     flash_color_fadeout: 
       key: key_flash_gi21
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi21
-        color: ffdca3
+        lights: "gi21"
+        color: "ffdca3"
   play_flash_gi22: 
     flash_color_fadeout: 
       key: key_flash_gi22
       loops: 0
       speed: 3
       show_tokens: 
-        lights: gi22
-        color: ffdca3
+        lights: "gi22"
+        color: "ffdca3"
   play_flash_giapron: 
     flash_color_fadeout: 
       key: key_flash_giapron
       loops: 0
       speed: 3
       show_tokens: 
-        lights: giapron
-        color: ffdca3
+        lights: "giapron"
+        color: "ffdca3"
   meteor1_explodes_show: 
     meteor1_explodes: 
       key: key_meteor1_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor1_blink_show: 
     flash_color: 
       key: key_meteor1_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet1
-        color: ff1100
+        lights: "LMet1"
+        color: "ff1100"
   meteor2_explodes_show: 
     meteor2_explodes: 
       key: key_meteor2_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor2_blink_show: 
     flash_color: 
       key: key_meteor2_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet2
-        color: ff1100
+        lights: "LMet2"
+        color: "ff1100"
   meteor3_explodes_show: 
     meteor3_explodes: 
       key: key_meteor3_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor3_blink_show: 
     flash_color: 
       key: key_meteor3_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet3
-        color: ff1100
+        lights: "LMet3"
+        color: "ff1100"
   meteor4_explodes_show: 
     meteor4_explodes: 
       key: key_meteor4_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor4_blink_show: 
     flash_color: 
       key: key_meteor4_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet4
-        color: ff1100
+        lights: "LMet4"
+        color: "ff1100"
   final_flash1: 
     flash_color: 
       key: key_final_flash3
       loops: 5
       speed: 20
       show_tokens: 
-        lights: tFlasher
-        color: ffe7a6
+        lights: "tFlasher"
+        color: "ffe7a6"
   s_Bumper1_active: 
     flash_color_with_fade: 
       key: key_bumper1_flash
@@ -1030,9 +1030,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB1
-        color: ed1800
-        fade: 50
+        lights: "LB1"
+        color: "ed1800"
+        fade: "50"
   s_Bumper2_active: 
     flash_color_with_fade: 
       key: key_bumper2_flash
@@ -1040,9 +1040,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB2
-        color: ed1800
-        fade: 50
+        lights: "LB2"
+        color: "ed1800"
+        fade: "50"
   s_Bumper3_active: 
     flash_color_with_fade: 
       key: key_bumper3_flash
@@ -1050,9 +1050,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB3
-        color: ed1800
-        fade: 50
+        lights: "LB3"
+        color: "ed1800"
+        fade: "50"
   s_Bumper4_active: 
     flash_color_with_fade: 
       key: key_bumper4_flash
@@ -1060,9 +1060,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB4
-        color: ed1800
-        fade: 50
+        lights: "LB4"
+        color: "ed1800"
+        fade: "50"
 
 
 sound_player: 

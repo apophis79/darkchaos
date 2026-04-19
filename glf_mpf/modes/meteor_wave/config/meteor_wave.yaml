@@ -374,7 +374,7 @@ shots:
   meteor1_light:
     profile: meteor_temp
     show_tokens: 
-      lights: LMet1
+      lights: "LMet1"
     reset_events: meteor1_down
     control_events: 
       - events: meteor1_cool
@@ -386,7 +386,7 @@ shots:
   meteor2_light:
     profile: meteor_temp
     show_tokens: 
-      lights: LMet2
+      lights: "LMet2"
     reset_events: meteor2_down
     control_events: 
       - events: meteor2_cool
@@ -398,7 +398,7 @@ shots:
   meteor3_light:
     profile: meteor_temp
     show_tokens: 
-      lights: LMet3
+      lights: "LMet3"
     reset_events: meteor3_down
     control_events: 
       - events: meteor3_cool
@@ -410,7 +410,7 @@ shots:
   meteor4_light:
     profile: meteor_temp
     show_tokens: 
-      lights: LMet4
+      lights: "LMet4"
     reset_events: meteor4_down
     control_events: 
       - events: meteor4_cool
@@ -426,86 +426,86 @@ show_player:
       key: key_meteor1_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor1_blink_show: 
     flash_color: 
       key: key_meteor1_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet1
-        color: 00dddd
+        lights: "LMet1"
+        color: "00dddd"
   meteor1_proton_hit: 
     meteor1_explodes: 
       key: key_meteor1_proton_hit
       loops: 0
       show_tokens: 
-        color: 00dddd
+        color: "00dddd"
   meteor2_explodes_show: 
     meteor2_explodes: 
       key: key_meteor2_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor2_blink_show: 
     flash_color: 
       key: key_meteor2_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet2
-        color: 00dddd
+        lights: "LMet2"
+        color: "00dddd"
   meteor2_proton_hit: 
     meteor2_explodes: 
       key: key_meteor2_proton_hit
       loops: 0
       show_tokens: 
-        color: 00dddd
+        color: "00dddd"
   meteor3_explodes_show: 
     meteor3_explodes: 
       key: key_meteor3_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor3_blink_show: 
     flash_color: 
       key: key_meteor3_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet3
-        color: 00dddd
+        lights: "LMet3"
+        color: "00dddd"
   meteor3_proton_hit: 
     meteor3_explodes: 
       key: key_meteor3_proton_hit
       loops: 0
       show_tokens: 
-        color: 00dddd
+        color: "00dddd"
   meteor4_explodes_show: 
     meteor4_explodes: 
       key: key_meteor4_explodes
       loops: 0
       show_tokens: 
-        color: ffffff
+        color: "ffffff"
   meteor4_blink_show: 
     flash_color: 
       key: key_meteor4_blink
       loops: 3
       speed: 22
       show_tokens: 
-        lights: LMet4
-        color: 00dddd
+        lights: "LMet4"
+        color: "00dddd"
   meteor4_proton_hit: 
     meteor4_explodes: 
       key: key_meteor4_proton_hit
       loops: 0
       show_tokens: 
-        color: 00dddd
+        color: "00dddd"
   mode_meteor_wave_started: 
     off: 
       key: key_bumpers_off
       show_tokens: 
-        lights: tBumper
+        lights: "tBumper"
   proton_fired: 
     flash_color: 
       key: key_proton_fired
@@ -513,53 +513,53 @@ show_player:
       loops: 4
       speed: 20
       show_tokens: 
-        lights: tBlast
-        color: 00dddd
+        lights: "tBlast"
+        color: "00dddd"
   meteor1_flash_show: 
     flash_color_with_fade: 
       key: key_meteor1_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL2
-        color: ffe7a6
-        fade: 300
+        lights: "FL2"
+        color: "ffe7a6"
+        fade: "300"
   meteor2_flash_show: 
     flash_color_with_fade: 
       key: key_meteor2_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL2
-        color: ffe7a6
-        fade: 300
+        lights: "FL2"
+        color: "ffe7a6"
+        fade: "300"
   meteor3_flash_show: 
     flash_color_with_fade: 
       key: key_meteor3_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL1
-        color: ffe7a6
-        fade: 300
+        lights: "FL1"
+        color: "ffe7a6"
+        fade: "300"
   meteor4_flash_show: 
     flash_color_with_fade: 
       key: key_meteor4_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL1
-        color: ffe7a6
-        fade: 300
+        lights: "FL1"
+        color: "ffe7a6"
+        fade: "300"
   proton_fired_flash_show: 
     flash_color_with_fade: 
       key: key_proton_flash
       loops: 2
       speed: 20
       show_tokens: 
-        lights: FL3
-        color: 00dddd
-        fade: 300
+        lights: "FL3"
+        color: "00dddd"
+        fade: "300"
   earth_hit: 
     earth_hit: 
       key: key_earth_hit
@@ -577,24 +577,24 @@ show_player:
       loops: 2
       speed: 15
       show_tokens: 
-        lights: tFlasherU
-        color: ff0909
+        lights: "tFlasherU"
+        color: "ff0909"
   mw_lsing_earth_hit: 
     flash_color: 
       key: key_mw_lsing_earth_hit
       loops: 5
       speed: 13
       show_tokens: 
-        lights: tFL5
-        color: ff0909
+        lights: "tFL5"
+        color: "ff0909"
   mw_rsling_earth_hit: 
     flash_color: 
       key: key_mw_rsling_earth_hit
       loops: 5
       speed: 13
       show_tokens: 
-        lights: tFL6
-        color: ff0909
+        lights: "tFL6"
+        color: "ff0909"
 
 
 slide_player: 

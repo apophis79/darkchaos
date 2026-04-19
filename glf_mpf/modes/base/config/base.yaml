@@ -466,8 +466,8 @@ shots:
     profile: wizard_ready1
     restart_events: game_start, run_final_wave_wizard
     show_tokens: 
-      lights: LCWiz
-      color: ffb46b
+      lights: "LCWiz"
+      color: "ffb46b"
     control_events: 
       - events: activate_combo_command_wizard
         state: 1
@@ -477,8 +477,8 @@ shots:
     profile: wizard_ready1
     restart_events: game_start, run_final_wave_wizard
     show_tokens: 
-      lights: LLWiz
-      color: ffb46b
+      lights: "LLWiz"
+      color: "ffb46b"
     control_events: 
       - events: prime_fully_loaded_wizard
         state: 1
@@ -488,8 +488,8 @@ shots:
     profile: wizard_ready1
     restart_events: game_start
     show_tokens: 
-      lights: LWiz
-      color: dd0400
+      lights: "LWiz"
+      color: "dd0400"
     control_events: 
       - events: activate_final_wave_wizard
         state: 1
@@ -499,8 +499,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave1_restart
     show_tokens: 
-      lights: LW1
-      color: dd0400
+      lights: "LW1"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave1_running
         state: 1
@@ -510,8 +510,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave2_restart
     show_tokens: 
-      lights: LW2
-      color: dd0400
+      lights: "LW2"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave2_running
         state: 1
@@ -521,8 +521,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave3_restart
     show_tokens: 
-      lights: LW3
-      color: dd0400
+      lights: "LW3"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave3_running
         state: 1
@@ -532,8 +532,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave4_restart
     show_tokens: 
-      lights: LW4
-      color: dd0400
+      lights: "LW4"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave4_running
         state: 1
@@ -543,8 +543,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave5_restart
     show_tokens: 
-      lights: LW5
-      color: dd0400
+      lights: "LW5"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave5_running
         state: 1
@@ -554,8 +554,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave6_restart
     show_tokens: 
-      lights: LW6
-      color: dd0400
+      lights: "LW6"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave6_running
         state: 1
@@ -565,8 +565,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave7_restart
     show_tokens: 
-      lights: LW7
-      color: dd0400
+      lights: "LW7"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave7_running
         state: 1
@@ -576,8 +576,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave8_restart
     show_tokens: 
-      lights: LW8
-      color: dd0400
+      lights: "LW8"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave8_running
         state: 1
@@ -587,8 +587,8 @@ shots:
     profile: powerups
     restart_events: game_start, meteor_wave9_restart
     show_tokens: 
-      lights: LW9
-      color: dd0400
+      lights: "LW9"
+      color: "dd0400"
     control_events: 
       - events: meteor_wave9_running
         state: 1
@@ -598,7 +598,7 @@ shots:
     profile: shoot_again
     restart_events: ball_save_new_ball_grace_period
     show_tokens: 
-      color: 0500ee
+      color: "0500ee"
     control_events: 
       - events: ball_save_new_ball_enabled
         state: 1
@@ -613,8 +613,8 @@ show_player:
       loops: 3
       speed: 20
       show_tokens: 
-        lights: LSwC1
-        color: ffffff
+        lights: "LSwC1"
+        color: "ffffff"
   s_CenterOrb2_active: 
     flash_color: 
       key: key_rollover1_flash
@@ -622,8 +622,8 @@ show_player:
       loops: 3
       speed: 20
       show_tokens: 
-        lights: LSwC2
-        color: ffffff
+        lights: "LSwC2"
+        color: "ffffff"
   s_CenterOrb3_active: 
     flash_color: 
       key: key_rollover2_flash
@@ -631,8 +631,8 @@ show_player:
       loops: 3
       speed: 20
       show_tokens: 
-        lights: LSwC3
-        color: ffffff
+        lights: "LSwC3"
+        color: "ffffff"
   magnet_activated_flash: 
     flash_color_with_fade: 
       key: key_ts_mag_flash
@@ -640,9 +640,9 @@ show_player:
       loops: 6
       speed: 20
       show_tokens: 
-        lights: FL1
-        color: aaaaaa
-        fade: 200
+        lights: "FL1"
+        color: "aaaaaa"
+        fade: "200"
   balldevice_scoop_ball_exiting: 
     flash_color: 
       key: key_ts_Scoop_gi
@@ -650,8 +650,8 @@ show_player:
       loops: 6
       speed: 15
       show_tokens: 
-        lights: gi22
-        color: ffdca3
+        lights: "gi22"
+        color: "ffdca3"
   play_lsling_base_show: 
     lsling_base_show: 
       key: key_lsling_base_show
@@ -667,18 +667,18 @@ show_player:
       key: key_combo_command_scoop
       priority: 2000
       show_tokens: 
-        intensity1: 20
-        intensity2: 100
-        color: ffb46b
+        intensity1: "20"
+        intensity2: "100"
+        color: "ffb46b"
   stop_ccwiz_scoop_show: 
     combo_command_scoop: 
       action: stop
       key: key_combo_command_scoop
       priority: 2000
       show_tokens: 
-        intensity1: 20
-        intensity2: 100
-        color: ffb46b
+        intensity1: "20"
+        intensity2: "100"
+        color: "ffb46b"
   scoop_blast: 
     insert_gi_slide_diag: 
       key: key_scoop_fire_blast
@@ -686,93 +686,93 @@ show_player:
       loops: 0
       speed: 2.5
       show_tokens: 
-        color: ed1800
-        intensity: 100
+        color: "ed1800"
+        intensity: "100"
   run_flwiz_scoop_show: 
     fully_loaded_scoop: 
       key: key_fully_loaded_scoop
       priority: 1000
       show_tokens: 
-        intensity1: 20
-        intensity2: 100
+        intensity1: "20"
+        intensity2: "100"
   stop_flwiz_scoop_show: 
     fully_loaded_scoop: 
       action: stop
       key: key_fully_loaded_scoop
       priority: 1000
       show_tokens: 
-        intensity1: 20
-        intensity2: 100
+        intensity1: "20"
+        intensity2: "100"
   run_fwwiz_scoop_show: 
     combo_command_scoop: 
       key: key_final_wave_scoop
       priority: 3000
       show_tokens: 
-        intensity1: 20
-        intensity2: 100
-        color: dd0400
+        intensity1: "20"
+        intensity2: "100"
+        color: "dd0400"
   stop_fwwiz_scoop_show: 
     combo_command_scoop: 
       action: stop
       key: key_final_wave_scoop
       priority: 3000
       show_tokens: 
-        intensity1: 20
-        intensity2: 100
-        color: dd0400
+        intensity1: "20"
+        intensity2: "100"
+        color: "dd0400"
   run_asteroid_spotlight_show: 
     flash_color_with_fade: 
       key: key_asteroid_spotlight
       priority: 3000
       show_tokens: 
-        lights: LSpot1
-        color: ffffff
-        fade: 700
+        lights: "LSpot1"
+        color: "ffffff"
+        fade: "700"
   stop_asteroid_spotlight_show: 
     flash_color_with_fade: 
       action: stop
       key: key_asteroid_spotlight
       priority: 3000
       show_tokens: 
-        lights: LSpot1
-        color: ffffff
-        fade: 700
+        lights: "LSpot1"
+        color: "ffffff"
+        fade: "700"
   pu_lsling1_show: 
     flash_color_with_fade: 
       key: key_pc_lsling1_show
       loops: 8
       speed: 9
       show_tokens: 
-        lights: gi04
-        color: ffdca3
-        fade: 800
+        lights: "gi04"
+        color: "ffdca3"
+        fade: "800"
   pu_lsling2_show: 
     flash_color_with_fade: 
       key: key_pc_lsling2_show
       loops: 3
       speed: 4
       show_tokens: 
-        lights: gi03
-        color: ffdca3
-        fade: 800
+        lights: "gi03"
+        color: "ffdca3"
+        fade: "800"
   pu_rsling1_show: 
     flash_color_with_fade: 
       key: key_pu_rsling1_show
       loops: 8
       speed: 9
       show_tokens: 
-        lights: gi08
-        color: ffdca3
-        fade: 800
+        lights: "gi08"
+        color: "ffdca3"
+        fade: "800"
   pu_rsling2_show: 
     flash_color_with_fade: 
       key: key_pu_rsling2_show
       loops: 3
       speed: 4
       show_tokens: 
-        lights: gi07
-        color: ffdca3
-        fade: 800
+        lights: "gi07"
+        color: "ffdca3"
+        fade: "800"
   timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}: 
     gi_cracked: 
       key: key_gi_cracked
@@ -785,16 +785,16 @@ show_player:
       loops: 3
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: ffb46b
+        lights: "tFlasherU"
+        color: "ffb46b"
   activate_fully_loaded_wizard: 
     flash_color: 
       key: key_loaded_wiz_ready
       loops: 3
       speed: 20
       show_tokens: 
-        lights: tFlasherU
-        color: 00dddd
+        lights: "tFlasherU"
+        color: "00dddd"
 
 
 slide_player: 

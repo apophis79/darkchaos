@@ -95,8 +95,8 @@ shots:
     profile: powerups
     restart_events: reset_proton_charges
     show_tokens: 
-      lights: LPC1
-      color: 00dddd
+      lights: "LPC1"
+      color: "00dddd"
     control_events: 
       - events: ready_proton_charge1
         state: 1
@@ -106,8 +106,8 @@ shots:
     profile: powerups
     restart_events: reset_proton_charges
     show_tokens: 
-      lights: LPC2
-      color: 00dddd
+      lights: "LPC2"
+      color: "00dddd"
     control_events: 
       - events: ready_proton_charge2
         state: 1
@@ -117,8 +117,8 @@ shots:
     profile: powerups
     restart_events: reset_proton_charges
     show_tokens: 
-      lights: LPC3
-      color: 00dddd
+      lights: "LPC3"
+      color: "00dddd"
     control_events: 
       - events: ready_proton_charge3
         state: 1
@@ -128,8 +128,8 @@ shots:
     profile: off_on_color
     restart_events: fire_proton_round1
     show_tokens: 
-      lights: LPR1
-      color: 00dddd
+      lights: "LPR1"
+      color: "00dddd"
     control_events: 
       - events: add_proton_round1, complete_full_protons
         state: 1
@@ -137,8 +137,8 @@ shots:
     profile: off_on_color
     restart_events: fire_proton_round2
     show_tokens: 
-      lights: LPR2
-      color: 00dddd
+      lights: "LPR2"
+      color: "00dddd"
     control_events: 
       - events: add_proton_round2, complete_full_protons
         state: 1
@@ -146,8 +146,8 @@ shots:
     profile: off_on_color
     restart_events: fire_proton_round3
     show_tokens: 
-      lights: LPR3
-      color: 00dddd
+      lights: "LPR3"
+      color: "00dddd"
     control_events: 
       - events: add_proton_round3, complete_full_protons
         state: 1
@@ -155,8 +155,8 @@ shots:
     profile: off_on_color
     restart_events: fire_proton_round4
     show_tokens: 
-      lights: LPR4
-      color: 00dddd
+      lights: "LPR4"
+      color: "00dddd"
     control_events: 
       - events: add_proton_round4, complete_full_protons
         state: 1
@@ -164,8 +164,8 @@ shots:
     profile: off_on_color
     restart_events: fire_proton_round5
     show_tokens: 
-      lights: LPR5
-      color: 00dddd
+      lights: "LPR5"
+      color: "00dddd"
     control_events: 
       - events: add_proton_round5, complete_full_protons
         state: 1
@@ -173,8 +173,8 @@ shots:
     profile: off_on_color
     restart_events: fire_proton_round6
     show_tokens: 
-      lights: LPR6
-      color: 00dddd
+      lights: "LPR6"
+      color: "00dddd"
     control_events: 
       - events: add_proton_round6, complete_full_protons
         state: 1
@@ -186,56 +186,56 @@ show_player:
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPR1
-        color: 00dddd
+        lights: "LPR1"
+        color: "00dddd"
   add_proton_round2: 
     flash_color: 
       key: key_proton2_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPR2
-        color: 00dddd
+        lights: "LPR2"
+        color: "00dddd"
   add_proton_round3: 
     flash_color: 
       key: key_proton3_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPR3
-        color: 00dddd
+        lights: "LPR3"
+        color: "00dddd"
   add_proton_round4: 
     flash_color: 
       key: key_proton4_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPR4
-        color: 00dddd
+        lights: "LPR4"
+        color: "00dddd"
   add_proton_round5: 
     flash_color: 
       key: key_proton5_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPR5
-        color: 00dddd
+        lights: "LPR5"
+        color: "00dddd"
   add_proton_round6: 
     flash_color: 
       key: key_proton6_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LPR6
-        color: 00dddd
+        lights: "LPR6"
+        color: "00dddd"
   light_proton_charge3: 
     flash_color: 
       key: key_proton_charged
       loops: 6
       speed: 15
       show_tokens: 
-        lights: tProton
-        color: 00dddd
+        lights: "tProton"
+        color: "00dddd"
   complete_full_protons: 
     flash_color: 
       key: key_all_proton_charged
@@ -243,8 +243,8 @@ show_player:
       loops: 14
       speed: 15
       show_tokens: 
-        lights: tProtonAll
-        color: 00dddd
+        lights: "tProtonAll"
+        color: "00dddd"
   proton_added_show: 
     flash_color: 
       key: key_all_proton_charged
@@ -252,35 +252,35 @@ show_player:
       loops: 12
       speed: 15
       show_tokens: 
-        lights: tInlaneGI
-        color: 00dddd
+        lights: "tInlaneGI"
+        color: "00dddd"
   s_Spinner_active: 
     flash_color_with_fade: 
       key: key_spinner_flash
       loops: 0
       speed: 15
       show_tokens: 
-        lights: FL4
-        color: 00dddd
-        fade: 300
+        lights: "FL4"
+        color: "00dddd"
+        fade: "300"
   lsling_powerup_pc: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_pc
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 00dddd
-        color2: 00dddd
-        intensity: 100
+        color1: "00dddd"
+        color2: "00dddd"
+        intensity: "100"
   rsling_powerup_pc: 
     rsling_rotate2_ccw: 
       key: key_rsling_powerup_pc
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 00dddd
-        color2: 00dddd
-        intensity: 100
+        color1: "00dddd"
+        color2: "00dddd"
+        intensity: "100"
 
 
 sound_player: 

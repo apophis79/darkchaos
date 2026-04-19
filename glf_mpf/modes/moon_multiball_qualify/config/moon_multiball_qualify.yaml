@@ -99,8 +99,8 @@ shots:
     switch: s_LeftOutlane
     profile: flicker_on
     show_tokens: 
-      lights: LLO
-      color: ccbb00
+      lights: "LLO"
+      color: "ccbb00"
     control_events: 
       - events: boost_qualify_shots, complete_moon_qualify_shots
         state: 1
@@ -108,8 +108,8 @@ shots:
     switch: s_LeftInlane
     profile: flicker_on
     show_tokens: 
-      lights: LLI
-      color: ccbb00
+      lights: "LLI"
+      color: "ccbb00"
     control_events: 
       - events: boost_qualify_shots, complete_moon_qualify_shots
         state: 1
@@ -117,8 +117,8 @@ shots:
     switch: s_RightInlane
     profile: flicker_on
     show_tokens: 
-      lights: LRI
-      color: ccbb00
+      lights: "LRI"
+      color: "ccbb00"
     control_events: 
       - events: boost_qualify_shots, complete_moon_qualify_shots
         state: 1
@@ -126,8 +126,8 @@ shots:
     switch: s_RightOutlane
     profile: flicker_on
     show_tokens: 
-      lights: LRO
-      color: ccbb00
+      lights: "LRO"
+      color: "ccbb00"
     control_events: 
       - events: complete_moon_qualify_shots
         state: 1
@@ -135,8 +135,8 @@ shots:
     profile: flicker_on
     restart_events: multiball_moon_started, restart_moon_missiles
     show_tokens: 
-      lights: LMR1
-      color: ccbb00
+      lights: "LMR1"
+      color: "ccbb00"
     control_events: 
       - events: light_missile1, complete_moon_missiles
         state: 1
@@ -144,8 +144,8 @@ shots:
     profile: flicker_on
     restart_events: multiball_moon_started, restart_moon_missiles
     show_tokens: 
-      lights: LMR2
-      color: ccbb00
+      lights: "LMR2"
+      color: "ccbb00"
     control_events: 
       - events: light_missile2, complete_moon_missiles
         state: 1
@@ -153,8 +153,8 @@ shots:
     profile: qualified_shot
     restart_events: restart_moon_qualify_shots
     show_tokens: 
-      lights: LMLR
-      color: ccbb00
+      lights: "LMLR"
+      color: "ccbb00"
     control_events: 
       - events: qualify_lock_on_complete
         state: 1
@@ -171,26 +171,26 @@ show_player:
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tMoon
-        color: ccbb00
+        lights: "tMoon"
+        color: "ccbb00"
   lsling_powerup_mm: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_mm
       loops: 2
       speed: 2
       show_tokens: 
-        color1: ccbb00
-        color2: ccbb00
-        intensity: 100
+        color1: "ccbb00"
+        color2: "ccbb00"
+        intensity: "100"
   rsling_powerup_mm: 
     rsling_rotate2_ccw: 
       key: key_rsling_powerup_mm
       loops: 2
       speed: 2
       show_tokens: 
-        color1: ccbb00
-        color2: ccbb00
-        intensity: 100
+        color1: "ccbb00"
+        color2: "ccbb00"
+        intensity: "100"
   mm_acquired: 
     moon_missile_acquired: 
       key: key_mm_acquired
@@ -198,16 +198,16 @@ show_player:
       loops: 0
       speed: 4
       show_tokens: 
-        color: ccbb00
-        intensity: 100
+        color: "ccbb00"
+        intensity: "100"
   s_GateR_active: 
     flash_color: 
       key: key_moon_launch_gate
       loops: 8
       speed: 13
       show_tokens: 
-        lights: LL
-        color: dd0400
+        lights: "LL"
+        color: "dd0400"
 
 
 sound_player: 

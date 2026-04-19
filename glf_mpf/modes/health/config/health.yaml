@@ -174,7 +174,7 @@ shots:
   health1_light:
     profile: health_meter
     show_tokens: 
-      lights: LH1
+      lights: "LH1"
     control_events: 
       - events: health1_off
         state: 0
@@ -187,7 +187,7 @@ shots:
   health2_light:
     profile: health_meter
     show_tokens: 
-      lights: LH2
+      lights: "LH2"
     control_events: 
       - events: health2_off
         state: 0
@@ -200,7 +200,7 @@ shots:
   health3_light:
     profile: health_meter
     show_tokens: 
-      lights: LH3
+      lights: "LH3"
     control_events: 
       - events: health3_off
         state: 0
@@ -213,7 +213,7 @@ shots:
   health4_light:
     profile: health_meter
     show_tokens: 
-      lights: LH4
+      lights: "LH4"
     control_events: 
       - events: health4_off
         state: 0
@@ -226,7 +226,7 @@ shots:
   health5_light:
     profile: health_meter
     show_tokens: 
-      lights: LH5
+      lights: "LH5"
     control_events: 
       - events: health5_off
         state: 0
@@ -239,7 +239,7 @@ shots:
   health6_light:
     profile: health_meter
     show_tokens: 
-      lights: LH6
+      lights: "LH6"
     control_events: 
       - events: health6_off
         state: 0
@@ -252,7 +252,7 @@ shots:
   health7_light:
     profile: health_meter
     show_tokens: 
-      lights: LH7
+      lights: "LH7"
     control_events: 
       - events: health7_off
         state: 0
@@ -265,7 +265,7 @@ shots:
   health8_light:
     profile: health_meter
     show_tokens: 
-      lights: LH8
+      lights: "LH8"
     control_events: 
       - events: health8_off
         state: 0
@@ -278,7 +278,7 @@ shots:
   health9_light:
     profile: health_meter
     show_tokens: 
-      lights: LH9
+      lights: "LH9"
     control_events: 
       - events: health9_off
         state: 0
@@ -303,8 +303,8 @@ show_player:
       loops: 6
       speed: 15
       show_tokens: 
-        lights: tHealth
-        color: 00dd00
+        lights: "tHealth"
+        color: "00dd00"
   health_charge2: 
     insert_gi_spin_center: 
       key: key_health_charge2
@@ -312,42 +312,42 @@ show_player:
       loops: 0
       speed: 3
       show_tokens: 
-        intensity: 100
-        color: 00dd00
+        intensity: "100"
+        color: "00dd00"
   complete_full_health: 
     flash_color: 
       key: key_health_full_charged
       loops: 14
       speed: 15
       show_tokens: 
-        lights: tHealth
-        color: 00dd00
+        lights: "tHealth"
+        color: "00dd00"
   mode_health_started: 
     flicker_color_on_intensity: 
       key: key_bumpers_on
       speed: 10
       show_tokens: 
-        lights: tBumper
-        color: ffdca3
-        intensity: 10
+        lights: "tBumper"
+        color: "ffdca3"
+        intensity: "10"
   lsling_powerup_h: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_h
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 00dd00
-        color2: 00dd00
-        intensity: 100
+        color1: "00dd00"
+        color2: "00dd00"
+        intensity: "100"
   rsling_powerup_h: 
     rsling_rotate2_ccw: 
       key: key_rsling_powerup_h
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 00dd00
-        color2: 00dd00
-        intensity: 100
+        color1: "00dd00"
+        color2: "00dd00"
+        intensity: "100"
   s_Bumper1_active: 
     flash_color_with_fade: 
       key: key_bumper1_flash
@@ -355,9 +355,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB1
-        color: 05cc05
-        fade: 50
+        lights: "LB1"
+        color: "05cc05"
+        fade: "50"
   s_Bumper2_active: 
     flash_color_with_fade: 
       key: key_bumper2_flash
@@ -365,9 +365,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB2
-        color: 05cc05
-        fade: 50
+        lights: "LB2"
+        color: "05cc05"
+        fade: "50"
   s_Bumper3_active: 
     flash_color_with_fade: 
       key: key_bumper3_flash
@@ -375,9 +375,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB3
-        color: 05cc05
-        fade: 50
+        lights: "LB3"
+        color: "05cc05"
+        fade: "50"
   s_Bumper4_active: 
     flash_color_with_fade: 
       key: key_bumper4_flash
@@ -385,9 +385,9 @@ show_player:
       loops: 0
       speed: 15
       show_tokens: 
-        lights: LB4
-        color: 05cc05
-        fade: 50
+        lights: "LB4"
+        color: "05cc05"
+        fade: "50"
 
 
 sound_player: 

@@ -58,8 +58,8 @@ shots:
     profile: qualified_shot
     restart_events: restart_eb
     show_tokens: 
-      lights: LEBR
-      color: 00dd00
+      lights: "LEBR"
+      color: "00dd00"
     control_events: 
       - events: eb_now_lit
         state: 1

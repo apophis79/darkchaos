@@ -56,9 +56,9 @@ show_player:
       loops: 1
       speed: 1.5
       show_tokens: 
-        color1: 000000
-        color2: 33dd33
-        intensity: 100
+        color1: "000000"
+        color2: "33dd33"
+        intensity: "100"
   sss_achieved: 
     insert_swap3: 
       key: key_sss_achieved
@@ -66,10 +66,10 @@ show_player:
       loops: 1
       speed: 1.5
       show_tokens: 
-        color1: 000000
-        color2: 33dd33
-        color3: ffae00
-        intensity: 100
+        color1: "000000"
+        color2: "33dd33"
+        color3: "ffae00"
+        intensity: "100"
   ssss_achieved: 
     insert_swap3: 
       key: key_ssss_achieved
@@ -77,10 +77,10 @@ show_player:
       loops: 2
       speed: 1.5
       show_tokens: 
-        color1: 00dddd
-        color2: 33dd33
-        color3: ccbb00
-        intensity: 100
+        color1: "00dddd"
+        color2: "33dd33"
+        color3: "ccbb00"
+        intensity: "100"
   sdsss_achieved: 
     insert_swap3: 
       key: key_sdsss_achieved
@@ -88,10 +88,10 @@ show_player:
       loops: 3
       speed: 1.5
       show_tokens: 
-        color1: ed1800
-        color2: 33dd33
-        color3: 0010cc
-        intensity: 100
+        color1: "ed1800"
+        color2: "33dd33"
+        color3: "0010cc"
+        intensity: "100"
 
 
 sound_player: 

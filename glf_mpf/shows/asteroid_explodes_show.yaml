@@ -8,10 +8,10 @@
       loops: 2
       speed: 1.5
       show_tokens: 
-        color1: ffffff
-        color2: ed1800
-        color3: edb600
-        intensity: 100
+        color1: "ffffff"
+        color2: "ed1800"
+        color3: "edb600"
+        intensity: "100"
 
 - time: 0.02s
   shows:
@@ -20,8 +20,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: tAsteroid
-        color: ffffff
+        lights: "tAsteroid"
+        color: "ffffff"
 
 - time: 0.2s
   shows:
@@ -38,10 +38,10 @@
       loops: 2
       speed: 1.5
       show_tokens: 
-        color1: 000000
-        color2: ed1800
-        color3: edb600
-        intensity: 100
+        color1: "000000"
+        color2: "ed1800"
+        color3: "edb600"
+        intensity: "100"
 
 - time: 1.71s
   shows:
@@ -50,8 +50,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: tAsteroid
-        color: aaaaaa
+        lights: "tAsteroid"
+        color: "aaaaaa"
 
 - time: 1.9s
   shows:
@@ -61,8 +61,8 @@
       loops: 0
       speed: 1.5
       show_tokens: 
-        color: edb600
-        intensity: 100
+        color: "edb600"
+        intensity: "100"
 
 - time: 4.1s
   shows:
@@ -72,9 +72,9 @@
       loops: 3
       speed: 1.5
       show_tokens: 
-        color1: 000000
-        color2: ed1800
-        intensity: 100
+        color1: "000000"
+        color2: "ed1800"
+        intensity: "100"
 
 - time: 4.11s
   shows:
@@ -83,8 +83,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: tAsteroid
-        color: 555555
+        lights: "tAsteroid"
+        color: "555555"
 
 - time: 4.36s
   shows:
@@ -94,8 +94,8 @@
       loops: 0
       speed: 1.5
       show_tokens: 
-        color: ed1800
-        intensity: 100
+        color: "ed1800"
+        intensity: "100"
 
 - time: 5.4s
   shows:
@@ -104,8 +104,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: tAsteroid
-        color: 111111
+        lights: "tAsteroid"
+        color: "111111"
 
 - time: 5.41s
   shows:
@@ -115,7 +115,7 @@
       loops: 0
       speed: 1.5
       show_tokens: 
-        color: ed1800
-        intensity: 100
+        color: "ed1800"
+        intensity: "100"
 
 

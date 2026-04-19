@@ -95,8 +95,8 @@ shots:
     profile: powerups
     restart_events: reset_cluster_charges
     show_tokens: 
-      lights: LCC1
-      color: dd00dd
+      lights: "LCC1"
+      color: "dd00dd"
     control_events: 
       - events: ready_cluster_charge1
         state: 1
@@ -106,8 +106,8 @@ shots:
     profile: powerups
     restart_events: reset_cluster_charges
     show_tokens: 
-      lights: LCC2
-      color: dd00dd
+      lights: "LCC2"
+      color: "dd00dd"
     control_events: 
       - events: ready_cluster_charge2
         state: 1
@@ -117,8 +117,8 @@ shots:
     profile: powerups
     restart_events: reset_cluster_charges
     show_tokens: 
-      lights: LCC3
-      color: dd00dd
+      lights: "LCC3"
+      color: "dd00dd"
     control_events: 
       - events: ready_cluster_charge3
         state: 1
@@ -127,8 +127,8 @@ shots:
   cluster_bomb1:
     profile: flicker_on
     show_tokens: 
-      lights: LCR1
-      color: dd00dd
+      lights: "LCR1"
+      color: "dd00dd"
     control_events: 
       - events: add_cluster_bomb1, complete_cluster_bombs
         state: 1
@@ -137,8 +137,8 @@ shots:
   cluster_bomb2:
     profile: flicker_on
     show_tokens: 
-      lights: LCR2
-      color: dd00dd
+      lights: "LCR2"
+      color: "dd00dd"
     control_events: 
       - events: add_cluster_bomb2, complete_cluster_bombs
         state: 1
@@ -152,32 +152,32 @@ show_player:
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tClusterAll
-        color: dd0400
+        lights: "tClusterAll"
+        color: "dd0400"
   light_cluster_charge3: 
     flash_color: 
       key: key_clusters_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: tCluster
-        color: dd00dd
+        lights: "tCluster"
+        color: "dd00dd"
   add_cluster_bomb1: 
     flash_color: 
       key: key_cluster1_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LCR1
-        color: dd00dd
+        lights: "LCR1"
+        color: "dd00dd"
   add_cluster_bomb2: 
     flash_color: 
       key: key_cluster2_charged
       loops: 4
       speed: 15
       show_tokens: 
-        lights: LCR2
-        color: dd00dd
+        lights: "LCR2"
+        color: "dd00dd"
   cluster_bomb_fired: 
     cluster_explodes: 
       key: key_cluster_explodes
@@ -189,27 +189,27 @@ show_player:
       loops: 4
       speed: 20
       show_tokens: 
-        lights: FL3
-        color: dd00dd
-        fade: 300
+        lights: "FL3"
+        color: "dd00dd"
+        fade: "300"
   lsling_powerup_cb: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_cb
       loops: 2
       speed: 2
       show_tokens: 
-        color1: dd00dd
-        color2: dd00dd
-        intensity: 100
+        color1: "dd00dd"
+        color2: "dd00dd"
+        intensity: "100"
   rsling_powerup_cb: 
     rsling_rotate2_ccw: 
       key: key_rsling_powerup_cb
       loops: 2
       speed: 2
       show_tokens: 
-        color1: dd00dd
-        color2: dd00dd
-        intensity: 100
+        color1: "dd00dd"
+        color2: "dd00dd"
+        intensity: "100"
   cb_acquired: 
     cluster_bomb_acquired: 
       key: key_cb_acquired
@@ -217,8 +217,8 @@ show_player:
       loops: 0
       speed: 4
       show_tokens: 
-        color: dd00dd
-        intensity: 100
+        color: "dd00dd"
+        intensity: "100"
 
 
 sound_player: 

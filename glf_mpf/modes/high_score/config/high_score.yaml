@@ -498,7 +498,7 @@ show_player:
     rainbow: 
       key: key_hs_show
       show_tokens: 
-        lights: GI
+        lights: "GI"
 
 
 sound_player: 

@@ -6,7 +6,7 @@
       key: insert_saver_acquiredA
       loops: 0
       show_tokens: 
-        color: 0500ee
-        intensity: 100
+        color: "0500ee"
+        intensity: "100"
 
 

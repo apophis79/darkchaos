@@ -73,7 +73,7 @@ shots:
     switch: s_TargetShield1
     profile: qualify_shields
     show_tokens: 
-      lights: LSC1
+      lights: "LSC1"
     control_events: 
       - events: boost_qualify_shields, complete_qualify_shields
         state: 1
@@ -81,7 +81,7 @@ shots:
     switch: s_TargetShield2
     profile: qualify_shields
     show_tokens: 
-      lights: LSC2
+      lights: "LSC2"
     control_events: 
       - events: boost_qualify_shields, complete_qualify_shields
         state: 1
@@ -89,7 +89,7 @@ shots:
     switch: s_TargetShield3
     profile: qualify_shields
     show_tokens: 
-      lights: LSC3
+      lights: "LSC3"
     control_events: 
       - events: complete_qualify_shields
         state: 1
@@ -97,7 +97,7 @@ shots:
     profile: shields_ready
     restart_events: restart_qualify_shields
     show_tokens: 
-      lights: LSL
+      lights: "LSL"
     control_events: 
       - events: qualify_shields_on_complete
         state: 1
@@ -105,7 +105,7 @@ shots:
     profile: shields_ready
     restart_events: restart_qualify_shields
     show_tokens: 
-      lights: LSR
+      lights: "LSR"
     control_events: 
       - events: qualify_shields_on_complete
         state: 1
@@ -117,26 +117,26 @@ show_player:
       loops: 6
       speed: 13
       show_tokens: 
-        lights: tShields
-        color: 0010cc
+        lights: "tShields"
+        color: "0010cc"
   lsling_powerup_sh: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_sh
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 0010cc
-        color2: 0010cc
-        intensity: 100
+        color1: "0010cc"
+        color2: "0010cc"
+        intensity: "100"
   rsling_powerup_sh: 
     rsling_rotate2_ccw: 
       key: key_rsling_powerup_sh
       loops: 2
       speed: 2
       show_tokens: 
-        color1: 0010cc
-        color2: 0010cc
-        intensity: 100
+        color1: "0010cc"
+        color2: "0010cc"
+        intensity: "100"
   play_shields_up: 
     shields_up: 
       key: key_shields_up

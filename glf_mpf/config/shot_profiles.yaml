@@ -80,7 +80,7 @@ shot_profiles:
        speed: 4
        sync_ms: 0
        show_tokens: 
-         fade: 400
+         fade: "400"
      - name: collected
        show: led_color
        loops: -1
@@ -95,7 +95,7 @@ shot_profiles:
        speed: 12
        sync_ms: 0
        show_tokens: 
-         fade: 100
+         fade: "100"
      - name: collected
        show: led_color
        loops: -1
@@ -115,7 +115,7 @@ shot_profiles:
        speed: 2
        sync_ms: 0
        show_tokens: 
-         fade: 100
+         fade: "100"
   shoot_again:
     advance_on_hit: True
     states: 
@@ -125,22 +125,22 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: LSA
+         lights: "LSA"
      - name: flashing
        show: flash_color_with_fade
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         lights: LSA
-         fade: 500
+         lights: "LSA"
+         fade: "500"
      - name: hurry
        show: flash_color
        loops: -1
        speed: 7
        sync_ms: 0
        show_tokens: 
-         lights: LSA
+         lights: "LSA"
   health_shot_ready:
     advance_on_hit: True
     states: 
@@ -150,16 +150,16 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: LDP
+         lights: "LDP"
      - name: ready
        show: flash_color_with_fade
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         fade: 500
-         color: 00dd00
-         lights: LDP
+         fade: "500"
+         color: "00dd00"
+         lights: "LDP"
   wizard_ready1:
     advance_on_hit: True
     states: 
@@ -174,7 +174,7 @@ shot_profiles:
        speed: 8
        sync_ms: 0
        show_tokens: 
-         fade: 400
+         fade: "400"
      - name: collected
        show: led_color
        loops: -1
@@ -189,16 +189,16 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: LM2
+         lights: "LM2"
      - name: ready
        show: flash_color_with_fade
        loops: -1
        speed: 3
        sync_ms: 0
        show_tokens: 
-         fade: 200
-         color: 33dd33
-         lights: LM2
+         fade: "200"
+         color: "33dd33"
+         lights: "LM2"
   alien:
     advance_on_hit: True
     states: 
@@ -213,8 +213,8 @@ shot_profiles:
        speed: 7
        sync_ms: 0
        show_tokens: 
-         fade: 200
-         color: ff0300
+         fade: "200"
+         color: "ff0300"
      - name: grace
        show: off
        loops: -1
@@ -234,7 +234,7 @@ shot_profiles:
        speed: 4
        sync_ms: 0
        show_tokens: 
-         color: 0010cc
+         color: "0010cc"
   shields_ready:
     advance_on_hit: True
     states: 
@@ -249,7 +249,7 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: 0010cc
+         color: "0010cc"
   extraball:
     advance_on_hit: True
     states: 
@@ -259,15 +259,15 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: LSA
+         lights: "LSA"
      - name: lit
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: LSA
-         color: 0500ee
+         lights: "LSA"
+         color: "0500ee"
   double_scoring:
     advance_on_hit: True
     states: 
@@ -277,25 +277,25 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: LDS
-         color: ff3300
+         lights: "LDS"
+         color: "ff3300"
      - name: flashing
        show: flash_color_with_fade
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         lights: LDS
-         fade: 500
-         color: ff3300
+         lights: "LDS"
+         fade: "500"
+         color: "ff3300"
      - name: hurry
        show: flash_color
        loops: -1
        speed: 7
        sync_ms: 0
        show_tokens: 
-         lights: LDS
-         color: ff3300
+         lights: "LDS"
+         color: "ff3300"
   super_spinner:
     advance_on_hit: True
     states: 
@@ -305,25 +305,25 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: gi21
-         color: 00dddd
+         lights: "gi21"
+         color: "00dddd"
      - name: flashing
        show: flash_color_with_fade
        loops: -1
        speed: 5
        sync_ms: 0
        show_tokens: 
-         lights: gi21
-         fade: 500
-         color: 00dddd
+         lights: "gi21"
+         fade: "500"
+         color: "00dddd"
      - name: hurry
        show: flash_color
        loops: -1
        speed: 10
        sync_ms: 0
        show_tokens: 
-         lights: gi21
-         color: 00dddd
+         lights: "gi21"
+         color: "00dddd"
   super_pops:
     advance_on_hit: True
     states: 
@@ -333,25 +333,25 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: tBumper
-         color: 555555
+         lights: "tBumper"
+         color: "555555"
      - name: flashing
        show: flash_color_with_fade
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         lights: tBumper
-         fade: 500
-         color: 555555
+         lights: "tBumper"
+         fade: "500"
+         color: "555555"
      - name: hurry
        show: flash_color
        loops: -1
        speed: 7
        sync_ms: 0
        show_tokens: 
-         lights: tBumper
-         color: 555555
+         lights: "tBumper"
+         color: "555555"
   health_meter:
     advance_on_hit: True
     states: 
@@ -366,21 +366,21 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: 00dd00
+         color: "00dd00"
      - name: warning
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: d14c00
+         color: "d14c00"
      - name: critical
        show: flash_color
        loops: -1
        speed: 15
        sync_ms: 0
        show_tokens: 
-         color: ff0300
+         color: "ff0300"
   training_profile:
     advance_on_hit: True
     states: 
@@ -408,14 +408,14 @@ shot_profiles:
        speed: 3
        sync_ms: 0
        show_tokens: 
-         fade: 200
+         fade: "200"
      - name: ready2
        show: flash_color_with_fade
        loops: -1
        speed: 8
        sync_ms: 0
        show_tokens: 
-         fade: 200
+         fade: "200"
      - name: on
        show: led_color
        loops: -1
@@ -430,15 +430,15 @@ shot_profiles:
        speed: 8
        sync_ms: 0
        show_tokens: 
-         color: ccbb00
-         fade: 400
+         color: "ccbb00"
+         fade: "400"
      - name: collected
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: ccbb00
+         color: "ccbb00"
   train_shields:
     advance_on_hit: True
     states: 
@@ -448,15 +448,15 @@ shot_profiles:
        speed: 8
        sync_ms: 0
        show_tokens: 
-         color: 0010cc
-         fade: 400
+         color: "0010cc"
+         fade: "400"
      - name: collected
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: 0010cc
+         color: "0010cc"
   meteor_temp:
     advance_on_hit: True
     states: 
@@ -471,23 +471,23 @@ shot_profiles:
        speed: 2
        sync_ms: 0
        show_tokens: 
-         color: ffA957
-         fade: 1000
+         color: "ffA957"
+         fade: "1000"
      - name: warm
        show: flash_color_with_fade
        loops: -1
        speed: 5
        sync_ms: 0
        show_tokens: 
-         color: edb600
-         fade: 1000
+         color: "edb600"
+         fade: "1000"
      - name: hot
        show: flash_color
        loops: -1
        speed: 12
        sync_ms: 0
        show_tokens: 
-         color: ed1800
+         color: "ed1800"
   proton_shot_ready:
     advance_on_hit: True
     states: 
@@ -497,16 +497,16 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: tFire
+         lights: "tFire"
      - name: ready
        show: flash_color_with_fade
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         fade: 400
-         color: 00dddd
-         lights: tFire
+         fade: "400"
+         color: "00dddd"
+         lights: "tFire"
   fully_loaded_profile:
     advance_on_hit: True
     states: 
@@ -539,14 +539,14 @@ shot_profiles:
        speed: 10
        sync_ms: 0
        show_tokens: 
-         color: ffb46b
+         color: "ffb46b"
      - name: on
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: ffb46b
+         color: "ffb46b"
   asteroid:
     advance_on_hit: True
     states: 
@@ -556,15 +556,15 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: tFire
+         lights: "tFire"
      - name: ready
        show: flash_color
        loops: -1
        speed: 8
        sync_ms: 0
        show_tokens: 
-         lights: tFire
-         color: dd0400
+         lights: "tFire"
+         color: "dd0400"
   fwwiz_meteor:
     advance_on_hit: True
     states: 
@@ -579,7 +579,7 @@ shot_profiles:
        speed: 8
        sync_ms: 0
        show_tokens: 
-         color: ed1800
+         color: "ed1800"
   victory_shots:
     advance_on_hit: True
     states: 
@@ -594,5 +594,5 @@ shot_profiles:
        speed: 7
        sync_ms: 0
        show_tokens: 
-         color: ffffff
+         color: "ffffff"
 

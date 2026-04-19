@@ -8,9 +8,9 @@
       loops: 3
       speed: 1.5
       show_tokens: 
-        color1: ffffff
-        color2: dd00dd
-        intensity: 100
+        color1: "ffffff"
+        color2: "dd00dd"
+        intensity: "100"
 
 - time: 0.1s
   shows:
@@ -20,8 +20,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi04
-        color: ffffff
+        lights: "gi04"
+        color: "ffffff"
 
 - time: 0.11s
   shows:
@@ -31,8 +31,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi04
-        color: dd00dd
+        lights: "gi04"
+        color: "dd00dd"
 
 - time: 0.14s
   shows:
@@ -42,8 +42,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi07
-        color: ffffff
+        lights: "gi07"
+        color: "ffffff"
 
 - time: 0.15s
   shows:
@@ -53,8 +53,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi07
-        color: dd00dd
+        lights: "gi07"
+        color: "dd00dd"
 
 - time: 0.19s
   shows:
@@ -64,8 +64,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi10
-        color: ffffff
+        lights: "gi10"
+        color: "ffffff"
 
 - time: 0.2s
   shows:
@@ -75,8 +75,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi10
-        color: dd00dd
+        lights: "gi10"
+        color: "dd00dd"
 
 - time: 0.21s
   shows:
@@ -86,8 +86,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi09
-        color: ffffff
+        lights: "gi09"
+        color: "ffffff"
 
 - time: 0.22s
   shows:
@@ -97,8 +97,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi09
-        color: dd00dd
+        lights: "gi09"
+        color: "dd00dd"
 
 - time: 0.24s
   shows:
@@ -108,8 +108,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi11
-        color: ffffff
+        lights: "gi11"
+        color: "ffffff"
 
 - time: 0.25s
   shows:
@@ -119,8 +119,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi11
-        color: dd00dd
+        lights: "gi11"
+        color: "dd00dd"
 
 - time: 0.52s
   shows:
@@ -130,8 +130,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi20
-        color: ffffff
+        lights: "gi20"
+        color: "ffffff"
 
 - time: 0.53s
   shows:
@@ -141,8 +141,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi20
-        color: dd00dd
+        lights: "gi20"
+        color: "dd00dd"
 
 - time: 0.54s
   shows:
@@ -152,8 +152,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi13
-        color: ffffff
+        lights: "gi13"
+        color: "ffffff"
 
 - time: 0.55s
   shows:
@@ -163,8 +163,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi13
-        color: dd00dd
+        lights: "gi13"
+        color: "dd00dd"
 
 - time: 0.92s
   shows:
@@ -174,8 +174,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi03
-        color: ffffff
+        lights: "gi03"
+        color: "ffffff"
 
 - time: 0.93s
   shows:
@@ -185,8 +185,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi03
-        color: dd00dd
+        lights: "gi03"
+        color: "dd00dd"
 
 - time: 0.95s
   shows:
@@ -196,8 +196,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi08
-        color: ffffff
+        lights: "gi08"
+        color: "ffffff"
 
 - time: 0.96s
   shows:
@@ -207,8 +207,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi08
-        color: dd00dd
+        lights: "gi08"
+        color: "dd00dd"
 
 - time: 1.38s
   shows:
@@ -218,8 +218,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi19
-        color: ffffff
+        lights: "gi19"
+        color: "ffffff"
 
 - time: 1.39s
   shows:
@@ -229,8 +229,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi19
-        color: dd00dd
+        lights: "gi19"
+        color: "dd00dd"
 
 - time: 1.4s
   shows:
@@ -240,8 +240,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi02
-        color: ffffff
+        lights: "gi02"
+        color: "ffffff"
 
 - time: 1.41s
   shows:
@@ -251,8 +251,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi02
-        color: dd00dd
+        lights: "gi02"
+        color: "dd00dd"
 
 - time: 2.49s
   shows:
@@ -262,8 +262,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi12
-        color: ffffff
+        lights: "gi12"
+        color: "ffffff"
 
 - time: 2.5s
   shows:
@@ -273,8 +273,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi12
-        color: dd00dd
+        lights: "gi12"
+        color: "dd00dd"
 
 - time: 2.54s
   shows:
@@ -284,8 +284,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi05
-        color: ffffff
+        lights: "gi05"
+        color: "ffffff"
 
 - time: 2.55s
   shows:
@@ -295,8 +295,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi05
-        color: dd00dd
+        lights: "gi05"
+        color: "dd00dd"
 
 - time: 3.49s
   shows:
@@ -306,8 +306,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi22
-        color: ffffff
+        lights: "gi22"
+        color: "ffffff"
 
 - time: 3.5s
   shows:
@@ -317,8 +317,8 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi22
-        color: dd00dd
+        lights: "gi22"
+        color: "dd00dd"
 
 - time: 3.54s
   shows:
@@ -328,8 +328,8 @@
       loops: 2
       speed: 15
       show_tokens: 
-        lights: gi20
-        color: ffffff
+        lights: "gi20"
+        color: "ffffff"
 
 - time: 3.55s
   shows:
@@ -339,7 +339,7 @@
       loops: 0
       speed: 4
       show_tokens: 
-        lights: gi20
-        color: dd00dd
+        lights: "gi20"
+        color: "dd00dd"
 
 

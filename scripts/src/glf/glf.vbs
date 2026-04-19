@@ -9872,7 +9872,7 @@ Class GlfShotProfile
                 yaml = yaml & "       show_tokens: " & vbCrLf
                 Dim state_tokens : Set state_tokens = state.Tokens()
                 For Each token in state_tokens.Keys()
-                    yaml = yaml & "         " & token & ": " & state_tokens(token) & vbCrLf
+                    yaml = yaml & "         " & token & ": """ & state_tokens(token) & """" & vbCrLf
                 Next
             End If
 
@@ -10254,7 +10254,7 @@ Class GlfShot
             If IsArray(m_tokens(key)) Then
                 yaml = yaml & "      " & key & ": " & Join(m_tokens(key), ",") & vbCrLf
             Else  
-                yaml = yaml & "      " & key & ": " & m_tokens(key) & vbCrLf
+                yaml = yaml & "      " & key & ": """ & m_tokens(key) & """" & vbCrLf
             End If
         Next
 
@@ -10634,7 +10634,7 @@ Class GlfShowPlayerItem
             yaml = yaml & "      show_tokens: " & vbCrLf
             Dim key
             For Each key in m_tokens.Keys
-                yaml = yaml & "        " & key & ": " & m_tokens(key) & vbCrLf
+                yaml = yaml & "        " & key & ": """ & m_tokens(key) & """" & vbCrLf
             Next
         End If
 
