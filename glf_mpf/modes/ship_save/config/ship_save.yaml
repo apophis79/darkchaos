@@ -20,10 +20,6 @@ event_player:
     - light_ship_charge2
     - ready_ship_charge3
     - clear_ship_save
-  mode_ship_save_started{current_player.shot_ship_charge3 == 2}:
-    - backglass_ball_on
-  mode_ship_save_stopping:
-    - backglass_ball_off
   right_orbit_hit{current_player.shot_ship_charge1 == 1}:
     - light_ship_charge1
     - ready_ship_charge2
@@ -40,7 +36,6 @@ event_player:
     - lsling_powerup_sa
     - rsling_powerup_sa
     - saver_acquired
-    - backglass_ball_on
   mystery_added_saver:
     - complete_ship_save
     - light_ship_charge3

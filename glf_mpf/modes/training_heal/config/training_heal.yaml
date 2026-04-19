@@ -26,9 +26,14 @@ combo_switches:
 event_player: 
   mode_training_heal_started:
     - init_training
-    - raise_diverter
     - play_lsling_training
     - play_rsling_training
+  left_orbit_hit:
+    - raise_diverter
+  right_orbit_hit:
+    - raise_diverter
+  timer_tr_health_diverter_complete:
+    - drop_diverter
   s_Bumper1_active:
     - check_add_training_health_bump
   s_Bumper2_active:
@@ -97,7 +102,7 @@ event_player:
     - stop_training
     - training_stopped
     - play_voc_training_incomplete
-  mode_training_heal_stopping{current_player.training_heal_achieved==0}:
+  mode_training_heal_stopping:
     - drop_diverter
   timer_training_heal_tick:
     - flicker_gi
@@ -239,7 +244,7 @@ show_player:
       show_tokens: 
         lights: tBumper
         color: 00dd00
-        intensity: 20
+        intensity: 100
   init_training: 
     flicker_color_on_intensity: 
       key: key_training_gi
@@ -247,7 +252,7 @@ show_player:
       show_tokens: 
         lights: GI
         color: 00dd00
-        intensity: 10
+        intensity: 100
   flash_gi: 
     flicker_color_on_intensity: 
       key: key_training_gi
@@ -255,7 +260,7 @@ show_player:
       show_tokens: 
         lights: GI
         color: 00dd00
-        intensity: 10
+        intensity: 100
   mode_training_heal_stopping: 
     flicker_color: 
       key: key_training_stopping
@@ -264,7 +269,7 @@ show_player:
       show_tokens: 
         lights: GI
         color: 00dd00
-        intensity: 10
+        intensity: 100
   training_achieved: 
     flash_color: 
       key: key_training_flash
@@ -281,7 +286,7 @@ show_player:
       show_tokens: 
         lights: gi01
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi02: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi02
@@ -290,7 +295,7 @@ show_player:
       show_tokens: 
         lights: gi02
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi03: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi03
@@ -299,7 +304,7 @@ show_player:
       show_tokens: 
         lights: gi03
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi04: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi04
@@ -308,7 +313,7 @@ show_player:
       show_tokens: 
         lights: gi04
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi05: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi05
@@ -317,7 +322,7 @@ show_player:
       show_tokens: 
         lights: gi05
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi06: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi06
@@ -326,7 +331,7 @@ show_player:
       show_tokens: 
         lights: gi06
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi07: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi07
@@ -335,7 +340,7 @@ show_player:
       show_tokens: 
         lights: gi07
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi08: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi08
@@ -344,7 +349,7 @@ show_player:
       show_tokens: 
         lights: gi08
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi09: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi09
@@ -353,7 +358,7 @@ show_player:
       show_tokens: 
         lights: gi09
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi10: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi10
@@ -362,7 +367,7 @@ show_player:
       show_tokens: 
         lights: gi10
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi11: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi11
@@ -371,7 +376,7 @@ show_player:
       show_tokens: 
         lights: gi11
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi12: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi12
@@ -380,7 +385,7 @@ show_player:
       show_tokens: 
         lights: gi12
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi13: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi13
@@ -389,7 +394,7 @@ show_player:
       show_tokens: 
         lights: gi13
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi14: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi14
@@ -398,7 +403,7 @@ show_player:
       show_tokens: 
         lights: gi14
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi15: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi15
@@ -407,7 +412,7 @@ show_player:
       show_tokens: 
         lights: gi15
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi16: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi16
@@ -416,7 +421,7 @@ show_player:
       show_tokens: 
         lights: gi16
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi17: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi17
@@ -425,7 +430,7 @@ show_player:
       show_tokens: 
         lights: gi17
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi18: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi18
@@ -434,7 +439,7 @@ show_player:
       show_tokens: 
         lights: gi18
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi19: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi19
@@ -443,7 +448,7 @@ show_player:
       show_tokens: 
         lights: gi19
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi20: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi20
@@ -452,7 +457,7 @@ show_player:
       show_tokens: 
         lights: gi20
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi21: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi21
@@ -461,7 +466,7 @@ show_player:
       show_tokens: 
         lights: gi21
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_flicker_gi22: 
     flicker2_color_on_intensity: 
       key: key_flicker_gi22
@@ -470,7 +475,7 @@ show_player:
       show_tokens: 
         lights: gi22
         color: 00dd00
-        intensity: 10
+        intensity: 100
   play_lsling_training: 
     lsling_rotate1_cw: 
       key: key_lsling_training
@@ -533,7 +538,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: tInlaneGI
-        color: ff4c00
+        color: ffae00
   training_cancel_warning_stop: 
     flash_color: 
       action: stop
@@ -543,7 +548,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: tInlaneGI
-        color: ff4c00
+        color: ffae00
 
 
 timers: 
@@ -553,6 +558,16 @@ timers:
     direction: down
     control_events: 
       - event: init_training
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  tr_health_diverter:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: raise_diverter
         action: restart
     restart_on_complete: False
     start_running: False

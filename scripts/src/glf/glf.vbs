@@ -90,7 +90,7 @@ Dim glf_max_lightmap_sync_enabled : glf_max_lightmap_sync_enabled = False
 Dim glf_max_lights_test : glf_max_lights_test = 0
 Dim GlfSwitchNameMap
 Set GlfSwitchNameMap = CreateObject("Scripting.Dictionary")
-
+Dim soundUidMap : Set soundUidMap = CreateObject("Scripting.Dictionary")
 Dim glf_master_volume : glf_master_volume = 0.8
 
 Dim glf_table
@@ -2929,7 +2929,7 @@ Function EnableGlfBallSearch()
             .Switches = Array("s_left_flipper", "s_right_flipper")
             .Time = 3000
             .EventsWhenActive = Array("flipper_cradle")
-            .EventsWhenReleased = Array("flipper_release")
+            .EventsWhenReleased = Array("flipper_cradle_release")
         End With
     End With
     glf_ballsearch_enabled = True
@@ -2979,7 +2979,7 @@ Class GlfBallSearch
         Set glf_ballsearch = Me
         SetDelay "ball_search" , "BallSearchHandler", Array(Array("start", Me), Null), 15000
         AddPinEventListener "flipper_cradle", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("stop", Me)
-        AddPinEventListener "flipper_release", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("reset", Me)
+        AddPinEventListener "flipper_cradle_release", "ball_search_flipper_cradle", "BallSearchHandler", 30, Array("reset", Me)
         Set Init = Me
     End Function
 
@@ -16324,6 +16324,7 @@ Class GlfSound
             audioUid = uidMap(sourceFileName)
         Else
             ToTres = ""
+            Exit Function
             'Err.Raise vbObjectError + 1000, "ToTres", "Missing audio UID for file: " & sourceFileName
         End If
         

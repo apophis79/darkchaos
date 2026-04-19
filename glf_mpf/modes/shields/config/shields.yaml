@@ -17,20 +17,14 @@ event_player:
     - restart_qualify_shields
   restart_qualify_shields{current_player.training_shields_achieved==1}:
     - boost_qualify_shields
-  mode_shields_started{current_player.shot_shield_left==1}:
-    - backglass_shields_on
-  mode_shields_stopping:
-    - backglass_shields_off
   s_LeftOutlane_active{current_player.shot_shield_left==1}:
     - shields_used
     - restart_qualify_shields
     - play_shields_down
-    - backglass_shields_off
   s_RightOutlane_active{current_player.shot_shield_right==1}:
     - shields_used
     - restart_qualify_shields
     - play_shields_down
-    - backglass_shields_off
   mystery_added_shields:
     - complete_qualify_shields
   qualify_shields_on_complete:
@@ -40,7 +34,6 @@ event_player:
     - play_shields_up
     - play_voc_shields_acquired
     - score_50000
-    - backglass_shields_on
   qualify_shields_hit:
     - score_1000
 

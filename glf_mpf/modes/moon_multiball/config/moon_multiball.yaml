@@ -9,7 +9,6 @@ event_player:
   s_RightMagnaButton_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}:
     - launch_moon_missiles
     - restart_moon_qualify_shots
-    - backglass_moon_off
   launch_moon_missiles:
     - start_moon_multiball
     - delayed_release_moon_ball

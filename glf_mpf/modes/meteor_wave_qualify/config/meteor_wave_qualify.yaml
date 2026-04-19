@@ -110,7 +110,7 @@ show_player:
       speed: 4.6
       show_tokens: 
         lights: GI
-        color: ffb46b
+        color: ffdca3
   flipper_cradling: 
     flash_color: 
       key: key_flipper_cradling
@@ -118,7 +118,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: tInlaneGI
-        color: ffb46b
+        color: ffdca3
   flipper_release: 
     flash_color: 
       action: stop
@@ -127,7 +127,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: tInlaneGI
-        color: ffb46b
+        color: ffdca3
 
 
 sound_player: 

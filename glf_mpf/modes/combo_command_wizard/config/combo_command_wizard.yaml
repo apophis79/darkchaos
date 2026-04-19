@@ -463,7 +463,7 @@ show_player:
       show_tokens: 
         color1: 000000
         color2: ffb46b
-        color3: ff4c00
+        color3: ffae00
         intensity: 100
   ccwiz_flash_phase2_show2: 
     flash_color_fadeout: 
@@ -472,7 +472,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: tFlasher
-        color: ff4c00
+        color: ffae00
   ccwiz_shot_phase2_show3: 
     insert_swap3: 
       key: key_ccwiz_shot_phase2_show3

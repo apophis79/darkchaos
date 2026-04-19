@@ -2,16 +2,6 @@
 
 - time: 0
 
-- time: 0.02s
-  shows:
-    flash_color_fadeout: 
-      key: key_DOF9
-      loops: 0
-      speed: 10
-      show_tokens: 
-        color: ffb46b
-        lights: LBG09
-
 - time: 0.4s
 
 - time: 0.41s

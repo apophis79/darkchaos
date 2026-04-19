@@ -734,7 +734,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: tFlasherU
-        color: ffb46b
+        color: ffdca3
   asteroid_flicker1: 
     flicker_color: 
       key: key_asteroid_flicker1
@@ -782,7 +782,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi01
-        color: ffb46b
+        color: ffdca3
   play_flash_gi02: 
     flash_color_fadeout: 
       key: key_flash_gi02
@@ -790,7 +790,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi02
-        color: ffb46b
+        color: ffdca3
   play_flash_gi03: 
     flash_color_fadeout: 
       key: key_flash_gi03
@@ -798,7 +798,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi03
-        color: ffb46b
+        color: ffdca3
   play_flash_gi04: 
     flash_color_fadeout: 
       key: key_flash_gi04
@@ -806,7 +806,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi04
-        color: ffb46b
+        color: ffdca3
   play_flash_gi05: 
     flash_color_fadeout: 
       key: key_flash_gi05
@@ -814,7 +814,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi05
-        color: ffb46b
+        color: ffdca3
   play_flash_gi06: 
     flash_color_fadeout: 
       key: key_flash_gi06
@@ -822,7 +822,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi06
-        color: ffb46b
+        color: ffdca3
   play_flash_gi07: 
     flash_color_fadeout: 
       key: key_flash_gi07
@@ -830,7 +830,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi07
-        color: ffb46b
+        color: ffdca3
   play_flash_gi08: 
     flash_color_fadeout: 
       key: key_flash_gi08
@@ -838,7 +838,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi08
-        color: ffb46b
+        color: ffdca3
   play_flash_gi09: 
     flash_color_fadeout: 
       key: key_flash_gi09
@@ -846,7 +846,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi09
-        color: ffb46b
+        color: ffdca3
   play_flash_gi10: 
     flash_color_fadeout: 
       key: key_flash_gi10
@@ -854,7 +854,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi10
-        color: ffb46b
+        color: ffdca3
   play_flash_gi11: 
     flash_color_fadeout: 
       key: key_flash_gi11
@@ -862,7 +862,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi11
-        color: ffb46b
+        color: ffdca3
   play_flash_gi12: 
     flash_color_fadeout: 
       key: key_flash_gi12
@@ -870,7 +870,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi12
-        color: ffb46b
+        color: ffdca3
   play_flash_gi13: 
     flash_color_fadeout: 
       key: key_flash_gi13
@@ -878,7 +878,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi13
-        color: ffb46b
+        color: ffdca3
   play_flash_gi14: 
     flash_color_fadeout: 
       key: key_flash_gi14
@@ -886,7 +886,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi14
-        color: ffb46b
+        color: ffdca3
   play_flash_gi15: 
     flash_color_fadeout: 
       key: key_flash_gi15
@@ -894,7 +894,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi15
-        color: ffb46b
+        color: ffdca3
   play_flash_gi16: 
     flash_color_fadeout: 
       key: key_flash_gi16
@@ -902,7 +902,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi16
-        color: ffb46b
+        color: ffdca3
   play_flash_gi17: 
     flash_color_fadeout: 
       key: key_flash_gi17
@@ -910,7 +910,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi17
-        color: ffb46b
+        color: ffdca3
   play_flash_gi18: 
     flash_color_fadeout: 
       key: key_flash_gi18
@@ -918,7 +918,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi18
-        color: ffb46b
+        color: ffdca3
   play_flash_gi19: 
     flash_color_fadeout: 
       key: key_flash_gi19
@@ -926,7 +926,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi19
-        color: ffb46b
+        color: ffdca3
   play_flash_gi20: 
     flash_color_fadeout: 
       key: key_flash_gi20
@@ -934,7 +934,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi20
-        color: ffb46b
+        color: ffdca3
   play_flash_gi21: 
     flash_color_fadeout: 
       key: key_flash_gi21
@@ -942,7 +942,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi21
-        color: ffb46b
+        color: ffdca3
   play_flash_gi22: 
     flash_color_fadeout: 
       key: key_flash_gi22
@@ -950,7 +950,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: gi22
-        color: ffb46b
+        color: ffdca3
   play_flash_giapron: 
     flash_color_fadeout: 
       key: key_flash_giapron
@@ -958,7 +958,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: giapron
-        color: ffb46b
+        color: ffdca3
   meteor1_explodes_show: 
     meteor1_explodes: 
       key: key_meteor1_explodes

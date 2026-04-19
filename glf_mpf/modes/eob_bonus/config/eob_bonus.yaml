@@ -295,7 +295,7 @@ show_player:
       speed: 13
       show_tokens: 
         lights: LX
-        color: ff4c00
+        color: ffae00
   bonus_tally3: 
     flash_color: 
       key: key_tally3_show

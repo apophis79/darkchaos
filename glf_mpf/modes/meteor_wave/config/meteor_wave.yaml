@@ -12,18 +12,18 @@ event_player:
     - init_meteor2
     - init_meteor3
     - init_meteor4
-    - raise_diverter
     - stop_some_modes_for_mw
     - backglass_dark_off
     - backglass_chaos_off
     - backglass_wave_on
-    - backglass_ball_off
   stop_some_modes_for_mw:
     - stop_skillshots
     - stop_combos
     - stop_ship_save
     - stop_timewarp
     - stop_shields
+  mode_meteor_wave_stopping:
+    - drop_diverter
   mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}:
     - meteor_wave1_running
     - meteor_wave0_music_stop
@@ -159,7 +159,7 @@ event_player:
     - meteor_wave9_done
     - activate_final_wave_wizard
   meteor_wave_done_done.2{current_player.training_heal_achieved==0}:
-    - drop_diverter
+    - cancel_heal_powerup
   meteor_wave_done_done.1:
     - stop_meteor_wave
   check_protons{current_player.shot_proton_round1==0}:
@@ -167,6 +167,12 @@ event_player:
   earth_hit:
     - mw_lsing_earth_hit
     - mw_rsling_earth_hit
+  left_orbit_hit{current_player.shot_mw_health==1}:
+    - raise_diverter
+  right_orbit_hit{current_player.shot_mw_health==1}:
+    - raise_diverter
+  timer_mw_health_diverter_complete:
+    - drop_diverter
   timer_meteor_wave_finish_complete:
     - meteor_wave_done_done
   timer_meteor_wave_nuked_complete:
@@ -180,7 +186,7 @@ light_player:
 
   stop_meteor_wave: 
     GI: 
-      color: ffb46b
+      color: ffdca3
 
 
 random_event_player: 
@@ -360,7 +366,7 @@ shots:
         state: 1
   mw_health:
     profile: health_shot_ready
-    restart_events: finish_meteor_wave
+    restart_events: finish_meteor_wave, cancel_heal_powerup
     show_tokens: 
     control_events: 
       - events: mode_meteor_wave_started
@@ -977,6 +983,16 @@ timers:
     direction: up
     control_events: 
       - event: finish_meteor_wave{current_player.nuke_just_used == 1}
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  mw_health_diverter:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: raise_diverter
         action: restart
     restart_on_complete: False
     start_running: False

@@ -226,8 +226,6 @@ event_player:
     - magnet_activated_gi
   s_TimewarpRamp_active:
     - left_ramp_hit
-  s_MoonRamp_active:
-    - right_ramp_hit
   s_LeftBumper1_active:
     - left_side_hit
   knockdown_meteors:
@@ -263,7 +261,7 @@ event_player:
 light_player: 
   mode_base_started: 
     GI: 
-      color: ffb46b
+      color: ffdca3
       fade: 200
 
   activate_final_wave_wizard: 
@@ -645,13 +643,13 @@ show_player:
         fade: 200
   balldevice_scoop_ball_exiting: 
     flash_color: 
-      key: key_ts_scoop_gi
+      key: key_ts_Scoop_gi
       priority: 1000
       loops: 6
       speed: 15
       show_tokens: 
         lights: gi22
-        color: ffb46b
+        color: ffdca3
   play_lsling_base_show: 
     lsling_base_show: 
       key: key_lsling_base_show
@@ -744,7 +742,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: gi04
-        color: ffb46b
+        color: ffdca3
         fade: 800
   pu_lsling2_show: 
     flash_color_with_fade: 
@@ -753,7 +751,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: gi03
-        color: ffb46b
+        color: ffdca3
         fade: 800
   pu_rsling1_show: 
     flash_color_with_fade: 
@@ -762,7 +760,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: gi08
-        color: ffb46b
+        color: ffdca3
         fade: 800
   pu_rsling2_show: 
     flash_color_with_fade: 
@@ -771,7 +769,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: gi07
-        color: ffb46b
+        color: ffdca3
         fade: 800
   timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}: 
     gi_cracked: 

@@ -10,7 +10,13 @@ event_player:
     - restart_health
     - reset_health_bump
   mode_health_started{current_player.training_heal_achieved==1}:
+    - heal_powerup
+  left_orbit_hit{current_player.shot_health_diverter==1}:
     - raise_diverter
+  right_orbit_hit{current_player.shot_health_diverter==1}:
+    - raise_diverter
+  timer_health_diverter_complete:
+    - drop_diverter
   s_Bumper1_active:
     - check_add_health_bump
   s_Bumper2_active:
@@ -284,10 +290,10 @@ shots:
         state: 3
   health_diverter:
     profile: health_shot_ready
-    restart_events: drop_diverter, mode_health_stopping
+    restart_events: mode_health_stopping
     show_tokens: 
     control_events: 
-      - events: raise_diverter
+      - events: heal_powerup
         state: 1
 
 show_player: 
@@ -322,7 +328,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: tBumper
-        color: ffb46b
+        color: ffdca3
         intensity: 10
   lsling_powerup_h: 
     lsling_rotate2_cw: 
@@ -390,6 +396,18 @@ sound_player:
       key: key_sfx_LH
       action: play
 
+
+timers: 
+  health_diverter:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: raise_diverter
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
 
 variable_player: 
   restart_health: 

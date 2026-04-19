@@ -316,7 +316,7 @@ show_player:
       show_tokens: 
         lights: GI
         fade: 900
-        color: ffb46b
+        color: ffdca3
   skip_selected: 
     flash_color: 
       key: key_skip_gi

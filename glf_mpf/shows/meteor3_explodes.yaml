@@ -1,16 +1,6 @@
 #show_version=6
 
 
-- time: 0.02s
-  shows:
-    flash_color: 
-      key: key_DOF15
-      loops: 9
-      speed: 20
-      show_tokens: 
-        color: ffb46b
-        lights: LBG15
-
 - time: 0.03333s
   lights:
     LW7: (color)%100

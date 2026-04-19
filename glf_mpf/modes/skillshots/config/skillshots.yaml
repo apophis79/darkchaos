@@ -68,7 +68,7 @@ show_player:
       show_tokens: 
         color1: 000000
         color2: 33dd33
-        color3: ff4c00
+        color3: ffae00
         intensity: 100
   ssss_achieved: 
     insert_swap3: 

@@ -1,16 +1,6 @@
 #show_version=6
 
 
-- time: 0.02s
-  shows:
-    flash_color: 
-      key: key_DOF11
-      loops: 9
-      speed: 20
-      show_tokens: 
-        color: ffb46b
-        lights: LBG11
-
 - time: 0.03333s
   lights:
     LMet3: (color)%100
