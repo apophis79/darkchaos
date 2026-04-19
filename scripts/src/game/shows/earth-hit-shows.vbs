@@ -9,33 +9,33 @@ With CreateGlfShow("earth_hit_bg")
           .Action = "DOF_ON"
       End With
   End With
-  ' With .AddStep(0.02, Null, Null)    
-  '     With .Shows("flash_color_fadeout")
-  '         .Key = "key_DOF2"
-  '         .Speed = 10
-  '         .Loops = 0
-  '         With .Tokens()
-  '             .Add "color", GIColor3000k
-  '             .Add "lights", "LBG02"
-  '         End With
-  '     End With
-  ' End With
+  With .AddStep(0.02, Null, Null)    
+      With .Shows("flash_color_fadeout")
+          .Key = "key_DOF2"
+          .Speed = 10
+          .Loops = 0
+          With .Tokens()
+              .Add "color", EarthHitColor
+              .Add "lights", "LBG02"
+          End With
+      End With
+  End With
   With .AddStep(0.1, Null, Null)
       With .DOFEvent("1")
           .Action = "DOF_ON"
       End With
   End With
-  ' With .AddStep(0.12, Null, Null) 'FIXME
-  '     With .Shows("flash_color_fadeout")
-  '         .Key = "key_DOF1"
-  '         .Speed = 10
-  '         .Loops = 0
-  '         With .Tokens()
-  '             .Add "color", GIColor3000k
-  '             .Add "lights", "LBG01"
-  '         End With
-  '     End With
-  ' End With
+  With .AddStep(0.12, Null, Null) 
+      With .Shows("flash_color_fadeout")
+          .Key = "key_DOF1"
+          .Speed = 10
+          .Loops = 0
+          With .Tokens()
+              .Add "color", EarthHitColor
+              .Add "lights", "LBG01"
+          End With
+      End With
+  End With
   With .AddStep(0.3, Null, Null)
       With .DOFEvent("2")
           .Action = "DOF_OFF"

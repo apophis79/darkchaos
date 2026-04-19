@@ -168,7 +168,7 @@ Sub CreateTrainingShipSaveMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShipSaveColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("flash_gi")
@@ -178,7 +178,7 @@ Sub CreateTrainingShipSaveMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShipSaveColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("mode_training_ship_save_stopping")
@@ -190,7 +190,7 @@ Sub CreateTrainingShipSaveMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ShipSaveColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
 
@@ -215,7 +215,7 @@ Sub CreateTrainingShipSaveMode
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", ShipSaveColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
@@ -228,7 +228,7 @@ Sub CreateTrainingShipSaveMode
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", ShipSaveColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next

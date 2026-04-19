@@ -166,7 +166,7 @@ Sub CreateTrainingClusterBombMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ClusterBombColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("flash_gi")
@@ -176,7 +176,7 @@ Sub CreateTrainingClusterBombMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ClusterBombColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("mode_training_cluster_bomb_stopping")
@@ -188,7 +188,7 @@ Sub CreateTrainingClusterBombMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ClusterBombColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
 
@@ -213,7 +213,7 @@ Sub CreateTrainingClusterBombMode
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", ClusterBombColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
@@ -226,7 +226,7 @@ Sub CreateTrainingClusterBombMode
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", ClusterBombColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next

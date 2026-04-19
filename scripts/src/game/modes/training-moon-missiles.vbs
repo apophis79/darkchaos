@@ -234,7 +234,7 @@ Sub CreateTrainingMoonMissileMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", MoonColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("flash_gi")
@@ -244,7 +244,7 @@ Sub CreateTrainingMoonMissileMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", MoonColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("mode_training_moon_missile_stopping")
@@ -256,7 +256,7 @@ Sub CreateTrainingMoonMissileMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", MoonColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
 
@@ -281,7 +281,7 @@ Sub CreateTrainingMoonMissileMode
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", MoonColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
@@ -294,7 +294,7 @@ Sub CreateTrainingMoonMissileMode
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", MoonColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next

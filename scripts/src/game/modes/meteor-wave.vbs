@@ -23,9 +23,9 @@ Sub CreateMeteorWaveMode
         With .EventPlayer()
             '.Debug = True
             'Initializations
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","raise_diverter","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on","backglass_ball_off")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on") ',"backglass_ball_off")
             .Add "stop_some_modes_for_mw", Array("stop_skillshots","stop_combos","stop_ship_save","stop_timewarp","stop_shields") '"stop_extra_ball","stop_mystery","stop_training_qualify"
-            '.Add "mode_meteor_wave_stopping", Array("backglass_dark_on","backglass_chaos_on")
+            .Add "mode_meteor_wave_stopping", Array("drop_diverter") '"backglass_dark_on","backglass_chaos_on")
             'Start up in correct wave
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running","meteor_wave0_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running","meteor_wave1_music_stop")
@@ -78,16 +78,21 @@ Sub CreateMeteorWaveMode
             .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave7 == 1}", Array("meteor_wave7_done","play_voc_wave_completed")
             .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave8 == 1}", Array("meteor_wave8_done","play_voc_wave_completed")
             .Add "meteor_wave_done_done.2{current_player.shot_meteor_wave9 == 1}", Array("meteor_wave9_done","activate_final_wave_wizard")
-            .Add "meteor_wave_done_done.2{current_player.training_heal_achieved==0}", Array("drop_diverter")
+            .Add "meteor_wave_done_done.2{current_player.training_heal_achieved==0}", Array("cancel_heal_powerup")
             .Add "meteor_wave_done_done.1", Array("stop_meteor_wave")
             'restart fire protons
             .Add "check_protons{current_player.shot_proton_round1==0}", Array("restart_fire_protons")
             'earth hit show
             .Add "earth_hit", Array("mw_lsing_earth_hit","mw_rsling_earth_hit")
+            'handle health diverter
+            .Add "left_orbit_hit{current_player.shot_mw_health==1}", Array("raise_diverter")
+            .Add "right_orbit_hit{current_player.shot_mw_health==1}", Array("raise_diverter")
+            .Add "timer_mw_health_diverter_complete", Array("drop_diverter")
             'stop wave
             .Add "timer_meteor_wave_finish_complete", Array("meteor_wave_done_done")
             .Add "timer_meteor_wave_nuked_complete", Array("meteor_wave_done_done")
         End With
+
 
         'Randomize which meteor gets hit by proton cannon
         With .RandomEventPlayer()
@@ -254,7 +259,7 @@ Sub CreateMeteorWaveMode
                 .Events = Array("mode_meteor_wave_started")
                 .State = 1
             End With
-            .RestartEvents = Array("finish_meteor_wave") 
+            .RestartEvents = Array("finish_meteor_wave","cancel_heal_powerup") 
         End With
 
         'Define meteor shots
@@ -486,6 +491,17 @@ Sub CreateMeteorWaveMode
             .EndValue = 9
             With .ControlEvents()
                 .EventName = "finish_meteor_wave{current_player.nuke_just_used == 1}"
+                .Action = "restart"
+            End With
+        End With
+
+        'Health diverter
+        With .Timers("mw_health_diverter")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 2
+            With .ControlEvents()
+                .EventName = "raise_diverter"
                 .Action = "restart"
             End With
         End With

@@ -19,7 +19,11 @@ Sub CreateHealthMode
         With .EventPlayer()
             'restart the mode
             .Add "mode_health_started{current_player.ball_just_started==1}", Array("restart_health","reset_health_bump")
-            .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("raise_diverter") 'training boost
+            .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("heal_powerup") 'training boost
+            'handle health diverter
+            .Add "left_orbit_hit{current_player.shot_health_diverter==1}", Array("raise_diverter")
+            .Add "right_orbit_hit{current_player.shot_health_diverter==1}", Array("raise_diverter")
+            .Add "timer_health_diverter_complete", Array("drop_diverter")
             'successful bumper hits
             .Add "s_Bumper1_active", Array("check_add_health_bump")
             .Add "s_Bumper2_active", Array("check_add_health_bump")
@@ -133,10 +137,20 @@ Sub CreateHealthMode
         With .Shots("health_diverter")
             .Profile = "health_shot_ready"
             With .ControlEvents()
-                .Events = Array("raise_diverter")
+                .Events = Array("heal_powerup")
                 .State = 1
             End With
-            .RestartEvents = Array("drop_diverter","mode_health_stopping") 
+            .RestartEvents = Array("mode_health_stopping") 
+        End With
+
+        With .Timers("health_diverter")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 2
+            With .ControlEvents()
+                .EventName = "raise_diverter"
+                .Action = "restart"
+            End With
         End With
         
 

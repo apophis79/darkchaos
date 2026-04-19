@@ -167,7 +167,7 @@ Sub CreateTrainingProtonCannonMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ProtonColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("flash_gi")
@@ -177,7 +177,7 @@ Sub CreateTrainingProtonCannonMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ProtonColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
             With .EventName("mode_training_proton_cannon_stopping")
@@ -189,7 +189,7 @@ Sub CreateTrainingProtonCannonMode
                 With .Tokens()
                     .Add "lights", "GI"
                     .Add "color", ProtonColor
-                    .Add "intensity", 10
+                    .Add "intensity", 100
                 End With
             End With
 
@@ -214,7 +214,7 @@ Sub CreateTrainingProtonCannonMode
                     With .Tokens()
                         .Add "lights", "gi0"&x
                         .Add "color", ProtonColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next
@@ -227,7 +227,7 @@ Sub CreateTrainingProtonCannonMode
                     With .Tokens()
                         .Add "lights", "gi"&x
                         .Add "color", ProtonColor
-                        .Add "intensity", 10
+                        .Add "intensity", 100
                     End With
                 End With
             Next

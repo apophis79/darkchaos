@@ -4,9 +4,9 @@
 '******************************************************
 
 ' Light color settings
-Const GIColorWhite = "ffffff"
+Const GIColorWhite = "ffffff" 
 Const GIColor2700k = "ffA957"
-Const GIColor3000k = "ffb46b"
+Const GIColor3000k = "ffdca3"
 
 Const TimewarpColor = "ccccdd"
 Const ShipSaveColor = "0500ee"
@@ -16,7 +16,7 @@ Const MysteryColor = "aa33aa"
 Const MoonColor = "ccbb00"
 Const ClusterBombColor = "dd00dd"
 Const CombosColor = "ffb46b"
-Const TrainingColor = "ff4c00"
+Const TrainingColor = "ffae00"
 Const HealthColor1 = "00dd00"
 Const HealthColor2 = "d14c00"
 Const HealthColor3 = "ff0300"
