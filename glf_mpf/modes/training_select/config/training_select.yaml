@@ -372,58 +372,72 @@ state_machines:
         target: cluster_bomb
         events: 
           - training_select_right
+        events_when_transitioning: heal_unselected
       - source: cluster_bomb
         target: proton_cannon
         events: 
           - training_select_right
+        events_when_transitioning: cluster_bomb_unselected
       - source: proton_cannon
         target: ship_save
         events: 
           - training_select_right
+        events_when_transitioning: proton_cannon_unselected
       - source: ship_save
         target: shields
         events: 
           - training_select_right
+        events_when_transitioning: ship_save_unselected
       - source: shields
         target: moon_missile
         events: 
           - training_select_right
+        events_when_transitioning: shields_unselected
       - source: moon_missile
         target: skip
         events: 
           - training_select_right
+        events_when_transitioning: moon_missile_unselected
       - source: skip
         target: heal
         events: 
           - training_select_right
+        events_when_transitioning: skip_unselected
       - source: heal
         target: skip
         events: 
           - training_select_left
+        events_when_transitioning: heal_unselected
       - source: cluster_bomb
         target: heal
         events: 
           - training_select_left
+        events_when_transitioning: cluster_bomb_unselected
       - source: proton_cannon
         target: cluster_bomb
         events: 
           - training_select_left
+        events_when_transitioning: proton_cannon_unselected
       - source: ship_save
         target: proton_cannon
         events: 
           - training_select_left
+        events_when_transitioning: ship_save_unselected
       - source: shields
         target: ship_save
         events: 
           - training_select_left
+        events_when_transitioning: shields_unselected
       - source: moon_missile
         target: shields
         events: 
           - training_select_left
+        events_when_transitioning: moon_missile_unselected
       - source: skip
         target: moon_missile
         events: 
           - training_select_left
+        events_when_transitioning: skip_unselected
 
 timers: 
   training_select:
