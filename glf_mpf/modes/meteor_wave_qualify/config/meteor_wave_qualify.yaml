@@ -119,7 +119,7 @@ show_player:
       show_tokens: 
         lights: tInlaneGI
         color: ffdca3
-  flipper_release: 
+  flipper_cradle_release: 
     flash_color: 
       action: stop
       key: key_flipper_cradling

@@ -36,7 +36,7 @@ Sub CreateInstantInfoMode
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "flipper_release"
+                .EventName = "flipper_cradle_release"
                 .Action = "stop"
             End With
             With .ControlEvents()
@@ -60,7 +60,7 @@ Sub CreateInstantInfoMode
                     .Int = 1
                 End With
             End With
-            With .EventName("flipper_release") 
+            With .EventName("flipper_cradle_release") 
                 With .Variable("ball_cradled")
                     .Action = "set"
                     .Int = 0

@@ -3,6 +3,7 @@
 mode:
   start_events: reset_complete
   stop_events: when_the_universe_ends
+  game_mode: false
   priority: 100
 
 event_player: 

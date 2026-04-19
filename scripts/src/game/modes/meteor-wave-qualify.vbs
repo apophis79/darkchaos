@@ -180,7 +180,7 @@ Sub CreateMeteorWaveQualifyMode
                     .Add "color", GIColor3000k
                 End With
             End With
-            With .EventName("flipper_release")
+            With .EventName("flipper_cradle_release")
                 .Key = "key_flipper_cradling"
                 .Show = "flash_color"
                 .Speed = 15

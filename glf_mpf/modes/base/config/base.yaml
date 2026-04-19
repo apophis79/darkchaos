@@ -226,6 +226,8 @@ event_player:
     - magnet_activated_gi
   s_TimewarpRamp_active:
     - left_ramp_hit
+  balldevice_moon_lock_ball_entered:
+    - right_ramp_hit
   s_LeftBumper1_active:
     - left_side_hit
   knockdown_meteors:
