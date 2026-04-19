@@ -769,7 +769,7 @@ Sub CreateMeteorWaveMode
                 End With
                 With .Display("player1")
                     .Key = "key_mw_nuke1"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 11000
                     .Priority = 11000
                 End With
@@ -789,7 +789,7 @@ Sub CreateMeteorWaveMode
                 End With
                 With .Display("player4")
                     .Key = "key_mw_nuke4"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 11000
                     .Priority = 11000
                 End With

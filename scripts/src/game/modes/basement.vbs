@@ -303,7 +303,7 @@ Sub CreateBasementMode()
         With .SegmentDisplayPlayer()
             With .EventName("tilt_warning")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                     .Expire = 4000
                     .Priority = 10000
                 End With
@@ -320,14 +320,14 @@ Sub CreateBasementMode()
                     .Priority = 10000
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                     .Expire = 4000
                     .Priority = 10000
                 End With
             End With
             With .EventName("tilt")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                     .Expire = 4000
                     .Priority = 10000
                 End With
@@ -342,7 +342,7 @@ Sub CreateBasementMode()
                     .Priority = 10000
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                     .Expire = 4000
                     .Priority = 10000
                 End With

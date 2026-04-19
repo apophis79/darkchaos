@@ -405,13 +405,13 @@ Sub CreateTrainingSelectMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_training_select_started")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                 End With
                 With .Display("player2")
                     .Text = "SELECT"
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                 End With
             End With
             With .EventName("heal_selected{current_player.training_heal_achieved==0}")

@@ -274,7 +274,7 @@ segment_display_player:
       flashing: off
     player1: 
       key: key_mw_nuke1
-      text: ""
+      text: " "
       priority: 11000
       expire: 11000ms
       flashing: off
@@ -292,7 +292,7 @@ segment_display_player:
       flashing: all
     player4: 
       key: key_mw_nuke4
-      text: ""
+      text: " "
       priority: 11000
       expire: 11000ms
       flashing: off

@@ -623,7 +623,7 @@ segment_display_player:
       expire: 3000ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       expire: 3000ms
       flashing: all
 

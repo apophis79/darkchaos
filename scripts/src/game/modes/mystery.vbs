@@ -260,7 +260,7 @@ Sub CreateMysteryMode
                 End With
                 With .Display("player4")
                     .Priority = 1000
-                    .Text = ""
+                    .Text = " "
                     .Expire = MysteryShowLength
                 End With
             End With

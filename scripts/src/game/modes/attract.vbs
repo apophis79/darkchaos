@@ -445,7 +445,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
                 With .Display("player3")
@@ -456,7 +456,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "left"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
             End With
@@ -554,7 +554,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
                 With .Display("player3")
@@ -565,7 +565,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "left"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
             End With
@@ -592,7 +592,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_credits1")
                 With .Display("all")
                     .Key = "key_all_show_attract_credits1"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 5000
                     .Priority = 9
                     With .Transition()
@@ -612,7 +612,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
             End With
@@ -626,7 +626,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
             End With
@@ -640,7 +640,7 @@ Sub CreateAttractMode()
                     With .Transition()
                         .TransitionType = "push"
                         .Direction = "right"
-                        .Text = ""
+                        .Text = " "
                     End With
                 End With
             End With
@@ -649,7 +649,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message1")
                 With .Display("all")
                     .Key = "key_all_show_attract_message1"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -663,7 +663,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message2")
                 With .Display("all")
                     .Key = "key_all_show_attract_message2"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -677,7 +677,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message3")
                 With .Display("all")
                     .Key = "key_all_show_attract_message3"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -691,7 +691,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message4")
                 With .Display("all")
                     .Key = "key_all_show_attract_message4"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -705,7 +705,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message5")
                 With .Display("all")
                     .Key = "key_all_show_attract_message5"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -719,7 +719,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message6")
                 With .Display("all")
                     .Key = "key_all_show_attract_message6"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -733,7 +733,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message7")
                 With .Display("all")
                     .Key = "key_all_show_attract_message7"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -747,7 +747,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message8")
                 With .Display("all")
                     .Key = "key_all_show_attract_message8"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -761,7 +761,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message9")
                 With .Display("all")
                     .Key = "key_all_show_attract_message9"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -775,7 +775,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message10")
                 With .Display("all")
                     .Key = "key_all_show_attract_message10"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -789,7 +789,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message11")
                 With .Display("all")
                     .Key = "key_all_show_attract_message11"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -803,7 +803,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message12")
                 With .Display("all")
                     .Key = "key_all_show_attract_message12"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -817,7 +817,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message13")
                 With .Display("all")
                     .Key = "key_all_show_attract_message13"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()
@@ -831,7 +831,7 @@ Sub CreateAttractMode()
             With .EventName("show_attract_message14")
                 With .Display("all")
                     .Key = "key_all_show_attract_message14"
-                    .Text = ""
+                    .Text = " "
                     .Expire = 9000
                     .Priority = 2
                     With .Transition()

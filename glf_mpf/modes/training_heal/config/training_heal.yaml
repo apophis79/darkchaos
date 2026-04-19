@@ -141,7 +141,7 @@ random_event_player:
 segment_display_player: 
   init_training: 
     player1: 
-      text: ""
+      text: " "
       expire: 5000ms
       flashing: off
     player2: 
@@ -153,7 +153,7 @@ segment_display_player:
       expire: 5000ms
       flashing: off
     player4: 
-      text: ""
+      text: " "
       expire: 5000ms
       flashing: off
     pf: 

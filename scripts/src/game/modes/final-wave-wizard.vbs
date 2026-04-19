@@ -678,7 +678,7 @@ Sub CreateFinalWaveWizardMode
                     .Expire = FWWizMessageInterval
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                     .Flashing = "all"
                     .Expire = FWWizMessageInterval
                 End With

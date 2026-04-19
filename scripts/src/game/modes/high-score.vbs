@@ -150,16 +150,16 @@ Sub CreateHighScoreMode
 
             With .EventName("text_input_high_score_complete")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                 End With
                 With .Display("player2")
-                    .Text = ""
+                    .Text = " "
                 End With
                 With .Display("player3")
-                    .Text = ""
+                    .Text = " "
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                 End With
             End With
 
@@ -243,16 +243,16 @@ Sub CreateHighScoreMode
 
             ' With .EventName("timer_high_score_award_timeout_complete")
             '     With .Display("player1")
-            '         .Text = ""
+            '         .Text = " "
             '     End With
             '     With .Display("player2")
-            '         .Text = ""
+            '         .Text = " "
             '     End With
             '     With .Display("player3")
-            '         .Text = ""
+            '         .Text = " "
             '     End With
             '     With .Display("player4")
-            '         .Text = ""
+            '         .Text = " "
             '     End With
             ' End With
 

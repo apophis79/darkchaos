@@ -212,7 +212,7 @@ segment_display_player:
 
   timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 1}: 
     player1: 
-      text: ""
+      text: " "
       expire: 3400ms
       flashing: off
     player2: 
@@ -224,13 +224,13 @@ segment_display_player:
       expire: 3400ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       expire: 3400ms
       flashing: off
 
   timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 2}: 
     player1: 
-      text: ""
+      text: " "
       expire: 3400ms
       flashing: off
     player2: 
@@ -242,7 +242,7 @@ segment_display_player:
       expire: 3400ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       expire: 3400ms
       flashing: off
 

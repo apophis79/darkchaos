@@ -70,13 +70,13 @@ random_event_player:
 segment_display_player: 
   mode_training_select_started: 
     player1: 
-      text: ""
+      text: " "
       flashing: off
     player2: 
       text: "SELECT"
       flashing: off
     player4: 
-      text: ""
+      text: " "
       flashing: off
 
   heal_selected{current_player.training_heal_achieved==0}: 

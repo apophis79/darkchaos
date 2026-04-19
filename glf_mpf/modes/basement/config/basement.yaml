@@ -41,7 +41,7 @@ light_player:
 segment_display_player: 
   tilt_warning: 
     player1: 
-      text: ""
+      text: " "
       priority: 10000
       expire: 4000ms
       flashing: off
@@ -56,14 +56,14 @@ segment_display_player:
       expire: 4000ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       priority: 10000
       expire: 4000ms
       flashing: off
 
   tilt: 
     player1: 
-      text: ""
+      text: " "
       priority: 10000
       expire: 4000ms
       flashing: off
@@ -78,7 +78,7 @@ segment_display_player:
       expire: 4000ms
       flashing: off
     player4: 
-      text: ""
+      text: " "
       priority: 10000
       expire: 4000ms
       flashing: off

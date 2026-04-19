@@ -28,16 +28,16 @@ segment_display_player:
 
   text_input_high_score_complete: 
     player1: 
-      text: ""
+      text: " "
       flashing: off
     player2: 
-      text: ""
+      text: " "
       flashing: off
     player3: 
-      text: ""
+      text: " "
       flashing: off
     player4: 
-      text: ""
+      text: " "
       flashing: off
 
   high_score_enter_initials{player_num==1}: 

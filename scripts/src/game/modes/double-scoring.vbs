@@ -95,7 +95,7 @@ Sub CreateDoubleScoringMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_double_scoring_started")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                     .Expire = DoubleScoringShowLength
                 End With
                 With .Display("player2")
@@ -109,7 +109,7 @@ Sub CreateDoubleScoringMode
                     .Expire = DoubleScoringShowLength
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                     .Expire = DoubleScoringShowLength
                 End With
             End With

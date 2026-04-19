@@ -98,7 +98,7 @@ Sub CreateSuperSpinnerMode
         With .SegmentDisplayPlayer()
             With .EventName("mode_super_spinner_started")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                     .Expire = SuperSpinnerShowLength
                 End With
                 With .Display("player2")
@@ -112,7 +112,7 @@ Sub CreateSuperSpinnerMode
                     .Expire = SuperSpinnerShowLength
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                     .Expire = SuperSpinnerShowLength
                 End With
             End With

@@ -209,7 +209,7 @@ segment_display_player:
       transition:
         type: push
         direction: right
-        text: 
+        text:  
     player3: 
       key: key_bot_show_attract_title
       text: "CHAOS   "
@@ -219,7 +219,7 @@ segment_display_player:
       transition:
         type: push
         direction: left
-        text: 
+        text:  
 
   show_attract_hs1: 
     p1p2: 
@@ -311,7 +311,7 @@ segment_display_player:
       transition:
         type: push
         direction: right
-        text: 
+        text:  
     player3: 
       key: key_p3_show_last_score
       text: "SCORES "
@@ -321,7 +321,7 @@ segment_display_player:
       transition:
         type: push
         direction: left
-        text: 
+        text:  
 
   show_attract_lastscores2: 
     player1: 
@@ -344,7 +344,7 @@ segment_display_player:
   show_attract_credits1: 
     all: 
       key: key_all_show_attract_credits1
-      text: ""
+      text: " "
       priority: 9
       expire: 5000ms
       flashing: off
@@ -363,7 +363,7 @@ segment_display_player:
       transition:
         type: push
         direction: right
-        text: 
+        text:  
 
   show_attract_credits3: 
     player3: 
@@ -375,7 +375,7 @@ segment_display_player:
       transition:
         type: push
         direction: right
-        text: 
+        text:  
 
   show_attract_credits4: 
     player4: 
@@ -387,12 +387,12 @@ segment_display_player:
       transition:
         type: push
         direction: right
-        text: 
+        text:  
 
   show_attract_message1: 
     all: 
       key: key_all_show_attract_message1
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -404,7 +404,7 @@ segment_display_player:
   show_attract_message2: 
     all: 
       key: key_all_show_attract_message2
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -416,7 +416,7 @@ segment_display_player:
   show_attract_message3: 
     all: 
       key: key_all_show_attract_message3
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -428,7 +428,7 @@ segment_display_player:
   show_attract_message4: 
     all: 
       key: key_all_show_attract_message4
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -440,7 +440,7 @@ segment_display_player:
   show_attract_message5: 
     all: 
       key: key_all_show_attract_message5
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -452,7 +452,7 @@ segment_display_player:
   show_attract_message6: 
     all: 
       key: key_all_show_attract_message6
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -464,7 +464,7 @@ segment_display_player:
   show_attract_message7: 
     all: 
       key: key_all_show_attract_message7
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -476,7 +476,7 @@ segment_display_player:
   show_attract_message8: 
     all: 
       key: key_all_show_attract_message8
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -488,7 +488,7 @@ segment_display_player:
   show_attract_message9: 
     all: 
       key: key_all_show_attract_message9
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -500,7 +500,7 @@ segment_display_player:
   show_attract_message10: 
     all: 
       key: key_all_show_attract_message10
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -512,7 +512,7 @@ segment_display_player:
   show_attract_message11: 
     all: 
       key: key_all_show_attract_message11
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -524,7 +524,7 @@ segment_display_player:
   show_attract_message12: 
     all: 
       key: key_all_show_attract_message12
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -536,7 +536,7 @@ segment_display_player:
   show_attract_message13: 
     all: 
       key: key_all_show_attract_message13
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off
@@ -548,7 +548,7 @@ segment_display_player:
   show_attract_message14: 
     all: 
       key: key_all_show_attract_message14
-      text: ""
+      text: " "
       priority: 2
       expire: 9000ms
       flashing: off

@@ -116,7 +116,7 @@ Sub CreateExtraBallMode
         With .SegmentDisplayPlayer()
             With .EventName("play_eb_show")
                 With .Display("player1")
-                    .Text = ""
+                    .Text = " "
                     .Expire = EBShowLength
                 End With
                 With .Display("player2")
@@ -130,7 +130,7 @@ Sub CreateExtraBallMode
                     .Expire = EBShowLength
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                     .Expire = EBShowLength
                 End With
             End With

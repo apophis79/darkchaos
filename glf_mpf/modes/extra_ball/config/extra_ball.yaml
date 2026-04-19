@@ -36,7 +36,7 @@ event_player:
 segment_display_player: 
   play_eb_show: 
     player1: 
-      text: ""
+      text: " "
       expire: 4000ms
       flashing: off
     player2: 
@@ -48,7 +48,7 @@ segment_display_player:
       expire: 4000ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       expire: 4000ms
       flashing: off
 

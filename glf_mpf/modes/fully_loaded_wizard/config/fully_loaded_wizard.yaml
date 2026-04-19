@@ -242,7 +242,7 @@ segment_display_player:
 
   timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 1}: 
     player1: 
-      text: ""
+      text: " "
       expire: 3000ms
       flashing: off
     player2: 
@@ -254,13 +254,13 @@ segment_display_player:
       expire: 3000ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       expire: 3000ms
       flashing: off
 
   timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 2}: 
     player1: 
-      text: ""
+      text: " "
       expire: 3000ms
       flashing: off
     player2: 
@@ -272,7 +272,7 @@ segment_display_player:
       expire: 3000ms
       flashing: all
     player4: 
-      text: ""
+      text: " "
       expire: 3000ms
       flashing: off
 

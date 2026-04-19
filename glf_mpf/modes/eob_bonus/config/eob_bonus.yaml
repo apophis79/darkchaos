@@ -194,13 +194,13 @@ segment_display_player:
       text: "BONUS  "
       flashing: off
     player2: 
-      text: ""
+      text: " "
       flashing: off
     player3: 
-      text: ""
+      text: " "
       flashing: off
     player4: 
-      text: ""
+      text: " "
       flashing: off
 
   bonus_2x: 
@@ -269,7 +269,7 @@ segment_display_player:
       priority: 5060
       flashing: all
     player4: 
-      text: ""
+      text: " "
       priority: 5060
       flashing: off
 

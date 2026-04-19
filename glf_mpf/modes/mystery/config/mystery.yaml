@@ -80,7 +80,7 @@ segment_display_player:
       expire: 4000ms
       flashing: off
     player4: 
-      text: ""
+      text: " "
       priority: 1000
       expire: 4000ms
       flashing: off

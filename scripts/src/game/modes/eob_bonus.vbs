@@ -275,13 +275,13 @@ Sub CreateBonusMode
                     .Text = "BONUS  "
                 End With
                 With .Display("player2")
-                    .Text = ""
+                    .Text = " "
                 End With
                 With .Display("player3")
-                    .Text = ""
+                    .Text = " "
                 End With
                 With .Display("player4")
-                    .Text = ""
+                    .Text = " "
                 End With
             End With
 
@@ -379,7 +379,7 @@ Sub CreateBonusMode
                 End With
                 With .Display("player4")
                     .Priority = 5060
-                    .Text = ""
+                    .Text = " "
                 End With
             End With
 
