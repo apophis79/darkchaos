@@ -268,10 +268,12 @@ Sub CreatePostGameMode()
             With .EventName("play_mus_post_game")
                 .Key = "key_mus_post_game"
                 .Sound = "mus_post_game"
+                .EventsWhenStopped = Array("mus_post_game_stopped")
             End With
             With .EventName("play_mus_post_game_heavier")
                 .Key = "key_mus_post_game_heavier"
                 .Sound = "mus_post_game_heavier"
+                .EventsWhenStopped = Array("mus_post_game_heavier_stopped")
             End With
 
             With .EventName("play_voc_winners_poem1")

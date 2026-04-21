@@ -468,6 +468,7 @@ Sub CreateVictoryLapMode
             With .EventName("play_mus_victory")
                 .Key = "key_mus_victory"
                 .Sound = "mus_victory"
+                .EventsWhenStopped = Array("mus_victory_stopped")
             End With
         End With
 

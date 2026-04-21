@@ -35,14 +35,17 @@ Sub CreateSkillshotsMode
             With .EventName("ss_achieved.1")
                 .Key = "key_voc_ss"
                 .Sound = "voc_ss"
+                .EventsWhenStopped = Array("voc_ss_stopped")
             End With
             With .EventName("sss_achieved.1")
                 .Key = "key_voc_sss"
                 .Sound = "voc_sss"
+                .EventsWhenStopped = Array("voc_sss_stopped")
             End With
             With .EventName("ssss_achieved")
                 .Key = "key_voc_ssss"
                 .Sound = "voc_ssss"
+                .EventsWhenStopped = Array("voc_ssss_stopped")
             End With
             With .EventName("sdsss_achieved")
                 .Key = "key_voc_sdsss"
