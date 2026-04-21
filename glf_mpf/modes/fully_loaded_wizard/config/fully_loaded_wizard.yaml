@@ -170,7 +170,7 @@ event_player:
 
 
 multiballs: 
-  multiball_flwiz:
+  flwiz:
     start_events: timer_fully_loaded_message_complete
     ball_count: 5
     ball_count_type: total
@@ -178,7 +178,7 @@ multiballs:
     hurry_up_time: 3000
     grace_period: 2000
     ball_locks: 
-  multiball_flwiz_2:
+  flwiz_2:
     start_events: flwiz_add_ball
     ball_count: 2
     ball_count_type: total

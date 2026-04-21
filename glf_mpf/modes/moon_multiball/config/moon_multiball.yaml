@@ -21,7 +21,7 @@ event_player:
 
 
 multiballs: 
-  multiball_moon:
+  moon:
     start_events: start_moon_multiball.3
     ball_count: current_player.moon_launch_locked_balls
     ball_count_type: add

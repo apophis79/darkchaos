@@ -256,7 +256,7 @@ event_player:
     - pu_lsling2_show
     - pu_rsling1_show
     - pu_rsling2_show
-  balldevice_scoop_ball_exiting:
+  balldevice_scoop_ball_eject_attempt:
     - scoop_blast
   check_plunger{current_player.ball_just_started==0}:
     - restart_plunger_check
@@ -653,7 +653,7 @@ show_player:
         lights: "FL1"
         color: "aaaaaa"
         fade: "200"
-  balldevice_scoop_ball_exiting: 
+  balldevice_scoop_ball_eject_attempt: 
     flash_color: 
       key: key_ts_Scoop_gi
       priority: 1000
@@ -1023,7 +1023,7 @@ sound_player:
     sfx_ball_launch3: 
       key: key_sfx_ball_launch3
       action: play
-  balldevice_scoop_ball_exiting: 
+  balldevice_scoop_ball_eject_attempt: 
     sfx_scoop: 
       key: key_sfx_scoop
       action: play

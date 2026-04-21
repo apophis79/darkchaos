@@ -11,7 +11,7 @@ event_player:
 
 
 multiballs: 
-  multiball_meteor:
+  meteor:
     start_events: mode_meteor_multiball_started
     ball_count: 3
     ball_count_type: total

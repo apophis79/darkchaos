@@ -154,7 +154,7 @@ event_player:
 
 
 multiballs: 
-  multiball_ccwiz:
+  ccwiz:
     start_events: timer_combo_command_message_complete
     ball_count: 5
     ball_count_type: total
@@ -162,7 +162,7 @@ multiballs:
     hurry_up_time: 3000
     grace_period: 2000
     ball_locks: 
-  multiball_ccwiz_2:
+  ccwiz_2:
     start_events: ccwiz_add_ball
     ball_count: 2
     ball_count_type: total

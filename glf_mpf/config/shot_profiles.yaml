@@ -180,25 +180,6 @@ shot_profiles:
        loops: -1
        speed: 1
        sync_ms: 0
-  ss_ready:
-    advance_on_hit: True
-    states: 
-     - name: unlit
-       show: off
-       loops: -1
-       speed: 1
-       sync_ms: 0
-       show_tokens: 
-         lights: "LM2"
-     - name: ready
-       show: flash_color_with_fade
-       loops: -1
-       speed: 3
-       sync_ms: 0
-       show_tokens: 
-         fade: "200"
-         color: "33dd33"
-         lights: "LM2"
   alien:
     advance_on_hit: True
     states: 
@@ -268,6 +249,25 @@ shot_profiles:
        show_tokens: 
          lights: "LSA"
          color: "0500ee"
+  ss_ready:
+    advance_on_hit: True
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         lights: "LM2"
+     - name: ready
+       show: flash_color_with_fade
+       loops: -1
+       speed: 3
+       sync_ms: 0
+       show_tokens: 
+         fade: "200"
+         color: "33dd33"
+         lights: "LM2"
   double_scoring:
     advance_on_hit: True
     states: 
@@ -286,7 +286,7 @@ shot_profiles:
        sync_ms: 0
        show_tokens: 
          lights: "LDS"
-         fade: "500"
+         fade: "400"
          color: "ff3300"
      - name: hurry
        show: flash_color
@@ -373,7 +373,7 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: "d14c00"
+         color: "ffae01"
      - name: critical
        show: flash_color
        loops: -1
@@ -431,7 +431,7 @@ shot_profiles:
        sync_ms: 0
        show_tokens: 
          color: "ccbb00"
-         fade: "400"
+         fade: "100"
      - name: collected
        show: led_color
        loops: -1
@@ -472,7 +472,7 @@ shot_profiles:
        sync_ms: 0
        show_tokens: 
          color: "ffeede"
-         fade: "1000"
+         fade: "300"
      - name: warm
        show: flash_color_with_fade
        loops: -1
@@ -480,7 +480,7 @@ shot_profiles:
        sync_ms: 0
        show_tokens: 
          color: "ffc400"
-         fade: "1000"
+         fade: "100"
      - name: hot
        show: flash_color
        loops: -1

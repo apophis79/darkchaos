@@ -506,6 +506,8 @@ sound_player:
     mus_victory: 
       key: key_mus_highscore
       action: play
+      events_when_stopped: 
+        - mus_victory_stopped
   text_inputted.4: 
     sfx_hs_initial: 
       key: key_sfx_hs_initial

@@ -1778,10 +1778,14 @@ sound_player:
     mus_post_game: 
       key: key_mus_post_game
       action: play
+      events_when_stopped: 
+        - mus_post_game_stopped
   play_mus_post_game_heavier: 
     mus_post_game_heavier: 
       key: key_mus_post_game_heavier
       action: play
+      events_when_stopped: 
+        - mus_post_game_heavier_stopped
   play_voc_winners_poem1: 
     voc_winners_poem1: 
       key: key_voc_winners_poem1

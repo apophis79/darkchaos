@@ -7,7 +7,7 @@
       loops: 0
       speed: 2
 
-- duration: 0.3s
+- duration: 0.5s
   shows:
     earth_hit_center: 
       key: key_earth_hit_centerB

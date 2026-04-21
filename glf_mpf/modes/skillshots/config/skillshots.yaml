@@ -3,7 +3,7 @@
 mode:
   start_events: new_ball_started, stop_training, wizard_mode_ended
   stop_events: mode_base_stopping, stop_skillshots, start_training_select, wizard_mode_started
-  priority: 500
+  priority: 600
 
 event_player: 
   mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}:
@@ -99,14 +99,20 @@ sound_player:
     voc_ss: 
       key: key_voc_ss
       action: play
+      events_when_stopped: 
+        - voc_ss_stopped
   sss_achieved.1: 
     voc_sss: 
       key: key_voc_sss
       action: play
+      events_when_stopped: 
+        - voc_sss_stopped
   ssss_achieved: 
     voc_ssss: 
       key: key_voc_ssss
       action: play
+      events_when_stopped: 
+        - voc_ssss_stopped
   sdsss_achieved: 
     voc_sdsss: 
       key: key_voc_sdsss

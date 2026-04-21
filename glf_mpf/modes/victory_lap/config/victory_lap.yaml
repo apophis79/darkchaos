@@ -102,7 +102,7 @@ event_player:
 
 
 multiballs: 
-  multiball_victory:
+  victory:
     start_events: run_victory_lap
     ball_count: 5
     ball_count_type: total
@@ -1504,6 +1504,8 @@ sound_player:
     mus_victory: 
       key: key_mus_victory
       action: play
+      events_when_stopped: 
+        - mus_victory_stopped
 
 
 timers: 

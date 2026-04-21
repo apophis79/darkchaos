@@ -8009,7 +8009,7 @@ Class GlfMultiballs
 
     Public Function ToYaml
         Dim yaml, x, key
-        yaml = "  " & Replace(m_name, "multiballs", "") & ":" & vbCrLf
+        yaml = "  " & Replace(m_name, "multiball_", "") & ":" & vbCrLf
     
         Dim start_events_keys : start_events_keys = m_start_events.Keys
         If UBound(start_events_keys) > -1 Then
@@ -11021,6 +11021,12 @@ Function GlfShowStepHandler(args)
             sound_item.Mode = running_show.Mode
             If sound_item.Action = "stop" Then
                 glf_sound_buses(sound_item.Sound.Bus).StopSoundWithKey sound_item.Sound.File
+                Dim evt
+                For Each evt in sound_item.EventsWhenStopped.Items()
+                    If evt.Evaluate() Then
+                        DispatchPinEvent evt.EventName, Null
+                    End If
+                Next
             Else
                 glf_sound_buses(sound_item.Sound.Bus).Play sound_item
             End If
@@ -11443,6 +11449,12 @@ Class GlfSoundPlayer
 
     Public Sub PlayOff(evt)
         glf_sound_buses(m_eventValues(evt).Sound.Bus).StopSoundWithKey m_eventValues(evt).Sound.File
+        Dim evtItem
+        For Each evtItem in m_eventValues(evt).EventsWhenStopped.Items()
+            If evt.Evaluate() Then
+                DispatchPinEvent evt.EventName, Null
+            End If
+        Next
     End Sub
 
     Private Sub Log(message)
@@ -11496,7 +11508,7 @@ End Function
 
 
 Class GlfSoundPlayerItem
-	Private m_sound, m_action, m_key, m_volume, m_loops, m_mode
+	Private m_sound, m_action, m_key, m_volume, m_loops, m_mode, m_events_when_stopped
     
     Public Property Get Action(): Action = m_action: End Property
     Public Property Let Action(input): m_action = input: End Property
@@ -11512,6 +11524,15 @@ Class GlfSoundPlayerItem
 
     Public Property Get Mode(): Mode = m_mode: End Property
     Public Property Let Mode(input): m_mode = input: End Property
+    
+    Public Property Get EventsWhenStopped(): Set EventsWhenStopped = m_events_when_stopped: End Property
+    Public Property Let EventsWhenStopped(value)
+        Dim x
+        For x=0 to UBound(value)
+            Dim newEvent : Set newEvent = (new GlfEvent)(value(x))
+            m_events_when_stopped.Add x, newEvent
+        Next
+    End Property
 
     Public Property Get Sound()
         If IsNull(m_sound) Then
@@ -11533,11 +11554,12 @@ Class GlfSoundPlayerItem
         m_volume = Empty
         m_loops = Empty
         m_mode = mode
+        Set m_events_when_stopped = CreateObject("Scripting.Dictionary")
         Set Init = Me
 	End Function
 
     Public Function ToYaml()
-        Dim yaml
+        Dim yaml,key
         yaml = yaml & "    " & Sound.NameRaw & ": " & vbCrLf
         If Not IsEmpty(m_key) Then
             yaml = yaml & "      key: " & m_key & vbCrLf
@@ -11548,6 +11570,12 @@ Class GlfSoundPlayerItem
         End If
         If Not IsEmpty(m_loops) Then
             yaml = yaml & "      loops: " & m_loops & vbCrLf
+        End If
+        If UBound(m_events_when_stopped.Keys) > -1 Then
+            yaml = yaml + "      events_when_stopped: " & vbCrLf
+            For Each key in m_events_when_stopped.keys
+                yaml = yaml & "        - " & m_events_when_stopped(key).Raw & vbCrLf
+            Next
         End If
         ToYaml = yaml
     End Function
@@ -13094,6 +13122,7 @@ Class GlfMachineVars
         m_persist = True
         m_value_type = "int"
         m_value = 0
+        'msgbox "Initializing Machine Var: " & m_name
         glf_machine_vars.Add name, Me
 	    Set Init = Me
 	End Function
@@ -16163,9 +16192,9 @@ Class GlfSoundBus
 
                 PlaySound sound_settings.Sound.File, loops, volume, 0,0,0,0,0,0
                 If loops = 0 Then
-                    SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration
+                    SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings, Me), sound_settings.Sound.Duration
                 ElseIf loops>0 Then
-                    SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings.Sound.File, Me), sound_settings.Sound.Duration*loops
+                    SetDelay m_name & "_stop_sound_" & sound_settings.Sound.File, "Glf_SoundBusStopSoundHandler", Array(sound_settings, Me), sound_settings.Sound.Duration*loops
                 End If
             End If
         End If
@@ -16203,9 +16232,15 @@ Class GlfSoundBus
 End Class
 
 Function Glf_SoundBusStopSoundHandler(args)
-    Dim sound_key : sound_key = args(0)
+    Dim sound : Set sound = args(0)
     Dim sound_bus : Set sound_bus = args(1)
-    sound_bus.StopSoundWithKey sound_key
+    sound_bus.StopSoundWithKey sound.Sound.File
+    Dim evt
+    For Each evt in sound.EventsWhenStopped.Items()
+        If evt.Evaluate() Then
+            DispatchPinEvent evt.EventName, Null
+        End If
+    Next
 End Function
 
 Function CreateGlfSound(name)

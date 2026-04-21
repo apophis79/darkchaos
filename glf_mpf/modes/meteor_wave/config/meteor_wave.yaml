@@ -561,8 +561,8 @@ show_player:
         color: "00dddd"
         fade: "300"
   earth_hit: 
-    earth_hit: 
-      key: key_earth_hit
+    earth_hit_center: 
+      key: key_earth_hit_mw
       priority: 15
       loops: 0
   earth_bg: 
