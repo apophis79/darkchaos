@@ -3014,152 +3014,152 @@ Function Glf_737(args)
 End Function
 Function Glf_738(args)
 	On Error Resume Next
-	    Glf_738 = GetPlayerState("ball_just_started")=1 and GetPlayerState("shot_meteor_wave9") < 2
+	    Glf_738 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_738 = False
 End Function
 Function Glf_739(args)
 	On Error Resume Next
-	    Glf_739 = GetPlayerState("shot_ss")=1
+	    Glf_739 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_739 = False
 End Function
 Function Glf_740(args)
 	On Error Resume Next
-	    Glf_740 = GetPlayerState("shot_ss")=1
+	    Glf_740 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_740 = False
 End Function
 Function Glf_741(args)
 	On Error Resume Next
-	    Glf_741 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 1
+	    Glf_741 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_741 = False
 End Function
 Function Glf_742(args)
 	On Error Resume Next
-	    Glf_742 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 2
+	    Glf_742 = glf_timers("alien_attack").GetValue("ticks") > 0
 	If Err Then Glf_742 = False
 End Function
 Function Glf_743(args)
 	On Error Resume Next
-	    Glf_743 = GetPlayerState("num_skillshots")=3
+	    Glf_743 = glf_timers("timewarp").GetValue("ticks")=1
 	If Err Then Glf_743 = False
 End Function
 Function Glf_744(args)
 	On Error Resume Next
-	    Glf_744 = GetPlayerState("num_skillshots")=3
+	    Glf_744 = GetPlayerState("alien_attack_dir") = 0
 	If Err Then Glf_744 = False
 End Function
 Function Glf_745(args)
 	On Error Resume Next
-	    Glf_745 = GetPlayerState("num_skillshots")=3
+	    Glf_745 = GetPlayerState("alien_attack_dir") = 1
 	If Err Then Glf_745 = False
 End Function
 Function Glf_746(args)
 	On Error Resume Next
-	    Glf_746 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_746 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_746 = False
 End Function
 Function Glf_747(args)
 	On Error Resume Next
-	    Glf_747 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_747 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_747 = False
 End Function
 Function Glf_748(args)
 	On Error Resume Next
-	    Glf_748 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_748 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_748 = False
 End Function
 Function Glf_749(args)
 	On Error Resume Next
-	    Glf_749 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_749 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_749 = False
 End Function
 Function Glf_750(args)
 	On Error Resume Next
-	    Glf_750 = glf_timers("alien_attack").GetValue("ticks") > 0
+	    Glf_750 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_750 = False
 End Function
 Function Glf_751(args)
 	On Error Resume Next
-	    Glf_751 = glf_timers("timewarp").GetValue("ticks")=1
+	    Glf_751 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_751 = False
 End Function
 Function Glf_752(args)
 	On Error Resume Next
-	    Glf_752 = GetPlayerState("alien_attack_dir") = 0
+	    Glf_752 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_752 = False
 End Function
 Function Glf_753(args)
 	On Error Resume Next
-	    Glf_753 = GetPlayerState("alien_attack_dir") = 1
+	    Glf_753 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_753 = False
 End Function
 Function Glf_754(args)
 	On Error Resume Next
-	    Glf_754 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 2
+	    Glf_754 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_754 = False
 End Function
 Function Glf_755(args)
 	On Error Resume Next
-	    Glf_755 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 3
+	    Glf_755 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_755 = False
 End Function
 Function Glf_756(args)
 	On Error Resume Next
-	    Glf_756 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 4
+	    Glf_756 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_756 = False
 End Function
 Function Glf_757(args)
 	On Error Resume Next
-	    Glf_757 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 5
+	    Glf_757 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_757 = False
 End Function
 Function Glf_758(args)
 	On Error Resume Next
-	    Glf_758 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 6
+	    Glf_758 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_758 = False
 End Function
 Function Glf_759(args)
 	On Error Resume Next
-	    Glf_759 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 7
+	    Glf_759 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_759 = False
 End Function
 Function Glf_760(args)
 	On Error Resume Next
-	    Glf_760 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 8
+	    Glf_760 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_760 = False
 End Function
 Function Glf_761(args)
 	On Error Resume Next
-	    Glf_761 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 8
+	    Glf_761 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_761 = False
 End Function
 Function Glf_762(args)
 	On Error Resume Next
-	    Glf_762 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 7
+	    Glf_762 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_762 = False
 End Function
 Function Glf_763(args)
 	On Error Resume Next
-	    Glf_763 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 6
+	    Glf_763 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_763 = False
 End Function
 Function Glf_764(args)
 	On Error Resume Next
-	    Glf_764 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 5
+	    Glf_764 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_764 = False
 End Function
 Function Glf_765(args)
 	On Error Resume Next
-	    Glf_765 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 4
+	    Glf_765 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_765 = False
 End Function
 Function Glf_766(args)
 	On Error Resume Next
-	    Glf_766 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 3
+	    Glf_766 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_766 = False
 End Function
 Function Glf_767(args)
 	On Error Resume Next
-	    Glf_767 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 2
+	    Glf_767 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_767 = False
 End Function
 Function Glf_768(args)
@@ -3193,151 +3193,151 @@ Function Glf_773(args)
 	If Err Then Glf_773 = False
 End Function
 Function Glf_774(args)
-	On Error Resume Next
-	    Glf_774 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
-	If Err Then Glf_774 = False
+	Glf_774 = GetPlayerState("alien_tick_count")
 End Function
 Function Glf_775(args)
-	On Error Resume Next
-	    Glf_775 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
-	If Err Then Glf_775 = False
+	Glf_775 = glf_timers("alien_attack").GetValue("ticks")
 End Function
 Function Glf_776(args)
 	On Error Resume Next
-	    Glf_776 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_776 = GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_776 = False
 End Function
 Function Glf_777(args)
 	On Error Resume Next
-	    Glf_777 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_777 = GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_777 = False
 End Function
 Function Glf_778(args)
 	On Error Resume Next
-	    Glf_778 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_778 = GetPlayerState("shot_shield_left")=1
 	If Err Then Glf_778 = False
 End Function
 Function Glf_779(args)
 	On Error Resume Next
-	    Glf_779 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_779 = GetPlayerState("shot_shield_right")=1
 	If Err Then Glf_779 = False
 End Function
 Function Glf_780(args)
-	On Error Resume Next
-	    Glf_780 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
-	If Err Then Glf_780 = False
+	Glf_780 = "SHIELDS"
 End Function
 Function Glf_781(args)
 	On Error Resume Next
-	    Glf_781 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_781 = GetPlayerState("shot_ship_charge1")=0
 	If Err Then Glf_781 = False
 End Function
 Function Glf_782(args)
-	Glf_782 = GetPlayerState("alien_tick_count")
+	On Error Resume Next
+	    Glf_782 = GetPlayerState("training_ship_save_achieved")=1 and GetPlayerState("shot_ship_charge3")<>2
+	If Err Then Glf_782 = False
 End Function
 Function Glf_783(args)
-	Glf_783 = glf_timers("alien_attack").GetValue("ticks")
+	On Error Resume Next
+	    Glf_783 = GetPlayerState("shot_ship_charge3")=2 and GetPlayerState("meteor_mb_shootagain_time") =6000
+	If Err Then Glf_783 = False
 End Function
 Function Glf_784(args)
 	On Error Resume Next
-	    Glf_784 = GetPlayerState("training_shields_achieved")=1
+	    Glf_784 = GetPlayerState("training_ship_save_achieved")=0
 	If Err Then Glf_784 = False
 End Function
 Function Glf_785(args)
 	On Error Resume Next
-	    Glf_785 = GetPlayerState("training_shields_achieved")=1
+	    Glf_785 = GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_785 = False
 End Function
 Function Glf_786(args)
 	On Error Resume Next
-	    Glf_786 = GetPlayerState("shot_shield_left")=1
+	    Glf_786 = GetPlayerState("shot_ship_charge1") = 1
 	If Err Then Glf_786 = False
 End Function
 Function Glf_787(args)
 	On Error Resume Next
-	    Glf_787 = GetPlayerState("shot_shield_right")=1
+	    Glf_787 = GetPlayerState("shot_ship_charge1") = 2 and GetPlayerState("shot_ship_charge2") = 1
 	If Err Then Glf_787 = False
 End Function
 Function Glf_788(args)
-	Glf_788 = "SHIELDS"
+	On Error Resume Next
+	    Glf_788 = GetPlayerState("shot_ship_charge2") = 2 and GetPlayerState("shot_ship_charge3") = 1
+	If Err Then Glf_788 = False
 End Function
 Function Glf_789(args)
-	On Error Resume Next
-	    Glf_789 = GetPlayerState("shot_ship_charge1")=0
-	If Err Then Glf_789 = False
+	Glf_789 = 15000
 End Function
 Function Glf_790(args)
-	On Error Resume Next
-	    Glf_790 = GetPlayerState("training_ship_save_achieved")=1 and GetPlayerState("shot_ship_charge3")<>2
-	If Err Then Glf_790 = False
+	Glf_790 = " SHIP "
 End Function
 Function Glf_791(args)
-	On Error Resume Next
-	    Glf_791 = GetPlayerState("shot_ship_charge3")=2 and GetPlayerState("meteor_mb_shootagain_time") =6000
-	If Err Then Glf_791 = False
+	Glf_791 = " SAVER "
 End Function
 Function Glf_792(args)
 	On Error Resume Next
-	    Glf_792 = GetPlayerState("training_ship_save_achieved")=0
+	    Glf_792 = GetPlayerState("ball_just_started")=1
 	If Err Then Glf_792 = False
 End Function
 Function Glf_793(args)
 	On Error Resume Next
-	    Glf_793 = GetPlayerState("training_ship_save_achieved")=1
+	    Glf_793 = GetPlayerState("combos_value")=0
 	If Err Then Glf_793 = False
 End Function
 Function Glf_794(args)
 	On Error Resume Next
-	    Glf_794 = GetPlayerState("shot_ship_charge1") = 1
+	    Glf_794 = GetPlayerState("combos_value")=1
 	If Err Then Glf_794 = False
 End Function
 Function Glf_795(args)
 	On Error Resume Next
-	    Glf_795 = GetPlayerState("shot_ship_charge1") = 2 and GetPlayerState("shot_ship_charge2") = 1
+	    Glf_795 = GetPlayerState("combos_value")=2
 	If Err Then Glf_795 = False
 End Function
 Function Glf_796(args)
 	On Error Resume Next
-	    Glf_796 = GetPlayerState("shot_ship_charge2") = 2 and GetPlayerState("shot_ship_charge3") = 1
+	    Glf_796 = GetPlayerState("combos_value")=3
 	If Err Then Glf_796 = False
 End Function
 Function Glf_797(args)
-	Glf_797 = 15000
+	On Error Resume Next
+	    Glf_797 = GetPlayerState("combos_value")=4
+	If Err Then Glf_797 = False
 End Function
 Function Glf_798(args)
-	Glf_798 = " SHIP "
+	On Error Resume Next
+	    Glf_798 = GetPlayerState("combos_value")=5
+	If Err Then Glf_798 = False
 End Function
 Function Glf_799(args)
-	Glf_799 = " SAVER "
+	On Error Resume Next
+	    Glf_799 = GetPlayerState("combos_value")=6
+	If Err Then Glf_799 = False
 End Function
 Function Glf_800(args)
 	On Error Resume Next
-	    Glf_800 = GetPlayerState("ball_just_started")=1
+	    Glf_800 = GetPlayerState("combos_value")=7
 	If Err Then Glf_800 = False
 End Function
 Function Glf_801(args)
 	On Error Resume Next
-	    Glf_801 = GetPlayerState("combos_value")=0
+	    Glf_801 = GetPlayerState("combos_value")=8
 	If Err Then Glf_801 = False
 End Function
 Function Glf_802(args)
 	On Error Resume Next
-	    Glf_802 = GetPlayerState("combos_value")=1
+	    Glf_802 = GetPlayerState("shot_combo_command_wizard") = 0
 	If Err Then Glf_802 = False
 End Function
 Function Glf_803(args)
 	On Error Resume Next
-	    Glf_803 = GetPlayerState("combos_value")=2
+	    Glf_803 = GetPlayerState("combos_value")=8
 	If Err Then Glf_803 = False
 End Function
 Function Glf_804(args)
 	On Error Resume Next
-	    Glf_804 = GetPlayerState("combos_value")=3
+	    Glf_804 = GetPlayerState("combos_value")=7
 	If Err Then Glf_804 = False
 End Function
 Function Glf_805(args)
 	On Error Resume Next
-	    Glf_805 = GetPlayerState("combos_value")=4
+	    Glf_805 = GetPlayerState("combos_value")=6
 	If Err Then Glf_805 = False
 End Function
 Function Glf_806(args)
@@ -3347,385 +3347,385 @@ Function Glf_806(args)
 End Function
 Function Glf_807(args)
 	On Error Resume Next
-	    Glf_807 = GetPlayerState("combos_value")=6
+	    Glf_807 = GetPlayerState("combos_value")=4
 	If Err Then Glf_807 = False
 End Function
 Function Glf_808(args)
 	On Error Resume Next
-	    Glf_808 = GetPlayerState("combos_value")=7
+	    Glf_808 = GetPlayerState("combos_value")=3
 	If Err Then Glf_808 = False
 End Function
 Function Glf_809(args)
 	On Error Resume Next
-	    Glf_809 = GetPlayerState("combos_value")=8
+	    Glf_809 = GetPlayerState("combos_value")=2
 	If Err Then Glf_809 = False
 End Function
 Function Glf_810(args)
 	On Error Resume Next
-	    Glf_810 = GetPlayerState("shot_combo_command_wizard") = 0
+	    Glf_810 = GetPlayerState("combos_value")=1
 	If Err Then Glf_810 = False
 End Function
 Function Glf_811(args)
 	On Error Resume Next
-	    Glf_811 = GetPlayerState("combos_value")=8
+	    Glf_811 = GetPlayerState("combos_value")>0
 	If Err Then Glf_811 = False
 End Function
 Function Glf_812(args)
 	On Error Resume Next
-	    Glf_812 = GetPlayerState("combos_value")=7
+	    Glf_812 = GetPlayerState("combos_value")>0
 	If Err Then Glf_812 = False
 End Function
 Function Glf_813(args)
 	On Error Resume Next
-	    Glf_813 = GetPlayerState("combos_value")=6
+	    Glf_813 = GetPlayerState("combos_value")>0
 	If Err Then Glf_813 = False
 End Function
 Function Glf_814(args)
 	On Error Resume Next
-	    Glf_814 = GetPlayerState("combos_value")=5
+	    Glf_814 = GetPlayerState("combos_value")>0
 	If Err Then Glf_814 = False
 End Function
 Function Glf_815(args)
 	On Error Resume Next
-	    Glf_815 = GetPlayerState("combos_value")=4
+	    Glf_815 = GetPlayerState("combos_value")>0
 	If Err Then Glf_815 = False
 End Function
 Function Glf_816(args)
 	On Error Resume Next
-	    Glf_816 = GetPlayerState("combos_value")=3
+	    Glf_816 = GetPlayerState("combos_value")>0
 	If Err Then Glf_816 = False
 End Function
 Function Glf_817(args)
 	On Error Resume Next
-	    Glf_817 = GetPlayerState("combos_value")=2
+	    Glf_817 = GetPlayerState("combos_value")>0
 	If Err Then Glf_817 = False
 End Function
 Function Glf_818(args)
 	On Error Resume Next
-	    Glf_818 = GetPlayerState("combos_value")=1
+	    Glf_818 = GetPlayerState("combos_value")>0
 	If Err Then Glf_818 = False
 End Function
 Function Glf_819(args)
-	On Error Resume Next
-	    Glf_819 = GetPlayerState("combos_value")>0
-	If Err Then Glf_819 = False
+	Glf_819 = GetPlayerState("combo_ticks")
 End Function
 Function Glf_820(args)
-	On Error Resume Next
-	    Glf_820 = GetPlayerState("combos_value")>0
-	If Err Then Glf_820 = False
+	Glf_820 = GetPlayerState("combo_decay_ticks")
 End Function
 Function Glf_821(args)
 	On Error Resume Next
-	    Glf_821 = GetPlayerState("combos_value")>0
+	    Glf_821 = GetPlayerState("shot_timewarp1")=0
 	If Err Then Glf_821 = False
 End Function
 Function Glf_822(args)
 	On Error Resume Next
-	    Glf_822 = GetPlayerState("combos_value")>0
+	    Glf_822 = GetPlayerState("ball_just_started")=0
 	If Err Then Glf_822 = False
 End Function
 Function Glf_823(args)
 	On Error Resume Next
-	    Glf_823 = GetPlayerState("combos_value")>0
+	    Glf_823 = GetPlayerState("warping")=0 and GetPlayerState("shot_timewarp1")=1
 	If Err Then Glf_823 = False
 End Function
 Function Glf_824(args)
 	On Error Resume Next
-	    Glf_824 = GetPlayerState("combos_value")>0
+	    Glf_824 = GetPlayerState("warping")=0 and GetPlayerState("shot_timewarp1")=2 and GetPlayerState("shot_timewarp2")=1
 	If Err Then Glf_824 = False
 End Function
 Function Glf_825(args)
-	On Error Resume Next
-	    Glf_825 = GetPlayerState("combos_value")>0
-	If Err Then Glf_825 = False
+	Glf_825 = Glf_FormatValue(glf_timers("meteor_countdown").GetValue("ticks"),"0>2")
 End Function
 Function Glf_826(args)
-	On Error Resume Next
-	    Glf_826 = GetPlayerState("combos_value")>0
-	If Err Then Glf_826 = False
+	Glf_826 = "WARPING"
 End Function
 Function Glf_827(args)
-	Glf_827 = GetPlayerState("combo_ticks")
+	On Error Resume Next
+	    Glf_827 = GetPlayerState("light_the_eb") = 1 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	If Err Then Glf_827 = False
 End Function
 Function Glf_828(args)
-	Glf_828 = GetPlayerState("combo_decay_ticks")
+	On Error Resume Next
+	    Glf_828 = GetPlayerState("extra_balls") = 0
+	If Err Then Glf_828 = False
 End Function
 Function Glf_829(args)
 	On Error Resume Next
-	    Glf_829 = GetPlayerState("shot_timewarp1")=0
+	    Glf_829 = GetPlayerState("extra_balls") > 0
 	If Err Then Glf_829 = False
 End Function
 Function Glf_830(args)
 	On Error Resume Next
-	    Glf_830 = GetPlayerState("ball_just_started")=0
+	    Glf_830 = GetPlayerState("shot_eb_ready") = 0 and GetPlayerState("wizard_mode_is_ready")=0
 	If Err Then Glf_830 = False
 End Function
 Function Glf_831(args)
 	On Error Resume Next
-	    Glf_831 = GetPlayerState("warping")=0 and GetPlayerState("shot_timewarp1")=1
+	    Glf_831 = GetPlayerState("shot_eb_ready") = 1 and GetPlayerState("wizard_mode_is_ready")=0
 	If Err Then Glf_831 = False
 End Function
 Function Glf_832(args)
 	On Error Resume Next
-	    Glf_832 = GetPlayerState("warping")=0 and GetPlayerState("shot_timewarp1")=2 and GetPlayerState("shot_timewarp2")=1
+	    Glf_832 = GetPlayerState("shot_mystery_ready")=0 and GetPlayerState("shot_training_ready")=0
 	If Err Then Glf_832 = False
 End Function
 Function Glf_833(args)
-	Glf_833 = Glf_FormatValue(glf_timers("meteor_countdown").GetValue("ticks"),"0>2")
+	Glf_833 = " EXTRA "
 End Function
 Function Glf_834(args)
-	Glf_834 = "WARPING"
+	Glf_834 = " BALL "
 End Function
 Function Glf_835(args)
 	On Error Resume Next
-	    Glf_835 = GetPlayerState("light_the_eb") = 1 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_835 = GetPlayerState("shot_mystery_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_835 = False
 End Function
 Function Glf_836(args)
 	On Error Resume Next
-	    Glf_836 = GetPlayerState("extra_balls") = 0
+	    Glf_836 = GetPlayerState("shot_mystery_ready")=0 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_836 = False
 End Function
 Function Glf_837(args)
 	On Error Resume Next
-	    Glf_837 = GetPlayerState("extra_balls") > 0
+	    Glf_837 = GetPlayerState("shot_mystery_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_837 = False
 End Function
 Function Glf_838(args)
 	On Error Resume Next
-	    Glf_838 = GetPlayerState("shot_eb_ready") = 0 and GetPlayerState("wizard_mode_is_ready")=0
+	    Glf_838 = GetPlayerState("shot_training_ready")=0
 	If Err Then Glf_838 = False
 End Function
 Function Glf_839(args)
 	On Error Resume Next
-	    Glf_839 = GetPlayerState("shot_eb_ready") = 1 and GetPlayerState("wizard_mode_is_ready")=0
+	    Glf_839 = GetPlayerState("flag_sss_mystery") = 0
 	If Err Then Glf_839 = False
 End Function
 Function Glf_840(args)
 	On Error Resume Next
-	    Glf_840 = GetPlayerState("shot_mystery_ready")=0 and GetPlayerState("shot_training_ready")=0
+	    Glf_840 = GetPlayerState("shot_health9_light") = 0
 	If Err Then Glf_840 = False
 End Function
 Function Glf_841(args)
-	Glf_841 = " EXTRA "
+	On Error Resume Next
+	    Glf_841 = GetPlayerState("shot_proton_round6") = 0
+	If Err Then Glf_841 = False
 End Function
 Function Glf_842(args)
-	Glf_842 = " BALL "
+	On Error Resume Next
+	    Glf_842 = GetPlayerState("shot_cluster_bomb2") = 0
+	If Err Then Glf_842 = False
 End Function
 Function Glf_843(args)
 	On Error Resume Next
-	    Glf_843 = GetPlayerState("shot_mystery_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_843 = GetPlayerState("shot_ship_charge3") <> 2
 	If Err Then Glf_843 = False
 End Function
 Function Glf_844(args)
 	On Error Resume Next
-	    Glf_844 = GetPlayerState("shot_mystery_ready")=0 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_844 = GetPlayerState("shot_shield_left") = 0
 	If Err Then Glf_844 = False
 End Function
 Function Glf_845(args)
 	On Error Resume Next
-	    Glf_845 = GetPlayerState("shot_mystery_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_845 = GetPlayerState("shot_moon_missile2") = 0 and glf_state_machines("moon_mb").GetValue("state")<>"locking"
 	If Err Then Glf_845 = False
 End Function
 Function Glf_846(args)
 	On Error Resume Next
-	    Glf_846 = GetPlayerState("shot_training_ready")=0
+	    Glf_846 = GetPlayerState("scoring_multiplier") = 1
 	If Err Then Glf_846 = False
 End Function
 Function Glf_847(args)
 	On Error Resume Next
-	    Glf_847 = GetPlayerState("flag_sss_mystery") = 0
+	    Glf_847 = GetPlayerState("spin_multiplier") = 1
 	If Err Then Glf_847 = False
 End Function
 Function Glf_848(args)
 	On Error Resume Next
-	    Glf_848 = GetPlayerState("shot_health9_light") = 0
+	    Glf_848 = GetPlayerState("pop_multiplier") = 1
 	If Err Then Glf_848 = False
 End Function
 Function Glf_849(args)
 	On Error Resume Next
-	    Glf_849 = GetPlayerState("shot_proton_round6") = 0
+	    Glf_849 = GetPlayerState("bonus_multiplier") = 1
 	If Err Then Glf_849 = False
 End Function
 Function Glf_850(args)
 	On Error Resume Next
-	    Glf_850 = GetPlayerState("shot_cluster_bomb2") = 0
+	    Glf_850 = GetPlayerState("combos_relaxed") = 0
 	If Err Then Glf_850 = False
 End Function
 Function Glf_851(args)
 	On Error Resume Next
-	    Glf_851 = GetPlayerState("shot_ship_charge3") <> 2
+	    Glf_851 = GetPlayerState("nuke_acquired") = 0
 	If Err Then Glf_851 = False
 End Function
 Function Glf_852(args)
-	On Error Resume Next
-	    Glf_852 = GetPlayerState("shot_shield_left") = 0
-	If Err Then Glf_852 = False
+	Glf_852 = "CLAIM"
 End Function
 Function Glf_853(args)
-	On Error Resume Next
-	    Glf_853 = GetPlayerState("shot_moon_missile2") = 0 and glf_state_machines("moon_mb").GetValue("state")<>"locking"
-	If Err Then Glf_853 = False
+	Glf_853 = "MYSTERY"
 End Function
 Function Glf_854(args)
-	On Error Resume Next
-	    Glf_854 = GetPlayerState("scoring_multiplier") = 1
-	If Err Then Glf_854 = False
+	Glf_854 = " FULL "
 End Function
 Function Glf_855(args)
-	On Error Resume Next
-	    Glf_855 = GetPlayerState("spin_multiplier") = 1
-	If Err Then Glf_855 = False
+	Glf_855 = "HEALTH"
 End Function
 Function Glf_856(args)
-	On Error Resume Next
-	    Glf_856 = GetPlayerState("pop_multiplier") = 1
-	If Err Then Glf_856 = False
+	Glf_856 = " ADDED "
 End Function
 Function Glf_857(args)
-	On Error Resume Next
-	    Glf_857 = GetPlayerState("bonus_multiplier") = 1
-	If Err Then Glf_857 = False
+	Glf_857 = "CLUSTER"
 End Function
 Function Glf_858(args)
-	On Error Resume Next
-	    Glf_858 = GetPlayerState("combos_relaxed") = 0
-	If Err Then Glf_858 = False
+	Glf_858 = " MOON "
 End Function
 Function Glf_859(args)
-	On Error Resume Next
-	    Glf_859 = GetPlayerState("nuke_acquired") = 0
-	If Err Then Glf_859 = False
+	Glf_859 = " READY "
 End Function
 Function Glf_860(args)
-	Glf_860 = "CLAIM"
+	Glf_860 = "TRAINER"
 End Function
 Function Glf_861(args)
-	Glf_861 = "MYSTERY"
+	Glf_861 = "DOUBLE"
 End Function
 Function Glf_862(args)
-	Glf_862 = " FULL "
+	Glf_862 = "SCORING"
 End Function
 Function Glf_863(args)
-	Glf_863 = "HEALTH"
+	Glf_863 = " SUPER "
 End Function
 Function Glf_864(args)
-	Glf_864 = " ADDED "
+	Glf_864 = "SPINNER"
 End Function
 Function Glf_865(args)
-	Glf_865 = "CLUSTER"
+	Glf_865 = "  POPS  "
 End Function
 Function Glf_866(args)
-	Glf_866 = " MOON "
+	Glf_866 = " BONUS "
 End Function
 Function Glf_867(args)
-	Glf_867 = " READY "
+	Glf_867 = "RELAXED"
 End Function
 Function Glf_868(args)
-	Glf_868 = "TRAINER"
+	Glf_868 = "COMBOS"
 End Function
 Function Glf_869(args)
-	Glf_869 = "DOUBLE"
+	Glf_869 = " EB IS "
 End Function
 Function Glf_870(args)
-	Glf_870 = "SCORING"
+	Glf_870 = " LIT "
 End Function
 Function Glf_871(args)
-	Glf_871 = " SUPER "
+	On Error Resume Next
+	    Glf_871 = GetPlayerState("shot_moon_missile2") = 1
+	If Err Then Glf_871 = False
 End Function
 Function Glf_872(args)
-	Glf_872 = "SPINNER"
+	On Error Resume Next
+	    Glf_872 = GetPlayerState("training_moon_missile_used")=1
+	If Err Then Glf_872 = False
 End Function
 Function Glf_873(args)
-	Glf_873 = "  POPS  "
+	On Error Resume Next
+	    Glf_873 = GetPlayerState("training_moon_missile_achieved")=1 and glf_state_machines("moon_mb").GetValue("state")<>"locking" and GetPlayerState("shot_moon_missile2") = 0
+	If Err Then Glf_873 = False
 End Function
 Function Glf_874(args)
-	Glf_874 = " BONUS "
+	On Error Resume Next
+	    Glf_874 = GetPlayerState("training_moon_missile_achieved")=1
+	If Err Then Glf_874 = False
 End Function
 Function Glf_875(args)
-	Glf_875 = "RELAXED"
+	On Error Resume Next
+	    Glf_875 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
+	If Err Then Glf_875 = False
 End Function
 Function Glf_876(args)
-	Glf_876 = "COMBOS"
+	On Error Resume Next
+	    Glf_876 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
+	If Err Then Glf_876 = False
 End Function
 Function Glf_877(args)
-	Glf_877 = " EB IS "
+	On Error Resume Next
+	    Glf_877 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
+	If Err Then Glf_877 = False
 End Function
 Function Glf_878(args)
-	Glf_878 = " LIT "
+	On Error Resume Next
+	    Glf_878 = GetPlayerState("moon_launch_locked_balls")=1
+	If Err Then Glf_878 = False
 End Function
 Function Glf_879(args)
 	On Error Resume Next
-	    Glf_879 = GetPlayerState("shot_moon_missile2") = 1
+	    Glf_879 = GetPlayerState("moon_launch_locked_balls")=2
 	If Err Then Glf_879 = False
 End Function
 Function Glf_880(args)
 	On Error Resume Next
-	    Glf_880 = GetPlayerState("training_moon_missile_used")=1
+	    Glf_880 = GetPlayerState("shot_moon_missile2") = 0
 	If Err Then Glf_880 = False
 End Function
 Function Glf_881(args)
 	On Error Resume Next
-	    Glf_881 = GetPlayerState("training_moon_missile_achieved")=1 and glf_state_machines("moon_mb").GetValue("state")<>"locking" and GetPlayerState("shot_moon_missile2") = 0
+	    Glf_881 = GetPlayerState("ball_just_started") = 0
 	If Err Then Glf_881 = False
 End Function
 Function Glf_882(args)
 	On Error Resume Next
-	    Glf_882 = GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_882 = glf_state_machines("moon_mb").GetValue("state")="locking"
 	If Err Then Glf_882 = False
 End Function
 Function Glf_883(args)
-	On Error Resume Next
-	    Glf_883 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
-	If Err Then Glf_883 = False
+	Glf_883 = glf_ball_devices("moon_lock").GetValue("balls")
 End Function
 Function Glf_884(args)
-	On Error Resume Next
-	    Glf_884 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
-	If Err Then Glf_884 = False
+	Glf_884 = "MOON"
 End Function
 Function Glf_885(args)
-	On Error Resume Next
-	    Glf_885 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
-	If Err Then Glf_885 = False
+	Glf_885 = "LAUNCH"
 End Function
 Function Glf_886(args)
-	On Error Resume Next
-	    Glf_886 = GetPlayerState("moon_launch_locked_balls")=1
-	If Err Then Glf_886 = False
+	Glf_886 = "LOCK"
 End Function
 Function Glf_887(args)
 	On Error Resume Next
-	    Glf_887 = GetPlayerState("moon_launch_locked_balls")=2
+	    Glf_887 = GetPlayerState("ball_just_started")=1 and GetPlayerState("shot_meteor_wave9") < 2
 	If Err Then Glf_887 = False
 End Function
 Function Glf_888(args)
 	On Error Resume Next
-	    Glf_888 = GetPlayerState("shot_moon_missile2") = 0
+	    Glf_888 = GetPlayerState("shot_ss")=1
 	If Err Then Glf_888 = False
 End Function
 Function Glf_889(args)
 	On Error Resume Next
-	    Glf_889 = GetPlayerState("ball_just_started") = 0
+	    Glf_889 = GetPlayerState("shot_ss")=1
 	If Err Then Glf_889 = False
 End Function
 Function Glf_890(args)
 	On Error Resume Next
-	    Glf_890 = glf_state_machines("moon_mb").GetValue("state")="locking"
+	    Glf_890 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 1
 	If Err Then Glf_890 = False
 End Function
 Function Glf_891(args)
-	Glf_891 = glf_ball_devices("moon_lock").GetValue("balls")
+	On Error Resume Next
+	    Glf_891 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 2
+	If Err Then Glf_891 = False
 End Function
 Function Glf_892(args)
-	Glf_892 = "MOON"
+	On Error Resume Next
+	    Glf_892 = GetPlayerState("num_skillshots")=3
+	If Err Then Glf_892 = False
 End Function
 Function Glf_893(args)
-	Glf_893 = "LAUNCH"
+	On Error Resume Next
+	    Glf_893 = GetPlayerState("num_skillshots")=3
+	If Err Then Glf_893 = False
 End Function
 Function Glf_894(args)
-	Glf_894 = "LOCK"
+	On Error Resume Next
+	    Glf_894 = GetPlayerState("num_skillshots")=3
+	If Err Then Glf_894 = False
 End Function
 Function Glf_895(args)
 	On Error Resume Next
@@ -8263,163 +8263,163 @@ glf_funcRefMap.Add "info_eb_num{current_player.number == 3 or current_player.num
 glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 0}", "Glf_735"
 glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_736"
 glf_funcRefMap.Add "check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_737"
-glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", "Glf_738"
-glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_ss==1}", "Glf_739"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1}", "Glf_740"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", "Glf_741"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_742"
-glf_funcRefMap.Add "sss_achieved.1{current_player.num_skillshots==3}", "Glf_743"
-glf_funcRefMap.Add "voc_ss_stopped{current_player.num_skillshots==3}", "Glf_744"
-glf_funcRefMap.Add "voc_sss_stopped{current_player.num_skillshots==3}", "Glf_745"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_746"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_747"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_748"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_749"
-glf_funcRefMap.Add "timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}", "Glf_750"
-glf_funcRefMap.Add "timer_timewarp_tick{device.timers.timewarp.ticks==1}", "Glf_751"
-glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 0}", "Glf_752"
-glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 1}", "Glf_753"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 2}", "Glf_754"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 3}", "Glf_755"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 4}", "Glf_756"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 5}", "Glf_757"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 6}", "Glf_758"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}", "Glf_759"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 8}", "Glf_760"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 8}", "Glf_761"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 7}", "Glf_762"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 6}", "Glf_763"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 5}", "Glf_764"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 4}", "Glf_765"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}", "Glf_766"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 2}", "Glf_767"
-glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_768"
-glf_funcRefMap.Add "left_side_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_769"
-glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_770"
-glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_771"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_772"
-glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_773"
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_774"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_775"
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_776"
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_777"
-glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_778"
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_779"
-glf_funcRefMap.Add "right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_780"
-glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_781"
-glf_funcRefMap.Add "current_player.alien_tick_count", "Glf_782"
-glf_funcRefMap.Add "device.timers.alien_attack.ticks", "Glf_783"
-glf_funcRefMap.Add "mode_shields_started{current_player.training_shields_achieved==1}", "Glf_784"
-glf_funcRefMap.Add "restart_qualify_shields{current_player.training_shields_achieved==1}", "Glf_785"
-glf_funcRefMap.Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", "Glf_786"
-glf_funcRefMap.Add "s_RightOutlane_active{current_player.shot_shield_right==1}", "Glf_787"
-glf_funcRefMap.Add """SHIELDS""", "Glf_788"
-glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", "Glf_789"
-glf_funcRefMap.Add "mode_ship_save_started{current_player.training_ship_save_achieved==1 and current_player.shot_ship_charge3!=2}", "Glf_790"
-glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge3==2 and current_player.meteor_mb_shootagain_time ==6000}", "Glf_791"
-glf_funcRefMap.Add "restart_ship_save{current_player.training_ship_save_achieved==0}", "Glf_792"
-glf_funcRefMap.Add "restart_ship_save{current_player.training_ship_save_achieved==1}", "Glf_793"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", "Glf_794"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 and current_player.shot_ship_charge2 == 1}", "Glf_795"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 and current_player.shot_ship_charge3 == 1}", "Glf_796"
-glf_funcRefMap.Add "15000", "Glf_797"
-glf_funcRefMap.Add """ SHIP """, "Glf_798"
-glf_funcRefMap.Add """ SAVER """, "Glf_799"
-glf_funcRefMap.Add "mode_combos_started{current_player.ball_just_started==1}", "Glf_800"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==0}", "Glf_801"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==1}", "Glf_802"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==2}", "Glf_803"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==3}", "Glf_804"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==4}", "Glf_805"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==5}", "Glf_806"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==6}", "Glf_807"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==7}", "Glf_808"
-glf_funcRefMap.Add "check_add_combos{current_player.combos_value==8}", "Glf_809"
-glf_funcRefMap.Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", "Glf_810"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==8}", "Glf_811"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==7}", "Glf_812"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==6}", "Glf_813"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==5}", "Glf_814"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==4}", "Glf_815"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==3}", "Glf_816"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==2}", "Glf_817"
-glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==1}", "Glf_818"
-glf_funcRefMap.Add "left_side_hit{current_player.combos_value>0}", "Glf_819"
-glf_funcRefMap.Add "left_orbit_hit{current_player.combos_value>0}", "Glf_820"
-glf_funcRefMap.Add "left_ramp_hit{current_player.combos_value>0}", "Glf_821"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.combos_value>0}", "Glf_822"
-glf_funcRefMap.Add "center_orbit_left_hit{current_player.combos_value>0}", "Glf_823"
-glf_funcRefMap.Add "center_orbit_right_hit{current_player.combos_value>0}", "Glf_824"
-glf_funcRefMap.Add "right_ramp_hit{current_player.combos_value>0}", "Glf_825"
-glf_funcRefMap.Add "right_orbit_hit{current_player.combos_value>0}", "Glf_826"
-glf_funcRefMap.Add "current_player.combo_ticks", "Glf_827"
-glf_funcRefMap.Add "current_player.combo_decay_ticks", "Glf_828"
-glf_funcRefMap.Add "mode_timewarp_started{current_player.shot_timewarp1==0}", "Glf_829"
-glf_funcRefMap.Add "mode_timewarp_started{current_player.ball_just_started==0}", "Glf_830"
-glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==1}", "Glf_831"
-glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==2 and current_player.shot_timewarp2==1}", "Glf_832"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.meteor_countdown.ticks,""0>2"")", "Glf_833"
-glf_funcRefMap.Add """WARPING""", "Glf_834"
-glf_funcRefMap.Add "check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}", "Glf_835"
-glf_funcRefMap.Add "check_eb{current_player.extra_balls == 0}", "Glf_836"
-glf_funcRefMap.Add "check_eb{current_player.extra_balls > 0}", "Glf_837"
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 and current_player.wizard_mode_is_ready==0}", "Glf_838"
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 and current_player.wizard_mode_is_ready==0}", "Glf_839"
-glf_funcRefMap.Add "eb_complete{current_player.shot_mystery_ready==0 and current_player.shot_training_ready==0}", "Glf_840"
-glf_funcRefMap.Add """ EXTRA """, "Glf_841"
-glf_funcRefMap.Add """ BALL """, "Glf_842"
-glf_funcRefMap.Add "mode_mystery_started{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", "Glf_843"
-glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==0 and machine.flippers_are_dead==0}", "Glf_844"
-glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", "Glf_845"
-glf_funcRefMap.Add "restart_qualify_mystery{current_player.shot_training_ready==0}", "Glf_846"
-glf_funcRefMap.Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", "Glf_847"
-glf_funcRefMap.Add "mystery_full_health{current_player.shot_health9_light == 0}", "Glf_848"
-glf_funcRefMap.Add "mystery_full_protons{current_player.shot_proton_round6 == 0}", "Glf_849"
-glf_funcRefMap.Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", "Glf_850"
-glf_funcRefMap.Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", "Glf_851"
-glf_funcRefMap.Add "mystery_added_shields{current_player.shot_shield_left == 0}", "Glf_852"
-glf_funcRefMap.Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 and device.state_machines.moon_mb.state!=""locking""}", "Glf_853"
-glf_funcRefMap.Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", "Glf_854"
-glf_funcRefMap.Add "mystery_super_spinner{current_player.spin_multiplier == 1}", "Glf_855"
-glf_funcRefMap.Add "mystery_super_pops{current_player.pop_multiplier == 1}", "Glf_856"
-glf_funcRefMap.Add "mystery_double_bonus{current_player.bonus_multiplier == 1}", "Glf_857"
-glf_funcRefMap.Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", "Glf_858"
-glf_funcRefMap.Add "activate_nuke{current_player.nuke_acquired == 0}", "Glf_859"
-glf_funcRefMap.Add """CLAIM""", "Glf_860"
-glf_funcRefMap.Add """MYSTERY""", "Glf_861"
-glf_funcRefMap.Add """ FULL """, "Glf_862"
-glf_funcRefMap.Add """HEALTH""", "Glf_863"
-glf_funcRefMap.Add """ ADDED """, "Glf_864"
-glf_funcRefMap.Add """CLUSTER""", "Glf_865"
-glf_funcRefMap.Add """ MOON """, "Glf_866"
-glf_funcRefMap.Add """ READY """, "Glf_867"
-glf_funcRefMap.Add """TRAINER""", "Glf_868"
-glf_funcRefMap.Add """DOUBLE""", "Glf_869"
-glf_funcRefMap.Add """SCORING""", "Glf_870"
-glf_funcRefMap.Add """ SUPER """, "Glf_871"
-glf_funcRefMap.Add """SPINNER""", "Glf_872"
-glf_funcRefMap.Add """  POPS  """, "Glf_873"
-glf_funcRefMap.Add """ BONUS """, "Glf_874"
-glf_funcRefMap.Add """RELAXED""", "Glf_875"
-glf_funcRefMap.Add """COMBOS""", "Glf_876"
-glf_funcRefMap.Add """ EB IS """, "Glf_877"
-glf_funcRefMap.Add """ LIT """, "Glf_878"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}", "Glf_879"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", "Glf_880"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", "Glf_881"
-glf_funcRefMap.Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", "Glf_882"
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_883"
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", "Glf_884"
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_885"
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}", "Glf_886"
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", "Glf_887"
-glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", "Glf_888"
-glf_funcRefMap.Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", "Glf_889"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_890"
-glf_funcRefMap.Add "device.ball_devices.moon_lock.balls", "Glf_891"
-glf_funcRefMap.Add """MOON""", "Glf_892"
-glf_funcRefMap.Add """LAUNCH""", "Glf_893"
-glf_funcRefMap.Add """LOCK""", "Glf_894"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_738"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_739"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_740"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_741"
+glf_funcRefMap.Add "timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}", "Glf_742"
+glf_funcRefMap.Add "timer_timewarp_tick{device.timers.timewarp.ticks==1}", "Glf_743"
+glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 0}", "Glf_744"
+glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 1}", "Glf_745"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 2}", "Glf_746"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 3}", "Glf_747"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 4}", "Glf_748"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 5}", "Glf_749"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 6}", "Glf_750"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}", "Glf_751"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 8}", "Glf_752"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 8}", "Glf_753"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 7}", "Glf_754"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 6}", "Glf_755"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 5}", "Glf_756"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 4}", "Glf_757"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}", "Glf_758"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 2}", "Glf_759"
+glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_760"
+glf_funcRefMap.Add "left_side_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_761"
+glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_762"
+glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_763"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_764"
+glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_765"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_766"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_767"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_768"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_769"
+glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_770"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_771"
+glf_funcRefMap.Add "right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_772"
+glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_773"
+glf_funcRefMap.Add "current_player.alien_tick_count", "Glf_774"
+glf_funcRefMap.Add "device.timers.alien_attack.ticks", "Glf_775"
+glf_funcRefMap.Add "mode_shields_started{current_player.training_shields_achieved==1}", "Glf_776"
+glf_funcRefMap.Add "restart_qualify_shields{current_player.training_shields_achieved==1}", "Glf_777"
+glf_funcRefMap.Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", "Glf_778"
+glf_funcRefMap.Add "s_RightOutlane_active{current_player.shot_shield_right==1}", "Glf_779"
+glf_funcRefMap.Add """SHIELDS""", "Glf_780"
+glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", "Glf_781"
+glf_funcRefMap.Add "mode_ship_save_started{current_player.training_ship_save_achieved==1 and current_player.shot_ship_charge3!=2}", "Glf_782"
+glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge3==2 and current_player.meteor_mb_shootagain_time ==6000}", "Glf_783"
+glf_funcRefMap.Add "restart_ship_save{current_player.training_ship_save_achieved==0}", "Glf_784"
+glf_funcRefMap.Add "restart_ship_save{current_player.training_ship_save_achieved==1}", "Glf_785"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 1}", "Glf_786"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge1 == 2 and current_player.shot_ship_charge2 == 1}", "Glf_787"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_ship_charge2 == 2 and current_player.shot_ship_charge3 == 1}", "Glf_788"
+glf_funcRefMap.Add "15000", "Glf_789"
+glf_funcRefMap.Add """ SHIP """, "Glf_790"
+glf_funcRefMap.Add """ SAVER """, "Glf_791"
+glf_funcRefMap.Add "mode_combos_started{current_player.ball_just_started==1}", "Glf_792"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==0}", "Glf_793"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==1}", "Glf_794"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==2}", "Glf_795"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==3}", "Glf_796"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==4}", "Glf_797"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==5}", "Glf_798"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==6}", "Glf_799"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==7}", "Glf_800"
+glf_funcRefMap.Add "check_add_combos{current_player.combos_value==8}", "Glf_801"
+glf_funcRefMap.Add "check_combo_command_wizard{current_player.shot_combo_command_wizard == 0}", "Glf_802"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==8}", "Glf_803"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==7}", "Glf_804"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==6}", "Glf_805"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==5}", "Glf_806"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==4}", "Glf_807"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==3}", "Glf_808"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==2}", "Glf_809"
+glf_funcRefMap.Add "check_subtract_combos{current_player.combos_value==1}", "Glf_810"
+glf_funcRefMap.Add "left_side_hit{current_player.combos_value>0}", "Glf_811"
+glf_funcRefMap.Add "left_orbit_hit{current_player.combos_value>0}", "Glf_812"
+glf_funcRefMap.Add "left_ramp_hit{current_player.combos_value>0}", "Glf_813"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.combos_value>0}", "Glf_814"
+glf_funcRefMap.Add "center_orbit_left_hit{current_player.combos_value>0}", "Glf_815"
+glf_funcRefMap.Add "center_orbit_right_hit{current_player.combos_value>0}", "Glf_816"
+glf_funcRefMap.Add "right_ramp_hit{current_player.combos_value>0}", "Glf_817"
+glf_funcRefMap.Add "right_orbit_hit{current_player.combos_value>0}", "Glf_818"
+glf_funcRefMap.Add "current_player.combo_ticks", "Glf_819"
+glf_funcRefMap.Add "current_player.combo_decay_ticks", "Glf_820"
+glf_funcRefMap.Add "mode_timewarp_started{current_player.shot_timewarp1==0}", "Glf_821"
+glf_funcRefMap.Add "mode_timewarp_started{current_player.ball_just_started==0}", "Glf_822"
+glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==1}", "Glf_823"
+glf_funcRefMap.Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==2 and current_player.shot_timewarp2==1}", "Glf_824"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.meteor_countdown.ticks,""0>2"")", "Glf_825"
+glf_funcRefMap.Add """WARPING""", "Glf_826"
+glf_funcRefMap.Add "check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}", "Glf_827"
+glf_funcRefMap.Add "check_eb{current_player.extra_balls == 0}", "Glf_828"
+glf_funcRefMap.Add "check_eb{current_player.extra_balls > 0}", "Glf_829"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 0 and current_player.wizard_mode_is_ready==0}", "Glf_830"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.shot_eb_ready == 1 and current_player.wizard_mode_is_ready==0}", "Glf_831"
+glf_funcRefMap.Add "eb_complete{current_player.shot_mystery_ready==0 and current_player.shot_training_ready==0}", "Glf_832"
+glf_funcRefMap.Add """ EXTRA """, "Glf_833"
+glf_funcRefMap.Add """ BALL """, "Glf_834"
+glf_funcRefMap.Add "mode_mystery_started{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", "Glf_835"
+glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==0 and machine.flippers_are_dead==0}", "Glf_836"
+glf_funcRefMap.Add "check_mystery{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", "Glf_837"
+glf_funcRefMap.Add "restart_qualify_mystery{current_player.shot_training_ready==0}", "Glf_838"
+glf_funcRefMap.Add "qualify_mystery_on_complete{current_player.flag_sss_mystery == 0}", "Glf_839"
+glf_funcRefMap.Add "mystery_full_health{current_player.shot_health9_light == 0}", "Glf_840"
+glf_funcRefMap.Add "mystery_full_protons{current_player.shot_proton_round6 == 0}", "Glf_841"
+glf_funcRefMap.Add "mystery_added_cluster{current_player.shot_cluster_bomb2 == 0}", "Glf_842"
+glf_funcRefMap.Add "mystery_added_saver{current_player.shot_ship_charge3 != 2}", "Glf_843"
+glf_funcRefMap.Add "mystery_added_shields{current_player.shot_shield_left == 0}", "Glf_844"
+glf_funcRefMap.Add "mystery_moon_ready{current_player.shot_moon_missile2 == 0 and device.state_machines.moon_mb.state!=""locking""}", "Glf_845"
+glf_funcRefMap.Add "mystery_double_scoring{current_player.scoring_multiplier == 1}", "Glf_846"
+glf_funcRefMap.Add "mystery_super_spinner{current_player.spin_multiplier == 1}", "Glf_847"
+glf_funcRefMap.Add "mystery_super_pops{current_player.pop_multiplier == 1}", "Glf_848"
+glf_funcRefMap.Add "mystery_double_bonus{current_player.bonus_multiplier == 1}", "Glf_849"
+glf_funcRefMap.Add "mystery_relaxed_combos{current_player.combos_relaxed == 0}", "Glf_850"
+glf_funcRefMap.Add "activate_nuke{current_player.nuke_acquired == 0}", "Glf_851"
+glf_funcRefMap.Add """CLAIM""", "Glf_852"
+glf_funcRefMap.Add """MYSTERY""", "Glf_853"
+glf_funcRefMap.Add """ FULL """, "Glf_854"
+glf_funcRefMap.Add """HEALTH""", "Glf_855"
+glf_funcRefMap.Add """ ADDED """, "Glf_856"
+glf_funcRefMap.Add """CLUSTER""", "Glf_857"
+glf_funcRefMap.Add """ MOON """, "Glf_858"
+glf_funcRefMap.Add """ READY """, "Glf_859"
+glf_funcRefMap.Add """TRAINER""", "Glf_860"
+glf_funcRefMap.Add """DOUBLE""", "Glf_861"
+glf_funcRefMap.Add """SCORING""", "Glf_862"
+glf_funcRefMap.Add """ SUPER """, "Glf_863"
+glf_funcRefMap.Add """SPINNER""", "Glf_864"
+glf_funcRefMap.Add """  POPS  """, "Glf_865"
+glf_funcRefMap.Add """ BONUS """, "Glf_866"
+glf_funcRefMap.Add """RELAXED""", "Glf_867"
+glf_funcRefMap.Add """COMBOS""", "Glf_868"
+glf_funcRefMap.Add """ EB IS """, "Glf_869"
+glf_funcRefMap.Add """ LIT """, "Glf_870"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}", "Glf_871"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", "Glf_872"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", "Glf_873"
+glf_funcRefMap.Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", "Glf_874"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_875"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", "Glf_876"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_877"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}", "Glf_878"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", "Glf_879"
+glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", "Glf_880"
+glf_funcRefMap.Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", "Glf_881"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_882"
+glf_funcRefMap.Add "device.ball_devices.moon_lock.balls", "Glf_883"
+glf_funcRefMap.Add """MOON""", "Glf_884"
+glf_funcRefMap.Add """LAUNCH""", "Glf_885"
+glf_funcRefMap.Add """LOCK""", "Glf_886"
+glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", "Glf_887"
+glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_ss==1}", "Glf_888"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1}", "Glf_889"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", "Glf_890"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_891"
+glf_funcRefMap.Add "sss_achieved.1{current_player.num_skillshots==3}", "Glf_892"
+glf_funcRefMap.Add "voc_ss_stopped{current_player.num_skillshots==3}", "Glf_893"
+glf_funcRefMap.Add "voc_sss_stopped{current_player.num_skillshots==3}", "Glf_894"
 glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_895"
 glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", "Glf_896"
 glf_funcRefMap.Add "10000", "Glf_897"

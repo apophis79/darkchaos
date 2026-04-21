@@ -335,11 +335,11 @@ Sub CreateAlienAttackMode
 
         
         With .ShowPlayer()
-            With .EventName("earth_hit_center")
-                .Key = "key_earth_hit_aa"
+            With .EventName("earth_hit")
+                .Key = "key_earth_hit_center_aa"
                 .Priority = 15
-                .Show = "earth_hit"
-                .Speed = 1
+                .Show = "earth_hit_center"
+                .Speed = 2
                 .Loops = 0
             End With
             With .EventName("alien_hit_show")

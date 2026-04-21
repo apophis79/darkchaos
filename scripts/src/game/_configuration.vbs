@@ -238,7 +238,6 @@ Sub ConfigureGlfDevices
     CreateBaseMode                  ' 200           Yes
     CreateInstantInfoMode           ' 300           Yes
     CreateNukeMode                  ' 400           Yes
-    CreateSkillshotsMode            ' 500           No
     CreateAlienAttackMode           ' 500           No
     CreateShieldsMode               ' 510           No
     CreateShipSaveMode              ' 520           No
@@ -247,6 +246,7 @@ Sub ConfigureGlfDevices
     CreateExtraBallMode             ' 560           No
     CreateMysteryMode               ' 580           No
     CreateMoonMultiballQualifyMode  ' 590           No
+    CreateSkillshotsMode            ' 600           No
     CreateMoonMultiballMode         ' 600           Yes
     CreateDoubleScoringMode         ' 700           Yes
     CreateSuperSpinnerMode          ' 700           Yes

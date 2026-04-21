@@ -81,7 +81,7 @@ With CreateGlfShow("earth_hit_center2")
             .Loops = 0
         End With
     End With
-    With .AddStep(Null, Null, 0.3)
+    With .AddStep(Null, Null, 0.5)
         With .Shows("earth_hit_center")
             .Key = "key_earth_hit_centerB"
             .Speed = 2
