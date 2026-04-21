@@ -196,7 +196,7 @@ Sub CreateSounds()
         .Bus = "sfx" 
         .Volume = 1 'Override bus volume
         .Duration = 11.860* 1000
-        .EventsWhenStopped = Array("sfx_nuke_stopped")
+       ' .EventsWhenStopped = Array("sfx_nuke_stopped")
     End With
 
 
@@ -216,7 +216,7 @@ Sub AddMusic(Name, Duration, Loops)
         '.Volume = 0.8 'Override bus volume
         .Loops = Loops 'default to all music looping
         .Duration = Duration * 1000
-        .EventsWhenStopped = Array(Name&"_stopped")
+        '.EventsWhenStopped = Array(Name&"_stopped")
     End With
 End Sub
 
@@ -228,7 +228,7 @@ Sub AddSoundEffect(Name, Duration)
         .Bus = "sfx" ' Sound bus to play on
         '.Volume = 0.6 'Override bus volume
         .Duration = Duration * 1000
-        .EventsWhenStopped = Array(Name&"_stopped")
+        '.EventsWhenStopped = Array(Name&"_stopped")
     End With
 End Sub
 
@@ -240,7 +240,7 @@ Sub AddCallout(Name, Duration)
         .Bus = "voc" ' Sound bus to play on
         '.Volume = 0.6 'Override bus volume
         .Duration = Duration * 1000
-        .EventsWhenStopped = Array(Name&"_stopped")
+        '.EventsWhenStopped = Array(Name&"_stopped")
     End With
 End Sub
 
