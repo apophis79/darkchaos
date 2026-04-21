@@ -132,7 +132,7 @@ Sub CreateBaseMode()
             .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_1000") 
             .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
-            .Add "balldevice_scoop_ball_exiting", Array("scoop_blast")
+            .Add "balldevice_scoop_ball_eject_attempt", Array("scoop_blast")
 
             'handle ball stuck in plunger fail
             .Add "check_plunger{current_player.ball_just_started==0}", Array("restart_plunger_check")
@@ -566,7 +566,7 @@ Sub CreateBaseMode()
             End With
             
 
-            With .EventName("balldevice_scoop_ball_exiting")
+            With .EventName("balldevice_scoop_ball_eject_attempt")
                 .Key = "key_ts_scoop_gi"
                 .Show = "flash_color" '_with_fade"
                 .Speed = 15
@@ -1009,7 +1009,7 @@ Sub CreateBaseMode()
 
 
             ' Scoop launch
-            With .EventName("balldevice_scoop_ball_exiting")
+            With .EventName("balldevice_scoop_ball_eject_attempt")
                 .Key = "key_sfx_scoop"
                 .Sound = "sfx_scoop"
             End With
