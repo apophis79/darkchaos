@@ -11451,8 +11451,8 @@ Class GlfSoundPlayer
         glf_sound_buses(m_eventValues(evt).Sound.Bus).StopSoundWithKey m_eventValues(evt).Sound.File
         Dim evtItem
         For Each evtItem in m_eventValues(evt).EventsWhenStopped.Items()
-            If evt.Evaluate() Then
-                DispatchPinEvent evt.EventName, Null
+            If evtItem.Evaluate() Then
+                DispatchPinEvent evtItem.EventName, Null
             End If
         Next
     End Sub
