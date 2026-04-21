@@ -360,7 +360,7 @@ Sub CreateAlienAttackMode
                 .Loops = 2
                 .Priority = 1000
                 With .Tokens()
-                    .Add "color1", DoubleScoringColor
+                    .Add "color1", TrainingColor
                     .Add "color2", AlienColor
                     .Add "intensity", 100
                 End With

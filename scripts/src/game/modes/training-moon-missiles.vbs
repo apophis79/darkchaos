@@ -125,7 +125,7 @@ Sub CreateTrainingMoonMissileMode
                 .Speed = 8
                 With .Tokens()
                     .Add "color", MoonColor
-                    .Add "fade", 400
+                    .Add "fade", 100
                 End With
             End With
             With .States("collected")

@@ -50,7 +50,7 @@ Sub CreateDoubleScoringMode
                 .Speed = 2
                 With .Tokens()
                     .Add "lights", "LDS"
-                    .Add "fade", 500
+                    .Add "fade", 400
                     .Add "color", DoubleScoringColor
                 End With
             End With
