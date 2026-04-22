@@ -732,10 +732,6 @@ Sub CreateMeteorWaveMode
                     .Action = "set"
                     .Int = "current_player.num_waves_completed + 1"
                 End With
-                With .Variable("flipper_main_pulse_ms")
-                    .Action = "set"
-                    .Int = "15"
-                End With
 			End With
             With .EventName("finish_meteor_wave") 
                 With .Variable("meteors_per_wave")
@@ -747,10 +743,6 @@ Sub CreateMeteorWaveMode
                 With .Variable("meteor_wave_running")
                     .Action = "set"
                     .Int = 0
-                End With
-                With .Variable("flipper_main_pulse_ms")
-                    .Action = "set"
-                    .Int = "20"
                 End With
             End With
             With .EventName("score_wave_count") 
