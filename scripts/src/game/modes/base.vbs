@@ -891,7 +891,7 @@ Sub CreateBaseMode()
         End With
 
         With .Timers("delay_raise_lock_pin")
-            .TickInterval = 240
+            .TickInterval = 240  'Real table needs this to be 150
             .StartValue = 0
             .EndValue = 1
             With .ControlEvents()

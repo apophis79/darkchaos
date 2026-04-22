@@ -20,6 +20,7 @@ With CreateGlfShow("slide_down6")
             .Key = "insert_gi_slide_downB"
             .Speed = 1
             .Loops = 0
+            .Priority = 1
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 50
@@ -31,6 +32,7 @@ With CreateGlfShow("slide_down6")
             .Key = "insert_gi_slide_downC"
             .Speed = 1
             .Loops = 0
+            .Priority = 2
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 20
@@ -42,6 +44,7 @@ With CreateGlfShow("slide_down6")
             .Key = "insert_gi_slide_downD"
             .Speed = 1
             .Loops = 0
+            .Priority = 3
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 10
@@ -53,17 +56,19 @@ With CreateGlfShow("slide_down6")
             .Key = "insert_gi_slide_downE"
             .Speed = 1
             .Loops = 0
+            .Priority = 4
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 5
             End With
         End With
     End With
-    With .AddStep(Null, Null, 0.1)
+    With .AddStep(Null, Null, 1)
         With .Shows("insert_gi_slide_down")
             .Key = "insert_gi_slide_downF"
             .Speed = 1
             .Loops = 0
+            .Priority = 5
             With .Tokens()
                 .Add "color", "ffffff"
                 .Add "intensity", 3
