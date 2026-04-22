@@ -344,6 +344,12 @@ Sub CreateMeteorWaveMode
                     .EventsWhenTransitioning = Array("meteor"&x&"_knockdown","earth_hit","earth_flash","earth_bg")
                 End With
                 With .Transitions()  'normal hit
+                    .Source = Array("init")
+                    .Target = "down"
+                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_80000","restart_meteor"&x&"_timer")
+                End With
+                With .Transitions()  'normal hit
                     .Source = Array("up_cool")
                     .Target = "down"
                     .Events = Array("s_DTMeteor"&x&"_active")
