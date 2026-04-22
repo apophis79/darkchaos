@@ -113,7 +113,7 @@ Sub CreateMeteorWaveMode
                 .Add "play_sfx_LMet5", 1
                 .Add "play_sfx_LMet6", 1
                 .Add "play_sfx_LMet7", 1
-                .Add "play_sfx_LMet8", 1
+                '.Add "play_sfx_LMet8", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
