@@ -243,6 +243,8 @@ event_player:
     - delayed_release_moon_ball
   timer_delay_ball_release_complete:
     - release_moon_ball
+  timer_delay_raise_lock_pin_complete:
+    - raise_lock_pin
   s_LockOut_active:
     - raise_lock_pin
   s_LeftSlingshot_active:
@@ -1202,6 +1204,16 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
+  delay_raise_lock_pin:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: release_moon_ball
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 240ms
   plunger_check:
     start_value: 0
     end_value: 5

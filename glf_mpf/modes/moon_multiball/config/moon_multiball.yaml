@@ -14,6 +14,8 @@ event_player:
     - delayed_release_moon_ball
     - play_sfx_launch
     - score_50000
+  multiball_moon_started:
+    - release_moon_ball
   s_RightMagnaButton_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}:
     - launch_panic_penalty
   launch_panic_penalty:
@@ -34,6 +36,7 @@ show_player:
   launch_panic_penalty: 
     flash_color: 
       key: key_launch_panic_penalty
+      priority: 2000
       loops: 6
       speed: 13
       show_tokens: 

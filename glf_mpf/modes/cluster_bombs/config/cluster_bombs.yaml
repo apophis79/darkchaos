@@ -149,6 +149,7 @@ show_player:
   cluster_panic_penalty: 
     flash_color: 
       key: key_cluster_panic_penalty
+      priority: 2000
       loops: 6
       speed: 13
       show_tokens: 

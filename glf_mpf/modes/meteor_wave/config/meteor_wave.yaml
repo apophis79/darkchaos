@@ -645,6 +645,11 @@ state_machines:
         events: 
           - timer_meteor1_complete
         events_when_transitioning: meteor1_knockdown, earth_hit, earth_flash, earth_bg
+      - source: init
+        target: down
+        events: 
+          - s_DTMeteor1_active
+        events_when_transitioning: meteor1_hit, meteor1_explodes_show, meteor1_flash_show, meteor1_blink_show, play_sfx_LMet, score_80000, restart_meteor1_timer
       - source: up_cool
         target: down
         events: 
@@ -709,6 +714,11 @@ state_machines:
         events: 
           - timer_meteor2_complete
         events_when_transitioning: meteor2_knockdown, earth_hit, earth_flash, earth_bg
+      - source: init
+        target: down
+        events: 
+          - s_DTMeteor2_active
+        events_when_transitioning: meteor2_hit, meteor2_explodes_show, meteor2_flash_show, meteor2_blink_show, play_sfx_LMet, score_80000, restart_meteor2_timer
       - source: up_cool
         target: down
         events: 
@@ -773,6 +783,11 @@ state_machines:
         events: 
           - timer_meteor3_complete
         events_when_transitioning: meteor3_knockdown, earth_hit, earth_flash, earth_bg
+      - source: init
+        target: down
+        events: 
+          - s_DTMeteor3_active
+        events_when_transitioning: meteor3_hit, meteor3_explodes_show, meteor3_flash_show, meteor3_blink_show, play_sfx_LMet, score_80000, restart_meteor3_timer
       - source: up_cool
         target: down
         events: 
@@ -837,6 +852,11 @@ state_machines:
         events: 
           - timer_meteor4_complete
         events_when_transitioning: meteor4_knockdown, earth_hit, earth_flash, earth_bg
+      - source: init
+        target: down
+        events: 
+          - s_DTMeteor4_active
+        events_when_transitioning: meteor4_hit, meteor4_explodes_show, meteor4_flash_show, meteor4_blink_show, play_sfx_LMet, score_80000, restart_meteor4_timer
       - source: up_cool
         target: down
         events: 
@@ -1079,6 +1099,9 @@ variable_player:
     num_wave_current: 
       action: set
       int: current_player.num_waves_completed + 1
+    flipper_main_pulse_ms: 
+      action: set
+      int: 15
 
   finish_meteor_wave: 
     meteors_per_wave: 
@@ -1089,6 +1112,9 @@ variable_player:
     meteor_wave_running: 
       action: set
       int: 0
+    flipper_main_pulse_ms: 
+      action: set
+      int: 20
 
   score_wave_count: 
     num_waves_completed_this_ball: 
