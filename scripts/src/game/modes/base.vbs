@@ -126,6 +126,7 @@ Sub CreateBaseMode()
             'handle delayed moon ball release
             .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
+            .Add "timer_delay_raise_lock_pin_complete", Array("raise_lock_pin") 
             .Add "s_LockOut_active", Array("raise_lock_pin") 
 
             'handle some shows
@@ -885,6 +886,16 @@ Sub CreateBaseMode()
             .EndValue = 1
             With .ControlEvents()
                 .EventName = "delayed_release_moon_ball"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("delay_raise_lock_pin")
+            .TickInterval = 240
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "release_moon_ball"
                 .Action = "restart"
             End With
         End With
