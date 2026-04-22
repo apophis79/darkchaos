@@ -286,6 +286,58 @@ Sub CreateMeteorWaveMode
         Next
 
 
+        'drop target state machines
+        '  these are used to help make the real machine robust against 
+        '  issue where the drop targets drop but dont register a hit
+        For x = 1 to 4   'for each drop target
+
+            With .StateMachines("dt"&x)  
+                '.Debug = True
+                .PersistState = False
+                .StartingState = "down"
+
+                'States
+                With .States("down")
+                    .Label = "Init State"
+                End With
+                With .States("up")
+                    .Label = "Init State"
+                End With
+
+                'Transitions
+                With .Transitions()
+                    .Source = Array("down")
+                    .Target = "up"
+                    .Events = Array("s_DTMeteor"&x&"_inactive")
+                    .EventsWhenTransitioning = Array("restart_dt"&x&"_check_timer")
+                End With
+                With .Transitions()
+                    .Source = Array("up")
+                    .Target = "down"
+                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .EventsWhenTransitioning = Array("stop_dt"&x&"_check_timer")
+                End With
+
+            End With
+
+            With .Timers("dt"&x&"_check")
+                '.Debug = True
+                .TickInterval = 500
+                .StartValue = 0
+                .EndValue = 100
+                With .ControlEvents()
+                    .EventName = "restart_dt"&x&"_check_timer"
+                    .Action = "restart"
+                End With
+                With .ControlEvents()
+                    .EventName = "stop_dt"&x&"_check_timer"
+                    .Action = "stop"
+                End With
+            End With
+
+        Next
+
+
         'Meteor state machines
         For x = 1 to 4   'for each meteor
 
@@ -352,19 +404,19 @@ Sub CreateMeteorWaveMode
                 With .Transitions()  'normal hit
                     .Source = Array("up_cool")
                     .Target = "down"
-                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .Events = Array("s_DTMeteor"&x&"_active","timer_dt"&x&"_check_tick{device.state_machines.dt"&x&".state==""down""}")
                     .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_80000")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_warm")
                     .Target = "down"
-                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .Events = Array("s_DTMeteor"&x&"_active","timer_dt"&x&"_check_tick{device.state_machines.dt"&x&".state==""down""}")
                     .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_90000")
                 End With
                 With .Transitions()  'normal hit
                     .Source = Array("up_hot")
                     .Target = "down"
-                    .Events = Array("s_DTMeteor"&x&"_active")
+                    .Events = Array("s_DTMeteor"&x&"_active","timer_dt"&x&"_check_tick{device.state_machines.dt"&x&".state==""down""}")
                     .EventsWhenTransitioning = Array("meteor"&x&"_hit","meteor"&x&"_explodes_show","meteor"&x&"_flash_show","meteor"&x&"_blink_show","play_sfx_LMet","score_100000")
                 End With
                 With .Transitions()  'knockdowns
