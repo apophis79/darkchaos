@@ -33,7 +33,7 @@ Sub CreateTrainingQualifyMode
             .Add MainShotNames(4)&"_hit{current_player.shot_training_shot5 == 1}", Array(MainShotNames(4)&"_training_off","training_shot_hit")
             .Add MainShotNames(5)&"_hit{current_player.shot_training_shot6 == 1}", Array(MainShotNames(5)&"_training_off","training_shot_hit")
             .Add MainShotNames(6)&"_hit{current_player.shot_training_shot7 == 1}", Array(MainShotNames(6)&"_training_off","training_shot_hit")
-            .Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
+            '.Add MainShotNames(7)&"_hit{current_player.shot_training_shot8 == 1}", Array(MainShotNames(7)&"_training_off","training_shot_hit")
             'Handle a successful hit
             .Add "training_shot_hit", Array("check_training_qualify","play_sfx_LS_between_waves_updated","score_70000")
             .Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("training_shots_completed","play_voc_Training","training_flash")
@@ -56,7 +56,7 @@ Sub CreateTrainingQualifyMode
                 .Add MainShotNames(4)&"_training_on{current_player.shot_training_shot5 == 0}", 1
                 .Add MainShotNames(5)&"_training_on{current_player.shot_training_shot6 == 0}", 1
                 .Add MainShotNames(6)&"_training_on{current_player.shot_training_shot7 == 0}", 1
-                .Add MainShotNames(7)&"_training_on{current_player.shot_training_shot8 == 0}", 1
+                '.Add MainShotNames(7)&"_training_on{current_player.shot_training_shot8 == 0}", 1
                 .ForceAll = False
                 .ForceDifferent = False
             End With
@@ -81,7 +81,7 @@ Sub CreateTrainingQualifyMode
 
      
         'Define our shots
-        For x = 1 to 8
+        For x = 1 to 7
             With .Shots("training_shot"&x)
                 .Profile = "training_profile"
                 With .Tokens()
@@ -142,7 +142,7 @@ Sub CreateTrainingQualifyMode
         End With
 
         With .VariablePlayer()
-		    With .EventName("training_shots_completed{current_player.num_training_shots < 8}")
+		    With .EventName("training_shots_completed{current_player.num_training_shots < 7}")
 				With .Variable("num_training_shots")
                     .Action = "add"
 					.Int = 1

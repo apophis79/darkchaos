@@ -38,8 +38,9 @@ Sub CreateFinalWaveWizardMode
             .Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", Array("fwwiz_add_ball_2")
             .Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", Array("fwwiz_add_ball_2")
             'asteroid hits
-            .Add "center_orbit_left_hit", Array("asteroid_hit")
-            .Add "center_orbit_right_hit", Array("asteroid_hit")
+            ' .Add "center_orbit_left_hit", Array("asteroid_hit")
+            ' .Add "center_orbit_right_hit", Array("asteroid_hit")
+            .Add "center_orbit_hit", Array("asteroid_hit")
             .Add "s_TargetMystery3_active", Array("asteroid_hit")
             .Add "asteroid_hit", Array("check_fwwiz_done","asteroid_flash3","asteroid_flicker1","play_asteroid_hit")
             .Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", Array("update_hit_count")

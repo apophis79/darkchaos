@@ -43,20 +43,27 @@ Sub CreateMeteorWaveMode
             .Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
             .Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-            'Successful center orbit left, fire proton round if available
-            .Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
-            'Successful center orbit right, fire proton round if available
-            .Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
-            .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            'Successful center orbit, fire proton round if available
+            .Add "center_orbit_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            .Add "center_orbit_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            .Add "center_orbit_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            .Add "center_orbit_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            .Add "center_orbit_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            .Add "center_orbit_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            ' 'Successful center orbit left, fire proton round if available
+            ' .Add "center_orbit_left_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            ' .Add "center_orbit_left_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            ' .Add "center_orbit_left_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            ' .Add "center_orbit_left_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            ' .Add "center_orbit_left_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            ' .Add "center_orbit_left_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
+            ' 'Successful center orbit right, fire proton round if available
+            ' .Add "center_orbit_right_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", Array("fire_proton_round1","proton_fired")
+            ' .Add "center_orbit_right_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", Array("fire_proton_round2","proton_fired")
+            ' .Add "center_orbit_right_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", Array("fire_proton_round3","proton_fired")
+            ' .Add "center_orbit_right_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", Array("fire_proton_round4","proton_fired")
+            ' .Add "center_orbit_right_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", Array("fire_proton_round5","proton_fired")
+            ' .Add "center_orbit_right_hit{current_player.shot_proton_round6 == 1}", Array("fire_proton_round6","proton_fired","reset_proton_charges")
             'Handle fired proton
             .Add "proton_fired", Array("check_protons","proton_fired_flash_show","score_10000")
             'Handle events after meteor is downed

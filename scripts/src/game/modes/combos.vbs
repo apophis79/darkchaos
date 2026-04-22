@@ -29,7 +29,7 @@ Sub CreateCombosMode
             .Add MainShotNames(4)&"_hit", Array("restart_c_timer","check_add_combos")
             .Add MainShotNames(5)&"_hit", Array("restart_c_timer","check_add_combos")
             .Add MainShotNames(6)&"_hit", Array("restart_c_timer","check_add_combos")
-            .Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_add_combos")
+            '.Add MainShotNames(7)&"_hit", Array("restart_c_timer","check_add_combos")
             .Add "check_add_combos{current_player.combos_value==0}", Array("add_combos")
             .Add "check_add_combos{current_player.combos_value==1}", Array("combos1_lit","add_combos","replay_sfx_combo","flash_combos","score_2000")
             .Add "check_add_combos{current_player.combos_value==2}", Array("combos2_lit","add_combos","replay_sfx_combo","flash_combos","score_4000")
@@ -70,7 +70,7 @@ Sub CreateCombosMode
 
 
         With .ShowPlayer()
-            For x = 1 to 8
+            For x = 1 to 7
                 With .EventName(MainShotNames(x-1)&"_hit{current_player.combos_value>0}")
                     .Key = "key_combo"&x
                     .Show = "flash_color"

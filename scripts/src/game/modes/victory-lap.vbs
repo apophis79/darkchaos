@@ -39,7 +39,7 @@ Sub CreateVictoryLapMode
             .Add MainShotNames(4)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_200000")
             .Add MainShotNames(5)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_200000")
             .Add MainShotNames(6)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_200000")
-            .Add MainShotNames(7)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_200000")
+            '.Add MainShotNames(7)&"_hit", Array("victory_fireworks_show","victory_flashers_show","score_200000")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
             .Add "ball_search_started", Array("release_moon_ball")
@@ -321,7 +321,7 @@ Sub CreateVictoryLapMode
 
 
         ' shots
-        For x = 1 to 8
+        For x = 1 to 7
             With .Shots("victory_shot"&x)
                 .Profile = "victory_shots"
                 With .Tokens()
@@ -336,7 +336,7 @@ Sub CreateVictoryLapMode
             End With
         Next
         For x = 1 to 5
-            With .Shots("victory_shot"&x+8)
+            With .Shots("victory_shot"&x+7)
                 .Profile = "victory_shots"
                 With .Tokens()
                     .Add "lights", "LM"&x

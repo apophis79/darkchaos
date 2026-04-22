@@ -48,8 +48,10 @@ PFDisplayLightNames = Array("pf_seg1", "pf_seg2", "pf_seg3", "pf_seg4", "pf_seg5
 
 ' Array of main shots and associated light names (used for combos and training modes)
 Dim MainShotNames, MainShotLightNames
-MainShotNames = Array("left_side","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
-MainShotLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
+' MainShotNames = Array("left_side","left_orbit","left_ramp","inner_orbit","center_orbit_left","center_orbit_right","right_ramp","right_orbit")
+MainShotNames = Array("left_side","left_orbit","left_ramp","inner_orbit","center_orbit","right_ramp","right_orbit")
+' MainShotLightNames = Array("LS1","LS2","LS3","LS4","LPC4","LPC5","LS5","LS6")
+MainShotLightNames = Array("LS1","LS2","LS3","LS4","LPC45","LS5","LS6")
 
 ' Array of rollover shots and associated light names
 Dim RolloverSwitches, RolloverLightNames
@@ -410,6 +412,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "nuke_acquired", 0
     Glf_SetInitialPlayerVar "nuke_used", 0
     Glf_SetInitialPlayerVar "nuke_just_used", 0
+    Glf_SetInitialPlayerVar "center_orbit_just_hit", 0
 
     'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0
     'Glf_SetInitialPlayerVar "debug_moon_launch_locked_balls", 0

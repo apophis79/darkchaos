@@ -33,7 +33,7 @@ Sub CreateComboCommandWizardMode
             .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
             .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
             .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
-            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
+            '.Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
             'Phase 1 shots completed, so activate the scoop for Super JPs
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", Array("activate_ccwiz_sjp","run_ccwiz_scoop_show")
             'Phase 1 Super JP achieved
@@ -47,7 +47,7 @@ Sub CreateComboCommandWizardMode
             .Add MainShotNames(4)&"_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show4","ccwiz_flash_phase2_show4","score_300000")
             .Add MainShotNames(5)&"_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show6","ccwiz_flash_phase2_show6","score_300000")
             .Add MainShotNames(6)&"_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show3","ccwiz_flash_phase2_show3","score_300000")
-            .Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show7","ccwiz_flash_phase2_show7","score_300000")
+            '.Add MainShotNames(7)&"_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show7","ccwiz_flash_phase2_show7","score_300000")
             'Phase 2 shots completed, so activate the scoop for Super JPs
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", Array("activate_ccwiz_sdjp","run_ccwiz_scoop_show","enable_scoop_hold")
             'Phase 2 Super Duper JP achieved
@@ -132,7 +132,7 @@ Sub CreateComboCommandWizardMode
 
         'Define combo command wizard shots
 
-        For x = 1 to 8
+        For x = 1 to 7
             With .Shots("combo_command"&x)
                 .Profile = "combo_command"
                 With .Tokens()
@@ -175,7 +175,7 @@ Sub CreateComboCommandWizardMode
         End With
 
         With .ShotGroups("ccwiz_shots")
-            .Shots = Array("combo_command1", "combo_command2", "combo_command3", "combo_command4", "combo_command5", "combo_command6", "combo_command7", "combo_command8")
+            .Shots = Array("combo_command1", "combo_command2", "combo_command3", "combo_command4", "combo_command5", "combo_command6", "combo_command7")
             .RestartEvents = Array("restart_combos_command_shots")
         End With
 

@@ -101,10 +101,16 @@ Sub CreateBaseMode()
             .Add "completed_final_wave_wizard", Array("wizard_mode_ended")
             .Add "completed_combo_command_wizard", Array("wizard_mode_ended","check_base_restart")
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended","check_base_restart")
+
+            'handle center orbit
+            .Add "s_CenterOrb1_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit")
+            .Add "s_CenterOrb2_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit")
+            .Add "s_CenterOrb3_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit")
     
             'handle some sound effects, music, and points
-            .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
-            .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
+            ' .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
+            ' .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
+            .Add "center_orbit_hit", Array("play_sfx_Orb","score_2000")
             .Add "left_side_hit", Array("play_sfx_Orb","score_2000")
             .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300")
             .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300")
@@ -516,15 +522,15 @@ Sub CreateBaseMode()
             .SequenceTimeout = 300
         End With
 
-        With .SequenceShots("center_orbit_left")
-            .SwitchSequence = Array("s_CenterOrb1", "s_CenterOrb3")
-            .SequenceTimeout = 600
-        End With
+        ' With .SequenceShots("center_orbit_left")
+        '     .SwitchSequence = Array("s_CenterOrb1", "s_CenterOrb3")
+        '     .SequenceTimeout = 600
+        ' End With
 
-        With .SequenceShots("center_orbit_right")
-            .SwitchSequence = Array("s_CenterOrb3", "s_CenterOrb1")
-            .SequenceTimeout = 600
-        End With
+        ' With .SequenceShots("center_orbit_right")
+        '     .SwitchSequence = Array("s_CenterOrb3", "s_CenterOrb1")
+        '     .SequenceTimeout = 600
+        ' End With
 
         With .SequenceShots("right_orbit")
             .SwitchSequence = Array("s_RightOrb1", "s_RightOrb2")
@@ -851,11 +857,33 @@ Sub CreateBaseMode()
                     .Action = "set"
                     .Int = 0
                 End With
+                With .Variable("center_orbit_just_hit")
+                    .Action = "set"
+                    .Int = 0
+                End With
                 With .Variable("flippers_are_dead")
                     .Action = "set_machine"
                     .Int = 0
                 End With
 			End With
+            With .EventName("mode_base_stopping")
+                With .Variable("center_orbit_just_hit")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+            With .EventName("center_orbit_hit")
+                With .Variable("center_orbit_just_hit")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("timer_center_orbit_complete")
+                With .Variable("center_orbit_just_hit")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
             With .EventName("new_ball_active")
 				With .Variable("ball_just_started")
                     .Action = "set"
@@ -912,6 +940,16 @@ Sub CreateBaseMode()
             With .ControlEvents()
                 .EventName = "s_Plunger1_inactive"
                 .Action = "stop"
+            End With
+        End With
+
+        With .Timers("center_orbit")
+            .TickInterval = 1500 
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "center_orbit_hit"
+                .Action = "restart"
             End With
         End With
 
