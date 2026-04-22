@@ -191,10 +191,13 @@ event_player:
   completed_fully_loaded_wizard:
     - wizard_mode_ended
     - check_base_restart
-  center_orbit_left_hit:
-    - play_sfx_Orb
-    - score_2000
-  center_orbit_right_hit:
+  s_CenterOrb1_active{current_player.center_orbit_just_hit == 0}:
+    - center_orbit_hit
+  s_CenterOrb2_active{current_player.center_orbit_just_hit == 0}:
+    - center_orbit_hit
+  s_CenterOrb3_active{current_player.center_orbit_just_hit == 0}:
+    - center_orbit_hit
+  center_orbit_hit:
     - play_sfx_Orb
     - score_2000
   left_side_hit:
@@ -452,16 +455,6 @@ sequence_shots:
       - s_InnerOrb1
       - s_InnerOrb2
     sequence_timeout: 300ms
-  center_orbit_left:
-    switch_sequence: 
-      - s_CenterOrb1
-      - s_CenterOrb3
-    sequence_timeout: 600ms
-  center_orbit_right:
-    switch_sequence: 
-      - s_CenterOrb3
-      - s_CenterOrb1
-    sequence_timeout: 600ms
   right_orbit:
     switch_sequence: 
       - s_RightOrb1
@@ -1226,6 +1219,16 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
+  center_orbit:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: center_orbit_hit
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1500ms
 
 variable_player: 
   mode_base_started: 
@@ -1235,8 +1238,26 @@ variable_player:
     num_waves_completed_this_ball: 
       action: set
       int: 0
+    center_orbit_just_hit: 
+      action: set
+      int: 0
     flippers_are_dead: 
       action: set_machine
+      int: 0
+
+  mode_base_stopping: 
+    center_orbit_just_hit: 
+      action: set
+      int: 0
+
+  center_orbit_hit: 
+    center_orbit_just_hit: 
+      action: set
+      int: 1
+
+  timer_center_orbit_complete: 
+    center_orbit_just_hit: 
+      action: set
       int: 0
 
   new_ball_active: 

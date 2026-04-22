@@ -77,11 +77,7 @@ event_player:
     - victory_fireworks_show
     - victory_flashers_show
     - score_200000
-  center_orbit_left_hit:
-    - victory_fireworks_show
-    - victory_flashers_show
-    - score_200000
-  center_orbit_right_hit:
+  center_orbit_hit:
     - victory_fireworks_show
     - victory_flashers_show
     - score_200000
@@ -358,7 +354,7 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LPC4"
+      lights: "LPC45"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
@@ -367,7 +363,7 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LPC5"
+      lights: "LS5"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
@@ -376,7 +372,7 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LS5"
+      lights: "LS6"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
@@ -385,7 +381,7 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LS6"
+      lights: "LM1"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
@@ -394,7 +390,7 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LM1"
+      lights: "LM2"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
@@ -403,7 +399,7 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LM2"
+      lights: "LM3"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
@@ -412,21 +408,12 @@ shots:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 
-      lights: "LM3"
-      color: "ffffff"
-    control_events: 
-      - events: init_victory_lap
-        state: 1
-  victory_shot12:
-    profile: victory_shots
-    restart_events: timer_victory_countdown_complete
-    show_tokens: 
       lights: "LM4"
       color: "ffffff"
     control_events: 
       - events: init_victory_lap
         state: 1
-  victory_shot13:
+  victory_shot12:
     profile: victory_shots
     restart_events: timer_victory_countdown_complete
     show_tokens: 

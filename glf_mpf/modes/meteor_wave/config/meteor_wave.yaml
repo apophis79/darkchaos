@@ -70,41 +70,22 @@ event_player:
     - fire_proton_round6
     - proton_fired
     - reset_proton_charges
-  center_orbit_left_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}:
+  center_orbit_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}:
     - fire_proton_round1
     - proton_fired
-  center_orbit_left_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}:
+  center_orbit_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}:
     - fire_proton_round2
     - proton_fired
-  center_orbit_left_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}:
+  center_orbit_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}:
     - fire_proton_round3
     - proton_fired
-  center_orbit_left_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}:
+  center_orbit_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}:
     - fire_proton_round4
     - proton_fired
-  center_orbit_left_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}:
+  center_orbit_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}:
     - fire_proton_round5
     - proton_fired
-  center_orbit_left_hit{current_player.shot_proton_round6 == 1}:
-    - fire_proton_round6
-    - proton_fired
-    - reset_proton_charges
-  center_orbit_right_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}:
-    - fire_proton_round1
-    - proton_fired
-  center_orbit_right_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}:
-    - fire_proton_round2
-    - proton_fired
-  center_orbit_right_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}:
-    - fire_proton_round3
-    - proton_fired
-  center_orbit_right_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}:
-    - fire_proton_round4
-    - proton_fired
-  center_orbit_right_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}:
-    - fire_proton_round5
-    - proton_fired
-  center_orbit_right_hit{current_player.shot_proton_round6 == 1}:
+  center_orbit_hit{current_player.shot_proton_round6 == 1}:
     - fire_proton_round6
     - proton_fired
     - reset_proton_charges
@@ -206,7 +187,6 @@ random_event_player:
       play_sfx_LMet5: 1
       play_sfx_LMet6: 1
       play_sfx_LMet7: 1
-      play_sfx_LMet8: 1
     scope: player
   earth_hit: 
     events:
@@ -605,6 +585,78 @@ slide_player:
 
 
 state_machines: 
+  dt1:
+    starting_state: down
+    states: 
+      down: 
+        label: Init State
+      up: 
+        label: Init State
+    transitions: 
+      - source: down
+        target: up
+        events: 
+          - s_DTMeteor1_inactive
+        events_when_transitioning: restart_dt1_check_timer
+      - source: up
+        target: down
+        events: 
+          - s_DTMeteor1_active
+        events_when_transitioning: stop_dt1_check_timer
+  dt2:
+    starting_state: down
+    states: 
+      down: 
+        label: Init State
+      up: 
+        label: Init State
+    transitions: 
+      - source: down
+        target: up
+        events: 
+          - s_DTMeteor2_inactive
+        events_when_transitioning: restart_dt2_check_timer
+      - source: up
+        target: down
+        events: 
+          - s_DTMeteor2_active
+        events_when_transitioning: stop_dt2_check_timer
+  dt3:
+    starting_state: down
+    states: 
+      down: 
+        label: Init State
+      up: 
+        label: Init State
+    transitions: 
+      - source: down
+        target: up
+        events: 
+          - s_DTMeteor3_inactive
+        events_when_transitioning: restart_dt3_check_timer
+      - source: up
+        target: down
+        events: 
+          - s_DTMeteor3_active
+        events_when_transitioning: stop_dt3_check_timer
+  dt4:
+    starting_state: down
+    states: 
+      down: 
+        label: Init State
+      up: 
+        label: Init State
+    transitions: 
+      - source: down
+        target: up
+        events: 
+          - s_DTMeteor4_inactive
+        events_when_transitioning: restart_dt4_check_timer
+      - source: up
+        target: down
+        events: 
+          - s_DTMeteor4_active
+        events_when_transitioning: stop_dt4_check_timer
   meteor1:
     starting_state: init
     states: 
@@ -654,16 +706,19 @@ state_machines:
         target: down
         events: 
           - s_DTMeteor1_active
+          - timer_dt1_check_tick{device.state_machines.dt1.state=="down"}
         events_when_transitioning: meteor1_hit, meteor1_explodes_show, meteor1_flash_show, meteor1_blink_show, play_sfx_LMet, score_80000
       - source: up_warm
         target: down
         events: 
           - s_DTMeteor1_active
+          - timer_dt1_check_tick{device.state_machines.dt1.state=="down"}
         events_when_transitioning: meteor1_hit, meteor1_explodes_show, meteor1_flash_show, meteor1_blink_show, play_sfx_LMet, score_90000
       - source: up_hot
         target: down
         events: 
           - s_DTMeteor1_active
+          - timer_dt1_check_tick{device.state_machines.dt1.state=="down"}
         events_when_transitioning: meteor1_hit, meteor1_explodes_show, meteor1_flash_show, meteor1_blink_show, play_sfx_LMet, score_100000
       - source: up_cool, up_warm, up_hot
         target: down
@@ -723,16 +778,19 @@ state_machines:
         target: down
         events: 
           - s_DTMeteor2_active
+          - timer_dt2_check_tick{device.state_machines.dt2.state=="down"}
         events_when_transitioning: meteor2_hit, meteor2_explodes_show, meteor2_flash_show, meteor2_blink_show, play_sfx_LMet, score_80000
       - source: up_warm
         target: down
         events: 
           - s_DTMeteor2_active
+          - timer_dt2_check_tick{device.state_machines.dt2.state=="down"}
         events_when_transitioning: meteor2_hit, meteor2_explodes_show, meteor2_flash_show, meteor2_blink_show, play_sfx_LMet, score_90000
       - source: up_hot
         target: down
         events: 
           - s_DTMeteor2_active
+          - timer_dt2_check_tick{device.state_machines.dt2.state=="down"}
         events_when_transitioning: meteor2_hit, meteor2_explodes_show, meteor2_flash_show, meteor2_blink_show, play_sfx_LMet, score_100000
       - source: up_cool, up_warm, up_hot
         target: down
@@ -792,16 +850,19 @@ state_machines:
         target: down
         events: 
           - s_DTMeteor3_active
+          - timer_dt3_check_tick{device.state_machines.dt3.state=="down"}
         events_when_transitioning: meteor3_hit, meteor3_explodes_show, meteor3_flash_show, meteor3_blink_show, play_sfx_LMet, score_80000
       - source: up_warm
         target: down
         events: 
           - s_DTMeteor3_active
+          - timer_dt3_check_tick{device.state_machines.dt3.state=="down"}
         events_when_transitioning: meteor3_hit, meteor3_explodes_show, meteor3_flash_show, meteor3_blink_show, play_sfx_LMet, score_90000
       - source: up_hot
         target: down
         events: 
           - s_DTMeteor3_active
+          - timer_dt3_check_tick{device.state_machines.dt3.state=="down"}
         events_when_transitioning: meteor3_hit, meteor3_explodes_show, meteor3_flash_show, meteor3_blink_show, play_sfx_LMet, score_100000
       - source: up_cool, up_warm, up_hot
         target: down
@@ -861,16 +922,19 @@ state_machines:
         target: down
         events: 
           - s_DTMeteor4_active
+          - timer_dt4_check_tick{device.state_machines.dt4.state=="down"}
         events_when_transitioning: meteor4_hit, meteor4_explodes_show, meteor4_flash_show, meteor4_blink_show, play_sfx_LMet, score_80000
       - source: up_warm
         target: down
         events: 
           - s_DTMeteor4_active
+          - timer_dt4_check_tick{device.state_machines.dt4.state=="down"}
         events_when_transitioning: meteor4_hit, meteor4_explodes_show, meteor4_flash_show, meteor4_blink_show, play_sfx_LMet, score_90000
       - source: up_hot
         target: down
         events: 
           - s_DTMeteor4_active
+          - timer_dt4_check_tick{device.state_machines.dt4.state=="down"}
         events_when_transitioning: meteor4_hit, meteor4_explodes_show, meteor4_flash_show, meteor4_blink_show, play_sfx_LMet, score_100000
       - source: up_cool, up_warm, up_hot
         target: down
@@ -883,6 +947,54 @@ state_machines:
         events_when_transitioning: meteor4_knockdown
 
 timers: 
+  dt1_check:
+    start_value: 0
+    end_value: 100
+    direction: up
+    control_events: 
+      - event: restart_dt1_check_timer
+        action: restart
+      - event: stop_dt1_check_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 500ms
+  dt2_check:
+    start_value: 0
+    end_value: 100
+    direction: up
+    control_events: 
+      - event: restart_dt2_check_timer
+        action: restart
+      - event: stop_dt2_check_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 500ms
+  dt3_check:
+    start_value: 0
+    end_value: 100
+    direction: up
+    control_events: 
+      - event: restart_dt3_check_timer
+        action: restart
+      - event: stop_dt3_check_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 500ms
+  dt4_check:
+    start_value: 0
+    end_value: 100
+    direction: up
+    control_events: 
+      - event: restart_dt4_check_timer
+        action: restart
+      - event: stop_dt4_check_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 500ms
   meteor1:
     start_value: 0
     end_value: 14
@@ -1099,9 +1211,6 @@ variable_player:
     num_wave_current: 
       action: set
       int: current_player.num_waves_completed + 1
-    flipper_main_pulse_ms: 
-      action: set
-      int: 15
 
   finish_meteor_wave: 
     meteors_per_wave: 
@@ -1112,9 +1221,6 @@ variable_player:
     meteor_wave_running: 
       action: set
       int: 0
-    flipper_main_pulse_ms: 
-      action: set
-      int: 20
 
   score_wave_count: 
     num_waves_completed_this_ball: 

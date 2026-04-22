@@ -28,16 +28,13 @@ event_player:
   inner_orbit_hit{current_player.shot_training_shot4 == 1}:
     - inner_orbit_training_off
     - training_shot_hit
-  center_orbit_left_hit{current_player.shot_training_shot5 == 1}:
-    - center_orbit_left_training_off
+  center_orbit_hit{current_player.shot_training_shot5 == 1}:
+    - center_orbit_training_off
     - training_shot_hit
-  center_orbit_right_hit{current_player.shot_training_shot6 == 1}:
-    - center_orbit_right_training_off
-    - training_shot_hit
-  right_ramp_hit{current_player.shot_training_shot7 == 1}:
+  right_ramp_hit{current_player.shot_training_shot6 == 1}:
     - right_ramp_training_off
     - training_shot_hit
-  right_orbit_hit{current_player.shot_training_shot8 == 1}:
+  right_orbit_hit{current_player.shot_training_shot7 == 1}:
     - right_orbit_training_off
     - training_shot_hit
   training_shot_hit:
@@ -69,10 +66,9 @@ random_event_player:
       left_orbit_training_on{current_player.shot_training_shot2 == 0}: 1
       left_ramp_training_on{current_player.shot_training_shot3 == 0}: 1
       inner_orbit_training_on{current_player.shot_training_shot4 == 0}: 1
-      center_orbit_left_training_on{current_player.shot_training_shot5 == 0}: 1
-      center_orbit_right_training_on{current_player.shot_training_shot6 == 0}: 1
-      right_ramp_training_on{current_player.shot_training_shot7 == 0}: 1
-      right_orbit_training_on{current_player.shot_training_shot8 == 0}: 1
+      center_orbit_training_on{current_player.shot_training_shot5 == 0}: 1
+      right_ramp_training_on{current_player.shot_training_shot6 == 0}: 1
+      right_orbit_training_on{current_player.shot_training_shot7 == 0}: 1
     scope: player
 
 
@@ -127,23 +123,14 @@ shots:
         state: 1
   training_shot5:
     profile: training_profile
-    restart_events: center_orbit_left_training_off, clear_training_shots
+    restart_events: center_orbit_training_off, clear_training_shots
     show_tokens: 
-      lights: "LPC4"
+      lights: "LPC45"
       color: "ffae00"
     control_events: 
-      - events: center_orbit_left_training_on
+      - events: center_orbit_training_on
         state: 1
   training_shot6:
-    profile: training_profile
-    restart_events: center_orbit_right_training_off, clear_training_shots
-    show_tokens: 
-      lights: "LPC5"
-      color: "ffae00"
-    control_events: 
-      - events: center_orbit_right_training_on
-        state: 1
-  training_shot7:
     profile: training_profile
     restart_events: right_ramp_training_off, clear_training_shots
     show_tokens: 
@@ -152,7 +139,7 @@ shots:
     control_events: 
       - events: right_ramp_training_on
         state: 1
-  training_shot8:
+  training_shot7:
     profile: training_profile
     restart_events: right_orbit_training_off, clear_training_shots
     show_tokens: 
@@ -207,7 +194,7 @@ timers:
     tick_interval: 60ms
 
 variable_player: 
-  training_shots_completed{current_player.num_training_shots < 8}: 
+  training_shots_completed{current_player.num_training_shots < 7}: 
     num_training_shots: 
       action: add
       int: 1

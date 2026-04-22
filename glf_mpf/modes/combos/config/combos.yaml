@@ -27,10 +27,7 @@ event_player:
   inner_orbit_hit:
     - restart_c_timer
     - check_add_combos
-  center_orbit_left_hit:
-    - restart_c_timer
-    - check_add_combos
-  center_orbit_right_hit:
+  center_orbit_hit:
     - restart_c_timer
     - check_add_combos
   right_ramp_hit:
@@ -237,25 +234,17 @@ show_player:
       show_tokens: 
         lights: "LS4"
         color: "ffb46b"
-  center_orbit_left_hit{current_player.combos_value>0}: 
+  center_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo5
       loops: 4
       speed: 15
       show_tokens: 
-        lights: "LPC4"
-        color: "ffb46b"
-  center_orbit_right_hit{current_player.combos_value>0}: 
-    flash_color: 
-      key: key_combo6
-      loops: 4
-      speed: 15
-      show_tokens: 
-        lights: "LPC5"
+        lights: "LPC45"
         color: "ffb46b"
   right_ramp_hit{current_player.combos_value>0}: 
     flash_color: 
-      key: key_combo7
+      key: key_combo6
       loops: 4
       speed: 15
       show_tokens: 
@@ -263,7 +252,7 @@ show_player:
         color: "ffb46b"
   right_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
-      key: key_combo8
+      key: key_combo7
       loops: 4
       speed: 15
       show_tokens: 

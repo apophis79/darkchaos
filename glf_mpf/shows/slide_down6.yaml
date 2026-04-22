@@ -13,6 +13,7 @@
   shows:
     insert_gi_slide_down: 
       key: insert_gi_slide_downB
+      priority: 1
       loops: 0
       show_tokens: 
         color: "ffffff"
@@ -22,6 +23,7 @@
   shows:
     insert_gi_slide_down: 
       key: insert_gi_slide_downC
+      priority: 2
       loops: 0
       show_tokens: 
         color: "ffffff"
@@ -31,6 +33,7 @@
   shows:
     insert_gi_slide_down: 
       key: insert_gi_slide_downD
+      priority: 3
       loops: 0
       show_tokens: 
         color: "ffffff"
@@ -40,15 +43,17 @@
   shows:
     insert_gi_slide_down: 
       key: insert_gi_slide_downE
+      priority: 4
       loops: 0
       show_tokens: 
         color: "ffffff"
         intensity: "5"
 
-- duration: 0.1s
+- duration: 1s
   shows:
     insert_gi_slide_down: 
       key: insert_gi_slide_downF
+      priority: 5
       loops: 0
       show_tokens: 
         color: "ffffff"

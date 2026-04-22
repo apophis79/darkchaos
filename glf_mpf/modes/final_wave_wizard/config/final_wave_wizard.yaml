@@ -35,9 +35,7 @@ event_player:
     - fwwiz_add_ball_2
   right_ramp_hit{current_player.fwwiz_add_ball_ready == 2}:
     - fwwiz_add_ball_2
-  center_orbit_left_hit:
-    - asteroid_hit
-  center_orbit_right_hit:
+  center_orbit_hit:
     - asteroid_hit
   s_TargetMystery3_active:
     - asteroid_hit

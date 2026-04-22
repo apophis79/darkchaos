@@ -175,7 +175,7 @@ player_vars:
   nuke_just_used:
     initial_value: 0
     value_type: int
-  flipper_main_pulse_ms:
-    initial_value: 20
+  center_orbit_just_hit:
+    initial_value: 0
     value_type: int
 

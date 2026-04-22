@@ -38,22 +38,17 @@ event_player:
     - ccwiz_shot_phase1_show
     - ccwiz_flash_phase1_show
     - score_200000
-  center_orbit_left_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}:
+  center_orbit_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}:
     - play_sfx_jackpot
     - ccwiz_shot_phase1_show
     - ccwiz_flash_phase1_show
     - score_200000
-  center_orbit_right_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}:
+  right_ramp_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}:
     - play_sfx_jackpot
     - ccwiz_shot_phase1_show
     - ccwiz_flash_phase1_show
     - score_200000
-  right_ramp_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}:
-    - play_sfx_jackpot
-    - ccwiz_shot_phase1_show
-    - ccwiz_flash_phase1_show
-    - score_200000
-  right_orbit_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 1}:
+  right_orbit_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}:
     - play_sfx_jackpot
     - ccwiz_shot_phase1_show
     - ccwiz_flash_phase1_show
@@ -99,33 +94,26 @@ event_player:
     - ccwiz_shot_phase2_show5
     - ccwiz_flash_phase2_show5
     - score_300000
-  center_orbit_left_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}:
+  center_orbit_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}:
     - ccwiz_add_ball
     - add_ccwiz_phase2_shot
     - play_sfx_jackpot
     - ccwiz_shot_phase2_show4
     - ccwiz_flash_phase2_show4
     - score_300000
-  center_orbit_right_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}:
+  right_ramp_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}:
     - ccwiz_add_ball
     - add_ccwiz_phase2_shot
     - play_sfx_jackpot
     - ccwiz_shot_phase2_show6
     - ccwiz_flash_phase2_show6
     - score_300000
-  right_ramp_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}:
+  right_orbit_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}:
     - ccwiz_add_ball
     - add_ccwiz_phase2_shot
     - play_sfx_jackpot
     - ccwiz_shot_phase2_show3
     - ccwiz_flash_phase2_show3
-    - score_300000
-  right_orbit_hit{current_player.shot_combo_command8 == 1 and current_player.wizard_combo_command_phase == 2}:
-    - ccwiz_add_ball
-    - add_ccwiz_phase2_shot
-    - play_sfx_jackpot
-    - ccwiz_shot_phase2_show7
-    - ccwiz_flash_phase2_show7
     - score_300000
   ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}:
     - activate_ccwiz_sdjp
@@ -249,7 +237,7 @@ segment_display_player:
 
 shot_groups: 
   ccwiz_shots:
-    shots: combo_command1,combo_command2,combo_command3,combo_command4,combo_command5,combo_command6,combo_command7,combo_command8
+    shots: combo_command1,combo_command2,combo_command3,combo_command4,combo_command5,combo_command6,combo_command7
     restart_events: restart_combos_command_shots
 
 shots: 
@@ -306,42 +294,32 @@ shots:
   combo_command5:
     profile: combo_command
     show_tokens: 
-      lights: "LPC4"
+      lights: "LPC45"
       color: "ffb46b"
     control_events: 
       - events: combo_command5_ready, mode_combo_command_wizard_started
         state: 1
-      - events: center_orbit_left_hit{current_player.shot_combo_command5==1}
+      - events: center_orbit_hit{current_player.shot_combo_command5==1}
         state: 2
   combo_command6:
-    profile: combo_command
-    show_tokens: 
-      lights: "LPC5"
-      color: "ffb46b"
-    control_events: 
-      - events: combo_command6_ready, mode_combo_command_wizard_started
-        state: 1
-      - events: center_orbit_right_hit{current_player.shot_combo_command6==1}
-        state: 2
-  combo_command7:
     profile: combo_command
     show_tokens: 
       lights: "LS5"
       color: "ffb46b"
     control_events: 
-      - events: combo_command7_ready, mode_combo_command_wizard_started
+      - events: combo_command6_ready, mode_combo_command_wizard_started
         state: 1
-      - events: right_ramp_hit{current_player.shot_combo_command7==1}
+      - events: right_ramp_hit{current_player.shot_combo_command6==1}
         state: 2
-  combo_command8:
+  combo_command7:
     profile: combo_command
     show_tokens: 
       lights: "LS6"
       color: "ffb46b"
     control_events: 
-      - events: combo_command8_ready, mode_combo_command_wizard_started
+      - events: combo_command7_ready, mode_combo_command_wizard_started
         state: 1
-      - events: right_orbit_hit{current_player.shot_combo_command8==1}
+      - events: right_orbit_hit{current_player.shot_combo_command7==1}
         state: 2
 
 show_player: 

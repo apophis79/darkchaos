@@ -79,9 +79,9 @@ shots:
     profile: alien
     restart_events: reset_alien_shot5, alien_attack_finished
     show_tokens: 
-      lights: "LPC4"
+      lights: "LPC45"
     control_events: 
-      - events: center_orbit_left_hit
+      - events: center_orbit_hit
         state: 0
       - events: alien_shot5_lit
         state: 1
@@ -89,9 +89,9 @@ shots:
     profile: alien
     restart_events: reset_alien_shot6, alien_attack_finished
     show_tokens: 
-      lights: "LPC5"
+      lights: "LS5"
     control_events: 
-      - events: center_orbit_right_hit
+      - events: right_ramp_hit
         state: 0
       - events: alien_shot6_lit
         state: 1
@@ -99,21 +99,11 @@ shots:
     profile: alien
     restart_events: reset_alien_shot7, alien_attack_finished
     show_tokens: 
-      lights: "LS5"
-    control_events: 
-      - events: right_ramp_hit
-        state: 0
-      - events: alien_shot7_lit
-        state: 1
-  alien_shot8:
-    profile: alien
-    restart_events: reset_alien_shot8, alien_attack_finished
-    show_tokens: 
       lights: "LS6"
     control_events: 
       - events: right_orbit_hit
         state: 0
-      - events: alien_shot8_lit
+      - events: alien_shot7_lit
         state: 1
 
 show_player: 
@@ -243,16 +233,13 @@ state_machines:
       shot7: 
         label: Alien Shot 7
         events_when_started: alien_shot7_lit
-      shot8: 
-        label: Alien Shot 8
-        events_when_started: alien_shot8_lit
     transitions: 
       - source: init
         target: shot1
         events: 
           - alien_attacking{current_player.alien_attack_dir == 0}
       - source: init
-        target: shot8
+        target: shot7
         events: 
           - alien_attacking{current_player.alien_attack_dir == 1}
       - source: shot1
@@ -285,11 +272,6 @@ state_machines:
         events: 
           - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}
         events_when_transitioning: reset_alien_shot6, restart_alien_grace_timer
-      - source: shot7
-        target: shot8
-        events: 
-          - timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 8}
-        events_when_transitioning: reset_alien_shot7, restart_alien_grace_timer
       - source: shot2
         target: shot1
         events: 
@@ -320,11 +302,6 @@ state_machines:
         events: 
           - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}
         events_when_transitioning: reset_alien_shot7, restart_alien_grace_timer
-      - source: shot8
-        target: shot7
-        events: 
-          - timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 2}
-        events_when_transitioning: reset_alien_shot8, restart_alien_grace_timer
       - source: shot1
         target: init
         events: 
@@ -332,7 +309,7 @@ state_machines:
           - left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
           - cluster_bomb_fired
           - detonate_nuke
-        events_when_transitioning: reset_alien_shot9, alien_hit
+        events_when_transitioning: reset_alien_shot8, alien_hit
       - source: shot2
         target: init
         events: 
@@ -356,45 +333,36 @@ state_machines:
         events: 
           - inner_orbit_hit
           - left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
-          - center_orbit_left_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - center_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
           - cluster_bomb_fired
           - detonate_nuke
         events_when_transitioning: reset_alien_shot4, alien_hit
       - source: shot5
         target: init
         events: 
-          - center_orbit_left_hit
+          - center_orbit_hit
           - inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
-          - center_orbit_right_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
           - cluster_bomb_fired
           - detonate_nuke
         events_when_transitioning: reset_alien_shot5, alien_hit
       - source: shot6
         target: init
         events: 
-          - center_orbit_right_hit
-          - center_orbit_left_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
-          - right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
+          - right_ramp_hit
+          - center_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
+          - right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
           - cluster_bomb_fired
           - detonate_nuke
         events_when_transitioning: reset_alien_shot6, alien_hit
       - source: shot7
         target: init
         events: 
-          - right_ramp_hit
-          - center_orbit_right_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
-          - right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}
-          - cluster_bomb_fired
-          - detonate_nuke
-        events_when_transitioning: reset_alien_shot7, alien_hit
-      - source: shot8
-        target: init
-        events: 
           - right_orbit_hit
           - right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}
           - cluster_bomb_fired
           - detonate_nuke
-        events_when_transitioning: reset_alien_shot8, alien_hit
+        events_when_transitioning: reset_alien_shot7, alien_hit
       - source: shot1
         target: init
         events: 
@@ -430,11 +398,6 @@ state_machines:
         events: 
           - earth_hit
         events_when_transitioning: reset_alien_shot7
-      - source: shot8
-        target: init
-        events: 
-          - earth_hit
-        events_when_transitioning: reset_alien_shot8
 
 timers: 
   alien_attack:

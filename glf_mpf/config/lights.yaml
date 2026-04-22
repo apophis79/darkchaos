@@ -470,7 +470,7 @@ lights:
     subtype: led
     size: 0.04
     type: rgb
-    tags: tFire,tInserts
+    tags: tFire,tInserts,LPC45
     x: 0.5249214
     y: 0.1793529
   LPC4:
@@ -478,7 +478,7 @@ lights:
     subtype: led
     size: 0.04
     type: rgb
-    tags: tFire,tInserts
+    tags: tFire,tInserts,LPC45
     x: 0.381481
     y: 0.1790943
   LSC3:

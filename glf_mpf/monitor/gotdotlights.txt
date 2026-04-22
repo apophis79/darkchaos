@@ -291,12 +291,12 @@ tags = ["tScoop", "tInserts"]
 [node name="LPC5" type="Sprite2D" parent="lights"]
 position = Vector2(255.1118, 193.7011)
 script = ExtResource("3_qb2nn")
-tags = ["tFire", "tInserts"]
+tags = ["tFire", "tInserts", "LPC45"]
 
 [node name="LPC4" type="Sprite2D" parent="lights"]
 position = Vector2(185.3997, 193.4218)
 script = ExtResource("3_qb2nn")
-tags = ["tFire", "tInserts"]
+tags = ["tFire", "tInserts", "LPC45"]
 
 [node name="LSC3" type="Sprite2D" parent="lights"]
 position = Vector2(374.6619, 618.0098)
