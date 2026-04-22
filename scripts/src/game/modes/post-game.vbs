@@ -7,6 +7,12 @@ Const NumLoserMessages = 24
 Dim LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10
 Dim LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20
 Dim LoserMessage21,LoserMessage22,LoserMessage23,LoserMessage24
+
+' These are for the real machine
+Dim LoserMessage1a,LoserMessage2a,LoserMessage3a,LoserMessage4a,LoserMessage5a,LoserMessage6a,LoserMessage7a,LoserMessage8a,LoserMessage9a,LoserMessage10a
+Dim LoserMessage11a,LoserMessage12a,LoserMessage13a,LoserMessage14a,LoserMessage15a,LoserMessage16a,LoserMessage17a,LoserMessage18a,LoserMessage19a,LoserMessage20a
+Dim LoserMessage21a,LoserMessage22a,LoserMessage23a,LoserMessage24a
+
 LoserMessage1 = Array("YOU","FAILED","WE ALL","DIED")
 LoserMessage2 = Array("PLAY","BETTER","NEXT","TIME")
 LoserMessage3 = Array("EARTH","DIED","THANKS","TO YOU")
@@ -32,21 +38,60 @@ LoserMessage22 = Array("THIS WAS","PRACTICE","NEXT IS ","FOR REAL")
 LoserMessage23 = Array("THE SKYS","FALLING","THE SKYS","FALLING")
 LoserMessage24 = Array("OUR END","BEGINS ","APRIL","13 2029")
 
-Dim LoserMessages
+LoserMessage1a =  "   YOU FAILED     WE ALL DIED   "
+LoserMessage2a =  "      PLAY BETTER NEXT TIME     "
+LoserMessage3a =  "    EARTH DIED THANKS TO YOU    "
+LoserMessage4a =  "  COME ON HOW HARD IS IT REALLY "
+LoserMessage5a =  "HIT THE METEORS NEXT TIME PLEASE"
+LoserMessage6a =  " OH WOW YOU LOST AGAIN SURPRISE "
+LoserMessage7a =  "   ITS EASY IF YOU DONT SUCK    "
+LoserMessage8a =  "   PRACTICE PRACTICE PRACTICE   "
+LoserMessage9a =  "  DAMN LUCKILY THIS IS NOT REAL "
+LoserMessage10a = "GAME OVER MAN    WE ALL DEAD NOW"
+LoserMessage11a = "      MORE BEER MIGHT HELP      "
+LoserMessage12a = "     UNLUCKY SHOT EARTHLING     "
+LoserMessage13a = "    THE DINOS LASTED LONGER     "
+LoserMessage14a = "  ASTEROID + ONE   HUMANS ZERO  "
+LoserMessage15a = "   THE ODDS WERE 3720 TO ONE    "
+LoserMessage16a = "   ONE GIANT WEEP FOR MANKIND   "
+LoserMessage17a = "  THE DARK CHAOS GOD IS HAPPY   "
+LoserMessage18a = "     TRY JUST ONE MORE TIME     "
+LoserMessage19a = " YOU ARE LUCKY ITS ON FREEPLAY  "
+LoserMessage20a = "   KEEP CALM     PLAY PINBALL   "
+LoserMessage21a = "   WE NEED A HERO NOT A ZERO    "
+LoserMessage22a = "    PLAY FOR REAL NEXT TIME     "
+LoserMessage23a = "       THE SKY IS FALLING       "
+LoserMessage24a = "   THE END IS ON APRI 13 2029   "
+
+Dim LoserMessages, LoserMessages_all
 LoserMessages = Array(LoserMessage1,LoserMessage2,LoserMessage3,LoserMessage4,LoserMessage5,LoserMessage6,LoserMessage7,LoserMessage8,LoserMessage9,LoserMessage10, _
                       LoserMessage11,LoserMessage12,LoserMessage13,LoserMessage14,LoserMessage15,LoserMessage16,LoserMessage17,LoserMessage18,LoserMessage19,LoserMessage20, _ 
                       LoserMessage21,LoserMessage22,LoserMessage23,LoserMessage24)
+LoserMessages_all = Array(LoserMessage1a,LoserMessage2a,LoserMessage3a,LoserMessage4a,LoserMessage5a,LoserMessage6a,LoserMessage7a,LoserMessage8a,LoserMessage9a,LoserMessage10a, _
+                      LoserMessage11a,LoserMessage12a,LoserMessage13a,LoserMessage14a,LoserMessage15a,LoserMessage16a,LoserMessage17a,LoserMessage18a,LoserMessage19a,LoserMessage20a, _ 
+                      LoserMessage21a,LoserMessage22a,LoserMessage23a,LoserMessage24a)
+
 
 Dim WinnerMessage1,WinnerMessage2,WinnerMessage3,WinnerMessage4,WinnerMessage5,WinnerMessage6
+Dim WinnerMessage1a,WinnerMessage2a,WinnerMessage3a,WinnerMessage4a,WinnerMessage5a,WinnerMessage6a
+
 WinnerMessage1 = Array("A VILE","DARK","CHAOS","LOOMED")
 WinnerMessage2 = Array("COSMIC","IMPACTS","TORE AND","BOOMED")
 WinnerMessage3 = Array("TURMOIL ","AND FEAR","HUMANITY","DOOMED")
 WinnerMessage4 = Array("A HERO ","ASCENDED","INTO THE","NIGHT")
 WinnerMessage5 = Array("A FIERY","BATTLE","WON THE","FIGHT")
 WinnerMessage6 = Array("SPARKS","OF HOPE","FLICKER ","OF LIGHT")
-Dim WinnerMessages
-WinnerMessages = Array(WinnerMessage1,WinnerMessage2,WinnerMessage3,WinnerMessage4,WinnerMessage5,WinnerMessage6)
 
+WinnerMessage1a = "    A VILE DARK CHAOS LOOMED    "
+WinnerMessage2a = " COSMIC IMPACTS TORE AND BOOMED "
+WinnerMessage3a = "TURMOIL AND FEAR HUMANITY DOOMED"
+WinnerMessage4a = " A HERO ASCENDED INTO THE NIGHT "
+WinnerMessage5a = "  A FIERY BATTLE WON THE FIGHT  "
+WinnerMessage6a = "SPARKS OF HOPE  FLICKER OF LIGHT"
+
+Dim WinnerMessages, WinnerMessages_all
+WinnerMessages = Array(WinnerMessage1,WinnerMessage2,WinnerMessage3,WinnerMessage4,WinnerMessage5,WinnerMessage6)
+WinnerMessages_all = Array(WinnerMessage1a,WinnerMessage2a,WinnerMessage3a,WinnerMessage4a,WinnerMessage5a,WinnerMessage6a)
 
 Sub CreatePostGameMode()
     Dim x
@@ -305,6 +350,7 @@ Sub CreatePostGameMode()
         With .SegmentDisplayPlayer()
             For x = 1 to NumLoserMessages
                 With .EventName("display_loser_message"&x)
+                    'For VPX 
                     With .Display("player1")
                         .Text = LoserMessages(x-1)(0)
                     End With
@@ -317,10 +363,15 @@ Sub CreatePostGameMode()
                     With .Display("player4")
                         .Text = LoserMessages(x-1)(3)
                     End With
+                    'For Real
+                    ' With .Display("all")
+                    '     .Text = LoserMessages_all(x-1)
+                    ' End With
                 End With
             Next
             For x = 1 to 6
                 With .EventName("display_winner_message"&x)
+                    'For VPX 
                     With .Display("player1")
                         .Text = WinnerMessages(x-1)(0)
                     End With
@@ -333,6 +384,10 @@ Sub CreatePostGameMode()
                     With .Display("player4")
                         .Text = WinnerMessages(x-1)(3)
                     End With
+                    'For Real
+                    ' With .Display("all")
+                    '     .Text = WinnerMessages_all(x-1)
+                    ' End With
                 End With
             Next
             With .EventName("display_last_scores")
