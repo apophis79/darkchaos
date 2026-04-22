@@ -99,6 +99,7 @@ Sub CreateMoonMultiballMode
                 .Show = "flash_color"
                 .Speed = 13
                 .Loops = 6
+                .Priority = 2000
                 With .Tokens()
                     .Add "lights", "tMoonAll"
                     .Add "color", MeteorWaveColor
