@@ -14,7 +14,7 @@
 
 
 Sub CreateTrainingSelectMode
-    Dim x
+    Dim x, y
 
     With CreateGlfMode("training_select",600)
         .StartEvents = Array("start_training_select")
@@ -24,7 +24,7 @@ Sub CreateTrainingSelectMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_select_started", Array("enable_scoop_hold","stop_training_qualify")
+            .Add "mode_training_select_started", Array("enable_scoop_hold","stop_training_qualify","show_training_completed_shots")
             'navigate selections
             .Add "s_left_flipper_active", Array("training_select_left")
             .Add "s_right_flipper_active", Array("training_select_right")
@@ -137,68 +137,89 @@ Sub CreateTrainingSelectMode
         End With
 
         
+        ' 'Show the shots that have been already completed
+        ' For x = 1 to 9
+        '     With .Shots("training_select_health"&x)
+        '         '.Debug = True
+        '         .Profile = "training_select"
+        '         With .Tokens()
+        '             .Add "lights", "LH"&x
+        '             .Add "color", HealthColor1
+        '         End With
+        '     End With
+        ' Next
+        ' For x = 1 to 3
+        '     With .Shots("training_select_cluster_charge"&x)
+        '         '.Debug = True
+        '         .Profile = "training_select"
+        '         With .Tokens()
+        '             .Add "lights", "LCC"&x
+        '             .Add "color", ClusterBombColor
+        '         End With
+        '     End With
+        ' Next
+        ' For x = 1 to 3
+        '     With .Shots("training_select_proton_charge"&x)
+        '         '.Debug = True
+        '         .Profile = "training_select"
+        '         With .Tokens()
+        '             .Add "lights", "LPC"&x
+        '             .Add "color", ProtonColor
+        '         End With
+        '     End With
+        ' Next
+        ' For x = 1 to 4
+        '     With .Shots("training_select_moon_lane"&x)
+        '         '.Debug = True
+        '         .Profile = "training_select"
+        '         With .Tokens()
+        '             .Add "lights", MoonQualifyLightNames(x-1)
+        '             .Add "color", MoonColor
+        '         End With
+        '     End With
+        ' Next
+        ' For x = 1 to 3
+        '     With .Shots("training_select_ship_charge"&x)
+        '         '.Debug = True
+        '         .Profile = "training_select"
+        '         With .Tokens()
+        '             .Add "lights", "LF"&x
+        '             .Add "color", ShipSaveColor
+        '         End With
+        '     End With
+        ' Next
+        ' For x = 1 to 3
+        '     With .Shots("training_select_shield_charge"&x)
+        '         '.Debug = True
+        '         .Profile = "training_select"
+        '         With .Tokens()
+        '             .Add "lights", "LSC"&x
+        '             .Add "color", ShieldsColor
+        '         End With
+        '     End With
+        ' Next
+
         'Show the shots that have been already completed
-        For x = 1 to 9
-            With .Shots("training_select_health"&x)
-                '.Debug = True
-                .Profile = "training_select"
-                With .Tokens()
-                    .Add "lights", "LH"&x
-                    .Add "color", HealthColor1
-                End With
-            End With
-        Next
-        For x = 1 to 3
-            With .Shots("training_select_cluster_charge"&x)
-                '.Debug = True
-                .Profile = "training_select"
-                With .Tokens()
-                    .Add "lights", "LCC"&x
-                    .Add "color", ClusterBombColor
-                End With
-            End With
-        Next
-        For x = 1 to 3
-            With .Shots("training_select_proton_charge"&x)
-                '.Debug = True
-                .Profile = "training_select"
-                With .Tokens()
-                    .Add "lights", "LPC"&x
-                    .Add "color", ProtonColor
-                End With
-            End With
-        Next
-        For x = 1 to 4
-            With .Shots("training_select_moon_lane"&x)
-                '.Debug = True
-                .Profile = "training_select"
-                With .Tokens()
-                    .Add "lights", MoonQualifyLightNames(x-1)
-                    .Add "color", MoonColor
-                End With
-            End With
-        Next
-        For x = 1 to 3
-            With .Shots("training_select_ship_charge"&x)
-                '.Debug = True
-                .Profile = "training_select"
-                With .Tokens()
-                    .Add "lights", "LF"&x
-                    .Add "color", ShipSaveColor
-                End With
-            End With
-        Next
-        For x = 1 to 3
-            With .Shots("training_select_shield_charge"&x)
-                '.Debug = True
-                .Profile = "training_select"
-                With .Tokens()
-                    .Add "lights", "LSC"&x
-                    .Add "color", ShieldsColor
-                End With
-            End With
-        Next
-        
+        With .EventPlayer()
+            For x = 0 to 5
+                For y = 1 to TrainingSelectionShotNumber(x)
+                    .Add "show_training_completed_shots{current_player.shot_"&TrainingSelectionShotName(x)&y&"==1}", Array(TrainingSelectionNames(x)&"_"&y&"_completed")
+                Next
+            Next
+        End With
+
+        With .LightPlayer()
+            For x = 0 to 5
+                For y = 1 to TrainingSelectionShotNumber(x)
+                    With .EventName(TrainingSelectionNames(x)&"_"&y&"_completed")
+                        With .Lights(TrainingSelectionLightPrefix(x)&y)
+                            .Color = TrainingColors(x)
+                            .Priority = 100
+                        End With
+                    End With
+                Next
+            Next
+        End With
 
         'Selection shots
         For x = 0 to 5
@@ -225,7 +246,7 @@ Sub CreateTrainingSelectMode
 
         With .ShotProfiles("training_select")
             With .States("unlit")
-                .Show = "off"
+                .Show = "led_stop"
                 .Key = "key_ts_unlit"
             End With
             With .States("ready1")
@@ -274,43 +295,43 @@ Sub CreateTrainingSelectMode
             'States
             With .States("heal")
                 .Label = "Select Heal State"
-                .EventsWhenStarted = Array("heal_selected", _
+                .EventsWhenStarted = Array("heal_selected", "show_training_completed_shots", _
                                            "training_select_left{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}") 
             End With
             With .States("cluster_bomb")
                 .Label = "Select Cluster Bomb State"
-                .EventsWhenStarted = Array("cluster_bomb_selected", _
+                .EventsWhenStarted = Array("cluster_bomb_selected", "show_training_completed_shots", _
                                            "training_select_left{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}") 
             End With
             With .States("proton_cannon")
                 .Label = "Select Proton Cannon State"
-                .EventsWhenStarted = Array("proton_cannon_selected", _
+                .EventsWhenStarted = Array("proton_cannon_selected", "show_training_completed_shots", _
                                            "training_select_left{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}") 
             End With
             With .States("moon_missile")
                 .Label = "Select Moon Missile State"
-                .EventsWhenStarted = Array("moon_missile_selected", _
+                .EventsWhenStarted = Array("moon_missile_selected", "show_training_completed_shots", _
                                            "training_select_left{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}") 
             End With
             With .States("ship_save")
                 .Label = "Select Ship Save State"
-                .EventsWhenStarted = Array("ship_save_selected", _
+                .EventsWhenStarted = Array("ship_save_selected", "show_training_completed_shots", _
                                            "training_select_left{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}") 
             End With
             With .States("shields")
                 .Label = "Select Shields State"
-                .EventsWhenStarted = Array("shields_selected", _
+                .EventsWhenStarted = Array("shields_selected", "show_training_completed_shots", _
                                            "training_select_left{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", _
                                            "training_select_right{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}")  
             End With
             With .States("skip")
                 .Label = "Skip State"
-                .EventsWhenStarted = Array("skip_selected")  
+                .EventsWhenStarted = Array("skip_selected", "show_training_completed_shots")  
             End With
 
             'Transitions, move selection right

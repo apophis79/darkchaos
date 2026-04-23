@@ -133,14 +133,14 @@ Sub CreateTrainingHealMode
         Next
 
         With .VariablePlayer()
-            For x = 1 to 9
-                With .EventName("light_health"&x)
-                    With .Variable("shot_training_select_health"&x)
-                        .Action = "set"
-                        .Int = 3  
-                    End With
-                End With
-            Next
+            ' For x = 1 to 9
+            '     With .EventName("light_health"&x)
+            '         With .Variable("shot_training_select_health"&x)
+            '             .Action = "set"
+            '             .Int = 3  
+            '         End With
+            '     End With
+            ' Next
             'training health bump value
             With .EventName("reset_training_health_bump")
 				With .Variable("training_health_bump_value")

@@ -15,7 +15,7 @@ Const ProtonColor = "00dddd"
 Const MysteryColor = "f7b5c9" 
 Const MoonColor = "ccbb00"
 Const ClusterBombColor = "dd00dd"
-Const CombosColor = "ffb46b"
+Const CombosColor = "ffffff"
 Const TrainingColor = "ffae00"
 Const HealthColor1 = "00dd00"
 Const HealthColor2 = "ffae01"
@@ -60,8 +60,11 @@ RolloverLightNames = Array("LSwC1","LSwC2","LSwC3")
 
 ' Array of training selection shots and associated info
 Const TrainingTicks = 69  'uses 1000 ms interval
-Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingColors
+Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingSelectionLightPrefix, TrainingSelectionShotName, TrainingSelectionShotNumber, TrainingColors
 TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields","skip")
+TrainingSelectionLightPrefix= Array("LH","LCC","LPC","LML","LF","LSC","")
+TrainingSelectionShotName = Array("training_health","training_cluster_charge","training_proton_charge","training_moon_lane","training_ship_charge","train_shields","")
+TrainingSelectionShotNumber = Array(9,3,3,4,3,3,0)
 TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields","gi22")
 TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor,GIColorWhite)
 

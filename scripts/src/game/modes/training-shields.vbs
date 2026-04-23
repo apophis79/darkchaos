@@ -28,12 +28,12 @@ Sub CreateTrainingShieldsMode
             'Update the training select shots
             .Add "training_shield_group_hit", Array("update_training_select_shields","flash_gi","play_sfx_LS","score_200000")
             .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge1==1}", Array("update_training_select_shield1b")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge2==0}", Array("update_training_select_shield2a")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge2==1}", Array("update_training_select_shield2b")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge3==0}", Array("update_training_select_shield3a")
-            .Add "update_training_select_shields{current_player.shot_training_shield_charge3==1}", Array("update_training_select_shield3b")
+            ' .Add "update_training_select_shields{current_player.shot_training_shield_charge1==0}", Array("update_training_select_shield1a")
+            ' .Add "update_training_select_shields{current_player.shot_training_shield_charge1==1}", Array("update_training_select_shield1b")
+            ' .Add "update_training_select_shields{current_player.shot_training_shield_charge2==0}", Array("update_training_select_shield2a")
+            ' .Add "update_training_select_shields{current_player.shot_training_shield_charge2==1}", Array("update_training_select_shield2b")
+            ' .Add "update_training_select_shields{current_player.shot_training_shield_charge3==0}", Array("update_training_select_shield3a")
+            ' .Add "update_training_select_shields{current_player.shot_training_shield_charge3==1}", Array("update_training_select_shield3b")
             'handle gi flicker shows
             .Add "timer_training_shields_tick", Array("flicker_gi")
             'Handle moon ramp
@@ -147,45 +147,45 @@ Sub CreateTrainingShieldsMode
 
         With .VariablePlayer()
             '.Debug = True
-            'update the training select shots 1
-            With .EventName("update_training_select_shield1a")
-				With .Variable("shot_training_select_shield_charge1")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_shield1b")
-				With .Variable("shot_training_select_shield_charge1")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            'update the training select shots 2
-            With .EventName("update_training_select_shield2a")
-				With .Variable("shot_training_select_shield_charge2")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_shield2b")
-				With .Variable("shot_training_select_shield_charge2")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            'update the training select shots 3
-            With .EventName("update_training_select_shield3a") 
-				With .Variable("shot_training_select_shield_charge3")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_shield3b")
-				With .Variable("shot_training_select_shield_charge3")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
+            ' 'update the training select shots 1
+            ' With .EventName("update_training_select_shield1a")
+			' 	With .Variable("shot_training_select_shield_charge1")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_shield1b")
+			' 	With .Variable("shot_training_select_shield_charge1")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' 'update the training select shots 2
+            ' With .EventName("update_training_select_shield2a")
+			' 	With .Variable("shot_training_select_shield_charge2")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_shield2b")
+			' 	With .Variable("shot_training_select_shield_charge2")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' 'update the training select shots 3
+            ' With .EventName("update_training_select_shield3a") 
+			' 	With .Variable("shot_training_select_shield_charge3")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_shield3b")
+			' 	With .Variable("shot_training_select_shield_charge3")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
             'completed
             With .EventName("training_shields_completed")
 				With .Variable("training_shields_achieved")

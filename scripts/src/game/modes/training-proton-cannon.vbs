@@ -117,24 +117,24 @@ Sub CreateTrainingProtonCannonMode
 
 
         With .VariablePlayer()
-            With .EventName("light_proton_charge1")
-				With .Variable("shot_training_select_proton_charge1")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            With .EventName("light_proton_charge2")
-				With .Variable("shot_training_select_proton_charge2")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            With .EventName("light_proton_charge3")
-				With .Variable("shot_training_select_proton_charge3")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
+            ' With .EventName("light_proton_charge1")
+			' 	With .Variable("shot_training_select_proton_charge1")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' With .EventName("light_proton_charge2")
+			' 	With .Variable("shot_training_select_proton_charge2")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' With .EventName("light_proton_charge3")
+			' 	With .Variable("shot_training_select_proton_charge3")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
             With .EventName("training_achieved")
 				With .Variable("training_proton_cannon_achieved")
                     .Action = "set"

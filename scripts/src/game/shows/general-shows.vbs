@@ -2,6 +2,12 @@
 
 Sub CreateGeneralShows()
 
+    With CreateGlfShow("led_stop")
+        With .AddStep(Null, Null, -1)
+            .Lights = Array("(lights)|0|stop")
+        End With
+    End With
+
     With CreateGlfShow("flicker_color")
         With .AddStep(Null, Null, .16)
             .Lights = Array("(lights)|37|(color)")

@@ -28,14 +28,14 @@ Sub CreateTrainingMoonMissileMode
             'Update the training select shots
             .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi","play_sfx_LS","score_200000")
             .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==1}", Array("update_training_select_moon_lane1b")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane2==0}", Array("update_training_select_moon_lane2a")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane2==1}", Array("update_training_select_moon_lane2b")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane3==0}", Array("update_training_select_moon_lane3a")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane3==1}", Array("update_training_select_moon_lane3b")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane4==0}", Array("update_training_select_moon_lane4a")
-            .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane4==1}", Array("update_training_select_moon_lane4b")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}", Array("update_training_select_moon_lane1a")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane1==1}", Array("update_training_select_moon_lane1b")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane2==0}", Array("update_training_select_moon_lane2a")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane2==1}", Array("update_training_select_moon_lane2b")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane3==0}", Array("update_training_select_moon_lane3a")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane3==1}", Array("update_training_select_moon_lane3b")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane4==0}", Array("update_training_select_moon_lane4a")
+            ' .Add "update_training_select_moon_lane{current_player.shot_training_moon_lane4==1}", Array("update_training_select_moon_lane4b")
             'handle gi flicker shows
             .Add "timer_training_moon_missile_tick", Array("flicker_gi")
             'Handle moon ramp
@@ -149,58 +149,58 @@ Sub CreateTrainingMoonMissileMode
 
         With .VariablePlayer()
             '.Debug = True
-            'update the training select shots 1
-            With .EventName("update_training_select_moon_lane1a")
-				With .Variable("shot_training_select_moon_lane1")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_moon_lane1b")
-				With .Variable("shot_training_select_moon_lane1")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            'update the training select shots 2
-            With .EventName("update_training_select_moon_lane2a")
-				With .Variable("shot_training_select_moon_lane2")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_moon_lane2b")
-				With .Variable("shot_training_select_moon_lane2")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            'update the training select shots 3
-            With .EventName("update_training_select_moon_lane3a") 
-				With .Variable("shot_training_select_moon_lane3")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_moon_lane3b")
-				With .Variable("shot_training_select_moon_lane3")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            'update the training select shots 4
-            With .EventName("update_training_select_moon_lane4a")
-				With .Variable("shot_training_select_moon_lane4")
-                    .Action = "set"
-					.Int = 0  
-				End With
-            End With
-            With .EventName("update_training_select_moon_lane4b")
-				With .Variable("shot_training_select_moon_lane4")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
+            ' 'update the training select shots 1
+            ' With .EventName("update_training_select_moon_lane1a")
+			' 	With .Variable("shot_training_select_moon_lane1")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_moon_lane1b")
+			' 	With .Variable("shot_training_select_moon_lane1")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' 'update the training select shots 2
+            ' With .EventName("update_training_select_moon_lane2a")
+			' 	With .Variable("shot_training_select_moon_lane2")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_moon_lane2b")
+			' 	With .Variable("shot_training_select_moon_lane2")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' 'update the training select shots 3
+            ' With .EventName("update_training_select_moon_lane3a") 
+			' 	With .Variable("shot_training_select_moon_lane3")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_moon_lane3b")
+			' 	With .Variable("shot_training_select_moon_lane3")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' 'update the training select shots 4
+            ' With .EventName("update_training_select_moon_lane4a")
+			' 	With .Variable("shot_training_select_moon_lane4")
+            '         .Action = "set"
+			' 		.Int = 0  
+			' 	End With
+            ' End With
+            ' With .EventName("update_training_select_moon_lane4b")
+			' 	With .Variable("shot_training_select_moon_lane4")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
             'completed
             With .EventName("training_moon_missile_completed")
 				With .Variable("training_moon_missile_achieved")

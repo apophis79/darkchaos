@@ -118,24 +118,24 @@ Sub CreateTrainingShipSaveMode
 
         With .VariablePlayer()
             '.Debug = True
-            With .EventName("light_ship_charge1")
-				With .Variable("shot_training_select_ship_charge1")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            With .EventName("light_ship_charge2")
-				With .Variable("shot_training_select_ship_charge2")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
-            With .EventName("light_ship_charge3")
-				With .Variable("shot_training_select_ship_charge3")
-                    .Action = "set"
-					.Int = 3  
-				End With
-            End With
+            ' With .EventName("light_ship_charge1")
+			' 	With .Variable("shot_training_select_ship_charge1")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' With .EventName("light_ship_charge2")
+			' 	With .Variable("shot_training_select_ship_charge2")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
+            ' With .EventName("light_ship_charge3")
+			' 	With .Variable("shot_training_select_ship_charge3")
+            '         .Action = "set"
+			' 		.Int = 3  
+			' 	End With
+            ' End With
             With .EventName("training_achieved")
 				With .Variable("training_ship_save_achieved")
                     .Action = "set"
