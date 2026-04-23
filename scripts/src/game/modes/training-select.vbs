@@ -49,6 +49,19 @@ Sub CreateTrainingSelectMode
             .Add "stopping_training_select", Array("training_music_start","meteor_wave_music_stop","stop_training_select")
             'Handle moon ramp
             .Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", Array("delayed_release_moon_ball")
+            'Handle skipping over completed trainings
+            .Add "check_ts_heal{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", Array("training_select_left")
+            .Add "check_ts_heal{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}", Array("training_select_right")
+            .Add "check_ts_cluster_bomb{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", Array("training_select_left")
+            .Add "check_ts_cluster_bomb{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}", Array("training_select_right")
+            .Add "check_ts_proton_cannon{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", Array("training_select_left")
+            .Add "check_ts_proton_cannon{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}", Array("training_select_right")
+            .Add "check_ts_moon_missile{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", Array("training_select_left")
+            .Add "check_ts_moon_missile{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}", Array("training_select_right")
+            .Add "check_ts_ship_save{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", Array("training_select_left")
+            .Add "check_ts_ship_save{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}", Array("training_select_right")
+            .Add "check_ts_shields{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", Array("training_select_left")
+            .Add "check_ts_shields{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}", Array("training_select_right")
         End With
 
         With .RandomEventPlayer()
@@ -295,39 +308,27 @@ Sub CreateTrainingSelectMode
             'States
             With .States("heal")
                 .Label = "Select Heal State"
-                .EventsWhenStarted = Array("heal_selected", "show_training_completed_shots", _
-                                           "training_select_left{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", _
-                                           "training_select_right{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}") 
+                .EventsWhenStarted = Array("heal_selected", "show_training_completed_shots", "check_ts_heal")
             End With
             With .States("cluster_bomb")
                 .Label = "Select Cluster Bomb State"
-                .EventsWhenStarted = Array("cluster_bomb_selected", "show_training_completed_shots", _
-                                           "training_select_left{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", _
-                                           "training_select_right{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}") 
+                .EventsWhenStarted = Array("cluster_bomb_selected", "show_training_completed_shots", "check_ts_cluster_bomb") 
             End With
             With .States("proton_cannon")
                 .Label = "Select Proton Cannon State"
-                .EventsWhenStarted = Array("proton_cannon_selected", "show_training_completed_shots", _
-                                           "training_select_left{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", _
-                                           "training_select_right{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}") 
+                .EventsWhenStarted = Array("proton_cannon_selected", "show_training_completed_shots", "check_ts_proton_cannon") 
             End With
             With .States("moon_missile")
                 .Label = "Select Moon Missile State"
-                .EventsWhenStarted = Array("moon_missile_selected", "show_training_completed_shots", _
-                                           "training_select_left{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", _
-                                           "training_select_right{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}") 
+                .EventsWhenStarted = Array("moon_missile_selected", "show_training_completed_shots", "check_ts_moon_missile") 
             End With
             With .States("ship_save")
                 .Label = "Select Ship Save State"
-                .EventsWhenStarted = Array("ship_save_selected", "show_training_completed_shots", _
-                                           "training_select_left{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", _
-                                           "training_select_right{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}") 
+                .EventsWhenStarted = Array("ship_save_selected", "show_training_completed_shots", "check_ts_ship_save")
             End With
             With .States("shields")
                 .Label = "Select Shields State"
-                .EventsWhenStarted = Array("shields_selected", "show_training_completed_shots", _
-                                           "training_select_left{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", _
-                                           "training_select_right{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}")  
+                .EventsWhenStarted = Array("shields_selected", "show_training_completed_shots", "check_ts_shields") 
             End With
             With .States("skip")
                 .Label = "Skip State"
