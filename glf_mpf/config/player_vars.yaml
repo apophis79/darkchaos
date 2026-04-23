@@ -118,6 +118,9 @@ player_vars:
   training_moon_missile_used:
     initial_value: 0
     value_type: int
+  ts_last_move:
+    initial_value: 
+    value_type: str
   wizard_mode_is_ready:
     initial_value: 0
     value_type: int

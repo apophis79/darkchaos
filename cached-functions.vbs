@@ -4176,194 +4176,194 @@ Function Glf_986(args)
 	If Err Then Glf_986 = False
 End Function
 Function Glf_987(args)
-	Glf_987 = "right"
+	On Error Resume Next
+	    Glf_987 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_heal_achieved")=1
+	If Err Then Glf_987 = False
 End Function
 Function Glf_988(args)
-	Glf_988 = "left"
+	On Error Resume Next
+	    Glf_988 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_heal_achieved")=1
+	If Err Then Glf_988 = False
 End Function
 Function Glf_989(args)
 	On Error Resume Next
-	    Glf_989 = GetPlayerState("shot_training_health1")=1
+	    Glf_989 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_989 = False
 End Function
 Function Glf_990(args)
 	On Error Resume Next
-	    Glf_990 = GetPlayerState("shot_training_health2")=1
+	    Glf_990 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_990 = False
 End Function
 Function Glf_991(args)
 	On Error Resume Next
-	    Glf_991 = GetPlayerState("shot_training_health3")=1
+	    Glf_991 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_991 = False
 End Function
 Function Glf_992(args)
 	On Error Resume Next
-	    Glf_992 = GetPlayerState("shot_training_health4")=1
+	    Glf_992 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_992 = False
 End Function
 Function Glf_993(args)
 	On Error Resume Next
-	    Glf_993 = GetPlayerState("shot_training_health5")=1
+	    Glf_993 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_993 = False
 End Function
 Function Glf_994(args)
 	On Error Resume Next
-	    Glf_994 = GetPlayerState("shot_training_health6")=1
+	    Glf_994 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_994 = False
 End Function
 Function Glf_995(args)
 	On Error Resume Next
-	    Glf_995 = GetPlayerState("shot_training_health7")=1
+	    Glf_995 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_995 = False
 End Function
 Function Glf_996(args)
 	On Error Resume Next
-	    Glf_996 = GetPlayerState("shot_training_health8")=1
+	    Glf_996 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_996 = False
 End Function
 Function Glf_997(args)
 	On Error Resume Next
-	    Glf_997 = GetPlayerState("shot_training_health9")=1
+	    Glf_997 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_997 = False
 End Function
 Function Glf_998(args)
 	On Error Resume Next
-	    Glf_998 = GetPlayerState("shot_training_cluster_charge1")=1
+	    Glf_998 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_998 = False
 End Function
 Function Glf_999(args)
-	On Error Resume Next
-	    Glf_999 = GetPlayerState("shot_training_cluster_charge2")=1
-	If Err Then Glf_999 = False
+	Glf_999 = "right"
 End Function
 Function Glf_1000(args)
-	On Error Resume Next
-	    Glf_1000 = GetPlayerState("shot_training_cluster_charge3")=1
-	If Err Then Glf_1000 = False
+	Glf_1000 = "left"
 End Function
 Function Glf_1001(args)
 	On Error Resume Next
-	    Glf_1001 = GetPlayerState("shot_training_proton_charge1")=1
+	    Glf_1001 = GetPlayerState("shot_training_health1")=1
 	If Err Then Glf_1001 = False
 End Function
 Function Glf_1002(args)
 	On Error Resume Next
-	    Glf_1002 = GetPlayerState("shot_training_proton_charge2")=1
+	    Glf_1002 = GetPlayerState("shot_training_health2")=1
 	If Err Then Glf_1002 = False
 End Function
 Function Glf_1003(args)
 	On Error Resume Next
-	    Glf_1003 = GetPlayerState("shot_training_proton_charge3")=1
+	    Glf_1003 = GetPlayerState("shot_training_health3")=1
 	If Err Then Glf_1003 = False
 End Function
 Function Glf_1004(args)
 	On Error Resume Next
-	    Glf_1004 = GetPlayerState("shot_training_moon_lane1")=1
+	    Glf_1004 = GetPlayerState("shot_training_health4")=1
 	If Err Then Glf_1004 = False
 End Function
 Function Glf_1005(args)
 	On Error Resume Next
-	    Glf_1005 = GetPlayerState("shot_training_moon_lane2")=1
+	    Glf_1005 = GetPlayerState("shot_training_health5")=1
 	If Err Then Glf_1005 = False
 End Function
 Function Glf_1006(args)
 	On Error Resume Next
-	    Glf_1006 = GetPlayerState("shot_training_moon_lane3")=1
+	    Glf_1006 = GetPlayerState("shot_training_health6")=1
 	If Err Then Glf_1006 = False
 End Function
 Function Glf_1007(args)
 	On Error Resume Next
-	    Glf_1007 = GetPlayerState("shot_training_moon_lane4")=1
+	    Glf_1007 = GetPlayerState("shot_training_health7")=1
 	If Err Then Glf_1007 = False
 End Function
 Function Glf_1008(args)
 	On Error Resume Next
-	    Glf_1008 = GetPlayerState("shot_training_ship_charge1")=1
+	    Glf_1008 = GetPlayerState("shot_training_health8")=1
 	If Err Then Glf_1008 = False
 End Function
 Function Glf_1009(args)
 	On Error Resume Next
-	    Glf_1009 = GetPlayerState("shot_training_ship_charge2")=1
+	    Glf_1009 = GetPlayerState("shot_training_health9")=1
 	If Err Then Glf_1009 = False
 End Function
 Function Glf_1010(args)
 	On Error Resume Next
-	    Glf_1010 = GetPlayerState("shot_training_ship_charge3")=1
+	    Glf_1010 = GetPlayerState("shot_training_cluster_charge1")=1
 	If Err Then Glf_1010 = False
 End Function
 Function Glf_1011(args)
 	On Error Resume Next
-	    Glf_1011 = GetPlayerState("shot_training_shield_charge1")=1
+	    Glf_1011 = GetPlayerState("shot_training_cluster_charge2")=1
 	If Err Then Glf_1011 = False
 End Function
 Function Glf_1012(args)
 	On Error Resume Next
-	    Glf_1012 = GetPlayerState("shot_training_shield_charge2")=1
+	    Glf_1012 = GetPlayerState("shot_training_cluster_charge3")=1
 	If Err Then Glf_1012 = False
 End Function
 Function Glf_1013(args)
 	On Error Resume Next
-	    Glf_1013 = GetPlayerState("shot_training_shield_charge3")=1
+	    Glf_1013 = GetPlayerState("shot_training_proton_charge1")=1
 	If Err Then Glf_1013 = False
 End Function
 Function Glf_1014(args)
 	On Error Resume Next
-	    Glf_1014 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1014 = GetPlayerState("shot_training_proton_charge2")=1
 	If Err Then Glf_1014 = False
 End Function
 Function Glf_1015(args)
 	On Error Resume Next
-	    Glf_1015 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1015 = GetPlayerState("shot_training_proton_charge3")=1
 	If Err Then Glf_1015 = False
 End Function
 Function Glf_1016(args)
 	On Error Resume Next
-	    Glf_1016 = glf_state_machines("training_select").GetValue("state")="heal"
+	    Glf_1016 = GetPlayerState("shot_training_moon_lane1")=1
 	If Err Then Glf_1016 = False
 End Function
 Function Glf_1017(args)
 	On Error Resume Next
-	    Glf_1017 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1017 = GetPlayerState("shot_training_moon_lane2")=1
 	If Err Then Glf_1017 = False
 End Function
 Function Glf_1018(args)
 	On Error Resume Next
-	    Glf_1018 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1018 = GetPlayerState("shot_training_moon_lane3")=1
 	If Err Then Glf_1018 = False
 End Function
 Function Glf_1019(args)
 	On Error Resume Next
-	    Glf_1019 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
+	    Glf_1019 = GetPlayerState("shot_training_moon_lane4")=1
 	If Err Then Glf_1019 = False
 End Function
 Function Glf_1020(args)
 	On Error Resume Next
-	    Glf_1020 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1020 = GetPlayerState("shot_training_ship_charge1")=1
 	If Err Then Glf_1020 = False
 End Function
 Function Glf_1021(args)
 	On Error Resume Next
-	    Glf_1021 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1021 = GetPlayerState("shot_training_ship_charge2")=1
 	If Err Then Glf_1021 = False
 End Function
 Function Glf_1022(args)
 	On Error Resume Next
-	    Glf_1022 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
+	    Glf_1022 = GetPlayerState("shot_training_ship_charge3")=1
 	If Err Then Glf_1022 = False
 End Function
 Function Glf_1023(args)
 	On Error Resume Next
-	    Glf_1023 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1023 = GetPlayerState("shot_training_shield_charge1")=1
 	If Err Then Glf_1023 = False
 End Function
 Function Glf_1024(args)
 	On Error Resume Next
-	    Glf_1024 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1024 = GetPlayerState("shot_training_shield_charge2")=1
 	If Err Then Glf_1024 = False
 End Function
 Function Glf_1025(args)
 	On Error Resume Next
-	    Glf_1025 = glf_state_machines("training_select").GetValue("state")="moon_missile"
+	    Glf_1025 = GetPlayerState("shot_training_shield_charge3")=1
 	If Err Then Glf_1025 = False
 End Function
 Function Glf_1026(args)
@@ -4378,7 +4378,7 @@ Function Glf_1027(args)
 End Function
 Function Glf_1028(args)
 	On Error Resume Next
-	    Glf_1028 = glf_state_machines("training_select").GetValue("state")="ship_save"
+	    Glf_1028 = glf_state_machines("training_select").GetValue("state")="heal"
 	If Err Then Glf_1028 = False
 End Function
 Function Glf_1029(args)
@@ -4393,67 +4393,67 @@ Function Glf_1030(args)
 End Function
 Function Glf_1031(args)
 	On Error Resume Next
-	    Glf_1031 = glf_state_machines("training_select").GetValue("state")="shields"
+	    Glf_1031 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
 	If Err Then Glf_1031 = False
 End Function
 Function Glf_1032(args)
 	On Error Resume Next
-	    Glf_1032 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_heal_achieved")=1
+	    Glf_1032 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1032 = False
 End Function
 Function Glf_1033(args)
 	On Error Resume Next
-	    Glf_1033 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_heal_achieved")=1
+	    Glf_1033 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1033 = False
 End Function
 Function Glf_1034(args)
 	On Error Resume Next
-	    Glf_1034 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1034 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
 	If Err Then Glf_1034 = False
 End Function
 Function Glf_1035(args)
 	On Error Resume Next
-	    Glf_1035 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1035 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1035 = False
 End Function
 Function Glf_1036(args)
 	On Error Resume Next
-	    Glf_1036 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1036 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1036 = False
 End Function
 Function Glf_1037(args)
 	On Error Resume Next
-	    Glf_1037 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1037 = glf_state_machines("training_select").GetValue("state")="moon_missile"
 	If Err Then Glf_1037 = False
 End Function
 Function Glf_1038(args)
 	On Error Resume Next
-	    Glf_1038 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1038 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1038 = False
 End Function
 Function Glf_1039(args)
 	On Error Resume Next
-	    Glf_1039 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1039 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1039 = False
 End Function
 Function Glf_1040(args)
 	On Error Resume Next
-	    Glf_1040 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1040 = glf_state_machines("training_select").GetValue("state")="ship_save"
 	If Err Then Glf_1040 = False
 End Function
 Function Glf_1041(args)
 	On Error Resume Next
-	    Glf_1041 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1041 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1041 = False
 End Function
 Function Glf_1042(args)
 	On Error Resume Next
-	    Glf_1042 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_shields_achieved")=1
+	    Glf_1042 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1042 = False
 End Function
 Function Glf_1043(args)
 	On Error Resume Next
-	    Glf_1043 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_shields_achieved")=1
+	    Glf_1043 = glf_state_machines("training_select").GetValue("state")="shields"
 	If Err Then Glf_1043 = False
 End Function
 Function Glf_1044(args)
@@ -8499,63 +8499,63 @@ glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==
 glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""shields""}", "Glf_984"
 glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""skip""}", "Glf_985"
 glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_986"
-glf_funcRefMap.Add """right""", "Glf_987"
-glf_funcRefMap.Add """left""", "Glf_988"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health1==1}", "Glf_989"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health2==1}", "Glf_990"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health3==1}", "Glf_991"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health4==1}", "Glf_992"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health5==1}", "Glf_993"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health6==1}", "Glf_994"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health7==1}", "Glf_995"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health8==1}", "Glf_996"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health9==1}", "Glf_997"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge1==1}", "Glf_998"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge2==1}", "Glf_999"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge3==1}", "Glf_1000"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge1==1}", "Glf_1001"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge2==1}", "Glf_1002"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge3==1}", "Glf_1003"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane1==1}", "Glf_1004"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane2==1}", "Glf_1005"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane3==1}", "Glf_1006"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane4==1}", "Glf_1007"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge1==1}", "Glf_1008"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge2==1}", "Glf_1009"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge3==1}", "Glf_1010"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge1==1}", "Glf_1011"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge2==1}", "Glf_1012"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge3==1}", "Glf_1013"
-glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==0}", "Glf_1014"
-glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==1}", "Glf_1015"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""heal""}", "Glf_1016"
-glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==0}", "Glf_1017"
-glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==1}", "Glf_1018"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_1019"
-glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==0}", "Glf_1020"
-glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==1}", "Glf_1021"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""proton_cannon""}", "Glf_1022"
-glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==0}", "Glf_1023"
-glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==1}", "Glf_1024"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""moon_missile""}", "Glf_1025"
-glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==0}", "Glf_1026"
-glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==1}", "Glf_1027"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""ship_save""}", "Glf_1028"
-glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==0}", "Glf_1029"
-glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==1}", "Glf_1030"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""shields""}", "Glf_1031"
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", "Glf_1032"
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}", "Glf_1033"
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1034"
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1035"
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", "Glf_1036"
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}", "Glf_1037"
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", "Glf_1038"
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}", "Glf_1039"
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", "Glf_1040"
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}", "Glf_1041"
-glf_funcRefMap.Add "training_select_left{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", "Glf_1042"
-glf_funcRefMap.Add "training_select_right{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}", "Glf_1043"
+glf_funcRefMap.Add "check_ts_heal{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", "Glf_987"
+glf_funcRefMap.Add "check_ts_heal{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}", "Glf_988"
+glf_funcRefMap.Add "check_ts_cluster_bomb{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", "Glf_989"
+glf_funcRefMap.Add "check_ts_cluster_bomb{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}", "Glf_990"
+glf_funcRefMap.Add "check_ts_proton_cannon{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", "Glf_991"
+glf_funcRefMap.Add "check_ts_proton_cannon{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}", "Glf_992"
+glf_funcRefMap.Add "check_ts_moon_missile{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", "Glf_993"
+glf_funcRefMap.Add "check_ts_moon_missile{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}", "Glf_994"
+glf_funcRefMap.Add "check_ts_ship_save{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", "Glf_995"
+glf_funcRefMap.Add "check_ts_ship_save{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}", "Glf_996"
+glf_funcRefMap.Add "check_ts_shields{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", "Glf_997"
+glf_funcRefMap.Add "check_ts_shields{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}", "Glf_998"
+glf_funcRefMap.Add """right""", "Glf_999"
+glf_funcRefMap.Add """left""", "Glf_1000"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health1==1}", "Glf_1001"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health2==1}", "Glf_1002"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health3==1}", "Glf_1003"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health4==1}", "Glf_1004"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health5==1}", "Glf_1005"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health6==1}", "Glf_1006"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health7==1}", "Glf_1007"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health8==1}", "Glf_1008"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health9==1}", "Glf_1009"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge1==1}", "Glf_1010"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge2==1}", "Glf_1011"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge3==1}", "Glf_1012"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge1==1}", "Glf_1013"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge2==1}", "Glf_1014"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge3==1}", "Glf_1015"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane1==1}", "Glf_1016"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane2==1}", "Glf_1017"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane3==1}", "Glf_1018"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane4==1}", "Glf_1019"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge1==1}", "Glf_1020"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge2==1}", "Glf_1021"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge3==1}", "Glf_1022"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge1==1}", "Glf_1023"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge2==1}", "Glf_1024"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge3==1}", "Glf_1025"
+glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==0}", "Glf_1026"
+glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==1}", "Glf_1027"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""heal""}", "Glf_1028"
+glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==0}", "Glf_1029"
+glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==1}", "Glf_1030"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_1031"
+glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==0}", "Glf_1032"
+glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==1}", "Glf_1033"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""proton_cannon""}", "Glf_1034"
+glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==0}", "Glf_1035"
+glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==1}", "Glf_1036"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""moon_missile""}", "Glf_1037"
+glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==0}", "Glf_1038"
+glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==1}", "Glf_1039"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""ship_save""}", "Glf_1040"
+glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==0}", "Glf_1041"
+glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==1}", "Glf_1042"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""shields""}", "Glf_1043"
 glf_funcRefMap.Add """SELECT""", "Glf_1044"
 glf_funcRefMap.Add "heal_selected{current_player.training_heal_achieved==0}", "Glf_1045"
 glf_funcRefMap.Add """HEAL """, "Glf_1046"

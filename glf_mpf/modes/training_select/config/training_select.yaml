@@ -55,6 +55,30 @@ event_player:
     - stop_training_select
   balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
     - delayed_release_moon_ball
+  check_ts_heal{current_player.ts_last_move=="left" and current_player.training_heal_achieved==1}:
+    - training_select_left
+  check_ts_heal{current_player.ts_last_move=="right" and current_player.training_heal_achieved==1}:
+    - training_select_right
+  check_ts_cluster_bomb{current_player.ts_last_move=="left" and current_player.training_cluster_bomb_achieved==1}:
+    - training_select_left
+  check_ts_cluster_bomb{current_player.ts_last_move=="right" and current_player.training_cluster_bomb_achieved==1}:
+    - training_select_right
+  check_ts_proton_cannon{current_player.ts_last_move=="left" and current_player.training_proton_cannon_achieved==1}:
+    - training_select_left
+  check_ts_proton_cannon{current_player.ts_last_move=="right" and current_player.training_proton_cannon_achieved==1}:
+    - training_select_right
+  check_ts_moon_missile{current_player.ts_last_move=="left" and current_player.training_moon_missile_achieved==1}:
+    - training_select_left
+  check_ts_moon_missile{current_player.ts_last_move=="right" and current_player.training_moon_missile_achieved==1}:
+    - training_select_right
+  check_ts_ship_save{current_player.ts_last_move=="left" and current_player.training_ship_save_achieved==1}:
+    - training_select_left
+  check_ts_ship_save{current_player.ts_last_move=="right" and current_player.training_ship_save_achieved==1}:
+    - training_select_right
+  check_ts_shields{current_player.ts_last_move=="left" and current_player.training_shields_achieved==1}:
+    - training_select_left
+  check_ts_shields{current_player.ts_last_move=="right" and current_player.training_shields_achieved==1}:
+    - training_select_right
   show_training_completed_shots{current_player.shot_training_health1==1}:
     - heal_1_completed
   show_training_completed_shots{current_player.shot_training_health2==1}:
@@ -401,22 +425,22 @@ state_machines:
     states: 
       heal: 
         label: Select Heal State
-        events_when_started: heal_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_heal_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_heal_achieved==1}
+        events_when_started: heal_selected, show_training_completed_shots, check_ts_heal
       cluster_bomb: 
         label: Select Cluster Bomb State
-        events_when_started: cluster_bomb_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_cluster_bomb_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_cluster_bomb_achieved==1}
+        events_when_started: cluster_bomb_selected, show_training_completed_shots, check_ts_cluster_bomb
       proton_cannon: 
         label: Select Proton Cannon State
-        events_when_started: proton_cannon_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_proton_cannon_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_proton_cannon_achieved==1}
+        events_when_started: proton_cannon_selected, show_training_completed_shots, check_ts_proton_cannon
       moon_missile: 
         label: Select Moon Missile State
-        events_when_started: moon_missile_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_moon_missile_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_moon_missile_achieved==1}
+        events_when_started: moon_missile_selected, show_training_completed_shots, check_ts_moon_missile
       ship_save: 
         label: Select Ship Save State
-        events_when_started: ship_save_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_ship_save_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_ship_save_achieved==1}
+        events_when_started: ship_save_selected, show_training_completed_shots, check_ts_ship_save
       shields: 
         label: Select Shields State
-        events_when_started: shields_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_shields_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_shields_achieved==1}
+        events_when_started: shields_selected, show_training_completed_shots, check_ts_shields
       skip: 
         label: Skip State
         events_when_started: skip_selected, show_training_completed_shots
