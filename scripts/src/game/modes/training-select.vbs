@@ -24,7 +24,7 @@ Sub CreateTrainingSelectMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_select_started", Array("enable_scoop_hold")
+            .Add "mode_training_select_started", Array("enable_scoop_hold","stop_training_qualify")
             'navigate selections
             .Add "s_left_flipper_active", Array("training_select_left")
             .Add "s_right_flipper_active", Array("training_select_right")
@@ -33,7 +33,7 @@ Sub CreateTrainingSelectMode
             .Add "s_right_magna_key_active", Array("make_selection")
             .Add "s_lockbar_key_active", Array("make_selection")
             .Add "timer_training_select_complete", Array("make_selection")
-            .Add "make_selection", Array("release_scoop_hold","start_training")  ',"enable_flippers"
+            .Add "make_selection", Array("release_scoop_hold")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
             .Add "timer_training_select_tick{device.timers.training_select.ticks == 7}", Array("selection_hurry_up")
