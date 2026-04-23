@@ -8,6 +8,8 @@ mode:
 event_player: 
   mode_training_select_started:
     - enable_scoop_hold
+    - stop_training_qualify
+    - show_training_completed_shots
   s_LeftFlipperButton_active:
     - training_select_left
   s_RightFlipperButton_active:
@@ -22,7 +24,6 @@ event_player:
     - make_selection
   make_selection:
     - release_scoop_hold
-    - start_training
   release_scoop_hold:
     - disable_scoop_hold
   timer_training_select_tick{device.timers.training_select.ticks == 7}:
@@ -54,6 +55,183 @@ event_player:
     - stop_training_select
   balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
     - delayed_release_moon_ball
+  show_training_completed_shots{current_player.shot_training_health1==1}:
+    - heal_1_completed
+  show_training_completed_shots{current_player.shot_training_health2==1}:
+    - heal_2_completed
+  show_training_completed_shots{current_player.shot_training_health3==1}:
+    - heal_3_completed
+  show_training_completed_shots{current_player.shot_training_health4==1}:
+    - heal_4_completed
+  show_training_completed_shots{current_player.shot_training_health5==1}:
+    - heal_5_completed
+  show_training_completed_shots{current_player.shot_training_health6==1}:
+    - heal_6_completed
+  show_training_completed_shots{current_player.shot_training_health7==1}:
+    - heal_7_completed
+  show_training_completed_shots{current_player.shot_training_health8==1}:
+    - heal_8_completed
+  show_training_completed_shots{current_player.shot_training_health9==1}:
+    - heal_9_completed
+  show_training_completed_shots{current_player.shot_training_cluster_charge1==1}:
+    - cluster_bomb_1_completed
+  show_training_completed_shots{current_player.shot_training_cluster_charge2==1}:
+    - cluster_bomb_2_completed
+  show_training_completed_shots{current_player.shot_training_cluster_charge3==1}:
+    - cluster_bomb_3_completed
+  show_training_completed_shots{current_player.shot_training_proton_charge1==1}:
+    - proton_cannon_1_completed
+  show_training_completed_shots{current_player.shot_training_proton_charge2==1}:
+    - proton_cannon_2_completed
+  show_training_completed_shots{current_player.shot_training_proton_charge3==1}:
+    - proton_cannon_3_completed
+  show_training_completed_shots{current_player.shot_training_moon_lane1==1}:
+    - moon_missile_1_completed
+  show_training_completed_shots{current_player.shot_training_moon_lane2==1}:
+    - moon_missile_2_completed
+  show_training_completed_shots{current_player.shot_training_moon_lane3==1}:
+    - moon_missile_3_completed
+  show_training_completed_shots{current_player.shot_training_moon_lane4==1}:
+    - moon_missile_4_completed
+  show_training_completed_shots{current_player.shot_training_ship_charge1==1}:
+    - ship_save_1_completed
+  show_training_completed_shots{current_player.shot_training_ship_charge2==1}:
+    - ship_save_2_completed
+  show_training_completed_shots{current_player.shot_training_ship_charge3==1}:
+    - ship_save_3_completed
+  show_training_completed_shots{current_player.shot_train_shields1==1}:
+    - shields_1_completed
+  show_training_completed_shots{current_player.shot_train_shields2==1}:
+    - shields_2_completed
+  show_training_completed_shots{current_player.shot_train_shields3==1}:
+    - shields_3_completed
+
+
+light_player: 
+  heal_1_completed: 
+    LH1: 
+      color: 00dd00
+      priority: 100
+
+  heal_2_completed: 
+    LH2: 
+      color: 00dd00
+      priority: 100
+
+  heal_3_completed: 
+    LH3: 
+      color: 00dd00
+      priority: 100
+
+  heal_4_completed: 
+    LH4: 
+      color: 00dd00
+      priority: 100
+
+  heal_5_completed: 
+    LH5: 
+      color: 00dd00
+      priority: 100
+
+  heal_6_completed: 
+    LH6: 
+      color: 00dd00
+      priority: 100
+
+  heal_7_completed: 
+    LH7: 
+      color: 00dd00
+      priority: 100
+
+  heal_8_completed: 
+    LH8: 
+      color: 00dd00
+      priority: 100
+
+  heal_9_completed: 
+    LH9: 
+      color: 00dd00
+      priority: 100
+
+  cluster_bomb_1_completed: 
+    LCC1: 
+      color: dd00dd
+      priority: 100
+
+  cluster_bomb_2_completed: 
+    LCC2: 
+      color: dd00dd
+      priority: 100
+
+  cluster_bomb_3_completed: 
+    LCC3: 
+      color: dd00dd
+      priority: 100
+
+  proton_cannon_1_completed: 
+    LPC1: 
+      color: 00dddd
+      priority: 100
+
+  proton_cannon_2_completed: 
+    LPC2: 
+      color: 00dddd
+      priority: 100
+
+  proton_cannon_3_completed: 
+    LPC3: 
+      color: 00dddd
+      priority: 100
+
+  moon_missile_1_completed: 
+    LML1: 
+      color: ccbb00
+      priority: 100
+
+  moon_missile_2_completed: 
+    LML2: 
+      color: ccbb00
+      priority: 100
+
+  moon_missile_3_completed: 
+    LML3: 
+      color: ccbb00
+      priority: 100
+
+  moon_missile_4_completed: 
+    LML4: 
+      color: ccbb00
+      priority: 100
+
+  ship_save_1_completed: 
+    LF1: 
+      color: 0500ee
+      priority: 100
+
+  ship_save_2_completed: 
+    LF2: 
+      color: 0500ee
+      priority: 100
+
+  ship_save_3_completed: 
+    LF3: 
+      color: 0500ee
+      priority: 100
+
+  shields_1_completed: 
+    LSC1: 
+      color: 0010cc
+      priority: 100
+
+  shields_2_completed: 
+    LSC2: 
+      color: 0010cc
+      priority: 100
+
+  shields_3_completed: 
+    LSC3: 
+      color: 0010cc
+      priority: 100
 
 
 random_event_player: 
@@ -116,131 +294,6 @@ segment_display_player:
 
 
 shots: 
-  training_select_health1:
-    profile: training_select
-    show_tokens: 
-      lights: "LH1"
-      color: "00dd00"
-  training_select_health2:
-    profile: training_select
-    show_tokens: 
-      lights: "LH2"
-      color: "00dd00"
-  training_select_health3:
-    profile: training_select
-    show_tokens: 
-      lights: "LH3"
-      color: "00dd00"
-  training_select_health4:
-    profile: training_select
-    show_tokens: 
-      lights: "LH4"
-      color: "00dd00"
-  training_select_health5:
-    profile: training_select
-    show_tokens: 
-      lights: "LH5"
-      color: "00dd00"
-  training_select_health6:
-    profile: training_select
-    show_tokens: 
-      lights: "LH6"
-      color: "00dd00"
-  training_select_health7:
-    profile: training_select
-    show_tokens: 
-      lights: "LH7"
-      color: "00dd00"
-  training_select_health8:
-    profile: training_select
-    show_tokens: 
-      lights: "LH8"
-      color: "00dd00"
-  training_select_health9:
-    profile: training_select
-    show_tokens: 
-      lights: "LH9"
-      color: "00dd00"
-  training_select_cluster_charge1:
-    profile: training_select
-    show_tokens: 
-      lights: "LCC1"
-      color: "dd00dd"
-  training_select_cluster_charge2:
-    profile: training_select
-    show_tokens: 
-      lights: "LCC2"
-      color: "dd00dd"
-  training_select_cluster_charge3:
-    profile: training_select
-    show_tokens: 
-      lights: "LCC3"
-      color: "dd00dd"
-  training_select_proton_charge1:
-    profile: training_select
-    show_tokens: 
-      lights: "LPC1"
-      color: "00dddd"
-  training_select_proton_charge2:
-    profile: training_select
-    show_tokens: 
-      lights: "LPC2"
-      color: "00dddd"
-  training_select_proton_charge3:
-    profile: training_select
-    show_tokens: 
-      lights: "LPC3"
-      color: "00dddd"
-  training_select_moon_lane1:
-    profile: training_select
-    show_tokens: 
-      lights: "LLO"
-      color: "ccbb00"
-  training_select_moon_lane2:
-    profile: training_select
-    show_tokens: 
-      lights: "LLI"
-      color: "ccbb00"
-  training_select_moon_lane3:
-    profile: training_select
-    show_tokens: 
-      lights: "LRI"
-      color: "ccbb00"
-  training_select_moon_lane4:
-    profile: training_select
-    show_tokens: 
-      lights: "LRO"
-      color: "ccbb00"
-  training_select_ship_charge1:
-    profile: training_select
-    show_tokens: 
-      lights: "LF1"
-      color: "0500ee"
-  training_select_ship_charge2:
-    profile: training_select
-    show_tokens: 
-      lights: "LF2"
-      color: "0500ee"
-  training_select_ship_charge3:
-    profile: training_select
-    show_tokens: 
-      lights: "LF3"
-      color: "0500ee"
-  training_select_shield_charge1:
-    profile: training_select
-    show_tokens: 
-      lights: "LSC1"
-      color: "0010cc"
-  training_select_shield_charge2:
-    profile: training_select
-    show_tokens: 
-      lights: "LSC2"
-      color: "0010cc"
-  training_select_shield_charge3:
-    profile: training_select
-    show_tokens: 
-      lights: "LSC3"
-      color: "0010cc"
   select_heal:
     profile: training_select
     restart_events: heal_unselected, make_selection
@@ -348,25 +401,25 @@ state_machines:
     states: 
       heal: 
         label: Select Heal State
-        events_when_started: heal_selected, training_select_left{current_player.ts_last_move=="left" and current_player.training_heal_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_heal_achieved==1}
+        events_when_started: heal_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_heal_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_heal_achieved==1}
       cluster_bomb: 
         label: Select Cluster Bomb State
-        events_when_started: cluster_bomb_selected, training_select_left{current_player.ts_last_move=="left" and current_player.training_cluster_bomb_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_cluster_bomb_achieved==1}
+        events_when_started: cluster_bomb_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_cluster_bomb_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_cluster_bomb_achieved==1}
       proton_cannon: 
         label: Select Proton Cannon State
-        events_when_started: proton_cannon_selected, training_select_left{current_player.ts_last_move=="left" and current_player.training_proton_cannon_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_proton_cannon_achieved==1}
+        events_when_started: proton_cannon_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_proton_cannon_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_proton_cannon_achieved==1}
       moon_missile: 
         label: Select Moon Missile State
-        events_when_started: moon_missile_selected, training_select_left{current_player.ts_last_move=="left" and current_player.training_moon_missile_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_moon_missile_achieved==1}
+        events_when_started: moon_missile_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_moon_missile_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_moon_missile_achieved==1}
       ship_save: 
         label: Select Ship Save State
-        events_when_started: ship_save_selected, training_select_left{current_player.ts_last_move=="left" and current_player.training_ship_save_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_ship_save_achieved==1}
+        events_when_started: ship_save_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_ship_save_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_ship_save_achieved==1}
       shields: 
         label: Select Shields State
-        events_when_started: shields_selected, training_select_left{current_player.ts_last_move=="left" and current_player.training_shields_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_shields_achieved==1}
+        events_when_started: shields_selected, show_training_completed_shots, training_select_left{current_player.ts_last_move=="left" and current_player.training_shields_achieved==1}, training_select_right{current_player.ts_last_move=="right" and current_player.training_shields_achieved==1}
       skip: 
         label: Skip State
-        events_when_started: skip_selected
+        events_when_started: skip_selected, show_training_completed_shots
     transitions: 
       - source: heal
         target: cluster_bomb

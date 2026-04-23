@@ -574,51 +574,6 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  light_health1: 
-    shot_training_select_health1: 
-      action: set
-      int: 3
-
-  light_health2: 
-    shot_training_select_health2: 
-      action: set
-      int: 3
-
-  light_health3: 
-    shot_training_select_health3: 
-      action: set
-      int: 3
-
-  light_health4: 
-    shot_training_select_health4: 
-      action: set
-      int: 3
-
-  light_health5: 
-    shot_training_select_health5: 
-      action: set
-      int: 3
-
-  light_health6: 
-    shot_training_select_health6: 
-      action: set
-      int: 3
-
-  light_health7: 
-    shot_training_select_health7: 
-      action: set
-      int: 3
-
-  light_health8: 
-    shot_training_select_health8: 
-      action: set
-      int: 3
-
-  light_health9: 
-    shot_training_select_health9: 
-      action: set
-      int: 3
-
   reset_training_health_bump: 
     training_health_bump_value: 
       action: set

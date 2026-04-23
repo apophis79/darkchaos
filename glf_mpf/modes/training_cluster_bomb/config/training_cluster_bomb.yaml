@@ -457,21 +457,6 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  light_cluster_charge1: 
-    shot_training_select_cluster_charge1: 
-      action: set
-      int: 3
-
-  light_cluster_charge2: 
-    shot_training_select_cluster_charge2: 
-      action: set
-      int: 3
-
-  light_cluster_charge3: 
-    shot_training_select_cluster_charge3: 
-      action: set
-      int: 3
-
   training_achieved: 
     training_cluster_bomb_achieved: 
       action: set

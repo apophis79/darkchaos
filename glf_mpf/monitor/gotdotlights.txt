@@ -516,22 +516,22 @@ tags = ["tClusterAll", "tInserts", "tClusterR"]
 [node name="LRI" type="Sprite2D" parent="lights"]
 position = Vector2(377.9175, 760.3024)
 script = ExtResource("3_qb2nn")
-tags = ["tMoon", "tMoonAll", "tInserts"]
+tags = ["tMoon", "tMoonAll", "tInserts", "LML3"]
 
 [node name="LRO" type="Sprite2D" parent="lights"]
 position = Vector2(419.2885, 773.1975)
 script = ExtResource("3_qb2nn")
-tags = ["tMoon", "tMoonAll", "tInserts"]
+tags = ["tMoon", "tMoonAll", "tInserts", "LML4"]
 
 [node name="LLI" type="Sprite2D" parent="lights"]
 position = Vector2(67.63602, 761.6459)
 script = ExtResource("3_qb2nn")
-tags = ["tMoon", "tMoonAll", "tInserts"]
+tags = ["tMoon", "tMoonAll", "tInserts", "LML2"]
 
 [node name="LLO" type="Sprite2D" parent="lights"]
 position = Vector2(26.80244, 772.3915)
 script = ExtResource("3_qb2nn")
-tags = ["tMoon", "tMoonAll", "tInserts"]
+tags = ["tMoon", "tMoonAll", "tInserts", "LML1"]
 
 [node name="LSR" type="Sprite2D" parent="lights"]
 position = Vector2(416.9931, 862.6536)

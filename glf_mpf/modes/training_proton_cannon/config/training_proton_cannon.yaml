@@ -457,21 +457,6 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  light_proton_charge1: 
-    shot_training_select_proton_charge1: 
-      action: set
-      int: 3
-
-  light_proton_charge2: 
-    shot_training_select_proton_charge2: 
-      action: set
-      int: 3
-
-  light_proton_charge3: 
-    shot_training_select_proton_charge3: 
-      action: set
-      int: 3
-
   training_achieved: 
     training_proton_cannon_achieved: 
       action: set

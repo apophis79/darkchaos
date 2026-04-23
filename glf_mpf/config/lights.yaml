@@ -830,7 +830,7 @@ lights:
     subtype: led
     size: 0.04
     type: rgb
-    tags: tMoon,tMoonAll,tInserts
+    tags: tMoon,tMoonAll,tInserts,LML3
     x: 0.777608
     y: 0.7039837
   LRO:
@@ -838,7 +838,7 @@ lights:
     subtype: led
     size: 0.04
     type: rgb
-    tags: tMoon,tMoonAll,tInserts
+    tags: tMoon,tMoonAll,tInserts,LML4
     x: 0.8627335
     y: 0.7159235
   LLI:
@@ -846,7 +846,7 @@ lights:
     subtype: led
     size: 0.04
     type: rgb
-    tags: tMoon,tMoonAll,tInserts
+    tags: tMoon,tMoonAll,tInserts,LML2
     x: 0.1391688
     y: 0.7052276
   LLO:
@@ -854,7 +854,7 @@ lights:
     subtype: led
     size: 0.04
     type: rgb
-    tags: tMoon,tMoonAll,tInserts
+    tags: tMoon,tMoonAll,tInserts,LML1
     x: 5.514906E-02
     y: 0.7151773
   LSR:

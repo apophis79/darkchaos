@@ -45,18 +45,6 @@ event_player:
     - score_200000
   play_sfx_LS:
     - play_sfx_LS_during_training
-  update_training_select_shields{current_player.shot_training_shield_charge1==0}:
-    - update_training_select_shield1a
-  update_training_select_shields{current_player.shot_training_shield_charge1==1}:
-    - update_training_select_shield1b
-  update_training_select_shields{current_player.shot_training_shield_charge2==0}:
-    - update_training_select_shield2a
-  update_training_select_shields{current_player.shot_training_shield_charge2==1}:
-    - update_training_select_shield2b
-  update_training_select_shields{current_player.shot_training_shield_charge3==0}:
-    - update_training_select_shield3a
-  update_training_select_shields{current_player.shot_training_shield_charge3==1}:
-    - update_training_select_shield3b
   timer_training_shields_tick:
     - flicker_gi
   balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
@@ -460,36 +448,6 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  update_training_select_shield1a: 
-    shot_training_select_shield_charge1: 
-      action: set
-      int: 0
-
-  update_training_select_shield1b: 
-    shot_training_select_shield_charge1: 
-      action: set
-      int: 3
-
-  update_training_select_shield2a: 
-    shot_training_select_shield_charge2: 
-      action: set
-      int: 0
-
-  update_training_select_shield2b: 
-    shot_training_select_shield_charge2: 
-      action: set
-      int: 3
-
-  update_training_select_shield3a: 
-    shot_training_select_shield_charge3: 
-      action: set
-      int: 0
-
-  update_training_select_shield3b: 
-    shot_training_select_shield_charge3: 
-      action: set
-      int: 3
-
   training_shields_completed: 
     training_shields_achieved: 
       action: set

@@ -45,22 +45,6 @@ event_player:
     - score_200000
   play_sfx_LS:
     - play_sfx_LS_during_training
-  update_training_select_moon_lane{current_player.shot_training_moon_lane1==0}:
-    - update_training_select_moon_lane1a
-  update_training_select_moon_lane{current_player.shot_training_moon_lane1==1}:
-    - update_training_select_moon_lane1b
-  update_training_select_moon_lane{current_player.shot_training_moon_lane2==0}:
-    - update_training_select_moon_lane2a
-  update_training_select_moon_lane{current_player.shot_training_moon_lane2==1}:
-    - update_training_select_moon_lane2b
-  update_training_select_moon_lane{current_player.shot_training_moon_lane3==0}:
-    - update_training_select_moon_lane3a
-  update_training_select_moon_lane{current_player.shot_training_moon_lane3==1}:
-    - update_training_select_moon_lane3b
-  update_training_select_moon_lane{current_player.shot_training_moon_lane4==0}:
-    - update_training_select_moon_lane4a
-  update_training_select_moon_lane{current_player.shot_training_moon_lane4==1}:
-    - update_training_select_moon_lane4b
   timer_training_moon_missile_tick:
     - flicker_gi
   balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
@@ -470,46 +454,6 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  update_training_select_moon_lane1a: 
-    shot_training_select_moon_lane1: 
-      action: set
-      int: 0
-
-  update_training_select_moon_lane1b: 
-    shot_training_select_moon_lane1: 
-      action: set
-      int: 3
-
-  update_training_select_moon_lane2a: 
-    shot_training_select_moon_lane2: 
-      action: set
-      int: 0
-
-  update_training_select_moon_lane2b: 
-    shot_training_select_moon_lane2: 
-      action: set
-      int: 3
-
-  update_training_select_moon_lane3a: 
-    shot_training_select_moon_lane3: 
-      action: set
-      int: 0
-
-  update_training_select_moon_lane3b: 
-    shot_training_select_moon_lane3: 
-      action: set
-      int: 3
-
-  update_training_select_moon_lane4a: 
-    shot_training_select_moon_lane4: 
-      action: set
-      int: 0
-
-  update_training_select_moon_lane4b: 
-    shot_training_select_moon_lane4: 
-      action: set
-      int: 3
-
   training_moon_missile_completed: 
     training_moon_missile_achieved: 
       action: set

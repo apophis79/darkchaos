@@ -457,21 +457,6 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
-  light_ship_charge1: 
-    shot_training_select_ship_charge1: 
-      action: set
-      int: 3
-
-  light_ship_charge2: 
-    shot_training_select_ship_charge2: 
-      action: set
-      int: 3
-
-  light_ship_charge3: 
-    shot_training_select_ship_charge3: 
-      action: set
-      int: 3
-
   training_achieved: 
     training_ship_save_achieved: 
       action: set
