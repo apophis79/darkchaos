@@ -99,11 +99,11 @@ event_player:
     - ship_save_2_completed
   show_training_completed_shots{current_player.shot_training_ship_charge3==1}:
     - ship_save_3_completed
-  show_training_completed_shots{current_player.shot_train_shields1==1}:
+  show_training_completed_shots{current_player.shot_training_shield_charge1==1}:
     - shields_1_completed
-  show_training_completed_shots{current_player.shot_train_shields2==1}:
+  show_training_completed_shots{current_player.shot_training_shield_charge2==1}:
     - shields_2_completed
-  show_training_completed_shots{current_player.shot_train_shields3==1}:
+  show_training_completed_shots{current_player.shot_training_shield_charge3==1}:
     - shields_3_completed
 
 

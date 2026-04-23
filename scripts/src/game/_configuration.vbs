@@ -63,7 +63,7 @@ Const TrainingTicks = 69  'uses 1000 ms interval
 Dim TrainingSelectionNames, TrainingSelectionLightNames, TrainingSelectionLightPrefix, TrainingSelectionShotName, TrainingSelectionShotNumber, TrainingColors
 TrainingSelectionNames = Array("heal","cluster_bomb","proton_cannon","moon_missile","ship_save","shields","skip")
 TrainingSelectionLightPrefix= Array("LH","LCC","LPC","LML","LF","LSC","")
-TrainingSelectionShotName = Array("training_health","training_cluster_charge","training_proton_charge","training_moon_lane","training_ship_charge","train_shields","")
+TrainingSelectionShotName = Array("training_health","training_cluster_charge","training_proton_charge","training_moon_lane","training_ship_charge","training_shield_charge","")
 TrainingSelectionShotNumber = Array(9,3,3,4,3,3,0)
 TrainingSelectionLightNames = Array("tHeal","tClusterAll","tProtonAll","tMoonAll","tSaver","tShields","gi22")
 TrainingColors = Array(HealthColor1,ClusterBombColor,ProtonColor,MoonColor,ShipSaveColor,ShieldsColor,GIColorWhite)

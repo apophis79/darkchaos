@@ -4293,17 +4293,17 @@ Function Glf_1010(args)
 End Function
 Function Glf_1011(args)
 	On Error Resume Next
-	    Glf_1011 = GetPlayerState("shot_train_shields1")=1
+	    Glf_1011 = GetPlayerState("shot_training_shield_charge1")=1
 	If Err Then Glf_1011 = False
 End Function
 Function Glf_1012(args)
 	On Error Resume Next
-	    Glf_1012 = GetPlayerState("shot_train_shields2")=1
+	    Glf_1012 = GetPlayerState("shot_training_shield_charge2")=1
 	If Err Then Glf_1012 = False
 End Function
 Function Glf_1013(args)
 	On Error Resume Next
-	    Glf_1013 = GetPlayerState("shot_train_shields3")=1
+	    Glf_1013 = GetPlayerState("shot_training_shield_charge3")=1
 	If Err Then Glf_1013 = False
 End Function
 Function Glf_1014(args)
@@ -8523,9 +8523,9 @@ glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_m
 glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge1==1}", "Glf_1008"
 glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge2==1}", "Glf_1009"
 glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge3==1}", "Glf_1010"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_train_shields1==1}", "Glf_1011"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_train_shields2==1}", "Glf_1012"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_train_shields3==1}", "Glf_1013"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge1==1}", "Glf_1011"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge2==1}", "Glf_1012"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge3==1}", "Glf_1013"
 glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==0}", "Glf_1014"
 glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==1}", "Glf_1015"
 glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""heal""}", "Glf_1016"
