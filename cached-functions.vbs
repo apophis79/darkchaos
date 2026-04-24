@@ -2075,7 +2075,7 @@ Function Glf_523(args)
 	If Err Then Glf_523 = False
 End Function
 Function Glf_524(args)
-	Glf_524 = glf_machine_vars("high_score_initials").GetValue() & " A"
+	Glf_524 = glf_machine_vars("high_score_initials").GetValue() & "A "
 End Function
 Function Glf_525(args)
 	On Error Resume Next
@@ -2088,7 +2088,7 @@ Function Glf_526(args)
 	If Err Then Glf_526 = False
 End Function
 Function Glf_527(args)
-	Glf_527 = glf_machine_vars("high_score_initials").GetValue() & " B"
+	Glf_527 = glf_machine_vars("high_score_initials").GetValue() & "B "
 End Function
 Function Glf_528(args)
 	On Error Resume Next
@@ -2101,7 +2101,7 @@ Function Glf_529(args)
 	If Err Then Glf_529 = False
 End Function
 Function Glf_530(args)
-	Glf_530 = glf_machine_vars("high_score_initials").GetValue() & " C"
+	Glf_530 = glf_machine_vars("high_score_initials").GetValue() & "C "
 End Function
 Function Glf_531(args)
 	On Error Resume Next
@@ -2114,7 +2114,7 @@ Function Glf_532(args)
 	If Err Then Glf_532 = False
 End Function
 Function Glf_533(args)
-	Glf_533 = glf_machine_vars("high_score_initials").GetValue() & " D"
+	Glf_533 = glf_machine_vars("high_score_initials").GetValue() & "D "
 End Function
 Function Glf_534(args)
 	On Error Resume Next
@@ -2127,7 +2127,7 @@ Function Glf_535(args)
 	If Err Then Glf_535 = False
 End Function
 Function Glf_536(args)
-	Glf_536 = glf_machine_vars("high_score_initials").GetValue() & " E"
+	Glf_536 = glf_machine_vars("high_score_initials").GetValue() & "E "
 End Function
 Function Glf_537(args)
 	On Error Resume Next
@@ -2140,7 +2140,7 @@ Function Glf_538(args)
 	If Err Then Glf_538 = False
 End Function
 Function Glf_539(args)
-	Glf_539 = glf_machine_vars("high_score_initials").GetValue() & " F"
+	Glf_539 = glf_machine_vars("high_score_initials").GetValue() & "F "
 End Function
 Function Glf_540(args)
 	On Error Resume Next
@@ -2153,7 +2153,7 @@ Function Glf_541(args)
 	If Err Then Glf_541 = False
 End Function
 Function Glf_542(args)
-	Glf_542 = glf_machine_vars("high_score_initials").GetValue() & " G"
+	Glf_542 = glf_machine_vars("high_score_initials").GetValue() & "G "
 End Function
 Function Glf_543(args)
 	On Error Resume Next
@@ -2166,7 +2166,7 @@ Function Glf_544(args)
 	If Err Then Glf_544 = False
 End Function
 Function Glf_545(args)
-	Glf_545 = glf_machine_vars("high_score_initials").GetValue() & " H"
+	Glf_545 = glf_machine_vars("high_score_initials").GetValue() & "H "
 End Function
 Function Glf_546(args)
 	On Error Resume Next
@@ -2179,7 +2179,7 @@ Function Glf_547(args)
 	If Err Then Glf_547 = False
 End Function
 Function Glf_548(args)
-	Glf_548 = glf_machine_vars("high_score_initials").GetValue() & " I"
+	Glf_548 = glf_machine_vars("high_score_initials").GetValue() & "I "
 End Function
 Function Glf_549(args)
 	On Error Resume Next
@@ -2192,7 +2192,7 @@ Function Glf_550(args)
 	If Err Then Glf_550 = False
 End Function
 Function Glf_551(args)
-	Glf_551 = glf_machine_vars("high_score_initials").GetValue() & " J"
+	Glf_551 = glf_machine_vars("high_score_initials").GetValue() & "J "
 End Function
 Function Glf_552(args)
 	On Error Resume Next
@@ -2205,7 +2205,7 @@ Function Glf_553(args)
 	If Err Then Glf_553 = False
 End Function
 Function Glf_554(args)
-	Glf_554 = glf_machine_vars("high_score_initials").GetValue() & " K"
+	Glf_554 = glf_machine_vars("high_score_initials").GetValue() & "K "
 End Function
 Function Glf_555(args)
 	On Error Resume Next
@@ -2218,7 +2218,7 @@ Function Glf_556(args)
 	If Err Then Glf_556 = False
 End Function
 Function Glf_557(args)
-	Glf_557 = glf_machine_vars("high_score_initials").GetValue() & " L"
+	Glf_557 = glf_machine_vars("high_score_initials").GetValue() & "L "
 End Function
 Function Glf_558(args)
 	On Error Resume Next
@@ -2231,7 +2231,7 @@ Function Glf_559(args)
 	If Err Then Glf_559 = False
 End Function
 Function Glf_560(args)
-	Glf_560 = glf_machine_vars("high_score_initials").GetValue() & " M"
+	Glf_560 = glf_machine_vars("high_score_initials").GetValue() & "M "
 End Function
 Function Glf_561(args)
 	On Error Resume Next
@@ -2244,7 +2244,7 @@ Function Glf_562(args)
 	If Err Then Glf_562 = False
 End Function
 Function Glf_563(args)
-	Glf_563 = glf_machine_vars("high_score_initials").GetValue() & " N"
+	Glf_563 = glf_machine_vars("high_score_initials").GetValue() & "N "
 End Function
 Function Glf_564(args)
 	On Error Resume Next
@@ -2257,7 +2257,7 @@ Function Glf_565(args)
 	If Err Then Glf_565 = False
 End Function
 Function Glf_566(args)
-	Glf_566 = glf_machine_vars("high_score_initials").GetValue() & " O"
+	Glf_566 = glf_machine_vars("high_score_initials").GetValue() & "O "
 End Function
 Function Glf_567(args)
 	On Error Resume Next
@@ -2270,7 +2270,7 @@ Function Glf_568(args)
 	If Err Then Glf_568 = False
 End Function
 Function Glf_569(args)
-	Glf_569 = glf_machine_vars("high_score_initials").GetValue() & " P"
+	Glf_569 = glf_machine_vars("high_score_initials").GetValue() & "P "
 End Function
 Function Glf_570(args)
 	On Error Resume Next
@@ -2283,7 +2283,7 @@ Function Glf_571(args)
 	If Err Then Glf_571 = False
 End Function
 Function Glf_572(args)
-	Glf_572 = glf_machine_vars("high_score_initials").GetValue() & " Q"
+	Glf_572 = glf_machine_vars("high_score_initials").GetValue() & "Q "
 End Function
 Function Glf_573(args)
 	On Error Resume Next
@@ -2296,7 +2296,7 @@ Function Glf_574(args)
 	If Err Then Glf_574 = False
 End Function
 Function Glf_575(args)
-	Glf_575 = glf_machine_vars("high_score_initials").GetValue() & " R"
+	Glf_575 = glf_machine_vars("high_score_initials").GetValue() & "R "
 End Function
 Function Glf_576(args)
 	On Error Resume Next
@@ -2309,7 +2309,7 @@ Function Glf_577(args)
 	If Err Then Glf_577 = False
 End Function
 Function Glf_578(args)
-	Glf_578 = glf_machine_vars("high_score_initials").GetValue() & " S"
+	Glf_578 = glf_machine_vars("high_score_initials").GetValue() & "S "
 End Function
 Function Glf_579(args)
 	On Error Resume Next
@@ -2322,7 +2322,7 @@ Function Glf_580(args)
 	If Err Then Glf_580 = False
 End Function
 Function Glf_581(args)
-	Glf_581 = glf_machine_vars("high_score_initials").GetValue() & " T"
+	Glf_581 = glf_machine_vars("high_score_initials").GetValue() & "T "
 End Function
 Function Glf_582(args)
 	On Error Resume Next
@@ -2335,7 +2335,7 @@ Function Glf_583(args)
 	If Err Then Glf_583 = False
 End Function
 Function Glf_584(args)
-	Glf_584 = glf_machine_vars("high_score_initials").GetValue() & " U"
+	Glf_584 = glf_machine_vars("high_score_initials").GetValue() & "U "
 End Function
 Function Glf_585(args)
 	On Error Resume Next
@@ -2348,7 +2348,7 @@ Function Glf_586(args)
 	If Err Then Glf_586 = False
 End Function
 Function Glf_587(args)
-	Glf_587 = glf_machine_vars("high_score_initials").GetValue() & " V"
+	Glf_587 = glf_machine_vars("high_score_initials").GetValue() & "V "
 End Function
 Function Glf_588(args)
 	On Error Resume Next
@@ -2361,7 +2361,7 @@ Function Glf_589(args)
 	If Err Then Glf_589 = False
 End Function
 Function Glf_590(args)
-	Glf_590 = glf_machine_vars("high_score_initials").GetValue() & " W"
+	Glf_590 = glf_machine_vars("high_score_initials").GetValue() & "W "
 End Function
 Function Glf_591(args)
 	On Error Resume Next
@@ -2374,7 +2374,7 @@ Function Glf_592(args)
 	If Err Then Glf_592 = False
 End Function
 Function Glf_593(args)
-	Glf_593 = glf_machine_vars("high_score_initials").GetValue() & " X"
+	Glf_593 = glf_machine_vars("high_score_initials").GetValue() & "X "
 End Function
 Function Glf_594(args)
 	On Error Resume Next
@@ -2387,7 +2387,7 @@ Function Glf_595(args)
 	If Err Then Glf_595 = False
 End Function
 Function Glf_596(args)
-	Glf_596 = glf_machine_vars("high_score_initials").GetValue() & " Y"
+	Glf_596 = glf_machine_vars("high_score_initials").GetValue() & "Y "
 End Function
 Function Glf_597(args)
 	On Error Resume Next
@@ -2400,7 +2400,7 @@ Function Glf_598(args)
 	If Err Then Glf_598 = False
 End Function
 Function Glf_599(args)
-	Glf_599 = glf_machine_vars("high_score_initials").GetValue() & " Z"
+	Glf_599 = glf_machine_vars("high_score_initials").GetValue() & "Z "
 End Function
 Function Glf_600(args)
 	On Error Resume Next
@@ -2413,7 +2413,7 @@ Function Glf_601(args)
 	If Err Then Glf_601 = False
 End Function
 Function Glf_602(args)
-	Glf_602 = glf_machine_vars("high_score_initials").GetValue() & " 0"
+	Glf_602 = glf_machine_vars("high_score_initials").GetValue() & "0 "
 End Function
 Function Glf_603(args)
 	On Error Resume Next
@@ -2426,7 +2426,7 @@ Function Glf_604(args)
 	If Err Then Glf_604 = False
 End Function
 Function Glf_605(args)
-	Glf_605 = glf_machine_vars("high_score_initials").GetValue() & " 1"
+	Glf_605 = glf_machine_vars("high_score_initials").GetValue() & "1 "
 End Function
 Function Glf_606(args)
 	On Error Resume Next
@@ -2439,7 +2439,7 @@ Function Glf_607(args)
 	If Err Then Glf_607 = False
 End Function
 Function Glf_608(args)
-	Glf_608 = glf_machine_vars("high_score_initials").GetValue() & " 2"
+	Glf_608 = glf_machine_vars("high_score_initials").GetValue() & "2 "
 End Function
 Function Glf_609(args)
 	On Error Resume Next
@@ -2452,7 +2452,7 @@ Function Glf_610(args)
 	If Err Then Glf_610 = False
 End Function
 Function Glf_611(args)
-	Glf_611 = glf_machine_vars("high_score_initials").GetValue() & " 3"
+	Glf_611 = glf_machine_vars("high_score_initials").GetValue() & "3 "
 End Function
 Function Glf_612(args)
 	On Error Resume Next
@@ -2465,7 +2465,7 @@ Function Glf_613(args)
 	If Err Then Glf_613 = False
 End Function
 Function Glf_614(args)
-	Glf_614 = glf_machine_vars("high_score_initials").GetValue() & " 4"
+	Glf_614 = glf_machine_vars("high_score_initials").GetValue() & "4 "
 End Function
 Function Glf_615(args)
 	On Error Resume Next
@@ -2478,7 +2478,7 @@ Function Glf_616(args)
 	If Err Then Glf_616 = False
 End Function
 Function Glf_617(args)
-	Glf_617 = glf_machine_vars("high_score_initials").GetValue() & " 5"
+	Glf_617 = glf_machine_vars("high_score_initials").GetValue() & "5 "
 End Function
 Function Glf_618(args)
 	On Error Resume Next
@@ -2491,7 +2491,7 @@ Function Glf_619(args)
 	If Err Then Glf_619 = False
 End Function
 Function Glf_620(args)
-	Glf_620 = glf_machine_vars("high_score_initials").GetValue() & " 6"
+	Glf_620 = glf_machine_vars("high_score_initials").GetValue() & "6 "
 End Function
 Function Glf_621(args)
 	On Error Resume Next
@@ -2504,7 +2504,7 @@ Function Glf_622(args)
 	If Err Then Glf_622 = False
 End Function
 Function Glf_623(args)
-	Glf_623 = glf_machine_vars("high_score_initials").GetValue() & " 7"
+	Glf_623 = glf_machine_vars("high_score_initials").GetValue() & "7 "
 End Function
 Function Glf_624(args)
 	On Error Resume Next
@@ -2517,7 +2517,7 @@ Function Glf_625(args)
 	If Err Then Glf_625 = False
 End Function
 Function Glf_626(args)
-	Glf_626 = glf_machine_vars("high_score_initials").GetValue() & " 8"
+	Glf_626 = glf_machine_vars("high_score_initials").GetValue() & "8 "
 End Function
 Function Glf_627(args)
 	On Error Resume Next
@@ -2530,7 +2530,7 @@ Function Glf_628(args)
 	If Err Then Glf_628 = False
 End Function
 Function Glf_629(args)
-	Glf_629 = glf_machine_vars("high_score_initials").GetValue() & " 9"
+	Glf_629 = glf_machine_vars("high_score_initials").GetValue() & "9 "
 End Function
 Function Glf_630(args)
 	On Error Resume Next
@@ -2543,7 +2543,7 @@ Function Glf_631(args)
 	If Err Then Glf_631 = False
 End Function
 Function Glf_632(args)
-	Glf_632 = glf_machine_vars("high_score_initials").GetValue() & " _"
+	Glf_632 = glf_machine_vars("high_score_initials").GetValue() & "_ "
 End Function
 Function Glf_633(args)
 	On Error Resume Next
@@ -2567,7 +2567,7 @@ Function Glf_637(args)
 	Glf_637 = "CHAMPION"
 End Function
 Function Glf_638(args)
-	Glf_638 = "     " & glf_machine_vars("high_score_initials").GetValue()
+	Glf_638 = "    " & glf_machine_vars("high_score_initials").GetValue()
 End Function
 Function Glf_639(args)
 	On Error Resume Next
@@ -8036,121 +8036,121 @@ glf_funcRefMap.Add """P4 """, "Glf_520"
 glf_funcRefMap.Add """INITIALS""", "Glf_521"
 glf_funcRefMap.Add """A""", "Glf_522"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}", "Glf_523"
-glf_funcRefMap.Add "machine.high_score_initials & "" A""", "Glf_524"
+glf_funcRefMap.Add "machine.high_score_initials & ""A """, "Glf_524"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 0 and current_player.hs_input_ready == 1}", "Glf_525"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}", "Glf_526"
-glf_funcRefMap.Add "machine.high_score_initials & "" B""", "Glf_527"
+glf_funcRefMap.Add "machine.high_score_initials & ""B """, "Glf_527"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 1 and current_player.hs_input_ready == 1}", "Glf_528"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}", "Glf_529"
-glf_funcRefMap.Add "machine.high_score_initials & "" C""", "Glf_530"
+glf_funcRefMap.Add "machine.high_score_initials & ""C """, "Glf_530"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 2 and current_player.hs_input_ready == 1}", "Glf_531"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}", "Glf_532"
-glf_funcRefMap.Add "machine.high_score_initials & "" D""", "Glf_533"
+glf_funcRefMap.Add "machine.high_score_initials & ""D """, "Glf_533"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 3 and current_player.hs_input_ready == 1}", "Glf_534"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}", "Glf_535"
-glf_funcRefMap.Add "machine.high_score_initials & "" E""", "Glf_536"
+glf_funcRefMap.Add "machine.high_score_initials & ""E """, "Glf_536"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 4 and current_player.hs_input_ready == 1}", "Glf_537"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}", "Glf_538"
-glf_funcRefMap.Add "machine.high_score_initials & "" F""", "Glf_539"
+glf_funcRefMap.Add "machine.high_score_initials & ""F """, "Glf_539"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 5 and current_player.hs_input_ready == 1}", "Glf_540"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}", "Glf_541"
-glf_funcRefMap.Add "machine.high_score_initials & "" G""", "Glf_542"
+glf_funcRefMap.Add "machine.high_score_initials & ""G """, "Glf_542"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 6 and current_player.hs_input_ready == 1}", "Glf_543"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}", "Glf_544"
-glf_funcRefMap.Add "machine.high_score_initials & "" H""", "Glf_545"
+glf_funcRefMap.Add "machine.high_score_initials & ""H """, "Glf_545"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 7 and current_player.hs_input_ready == 1}", "Glf_546"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}", "Glf_547"
-glf_funcRefMap.Add "machine.high_score_initials & "" I""", "Glf_548"
+glf_funcRefMap.Add "machine.high_score_initials & ""I """, "Glf_548"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 8 and current_player.hs_input_ready == 1}", "Glf_549"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}", "Glf_550"
-glf_funcRefMap.Add "machine.high_score_initials & "" J""", "Glf_551"
+glf_funcRefMap.Add "machine.high_score_initials & ""J """, "Glf_551"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 9 and current_player.hs_input_ready == 1}", "Glf_552"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}", "Glf_553"
-glf_funcRefMap.Add "machine.high_score_initials & "" K""", "Glf_554"
+glf_funcRefMap.Add "machine.high_score_initials & ""K """, "Glf_554"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 10 and current_player.hs_input_ready == 1}", "Glf_555"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}", "Glf_556"
-glf_funcRefMap.Add "machine.high_score_initials & "" L""", "Glf_557"
+glf_funcRefMap.Add "machine.high_score_initials & ""L """, "Glf_557"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 11 and current_player.hs_input_ready == 1}", "Glf_558"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}", "Glf_559"
-glf_funcRefMap.Add "machine.high_score_initials & "" M""", "Glf_560"
+glf_funcRefMap.Add "machine.high_score_initials & ""M """, "Glf_560"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 12 and current_player.hs_input_ready == 1}", "Glf_561"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}", "Glf_562"
-glf_funcRefMap.Add "machine.high_score_initials & "" N""", "Glf_563"
+glf_funcRefMap.Add "machine.high_score_initials & ""N """, "Glf_563"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 13 and current_player.hs_input_ready == 1}", "Glf_564"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}", "Glf_565"
-glf_funcRefMap.Add "machine.high_score_initials & "" O""", "Glf_566"
+glf_funcRefMap.Add "machine.high_score_initials & ""O """, "Glf_566"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 14 and current_player.hs_input_ready == 1}", "Glf_567"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}", "Glf_568"
-glf_funcRefMap.Add "machine.high_score_initials & "" P""", "Glf_569"
+glf_funcRefMap.Add "machine.high_score_initials & ""P """, "Glf_569"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 15 and current_player.hs_input_ready == 1}", "Glf_570"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}", "Glf_571"
-glf_funcRefMap.Add "machine.high_score_initials & "" Q""", "Glf_572"
+glf_funcRefMap.Add "machine.high_score_initials & ""Q """, "Glf_572"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 16 and current_player.hs_input_ready == 1}", "Glf_573"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}", "Glf_574"
-glf_funcRefMap.Add "machine.high_score_initials & "" R""", "Glf_575"
+glf_funcRefMap.Add "machine.high_score_initials & ""R """, "Glf_575"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 17 and current_player.hs_input_ready == 1}", "Glf_576"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}", "Glf_577"
-glf_funcRefMap.Add "machine.high_score_initials & "" S""", "Glf_578"
+glf_funcRefMap.Add "machine.high_score_initials & ""S """, "Glf_578"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 18 and current_player.hs_input_ready == 1}", "Glf_579"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}", "Glf_580"
-glf_funcRefMap.Add "machine.high_score_initials & "" T""", "Glf_581"
+glf_funcRefMap.Add "machine.high_score_initials & ""T """, "Glf_581"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 19 and current_player.hs_input_ready == 1}", "Glf_582"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}", "Glf_583"
-glf_funcRefMap.Add "machine.high_score_initials & "" U""", "Glf_584"
+glf_funcRefMap.Add "machine.high_score_initials & ""U """, "Glf_584"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 20 and current_player.hs_input_ready == 1}", "Glf_585"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}", "Glf_586"
-glf_funcRefMap.Add "machine.high_score_initials & "" V""", "Glf_587"
+glf_funcRefMap.Add "machine.high_score_initials & ""V """, "Glf_587"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 21 and current_player.hs_input_ready == 1}", "Glf_588"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}", "Glf_589"
-glf_funcRefMap.Add "machine.high_score_initials & "" W""", "Glf_590"
+glf_funcRefMap.Add "machine.high_score_initials & ""W """, "Glf_590"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 22 and current_player.hs_input_ready == 1}", "Glf_591"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}", "Glf_592"
-glf_funcRefMap.Add "machine.high_score_initials & "" X""", "Glf_593"
+glf_funcRefMap.Add "machine.high_score_initials & ""X """, "Glf_593"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 23 and current_player.hs_input_ready == 1}", "Glf_594"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}", "Glf_595"
-glf_funcRefMap.Add "machine.high_score_initials & "" Y""", "Glf_596"
+glf_funcRefMap.Add "machine.high_score_initials & ""Y """, "Glf_596"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 24 and current_player.hs_input_ready == 1}", "Glf_597"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}", "Glf_598"
-glf_funcRefMap.Add "machine.high_score_initials & "" Z""", "Glf_599"
+glf_funcRefMap.Add "machine.high_score_initials & ""Z """, "Glf_599"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 25 and current_player.hs_input_ready == 1}", "Glf_600"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}", "Glf_601"
-glf_funcRefMap.Add "machine.high_score_initials & "" 0""", "Glf_602"
+glf_funcRefMap.Add "machine.high_score_initials & ""0 """, "Glf_602"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 26 and current_player.hs_input_ready == 1}", "Glf_603"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}", "Glf_604"
-glf_funcRefMap.Add "machine.high_score_initials & "" 1""", "Glf_605"
+glf_funcRefMap.Add "machine.high_score_initials & ""1 """, "Glf_605"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 27 and current_player.hs_input_ready == 1}", "Glf_606"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}", "Glf_607"
-glf_funcRefMap.Add "machine.high_score_initials & "" 2""", "Glf_608"
+glf_funcRefMap.Add "machine.high_score_initials & ""2 """, "Glf_608"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 28 and current_player.hs_input_ready == 1}", "Glf_609"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}", "Glf_610"
-glf_funcRefMap.Add "machine.high_score_initials & "" 3""", "Glf_611"
+glf_funcRefMap.Add "machine.high_score_initials & ""3 """, "Glf_611"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 29 and current_player.hs_input_ready == 1}", "Glf_612"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}", "Glf_613"
-glf_funcRefMap.Add "machine.high_score_initials & "" 4""", "Glf_614"
+glf_funcRefMap.Add "machine.high_score_initials & ""4 """, "Glf_614"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 30 and current_player.hs_input_ready == 1}", "Glf_615"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}", "Glf_616"
-glf_funcRefMap.Add "machine.high_score_initials & "" 5""", "Glf_617"
+glf_funcRefMap.Add "machine.high_score_initials & ""5 """, "Glf_617"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 31 and current_player.hs_input_ready == 1}", "Glf_618"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}", "Glf_619"
-glf_funcRefMap.Add "machine.high_score_initials & "" 6""", "Glf_620"
+glf_funcRefMap.Add "machine.high_score_initials & ""6 """, "Glf_620"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 32 and current_player.hs_input_ready == 1}", "Glf_621"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}", "Glf_622"
-glf_funcRefMap.Add "machine.high_score_initials & "" 7""", "Glf_623"
+glf_funcRefMap.Add "machine.high_score_initials & ""7 """, "Glf_623"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 33 and current_player.hs_input_ready == 1}", "Glf_624"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}", "Glf_625"
-glf_funcRefMap.Add "machine.high_score_initials & "" 8""", "Glf_626"
+glf_funcRefMap.Add "machine.high_score_initials & ""8 """, "Glf_626"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 34 and current_player.hs_input_ready == 1}", "Glf_627"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}", "Glf_628"
-glf_funcRefMap.Add "machine.high_score_initials & "" 9""", "Glf_629"
+glf_funcRefMap.Add "machine.high_score_initials & ""9 """, "Glf_629"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 35 and current_player.hs_input_ready == 1}", "Glf_630"
 glf_funcRefMap.Add "s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}", "Glf_631"
-glf_funcRefMap.Add "machine.high_score_initials & "" _""", "Glf_632"
+glf_funcRefMap.Add "machine.high_score_initials & ""_ """, "Glf_632"
 glf_funcRefMap.Add "s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == 36 and current_player.hs_input_ready == 1}", "Glf_633"
 glf_funcRefMap.Add "text_inputted.1{machine.high_score_initials_chars<3}", "Glf_634"
 glf_funcRefMap.Add "high_score_award_display{kwargs.position == 1}", "Glf_635"
 glf_funcRefMap.Add """  GRAND """, "Glf_636"
 glf_funcRefMap.Add """CHAMPION""", "Glf_637"
-glf_funcRefMap.Add """     "" & machine.high_score_initials", "Glf_638"
+glf_funcRefMap.Add """    "" & machine.high_score_initials", "Glf_638"
 glf_funcRefMap.Add "high_score_award_display{kwargs.position == 2}", "Glf_639"
 glf_funcRefMap.Add """   HIGH """, "Glf_640"
 glf_funcRefMap.Add """SCORE 1 """, "Glf_641"

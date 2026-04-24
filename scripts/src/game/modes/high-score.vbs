@@ -206,19 +206,19 @@ Sub CreateHighScoreMode
             For i=0 to 36
                 With .EventName("s_left_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " and current_player.hs_input_ready == 1}")
                     With .Display("player3")
-                        .Text = "{machine.high_score_initials} " & AZLookup(i)
+                        .Text = "{machine.high_score_initials}" & AZLookup(i) & " "
                     End With
                 End With
                 With .EventName("s_right_flipper_active.1{(((machine.high_score_initials_index Mod 37) + 37) Mod 37) == " & i & " and current_player.hs_input_ready == 1}")
                     With .Display("player3")
-                        .Text = "{machine.high_score_initials} " & AZLookup(i)
+                        .Text = "{machine.high_score_initials}" & AZLookup(i) & " "
                     End With
                 End With
             Next
 
             With .EventName("text_inputted.1{machine.high_score_initials_chars<3}")
                 With .Display("player3")
-                    .Text = "{machine.high_score_initials} A"
+                    .Text = "{machine.high_score_initials}A "
                 End With
             End With
 
@@ -267,7 +267,7 @@ Sub CreateHighScoreMode
                     .Flashing = "all"
                 End With
                 With .Display("player3")
-                    .Text = "     {machine.high_score_initials}"
+                    .Text = "    {machine.high_score_initials}"
                 End With
             End With
 
@@ -281,7 +281,7 @@ Sub CreateHighScoreMode
                     .Flashing = "all"
                 End With
                 With .Display("player3")
-                    .Text = "     {machine.high_score_initials}"
+                    .Text = "    {machine.high_score_initials}"
                 End With
             End With
 
@@ -295,7 +295,7 @@ Sub CreateHighScoreMode
                     .Flashing = "all"
                 End With
                 With .Display("player3")
-                    .Text = "     {machine.high_score_initials}"
+                    .Text = "    {machine.high_score_initials}"
                 End With
             End With
 
@@ -309,7 +309,7 @@ Sub CreateHighScoreMode
                     .Flashing = "all"
                 End With
                 With .Display("player3")
-                    .Text = "     {machine.high_score_initials}"
+                    .Text = "    {machine.high_score_initials}"
                 End With
             End With
         End With
