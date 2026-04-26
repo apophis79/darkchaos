@@ -30,7 +30,7 @@ Sub CreateFullyLoadedWizardMode
             .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start","flwiz_sjp1_show2")
             .Add "mode_fully_loaded_wizard_stopping", Array("flwiz_music_stop")   
             'release the scoop ball to start the wizard mode
-            .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
+            .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
             .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
@@ -146,6 +146,7 @@ Sub CreateFullyLoadedWizardMode
             .ShootAgain = 20000
             .HurryUp = 3000
             .GracePeriod = 2000
+            .BallLocks = Array("moon_lock")
         End With
 
         With .Multiballs("flwiz_2")
@@ -155,6 +156,7 @@ Sub CreateFullyLoadedWizardMode
             .ShootAgain = 0
             .HurryUp = 0
             .GracePeriod = 0
+            .BallLocks = Array("moon_lock")
         End With
 
 

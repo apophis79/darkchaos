@@ -23,7 +23,7 @@ Sub CreateComboCommandWizardMode
             .Add "mode_combo_command_wizard_started", Array("meteor_wave_music_stop","ccwiz_music_start","ccwiz_sjp1_show2")
             .Add "mode_combo_command_wizard_stopping", Array("ccwiz_music_stop") 
             'release the scoop ball to start the wizard mode
-            .Add "timer_combo_command_message_complete", Array("release_scoop_hold","start_moon_multiball","delayed_release_moon_ball")
+            .Add "timer_combo_command_message_complete", Array("release_scoop_hold","delayed_release_moon_ball") 
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
             .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 1}", Array("play_sfx_jackpot","ccwiz_shot_phase1_show","ccwiz_flash_phase1_show","score_200000")
@@ -117,6 +117,7 @@ Sub CreateComboCommandWizardMode
             .ShootAgain = 20000
             .HurryUp = 3000
             .GracePeriod = 2000
+            .BallLocks = Array("moon_lock")
         End With
 
         With .Multiballs("ccwiz_2")
@@ -126,6 +127,7 @@ Sub CreateComboCommandWizardMode
             .ShootAgain = 0
             .HurryUp = 0
             .GracePeriod = 0
+            .BallLocks = Array("moon_lock")
         End With
 
 
