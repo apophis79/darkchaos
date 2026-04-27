@@ -493,7 +493,7 @@
     "glossy_color": "#00000000",
     "clearcoat_color": "#00000000",
     "opacity_active": false,
-    "elasticity": 0.75,
+    "elasticity": 0.85,
     "elasticity_falloff": 0.1,
     "friction": 0.3,
     "scatter_angle": 1.0,

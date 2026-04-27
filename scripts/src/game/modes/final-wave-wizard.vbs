@@ -30,7 +30,7 @@ Sub CreateFinalWaveWizardMode
             .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","turn_off_gi","final_flash1")
             .Add "mode_final_wave_wizard_stopping", Array("fwwiz_music_stop") 
             'release the scoop ball to start the wizard mode
-            .Add "timer_final_wave_message_complete", Array("fwwiz_music_start","release_scoop_hold","start_moon_multiball","delayed_release_moon_ball","display_hit_count")
+            .Add "timer_final_wave_message_complete", Array("fwwiz_music_start","release_scoop_hold","delayed_release_moon_ball","display_hit_count")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'add-a-ball
             .Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
@@ -220,6 +220,7 @@ Sub CreateFinalWaveWizardMode
             .ShootAgain = FWWizBallSaveTime
             .HurryUp = 5000
             .GracePeriod = 500
+            .BallLocks = Array("moon_lock")
         End With
 
         With .Multiballs("fwwiz_2")
@@ -231,6 +232,7 @@ Sub CreateFinalWaveWizardMode
             .ShootAgain = 0
             .HurryUp = 0
             .GracePeriod = 0
+            .BallLocks = Array("moon_lock")
         End With
 
 

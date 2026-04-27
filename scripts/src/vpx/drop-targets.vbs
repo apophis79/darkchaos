@@ -83,7 +83,7 @@ Const DTBrickVel = 30 'velocity at which the target will brick, set to '0' to di
 Const DTEnableBrick = 0 'Set to 0 to disable bricking, 1 to enable bricking
 Const DTBackHitVel = 15 'velocity at which the target will drop if hit from behind
 Const DTBackHitDrops = 1 'Set to 0 to disable dropping from back hits, 1 to enable dropping from back hits
-Const DTMass = 0.2 'Mass of the Drop Target (between 0 and 1), higher values provide more resistance
+Const DTMass = 0.1 'Mass of the Drop Target (between 0 and 1), higher values provide more resistance
 
 
 '  DROP TARGETS FUNCTIONS

@@ -8,7 +8,7 @@
     "is_timer_enabled": true,
     "timer_interval": 200,
     "threshold": 0.5,
-    "force": 12.0,
+    "force": 10.0,
     "scatter": 5.0,
     "height_scale": 70.0,
     "ring_speed": 1.0,

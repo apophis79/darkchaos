@@ -37,7 +37,7 @@
     "scatter": 2.0,
     "edge_factor_ui": 0.25,
     "collision_reduction_factor": 0.0,
-    "is_collidable": true,
+    "is_collidable": false,
     "is_toy": false,
     "use_3d_mesh": false,
     "static_rendering": false,
