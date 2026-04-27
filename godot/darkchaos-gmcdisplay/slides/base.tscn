@@ -9,6 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://by6tlyvf64qld" path="res://resources/playerScore.png" id="5_du778"]
 [ext_resource type="FontVariation" uid="uid://c20yoyk3m323p" path="res://orbitron-wide.tres" id="6_6vrr4"]
 [ext_resource type="Texture2D" uid="uid://d4jyc8xyy7lw6" path="res://resources/combos-empty.png" id="9_f5kbb"]
+[ext_resource type="SpriteFrames" uid="uid://6irbqgikm7yo" path="res://resources/ShipHud/ship_hud.tres" id="10_du778"]
+[ext_resource type="SpriteFrames" uid="uid://ct5v7fhe1xjty" path="res://resources/Shields/shields.tres" id="11_n3kaw"]
+[ext_resource type="Script" uid="uid://byp603tsgxmsi" path="res://slides/animated_sheilds.gd" id="12_s2a5r"]
+[ext_resource type="Script" uid="uid://5rqmne8e68ao" path="res://slides/animated_overlay_queue_manager.gd" id="13_735fb"]
+[ext_resource type="SpriteFrames" uid="uid://cijfh8c15m82w" path="res://resources/Alert_AlienShipDetected/alien_ship_detected.tres" id="13_s2a5r"]
+[ext_resource type="Script" uid="uid://b0k643g7873h8" path="res://slides/animated_overlay_queue.gd" id="14_4yxvp"]
+[ext_resource type="SpriteFrames" uid="uid://ikmdc5tlkj4e" path="res://resources/Alert_AlienShipSaved/alien_ship_Saved.tres" id="15_dm14r"]
 
 [node name="Base" type="Control" unique_id=483653664]
 z_index = 5
@@ -313,3 +320,37 @@ metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 position = Vector2(0, 158)
 texture = ExtResource("9_f5kbb")
 centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1545557138]
+position = Vector2(1643, 877)
+sprite_frames = ExtResource("10_du778")
+autoplay = "default"
+frame = 91
+frame_progress = 0.80568147
+
+[node name="AnimatedSheilds" type="AnimatedSprite2D" parent="." unique_id=998668991]
+position = Vector2(1643, 877)
+sprite_frames = ExtResource("11_n3kaw")
+autoplay = "default"
+frame_progress = 0.78240865
+script = ExtResource("12_s2a5r")
+
+[node name="AnimatedOverlayQueue" type="Control" parent="." unique_id=887058142]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_735fb")
+
+[node name="AlienShipDetected" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=680644086]
+sprite_frames = ExtResource("13_s2a5r")
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "alien_attacking"
+
+[node name="AlienShipSaved" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1939050666]
+sprite_frames = ExtResource("15_dm14r")
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "ball_save_new_ball_saving_ball"

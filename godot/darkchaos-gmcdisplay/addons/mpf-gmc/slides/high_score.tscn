@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://lqeoxevsy0ex"]
+[gd_scene format=3 uid="uid://lqeoxevsy0ex"]
 
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_adeqt"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_text_input.gd" id="2_6uslk"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_hewrl"]
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_adeqt"]
+[ext_resource type="Script" uid="uid://btfn6s6a0a7rg" path="res://addons/mpf-gmc/classes/mpf_text_input.gd" id="2_6uslk"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_hewrl"]
 
-[node name="HighScore" type="Control"]
+[node name="HighScore" type="Control" unique_id=870351334]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_adeqt")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=951434328]
 layout_mode = 0
 offset_left = 691.0
 offset_top = 104.0
 offset_right = 1356.0
 offset_bottom = 246.0
 
-[node name="MPFTextInput" type="HFlowContainer" parent="." node_paths=PackedStringArray("display_node")]
+[node name="MPFTextInput" type="HFlowContainer" parent="." unique_id=882652238 node_paths=PackedStringArray("display_node")]
 layout_mode = 0
 offset_left = 329.0
 offset_top = 551.0
@@ -27,7 +27,7 @@ script = ExtResource("2_6uslk")
 grid_width = 30
 display_node = NodePath("../RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1936276132]
 layout_mode = 0
 offset_left = 663.0
 offset_top = 258.0
@@ -38,7 +38,7 @@ theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "[pulse freq=3.0 color=#ff00ffff ease=-1.0]A[/pulse]"
 
-[node name="event_award" type="Label" parent="."]
+[node name="event_award" type="Label" parent="." unique_id=569089750]
 layout_mode = 0
 offset_left = 758.0
 offset_top = 61.0
@@ -51,7 +51,7 @@ script = ExtResource("3_hewrl")
 variable_type = 1
 variable_name = "award"
 
-[node name="event_player" type="Label" parent="."]
+[node name="event_player" type="Label" parent="." unique_id=334802046]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 330.0

@@ -1,19 +1,27 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://bkajecschy1dp"]
 
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
+resource_name = "Compressor"
+threshold = -30.0
+ratio = 6.0
+sidechain = &"voc"
+
 [resource]
-bus/1/name = &"music"
+bus/1/name = &"mus"
 bus/1/solo = false
 bus/1/mute = false
-bus/1/bypass_fx = false
+bus/1/bypass_fx = true
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
-bus/2/name = &"effects"
+bus/1/effect/0/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/1/effect/0/enabled = false
+bus/2/name = &"sfx"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
-bus/3/name = &"voice"
+bus/3/name = &"voc"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false

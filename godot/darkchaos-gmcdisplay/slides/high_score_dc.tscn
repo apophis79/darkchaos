@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b2ei1womec2vb"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_87cua"]
+[ext_resource type="Theme" uid="uid://do0kvf6fqvo2n" path="res://resources/OrbitronReg.tres" id="2_rux56"]
+[ext_resource type="Script" uid="uid://bk7xwr1b6ku2y" path="res://slides/high_score.gd" id="3_phcas"]
+
+[node name="HighScoreDc" type="Control" unique_id=1353336004]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87cua")
+metadata/_custom_type_script = "uid://dru3usokwlhd3"
+
+[node name="Label" type="Label" parent="." unique_id=1626348925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rux56")
+text = "HIGH SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_phcas")

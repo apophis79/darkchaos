@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxomb1kyk6cw7"]
+[gd_scene format=3 uid="uid://bxomb1kyk6cw7"]
 
 [ext_resource type="Script" uid="uid://b7l2vx2o7yb2q" path="res://addons/mpf-gmc/classes/mpf_window.gd" id="1_ni31q"]
 [ext_resource type="Script" uid="uid://cnc7dblwai6nd" path="res://addons/mpf-gmc/classes/mpf_display.gd" id="2_ce758"]
@@ -31,7 +31,7 @@ shader_parameter/rows = 36.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t6y31"]
 
-[node name="MPFWindow" type="Control"]
+[node name="MPFWindow" type="Control" unique_id=168567742]
 custom_minimum_size = Vector2(1920, 720)
 layout_mode = 3
 anchors_preset = 15
@@ -43,7 +43,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ni31q")
 
-[node name="DefaultDisplay" type="Control" parent="."]
+[node name="DefaultDisplay" type="Control" parent="." unique_id=1661238292]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +54,7 @@ script = ExtResource("2_ce758")
 is_default = true
 initial_slide = ExtResource("3_iwhwg")
 
-[node name="filters" type="Control" parent="."]
+[node name="filters" type="Control" parent="." unique_id=799001840]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -63,7 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="virtual_dmd" type="ColorRect" parent="filters"]
+[node name="virtual_dmd" type="ColorRect" parent="filters" unique_id=797874410]
 visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_vnlqf")
@@ -74,7 +74,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="pixelate" type="ColorRect" parent="filters"]
+[node name="pixelate" type="ColorRect" parent="filters" unique_id=1172032037]
 visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_gmaen")
@@ -85,7 +85,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="dmd_dots" type="ColorRect" parent="filters"]
+[node name="dmd_dots" type="ColorRect" parent="filters" unique_id=526263181]
 visible = false
 top_level = true
 z_index = 4096
@@ -97,7 +97,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="custom" type="ColorRect" parent="filters"]
+[node name="custom" type="ColorRect" parent="filters" unique_id=1443821749]
 visible = false
 top_level = true
 z_index = 4096
@@ -109,7 +109,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingsMenu" type="PopupMenu" parent="."]
+[node name="SettingsMenu" type="PopupMenu" parent="." unique_id=1059531350]
 oversampling_override = 1.0
 hide_on_checkable_item_selection = false
 prefer_native_menu = true

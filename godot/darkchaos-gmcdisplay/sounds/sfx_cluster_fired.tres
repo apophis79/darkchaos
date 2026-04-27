@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MPFSoundAsset" format=3 uid="uid://csisw7whilogj"]
+
+[ext_resource type="Script" uid="uid://bsvo8cxf10088" path="res://addons/mpf-gmc/classes/mpf_sound_marker.gd" id="1_lar81"]
+[ext_resource type="Script" uid="uid://e2h352i1jeqi" path="res://addons/mpf-gmc/classes/mpf_sound.gd" id="2_7nm0v"]
+[ext_resource type="AudioStream" uid="uid://2fvem4qhngw2" path="sfx_cluster_fired" id="3_7nm0v"]
+
+[resource]
+script = ExtResource("2_7nm0v")
+stream = ExtResource("3_7nm0v")
+bus = "sfx"
+loops = 0
+max_queue_time = -1
+metadata/_custom_type_script = "uid://e2h352i1jeqi"
