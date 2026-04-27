@@ -14,22 +14,31 @@ jobs:
       build_number: ${{ steps.version.outputs.build_number }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Fetch full history for versioning
 
-      - id: version
+      - name: Read Game Name from File
+        id: gamename
         run: |
-          git fetch --unshallow
-          $build_number = git rev-list d5dc63720abb4a5a4ca3c6724c7497e593e14eb3..HEAD --count
-          echo "build_number=$build_number" >> $env:GITHUB_OUTPUT
+          $game_name = Get-Content gamename.txt | Select-Object -First 1
+          echo "game_name=$game_name" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Set Build Number from GitHub Run
+        id: version
+        run: |
+          echo "build_number=${{ github.run_number }}" >> $env:GITHUB_OUTPUT
         shell: pwsh
 
       - name: Install Node.js and Grunt
-        run: |
-          Invoke-WebRequest -Uri https://nodejs.org/dist/v16.20.0/node-v16.20.0-x64.msi -OutFile nodejs.msi
-          Start-Process msiexec.exe -ArgumentList '/i', 'nodejs.msi', '/quiet', '/norestart' -Wait
-          npm install -g grunt-cli
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: Install Grunt CLI
+        run: npm install -g grunt-cli
         shell: pwsh
 
       - name: Run Grunt to Concat VPX Files and Set Production Mode
@@ -57,38 +66,18 @@ jobs:
           $lines | Set-Content dest/vpx/tablescript.vbs
 
           # Move modified script into game folder
-          Move-Item -Path dest/vpx/tablescript.vbs -Destination ../DarkChaos-Dev/script.vbs -Force
+          Move-Item -Path dest/vpx/tablescript.vbs -Destination ../${{ steps.gamename.outputs.game_name }}/script.vbs -Force
         shell: pwsh
 
-      - name: Remove GLF blocks from script.vbs
+      - name: Install jq (JSON Processor)
         run: |
-          $scriptPath = "DarkChaos-Dev/script.vbs"
-          $content = Get-Content $scriptPath -Raw
-
-          # Patterns to remove both blocks
-          $patterns = @(
-            '(?s)\*\*\*GLFMPF_EXPORT_START\*\*\*.*?\*\*\*GLFMPF_EXPORT_END\*\*\*',
-            "(?s)'[*]+GLF_DEBUG_OPTIONS_START[*]+.*?'[*]+GLF_DEBUG_OPTIONS_END[*]+"
-          )
-
-          foreach ($pattern in $patterns) {
-            $content = [regex]::Replace($content, $pattern, '')
-          }
-
-          Set-Content -Path $scriptPath -Value $content
+          choco install jq -y
         shell: pwsh
 
-      - name: Install jq
+      - name: Modify Locked Property in JSON
         run: |
-          Invoke-WebRequest -Uri https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe -OutFile jq.exe
-          Move-Item jq.exe -Destination 'C:\Program Files\Git\usr\bin\jq.exe'
-        shell: pwsh
-
-      - name: Modify locked property
-        run: |
-          jq '.locked = 1' DarkChaos-Dev/gamedata.json > temp.json
-          mv temp.json DarkChaos-Dev/gamedata.json
-        working-directory: ${{ github.workspace }}
+          jq '.locked = 1' ${{ steps.gamename.outputs.game_name }}/gamedata.json > temp.json
+          mv temp.json ${{ steps.gamename.outputs.game_name }}/gamedata.json
         shell: bash
 
       - name: Download vpxtool
@@ -97,13 +86,121 @@ jobs:
           Expand-Archive vpxtool.zip -DestinationPath .\vpxtool
         shell: pwsh
 
-      - name: Run Command
+      - name: Assemble VPX File
         run: |
-          .\vpxtool\vpxtool.exe assemble DarkChaos-Dev
-          Rename-Item -Path .\DarkChaos-Dev.vpx -NewName "DarkChaos${{ steps.version.outputs.build_number }}.vpx"
+          .\vpxtool\vpxtool.exe assemble ${{ steps.gamename.outputs.game_name }}
+          Rename-Item -Path .\${{ steps.gamename.outputs.game_name }}.vpx -NewName "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx"
         shell: pwsh
 
-      - uses: actions/upload-artifact@v4
+
+      - name: Check for Godot Project Folder
+        id: check_godot
+        run: |
+          if (Test-Path ".\godot\GMCDisplay") {
+            echo "exists=true" >> $env:GITHUB_OUTPUT
+          } else {
+            echo "exists=false" >> $env:GITHUB_OUTPUT
+          }
+        shell: pwsh
+
+      - name: Upload VPX Artifact
+        if: steps.check_godot.outputs.exists == 'false'
+        uses: actions/upload-artifact@v4
         with:
-          name: DarkChaos_${{ steps.version.outputs.build_number }}
-          path: ./DarkChaos${{ steps.version.outputs.build_number }}.vpx
+          name: ${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}
+          path: ./${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx
+
+
+      - name: Download Godot 4.6.2 Headless
+        if: steps.check_godot.outputs.exists == 'true'
+        run: |
+          Invoke-WebRequest -Uri https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_win64.exe.zip -OutFile godot.zip
+          Expand-Archive godot.zip -DestinationPath godot_engine
+        shell: pwsh
+
+      - name: Download and Extract Godot 4.6.2 Export Templates
+        if: steps.check_godot.outputs.exists == 'true'
+        run: |
+          $target = "$env:APPDATA\Godot\export_templates\4.6.2.stable"
+          $temp = "temp_templates"
+
+          Invoke-WebRequest -Uri https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_export_templates.tpz -OutFile templates.tpz
+          mkdir $temp -Force
+          mkdir $target -Force
+
+          tar -xf templates.tpz -C $temp
+
+          # Move contents of templates/ inside temp to the real target
+          Move-Item "$temp/templates/*" $target -Force
+
+          # Clean up
+          Remove-Item $temp -Recurse -Force
+        shell: pwsh
+
+      - name: Export Godot Project (Windows)
+        if: steps.check_godot.outputs.exists == 'true'
+        run: |
+          mkdir godot_builds
+          .\godot_engine\Godot_v4.6.2-stable_win64.exe --headless --path .\godot\GMCDisplay --export-release "Windows Desktop" 2>&1 | Tee-Object -FilePath godot_export.log
+
+          Write-Host "`n📄 Export Log:"
+          Get-Content godot_export.log
+
+          if (!(Test-Path "godot_builds\GMCDisplay.exe")) {
+            Write-Host "❌ Export failed: GMCDisplay.exe not found."
+            Get-ChildItem -Recurse godot_builds
+            exit 1
+          }
+
+          Write-Host "✅ Export succeeded. Contents of godot_builds:"
+          Get-ChildItem -Recurse godot_builds
+        shell: pwsh
+
+      - name: Rename Godot EXE
+        if: steps.check_godot.outputs.exists == 'true'
+        run: |
+          $original = "godot_builds\GMCDisplay.exe"
+          $renamed = "godot_builds\${{ steps.gamename.outputs.game_name }}_gmc.exe"
+          Rename-Item -Path $original -NewName (Split-Path $renamed -Leaf)
+        shell: pwsh
+
+
+      - name: Create Combined Artifact ZIP
+        run: |
+          $zipName = "${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}.zip"
+          $outDir = "release"
+
+          mkdir $outDir
+
+          # Copy build files into packaging folder
+          Copy-Item "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx" -Destination $outDir/
+          Copy-Item "godot_builds/${{ steps.gamename.outputs.game_name }}_gmc.exe" -Destination $outDir/
+
+          # Add .directb2s file if it exists
+          Copy-Item "${{ steps.gamename.outputs.game_name }}.directb2s" -Destination $outDir/ -ErrorAction SilentlyContinue
+
+          # Add default ini settings
+          $iniName = "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.ini"
+          Copy-Item "default_ini_settings.txt" -Destination (Join-Path $outDir $iniName) -ErrorAction SilentlyContinue
+
+          # Copy bcp-controller folder (recursive)
+          Copy-Item "bcp-controller" -Destination "$outDir\bcp-controller" -Recurse -Force
+
+          # Compress contents only (not the outer folder)
+          Push-Location $outDir
+          Compress-Archive -Path * -DestinationPath "..\$zipName"
+          Pop-Location
+        shell: pwsh
+
+
+
+      - name: Upload Game Bundle Files (no zip)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}
+          path: |
+            release/*.vpx
+            release/*.exe
+            release/*.directb2s
+            release/*.ini
+            bcp-controller/**
