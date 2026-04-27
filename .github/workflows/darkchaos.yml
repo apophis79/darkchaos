@@ -96,7 +96,7 @@ jobs:
       - name: Check for Godot Project Folder
         id: check_godot
         run: |
-          if (Test-Path ".\godot\GMCDisplay") {
+          if (Test-Path ".\godot\darkchaos-gmcdisplay") {
             echo "exists=true" >> $env:GITHUB_OUTPUT
           } else {
             echo "exists=false" >> $env:GITHUB_OUTPUT
@@ -141,13 +141,13 @@ jobs:
         if: steps.check_godot.outputs.exists == 'true'
         run: |
           mkdir godot_builds
-          .\godot_engine\Godot_v4.6.2-stable_win64.exe --headless --path .\godot\GMCDisplay --export-release "Windows Desktop" 2>&1 | Tee-Object -FilePath godot_export.log
+          .\godot_engine\Godot_v4.6.2-stable_win64.exe --headless --path .\godot\darkchaos-gmcdisplay --export-release "Windows Desktop" 2>&1 | Tee-Object -FilePath godot_export.log
 
           Write-Host "`n📄 Export Log:"
           Get-Content godot_export.log
 
-          if (!(Test-Path "godot_builds\GMCDisplay.exe")) {
-            Write-Host "❌ Export failed: GMCDisplay.exe not found."
+          if (!(Test-Path "godot_builds\darkchaos-gmcdisplay.exe")) {
+            Write-Host "❌ Export failed: darkchaos-gmcdisplay.exe not found."
             Get-ChildItem -Recurse godot_builds
             exit 1
           }
@@ -159,7 +159,7 @@ jobs:
       - name: Rename Godot EXE
         if: steps.check_godot.outputs.exists == 'true'
         run: |
-          $original = "godot_builds\GMCDisplay.exe"
+          $original = "godot_builds\darkchaos-gmcdisplay.exe"
           $renamed = "godot_builds\${{ steps.gamename.outputs.game_name }}_gmc.exe"
           Rename-Item -Path $original -NewName (Split-Path $renamed -Leaf)
         shell: pwsh
