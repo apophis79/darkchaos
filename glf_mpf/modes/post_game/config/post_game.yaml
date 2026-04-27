@@ -609,153 +609,423 @@ random_event_player:
 
 segment_display_player: 
   display_loser_message1: 
-    all: 
-      text: "   YOU FAILED     WE ALL DIED   "
+    player1: 
+      text: "YOU"
+      flashing: off
+    player2: 
+      text: "FAILED"
+      flashing: off
+    player3: 
+      text: "WE ALL"
+      flashing: off
+    player4: 
+      text: "DIED"
       flashing: off
 
   display_loser_message2: 
-    all: 
-      text: "      PLAY BETTER NEXT TIME     "
+    player1: 
+      text: "PLAY"
+      flashing: off
+    player2: 
+      text: "BETTER"
+      flashing: off
+    player3: 
+      text: "NEXT"
+      flashing: off
+    player4: 
+      text: "TIME"
       flashing: off
 
   display_loser_message3: 
-    all: 
-      text: "    EARTH DIED THANKS TO YOU    "
+    player1: 
+      text: "EARTH"
+      flashing: off
+    player2: 
+      text: "DIED"
+      flashing: off
+    player3: 
+      text: "THANKS"
+      flashing: off
+    player4: 
+      text: "TO YOU"
       flashing: off
 
   display_loser_message4: 
-    all: 
-      text: "  COME ON HOW HARD IS IT REALLY "
+    player1: 
+      text: "COME ON "
+      flashing: off
+    player2: 
+      text: "HOW HARD"
+      flashing: off
+    player3: 
+      text: "IS IT"
+      flashing: off
+    player4: 
+      text: "REALLY"
       flashing: off
 
   display_loser_message5: 
-    all: 
-      text: "HIT THE METEORS NEXT TIME PLEASE"
+    player1: 
+      text: "HIT THE"
+      flashing: off
+    player2: 
+      text: "METEORS"
+      flashing: off
+    player3: 
+      text: "NEXTTIME"
+      flashing: off
+    player4: 
+      text: "PLEASE"
       flashing: off
 
   display_loser_message6: 
-    all: 
-      text: " OH WOW YOU LOST AGAIN SURPRISE "
+    player1: 
+      text: "OH WOW "
+      flashing: off
+    player2: 
+      text: "YOU LOST"
+      flashing: off
+    player3: 
+      text: "AGAIN "
+      flashing: off
+    player4: 
+      text: "SURPRISE"
       flashing: off
 
   display_loser_message7: 
-    all: 
-      text: "   ITS EASY IF YOU DONT SUCK    "
+    player1: 
+      text: "ITS EASY"
+      flashing: off
+    player2: 
+      text: "YOU JUST"
+      flashing: off
+    player3: 
+      text: "NEED TO "
+      flashing: off
+    player4: 
+      text: "NOT SUCK"
       flashing: off
 
   display_loser_message8: 
-    all: 
-      text: "   PRACTICE PRACTICE PRACTICE   "
+    player1: 
+      text: "PRACTICE"
+      flashing: off
+    player2: 
+      text: "PRACTICE"
+      flashing: off
+    player3: 
+      text: "PRACTICE"
+      flashing: off
+    player4: 
+      text: "PRACTICE"
       flashing: off
 
   display_loser_message9: 
-    all: 
-      text: "  DAMN LUCKILY THIS IS NOT REAL "
+    player1: 
+      text: "DAMN"
+      flashing: off
+    player2: 
+      text: "LUCKILY"
+      flashing: off
+    player3: 
+      text: "THIS IS "
+      flashing: off
+    player4: 
+      text: "NOT REAL"
       flashing: off
 
   display_loser_message10: 
-    all: 
-      text: "GAME OVER MAN    WE ALL DEAD NOW"
+    player1: 
+      text: "GAMEOVER"
+      flashing: off
+    player2: 
+      text: "MAN   "
+      flashing: off
+    player3: 
+      text: "WE ALL "
+      flashing: off
+    player4: 
+      text: "DEAD NOW"
       flashing: off
 
   display_loser_message11: 
-    all: 
-      text: "      MORE BEER MIGHT HELP      "
+    player1: 
+      text: "MORE"
+      flashing: off
+    player2: 
+      text: "BEER"
+      flashing: off
+    player3: 
+      text: "MIGHT"
+      flashing: off
+    player4: 
+      text: "HELP"
       flashing: off
 
   display_loser_message12: 
-    all: 
-      text: "     UNLUCKY SHOT EARTHLING     "
+    player1: 
+      text: "UNLUCKY"
+      flashing: off
+    player2: 
+      text: "SHOT"
+      flashing: off
+    player3: 
+      text: "EARTH-"
+      flashing: off
+    player4: 
+      text: "LING"
       flashing: off
 
   display_loser_message13: 
-    all: 
-      text: "    THE DINOS LASTED LONGER     "
+    player1: 
+      text: "THE"
+      flashing: off
+    player2: 
+      text: "DINOS"
+      flashing: off
+    player3: 
+      text: "LASTED"
+      flashing: off
+    player4: 
+      text: "LONGER"
       flashing: off
 
   display_loser_message14: 
-    all: 
-      text: "  ASTEROID + ONE   HUMANS ZERO  "
+    player1: 
+      text: "ASTEROID"
+      flashing: off
+    player2: 
+      text: "+ ONE"
+      flashing: off
+    player3: 
+      text: "HUMANS"
+      flashing: off
+    player4: 
+      text: "ZERO"
       flashing: off
 
   display_loser_message15: 
-    all: 
-      text: "   THE ODDS WERE 3720 TO ONE    "
+    player1: 
+      text: "THE ODDS"
+      flashing: off
+    player2: 
+      text: "WERE"
+      flashing: off
+    player3: 
+      text: "3720"
+      flashing: off
+    player4: 
+      text: "TO ONE"
       flashing: off
 
   display_loser_message16: 
-    all: 
-      text: "   ONE GIANT WEEP FOR MANKIND   "
+    player1: 
+      text: "ONE"
+      flashing: off
+    player2: 
+      text: "GIANT"
+      flashing: off
+    player3: 
+      text: "WEEP FOR"
+      flashing: off
+    player4: 
+      text: "MANKIND"
       flashing: off
 
   display_loser_message17: 
-    all: 
-      text: "  THE DARK CHAOS GOD IS HAPPY   "
+    player1: 
+      text: "THE DARK"
+      flashing: off
+    player2: 
+      text: "CHAOS"
+      flashing: off
+    player3: 
+      text: "GOD IS"
+      flashing: off
+    player4: 
+      text: "HAPPY"
       flashing: off
 
   display_loser_message18: 
-    all: 
-      text: "     TRY JUST ONE MORE TIME     "
+    player1: 
+      text: "TRY JUST"
+      flashing: off
+    player2: 
+      text: "ONE"
+      flashing: off
+    player3: 
+      text: "MORE"
+      flashing: off
+    player4: 
+      text: "TIME"
       flashing: off
 
   display_loser_message19: 
-    all: 
-      text: " YOU ARE LUCKY ITS ON FREEPLAY  "
+    player1: 
+      text: "YOU ARE"
+      flashing: off
+    player2: 
+      text: "LUCKY"
+      flashing: off
+    player3: 
+      text: "ITS ON "
+      flashing: off
+    player4: 
+      text: "FREEPLAY"
       flashing: off
 
   display_loser_message20: 
-    all: 
-      text: "   KEEP CALM     PLAY PINBALL   "
+    player1: 
+      text: "KEEP"
+      flashing: off
+    player2: 
+      text: "CALM"
+      flashing: off
+    player3: 
+      text: "PLAY"
+      flashing: off
+    player4: 
+      text: "PINBALL"
       flashing: off
 
   display_loser_message21: 
-    all: 
-      text: "   WE NEED A HERO NOT A ZERO    "
+    player1: 
+      text: "WE NEED"
+      flashing: off
+    player2: 
+      text: "A HERO "
+      flashing: off
+    player3: 
+      text: "NOT A"
+      flashing: off
+    player4: 
+      text: "ZERO  "
       flashing: off
 
   display_loser_message22: 
-    all: 
-      text: "    PLAY FOR REAL NEXT TIME     "
+    player1: 
+      text: "THIS WAS"
+      flashing: off
+    player2: 
+      text: "PRACTICE"
+      flashing: off
+    player3: 
+      text: "NEXT IS "
+      flashing: off
+    player4: 
+      text: "FOR REAL"
       flashing: off
 
   display_loser_message23: 
-    all: 
-      text: "       THE SKY IS FALLING       "
+    player1: 
+      text: "THE SKYS"
+      flashing: off
+    player2: 
+      text: "FALLING"
+      flashing: off
+    player3: 
+      text: "THE SKYS"
+      flashing: off
+    player4: 
+      text: "FALLING"
       flashing: off
 
   display_loser_message24: 
-    all: 
-      text: "   THE END IS ON APRI 13 2029   "
+    player1: 
+      text: "OUR END"
+      flashing: off
+    player2: 
+      text: "BEGINS "
+      flashing: off
+    player3: 
+      text: "APRIL"
+      flashing: off
+    player4: 
+      text: "13 2029"
       flashing: off
 
   display_winner_message1: 
-    all: 
-      text: "    A VILE DARK CHAOS LOOMED    "
+    player1: 
+      text: "A VILE"
+      flashing: off
+    player2: 
+      text: "DARK"
+      flashing: off
+    player3: 
+      text: "CHAOS"
+      flashing: off
+    player4: 
+      text: "LOOMED"
       flashing: off
 
   display_winner_message2: 
-    all: 
-      text: " COSMIC IMPACTS TORE AND BOOMED "
+    player1: 
+      text: "COSMIC"
+      flashing: off
+    player2: 
+      text: "IMPACTS"
+      flashing: off
+    player3: 
+      text: "TORE AND"
+      flashing: off
+    player4: 
+      text: "BOOMED"
       flashing: off
 
   display_winner_message3: 
-    all: 
-      text: "TURMOIL AND FEAR HUMANITY DOOMED"
+    player1: 
+      text: "TURMOIL "
+      flashing: off
+    player2: 
+      text: "AND FEAR"
+      flashing: off
+    player3: 
+      text: "HUMANITY"
+      flashing: off
+    player4: 
+      text: "DOOMED"
       flashing: off
 
   display_winner_message4: 
-    all: 
-      text: " A HERO ASCENDED INTO THE NIGHT "
+    player1: 
+      text: "A HERO "
+      flashing: off
+    player2: 
+      text: "ASCENDED"
+      flashing: off
+    player3: 
+      text: "INTO THE"
+      flashing: off
+    player4: 
+      text: "NIGHT"
       flashing: off
 
   display_winner_message5: 
-    all: 
-      text: "  A FIERY BATTLE WON THE FIGHT  "
+    player1: 
+      text: "A FIERY"
+      flashing: off
+    player2: 
+      text: "BATTLE"
+      flashing: off
+    player3: 
+      text: "WON THE"
+      flashing: off
+    player4: 
+      text: "FIGHT"
       flashing: off
 
   display_winner_message6: 
-    all: 
-      text: "SPARKS OF HOPE  FLICKER OF LIGHT"
+    player1: 
+      text: "SPARKS"
+      flashing: off
+    player2: 
+      text: "OF HOPE"
+      flashing: off
+    player3: 
+      text: "FLICKER "
+      flashing: off
+    player4: 
+      text: "OF LIGHT"
       flashing: off
 
   display_last_scores: 
@@ -879,7 +1149,7 @@ show_player:
       speed: 6
       show_tokens: 
         lights: "tCombos"
-        color: "ffb46b"
+        color: "ffffff"
   play_slide_left: 
     insert_gi_slide_left: 
       key: key_insert_gi_slide_left

@@ -141,6 +141,11 @@ event_player:
     - release_moon_ball
 
 
+extra_balls: 
+  ccwiz_eb:
+    award_events: mode_combo_command_wizard_started
+    max_per_game: 3
+
 multiballs: 
   ccwiz:
     start_events: timer_combo_command_message_complete

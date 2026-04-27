@@ -169,6 +169,11 @@ event_player:
     - shield_bank_hit
 
 
+extra_balls: 
+  flwiz_eb:
+    award_events: mode_fully_loaded_wizard_started
+    max_per_game: 3
+
 multiballs: 
   flwiz:
     start_events: timer_fully_loaded_message_complete

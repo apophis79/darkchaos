@@ -5326,6 +5326,29 @@ Class GlfExtraBall
         End If
     End Sub
 
+    Public Function ToYaml
+        Dim yaml, x, key
+        yaml = "  " & m_command_name & ":" & vbCrLf
+
+        Dim award_events_keys : award_events_keys = m_award_events.Keys
+        If UBound(award_events_keys) > -1 Then
+            yaml = yaml & "    award_events: "
+            x=0
+            For Each key in award_events_keys
+                yaml = yaml & m_award_events(key).Raw
+                If x <> UBound(award_events_keys) Then
+                    yaml = yaml & ", "
+                End If
+                x = x + 1
+            Next
+            yaml = yaml & vbCrLf
+        End If
+
+        yaml = yaml & "    max_per_game: " & m_max_per_game.Raw() & vbCrLf
+
+        ToYaml = yaml
+    End Function
+
     Private Sub Log(message)
         If m_debug = True Then
             glf_debugLog.WriteToLog m_name, message
@@ -7088,6 +7111,14 @@ Class Mode
             yaml = yaml & vbCrLf
             yaml = yaml & "event_player: " & vbCrLf
             yaml = yaml & m_eventplayer.ToYaml()
+        End If
+
+        If UBound(m_extra_balls.Keys)>-1 Then
+            yaml = yaml & vbCrLf
+            yaml = yaml & "extra_balls: " & vbCrLf
+            For Each child in m_extra_balls.Keys
+                yaml = yaml & m_extra_balls(child).ToYaml
+            Next
         End If
 
         If Not IsNull(m_high_score) Then

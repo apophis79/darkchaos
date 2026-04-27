@@ -33,6 +33,11 @@ event_player:
     - eb_now_lit
 
 
+extra_balls: 
+  eb:
+    award_events: eb_achieved
+    max_per_game: 3
+
 segment_display_player: 
   play_eb_show: 
     player1: 
