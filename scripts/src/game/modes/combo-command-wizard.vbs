@@ -72,7 +72,6 @@ Sub CreateComboCommandWizardMode
                 .Add "combo_command5_ready{current_player.shot_combo_command5 == 0}", 1
                 .Add "combo_command6_ready{current_player.shot_combo_command6 == 0}", 1
                 .Add "combo_command7_ready{current_player.shot_combo_command7 == 0}", 1
-                .Add "combo_command8_ready{current_player.shot_combo_command8 == 0}", 1
                 .ForceAll = True
                 .ForceDifferent = False
             End With
