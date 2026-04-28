@@ -68,29 +68,45 @@ func load_window_settings(display: String, display_menu: PopupMenu):
 	var aot_idx := display_menu.get_item_index(4)
 
 	var display_name = mpf_display.name
-	if error == OK:
-		var wsize = config.get_value(display_name, "size", Vector2i(800, 600))  # Default size
-		var wposition = config.get_value(display_name, "position", Vector2i(100, 100))  # Default position
-		var wborderless = config.get_value(display_name, "borderless", false)  # Default to false
-		var walwaysOnTop = config.get_value(display_name, "alwaysOnTop", false)  # Default to false
 
-		if borderless_idx != -1:
-			display_menu.set_item_checked(borderless_idx, wborderless)
-		if aot_idx != -1:
-			display_menu.set_item_checked(aot_idx, walwaysOnTop)
+	var default_size := Vector2i(1280, 720)
+	var default_position := Vector2i(0, 0)
+	var default_borderless := true
+	var default_always_on_top := true
 
-		var window = mpf_display.get_window()
-		var win_id = window.get_window_id()
-
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, wborderless, win_id)
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_ALWAYS_ON_TOP, walwaysOnTop, win_id)
-
-		window.size		 = wsize
-		window.position = wposition
-
-
-	else:
+	# If the config file does not exist, create it with defaults
+	if error != OK:
 		print("No settings file found or other error: ", error)
+		print("Creating default settings file: ", CONFIG_FILE)
+
+		config.set_value(display_name, "size", default_size)
+		config.set_value(display_name, "position", default_position)
+		config.set_value(display_name, "borderless", default_borderless)
+		config.set_value(display_name, "alwaysOnTop", default_always_on_top)
+
+		var save_error = config.save(CONFIG_FILE)
+		if save_error != OK:
+			print("Failed to create settings file: ", save_error)
+			return
+
+	var wsize = config.get_value(display_name, "size", default_size)
+	var wposition = config.get_value(display_name, "position", default_position)
+	var wborderless = config.get_value(display_name, "borderless", default_borderless)
+	var walwaysOnTop = config.get_value(display_name, "alwaysOnTop", default_always_on_top)
+
+	if borderless_idx != -1:
+		display_menu.set_item_checked(borderless_idx, wborderless)
+	if aot_idx != -1:
+		display_menu.set_item_checked(aot_idx, walwaysOnTop)
+
+	var window = mpf_display.get_window()
+	var win_id = window.get_window_id()
+
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, wborderless, win_id)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_ALWAYS_ON_TOP, walwaysOnTop, win_id)
+
+	window.size = wsize
+	window.position = wposition
 
 func _on_self_item_pressed(id):
 
