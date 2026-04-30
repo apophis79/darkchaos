@@ -325,14 +325,15 @@ centered = false
 position = Vector2(1643, 877)
 sprite_frames = ExtResource("10_du778")
 autoplay = "default"
-frame = 91
-frame_progress = 0.80568147
+frame = 17
+frame_progress = 0.73986405
+speed_scale = 0.5
 
 [node name="AnimatedSheilds" type="AnimatedSprite2D" parent="." unique_id=998668991]
 position = Vector2(1643, 877)
 sprite_frames = ExtResource("11_n3kaw")
 autoplay = "default"
-frame_progress = 0.78240865
+frame_progress = 0.9203861
 script = ExtResource("12_s2a5r")
 
 [node name="AnimatedOverlayQueue" type="Control" parent="." unique_id=887058142]
