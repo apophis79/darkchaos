@@ -27,7 +27,11 @@ Sub CreateBaseMode()
         With .EventPlayer()
 
             'new ball
-            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","start_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger", "display_p1_score{machine.last_game_players>0}", "display_p2_score{machine.last_game_players>1}", "display_p3_score{machine.last_game_players>2}", "display_p4_score{machine.last_game_players>3}")
+            .Add "mode_base_started", Array("stop_attract_mode","knockdown_meteors","check_base_restart","start_asteroid_motor","backglass_dark_on","backglass_chaos_on","backglass_wave_off","check_plunger", "init_player_scores")
+            .Add "init_player_scores{machine.last_game_players>0}", Array("display_p1_score")
+            .Add "init_player_scores{machine.last_game_players>1}", Array("display_p2_score")
+            .Add "init_player_scores{machine.last_game_players>2}", Array("display_p3_score")
+            .Add "init_player_scores{machine.last_game_players>3}", Array("display_p4_score")
             .Add "mode_base_started{current_player.wizard_final_hit_count > 0}", Array("new_ball_started")  'start a new ball if not at end of the game.
             .Add "mode_base_started{current_player.number == 1}", Array("flash_player1_score","display34_ball_num")
             .Add "mode_base_started{current_player.number == 2}", Array("flash_player2_score","display34_ball_num")
