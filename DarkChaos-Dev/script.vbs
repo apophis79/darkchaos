@@ -199,7 +199,6 @@ End Function
 Dim soundUidMap
 Set soundUidMap = BuildAudioUidMap()
 
-bcpExeName = "DarkChaos-Dev_gmc.exe"
 
 
 Dim objFSO,objTextFile

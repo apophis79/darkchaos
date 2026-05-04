@@ -48,7 +48,7 @@ End Sub
 
 Sub PlungerEjectCallback(ball)
 	If s_Plunger1.BallCntOver > 0 Then
-		KickBall ball, 0, 60, 0, 0
+		KickBall ball, 0, 45+rnd*6, 0, 0
 		SoundSaucerKick 1, s_Plunger1
 	Else
 		SoundSaucerKick 0, s_Plunger1

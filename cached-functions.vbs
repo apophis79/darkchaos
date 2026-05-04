@@ -3798,12 +3798,12 @@ Function Glf_909(args)
 End Function
 Function Glf_910(args)
 	On Error Resume Next
-	    Glf_910 = GetPlayerState("health_bump_value")<9
+	    Glf_910 = GetPlayerState("health_bump_value")<3
 	If Err Then Glf_910 = False
 End Function
 Function Glf_911(args)
 	On Error Resume Next
-	    Glf_911 = GetPlayerState("health_bump_value")>=9
+	    Glf_911 = GetPlayerState("health_bump_value")>=3
 	If Err Then Glf_911 = False
 End Function
 Function Glf_912(args)
@@ -4523,12 +4523,12 @@ Function Glf_1058(args)
 End Function
 Function Glf_1059(args)
 	On Error Resume Next
-	    Glf_1059 = GetPlayerState("training_health_bump_value")<3
+	    Glf_1059 = GetPlayerState("training_health_bump_value")<1
 	If Err Then Glf_1059 = False
 End Function
 Function Glf_1060(args)
 	On Error Resume Next
-	    Glf_1060 = GetPlayerState("training_health_bump_value")>=3
+	    Glf_1060 = GetPlayerState("training_health_bump_value")>=1
 	If Err Then Glf_1060 = False
 End Function
 Function Glf_1061(args)
@@ -8437,8 +8437,8 @@ glf_funcRefMap.Add "mode_health_started{current_player.ball_just_started==1}", "
 glf_funcRefMap.Add "mode_health_started{current_player.training_heal_achieved==1}", "Glf_907"
 glf_funcRefMap.Add "left_orbit_hit{current_player.shot_health_diverter==1}", "Glf_908"
 glf_funcRefMap.Add "right_orbit_hit{current_player.shot_health_diverter==1}", "Glf_909"
-glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value<9}", "Glf_910"
-glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value>=9}", "Glf_911"
+glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value<3}", "Glf_910"
+glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value>=3}", "Glf_911"
 glf_funcRefMap.Add "check_add_health{current_player.health_value>8}", "Glf_912"
 glf_funcRefMap.Add "check_add_health{current_player.health_value==8}", "Glf_913"
 glf_funcRefMap.Add "check_add_health{current_player.health_value==7}", "Glf_914"
@@ -8586,8 +8586,8 @@ glf_funcRefMap.Add "ship_save_selected{current_player.training_ship_save_achieve
 glf_funcRefMap.Add """SAVER """, "Glf_1056"
 glf_funcRefMap.Add "shields_selected{current_player.training_shields_achieved==0}", "Glf_1057"
 glf_funcRefMap.Add """SKIP """, "Glf_1058"
-glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value<3}", "Glf_1059"
-glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value>=3}", "Glf_1060"
+glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value<1}", "Glf_1059"
+glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value>=1}", "Glf_1060"
 glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 0}", "Glf_1061"
 glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 1 and current_player.shot_training_health2 == 0}", "Glf_1062"
 glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health2 == 1 and current_player.shot_training_health3 == 0}", "Glf_1063"

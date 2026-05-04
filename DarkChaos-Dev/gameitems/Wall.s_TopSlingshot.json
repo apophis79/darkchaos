@@ -7,7 +7,7 @@
     "is_collidable": true,
     "is_timer_enabled": false,
     "timer_interval": 10,
-    "threshold": 2.0,
+    "threshold": 4.0,
     "image": "",
     "side_image": "",
     "side_material": "",
