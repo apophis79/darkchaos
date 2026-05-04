@@ -3145,6 +3145,7 @@ Class GlfVpxBcpController
 	End Sub
     
     Public Sub PlaySlide(slide, context, calling_context, action, expire, priorty, kwargs)
+        Dim key
 		If m_connected Then
             Dim kwargsString : kwargsString = ""
             If Not IsNull(kwargs) Then
@@ -3297,7 +3298,8 @@ Sub Glf_BcpSendEvent(evt, kwargs)
     If useBcp=False Then
         Exit Sub
     End If
-
+    
+    Dim key
     Dim kwargsString : kwargsString = ""
     If Not IsNull(kwargs) Then
         Dim first : first = True
