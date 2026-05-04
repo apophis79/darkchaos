@@ -592,7 +592,7 @@ Sub CreateMeteorWaveMode
             With .EventName("earth_hit")
                 .Key = "key_earth_hit_mw"
                 .Priority = 15
-                .Show = "earth_hit_center"
+                .Show = "earth_hit"
                 .Speed = 1
                 .Loops = 0
             End With
