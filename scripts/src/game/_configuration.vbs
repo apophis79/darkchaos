@@ -96,8 +96,8 @@ MoonQualifySwitches = Array("s_LeftOutlane","s_LeftInlane","s_RightInlane","s_Ri
 MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
 
 ' Health settings
-Const BumperHitsPerRepair = 9
-Const BumperHitsPerRepairTrain = 3
+Const BumperHitsPerRepair = 3
+Const BumperHitsPerRepairTrain = 1
 
 ' Ship save settings (more shoot again time)
 Const ShipSaveShootAgainTime = 15000
