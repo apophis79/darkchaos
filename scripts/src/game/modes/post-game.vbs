@@ -228,6 +228,13 @@ Sub CreatePostGameMode()
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_post_game_started")
+                .Slide = "post_game"
+                .Action = "play"
+            End With
+        End With
+
 
         With .DOFPlayer()
             With .EventName("play_flasher1_flash_3000k")

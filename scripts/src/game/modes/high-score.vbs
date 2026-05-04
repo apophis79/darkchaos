@@ -26,6 +26,13 @@ Sub CreateHighScoreMode
             .Add "timer_high_score_timeout_complete", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
         End With
 
+        With .SlidePlayer()
+            With .EventName("high_score_enter_initials")
+                .Slide = "high_score_dc"
+                .Action = "play"
+            End With
+        End With
+
         With .Timers("hs_cooldown")
             .TickInterval = 200
             .StartValue = 0
