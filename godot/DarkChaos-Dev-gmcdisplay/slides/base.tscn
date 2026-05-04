@@ -343,14 +343,20 @@ offset_bottom = 40.0
 script = ExtResource("13_735fb")
 
 [node name="AlienShipDetected" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=680644086]
+visible = false
 sprite_frames = ExtResource("13_s2a5r")
+frame = 23
+frame_progress = 1.0
 centered = false
 offset = Vector2(320, 180)
 script = ExtResource("14_4yxvp")
 trigger_event = "alien_attacking"
 
 [node name="AlienShipSaved" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1939050666]
+visible = false
 sprite_frames = ExtResource("15_dm14r")
+frame = 35
+frame_progress = 1.0
 centered = false
 offset = Vector2(320, 180)
 script = ExtResource("14_4yxvp")
