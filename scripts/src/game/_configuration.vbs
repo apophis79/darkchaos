@@ -633,7 +633,14 @@ Sub ConfigureGlfDevices
     ' Moon Lock
     With CreateGlfBallDevice("moon_lock")
         .BallSwitches = Array("s_Lock1","s_Lock2","s_Lock3")
+        .EjectCallback = "DropLockPin" 
+        .EntranceCountDelay = 1000
+        .EjectEnableTime = 180
+        .EjectTimeout = 2000
+        .EjectTargets = Array("s_LockOut")
+        .MechanicalEject = False
     End With
+
 
 
     ' Diverters

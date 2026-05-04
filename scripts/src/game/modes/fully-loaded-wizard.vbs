@@ -30,7 +30,7 @@ Sub CreateFullyLoadedWizardMode
             .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start","flwiz_sjp1_show2")
             .Add "mode_fully_loaded_wizard_stopping", Array("flwiz_music_stop")   
             'release the scoop ball to start the wizard mode
-            .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","delayed_release_moon_ball")
+            .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold") ',"delayed_release_moon_ball")
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'Phase 1 shots
             .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", Array("flwiz_proton1_shot_hit","proton_fired","proton_fired_flash_show","play_sfx_jackpot","score_200000")
@@ -65,8 +65,8 @@ Sub CreateFullyLoadedWizardMode
             .Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 1}", Array("flwiz_bumpers_show1")
             .Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 2}", Array("flwiz_bumpers_show2")
             'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
-            .Add "ball_search_started", Array("release_moon_ball")
+            ' .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            ' .Add "ball_search_started", Array("release_moon_ball")
             'Handle shield shot bank
             .Add "s_TargetShield1_active", Array("shield_bank_hit")
             .Add "s_TargetShield2_active", Array("shield_bank_hit")

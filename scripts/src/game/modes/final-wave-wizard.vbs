@@ -30,7 +30,7 @@ Sub CreateFinalWaveWizardMode
             .Add "mode_final_wave_wizard_started", Array("meteor_wave_music_stop","turn_off_gi","final_flash1")
             .Add "mode_final_wave_wizard_stopping", Array("fwwiz_music_stop") 
             'release the scoop ball to start the wizard mode
-            .Add "timer_final_wave_message_complete", Array("fwwiz_music_start","release_scoop_hold","delayed_release_moon_ball","display_hit_count")
+            .Add "timer_final_wave_message_complete", Array("fwwiz_music_start","release_scoop_hold","display_hit_count")  ',"delayed_release_moon_ball"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'add-a-ball
             .Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", Array("fwwiz_add_ball")
@@ -166,9 +166,9 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 24}", Array("play_asteroid_flicker")
             .Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 29}", Array("play_asteroid_flicker")
 
-            'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
-            .Add "ball_search_started", Array("release_moon_ball")
+            ' 'Handle moon ramp
+            ' .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            ' .Add "ball_search_started", Array("release_moon_ball")
 
         End With
 
