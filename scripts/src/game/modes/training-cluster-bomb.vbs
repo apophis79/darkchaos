@@ -76,6 +76,13 @@ Sub CreateTrainingClusterBombMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_training_cluster_bomb_started")
+                .Slide = "training_clusters"
+                .Action = "play"
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("play_sfx_LS")
                 .Action = "DOF_PULSE"

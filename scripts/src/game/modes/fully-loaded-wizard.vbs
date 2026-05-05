@@ -115,6 +115,21 @@ Sub CreateFullyLoadedWizardMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_fully_loaded_wizard_started")
+                .Slide = "wizard_mode"
+                .Action = "play"
+            End With
+        End With
+
+        With .WidgetPlayer()
+            With .EventName("mode_fully_loaded_wizard_started")
+                .Widget = "fully_loaded_wizard_intro"
+                .Action = "play"
+                .Expire = 11
+            End With
+        End With
+
 
         With .ExtraBalls("flwiz_eb")
             .AwardEvents = Array("mode_fully_loaded_wizard_started")

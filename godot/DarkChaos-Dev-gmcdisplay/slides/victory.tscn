@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cwyjixie1qqow"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ekaig"]
+[ext_resource type="VideoStream" uid="uid://cl2wm4j42d1wt" path="res://resources/Saved_The_Earth.ogv" id="2_ekaig"]
+
+[node name="Victory" type="Control" unique_id=289633905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekaig")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1899018468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=1702018078]
+layout_mode = 2
+stream = ExtResource("2_ekaig")
+autoplay = true
+expand = true
+loop = true

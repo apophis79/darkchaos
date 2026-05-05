@@ -83,6 +83,13 @@ Sub CreateTrainingShipSaveMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_training_ship_save_started")
+                .Slide = "training_ship_save"
+                .Action = "play"
+            End With
+        End With
+
         With .ComboSwitches("cancel_training_ss")
             .Switch1 = "s_left_flipper"
             .Switch2 = "s_right_flipper"

@@ -212,6 +212,14 @@ Sub CreateFinalWaveWizardMode
         End With
 
 
+        With .SlidePlayer()
+            With .EventName("mode_final_wave_wizard_started")
+                .Slide = "final_wave"
+                .Action = "play"
+            End With
+        End With
+
+
         With .Multiballs("fwwiz")
             .StartEvents = Array("timer_final_wave_message_complete")
             .DisableEvents = Array("asteroid_destroyed","disable_fwwiz_mb")

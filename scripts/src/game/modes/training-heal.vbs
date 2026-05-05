@@ -93,6 +93,13 @@ Sub CreateTrainingHealMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_training_heal_started")
+                .Slide = "training_health"
+                .Action = "play"
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("play_sfx_LS")
                 .Action = "DOF_PULSE"

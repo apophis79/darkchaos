@@ -79,6 +79,13 @@ Sub CreateTrainingShieldsMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_training_shields_started")
+                .Slide = "training_shields"
+                .Action = "play"
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("play_sfx_LS")
                 .Action = "DOF_PULSE"

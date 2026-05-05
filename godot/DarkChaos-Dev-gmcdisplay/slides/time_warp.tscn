@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ms1iwydqoy4m"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_b1vwq"]
+[ext_resource type="VideoStream" uid="uid://ctkanq7oespfv" path="res://resources/TimeWarp.ogv" id="2_b1vwq"]
+
+[node name="TimeWarp" type="Control" unique_id=1693927328]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1vwq")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=177621551]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=333173747]
+z_index = 1
+layout_mode = 2
+stream = ExtResource("2_b1vwq")
+autoplay = true
+expand = true
+loop = true

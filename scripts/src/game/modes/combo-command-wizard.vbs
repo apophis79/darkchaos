@@ -85,6 +85,20 @@ Sub CreateComboCommandWizardMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_combo_command_wizard_started")
+                .Slide = "wizard_mode"
+                .Action = "play"
+            End With
+        End With
+
+        With .WidgetPlayer()
+            With .EventName("mode_combo_command_wizard_started")
+                .Widget = "combo_command_wizard_intro"
+                .Action = "play"
+                .Expire = 11
+            End With
+        End With
 
         With .ExtraBalls("ccwiz_eb")
             .AwardEvents = Array("mode_combo_command_wizard_started")

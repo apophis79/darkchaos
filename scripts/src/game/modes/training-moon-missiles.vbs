@@ -81,6 +81,13 @@ Sub CreateTrainingMoonMissileMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_training_moon_missile_started")
+                .Slide = "training_moon"
+                .Action = "play"
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("play_sfx_LS")
                 .Action = "DOF_PULSE"

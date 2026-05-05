@@ -76,6 +76,13 @@ Sub CreateTrainingProtonCannonMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_training_proton_cannon_started")
+                .Slide = "training_protons"
+                .Action = "play"
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("play_sfx_LS")
                 .Action = "DOF_PULSE"

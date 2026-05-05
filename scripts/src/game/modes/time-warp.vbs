@@ -28,6 +28,18 @@ Sub CreateTimewarpMode
         End With
 
 
+        With .SlidePlayer()
+            With .EventName("restart_tw_timer")
+                .Slide = "time_warp"
+                .Action = "play"
+            End With
+            With .EventName("timer_timewarp_complete")
+                .Slide = "time_warp"
+                .Action = "remove"
+            End With
+        End With
+
+
         With .DOFPlayer()
             With .EventName("restart_tw_timer")
                 .Action = "DOF_PULSE"

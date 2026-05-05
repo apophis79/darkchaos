@@ -63,6 +63,15 @@ Sub CreateMoonMultiballQualifyMode
         End With
 
 
+        With .WidgetPlayer()
+            With .EventName("mm_acquired")
+                .Widget = "moon_lock"
+                .Action = "play"
+                .Expire = 3
+            End With
+        End With
+
+
         With .DOFPlayer()
             With .EventName("mm_acquired")
                 .Action = "DOF_PULSE"

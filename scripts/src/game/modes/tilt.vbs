@@ -18,6 +18,13 @@ Sub CreateTiltMode()
             .ResetWarningEvents = Array("mode_tilt_started")
         End With
 
+        With .SlidePlayer()
+            With .EventName("tilt")
+                .Slide = "tilt_dc"
+                .Action = "play"
+            End With
+        End With
+
     End With
 
 End Sub
