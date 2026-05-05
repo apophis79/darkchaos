@@ -3,38 +3,50 @@
 '	ZGCF:  GLF Configurations
 '******************************************************
 
+' set some parameter values based on if the script will generate yaml for real machine
+Const for_real = false
+
 ' Light color settings
-Const GIColorWhite = "ffffff" 
-Const GIColor2700k = "ffA957"
-Const GIColor3000k = "ffdca3"
+Dim GIColorWhite: GIColorWhite = "ffffff" 
+Dim GIColor2700k: GIColor2700k = "ffA957"
+Dim GIColor3000k: GIColor3000k = "ffdca3"
 
-Const TimewarpColor = "ccccdd"
-Const ShipSaveColor = "0500ee"
-Const ShieldsColor = "0010cc"
-Const ProtonColor = "00dddd"
-Const MysteryColor = "aa33aa"
-Const MoonColor = "ccbb00"
-Const ClusterBombColor = "dd00dd"
-Const CombosColor = "ffb46b"
-Const TrainingColor = "ff4c00"
-Const HealthColor1 = "00dd00"
-Const HealthColor2 = "d14c00"
-Const HealthColor3 = "ff0300"
-Const SkillshotColor = "33dd33"
-Const AlienColor = "ff0300"
-Const AlienFlashColor = "ffb2a6"
-Const DoubleScoringColor = "ff3300"
+Dim TimewarpColor: TimewarpColor = "ccccdd"
+Dim ShipSaveColor: ShipSaveColor = "0500ee"
+Dim ShieldsColor: ShieldsColor = "0010cc"
+Dim ProtonColor: ProtonColor = "00dddd"
+Dim MysteryColor: MysteryColor = "aa33aa"
+Dim MoonColor: MoonColor = "ccbb00"
+Dim ClusterBombColor: ClusterBombColor = "dd00dd"
+Dim CombosColor: CombosColor = "ffb46b"
+Dim TrainingColor: TrainingColor = "ff4c00"
+Dim HealthColor1: HealthColor1 = "00dd00"
+Dim HealthColor2: HealthColor2 = "d14c00"
+Dim HealthColor3: HealthColor3 = "ff0300"
+Dim SkillshotColor: SkillshotColor = "33dd33"
+Dim AlienColor: AlienColor = "ff0300"
+Dim AlienFlashColor: AlienFlashColor = "ffb2a6"
+Dim DoubleScoringColor: DoubleScoringColor = "ff3300"
 
-Const MeteorCoolColor = "ffA957"
-Const MeteorWarmColor = "edb600"
-Const MeteorHotColor = "ed1800"
-Const MeteorWaveColor = "dd0400"
-Const MeteorFlashColor = "ffe7a6"
+Dim MeteorCoolColor: MeteorCoolColor = "ffA957"
+Dim MeteorWarmColor: MeteorWarmColor = "edb600"
+Dim MeteorHotColor: MeteorHotColor = "ed1800"
+Dim MeteorWaveColor: MeteorWaveColor = "dd0400"
+Dim MeteorFlashColor: MeteorFlashColor = "ffe7a6"
 
-Const EarthHitColor = "ff0909"
-Const EarthHitColor2 = "880303"
+Dim EarthHitColor: EarthHitColor = "ff0909"
+Dim EarthHitColor2: EarthHitColor2 = "880303"
 
-Const SegmentsColor = "ff0000"
+Dim SegmentsColor: SegmentsColor = "ff0000"
+
+If for_real = true Then
+    MysteryColor = "f7b5c9" 
+    CombosColor = "ffffff"
+    HealthColor2 = "ffae01"
+    MeteorCoolColor = "ffeede"
+     MeteorWarmColor = "ffc400"
+End If
+
 
 Const SlingDomePowerUpBrightness = 100  '0 to 100
 

@@ -54,6 +54,14 @@ Sub CreateVictoryLapMode
             End With
         End With
 
+        With .SlidePlayer()
+            With .EventName("mode_victory_lap_started")
+                .Slide = "victory"
+                .Action = "play"
+            End With
+        End With
+
+
 
         With .RandomEventPlayer()
             With .EventName("victory_bumpers_show")

@@ -61,8 +61,16 @@ Sub CreateBonusMode
         End With
 
         With .SlidePlayer()
-            With .EventName("run_bonus_started.2")
-                .Slide = "bonus"
+            With .EventName("run_bonus_started.2{current_player.ball==1}")
+                .Slide = "bonus1"
+                .Action = "play"
+            End With
+            With .EventName("run_bonus_started.2{current_player.ball==2}")
+                .Slide = "bonus2"
+                .Action = "play"
+            End With
+            With .EventName("run_bonus_started.2{current_player.ball==3}")
+                .Slide = "bonus3"
                 .Action = "play"
             End With
         End With
