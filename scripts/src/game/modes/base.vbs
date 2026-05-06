@@ -214,6 +214,13 @@ Sub CreateBaseMode()
                 .Action = "play"
                 .Expire = 5
             End With
+
+            With .EventName("earth_hit")
+                .Widget = "impact"
+                .Action = "play"
+                .Expire = 2.5
+            End With
+
         End With
 
         With .RandomEventPlayer()

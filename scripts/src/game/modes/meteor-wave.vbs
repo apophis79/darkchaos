@@ -154,11 +154,6 @@ Sub CreateMeteorWaveMode
                 .Widget = "wave_number"
                 .Action = "play"
             End With
-            With .EventName("earth_hit")
-                .Widget = "impact_warning"
-                .Action = "play"
-                .Expire = 5
-            End With
         End With
 
 

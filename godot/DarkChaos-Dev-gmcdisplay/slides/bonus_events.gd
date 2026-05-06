@@ -73,3 +73,5 @@ func _on_tally6(payload: Dictionary) -> void:
 	var bonus_value = MPF.game.player.bonus_total
 	lblBonus.text = "BONUS TOTAL"
 	lblBonusValue.text = str(bonus_value)
+	ani.play("flash_bonus")
+	
