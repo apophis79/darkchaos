@@ -184,4 +184,11 @@ sound_player:
       action: play
 
 
+widget_player: 
+  play_shields_down: 
+    shields_down:
+      action: play
+      expire: 1.8s
+
+
 

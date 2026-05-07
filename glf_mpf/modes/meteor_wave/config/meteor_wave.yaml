@@ -202,6 +202,26 @@ random_event_player:
       play_sfx_LPF4: 1
       play_sfx_LPF5: 1
     scope: player
+  meteor1_hit: 
+    events:
+      play_widget_meteor1a: 1
+      play_widget_meteor1b: 1
+    scope: player
+  meteor2_hit: 
+    events:
+      play_widget_meteor2a: 1
+      play_widget_meteor2b: 1
+    scope: player
+  meteor3_hit: 
+    events:
+      play_widget_meteor3a: 1
+      play_widget_meteor3b: 1
+    scope: player
+  meteor4_hit: 
+    events:
+      play_widget_meteor4a: 1
+      play_widget_meteor4b: 1
+    scope: player
   init_meteor1: 
     events:
       meteor1_init_tick1: 1
@@ -1107,13 +1127,42 @@ variable_player:
 
 
 widget_player: 
-  mode_meteor_wave_started: 
-    wave_number:
-      action: play
   proton_fired: 
     proton_fired:
       action: play
       expire: 1s
+  play_widget_meteor1a: 
+    meteor_explosion_1a:
+      action: play
+      expire: 0.27s
+  play_widget_meteor1b: 
+    meteor_explosion_1b:
+      action: play
+      expire: 0.27s
+  play_widget_meteor2a: 
+    meteor_explosion_2a:
+      action: play
+      expire: 0.27s
+  play_widget_meteor2b: 
+    meteor_explosion_2b:
+      action: play
+      expire: 0.27s
+  play_widget_meteor3a: 
+    meteor_explosion_3a:
+      action: play
+      expire: 0.27s
+  play_widget_meteor3b: 
+    meteor_explosion_3b:
+      action: play
+      expire: 0.27s
+  play_widget_meteor4a: 
+    meteor_explosion_4a:
+      action: play
+      expire: 0.27s
+  play_widget_meteor4b: 
+    meteor_explosion_4b:
+      action: play
+      expire: 0.27s
 
 
 
