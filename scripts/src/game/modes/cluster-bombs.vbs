@@ -57,6 +57,14 @@ Sub CreateClusterBombMode
             End With
         End With
 
+        With .WidgetPlayer()
+            With .EventName("cluster_bomb_fired")
+                .Widget = "cluster_bomb"
+                .Action = "play"
+                .Expire = 2.3
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("cluster_bomb_fired")
                 .Action = "DOF_PULSE"

@@ -58,7 +58,6 @@ Sub CreateProtonCannonMode
             End With
         End With
 
-
         With .DOFPlayer()
             With .EventName("s_Spinner_active")
                 .Action = "DOF_PULSE"

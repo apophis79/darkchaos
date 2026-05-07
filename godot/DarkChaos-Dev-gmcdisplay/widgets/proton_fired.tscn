@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://csiouiintr6qd"]
+
+[ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_q8tuo"]
+[ext_resource type="SpriteFrames" uid="uid://dhywkx7bjj0v2" path="res://resources/Proton/proton_fired.tres" id="2_q8tuo"]
+
+[node name="BallSave" type="Control" unique_id=782112633]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q8tuo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=300870717]
+position = Vector2(909.50006, 485.99994)
+scale = Vector2(1.3039063, 1.1388887)
+sprite_frames = ExtResource("2_q8tuo")
+autoplay = "default"
+frame = 20
+frame_progress = 1.0

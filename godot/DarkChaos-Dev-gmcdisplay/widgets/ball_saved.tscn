@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7hecq638rhf1"]
+
+[ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_i57dd"]
+[ext_resource type="VideoStream" uid="uid://cpwgbgb72qkqf" path="res://resources/ball_saved.ogv" id="2_i57dd"]
+
+[node name="MoonLaunch" type="Control" unique_id=472710894]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i57dd")
+
+[node name="Control" type="Control" parent="." unique_id=2114658926]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control" unique_id=1596476669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_i57dd")
+autoplay = true
+expand = true

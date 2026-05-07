@@ -154,6 +154,11 @@ Sub CreateMeteorWaveMode
                 .Widget = "wave_number"
                 .Action = "play"
             End With
+            With .EventName("proton_fired")
+                .Widget = "proton_fired"
+                .Action = "play"
+                .Expire = 1
+            End With
         End With
 
 

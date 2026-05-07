@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5xgj3x7iwcts"]
+
+[ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ehq7t"]
+[ext_resource type="SpriteFrames" uid="uid://b0relk7jilbkb" path="res://resources/Cluster/cluster_bomb.tres" id="2_spges"]
+
+[node name="BallSave" type="Control" unique_id=782112633]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehq7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=300870717]
+position = Vector2(972.4999, 546.5)
+scale = Vector2(1.4882811, 1.4402778)
+sprite_frames = ExtResource("2_spges")
+autoplay = "default"
+frame = 35
+frame_progress = 1.0
