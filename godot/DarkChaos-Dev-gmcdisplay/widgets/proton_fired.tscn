@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_q8tuo"]
 [ext_resource type="SpriteFrames" uid="uid://dhywkx7bjj0v2" path="res://resources/Proton/proton_fired.tres" id="2_q8tuo"]
 
-[node name="BallSave" type="Control" unique_id=782112633]
+[node name="ProtonsFired" type="Control" unique_id=782112633]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

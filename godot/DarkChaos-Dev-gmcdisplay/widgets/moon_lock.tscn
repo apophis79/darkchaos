@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ypeh4"]
 [ext_resource type="VideoStream" uid="uid://bgy2gkev71112" path="res://resources/Moon_Lock.ogv" id="2_ypeh4"]
 
-[node name="Wave9" type="Control" unique_id=472710894]
+[node name="MoonLocl" type="Control" unique_id=472710894]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15

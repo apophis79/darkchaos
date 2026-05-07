@@ -140,6 +140,30 @@ Sub CreateMeteorWaveMode
                 .ForceAll = True
                 .ForceDifferent = True
             End With
+            With .EventName("meteor1_hit")
+                .Add "play_widget_meteor1a", 1
+                .Add "play_widget_meteor1b", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+            With .EventName("meteor2_hit")
+                .Add "play_widget_meteor2a", 1
+                .Add "play_widget_meteor2b", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+            With .EventName("meteor3_hit")
+                .Add "play_widget_meteor3a", 1
+                .Add "play_widget_meteor3b", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+            With .EventName("meteor4_hit")
+                .Add "play_widget_meteor4a", 1
+                .Add "play_widget_meteor4b", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
         End With
 
         With .SlidePlayer()
@@ -150,14 +174,54 @@ Sub CreateMeteorWaveMode
         End With
 
         With .WidgetPlayer()
-            With .EventName("mode_meteor_wave_started")
-                .Widget = "wave_number"
-                .Action = "play"
-            End With
+            ' With .EventName("mode_meteor_wave_started")
+            '     .Widget = "wave_number"
+            '     .Action = "play"
+            ' End With
             With .EventName("proton_fired")
                 .Widget = "proton_fired"
                 .Action = "play"
                 .Expire = 1
+            End With
+            With .EventName("play_widget_meteor1a")
+                .Widget = "meteor_explosion_1a"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor1b")
+                .Widget = "meteor_explosion_1b"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor2a")
+                .Widget = "meteor_explosion_2a"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor2b")
+                .Widget = "meteor_explosion_2b"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor3a")
+                .Widget = "meteor_explosion_3a"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor3b")
+                .Widget = "meteor_explosion_3b"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor4a")
+                .Widget = "meteor_explosion_4a"
+                .Action = "play"
+                .Expire = 0.27
+            End With
+            With .EventName("play_widget_meteor4b")
+                .Widget = "meteor_explosion_4b"
+                .Action = "play"
+                .Expire = 0.27
             End With
         End With
 

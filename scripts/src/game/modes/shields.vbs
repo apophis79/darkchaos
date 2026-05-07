@@ -51,6 +51,15 @@ Sub CreateShieldsMode
         End With
 
 
+        With .WidgetPlayer()
+            With .EventName("play_shields_down")
+                .Widget = "shields_down"
+                .Action = "play"
+                .Expire = 1.8
+            End With
+        End With
+
+
         With .DOFPlayer()
             With .EventName("play_shields_up")
                 .Action = "DOF_PULSE"

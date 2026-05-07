@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_sqx54"]
 [ext_resource type="SpriteFrames" uid="uid://cu6wxs3we7dlo" path="res://resources/impact_warning/impact_warning.tres" id="2_em66o"]
 
-[node name="mystery" type="Control" unique_id=1970079132]
+[node name="Impact" type="Control" unique_id=1970079132]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

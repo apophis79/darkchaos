@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dj2rc21ufueyu"]
+
+[ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_4vlfc"]
+[ext_resource type="SpriteFrames" uid="uid://vofj1rrmvqmj" path="res://resources/ShieldsDown/shields_down.tres" id="2_g7w0r"]
+
+[node name="ShieldsDown" type="Control" unique_id=782112633]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vlfc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=300870717]
+position = Vector2(962.5, 540.5)
+scale = Vector2(1.4960936, 1.4958333)
+sprite_frames = ExtResource("2_g7w0r")
+autoplay = "default"
+frame = 35
+frame_progress = 1.0

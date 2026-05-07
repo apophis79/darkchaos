@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://2stnm8x1v2rj"]
+
+[ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_cvnlv"]
+[ext_resource type="SpriteFrames" uid="uid://oi8h1k344oer" path="res://resources/DropTargetExplosion/meteor_explosion.tres" id="2_m7613"]
+
+[node name="MeteorExplosion" type="Control" unique_id=782112633]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cvnlv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=300870717]
+position = Vector2(1192, 726)
+rotation = -4.373795
+scale = Vector2(0.87594235, 1.0043298)
+sprite_frames = ExtResource("2_m7613")
+autoplay = "default"
+frame = 8
+frame_progress = 1.0

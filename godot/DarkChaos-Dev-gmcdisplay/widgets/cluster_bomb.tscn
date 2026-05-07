@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ehq7t"]
 [ext_resource type="SpriteFrames" uid="uid://b0relk7jilbkb" path="res://resources/Cluster/cluster_bomb.tres" id="2_spges"]
 
-[node name="BallSave" type="Control" unique_id=782112633]
+[node name="ClusterBomb" type="Control" unique_id=782112633]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

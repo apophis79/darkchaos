@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_pvili"]
 [ext_resource type="VideoStream" uid="uid://bookkh3r4epar" path="res://resources/Wizard_Mode_Fully_Loaded.ogv" id="2_r76n5"]
 
-[node name="Wave9" type="Control" unique_id=418202989]
+[node name="ComboCommandInro" type="Control" unique_id=418202989]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
