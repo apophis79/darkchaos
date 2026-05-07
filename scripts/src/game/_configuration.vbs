@@ -44,7 +44,8 @@ If for_real = true Then
     CombosColor = "ffffff"
     HealthColor2 = "ffae01"
     MeteorCoolColor = "ffeede"
-     MeteorWarmColor = "ffc400"
+    MeteorWarmColor = "ffc400"
+    TrainingColor = "ffae00"
 End If
 
 

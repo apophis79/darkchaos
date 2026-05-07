@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7hecq638rhf1"]
 
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_i57dd"]
-[ext_resource type="VideoStream" uid="uid://cpwgbgb72qkqf" path="res://resources/ball_saved.ogv" id="2_i57dd"]
+[ext_resource type="VideoStream" uid="uid://d18uitechwsrs" path="res://resources/Alert_FullScreen_ShipSave.ogv" id="2_i57dd"]
 
 [node name="MoonLaunch" type="Control" unique_id=472710894]
 z_index = 10

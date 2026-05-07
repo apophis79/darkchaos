@@ -13,8 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_yobjl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=300870717]
-position = Vector2(406, 403)
-scale = Vector2(0.866797, 0.9604168)
+position = Vector2(348.00003, 294)
+scale = Vector2(1.0326172, 1.1010417)
 sprite_frames = ExtResource("2_yobjl")
 autoplay = "default"
 frame = 8

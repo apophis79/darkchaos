@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddumfa42buwqr"]
 
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_sml76"]
-[ext_resource type="VideoStream" uid="uid://c53lph7vtpgjk" path="res://resources/training_ship_save.ogv" id="2_dn2yl"]
+[ext_resource type="VideoStream" uid="uid://1ww30661t7t7" path="res://resources/Training_Protons.ogv" id="2_sml76"]
 
 [node name="TrainingProtons" type="Control" unique_id=289633905]
 layout_mode = 3
@@ -24,7 +24,7 @@ ratio = 1.777
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=1702018078]
 z_index = 6
 layout_mode = 2
-stream = ExtResource("2_dn2yl")
+stream = ExtResource("2_sml76")
 autoplay = true
 expand = true
 loop = true

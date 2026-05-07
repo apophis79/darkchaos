@@ -13,9 +13,9 @@ grow_vertical = 2
 script = ExtResource("1_c62c3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=300870717]
-position = Vector2(692, 347.00003)
+position = Vector2(630.99994, 338)
 rotation = -2.7122416
-scale = Vector2(0.9678475, 1.0642184)
+scale = Vector2(1.1550791, 1.2720097)
 sprite_frames = ExtResource("2_ctcy0")
 autoplay = "default"
 frame = 8

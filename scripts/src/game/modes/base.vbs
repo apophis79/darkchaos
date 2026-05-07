@@ -167,7 +167,7 @@ Sub CreateBaseMode()
             With .EventName("ball_save_new_ball_saving_ball")
                 .Widget = "ball_saved"
                 .Action = "play"
-                .Expire = 2
+                .Expire = 4
             End With
             With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave1 == 0}")
                 .Widget = "wave1"
