@@ -1,0 +1,154 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://djpwxbc2e32r"]
+
+[ext_resource type="Texture2D" uid="uid://2ewbdmoblk62" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00000.png" id="1_up55q"]
+[ext_resource type="Texture2D" uid="uid://rywo623a3eab" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00001.png" id="2_q87k3"]
+[ext_resource type="Texture2D" uid="uid://cq1rl170k0oc2" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00002.png" id="3_3mfox"]
+[ext_resource type="Texture2D" uid="uid://clgmnd80ao81c" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00003.png" id="4_4i671"]
+[ext_resource type="Texture2D" uid="uid://butddp5wn6mxg" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00004.png" id="5_lqsvm"]
+[ext_resource type="Texture2D" uid="uid://bu76lgm1hhsup" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00005.png" id="6_jfyg0"]
+[ext_resource type="Texture2D" uid="uid://78y2t5n5sxju" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00006.png" id="7_k33js"]
+[ext_resource type="Texture2D" uid="uid://d2qas8qea60ec" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00007.png" id="8_trm5n"]
+[ext_resource type="Texture2D" uid="uid://d1i33amiggjj0" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00008.png" id="9_3usyl"]
+[ext_resource type="Texture2D" uid="uid://csfwu7efb37fu" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00009.png" id="10_6vdw2"]
+[ext_resource type="Texture2D" uid="uid://b14hpdh1n387g" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00010.png" id="11_kvjn1"]
+[ext_resource type="Texture2D" uid="uid://jbjbkl8vpalb" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00011.png" id="12_iwb7p"]
+[ext_resource type="Texture2D" uid="uid://eea6ooygbvvr" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00012.png" id="13_m3e7e"]
+[ext_resource type="Texture2D" uid="uid://budfnulcantem" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00013.png" id="14_pjacr"]
+[ext_resource type="Texture2D" uid="uid://b44s5tw44ex7o" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00014.png" id="15_h5ylu"]
+[ext_resource type="Texture2D" uid="uid://na0qlrg4xyx5" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00015.png" id="16_hfksv"]
+[ext_resource type="Texture2D" uid="uid://b6kbsqw65hcrx" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00016.png" id="17_67fy3"]
+[ext_resource type="Texture2D" uid="uid://djvkegf4i6w2i" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00017.png" id="18_kb8nt"]
+[ext_resource type="Texture2D" uid="uid://bai3p2op0fjie" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00018.png" id="19_pd22y"]
+[ext_resource type="Texture2D" uid="uid://c7oo8joixbv6r" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00019.png" id="20_8ff0e"]
+[ext_resource type="Texture2D" uid="uid://dkwxqmyyi3v4g" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00020.png" id="21_uar1v"]
+[ext_resource type="Texture2D" uid="uid://b1t4rqrq4c2j7" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00021.png" id="22_v1637"]
+[ext_resource type="Texture2D" uid="uid://dn77ggu5iucih" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00022.png" id="23_bfmld"]
+[ext_resource type="Texture2D" uid="uid://b7d56xd82psit" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00023.png" id="24_2rova"]
+[ext_resource type="Texture2D" uid="uid://b0v3hu0y1xa5e" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00024.png" id="25_ed0du"]
+[ext_resource type="Texture2D" uid="uid://dw8rrn7xi5q1w" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00025.png" id="26_jwxc3"]
+[ext_resource type="Texture2D" uid="uid://0eom1w6kyt0k" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00026.png" id="27_hmk5n"]
+[ext_resource type="Texture2D" uid="uid://b3irsc15r05nj" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00027.png" id="28_w2io4"]
+[ext_resource type="Texture2D" uid="uid://dsw7pej3xcyke" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00028.png" id="29_55ae1"]
+[ext_resource type="Texture2D" uid="uid://cxqbmpo2tnoqh" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00029.png" id="30_lp5ju"]
+[ext_resource type="Texture2D" uid="uid://damdrl7yh7nyn" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00030.png" id="31_vynyo"]
+[ext_resource type="Texture2D" uid="uid://cit7pnvakg5uv" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00031.png" id="32_dlhkm"]
+[ext_resource type="Texture2D" uid="uid://6tr4o4cxbtjd" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00032.png" id="33_mtrhb"]
+[ext_resource type="Texture2D" uid="uid://cs0tpfy3ixq6u" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00033.png" id="34_fi4p2"]
+[ext_resource type="Texture2D" uid="uid://b76wyngbw54sb" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00034.png" id="35_dac83"]
+[ext_resource type="Texture2D" uid="uid://bxssl63olk1bc" path="res://resources/Alert_Moon_Missile/Alert_Moon_Missile_00035.png" id="36_1e42i"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_up55q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q87k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3mfox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4i671")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lqsvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jfyg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k33js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_trm5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3usyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6vdw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kvjn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iwb7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m3e7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pjacr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h5ylu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hfksv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_67fy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kb8nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pd22y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8ff0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_uar1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_v1637")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bfmld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2rova")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ed0du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jwxc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hmk5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w2io4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_55ae1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lp5ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_vynyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dlhkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_mtrhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_fi4p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_dac83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1e42i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]

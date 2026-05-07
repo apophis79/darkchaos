@@ -13,9 +13,23 @@
 [ext_resource type="SpriteFrames" uid="uid://ct5v7fhe1xjty" path="res://resources/Shields/shields.tres" id="11_n3kaw"]
 [ext_resource type="Script" uid="uid://byp603tsgxmsi" path="res://slides/animated_sheilds.gd" id="12_s2a5r"]
 [ext_resource type="Script" uid="uid://5rqmne8e68ao" path="res://slides/animated_overlay_queue_manager.gd" id="13_735fb"]
-[ext_resource type="SpriteFrames" uid="uid://cijfh8c15m82w" path="res://resources/Alert_AlienShipDetected/alien_ship_detected.tres" id="13_s2a5r"]
+[ext_resource type="SpriteFrames" uid="uid://cijfh8c15m82w" path="res://resources/Alert_AlienShipDetected/alert_alien_ship_detected.tres" id="13_s2a5r"]
 [ext_resource type="Script" uid="uid://b0k643g7873h8" path="res://slides/animated_overlay_queue.gd" id="14_4yxvp"]
-[ext_resource type="SpriteFrames" uid="uid://ikmdc5tlkj4e" path="res://resources/Alert_AlienShipSaved/alien_ship_Saved.tres" id="15_dm14r"]
+[ext_resource type="SpriteFrames" uid="uid://ikmdc5tlkj4e" path="res://resources/Alert_AlienShipSaved/alert_alien_ship_Saved.tres" id="15_dm14r"]
+[ext_resource type="SpriteFrames" uid="uid://t3ebmm7wbcm7" path="res://resources/Alert_Mystery_Ready/alert_mystery_ready.tres" id="17_ftlc5"]
+[ext_resource type="SpriteFrames" uid="uid://gxeuabds27p4" path="res://resources/Alert_Cluster/alert_cluster.tres" id="18_ftlc5"]
+[ext_resource type="SpriteFrames" uid="uid://cmgf7lvbwpps6" path="res://resources/Alert_Extra_Ball/alert_extra_ball.tres" id="19_nef13"]
+[ext_resource type="SpriteFrames" uid="uid://dkbhtg5r8jlnb" path="res://resources/Alert_Health/alert_health.tres" id="20_poryc"]
+[ext_resource type="SpriteFrames" uid="uid://dygygakk1vr31" path="res://resources/Alert_Health_Low/aleart_health_low.tres" id="21_hjgr4"]
+[ext_resource type="SpriteFrames" uid="uid://djpwxbc2e32r" path="res://resources/Alert_Moon_Missile/alert_moon_missile.tres" id="21_ukjfp"]
+[ext_resource type="SpriteFrames" uid="uid://b8pquxnmlquk1" path="res://resources/Alert_Proton_Acquired/alert_proton_aqcuired.tres" id="23_r1rew"]
+[ext_resource type="SpriteFrames" uid="uid://1cvxxkiqgy3i" path="res://resources/Alert_Ship_Saved/alert_ship_saved.tres" id="24_r1rew"]
+[ext_resource type="SpriteFrames" uid="uid://ctwaisadg33qq" path="res://resources/Alert_SkillShot/alert_skill_shot.tres" id="25_2y4wy"]
+[ext_resource type="SpriteFrames" uid="uid://cwxgittnrnr65" path="res://resources/Alert_TiltWarning/alert_tilt_warning.tres" id="26_e3lof"]
+[ext_resource type="SpriteFrames" uid="uid://dvcnlxik1arex" path="res://resources/Alert_Training_Ready/alert_training_ready.tres" id="27_gx7cy"]
+[ext_resource type="SpriteFrames" uid="uid://dx8nakjpk2c8i" path="res://resources/Alert_Wave_Completed/alert_wave_completed.tres" id="28_cnhqp"]
+[ext_resource type="SpriteFrames" uid="uid://bdfuolqgjfvb6" path="res://resources/Alert_Wizard_Mode Combo Command/alert_wizard_combo_command.tres" id="29_ovcnp"]
+[ext_resource type="SpriteFrames" uid="uid://dfyaeeljqmu6j" path="res://resources/Alert_Wizard_Mode_Fully_Loaded/wizard_fully_loaded.tres" id="30_gvfig"]
 
 [node name="Base" type="Control" unique_id=483653664]
 z_index = 5
@@ -361,3 +375,139 @@ centered = false
 offset = Vector2(320, 180)
 script = ExtResource("14_4yxvp")
 trigger_event = "ball_save_new_ball_saving_ball"
+
+[node name="Cluster" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1183544683]
+visible = false
+sprite_frames = ExtResource("18_ftlc5")
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_cluster_alert"
+
+[node name="ExtraBall" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1689882021]
+visible = false
+sprite_frames = ExtResource("19_nef13")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "eb_achieved"
+
+[node name="Health" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1694233025]
+visible = false
+sprite_frames = ExtResource("20_poryc")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_voc_critically_low_health"
+
+[node name="HealthLow" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=470053894]
+sprite_frames = ExtResource("21_hjgr4")
+frame = 36
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_voc_imminent_shutdown"
+
+[node name="MoonMissile" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=529239899]
+sprite_frames = ExtResource("21_ukjfp")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "qualify_lock_on_complete"
+
+[node name="MysteryReady" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=2013242045]
+visible = false
+sprite_frames = ExtResource("17_ftlc5")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_voc_LMR"
+
+[node name="ProtonAcquired" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=485355500]
+visible = false
+sprite_frames = ExtResource("23_r1rew")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "added_proton"
+
+[node name="ShipSaved" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1787926144]
+visible = false
+sprite_frames = ExtResource("24_r1rew")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "saver_acquired"
+
+[node name="SkillShot" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1235153079]
+visible = false
+sprite_frames = ExtResource("25_2y4wy")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_ss_alert"
+
+[node name="TiltWarning" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1448582049]
+visible = false
+sprite_frames = ExtResource("26_e3lof")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "tilt_warning"
+
+[node name="TrainingReady" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1008396377]
+visible = false
+sprite_frames = ExtResource("27_gx7cy")
+frame = 36
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_voc_Training"
+
+[node name="WaveCompleted" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=2088261499]
+visible = false
+sprite_frames = ExtResource("28_cnhqp")
+frame = 36
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "play_voc_wave_completed"
+
+[node name="WizardModeComboCommand" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=560163092]
+visible = false
+sprite_frames = ExtResource("29_ovcnp")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "activate_combo_command_wizard"
+
+[node name="WizardModeFullyLoaded" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1742812129]
+visible = false
+sprite_frames = ExtResource("30_gvfig")
+frame = 35
+frame_progress = 1.0
+centered = false
+offset = Vector2(320, 180)
+script = ExtResource("14_4yxvp")
+trigger_event = "activate_fully_loaded_wizard"

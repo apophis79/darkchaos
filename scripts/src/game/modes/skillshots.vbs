@@ -15,8 +15,8 @@ Sub CreateSkillshotsMode
             'Only start skillshots if starting a new ball
             .Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", Array("init_ss")
             'Handle successful skillshots
-            .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved")
-            .Add "left_side_hit{current_player.shot_ss==1}", Array("sss_achieved") 
+            .Add "s_TargetMystery2_active{current_player.shot_ss==1}", Array("ss_achieved","play_ss_alert")
+            .Add "left_side_hit{current_player.shot_ss==1}", Array("sss_achieved","play_ss_alert") 
             .Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", Array("ssss_achieved") 
             .Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", Array("sdsss_achieved") 
             .Add "ss_achieved", Array("ss_trainer_ready","score_500000")
