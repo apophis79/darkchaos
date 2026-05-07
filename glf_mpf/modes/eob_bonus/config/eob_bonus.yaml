@@ -295,7 +295,7 @@ show_player:
       speed: 13
       show_tokens: 
         lights: "LX"
-        color: "ffae00"
+        color: "ff4c00"
   bonus_tally3: 
     flash_color: 
       key: key_tally3_show
@@ -323,8 +323,16 @@ show_player:
 
 
 slide_player: 
-  run_bonus_started.2: 
-    bonus:
+  run_bonus_started.2{current_player.ball==1}: 
+    bonus1:
+      action: play
+      expire: 0s
+  run_bonus_started.2{current_player.ball==2}: 
+    bonus2:
+      action: play
+      expire: 0s
+  run_bonus_started.2{current_player.ball==3}: 
+    bonus3:
       action: play
       expire: 0s
 

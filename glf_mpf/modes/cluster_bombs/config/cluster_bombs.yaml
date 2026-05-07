@@ -30,9 +30,11 @@ event_player:
   light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}:
     - add_cluster_bomb1
     - reset_cluster_charges
+    - play_cluster_alert
   light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
     - add_cluster_bomb2
     - check_fully_loaded
+    - play_cluster_alert
   s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}:
     - fire_cluster_bomb1
     - cluster_bomb_fired
@@ -251,6 +253,13 @@ sound_player:
     sfx_error_buzz: 
       key: key_sfx_error_buzz2
       action: play
+
+
+widget_player: 
+  cluster_bomb_fired: 
+    cluster_bomb:
+      action: play
+      expire: 2.3s
 
 
 

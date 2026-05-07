@@ -501,6 +501,13 @@ show_player:
         lights: "GI"
 
 
+slide_player: 
+  high_score_enter_initials: 
+    high_score_dc:
+      action: play
+      expire: 0s
+
+
 sound_player: 
   mode_high_score_started: 
     mus_victory: 

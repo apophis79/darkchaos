@@ -22,7 +22,6 @@ event_player:
   timer_final_wave_message_complete:
     - fwwiz_music_start
     - release_scoop_hold
-    - start_moon_multiball
     - delayed_release_moon_ball
     - display_hit_count
   release_scoop_hold:
@@ -545,7 +544,7 @@ multiballs:
     shoot_again: 60000
     hurry_up_time: 5000
     grace_period: 500
-    ball_locks: 
+    ball_locks: moon_lock
   fwwiz_2:
     start_events: fwwiz_add_ball
     ball_count: 1
@@ -553,7 +552,7 @@ multiballs:
     shoot_again: 0
     hurry_up_time: 0
     grace_period: 0
-    ball_locks: 
+    ball_locks: moon_lock
 
 random_event_player: 
   fwwiz_raise_meteor: 
@@ -1061,6 +1060,13 @@ show_player:
         lights: "LB4"
         color: "ed1800"
         fade: "50"
+
+
+slide_player: 
+  mode_final_wave_wizard_started: 
+    final_wave:
+      action: play
+      expire: 0s
 
 
 sound_player: 

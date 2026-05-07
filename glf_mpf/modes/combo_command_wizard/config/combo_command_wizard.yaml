@@ -14,7 +14,6 @@ event_player:
     - ccwiz_music_stop
   timer_combo_command_message_complete:
     - release_scoop_hold
-    - start_moon_multiball
     - delayed_release_moon_ball
   release_scoop_hold:
     - disable_scoop_hold
@@ -154,7 +153,7 @@ multiballs:
     shoot_again: 20000
     hurry_up_time: 3000
     grace_period: 2000
-    ball_locks: 
+    ball_locks: moon_lock
   ccwiz_2:
     start_events: ccwiz_add_ball
     ball_count: 2
@@ -162,7 +161,7 @@ multiballs:
     shoot_again: 0
     hurry_up_time: 0
     grace_period: 0
-    ball_locks: 
+    ball_locks: moon_lock
 
 random_event_player: 
   add_ccwiz_phase2_shot: 
@@ -174,7 +173,6 @@ random_event_player:
       combo_command5_ready{current_player.shot_combo_command5 == 0}: 1
       combo_command6_ready{current_player.shot_combo_command6 == 0}: 1
       combo_command7_ready{current_player.shot_combo_command7 == 0}: 1
-      combo_command8_ready{current_player.shot_combo_command8 == 0}: 1
     scope: player
   ccwiz_bumpers_show2: 
     events:
@@ -446,7 +444,7 @@ show_player:
       show_tokens: 
         color1: "000000"
         color2: "ffffff"
-        color3: "ffae00"
+        color3: "ff4c00"
         intensity: "100"
   ccwiz_flash_phase2_show2: 
     flash_color_fadeout: 
@@ -455,7 +453,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "tFlasher"
-        color: "ffae00"
+        color: "ff4c00"
   ccwiz_shot_phase2_show3: 
     insert_swap3: 
       key: key_ccwiz_shot_phase2_show3
@@ -607,6 +605,13 @@ show_player:
         color: "dd0400"
 
 
+slide_player: 
+  mode_combo_command_wizard_started: 
+    wizard_mode:
+      action: play
+      expire: 0s
+
+
 timers: 
   combo_command_message:
     start_value: 0
@@ -658,6 +663,13 @@ variable_player:
       action: set
       int: 2
 
+
+
+widget_player: 
+  mode_combo_command_wizard_started: 
+    combo_command_wizard_intro:
+      action: play
+      expire: 11s
 
 
 

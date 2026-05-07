@@ -5,4 +5,11 @@ mode:
   stop_events: ball_will_end
   priority: 10000
 
+slide_player: 
+  tilt: 
+    tilt_dc:
+      action: play
+      expire: 0s
+
+
 

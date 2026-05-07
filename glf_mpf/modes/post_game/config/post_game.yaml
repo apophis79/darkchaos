@@ -1077,7 +1077,7 @@ show_player:
       speed: 6
       show_tokens: 
         lights: "tTrain"
-        color: "ffae00"
+        color: "ff4c00"
   powerup_cluster: 
     flash_color_fadeout: 
       key: key_powerup_cluster
@@ -1714,7 +1714,7 @@ show_player:
       speed: 2
       show_tokens: 
         intensity: "100"
-        color: "ffae00"
+        color: "ff4c00"
   play_rsling_magenta: 
     rsling_rotate1_ccw: 
       key: key_rsling_magenta
@@ -1771,6 +1771,13 @@ show_player:
       show_tokens: 
         lights: "LSpot1"
         color: "ffffff"
+
+
+slide_player: 
+  mode_post_game_started: 
+    post_game:
+      action: play
+      expire: 0s
 
 
 sound_player: 

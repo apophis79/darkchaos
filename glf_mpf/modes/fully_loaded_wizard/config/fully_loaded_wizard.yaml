@@ -14,7 +14,6 @@ event_player:
     - flwiz_music_stop
   timer_fully_loaded_message_complete:
     - release_scoop_hold
-    - start_moon_multiball
     - delayed_release_moon_ball
   release_scoop_hold:
     - disable_scoop_hold
@@ -182,7 +181,7 @@ multiballs:
     shoot_again: 20000
     hurry_up_time: 3000
     grace_period: 2000
-    ball_locks: 
+    ball_locks: moon_lock
   flwiz_2:
     start_events: flwiz_add_ball
     ball_count: 2
@@ -190,7 +189,7 @@ multiballs:
     shoot_again: 0
     hurry_up_time: 0
     grace_period: 0
-    ball_locks: 
+    ball_locks: moon_lock
 
 random_event_player: 
   add_flwiz_phase2_shot: 
@@ -669,6 +668,13 @@ show_player:
       loops: 0
 
 
+slide_player: 
+  mode_fully_loaded_wizard_started: 
+    wizard_mode:
+      action: play
+      expire: 0s
+
+
 sound_player: 
   play_sfx_cluster_fired: 
     sfx_cluster_fired: 
@@ -731,6 +737,13 @@ variable_player:
       action: set
       int: 2
 
+
+
+widget_player: 
+  mode_fully_loaded_wizard_started: 
+    fully_loaded_wizard_intro:
+      action: play
+      expire: 11s
 
 
 

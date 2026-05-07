@@ -47,10 +47,15 @@ event_player:
     - backglass_chaos_on
     - backglass_wave_off
     - check_plunger
-    - display_p1_score{machine.last_game_players>0}
-    - display_p2_score{machine.last_game_players>1}
-    - display_p3_score{machine.last_game_players>2}
-    - display_p4_score{machine.last_game_players>3}
+    - display_player_scores
+  display_player_scores{machine.last_game_players>0}:
+    - display_p1_score
+  display_player_scores{machine.last_game_players>1}:
+    - display_p2_score
+  display_player_scores{machine.last_game_players>2}:
+    - display_p3_score
+  display_player_scores{machine.last_game_players>3}:
+    - display_p4_score
   mode_base_started{current_player.wizard_final_hit_count > 0}:
     - new_ball_started
   mode_base_started{current_player.number == 1}:
@@ -1279,7 +1284,7 @@ variable_player:
 
 widget_player: 
   ball_save_new_ball_saving_ball: 
-    ball_save:
+    ball_saved:
       action: play
       expire: 2s
   timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave1 == 0}: 
@@ -1318,6 +1323,10 @@ widget_player:
     wave9:
       action: play
       expire: 5s
+  earth_hit: 
+    impact:
+      action: play
+      expire: 2.5s
 
 
 

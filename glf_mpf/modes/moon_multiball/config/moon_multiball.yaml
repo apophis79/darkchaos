@@ -120,4 +120,11 @@ variable_player:
 
 
 
+widget_player: 
+  start_moon_multiball: 
+    moon_launch:
+      action: play
+      expire: 4s
+
+
 

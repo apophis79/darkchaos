@@ -42,9 +42,9 @@ event_player:
     - check_add_training_health_bump
   s_TopSlingshot_active:
     - check_add_training_health_bump
-  check_add_training_health_bump{current_player.training_health_bump_value<3}:
+  check_add_training_health_bump{current_player.training_health_bump_value<1}:
     - add_training_health_bump
-  check_add_training_health_bump{current_player.training_health_bump_value>=3}:
+  check_add_training_health_bump{current_player.training_health_bump_value>=1}:
     - check_add_training_health
     - reset_training_health_bump
   check_add_training_health{current_player.shot_training_health1 == 0}:
@@ -538,7 +538,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffae00"
+        color: "ff4c00"
   training_cancel_warning_stop: 
     flash_color: 
       action: stop
@@ -548,7 +548,14 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffae00"
+        color: "ff4c00"
+
+
+slide_player: 
+  mode_training_heal_started: 
+    training_health:
+      action: play
+      expire: 0s
 
 
 timers: 

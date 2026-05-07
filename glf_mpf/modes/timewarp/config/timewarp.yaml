@@ -79,6 +79,17 @@ show_player:
       loops: 0
 
 
+slide_player: 
+  restart_tw_timer: 
+    time_warp:
+      action: play
+      expire: 0s
+  timer_timewarp_complete: 
+    time_warp:
+      action: remove
+      expire: 0s
+
+
 sound_player: 
   s_GateL_active: 
     sfx_left_ramp_time_warp: 

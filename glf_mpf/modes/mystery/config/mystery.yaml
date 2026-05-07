@@ -399,11 +399,4 @@ variable_player:
 
 
 
-widget_player: 
-  play_voc_LMR: 
-    mystery_ready:
-      action: play
-      expire: 5s
-
-
 

@@ -108,7 +108,7 @@ shots:
 
 show_player: 
   earth_hit: 
-    earth_hit_center: 
+    earth_hit: 
       key: key_earth_hit_center_aa
       priority: 15
       loops: 0
@@ -129,7 +129,7 @@ show_player:
       loops: 2
       speed: 1.5
       show_tokens: 
-        color1: "ffae00"
+        color1: "ff4c00"
         color2: "ff0300"
         intensity: "100"
 

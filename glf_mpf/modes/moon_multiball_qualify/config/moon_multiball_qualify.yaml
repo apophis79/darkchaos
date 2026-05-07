@@ -289,4 +289,11 @@ variable_player:
 
 
 
+widget_player: 
+  mm_acquired: 
+    moon_lock:
+      action: play
+      expire: 3s
+
+
 
