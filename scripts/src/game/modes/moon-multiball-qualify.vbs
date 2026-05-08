@@ -47,7 +47,7 @@ Sub CreateMoonMultiballQualifyMode
             .Add "light_missile1", Array("score_50000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired") ',"backglass_moon_on")
             .Add "light_missile2", Array("score_100000","slings_powerup_added","lsling_powerup_mm","rsling_powerup_mm","mm_acquired") ',"backglass_moon_on")
             .Add "qualify_lock_hit", Array("score_2000")
-            .Add "qualify_lock_on_complete", Array("score_50000")
+            .Add "qualify_lock_on_complete", Array("score_50000","play_moon_lock_ready")
             .Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", Array("restart_moon_qualify_shots")
         End With
 

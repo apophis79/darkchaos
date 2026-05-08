@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ch5wdby2ejge5"]
+
+[ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_nd5nj"]
+[ext_resource type="VideoStream" uid="uid://ig4diwiio86p" path="res://resources/Final_Wave.ogv" id="2_nd5nj"]
+
+[node name="FinalWaveIntro" type="Control" unique_id=418202989]
+z_index = 9
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nd5nj")
+
+[node name="Control" type="Control" parent="." unique_id=629197098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control" unique_id=1776840794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_nd5nj")
+autoplay = true
+expand = true

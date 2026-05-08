@@ -161,6 +161,22 @@ Sub CreateBaseMode()
                 .Slide = "space_field"
                 .Action = "play"
             End With
+            With .EventName("activate_final_wave_wizard")
+                .Slide = "final_wave_hit_the_scoop"
+                .Action = "play"
+            End With
+            With .EventName("run_final_wave_wizard")
+                .Slide = "final_wave_hit_the_scoop"
+                .Action = "remove"
+            End With
+        End With
+
+        With .WidgetPlayer()
+            With .EventName("run_final_wave_wizard")
+                .Widget = "final_wave_wizard_intro"
+                .Action = "play"
+                .Expire = 11
+            End With
         End With
 
         With .WidgetPlayer()

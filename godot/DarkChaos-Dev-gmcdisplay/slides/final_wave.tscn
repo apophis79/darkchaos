@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dh5kjtxx2k67d"]
 
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_w48rb"]
-[ext_resource type="VideoStream" uid="uid://ctycoqn8x3sxx" path="res://resources/Wizard_Mode_Loop.ogv" id="2_ltucs"]
+[ext_resource type="VideoStream" uid="uid://bjgapsan5b2ub" path="res://resources/Final_Wave_Loop.ogv" id="2_w48rb"]
 
 [node name="FinalWave" type="Control" unique_id=1132851332]
 z_index = 1
@@ -24,7 +24,7 @@ ratio = 1.777
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=1777239437]
 layout_mode = 2
-stream = ExtResource("2_ltucs")
+stream = ExtResource("2_w48rb")
 autoplay = true
 expand = true
 loop = true

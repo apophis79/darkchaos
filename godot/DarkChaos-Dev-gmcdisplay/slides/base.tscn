@@ -20,10 +20,10 @@
 [ext_resource type="SpriteFrames" uid="uid://gxeuabds27p4" path="res://resources/Alert_Cluster/alert_cluster.tres" id="18_ftlc5"]
 [ext_resource type="SpriteFrames" uid="uid://cmgf7lvbwpps6" path="res://resources/Alert_Extra_Ball/alert_extra_ball.tres" id="19_nef13"]
 [ext_resource type="SpriteFrames" uid="uid://dkbhtg5r8jlnb" path="res://resources/Alert_Health/alert_health.tres" id="20_poryc"]
+[ext_resource type="SpriteFrames" uid="uid://rgcdfcw80pmc" path="res://resources/Alert_Moon_Lock_Ready/alert_moon_lock_ready.tres" id="21_gvfig"]
 [ext_resource type="SpriteFrames" uid="uid://dygygakk1vr31" path="res://resources/Alert_Health_Low/aleart_health_low.tres" id="21_hjgr4"]
-[ext_resource type="SpriteFrames" uid="uid://djpwxbc2e32r" path="res://resources/Alert_Moon_Missile/alert_moon_missile.tres" id="21_ukjfp"]
 [ext_resource type="SpriteFrames" uid="uid://b8pquxnmlquk1" path="res://resources/Alert_Proton_Acquired/alert_proton_aqcuired.tres" id="23_r1rew"]
-[ext_resource type="SpriteFrames" uid="uid://1cvxxkiqgy3i" path="res://resources/Alert_Ship_Saved/alert_ship_saved.tres" id="24_r1rew"]
+[ext_resource type="SpriteFrames" uid="uid://cfnfdkyoeihxs" path="res://resources/Alert_Ship_Saver/alert_ship_saver.tres" id="24_6vceq"]
 [ext_resource type="SpriteFrames" uid="uid://ctwaisadg33qq" path="res://resources/Alert_SkillShot/alert_skill_shot.tres" id="25_2y4wy"]
 [ext_resource type="SpriteFrames" uid="uid://cwxgittnrnr65" path="res://resources/Alert_TiltWarning/alert_tilt_warning.tres" id="26_e3lof"]
 [ext_resource type="SpriteFrames" uid="uid://dvcnlxik1arex" path="res://resources/Alert_Training_Ready/alert_training_ready.tres" id="27_gx7cy"]
@@ -335,7 +335,7 @@ position = Vector2(0, 158)
 texture = ExtResource("9_f5kbb")
 centered = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1545557138]
+[node name="AnimatedShip" type="AnimatedSprite2D" parent="." unique_id=1545557138]
 position = Vector2(1643, 877)
 sprite_frames = ExtResource("10_du778")
 autoplay = "default"
@@ -405,6 +405,7 @@ script = ExtResource("14_4yxvp")
 trigger_event = "play_voc_critically_low_health"
 
 [node name="HealthLow" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=470053894]
+visible = false
 sprite_frames = ExtResource("21_hjgr4")
 frame = 36
 frame_progress = 1.0
@@ -414,13 +415,13 @@ script = ExtResource("14_4yxvp")
 trigger_event = "play_voc_imminent_shutdown"
 
 [node name="MoonMissile" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=529239899]
-sprite_frames = ExtResource("21_ukjfp")
-frame = 35
+sprite_frames = ExtResource("21_gvfig")
+frame = 36
 frame_progress = 1.0
 centered = false
 offset = Vector2(320, 180)
 script = ExtResource("14_4yxvp")
-trigger_event = "qualify_lock_on_complete"
+trigger_event = "play_moon_lock_ready"
 
 [node name="MysteryReady" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=2013242045]
 visible = false
@@ -442,10 +443,10 @@ offset = Vector2(320, 180)
 script = ExtResource("14_4yxvp")
 trigger_event = "added_proton"
 
-[node name="ShipSaved" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1787926144]
+[node name="ShipSaver" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=1787926144]
 visible = false
-sprite_frames = ExtResource("24_r1rew")
-frame = 35
+sprite_frames = ExtResource("24_6vceq")
+frame = 36
 frame_progress = 1.0
 centered = false
 offset = Vector2(320, 180)
