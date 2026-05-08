@@ -50,6 +50,7 @@ event_player:
     - score_2000
   qualify_lock_on_complete:
     - score_50000
+    - play_moon_lock_ready
   restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}:
     - restart_moon_qualify_shots
 

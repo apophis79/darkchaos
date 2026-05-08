@@ -1149,7 +1149,7 @@ show_player:
       speed: 6
       show_tokens: 
         lights: "tCombos"
-        color: "ffffff"
+        color: "ffb46b"
   play_slide_left: 
     insert_gi_slide_left: 
       key: key_insert_gi_slide_left

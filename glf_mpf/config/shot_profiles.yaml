@@ -373,7 +373,7 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: "ffae01"
+         color: "d14c00"
      - name: critical
        show: flash_color
        loops: -1
@@ -471,7 +471,7 @@ shot_profiles:
        speed: 2
        sync_ms: 0
        show_tokens: 
-         color: "ffeede"
+         color: "ffA957"
          fade: "300"
      - name: warm
        show: flash_color_with_fade
@@ -479,7 +479,7 @@ shot_profiles:
        speed: 5
        sync_ms: 0
        show_tokens: 
-         color: "ffc400"
+         color: "edb600"
          fade: "100"
      - name: hot
        show: flash_color
@@ -539,14 +539,14 @@ shot_profiles:
        speed: 10
        sync_ms: 0
        show_tokens: 
-         color: "ffffff"
+         color: "ffb46b"
      - name: on
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: "ffffff"
+         color: "ffb46b"
   asteroid:
     advance_on_hit: True
     states: 

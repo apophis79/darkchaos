@@ -2,7 +2,7 @@
 
 mode:
   start_events: asteroid_destroyed, restart_victory
-  stop_events: mode_base_stopping
+  stop_events: mode_base_stopping, end_victory_lap
   priority: 9999
 
 ball_saves: 
@@ -1488,6 +1488,14 @@ show_player:
 
 slide_player: 
   mode_victory_lap_started: 
+    plunge_for_victory:
+      action: play
+      expire: 0s
+  run_victory_lap: 
+    plunge_for_victory:
+      action: remove
+      expire: 0s
+  play_mus_victory: 
     victory:
       action: play
       expire: 0s

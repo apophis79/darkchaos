@@ -477,7 +477,7 @@ shots:
     restart_events: game_start, run_final_wave_wizard
     show_tokens: 
       lights: "LCWiz"
-      color: "ffffff"
+      color: "ffb46b"
     control_events: 
       - events: activate_combo_command_wizard
         state: 1
@@ -488,7 +488,7 @@ shots:
     restart_events: game_start, run_final_wave_wizard
     show_tokens: 
       lights: "LLWiz"
-      color: "ffffff"
+      color: "ffb46b"
     control_events: 
       - events: prime_fully_loaded_wizard
         state: 1
@@ -679,7 +679,7 @@ show_player:
       show_tokens: 
         intensity1: "20"
         intensity2: "100"
-        color: "ffffff"
+        color: "ffb46b"
   stop_ccwiz_scoop_show: 
     combo_command_scoop: 
       action: stop
@@ -688,7 +688,7 @@ show_player:
       show_tokens: 
         intensity1: "20"
         intensity2: "100"
-        color: "ffffff"
+        color: "ffb46b"
   scoop_blast: 
     insert_gi_slide_diag: 
       key: key_scoop_fire_blast
@@ -796,7 +796,7 @@ show_player:
       speed: 20
       show_tokens: 
         lights: "tFlasherU"
-        color: "ffffff"
+        color: "ffb46b"
   activate_fully_loaded_wizard: 
     flash_color: 
       key: key_loaded_wiz_ready
@@ -815,6 +815,14 @@ slide_player:
   mode_base_started.1: 
     space_field:
       action: play
+      expire: 0s
+  activate_final_wave_wizard: 
+    final_wave_hit_the_scoop:
+      action: play
+      expire: 0s
+  run_final_wave_wizard: 
+    final_wave_hit_the_scoop:
+      action: remove
       expire: 0s
 
 
@@ -1283,6 +1291,10 @@ variable_player:
 
 
 widget_player: 
+  run_final_wave_wizard: 
+    final_wave_wizard_intro:
+      action: play
+      expire: 11s
   ball_save_new_ball_saving_ball: 
     ball_saved:
       action: play
