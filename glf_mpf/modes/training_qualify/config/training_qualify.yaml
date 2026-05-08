@@ -90,7 +90,7 @@ shots:
     restart_events: left_side_training_off, clear_training_shots
     show_tokens: 
       lights: "LS1"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: left_side_training_on
         state: 1
@@ -99,7 +99,7 @@ shots:
     restart_events: left_orbit_training_off, clear_training_shots
     show_tokens: 
       lights: "LS2"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: left_orbit_training_on
         state: 1
@@ -108,7 +108,7 @@ shots:
     restart_events: left_ramp_training_off, clear_training_shots
     show_tokens: 
       lights: "LS3"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: left_ramp_training_on
         state: 1
@@ -117,7 +117,7 @@ shots:
     restart_events: inner_orbit_training_off, clear_training_shots
     show_tokens: 
       lights: "LS4"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: inner_orbit_training_on
         state: 1
@@ -126,7 +126,7 @@ shots:
     restart_events: center_orbit_training_off, clear_training_shots
     show_tokens: 
       lights: "LPC45"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: center_orbit_training_on
         state: 1
@@ -135,7 +135,7 @@ shots:
     restart_events: right_ramp_training_off, clear_training_shots
     show_tokens: 
       lights: "LS5"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: right_ramp_training_on
         state: 1
@@ -144,7 +144,7 @@ shots:
     restart_events: right_orbit_training_off, clear_training_shots
     show_tokens: 
       lights: "LS6"
-      color: "ff4c00"
+      color: "ffae00"
     control_events: 
       - events: right_orbit_training_on
         state: 1
@@ -153,7 +153,7 @@ shots:
     restart_events: restart_qualify_training
     show_tokens: 
       lights: "LX"
-      color: "ff4c00"
+      color: "ffae00"
     enable_events: mode_training_qualify_started
     disable_events: start_training_select
     control_events: 
@@ -168,7 +168,7 @@ show_player:
       speed: 20
       show_tokens: 
         lights: "tFlasherU"
-        color: "ff4c00"
+        color: "ffae00"
 
 
 sound_player: 

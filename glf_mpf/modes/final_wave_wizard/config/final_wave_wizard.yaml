@@ -672,7 +672,7 @@ shots:
   fwwiz_shoot_again:
     profile: shoot_again
     show_tokens: 
-      color: "d14c00"
+      color: "ffae01"
     reset_events: multiball_fwwiz_shoot_again_ended
     control_events: 
       - events: begin_fwwiz

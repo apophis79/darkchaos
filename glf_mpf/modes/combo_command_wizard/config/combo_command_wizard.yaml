@@ -258,7 +258,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LS1"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command1_ready, mode_combo_command_wizard_started
         state: 1
@@ -268,7 +268,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LS2"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command2_ready, mode_combo_command_wizard_started
         state: 1
@@ -278,7 +278,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LS3"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command3_ready, mode_combo_command_wizard_started
         state: 1
@@ -288,7 +288,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LS4"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command4_ready, mode_combo_command_wizard_started
         state: 1
@@ -298,7 +298,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LPC45"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command5_ready, mode_combo_command_wizard_started
         state: 1
@@ -308,7 +308,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LS5"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command6_ready, mode_combo_command_wizard_started
         state: 1
@@ -318,7 +318,7 @@ shots:
     profile: combo_command
     show_tokens: 
       lights: "LS6"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combo_command7_ready, mode_combo_command_wizard_started
         state: 1
@@ -406,7 +406,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         intensity: "100"
   ccwiz_flash_phase1_show: 
     flash_color_fadeout: 
@@ -415,7 +415,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "tFlasher"
-        color: "ffb46b"
+        color: "ffffff"
   ccwiz_shot_phase2_show1: 
     insert_swap3: 
       key: key_ccwiz_shot_phase2_show1
@@ -424,7 +424,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "dd0400"
         intensity: "100"
   ccwiz_flash_phase2_show1: 
@@ -443,8 +443,8 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
-        color3: "ff4c00"
+        color2: "ffffff"
+        color3: "ffae00"
         intensity: "100"
   ccwiz_flash_phase2_show2: 
     flash_color_fadeout: 
@@ -453,7 +453,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "tFlasher"
-        color: "ff4c00"
+        color: "ffae00"
   ccwiz_shot_phase2_show3: 
     insert_swap3: 
       key: key_ccwiz_shot_phase2_show3
@@ -462,7 +462,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "ccbb00"
         intensity: "100"
   ccwiz_flash_phase2_show3: 
@@ -481,7 +481,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "00dd00"
         intensity: "100"
   ccwiz_flash_phase2_show4: 
@@ -500,7 +500,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "00dddd"
         intensity: "100"
   ccwiz_flash_phase2_show5: 
@@ -519,7 +519,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "0010cc"
         intensity: "100"
   ccwiz_flash_phase2_show6: 
@@ -538,7 +538,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "0500ee"
         intensity: "100"
   ccwiz_flash_phase2_show7: 
@@ -557,7 +557,7 @@ show_player:
       speed: 1.5
       show_tokens: 
         color1: "000000"
-        color2: "ffb46b"
+        color2: "ffffff"
         color3: "dd00dd"
         intensity: "100"
   ccwiz_flash_phase2_show8: 
@@ -576,7 +576,7 @@ show_player:
       speed: 2
       show_tokens: 
         intensity: "100"
-        color: "ffb46b"
+        color: "ffffff"
   ccwiz_sjp1_show2: 
     flash_color: 
       key: key_ccwiz_sjp1_show2
@@ -584,7 +584,7 @@ show_player:
       speed: 20
       show_tokens: 
         lights: "tFlasher"
-        color: "ffb46b"
+        color: "ffffff"
   ccwiz_sjp2_show1: 
     insert_gi_spin_center: 
       key: key_ccwiz_sjp2_show1

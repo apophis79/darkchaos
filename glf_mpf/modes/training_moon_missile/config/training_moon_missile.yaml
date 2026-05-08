@@ -428,7 +428,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ff4c00"
+        color: "ffae00"
   training_cancel_warning_stop: 
     flash_color: 
       action: stop
@@ -438,7 +438,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ff4c00"
+        color: "ffae00"
 
 
 slide_player: 
