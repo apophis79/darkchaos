@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ccx1igga00i3h"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_jc6au"]
+[ext_resource type="VideoStream" uid="uid://cofca1w62r2f8" path="res://resources/Plunge_For_Victory.ogv" id="2_jc6au"]
+
+[node name="PlungeForVictory" type="Control" unique_id=1132851332]
+z_index = 11
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jc6au")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=297178048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=1777239437]
+layout_mode = 2
+stream = ExtResource("2_jc6au")
+autoplay = true
+expand = true
+loop = true

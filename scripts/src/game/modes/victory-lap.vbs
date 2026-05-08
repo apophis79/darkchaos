@@ -12,7 +12,7 @@ Sub CreateVictoryLapMode
 
     With CreateGlfMode("victory_lap", 9999)
         .StartEvents = Array("asteroid_destroyed","restart_victory")
-        .StopEvents = Array("mode_base_stopping")
+        .StopEvents = Array("mode_base_stopping","end_victory_lap")
 
         With .EventPlayer()
             'victory lap starts before final wve ends... so wait till the final wave is done
@@ -56,11 +56,21 @@ Sub CreateVictoryLapMode
 
         With .SlidePlayer()
             With .EventName("mode_victory_lap_started")
+                .Slide = "plunge_for_victory"
+                .Action = "play"
+            End With
+            With .EventName("run_victory_lap")
+                .Slide = "plunge_for_victory"
+                .Action = "remove"
+            End With
+            With .EventName("play_mus_victory")
                 .Slide = "victory"
                 .Action = "play"
             End With
         End With
 
+
+        
 
 
         With .RandomEventPlayer()
