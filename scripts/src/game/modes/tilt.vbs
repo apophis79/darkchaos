@@ -12,16 +12,25 @@ Sub CreateTiltMode()
 
 
         With .Tilt()
-            .MultipleHitWindow = 3000
+            .MultipleHitWindow = 1000
             .SettleTime = 5000
             .WarningsToTilt = 3
             .ResetWarningEvents = Array("mode_tilt_started")
         End With
 
-        With .SlidePlayer()
+
+        ' With .SlidePlayer()
+        '     With .EventName("tilt") 
+        '         .Slide = "tilt_dc"
+        '         .Action = "play"
+        '     End With
+        ' End With
+
+        With .WidgetPlayer()
             With .EventName("tilt")
-                .Slide = "tilt_dc"
+                .Widget = "tilt"
                 .Action = "play"
+                .Expire = 5.5
             End With
         End With
 

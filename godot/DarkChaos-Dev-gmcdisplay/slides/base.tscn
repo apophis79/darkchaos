@@ -30,6 +30,12 @@
 [ext_resource type="SpriteFrames" uid="uid://dx8nakjpk2c8i" path="res://resources/Alert_Wave_Completed/alert_wave_completed.tres" id="28_cnhqp"]
 [ext_resource type="SpriteFrames" uid="uid://bdfuolqgjfvb6" path="res://resources/Alert_Wizard_Mode Combo Command/alert_wizard_combo_command.tres" id="29_ovcnp"]
 [ext_resource type="SpriteFrames" uid="uid://dfyaeeljqmu6j" path="res://resources/Alert_Wizard_Mode_Fully_Loaded/wizard_fully_loaded.tres" id="30_gvfig"]
+[ext_resource type="Texture2D" uid="uid://dj43yao4l6gxv" path="res://resources/training_badges/badge_cluster.png" id="31_77bry"]
+[ext_resource type="Texture2D" uid="uid://74dywrc3pmua" path="res://resources/training_badges/badge_health.png" id="32_6wvah"]
+[ext_resource type="Texture2D" uid="uid://b6mc01y7n3ei6" path="res://resources/training_badges/badge_moon.png" id="33_tfc7s"]
+[ext_resource type="Texture2D" uid="uid://bm0jyi32swwyo" path="res://resources/training_badges/badge_proton.png" id="34_qijxy"]
+[ext_resource type="Texture2D" uid="uid://dbtonicb1sin3" path="res://resources/training_badges/badge_shields.png" id="35_msdqq"]
+[ext_resource type="Texture2D" uid="uid://doyrjrjc13mrr" path="res://resources/training_badges/badge_shipSave.png" id="36_lcr4l"]
 
 [node name="Base" type="Control" unique_id=483653664]
 z_index = 5
@@ -84,6 +90,8 @@ offset_right = 1920.0
 offset_bottom = 190.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "12,456,656,455"
@@ -127,6 +135,7 @@ offset_right = 1920.0
 offset_bottom = 190.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(0, 0.4745098, 0.6313726, 0)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "12,456,656,455"
@@ -170,6 +179,7 @@ offset_right = 1920.0
 offset_bottom = 190.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(0, 0.4745098, 0.6313726, 0)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "12,456,656,455"
@@ -212,6 +222,7 @@ offset_right = 1920.0
 offset_bottom = 190.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(0, 0.4745098, 0.6313726, 0)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "12,456,656,455"
@@ -230,6 +241,7 @@ offset_right = 761.0
 offset_bottom = 960.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_6vrr4")
 theme_override_font_sizes/font_size = 41
@@ -244,6 +256,7 @@ offset_right = 1153.0
 offset_bottom = 942.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_6vrr4")
 theme_override_font_sizes/font_size = 48
@@ -272,6 +285,7 @@ offset_right = 1435.0
 offset_bottom = 960.0
 size_flags_horizontal = 3
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_6vrr4")
 theme_override_font_sizes/font_size = 41
@@ -290,6 +304,7 @@ offset_bottom = -974.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "12,676,676,67"
 horizontal_alignment = 1
@@ -307,6 +322,7 @@ offset_top = 933.0
 offset_right = 1145.0
 offset_bottom = 1080.0
 theme = ExtResource("2_mixwp")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 90
 text = "45"
 horizontal_alignment = 1
@@ -322,6 +338,7 @@ offset_top = 954.0
 offset_right = 763.0
 offset_bottom = 1080.0
 theme = ExtResource("2_mixwp")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "1"
 horizontal_alignment = 1
@@ -512,3 +529,33 @@ centered = false
 offset = Vector2(320, 180)
 script = ExtResource("14_4yxvp")
 trigger_event = "activate_fully_loaded_wizard"
+
+[node name="BadgeCluster" type="Sprite2D" parent="." unique_id=1353386667]
+position = Vector2(62, 815)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("31_77bry")
+
+[node name="BadgeHealth" type="Sprite2D" parent="." unique_id=1130977931]
+position = Vector2(352, 815.00006)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("32_6wvah")
+
+[node name="BadgeMoon" type="Sprite2D" parent="." unique_id=657533617]
+position = Vector2(254.00002, 815)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("33_tfc7s")
+
+[node name="BadgeProton" type="Sprite2D" parent="." unique_id=566293999]
+position = Vector2(156.00003, 815.00006)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("34_qijxy")
+
+[node name="BadgeShields" type="Sprite2D" parent="." unique_id=1527045768]
+position = Vector2(446, 815)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("35_msdqq")
+
+[node name="BadgeShipSave" type="Sprite2D" parent="." unique_id=467289207]
+position = Vector2(544, 815.00006)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("36_lcr4l")

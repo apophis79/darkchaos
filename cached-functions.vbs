@@ -6092,37 +6092,37 @@ Function Glf_1394(args)
 	Glf_1394 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1395(args)
-	Glf_1395 = 150
+	Glf_1395 = 1000
 End Function
 Function Glf_1396(args)
-	On Error Resume Next
-		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "left"
-	Set Glf_1396 = kwargs
-	If Err Then Glf_1396 = Null
+	Glf_1396 = 150
 End Function
 Function Glf_1397(args)
 	On Error Resume Next
 		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "right"
+	kwargs.Add "action",  "left"
 	Set Glf_1397 = kwargs
 	If Err Then Glf_1397 = Null
 End Function
 Function Glf_1398(args)
 	On Error Resume Next
 		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "select"
+	kwargs.Add "action",  "right"
 	Set Glf_1398 = kwargs
 	If Err Then Glf_1398 = Null
 End Function
 Function Glf_1399(args)
-	Glf_1399 = 4000
+	On Error Resume Next
+		Dim kwargs : Set kwargs = GlfKwargs()
+	kwargs.Add "action",  "select"
+	Set Glf_1399 = kwargs
+	If Err Then Glf_1399 = Null
 End Function
 Function Glf_1400(args)
-	Glf_1400 = 65000
+	Glf_1400 = 4000
 End Function
 Function Glf_1401(args)
-	Glf_1401 = 1000
+	Glf_1401 = 65000
 End Function
 Function Glf_1402(args)
 	On Error Resume Next
@@ -8937,13 +8937,13 @@ glf_funcRefMap.Add """ SAVED """, "Glf_1391"
 glf_funcRefMap.Add """US  """, "Glf_1392"
 glf_funcRefMap.Add """ALL """, "Glf_1393"
 glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks,""0>2"")", "Glf_1394"
-glf_funcRefMap.Add "150", "Glf_1395"
-glf_funcRefMap.Add "text_input: {action: ""left""}", "Glf_1396"
-glf_funcRefMap.Add "text_input: {action: ""right""}", "Glf_1397"
-glf_funcRefMap.Add "text_input: {action: ""select""}", "Glf_1398"
-glf_funcRefMap.Add "4000", "Glf_1399"
-glf_funcRefMap.Add "65000", "Glf_1400"
-glf_funcRefMap.Add "1000", "Glf_1401"
+glf_funcRefMap.Add "1000", "Glf_1395"
+glf_funcRefMap.Add "150", "Glf_1396"
+glf_funcRefMap.Add "text_input: {action: ""left""}", "Glf_1397"
+glf_funcRefMap.Add "text_input: {action: ""right""}", "Glf_1398"
+glf_funcRefMap.Add "text_input: {action: ""select""}", "Glf_1399"
+glf_funcRefMap.Add "4000", "Glf_1400"
+glf_funcRefMap.Add "65000", "Glf_1401"
 glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1402"
 glf_funcRefMap.Add "250", "Glf_1403"
 glf_funcRefMap.Add """  """, "Glf_1404"

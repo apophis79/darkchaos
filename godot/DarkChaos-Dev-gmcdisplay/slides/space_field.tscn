@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://54laofvrpqhu"]
+[gd_scene format=3 uid="uid://54laofvrpqhu"]
 
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_pugal"]
-[ext_resource type="VideoStream" uid="uid://bkrl30uay4fhn" path="res://resources/space-loop.ogv" id="2_pugal"]
+[ext_resource type="VideoStream" uid="uid://dfa2wrharq3do" path="res://resources/space_loop_2.ogv" id="2_pugal"]
 
-[node name="SpaceField" type="Control"]
+[node name="SpaceField" type="Control" unique_id=1994720706]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pugal")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1004130032]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 ratio = 1.777
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=1093137963]
 layout_mode = 2
 stream = ExtResource("2_pugal")
 autoplay = true

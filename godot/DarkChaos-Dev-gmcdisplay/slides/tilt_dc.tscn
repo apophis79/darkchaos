@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_cy1vj"]
 [ext_resource type="VideoStream" uid="uid://cj3n0ekieyku7" path="res://resources/Tilt.ogv" id="2_cy1vj"]
 
-[node name="TiltDc" type="Control" unique_id=289633905]
+[node name="Victory" type="Control" unique_id=289633905]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

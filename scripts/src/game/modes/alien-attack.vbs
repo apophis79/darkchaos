@@ -40,6 +40,13 @@ Sub CreateAlienAttackMode
             End With
         End With
 
+        With .WidgetPlayer()
+            With .EventName("alien_hit")
+                .Widget = "alien_destroyed"
+                .Action = "play"
+                .Expire = 5.5
+            End With
+        End With
 
         With .SoundPlayer()
             With .EventName("alien_attacking")

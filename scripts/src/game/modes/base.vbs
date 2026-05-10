@@ -177,6 +177,11 @@ Sub CreateBaseMode()
                 .Action = "play"
                 .Expire = 11
             End With
+            With .EventName("detonate_nuke")
+                .Widget = "nuke"
+                .Action = "play"
+                .Expire = 9.5
+            End With
         End With
 
         With .WidgetPlayer()

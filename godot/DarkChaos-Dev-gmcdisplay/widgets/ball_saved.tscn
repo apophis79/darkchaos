@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_i57dd"]
 [ext_resource type="VideoStream" uid="uid://d18uitechwsrs" path="res://resources/Alert_FullScreen_ShipSave.ogv" id="2_i57dd"]
 
-[node name="MoonLaunch" type="Control" unique_id=472710894]
+[node name="BallSaved" type="Control" unique_id=472710894]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
