@@ -25,24 +25,29 @@ Sub CreateBasementMode()
             .Add "training_music_stop", Array("training_music_1_stop","training_music_2_stop","training_music_3_stop","training_music_4_stop","training_music_5_stop")
             'ball search ejects from plunger for this table (special case)
             '.Add "ball_search_started", Array("plunger_eject")
+
+            .Add "player_added{kwargs.num==1}", Array("player1_added","display_p1_score")
+            .Add "player_added{kwargs.num==2}", Array("player2_added","display_p2_score")
+            .Add "player_added{kwargs.num==3}", Array("player3_added","display_p3_score")
+            .Add "player_added{kwargs.num==4}", Array("player4_added","display_p4_score")
         End With
 
 
         ' some sound effects
         With .SoundPlayer() 
-            With .EventName("player_added{kwargs.num==1}")
+            With .EventName("player1_added")
                 .Key = "key_voc_p1"
                 .Sound = "voc_p1"
             End With
-            With .EventName("player_added{kwargs.num==2}")
+            With .EventName("player2_added")
                 .Key = "key_voc_p2"
                 .Sound = "voc_p2"
             End With
-            With .EventName("player_added{kwargs.num==3}")
+            With .EventName("player3_added")
                 .Key = "key_voc_p3"
                 .Sound = "voc_p3"
             End With
-            With .EventName("player_added{kwargs.num==4}")
+            With .EventName("player4_added")
                 .Key = "key_voc_p4"
                 .Sound = "voc_p4"
             End With

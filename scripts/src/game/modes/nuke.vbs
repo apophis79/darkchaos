@@ -60,7 +60,7 @@ Sub CreateNukeMode
                 .Speed = 1
                 With .Tokens()
                     .Add "lights", "tFL5"
-                    .Add "color", MeteorHotColor
+                    .Add "color", NukeColor
                     .Add "fade", 900
                 End With
             End With
@@ -70,7 +70,7 @@ Sub CreateNukeMode
                 .Speed = 1
                 With .Tokens()
                     .Add "lights", "tFL6"
-                    .Add "color", MeteorHotColor
+                    .Add "color", NukeColor
                     .Add "fade", 900
                 End With
             End With
@@ -82,7 +82,7 @@ Sub CreateNukeMode
                 .Action = "stop"
                 With .Tokens()
                     .Add "lights", "tFL5"
-                    .Add "color", MeteorHotColor
+                    .Add "color", NukeColor
                     .Add "fade", 900
                 End With
             End With
@@ -93,7 +93,7 @@ Sub CreateNukeMode
                 .Action = "stop"
                 With .Tokens()
                     .Add "lights", "tFL6"
-                    .Add "color", MeteorHotColor
+                    .Add "color", NukeColor
                     .Add "fade", 900
                 End With
             End With
@@ -105,7 +105,7 @@ Sub CreateNukeMode
                 .Loops = 0
                 .Priority = 4000
                 With .Tokens()
-                    .Add "color", MeteorHotColor
+                    .Add "color", NukeColor
                     .Add "intensity", 100
                 End With
                 .EventsWhenCompleted = Array("acquire_nuke_show2")
@@ -117,7 +117,7 @@ Sub CreateNukeMode
                 .Loops = 0
                 .Priority = 4000
                 With .Tokens()
-                    .Add "color", MeteorHotColor
+                    .Add "color", NukeColor
                     .Add "intensity", 100
                 End With
             End With

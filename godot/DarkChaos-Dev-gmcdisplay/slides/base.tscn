@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_b71wd"]
 [ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_06ewq"]
 [ext_resource type="Theme" uid="uid://b1eua1hgsadbh" path="res://resources/Score.tres" id="2_mixwp"]
+[ext_resource type="Script" uid="uid://q73lraikq2m0" path="res://slides/player_side_group.gd" id="3_g8vm3"]
 [ext_resource type="FontVariation" uid="uid://bjymib6vj56at" path="res://orbitron-wide-bold.tres" id="4_20xw8"]
 [ext_resource type="Texture2D" uid="uid://qxl1ofm6bwg7" path="res://resources/frame.png" id="4_myvl5"]
 [ext_resource type="Theme" uid="uid://do0kvf6fqvo2n" path="res://resources/OrbitronReg.tres" id="5_6vrr4"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d4jyc8xyy7lw6" path="res://resources/combos-empty.png" id="9_f5kbb"]
 [ext_resource type="SpriteFrames" uid="uid://6irbqgikm7yo" path="res://resources/ShipHud/ship_hud.tres" id="10_du778"]
 [ext_resource type="SpriteFrames" uid="uid://ct5v7fhe1xjty" path="res://resources/Shields/shields.tres" id="11_n3kaw"]
+[ext_resource type="Texture2D" uid="uid://miwgx14nammb" path="res://resources/nuke.png" id="12_1m7cl"]
 [ext_resource type="Script" uid="uid://byp603tsgxmsi" path="res://slides/animated_sheilds.gd" id="12_s2a5r"]
 [ext_resource type="Script" uid="uid://5rqmne8e68ao" path="res://slides/animated_overlay_queue_manager.gd" id="13_735fb"]
 [ext_resource type="SpriteFrames" uid="uid://cijfh8c15m82w" path="res://resources/Alert_AlienShipDetected/alert_alien_ship_detected.tres" id="13_s2a5r"]
@@ -67,10 +69,13 @@ expand_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Player1SideGroup" type="Control" parent="." unique_id=1209593800]
+visible = false
 anchors_preset = 0
 offset_top = -30.0
 offset_right = 40.0
 offset_bottom = 10.0
+script = ExtResource("3_g8vm3")
+show_event = "display_p2_score"
 
 [node name="lblPlayer1" type="Label" parent="Player1SideGroup" unique_id=1357218747]
 layout_mode = 0
@@ -110,14 +115,16 @@ variable_type = 4
 variable_name = "score"
 comma_separate = true
 
-[node name="Player1SideGroup2" type="Control" parent="." unique_id=14233017]
+[node name="Player2SideGroup" type="Control" parent="." unique_id=14233017]
+visible = false
 anchors_preset = 0
 offset_top = 120.0
 offset_right = 40.0
 offset_bottom = 160.0
-metadata/_edit_lock_ = true
+script = ExtResource("3_g8vm3")
+show_event = "display_p2_score"
 
-[node name="lblPlayer2" type="Label" parent="Player1SideGroup2" unique_id=899468148]
+[node name="lblPlayer2" type="Label" parent="Player2SideGroup" unique_id=899468148]
 layout_mode = 0
 offset_left = 1615.925
 offset_top = 64.0
@@ -131,11 +138,11 @@ theme_override_font_sizes/font_size = 32
 text = "PLAYER 2"
 horizontal_alignment = 1
 
-[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup2" unique_id=909145868]
+[node name="PlayerScore" type="Sprite2D" parent="Player2SideGroup" unique_id=909145868]
 position = Vector2(1756, 161)
 texture = ExtResource("5_du778")
 
-[node name="Player2Score" type="Label" parent="Player1SideGroup2" unique_id=307496413]
+[node name="Player2Score" type="Label" parent="Player2SideGroup" unique_id=307496413]
 layout_mode = 0
 offset_left = 1615.0
 offset_top = 125.0
@@ -154,14 +161,16 @@ variable_type = 5
 variable_name = "score"
 comma_separate = true
 
-[node name="Player1SideGroup3" type="Control" parent="." unique_id=1810328012]
+[node name="Player3SideGroup" type="Control" parent="." unique_id=1810328012]
+visible = false
 anchors_preset = 0
 offset_top = 270.0
 offset_right = 40.0
 offset_bottom = 310.0
-metadata/_edit_lock_ = true
+script = ExtResource("3_g8vm3")
+show_event = "display_p3_score"
 
-[node name="lblPlayer3" type="Label" parent="Player1SideGroup3" unique_id=1076844999]
+[node name="lblPlayer3" type="Label" parent="Player3SideGroup" unique_id=1076844999]
 layout_mode = 0
 offset_left = 1615.925
 offset_top = 64.0
@@ -175,11 +184,11 @@ theme_override_font_sizes/font_size = 32
 text = "PLAYER 3"
 horizontal_alignment = 1
 
-[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup3" unique_id=1916854808]
+[node name="PlayerScore" type="Sprite2D" parent="Player3SideGroup" unique_id=1916854808]
 position = Vector2(1756, 161)
 texture = ExtResource("5_du778")
 
-[node name="Player3Score" type="Label" parent="Player1SideGroup3" unique_id=1614278295]
+[node name="Player3Score" type="Label" parent="Player3SideGroup" unique_id=1614278295]
 layout_mode = 0
 offset_left = 1615.0
 offset_top = 125.0
@@ -198,13 +207,16 @@ variable_type = 6
 variable_name = "score"
 comma_separate = true
 
-[node name="Player1SideGroup4" type="Control" parent="." unique_id=84215437]
+[node name="Player4SideGroup" type="Control" parent="." unique_id=84215437]
+visible = false
 anchors_preset = 0
 offset_top = 420.0
 offset_right = 40.0
 offset_bottom = 460.0
+script = ExtResource("3_g8vm3")
+show_event = "display_p4_score"
 
-[node name="lblPlayer4" type="Label" parent="Player1SideGroup4" unique_id=1924647591]
+[node name="lblPlayer4" type="Label" parent="Player4SideGroup" unique_id=1924647591]
 layout_mode = 0
 offset_left = 1615.925
 offset_top = 64.0
@@ -218,11 +230,11 @@ theme_override_font_sizes/font_size = 32
 text = "PLAYER 4"
 horizontal_alignment = 1
 
-[node name="PlayerScore" type="Sprite2D" parent="Player1SideGroup4" unique_id=119420136]
+[node name="PlayerScore" type="Sprite2D" parent="Player4SideGroup" unique_id=119420136]
 position = Vector2(1756, 161)
 texture = ExtResource("5_du778")
 
-[node name="Player4Score" type="Label" parent="Player1SideGroup4" unique_id=520448203]
+[node name="Player4Score" type="Label" parent="Player4SideGroup" unique_id=520448203]
 layout_mode = 0
 offset_left = 1615.0
 offset_top = 125.0
@@ -484,6 +496,14 @@ sprite_frames = ExtResource("11_n3kaw")
 autoplay = "default"
 frame_progress = 0.9203861
 script = ExtResource("12_s2a5r")
+
+[node name="Nuke" type="Sprite2D" parent="." unique_id=184375907]
+position = Vector2(1812, 1005)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_1m7cl")
+script = ExtResource("32_iya4i")
+show_event = "nuke_lsling_on"
+hide_event = "nuke_lsling_off"
 
 [node name="AnimatedOverlayQueue" type="Control" parent="." unique_id=887058142]
 anchors_preset = 0

@@ -33,7 +33,7 @@ Dim MeteorWarmColor: MeteorWarmColor = "edb600"
 Dim MeteorHotColor: MeteorHotColor = "ed1800"
 Dim MeteorWaveColor: MeteorWaveColor = "dd0400"
 Dim MeteorFlashColor: MeteorFlashColor = "ffe7a6"
-
+Dim NukeColor : NukeColor = "ed1800"
 Dim EarthHitColor: EarthHitColor = "ff0909"
 Dim EarthHitColor2: EarthHitColor2 = "880303"
 
@@ -46,6 +46,7 @@ If for_real = true Then
     MeteorCoolColor = "ffeede"
     MeteorWarmColor = "ffc400"
     TrainingColor = "ffae00"
+    NukeColor = "ffae00"
 End If
 
 
