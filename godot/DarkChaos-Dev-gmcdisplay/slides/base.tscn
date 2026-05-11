@@ -32,10 +32,16 @@
 [ext_resource type="SpriteFrames" uid="uid://dfyaeeljqmu6j" path="res://resources/Alert_Wizard_Mode_Fully_Loaded/wizard_fully_loaded.tres" id="30_gvfig"]
 [ext_resource type="Texture2D" uid="uid://dj43yao4l6gxv" path="res://resources/training_badges/badge_cluster.png" id="31_77bry"]
 [ext_resource type="Texture2D" uid="uid://74dywrc3pmua" path="res://resources/training_badges/badge_health.png" id="32_6wvah"]
+[ext_resource type="Texture2D" uid="uid://de5gb4j08xskk" path="res://resources/training_badges/badge_cluster_grey.png" id="32_30m72"]
 [ext_resource type="Texture2D" uid="uid://b6mc01y7n3ei6" path="res://resources/training_badges/badge_moon.png" id="33_tfc7s"]
+[ext_resource type="Texture2D" uid="uid://xgj1egsu6f2b" path="res://resources/training_badges/badge_health_grey.png" id="34_iya4i"]
 [ext_resource type="Texture2D" uid="uid://bm0jyi32swwyo" path="res://resources/training_badges/badge_proton.png" id="34_qijxy"]
 [ext_resource type="Texture2D" uid="uid://dbtonicb1sin3" path="res://resources/training_badges/badge_shields.png" id="35_msdqq"]
+[ext_resource type="Texture2D" uid="uid://c3ex113bt8j5r" path="res://resources/training_badges/badge_moon_grey.png" id="36_cbytx"]
 [ext_resource type="Texture2D" uid="uid://doyrjrjc13mrr" path="res://resources/training_badges/badge_shipSave.png" id="36_lcr4l"]
+[ext_resource type="Texture2D" uid="uid://b8st4684yor14" path="res://resources/training_badges/badge_proton_grey.png" id="38_1m7cl"]
+[ext_resource type="Texture2D" uid="uid://dgwhhw6oo5fva" path="res://resources/training_badges/badge_shields_grey.png" id="40_g8vm3"]
+[ext_resource type="Texture2D" uid="uid://cvfiflqxt0ynn" path="res://resources/training_badges/badge_shipSave_grey.png" id="42_fqay2"]
 
 [node name="Base" type="Control" unique_id=483653664]
 z_index = 5
@@ -531,31 +537,73 @@ script = ExtResource("14_4yxvp")
 trigger_event = "activate_fully_loaded_wizard"
 
 [node name="BadgeCluster" type="Sprite2D" parent="." unique_id=1353386667]
+visible = false
 position = Vector2(62, 815)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("31_77bry")
 
+[node name="BadgeClusterGrey" type="Sprite2D" parent="." unique_id=155239833]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(62, 815)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("32_30m72")
+
 [node name="BadgeHealth" type="Sprite2D" parent="." unique_id=1130977931]
+visible = false
 position = Vector2(352, 815.00006)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("32_6wvah")
 
+[node name="BadgeHealthGrey" type="Sprite2D" parent="." unique_id=79381521]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(352, 815.00006)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("34_iya4i")
+
 [node name="BadgeMoon" type="Sprite2D" parent="." unique_id=657533617]
+visible = false
 position = Vector2(254.00002, 815)
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("33_tfc7s")
 
+[node name="BadgeMoonGrey" type="Sprite2D" parent="." unique_id=1720647718]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(254.00002, 815)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("36_cbytx")
+
 [node name="BadgeProton" type="Sprite2D" parent="." unique_id=566293999]
+visible = false
 position = Vector2(156.00003, 815.00006)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("34_qijxy")
 
+[node name="BadgeProtonGrey" type="Sprite2D" parent="." unique_id=575837446]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(156.00003, 815.00006)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("38_1m7cl")
+
 [node name="BadgeShields" type="Sprite2D" parent="." unique_id=1527045768]
+visible = false
 position = Vector2(446, 815)
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("35_msdqq")
 
+[node name="BadgeShieldsGrey" type="Sprite2D" parent="." unique_id=1982392743]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(446, 815)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("40_g8vm3")
+
 [node name="BadgeShipSave" type="Sprite2D" parent="." unique_id=467289207]
+visible = false
 position = Vector2(544, 815.00006)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("36_lcr4l")
+
+[node name="BadgeShipSaveGrey" type="Sprite2D" parent="." unique_id=1454269963]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(544, 815.00006)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("42_fqay2")
