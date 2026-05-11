@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://doyrjrjc13mrr" path="res://resources/training_badges/badge_shipSave.png" id="14_p54u3"]
 [ext_resource type="Texture2D" uid="uid://cvfiflqxt0ynn" path="res://resources/training_badges/badge_shipSave_grey.png" id="15_7lmc6"]
 [ext_resource type="Texture2D" uid="uid://dbtonicb1sin3" path="res://resources/training_badges/badge_shields.png" id="16_7k6k3"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="17_fbl61"]
 [ext_resource type="Texture2D" uid="uid://dgwhhw6oo5fva" path="res://resources/training_badges/badge_shields_grey.png" id="17_jjb3x"]
 
 [node name="TrainingSelect" type="Control" unique_id=261437027]
@@ -154,3 +155,19 @@ modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(1684, 527.00006)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("13_u6uds")
+
+[node name="SelectCountdown" type="Label" parent="." unique_id=1034596300]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 933.0
+offset_right = 1145.0
+offset_bottom = 1080.0
+theme = ExtResource("4_5rvrd")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_fbl61")
+variable_name = "selection_countdown_value"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"

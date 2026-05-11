@@ -43,7 +43,7 @@ Sub CreateTrainingSelectMode
             .Add "make_selection", Array("release_scoop_hold")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
-            .Add "timer_training_select_tick{device.timers.training_select.ticks == 7}", Array("selection_hurry_up")
+            .Add "timer_training_select_tick{device.timers.training_select.ticks == 3}", Array("selection_hurry_up")
             '.Add "timer_training_select_tick{device.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
             'start requested training
             .Add "make_selection{device.state_machines.training_select.state==""heal""}", Array("start_training_heal","stopping_training_select")
@@ -99,7 +99,17 @@ Sub CreateTrainingSelectMode
 
 
         With .VariablePlayer()
+            With .EventName("timer_training_select_tick")
+				With .Variable("selection_countdown_value")
+                    .Action = "set"
+					.Int = "{device.timers.training_select.ticks}"  
+				End With
+            End With
             With .EventName("mode_training_select_started")
+                With .Variable("selection_countdown_value")
+                    .Action = "set"
+					.Int = 10
+				End With
 				With .Variable("ts_hurry_up")
                     .Action = "set"
 					.Int = 0  
@@ -305,8 +315,9 @@ Sub CreateTrainingSelectMode
         With .Timers("training_select")
             '.Debug = True
             .TickInterval = 1000
-            .StartValue = 0
-            .EndValue = 10
+            .StartValue = 10
+            .EndValue = 0
+            .Direction = "down"
             With .ControlEvents()
                 .EventName = "mode_training_select_started"
                 .Action = "restart"

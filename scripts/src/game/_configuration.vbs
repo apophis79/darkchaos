@@ -110,7 +110,7 @@ MoonQualifySwitches = Array("s_LeftOutlane","s_LeftInlane","s_RightInlane","s_Ri
 MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
 
 ' Health settings
-Const BumperHitsPerRepair = 3
+Const BumperHitsPerRepair = 5
 Const BumperHitsPerRepairTrain = 1
 
 ' Ship save settings (more shoot again time)
@@ -413,6 +413,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "training_shields_achieved", 0
     Glf_SetInitialPlayerVar "training_total_achieved", 0
     Glf_SetInitialPlayerVar "training_moon_missile_used", 0
+    Glf_SetInitialPlayerVar "selection_countdown_value", 10
     Glf_SetInitialPlayerVar "ts_last_move", ""
     Glf_SetInitialPlayerVar "wizard_mode_is_ready", 0
     Glf_SetInitialPlayerVar "wizard_mode_running", 0

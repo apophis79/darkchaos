@@ -15,14 +15,14 @@ extends Control
 @onready var badgeMoon = $BadgeMoon
 @onready var badgeMoonGrey = $BadgeMoonGrey
 
-var selection1_completed = 0
-var selection2_completed = 0
-var selection3_completed = 0
-var selection4_completed = 0
-var selection5_completed = 0
-var selection6_completed = 0
+@onready var selection1_completed = 0
+@onready var selection2_completed = 0
+@onready var selection3_completed = 0
+@onready var selection4_completed = 0
+@onready var selection5_completed = 0
+@onready var selection6_completed = 0
 
-func _ready():
+func _ready() -> void:
 	# completed events
 	MPF.server.add_event_handler("show_heal_completed", self._on_selection1_completed)
 	MPF.server.add_event_handler("show_cluster_bomb_completed", self._on_selection2_completed)
@@ -45,6 +45,10 @@ func _ready():
 	MPF.server.add_event_handler("ship_save_unselected", self._on_unselection4)
 	MPF.server.add_event_handler("shields_unselected", self._on_unselection5)
 	MPF.server.add_event_handler("moon_missile_unselected", self._on_unselection6)
+	# initial selection
+	lblSelection.text = "HEALTH"
+	badgeHealth.visible = 1
+	badgeHealth.scale = Vector2(1.1, 1.1)
 	
 	
 func _on_selection1_completed(payload: Dictionary) -> void:

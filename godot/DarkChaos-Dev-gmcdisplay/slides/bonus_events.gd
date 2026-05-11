@@ -5,7 +5,7 @@ extends Control
 @onready var ani = $AnimationPlayer
 
 
-func _ready():
+func _ready() -> void:
 	MPF.server.add_event_handler("bonus_tally1", self._on_tally1)
 	MPF.server.add_event_handler("bonus_tally2", self._on_tally2)
 	MPF.server.add_event_handler("bonus_tally3", self._on_tally3)

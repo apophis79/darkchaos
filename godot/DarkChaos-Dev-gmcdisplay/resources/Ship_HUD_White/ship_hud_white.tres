@@ -1,0 +1,134 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bmjsi2c6sc6dc"]
+
+[ext_resource type="Texture2D" uid="uid://cedm3l1wf158g" path="res://resources/Ship_HUD_White/Ship_HUD_White_00000.png" id="1_eg5p0"]
+[ext_resource type="Texture2D" uid="uid://c7wjxe72bf6py" path="res://resources/Ship_HUD_White/Ship_HUD_White_00001.png" id="2_jmtt5"]
+[ext_resource type="Texture2D" uid="uid://bmxrv1u076v2r" path="res://resources/Ship_HUD_White/Ship_HUD_White_00002.png" id="3_t1th4"]
+[ext_resource type="Texture2D" uid="uid://bkgot6brro1i6" path="res://resources/Ship_HUD_White/Ship_HUD_White_00003.png" id="4_gqjhw"]
+[ext_resource type="Texture2D" uid="uid://vvlu1lrx3qik" path="res://resources/Ship_HUD_White/Ship_HUD_White_00004.png" id="5_2f487"]
+[ext_resource type="Texture2D" uid="uid://belqbih3qvw3k" path="res://resources/Ship_HUD_White/Ship_HUD_White_00006.png" id="6_rgtfd"]
+[ext_resource type="Texture2D" uid="uid://dl0aeoek1ak7f" path="res://resources/Ship_HUD_White/Ship_HUD_White_00008.png" id="7_8fxxb"]
+[ext_resource type="Texture2D" uid="uid://bi1f7gj0k4ahk" path="res://resources/Ship_HUD_White/Ship_HUD_White_00009.png" id="8_2asve"]
+[ext_resource type="Texture2D" uid="uid://lv878x85k3v3" path="res://resources/Ship_HUD_White/Ship_HUD_White_00010.png" id="9_ttgxv"]
+[ext_resource type="Texture2D" uid="uid://bft2yyr2hujxq" path="res://resources/Ship_HUD_White/Ship_HUD_White_00011.png" id="10_cw586"]
+[ext_resource type="Texture2D" uid="uid://bd8xdsvnywhjt" path="res://resources/Ship_HUD_White/Ship_HUD_White_00012.png" id="11_krj0v"]
+[ext_resource type="Texture2D" uid="uid://bhim1sjeud4eg" path="res://resources/Ship_HUD_White/Ship_HUD_White_00013.png" id="12_6g5it"]
+[ext_resource type="Texture2D" uid="uid://vms7dsgd4175" path="res://resources/Ship_HUD_White/Ship_HUD_White_00014.png" id="13_re2xp"]
+[ext_resource type="Texture2D" uid="uid://b537kjosbrf8a" path="res://resources/Ship_HUD_White/Ship_HUD_White_00015.png" id="14_7apu4"]
+[ext_resource type="Texture2D" uid="uid://d1pbfn2csfqab" path="res://resources/Ship_HUD_White/Ship_HUD_White_00016.png" id="15_kq53o"]
+[ext_resource type="Texture2D" uid="uid://dkjnyuk1nndrc" path="res://resources/Ship_HUD_White/Ship_HUD_White_00017.png" id="16_3j3wh"]
+[ext_resource type="Texture2D" uid="uid://s5h2tcuvjpq6" path="res://resources/Ship_HUD_White/Ship_HUD_White_00018.png" id="17_xwv8a"]
+[ext_resource type="Texture2D" uid="uid://d4ipsj1dlg1ix" path="res://resources/Ship_HUD_White/Ship_HUD_White_00019.png" id="18_fvqfk"]
+[ext_resource type="Texture2D" uid="uid://blwhmsfd5vvn6" path="res://resources/Ship_HUD_White/Ship_HUD_White_00020.png" id="19_xpc5y"]
+[ext_resource type="Texture2D" uid="uid://cump388ebbj5o" path="res://resources/Ship_HUD_White/Ship_HUD_White_00021.png" id="20_vax1t"]
+[ext_resource type="Texture2D" uid="uid://b5l30nc8ywkq7" path="res://resources/Ship_HUD_White/Ship_HUD_White_00022.png" id="21_inuj4"]
+[ext_resource type="Texture2D" uid="uid://dvmhi4vtqpuki" path="res://resources/Ship_HUD_White/Ship_HUD_White_00023.png" id="22_n42tx"]
+[ext_resource type="Texture2D" uid="uid://cj3bv6ggqgjyd" path="res://resources/Ship_HUD_White/Ship_HUD_White_00024.png" id="23_23euc"]
+[ext_resource type="Texture2D" uid="uid://dk6rwwe7l156t" path="res://resources/Ship_HUD_White/Ship_HUD_White_00025.png" id="24_iqrqk"]
+[ext_resource type="Texture2D" uid="uid://6q4wv640f4ru" path="res://resources/Ship_HUD_White/Ship_HUD_White_00026.png" id="25_gqa38"]
+[ext_resource type="Texture2D" uid="uid://bthc6mp3f2fa2" path="res://resources/Ship_HUD_White/Ship_HUD_White_00027.png" id="26_tdr7f"]
+[ext_resource type="Texture2D" uid="uid://d32bjnjxdflgm" path="res://resources/Ship_HUD_White/Ship_HUD_White_00029.png" id="27_lfnxk"]
+[ext_resource type="Texture2D" uid="uid://h1jbi4h7vs4r" path="res://resources/Ship_HUD_White/Ship_HUD_White_00030.png" id="28_b306q"]
+[ext_resource type="Texture2D" uid="uid://bwiotng0gaoiy" path="res://resources/Ship_HUD_White/Ship_HUD_White_00032.png" id="29_3q8jl"]
+[ext_resource type="Texture2D" uid="uid://bm2rx25ugk7wp" path="res://resources/Ship_HUD_White/Ship_HUD_White_00033.png" id="30_5keiq"]
+[ext_resource type="Texture2D" uid="uid://d3sfglpnns6f4" path="res://resources/Ship_HUD_White/Ship_HUD_White_00034.png" id="31_a7cy6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eg5p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jmtt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t1th4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gqjhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2f487")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rgtfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8fxxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2asve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ttgxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cw586")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_krj0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6g5it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_re2xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7apu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kq53o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3j3wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xwv8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fvqfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xpc5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vax1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_inuj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_n42tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_23euc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_iqrqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_gqa38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tdr7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lfnxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_b306q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3q8jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5keiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_a7cy6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]

@@ -10,7 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://by6tlyvf64qld" path="res://resources/playerScore.png" id="5_du778"]
 [ext_resource type="FontVariation" uid="uid://c20yoyk3m323p" path="res://orbitron-wide.tres" id="6_6vrr4"]
 [ext_resource type="Texture2D" uid="uid://d4jyc8xyy7lw6" path="res://resources/combos-empty.png" id="9_f5kbb"]
-[ext_resource type="SpriteFrames" uid="uid://6irbqgikm7yo" path="res://resources/ShipHud/ship_hud.tres" id="10_du778"]
+[ext_resource type="SpriteFrames" uid="uid://bmjsi2c6sc6dc" path="res://resources/Ship_HUD_White/ship_hud_white.tres" id="10_g8vm3"]
+[ext_resource type="Script" uid="uid://b88xi4a1013k7" path="res://slides/health_ship.gd" id="11_fqay2"]
 [ext_resource type="SpriteFrames" uid="uid://ct5v7fhe1xjty" path="res://resources/Shields/shields.tres" id="11_n3kaw"]
 [ext_resource type="Texture2D" uid="uid://miwgx14nammb" path="res://resources/nuke.png" id="12_1m7cl"]
 [ext_resource type="Script" uid="uid://byp603tsgxmsi" path="res://slides/animated_sheilds.gd" id="12_s2a5r"]
@@ -483,12 +484,13 @@ variable_name = "num_waves_completed"
 metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 
 [node name="AnimatedShip" type="AnimatedSprite2D" parent="." unique_id=1545557138]
+modulate = Color(0.14509805, 1, 1, 1)
 position = Vector2(1643, 877)
-sprite_frames = ExtResource("10_du778")
+sprite_frames = ExtResource("10_g8vm3")
 autoplay = "default"
-frame = 17
-frame_progress = 0.73986405
+frame_progress = 0.08449811
 speed_scale = 0.5
+script = ExtResource("11_fqay2")
 
 [node name="AnimatedSheilds" type="AnimatedSprite2D" parent="." unique_id=998668991]
 position = Vector2(1643, 877)
@@ -570,6 +572,7 @@ script = ExtResource("14_4yxvp")
 trigger_event = "play_voc_imminent_shutdown"
 
 [node name="MoonMissile" type="AnimatedSprite2D" parent="AnimatedOverlayQueue" unique_id=529239899]
+visible = false
 sprite_frames = ExtResource("21_gvfig")
 frame = 36
 frame_progress = 1.0
