@@ -673,24 +673,9 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BadgeCluster" type="Sprite2D" parent="TrainingBadges" unique_id=1353386667]
-z_index = 3
-position = Vector2(62, 815)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("31_77bry")
-script = ExtResource("32_iya4i")
-show_event = "badge_cluster_on"
-hide_event = "badge_cluster_off"
-
-[node name="BadgeClusterGrey" type="Sprite2D" parent="TrainingBadges" unique_id=155239833]
-modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(62, 815)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("32_30m72")
-
 [node name="BadgeHealth" type="Sprite2D" parent="TrainingBadges" unique_id=1130977931]
 z_index = 3
-position = Vector2(352, 815.00006)
+position = Vector2(59.00003, 813.00006)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("32_6wvah")
 script = ExtResource("32_iya4i")
@@ -699,13 +684,43 @@ hide_event = "badge_health_off"
 
 [node name="BadgeHealthGrey" type="Sprite2D" parent="TrainingBadges" unique_id=79381521]
 modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(352, 815.00006)
+position = Vector2(59.00003, 813.00006)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("34_iya4i")
 
+[node name="BadgeCluster" type="Sprite2D" parent="TrainingBadges" unique_id=1353386667]
+z_index = 3
+position = Vector2(153, 815.0001)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("31_77bry")
+script = ExtResource("32_iya4i")
+show_event = "badge_cluster_on"
+hide_event = "badge_cluster_off"
+
+[node name="BadgeClusterGrey" type="Sprite2D" parent="TrainingBadges" unique_id=155239833]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(153, 815.0001)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("32_30m72")
+
+[node name="BadgeProton" type="Sprite2D" parent="TrainingBadges" unique_id=566293999]
+z_index = 3
+position = Vector2(245.00003, 815.0001)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("34_qijxy")
+script = ExtResource("32_iya4i")
+show_event = "badge_proton_on"
+hide_event = "badge_proton_off"
+
+[node name="BadgeProtonGrey" type="Sprite2D" parent="TrainingBadges" unique_id=575837446]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(245.00003, 815.0001)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("38_1m7cl")
+
 [node name="BadgeMoon" type="Sprite2D" parent="TrainingBadges" unique_id=657533617]
 z_index = 3
-position = Vector2(254.00002, 815)
+position = Vector2(531.845, 813.8401)
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("33_tfc7s")
 script = ExtResource("32_iya4i")
@@ -714,43 +729,13 @@ hide_event = "badge_moon_off"
 
 [node name="BadgeMoonGrey" type="Sprite2D" parent="TrainingBadges" unique_id=1720647718]
 modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(254.00002, 815)
+position = Vector2(531.845, 813.8401)
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("36_cbytx")
 
-[node name="BadgeProton" type="Sprite2D" parent="TrainingBadges" unique_id=566293999]
-z_index = 3
-position = Vector2(156.00003, 815.00006)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("34_qijxy")
-script = ExtResource("32_iya4i")
-show_event = "badge_proton_on"
-hide_event = "badge_proton_off"
-
-[node name="BadgeProtonGrey" type="Sprite2D" parent="TrainingBadges" unique_id=575837446]
-modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(156.00003, 815.00006)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("38_1m7cl")
-
-[node name="BadgeShields" type="Sprite2D" parent="TrainingBadges" unique_id=1527045768]
-z_index = 3
-position = Vector2(446, 815)
-scale = Vector2(0.38, 0.38)
-texture = ExtResource("35_msdqq")
-script = ExtResource("32_iya4i")
-show_event = "badge_shields_on"
-hide_event = "badge_shields_off"
-
-[node name="BadgeShieldsGrey" type="Sprite2D" parent="TrainingBadges" unique_id=1982392743]
-modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(446, 815)
-scale = Vector2(0.38, 0.38)
-texture = ExtResource("40_g8vm3")
-
 [node name="BadgeShipSave" type="Sprite2D" parent="TrainingBadges" unique_id=467289207]
 z_index = 3
-position = Vector2(544, 815.00006)
+position = Vector2(345.225, 815.17)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("36_lcr4l")
 script = ExtResource("32_iya4i")
@@ -759,9 +744,24 @@ hide_event = "badge_ship_save_off"
 
 [node name="BadgeShipSaveGrey" type="Sprite2D" parent="TrainingBadges" unique_id=1454269963]
 modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(544, 815.00006)
+position = Vector2(345.225, 815.17)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("42_fqay2")
+
+[node name="BadgeShields" type="Sprite2D" parent="TrainingBadges" unique_id=1527045768]
+z_index = 3
+position = Vector2(437.22498, 815.1699)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("35_msdqq")
+script = ExtResource("32_iya4i")
+show_event = "badge_shields_on"
+hide_event = "badge_shields_off"
+
+[node name="BadgeShieldsGrey" type="Sprite2D" parent="TrainingBadges" unique_id=1982392743]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(437.22498, 815.1699)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("40_g8vm3")
 
 [node name="ComboLights" type="Control" parent="." unique_id=116205832]
 anchors_preset = 0

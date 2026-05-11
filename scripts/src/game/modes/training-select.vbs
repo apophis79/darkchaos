@@ -25,6 +25,13 @@ Sub CreateTrainingSelectMode
         With .EventPlayer()
             '.Debug = True
             .Add "mode_training_select_started", Array("enable_scoop_hold","stop_training_qualify","show_training_completed_shots")
+            'initialize badges
+            .Add "mode_training_select_started{current_player.training_heal_achieved==1}", Array("show_heal_completed")
+            .Add "mode_training_select_started{current_player.training_cluster_bomb_achieved==1}", Array("show_cluster_bomb_completed")
+            .Add "mode_training_select_started{current_player.training_proton_cannon_achieved==1}", Array("show_proton_cannon_completed")
+            .Add "mode_training_select_started{current_player.training_moon_missile_achieved==1}", Array("show_moon_missile_completed")
+            .Add "mode_training_select_started{current_player.training_ship_save_achieved==1}", Array("show_ship_save_completed")
+            .Add "mode_training_select_started{current_player.training_shields_achieved==1}", Array("show_shields_completed")
             'navigate selections
             .Add "s_left_flipper_active", Array("training_select_left")
             .Add "s_right_flipper_active", Array("training_select_right")
@@ -73,6 +80,13 @@ Sub CreateTrainingSelectMode
                 .Add "training_music_5_start", 1
                 .ForceAll = True
                 .ForceDifferent = True
+            End With
+        End With
+
+        With .SlidePlayer()
+            With .EventName("mode_training_select_started.1")
+                .Slide = "training_select"
+                .Action = "play"
             End With
         End With
 
@@ -303,9 +317,13 @@ Sub CreateTrainingSelectMode
         With .StateMachines("training_select")
             '.Debug = True
             .PersistState = False
-            .StartingState = "heal"
+            .StartingState = "init"
             
             'States
+            With .States("init")
+                .Label = "Init State"
+                .EventsWhenStarted = Array("training_select_init")
+            End With
             With .States("heal")
                 .Label = "Select Heal State"
                 .EventsWhenStarted = Array("heal_selected", "show_training_completed_shots", "check_ts_heal")
@@ -336,6 +354,11 @@ Sub CreateTrainingSelectMode
             End With
 
             'Transitions, move selection right
+            With .Transitions()
+                .Source = Array("init")
+                .Target = "heal"
+                .Events = Array("training_select_init")
+            End With
             With .Transitions()
                 .Source = Array("heal")
                 .Target = "cluster_bomb"
