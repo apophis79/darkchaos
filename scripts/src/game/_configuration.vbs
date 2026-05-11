@@ -383,6 +383,9 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "num_waves_completed_this_ball", 0
     Glf_SetInitialPlayerVar "num_wave_current", 0
     Glf_SetInitialPlayerVar "num_training_shots_hit", 2
+    Glf_SetInitialPlayerVar "num_protons", 0
+    Glf_SetInitialPlayerVar "num_missiles", 0
+    Glf_SetInitialPlayerVar "num_clusters", 0
     Glf_SetInitialPlayerVar "meteors_per_wave", 7
     Glf_SetInitialPlayerVar "disable_moon_launch", 0
     ' Glf_SetInitialPlayerVar "s_Lock1_on", 0

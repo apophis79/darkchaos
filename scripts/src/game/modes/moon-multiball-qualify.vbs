@@ -23,7 +23,7 @@ Sub CreateMoonMultiballQualifyMode
             '.Debug=True
             'Reset
             .Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}", Array("disable_moon_qualify_shots")
-            .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", Array("restart_moon_missiles","restart_moon_qualify_shots") 'moon missile used during training
+            .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", Array("restart_moon_missiles","restart_moon_qualify_shots","zero_missiles") 'moon missile used during training
             .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", Array("restart_moon_qualify_shots") 'with training boost
             .Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", Array("boost_qualify_shots") 'with training boost
             '.Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile1 == 1}", Array("backglass_moon_on")
@@ -60,6 +60,33 @@ Sub CreateMoonMultiballQualifyMode
             .ResetEvents = Array("start_moon_multiball.2","restart_moon_missiles")
             .BallsToLock = 2
             .LockDevices = Array("moon_lock")
+        End With
+
+        With .VariablePlayer()
+            With .EventName("light_missile1") 
+                With .Variable("num_missiles")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("light_missile2") 
+                With .Variable("num_missiles")
+                    .Action = "set"
+                    .Int = 2
+                End With
+            End With
+            With .EventName("multiball_moon_started") 
+                With .Variable("num_missiles")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+            With .EventName("zero_missiles") 
+                With .Variable("num_missiles")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
         End With
 
 

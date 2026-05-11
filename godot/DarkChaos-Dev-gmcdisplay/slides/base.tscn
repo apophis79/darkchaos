@@ -241,6 +241,54 @@ variable_type = 7
 variable_name = "score"
 comma_separate = true
 
+[node name="lblProtons" type="Label" parent="." unique_id=345637435]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 918.0
+offset_right = 450.0
+offset_bottom = 970.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_6vrr4")
+theme_override_font_sizes/font_size = 32
+text = "PROTONS"
+horizontal_alignment = 1
+
+[node name="lblMoon" type="Label" parent="." unique_id=1640515605]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 970.0
+offset_right = 451.0
+offset_bottom = 1022.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_6vrr4")
+theme_override_font_sizes/font_size = 32
+text = "MISSILES"
+horizontal_alignment = 1
+
+[node name="lblCuster" type="Label" parent="." unique_id=684077818]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 1021.0
+offset_right = 471.0
+offset_bottom = 1073.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_6vrr4")
+theme_override_font_sizes/font_size = 32
+text = "CLUSTER"
+horizontal_alignment = 1
+
 [node name="lblBall" type="Label" parent="." unique_id=197924790]
 layout_mode = 0
 offset_left = 518.0
@@ -252,7 +300,7 @@ theme = ExtResource("5_6vrr4")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_6vrr4")
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 37
 text = "BALL"
 horizontal_alignment = 1
 
@@ -296,9 +344,25 @@ theme = ExtResource("5_6vrr4")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_6vrr4")
-theme_override_font_sizes/font_size = 41
-text = "WAVE"
+theme_override_font_sizes/font_size = 37
+text = "WAVES"
 horizontal_alignment = 1
+
+[node name="BallCount" type="Label" parent="." unique_id=455830802]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 954.0
+offset_right = 760.0
+offset_bottom = 1080.0
+theme = ExtResource("2_mixwp")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "ball"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 
 [node name="CurrentPlayerScore" type="Label" parent="." unique_id=1013230769]
 layout_mode = 1
@@ -339,20 +403,71 @@ script = ExtResource("2_06ewq")
 variable_name = "meteor_countdown_value"
 metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 
-[node name="BallCount" type="Label" parent="." unique_id=815265241]
+[node name="NumProtons" type="Label" parent="." unique_id=815265241]
 layout_mode = 0
-offset_left = 532.0
-offset_top = 954.0
-offset_right = 763.0
-offset_bottom = 1080.0
+offset_left = 80.0
+offset_top = 890.0
+offset_right = 187.0
+offset_bottom = 991.0
 theme = ExtResource("2_mixwp")
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 80
-text = "1"
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_06ewq")
-variable_name = "ball"
+variable_name = "num_protons"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"
+
+[node name="NumMissiles" type="Label" parent="." unique_id=2067204247]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 942.0
+offset_right = 187.0
+offset_bottom = 1043.0
+theme = ExtResource("2_mixwp")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "num_missiles"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"
+
+[node name="NumClusters" type="Label" parent="." unique_id=1217786957]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 994.0
+offset_right = 187.0
+offset_bottom = 1095.0
+theme = ExtResource("2_mixwp")
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 1, 1)
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "num_clusters"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"
+
+[node name="CurrentWave" type="Label" parent="." unique_id=277431203]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 938.0
+offset_right = 1479.0
+offset_bottom = 1085.0
+theme = ExtResource("2_mixwp")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "num_waves_completed"
 metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 
 [node name="AnimatedShip" type="AnimatedSprite2D" parent="." unique_id=1545557138]

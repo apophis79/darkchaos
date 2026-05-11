@@ -57,6 +57,33 @@ Sub CreateClusterBombMode
             End With
         End With
 
+        With .VariablePlayer()
+            With .EventName("add_cluster_bomb1") 
+                With .Variable("num_clusters")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("add_cluster_bomb2") 
+                With .Variable("num_clusters")
+                    .Action = "set"
+                    .Int = 2
+                End With
+            End With
+            With .EventName("fire_cluster_bomb2") 
+                With .Variable("num_clusters")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("fire_cluster_bomb1") 
+                With .Variable("num_clusters")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+        End With
+
         With .WidgetPlayer()
             With .EventName("cluster_bomb_fired")
                 .Widget = "cluster_bomb"

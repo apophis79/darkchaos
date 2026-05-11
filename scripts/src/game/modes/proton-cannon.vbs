@@ -58,6 +58,83 @@ Sub CreateProtonCannonMode
             End With
         End With
 
+        With .VariablePlayer()
+            With .EventName("add_proton_round1") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("add_proton_round2") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 2
+                End With
+            End With
+            With .EventName("add_proton_round3") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 3
+                End With
+            End With
+            With .EventName("add_proton_round4") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 4
+                End With
+            End With
+            With .EventName("add_proton_round5") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 5
+                End With
+            End With
+            With .EventName("add_proton_round6") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 6
+                End With
+            End With
+            With .EventName("fire_proton_round6") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 5
+                End With
+            End With
+            With .EventName("fire_proton_round5") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 4
+                End With
+            End With
+            With .EventName("fire_proton_round4") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 3
+                End With
+            End With
+            With .EventName("fire_proton_round3") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 2
+                End With
+            End With
+            With .EventName("fire_proton_round2") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("fire_proton_round1") 
+                With .Variable("num_protons")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+        End With
+
+
+
         With .DOFPlayer()
             With .EventName("s_Spinner_active")
                 .Action = "DOF_PULSE"
