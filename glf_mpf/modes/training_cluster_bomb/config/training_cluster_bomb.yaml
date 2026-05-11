@@ -45,6 +45,7 @@ event_player:
   light_cluster_charge3:
     - training_achieved
     - play_sfx_super_jackpot
+    - badge_cluster_on
   play_sfx_LS:
     - play_sfx_LS_during_training
   training_achieved:

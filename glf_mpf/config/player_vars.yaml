@@ -49,6 +49,15 @@ player_vars:
   num_training_shots_hit:
     initial_value: 2
     value_type: int
+  num_protons:
+    initial_value: 0
+    value_type: int
+  num_missiles:
+    initial_value: 0
+    value_type: int
+  num_clusters:
+    initial_value: 0
+    value_type: int
   meteors_per_wave:
     initial_value: 7
     value_type: int
@@ -117,6 +126,9 @@ player_vars:
     value_type: int
   training_moon_missile_used:
     initial_value: 0
+    value_type: int
+  selection_countdown_value:
+    initial_value: 10
     value_type: int
   ts_last_move:
     initial_value: 

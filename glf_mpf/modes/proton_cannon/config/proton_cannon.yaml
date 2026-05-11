@@ -310,4 +310,67 @@ sound_player:
       action: play
 
 
+variable_player: 
+  add_proton_round1: 
+    num_protons: 
+      action: set
+      int: 1
+
+  add_proton_round2: 
+    num_protons: 
+      action: set
+      int: 2
+
+  add_proton_round3: 
+    num_protons: 
+      action: set
+      int: 3
+
+  add_proton_round4: 
+    num_protons: 
+      action: set
+      int: 4
+
+  add_proton_round5: 
+    num_protons: 
+      action: set
+      int: 5
+
+  add_proton_round6: 
+    num_protons: 
+      action: set
+      int: 6
+
+  fire_proton_round6: 
+    num_protons: 
+      action: set
+      int: 5
+
+  fire_proton_round5: 
+    num_protons: 
+      action: set
+      int: 4
+
+  fire_proton_round4: 
+    num_protons: 
+      action: set
+      int: 3
+
+  fire_proton_round3: 
+    num_protons: 
+      action: set
+      int: 2
+
+  fire_proton_round2: 
+    num_protons: 
+      action: set
+      int: 1
+
+  fire_proton_round1: 
+    num_protons: 
+      action: set
+      int: 0
+
+
+
 

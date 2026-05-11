@@ -38,6 +38,7 @@ event_player:
   training_moon_missile_completed:
     - stop_training
     - training_stopped
+    - badge_moon_on
   training_moon_lane_group_hit:
     - update_training_select_moon_lane
     - flash_gi

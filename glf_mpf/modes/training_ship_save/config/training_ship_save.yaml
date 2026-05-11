@@ -50,6 +50,7 @@ event_player:
   training_achieved:
     - stop_training
     - training_stopped
+    - badge_ship_save_on
   timer_training_ship_save_complete:
     - stop_training
     - training_stopped

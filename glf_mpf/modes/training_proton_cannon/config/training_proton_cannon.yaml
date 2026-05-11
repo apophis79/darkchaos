@@ -50,6 +50,7 @@ event_player:
     - stop_training
     - play_sfx_super_jackpot
     - training_stopped
+    - badge_proton_on
   timer_training_proton_cannon_complete:
     - stop_training
     - training_stopped

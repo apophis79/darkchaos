@@ -35,6 +35,7 @@ event_player:
     - stop_training
     - training_stopped
     - play_voc_training_incomplete
+    - badge_shields_on
   training_shields_completed:
     - stop_training
     - training_stopped

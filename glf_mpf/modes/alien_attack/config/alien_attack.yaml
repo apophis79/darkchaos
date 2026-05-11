@@ -458,4 +458,11 @@ variable_player:
 
 
 
+widget_player: 
+  alien_hit: 
+    alien_destroyed:
+      action: play
+      expire: 5.5s
+
+
 

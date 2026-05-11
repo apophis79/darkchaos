@@ -26,6 +26,18 @@ event_player:
     - training_music_3_stop
     - training_music_4_stop
     - training_music_5_stop
+  player_added{num==1}:
+    - player1_added
+    - display_p1_score
+  player_added{num==2}:
+    - player2_added
+    - display_p2_score
+  player_added{num==3}:
+    - player3_added
+    - display_p3_score
+  player_added{num==4}:
+    - player4_added
+    - display_p4_score
 
 
 light_player: 
@@ -190,19 +202,19 @@ show_player:
 
 
 sound_player: 
-  player_added{num==1}: 
+  player1_added: 
     voc_p1: 
       key: key_voc_p1
       action: play
-  player_added{num==2}: 
+  player2_added: 
     voc_p2: 
       key: key_voc_p2
       action: play
-  player_added{num==3}: 
+  player3_added: 
     voc_p3: 
       key: key_voc_p3
       action: play
-  player_added{num==4}: 
+  player4_added: 
     voc_p4: 
       key: key_voc_p4
       action: play

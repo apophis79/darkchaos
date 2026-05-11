@@ -25,9 +25,9 @@ event_player:
     - check_add_health_bump
   s_TopSlingshot_active:
     - check_add_health_bump
-  check_add_health_bump{current_player.health_bump_value<3}:
+  check_add_health_bump{current_player.health_bump_value<5}:
     - add_health_bump
-  check_add_health_bump{current_player.health_bump_value>=3}:
+  check_add_health_bump{current_player.health_bump_value>=5}:
     - check_add_health
     - reset_health_bump
   check_add_health{current_player.health_value>8}:
@@ -40,12 +40,15 @@ event_player:
     - health3_norm
     - health2_norm
     - health1_norm
+    - health_norm
     - restart_health
   check_add_health{current_player.health_value==8}:
     - health9_norm
+    - health_norm
     - add_health
   check_add_health{current_player.health_value==7}:
     - health8_norm
+    - health_norm
     - add_health
   check_add_health{current_player.health_value==6}:
     - health7_norm
@@ -55,31 +58,40 @@ event_player:
     - health3_norm
     - health2_norm
     - health1_norm
+    - health_norm
     - add_health
   check_add_health{current_player.health_value==5}:
     - health6_warm
+    - health_warm
     - add_health
   check_add_health{current_player.health_value==4}:
     - health5_warm
+    - health_warm
     - add_health
   check_add_health{current_player.health_value==3}:
     - health4_warm
+    - health_warm
     - health3_warm
     - health2_warm
     - health1_warm
+    - health_warm
     - add_health
   check_add_health{current_player.health_value==2}:
     - health3_crit
+    - health_crit
     - add_health
   check_add_health{current_player.health_value==1}:
     - health2_crit
+    - health_crit
     - add_health
   check_remove_health{current_player.health_value==9}:
     - health9_off
+    - health_norm
     - remove_health
   check_remove_health{current_player.health_value==8}:
     - health8_off
     - health9_off
+    - health_norm
     - remove_health
   check_remove_health{current_player.health_value==7}:
     - health7_off
@@ -92,11 +104,13 @@ event_player:
     - health2_warm
     - health1_warm
     - remove_health
+    - health_warm
   check_remove_health{current_player.health_value==6}:
     - health6_off
     - health7_off
     - health8_off
     - health9_off
+    - health_warm
     - remove_health
   check_remove_health{current_player.health_value==5}:
     - health5_off
@@ -104,6 +118,7 @@ event_player:
     - health7_off
     - health8_off
     - health9_off
+    - health_warm
     - remove_health
   check_remove_health{current_player.health_value==4}:
     - health4_off
@@ -115,6 +130,7 @@ event_player:
     - health3_crit
     - health2_crit
     - health1_crit
+    - health_crit
     - remove_health
     - play_voc_critically_low_health
   check_remove_health{current_player.health_value==3}:
@@ -125,6 +141,7 @@ event_player:
     - health7_off
     - health8_off
     - health9_off
+    - health_crit
     - remove_health
   check_remove_health{current_player.health_value==2}:
     - health2_off
@@ -136,6 +153,7 @@ event_player:
     - health8_off
     - health9_off
     - remove_health
+    - health_crit
     - play_voc_imminent_shutdown
   check_remove_health{current_player.health_value==1}:
     - health1_off
@@ -147,6 +165,7 @@ event_player:
     - health7_off
     - health8_off
     - health9_off
+    - health_crit
     - remove_health
     - kill_flippers
     - turn_off_gi

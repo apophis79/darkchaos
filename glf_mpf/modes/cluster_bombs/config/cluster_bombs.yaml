@@ -255,6 +255,29 @@ sound_player:
       action: play
 
 
+variable_player: 
+  add_cluster_bomb1: 
+    num_clusters: 
+      action: set
+      int: 1
+
+  add_cluster_bomb2: 
+    num_clusters: 
+      action: set
+      int: 2
+
+  fire_cluster_bomb2: 
+    num_clusters: 
+      action: set
+      int: 1
+
+  fire_cluster_bomb1: 
+    num_clusters: 
+      action: set
+      int: 0
+
+
+
 widget_player: 
   cluster_bomb_fired: 
     cluster_bomb:

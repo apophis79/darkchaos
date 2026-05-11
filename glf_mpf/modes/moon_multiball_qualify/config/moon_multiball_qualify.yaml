@@ -11,6 +11,7 @@ event_player:
   mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}:
     - restart_moon_missiles
     - restart_moon_qualify_shots
+    - zero_missiles
   mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!="locking" and current_player.shot_moon_missile2 == 0}:
     - restart_moon_qualify_shots
   restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}:
@@ -275,6 +276,26 @@ state_machines:
           - restart_moon_missiles
 
 variable_player: 
+  light_missile1: 
+    num_missiles: 
+      action: set
+      int: 1
+
+  light_missile2: 
+    num_missiles: 
+      action: set
+      int: 2
+
+  multiball_moon_started: 
+    num_missiles: 
+      action: set
+      int: 0
+
+  zero_missiles: 
+    num_missiles: 
+      action: set
+      int: 0
+
   mode_moon_multiball_qualify_started: 
     leftover_balls_in_lock: 
       action: set

@@ -98,6 +98,7 @@ event_player:
     - stop_training
     - play_sfx_super_jackpot
     - training_stopped
+    - badge_health_on
   timer_training_heal_complete:
     - stop_training
     - training_stopped

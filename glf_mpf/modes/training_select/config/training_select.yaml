@@ -10,6 +10,18 @@ event_player:
     - enable_scoop_hold
     - stop_training_qualify
     - show_training_completed_shots
+  mode_training_select_started{current_player.training_heal_achieved==1}:
+    - show_heal_completed
+  mode_training_select_started{current_player.training_cluster_bomb_achieved==1}:
+    - show_cluster_bomb_completed
+  mode_training_select_started{current_player.training_proton_cannon_achieved==1}:
+    - show_proton_cannon_completed
+  mode_training_select_started{current_player.training_moon_missile_achieved==1}:
+    - show_moon_missile_completed
+  mode_training_select_started{current_player.training_ship_save_achieved==1}:
+    - show_ship_save_completed
+  mode_training_select_started{current_player.training_shields_achieved==1}:
+    - show_shields_completed
   s_LeftFlipperButton_active:
     - training_select_left
   s_RightFlipperButton_active:
@@ -26,7 +38,7 @@ event_player:
     - release_scoop_hold
   release_scoop_hold:
     - disable_scoop_hold
-  timer_training_select_tick{device.timers.training_select.ticks == 7}:
+  timer_training_select_tick{device.timers.training_select.ticks == 3}:
     - selection_hurry_up
   make_selection{device.state_machines.training_select.state=="heal"}:
     - start_training_heal
@@ -412,6 +424,13 @@ show_player:
         color: "ffffff"
 
 
+slide_player: 
+  mode_training_select_started.1: 
+    training_select:
+      action: play
+      expire: 0s
+
+
 sound_player: 
   mode_training_select_started: 
     voc_select_option: 
@@ -421,8 +440,11 @@ sound_player:
 
 state_machines: 
   training_select:
-    starting_state: heal
+    starting_state: init
     states: 
+      init: 
+        label: Init State
+        events_when_started: training_select_init
       heal: 
         label: Select Heal State
         events_when_started: heal_selected, show_training_completed_shots, check_ts_heal
@@ -445,6 +467,10 @@ state_machines:
         label: Skip State
         events_when_started: skip_selected, show_training_completed_shots
     transitions: 
+      - source: init
+        target: heal
+        events: 
+          - training_select_init
       - source: heal
         target: cluster_bomb
         events: 
@@ -518,9 +544,9 @@ state_machines:
 
 timers: 
   training_select:
-    start_value: 0
-    end_value: 10
-    direction: up
+    start_value: 10
+    end_value: 0
+    direction: down
     control_events: 
       - event: mode_training_select_started
         action: restart
@@ -529,7 +555,15 @@ timers:
     tick_interval: 1000ms
 
 variable_player: 
+  timer_training_select_tick: 
+    selection_countdown_value: 
+      action: set
+      int: {device.timers.training_select.ticks}
+
   mode_training_select_started: 
+    selection_countdown_value: 
+      action: set
+      int: 10
     ts_hurry_up: 
       action: set
       int: 0
