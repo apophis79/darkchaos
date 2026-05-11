@@ -24,7 +24,7 @@ Sub CreateTrainingMoonMissileMode
             'Stop the training
             .Add "training_moon_lane_group_collected_complete", Array("training_moon_missile_completed","play_sfx_super_jackpot")
             .Add "timer_training_moon_missile_complete", Array("stop_training","training_stopped","play_voc_training_incomplete")
-            .Add "training_moon_missile_completed", Array("stop_training","training_stopped")
+            .Add "training_moon_missile_completed", Array("stop_training","training_stopped","badge_moon_on")
             'Update the training select shots
             .Add "training_moon_lane_group_hit", Array("update_training_select_moon_lane","flash_gi","play_sfx_LS","score_200000")
             .Add "play_sfx_LS", Array("play_sfx_LS_during_training")

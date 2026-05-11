@@ -45,7 +45,7 @@ Sub CreateTrainingHealMode
             .Add "check_add_training_health{current_player.shot_training_health8 == 1 and current_player.shot_training_health9 == 0}", Array("light_health9","training_achieved","play_sfx_LS","score_90000")
             .Add "play_sfx_LS", Array("play_sfx_LS_during_training")
             'Stop the training
-            .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot","training_stopped")
+            .Add "training_achieved", Array("stop_training","play_sfx_super_jackpot","training_stopped","badge_health_on")
             .Add "timer_training_heal_complete", Array("stop_training","training_stopped","play_voc_training_incomplete")
             .Add "mode_training_heal_stopping", Array("drop_diverter")
             'handle gi flicker shows

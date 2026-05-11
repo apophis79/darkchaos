@@ -40,6 +40,20 @@ Sub CreateBaseMode()
             .Add "s_Plunger2_active{current_player.wizard_final_hit_count > 0 and current_player.ball_just_started==1}", Array("new_ball_active","remove_display34_ball_num","remove_display12_ball_num", _
                   "stop_flash_player1_score","stop_flash_player2_score","stop_flash_player3_score","stop_flash_player4_score")
 
+            'training badges
+            .Add "mode_base_started{current_player.training_cluster_bomb_achieved==1}", Array("badge_cluster_on")
+            .Add "mode_base_started{current_player.training_cluster_bomb_achieved==0}", Array("badge_cluster_off")
+            .Add "mode_base_started{current_player.training_proton_cannon_achieved==1}", Array("badge_proton_on")
+            .Add "mode_base_started{current_player.training_proton_cannon_achieved==0}", Array("badge_proton_off")
+            .Add "mode_base_started{current_player.training_moon_missile_achieved==1}", Array("badge_moon_on")
+            .Add "mode_base_started{current_player.training_moon_missile_achieved==0}", Array("badge_moon_off")
+            .Add "mode_base_started{current_player.training_heal_achieved==1}", Array("badge_health_on")
+            .Add "mode_base_started{current_player.training_heal_achieved==0}", Array("badge_health_off")
+            .Add "mode_base_started{current_player.training_shields_achieved==1}", Array("badge_shields_on")
+            .Add "mode_base_started{current_player.training_shields_achieved==0}", Array("badge_shields_off")
+            .Add "mode_base_started{current_player.training_ship_save_achieved==1}", Array("badge_ship_save_on")
+            .Add "mode_base_started{current_player.training_ship_save_achieved==0}", Array("badge_ship_save_off")
+
             'stopping stuff
             .Add "mode_base_stopping", Array("training_music_stop")
             
