@@ -3,7 +3,7 @@ extends Node
 
 @onready var video_player = $VideoStreamPlayer
 
-const intro = preload("res://resources/attract.ogv")
+const intro = preload("res://resources/GLF_Logo_Reveal.ogv")
 const bg_loop = preload("res://resources/press_start_final.ogv")
 
 func _ready():

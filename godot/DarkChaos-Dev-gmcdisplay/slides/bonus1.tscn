@@ -4,6 +4,7 @@
 [ext_resource type="VideoStream" uid="uid://dw4eombilcwsj" path="res://resources/Ball_Drain_1.ogv" id="2_cm4hn"]
 [ext_resource type="Theme" uid="uid://b1eua1hgsadbh" path="res://resources/Score.tres" id="3_ktofo"]
 [ext_resource type="Script" uid="uid://bnukvjuqkes31" path="res://slides/bonus_events.gd" id="3_vubgl"]
+[ext_resource type="FontVariation" uid="uid://bjymib6vj56at" path="res://orbitron-wide-bold.tres" id="5_cm4hn"]
 
 [sub_resource type="Animation" id="Animation_vubgl"]
 length = 0.001
@@ -83,8 +84,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 66.33
-offset_bottom = 66.33
+offset_top = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -96,15 +97,17 @@ custom_minimum_size = Vector2(0, 86)
 layout_mode = 2
 theme = ExtResource("3_ktofo")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.89411765, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_cm4hn")
 theme_override_font_sizes/font_size = 90
-text = "00"
+text = "BONUS TOTAL"
 horizontal_alignment = 1
 
 [node name="lblBonusValue" type="Label" parent="Control/VBoxContainer" unique_id=1333533836]
 layout_mode = 2
 theme = ExtResource("3_ktofo")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.89411765, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_cm4hn")
 theme_override_font_sizes/font_size = 90
 horizontal_alignment = 1

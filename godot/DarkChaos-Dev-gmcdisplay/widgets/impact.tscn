@@ -14,7 +14,8 @@ script = ExtResource("1_sqx54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=500151232]
 z_index = 6
-position = Vector2(-282, -52)
+position = Vector2(1217, 604)
+scale = Vector2(0.636551, 0.52732325)
 sprite_frames = ExtResource("2_em66o")
 animation = &"impact"
 autoplay = "impact"
