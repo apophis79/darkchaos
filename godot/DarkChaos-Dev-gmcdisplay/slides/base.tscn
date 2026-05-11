@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://b8st4684yor14" path="res://resources/training_badges/badge_proton_grey.png" id="38_1m7cl"]
 [ext_resource type="Texture2D" uid="uid://dgwhhw6oo5fva" path="res://resources/training_badges/badge_shields_grey.png" id="40_g8vm3"]
 [ext_resource type="Texture2D" uid="uid://cvfiflqxt0ynn" path="res://resources/training_badges/badge_shipSave_grey.png" id="42_fqay2"]
+[ext_resource type="Texture2D" uid="uid://bqoj5rwcxbqet" path="res://resources/combo_light.png" id="44_cbytx"]
 
 [node name="Base" type="Control" unique_id=483653664]
 z_index = 5
@@ -354,11 +355,6 @@ script = ExtResource("2_06ewq")
 variable_name = "ball"
 metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 
-[node name="CombosEmpty" type="Sprite2D" parent="." unique_id=1180011478]
-position = Vector2(0, 158)
-texture = ExtResource("9_f5kbb")
-centered = false
-
 [node name="AnimatedShip" type="AnimatedSprite2D" parent="." unique_id=1545557138]
 position = Vector2(1643, 877)
 sprite_frames = ExtResource("10_du778")
@@ -631,3 +627,77 @@ modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(544, 815.00006)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("42_fqay2")
+
+[node name="ComboLights" type="Control" parent="." unique_id=116205832]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CombosEmpty" type="Sprite2D" parent="ComboLights" unique_id=1180011478]
+position = Vector2(0, 158)
+texture = ExtResource("9_f5kbb")
+centered = false
+
+[node name="Combo1" type="Sprite2D" parent="ComboLights" unique_id=838486648]
+position = Vector2(21, 178)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos1_lit"
+hide_event = "combos1_unlit"
+
+[node name="Combo2" type="Sprite2D" parent="ComboLights" unique_id=1490040235]
+position = Vector2(55.999996, 178.00002)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos2_lit"
+hide_event = "combos2_unlit"
+
+[node name="Combo3" type="Sprite2D" parent="ComboLights" unique_id=1884138908]
+position = Vector2(90.999985, 178.00002)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos3_lit"
+hide_event = "combos3_unlit"
+
+[node name="Combo4" type="Sprite2D" parent="ComboLights" unique_id=501138618]
+position = Vector2(126, 178)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos4_lit"
+hide_event = "combos4_unlit"
+
+[node name="Combo5" type="Sprite2D" parent="ComboLights" unique_id=922689612]
+position = Vector2(159.99998, 178)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos5_lit"
+hide_event = "combos5_unlit"
+
+[node name="Combo6" type="Sprite2D" parent="ComboLights" unique_id=1857152816]
+position = Vector2(194.99997, 178.00002)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos6_lit"
+hide_event = "combos6_unlit"
+
+[node name="Combo7" type="Sprite2D" parent="ComboLights" unique_id=1039984642]
+position = Vector2(229.99998, 178.00002)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos7_lit"
+hide_event = "combos7_unlit"
+
+[node name="Combo8" type="Sprite2D" parent="ComboLights" unique_id=1282771864]
+position = Vector2(265, 178)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("44_cbytx")
+script = ExtResource("32_iya4i")
+show_event = "combos8_lit"
+hide_event = "combos8_unlit"
