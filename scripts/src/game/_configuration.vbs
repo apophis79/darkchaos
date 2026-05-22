@@ -992,7 +992,27 @@ Public Sub CreateSharedShotProfiles()
             .Key = "key_collected_f"
         End With
     End With
-      
+
+    With GlfShotProfiles("moon_missiles")
+        With .States("unlit")
+            .Show = "off"
+            .Key = "key_mm_unlit"
+        End With
+        With .States("on")
+            .Show = "flicker_color_on"
+            .Key = "key_mm_on"
+            .Speed = 10
+        End With
+        With .States("running")
+            .Show = "flash_color_with_fade"
+            .Key = "key_mm_running"
+            .Speed = 1
+            With .Tokens()
+                .Add "fade", 800
+            End With
+        End With
+    End With
+    
 
 End Sub
 

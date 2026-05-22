@@ -129,7 +129,6 @@ Sub CreateMoonMultiballQualifyMode
             ' End With
         End With
 
-
         'Lane qualification shots
         For x = 1 to 3
             With .Shots("moon_lane"&x)
@@ -161,7 +160,7 @@ Sub CreateMoonMultiballQualifyMode
         'Missile lights
         For x = 1 to 2
             With .Shots("moon_missile"&x)
-                .Profile = "flicker_on"
+                .Profile = "moon_missiles"
                 With .Tokens()
                     .Add "lights", "LMR"&x
                     .Add "color", MoonColor
@@ -170,7 +169,11 @@ Sub CreateMoonMultiballQualifyMode
                     .Events = Array("light_missile"&x,"complete_moon_missiles")
                     .State = 1
                 End With
-                .RestartEvents = Array("multiball_moon_started","restart_moon_missiles")
+                With .ControlEvents()
+                    .Events = Array("multiball_moon_started")
+                    .State = 2
+                End With
+                .RestartEvents = Array("multiball_moon_ended","restart_moon_missiles")
             End With
         Next
 
