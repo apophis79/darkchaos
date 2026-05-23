@@ -134,23 +134,27 @@ shots:
       - events: complete_moon_qualify_shots
         state: 1
   moon_missile1:
-    profile: flicker_on
-    restart_events: multiball_moon_started, restart_moon_missiles
+    profile: moon_missiles
+    restart_events: multiball_moon_ended, restart_moon_missiles
     show_tokens: 
       lights: "LMR1"
       color: "ccbb00"
     control_events: 
       - events: light_missile1, complete_moon_missiles
         state: 1
+      - events: multiball_moon_started
+        state: 2
   moon_missile2:
-    profile: flicker_on
-    restart_events: multiball_moon_started, restart_moon_missiles
+    profile: moon_missiles
+    restart_events: multiball_moon_ended, restart_moon_missiles
     show_tokens: 
       lights: "LMR2"
       color: "ccbb00"
     control_events: 
       - events: light_missile2, complete_moon_missiles
         state: 1
+      - events: multiball_moon_started
+        state: 2
   moon_lock_ready:
     profile: qualified_shot
     restart_events: restart_moon_qualify_shots
