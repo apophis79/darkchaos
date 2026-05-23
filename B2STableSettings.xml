@@ -15,7 +15,7 @@
   </ScreenshotPath>
   <ScreenshotFileType>0</ScreenshotFileType>
   <darkchaos>
-    <HideGrill>1</HideGrill>
+    <HideGrill>0</HideGrill>
     <HideB2SDMD>0</HideB2SDMD>
     <HideB2SBackglass>0</HideB2SBackglass>
     <HideDMD>2</HideDMD>
@@ -30,6 +30,5 @@
     <FormToFront>1</FormToFront>
     <FormToBack>0</FormToBack>
     <FormNoFocus>0</FormNoFocus>
-    <Animations />
   </darkchaos>
 </B2STableSettings>
