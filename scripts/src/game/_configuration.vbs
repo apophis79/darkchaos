@@ -308,8 +308,32 @@ Sub ConfigureGlfDevices
     '*********** INITALIZE HIGH SCORES ***********
     ' These high scores are tracked for this machine. 
     ' Initial values are set first time the machine turns on. After that, values are read from the machines ini file.
+    Dim high_score_mode : Set high_score_mode = CreateGlfMode("high_scores", 1500)
+    high_score_mode.StartEvents = Array("game_ending")
+    high_score_mode.StopEvents = Array("high_score_complete")
+    high_score_mode.GameMode = False
+    high_score_mode.UseWaitQueue = True
+    With high_score_mode
+        With .EventPlayer()
+            .Add "s_left_flipper_active", Array("text_input: {action: ""left""}")
+            .Add "s_right_flipper_active", Array("text_input: {action: ""right""}")
+            .Add "s_start_active", Array("text_input: {action: ""select""}")
+        End With
 
-    With EnableGlfHighScores()
+        ' With .SlidePlayer()
+        '     With .EventName("high_score_enter_initials")
+        '         .Slide = "high_score"
+        '         .Action = "play"
+        '     End With
+        '     With .EventName("high_score_award_display")
+        '         .Slide = "high_score_award"
+        '         .Action = "play"
+        '     End With
+        ' End With
+    End With
+
+    Dim high_score : Set high_score = (new GlfHighScore)(high_score_mode)
+    With high_score
         With .Categories()
             .Add "score", Array("GRAND CHAMPION", "HIGH SCORE 1", "HIGH SCORE 2", "HIGH SCORE 3") 
         End With
@@ -320,8 +344,10 @@ Sub ConfigureGlfDevices
             .Add "DIG", 3000000
         End With
         .EnterInitialsTimeout = 65000
+        .Debug = False
     End With
-
+    Set high_score_mode.HighScore = high_score
+    Set glf_highscore = high_score
 
 
     '*********** INITALIZE MACHINE VARIABLES ***********
@@ -814,7 +840,7 @@ Sub ConfigureGlfDevices
     ' segment_display_p3p4.ExternalFlexDmdSegmentIndex = 16
     ' segment_display_p3p4.ExternalB2SSegmentIndex = 19
    
-
+    
     
 End Sub
 
