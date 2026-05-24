@@ -40,6 +40,7 @@ Dim EarthHitColor2: EarthHitColor2 = "880303"
 Dim SegmentsColor: SegmentsColor = "ff0000"
 
 If for_real = true Then
+    GIColor3000k = "ffedd2"
     MysteryColor = "f7b5c9" 
     CombosColor = "ffffff"
     HealthColor2 = "ffae01"
