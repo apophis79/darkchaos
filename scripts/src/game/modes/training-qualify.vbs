@@ -19,6 +19,7 @@ Sub CreateTrainingQualifyMode
 
 
         With .EventPlayer()
+            .Add "mode_training_qualify_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_training_qualify")
             'Restart qualification round
             .Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", Array("restart_qualify_training")
             .Add "mode_training_qualify_started{current_player.training_just_finished == 1}", Array("restart_qualify_training")

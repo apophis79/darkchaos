@@ -12,6 +12,7 @@ Sub CreateSkillshotsMode
         
 
         With .EventPlayer()
+            .Add "mode_skillshots_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_skillshots")
             'Only start skillshots if starting a new ball
             .Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", Array("init_ss")
             'Handle successful skillshots

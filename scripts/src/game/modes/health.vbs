@@ -14,10 +14,11 @@ Sub CreateHealthMode
 
     With CreateGlfMode("health", 800)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_health","mode_base_stopping","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'restart the mode
+            .Add "mode_health_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_health")
             .Add "mode_health_started{current_player.ball_just_started==1}", Array("restart_health","reset_health_bump")
             .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("heal_powerup") 'training boost
             'handle health diverter

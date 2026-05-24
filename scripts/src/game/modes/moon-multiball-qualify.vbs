@@ -16,12 +16,13 @@ Sub CreateMoonMultiballQualifyMode
 
     With CreateGlfMode("moon_multiball_qualify", 590)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_moon_multiball_qualify","mode_base_stopping","start_training_select","wizard_mode_started")
         '.Debug=True
 
         With .EventPlayer()
             '.Debug=True
             'Reset
+            .Add "mode_moon_multiball_qualify_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_moon_multiball_qualify")
             .Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}", Array("disable_moon_qualify_shots")
             .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", Array("restart_moon_missiles","restart_moon_qualify_shots","zero_missiles") 'moon missile used during training
             .Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", Array("restart_moon_qualify_shots") 'with training boost

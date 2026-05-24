@@ -15,6 +15,7 @@ Sub CreateShipSaveMode
         .StopEvents = Array("stop_ship_save","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
+            .Add "mode_ship_save_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_ship_save")
             'Reset ship charge shots
             .Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", Array("restart_ship_save")
             .Add "mode_ship_save_started{current_player.training_ship_save_achieved==1 and current_player.shot_ship_charge3!=2}", Array("restart_ship_save")

@@ -13,6 +13,7 @@ Sub CreateExtraBallMode
 
         With .EventPlayer()
             'initialize the EB
+            .Add "mode_extra_ball_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_extra_ball")
             .Add "mode_extra_ball_started", Array("check_eb")
             .Add "check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}", Array("eb_now_lit","enable_scoop_hold")
             .Add "check_eb{current_player.extra_balls == 0}", Array("eb_reset")

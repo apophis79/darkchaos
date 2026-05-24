@@ -20,6 +20,7 @@ Sub CreateMysteryMode
         .StopEvents = Array("stop_mystery","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
+            .Add "mode_mystery_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_mystery")
             'enable the ball hold if needed
             .Add "mode_mystery_started{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}", Array("enable_scoop_hold")
             '.Add "balldevice_scoop_ball_entered{current_player.shot_mystery_ready==1 and current_player.wizard_mode_is_ready==0}", Array("enable_scoop_hold") 

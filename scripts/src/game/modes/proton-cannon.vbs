@@ -16,9 +16,10 @@ Sub CreateProtonCannonMode
 
     With CreateGlfMode("proton_cannon", 900)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_proton_cannon","mode_base_stopping","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
+            .Add "mode_proton_cannon_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_proton_cannon")
             'Reset proton charge shots
             .Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", Array("reset_proton_charges")
             .Add "mode_proton_cannon_started{current_player.training_proton_cannon_achieved==1}", Array("reset_proton_charges")

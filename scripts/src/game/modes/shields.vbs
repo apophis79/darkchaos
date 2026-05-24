@@ -19,6 +19,7 @@ Sub CreateShieldsMode
         .StopEvents = Array("stop_shields","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
+            .Add "mode_shields_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_shields")
             'reset shields qualification
             .Add "mode_shields_started{current_player.training_shields_achieved==1}", Array("restart_qualify_shields") 'with training boost
             .Add "restart_qualify_shields{current_player.training_shields_achieved==1}", Array("boost_qualify_shields") 'with training boost

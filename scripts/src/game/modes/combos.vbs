@@ -17,6 +17,7 @@ Sub CreateCombosMode
 
         With .EventPlayer()
             'init and reset
+            .Add "mode_combos_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_combos")
             .Add "mode_combos_started", Array("reset_combos")
             .Add "mode_combos_started{current_player.ball_just_started==1}", Array("clear_relaxed_combos")
             .Add "timer_combos_complete", Array("restart_decay_timer","check_subtract_combos")

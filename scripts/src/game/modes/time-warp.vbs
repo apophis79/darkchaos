@@ -18,6 +18,7 @@ Sub CreateTimewarpMode
         .StopEvents = Array("stop_timewarp","mode_base_stopping","start_training_select","wizard_mode_started") ',"start_meteor_wave"
 
         With .EventPlayer()
+            .Add "mode_timewarp_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_timewarp")
             .Add "mode_timewarp_started{current_player.shot_timewarp1==0}", Array("reset_timewarp")
             .Add "mode_timewarp_started{current_player.ball_just_started==0}", Array("reset_timewarp")
             .Add "reset_timewarp", Array("ready_timewarp1")

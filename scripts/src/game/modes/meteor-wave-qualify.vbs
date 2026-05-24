@@ -7,9 +7,10 @@ Sub CreateMeteorWaveQualifyMode
 
     With CreateGlfMode("meteor_wave_qualify", 1100)
         .StartEvents = Array("new_ball_started","stop_meteor_wave","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","mode_eob_bonus_started","start_meteor_wave","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_meteor_wave_qualify","mode_base_stopping","mode_eob_bonus_started","start_meteor_wave","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
+            .Add "mode_meteor_wave_qualify_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_meteor_wave_qualify")
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer")
             .Add "reset_countdown_value", Array("init_mwq_timer")

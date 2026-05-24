@@ -14,10 +14,11 @@ Sub CreateClusterBombMode
 
     With CreateGlfMode("cluster_bombs", 1000)
         .StartEvents = Array("new_ball_started","stop_training","wizard_mode_ended")
-        .StopEvents = Array("mode_base_stopping","start_training_select","wizard_mode_started")
+        .StopEvents = Array("stop_cluster_bombs","mode_base_stopping","start_training_select","wizard_mode_started")
 
         With .EventPlayer()
             'Reset cluster charge shots
+            .Add "mode_cluster_bombs_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_cluster_bombs")
             .Add "mode_cluster_bombs_started{current_player.shot_cluster_charge1==0}", Array("reset_cluster_charges")
             .Add "mode_cluster_bombs_started{current_player.training_cluster_bomb_achieved==1}", Array("reset_cluster_charges")
             .Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}", Array("ready_cluster_charge1") 'no training boost
