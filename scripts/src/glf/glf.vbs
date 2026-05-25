@@ -1485,6 +1485,8 @@ Public Function Glf_ParseDispatchEventInput(value)
 		If Not glf_funcRefMap.Exists(value) Then
 			glf_codeFuncRefStr = glf_codeFuncRefStr & "glf_funcRefMap.Add """ & Replace(value, """", """""") & """, """ & funcRef & """" & vbCrLf
 			glf_funcRefMap.Add value, funcRef
+		Else
+			funcRef = glf_funcRefMap(CStr(value))
 		End If
 		glf_FuncCount = glf_FuncCount + 1
 
