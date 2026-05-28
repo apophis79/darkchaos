@@ -85,9 +85,7 @@ Sub CreateSounds()
     AddSoundEffect "sfx_tally_alt", 2.000
     AddSoundEffect "sfx_cluster_fired", 4.593
     AddSoundEffect "sfx_launch", 7.552
-    AddSoundEffect "sfx_ball_launch1", 4.736
-    AddSoundEffect "sfx_ball_launch2", 4.736
-    AddSoundEffect "sfx_ball_launch3", 4.736
+    AddSoundEffect "sfx_ball_launch", 4.736
     AddSoundEffect "sfx_scoop", 2.690
     AddSoundEffect "sfx_tilt_warning", 1.050
     AddSoundEffect "sfx_tilt", 4.714
@@ -179,7 +177,7 @@ Sub CreateSounds()
     AddMusic "mus_wizard", 118.143, -1
     AddMusic "mus_wizard2", 79.967, -1
     '  not looping
-    AddMusic "mus_training_1", 70.532, 0
+    ' AddMusic "mus_training_1", 70.532, 0
     AddMusic "mus_training_2", 69.160, 0
     AddMusic "mus_training_3", 70.296, 0
     AddMusic "mus_training_4", 74.050, 0

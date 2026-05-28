@@ -224,16 +224,19 @@ Sub ConfigureGlfDevices
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
         .Volume = Volume_GameSoundEffects
+        .SystemType = "bcp"
     End With
 
     With CreateGlfSoundBus("voc")
         .SimultaneousSounds = 2
         .Volume = Volume_GameCallouts
+        .SystemType = "bcp"
     End With
 
     With CreateGlfSoundBus("mus")
         .SimultaneousSounds = 4
         .Volume = Volume_GameMusic
+        .SystemType = "bcp"
     End With
 
 

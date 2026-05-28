@@ -128,6 +128,7 @@ Sub CreateBaseMode()
             'handle some sound effects, music, and points
             ' .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
             ' .Add "center_orbit_right_hit", Array("play_sfx_Orb","score_2000")
+            .Add "ball_launch_hit", Array("play_sfx_ball_launch")
             .Add "center_orbit_hit", Array("play_sfx_Orb","score_2000")
             .Add "left_side_hit", Array("play_sfx_Orb","score_2000")
             .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300")
@@ -271,13 +272,6 @@ Sub CreateBaseMode()
                 .Add "play_sfx_bumper2", 1
                 .Add "play_sfx_bumper3", 1
                 .Add "play_sfx_bumper4", 1
-                .ForceAll = True
-                .ForceDifferent = True
-            End With
-            With .EventName("ball_launch_hit")
-                .Add "play_sfx_ball_launch1", 1
-                .Add "play_sfx_ball_launch2", 1
-                .Add "play_sfx_ball_launch3", 1
                 .ForceAll = True
                 .ForceDifferent = True
             End With
@@ -1036,7 +1030,7 @@ Sub CreateBaseMode()
             End With
 
             'Training
-            For x = 1 to 5
+            For x = 2 to 5
                 With .EventName("training_music_"&x&"_start")
                     .Key = "key_mus_training_"&x
                     .Sound = "mus_training_"&x
@@ -1089,17 +1083,9 @@ Sub CreateBaseMode()
 
 
             'Ball launch
-            With .EventName("play_sfx_ball_launch1")
+            With .EventName("play_sfx_ball_launch")
                 .Key = "key_sfx_ball_launch1"
-                .Sound = "sfx_ball_launch1"
-            End With
-            With .EventName("play_sfx_ball_launch2")
-                .Key = "key_sfx_ball_launch2"
-                .Sound = "sfx_ball_launch2"
-            End With
-            With .EventName("play_sfx_ball_launch3")
-                .Key = "key_sfx_ball_launch3"
-                .Sound = "sfx_ball_launch3"
+                .Sound = "sfx_ball_launch"
             End With
 
 
