@@ -9,8 +9,10 @@ Dim MechVol : MechVol = 0.8           			' Overall Mechanical sound effect volum
 Dim BallRollVolume : BallRollVolume = 0.5   	' Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume : RampRollVolume = 0.5 		' Level of ramp rolling volume. Value between 0 and 1
 Dim StagedFlipper : StagedFlipper = 0 			' 0 = Not enabled, 1 = Enabled
-Dim BackglassVol : BackglassVol = 1			    ' Separate setting that only affects sounds coming from backglass. Range from 0 to 1
-Dim CalloutVol : CalloutVol = 1				    ' Separate setting that affects verbal callout volume. Note, the backglass volume dial also affects callouts. Range from 0 to 1
+Dim MusicVolume : MusicVolume = 0.5			    ' Separate setting that only affects music coming from backglass. Range from 0 to 1
+Dim CalloutVolume : CalloutVolume = 0.5			' Separate setting that affects verbal callout volume.  Range from 0 to 1
+Dim SoundEffectVolume : SoundEffectVolume = 0.5	' Separate setting that affects game sound effect volume.  Range from 0 to 1
+
 
 Dim VRRoom: VRRoom = 0
 Dim VREarthVisible: VREarthVisible = 1			' 0 - Hidden, 1 - Visible
@@ -55,12 +57,30 @@ Sub Table1_OptionEvent(ByVal eventId)
 	End If
 	
     ' Sound volumes
-    'BackglassVol = Table1.Option("Game Sounds Volume", 0, 1, 0.01, 0.8, 1)
-	'CalloutVol = Table1.Option("Callout Volume", 0, 1, 0.01, 0.8, 1)
+    MusicVolume = Table1.Option("Music Volume", 0, 1, 0.1, 0.5, 1)
+	CalloutVolume = Table1.Option("Callout Volume", 0, 1, 0.1, 0.5, 1)
+	SoundEffectVolume = Table1.Option("Sound Effect Volume", 0, 1, 0.1, 0.5, 1)
     MechVol = Table1.Option("Mechanical Sounds Volume", 0, 1, 0.01, 0.8, 1)
     BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.3, 1)
 	RampRollVolume = Table1.Option("Ramp Roll Volume", 0, 1, 0.01, 0.5, 1)
 
+	Dim kwargs1 : Set kwargs1 = GlfKwargs()
+	With kwargs1
+		.Add "vol", MusicVolume
+	End With
+	DispatchPinEvent "set_mus_volume", kwargs1
+
+	Dim kwargs2 : Set kwargs2 = GlfKwargs()
+	With kwargs2
+		.Add "vol", CalloutVolume
+	End With
+	DispatchPinEvent "set_voc_volume", kwargs2
+
+	Dim kwargs3 : Set kwargs3 = GlfKwargs()
+	With kwargs3
+		.Add "vol", SoundEffectVolume
+	End With
+	DispatchPinEvent "set_sfx_volume", kwargs3
 
 	' Room brightness
 '	LightLevel = Table1.Option("Table Brightness (Ambient Light Level)", 0, 1, 0.01, .5, 1)

@@ -223,19 +223,19 @@ Sub ConfigureGlfDevices
 
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
-        .Volume = Volume_GameSoundEffects
+        .Volume = SoundEffectVolume
         .SystemType = "bcp"
     End With
 
     With CreateGlfSoundBus("voc")
         .SimultaneousSounds = 2
-        .Volume = Volume_GameCallouts
+        .Volume = CalloutVolume
         .SystemType = "bcp"
     End With
 
     With CreateGlfSoundBus("mus")
         .SimultaneousSounds = 4
-        .Volume = Volume_GameMusic
+        .Volume = MusicVolume
         .SystemType = "bcp"
     End With
 
@@ -392,6 +392,24 @@ Sub ConfigureGlfDevices
         .InitialValue = 0
         .ValueType = "int"
         .Persist = False
+    End With
+
+    With CreateMachineVar("sfx_volume")
+        .InitialValue = 0
+        .ValueType = "float"
+        .Persist = True
+    End With
+
+    With CreateMachineVar("voc_volume")
+        .InitialValue = 0
+        .ValueType = "float"
+        .Persist = True
+    End With
+
+    With CreateMachineVar("mus_volume")
+        .InitialValue = 0
+        .ValueType = "float"
+        .Persist = True
     End With
 
 
