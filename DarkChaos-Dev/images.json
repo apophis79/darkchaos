@@ -99,15 +99,15 @@
   },
   {
     "name": "Backglassimage",
-    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Backglassimage.png",
-    "width": 3015,
-    "height": 2160,
+    "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Backglass\\backglass-no-window.png",
+    "width": 3945,
+    "height": 2513,
     "alpha_test_value": -1.0,
     "is_opaque": null,
     "is_signed": false,
     "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Backglassimage.png",
-      "name": "Backglassimage"
+      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Backglass\\backglass-no-window.png",
+      "name": "backglass-no-window"
     },
     "bits": false
   },
@@ -144,7 +144,7 @@
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Backbox.webp",
     "width": 2048,
     "height": 4096,
-    "alpha_test_value": 200.00146,
+    "alpha_test_value": 200.00148,
     "is_opaque": false,
     "is_signed": false,
     "jpeg": {

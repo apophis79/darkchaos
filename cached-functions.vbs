@@ -2965,69 +2965,71 @@ Function Glf_719(args)
 	If Err Then Glf_719 = False
 End Function
 Function Glf_720(args)
-	Glf_720 = 5000
+	Glf_720 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2,")
 End Function
 Function Glf_721(args)
-	Glf_721 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2,")
+	Glf_721 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
 End Function
 Function Glf_722(args)
-	Glf_722 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2,")
+	Glf_722 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
 End Function
 Function Glf_723(args)
-	Glf_723 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2,")
+	Glf_723 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
 End Function
 Function Glf_724(args)
-	Glf_724 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2,")
+	Glf_724 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
 End Function
 Function Glf_725(args)
-	Glf_725 = Glf_FormatValue(GetPlayerState("ball"),"0>2")
+	Glf_725 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2")
 End Function
 Function Glf_726(args)
-	Glf_726 = Glf_FormatValue(GetPlayerStateForPlayer(0, "score"),"0>2")
+	Glf_726 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2")
 End Function
 Function Glf_727(args)
-	Glf_727 = Glf_FormatValue(GetPlayerStateForPlayer(1, "score"),"0>2")
+	Glf_727 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2")
 End Function
 Function Glf_728(args)
-	Glf_728 = Glf_FormatValue(GetPlayerStateForPlayer(2, "score"),"0>2")
+	Glf_728 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2")
 End Function
 Function Glf_729(args)
-	Glf_729 = Glf_FormatValue(GetPlayerStateForPlayer(3, "score"),"0>2")
+	Glf_729 = "BALL"
 End Function
 Function Glf_730(args)
-	Glf_730 = "BALL"
+	Glf_730 = 500
 End Function
 Function Glf_731(args)
-	Glf_731 = 500
+	Glf_731 = 300
 End Function
 Function Glf_732(args)
-	Glf_732 = 300
+	On Error Resume Next
+	    Glf_732 = glf_timers("meteor_countdown").GetValue("ticks") = 3
+	If Err Then Glf_732 = False
 End Function
 Function Glf_733(args)
-	On Error Resume Next
-	    Glf_733 = glf_timers("meteor_countdown").GetValue("ticks") = 3
-	If Err Then Glf_733 = False
+	Glf_733 = 6000
 End Function
 Function Glf_734(args)
-	Glf_734 = 6000
+	Glf_734 = 3000
 End Function
 Function Glf_735(args)
-	Glf_735 = 3000
+	Glf_735 = 2000
 End Function
 Function Glf_736(args)
-	Glf_736 = 2000
+	Glf_736 = 1500
 End Function
 Function Glf_737(args)
-	Glf_737 = 1500
+	On Error Resume Next
+	    Glf_737 = glf_timers("meteor_countdown").GetValue("ticks") = 1
+	If Err Then Glf_737 = False
 End Function
 Function Glf_738(args)
 	On Error Resume Next
-	    Glf_738 = glf_timers("meteor_countdown").GetValue("ticks") = 1
+	    Glf_738 = Glf_GameVariable("balls_in_play") = 1 and GetPlayerState("ball_just_started") = 0
 	If Err Then Glf_738 = False
 End Function
 Function Glf_739(args)
 	On Error Resume Next
-	    Glf_739 = Glf_GameVariable("balls_in_play") = 1 and GetPlayerState("ball_just_started") = 0
+	    Glf_739 = GetPlayerState("ball_cradled") = 1
 	If Err Then Glf_739 = False
 End Function
 Function Glf_740(args)
@@ -3042,74 +3044,74 @@ Function Glf_741(args)
 End Function
 Function Glf_742(args)
 	On Error Resume Next
-	    Glf_742 = GetPlayerState("ball_cradled") = 1
+	    Glf_742 = glf_timers("info").GetValue("ticks") = 0
 	If Err Then Glf_742 = False
 End Function
 Function Glf_743(args)
 	On Error Resume Next
-	    Glf_743 = glf_timers("info").GetValue("ticks") = 0
+	    Glf_743 = glf_timers("info").GetValue("ticks") = 1
 	If Err Then Glf_743 = False
 End Function
 Function Glf_744(args)
 	On Error Resume Next
-	    Glf_744 = glf_timers("info").GetValue("ticks") = 1
+	    Glf_744 = glf_timers("info").GetValue("ticks") = 2
 	If Err Then Glf_744 = False
 End Function
 Function Glf_745(args)
 	On Error Resume Next
-	    Glf_745 = glf_timers("info").GetValue("ticks") = 2
+	    Glf_745 = glf_timers("info").GetValue("ticks") = 3
 	If Err Then Glf_745 = False
 End Function
 Function Glf_746(args)
 	On Error Resume Next
-	    Glf_746 = glf_timers("info").GetValue("ticks") = 3
+	    Glf_746 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
 	If Err Then Glf_746 = False
 End Function
 Function Glf_747(args)
 	On Error Resume Next
-	    Glf_747 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
+	    Glf_747 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
 	If Err Then Glf_747 = False
 End Function
 Function Glf_748(args)
 	On Error Resume Next
-	    Glf_748 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	    Glf_748 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
 	If Err Then Glf_748 = False
 End Function
 Function Glf_749(args)
-	On Error Resume Next
-	    Glf_749 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
-	If Err Then Glf_749 = False
+	Glf_749 = "TRAINED"
 End Function
 Function Glf_750(args)
-	Glf_750 = "TRAINED"
+	Glf_750 = Glf_FormatValue(GetPlayerState("training_total_achieved"),"0>2")
 End Function
 Function Glf_751(args)
-	Glf_751 = Glf_FormatValue(GetPlayerState("training_total_achieved"),"0>2")
+	On Error Resume Next
+	    Glf_751 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	If Err Then Glf_751 = False
 End Function
 Function Glf_752(args)
 	On Error Resume Next
-	    Glf_752 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	    Glf_752 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
 	If Err Then Glf_752 = False
 End Function
 Function Glf_753(args)
-	On Error Resume Next
-	    Glf_753 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
-	If Err Then Glf_753 = False
+	Glf_753 = "EB NUM"
 End Function
 Function Glf_754(args)
-	Glf_754 = "EB NUM"
+	Glf_754 = Glf_FormatValue(GetPlayerState("extra_balls"),"0>2")
 End Function
 Function Glf_755(args)
-	Glf_755 = Glf_FormatValue(GetPlayerState("extra_balls"),"0>2")
+	On Error Resume Next
+	    Glf_755 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	If Err Then Glf_755 = False
 End Function
 Function Glf_756(args)
 	On Error Resume Next
-	    Glf_756 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	    Glf_756 = GetPlayerState("nuke_acquired") = 0
 	If Err Then Glf_756 = False
 End Function
 Function Glf_757(args)
 	On Error Resume Next
-	    Glf_757 = GetPlayerState("nuke_acquired") = 0
+	    Glf_757 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
 	If Err Then Glf_757 = False
 End Function
 Function Glf_758(args)
@@ -3119,178 +3121,178 @@ Function Glf_758(args)
 End Function
 Function Glf_759(args)
 	On Error Resume Next
-	    Glf_759 = GetPlayerState("nuke_acquired") = 1 and GetPlayerState("nuke_used") = 0
+	    Glf_759 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_759 = False
 End Function
 Function Glf_760(args)
 	On Error Resume Next
-	    Glf_760 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_760 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_760 = False
 End Function
 Function Glf_761(args)
 	On Error Resume Next
-	    Glf_761 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_761 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_761 = False
 End Function
 Function Glf_762(args)
 	On Error Resume Next
-	    Glf_762 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_762 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_762 = False
 End Function
 Function Glf_763(args)
 	On Error Resume Next
-	    Glf_763 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_763 = glf_timers("alien_attack").GetValue("ticks") > 0
 	If Err Then Glf_763 = False
 End Function
 Function Glf_764(args)
 	On Error Resume Next
-	    Glf_764 = glf_timers("alien_attack").GetValue("ticks") > 0
+	    Glf_764 = glf_timers("timewarp").GetValue("ticks")=1
 	If Err Then Glf_764 = False
 End Function
 Function Glf_765(args)
 	On Error Resume Next
-	    Glf_765 = glf_timers("timewarp").GetValue("ticks")=1
+	    Glf_765 = GetPlayerState("alien_attack_dir") = 0
 	If Err Then Glf_765 = False
 End Function
 Function Glf_766(args)
 	On Error Resume Next
-	    Glf_766 = GetPlayerState("alien_attack_dir") = 0
+	    Glf_766 = GetPlayerState("alien_attack_dir") = 1
 	If Err Then Glf_766 = False
 End Function
 Function Glf_767(args)
 	On Error Resume Next
-	    Glf_767 = GetPlayerState("alien_attack_dir") = 1
+	    Glf_767 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 2
 	If Err Then Glf_767 = False
 End Function
 Function Glf_768(args)
 	On Error Resume Next
-	    Glf_768 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 2
+	    Glf_768 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_768 = False
 End Function
 Function Glf_769(args)
 	On Error Resume Next
-	    Glf_769 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 3
+	    Glf_769 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_769 = False
 End Function
 Function Glf_770(args)
 	On Error Resume Next
-	    Glf_770 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 4
+	    Glf_770 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_770 = False
 End Function
 Function Glf_771(args)
 	On Error Resume Next
-	    Glf_771 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 5
+	    Glf_771 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_771 = False
 End Function
 Function Glf_772(args)
 	On Error Resume Next
-	    Glf_772 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 6
+	    Glf_772 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_772 = False
 End Function
 Function Glf_773(args)
 	On Error Resume Next
-	    Glf_773 = GetPlayerState("alien_attack_dir") = 0 and glf_timers("alien_attack").GetValue("ticks") = 7
+	    Glf_773 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 8
 	If Err Then Glf_773 = False
 End Function
 Function Glf_774(args)
 	On Error Resume Next
-	    Glf_774 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 8
+	    Glf_774 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 7
 	If Err Then Glf_774 = False
 End Function
 Function Glf_775(args)
 	On Error Resume Next
-	    Glf_775 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 7
+	    Glf_775 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 6
 	If Err Then Glf_775 = False
 End Function
 Function Glf_776(args)
 	On Error Resume Next
-	    Glf_776 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 6
+	    Glf_776 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 5
 	If Err Then Glf_776 = False
 End Function
 Function Glf_777(args)
 	On Error Resume Next
-	    Glf_777 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 5
+	    Glf_777 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 4
 	If Err Then Glf_777 = False
 End Function
 Function Glf_778(args)
 	On Error Resume Next
-	    Glf_778 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 4
+	    Glf_778 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 3
 	If Err Then Glf_778 = False
 End Function
 Function Glf_779(args)
 	On Error Resume Next
-	    Glf_779 = GetPlayerState("alien_attack_dir") = 1 and glf_timers("alien_attack").GetValue("ticks") = 3
+	    Glf_779 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_779 = False
 End Function
 Function Glf_780(args)
 	On Error Resume Next
-	    Glf_780 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_780 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_780 = False
 End Function
 Function Glf_781(args)
 	On Error Resume Next
-	    Glf_781 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_781 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_781 = False
 End Function
 Function Glf_782(args)
 	On Error Resume Next
-	    Glf_782 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_782 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_782 = False
 End Function
 Function Glf_783(args)
 	On Error Resume Next
-	    Glf_783 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_783 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_783 = False
 End Function
 Function Glf_784(args)
 	On Error Resume Next
-	    Glf_784 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_784 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_784 = False
 End Function
 Function Glf_785(args)
 	On Error Resume Next
-	    Glf_785 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_785 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_785 = False
 End Function
 Function Glf_786(args)
 	On Error Resume Next
-	    Glf_786 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_786 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_786 = False
 End Function
 Function Glf_787(args)
 	On Error Resume Next
-	    Glf_787 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_787 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_787 = False
 End Function
 Function Glf_788(args)
 	On Error Resume Next
-	    Glf_788 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_788 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_788 = False
 End Function
 Function Glf_789(args)
 	On Error Resume Next
-	    Glf_789 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
+	    Glf_789 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_789 = False
 End Function
 Function Glf_790(args)
 	On Error Resume Next
-	    Glf_790 = GetPlayerState("alien_attack_dir") = 1 and GetPlayerState("alien_grace_time") = 1
+	    Glf_790 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
 	If Err Then Glf_790 = False
 End Function
 Function Glf_791(args)
-	On Error Resume Next
-	    Glf_791 = GetPlayerState("alien_attack_dir") = 0 and GetPlayerState("alien_grace_time") = 1
-	If Err Then Glf_791 = False
+	Glf_791 = GetPlayerState("alien_tick_count")
 End Function
 Function Glf_792(args)
-	Glf_792 = GetPlayerState("alien_tick_count")
+	Glf_792 = glf_timers("alien_attack").GetValue("ticks")
 End Function
 Function Glf_793(args)
-	Glf_793 = glf_timers("alien_attack").GetValue("ticks")
+	On Error Resume Next
+	    Glf_793 = GetPlayerState("shot_final_wave_wizard")>0
+	If Err Then Glf_793 = False
 End Function
 Function Glf_794(args)
 	On Error Resume Next
-	    Glf_794 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_794 = GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_794 = False
 End Function
 Function Glf_795(args)
@@ -3300,18 +3302,16 @@ Function Glf_795(args)
 End Function
 Function Glf_796(args)
 	On Error Resume Next
-	    Glf_796 = GetPlayerState("training_shields_achieved")=1
+	    Glf_796 = GetPlayerState("shot_shield_left")=1
 	If Err Then Glf_796 = False
 End Function
 Function Glf_797(args)
 	On Error Resume Next
-	    Glf_797 = GetPlayerState("shot_shield_left")=1
+	    Glf_797 = GetPlayerState("shot_shield_right")=1
 	If Err Then Glf_797 = False
 End Function
 Function Glf_798(args)
-	On Error Resume Next
-	    Glf_798 = GetPlayerState("shot_shield_right")=1
-	If Err Then Glf_798 = False
+	Glf_798 = 5000
 End Function
 Function Glf_799(args)
 	Glf_799 = "SHIELDS"
@@ -8428,85 +8428,85 @@ glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.t
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_717"
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_718"
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1 and current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_719"
-glf_funcRefMap.Add "5000", "Glf_720"
-glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_721"
-glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_722"
-glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_723"
-glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_724"
-glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_725"
-glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2"")", "Glf_726"
-glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2"")", "Glf_727"
-glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2"")", "Glf_728"
-glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2"")", "Glf_729"
-glf_funcRefMap.Add """BALL""", "Glf_730"
-glf_funcRefMap.Add "500", "Glf_731"
-glf_funcRefMap.Add "300", "Glf_732"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}", "Glf_733"
-glf_funcRefMap.Add "6000", "Glf_734"
-glf_funcRefMap.Add "3000", "Glf_735"
-glf_funcRefMap.Add "2000", "Glf_736"
-glf_funcRefMap.Add "1500", "Glf_737"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", "Glf_738"
-glf_funcRefMap.Add "flipper_cradle{game.balls_in_play == 1 and current_player.ball_just_started == 0}", "Glf_739"
-glf_funcRefMap.Add "s_left_flipper_active{current_player.ball_cradled == 1}", "Glf_740"
-glf_funcRefMap.Add "s_right_flipper_active{current_player.ball_cradled == 1}", "Glf_741"
-glf_funcRefMap.Add "s_right_staged_flipper_key_active{current_player.ball_cradled == 1}", "Glf_742"
-glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 0}", "Glf_743"
-glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 1}", "Glf_744"
-glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 2}", "Glf_745"
-glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 3}", "Glf_746"
-glf_funcRefMap.Add "info_ball_num{current_player.number == 1 or current_player.number == 2}", "Glf_747"
-glf_funcRefMap.Add "info_ball_num{current_player.number == 3 or current_player.number == 4}", "Glf_748"
-glf_funcRefMap.Add "info_trained_num{current_player.number == 1 or current_player.number == 2}", "Glf_749"
-glf_funcRefMap.Add """TRAINED""", "Glf_750"
-glf_funcRefMap.Add "Glf_FormatValue(current_player.training_total_achieved,""0>2"")", "Glf_751"
-glf_funcRefMap.Add "info_trained_num{current_player.number == 3 or current_player.number == 4}", "Glf_752"
-glf_funcRefMap.Add "info_eb_num{current_player.number == 1 or current_player.number == 2}", "Glf_753"
-glf_funcRefMap.Add """EB NUM""", "Glf_754"
-glf_funcRefMap.Add "Glf_FormatValue(current_player.extra_balls,""0>2"")", "Glf_755"
-glf_funcRefMap.Add "info_eb_num{current_player.number == 3 or current_player.number == 4}", "Glf_756"
-glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 0}", "Glf_757"
-glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_758"
-glf_funcRefMap.Add "check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_759"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_760"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_761"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_762"
-glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_763"
-glf_funcRefMap.Add "timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}", "Glf_764"
-glf_funcRefMap.Add "timer_timewarp_tick{device.timers.timewarp.ticks==1}", "Glf_765"
-glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 0}", "Glf_766"
-glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 1}", "Glf_767"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 2}", "Glf_768"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 3}", "Glf_769"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 4}", "Glf_770"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 5}", "Glf_771"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 6}", "Glf_772"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}", "Glf_773"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 8}", "Glf_774"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 7}", "Glf_775"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 6}", "Glf_776"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 5}", "Glf_777"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 4}", "Glf_778"
-glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}", "Glf_779"
-glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_780"
-glf_funcRefMap.Add "left_side_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_781"
-glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_782"
-glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_783"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_784"
-glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_785"
-glf_funcRefMap.Add "center_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_786"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_787"
-glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_788"
-glf_funcRefMap.Add "center_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_789"
-glf_funcRefMap.Add "right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_790"
-glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_791"
-glf_funcRefMap.Add "current_player.alien_tick_count", "Glf_792"
-glf_funcRefMap.Add "device.timers.alien_attack.ticks", "Glf_793"
-glf_funcRefMap.Add "mode_shields_started.1{current_player.shot_final_wave_wizard>0}", "Glf_794"
-glf_funcRefMap.Add "mode_shields_started{current_player.training_shields_achieved==1}", "Glf_795"
-glf_funcRefMap.Add "restart_qualify_shields{current_player.training_shields_achieved==1}", "Glf_796"
-glf_funcRefMap.Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", "Glf_797"
-glf_funcRefMap.Add "s_RightOutlane_active{current_player.shot_shield_right==1}", "Glf_798"
+glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2,"")", "Glf_720"
+glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2,"")", "Glf_721"
+glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2,"")", "Glf_722"
+glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2,"")", "Glf_723"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.ball,""0>2"")", "Glf_724"
+glf_funcRefMap.Add "Glf_FormatValue(players[0].score,""0>2"")", "Glf_725"
+glf_funcRefMap.Add "Glf_FormatValue(players[1].score,""0>2"")", "Glf_726"
+glf_funcRefMap.Add "Glf_FormatValue(players[2].score,""0>2"")", "Glf_727"
+glf_funcRefMap.Add "Glf_FormatValue(players[3].score,""0>2"")", "Glf_728"
+glf_funcRefMap.Add """BALL""", "Glf_729"
+glf_funcRefMap.Add "500", "Glf_730"
+glf_funcRefMap.Add "300", "Glf_731"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}", "Glf_732"
+glf_funcRefMap.Add "6000", "Glf_733"
+glf_funcRefMap.Add "3000", "Glf_734"
+glf_funcRefMap.Add "2000", "Glf_735"
+glf_funcRefMap.Add "1500", "Glf_736"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", "Glf_737"
+glf_funcRefMap.Add "flipper_cradle{game.balls_in_play == 1 and current_player.ball_just_started == 0}", "Glf_738"
+glf_funcRefMap.Add "s_left_flipper_active{current_player.ball_cradled == 1}", "Glf_739"
+glf_funcRefMap.Add "s_right_flipper_active{current_player.ball_cradled == 1}", "Glf_740"
+glf_funcRefMap.Add "s_right_staged_flipper_key_active{current_player.ball_cradled == 1}", "Glf_741"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 0}", "Glf_742"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 1}", "Glf_743"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 2}", "Glf_744"
+glf_funcRefMap.Add "timer_info_tick{device.timers.info.ticks == 3}", "Glf_745"
+glf_funcRefMap.Add "info_ball_num{current_player.number == 1 or current_player.number == 2}", "Glf_746"
+glf_funcRefMap.Add "info_ball_num{current_player.number == 3 or current_player.number == 4}", "Glf_747"
+glf_funcRefMap.Add "info_trained_num{current_player.number == 1 or current_player.number == 2}", "Glf_748"
+glf_funcRefMap.Add """TRAINED""", "Glf_749"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.training_total_achieved,""0>2"")", "Glf_750"
+glf_funcRefMap.Add "info_trained_num{current_player.number == 3 or current_player.number == 4}", "Glf_751"
+glf_funcRefMap.Add "info_eb_num{current_player.number == 1 or current_player.number == 2}", "Glf_752"
+glf_funcRefMap.Add """EB NUM""", "Glf_753"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.extra_balls,""0>2"")", "Glf_754"
+glf_funcRefMap.Add "info_eb_num{current_player.number == 3 or current_player.number == 4}", "Glf_755"
+glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 0}", "Glf_756"
+glf_funcRefMap.Add "mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_757"
+glf_funcRefMap.Add "check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", "Glf_758"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_759"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_760"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_761"
+glf_funcRefMap.Add "mode_alien_attack_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_762"
+glf_funcRefMap.Add "timer_alien_attack_tick{device.timers.alien_attack.ticks > 0}", "Glf_763"
+glf_funcRefMap.Add "timer_timewarp_tick{device.timers.timewarp.ticks==1}", "Glf_764"
+glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 0}", "Glf_765"
+glf_funcRefMap.Add "alien_attacking{current_player.alien_attack_dir == 1}", "Glf_766"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 2}", "Glf_767"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 3}", "Glf_768"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 4}", "Glf_769"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 5}", "Glf_770"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 6}", "Glf_771"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 0 and device.timers.alien_attack.ticks == 7}", "Glf_772"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 8}", "Glf_773"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 7}", "Glf_774"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 6}", "Glf_775"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 5}", "Glf_776"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 4}", "Glf_777"
+glf_funcRefMap.Add "timer_alien_attack_tick{current_player.alien_attack_dir == 1 and device.timers.alien_attack.ticks == 3}", "Glf_778"
+glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_779"
+glf_funcRefMap.Add "left_side_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_780"
+glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_781"
+glf_funcRefMap.Add "left_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_782"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_783"
+glf_funcRefMap.Add "left_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_784"
+glf_funcRefMap.Add "center_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_785"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_786"
+glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_787"
+glf_funcRefMap.Add "center_orbit_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_788"
+glf_funcRefMap.Add "right_orbit_hit{current_player.alien_attack_dir == 1 and current_player.alien_grace_time == 1}", "Glf_789"
+glf_funcRefMap.Add "right_ramp_hit{current_player.alien_attack_dir == 0 and current_player.alien_grace_time == 1}", "Glf_790"
+glf_funcRefMap.Add "current_player.alien_tick_count", "Glf_791"
+glf_funcRefMap.Add "device.timers.alien_attack.ticks", "Glf_792"
+glf_funcRefMap.Add "mode_shields_started.1{current_player.shot_final_wave_wizard>0}", "Glf_793"
+glf_funcRefMap.Add "mode_shields_started{current_player.training_shields_achieved==1}", "Glf_794"
+glf_funcRefMap.Add "restart_qualify_shields{current_player.training_shields_achieved==1}", "Glf_795"
+glf_funcRefMap.Add "s_LeftOutlane_active{current_player.shot_shield_left==1}", "Glf_796"
+glf_funcRefMap.Add "s_RightOutlane_active{current_player.shot_shield_right==1}", "Glf_797"
+glf_funcRefMap.Add "5000", "Glf_798"
 glf_funcRefMap.Add """SHIELDS""", "Glf_799"
 glf_funcRefMap.Add "mode_ship_save_started.1{current_player.shot_final_wave_wizard>0}", "Glf_800"
 glf_funcRefMap.Add "mode_ship_save_started{current_player.shot_ship_charge1==0}", "Glf_801"
