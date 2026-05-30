@@ -6223,7 +6223,7 @@ Function Glf_1418(args)
 End Function
 Function Glf_1419(args)
 	On Error Resume Next
-	    Glf_1419 = glf_modes("final_wave_wizard").GetValue("active")
+	    Glf_1419 = GetPlayerState("victory_lap_running") = 0
 	If Err Then Glf_1419 = False
 End Function
 Function Glf_1420(args)
@@ -6233,7 +6233,7 @@ Function Glf_1420(args)
 End Function
 Function Glf_1421(args)
 	On Error Resume Next
-	    Glf_1421 = GetPlayerState("victory_lap_running") = 0
+	    Glf_1421 = glf_timers("victory_countdown").GetValue("ticks") = 21
 	If Err Then Glf_1421 = False
 End Function
 Function Glf_1422(args)
@@ -6243,72 +6243,75 @@ Function Glf_1423(args)
 	Glf_1423 = 45000
 End Function
 Function Glf_1424(args)
-	Glf_1424 = " YOU "
+	Glf_1424 = 66
 End Function
 Function Glf_1425(args)
-	Glf_1425 = " SAVED "
+	Glf_1425 = " YOU "
 End Function
 Function Glf_1426(args)
-	Glf_1426 = "US  "
+	Glf_1426 = " SAVED "
 End Function
 Function Glf_1427(args)
-	Glf_1427 = "ALL "
+	Glf_1427 = "US  "
 End Function
 Function Glf_1428(args)
-	Glf_1428 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks"),"0>2")
+	Glf_1428 = "ALL "
 End Function
 Function Glf_1429(args)
-	Glf_1429 = 1000
+	Glf_1429 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks")-21,"0>2")
 End Function
 Function Glf_1430(args)
-	Glf_1430 = 150
+	Glf_1430 = 1000
 End Function
 Function Glf_1431(args)
-	On Error Resume Next
-		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "left"
-	Set Glf_1431 = kwargs
-	If Err Then Glf_1431 = Null
+	Glf_1431 = 150
 End Function
 Function Glf_1432(args)
 	On Error Resume Next
 		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "right"
+	kwargs.Add "action",  "left"
 	Set Glf_1432 = kwargs
 	If Err Then Glf_1432 = Null
 End Function
 Function Glf_1433(args)
 	On Error Resume Next
 		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "select"
+	kwargs.Add "action",  "right"
 	Set Glf_1433 = kwargs
 	If Err Then Glf_1433 = Null
 End Function
 Function Glf_1434(args)
-	Glf_1434 = 4000
+	On Error Resume Next
+		Dim kwargs : Set kwargs = GlfKwargs()
+	kwargs.Add "action",  "select"
+	Set Glf_1434 = kwargs
+	If Err Then Glf_1434 = Null
 End Function
 Function Glf_1435(args)
-	Glf_1435 = 65000
+	Glf_1435 = 4000
 End Function
 Function Glf_1436(args)
-	On Error Resume Next
-	    Glf_1436 = glf_ball_devices("moon_lock").GetValue("balls") > 0
-	If Err Then Glf_1436 = False
+	Glf_1436 = 65000
 End Function
 Function Glf_1437(args)
-	Glf_1437 = 250
+	On Error Resume Next
+	    Glf_1437 = glf_ball_devices("moon_lock").GetValue("balls") > 0
+	If Err Then Glf_1437 = False
 End Function
 Function Glf_1438(args)
-	Glf_1438 = "  "
+	Glf_1438 = 250
 End Function
 Function Glf_1439(args)
-	Glf_1439 = "        "
+	Glf_1439 = "  "
 End Function
 Function Glf_1440(args)
-	Glf_1440 = "                                "
+	Glf_1440 = "        "
 End Function
 Function Glf_1441(args)
-	Glf_1441 = "                "
+	Glf_1441 = "                                "
+End Function
+Function Glf_1442(args)
+	Glf_1442 = "                "
 End Function
 Dim glf_gi17_lmarr : glf_gi17_lmarr = Array(lm_gi_gi17_bs2,lm_gi_gi17_bmpbot,lm_gi_gi17_parts,lm_gi_gi17_playfield)
 glf_lightMaps.Add "gi17", glf_gi17_lmarr
@@ -9127,27 +9130,28 @@ glf_funcRefMap.Add """--------""", "Glf_1415"
 glf_funcRefMap.Add """DESTROY""", "Glf_1416"
 glf_funcRefMap.Add """HITSLEFT""", "Glf_1417"
 glf_funcRefMap.Add "Glf_FormatValue(current_player.wizard_final_hit_count,""0>2"")", "Glf_1418"
-glf_funcRefMap.Add "mode_victory_lap_started{modes.final_wave_wizard.active}", "Glf_1419"
-glf_funcRefMap.Add "ball_launch_hit{current_player.victory_lap_running == 0}", "Glf_1420"
-glf_funcRefMap.Add "s_Plunger1_active{current_player.victory_lap_running == 0}", "Glf_1421"
+glf_funcRefMap.Add "ball_launch_hit{current_player.victory_lap_running == 0}", "Glf_1419"
+glf_funcRefMap.Add "s_Plunger1_active{current_player.victory_lap_running == 0}", "Glf_1420"
+glf_funcRefMap.Add "timer_victory_countdown_tick{device.timers.victory_countdown.ticks == 21}", "Glf_1421"
 glf_funcRefMap.Add "13000", "Glf_1422"
 glf_funcRefMap.Add "45000", "Glf_1423"
-glf_funcRefMap.Add """ YOU """, "Glf_1424"
-glf_funcRefMap.Add """ SAVED """, "Glf_1425"
-glf_funcRefMap.Add """US  """, "Glf_1426"
-glf_funcRefMap.Add """ALL """, "Glf_1427"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks,""0>2"")", "Glf_1428"
-glf_funcRefMap.Add "1000", "Glf_1429"
-glf_funcRefMap.Add "150", "Glf_1430"
-glf_funcRefMap.Add "text_input: {action: ""left""}", "Glf_1431"
-glf_funcRefMap.Add "text_input: {action: ""right""}", "Glf_1432"
-glf_funcRefMap.Add "text_input: {action: ""select""}", "Glf_1433"
-glf_funcRefMap.Add "4000", "Glf_1434"
-glf_funcRefMap.Add "65000", "Glf_1435"
-glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1436"
-glf_funcRefMap.Add "250", "Glf_1437"
-glf_funcRefMap.Add """  """, "Glf_1438"
-glf_funcRefMap.Add """        """, "Glf_1439"
-glf_funcRefMap.Add """                                """, "Glf_1440"
-glf_funcRefMap.Add """                """, "Glf_1441"
+glf_funcRefMap.Add "66", "Glf_1424"
+glf_funcRefMap.Add """ YOU """, "Glf_1425"
+glf_funcRefMap.Add """ SAVED """, "Glf_1426"
+glf_funcRefMap.Add """US  """, "Glf_1427"
+glf_funcRefMap.Add """ALL """, "Glf_1428"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks-21,""0>2"")", "Glf_1429"
+glf_funcRefMap.Add "1000", "Glf_1430"
+glf_funcRefMap.Add "150", "Glf_1431"
+glf_funcRefMap.Add "text_input: {action: ""left""}", "Glf_1432"
+glf_funcRefMap.Add "text_input: {action: ""right""}", "Glf_1433"
+glf_funcRefMap.Add "text_input: {action: ""select""}", "Glf_1434"
+glf_funcRefMap.Add "4000", "Glf_1435"
+glf_funcRefMap.Add "65000", "Glf_1436"
+glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1437"
+glf_funcRefMap.Add "250", "Glf_1438"
+glf_funcRefMap.Add """  """, "Glf_1439"
+glf_funcRefMap.Add """        """, "Glf_1440"
+glf_funcRefMap.Add """                                """, "Glf_1441"
+glf_funcRefMap.Add """                """, "Glf_1442"
 

@@ -16,12 +16,13 @@ Sub CreateVictoryLapMode
 
         With .EventPlayer()
             'victory lap starts before final wve ends... so wait till the final wave is done
-            .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game","meteor_wave_music_stop","turn_off_gi")
-            .Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
+            .Add "mode_victory_lap_started", Array("stop_asteroid_motor","set_won_game","meteor_wave_music_stop","turn_off_gi","victory_startup_ballsave")
+            '.Add "mode_victory_lap_started{modes.final_wave_wizard.active}", Array("victory_startup_ballsave")
             'starting, restarting, and stopping the victor lap itself
             .Add "ball_launch_hit{current_player.victory_lap_running == 0}", Array("run_victory_lap","enable_flippers")
             .Add "s_Plunger1_active{current_player.victory_lap_running == 0}", Array("init_victory_lap","stop_final_wave_wizard","enable_flippers","deactivate_nuke")
-            .Add "multiball_victory_shoot_again_ended", Array("kill_flippers")
+            .Add "timer_victory_countdown_tick{device.timers.victory_countdown.ticks == "&(VictoryCompleteLapTime-VictoryLapTime)&"}", Array("timer_victory_countdown_kill")
+            .Add "timer_victory_countdown_kill", Array("kill_flippers")
             'run stuff during the victory lap
             .Add "run_victory_lap", Array("victory_bumpers_show","play_mus_victory","run_victory_lap_show","play_vic_lsling_show","play_vic_rsling_show")
             'Handle bumper and gi lights
@@ -44,7 +45,7 @@ Sub CreateVictoryLapMode
             .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
             .Add "ball_search_started", Array("release_moon_ball")
             'Handled mode ending
-            .Add "mus_victory_stopped", Array("end_victory_lap")
+            .Add "timer_victory_countdown_complete", Array("end_victory_lap")
         End With
 
         With .QueueRelayPlayer()
@@ -312,7 +313,7 @@ Sub CreateVictoryLapMode
         
         With .Multiballs("victory")
             .StartEvents = Array("run_victory_lap")
-            .DisableEvents = Array("multiball_victory_shoot_again_ended")
+            .DisableEvents = Array("timer_victory_countdown_kill")
             .BallCount = 5
             .BallCountType = "total"
             .ShootAgain = VictoryLapTime*1000
@@ -334,7 +335,7 @@ Sub CreateVictoryLapMode
                 .Events = Array("multiball_victory_hurry_up")
                 .State = 2
             End With
-            .ResetEvents = Array("multiball_victory_shoot_again_ended")
+            .ResetEvents = Array("timer_victory_countdown_kill")
         End With
 
 
@@ -350,7 +351,7 @@ Sub CreateVictoryLapMode
                     .Events = Array("init_victory_lap")
                     .State = 1
                 End With
-                .RestartEvents = Array("timer_victory_countdown_complete")
+                .RestartEvents = Array("timer_victory_countdown_kill")
             End With
         Next
         For x = 1 to 5
@@ -364,7 +365,7 @@ Sub CreateVictoryLapMode
                     .Events = Array("init_victory_lap")
                     .State = 1
                 End With
-                .RestartEvents = Array("timer_victory_countdown_complete")
+                .RestartEvents = Array("timer_victory_countdown_kill")
             End With
         Next
 
@@ -414,7 +415,7 @@ Sub CreateVictoryLapMode
 
         With .Timers("victory_countdown")
             .TickInterval = 1000
-            .StartValue = VictoryLapTime
+            .StartValue = VictoryCompleteLapTime
             .EndValue = 0
             .Direction = "down"
             With .ControlEvents()
@@ -469,11 +470,11 @@ Sub CreateVictoryLapMode
                 End With
 
                 With .Display("pf")
-                    .Text = "{device.timers.victory_countdown.ticks:0>2}"
+                    .Text = "{device.timers.victory_countdown.ticks-"&(VictoryCompleteLapTime-VictoryLapTime)&":0>2}"
                 End With
             End With
 
-            With .EventName("timer_victory_countdown_complete")
+            With .EventName("timer_victory_countdown_kill")
                 With .Display("pf")
                     .Text = "00"
                     .Priority = 100

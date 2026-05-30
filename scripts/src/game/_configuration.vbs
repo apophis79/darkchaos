@@ -174,6 +174,7 @@ Const FWWizMaxAsteroidHits = 20
 
 ' Victory Lap settings
 Const VictoryLapTime = 45 'seconds
+Const VictoryCompleteLapTime = 66 'seconds
 
 ' Bonus settings
 Const BonusTimerTickInterval = 333
@@ -483,6 +484,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "nuke_used", 0
     Glf_SetInitialPlayerVar "nuke_just_used", 0
     Glf_SetInitialPlayerVar "center_orbit_just_hit", 0
+    Glf_SetInitialPlayerVar "victory_lap_running", 0
+    
 
     'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0
     'Glf_SetInitialPlayerVar "debug_moon_launch_locked_balls", 0
