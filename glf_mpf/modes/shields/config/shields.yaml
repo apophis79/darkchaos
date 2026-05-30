@@ -13,6 +13,8 @@ ball_saves:
     balls_to_save: 1
 
 event_player: 
+  mode_shields_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_shields
   mode_shields_started{current_player.training_shields_achieved==1}:
     - restart_qualify_shields
   restart_qualify_shields{current_player.training_shields_achieved==1}:

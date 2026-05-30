@@ -18,7 +18,6 @@ event_player:
     - set_won_game
     - meteor_wave_music_stop
     - turn_off_gi
-  mode_victory_lap_started{modes.final_wave_wizard.active}:
     - victory_startup_ballsave
   ball_launch_hit{current_player.victory_lap_running == 0}:
     - run_victory_lap
@@ -28,7 +27,9 @@ event_player:
     - stop_final_wave_wizard
     - enable_flippers
     - deactivate_nuke
-  multiball_victory_shoot_again_ended:
+  timer_victory_countdown_tick{device.timers.victory_countdown.ticks == 21}:
+    - timer_victory_countdown_kill
+  timer_victory_countdown_kill:
     - kill_flippers
   run_victory_lap:
     - victory_bumpers_show
@@ -93,7 +94,7 @@ event_player:
     - delayed_release_moon_ball
   ball_search_started:
     - release_moon_ball
-  mus_victory_stopped:
+  timer_victory_countdown_complete:
     - end_victory_lap
 
 
@@ -293,10 +294,10 @@ segment_display_player:
       action: remove
       flashing: off
     pf: 
-      text: "{device.timers.victory_countdown.ticks:0>2}"
+      text: "{device.timers.victory_countdown.ticks-21:0>2}"
       flashing: off
 
-  timer_victory_countdown_complete: 
+  timer_victory_countdown_kill: 
     pf: 
       text: "00"
       priority: 100
@@ -308,7 +309,7 @@ shots:
     profile: shoot_again
     show_tokens: 
       color: "ffffff"
-    reset_events: multiball_victory_shoot_again_ended
+    reset_events: timer_victory_countdown_kill
     control_events: 
       - events: run_victory_lap
         state: 1
@@ -316,7 +317,7 @@ shots:
         state: 2
   victory_shot1:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LS1"
       color: "ffffff"
@@ -325,7 +326,7 @@ shots:
         state: 1
   victory_shot2:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LS2"
       color: "ffffff"
@@ -334,7 +335,7 @@ shots:
         state: 1
   victory_shot3:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LS3"
       color: "ffffff"
@@ -343,7 +344,7 @@ shots:
         state: 1
   victory_shot4:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LS4"
       color: "ffffff"
@@ -352,7 +353,7 @@ shots:
         state: 1
   victory_shot5:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LPC45"
       color: "ffffff"
@@ -361,7 +362,7 @@ shots:
         state: 1
   victory_shot6:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LS5"
       color: "ffffff"
@@ -370,7 +371,7 @@ shots:
         state: 1
   victory_shot7:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LS6"
       color: "ffffff"
@@ -379,7 +380,7 @@ shots:
         state: 1
   victory_shot8:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LM1"
       color: "ffffff"
@@ -388,7 +389,7 @@ shots:
         state: 1
   victory_shot9:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LM2"
       color: "ffffff"
@@ -397,7 +398,7 @@ shots:
         state: 1
   victory_shot10:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LM3"
       color: "ffffff"
@@ -406,7 +407,7 @@ shots:
         state: 1
   victory_shot11:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LM4"
       color: "ffffff"
@@ -415,7 +416,7 @@ shots:
         state: 1
   victory_shot12:
     profile: victory_shots
-    restart_events: timer_victory_countdown_complete
+    restart_events: timer_victory_countdown_kill
     show_tokens: 
       lights: "LM5"
       color: "ffffff"
@@ -1512,7 +1513,7 @@ sound_player:
 
 timers: 
   victory_countdown:
-    start_value: 45
+    start_value: 66
     end_value: 0
     direction: down
     control_events: 

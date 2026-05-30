@@ -6,6 +6,8 @@ mode:
   priority: 580
 
 event_player: 
+  mode_mystery_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_mystery
   mode_mystery_started{current_player.shot_mystery_ready==1 and machine.flippers_are_dead==0}:
     - enable_scoop_hold
   check_mystery{current_player.shot_mystery_ready==0 and machine.flippers_are_dead==0}:

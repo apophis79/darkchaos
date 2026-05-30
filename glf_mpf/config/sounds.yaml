@@ -658,26 +658,8 @@ sounds:
     duration: 7552
     loops: 0
 
-  sfx_ball_launch1:
-    file: sfx_ball_launch1
-    volume: 
-    bus: sfx
-    priority: 0
-    max_queue_time: -1
-    duration: 4736
-    loops: 0
-
-  sfx_ball_launch2:
-    file: sfx_ball_launch2
-    volume: 
-    bus: sfx
-    priority: 0
-    max_queue_time: -1
-    duration: 4736
-    loops: 0
-
-  sfx_ball_launch3:
-    file: sfx_ball_launch3
+  sfx_ball_launch:
+    file: sfx_ball_launch
     volume: 
     bus: sfx
     priority: 0
@@ -1449,15 +1431,6 @@ sounds:
     max_queue_time: -1
     duration: 79967
     loops: -1
-
-  mus_training_1:
-    file: mus_training_1
-    volume: 
-    bus: mus
-    priority: 0
-    max_queue_time: -1
-    duration: 70532
-    loops: 0
 
   mus_training_2:
     file: mus_training_2

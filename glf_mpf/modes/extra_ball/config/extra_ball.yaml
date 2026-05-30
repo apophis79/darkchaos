@@ -6,6 +6,8 @@ mode:
   priority: 560
 
 event_player: 
+  mode_extra_ball_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_extra_ball
   mode_extra_ball_started:
     - check_eb
   check_eb{current_player.light_the_eb == 1 and machine.flippers_are_dead==0}:

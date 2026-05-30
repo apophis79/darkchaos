@@ -6,6 +6,8 @@ mode:
   priority: 513
 
 event_player: 
+  mode_training_qualify_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_training_qualify
   mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}:
     - restart_qualify_training
   mode_training_qualify_started{current_player.training_just_finished == 1}:

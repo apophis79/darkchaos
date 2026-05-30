@@ -6,6 +6,8 @@ mode:
   priority: 600
 
 event_player: 
+  mode_skillshots_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_skillshots
   mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}:
     - init_ss
   s_TargetMystery2_active{current_player.shot_ss==1}:

@@ -405,7 +405,7 @@ show_player:
       show_tokens: 
         lights: "GI"
         fade: "900"
-        color: "ffdca3"
+        color: "ffedd2"
   skip_selected: 
     flash_color: 
       key: key_skip_gi

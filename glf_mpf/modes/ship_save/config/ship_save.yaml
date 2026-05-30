@@ -6,6 +6,8 @@ mode:
   priority: 520
 
 event_player: 
+  mode_ship_save_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_ship_save
   mode_ship_save_started{current_player.shot_ship_charge1==0}:
     - restart_ship_save
   mode_ship_save_started{current_player.training_ship_save_achieved==1 and current_player.shot_ship_charge3!=2}:

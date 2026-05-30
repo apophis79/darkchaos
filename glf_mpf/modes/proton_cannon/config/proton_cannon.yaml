@@ -2,10 +2,12 @@
 
 mode:
   start_events: new_ball_started, stop_training, wizard_mode_ended
-  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  stop_events: stop_proton_cannon, mode_base_stopping, start_training_select, wizard_mode_started
   priority: 900
 
 event_player: 
+  mode_proton_cannon_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_proton_cannon
   mode_proton_cannon_started{current_player.shot_proton_charge1==0}:
     - reset_proton_charges
   mode_proton_cannon_started{current_player.training_proton_cannon_achieved==1}:

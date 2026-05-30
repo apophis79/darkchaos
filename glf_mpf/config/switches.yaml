@@ -124,7 +124,7 @@ switches:
   s_Bumper1:
     number: 24
     tags: 
-    x: 0.139248
+    x: 0.1413468
     y: 0.4831038
   s_Bumper2:
     number: 25

@@ -827,4 +827,22 @@ timers:
     start_running: False
     tick_interval: 1000ms
 
+variable_player: 
+  set_mus_volume: 
+    mus_volume: 
+      action: set_machine
+      float: {vol}
+
+  set_voc_volume: 
+    voc_volume: 
+      action: set_machine
+      float: {vol}
+
+  set_sfx_volume: 
+    sfx_volume: 
+      action: set_machine
+      float: {vol}
+
+
+
 

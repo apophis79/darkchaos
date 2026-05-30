@@ -2,10 +2,12 @@
 
 mode:
   start_events: new_ball_started, stop_training, wizard_mode_ended
-  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  stop_events: stop_cluster_bombs, mode_base_stopping, start_training_select, wizard_mode_started
   priority: 1000
 
 event_player: 
+  mode_cluster_bombs_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_cluster_bombs
   mode_cluster_bombs_started{current_player.shot_cluster_charge1==0}:
     - reset_cluster_charges
   mode_cluster_bombs_started{current_player.training_cluster_bomb_achieved==1}:
