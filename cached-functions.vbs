@@ -3747,79 +3747,79 @@ Function Glf_896(args)
 End Function
 Function Glf_897(args)
 	On Error Resume Next
-	    Glf_897 = glf_state_machines("moon_mb").GetValue("state")<>"in_progress" and Glf_GameVariable("balls_in_play") = 1
+	    Glf_897 = GetPlayerState("training_moon_missile_achieved")=1 and glf_state_machines("moon_mb").GetValue("state")<>"locking" and GetPlayerState("shot_moon_missile2") = 0
 	If Err Then Glf_897 = False
 End Function
 Function Glf_898(args)
 	On Error Resume Next
-	    Glf_898 = GetPlayerState("training_moon_missile_achieved")=1 and glf_state_machines("moon_mb").GetValue("state")<>"locking" and GetPlayerState("shot_moon_missile2") = 0
+	    Glf_898 = GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_898 = False
 End Function
 Function Glf_899(args)
 	On Error Resume Next
-	    Glf_899 = GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_899 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
 	If Err Then Glf_899 = False
 End Function
 Function Glf_900(args)
 	On Error Resume Next
-	    Glf_900 = glf_state_machines("moon_mb").GetValue("state")<>"locking" and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls") and glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("leftover_balls_in_lock")
+	    Glf_900 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
 	If Err Then Glf_900 = False
 End Function
 Function Glf_901(args)
 	On Error Resume Next
-	    Glf_901 = glf_state_machines("moon_mb").GetValue("state")="in_progress"
+	    Glf_901 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
 	If Err Then Glf_901 = False
 End Function
 Function Glf_902(args)
 	On Error Resume Next
-	    Glf_902 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
+	    Glf_902 = GetPlayerState("moon_launch_locked_balls")=1
 	If Err Then Glf_902 = False
 End Function
 Function Glf_903(args)
 	On Error Resume Next
-	    Glf_903 = GetPlayerState("moon_launch_locked_balls")=1
+	    Glf_903 = GetPlayerState("moon_launch_locked_balls")=2
 	If Err Then Glf_903 = False
 End Function
 Function Glf_904(args)
 	On Error Resume Next
-	    Glf_904 = GetPlayerState("moon_launch_locked_balls")=2
+	    Glf_904 = GetPlayerState("shot_moon_missile2") = 0
 	If Err Then Glf_904 = False
 End Function
 Function Glf_905(args)
 	On Error Resume Next
-	    Glf_905 = GetPlayerState("shot_moon_missile2") = 0
+	    Glf_905 = GetPlayerState("ball_just_started") = 0
 	If Err Then Glf_905 = False
 End Function
 Function Glf_906(args)
 	On Error Resume Next
-	    Glf_906 = GetPlayerState("ball_just_started") = 0
+	    Glf_906 = glf_state_machines("moon_mb").GetValue("state")="locking"
 	If Err Then Glf_906 = False
 End Function
 Function Glf_907(args)
-	On Error Resume Next
-	    Glf_907 = glf_state_machines("moon_mb").GetValue("state")="locking"
-	If Err Then Glf_907 = False
+	Glf_907 = glf_ball_devices("moon_lock").GetValue("balls")
 End Function
 Function Glf_908(args)
-	Glf_908 = glf_ball_devices("moon_lock").GetValue("balls")
+	Glf_908 = "MOON"
 End Function
 Function Glf_909(args)
-	Glf_909 = "MOON"
+	Glf_909 = "LAUNCH"
 End Function
 Function Glf_910(args)
-	Glf_910 = "LAUNCH"
+	Glf_910 = "LOCK"
 End Function
 Function Glf_911(args)
-	Glf_911 = "LOCK"
+	On Error Resume Next
+	    Glf_911 = GetPlayerState("shot_final_wave_wizard")>0
+	If Err Then Glf_911 = False
 End Function
 Function Glf_912(args)
 	On Error Resume Next
-	    Glf_912 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_912 = GetPlayerState("ball_just_started")=1 and GetPlayerState("shot_meteor_wave9") < 2
 	If Err Then Glf_912 = False
 End Function
 Function Glf_913(args)
 	On Error Resume Next
-	    Glf_913 = GetPlayerState("ball_just_started")=1 and GetPlayerState("shot_meteor_wave9") < 2
+	    Glf_913 = GetPlayerState("shot_ss")=1
 	If Err Then Glf_913 = False
 End Function
 Function Glf_914(args)
@@ -3829,17 +3829,17 @@ Function Glf_914(args)
 End Function
 Function Glf_915(args)
 	On Error Resume Next
-	    Glf_915 = GetPlayerState("shot_ss")=1
+	    Glf_915 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 1
 	If Err Then Glf_915 = False
 End Function
 Function Glf_916(args)
 	On Error Resume Next
-	    Glf_916 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 1
+	    Glf_916 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 2
 	If Err Then Glf_916 = False
 End Function
 Function Glf_917(args)
 	On Error Resume Next
-	    Glf_917 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss") = 2
+	    Glf_917 = GetPlayerState("num_skillshots")=3
 	If Err Then Glf_917 = False
 End Function
 Function Glf_918(args)
@@ -3854,69 +3854,69 @@ Function Glf_919(args)
 End Function
 Function Glf_920(args)
 	On Error Resume Next
-	    Glf_920 = GetPlayerState("num_skillshots")=3
+	    Glf_920 = GetPlayerState("shot_final_wave_wizard")>0
 	If Err Then Glf_920 = False
 End Function
 Function Glf_921(args)
 	On Error Resume Next
-	    Glf_921 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_921 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0
 	If Err Then Glf_921 = False
 End Function
 Function Glf_922(args)
 	On Error Resume Next
-	    Glf_922 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0
+	    Glf_922 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0
 	If Err Then Glf_922 = False
 End Function
 Function Glf_923(args)
-	On Error Resume Next
-	    Glf_923 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0
-	If Err Then Glf_923 = False
+	Glf_923 = 10000
 End Function
 Function Glf_924(args)
-	Glf_924 = 10000
+	Glf_924 = GetPlayerState("moon_launch_locked_balls")
 End Function
 Function Glf_925(args)
-	Glf_925 = GetPlayerState("moon_launch_locked_balls")
+	On Error Resume Next
+	    Glf_925 = GetPlayerState("wizard_mode_running") = 0
+	If Err Then Glf_925 = False
 End Function
 Function Glf_926(args)
 	On Error Resume Next
-	    Glf_926 = GetPlayerState("wizard_mode_running") = 0
+	    Glf_926 = glf_timers("double_scoring").GetValue("ticks") = 55
 	If Err Then Glf_926 = False
 End Function
 Function Glf_927(args)
-	On Error Resume Next
-	    Glf_927 = glf_timers("double_scoring").GetValue("ticks") = 55
-	If Err Then Glf_927 = False
+	Glf_927 = " DOUBLE "
 End Function
 Function Glf_928(args)
-	Glf_928 = " DOUBLE "
+	On Error Resume Next
+	    Glf_928 = glf_timers("super_spinner").GetValue("ticks") = 55
+	If Err Then Glf_928 = False
 End Function
 Function Glf_929(args)
-	On Error Resume Next
-	    Glf_929 = glf_timers("super_spinner").GetValue("ticks") = 55
-	If Err Then Glf_929 = False
+	Glf_929 = 69
 End Function
 Function Glf_930(args)
-	Glf_930 = 69
+	On Error Resume Next
+	    Glf_930 = glf_timers("super_pops").GetValue("ticks") = 55
+	If Err Then Glf_930 = False
 End Function
 Function Glf_931(args)
 	On Error Resume Next
-	    Glf_931 = glf_timers("super_pops").GetValue("ticks") = 55
+	    Glf_931 = GetPlayerState("shot_final_wave_wizard")>0
 	If Err Then Glf_931 = False
 End Function
 Function Glf_932(args)
 	On Error Resume Next
-	    Glf_932 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_932 = GetPlayerState("ball_just_started")=1
 	If Err Then Glf_932 = False
 End Function
 Function Glf_933(args)
 	On Error Resume Next
-	    Glf_933 = GetPlayerState("ball_just_started")=1
+	    Glf_933 = GetPlayerState("training_heal_achieved")=1
 	If Err Then Glf_933 = False
 End Function
 Function Glf_934(args)
 	On Error Resume Next
-	    Glf_934 = GetPlayerState("training_heal_achieved")=1
+	    Glf_934 = GetPlayerState("shot_health_diverter")=1
 	If Err Then Glf_934 = False
 End Function
 Function Glf_935(args)
@@ -3926,230 +3926,230 @@ Function Glf_935(args)
 End Function
 Function Glf_936(args)
 	On Error Resume Next
-	    Glf_936 = GetPlayerState("shot_health_diverter")=1
+	    Glf_936 = GetPlayerState("health_bump_value")<5
 	If Err Then Glf_936 = False
 End Function
 Function Glf_937(args)
 	On Error Resume Next
-	    Glf_937 = GetPlayerState("health_bump_value")<5
+	    Glf_937 = GetPlayerState("health_bump_value")>=5
 	If Err Then Glf_937 = False
 End Function
 Function Glf_938(args)
 	On Error Resume Next
-	    Glf_938 = GetPlayerState("health_bump_value")>=5
+	    Glf_938 = GetPlayerState("health_value")>8
 	If Err Then Glf_938 = False
 End Function
 Function Glf_939(args)
 	On Error Resume Next
-	    Glf_939 = GetPlayerState("health_value")>8
+	    Glf_939 = GetPlayerState("health_value")=8
 	If Err Then Glf_939 = False
 End Function
 Function Glf_940(args)
 	On Error Resume Next
-	    Glf_940 = GetPlayerState("health_value")=8
+	    Glf_940 = GetPlayerState("health_value")=7
 	If Err Then Glf_940 = False
 End Function
 Function Glf_941(args)
 	On Error Resume Next
-	    Glf_941 = GetPlayerState("health_value")=7
+	    Glf_941 = GetPlayerState("health_value")=6
 	If Err Then Glf_941 = False
 End Function
 Function Glf_942(args)
 	On Error Resume Next
-	    Glf_942 = GetPlayerState("health_value")=6
+	    Glf_942 = GetPlayerState("health_value")=5
 	If Err Then Glf_942 = False
 End Function
 Function Glf_943(args)
 	On Error Resume Next
-	    Glf_943 = GetPlayerState("health_value")=5
+	    Glf_943 = GetPlayerState("health_value")=4
 	If Err Then Glf_943 = False
 End Function
 Function Glf_944(args)
 	On Error Resume Next
-	    Glf_944 = GetPlayerState("health_value")=4
+	    Glf_944 = GetPlayerState("health_value")=3
 	If Err Then Glf_944 = False
 End Function
 Function Glf_945(args)
 	On Error Resume Next
-	    Glf_945 = GetPlayerState("health_value")=3
+	    Glf_945 = GetPlayerState("health_value")=2
 	If Err Then Glf_945 = False
 End Function
 Function Glf_946(args)
 	On Error Resume Next
-	    Glf_946 = GetPlayerState("health_value")=2
+	    Glf_946 = GetPlayerState("health_value")=1
 	If Err Then Glf_946 = False
 End Function
 Function Glf_947(args)
 	On Error Resume Next
-	    Glf_947 = GetPlayerState("health_value")=1
+	    Glf_947 = GetPlayerState("health_value")=9
 	If Err Then Glf_947 = False
 End Function
 Function Glf_948(args)
 	On Error Resume Next
-	    Glf_948 = GetPlayerState("health_value")=9
+	    Glf_948 = GetPlayerState("health_value")=8
 	If Err Then Glf_948 = False
 End Function
 Function Glf_949(args)
 	On Error Resume Next
-	    Glf_949 = GetPlayerState("health_value")=8
+	    Glf_949 = GetPlayerState("health_value")=7
 	If Err Then Glf_949 = False
 End Function
 Function Glf_950(args)
 	On Error Resume Next
-	    Glf_950 = GetPlayerState("health_value")=7
+	    Glf_950 = GetPlayerState("health_value")=6
 	If Err Then Glf_950 = False
 End Function
 Function Glf_951(args)
 	On Error Resume Next
-	    Glf_951 = GetPlayerState("health_value")=6
+	    Glf_951 = GetPlayerState("health_value")=5
 	If Err Then Glf_951 = False
 End Function
 Function Glf_952(args)
 	On Error Resume Next
-	    Glf_952 = GetPlayerState("health_value")=5
+	    Glf_952 = GetPlayerState("health_value")=4
 	If Err Then Glf_952 = False
 End Function
 Function Glf_953(args)
 	On Error Resume Next
-	    Glf_953 = GetPlayerState("health_value")=4
+	    Glf_953 = GetPlayerState("health_value")=3
 	If Err Then Glf_953 = False
 End Function
 Function Glf_954(args)
 	On Error Resume Next
-	    Glf_954 = GetPlayerState("health_value")=3
+	    Glf_954 = GetPlayerState("health_value")=2
 	If Err Then Glf_954 = False
 End Function
 Function Glf_955(args)
 	On Error Resume Next
-	    Glf_955 = GetPlayerState("health_value")=2
+	    Glf_955 = GetPlayerState("health_value")=1
 	If Err Then Glf_955 = False
 End Function
 Function Glf_956(args)
 	On Error Resume Next
-	    Glf_956 = GetPlayerState("health_value")=1
+	    Glf_956 = GetPlayerState("health_value")>0
 	If Err Then Glf_956 = False
 End Function
 Function Glf_957(args)
 	On Error Resume Next
-	    Glf_957 = GetPlayerState("health_value")>0
+	    Glf_957 = GetPlayerState("shot_final_wave_wizard")>0
 	If Err Then Glf_957 = False
 End Function
 Function Glf_958(args)
 	On Error Resume Next
-	    Glf_958 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_958 = GetPlayerState("shot_proton_charge1")=0
 	If Err Then Glf_958 = False
 End Function
 Function Glf_959(args)
 	On Error Resume Next
-	    Glf_959 = GetPlayerState("shot_proton_charge1")=0
+	    Glf_959 = GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_959 = False
 End Function
 Function Glf_960(args)
 	On Error Resume Next
-	    Glf_960 = GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_960 = GetPlayerState("training_proton_cannon_achieved")=0
 	If Err Then Glf_960 = False
 End Function
 Function Glf_961(args)
 	On Error Resume Next
-	    Glf_961 = GetPlayerState("training_proton_cannon_achieved")=0
+	    Glf_961 = GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_961 = False
 End Function
 Function Glf_962(args)
 	On Error Resume Next
-	    Glf_962 = GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_962 = GetPlayerState("shot_proton_charge1") = 1
 	If Err Then Glf_962 = False
 End Function
 Function Glf_963(args)
 	On Error Resume Next
-	    Glf_963 = GetPlayerState("shot_proton_charge1") = 1
+	    Glf_963 = GetPlayerState("shot_proton_charge1") = 2 and GetPlayerState("shot_proton_charge2") = 1
 	If Err Then Glf_963 = False
 End Function
 Function Glf_964(args)
 	On Error Resume Next
-	    Glf_964 = GetPlayerState("shot_proton_charge1") = 2 and GetPlayerState("shot_proton_charge2") = 1
+	    Glf_964 = GetPlayerState("shot_proton_charge2") = 2 and GetPlayerState("shot_proton_charge3") = 1
 	If Err Then Glf_964 = False
 End Function
 Function Glf_965(args)
 	On Error Resume Next
-	    Glf_965 = GetPlayerState("shot_proton_charge2") = 2 and GetPlayerState("shot_proton_charge3") = 1
+	    Glf_965 = GetPlayerState("shot_proton_round1") = 0
 	If Err Then Glf_965 = False
 End Function
 Function Glf_966(args)
 	On Error Resume Next
-	    Glf_966 = GetPlayerState("shot_proton_round1") = 0
+	    Glf_966 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_966 = False
 End Function
 Function Glf_967(args)
 	On Error Resume Next
-	    Glf_967 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
+	    Glf_967 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_967 = False
 End Function
 Function Glf_968(args)
 	On Error Resume Next
-	    Glf_968 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
+	    Glf_968 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_968 = False
 End Function
 Function Glf_969(args)
 	On Error Resume Next
-	    Glf_969 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
+	    Glf_969 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_969 = False
 End Function
 Function Glf_970(args)
 	On Error Resume Next
-	    Glf_970 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
+	    Glf_970 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_970 = False
 End Function
 Function Glf_971(args)
-	On Error Resume Next
-	    Glf_971 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
-	If Err Then Glf_971 = False
+	Glf_971 = "PROTON"
 End Function
 Function Glf_972(args)
-	Glf_972 = "PROTON"
+	On Error Resume Next
+	    Glf_972 = GetPlayerState("shot_final_wave_wizard")>0
+	If Err Then Glf_972 = False
 End Function
 Function Glf_973(args)
 	On Error Resume Next
-	    Glf_973 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_973 = GetPlayerState("shot_cluster_charge1")=0
 	If Err Then Glf_973 = False
 End Function
 Function Glf_974(args)
 	On Error Resume Next
-	    Glf_974 = GetPlayerState("shot_cluster_charge1")=0
+	    Glf_974 = GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_974 = False
 End Function
 Function Glf_975(args)
 	On Error Resume Next
-	    Glf_975 = GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_975 = GetPlayerState("training_cluster_bomb_achieved")=0
 	If Err Then Glf_975 = False
 End Function
 Function Glf_976(args)
 	On Error Resume Next
-	    Glf_976 = GetPlayerState("training_cluster_bomb_achieved")=0
+	    Glf_976 = GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_976 = False
 End Function
 Function Glf_977(args)
 	On Error Resume Next
-	    Glf_977 = GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_977 = GetPlayerState("shot_cluster_charge1") = 1
 	If Err Then Glf_977 = False
 End Function
 Function Glf_978(args)
 	On Error Resume Next
-	    Glf_978 = GetPlayerState("shot_cluster_charge1") = 1
+	    Glf_978 = GetPlayerState("shot_cluster_charge1") = 2 and GetPlayerState("shot_cluster_charge2") = 1
 	If Err Then Glf_978 = False
 End Function
 Function Glf_979(args)
 	On Error Resume Next
-	    Glf_979 = GetPlayerState("shot_cluster_charge1") = 2 and GetPlayerState("shot_cluster_charge2") = 1
+	    Glf_979 = GetPlayerState("shot_cluster_charge2") = 2 and GetPlayerState("shot_cluster_charge3") = 1
 	If Err Then Glf_979 = False
 End Function
 Function Glf_980(args)
 	On Error Resume Next
-	    Glf_980 = GetPlayerState("shot_cluster_charge2") = 2 and GetPlayerState("shot_cluster_charge3") = 1
+	    Glf_980 = GetPlayerState("shot_cluster_bomb1") = 0
 	If Err Then Glf_980 = False
 End Function
 Function Glf_981(args)
 	On Error Resume Next
-	    Glf_981 = GetPlayerState("shot_cluster_bomb1") = 0
+	    Glf_981 = GetPlayerState("shot_cluster_bomb1") = 1 and GetPlayerState("shot_cluster_bomb2") = 0
 	If Err Then Glf_981 = False
 End Function
 Function Glf_982(args)
@@ -4159,830 +4159,830 @@ Function Glf_982(args)
 End Function
 Function Glf_983(args)
 	On Error Resume Next
-	    Glf_983 = GetPlayerState("shot_cluster_bomb1") = 1 and GetPlayerState("shot_cluster_bomb2") = 0
+	    Glf_983 = GetPlayerState("shot_cluster_bomb2") = 1
 	If Err Then Glf_983 = False
 End Function
 Function Glf_984(args)
 	On Error Resume Next
-	    Glf_984 = GetPlayerState("shot_cluster_bomb2") = 1
+	    Glf_984 = GetPlayerState("shot_cluster_bomb1") = 0
 	If Err Then Glf_984 = False
 End Function
 Function Glf_985(args)
 	On Error Resume Next
-	    Glf_985 = GetPlayerState("shot_cluster_bomb1") = 0
+	    Glf_985 = GetPlayerState("shot_final_wave_wizard")>0
 	If Err Then Glf_985 = False
 End Function
 Function Glf_986(args)
 	On Error Resume Next
-	    Glf_986 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_986 = GetPlayerState("num_training_shots_hit") = GetPlayerState("num_training_shots")
 	If Err Then Glf_986 = False
 End Function
 Function Glf_987(args)
 	On Error Resume Next
-	    Glf_987 = GetPlayerState("num_training_shots_hit") = GetPlayerState("num_training_shots")
+	    Glf_987 = GetPlayerState("training_just_finished") = 1
 	If Err Then Glf_987 = False
 End Function
 Function Glf_988(args)
 	On Error Resume Next
-	    Glf_988 = GetPlayerState("training_just_finished") = 1
+	    Glf_988 = GetPlayerState("training_total_achieved") < 6
 	If Err Then Glf_988 = False
 End Function
 Function Glf_989(args)
 	On Error Resume Next
-	    Glf_989 = GetPlayerState("training_total_achieved") < 6
+	    Glf_989 = GetPlayerState("training_total_achieved") = 3
 	If Err Then Glf_989 = False
 End Function
 Function Glf_990(args)
 	On Error Resume Next
-	    Glf_990 = GetPlayerState("training_total_achieved") = 3
+	    Glf_990 = GetPlayerState("shot_training_shot1") = 1
 	If Err Then Glf_990 = False
 End Function
 Function Glf_991(args)
 	On Error Resume Next
-	    Glf_991 = GetPlayerState("shot_training_shot1") = 1
+	    Glf_991 = GetPlayerState("shot_training_shot2") = 1
 	If Err Then Glf_991 = False
 End Function
 Function Glf_992(args)
 	On Error Resume Next
-	    Glf_992 = GetPlayerState("shot_training_shot2") = 1
+	    Glf_992 = GetPlayerState("shot_training_shot3") = 1
 	If Err Then Glf_992 = False
 End Function
 Function Glf_993(args)
 	On Error Resume Next
-	    Glf_993 = GetPlayerState("shot_training_shot3") = 1
+	    Glf_993 = GetPlayerState("shot_training_shot4") = 1
 	If Err Then Glf_993 = False
 End Function
 Function Glf_994(args)
 	On Error Resume Next
-	    Glf_994 = GetPlayerState("shot_training_shot4") = 1
+	    Glf_994 = GetPlayerState("shot_training_shot5") = 1
 	If Err Then Glf_994 = False
 End Function
 Function Glf_995(args)
 	On Error Resume Next
-	    Glf_995 = GetPlayerState("shot_training_shot5") = 1
+	    Glf_995 = GetPlayerState("shot_training_shot6") = 1
 	If Err Then Glf_995 = False
 End Function
 Function Glf_996(args)
 	On Error Resume Next
-	    Glf_996 = GetPlayerState("shot_training_shot6") = 1
+	    Glf_996 = GetPlayerState("shot_training_shot7") = 1
 	If Err Then Glf_996 = False
 End Function
 Function Glf_997(args)
 	On Error Resume Next
-	    Glf_997 = GetPlayerState("shot_training_shot7") = 1
+	    Glf_997 = GetPlayerState("num_training_shots_hit") = GetPlayerState("num_training_shots")
 	If Err Then Glf_997 = False
 End Function
 Function Glf_998(args)
 	On Error Resume Next
-	    Glf_998 = GetPlayerState("num_training_shots_hit") = GetPlayerState("num_training_shots")
+	    Glf_998 = GetPlayerState("shot_training_ready") = 1 and GetPlayerState("wizard_mode_is_ready")=0 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_998 = False
 End Function
 Function Glf_999(args)
 	On Error Resume Next
-	    Glf_999 = GetPlayerState("shot_training_ready") = 1 and GetPlayerState("wizard_mode_is_ready")=0 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_999 = GetPlayerState("shot_training_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
 	If Err Then Glf_999 = False
 End Function
 Function Glf_1000(args)
 	On Error Resume Next
-	    Glf_1000 = GetPlayerState("shot_training_ready")=1 and glf_machine_vars("flippers_are_dead").GetValue()=0
+	    Glf_1000 = GetPlayerState("shot_training_ready") = 0
 	If Err Then Glf_1000 = False
 End Function
 Function Glf_1001(args)
 	On Error Resume Next
-	    Glf_1001 = GetPlayerState("shot_training_ready") = 0
+	    Glf_1001 = GetPlayerState("shot_training_shot1") = 0
 	If Err Then Glf_1001 = False
 End Function
 Function Glf_1002(args)
 	On Error Resume Next
-	    Glf_1002 = GetPlayerState("shot_training_shot1") = 0
+	    Glf_1002 = GetPlayerState("shot_training_shot2") = 0
 	If Err Then Glf_1002 = False
 End Function
 Function Glf_1003(args)
 	On Error Resume Next
-	    Glf_1003 = GetPlayerState("shot_training_shot2") = 0
+	    Glf_1003 = GetPlayerState("shot_training_shot3") = 0
 	If Err Then Glf_1003 = False
 End Function
 Function Glf_1004(args)
 	On Error Resume Next
-	    Glf_1004 = GetPlayerState("shot_training_shot3") = 0
+	    Glf_1004 = GetPlayerState("shot_training_shot4") = 0
 	If Err Then Glf_1004 = False
 End Function
 Function Glf_1005(args)
 	On Error Resume Next
-	    Glf_1005 = GetPlayerState("shot_training_shot4") = 0
+	    Glf_1005 = GetPlayerState("shot_training_shot5") = 0
 	If Err Then Glf_1005 = False
 End Function
 Function Glf_1006(args)
 	On Error Resume Next
-	    Glf_1006 = GetPlayerState("shot_training_shot5") = 0
+	    Glf_1006 = GetPlayerState("shot_training_shot6") = 0
 	If Err Then Glf_1006 = False
 End Function
 Function Glf_1007(args)
 	On Error Resume Next
-	    Glf_1007 = GetPlayerState("shot_training_shot6") = 0
+	    Glf_1007 = GetPlayerState("shot_training_shot7") = 0
 	If Err Then Glf_1007 = False
 End Function
 Function Glf_1008(args)
-	On Error Resume Next
-	    Glf_1008 = GetPlayerState("shot_training_shot7") = 0
-	If Err Then Glf_1008 = False
+	Glf_1008 = GetPlayerState("num_training_shots")
 End Function
 Function Glf_1009(args)
-	Glf_1009 = GetPlayerState("num_training_shots")
+	On Error Resume Next
+	    Glf_1009 = GetPlayerState("num_training_shots") < 7
+	If Err Then Glf_1009 = False
 End Function
 Function Glf_1010(args)
-	On Error Resume Next
-	    Glf_1010 = GetPlayerState("num_training_shots") < 7
-	If Err Then Glf_1010 = False
+	Glf_1010 = "START"
 End Function
 Function Glf_1011(args)
-	Glf_1011 = "START"
+	On Error Resume Next
+	    Glf_1011 = GetPlayerState("training_heal_achieved")=1
+	If Err Then Glf_1011 = False
 End Function
 Function Glf_1012(args)
 	On Error Resume Next
-	    Glf_1012 = GetPlayerState("training_heal_achieved")=1
+	    Glf_1012 = GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_1012 = False
 End Function
 Function Glf_1013(args)
 	On Error Resume Next
-	    Glf_1013 = GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1013 = GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_1013 = False
 End Function
 Function Glf_1014(args)
 	On Error Resume Next
-	    Glf_1014 = GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1014 = GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_1014 = False
 End Function
 Function Glf_1015(args)
 	On Error Resume Next
-	    Glf_1015 = GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1015 = GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_1015 = False
 End Function
 Function Glf_1016(args)
 	On Error Resume Next
-	    Glf_1016 = GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1016 = GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_1016 = False
 End Function
 Function Glf_1017(args)
 	On Error Resume Next
-	    Glf_1017 = GetPlayerState("training_shields_achieved")=1
+	    Glf_1017 = glf_timers("training_select").GetValue("ticks") = 3
 	If Err Then Glf_1017 = False
 End Function
 Function Glf_1018(args)
 	On Error Resume Next
-	    Glf_1018 = glf_timers("training_select").GetValue("ticks") = 3
+	    Glf_1018 = glf_state_machines("training_select").GetValue("state")="heal"
 	If Err Then Glf_1018 = False
 End Function
 Function Glf_1019(args)
 	On Error Resume Next
-	    Glf_1019 = glf_state_machines("training_select").GetValue("state")="heal"
+	    Glf_1019 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
 	If Err Then Glf_1019 = False
 End Function
 Function Glf_1020(args)
 	On Error Resume Next
-	    Glf_1020 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
+	    Glf_1020 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
 	If Err Then Glf_1020 = False
 End Function
 Function Glf_1021(args)
 	On Error Resume Next
-	    Glf_1021 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
+	    Glf_1021 = glf_state_machines("training_select").GetValue("state")="moon_missile"
 	If Err Then Glf_1021 = False
 End Function
 Function Glf_1022(args)
 	On Error Resume Next
-	    Glf_1022 = glf_state_machines("training_select").GetValue("state")="moon_missile"
+	    Glf_1022 = glf_state_machines("training_select").GetValue("state")="ship_save"
 	If Err Then Glf_1022 = False
 End Function
 Function Glf_1023(args)
 	On Error Resume Next
-	    Glf_1023 = glf_state_machines("training_select").GetValue("state")="ship_save"
+	    Glf_1023 = glf_state_machines("training_select").GetValue("state")="shields"
 	If Err Then Glf_1023 = False
 End Function
 Function Glf_1024(args)
 	On Error Resume Next
-	    Glf_1024 = glf_state_machines("training_select").GetValue("state")="shields"
+	    Glf_1024 = glf_state_machines("training_select").GetValue("state")="skip"
 	If Err Then Glf_1024 = False
 End Function
 Function Glf_1025(args)
 	On Error Resume Next
-	    Glf_1025 = glf_state_machines("training_select").GetValue("state")="skip"
+	    Glf_1025 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
 	If Err Then Glf_1025 = False
 End Function
 Function Glf_1026(args)
 	On Error Resume Next
-	    Glf_1026 = glf_ball_devices("moon_lock").GetValue("balls") > GetPlayerState("moon_launch_locked_balls")
+	    Glf_1026 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_heal_achieved")=1
 	If Err Then Glf_1026 = False
 End Function
 Function Glf_1027(args)
 	On Error Resume Next
-	    Glf_1027 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_heal_achieved")=1
+	    Glf_1027 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_heal_achieved")=1
 	If Err Then Glf_1027 = False
 End Function
 Function Glf_1028(args)
 	On Error Resume Next
-	    Glf_1028 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_heal_achieved")=1
+	    Glf_1028 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_1028 = False
 End Function
 Function Glf_1029(args)
 	On Error Resume Next
-	    Glf_1029 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1029 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_cluster_bomb_achieved")=1
 	If Err Then Glf_1029 = False
 End Function
 Function Glf_1030(args)
 	On Error Resume Next
-	    Glf_1030 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_cluster_bomb_achieved")=1
+	    Glf_1030 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_1030 = False
 End Function
 Function Glf_1031(args)
 	On Error Resume Next
-	    Glf_1031 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1031 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_proton_cannon_achieved")=1
 	If Err Then Glf_1031 = False
 End Function
 Function Glf_1032(args)
 	On Error Resume Next
-	    Glf_1032 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_proton_cannon_achieved")=1
+	    Glf_1032 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_1032 = False
 End Function
 Function Glf_1033(args)
 	On Error Resume Next
-	    Glf_1033 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1033 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_moon_missile_achieved")=1
 	If Err Then Glf_1033 = False
 End Function
 Function Glf_1034(args)
 	On Error Resume Next
-	    Glf_1034 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_moon_missile_achieved")=1
+	    Glf_1034 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_1034 = False
 End Function
 Function Glf_1035(args)
 	On Error Resume Next
-	    Glf_1035 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1035 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_ship_save_achieved")=1
 	If Err Then Glf_1035 = False
 End Function
 Function Glf_1036(args)
 	On Error Resume Next
-	    Glf_1036 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_ship_save_achieved")=1
+	    Glf_1036 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_1036 = False
 End Function
 Function Glf_1037(args)
 	On Error Resume Next
-	    Glf_1037 = GetPlayerState("ts_last_move")="left" and GetPlayerState("training_shields_achieved")=1
+	    Glf_1037 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_shields_achieved")=1
 	If Err Then Glf_1037 = False
 End Function
 Function Glf_1038(args)
-	On Error Resume Next
-	    Glf_1038 = GetPlayerState("ts_last_move")="right" and GetPlayerState("training_shields_achieved")=1
-	If Err Then Glf_1038 = False
+	Glf_1038 = glf_timers("training_select").GetValue("ticks")
 End Function
 Function Glf_1039(args)
-	Glf_1039 = glf_timers("training_select").GetValue("ticks")
+	Glf_1039 = "right"
 End Function
 Function Glf_1040(args)
-	Glf_1040 = "right"
+	Glf_1040 = "left"
 End Function
 Function Glf_1041(args)
-	Glf_1041 = "left"
+	On Error Resume Next
+	    Glf_1041 = GetPlayerState("shot_training_health1")=1
+	If Err Then Glf_1041 = False
 End Function
 Function Glf_1042(args)
 	On Error Resume Next
-	    Glf_1042 = GetPlayerState("shot_training_health1")=1
+	    Glf_1042 = GetPlayerState("shot_training_health2")=1
 	If Err Then Glf_1042 = False
 End Function
 Function Glf_1043(args)
 	On Error Resume Next
-	    Glf_1043 = GetPlayerState("shot_training_health2")=1
+	    Glf_1043 = GetPlayerState("shot_training_health3")=1
 	If Err Then Glf_1043 = False
 End Function
 Function Glf_1044(args)
 	On Error Resume Next
-	    Glf_1044 = GetPlayerState("shot_training_health3")=1
+	    Glf_1044 = GetPlayerState("shot_training_health4")=1
 	If Err Then Glf_1044 = False
 End Function
 Function Glf_1045(args)
 	On Error Resume Next
-	    Glf_1045 = GetPlayerState("shot_training_health4")=1
+	    Glf_1045 = GetPlayerState("shot_training_health5")=1
 	If Err Then Glf_1045 = False
 End Function
 Function Glf_1046(args)
 	On Error Resume Next
-	    Glf_1046 = GetPlayerState("shot_training_health5")=1
+	    Glf_1046 = GetPlayerState("shot_training_health6")=1
 	If Err Then Glf_1046 = False
 End Function
 Function Glf_1047(args)
 	On Error Resume Next
-	    Glf_1047 = GetPlayerState("shot_training_health6")=1
+	    Glf_1047 = GetPlayerState("shot_training_health7")=1
 	If Err Then Glf_1047 = False
 End Function
 Function Glf_1048(args)
 	On Error Resume Next
-	    Glf_1048 = GetPlayerState("shot_training_health7")=1
+	    Glf_1048 = GetPlayerState("shot_training_health8")=1
 	If Err Then Glf_1048 = False
 End Function
 Function Glf_1049(args)
 	On Error Resume Next
-	    Glf_1049 = GetPlayerState("shot_training_health8")=1
+	    Glf_1049 = GetPlayerState("shot_training_health9")=1
 	If Err Then Glf_1049 = False
 End Function
 Function Glf_1050(args)
 	On Error Resume Next
-	    Glf_1050 = GetPlayerState("shot_training_health9")=1
+	    Glf_1050 = GetPlayerState("shot_training_cluster_charge1")=1
 	If Err Then Glf_1050 = False
 End Function
 Function Glf_1051(args)
 	On Error Resume Next
-	    Glf_1051 = GetPlayerState("shot_training_cluster_charge1")=1
+	    Glf_1051 = GetPlayerState("shot_training_cluster_charge2")=1
 	If Err Then Glf_1051 = False
 End Function
 Function Glf_1052(args)
 	On Error Resume Next
-	    Glf_1052 = GetPlayerState("shot_training_cluster_charge2")=1
+	    Glf_1052 = GetPlayerState("shot_training_cluster_charge3")=1
 	If Err Then Glf_1052 = False
 End Function
 Function Glf_1053(args)
 	On Error Resume Next
-	    Glf_1053 = GetPlayerState("shot_training_cluster_charge3")=1
+	    Glf_1053 = GetPlayerState("shot_training_proton_charge1")=1
 	If Err Then Glf_1053 = False
 End Function
 Function Glf_1054(args)
 	On Error Resume Next
-	    Glf_1054 = GetPlayerState("shot_training_proton_charge1")=1
+	    Glf_1054 = GetPlayerState("shot_training_proton_charge2")=1
 	If Err Then Glf_1054 = False
 End Function
 Function Glf_1055(args)
 	On Error Resume Next
-	    Glf_1055 = GetPlayerState("shot_training_proton_charge2")=1
+	    Glf_1055 = GetPlayerState("shot_training_proton_charge3")=1
 	If Err Then Glf_1055 = False
 End Function
 Function Glf_1056(args)
 	On Error Resume Next
-	    Glf_1056 = GetPlayerState("shot_training_proton_charge3")=1
+	    Glf_1056 = GetPlayerState("shot_training_moon_lane1")=1
 	If Err Then Glf_1056 = False
 End Function
 Function Glf_1057(args)
 	On Error Resume Next
-	    Glf_1057 = GetPlayerState("shot_training_moon_lane1")=1
+	    Glf_1057 = GetPlayerState("shot_training_moon_lane2")=1
 	If Err Then Glf_1057 = False
 End Function
 Function Glf_1058(args)
 	On Error Resume Next
-	    Glf_1058 = GetPlayerState("shot_training_moon_lane2")=1
+	    Glf_1058 = GetPlayerState("shot_training_moon_lane3")=1
 	If Err Then Glf_1058 = False
 End Function
 Function Glf_1059(args)
 	On Error Resume Next
-	    Glf_1059 = GetPlayerState("shot_training_moon_lane3")=1
+	    Glf_1059 = GetPlayerState("shot_training_moon_lane4")=1
 	If Err Then Glf_1059 = False
 End Function
 Function Glf_1060(args)
 	On Error Resume Next
-	    Glf_1060 = GetPlayerState("shot_training_moon_lane4")=1
+	    Glf_1060 = GetPlayerState("shot_training_ship_charge1")=1
 	If Err Then Glf_1060 = False
 End Function
 Function Glf_1061(args)
 	On Error Resume Next
-	    Glf_1061 = GetPlayerState("shot_training_ship_charge1")=1
+	    Glf_1061 = GetPlayerState("shot_training_ship_charge2")=1
 	If Err Then Glf_1061 = False
 End Function
 Function Glf_1062(args)
 	On Error Resume Next
-	    Glf_1062 = GetPlayerState("shot_training_ship_charge2")=1
+	    Glf_1062 = GetPlayerState("shot_training_ship_charge3")=1
 	If Err Then Glf_1062 = False
 End Function
 Function Glf_1063(args)
 	On Error Resume Next
-	    Glf_1063 = GetPlayerState("shot_training_ship_charge3")=1
+	    Glf_1063 = GetPlayerState("shot_training_shield_charge1")=1
 	If Err Then Glf_1063 = False
 End Function
 Function Glf_1064(args)
 	On Error Resume Next
-	    Glf_1064 = GetPlayerState("shot_training_shield_charge1")=1
+	    Glf_1064 = GetPlayerState("shot_training_shield_charge2")=1
 	If Err Then Glf_1064 = False
 End Function
 Function Glf_1065(args)
 	On Error Resume Next
-	    Glf_1065 = GetPlayerState("shot_training_shield_charge2")=1
+	    Glf_1065 = GetPlayerState("shot_training_shield_charge3")=1
 	If Err Then Glf_1065 = False
 End Function
 Function Glf_1066(args)
 	On Error Resume Next
-	    Glf_1066 = GetPlayerState("shot_training_shield_charge3")=1
+	    Glf_1066 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1066 = False
 End Function
 Function Glf_1067(args)
 	On Error Resume Next
-	    Glf_1067 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1067 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1067 = False
 End Function
 Function Glf_1068(args)
 	On Error Resume Next
-	    Glf_1068 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1068 = glf_state_machines("training_select").GetValue("state")="heal"
 	If Err Then Glf_1068 = False
 End Function
 Function Glf_1069(args)
 	On Error Resume Next
-	    Glf_1069 = glf_state_machines("training_select").GetValue("state")="heal"
+	    Glf_1069 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1069 = False
 End Function
 Function Glf_1070(args)
 	On Error Resume Next
-	    Glf_1070 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1070 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1070 = False
 End Function
 Function Glf_1071(args)
 	On Error Resume Next
-	    Glf_1071 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1071 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
 	If Err Then Glf_1071 = False
 End Function
 Function Glf_1072(args)
 	On Error Resume Next
-	    Glf_1072 = glf_state_machines("training_select").GetValue("state")="cluster_bomb"
+	    Glf_1072 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1072 = False
 End Function
 Function Glf_1073(args)
 	On Error Resume Next
-	    Glf_1073 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1073 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1073 = False
 End Function
 Function Glf_1074(args)
 	On Error Resume Next
-	    Glf_1074 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1074 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
 	If Err Then Glf_1074 = False
 End Function
 Function Glf_1075(args)
 	On Error Resume Next
-	    Glf_1075 = glf_state_machines("training_select").GetValue("state")="proton_cannon"
+	    Glf_1075 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1075 = False
 End Function
 Function Glf_1076(args)
 	On Error Resume Next
-	    Glf_1076 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1076 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1076 = False
 End Function
 Function Glf_1077(args)
 	On Error Resume Next
-	    Glf_1077 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1077 = glf_state_machines("training_select").GetValue("state")="moon_missile"
 	If Err Then Glf_1077 = False
 End Function
 Function Glf_1078(args)
 	On Error Resume Next
-	    Glf_1078 = glf_state_machines("training_select").GetValue("state")="moon_missile"
+	    Glf_1078 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1078 = False
 End Function
 Function Glf_1079(args)
 	On Error Resume Next
-	    Glf_1079 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1079 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1079 = False
 End Function
 Function Glf_1080(args)
 	On Error Resume Next
-	    Glf_1080 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1080 = glf_state_machines("training_select").GetValue("state")="ship_save"
 	If Err Then Glf_1080 = False
 End Function
 Function Glf_1081(args)
 	On Error Resume Next
-	    Glf_1081 = glf_state_machines("training_select").GetValue("state")="ship_save"
+	    Glf_1081 = GetPlayerState("ts_hurry_up")=0
 	If Err Then Glf_1081 = False
 End Function
 Function Glf_1082(args)
 	On Error Resume Next
-	    Glf_1082 = GetPlayerState("ts_hurry_up")=0
+	    Glf_1082 = GetPlayerState("ts_hurry_up")=1
 	If Err Then Glf_1082 = False
 End Function
 Function Glf_1083(args)
 	On Error Resume Next
-	    Glf_1083 = GetPlayerState("ts_hurry_up")=1
+	    Glf_1083 = glf_state_machines("training_select").GetValue("state")="shields"
 	If Err Then Glf_1083 = False
 End Function
 Function Glf_1084(args)
-	On Error Resume Next
-	    Glf_1084 = glf_state_machines("training_select").GetValue("state")="shields"
-	If Err Then Glf_1084 = False
+	Glf_1084 = "SELECT"
 End Function
 Function Glf_1085(args)
-	Glf_1085 = "SELECT"
+	On Error Resume Next
+	    Glf_1085 = GetPlayerState("training_heal_achieved")=0
+	If Err Then Glf_1085 = False
 End Function
 Function Glf_1086(args)
-	On Error Resume Next
-	    Glf_1086 = GetPlayerState("training_heal_achieved")=0
-	If Err Then Glf_1086 = False
+	Glf_1086 = "HEAL "
 End Function
 Function Glf_1087(args)
-	Glf_1087 = "HEAL "
+	On Error Resume Next
+	    Glf_1087 = GetPlayerState("training_cluster_bomb_achieved")=0
+	If Err Then Glf_1087 = False
 End Function
 Function Glf_1088(args)
 	On Error Resume Next
-	    Glf_1088 = GetPlayerState("training_cluster_bomb_achieved")=0
+	    Glf_1088 = GetPlayerState("training_proton_cannon_achieved")=0
 	If Err Then Glf_1088 = False
 End Function
 Function Glf_1089(args)
 	On Error Resume Next
-	    Glf_1089 = GetPlayerState("training_proton_cannon_achieved")=0
+	    Glf_1089 = GetPlayerState("training_moon_missile_achieved")=0
 	If Err Then Glf_1089 = False
 End Function
 Function Glf_1090(args)
-	On Error Resume Next
-	    Glf_1090 = GetPlayerState("training_moon_missile_achieved")=0
-	If Err Then Glf_1090 = False
+	Glf_1090 = "MOON "
 End Function
 Function Glf_1091(args)
-	Glf_1091 = "MOON "
+	On Error Resume Next
+	    Glf_1091 = GetPlayerState("training_ship_save_achieved")=0
+	If Err Then Glf_1091 = False
 End Function
 Function Glf_1092(args)
-	On Error Resume Next
-	    Glf_1092 = GetPlayerState("training_ship_save_achieved")=0
-	If Err Then Glf_1092 = False
+	Glf_1092 = "SAVER "
 End Function
 Function Glf_1093(args)
-	Glf_1093 = "SAVER "
+	On Error Resume Next
+	    Glf_1093 = GetPlayerState("training_shields_achieved")=0
+	If Err Then Glf_1093 = False
 End Function
 Function Glf_1094(args)
-	On Error Resume Next
-	    Glf_1094 = GetPlayerState("training_shields_achieved")=0
-	If Err Then Glf_1094 = False
+	Glf_1094 = "SKIP "
 End Function
 Function Glf_1095(args)
-	Glf_1095 = "SKIP "
+	On Error Resume Next
+	    Glf_1095 = GetPlayerState("training_health_bump_value")<1
+	If Err Then Glf_1095 = False
 End Function
 Function Glf_1096(args)
 	On Error Resume Next
-	    Glf_1096 = GetPlayerState("training_health_bump_value")<1
+	    Glf_1096 = GetPlayerState("training_health_bump_value")>=1
 	If Err Then Glf_1096 = False
 End Function
 Function Glf_1097(args)
 	On Error Resume Next
-	    Glf_1097 = GetPlayerState("training_health_bump_value")>=1
+	    Glf_1097 = GetPlayerState("shot_training_health1") = 0
 	If Err Then Glf_1097 = False
 End Function
 Function Glf_1098(args)
 	On Error Resume Next
-	    Glf_1098 = GetPlayerState("shot_training_health1") = 0
+	    Glf_1098 = GetPlayerState("shot_training_health1") = 1 and GetPlayerState("shot_training_health2") = 0
 	If Err Then Glf_1098 = False
 End Function
 Function Glf_1099(args)
 	On Error Resume Next
-	    Glf_1099 = GetPlayerState("shot_training_health1") = 1 and GetPlayerState("shot_training_health2") = 0
+	    Glf_1099 = GetPlayerState("shot_training_health2") = 1 and GetPlayerState("shot_training_health3") = 0
 	If Err Then Glf_1099 = False
 End Function
 Function Glf_1100(args)
 	On Error Resume Next
-	    Glf_1100 = GetPlayerState("shot_training_health2") = 1 and GetPlayerState("shot_training_health3") = 0
+	    Glf_1100 = GetPlayerState("shot_training_health3") = 1 and GetPlayerState("shot_training_health4") = 0
 	If Err Then Glf_1100 = False
 End Function
 Function Glf_1101(args)
 	On Error Resume Next
-	    Glf_1101 = GetPlayerState("shot_training_health3") = 1 and GetPlayerState("shot_training_health4") = 0
+	    Glf_1101 = GetPlayerState("shot_training_health4") = 1 and GetPlayerState("shot_training_health5") = 0
 	If Err Then Glf_1101 = False
 End Function
 Function Glf_1102(args)
 	On Error Resume Next
-	    Glf_1102 = GetPlayerState("shot_training_health4") = 1 and GetPlayerState("shot_training_health5") = 0
+	    Glf_1102 = GetPlayerState("shot_training_health5") = 1 and GetPlayerState("shot_training_health6") = 0
 	If Err Then Glf_1102 = False
 End Function
 Function Glf_1103(args)
 	On Error Resume Next
-	    Glf_1103 = GetPlayerState("shot_training_health5") = 1 and GetPlayerState("shot_training_health6") = 0
+	    Glf_1103 = GetPlayerState("shot_training_health6") = 1 and GetPlayerState("shot_training_health7") = 0
 	If Err Then Glf_1103 = False
 End Function
 Function Glf_1104(args)
 	On Error Resume Next
-	    Glf_1104 = GetPlayerState("shot_training_health6") = 1 and GetPlayerState("shot_training_health7") = 0
+	    Glf_1104 = GetPlayerState("shot_training_health7") = 1 and GetPlayerState("shot_training_health8") = 0
 	If Err Then Glf_1104 = False
 End Function
 Function Glf_1105(args)
 	On Error Resume Next
-	    Glf_1105 = GetPlayerState("shot_training_health7") = 1 and GetPlayerState("shot_training_health8") = 0
+	    Glf_1105 = GetPlayerState("shot_training_health8") = 1 and GetPlayerState("shot_training_health9") = 0
 	If Err Then Glf_1105 = False
 End Function
 Function Glf_1106(args)
-	On Error Resume Next
-	    Glf_1106 = GetPlayerState("shot_training_health8") = 1 and GetPlayerState("shot_training_health9") = 0
-	If Err Then Glf_1106 = False
+	Glf_1106 = "TRAIN "
 End Function
 Function Glf_1107(args)
-	Glf_1107 = "TRAIN "
+	Glf_1107 = Glf_FormatValue(glf_timers("training_heal").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1108(args)
-	Glf_1108 = Glf_FormatValue(glf_timers("training_heal").GetValue("ticks"),"0>2")
+	On Error Resume Next
+	    Glf_1108 = GetPlayerState("shot_training_cluster_charge1") = 0
+	If Err Then Glf_1108 = False
 End Function
 Function Glf_1109(args)
 	On Error Resume Next
-	    Glf_1109 = GetPlayerState("shot_training_cluster_charge1") = 0
+	    Glf_1109 = GetPlayerState("shot_training_cluster_charge1") = 1 and GetPlayerState("shot_training_cluster_charge2") = 0
 	If Err Then Glf_1109 = False
 End Function
 Function Glf_1110(args)
 	On Error Resume Next
-	    Glf_1110 = GetPlayerState("shot_training_cluster_charge1") = 1 and GetPlayerState("shot_training_cluster_charge2") = 0
+	    Glf_1110 = GetPlayerState("shot_training_cluster_charge2") = 1 and GetPlayerState("shot_training_cluster_charge3") = 0
 	If Err Then Glf_1110 = False
 End Function
 Function Glf_1111(args)
-	On Error Resume Next
-	    Glf_1111 = GetPlayerState("shot_training_cluster_charge2") = 1 and GetPlayerState("shot_training_cluster_charge3") = 0
-	If Err Then Glf_1111 = False
+	Glf_1111 = Glf_FormatValue(glf_timers("training_cluster_bomb").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1112(args)
-	Glf_1112 = Glf_FormatValue(glf_timers("training_cluster_bomb").GetValue("ticks"),"0>2")
+	On Error Resume Next
+	    Glf_1112 = GetPlayerState("shot_training_proton_charge1") = 0
+	If Err Then Glf_1112 = False
 End Function
 Function Glf_1113(args)
 	On Error Resume Next
-	    Glf_1113 = GetPlayerState("shot_training_proton_charge1") = 0
+	    Glf_1113 = GetPlayerState("shot_training_proton_charge1") = 1 and GetPlayerState("shot_training_proton_charge2") = 0
 	If Err Then Glf_1113 = False
 End Function
 Function Glf_1114(args)
 	On Error Resume Next
-	    Glf_1114 = GetPlayerState("shot_training_proton_charge1") = 1 and GetPlayerState("shot_training_proton_charge2") = 0
+	    Glf_1114 = GetPlayerState("shot_training_proton_charge2") = 1 and GetPlayerState("shot_training_proton_charge3") = 0
 	If Err Then Glf_1114 = False
 End Function
 Function Glf_1115(args)
-	On Error Resume Next
-	    Glf_1115 = GetPlayerState("shot_training_proton_charge2") = 1 and GetPlayerState("shot_training_proton_charge3") = 0
-	If Err Then Glf_1115 = False
+	Glf_1115 = Glf_FormatValue(glf_timers("training_proton_cannon").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1116(args)
-	Glf_1116 = Glf_FormatValue(glf_timers("training_proton_cannon").GetValue("ticks"),"0>2")
+	Glf_1116 = Glf_FormatValue(glf_timers("training_moon_missile").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1117(args)
-	Glf_1117 = Glf_FormatValue(glf_timers("training_moon_missile").GetValue("ticks"),"0>2")
+	On Error Resume Next
+	    Glf_1117 = GetPlayerState("shot_training_ship_charge1") = 0
+	If Err Then Glf_1117 = False
 End Function
 Function Glf_1118(args)
 	On Error Resume Next
-	    Glf_1118 = GetPlayerState("shot_training_ship_charge1") = 0
+	    Glf_1118 = GetPlayerState("shot_training_ship_charge1") = 1 and GetPlayerState("shot_training_ship_charge2") = 0
 	If Err Then Glf_1118 = False
 End Function
 Function Glf_1119(args)
 	On Error Resume Next
-	    Glf_1119 = GetPlayerState("shot_training_ship_charge1") = 1 and GetPlayerState("shot_training_ship_charge2") = 0
+	    Glf_1119 = GetPlayerState("shot_training_ship_charge2") = 1 and GetPlayerState("shot_training_ship_charge3") = 0
 	If Err Then Glf_1119 = False
 End Function
 Function Glf_1120(args)
-	On Error Resume Next
-	    Glf_1120 = GetPlayerState("shot_training_ship_charge2") = 1 and GetPlayerState("shot_training_ship_charge3") = 0
-	If Err Then Glf_1120 = False
+	Glf_1120 = "SAVER"
 End Function
 Function Glf_1121(args)
-	Glf_1121 = "SAVER"
+	Glf_1121 = Glf_FormatValue(glf_timers("training_ship_save").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1122(args)
-	Glf_1122 = Glf_FormatValue(glf_timers("training_ship_save").GetValue("ticks"),"0>2")
+	Glf_1122 = Glf_FormatValue(glf_timers("training_shields").GetValue("ticks"),"0>2")
 End Function
 Function Glf_1123(args)
-	Glf_1123 = Glf_FormatValue(glf_timers("training_shields").GetValue("ticks"),"0>2")
+	On Error Resume Next
+	    Glf_1123 = GetPlayerState("shot_final_wave_wizard")>0
+	If Err Then Glf_1123 = False
 End Function
 Function Glf_1124(args)
 	On Error Resume Next
-	    Glf_1124 = GetPlayerState("shot_final_wave_wizard")>0
+	    Glf_1124 = GetPlayerState("meteor_countdown_value") = 0
 	If Err Then Glf_1124 = False
 End Function
 Function Glf_1125(args)
 	On Error Resume Next
-	    Glf_1125 = GetPlayerState("meteor_countdown_value") = 0
+	    Glf_1125 = GetPlayerState("meteor_countdown_value") > 0
 	If Err Then Glf_1125 = False
 End Function
 Function Glf_1126(args)
 	On Error Resume Next
-	    Glf_1126 = GetPlayerState("meteor_countdown_value") > 0
+	    Glf_1126 = GetPlayerState("ball_just_started") = 0
 	If Err Then Glf_1126 = False
 End Function
 Function Glf_1127(args)
 	On Error Resume Next
-	    Glf_1127 = GetPlayerState("ball_just_started") = 0
+	    Glf_1127 = GetPlayerState("ball_just_started") = 1
 	If Err Then Glf_1127 = False
 End Function
 Function Glf_1128(args)
 	On Error Resume Next
-	    Glf_1128 = GetPlayerState("ball_just_started") = 1
+	    Glf_1128 = glf_timers("meteor_countdown").GetValue("ticks") = 4
 	If Err Then Glf_1128 = False
 End Function
 Function Glf_1129(args)
 	On Error Resume Next
-	    Glf_1129 = glf_timers("meteor_countdown").GetValue("ticks") = 4
+	    Glf_1129 = glf_timers("meteor_countdown").GetValue("ticks") = 2
 	If Err Then Glf_1129 = False
 End Function
 Function Glf_1130(args)
-	On Error Resume Next
-	    Glf_1130 = glf_timers("meteor_countdown").GetValue("ticks") = 2
-	If Err Then Glf_1130 = False
+	Glf_1130 = GetPlayerState("meteor_countdown_value")
 End Function
 Function Glf_1131(args)
-	Glf_1131 = GetPlayerState("meteor_countdown_value")
+	Glf_1131 = 45
 End Function
 Function Glf_1132(args)
-	Glf_1132 = 45
+	Glf_1132 = glf_timers("meteor_countdown").GetValue("ticks")
 End Function
 Function Glf_1133(args)
-	Glf_1133 = glf_timers("meteor_countdown").GetValue("ticks")
+	On Error Resume Next
+	    Glf_1133 = GetPlayerState("shot_meteor_wave1") = 0
+	If Err Then Glf_1133 = False
 End Function
 Function Glf_1134(args)
 	On Error Resume Next
-	    Glf_1134 = GetPlayerState("shot_meteor_wave1") = 0
+	    Glf_1134 = GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
 	If Err Then Glf_1134 = False
 End Function
 Function Glf_1135(args)
 	On Error Resume Next
-	    Glf_1135 = GetPlayerState("shot_meteor_wave1") = 2 and GetPlayerState("shot_meteor_wave2") = 0
+	    Glf_1135 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
 	If Err Then Glf_1135 = False
 End Function
 Function Glf_1136(args)
 	On Error Resume Next
-	    Glf_1136 = GetPlayerState("shot_meteor_wave2") = 2 and GetPlayerState("shot_meteor_wave3") = 0
+	    Glf_1136 = GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
 	If Err Then Glf_1136 = False
 End Function
 Function Glf_1137(args)
 	On Error Resume Next
-	    Glf_1137 = GetPlayerState("shot_meteor_wave3") = 2 and GetPlayerState("shot_meteor_wave4") = 0
+	    Glf_1137 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
 	If Err Then Glf_1137 = False
 End Function
 Function Glf_1138(args)
 	On Error Resume Next
-	    Glf_1138 = GetPlayerState("shot_meteor_wave4") = 2 and GetPlayerState("shot_meteor_wave5") = 0
+	    Glf_1138 = GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
 	If Err Then Glf_1138 = False
 End Function
 Function Glf_1139(args)
 	On Error Resume Next
-	    Glf_1139 = GetPlayerState("shot_meteor_wave5") = 2 and GetPlayerState("shot_meteor_wave6") = 0
+	    Glf_1139 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
 	If Err Then Glf_1139 = False
 End Function
 Function Glf_1140(args)
 	On Error Resume Next
-	    Glf_1140 = GetPlayerState("shot_meteor_wave6") = 2 and GetPlayerState("shot_meteor_wave7") = 0
+	    Glf_1140 = GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
 	If Err Then Glf_1140 = False
 End Function
 Function Glf_1141(args)
 	On Error Resume Next
-	    Glf_1141 = GetPlayerState("shot_meteor_wave7") = 2 and GetPlayerState("shot_meteor_wave8") = 0
+	    Glf_1141 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
 	If Err Then Glf_1141 = False
 End Function
 Function Glf_1142(args)
 	On Error Resume Next
-	    Glf_1142 = GetPlayerState("shot_meteor_wave8") = 2 and GetPlayerState("shot_meteor_wave9") = 0
+	    Glf_1142 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_1142 = False
 End Function
 Function Glf_1143(args)
 	On Error Resume Next
-	    Glf_1143 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
+	    Glf_1143 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_1143 = False
 End Function
 Function Glf_1144(args)
 	On Error Resume Next
-	    Glf_1144 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
+	    Glf_1144 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_1144 = False
 End Function
 Function Glf_1145(args)
 	On Error Resume Next
-	    Glf_1145 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
+	    Glf_1145 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_1145 = False
 End Function
 Function Glf_1146(args)
 	On Error Resume Next
-	    Glf_1146 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
+	    Glf_1146 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_1146 = False
 End Function
 Function Glf_1147(args)
 	On Error Resume Next
-	    Glf_1147 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
+	    Glf_1147 = GetPlayerState("shot_proton_round6") = 1
 	If Err Then Glf_1147 = False
 End Function
 Function Glf_1148(args)
 	On Error Resume Next
-	    Glf_1148 = GetPlayerState("shot_proton_round6") = 1
+	    Glf_1148 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
 	If Err Then Glf_1148 = False
 End Function
 Function Glf_1149(args)
 	On Error Resume Next
-	    Glf_1149 = GetPlayerState("shot_proton_round1") = 1 and GetPlayerState("shot_proton_round2") = 0
+	    Glf_1149 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
 	If Err Then Glf_1149 = False
 End Function
 Function Glf_1150(args)
 	On Error Resume Next
-	    Glf_1150 = GetPlayerState("shot_proton_round2") = 1 and GetPlayerState("shot_proton_round3") = 0
+	    Glf_1150 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
 	If Err Then Glf_1150 = False
 End Function
 Function Glf_1151(args)
 	On Error Resume Next
-	    Glf_1151 = GetPlayerState("shot_proton_round3") = 1 and GetPlayerState("shot_proton_round4") = 0
+	    Glf_1151 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
 	If Err Then Glf_1151 = False
 End Function
 Function Glf_1152(args)
 	On Error Resume Next
-	    Glf_1152 = GetPlayerState("shot_proton_round4") = 1 and GetPlayerState("shot_proton_round5") = 0
+	    Glf_1152 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
 	If Err Then Glf_1152 = False
 End Function
 Function Glf_1153(args)
 	On Error Resume Next
-	    Glf_1153 = GetPlayerState("shot_proton_round5") = 1 and GetPlayerState("shot_proton_round6") = 0
+	    Glf_1153 = GetPlayerState("shot_proton_round6") = 1
 	If Err Then Glf_1153 = False
 End Function
 Function Glf_1154(args)
 	On Error Resume Next
-	    Glf_1154 = GetPlayerState("shot_proton_round6") = 1
+	    Glf_1154 = GetPlayerState("num_meteors_to_drop") < 0
 	If Err Then Glf_1154 = False
 End Function
 Function Glf_1155(args)
 	On Error Resume Next
-	    Glf_1155 = GetPlayerState("num_meteors_to_drop") < 0
+	    Glf_1155 = GetPlayerState("num_meteors_to_drop") <= 0 and GetPlayerState("nuke_just_used") = 0
 	If Err Then Glf_1155 = False
 End Function
 Function Glf_1156(args)
 	On Error Resume Next
-	    Glf_1156 = GetPlayerState("num_meteors_to_drop") <= 0 and GetPlayerState("nuke_just_used") = 0
+	    Glf_1156 = GetPlayerState("meteor_wave_running") = 1
 	If Err Then Glf_1156 = False
 End Function
 Function Glf_1157(args)
@@ -4992,62 +4992,62 @@ Function Glf_1157(args)
 End Function
 Function Glf_1158(args)
 	On Error Resume Next
-	    Glf_1158 = GetPlayerState("meteor_wave_running") = 1
+	    Glf_1158 = GetPlayerState("shot_meteor_wave1") = 1
 	If Err Then Glf_1158 = False
 End Function
 Function Glf_1159(args)
 	On Error Resume Next
-	    Glf_1159 = GetPlayerState("shot_meteor_wave1") = 1
+	    Glf_1159 = GetPlayerState("shot_meteor_wave2") = 1
 	If Err Then Glf_1159 = False
 End Function
 Function Glf_1160(args)
 	On Error Resume Next
-	    Glf_1160 = GetPlayerState("shot_meteor_wave2") = 1
+	    Glf_1160 = GetPlayerState("shot_meteor_wave3") = 1
 	If Err Then Glf_1160 = False
 End Function
 Function Glf_1161(args)
 	On Error Resume Next
-	    Glf_1161 = GetPlayerState("shot_meteor_wave3") = 1
+	    Glf_1161 = GetPlayerState("shot_meteor_wave4") = 1
 	If Err Then Glf_1161 = False
 End Function
 Function Glf_1162(args)
 	On Error Resume Next
-	    Glf_1162 = GetPlayerState("shot_meteor_wave4") = 1
+	    Glf_1162 = GetPlayerState("shot_meteor_wave5") = 1
 	If Err Then Glf_1162 = False
 End Function
 Function Glf_1163(args)
 	On Error Resume Next
-	    Glf_1163 = GetPlayerState("shot_meteor_wave5") = 1
+	    Glf_1163 = GetPlayerState("shot_meteor_wave6") = 1
 	If Err Then Glf_1163 = False
 End Function
 Function Glf_1164(args)
 	On Error Resume Next
-	    Glf_1164 = GetPlayerState("shot_meteor_wave6") = 1
+	    Glf_1164 = GetPlayerState("shot_meteor_wave7") = 1
 	If Err Then Glf_1164 = False
 End Function
 Function Glf_1165(args)
 	On Error Resume Next
-	    Glf_1165 = GetPlayerState("shot_meteor_wave7") = 1
+	    Glf_1165 = GetPlayerState("shot_meteor_wave8") = 1
 	If Err Then Glf_1165 = False
 End Function
 Function Glf_1166(args)
 	On Error Resume Next
-	    Glf_1166 = GetPlayerState("shot_meteor_wave8") = 1
+	    Glf_1166 = GetPlayerState("shot_meteor_wave9") = 1
 	If Err Then Glf_1166 = False
 End Function
 Function Glf_1167(args)
 	On Error Resume Next
-	    Glf_1167 = GetPlayerState("shot_meteor_wave9") = 1
+	    Glf_1167 = GetPlayerState("training_heal_achieved")=0
 	If Err Then Glf_1167 = False
 End Function
 Function Glf_1168(args)
 	On Error Resume Next
-	    Glf_1168 = GetPlayerState("training_heal_achieved")=0
+	    Glf_1168 = GetPlayerState("shot_proton_round1")=0
 	If Err Then Glf_1168 = False
 End Function
 Function Glf_1169(args)
 	On Error Resume Next
-	    Glf_1169 = GetPlayerState("shot_proton_round1")=0
+	    Glf_1169 = GetPlayerState("shot_mw_health")=1
 	If Err Then Glf_1169 = False
 End Function
 Function Glf_1170(args)
@@ -5057,535 +5057,535 @@ Function Glf_1170(args)
 End Function
 Function Glf_1171(args)
 	On Error Resume Next
-	    Glf_1171 = GetPlayerState("shot_mw_health")=1
+	    Glf_1171 = GetPlayerState("shot_meteor1_light") > 0
 	If Err Then Glf_1171 = False
 End Function
 Function Glf_1172(args)
 	On Error Resume Next
-	    Glf_1172 = GetPlayerState("shot_meteor1_light") > 0
+	    Glf_1172 = GetPlayerState("shot_meteor2_light") > 0
 	If Err Then Glf_1172 = False
 End Function
 Function Glf_1173(args)
 	On Error Resume Next
-	    Glf_1173 = GetPlayerState("shot_meteor2_light") > 0
+	    Glf_1173 = GetPlayerState("shot_meteor3_light") > 0
 	If Err Then Glf_1173 = False
 End Function
 Function Glf_1174(args)
 	On Error Resume Next
-	    Glf_1174 = GetPlayerState("shot_meteor3_light") > 0
+	    Glf_1174 = GetPlayerState("shot_meteor4_light") > 0
 	If Err Then Glf_1174 = False
 End Function
 Function Glf_1175(args)
 	On Error Resume Next
-	    Glf_1175 = GetPlayerState("shot_meteor4_light") > 0
+	    Glf_1175 = GetPlayerState("shot_proton_round1")=1
 	If Err Then Glf_1175 = False
 End Function
 Function Glf_1176(args)
 	On Error Resume Next
-	    Glf_1176 = GetPlayerState("shot_proton_round1")=1
+	    Glf_1176 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor1").GetValue("ticks")=2
 	If Err Then Glf_1176 = False
 End Function
 Function Glf_1177(args)
 	On Error Resume Next
-	    Glf_1177 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor1").GetValue("ticks")=2
+	    Glf_1177 = glf_timers("meteor1").GetValue("ticks")=6
 	If Err Then Glf_1177 = False
 End Function
 Function Glf_1178(args)
 	On Error Resume Next
-	    Glf_1178 = glf_timers("meteor1").GetValue("ticks")=6
+	    Glf_1178 = glf_timers("meteor1").GetValue("ticks")=10
 	If Err Then Glf_1178 = False
 End Function
 Function Glf_1179(args)
 	On Error Resume Next
-	    Glf_1179 = glf_timers("meteor1").GetValue("ticks")=10
+	    Glf_1179 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor2").GetValue("ticks")=2
 	If Err Then Glf_1179 = False
 End Function
 Function Glf_1180(args)
 	On Error Resume Next
-	    Glf_1180 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor2").GetValue("ticks")=2
+	    Glf_1180 = glf_timers("meteor2").GetValue("ticks")=6
 	If Err Then Glf_1180 = False
 End Function
 Function Glf_1181(args)
 	On Error Resume Next
-	    Glf_1181 = glf_timers("meteor2").GetValue("ticks")=6
+	    Glf_1181 = glf_timers("meteor2").GetValue("ticks")=10
 	If Err Then Glf_1181 = False
 End Function
 Function Glf_1182(args)
 	On Error Resume Next
-	    Glf_1182 = glf_timers("meteor2").GetValue("ticks")=10
+	    Glf_1182 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor3").GetValue("ticks")=2
 	If Err Then Glf_1182 = False
 End Function
 Function Glf_1183(args)
 	On Error Resume Next
-	    Glf_1183 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor3").GetValue("ticks")=2
+	    Glf_1183 = glf_timers("meteor3").GetValue("ticks")=6
 	If Err Then Glf_1183 = False
 End Function
 Function Glf_1184(args)
 	On Error Resume Next
-	    Glf_1184 = glf_timers("meteor3").GetValue("ticks")=6
+	    Glf_1184 = glf_timers("meteor3").GetValue("ticks")=10
 	If Err Then Glf_1184 = False
 End Function
 Function Glf_1185(args)
 	On Error Resume Next
-	    Glf_1185 = glf_timers("meteor3").GetValue("ticks")=10
+	    Glf_1185 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor4").GetValue("ticks")=2
 	If Err Then Glf_1185 = False
 End Function
 Function Glf_1186(args)
 	On Error Resume Next
-	    Glf_1186 = GetPlayerState("num_meteors_to_raise")>0 and glf_timers("meteor4").GetValue("ticks")=2
+	    Glf_1186 = glf_timers("meteor4").GetValue("ticks")=6
 	If Err Then Glf_1186 = False
 End Function
 Function Glf_1187(args)
 	On Error Resume Next
-	    Glf_1187 = glf_timers("meteor4").GetValue("ticks")=6
+	    Glf_1187 = glf_timers("meteor4").GetValue("ticks")=10
 	If Err Then Glf_1187 = False
 End Function
 Function Glf_1188(args)
 	On Error Resume Next
-	    Glf_1188 = glf_timers("meteor4").GetValue("ticks")=10
+	    Glf_1188 = GetPlayerState("nuke_just_used") = 0
 	If Err Then Glf_1188 = False
 End Function
 Function Glf_1189(args)
 	On Error Resume Next
-	    Glf_1189 = GetPlayerState("nuke_just_used") = 0
+	    Glf_1189 = GetPlayerState("nuke_just_used") = 1
 	If Err Then Glf_1189 = False
 End Function
 Function Glf_1190(args)
-	On Error Resume Next
-	    Glf_1190 = GetPlayerState("nuke_just_used") = 1
-	If Err Then Glf_1190 = False
+	Glf_1190 = GetPlayerState("meteors_per_wave")
 End Function
 Function Glf_1191(args)
-	Glf_1191 = GetPlayerState("meteors_per_wave")
+	Glf_1191 = GetPlayerState("num_waves_completed") + 1
 End Function
 Function Glf_1192(args)
-	Glf_1192 = GetPlayerState("num_waves_completed") + 1
+	Glf_1192 = Glf_FormatValue(GetPlayerState("num_meteors_to_drop"),"0>2")
 End Function
 Function Glf_1193(args)
-	Glf_1193 = Glf_FormatValue(GetPlayerState("num_meteors_to_drop"),"0>2")
+	Glf_1193 = "00"
 End Function
 Function Glf_1194(args)
-	Glf_1194 = "00"
+	Glf_1194 = "  NUKED "
 End Function
 Function Glf_1195(args)
-	Glf_1195 = "  NUKED "
+	Glf_1195 = " NUKED  "
 End Function
 Function Glf_1196(args)
-	Glf_1196 = " NUKED  "
+	On Error Resume Next
+	    Glf_1196 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
+	If Err Then Glf_1196 = False
 End Function
 Function Glf_1197(args)
-	On Error Resume Next
-	    Glf_1197 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
-	If Err Then Glf_1197 = False
+	Glf_1197 = "METEOR "
 End Function
 Function Glf_1198(args)
-	Glf_1198 = "METEOR "
+	Glf_1198 = "WAVE  "
 End Function
 Function Glf_1199(args)
-	Glf_1199 = "WAVE  "
+	On Error Resume Next
+	    Glf_1199 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	If Err Then Glf_1199 = False
 End Function
 Function Glf_1200(args)
 	On Error Resume Next
-	    Glf_1200 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
+	    Glf_1200 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
 	If Err Then Glf_1200 = False
 End Function
 Function Glf_1201(args)
 	On Error Resume Next
-	    Glf_1201 = GetPlayerState("number") = 1 or GetPlayerState("number") = 2
+	    Glf_1201 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
 	If Err Then Glf_1201 = False
 End Function
 Function Glf_1202(args)
-	On Error Resume Next
-	    Glf_1202 = GetPlayerState("number") = 3 or GetPlayerState("number") = 4
-	If Err Then Glf_1202 = False
+	Glf_1202 = GetPlayerState("meteor_mb_shootagain_time")
 End Function
 Function Glf_1203(args)
-	Glf_1203 = GetPlayerState("meteor_mb_shootagain_time")
+	On Error Resume Next
+	    Glf_1203 = GetPlayerState("shot_flwiz_proton1")=1
+	If Err Then Glf_1203 = False
 End Function
 Function Glf_1204(args)
 	On Error Resume Next
-	    Glf_1204 = GetPlayerState("shot_flwiz_proton1")=1
+	    Glf_1204 = GetPlayerState("shot_flwiz_proton2")=1
 	If Err Then Glf_1204 = False
 End Function
 Function Glf_1205(args)
 	On Error Resume Next
-	    Glf_1205 = GetPlayerState("shot_flwiz_proton2")=1
+	    Glf_1205 = GetPlayerState("shot_flwiz_proton3")=1
 	If Err Then Glf_1205 = False
 End Function
 Function Glf_1206(args)
 	On Error Resume Next
-	    Glf_1206 = GetPlayerState("shot_flwiz_proton3")=1
+	    Glf_1206 = GetPlayerState("shot_flwiz_proton4")=1
 	If Err Then Glf_1206 = False
 End Function
 Function Glf_1207(args)
 	On Error Resume Next
-	    Glf_1207 = GetPlayerState("shot_flwiz_proton4")=1
+	    Glf_1207 = GetPlayerState("shot_flwiz_proton5")=1
 	If Err Then Glf_1207 = False
 End Function
 Function Glf_1208(args)
 	On Error Resume Next
-	    Glf_1208 = GetPlayerState("shot_flwiz_proton5")=1
+	    Glf_1208 = GetPlayerState("shot_flwiz_proton6")=1
 	If Err Then Glf_1208 = False
 End Function
 Function Glf_1209(args)
 	On Error Resume Next
-	    Glf_1209 = GetPlayerState("shot_flwiz_proton6")=1
+	    Glf_1209 = GetPlayerState("shot_flwiz_cluster") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 1
 	If Err Then Glf_1209 = False
 End Function
 Function Glf_1210(args)
 	On Error Resume Next
-	    Glf_1210 = GetPlayerState("shot_flwiz_cluster") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 1
+	    Glf_1210 = GetPlayerState("shot_flwiz_moon") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 1
 	If Err Then Glf_1210 = False
 End Function
 Function Glf_1211(args)
 	On Error Resume Next
-	    Glf_1211 = GetPlayerState("shot_flwiz_moon") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 1
+	    Glf_1211 = GetPlayerState("wizard_fully_loaded_phase") = 1
 	If Err Then Glf_1211 = False
 End Function
 Function Glf_1212(args)
 	On Error Resume Next
-	    Glf_1212 = GetPlayerState("wizard_fully_loaded_phase") = 1
+	    Glf_1212 = GetPlayerState("wizard_fully_loaded_phase") = 1 and GetPlayerState("flwiz_super_jp") = 1
 	If Err Then Glf_1212 = False
 End Function
 Function Glf_1213(args)
 	On Error Resume Next
-	    Glf_1213 = GetPlayerState("wizard_fully_loaded_phase") = 1 and GetPlayerState("flwiz_super_jp") = 1
+	    Glf_1213 = GetPlayerState("shot_flwiz_proton1") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1213 = False
 End Function
 Function Glf_1214(args)
 	On Error Resume Next
-	    Glf_1214 = GetPlayerState("shot_flwiz_proton1") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1214 = GetPlayerState("shot_flwiz_proton2") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1214 = False
 End Function
 Function Glf_1215(args)
 	On Error Resume Next
-	    Glf_1215 = GetPlayerState("shot_flwiz_proton2") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1215 = GetPlayerState("shot_flwiz_proton3") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1215 = False
 End Function
 Function Glf_1216(args)
 	On Error Resume Next
-	    Glf_1216 = GetPlayerState("shot_flwiz_proton3") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1216 = GetPlayerState("shot_flwiz_proton4") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1216 = False
 End Function
 Function Glf_1217(args)
 	On Error Resume Next
-	    Glf_1217 = GetPlayerState("shot_flwiz_proton4") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1217 = GetPlayerState("shot_flwiz_proton5") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1217 = False
 End Function
 Function Glf_1218(args)
 	On Error Resume Next
-	    Glf_1218 = GetPlayerState("shot_flwiz_proton5") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1218 = GetPlayerState("shot_flwiz_proton6") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1218 = False
 End Function
 Function Glf_1219(args)
 	On Error Resume Next
-	    Glf_1219 = GetPlayerState("shot_flwiz_proton6") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1219 = GetPlayerState("shot_flwiz_cluster") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1219 = False
 End Function
 Function Glf_1220(args)
 	On Error Resume Next
-	    Glf_1220 = GetPlayerState("shot_flwiz_cluster") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1220 = GetPlayerState("shot_flwiz_moon") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1220 = False
 End Function
 Function Glf_1221(args)
 	On Error Resume Next
-	    Glf_1221 = GetPlayerState("shot_flwiz_moon") = 1 and GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1221 = GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1221 = False
 End Function
 Function Glf_1222(args)
 	On Error Resume Next
-	    Glf_1222 = GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1222 = GetPlayerState("flwiz_super_jp") = 2
 	If Err Then Glf_1222 = False
 End Function
 Function Glf_1223(args)
 	On Error Resume Next
-	    Glf_1223 = GetPlayerState("flwiz_super_jp") = 2
+	    Glf_1223 = GetPlayerState("wizard_fully_loaded_phase") = 1
 	If Err Then Glf_1223 = False
 End Function
 Function Glf_1224(args)
 	On Error Resume Next
-	    Glf_1224 = GetPlayerState("wizard_fully_loaded_phase") = 1
+	    Glf_1224 = GetPlayerState("wizard_fully_loaded_phase") = 2
 	If Err Then Glf_1224 = False
 End Function
 Function Glf_1225(args)
 	On Error Resume Next
-	    Glf_1225 = GetPlayerState("wizard_fully_loaded_phase") = 2
+	    Glf_1225 = GetPlayerState("shot_flwiz_proton1") = 0
 	If Err Then Glf_1225 = False
 End Function
 Function Glf_1226(args)
 	On Error Resume Next
-	    Glf_1226 = GetPlayerState("shot_flwiz_proton1") = 0
+	    Glf_1226 = GetPlayerState("shot_flwiz_proton2") = 0
 	If Err Then Glf_1226 = False
 End Function
 Function Glf_1227(args)
 	On Error Resume Next
-	    Glf_1227 = GetPlayerState("shot_flwiz_proton2") = 0
+	    Glf_1227 = GetPlayerState("shot_flwiz_proton3") = 0
 	If Err Then Glf_1227 = False
 End Function
 Function Glf_1228(args)
 	On Error Resume Next
-	    Glf_1228 = GetPlayerState("shot_flwiz_proton3") = 0
+	    Glf_1228 = GetPlayerState("shot_flwiz_proton4") = 0
 	If Err Then Glf_1228 = False
 End Function
 Function Glf_1229(args)
 	On Error Resume Next
-	    Glf_1229 = GetPlayerState("shot_flwiz_proton4") = 0
+	    Glf_1229 = GetPlayerState("shot_flwiz_proton5") = 0
 	If Err Then Glf_1229 = False
 End Function
 Function Glf_1230(args)
 	On Error Resume Next
-	    Glf_1230 = GetPlayerState("shot_flwiz_proton5") = 0
+	    Glf_1230 = GetPlayerState("shot_flwiz_proton6") = 0
 	If Err Then Glf_1230 = False
 End Function
 Function Glf_1231(args)
 	On Error Resume Next
-	    Glf_1231 = GetPlayerState("shot_flwiz_proton6") = 0
+	    Glf_1231 = GetPlayerState("shot_flwiz_cluster") = 0
 	If Err Then Glf_1231 = False
 End Function
 Function Glf_1232(args)
 	On Error Resume Next
-	    Glf_1232 = GetPlayerState("shot_flwiz_cluster") = 0
+	    Glf_1232 = GetPlayerState("shot_flwiz_moon") = 0
 	If Err Then Glf_1232 = False
 End Function
 Function Glf_1233(args)
-	On Error Resume Next
-	    Glf_1233 = GetPlayerState("shot_flwiz_moon") = 0
-	If Err Then Glf_1233 = False
+	Glf_1233 = 20000
 End Function
 Function Glf_1234(args)
-	Glf_1234 = 20000
+	Glf_1234 = 100000
 End Function
 Function Glf_1235(args)
-	Glf_1235 = 100000
+	Glf_1235 = " FULLY "
 End Function
 Function Glf_1236(args)
-	Glf_1236 = " FULLY "
+	Glf_1236 = " LOADED "
 End Function
 Function Glf_1237(args)
-	Glf_1237 = " LOADED "
+	Glf_1237 = " WIZARD "
 End Function
 Function Glf_1238(args)
-	Glf_1238 = " WIZARD "
+	Glf_1238 = "  MODE  "
 End Function
 Function Glf_1239(args)
-	Glf_1239 = "  MODE  "
+	On Error Resume Next
+	    Glf_1239 = glf_timers("fully_loaded_message").GetValue("ticks") = 1
+	If Err Then Glf_1239 = False
 End Function
 Function Glf_1240(args)
-	On Error Resume Next
-	    Glf_1240 = glf_timers("fully_loaded_message").GetValue("ticks") = 1
-	If Err Then Glf_1240 = False
+	Glf_1240 = "   EB   "
 End Function
 Function Glf_1241(args)
-	Glf_1241 = "   EB   "
+	Glf_1241 = "  ADDED "
 End Function
 Function Glf_1242(args)
-	Glf_1242 = "  ADDED "
+	On Error Resume Next
+	    Glf_1242 = glf_timers("fully_loaded_message").GetValue("ticks") = 2
+	If Err Then Glf_1242 = False
 End Function
 Function Glf_1243(args)
-	On Error Resume Next
-	    Glf_1243 = glf_timers("fully_loaded_message").GetValue("ticks") = 2
-	If Err Then Glf_1243 = False
+	Glf_1243 = "HIT ALL"
 End Function
 Function Glf_1244(args)
-	Glf_1244 = "HIT ALL"
+	Glf_1244 = "  SHOTS "
 End Function
 Function Glf_1245(args)
-	Glf_1245 = "  SHOTS "
+	On Error Resume Next
+	    Glf_1245 = GetPlayerState("shot_combo_command1") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	If Err Then Glf_1245 = False
 End Function
 Function Glf_1246(args)
 	On Error Resume Next
-	    Glf_1246 = GetPlayerState("shot_combo_command1") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1246 = GetPlayerState("shot_combo_command2") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1246 = False
 End Function
 Function Glf_1247(args)
 	On Error Resume Next
-	    Glf_1247 = GetPlayerState("shot_combo_command2") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1247 = GetPlayerState("shot_combo_command3") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1247 = False
 End Function
 Function Glf_1248(args)
 	On Error Resume Next
-	    Glf_1248 = GetPlayerState("shot_combo_command3") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1248 = GetPlayerState("shot_combo_command4") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1248 = False
 End Function
 Function Glf_1249(args)
 	On Error Resume Next
-	    Glf_1249 = GetPlayerState("shot_combo_command4") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1249 = GetPlayerState("shot_combo_command5") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1249 = False
 End Function
 Function Glf_1250(args)
 	On Error Resume Next
-	    Glf_1250 = GetPlayerState("shot_combo_command5") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1250 = GetPlayerState("shot_combo_command6") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1250 = False
 End Function
 Function Glf_1251(args)
 	On Error Resume Next
-	    Glf_1251 = GetPlayerState("shot_combo_command6") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1251 = GetPlayerState("shot_combo_command7") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1251 = False
 End Function
 Function Glf_1252(args)
 	On Error Resume Next
-	    Glf_1252 = GetPlayerState("shot_combo_command7") = 1 and GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1252 = GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1252 = False
 End Function
 Function Glf_1253(args)
 	On Error Resume Next
-	    Glf_1253 = GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1253 = GetPlayerState("wizard_combo_command_phase") = 1 and GetPlayerState("ccwiz_super_jp") = 1
 	If Err Then Glf_1253 = False
 End Function
 Function Glf_1254(args)
 	On Error Resume Next
-	    Glf_1254 = GetPlayerState("wizard_combo_command_phase") = 1 and GetPlayerState("ccwiz_super_jp") = 1
+	    Glf_1254 = GetPlayerState("shot_combo_command1") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1254 = False
 End Function
 Function Glf_1255(args)
 	On Error Resume Next
-	    Glf_1255 = GetPlayerState("shot_combo_command1") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1255 = GetPlayerState("shot_combo_command2") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1255 = False
 End Function
 Function Glf_1256(args)
 	On Error Resume Next
-	    Glf_1256 = GetPlayerState("shot_combo_command2") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1256 = GetPlayerState("shot_combo_command3") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1256 = False
 End Function
 Function Glf_1257(args)
 	On Error Resume Next
-	    Glf_1257 = GetPlayerState("shot_combo_command3") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1257 = GetPlayerState("shot_combo_command4") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1257 = False
 End Function
 Function Glf_1258(args)
 	On Error Resume Next
-	    Glf_1258 = GetPlayerState("shot_combo_command4") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1258 = GetPlayerState("shot_combo_command5") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1258 = False
 End Function
 Function Glf_1259(args)
 	On Error Resume Next
-	    Glf_1259 = GetPlayerState("shot_combo_command5") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1259 = GetPlayerState("shot_combo_command6") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1259 = False
 End Function
 Function Glf_1260(args)
 	On Error Resume Next
-	    Glf_1260 = GetPlayerState("shot_combo_command6") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1260 = GetPlayerState("shot_combo_command7") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1260 = False
 End Function
 Function Glf_1261(args)
 	On Error Resume Next
-	    Glf_1261 = GetPlayerState("shot_combo_command7") = 1 and GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1261 = GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1261 = False
 End Function
 Function Glf_1262(args)
 	On Error Resume Next
-	    Glf_1262 = GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1262 = GetPlayerState("ccwiz_super_jp") = 2
 	If Err Then Glf_1262 = False
 End Function
 Function Glf_1263(args)
 	On Error Resume Next
-	    Glf_1263 = GetPlayerState("ccwiz_super_jp") = 2
+	    Glf_1263 = GetPlayerState("wizard_combo_command_phase") = 1
 	If Err Then Glf_1263 = False
 End Function
 Function Glf_1264(args)
 	On Error Resume Next
-	    Glf_1264 = GetPlayerState("wizard_combo_command_phase") = 1
+	    Glf_1264 = GetPlayerState("wizard_combo_command_phase") = 2
 	If Err Then Glf_1264 = False
 End Function
 Function Glf_1265(args)
 	On Error Resume Next
-	    Glf_1265 = GetPlayerState("wizard_combo_command_phase") = 2
+	    Glf_1265 = GetPlayerState("shot_combo_command1") = 0
 	If Err Then Glf_1265 = False
 End Function
 Function Glf_1266(args)
 	On Error Resume Next
-	    Glf_1266 = GetPlayerState("shot_combo_command1") = 0
+	    Glf_1266 = GetPlayerState("shot_combo_command2") = 0
 	If Err Then Glf_1266 = False
 End Function
 Function Glf_1267(args)
 	On Error Resume Next
-	    Glf_1267 = GetPlayerState("shot_combo_command2") = 0
+	    Glf_1267 = GetPlayerState("shot_combo_command3") = 0
 	If Err Then Glf_1267 = False
 End Function
 Function Glf_1268(args)
 	On Error Resume Next
-	    Glf_1268 = GetPlayerState("shot_combo_command3") = 0
+	    Glf_1268 = GetPlayerState("shot_combo_command4") = 0
 	If Err Then Glf_1268 = False
 End Function
 Function Glf_1269(args)
 	On Error Resume Next
-	    Glf_1269 = GetPlayerState("shot_combo_command4") = 0
+	    Glf_1269 = GetPlayerState("shot_combo_command5") = 0
 	If Err Then Glf_1269 = False
 End Function
 Function Glf_1270(args)
 	On Error Resume Next
-	    Glf_1270 = GetPlayerState("shot_combo_command5") = 0
+	    Glf_1270 = GetPlayerState("shot_combo_command6") = 0
 	If Err Then Glf_1270 = False
 End Function
 Function Glf_1271(args)
 	On Error Resume Next
-	    Glf_1271 = GetPlayerState("shot_combo_command6") = 0
+	    Glf_1271 = GetPlayerState("shot_combo_command7") = 0
 	If Err Then Glf_1271 = False
 End Function
 Function Glf_1272(args)
 	On Error Resume Next
-	    Glf_1272 = GetPlayerState("shot_combo_command7") = 0
+	    Glf_1272 = GetPlayerState("shot_combo_command1")=1
 	If Err Then Glf_1272 = False
 End Function
 Function Glf_1273(args)
 	On Error Resume Next
-	    Glf_1273 = GetPlayerState("shot_combo_command1")=1
+	    Glf_1273 = GetPlayerState("shot_combo_command2")=1
 	If Err Then Glf_1273 = False
 End Function
 Function Glf_1274(args)
 	On Error Resume Next
-	    Glf_1274 = GetPlayerState("shot_combo_command2")=1
+	    Glf_1274 = GetPlayerState("shot_combo_command3")=1
 	If Err Then Glf_1274 = False
 End Function
 Function Glf_1275(args)
 	On Error Resume Next
-	    Glf_1275 = GetPlayerState("shot_combo_command3")=1
+	    Glf_1275 = GetPlayerState("shot_combo_command4")=1
 	If Err Then Glf_1275 = False
 End Function
 Function Glf_1276(args)
 	On Error Resume Next
-	    Glf_1276 = GetPlayerState("shot_combo_command4")=1
+	    Glf_1276 = GetPlayerState("shot_combo_command5")=1
 	If Err Then Glf_1276 = False
 End Function
 Function Glf_1277(args)
 	On Error Resume Next
-	    Glf_1277 = GetPlayerState("shot_combo_command5")=1
+	    Glf_1277 = GetPlayerState("shot_combo_command6")=1
 	If Err Then Glf_1277 = False
 End Function
 Function Glf_1278(args)
 	On Error Resume Next
-	    Glf_1278 = GetPlayerState("shot_combo_command6")=1
+	    Glf_1278 = GetPlayerState("shot_combo_command7")=1
 	If Err Then Glf_1278 = False
 End Function
 Function Glf_1279(args)
-	On Error Resume Next
-	    Glf_1279 = GetPlayerState("shot_combo_command7")=1
-	If Err Then Glf_1279 = False
+	Glf_1279 = " COMBO "
 End Function
 Function Glf_1280(args)
-	Glf_1280 = " COMBO "
+	Glf_1280 = "COMMAND"
 End Function
 Function Glf_1281(args)
-	Glf_1281 = "COMMAND"
+	On Error Resume Next
+	    Glf_1281 = glf_timers("combo_command_message").GetValue("ticks") = 1
+	If Err Then Glf_1281 = False
 End Function
 Function Glf_1282(args)
 	On Error Resume Next
-	    Glf_1282 = glf_timers("combo_command_message").GetValue("ticks") = 1
+	    Glf_1282 = glf_timers("combo_command_message").GetValue("ticks") = 2
 	If Err Then Glf_1282 = False
 End Function
 Function Glf_1283(args)
 	On Error Resume Next
-	    Glf_1283 = glf_timers("combo_command_message").GetValue("ticks") = 2
+	    Glf_1283 = GetPlayerState("wizard_final_hit_count") = 20
 	If Err Then Glf_1283 = False
 End Function
 Function Glf_1284(args)
 	On Error Resume Next
-	    Glf_1284 = GetPlayerState("wizard_final_hit_count") = 20
+	    Glf_1284 = GetPlayerState("wizard_final_hit_count") < 20
 	If Err Then Glf_1284 = False
 End Function
 Function Glf_1285(args)
 	On Error Resume Next
-	    Glf_1285 = GetPlayerState("wizard_final_hit_count") < 20
+	    Glf_1285 = GetPlayerState("fwwiz_add_ball_ready") = 1
 	If Err Then Glf_1285 = False
 End Function
 Function Glf_1286(args)
@@ -5595,7 +5595,7 @@ Function Glf_1286(args)
 End Function
 Function Glf_1287(args)
 	On Error Resume Next
-	    Glf_1287 = GetPlayerState("fwwiz_add_ball_ready") = 1
+	    Glf_1287 = GetPlayerState("fwwiz_add_ball_ready") = 2
 	If Err Then Glf_1287 = False
 End Function
 Function Glf_1288(args)
@@ -5605,212 +5605,212 @@ Function Glf_1288(args)
 End Function
 Function Glf_1289(args)
 	On Error Resume Next
-	    Glf_1289 = GetPlayerState("fwwiz_add_ball_ready") = 2
+	    Glf_1289 = GetPlayerState("wizard_final_hit_count") > 0
 	If Err Then Glf_1289 = False
 End Function
 Function Glf_1290(args)
 	On Error Resume Next
-	    Glf_1290 = GetPlayerState("wizard_final_hit_count") > 0
+	    Glf_1290 = GetPlayerState("wizard_final_hit_count") = 3
 	If Err Then Glf_1290 = False
 End Function
 Function Glf_1291(args)
 	On Error Resume Next
-	    Glf_1291 = GetPlayerState("wizard_final_hit_count") = 3
+	    Glf_1291 = GetPlayerState("wizard_final_hit_count") <= 0
 	If Err Then Glf_1291 = False
 End Function
 Function Glf_1292(args)
 	On Error Resume Next
-	    Glf_1292 = GetPlayerState("wizard_final_hit_count") <= 0
+	    Glf_1292 = GetPlayerState("wizard_final_hit_count") = 19
 	If Err Then Glf_1292 = False
 End Function
 Function Glf_1293(args)
 	On Error Resume Next
-	    Glf_1293 = GetPlayerState("wizard_final_hit_count") = 19
+	    Glf_1293 = GetPlayerState("wizard_final_hit_count") = 18
 	If Err Then Glf_1293 = False
 End Function
 Function Glf_1294(args)
 	On Error Resume Next
-	    Glf_1294 = GetPlayerState("wizard_final_hit_count") = 18
+	    Glf_1294 = GetPlayerState("wizard_final_hit_count") = 17
 	If Err Then Glf_1294 = False
 End Function
 Function Glf_1295(args)
 	On Error Resume Next
-	    Glf_1295 = GetPlayerState("wizard_final_hit_count") = 17
+	    Glf_1295 = GetPlayerState("wizard_final_hit_count") = 16
 	If Err Then Glf_1295 = False
 End Function
 Function Glf_1296(args)
 	On Error Resume Next
-	    Glf_1296 = GetPlayerState("wizard_final_hit_count") = 16
+	    Glf_1296 = GetPlayerState("wizard_final_hit_count") = 15
 	If Err Then Glf_1296 = False
 End Function
 Function Glf_1297(args)
 	On Error Resume Next
-	    Glf_1297 = GetPlayerState("wizard_final_hit_count") = 15
+	    Glf_1297 = GetPlayerState("wizard_final_hit_count") = 14
 	If Err Then Glf_1297 = False
 End Function
 Function Glf_1298(args)
 	On Error Resume Next
-	    Glf_1298 = GetPlayerState("wizard_final_hit_count") = 14
+	    Glf_1298 = GetPlayerState("wizard_final_hit_count") = 13
 	If Err Then Glf_1298 = False
 End Function
 Function Glf_1299(args)
 	On Error Resume Next
-	    Glf_1299 = GetPlayerState("wizard_final_hit_count") = 13
+	    Glf_1299 = GetPlayerState("wizard_final_hit_count") = 12
 	If Err Then Glf_1299 = False
 End Function
 Function Glf_1300(args)
 	On Error Resume Next
-	    Glf_1300 = GetPlayerState("wizard_final_hit_count") = 12
+	    Glf_1300 = GetPlayerState("wizard_final_hit_count") = 11
 	If Err Then Glf_1300 = False
 End Function
 Function Glf_1301(args)
 	On Error Resume Next
-	    Glf_1301 = GetPlayerState("wizard_final_hit_count") = 11
+	    Glf_1301 = GetPlayerState("wizard_final_hit_count") = 10
 	If Err Then Glf_1301 = False
 End Function
 Function Glf_1302(args)
 	On Error Resume Next
-	    Glf_1302 = GetPlayerState("wizard_final_hit_count") = 10
+	    Glf_1302 = GetPlayerState("wizard_final_hit_count") = 9
 	If Err Then Glf_1302 = False
 End Function
 Function Glf_1303(args)
 	On Error Resume Next
-	    Glf_1303 = GetPlayerState("wizard_final_hit_count") = 9
+	    Glf_1303 = GetPlayerState("wizard_final_hit_count") = 8
 	If Err Then Glf_1303 = False
 End Function
 Function Glf_1304(args)
 	On Error Resume Next
-	    Glf_1304 = GetPlayerState("wizard_final_hit_count") = 8
+	    Glf_1304 = GetPlayerState("wizard_final_hit_count") = 7
 	If Err Then Glf_1304 = False
 End Function
 Function Glf_1305(args)
 	On Error Resume Next
-	    Glf_1305 = GetPlayerState("wizard_final_hit_count") = 7
+	    Glf_1305 = GetPlayerState("wizard_final_hit_count") = 6
 	If Err Then Glf_1305 = False
 End Function
 Function Glf_1306(args)
 	On Error Resume Next
-	    Glf_1306 = GetPlayerState("wizard_final_hit_count") = 6
+	    Glf_1306 = GetPlayerState("wizard_final_hit_count") = 5
 	If Err Then Glf_1306 = False
 End Function
 Function Glf_1307(args)
 	On Error Resume Next
-	    Glf_1307 = GetPlayerState("wizard_final_hit_count") = 5
+	    Glf_1307 = GetPlayerState("wizard_final_hit_count") = 4
 	If Err Then Glf_1307 = False
 End Function
 Function Glf_1308(args)
 	On Error Resume Next
-	    Glf_1308 = GetPlayerState("wizard_final_hit_count") = 4
+	    Glf_1308 = GetPlayerState("wizard_final_hit_count") = 3
 	If Err Then Glf_1308 = False
 End Function
 Function Glf_1309(args)
 	On Error Resume Next
-	    Glf_1309 = GetPlayerState("wizard_final_hit_count") = 3
+	    Glf_1309 = GetPlayerState("wizard_final_hit_count") = 2
 	If Err Then Glf_1309 = False
 End Function
 Function Glf_1310(args)
 	On Error Resume Next
-	    Glf_1310 = GetPlayerState("wizard_final_hit_count") = 2
+	    Glf_1310 = GetPlayerState("wizard_final_hit_count") = 1
 	If Err Then Glf_1310 = False
 End Function
 Function Glf_1311(args)
 	On Error Resume Next
-	    Glf_1311 = GetPlayerState("wizard_final_hit_count") = 1
+	    Glf_1311 = GetPlayerState("wizard_final_hit_count") = 19
 	If Err Then Glf_1311 = False
 End Function
 Function Glf_1312(args)
 	On Error Resume Next
-	    Glf_1312 = GetPlayerState("wizard_final_hit_count") = 19
+	    Glf_1312 = GetPlayerState("wizard_final_hit_count") = 18
 	If Err Then Glf_1312 = False
 End Function
 Function Glf_1313(args)
 	On Error Resume Next
-	    Glf_1313 = GetPlayerState("wizard_final_hit_count") = 18
+	    Glf_1313 = GetPlayerState("wizard_final_hit_count") = 17
 	If Err Then Glf_1313 = False
 End Function
 Function Glf_1314(args)
 	On Error Resume Next
-	    Glf_1314 = GetPlayerState("wizard_final_hit_count") = 17
+	    Glf_1314 = GetPlayerState("wizard_final_hit_count") = 16
 	If Err Then Glf_1314 = False
 End Function
 Function Glf_1315(args)
 	On Error Resume Next
-	    Glf_1315 = GetPlayerState("wizard_final_hit_count") = 16
+	    Glf_1315 = GetPlayerState("wizard_final_hit_count") = 15
 	If Err Then Glf_1315 = False
 End Function
 Function Glf_1316(args)
 	On Error Resume Next
-	    Glf_1316 = GetPlayerState("wizard_final_hit_count") = 15
+	    Glf_1316 = GetPlayerState("wizard_final_hit_count") = 14
 	If Err Then Glf_1316 = False
 End Function
 Function Glf_1317(args)
 	On Error Resume Next
-	    Glf_1317 = GetPlayerState("wizard_final_hit_count") = 14
+	    Glf_1317 = GetPlayerState("wizard_final_hit_count") = 13
 	If Err Then Glf_1317 = False
 End Function
 Function Glf_1318(args)
 	On Error Resume Next
-	    Glf_1318 = GetPlayerState("wizard_final_hit_count") = 13
+	    Glf_1318 = GetPlayerState("wizard_final_hit_count") = 12
 	If Err Then Glf_1318 = False
 End Function
 Function Glf_1319(args)
 	On Error Resume Next
-	    Glf_1319 = GetPlayerState("wizard_final_hit_count") = 12
+	    Glf_1319 = GetPlayerState("wizard_final_hit_count") = 11
 	If Err Then Glf_1319 = False
 End Function
 Function Glf_1320(args)
 	On Error Resume Next
-	    Glf_1320 = GetPlayerState("wizard_final_hit_count") = 11
+	    Glf_1320 = GetPlayerState("wizard_final_hit_count") = 10
 	If Err Then Glf_1320 = False
 End Function
 Function Glf_1321(args)
 	On Error Resume Next
-	    Glf_1321 = GetPlayerState("wizard_final_hit_count") = 10
+	    Glf_1321 = GetPlayerState("wizard_final_hit_count") = 9
 	If Err Then Glf_1321 = False
 End Function
 Function Glf_1322(args)
 	On Error Resume Next
-	    Glf_1322 = GetPlayerState("wizard_final_hit_count") = 9
+	    Glf_1322 = GetPlayerState("wizard_final_hit_count") = 8
 	If Err Then Glf_1322 = False
 End Function
 Function Glf_1323(args)
 	On Error Resume Next
-	    Glf_1323 = GetPlayerState("wizard_final_hit_count") = 8
+	    Glf_1323 = GetPlayerState("wizard_final_hit_count") = 7
 	If Err Then Glf_1323 = False
 End Function
 Function Glf_1324(args)
 	On Error Resume Next
-	    Glf_1324 = GetPlayerState("wizard_final_hit_count") = 7
+	    Glf_1324 = GetPlayerState("wizard_final_hit_count") = 6
 	If Err Then Glf_1324 = False
 End Function
 Function Glf_1325(args)
 	On Error Resume Next
-	    Glf_1325 = GetPlayerState("wizard_final_hit_count") = 6
+	    Glf_1325 = GetPlayerState("wizard_final_hit_count") = 5
 	If Err Then Glf_1325 = False
 End Function
 Function Glf_1326(args)
 	On Error Resume Next
-	    Glf_1326 = GetPlayerState("wizard_final_hit_count") = 5
+	    Glf_1326 = GetPlayerState("wizard_final_hit_count") = 4
 	If Err Then Glf_1326 = False
 End Function
 Function Glf_1327(args)
 	On Error Resume Next
-	    Glf_1327 = GetPlayerState("wizard_final_hit_count") = 4
+	    Glf_1327 = GetPlayerState("wizard_final_hit_count") = 3
 	If Err Then Glf_1327 = False
 End Function
 Function Glf_1328(args)
 	On Error Resume Next
-	    Glf_1328 = GetPlayerState("wizard_final_hit_count") = 3
+	    Glf_1328 = GetPlayerState("wizard_final_hit_count") = 2
 	If Err Then Glf_1328 = False
 End Function
 Function Glf_1329(args)
 	On Error Resume Next
-	    Glf_1329 = GetPlayerState("wizard_final_hit_count") = 2
+	    Glf_1329 = GetPlayerState("wizard_final_hit_count") = 1
 	If Err Then Glf_1329 = False
 End Function
 Function Glf_1330(args)
 	On Error Resume Next
-	    Glf_1330 = GetPlayerState("wizard_final_hit_count") = 1
+	    Glf_1330 = GetPlayerState("wizard_final_hit_count") > 1
 	If Err Then Glf_1330 = False
 End Function
 Function Glf_1331(args)
@@ -5835,396 +5835,396 @@ Function Glf_1334(args)
 End Function
 Function Glf_1335(args)
 	On Error Resume Next
-	    Glf_1335 = GetPlayerState("wizard_final_hit_count") > 1
+	    Glf_1335 = glf_timers("asteroid_explodes").GetValue("ticks") = 4
 	If Err Then Glf_1335 = False
 End Function
 Function Glf_1336(args)
 	On Error Resume Next
-	    Glf_1336 = glf_timers("asteroid_explodes").GetValue("ticks") = 4
+	    Glf_1336 = glf_timers("final_wave_gi").GetValue("ticks") = 1
 	If Err Then Glf_1336 = False
 End Function
 Function Glf_1337(args)
 	On Error Resume Next
-	    Glf_1337 = glf_timers("final_wave_gi").GetValue("ticks") = 1
+	    Glf_1337 = glf_timers("final_wave_gi").GetValue("ticks") = 2
 	If Err Then Glf_1337 = False
 End Function
 Function Glf_1338(args)
 	On Error Resume Next
-	    Glf_1338 = glf_timers("final_wave_gi").GetValue("ticks") = 2
+	    Glf_1338 = glf_timers("final_wave_gi").GetValue("ticks") = 3
 	If Err Then Glf_1338 = False
 End Function
 Function Glf_1339(args)
 	On Error Resume Next
-	    Glf_1339 = glf_timers("final_wave_gi").GetValue("ticks") = 3
+	    Glf_1339 = glf_timers("final_wave_gi").GetValue("ticks") = 4
 	If Err Then Glf_1339 = False
 End Function
 Function Glf_1340(args)
 	On Error Resume Next
-	    Glf_1340 = glf_timers("final_wave_gi").GetValue("ticks") = 4
+	    Glf_1340 = glf_timers("final_wave_gi").GetValue("ticks") = 5
 	If Err Then Glf_1340 = False
 End Function
 Function Glf_1341(args)
 	On Error Resume Next
-	    Glf_1341 = glf_timers("final_wave_gi").GetValue("ticks") = 5
+	    Glf_1341 = glf_timers("final_wave_gi").GetValue("ticks") = 6
 	If Err Then Glf_1341 = False
 End Function
 Function Glf_1342(args)
 	On Error Resume Next
-	    Glf_1342 = glf_timers("final_wave_gi").GetValue("ticks") = 6
+	    Glf_1342 = glf_timers("final_wave_gi").GetValue("ticks") = 7
 	If Err Then Glf_1342 = False
 End Function
 Function Glf_1343(args)
 	On Error Resume Next
-	    Glf_1343 = glf_timers("final_wave_gi").GetValue("ticks") = 7
+	    Glf_1343 = glf_timers("final_wave_gi").GetValue("ticks") = 8
 	If Err Then Glf_1343 = False
 End Function
 Function Glf_1344(args)
 	On Error Resume Next
-	    Glf_1344 = glf_timers("final_wave_gi").GetValue("ticks") = 8
+	    Glf_1344 = glf_timers("final_wave_gi").GetValue("ticks") = 9
 	If Err Then Glf_1344 = False
 End Function
 Function Glf_1345(args)
 	On Error Resume Next
-	    Glf_1345 = glf_timers("final_wave_gi").GetValue("ticks") = 9
+	    Glf_1345 = glf_timers("final_wave_gi").GetValue("ticks") = 10
 	If Err Then Glf_1345 = False
 End Function
 Function Glf_1346(args)
 	On Error Resume Next
-	    Glf_1346 = glf_timers("final_wave_gi").GetValue("ticks") = 10
+	    Glf_1346 = glf_timers("final_wave_gi").GetValue("ticks") = 11
 	If Err Then Glf_1346 = False
 End Function
 Function Glf_1347(args)
 	On Error Resume Next
-	    Glf_1347 = glf_timers("final_wave_gi").GetValue("ticks") = 11
+	    Glf_1347 = glf_timers("final_wave_gi").GetValue("ticks") = 12
 	If Err Then Glf_1347 = False
 End Function
 Function Glf_1348(args)
 	On Error Resume Next
-	    Glf_1348 = glf_timers("final_wave_gi").GetValue("ticks") = 12
+	    Glf_1348 = glf_timers("final_wave_gi").GetValue("ticks") = 13
 	If Err Then Glf_1348 = False
 End Function
 Function Glf_1349(args)
 	On Error Resume Next
-	    Glf_1349 = glf_timers("final_wave_gi").GetValue("ticks") = 13
+	    Glf_1349 = glf_timers("final_wave_gi").GetValue("ticks") = 14
 	If Err Then Glf_1349 = False
 End Function
 Function Glf_1350(args)
 	On Error Resume Next
-	    Glf_1350 = glf_timers("final_wave_gi").GetValue("ticks") = 14
+	    Glf_1350 = glf_timers("final_wave_gi").GetValue("ticks") = 15
 	If Err Then Glf_1350 = False
 End Function
 Function Glf_1351(args)
 	On Error Resume Next
-	    Glf_1351 = glf_timers("final_wave_gi").GetValue("ticks") = 15
+	    Glf_1351 = glf_timers("final_wave_gi").GetValue("ticks") = 16
 	If Err Then Glf_1351 = False
 End Function
 Function Glf_1352(args)
 	On Error Resume Next
-	    Glf_1352 = glf_timers("final_wave_gi").GetValue("ticks") = 16
+	    Glf_1352 = glf_timers("final_wave_gi").GetValue("ticks") = 17
 	If Err Then Glf_1352 = False
 End Function
 Function Glf_1353(args)
 	On Error Resume Next
-	    Glf_1353 = glf_timers("final_wave_gi").GetValue("ticks") = 17
+	    Glf_1353 = glf_timers("final_wave_gi").GetValue("ticks") = 18
 	If Err Then Glf_1353 = False
 End Function
 Function Glf_1354(args)
 	On Error Resume Next
-	    Glf_1354 = glf_timers("final_wave_gi").GetValue("ticks") = 18
+	    Glf_1354 = glf_timers("final_wave_gi").GetValue("ticks") = 19
 	If Err Then Glf_1354 = False
 End Function
 Function Glf_1355(args)
 	On Error Resume Next
-	    Glf_1355 = glf_timers("final_wave_gi").GetValue("ticks") = 19
+	    Glf_1355 = glf_timers("final_wave_gi").GetValue("ticks") = 20
 	If Err Then Glf_1355 = False
 End Function
 Function Glf_1356(args)
 	On Error Resume Next
-	    Glf_1356 = glf_timers("final_wave_gi").GetValue("ticks") = 20
+	    Glf_1356 = glf_timers("final_wave_gi").GetValue("ticks") = 21
 	If Err Then Glf_1356 = False
 End Function
 Function Glf_1357(args)
 	On Error Resume Next
-	    Glf_1357 = glf_timers("final_wave_gi").GetValue("ticks") = 21
+	    Glf_1357 = glf_timers("final_wave_gi").GetValue("ticks") = 22
 	If Err Then Glf_1357 = False
 End Function
 Function Glf_1358(args)
 	On Error Resume Next
-	    Glf_1358 = glf_timers("final_wave_gi").GetValue("ticks") = 22
+	    Glf_1358 = glf_timers("final_wave_gi").GetValue("ticks") = 23
 	If Err Then Glf_1358 = False
 End Function
 Function Glf_1359(args)
 	On Error Resume Next
-	    Glf_1359 = glf_timers("final_wave_gi").GetValue("ticks") = 23
+	    Glf_1359 = glf_timers("final_wave_gi").GetValue("ticks") = 24
 	If Err Then Glf_1359 = False
 End Function
 Function Glf_1360(args)
 	On Error Resume Next
-	    Glf_1360 = glf_timers("final_wave_gi").GetValue("ticks") = 24
+	    Glf_1360 = glf_timers("final_wave_gi").GetValue("ticks") = 25
 	If Err Then Glf_1360 = False
 End Function
 Function Glf_1361(args)
 	On Error Resume Next
-	    Glf_1361 = glf_timers("final_wave_gi").GetValue("ticks") = 25
+	    Glf_1361 = glf_timers("final_wave_gi").GetValue("ticks") = 26
 	If Err Then Glf_1361 = False
 End Function
 Function Glf_1362(args)
 	On Error Resume Next
-	    Glf_1362 = glf_timers("final_wave_gi").GetValue("ticks") = 26
+	    Glf_1362 = glf_timers("final_wave_gi").GetValue("ticks") = 27
 	If Err Then Glf_1362 = False
 End Function
 Function Glf_1363(args)
 	On Error Resume Next
-	    Glf_1363 = glf_timers("final_wave_gi").GetValue("ticks") = 27
+	    Glf_1363 = glf_timers("final_wave_gi").GetValue("ticks") = 28
 	If Err Then Glf_1363 = False
 End Function
 Function Glf_1364(args)
 	On Error Resume Next
-	    Glf_1364 = glf_timers("final_wave_gi").GetValue("ticks") = 28
+	    Glf_1364 = glf_timers("final_wave_gi").GetValue("ticks") = 29
 	If Err Then Glf_1364 = False
 End Function
 Function Glf_1365(args)
 	On Error Resume Next
-	    Glf_1365 = glf_timers("final_wave_gi").GetValue("ticks") = 29
+	    Glf_1365 = glf_timers("final_wave_gi").GetValue("ticks") = 30
 	If Err Then Glf_1365 = False
 End Function
 Function Glf_1366(args)
 	On Error Resume Next
-	    Glf_1366 = glf_timers("final_wave_gi").GetValue("ticks") = 30
+	    Glf_1366 = glf_timers("final_wave_gi").GetValue("ticks") = 31
 	If Err Then Glf_1366 = False
 End Function
 Function Glf_1367(args)
 	On Error Resume Next
-	    Glf_1367 = glf_timers("final_wave_gi").GetValue("ticks") = 31
+	    Glf_1367 = glf_timers("final_wave_gi").GetValue("ticks") = 32
 	If Err Then Glf_1367 = False
 End Function
 Function Glf_1368(args)
 	On Error Resume Next
-	    Glf_1368 = glf_timers("final_wave_gi").GetValue("ticks") = 32
+	    Glf_1368 = glf_timers("final_wave_gi").GetValue("ticks") = 33
 	If Err Then Glf_1368 = False
 End Function
 Function Glf_1369(args)
 	On Error Resume Next
-	    Glf_1369 = glf_timers("final_wave_gi").GetValue("ticks") = 33
+	    Glf_1369 = glf_timers("final_wave_gi").GetValue("ticks") = 34
 	If Err Then Glf_1369 = False
 End Function
 Function Glf_1370(args)
 	On Error Resume Next
-	    Glf_1370 = glf_timers("final_wave_gi").GetValue("ticks") = 34
+	    Glf_1370 = glf_timers("final_wave_gi").GetValue("ticks") = 35
 	If Err Then Glf_1370 = False
 End Function
 Function Glf_1371(args)
 	On Error Resume Next
-	    Glf_1371 = glf_timers("final_wave_gi").GetValue("ticks") = 35
+	    Glf_1371 = glf_timers("final_wave_gi").GetValue("ticks") = 36
 	If Err Then Glf_1371 = False
 End Function
 Function Glf_1372(args)
 	On Error Resume Next
-	    Glf_1372 = glf_timers("final_wave_gi").GetValue("ticks") = 36
+	    Glf_1372 = glf_timers("final_wave_gi").GetValue("ticks") = 37
 	If Err Then Glf_1372 = False
 End Function
 Function Glf_1373(args)
 	On Error Resume Next
-	    Glf_1373 = glf_timers("final_wave_gi").GetValue("ticks") = 37
+	    Glf_1373 = glf_timers("final_wave_gi").GetValue("ticks") = 38
 	If Err Then Glf_1373 = False
 End Function
 Function Glf_1374(args)
 	On Error Resume Next
-	    Glf_1374 = glf_timers("final_wave_gi").GetValue("ticks") = 38
+	    Glf_1374 = glf_timers("final_wave_gi").GetValue("ticks") = 39
 	If Err Then Glf_1374 = False
 End Function
 Function Glf_1375(args)
 	On Error Resume Next
-	    Glf_1375 = glf_timers("final_wave_gi").GetValue("ticks") = 39
+	    Glf_1375 = glf_timers("final_wave_gi").GetValue("ticks") = 40
 	If Err Then Glf_1375 = False
 End Function
 Function Glf_1376(args)
 	On Error Resume Next
-	    Glf_1376 = glf_timers("final_wave_gi").GetValue("ticks") = 40
+	    Glf_1376 = glf_timers("final_wave_gi").GetValue("ticks") = 41
 	If Err Then Glf_1376 = False
 End Function
 Function Glf_1377(args)
 	On Error Resume Next
-	    Glf_1377 = glf_timers("final_wave_gi").GetValue("ticks") = 41
+	    Glf_1377 = glf_timers("final_wave_gi").GetValue("ticks") = 42
 	If Err Then Glf_1377 = False
 End Function
 Function Glf_1378(args)
 	On Error Resume Next
-	    Glf_1378 = glf_timers("final_wave_gi").GetValue("ticks") = 42
+	    Glf_1378 = glf_timers("final_wave_gi").GetValue("ticks") = 43
 	If Err Then Glf_1378 = False
 End Function
 Function Glf_1379(args)
 	On Error Resume Next
-	    Glf_1379 = glf_timers("final_wave_gi").GetValue("ticks") = 43
+	    Glf_1379 = glf_timers("final_wave_gi").GetValue("ticks") = 44
 	If Err Then Glf_1379 = False
 End Function
 Function Glf_1380(args)
 	On Error Resume Next
-	    Glf_1380 = glf_timers("final_wave_gi").GetValue("ticks") = 44
+	    Glf_1380 = glf_timers("final_wave_gi").GetValue("ticks") = 45
 	If Err Then Glf_1380 = False
 End Function
 Function Glf_1381(args)
 	On Error Resume Next
-	    Glf_1381 = glf_timers("final_wave_gi").GetValue("ticks") = 45
+	    Glf_1381 = glf_timers("final_wave_gi").GetValue("ticks") = 46
 	If Err Then Glf_1381 = False
 End Function
 Function Glf_1382(args)
 	On Error Resume Next
-	    Glf_1382 = glf_timers("final_wave_gi").GetValue("ticks") = 46
+	    Glf_1382 = glf_timers("final_wave_gi").GetValue("ticks") = 47
 	If Err Then Glf_1382 = False
 End Function
 Function Glf_1383(args)
 	On Error Resume Next
-	    Glf_1383 = glf_timers("final_wave_gi").GetValue("ticks") = 47
+	    Glf_1383 = glf_timers("final_wave_gi").GetValue("ticks") = 48
 	If Err Then Glf_1383 = False
 End Function
 Function Glf_1384(args)
 	On Error Resume Next
-	    Glf_1384 = glf_timers("final_wave_gi").GetValue("ticks") = 48
+	    Glf_1384 = glf_timers("final_wave_gi").GetValue("ticks") = 49
 	If Err Then Glf_1384 = False
 End Function
 Function Glf_1385(args)
 	On Error Resume Next
-	    Glf_1385 = glf_timers("final_wave_gi").GetValue("ticks") = 49
+	    Glf_1385 = glf_timers("final_wave_gi").GetValue("ticks") = 50
 	If Err Then Glf_1385 = False
 End Function
 Function Glf_1386(args)
 	On Error Resume Next
-	    Glf_1386 = glf_timers("final_wave_gi").GetValue("ticks") = 50
+	    Glf_1386 = glf_timers("final_wave_gi").GetValue("ticks") = 51
 	If Err Then Glf_1386 = False
 End Function
 Function Glf_1387(args)
 	On Error Resume Next
-	    Glf_1387 = glf_timers("final_wave_gi").GetValue("ticks") = 51
+	    Glf_1387 = glf_timers("final_wave_gi").GetValue("ticks") = 52
 	If Err Then Glf_1387 = False
 End Function
 Function Glf_1388(args)
 	On Error Resume Next
-	    Glf_1388 = glf_timers("final_wave_gi").GetValue("ticks") = 52
+	    Glf_1388 = glf_timers("final_wave_flicker").GetValue("ticks") = 1
 	If Err Then Glf_1388 = False
 End Function
 Function Glf_1389(args)
 	On Error Resume Next
-	    Glf_1389 = glf_timers("final_wave_flicker").GetValue("ticks") = 1
+	    Glf_1389 = glf_timers("final_wave_flicker").GetValue("ticks") = 7
 	If Err Then Glf_1389 = False
 End Function
 Function Glf_1390(args)
 	On Error Resume Next
-	    Glf_1390 = glf_timers("final_wave_flicker").GetValue("ticks") = 7
+	    Glf_1390 = glf_timers("final_wave_flicker").GetValue("ticks") = 10
 	If Err Then Glf_1390 = False
 End Function
 Function Glf_1391(args)
 	On Error Resume Next
-	    Glf_1391 = glf_timers("final_wave_flicker").GetValue("ticks") = 10
+	    Glf_1391 = glf_timers("final_wave_flicker").GetValue("ticks") = 15
 	If Err Then Glf_1391 = False
 End Function
 Function Glf_1392(args)
 	On Error Resume Next
-	    Glf_1392 = glf_timers("final_wave_flicker").GetValue("ticks") = 15
+	    Glf_1392 = glf_timers("final_wave_flicker").GetValue("ticks") = 22
 	If Err Then Glf_1392 = False
 End Function
 Function Glf_1393(args)
 	On Error Resume Next
-	    Glf_1393 = glf_timers("final_wave_flicker").GetValue("ticks") = 22
+	    Glf_1393 = glf_timers("final_wave_flicker").GetValue("ticks") = 24
 	If Err Then Glf_1393 = False
 End Function
 Function Glf_1394(args)
 	On Error Resume Next
-	    Glf_1394 = glf_timers("final_wave_flicker").GetValue("ticks") = 24
+	    Glf_1394 = glf_timers("final_wave_flicker").GetValue("ticks") = 29
 	If Err Then Glf_1394 = False
 End Function
 Function Glf_1395(args)
 	On Error Resume Next
-	    Glf_1395 = glf_timers("final_wave_flicker").GetValue("ticks") = 29
+	    Glf_1395 = GetPlayerState("shot_fwwiz_meteor1") = 0
 	If Err Then Glf_1395 = False
 End Function
 Function Glf_1396(args)
 	On Error Resume Next
-	    Glf_1396 = GetPlayerState("shot_fwwiz_meteor1") = 0
+	    Glf_1396 = GetPlayerState("shot_fwwiz_meteor2") = 0
 	If Err Then Glf_1396 = False
 End Function
 Function Glf_1397(args)
 	On Error Resume Next
-	    Glf_1397 = GetPlayerState("shot_fwwiz_meteor2") = 0
+	    Glf_1397 = GetPlayerState("shot_fwwiz_meteor3") = 0
 	If Err Then Glf_1397 = False
 End Function
 Function Glf_1398(args)
 	On Error Resume Next
-	    Glf_1398 = GetPlayerState("shot_fwwiz_meteor3") = 0
+	    Glf_1398 = GetPlayerState("shot_fwwiz_meteor4") = 0
 	If Err Then Glf_1398 = False
 End Function
 Function Glf_1399(args)
 	On Error Resume Next
-	    Glf_1399 = GetPlayerState("shot_fwwiz_meteor4") = 0
+	    Glf_1399 = glf_modes("final_wave_wizard").GetValue("active") and GetPlayerState("wizard_final_hit_count") = 0
 	If Err Then Glf_1399 = False
 End Function
 Function Glf_1400(args)
-	On Error Resume Next
-	    Glf_1400 = glf_modes("final_wave_wizard").GetValue("active") and GetPlayerState("wizard_final_hit_count") = 0
-	If Err Then Glf_1400 = False
+	Glf_1400 = 60000
 End Function
 Function Glf_1401(args)
-	Glf_1401 = 60000
+	On Error Resume Next
+	    Glf_1401 = glf_timers("final_wave_message").GetValue("ticks") = 2
+	If Err Then Glf_1401 = False
 End Function
 Function Glf_1402(args)
-	On Error Resume Next
-	    Glf_1402 = glf_timers("final_wave_message").GetValue("ticks") = 2
-	If Err Then Glf_1402 = False
+	Glf_1402 = -10
 End Function
 Function Glf_1403(args)
-	Glf_1403 = -10
+	On Error Resume Next
+	    Glf_1403 = GetPlayerState("wizard_final_hit_count") < 0
+	If Err Then Glf_1403 = False
 End Function
 Function Glf_1404(args)
-	On Error Resume Next
-	    Glf_1404 = GetPlayerState("wizard_final_hit_count") < 0
-	If Err Then Glf_1404 = False
+	Glf_1404 = 50
 End Function
 Function Glf_1405(args)
-	Glf_1405 = 50
+	Glf_1405 = 53
 End Function
 Function Glf_1406(args)
-	Glf_1406 = 53
+	Glf_1406 = 30
 End Function
 Function Glf_1407(args)
-	Glf_1407 = 30
+	Glf_1407 = "  THE  "
 End Function
 Function Glf_1408(args)
-	Glf_1408 = "  THE  "
+	Glf_1408 = " FINAL "
 End Function
 Function Glf_1409(args)
-	Glf_1409 = " FINAL "
+	Glf_1409 = "  WAVE  "
 End Function
 Function Glf_1410(args)
-	Glf_1410 = "  WAVE  "
+	Glf_1410 = "IS HERE "
 End Function
 Function Glf_1411(args)
-	Glf_1411 = "IS HERE "
+	On Error Resume Next
+	    Glf_1411 = glf_timers("final_wave_message").GetValue("ticks") = 1
+	If Err Then Glf_1411 = False
 End Function
 Function Glf_1412(args)
-	On Error Resume Next
-	    Glf_1412 = glf_timers("final_wave_message").GetValue("ticks") = 1
-	If Err Then Glf_1412 = False
+	Glf_1412 = " RAMPS "
 End Function
 Function Glf_1413(args)
-	Glf_1413 = " RAMPS "
+	Glf_1413 = " ADD A  "
 End Function
 Function Glf_1414(args)
-	Glf_1414 = " ADD A  "
+	Glf_1414 = "  BALL  "
 End Function
 Function Glf_1415(args)
-	Glf_1415 = "  BALL  "
+	Glf_1415 = "--------"
 End Function
 Function Glf_1416(args)
-	Glf_1416 = "--------"
+	Glf_1416 = "DESTROY"
 End Function
 Function Glf_1417(args)
-	Glf_1417 = "DESTROY"
+	Glf_1417 = "HITSLEFT"
 End Function
 Function Glf_1418(args)
-	Glf_1418 = "HITSLEFT"
+	Glf_1418 = Glf_FormatValue(GetPlayerState("wizard_final_hit_count"),"0>2")
 End Function
 Function Glf_1419(args)
-	Glf_1419 = Glf_FormatValue(GetPlayerState("wizard_final_hit_count"),"0>2")
+	On Error Resume Next
+	    Glf_1419 = GetPlayerState("victory_lap_running") = 0
+	If Err Then Glf_1419 = False
 End Function
 Function Glf_1420(args)
 	On Error Resume Next
@@ -6233,90 +6233,85 @@ Function Glf_1420(args)
 End Function
 Function Glf_1421(args)
 	On Error Resume Next
-	    Glf_1421 = GetPlayerState("victory_lap_running") = 0
+	    Glf_1421 = glf_timers("victory_countdown").GetValue("ticks") = 21
 	If Err Then Glf_1421 = False
 End Function
 Function Glf_1422(args)
-	On Error Resume Next
-	    Glf_1422 = glf_timers("victory_countdown").GetValue("ticks") = 21
-	If Err Then Glf_1422 = False
+	Glf_1422 = 13000
 End Function
 Function Glf_1423(args)
-	Glf_1423 = 13000
+	Glf_1423 = 45000
 End Function
 Function Glf_1424(args)
-	Glf_1424 = 45000
+	Glf_1424 = 66
 End Function
 Function Glf_1425(args)
-	Glf_1425 = 66
+	Glf_1425 = " YOU "
 End Function
 Function Glf_1426(args)
-	Glf_1426 = " YOU "
+	Glf_1426 = " SAVED "
 End Function
 Function Glf_1427(args)
-	Glf_1427 = " SAVED "
+	Glf_1427 = "US  "
 End Function
 Function Glf_1428(args)
-	Glf_1428 = "US  "
+	Glf_1428 = "ALL "
 End Function
 Function Glf_1429(args)
-	Glf_1429 = "ALL "
+	Glf_1429 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks")-21,"0>2")
 End Function
 Function Glf_1430(args)
-	Glf_1430 = Glf_FormatValue(glf_timers("victory_countdown").GetValue("ticks")-21,"0>2")
+	Glf_1430 = 1000
 End Function
 Function Glf_1431(args)
-	Glf_1431 = 1000
+	Glf_1431 = 150
 End Function
 Function Glf_1432(args)
-	Glf_1432 = 150
+	On Error Resume Next
+		Dim kwargs : Set kwargs = GlfKwargs()
+	kwargs.Add "action",  "left"
+	Set Glf_1432 = kwargs
+	If Err Then Glf_1432 = Null
 End Function
 Function Glf_1433(args)
 	On Error Resume Next
 		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "left"
+	kwargs.Add "action",  "right"
 	Set Glf_1433 = kwargs
 	If Err Then Glf_1433 = Null
 End Function
 Function Glf_1434(args)
 	On Error Resume Next
 		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "right"
+	kwargs.Add "action",  "select"
 	Set Glf_1434 = kwargs
 	If Err Then Glf_1434 = Null
 End Function
 Function Glf_1435(args)
-	On Error Resume Next
-		Dim kwargs : Set kwargs = GlfKwargs()
-	kwargs.Add "action",  "select"
-	Set Glf_1435 = kwargs
-	If Err Then Glf_1435 = Null
+	Glf_1435 = 4000
 End Function
 Function Glf_1436(args)
-	Glf_1436 = 4000
+	Glf_1436 = 65000
 End Function
 Function Glf_1437(args)
-	Glf_1437 = 65000
+	On Error Resume Next
+	    Glf_1437 = glf_ball_devices("moon_lock").GetValue("balls") > 0
+	If Err Then Glf_1437 = False
 End Function
 Function Glf_1438(args)
-	On Error Resume Next
-	    Glf_1438 = glf_ball_devices("moon_lock").GetValue("balls") > 0
-	If Err Then Glf_1438 = False
+	Glf_1438 = 250
 End Function
 Function Glf_1439(args)
-	Glf_1439 = 250
+	Glf_1439 = "  "
 End Function
 Function Glf_1440(args)
-	Glf_1440 = "  "
+	Glf_1440 = "        "
 End Function
 Function Glf_1441(args)
-	Glf_1441 = "        "
+	Glf_1441 = "                                "
 End Function
 Function Glf_1442(args)
-	Glf_1442 = "                                "
-End Function
-Function Glf_1443(args)
-	Glf_1443 = "                "
+	Glf_1442 = "                "
 End Function
 Dim glf_gi17_lmarr : glf_gi17_lmarr = Array(lm_gi_gi17_bs2,lm_gi_gi17_bmpbot,lm_gi_gi17_parts,lm_gi_gi17_playfield)
 glf_lightMaps.Add "gi17", glf_gi17_lmarr
@@ -8610,554 +8605,553 @@ glf_funcRefMap.Add """RELAXED""", "Glf_890"
 glf_funcRefMap.Add """COMBOS""", "Glf_891"
 glf_funcRefMap.Add """ EB IS """, "Glf_892"
 glf_funcRefMap.Add """ LIT """, "Glf_893"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started.1{current_player.shot_final_wave_wizard>0}", "Glf_894"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}", "Glf_895"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}", "Glf_896"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state!=""in_progress"" and game.balls_in_play == 1}", "Glf_897"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", "Glf_898"
-glf_funcRefMap.Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", "Glf_899"
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_900"
-glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", "Glf_901"
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_902"
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}", "Glf_903"
-glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", "Glf_904"
-glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", "Glf_905"
-glf_funcRefMap.Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", "Glf_906"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_907"
-glf_funcRefMap.Add "device.ball_devices.moon_lock.balls", "Glf_908"
-glf_funcRefMap.Add """MOON""", "Glf_909"
-glf_funcRefMap.Add """LAUNCH""", "Glf_910"
-glf_funcRefMap.Add """LOCK""", "Glf_911"
-glf_funcRefMap.Add "mode_skillshots_started.1{current_player.shot_final_wave_wizard>0}", "Glf_912"
-glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", "Glf_913"
-glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_ss==1}", "Glf_914"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1}", "Glf_915"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", "Glf_916"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_917"
-glf_funcRefMap.Add "sss_achieved.1{current_player.num_skillshots==3}", "Glf_918"
-glf_funcRefMap.Add "voc_ss_stopped{current_player.num_skillshots==3}", "Glf_919"
-glf_funcRefMap.Add "voc_sss_stopped{current_player.num_skillshots==3}", "Glf_920"
-glf_funcRefMap.Add "mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}", "Glf_921"
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_922"
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", "Glf_923"
-glf_funcRefMap.Add "10000", "Glf_924"
-glf_funcRefMap.Add "current_player.moon_launch_locked_balls", "Glf_925"
-glf_funcRefMap.Add "start_moon_multiball.1{current_player.wizard_mode_running == 0}", "Glf_926"
-glf_funcRefMap.Add "timer_double_scoring_tick{device.timers.double_scoring.ticks == 55}", "Glf_927"
-glf_funcRefMap.Add """ DOUBLE """, "Glf_928"
-glf_funcRefMap.Add "timer_super_spinner_tick{device.timers.super_spinner.ticks == 55}", "Glf_929"
-glf_funcRefMap.Add "69", "Glf_930"
-glf_funcRefMap.Add "timer_super_pops_tick{device.timers.super_pops.ticks == 55}", "Glf_931"
-glf_funcRefMap.Add "mode_health_started.1{current_player.shot_final_wave_wizard>0}", "Glf_932"
-glf_funcRefMap.Add "mode_health_started{current_player.ball_just_started==1}", "Glf_933"
-glf_funcRefMap.Add "mode_health_started{current_player.training_heal_achieved==1}", "Glf_934"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_health_diverter==1}", "Glf_935"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_health_diverter==1}", "Glf_936"
-glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value<5}", "Glf_937"
-glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value>=5}", "Glf_938"
-glf_funcRefMap.Add "check_add_health{current_player.health_value>8}", "Glf_939"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==8}", "Glf_940"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==7}", "Glf_941"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==6}", "Glf_942"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==5}", "Glf_943"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==4}", "Glf_944"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==3}", "Glf_945"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==2}", "Glf_946"
-glf_funcRefMap.Add "check_add_health{current_player.health_value==1}", "Glf_947"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==9}", "Glf_948"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==8}", "Glf_949"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==7}", "Glf_950"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==6}", "Glf_951"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==5}", "Glf_952"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==4}", "Glf_953"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==3}", "Glf_954"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==2}", "Glf_955"
-glf_funcRefMap.Add "check_remove_health{current_player.health_value==1}", "Glf_956"
-glf_funcRefMap.Add "earth_hit{current_player.health_value>0}", "Glf_957"
-glf_funcRefMap.Add "mode_proton_cannon_started.1{current_player.shot_final_wave_wizard>0}", "Glf_958"
-glf_funcRefMap.Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", "Glf_959"
-glf_funcRefMap.Add "mode_proton_cannon_started{current_player.training_proton_cannon_achieved==1}", "Glf_960"
-glf_funcRefMap.Add "reset_proton_charges{current_player.training_proton_cannon_achieved==0}", "Glf_961"
-glf_funcRefMap.Add "reset_proton_charges{current_player.training_proton_cannon_achieved==1}", "Glf_962"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", "Glf_963"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 and current_player.shot_proton_charge2 == 1}", "Glf_964"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 and current_player.shot_proton_charge3 == 1}", "Glf_965"
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", "Glf_966"
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_967"
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_968"
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_969"
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_970"
-glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_971"
-glf_funcRefMap.Add """PROTON""", "Glf_972"
-glf_funcRefMap.Add "mode_cluster_bombs_started.1{current_player.shot_final_wave_wizard>0}", "Glf_973"
-glf_funcRefMap.Add "mode_cluster_bombs_started{current_player.shot_cluster_charge1==0}", "Glf_974"
-glf_funcRefMap.Add "mode_cluster_bombs_started{current_player.training_cluster_bomb_achieved==1}", "Glf_975"
-glf_funcRefMap.Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}", "Glf_976"
-glf_funcRefMap.Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==1}", "Glf_977"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", "Glf_978"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 and current_player.shot_cluster_charge2 == 1}", "Glf_979"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 and current_player.shot_cluster_charge3 == 1}", "Glf_980"
-glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", "Glf_981"
-glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_982"
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_983"
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", "Glf_984"
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}", "Glf_985"
-glf_funcRefMap.Add "mode_training_qualify_started.1{current_player.shot_final_wave_wizard>0}", "Glf_986"
-glf_funcRefMap.Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_987"
-glf_funcRefMap.Add "mode_training_qualify_started{current_player.training_just_finished == 1}", "Glf_988"
-glf_funcRefMap.Add "restart_qualify_training{current_player.training_total_achieved < 6}", "Glf_989"
-glf_funcRefMap.Add "restart_qualify_training{current_player.training_total_achieved == 3}", "Glf_990"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_training_shot1 == 1}", "Glf_991"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_shot2 == 1}", "Glf_992"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_training_shot3 == 1}", "Glf_993"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_shot4 == 1}", "Glf_994"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_training_shot5 == 1}", "Glf_995"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_training_shot6 == 1}", "Glf_996"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_shot7 == 1}", "Glf_997"
-glf_funcRefMap.Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_998"
-glf_funcRefMap.Add "s_Scoop_active{current_player.shot_training_ready == 1 and current_player.wizard_mode_is_ready==0 and machine.flippers_are_dead==0}", "Glf_999"
-glf_funcRefMap.Add "check_training{current_player.shot_training_ready==1 and machine.flippers_are_dead==0}", "Glf_1000"
-glf_funcRefMap.Add "ss_trainer_ready{current_player.shot_training_ready == 0}", "Glf_1001"
-glf_funcRefMap.Add "left_side_training_on{current_player.shot_training_shot1 == 0}", "Glf_1002"
-glf_funcRefMap.Add "left_orbit_training_on{current_player.shot_training_shot2 == 0}", "Glf_1003"
-glf_funcRefMap.Add "left_ramp_training_on{current_player.shot_training_shot3 == 0}", "Glf_1004"
-glf_funcRefMap.Add "inner_orbit_training_on{current_player.shot_training_shot4 == 0}", "Glf_1005"
-glf_funcRefMap.Add "center_orbit_training_on{current_player.shot_training_shot5 == 0}", "Glf_1006"
-glf_funcRefMap.Add "right_ramp_training_on{current_player.shot_training_shot6 == 0}", "Glf_1007"
-glf_funcRefMap.Add "right_orbit_training_on{current_player.shot_training_shot7 == 0}", "Glf_1008"
-glf_funcRefMap.Add "current_player.num_training_shots", "Glf_1009"
-glf_funcRefMap.Add "training_shots_completed{current_player.num_training_shots < 7}", "Glf_1010"
-glf_funcRefMap.Add """START""", "Glf_1011"
-glf_funcRefMap.Add "mode_training_select_started{current_player.training_heal_achieved==1}", "Glf_1012"
-glf_funcRefMap.Add "mode_training_select_started{current_player.training_cluster_bomb_achieved==1}", "Glf_1013"
-glf_funcRefMap.Add "mode_training_select_started{current_player.training_proton_cannon_achieved==1}", "Glf_1014"
-glf_funcRefMap.Add "mode_training_select_started{current_player.training_moon_missile_achieved==1}", "Glf_1015"
-glf_funcRefMap.Add "mode_training_select_started{current_player.training_ship_save_achieved==1}", "Glf_1016"
-glf_funcRefMap.Add "mode_training_select_started{current_player.training_shields_achieved==1}", "Glf_1017"
-glf_funcRefMap.Add "timer_training_select_tick{device.timers.training_select.ticks == 3}", "Glf_1018"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""heal""}", "Glf_1019"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_1020"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""proton_cannon""}", "Glf_1021"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""moon_missile""}", "Glf_1022"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""ship_save""}", "Glf_1023"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""shields""}", "Glf_1024"
-glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""skip""}", "Glf_1025"
-glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_1026"
-glf_funcRefMap.Add "check_ts_heal{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", "Glf_1027"
-glf_funcRefMap.Add "check_ts_heal{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}", "Glf_1028"
-glf_funcRefMap.Add "check_ts_cluster_bomb{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1029"
-glf_funcRefMap.Add "check_ts_cluster_bomb{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1030"
-glf_funcRefMap.Add "check_ts_proton_cannon{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", "Glf_1031"
-glf_funcRefMap.Add "check_ts_proton_cannon{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}", "Glf_1032"
-glf_funcRefMap.Add "check_ts_moon_missile{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", "Glf_1033"
-glf_funcRefMap.Add "check_ts_moon_missile{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}", "Glf_1034"
-glf_funcRefMap.Add "check_ts_ship_save{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", "Glf_1035"
-glf_funcRefMap.Add "check_ts_ship_save{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}", "Glf_1036"
-glf_funcRefMap.Add "check_ts_shields{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", "Glf_1037"
-glf_funcRefMap.Add "check_ts_shields{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}", "Glf_1038"
-glf_funcRefMap.Add "{device.timers.training_select.ticks}", "Glf_1039"
-glf_funcRefMap.Add """right""", "Glf_1040"
-glf_funcRefMap.Add """left""", "Glf_1041"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health1==1}", "Glf_1042"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health2==1}", "Glf_1043"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health3==1}", "Glf_1044"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health4==1}", "Glf_1045"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health5==1}", "Glf_1046"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health6==1}", "Glf_1047"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health7==1}", "Glf_1048"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health8==1}", "Glf_1049"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health9==1}", "Glf_1050"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge1==1}", "Glf_1051"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge2==1}", "Glf_1052"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge3==1}", "Glf_1053"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge1==1}", "Glf_1054"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge2==1}", "Glf_1055"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge3==1}", "Glf_1056"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane1==1}", "Glf_1057"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane2==1}", "Glf_1058"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane3==1}", "Glf_1059"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane4==1}", "Glf_1060"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge1==1}", "Glf_1061"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge2==1}", "Glf_1062"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge3==1}", "Glf_1063"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge1==1}", "Glf_1064"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge2==1}", "Glf_1065"
-glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge3==1}", "Glf_1066"
-glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==0}", "Glf_1067"
-glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==1}", "Glf_1068"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""heal""}", "Glf_1069"
-glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==0}", "Glf_1070"
-glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==1}", "Glf_1071"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_1072"
-glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==0}", "Glf_1073"
-glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==1}", "Glf_1074"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""proton_cannon""}", "Glf_1075"
-glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==0}", "Glf_1076"
-glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==1}", "Glf_1077"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""moon_missile""}", "Glf_1078"
-glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==0}", "Glf_1079"
-glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==1}", "Glf_1080"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""ship_save""}", "Glf_1081"
-glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==0}", "Glf_1082"
-glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==1}", "Glf_1083"
-glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""shields""}", "Glf_1084"
-glf_funcRefMap.Add """SELECT""", "Glf_1085"
-glf_funcRefMap.Add "heal_selected{current_player.training_heal_achieved==0}", "Glf_1086"
-glf_funcRefMap.Add """HEAL """, "Glf_1087"
-glf_funcRefMap.Add "cluster_bomb_selected{current_player.training_cluster_bomb_achieved==0}", "Glf_1088"
-glf_funcRefMap.Add "proton_cannon_selected{current_player.training_proton_cannon_achieved==0}", "Glf_1089"
-glf_funcRefMap.Add "moon_missile_selected{current_player.training_moon_missile_achieved==0}", "Glf_1090"
-glf_funcRefMap.Add """MOON """, "Glf_1091"
-glf_funcRefMap.Add "ship_save_selected{current_player.training_ship_save_achieved==0}", "Glf_1092"
-glf_funcRefMap.Add """SAVER """, "Glf_1093"
-glf_funcRefMap.Add "shields_selected{current_player.training_shields_achieved==0}", "Glf_1094"
-glf_funcRefMap.Add """SKIP """, "Glf_1095"
-glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value<1}", "Glf_1096"
-glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value>=1}", "Glf_1097"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 0}", "Glf_1098"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 1 and current_player.shot_training_health2 == 0}", "Glf_1099"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health2 == 1 and current_player.shot_training_health3 == 0}", "Glf_1100"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health3 == 1 and current_player.shot_training_health4 == 0}", "Glf_1101"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health4 == 1 and current_player.shot_training_health5 == 0}", "Glf_1102"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health5 == 1 and current_player.shot_training_health6 == 0}", "Glf_1103"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health6 == 1 and current_player.shot_training_health7 == 0}", "Glf_1104"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health7 == 1 and current_player.shot_training_health8 == 0}", "Glf_1105"
-glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health8 == 1 and current_player.shot_training_health9 == 0}", "Glf_1106"
-glf_funcRefMap.Add """TRAIN """, "Glf_1107"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_heal.ticks,""0>2"")", "Glf_1108"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}", "Glf_1109"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 and current_player.shot_training_cluster_charge2 == 0}", "Glf_1110"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 and current_player.shot_training_cluster_charge3 == 0}", "Glf_1111"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_cluster_bomb.ticks,""0>2"")", "Glf_1112"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", "Glf_1113"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 and current_player.shot_training_proton_charge2 == 0}", "Glf_1114"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 and current_player.shot_training_proton_charge3 == 0}", "Glf_1115"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_proton_cannon.ticks,""0>2"")", "Glf_1116"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_moon_missile.ticks,""0>2"")", "Glf_1117"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", "Glf_1118"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 and current_player.shot_training_ship_charge2 == 0}", "Glf_1119"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 and current_player.shot_training_ship_charge3 == 0}", "Glf_1120"
-glf_funcRefMap.Add """SAVER""", "Glf_1121"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_ship_save.ticks,""0>2"")", "Glf_1122"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_shields.ticks,""0>2"")", "Glf_1123"
-glf_funcRefMap.Add "mode_meteor_wave_qualify_started.1{current_player.shot_final_wave_wizard>0}", "Glf_1124"
-glf_funcRefMap.Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", "Glf_1125"
-glf_funcRefMap.Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", "Glf_1126"
-glf_funcRefMap.Add "init_mwq_timer{current_player.ball_just_started == 0}", "Glf_1127"
-glf_funcRefMap.Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", "Glf_1128"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", "Glf_1129"
-glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", "Glf_1130"
-glf_funcRefMap.Add "current_player.meteor_countdown_value", "Glf_1131"
-glf_funcRefMap.Add "45", "Glf_1132"
-glf_funcRefMap.Add "device.timers.meteor_countdown.ticks", "Glf_1133"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", "Glf_1134"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_1135"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_1136"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_1137"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_1138"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_1139"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_1140"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_1141"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_1142"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1143"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1144"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1145"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1146"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1147"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", "Glf_1148"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1149"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1150"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1151"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1152"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1153"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round6 == 1}", "Glf_1154"
-glf_funcRefMap.Add "check_meteor_wave.4{current_player.num_meteors_to_drop < 0}", "Glf_1155"
-glf_funcRefMap.Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0 and current_player.nuke_just_used == 0}", "Glf_1156"
-glf_funcRefMap.Add "meteor_wave_done{current_player.meteor_wave_running == 1}", "Glf_1157"
-glf_funcRefMap.Add "detonate_nuke{current_player.meteor_wave_running == 1}", "Glf_1158"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave1 == 1}", "Glf_1159"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave2 == 1}", "Glf_1160"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave3 == 1}", "Glf_1161"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave4 == 1}", "Glf_1162"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave5 == 1}", "Glf_1163"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave6 == 1}", "Glf_1164"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave7 == 1}", "Glf_1165"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave8 == 1}", "Glf_1166"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave9 == 1}", "Glf_1167"
-glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.training_heal_achieved==0}", "Glf_1168"
-glf_funcRefMap.Add "check_protons{current_player.shot_proton_round1==0}", "Glf_1169"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_mw_health==1}", "Glf_1170"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_mw_health==1}", "Glf_1171"
-glf_funcRefMap.Add "meteor1_proton_hit{current_player.shot_meteor1_light > 0}", "Glf_1172"
-glf_funcRefMap.Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", "Glf_1173"
-glf_funcRefMap.Add "meteor3_proton_hit{current_player.shot_meteor3_light > 0}", "Glf_1174"
-glf_funcRefMap.Add "meteor4_proton_hit{current_player.shot_meteor4_light > 0}", "Glf_1175"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_proton_round1==1}", "Glf_1176"
-glf_funcRefMap.Add "timer_meteor1_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor1.ticks==2}", "Glf_1177"
-glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==6}", "Glf_1178"
-glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==10}", "Glf_1179"
-glf_funcRefMap.Add "timer_meteor2_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor2.ticks==2}", "Glf_1180"
-glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==6}", "Glf_1181"
-glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==10}", "Glf_1182"
-glf_funcRefMap.Add "timer_meteor3_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor3.ticks==2}", "Glf_1183"
-glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==6}", "Glf_1184"
-glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==10}", "Glf_1185"
-glf_funcRefMap.Add "timer_meteor4_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor4.ticks==2}", "Glf_1186"
-glf_funcRefMap.Add "timer_meteor4_tick{device.timers.meteor4.ticks==6}", "Glf_1187"
-glf_funcRefMap.Add "timer_meteor4_tick{device.timers.meteor4.ticks==10}", "Glf_1188"
-glf_funcRefMap.Add "finish_meteor_wave{current_player.nuke_just_used == 0}", "Glf_1189"
-glf_funcRefMap.Add "finish_meteor_wave{current_player.nuke_just_used == 1}", "Glf_1190"
-glf_funcRefMap.Add "current_player.meteors_per_wave", "Glf_1191"
-glf_funcRefMap.Add "current_player.num_waves_completed + 1", "Glf_1192"
-glf_funcRefMap.Add "Glf_FormatValue(current_player.num_meteors_to_drop,""0>2"")", "Glf_1193"
-glf_funcRefMap.Add """00""", "Glf_1194"
-glf_funcRefMap.Add """  NUKED """, "Glf_1195"
-glf_funcRefMap.Add """ NUKED  """, "Glf_1196"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.number == 1 or current_player.number == 2}", "Glf_1197"
-glf_funcRefMap.Add """METEOR """, "Glf_1198"
-glf_funcRefMap.Add """WAVE  """, "Glf_1199"
-glf_funcRefMap.Add "mode_meteor_wave_started{current_player.number == 3 or current_player.number == 4}", "Glf_1200"
-glf_funcRefMap.Add "check_meteor_wave.2{current_player.number == 1 or current_player.number == 2}", "Glf_1201"
-glf_funcRefMap.Add "check_meteor_wave.2{current_player.number == 3 or current_player.number == 4}", "Glf_1202"
-glf_funcRefMap.Add "current_player.meteor_mb_shootagain_time", "Glf_1203"
-glf_funcRefMap.Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", "Glf_1204"
-glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", "Glf_1205"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", "Glf_1206"
-glf_funcRefMap.Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", "Glf_1207"
-glf_funcRefMap.Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", "Glf_1208"
-glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6==1}", "Glf_1209"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 1}", "Glf_1210"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 1}", "Glf_1211"
-glf_funcRefMap.Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}", "Glf_1212"
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 and current_player.flwiz_super_jp == 1}", "Glf_1213"
-glf_funcRefMap.Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1214"
-glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1215"
-glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1216"
-glf_funcRefMap.Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1217"
-glf_funcRefMap.Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1218"
-glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1219"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1220"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1221"
-glf_funcRefMap.Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 2}", "Glf_1222"
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.flwiz_super_jp == 2}", "Glf_1223"
-glf_funcRefMap.Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 1}", "Glf_1224"
-glf_funcRefMap.Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 2}", "Glf_1225"
-glf_funcRefMap.Add "flwiz_proton1_ready{current_player.shot_flwiz_proton1 == 0}", "Glf_1226"
-glf_funcRefMap.Add "flwiz_proton2_ready{current_player.shot_flwiz_proton2 == 0}", "Glf_1227"
-glf_funcRefMap.Add "flwiz_proton3_ready{current_player.shot_flwiz_proton3 == 0}", "Glf_1228"
-glf_funcRefMap.Add "flwiz_proton4_ready{current_player.shot_flwiz_proton4 == 0}", "Glf_1229"
-glf_funcRefMap.Add "flwiz_proton5_ready{current_player.shot_flwiz_proton5 == 0}", "Glf_1230"
-glf_funcRefMap.Add "flwiz_proton6_ready{current_player.shot_flwiz_proton6 == 0}", "Glf_1231"
-glf_funcRefMap.Add "flwiz_cluster_ready{current_player.shot_flwiz_cluster == 0}", "Glf_1232"
-glf_funcRefMap.Add "flwiz_moon_ready{current_player.shot_flwiz_moon == 0}", "Glf_1233"
-glf_funcRefMap.Add "20000", "Glf_1234"
-glf_funcRefMap.Add "100000", "Glf_1235"
-glf_funcRefMap.Add """ FULLY """, "Glf_1236"
-glf_funcRefMap.Add """ LOADED """, "Glf_1237"
-glf_funcRefMap.Add """ WIZARD """, "Glf_1238"
-glf_funcRefMap.Add """  MODE  """, "Glf_1239"
-glf_funcRefMap.Add "timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 1}", "Glf_1240"
-glf_funcRefMap.Add """   EB   """, "Glf_1241"
-glf_funcRefMap.Add """  ADDED """, "Glf_1242"
-glf_funcRefMap.Add "timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 2}", "Glf_1243"
-glf_funcRefMap.Add """HIT ALL""", "Glf_1244"
-glf_funcRefMap.Add """  SHOTS """, "Glf_1245"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1246"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1247"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1248"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1249"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1250"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1251"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1252"
-glf_funcRefMap.Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", "Glf_1253"
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 and current_player.ccwiz_super_jp == 1}", "Glf_1254"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1255"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1256"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1257"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1258"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1259"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1260"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1261"
-glf_funcRefMap.Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", "Glf_1262"
-glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", "Glf_1263"
-glf_funcRefMap.Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 1}", "Glf_1264"
-glf_funcRefMap.Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 2}", "Glf_1265"
-glf_funcRefMap.Add "combo_command1_ready{current_player.shot_combo_command1 == 0}", "Glf_1266"
-glf_funcRefMap.Add "combo_command2_ready{current_player.shot_combo_command2 == 0}", "Glf_1267"
-glf_funcRefMap.Add "combo_command3_ready{current_player.shot_combo_command3 == 0}", "Glf_1268"
-glf_funcRefMap.Add "combo_command4_ready{current_player.shot_combo_command4 == 0}", "Glf_1269"
-glf_funcRefMap.Add "combo_command5_ready{current_player.shot_combo_command5 == 0}", "Glf_1270"
-glf_funcRefMap.Add "combo_command6_ready{current_player.shot_combo_command6 == 0}", "Glf_1271"
-glf_funcRefMap.Add "combo_command7_ready{current_player.shot_combo_command7 == 0}", "Glf_1272"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1==1}", "Glf_1273"
-glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2==1}", "Glf_1274"
-glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3==1}", "Glf_1275"
-glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4==1}", "Glf_1276"
-glf_funcRefMap.Add "center_orbit_hit{current_player.shot_combo_command5==1}", "Glf_1277"
-glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command6==1}", "Glf_1278"
-glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command7==1}", "Glf_1279"
-glf_funcRefMap.Add """ COMBO """, "Glf_1280"
-glf_funcRefMap.Add """COMMAND""", "Glf_1281"
-glf_funcRefMap.Add "timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 1}", "Glf_1282"
-glf_funcRefMap.Add "timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 2}", "Glf_1283"
-glf_funcRefMap.Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == 20}", "Glf_1284"
-glf_funcRefMap.Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < 20}", "Glf_1285"
-glf_funcRefMap.Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", "Glf_1286"
-glf_funcRefMap.Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", "Glf_1287"
-glf_funcRefMap.Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", "Glf_1288"
-glf_funcRefMap.Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", "Glf_1289"
-glf_funcRefMap.Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", "Glf_1290"
-glf_funcRefMap.Add "check_fwwiz_done{current_player.wizard_final_hit_count == 3}", "Glf_1291"
-glf_funcRefMap.Add "check_fwwiz_done{current_player.wizard_final_hit_count <= 0}", "Glf_1292"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", "Glf_1293"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 18}", "Glf_1294"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 17}", "Glf_1295"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 16}", "Glf_1296"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 15}", "Glf_1297"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 14}", "Glf_1298"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 13}", "Glf_1299"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 12}", "Glf_1300"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 11}", "Glf_1301"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 10}", "Glf_1302"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 9}", "Glf_1303"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 8}", "Glf_1304"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 7}", "Glf_1305"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 6}", "Glf_1306"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 5}", "Glf_1307"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 4}", "Glf_1308"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 3}", "Glf_1309"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 2}", "Glf_1310"
-glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 1}", "Glf_1311"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 19}", "Glf_1312"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 18}", "Glf_1313"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 17}", "Glf_1314"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 16}", "Glf_1315"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 15}", "Glf_1316"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 14}", "Glf_1317"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 13}", "Glf_1318"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 12}", "Glf_1319"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 11}", "Glf_1320"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 10}", "Glf_1321"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 9}", "Glf_1322"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 8}", "Glf_1323"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 7}", "Glf_1324"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 6}", "Glf_1325"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 5}", "Glf_1326"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 4}", "Glf_1327"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 3}", "Glf_1328"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 2}", "Glf_1329"
-glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 1}", "Glf_1330"
-glf_funcRefMap.Add "s_DTMeteor1_active{current_player.wizard_final_hit_count > 1}", "Glf_1331"
-glf_funcRefMap.Add "s_DTMeteor2_active{current_player.wizard_final_hit_count > 1}", "Glf_1332"
-glf_funcRefMap.Add "s_DTMeteor3_active{current_player.wizard_final_hit_count > 1}", "Glf_1333"
-glf_funcRefMap.Add "s_DTMeteor4_active{current_player.wizard_final_hit_count > 1}", "Glf_1334"
-glf_funcRefMap.Add "timer_fwwiz_add_meteor_complete{current_player.wizard_final_hit_count > 1}", "Glf_1335"
-glf_funcRefMap.Add "timer_asteroid_explodes_tick{device.timers.asteroid_explodes.ticks == 4}", "Glf_1336"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 1}", "Glf_1337"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 2}", "Glf_1338"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 3}", "Glf_1339"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 4}", "Glf_1340"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 5}", "Glf_1341"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 6}", "Glf_1342"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 7}", "Glf_1343"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 8}", "Glf_1344"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 9}", "Glf_1345"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 10}", "Glf_1346"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 11}", "Glf_1347"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 12}", "Glf_1348"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 13}", "Glf_1349"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 14}", "Glf_1350"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 15}", "Glf_1351"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 16}", "Glf_1352"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 17}", "Glf_1353"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 18}", "Glf_1354"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 19}", "Glf_1355"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 20}", "Glf_1356"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 21}", "Glf_1357"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 22}", "Glf_1358"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 23}", "Glf_1359"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 24}", "Glf_1360"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 25}", "Glf_1361"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 26}", "Glf_1362"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 27}", "Glf_1363"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 28}", "Glf_1364"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 29}", "Glf_1365"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 30}", "Glf_1366"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 31}", "Glf_1367"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 32}", "Glf_1368"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 33}", "Glf_1369"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 34}", "Glf_1370"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 35}", "Glf_1371"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 36}", "Glf_1372"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 37}", "Glf_1373"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 38}", "Glf_1374"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 39}", "Glf_1375"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 40}", "Glf_1376"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 41}", "Glf_1377"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 42}", "Glf_1378"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 43}", "Glf_1379"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 44}", "Glf_1380"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 45}", "Glf_1381"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 46}", "Glf_1382"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 47}", "Glf_1383"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 48}", "Glf_1384"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 49}", "Glf_1385"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 50}", "Glf_1386"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 51}", "Glf_1387"
-glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 52}", "Glf_1388"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 1}", "Glf_1389"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 7}", "Glf_1390"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 10}", "Glf_1391"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 15}", "Glf_1392"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 22}", "Glf_1393"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 24}", "Glf_1394"
-glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 29}", "Glf_1395"
-glf_funcRefMap.Add "meteor1_raise{current_player.shot_fwwiz_meteor1 == 0}", "Glf_1396"
-glf_funcRefMap.Add "meteor2_raise{current_player.shot_fwwiz_meteor2 == 0}", "Glf_1397"
-glf_funcRefMap.Add "meteor3_raise{current_player.shot_fwwiz_meteor3 == 0}", "Glf_1398"
-glf_funcRefMap.Add "meteor4_raise{current_player.shot_fwwiz_meteor4 == 0}", "Glf_1399"
-glf_funcRefMap.Add "balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active and current_player.wizard_final_hit_count == 0}", "Glf_1400"
-glf_funcRefMap.Add "60000", "Glf_1401"
-glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 2}", "Glf_1402"
-glf_funcRefMap.Add "-10", "Glf_1403"
-glf_funcRefMap.Add "detonate_nuke.2{current_player.wizard_final_hit_count < 0}", "Glf_1404"
-glf_funcRefMap.Add "50", "Glf_1405"
-glf_funcRefMap.Add "53", "Glf_1406"
-glf_funcRefMap.Add "30", "Glf_1407"
-glf_funcRefMap.Add """  THE  """, "Glf_1408"
-glf_funcRefMap.Add """ FINAL """, "Glf_1409"
-glf_funcRefMap.Add """  WAVE  """, "Glf_1410"
-glf_funcRefMap.Add """IS HERE """, "Glf_1411"
-glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 1}", "Glf_1412"
-glf_funcRefMap.Add """ RAMPS """, "Glf_1413"
-glf_funcRefMap.Add """ ADD A  """, "Glf_1414"
-glf_funcRefMap.Add """  BALL  """, "Glf_1415"
-glf_funcRefMap.Add """--------""", "Glf_1416"
-glf_funcRefMap.Add """DESTROY""", "Glf_1417"
-glf_funcRefMap.Add """HITSLEFT""", "Glf_1418"
-glf_funcRefMap.Add "Glf_FormatValue(current_player.wizard_final_hit_count,""0>2"")", "Glf_1419"
-glf_funcRefMap.Add "ball_launch_hit{current_player.victory_lap_running == 0}", "Glf_1420"
-glf_funcRefMap.Add "s_Plunger1_active{current_player.victory_lap_running == 0}", "Glf_1421"
-glf_funcRefMap.Add "timer_victory_countdown_tick{device.timers.victory_countdown.ticks == 21}", "Glf_1422"
-glf_funcRefMap.Add "13000", "Glf_1423"
-glf_funcRefMap.Add "45000", "Glf_1424"
-glf_funcRefMap.Add "66", "Glf_1425"
-glf_funcRefMap.Add """ YOU """, "Glf_1426"
-glf_funcRefMap.Add """ SAVED """, "Glf_1427"
-glf_funcRefMap.Add """US  """, "Glf_1428"
-glf_funcRefMap.Add """ALL """, "Glf_1429"
-glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks-21,""0>2"")", "Glf_1430"
-glf_funcRefMap.Add "1000", "Glf_1431"
-glf_funcRefMap.Add "150", "Glf_1432"
-glf_funcRefMap.Add "text_input: {action: ""left""}", "Glf_1433"
-glf_funcRefMap.Add "text_input: {action: ""right""}", "Glf_1434"
-glf_funcRefMap.Add "text_input: {action: ""select""}", "Glf_1435"
-glf_funcRefMap.Add "4000", "Glf_1436"
-glf_funcRefMap.Add "65000", "Glf_1437"
-glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1438"
-glf_funcRefMap.Add "250", "Glf_1439"
-glf_funcRefMap.Add """  """, "Glf_1440"
-glf_funcRefMap.Add """        """, "Glf_1441"
-glf_funcRefMap.Add """                                """, "Glf_1442"
-glf_funcRefMap.Add """                """, "Glf_1443"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started.3{current_player.shot_final_wave_wizard>0}", "Glf_894"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started.1{current_player.shot_moon_missile2 == 1}", "Glf_895"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started.2{current_player.training_moon_missile_used==1}", "Glf_896"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started.1{current_player.training_moon_missile_achieved==1 and device.state_machines.moon_mb.state!=""locking"" and current_player.shot_moon_missile2 == 0}", "Glf_897"
+glf_funcRefMap.Add "restart_moon_qualify_shots{current_player.training_moon_missile_achieved==1}", "Glf_898"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", "Glf_899"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", "Glf_900"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_901"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}", "Glf_902"
+glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", "Glf_903"
+glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", "Glf_904"
+glf_funcRefMap.Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", "Glf_905"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started.1{device.state_machines.moon_mb.state==""locking""}", "Glf_906"
+glf_funcRefMap.Add "device.ball_devices.moon_lock.balls", "Glf_907"
+glf_funcRefMap.Add """MOON""", "Glf_908"
+glf_funcRefMap.Add """LAUNCH""", "Glf_909"
+glf_funcRefMap.Add """LOCK""", "Glf_910"
+glf_funcRefMap.Add "mode_skillshots_started.1{current_player.shot_final_wave_wizard>0}", "Glf_911"
+glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", "Glf_912"
+glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_ss==1}", "Glf_913"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1}", "Glf_914"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", "Glf_915"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_916"
+glf_funcRefMap.Add "sss_achieved.1{current_player.num_skillshots==3}", "Glf_917"
+glf_funcRefMap.Add "voc_ss_stopped{current_player.num_skillshots==3}", "Glf_918"
+glf_funcRefMap.Add "voc_sss_stopped{current_player.num_skillshots==3}", "Glf_919"
+glf_funcRefMap.Add "mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}", "Glf_920"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_921"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", "Glf_922"
+glf_funcRefMap.Add "10000", "Glf_923"
+glf_funcRefMap.Add "current_player.moon_launch_locked_balls", "Glf_924"
+glf_funcRefMap.Add "start_moon_multiball.1{current_player.wizard_mode_running == 0}", "Glf_925"
+glf_funcRefMap.Add "timer_double_scoring_tick{device.timers.double_scoring.ticks == 55}", "Glf_926"
+glf_funcRefMap.Add """ DOUBLE """, "Glf_927"
+glf_funcRefMap.Add "timer_super_spinner_tick{device.timers.super_spinner.ticks == 55}", "Glf_928"
+glf_funcRefMap.Add "69", "Glf_929"
+glf_funcRefMap.Add "timer_super_pops_tick{device.timers.super_pops.ticks == 55}", "Glf_930"
+glf_funcRefMap.Add "mode_health_started.1{current_player.shot_final_wave_wizard>0}", "Glf_931"
+glf_funcRefMap.Add "mode_health_started{current_player.ball_just_started==1}", "Glf_932"
+glf_funcRefMap.Add "mode_health_started{current_player.training_heal_achieved==1}", "Glf_933"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_health_diverter==1}", "Glf_934"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_health_diverter==1}", "Glf_935"
+glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value<5}", "Glf_936"
+glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value>=5}", "Glf_937"
+glf_funcRefMap.Add "check_add_health{current_player.health_value>8}", "Glf_938"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==8}", "Glf_939"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==7}", "Glf_940"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==6}", "Glf_941"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==5}", "Glf_942"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==4}", "Glf_943"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==3}", "Glf_944"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==2}", "Glf_945"
+glf_funcRefMap.Add "check_add_health{current_player.health_value==1}", "Glf_946"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==9}", "Glf_947"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==8}", "Glf_948"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==7}", "Glf_949"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==6}", "Glf_950"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==5}", "Glf_951"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==4}", "Glf_952"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==3}", "Glf_953"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==2}", "Glf_954"
+glf_funcRefMap.Add "check_remove_health{current_player.health_value==1}", "Glf_955"
+glf_funcRefMap.Add "earth_hit{current_player.health_value>0}", "Glf_956"
+glf_funcRefMap.Add "mode_proton_cannon_started.1{current_player.shot_final_wave_wizard>0}", "Glf_957"
+glf_funcRefMap.Add "mode_proton_cannon_started{current_player.shot_proton_charge1==0}", "Glf_958"
+glf_funcRefMap.Add "mode_proton_cannon_started{current_player.training_proton_cannon_achieved==1}", "Glf_959"
+glf_funcRefMap.Add "reset_proton_charges{current_player.training_proton_cannon_achieved==0}", "Glf_960"
+glf_funcRefMap.Add "reset_proton_charges{current_player.training_proton_cannon_achieved==1}", "Glf_961"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 1}", "Glf_962"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge1 == 2 and current_player.shot_proton_charge2 == 1}", "Glf_963"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_proton_charge2 == 2 and current_player.shot_proton_charge3 == 1}", "Glf_964"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 0}", "Glf_965"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_966"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_967"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_968"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_969"
+glf_funcRefMap.Add "light_proton_charge3{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_970"
+glf_funcRefMap.Add """PROTON""", "Glf_971"
+glf_funcRefMap.Add "mode_cluster_bombs_started.1{current_player.shot_final_wave_wizard>0}", "Glf_972"
+glf_funcRefMap.Add "mode_cluster_bombs_started{current_player.shot_cluster_charge1==0}", "Glf_973"
+glf_funcRefMap.Add "mode_cluster_bombs_started{current_player.training_cluster_bomb_achieved==1}", "Glf_974"
+glf_funcRefMap.Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==0}", "Glf_975"
+glf_funcRefMap.Add "reset_cluster_charges{current_player.training_cluster_bomb_achieved==1}", "Glf_976"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 1}", "Glf_977"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 and current_player.shot_cluster_charge2 == 1}", "Glf_978"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 and current_player.shot_cluster_charge3 == 1}", "Glf_979"
+glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", "Glf_980"
+glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_981"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_982"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", "Glf_983"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}", "Glf_984"
+glf_funcRefMap.Add "mode_training_qualify_started.1{current_player.shot_final_wave_wizard>0}", "Glf_985"
+glf_funcRefMap.Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_986"
+glf_funcRefMap.Add "mode_training_qualify_started{current_player.training_just_finished == 1}", "Glf_987"
+glf_funcRefMap.Add "restart_qualify_training{current_player.training_total_achieved < 6}", "Glf_988"
+glf_funcRefMap.Add "restart_qualify_training{current_player.training_total_achieved == 3}", "Glf_989"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_training_shot1 == 1}", "Glf_990"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_shot2 == 1}", "Glf_991"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_training_shot3 == 1}", "Glf_992"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_shot4 == 1}", "Glf_993"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_training_shot5 == 1}", "Glf_994"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_training_shot6 == 1}", "Glf_995"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_shot7 == 1}", "Glf_996"
+glf_funcRefMap.Add "check_training_qualify{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_997"
+glf_funcRefMap.Add "s_Scoop_active{current_player.shot_training_ready == 1 and current_player.wizard_mode_is_ready==0 and machine.flippers_are_dead==0}", "Glf_998"
+glf_funcRefMap.Add "check_training{current_player.shot_training_ready==1 and machine.flippers_are_dead==0}", "Glf_999"
+glf_funcRefMap.Add "ss_trainer_ready{current_player.shot_training_ready == 0}", "Glf_1000"
+glf_funcRefMap.Add "left_side_training_on{current_player.shot_training_shot1 == 0}", "Glf_1001"
+glf_funcRefMap.Add "left_orbit_training_on{current_player.shot_training_shot2 == 0}", "Glf_1002"
+glf_funcRefMap.Add "left_ramp_training_on{current_player.shot_training_shot3 == 0}", "Glf_1003"
+glf_funcRefMap.Add "inner_orbit_training_on{current_player.shot_training_shot4 == 0}", "Glf_1004"
+glf_funcRefMap.Add "center_orbit_training_on{current_player.shot_training_shot5 == 0}", "Glf_1005"
+glf_funcRefMap.Add "right_ramp_training_on{current_player.shot_training_shot6 == 0}", "Glf_1006"
+glf_funcRefMap.Add "right_orbit_training_on{current_player.shot_training_shot7 == 0}", "Glf_1007"
+glf_funcRefMap.Add "current_player.num_training_shots", "Glf_1008"
+glf_funcRefMap.Add "training_shots_completed{current_player.num_training_shots < 7}", "Glf_1009"
+glf_funcRefMap.Add """START""", "Glf_1010"
+glf_funcRefMap.Add "mode_training_select_started{current_player.training_heal_achieved==1}", "Glf_1011"
+glf_funcRefMap.Add "mode_training_select_started{current_player.training_cluster_bomb_achieved==1}", "Glf_1012"
+glf_funcRefMap.Add "mode_training_select_started{current_player.training_proton_cannon_achieved==1}", "Glf_1013"
+glf_funcRefMap.Add "mode_training_select_started{current_player.training_moon_missile_achieved==1}", "Glf_1014"
+glf_funcRefMap.Add "mode_training_select_started{current_player.training_ship_save_achieved==1}", "Glf_1015"
+glf_funcRefMap.Add "mode_training_select_started{current_player.training_shields_achieved==1}", "Glf_1016"
+glf_funcRefMap.Add "timer_training_select_tick{device.timers.training_select.ticks == 3}", "Glf_1017"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""heal""}", "Glf_1018"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_1019"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""proton_cannon""}", "Glf_1020"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""moon_missile""}", "Glf_1021"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""ship_save""}", "Glf_1022"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""shields""}", "Glf_1023"
+glf_funcRefMap.Add "make_selection{device.state_machines.training_select.state==""skip""}", "Glf_1024"
+glf_funcRefMap.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", "Glf_1025"
+glf_funcRefMap.Add "check_ts_heal{current_player.ts_last_move==""left"" and current_player.training_heal_achieved==1}", "Glf_1026"
+glf_funcRefMap.Add "check_ts_heal{current_player.ts_last_move==""right"" and current_player.training_heal_achieved==1}", "Glf_1027"
+glf_funcRefMap.Add "check_ts_cluster_bomb{current_player.ts_last_move==""left"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1028"
+glf_funcRefMap.Add "check_ts_cluster_bomb{current_player.ts_last_move==""right"" and current_player.training_cluster_bomb_achieved==1}", "Glf_1029"
+glf_funcRefMap.Add "check_ts_proton_cannon{current_player.ts_last_move==""left"" and current_player.training_proton_cannon_achieved==1}", "Glf_1030"
+glf_funcRefMap.Add "check_ts_proton_cannon{current_player.ts_last_move==""right"" and current_player.training_proton_cannon_achieved==1}", "Glf_1031"
+glf_funcRefMap.Add "check_ts_moon_missile{current_player.ts_last_move==""left"" and current_player.training_moon_missile_achieved==1}", "Glf_1032"
+glf_funcRefMap.Add "check_ts_moon_missile{current_player.ts_last_move==""right"" and current_player.training_moon_missile_achieved==1}", "Glf_1033"
+glf_funcRefMap.Add "check_ts_ship_save{current_player.ts_last_move==""left"" and current_player.training_ship_save_achieved==1}", "Glf_1034"
+glf_funcRefMap.Add "check_ts_ship_save{current_player.ts_last_move==""right"" and current_player.training_ship_save_achieved==1}", "Glf_1035"
+glf_funcRefMap.Add "check_ts_shields{current_player.ts_last_move==""left"" and current_player.training_shields_achieved==1}", "Glf_1036"
+glf_funcRefMap.Add "check_ts_shields{current_player.ts_last_move==""right"" and current_player.training_shields_achieved==1}", "Glf_1037"
+glf_funcRefMap.Add "{device.timers.training_select.ticks}", "Glf_1038"
+glf_funcRefMap.Add """right""", "Glf_1039"
+glf_funcRefMap.Add """left""", "Glf_1040"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health1==1}", "Glf_1041"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health2==1}", "Glf_1042"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health3==1}", "Glf_1043"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health4==1}", "Glf_1044"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health5==1}", "Glf_1045"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health6==1}", "Glf_1046"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health7==1}", "Glf_1047"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health8==1}", "Glf_1048"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_health9==1}", "Glf_1049"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge1==1}", "Glf_1050"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge2==1}", "Glf_1051"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_cluster_charge3==1}", "Glf_1052"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge1==1}", "Glf_1053"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge2==1}", "Glf_1054"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_proton_charge3==1}", "Glf_1055"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane1==1}", "Glf_1056"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane2==1}", "Glf_1057"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane3==1}", "Glf_1058"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_moon_lane4==1}", "Glf_1059"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge1==1}", "Glf_1060"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge2==1}", "Glf_1061"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_ship_charge3==1}", "Glf_1062"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge1==1}", "Glf_1063"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge2==1}", "Glf_1064"
+glf_funcRefMap.Add "show_training_completed_shots{current_player.shot_training_shield_charge3==1}", "Glf_1065"
+glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==0}", "Glf_1066"
+glf_funcRefMap.Add "heal_selected{current_player.ts_hurry_up==1}", "Glf_1067"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""heal""}", "Glf_1068"
+glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==0}", "Glf_1069"
+glf_funcRefMap.Add "cluster_bomb_selected{current_player.ts_hurry_up==1}", "Glf_1070"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""cluster_bomb""}", "Glf_1071"
+glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==0}", "Glf_1072"
+glf_funcRefMap.Add "proton_cannon_selected{current_player.ts_hurry_up==1}", "Glf_1073"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""proton_cannon""}", "Glf_1074"
+glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==0}", "Glf_1075"
+glf_funcRefMap.Add "moon_missile_selected{current_player.ts_hurry_up==1}", "Glf_1076"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""moon_missile""}", "Glf_1077"
+glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==0}", "Glf_1078"
+glf_funcRefMap.Add "ship_save_selected{current_player.ts_hurry_up==1}", "Glf_1079"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""ship_save""}", "Glf_1080"
+glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==0}", "Glf_1081"
+glf_funcRefMap.Add "shields_selected{current_player.ts_hurry_up==1}", "Glf_1082"
+glf_funcRefMap.Add "selection_hurry_up{device.state_machines.training_select.state==""shields""}", "Glf_1083"
+glf_funcRefMap.Add """SELECT""", "Glf_1084"
+glf_funcRefMap.Add "heal_selected{current_player.training_heal_achieved==0}", "Glf_1085"
+glf_funcRefMap.Add """HEAL """, "Glf_1086"
+glf_funcRefMap.Add "cluster_bomb_selected{current_player.training_cluster_bomb_achieved==0}", "Glf_1087"
+glf_funcRefMap.Add "proton_cannon_selected{current_player.training_proton_cannon_achieved==0}", "Glf_1088"
+glf_funcRefMap.Add "moon_missile_selected{current_player.training_moon_missile_achieved==0}", "Glf_1089"
+glf_funcRefMap.Add """MOON """, "Glf_1090"
+glf_funcRefMap.Add "ship_save_selected{current_player.training_ship_save_achieved==0}", "Glf_1091"
+glf_funcRefMap.Add """SAVER """, "Glf_1092"
+glf_funcRefMap.Add "shields_selected{current_player.training_shields_achieved==0}", "Glf_1093"
+glf_funcRefMap.Add """SKIP """, "Glf_1094"
+glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value<1}", "Glf_1095"
+glf_funcRefMap.Add "check_add_training_health_bump{current_player.training_health_bump_value>=1}", "Glf_1096"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 0}", "Glf_1097"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health1 == 1 and current_player.shot_training_health2 == 0}", "Glf_1098"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health2 == 1 and current_player.shot_training_health3 == 0}", "Glf_1099"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health3 == 1 and current_player.shot_training_health4 == 0}", "Glf_1100"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health4 == 1 and current_player.shot_training_health5 == 0}", "Glf_1101"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health5 == 1 and current_player.shot_training_health6 == 0}", "Glf_1102"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health6 == 1 and current_player.shot_training_health7 == 0}", "Glf_1103"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health7 == 1 and current_player.shot_training_health8 == 0}", "Glf_1104"
+glf_funcRefMap.Add "check_add_training_health{current_player.shot_training_health8 == 1 and current_player.shot_training_health9 == 0}", "Glf_1105"
+glf_funcRefMap.Add """TRAIN """, "Glf_1106"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_heal.ticks,""0>2"")", "Glf_1107"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 0}", "Glf_1108"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge1 == 1 and current_player.shot_training_cluster_charge2 == 0}", "Glf_1109"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_training_cluster_charge2 == 1 and current_player.shot_training_cluster_charge3 == 0}", "Glf_1110"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_cluster_bomb.ticks,""0>2"")", "Glf_1111"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 0}", "Glf_1112"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge1 == 1 and current_player.shot_training_proton_charge2 == 0}", "Glf_1113"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_training_proton_charge2 == 1 and current_player.shot_training_proton_charge3 == 0}", "Glf_1114"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_proton_cannon.ticks,""0>2"")", "Glf_1115"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_moon_missile.ticks,""0>2"")", "Glf_1116"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 0}", "Glf_1117"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge1 == 1 and current_player.shot_training_ship_charge2 == 0}", "Glf_1118"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_training_ship_charge2 == 1 and current_player.shot_training_ship_charge3 == 0}", "Glf_1119"
+glf_funcRefMap.Add """SAVER""", "Glf_1120"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_ship_save.ticks,""0>2"")", "Glf_1121"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.training_shields.ticks,""0>2"")", "Glf_1122"
+glf_funcRefMap.Add "mode_meteor_wave_qualify_started.1{current_player.shot_final_wave_wizard>0}", "Glf_1123"
+glf_funcRefMap.Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", "Glf_1124"
+glf_funcRefMap.Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", "Glf_1125"
+glf_funcRefMap.Add "init_mwq_timer{current_player.ball_just_started == 0}", "Glf_1126"
+glf_funcRefMap.Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", "Glf_1127"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", "Glf_1128"
+glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", "Glf_1129"
+glf_funcRefMap.Add "current_player.meteor_countdown_value", "Glf_1130"
+glf_funcRefMap.Add "45", "Glf_1131"
+glf_funcRefMap.Add "device.timers.meteor_countdown.ticks", "Glf_1132"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", "Glf_1133"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", "Glf_1134"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave2 == 2 and current_player.shot_meteor_wave3 == 0}", "Glf_1135"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave3 == 2 and current_player.shot_meteor_wave4 == 0}", "Glf_1136"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave4 == 2 and current_player.shot_meteor_wave5 == 0}", "Glf_1137"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave5 == 2 and current_player.shot_meteor_wave6 == 0}", "Glf_1138"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave6 == 2 and current_player.shot_meteor_wave7 == 0}", "Glf_1139"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave7 == 2 and current_player.shot_meteor_wave8 == 0}", "Glf_1140"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_meteor_wave8 == 2 and current_player.shot_meteor_wave9 == 0}", "Glf_1141"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1142"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1143"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1144"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1145"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1146"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_proton_round6 == 1}", "Glf_1147"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round1 == 1 and current_player.shot_proton_round2 == 0}", "Glf_1148"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round2 == 1 and current_player.shot_proton_round3 == 0}", "Glf_1149"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round3 == 1 and current_player.shot_proton_round4 == 0}", "Glf_1150"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round4 == 1 and current_player.shot_proton_round5 == 0}", "Glf_1151"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round5 == 1 and current_player.shot_proton_round6 == 0}", "Glf_1152"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_proton_round6 == 1}", "Glf_1153"
+glf_funcRefMap.Add "check_meteor_wave.4{current_player.num_meteors_to_drop < 0}", "Glf_1154"
+glf_funcRefMap.Add "check_meteor_wave.1{current_player.num_meteors_to_drop <= 0 and current_player.nuke_just_used == 0}", "Glf_1155"
+glf_funcRefMap.Add "meteor_wave_done{current_player.meteor_wave_running == 1}", "Glf_1156"
+glf_funcRefMap.Add "detonate_nuke{current_player.meteor_wave_running == 1}", "Glf_1157"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave1 == 1}", "Glf_1158"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave2 == 1}", "Glf_1159"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave3 == 1}", "Glf_1160"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave4 == 1}", "Glf_1161"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave5 == 1}", "Glf_1162"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave6 == 1}", "Glf_1163"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave7 == 1}", "Glf_1164"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave8 == 1}", "Glf_1165"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.shot_meteor_wave9 == 1}", "Glf_1166"
+glf_funcRefMap.Add "meteor_wave_done_done.2{current_player.training_heal_achieved==0}", "Glf_1167"
+glf_funcRefMap.Add "check_protons{current_player.shot_proton_round1==0}", "Glf_1168"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_mw_health==1}", "Glf_1169"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_mw_health==1}", "Glf_1170"
+glf_funcRefMap.Add "meteor1_proton_hit{current_player.shot_meteor1_light > 0}", "Glf_1171"
+glf_funcRefMap.Add "meteor2_proton_hit{current_player.shot_meteor2_light > 0}", "Glf_1172"
+glf_funcRefMap.Add "meteor3_proton_hit{current_player.shot_meteor3_light > 0}", "Glf_1173"
+glf_funcRefMap.Add "meteor4_proton_hit{current_player.shot_meteor4_light > 0}", "Glf_1174"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.shot_proton_round1==1}", "Glf_1175"
+glf_funcRefMap.Add "timer_meteor1_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor1.ticks==2}", "Glf_1176"
+glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==6}", "Glf_1177"
+glf_funcRefMap.Add "timer_meteor1_tick{device.timers.meteor1.ticks==10}", "Glf_1178"
+glf_funcRefMap.Add "timer_meteor2_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor2.ticks==2}", "Glf_1179"
+glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==6}", "Glf_1180"
+glf_funcRefMap.Add "timer_meteor2_tick{device.timers.meteor2.ticks==10}", "Glf_1181"
+glf_funcRefMap.Add "timer_meteor3_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor3.ticks==2}", "Glf_1182"
+glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==6}", "Glf_1183"
+glf_funcRefMap.Add "timer_meteor3_tick{device.timers.meteor3.ticks==10}", "Glf_1184"
+glf_funcRefMap.Add "timer_meteor4_tick{current_player.num_meteors_to_raise>0 and device.timers.meteor4.ticks==2}", "Glf_1185"
+glf_funcRefMap.Add "timer_meteor4_tick{device.timers.meteor4.ticks==6}", "Glf_1186"
+glf_funcRefMap.Add "timer_meteor4_tick{device.timers.meteor4.ticks==10}", "Glf_1187"
+glf_funcRefMap.Add "finish_meteor_wave{current_player.nuke_just_used == 0}", "Glf_1188"
+glf_funcRefMap.Add "finish_meteor_wave{current_player.nuke_just_used == 1}", "Glf_1189"
+glf_funcRefMap.Add "current_player.meteors_per_wave", "Glf_1190"
+glf_funcRefMap.Add "current_player.num_waves_completed + 1", "Glf_1191"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.num_meteors_to_drop,""0>2"")", "Glf_1192"
+glf_funcRefMap.Add """00""", "Glf_1193"
+glf_funcRefMap.Add """  NUKED """, "Glf_1194"
+glf_funcRefMap.Add """ NUKED  """, "Glf_1195"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.number == 1 or current_player.number == 2}", "Glf_1196"
+glf_funcRefMap.Add """METEOR """, "Glf_1197"
+glf_funcRefMap.Add """WAVE  """, "Glf_1198"
+glf_funcRefMap.Add "mode_meteor_wave_started{current_player.number == 3 or current_player.number == 4}", "Glf_1199"
+glf_funcRefMap.Add "check_meteor_wave.2{current_player.number == 1 or current_player.number == 2}", "Glf_1200"
+glf_funcRefMap.Add "check_meteor_wave.2{current_player.number == 3 or current_player.number == 4}", "Glf_1201"
+glf_funcRefMap.Add "current_player.meteor_mb_shootagain_time", "Glf_1202"
+glf_funcRefMap.Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1==1}", "Glf_1203"
+glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2==1}", "Glf_1204"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3==1}", "Glf_1205"
+glf_funcRefMap.Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4==1}", "Glf_1206"
+glf_funcRefMap.Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5==1}", "Glf_1207"
+glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6==1}", "Glf_1208"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 1}", "Glf_1209"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 1}", "Glf_1210"
+glf_funcRefMap.Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}", "Glf_1211"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 and current_player.flwiz_super_jp == 1}", "Glf_1212"
+glf_funcRefMap.Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1213"
+glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1214"
+glf_funcRefMap.Add "s_TargetMystery3_active{current_player.shot_flwiz_proton3 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1215"
+glf_funcRefMap.Add "s_TargetMystery4_active{current_player.shot_flwiz_proton4 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1216"
+glf_funcRefMap.Add "s_TargetMystery5_active{current_player.shot_flwiz_proton5 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1217"
+glf_funcRefMap.Add "shield_bank_hit{current_player.shot_flwiz_proton6 == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1218"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_flwiz_cluster == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1219"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_flwiz_moon == 1 and current_player.wizard_fully_loaded_phase == 2}", "Glf_1220"
+glf_funcRefMap.Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 2}", "Glf_1221"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.flwiz_super_jp == 2}", "Glf_1222"
+glf_funcRefMap.Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 1}", "Glf_1223"
+glf_funcRefMap.Add "timer_flwiz_bumper_lights_tick{current_player.wizard_fully_loaded_phase == 2}", "Glf_1224"
+glf_funcRefMap.Add "flwiz_proton1_ready{current_player.shot_flwiz_proton1 == 0}", "Glf_1225"
+glf_funcRefMap.Add "flwiz_proton2_ready{current_player.shot_flwiz_proton2 == 0}", "Glf_1226"
+glf_funcRefMap.Add "flwiz_proton3_ready{current_player.shot_flwiz_proton3 == 0}", "Glf_1227"
+glf_funcRefMap.Add "flwiz_proton4_ready{current_player.shot_flwiz_proton4 == 0}", "Glf_1228"
+glf_funcRefMap.Add "flwiz_proton5_ready{current_player.shot_flwiz_proton5 == 0}", "Glf_1229"
+glf_funcRefMap.Add "flwiz_proton6_ready{current_player.shot_flwiz_proton6 == 0}", "Glf_1230"
+glf_funcRefMap.Add "flwiz_cluster_ready{current_player.shot_flwiz_cluster == 0}", "Glf_1231"
+glf_funcRefMap.Add "flwiz_moon_ready{current_player.shot_flwiz_moon == 0}", "Glf_1232"
+glf_funcRefMap.Add "20000", "Glf_1233"
+glf_funcRefMap.Add "100000", "Glf_1234"
+glf_funcRefMap.Add """ FULLY """, "Glf_1235"
+glf_funcRefMap.Add """ LOADED """, "Glf_1236"
+glf_funcRefMap.Add """ WIZARD """, "Glf_1237"
+glf_funcRefMap.Add """  MODE  """, "Glf_1238"
+glf_funcRefMap.Add "timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 1}", "Glf_1239"
+glf_funcRefMap.Add """   EB   """, "Glf_1240"
+glf_funcRefMap.Add """  ADDED """, "Glf_1241"
+glf_funcRefMap.Add "timer_fully_loaded_message_tick{device.timers.fully_loaded_message.ticks == 2}", "Glf_1242"
+glf_funcRefMap.Add """HIT ALL""", "Glf_1243"
+glf_funcRefMap.Add """  SHOTS """, "Glf_1244"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1245"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1246"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1247"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1248"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1249"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1250"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 1}", "Glf_1251"
+glf_funcRefMap.Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", "Glf_1252"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 and current_player.ccwiz_super_jp == 1}", "Glf_1253"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1254"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1255"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1256"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1257"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_combo_command5 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1258"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command6 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1259"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command7 == 1 and current_player.wizard_combo_command_phase == 2}", "Glf_1260"
+glf_funcRefMap.Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 2}", "Glf_1261"
+glf_funcRefMap.Add "balldevice_scoop_ball_entered{current_player.ccwiz_super_jp == 2}", "Glf_1262"
+glf_funcRefMap.Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 1}", "Glf_1263"
+glf_funcRefMap.Add "timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 2}", "Glf_1264"
+glf_funcRefMap.Add "combo_command1_ready{current_player.shot_combo_command1 == 0}", "Glf_1265"
+glf_funcRefMap.Add "combo_command2_ready{current_player.shot_combo_command2 == 0}", "Glf_1266"
+glf_funcRefMap.Add "combo_command3_ready{current_player.shot_combo_command3 == 0}", "Glf_1267"
+glf_funcRefMap.Add "combo_command4_ready{current_player.shot_combo_command4 == 0}", "Glf_1268"
+glf_funcRefMap.Add "combo_command5_ready{current_player.shot_combo_command5 == 0}", "Glf_1269"
+glf_funcRefMap.Add "combo_command6_ready{current_player.shot_combo_command6 == 0}", "Glf_1270"
+glf_funcRefMap.Add "combo_command7_ready{current_player.shot_combo_command7 == 0}", "Glf_1271"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_combo_command1==1}", "Glf_1272"
+glf_funcRefMap.Add "left_orbit_hit{current_player.shot_combo_command2==1}", "Glf_1273"
+glf_funcRefMap.Add "left_ramp_hit{current_player.shot_combo_command3==1}", "Glf_1274"
+glf_funcRefMap.Add "inner_orbit_hit{current_player.shot_combo_command4==1}", "Glf_1275"
+glf_funcRefMap.Add "center_orbit_hit{current_player.shot_combo_command5==1}", "Glf_1276"
+glf_funcRefMap.Add "right_ramp_hit{current_player.shot_combo_command6==1}", "Glf_1277"
+glf_funcRefMap.Add "right_orbit_hit{current_player.shot_combo_command7==1}", "Glf_1278"
+glf_funcRefMap.Add """ COMBO """, "Glf_1279"
+glf_funcRefMap.Add """COMMAND""", "Glf_1280"
+glf_funcRefMap.Add "timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 1}", "Glf_1281"
+glf_funcRefMap.Add "timer_combo_command_message_tick{device.timers.combo_command_message.ticks == 2}", "Glf_1282"
+glf_funcRefMap.Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count == 20}", "Glf_1283"
+glf_funcRefMap.Add "mode_final_wave_wizard_started{current_player.wizard_final_hit_count < 20}", "Glf_1284"
+glf_funcRefMap.Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", "Glf_1285"
+glf_funcRefMap.Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 1}", "Glf_1286"
+glf_funcRefMap.Add "left_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", "Glf_1287"
+glf_funcRefMap.Add "right_ramp_hit{current_player.fwwiz_add_ball_ready == 2}", "Glf_1288"
+glf_funcRefMap.Add "asteroid_hit{current_player.wizard_final_hit_count > 0}", "Glf_1289"
+glf_funcRefMap.Add "check_fwwiz_done{current_player.wizard_final_hit_count == 3}", "Glf_1290"
+glf_funcRefMap.Add "check_fwwiz_done{current_player.wizard_final_hit_count <= 0}", "Glf_1291"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 19}", "Glf_1292"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 18}", "Glf_1293"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 17}", "Glf_1294"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 16}", "Glf_1295"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 15}", "Glf_1296"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 14}", "Glf_1297"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 13}", "Glf_1298"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 12}", "Glf_1299"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 11}", "Glf_1300"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 10}", "Glf_1301"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 9}", "Glf_1302"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 8}", "Glf_1303"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 7}", "Glf_1304"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 6}", "Glf_1305"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 5}", "Glf_1306"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 4}", "Glf_1307"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 3}", "Glf_1308"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 2}", "Glf_1309"
+glf_funcRefMap.Add "update_asteroid_glow{current_player.wizard_final_hit_count == 1}", "Glf_1310"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 19}", "Glf_1311"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 18}", "Glf_1312"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 17}", "Glf_1313"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 16}", "Glf_1314"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 15}", "Glf_1315"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 14}", "Glf_1316"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 13}", "Glf_1317"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 12}", "Glf_1318"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 11}", "Glf_1319"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 10}", "Glf_1320"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 9}", "Glf_1321"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 8}", "Glf_1322"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 7}", "Glf_1323"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 6}", "Glf_1324"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 5}", "Glf_1325"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 4}", "Glf_1326"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 3}", "Glf_1327"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 2}", "Glf_1328"
+glf_funcRefMap.Add "update_fwwiz_score{current_player.wizard_final_hit_count == 1}", "Glf_1329"
+glf_funcRefMap.Add "s_DTMeteor1_active{current_player.wizard_final_hit_count > 1}", "Glf_1330"
+glf_funcRefMap.Add "s_DTMeteor2_active{current_player.wizard_final_hit_count > 1}", "Glf_1331"
+glf_funcRefMap.Add "s_DTMeteor3_active{current_player.wizard_final_hit_count > 1}", "Glf_1332"
+glf_funcRefMap.Add "s_DTMeteor4_active{current_player.wizard_final_hit_count > 1}", "Glf_1333"
+glf_funcRefMap.Add "timer_fwwiz_add_meteor_complete{current_player.wizard_final_hit_count > 1}", "Glf_1334"
+glf_funcRefMap.Add "timer_asteroid_explodes_tick{device.timers.asteroid_explodes.ticks == 4}", "Glf_1335"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 1}", "Glf_1336"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 2}", "Glf_1337"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 3}", "Glf_1338"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 4}", "Glf_1339"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 5}", "Glf_1340"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 6}", "Glf_1341"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 7}", "Glf_1342"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 8}", "Glf_1343"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 9}", "Glf_1344"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 10}", "Glf_1345"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 11}", "Glf_1346"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 12}", "Glf_1347"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 13}", "Glf_1348"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 14}", "Glf_1349"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 15}", "Glf_1350"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 16}", "Glf_1351"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 17}", "Glf_1352"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 18}", "Glf_1353"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 19}", "Glf_1354"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 20}", "Glf_1355"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 21}", "Glf_1356"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 22}", "Glf_1357"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 23}", "Glf_1358"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 24}", "Glf_1359"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 25}", "Glf_1360"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 26}", "Glf_1361"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 27}", "Glf_1362"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 28}", "Glf_1363"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 29}", "Glf_1364"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 30}", "Glf_1365"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 31}", "Glf_1366"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 32}", "Glf_1367"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 33}", "Glf_1368"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 34}", "Glf_1369"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 35}", "Glf_1370"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 36}", "Glf_1371"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 37}", "Glf_1372"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 38}", "Glf_1373"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 39}", "Glf_1374"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 40}", "Glf_1375"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 41}", "Glf_1376"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 42}", "Glf_1377"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 43}", "Glf_1378"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 44}", "Glf_1379"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 45}", "Glf_1380"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 46}", "Glf_1381"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 47}", "Glf_1382"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 48}", "Glf_1383"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 49}", "Glf_1384"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 50}", "Glf_1385"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 51}", "Glf_1386"
+glf_funcRefMap.Add "timer_final_wave_gi_tick{device.timers.final_wave_gi.ticks == 52}", "Glf_1387"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 1}", "Glf_1388"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 7}", "Glf_1389"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 10}", "Glf_1390"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 15}", "Glf_1391"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 22}", "Glf_1392"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 24}", "Glf_1393"
+glf_funcRefMap.Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 29}", "Glf_1394"
+glf_funcRefMap.Add "meteor1_raise{current_player.shot_fwwiz_meteor1 == 0}", "Glf_1395"
+glf_funcRefMap.Add "meteor2_raise{current_player.shot_fwwiz_meteor2 == 0}", "Glf_1396"
+glf_funcRefMap.Add "meteor3_raise{current_player.shot_fwwiz_meteor3 == 0}", "Glf_1397"
+glf_funcRefMap.Add "meteor4_raise{current_player.shot_fwwiz_meteor4 == 0}", "Glf_1398"
+glf_funcRefMap.Add "balldevice_trough_ball_eject_attempt{modes.final_wave_wizard.active and current_player.wizard_final_hit_count == 0}", "Glf_1399"
+glf_funcRefMap.Add "60000", "Glf_1400"
+glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 2}", "Glf_1401"
+glf_funcRefMap.Add "-10", "Glf_1402"
+glf_funcRefMap.Add "detonate_nuke.2{current_player.wizard_final_hit_count < 0}", "Glf_1403"
+glf_funcRefMap.Add "50", "Glf_1404"
+glf_funcRefMap.Add "53", "Glf_1405"
+glf_funcRefMap.Add "30", "Glf_1406"
+glf_funcRefMap.Add """  THE  """, "Glf_1407"
+glf_funcRefMap.Add """ FINAL """, "Glf_1408"
+glf_funcRefMap.Add """  WAVE  """, "Glf_1409"
+glf_funcRefMap.Add """IS HERE """, "Glf_1410"
+glf_funcRefMap.Add "timer_final_wave_message_tick{device.timers.final_wave_message.ticks == 1}", "Glf_1411"
+glf_funcRefMap.Add """ RAMPS """, "Glf_1412"
+glf_funcRefMap.Add """ ADD A  """, "Glf_1413"
+glf_funcRefMap.Add """  BALL  """, "Glf_1414"
+glf_funcRefMap.Add """--------""", "Glf_1415"
+glf_funcRefMap.Add """DESTROY""", "Glf_1416"
+glf_funcRefMap.Add """HITSLEFT""", "Glf_1417"
+glf_funcRefMap.Add "Glf_FormatValue(current_player.wizard_final_hit_count,""0>2"")", "Glf_1418"
+glf_funcRefMap.Add "ball_launch_hit{current_player.victory_lap_running == 0}", "Glf_1419"
+glf_funcRefMap.Add "s_Plunger1_active{current_player.victory_lap_running == 0}", "Glf_1420"
+glf_funcRefMap.Add "timer_victory_countdown_tick{device.timers.victory_countdown.ticks == 21}", "Glf_1421"
+glf_funcRefMap.Add "13000", "Glf_1422"
+glf_funcRefMap.Add "45000", "Glf_1423"
+glf_funcRefMap.Add "66", "Glf_1424"
+glf_funcRefMap.Add """ YOU """, "Glf_1425"
+glf_funcRefMap.Add """ SAVED """, "Glf_1426"
+glf_funcRefMap.Add """US  """, "Glf_1427"
+glf_funcRefMap.Add """ALL """, "Glf_1428"
+glf_funcRefMap.Add "Glf_FormatValue(device.timers.victory_countdown.ticks-21,""0>2"")", "Glf_1429"
+glf_funcRefMap.Add "1000", "Glf_1430"
+glf_funcRefMap.Add "150", "Glf_1431"
+glf_funcRefMap.Add "text_input: {action: ""left""}", "Glf_1432"
+glf_funcRefMap.Add "text_input: {action: ""right""}", "Glf_1433"
+glf_funcRefMap.Add "text_input: {action: ""select""}", "Glf_1434"
+glf_funcRefMap.Add "4000", "Glf_1435"
+glf_funcRefMap.Add "65000", "Glf_1436"
+glf_funcRefMap.Add "game_ended{device.ball_devices.moon_lock.balls > 0}", "Glf_1437"
+glf_funcRefMap.Add "250", "Glf_1438"
+glf_funcRefMap.Add """  """, "Glf_1439"
+glf_funcRefMap.Add """        """, "Glf_1440"
+glf_funcRefMap.Add """                                """, "Glf_1441"
+glf_funcRefMap.Add """                """, "Glf_1442"
 
