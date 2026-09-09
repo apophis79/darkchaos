@@ -94,6 +94,7 @@ event_player:
     - delayed_release_moon_ball
   ball_search_started:
     - release_moon_ball
+    - end_victory_lap
   timer_victory_countdown_complete:
     - end_victory_lap
 
