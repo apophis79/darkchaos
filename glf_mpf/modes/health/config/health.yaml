@@ -2,10 +2,12 @@
 
 mode:
   start_events: new_ball_started, stop_training, wizard_mode_ended
-  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  stop_events: stop_health, mode_base_stopping, start_training_select, wizard_mode_started
   priority: 800
 
 event_player: 
+  mode_health_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_health
   mode_health_started{current_player.ball_just_started==1}:
     - restart_health
     - reset_health_bump
@@ -347,7 +349,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "tBumper"
-        color: "ffdca3"
+        color: "ffedd2"
         intensity: "10"
   lsling_powerup_h: 
     lsling_rotate2_cw: 

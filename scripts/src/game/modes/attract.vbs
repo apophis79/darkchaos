@@ -119,6 +119,27 @@ Sub CreateAttractMode()
             End With
         End With
 
+        With .VariablePlayer()
+		    With .EventName("set_mus_volume")
+                With .Variable("mus_volume")
+                    .Action = "set_machine"
+                    .Float = "{kwargs.vol}"
+                End With
+            End With
+            With .EventName("set_voc_volume")
+                With .Variable("voc_volume")
+                    .Action = "set_machine"
+                    .Float = "{kwargs.vol}"
+                End With
+            End With
+            With .EventName("set_sfx_volume")
+                With .Variable("sfx_volume")
+                    .Action = "set_machine"
+                    .Float = "{kwargs.vol}"
+                End With
+            End With
+        End With
+
         With .DOFPlayer()
             With .EventName("play_attract_show")
                 .Action = "DOF_ON"

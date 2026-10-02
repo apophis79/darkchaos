@@ -2920,7 +2920,7 @@ switches:
   s_Bumper1:
     shape: RECTANGLE
     size: 0.06
-    x: 0.139248
+    x: 0.1413468
     y: 0.4831038
   s_Bumper2:
     shape: RECTANGLE

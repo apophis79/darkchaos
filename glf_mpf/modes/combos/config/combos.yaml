@@ -6,6 +6,8 @@ mode:
   priority: 530
 
 event_player: 
+  mode_combos_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_combos
   mode_combos_started:
     - reset_combos
   mode_combos_started{current_player.ball_just_started==1}:

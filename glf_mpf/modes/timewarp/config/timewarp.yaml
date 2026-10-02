@@ -6,6 +6,8 @@ mode:
   priority: 550
 
 event_player: 
+  mode_timewarp_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_timewarp
   mode_timewarp_started{current_player.shot_timewarp1==0}:
     - reset_timewarp
   mode_timewarp_started{current_player.ball_just_started==0}:

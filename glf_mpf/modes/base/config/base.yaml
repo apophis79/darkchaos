@@ -29,14 +29,6 @@ ball_saves:
     auto_launch: true
     balls_to_save: 1
 
-combo_switches: 
-  flipper_cancel:
-    switches_1: s_LeftFlipperButton
-    switches_2: s_start
-    events_when_both: 
-      - glf_game_cancel
-    hold_time: 5000ms
-
 event_player: 
   mode_base_started:
     - stop_attract_mode
@@ -226,6 +218,8 @@ event_player:
     - center_orbit_hit
   s_CenterOrb3_active{current_player.center_orbit_just_hit == 0}:
     - center_orbit_hit
+  ball_launch_hit:
+    - play_sfx_ball_launch
   center_orbit_hit:
     - play_sfx_Orb
     - score_2000
@@ -301,7 +295,7 @@ event_player:
 light_player: 
   mode_base_started: 
     GI: 
-      color: ffdca3
+      color: ffedd2
       fade: 200
 
   activate_final_wave_wizard: 
@@ -326,12 +320,6 @@ random_event_player:
       play_sfx_bumper2: 1
       play_sfx_bumper3: 1
       play_sfx_bumper4: 1
-    scope: player
-  ball_launch_hit: 
-    events:
-      play_sfx_ball_launch1: 1
-      play_sfx_ball_launch2: 1
-      play_sfx_ball_launch3: 1
     scope: player
 
 
@@ -685,7 +673,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "gi22"
-        color: "ffdca3"
+        color: "ffedd2"
   play_lsling_base_show: 
     lsling_base_show: 
       key: key_lsling_base_show
@@ -778,7 +766,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: "gi04"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   pu_lsling2_show: 
     flash_color_with_fade: 
@@ -787,7 +775,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "gi03"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   pu_rsling1_show: 
     flash_color_with_fade: 
@@ -796,7 +784,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: "gi08"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   pu_rsling2_show: 
     flash_color_with_fade: 
@@ -805,7 +793,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "gi07"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}: 
     gi_cracked: 
@@ -971,14 +959,6 @@ sound_player:
     voc_wave_completed: 
       key: key_voc_wave_completed
       action: play
-  training_music_1_start: 
-    mus_training_1: 
-      key: key_mus_training_1
-      action: play
-  training_music_1_stop: 
-    mus_training_1: 
-      key: key_mus_training_1
-      action: stop
   training_music_2_start: 
     mus_training_2: 
       key: key_mus_training_2
@@ -1043,17 +1023,9 @@ sound_player:
     mus_wizard2: 
       key: key_mus_wizard2
       action: stop
-  play_sfx_ball_launch1: 
-    sfx_ball_launch1: 
+  play_sfx_ball_launch: 
+    sfx_ball_launch: 
       key: key_sfx_ball_launch1
-      action: play
-  play_sfx_ball_launch2: 
-    sfx_ball_launch2: 
-      key: key_sfx_ball_launch2
-      action: play
-  play_sfx_ball_launch3: 
-    sfx_ball_launch3: 
-      key: key_sfx_ball_launch3
       action: play
   balldevice_scoop_ball_eject_attempt: 
     sfx_scoop: 
@@ -1311,6 +1283,21 @@ variable_player:
     wizard_mode_is_ready: 
       action: set
       int: 0
+
+  set_mus_volume: 
+    mus_volume: 
+      action: set_machine
+      float: {vol}
+
+  set_voc_volume: 
+    voc_volume: 
+      action: set_machine
+      float: {vol}
+
+  set_sfx_volume: 
+    sfx_volume: 
+      action: set_machine
+      float: {vol}
 
 
 

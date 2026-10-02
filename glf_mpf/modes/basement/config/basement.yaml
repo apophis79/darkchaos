@@ -105,7 +105,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "GI"
-        color: "ffdca3"
+        color: "ffedd2"
   tilt_warning: 
     flash_color: 
       key: key_tilt_warning_gi
@@ -114,7 +114,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffdca3"
+        color: "ffedd2"
   ball_started: 
     flicker_color_off: 
       action: stop
@@ -124,7 +124,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "GI"
-        color: "ffdca3"
+        color: "ffedd2"
   s_Bumper1_active: 
     bumper_bg_show1: 
       key: key_bumper_bg_show1
@@ -144,7 +144,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "LBG01"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   backglass_dark_off: 
     flicker_color_off: 
@@ -153,7 +153,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "LBG01"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   backglass_chaos_on: 
     flicker_color_on: 
@@ -162,7 +162,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "LBG02"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   backglass_chaos_off: 
     flicker_color_off: 
@@ -171,7 +171,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "LBG02"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   backglass_wave_on: 
     flicker_color_on: 
@@ -180,7 +180,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "LBG05"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   backglass_wave_off: 
     flicker_color_off: 
@@ -189,7 +189,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "LBG05"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   backglass_wave_flash: 
     flash_color: 
@@ -198,7 +198,7 @@ show_player:
       speed: 20
       show_tokens: 
         lights: "LBG05"
-        color: "ffdca3"
+        color: "ffedd2"
 
 
 sound_player: 

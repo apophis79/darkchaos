@@ -33,15 +33,4 @@ high_score:
   enter_initials_timeout: 65000ms
   award_slide_display_time: 4000ms
 
-slide_player: 
-  high_score_enter_initials: 
-    high_score:
-      action: play
-      expire: 0s
-  high_score_award_display: 
-    high_score_award:
-      action: play
-      expire: 0s
-
-
 

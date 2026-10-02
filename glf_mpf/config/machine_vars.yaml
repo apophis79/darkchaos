@@ -25,4 +25,16 @@ machine_vars:
     initial_value: 0
     persist: False
     value_type: int
+  sfx_volume:
+    initial_value: 0
+    persist: True
+    value_type: int
+  voc_volume:
+    initial_value: 0
+    persist: True
+    value_type: int
+  mus_volume:
+    initial_value: 0
+    persist: True
+    value_type: int
 

@@ -174,6 +174,7 @@ Const FWWizMaxAsteroidHits = 20
 
 ' Victory Lap settings
 Const VictoryLapTime = 45 'seconds
+Const VictoryCompleteLapTime = 66 'seconds
 
 ' Bonus settings
 Const BonusTimerTickInterval = 333
@@ -223,17 +224,20 @@ Sub ConfigureGlfDevices
 
     With CreateGlfSoundBus("sfx")
         .SimultaneousSounds = 8
-        .Volume = Volume_GameSoundEffects
+        .Volume = SoundEffectVolume
+        .SystemType = "bcp"
     End With
 
     With CreateGlfSoundBus("voc")
         .SimultaneousSounds = 2
-        .Volume = Volume_GameCallouts
+        .Volume = CalloutVolume
+        .SystemType = "bcp"
     End With
 
     With CreateGlfSoundBus("mus")
         .SimultaneousSounds = 4
-        .Volume = Volume_GameMusic
+        .Volume = MusicVolume
+        .SystemType = "bcp"
     End With
 
 
@@ -391,6 +395,24 @@ Sub ConfigureGlfDevices
         .Persist = False
     End With
 
+    With CreateMachineVar("sfx_volume")
+        .InitialValue = 0
+        .ValueType = "float"
+        .Persist = True
+    End With
+
+    With CreateMachineVar("voc_volume")
+        .InitialValue = 0
+        .ValueType = "float"
+        .Persist = True
+    End With
+
+    With CreateMachineVar("mus_volume")
+        .InitialValue = 0
+        .ValueType = "float"
+        .Persist = True
+    End With
+
 
 
     '*********** INITALIZE PLAYER VARIABLES ***********
@@ -462,6 +484,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "nuke_used", 0
     Glf_SetInitialPlayerVar "nuke_just_used", 0
     Glf_SetInitialPlayerVar "center_orbit_just_hit", 0
+    Glf_SetInitialPlayerVar "victory_lap_running", 0
+    
 
     'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0
     'Glf_SetInitialPlayerVar "debug_moon_launch_locked_balls", 0

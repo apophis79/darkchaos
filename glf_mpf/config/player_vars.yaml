@@ -193,4 +193,7 @@ player_vars:
   center_orbit_just_hit:
     initial_value: 0
     value_type: int
+  victory_lap_running:
+    initial_value: 0
+    value_type: int
 

@@ -2,10 +2,12 @@
 
 mode:
   start_events: new_ball_started, stop_meteor_wave, stop_training, wizard_mode_ended
-  stop_events: mode_base_stopping, mode_eob_bonus_started, start_meteor_wave, start_training_select, wizard_mode_started
+  stop_events: stop_meteor_wave_qualify, mode_base_stopping, mode_eob_bonus_started, start_meteor_wave, start_training_select, wizard_mode_started
   priority: 1100
 
 event_player: 
+  mode_meteor_wave_qualify_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_meteor_wave_qualify
   mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}:
     - reset_countdown_value
   mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}:
@@ -110,7 +112,7 @@ show_player:
       speed: 4.6
       show_tokens: 
         lights: "GI"
-        color: "ffdca3"
+        color: "ffedd2"
   flipper_cradling: 
     flash_color: 
       key: key_flipper_cradling
@@ -118,7 +120,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffdca3"
+        color: "ffedd2"
   flipper_cradle_release: 
     flash_color: 
       action: stop
@@ -127,7 +129,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffdca3"
+        color: "ffedd2"
 
 
 sound_player: 

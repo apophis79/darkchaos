@@ -2,10 +2,12 @@
 
 mode:
   start_events: new_ball_started, stop_training, wizard_mode_ended
-  stop_events: mode_base_stopping, start_training_select, wizard_mode_started
+  stop_events: stop_moon_multiball_qualify, mode_base_stopping, start_training_select, wizard_mode_started
   priority: 590
 
 event_player: 
+  mode_moon_multiball_qualify_started.1{current_player.shot_final_wave_wizard>0}:
+    - stop_moon_multiball_qualify
   mode_moon_multiball_qualify_started{current_player.shot_moon_missile2 == 1}:
     - disable_moon_qualify_shots
   mode_moon_multiball_qualify_started{current_player.training_moon_missile_used==1}:
