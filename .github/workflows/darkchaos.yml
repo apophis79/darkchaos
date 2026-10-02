@@ -10,14 +10,24 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     outputs:
       build_number: ${{ steps.version.outputs.build_number }}
 
     steps:
+      # --------------------------------------------------
+      # CHECKOUT
+      # --------------------------------------------------
+
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch full history for versioning
+          fetch-depth: 0
+
+
+      # --------------------------------------------------
+      # GAME / VERSION
+      # --------------------------------------------------
 
       - name: Read Game Name from File
         id: gamename
@@ -32,7 +42,12 @@ jobs:
           echo "build_number=${{ github.run_number }}" >> $env:GITHUB_OUTPUT
         shell: pwsh
 
-      - name: Install Node.js and Grunt
+
+      # --------------------------------------------------
+      # BUILD VPX SCRIPT
+      # --------------------------------------------------
+
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 16
@@ -44,11 +59,13 @@ jobs:
       - name: Run Grunt to Concat VPX Files and Set Production Mode
         run: |
           cd scripts
+
           npm install
           grunt concat:prod
 
-          # Replace the exact line only
+          # Replace production mode
           $lines = Get-Content dest/vpx/tablescript.vbs
+
           $lines = $lines | ForEach-Object {
             if ($_ -eq 'Dim glf_production_mode : glf_production_mode = False') {
               'Dim glf_production_mode : glf_production_mode = True'
@@ -56,6 +73,8 @@ jobs:
               $_
             }
           }
+
+          # Replace function count
           $lines = $lines | ForEach-Object {
             if ($_ -eq 'Dim glf_FuncCount : glf_FuncCount = 0') {
               'Dim glf_FuncCount : glf_FuncCount = 9999'
@@ -63,13 +82,22 @@ jobs:
               $_
             }
           }
+
           $lines | Set-Content dest/vpx/tablescript.vbs
 
           # Move modified script into game folder
-          Move-Item -Path dest/vpx/tablescript.vbs -Destination ../${{ steps.gamename.outputs.game_name }}/script.vbs -Force
+          Move-Item `
+            -Path dest/vpx/tablescript.vbs `
+            -Destination ../${{ steps.gamename.outputs.game_name }}/script.vbs `
+            -Force
         shell: pwsh
 
-      - name: Install jq (JSON Processor)
+
+      # --------------------------------------------------
+      # LOCK GAMEDATA
+      # --------------------------------------------------
+
+      - name: Install jq
         run: |
           choco install jq -y
         shell: pwsh
@@ -80,18 +108,33 @@ jobs:
           mv temp.json ${{ steps.gamename.outputs.game_name }}/gamedata.json
         shell: bash
 
+
+      # --------------------------------------------------
+      # BUILD VPX
+      # --------------------------------------------------
+
       - name: Download vpxtool
         run: |
-          Invoke-WebRequest -Uri https://github.com/francisdb/vpxtool/releases/download/v0.13.0/vpxtool-Windows-x86_64-v0.13.0.zip -OutFile vpxtool.zip
+          Invoke-WebRequest `
+            -Uri https://github.com/francisdb/vpxtool/releases/download/v0.13.0/vpxtool-Windows-x86_64-v0.13.0.zip `
+            -OutFile vpxtool.zip
+
           Expand-Archive vpxtool.zip -DestinationPath .\vpxtool
         shell: pwsh
 
       - name: Assemble VPX File
         run: |
           .\vpxtool\vpxtool.exe assemble ${{ steps.gamename.outputs.game_name }}
-          Rename-Item -Path .\${{ steps.gamename.outputs.game_name }}.vpx -NewName "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx"
+
+          Rename-Item `
+            -Path .\${{ steps.gamename.outputs.game_name }}.vpx `
+            -NewName "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx"
         shell: pwsh
 
+
+      # --------------------------------------------------
+      # CHECK FOR GODOT
+      # --------------------------------------------------
 
       - name: Check for Godot Project Folder
         id: check_godot
@@ -103,6 +146,11 @@ jobs:
           }
         shell: pwsh
 
+
+      # --------------------------------------------------
+      # NON-GODOT GAME
+      # --------------------------------------------------
+
       - name: Upload VPX Artifact
         if: steps.check_godot.outputs.exists == 'false'
         uses: actions/upload-artifact@v4
@@ -111,10 +159,17 @@ jobs:
           path: ./${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx
 
 
-      - name: Download Godot 4.6.2 Headless
+      # --------------------------------------------------
+      # DOWNLOAD GODOT
+      # --------------------------------------------------
+
+      - name: Download Godot 4.6.2
         if: steps.check_godot.outputs.exists == 'true'
         run: |
-          Invoke-WebRequest -Uri https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_win64.exe.zip -OutFile godot.zip
+          Invoke-WebRequest `
+            -Uri https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_win64.exe.zip `
+            -OutFile godot.zip
+
           Expand-Archive godot.zip -DestinationPath godot_engine
         shell: pwsh
 
@@ -124,83 +179,280 @@ jobs:
           $target = "$env:APPDATA\Godot\export_templates\4.6.2.stable"
           $temp = "temp_templates"
 
-          Invoke-WebRequest -Uri https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_export_templates.tpz -OutFile templates.tpz
-          mkdir $temp -Force
-          mkdir $target -Force
+          Invoke-WebRequest `
+            -Uri https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_export_templates.tpz `
+            -OutFile templates.tpz
+
+          New-Item -ItemType Directory -Force -Path $temp | Out-Null
+          New-Item -ItemType Directory -Force -Path $target | Out-Null
 
           tar -xf templates.tpz -C $temp
 
-          # Move contents of templates/ inside temp to the real target
           Move-Item "$temp/templates/*" $target -Force
 
-          # Clean up
           Remove-Item $temp -Recurse -Force
         shell: pwsh
 
-      - name: Export Godot Project (Windows)
+
+      # --------------------------------------------------
+      # EXPORT GODOT - WINDOWS
+      # --------------------------------------------------
+
+      - name: Export Godot - Windows
         if: steps.check_godot.outputs.exists == 'true'
         run: |
-          mkdir godot_builds
-          .\godot_engine\Godot_v4.6.2-stable_win64.exe --headless --path .\godot\${{ steps.gamename.outputs.game_name }}-gmcdisplay --export-release "Windows Desktop" 2>&1 | Tee-Object -FilePath godot_export.log
+          New-Item -ItemType Directory -Force -Path godot_builds | Out-Null
 
-          Write-Host "`n📄 Export Log:"
-          Get-Content godot_export.log
+          $gameName = "${{ steps.gamename.outputs.game_name }}"
+          $tableName = $gameName -replace '-Dev$', ''
 
-          if (!(Test-Path "godot_builds\${{ steps.gamename.outputs.game_name }}-gmcdisplay.exe")) {
-            Write-Host "❌ Export failed: ${{ steps.gamename.outputs.game_name }}-gmcdisplay.exe not found."
-            Get-ChildItem -Recurse godot_builds
+          $projectPath = ".\godot\$gameName-gmcdisplay"
+          $godot = ".\godot_engine\Godot_v4.6.2-stable_win64.exe"
+
+          $buildDir = (Resolve-Path ".\godot_builds").Path
+          $output = "$buildDir\${tableName}_gmc.exe"
+
+          Write-Host "Exporting Windows build to $output"
+
+          & $godot `
+            --headless `
+            --path $projectPath `
+            --export-release "Windows Desktop" `
+            $output `
+            2>&1 | Tee-Object -FilePath godot_windows_export.log
+
+          if (!(Test-Path $output)) {
+            Write-Host "Windows export failed."
+            Get-Content godot_windows_export.log
             exit 1
           }
 
-          Write-Host "✅ Export succeeded. Contents of godot_builds:"
-          Get-ChildItem -Recurse godot_builds
+          Write-Host "Windows export succeeded:"
+          Get-Item $output
         shell: pwsh
 
-      - name: Rename Godot EXE
+
+      # --------------------------------------------------
+      # EXPORT GODOT - LINUX
+      # --------------------------------------------------
+
+      - name: Export Godot - Linux
         if: steps.check_godot.outputs.exists == 'true'
         run: |
-          $original = "godot_builds\${{ steps.gamename.outputs.game_name }}-gmcdisplay.exe"
-          $renamed = "godot_builds\${{ steps.gamename.outputs.game_name }}_gmc.exe"
-          Rename-Item -Path $original -NewName (Split-Path $renamed -Leaf)
+          $gameName = "${{ steps.gamename.outputs.game_name }}"
+          $tableName = $gameName -replace '-Dev$', ''
+
+          $projectPath = ".\godot\$gameName-gmcdisplay"
+          $godot = ".\godot_engine\Godot_v4.6.2-stable_win64.exe"
+
+          $buildDir = (Resolve-Path ".\godot_builds").Path
+          $output = "$buildDir\${tableName}_gmc.x86_64"
+
+          Write-Host "Exporting Linux build to $output"
+
+          & $godot `
+            --headless `
+            --path $projectPath `
+            --export-release "Linux" `
+            $output `
+            2>&1 | Tee-Object -FilePath godot_linux_export.log
+
+          if (!(Test-Path $output)) {
+            Write-Host "Linux export failed."
+            Get-Content godot_linux_export.log
+            exit 1
+          }
+
+          Write-Host "Linux export succeeded:"
+          Get-Item $output
         shell: pwsh
 
 
-      - name: Create Combined Artifact ZIP
+      # --------------------------------------------------
+      # EXPORT GODOT - MACOS
+      # --------------------------------------------------
+
+      - name: Export Godot - macOS
+        if: steps.check_godot.outputs.exists == 'true'
         run: |
-          $zipName = "${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}.zip"
-          $outDir = "release"
+          $gameName = "${{ steps.gamename.outputs.game_name }}"
+          $tableName = $gameName -replace '-Dev$', ''
 
-          mkdir $outDir
+          $projectPath = ".\godot\$gameName-gmcdisplay"
+          $godot = ".\godot_engine\Godot_v4.6.2-stable_win64.exe"
 
-          # Copy build files into packaging folder
-          Copy-Item "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.vpx" -Destination $outDir/
-          Copy-Item "godot_builds/${{ steps.gamename.outputs.game_name }}_gmc.exe" -Destination $outDir/
+          $buildDir = (Resolve-Path ".\godot_builds").Path
+          $output = "$buildDir\${tableName}_gmc.zip"
 
-          # Add .directb2s file if it exists
-          Copy-Item "${{ steps.gamename.outputs.game_name }}.directb2s" -Destination $outDir/ -ErrorAction SilentlyContinue
+          Write-Host "Exporting macOS build to $output"
 
-          # Add default ini settings
-          $iniName = "${{ steps.gamename.outputs.game_name }}${{ steps.version.outputs.build_number }}.ini"
-          Copy-Item "default_ini_settings.txt" -Destination (Join-Path $outDir $iniName) -ErrorAction SilentlyContinue
+          & $godot `
+            --headless `
+            --path $projectPath `
+            --export-release "macOS" `
+            $output `
+            2>&1 | Tee-Object -FilePath godot_macos_export.log
 
-          # Copy bcp-controller folder (recursive)
-          Copy-Item "bcp-controller" -Destination "$outDir\bcp-controller" -Recurse -Force
+          if (!(Test-Path $output)) {
+            Write-Host "macOS export failed."
+            Get-Content godot_macos_export.log
+            exit 1
+          }
 
-          # Compress contents only (not the outer folder)
-          Push-Location $outDir
-          Compress-Archive -Path * -DestinationPath "..\$zipName"
-          Pop-Location
+          Write-Host "macOS export succeeded:"
+          Get-Item $output
         shell: pwsh
 
 
+      # --------------------------------------------------
+      # CREATE PLATFORM RELEASE DIRECTORIES
+      # --------------------------------------------------
 
-      - name: Upload Game Bundle Files (no zip)
+      - name: Create Platform Release Folders
+        if: steps.check_godot.outputs.exists == 'true'
+        run: |
+          $gameName = "${{ steps.gamename.outputs.game_name }}"
+          $tableName = $gameName -replace '-Dev$', ''
+          $buildNumber = "${{ steps.version.outputs.build_number }}"
+
+          $windowsDir = "release\windows"
+          $linuxDir   = "release\linux"
+          $macDir     = "release\macos"
+
+          New-Item -ItemType Directory -Force -Path $windowsDir | Out-Null
+          New-Item -ItemType Directory -Force -Path $linuxDir | Out-Null
+          New-Item -ItemType Directory -Force -Path $macDir | Out-Null
+
+
+          # --------------------------------------------------
+          # FUNCTION: COPY SHARED GAME FILES
+          # --------------------------------------------------
+
+          function Copy-SharedFiles {
+            param(
+              [string]$Destination
+            )
+
+            # VPX
+            Copy-Item `
+              "${gameName}${buildNumber}.vpx" `
+              -Destination $Destination
+
+
+            # DirectB2S - optional
+            if (Test-Path "${gameName}.directb2s") {
+              Copy-Item `
+                "${gameName}.directb2s" `
+                -Destination $Destination
+            }
+
+
+            # Default INI - optional
+            if (Test-Path "default_ini_settings.txt") {
+              $iniName = "${gameName}${buildNumber}.ini"
+
+              Copy-Item `
+                "default_ini_settings.txt" `
+                -Destination (Join-Path $Destination $iniName)
+            }
+
+
+            # BCP Controller
+            if (Test-Path "bcp-controller") {
+              Copy-Item `
+                "bcp-controller" `
+                -Destination (Join-Path $Destination "bcp-controller") `
+                -Recurse `
+                -Force
+            }
+          }
+
+
+          # --------------------------------------------------
+          # WINDOWS PACKAGE
+          # --------------------------------------------------
+
+          Copy-SharedFiles $windowsDir
+
+          Copy-Item `
+            "godot_builds\${tableName}_gmc.exe" `
+            -Destination $windowsDir
+
+
+          # --------------------------------------------------
+          # LINUX PACKAGE
+          # --------------------------------------------------
+
+          Copy-SharedFiles $linuxDir
+
+          Copy-Item `
+            "godot_builds\${tableName}_gmc.x86_64" `
+            -Destination $linuxDir
+
+
+          # --------------------------------------------------
+          # MACOS PACKAGE
+          # --------------------------------------------------
+
+          Copy-SharedFiles $macDir
+
+          Copy-Item `
+            "godot_builds\${tableName}_gmc.zip" `
+            -Destination $macDir
+
+
+          # --------------------------------------------------
+          # DISPLAY FINAL PACKAGES
+          # --------------------------------------------------
+
+          Write-Host ""
+          Write-Host "Windows package:"
+          Get-ChildItem -Recurse $windowsDir
+
+          Write-Host ""
+          Write-Host "Linux package:"
+          Get-ChildItem -Recurse $linuxDir
+
+          Write-Host ""
+          Write-Host "macOS package:"
+          Get-ChildItem -Recurse $macDir
+        shell: pwsh
+
+
+      # --------------------------------------------------
+      # UPLOAD WINDOWS ARTIFACT
+      # --------------------------------------------------
+
+      - name: Upload Windows Build
+        if: steps.check_godot.outputs.exists == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}
-          path: |
-            release/*.vpx
-            release/*.exe
-            release/*.directb2s
-            release/*.ini
-            bcp-controller/**
+          name: ${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}_Windows
+          path: release/windows/
+          if-no-files-found: error
+
+
+      # --------------------------------------------------
+      # UPLOAD LINUX ARTIFACT
+      # --------------------------------------------------
+
+      - name: Upload Linux Build
+        if: steps.check_godot.outputs.exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}_Linux
+          path: release/linux/
+          if-no-files-found: error
+
+
+      # --------------------------------------------------
+      # UPLOAD MACOS ARTIFACT
+      # --------------------------------------------------
+
+      - name: Upload macOS Build
+        if: steps.check_godot.outputs.exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.gamename.outputs.game_name }}_${{ steps.version.outputs.build_number }}_macOS
+          path: release/macos/
+          if-no-files-found: error
