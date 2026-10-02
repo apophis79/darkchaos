@@ -275,7 +275,6 @@ Public Sub Glf_Init(ByRef table)
 			lightsYaml = lightsYaml + "  " & light.name & ":"&vbCrLf
 			lightsYaml = lightsYaml + "    number: " & lightsNumber & vbCrLf
 			lightsYaml = lightsYaml + "    subtype: led" & vbCrLf
-			lightsYaml = lightsYaml + "    size: 0.04" & vbCrLf
 			lightsYaml = lightsYaml + "    type: rgb" & vbCrLf
 			lightsYaml = lightsYaml + "    tags: " & light.BlinkPattern & vbCrLf
 			lightsYaml = lightsYaml + "    x: "& light.x/tablewidth & vbCrLf
@@ -3135,7 +3134,7 @@ Class GlfVpxBcpController
 
     Public Function GetMessages
 		If m_connected Then
-            GetMessages = m_bcpController.GetMessages
+            GetMessages = BcpDrainMessages(m_bcpController)
         End If
 	End Function
 
@@ -3147,7 +3146,6 @@ Class GlfVpxBcpController
 	End Sub
     
     Public Sub PlaySlide(slide, context, calling_context, action, expire, priorty, kwargs)
-        Dim key
 		If m_connected Then
             Dim kwargsString : kwargsString = ""
             If Not IsNull(kwargs) Then
@@ -3300,11 +3298,11 @@ Sub Glf_BcpSendEvent(evt, kwargs)
     If useBcp=False Then
         Exit Sub
     End If
-    
-    Dim key
+
     Dim kwargsString : kwargsString = ""
     If Not IsNull(kwargs) Then
         Dim first : first = True
+        Dim key
         For Each key In kwargs.Keys
             'If Not first Then
             '    kwargsString = kwargsString & "&"
@@ -3426,6 +3424,47 @@ End Function
 '*****************************************************************************************************************************************
 '  END Vpx Glf Bcp Controller
 '*****************************************************************************************************************************************
+
+Function BcpDrainMessages(controller)
+    Dim result(), count, message
+    Dim errorNumber, errorSource, errorDescription
+
+    ' Probe by reading once; retain that first message if the native API exists.
+    ' Only a missing member permits fallback. Other failures must reach the caller.
+    On Error Resume Next
+    Err.Clear
+    Set message = controller.ReadMessage()
+    errorNumber = Err.Number
+    errorSource = Err.Source
+    errorDescription = Err.Description
+    On Error GoTo 0
+
+    Select Case errorNumber
+        Case 438, -2147352570, -2147352573 ' Unsupported member / unknown name / member not found
+            BcpDrainMessages = controller.GetMessages()
+            Exit Function
+        Case 0
+            ' Native controller: continue draining below.
+        Case Else
+            Err.Raise errorNumber, errorSource, errorDescription
+    End Select
+
+    count = 0
+    Do
+        If message Is Nothing Then Exit Do
+        ReDim Preserve result(count)
+        Set result(count) = message
+        count = count + 1
+        Set message = controller.ReadMessage()
+    Loop
+    If count = 0 Then
+        BcpDrainMessages = Array()
+    Else
+        BcpDrainMessages = result
+    End If
+End Function
+
+
 
 
 '*****************************************************************************************************************************************
@@ -8325,8 +8364,8 @@ Class GlfQueueRelayPlayer
     End Sub
 
     Public Function ToYaml()
-        Dim yaml
-        Dim evt, key
+        Dim yaml, key
+        Dim evt
         If UBound(m_events.Keys) > -1 Then
             For Each key in m_events.keys
                 yaml = yaml & "  " & m_events(key).Raw & ": " & vbCrLf
@@ -16203,7 +16242,7 @@ Class GlfSoundBus
                 m_current_sounds.Add sound_settings.Sound.File, sound_settings
             End If
         Else
-            If (UBound(m_current_sounds.Keys)-1) > m_simultaneous_sounds Then
+            If Not m_current_sounds.Exists(sound_settings.Sound.File) And m_current_sounds.Count >= m_simultaneous_sounds Then
                 'TODO: Queue Sound
             Else
                 If m_current_sounds.Exists(sound_settings.Sound.File) Then
@@ -16754,7 +16793,7 @@ Sub Glf_AddPlayer()
     Select Case UBound(glf_playerState.Keys())
         Case -1:
             kwargs("num") = 1
-            
+            DispatchPinEvent "player_added", kwargs
             glf_playerState.Add "PLAYER 1", Glf_InitNewPlayer()
             SetPlayerStateByPlayer GLF_SCORE, 0, 0
             SetPlayerStateByPlayer "number", 1, 0
@@ -16762,42 +16801,38 @@ Sub Glf_AddPlayer()
             glf_currentPlayer = "PLAYER 1"
             Glf_BcpSendMachineVar "last_game_players", 1, 0
             glf_machine_vars("last_game_players").Value = 1
-            DispatchPinEvent "player_added", kwargs
         Case 0:     
             If GetPlayerState(GLF_CURRENT_BALL) = 1 Then
                 kwargs("num") = 2
-                
+                DispatchPinEvent "player_added", kwargs
                 glf_playerState.Add "PLAYER 2", Glf_InitNewPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 1
                 SetPlayerStateByPlayer "number", 2, 1
                 Glf_BcpAddPlayer 2
                 Glf_BcpSendMachineVar "last_game_players", 2, 1
                 glf_machine_vars("last_game_players").Value = 2
-                DispatchPinEvent "player_added", kwargs
             End If
         Case 1:
             If GetPlayerState(GLF_CURRENT_BALL) = 1 Then
                 kwargs("num") = 3
-                
+                DispatchPinEvent "player_added", kwargs
                 glf_playerState.Add "PLAYER 3", Glf_InitNewPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 2
                 SetPlayerStateByPlayer "number", 3, 2
                 Glf_BcpAddPlayer 3
                 Glf_BcpSendMachineVar "last_game_players", 3, 2
                 glf_machine_vars("last_game_players").Value = 3
-                DispatchPinEvent "player_added", kwargs
             End If     
         Case 2:   
             If GetPlayerState(GLF_CURRENT_BALL) = 1 Then
                 kwargs("num") = 4
-                
+                DispatchPinEvent "player_added", kwargs
                 glf_playerState.Add "PLAYER 4", Glf_InitNewPlayer()
                 SetPlayerStateByPlayer GLF_SCORE, 0, 3
                 SetPlayerStateByPlayer "number", 4, 3
                 Glf_BcpAddPlayer 4
                 Glf_BcpSendMachineVar "last_game_players", 4, 3
                 glf_machine_vars("last_game_players").Value = 4
-                DispatchPinEvent "player_added", kwargs
             End If  
             glf_canAddPlayers = False
     End Select
