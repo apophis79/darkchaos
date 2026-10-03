@@ -76,7 +76,7 @@ Dim glf_production_mode : glf_production_mode = False
 Dim useGlfBCPMonitor : useGlfBCPMonitor = False
 Dim useBCP : useBCP = False
 Dim bcpPort : bcpPort = 5050
-Dim bcpExeName : bcpExeName = CGameName & "_gmc.exe"
+Dim bcpExeName : bcpExeName = CGameName & "_gmc"
 Dim bcpLocalPathToGodot : bcpLocalPathToGodot = "C:\Godot\4.6.2\Godot_v4.6.2-stable_win64.exe"
 Dim bcpLocalPathToProject : bcpLocalPathToProject = "C:\Git\darkchaos"
 Dim bcpDebug : bcpDebug = False
@@ -108,14 +108,8 @@ Dim glf_debug_level : glf_debug_level = "Info"
 Dim glf_ball1, glf_ball2, glf_ball3, glf_ball4, glf_ball5, glf_ball6, glf_ball7, glf_ball8	
 
 Public Sub Glf_ConnectToBCPMediaController(args)
-	If glf_production_mode = True Then
-		Dim fso
-		Set fso = CreateObject("Scripting.FileSystemObject")
-		If fso.FileExists(bcpExeName) Then
-			Set bcpController = (new GlfVpxBcpController)(bcpPort, bcpExeName)	
-		Else
-			MsgBox "Missing GMCDisplay file"
-		End If
+	If glf_production_mode = True Then		
+		Set bcpController = (new GlfVpxBcpController)(bcpPort, bcpExeName)	
 	Else
 		Set bcpController = (new GlfVpxBcpController)(bcpPort, "")
 	End If
@@ -3148,6 +3142,7 @@ Class GlfVpxBcpController
     Public Sub PlaySlide(slide, context, calling_context, action, expire, priorty, kwargs)
 		If m_connected Then
             Dim kwargsString : kwargsString = ""
+            Dim key
             If Not IsNull(kwargs) Then
                 For Each key In kwargs.Keys
                     Dim value : value = kwargs(key)
@@ -3425,6 +3420,7 @@ End Function
 '  END Vpx Glf Bcp Controller
 '*****************************************************************************************************************************************
 
+' Shared native/C# message adapter. Include this function only once per table.
 Function BcpDrainMessages(controller)
     Dim result(), count, message
     Dim errorNumber, errorSource, errorDescription

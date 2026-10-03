@@ -279,10 +279,73 @@ jobs:
           $tableName = $gameName -replace '-Dev$', ''
 
           $projectPath = ".\godot\$gameName-gmcdisplay"
+          $projectFile = "$projectPath\project.godot"
+
           $godot = ".\godot_engine\Godot_v4.6.2-stable_win64.exe"
 
           $buildDir = (Resolve-Path ".\godot_builds").Path
           $output = "$buildDir\${tableName}_gmc.zip"
+
+          # --------------------------------------------------
+          # Set the macOS application bundle name.
+          #
+          # Example:
+          #
+          # DarkChaos_gmc.zip
+          #   └── DarkChaos_gmc.app
+          #
+          # The base Godot project name is left unchanged.
+          # --------------------------------------------------
+
+          $macAppName = "${tableName}_gmc"
+
+          Write-Host "Setting macOS application name to: $macAppName"
+
+          if (!(Test-Path $projectFile)) {
+            Write-Host "project.godot not found: $projectFile"
+            exit 1
+          }
+
+          $content = Get-Content $projectFile
+
+          # Replace existing macOS override if one already exists.
+          if ($content -match '^config/name\.macos=') {
+
+            $content = $content | ForEach-Object {
+              if ($_ -match '^config/name\.macos=') {
+                "config/name.macos=`"$macAppName`""
+              } else {
+                $_
+              }
+            }
+
+          } else {
+
+            # Insert macOS override immediately after config/name.
+            $newContent = @()
+            $inserted = $false
+
+            foreach ($line in $content) {
+              $newContent += $line
+
+              if (!$inserted -and $line -match '^config/name=') {
+                $newContent += "config/name.macos=`"$macAppName`""
+                $inserted = $true
+              }
+            }
+
+            if (!$inserted) {
+              Write-Host "Could not find config/name in project.godot"
+              exit 1
+            }
+
+            $content = $newContent
+          }
+
+          $content | Set-Content $projectFile
+
+          Write-Host "macOS application configuration:"
+          Get-Content $projectFile | Select-String "config/name"
 
           Write-Host "Exporting macOS build to $output"
 
