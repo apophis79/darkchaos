@@ -199,8 +199,9 @@ Sub CreatePostGameMode()
             ' .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 90}", Array("")
             '.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 91}", Array("")
             '.Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 92}", Array("")
-            .Add "timer_post_game_show_complete", Array("final_flash1","final_flash2","final_flash3","final_flash4","final_flash5")
-
+            .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 94}", Array("final_flash1","final_flash2","final_flash3","final_flash4","final_flash5")
+            .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 101 and machine.won_game == 0}", Array("start_attract_mode")
+            .Add "timer_post_game_show_tick{device.timers.post_game_show.ticks == 120 and machine.won_game == 1}", Array("start_attract_mode")
 
             'handle post game messages
             For x = 1 to NumLoserMessages
@@ -308,7 +309,7 @@ Sub CreatePostGameMode()
         With .Timers("post_game_show")
             .TickInterval = 541  'one beat of the song
             .StartValue = 0
-            .EndValue = 93
+            .EndValue = 125
             With .ControlEvents()
                 .EventName = "mode_post_game_started"
                 .Action = "restart"
