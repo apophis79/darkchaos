@@ -22,11 +22,9 @@ Sub CreateSkillshotsMode
             .Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", Array("sdsss_achieved") 
             .Add "ss_achieved", Array("ss_trainer_ready","score_500000")
             .Add "sss_achieved", Array("ss_trainer_ready","sss_mystery_ready","score_1000000")
-            .Add "sss_achieved.1{current_player.num_skillshots==3}", Array("activate_nuke")
             .Add "ssss_achieved", Array("score_2000000")
             .Add "sdsss_achieved", Array("score_3000000")
-            .Add "voc_ss_stopped{current_player.num_skillshots==3}", Array("activate_nuke")
-            .Add "voc_sss_stopped{current_player.num_skillshots==3}", Array("activate_nuke")
+            .Add "timer_ss_voc_complete{current_player.num_skillshots==3}", Array("activate_nuke")
             'Stop skillshots
             .Add "timer_skillshots_complete", Array("stop_skillshots") 
             .Add "s_InnerOrb1_active", Array("stop_skillshots")
@@ -145,6 +143,20 @@ Sub CreateSkillshotsMode
             End With
             With .ControlEvents()
                 .EventName = "ssss_achieved"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("ss_voc")
+            .TickInterval = 2000
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "ss_achieved"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "sss_achieved"
                 .Action = "restart"
             End With
         End With
