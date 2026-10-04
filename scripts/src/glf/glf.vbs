@@ -78,7 +78,7 @@ Dim useBCP : useBCP = False
 Dim bcpPort : bcpPort = 5050
 Dim bcpExeName : bcpExeName = CGameName & "_gmc"
 Dim bcpLocalPathToGodot : bcpLocalPathToGodot = "C:\Godot\4.6.2\Godot_v4.6.2-stable_win64.exe"
-Dim bcpLocalPathToProject : bcpLocalPathToProject = "C:\Git\darkchaos"
+Dim bcpLocalPathToProject : bcpLocalPathToProject = "C:\Git\darkchaos\godot\DarkChaos-Dev-gmcdisplay"
 Dim bcpDebug : bcpDebug = False
 Dim glf_monitor_player_vars : glf_monitor_player_vars = false
 Dim glf_BIP : glf_BIP = 0
@@ -3096,7 +3096,7 @@ Class GlfVpxBcpController
     Public default Function init(port, backboxCommand)
         On Error Resume Next
 
-        Set m_bcpController = CreateObject("vpx_bcp_controller.VpxBcpController")
+        Set m_bcpController = CreatePluginObject("BCP.Controller")
         If backboxCommand = "" Then
             m_bcpController.EnableLogging()
         End If
@@ -3473,7 +3473,7 @@ Class GlfMonitorBcpController
 
     Public default Function init(port, backboxCommand)
         On Error Resume Next
-        Set m_bcpController = CreateObject("vpx_bcp_controller.VpxBcpController")
+        Set m_bcpController = CreatePluginObject("BCP.Controller")
         m_bcpController.Connect port, backboxCommand
         m_connected = True
         If Err Then MsgBox("Can not start VPX BCP Controller") : m_connected = False
