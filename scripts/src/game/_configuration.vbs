@@ -111,8 +111,9 @@ MoonQualifySwitches = Array("s_LeftOutlane","s_LeftInlane","s_RightInlane","s_Ri
 MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
 
 ' Health settings
-Const BumperHitsPerRepair = 5
-Const BumperHitsPerRepairTrain = 1
+Const BumperHitsPerRepair = 8
+Const BumperHitsPerRepairTrained = 5
+Const BumperHitsPerRepairTraining = 1
 
 ' Ship save settings (more shoot again time)
 Const ShipSaveShootAgainTime = 15000
@@ -453,6 +454,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "bonus_multiplier", 1
     Glf_SetInitialPlayerVar "combo_ticks", CombosTickLimit
     Glf_SetInitialPlayerVar "combo_decay_ticks", CombosDecayTickLimit
+    Glf_SetInitialPlayerVar "heal_value", BumperHitsPerRepair
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0
     Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0

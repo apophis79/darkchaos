@@ -3926,12 +3926,12 @@ Function Glf_935(args)
 End Function
 Function Glf_936(args)
 	On Error Resume Next
-	    Glf_936 = GetPlayerState("health_bump_value")<5
+	    Glf_936 = GetPlayerState("health_bump_value") < GetPlayerState("heal_value")
 	If Err Then Glf_936 = False
 End Function
 Function Glf_937(args)
 	On Error Resume Next
-	    Glf_937 = GetPlayerState("health_bump_value")>=5
+	    Glf_937 = GetPlayerState("health_bump_value") >= GetPlayerState("heal_value")
 	If Err Then Glf_937 = False
 End Function
 Function Glf_938(args)
@@ -8647,8 +8647,8 @@ glf_funcRefMap.Add "mode_health_started{current_player.ball_just_started==1}", "
 glf_funcRefMap.Add "mode_health_started{current_player.training_heal_achieved==1}", "Glf_933"
 glf_funcRefMap.Add "left_orbit_hit{current_player.shot_health_diverter==1}", "Glf_934"
 glf_funcRefMap.Add "right_orbit_hit{current_player.shot_health_diverter==1}", "Glf_935"
-glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value<5}", "Glf_936"
-glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value>=5}", "Glf_937"
+glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value < current_player.heal_value}", "Glf_936"
+glf_funcRefMap.Add "check_add_health_bump{current_player.health_bump_value >= current_player.heal_value}", "Glf_937"
 glf_funcRefMap.Add "check_add_health{current_player.health_value>8}", "Glf_938"
 glf_funcRefMap.Add "check_add_health{current_player.health_value==8}", "Glf_939"
 glf_funcRefMap.Add "check_add_health{current_player.health_value==7}", "Glf_940"

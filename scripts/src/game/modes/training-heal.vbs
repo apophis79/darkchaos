@@ -32,8 +32,8 @@ Sub CreateTrainingHealMode
             .Add "s_Bumper3_active", Array("check_add_training_health_bump")
             .Add "s_TopSlingshot_active", Array("check_add_training_health_bump")
             'add health lights as needed
-            .Add "check_add_training_health_bump{current_player.training_health_bump_value<"&BumperHitsPerRepairTrain&"}", Array("add_training_health_bump")
-            .Add "check_add_training_health_bump{current_player.training_health_bump_value>="&BumperHitsPerRepairTrain&"}", Array("check_add_training_health","reset_training_health_bump")
+            .Add "check_add_training_health_bump{current_player.training_health_bump_value<"&BumperHitsPerRepairTraining&"}", Array("add_training_health_bump")
+            .Add "check_add_training_health_bump{current_player.training_health_bump_value>="&BumperHitsPerRepairTraining&"}", Array("check_add_training_health","reset_training_health_bump")
             .Add "check_add_training_health{current_player.shot_training_health1 == 0}", Array("light_health1","flash_gi","play_sfx_LS","score_90000")
             .Add "check_add_training_health{current_player.shot_training_health1 == 1 and current_player.shot_training_health2 == 0}", Array("light_health2","flash_gi","play_sfx_LS","score_90000")
             .Add "check_add_training_health{current_player.shot_training_health2 == 1 and current_player.shot_training_health3 == 0}", Array("light_health3","flash_gi","play_sfx_LS","score_90000")
@@ -163,6 +163,10 @@ Sub CreateTrainingHealMode
 			End With
             'training achieved
             With .EventName("training_achieved")
+                With .Variable("heal_value")
+                    .Action = "set"
+					.Int = BumperHitsPerRepairTrained
+				End With
 				With .Variable("training_heal_achieved")
                     .Action = "set"
 					.Int = 1  
