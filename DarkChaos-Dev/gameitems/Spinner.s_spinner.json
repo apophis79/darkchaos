@@ -19,6 +19,7 @@
     "image": "",
     "surface": "",
     "name": "s_Spinner",
-    "is_reflection_enabled": false
+    "is_reflection_enabled": false,
+    "part_group_name": "Main"
   }
 }

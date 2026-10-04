@@ -1,6 +1,6 @@
 [
   {
-    "type_": "plane_reflection",
+    "type": "plane_reflection",
     "name": "Playfield Reflections",
     "roughness": 0,
     "reflection_plane": {
@@ -13,7 +13,7 @@
     "disable_light_reflection": true
   },
   {
-    "type_": "screen_space_transparency",
+    "type": "screen_space_transparency",
     "name": "Refraction Pass 1",
     "roughness": 0,
     "reflection_plane": {
@@ -26,7 +26,7 @@
     "disable_light_reflection": false
   },
   {
-    "type_": "screen_space_transparency",
+    "type": "screen_space_transparency",
     "name": "Refraction Pass 2",
     "roughness": 0,
     "reflection_plane": {
@@ -39,7 +39,7 @@
     "disable_light_reflection": false
   },
   {
-    "type_": "screen_space_transparency",
+    "type": "screen_space_transparency",
     "name": "Refraction Pass 3",
     "roughness": 0,
     "reflection_plane": {

@@ -7,7 +7,7 @@
     "base_radius": 20.2,
     "end_radius": 12.0,
     "flipper_radius_max": 115.0,
-    "return_": 0.07,
+    "return": 0.07,
     "start_angle": 122.0,
     "end_angle": 69.0,
     "override_physics": 0,
@@ -24,7 +24,7 @@
     "rubber_height": 17.6475,
     "rubber_width_int": 23,
     "rubber_width": 23.53,
-    "strength": 3000.0,
+    "strength": 3100.0,
     "elasticity": 0.88,
     "elasticity_falloff": 0.15,
     "friction": 0.7,
@@ -37,6 +37,7 @@
     "is_enabled": true,
     "height": 50.0,
     "image": "",
-    "is_reflection_enabled": false
+    "is_reflection_enabled": false,
+    "part_group_name": "Main"
   }
 }

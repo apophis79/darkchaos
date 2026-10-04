@@ -9,11 +9,9 @@
     "rotation": -16.0,
     "material": "",
     "is_timer_enabled": false,
+    "timer_interval": 100,
     "show_bracket": false,
     "is_collidable": true,
-    "timer_interval": 100,
-    "imgf": null,
-    "imgb": null,
     "surface": "75h",
     "elasticity": 0.3,
     "angle_max": 1.5707964,
@@ -25,6 +23,7 @@
     "name": "GateL",
     "two_way": true,
     "is_reflection_enabled": false,
-    "gate_type": "WireW"
+    "gate_type": "wire_w",
+    "part_group_name": "Main"
   }
 }

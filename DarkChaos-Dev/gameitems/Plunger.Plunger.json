@@ -34,6 +34,7 @@
     "spring_diam": 0.77,
     "spring_gauge": 1.38,
     "spring_loops": 16.0,
-    "spring_end_loops": 2.5
+    "spring_end_loops": 2.5,
+    "part_group_name": "Main"
   }
 }

@@ -24,7 +24,6 @@
     "friction": 0.3,
     "scatter": 1.0,
     "is_collidable": true,
-    "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 0.0,
     "depth_bias": 0.0,
@@ -35,6 +34,7 @@
     "timer_interval": 100,
     "raise_delay": 100,
     "physics_material": "zCol_Targets",
-    "overwrite_physics": true
+    "overwrite_physics": true,
+    "part_group_name": "Main"
   }
 }

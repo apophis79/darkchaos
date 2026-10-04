@@ -1,12 +1,10 @@
 {
   "Flasher": {
     "height": 1176.4866,
-    "pos_x": -795.29236,
-    "pos_y": 175.48624,
     "rot_x": -86.0,
     "rot_y": 0.0,
     "rot_z": 0.0,
-    "color": "#91009191",
+    "color": "#919191",
     "is_timer_enabled": false,
     "timer_interval": 100,
     "name": "BGDisplay",
@@ -15,14 +13,24 @@
     "alpha": 100,
     "modulate_vs_add": 0.8,
     "is_visible": false,
-    "add_blend": false,
-    "is_dmd": false,
+    "add_blend": "none",
+    "render_mode": "flasher",
+    "render_style": 0,
+    "glass_roughness": 0.0,
+    "glass_ambient": 0,
+    "glass_pad_top": 0.0,
+    "glass_pad_bottom": 0.0,
+    "glass_pad_left": 0.0,
+    "glass_pad_right": 0.0,
+    "image_src_link": "",
     "display_texture": true,
     "depth_bias": -1000.0,
     "image_alignment": "wrap",
     "filter": "none",
     "filter_amount": 100,
     "light_map": "",
+    "backglass": false,
+    "part_group_name": "VR_Backglass_Layer",
     "drag_points": [
       {
         "x": -151.92023,
@@ -33,8 +41,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -46,8 +52,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -59,8 +63,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -72,8 +74,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       }
     ]

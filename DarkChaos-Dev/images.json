@@ -2,659 +2,307 @@
   {
     "name": "Scratches",
     "path": "C:\\Models\\Scratches.png",
-    "width": 256,
-    "height": 256,
     "alpha_test_value": 128.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Models\\Scratches.png",
-      "name": "Scratches"
-    },
-    "bits": false
+    "is_opaque": false,
+    "md5_hash": "f732457588d60ccb2ab1cde82f35b94b"
   },
   {
     "name": "CustomBlackTip",
     "path": "D:\\temp\\CustomBlackTip.png",
-    "width": 256,
-    "height": 341,
     "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "D:\\temp\\CustomBlackTip.png",
-      "name": "CustomBlackTip"
-    },
-    "bits": false
+    "is_opaque": false,
+    "md5_hash": "e18df42fce6f00739c1bd3ec43ea0e5f"
   },
   {
     "name": "CustomWhiteTip",
     "path": "D:\\temp\\CustomWhiteTip.png",
-    "width": 256,
-    "height": 341,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "D:\\temp\\CustomWhiteTip.png",
-      "name": "CustomWhiteTip"
-    },
-    "bits": false
+    "md5_hash": "0e954302358774cd969a88e6f8793304"
   },
   {
     "name": "ballshadow",
     "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\ballshadow.png",
-    "width": 249,
-    "height": 252,
     "alpha_test_value": 1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\ballshadow.png",
-      "name": "ballshadow"
-    },
-    "bits": false
+    "md5_hash": "db06e6a4052e7f4f5770c08ac143720a"
   },
   {
     "name": "flippers_shadow",
     "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\flippers_shadow.png",
-    "width": 256,
-    "height": 512,
     "alpha_test_value": 1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\HP i7\\Downloads\\VP_old\\makeover stuff\\flippers_shadow.png",
-      "name": "flippers_shadow"
-    },
-    "bits": false
+    "md5_hash": "259574a38a4463f4bd39bdcf2427102c"
   },
   {
     "name": "ball_HDR",
     "path": "C:\\ball_HDR.hdr",
-    "width": 256,
-    "height": 256,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\ball_HDR.hdr",
-      "name": "ball_HDR"
-    },
-    "bits": false
+    "md5_hash": "b66a4fbf3cb4da9246a4345d96a51069"
   },
   {
     "name": "Colour_Dark",
     "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Colours\\Colour_Dark.png",
-    "width": 100,
-    "height": 100,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Visual Pinball\\Tables VR\\VR Room WIP\\_Assets\\Colours\\Colour_Dark.png",
-      "name": "Colour_Dark"
-    },
-    "bits": false
+    "md5_hash": "0213d8899a407e4725bd5e7d7c3b7e29"
   },
   {
     "name": "Backglassimage",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Backglass\\backglass-no-window.png",
-    "width": 3945,
-    "height": 2513,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Backglass\\backglass-no-window.png",
-      "name": "backglass-no-window"
-    },
-    "bits": false
+    "is_opaque": false,
+    "jpeg_name": "backglass-no-window",
+    "md5_hash": "e75b7f4768c5da8195d1a6919bad468d"
   },
   {
     "name": "environment_shiny3blur4",
     "path": "C:\\VPX4\\tables\\makeover stuff\\environment_shiny3blur4.hdr",
-    "width": 1024,
-    "height": 512,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\VPX4\\tables\\makeover stuff\\environment_shiny3blur4.hdr",
-      "name": "environment_shiny3blur4"
-    },
-    "bits": false
+    "md5_hash": "95380437c6c88af3818a42dd11105b34"
   },
   {
     "name": "Pincab_Cabinet",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Cabinet.webp",
-    "width": 4000,
-    "height": 4000,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Cabinet.webp",
-      "name": "Pincab_Cabinet"
-    },
-    "bits": false
+    "md5_hash": "d42d7325c5fa3d37a74c400e127fd607"
   },
   {
     "name": "Pincab_Backbox",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Backbox.webp",
-    "width": 2048,
-    "height": 4096,
-    "alpha_test_value": 200.00148,
+    "alpha_test_value": 200.00151,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\Cab\\Pincab_Backbox.webp",
-      "name": "Pincab_Backbox"
-    },
-    "bits": false
+    "md5_hash": "f0c369e16221fdb0266992d378aa47b4"
   },
   {
     "name": "NeoSegMap",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.png",
-    "width": 3285,
-    "height": 345,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\NeoSegMap.png",
-      "name": "NeoSegMap"
-    },
-    "bits": false
+    "md5_hash": "9b35eaa3a98ebf5126d92519d27046ca"
   },
   {
     "name": "SparkfunSegMap",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\SparkfunSegMap.png",
-    "width": 3645,
-    "height": 374,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Alphanumerics\\SparkfunSegMap.png",
-      "name": "SparkfunSegMap"
-    },
-    "bits": false
+    "md5_hash": "9a466ac95c6a6e196edc97af6af2474b"
   },
   {
     "name": "InstructionCard",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\dark_chaos_card_instructions2.png",
-    "width": 1788,
-    "height": 996,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Art\\dark_chaos_card_instructions2.png",
-      "name": "dark_chaos_card_instructions2"
-    },
-    "bits": false
+    "is_opaque": true,
+    "jpeg_name": "dark_chaos_card_instructions2",
+    "md5_hash": "9729d05cb17bd970a620eaef16311389"
   },
   {
     "name": "starmap_2020_4k",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\starmap_2020_4k_2.exr",
-    "width": 4096,
-    "height": 2048,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\starmap_2020_4k_2.exr",
-      "name": "starmap_2020_4k_2"
-    },
-    "bits": false
+    "jpeg_name": "starmap_2020_4k_2",
+    "md5_hash": "361e14f70ac6829f0cac5b28f5a1496a"
   },
   {
     "name": "stars",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\stars.png",
-    "width": 2964,
-    "height": 1667,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\stars.png",
-      "name": "stars"
-    },
-    "bits": false
+    "is_opaque": true,
+    "md5_hash": "2441987684a8b9c512be634aecbc844c"
   },
   {
     "name": "VRMinimal",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VRMinimal2.webp",
-    "width": 4000,
-    "height": 4000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VRMinimal2.webp",
-      "name": "VRMinimal2"
-    },
-    "bits": false
+    "jpeg_name": "VRMinimal2",
+    "md5_hash": "e3510480c243b6ecddea71eaa023031f"
   },
   {
     "name": "VR_Asteroid_Color",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Asteroid_Color.webp",
-    "width": 4096,
-    "height": 4096,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Asteroid_Color.webp",
-      "name": "VR_Asteroid_Color"
-    },
-    "bits": false
+    "md5_hash": "19b7b22da9ad526ce867246aadd556e0"
   },
   {
     "name": "Floor1_3x3.002_baseColor",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_baseColor.webp",
-    "width": 1024,
-    "height": 1024,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_baseColor.webp",
-      "name": "Floor1_3x3.002_baseColor"
-    },
-    "bits": false
+    "md5_hash": "181c2a68f3cda6e8ee71efcd5bc90034"
   },
   {
     "name": "Floor1_3x3.002_normal",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_normal.webp",
-    "width": 1024,
-    "height": 1024,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\Floor1_3x3.002_normal.webp",
-      "name": "Floor1_3x3.002_normal"
-    },
-    "bits": false
+    "is_opaque": true,
+    "md5_hash": "ff63d30c7e47e3e40efeeebb737443f6"
   },
   {
     "name": "bgflash",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\bgflash.png",
-    "width": 293,
-    "height": 282,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\bgflash.png",
-      "name": "bgflash"
-    },
-    "bits": false
+    "md5_hash": "4fd67e793c0642e2a533e14e06f163ae"
   },
   {
     "name": "ball_HDR2",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\MRBallDark3.hdr",
-    "width": 256,
-    "height": 256,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Textures\\MRBallDark3.hdr",
-      "name": "MRBallDark3"
-    },
-    "bits": false
+    "jpeg_name": "MRBallDark3",
+    "md5_hash": "38f8597258d497ce94a7498134e0dfe7"
   },
   {
     "name": "ball_Test8B",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\Balls\\ball_Test8B.hdr",
-    "width": 600,
-    "height": 300,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\Balls\\ball_Test8B.hdr",
-      "name": "ball_Test8B"
-    },
-    "bits": false
+    "md5_hash": "742501ef870b59bed79abeb2fec674b6"
   },
   {
     "name": "balldecal_ScratchesWeathered2",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\Balls\\balldecal_ScratchesWeathered2.png",
-    "width": 256,
-    "height": 256,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\Balls\\balldecal_ScratchesWeathered2.png",
-      "name": "balldecal_ScratchesWeathered2"
-    },
-    "bits": false
+    "is_opaque": true,
+    "md5_hash": "0e524928fb98c012e25e12bab226a98d"
   },
   {
     "name": "VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_AsteroidCircleEffect_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "cdd018b5cda94649bd385032e1705239"
   },
   {
     "name": "VR_AsteroidEffect001_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidEffect001_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidEffect001_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_AsteroidEffect001_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "e1cc9a269eb0778c4e8dae7e2491d028"
   },
   {
     "name": "VR_AsteroidFire_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidFire_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_AsteroidFire_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_AsteroidFire_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "477e629c39e348cc969075883f7e4da8"
   },
   {
     "name": "VR_DamageEarth_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_DamageEarth_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_DamageEarth_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_DamageEarth_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "140a696cc50182419030b0c7da1d45e6"
   },
   {
     "name": "VR_EarthClouds_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_EarthClouds_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_EarthClouds_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_EarthClouds_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "2050e654a4390a779903e81af8a2d95a"
   },
   {
     "name": "VR_Meteor_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Meteor_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_Meteor_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_Meteor_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "ba8bb95267b7d7b8f26260e6238a9643"
   },
   {
     "name": "VR_MeteorShards001_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards001_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards001_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_MeteorShards001_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "02462b23198a82f01b0cdf3b832cbf70"
   },
   {
     "name": "VR_MeteorShards002_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards002_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards002_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_MeteorShards002_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "e68e15b04d6674c14652adedad4d1f23"
   },
   {
     "name": "VR_MeteorShards003_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards003_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards003_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_MeteorShards003_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "3f3fc22ae117f4935686e3a75bfcaecd"
   },
   {
     "name": "VR_MeteorShards004_Bake1_CyclesBake_COMBINED_1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards004_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 1000,
-    "height": 1000,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR\\VR_MeteorShards004_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_MeteorShards004_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "e33333da4f202eb4b2c0b31681be860f"
   },
   {
     "name": "VR_Earth_Bake1_CyclesBake_COMBINED_1",
     "path": "D:\\Blender\\Tables\\Asteroid\\Transfer\\VR_Earth_Bake1_CyclesBake_COMBINED_1.webp",
-    "width": 4096,
-    "height": 4096,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "D:\\Blender\\Tables\\Asteroid\\Transfer\\VR_Earth_Bake1_CyclesBake_COMBINED_1.webp",
-      "name": "VR_Earth_Bake1_CyclesBake_COMBINED_1"
-    },
-    "bits": false
+    "md5_hash": "2164ca6520df6e2241937e87e8b82318"
   },
   {
     "name": "Dark_Chaos_Logo",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Release\\Dark_Chaos_Logo.png",
-    "width": 1488,
-    "height": 899,
-    "alpha_test_value": -1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Release\\Dark_Chaos_Logo.png",
-      "name": "Dark_Chaos_Logo"
-    },
-    "bits": false
+    "is_opaque": false,
+    "md5_hash": "c4e1eca07b3e32c9ccc27312063a3a1a"
   },
   {
     "name": "VLM.Nestmap0",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap0a.webp",
-    "width": 7296,
-    "height": 8192,
     "alpha_test_value": 1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap0a.webp",
-      "name": "VLM.Nestmap0a"
-    },
-    "bits": false
+    "jpeg_name": "VLM.Nestmap0a",
+    "md5_hash": "ceb7de58d4d904ea06c13791c30f15b1"
   },
   {
     "name": "VLM.Nestmap1",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 1.exr",
-    "width": 8192,
-    "height": 8192,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 1.exr",
-      "name": "VLM.Nestmap1"
-    },
-    "bits": false
+    "md5_hash": "1ec1f26f32d726a6b7f0d68889b7e63c"
   },
   {
     "name": "VLM.Nestmap2",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 2.exr",
-    "width": 8128,
-    "height": 8192,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 2.exr",
-      "name": "VLM.Nestmap2"
-    },
-    "bits": false
+    "md5_hash": "61f419ba74b31e5093080362d9019c52"
   },
   {
     "name": "VLM.Nestmap3",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap3a.exr",
-    "width": 8192,
-    "height": 8192,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VLM.Nestmap3a.exr",
-      "name": "VLM.Nestmap3a"
-    },
-    "bits": false
+    "jpeg_name": "VLM.Nestmap3a",
+    "md5_hash": "00f015e7b8379b0db8c969a373566d7f"
   },
   {
     "name": "VLM.Nestmap4",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 4.exr",
-    "width": 5568,
-    "height": 8192,
     "alpha_test_value": 1.0,
     "is_opaque": true,
-    "is_signed": true,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 4.exr",
-      "name": "VLM.Nestmap4"
-    },
-    "bits": false
+    "md5_hash": "a98f783a7e218c6bc61dc9ffd11d7f62"
   },
   {
     "name": "VLM.Nestmap5",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5.webp",
-    "width": 448,
-    "height": 2432,
     "alpha_test_value": 1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5.webp",
-      "name": "VLM.Nestmap5"
-    },
-    "bits": false
+    "md5_hash": "d27bcdd8a65e0da9f90b0ac449141fed"
   },
   {
     "name": "VLM.Nestmap5 - NM",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5 - NM.webp",
-    "width": 448,
-    "height": 2432,
     "alpha_test_value": 1.0,
-    "is_opaque": null,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\Blender\\darkchaos_26 - Bakes/Export/Nestmap 5 - NM.webp",
-      "name": "VLM.Nestmap5 - NM"
-    },
-    "bits": false
+    "is_opaque": false,
+    "md5_hash": "064ee15bb115c48e1f585e952950c9fe"
   },
   {
     "name": "PinCab_Blades",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Blades.png",
-    "width": 2048,
-    "height": 2048,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Blades.png",
-      "name": "PinCab_Blades"
-    },
-    "bits": false
+    "md5_hash": "a2a5b9bcb179ec65e74f6011bef7412e"
   },
   {
     "name": "Pincab_DMD",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_DMD.png",
-    "width": 1005,
-    "height": 416,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_DMD.png",
-      "name": "Pincab_DMD"
-    },
-    "bits": false
+    "md5_hash": "5bbb7be6d583436ac9eb5366cc7aba9e"
   },
   {
     "name": "PinCab_Quarters",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Quarters.png",
-    "width": 550,
-    "height": 640,
-    "alpha_test_value": -1.0,
     "is_opaque": true,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\PinCab_Quarters.png",
-      "name": "PinCab_Quarters"
-    },
-    "bits": false
+    "md5_hash": "5155d55d01276512d8109dad5d6251d3"
   },
   {
     "name": "Pincab_startbutton",
     "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_startbutton.png",
-    "width": 230,
-    "height": 228,
-    "alpha_test_value": -1.0,
     "is_opaque": false,
-    "is_signed": false,
-    "jpeg": {
-      "path": "C:\\Users\\dan\\OneDrive\\Documents\\Dan\\Pinball\\_Table Dev\\Dark Chaos\\VR Stuff\\Pincab_startbutton.png",
-      "name": "Pincab_startbutton"
-    },
-    "bits": false
+    "md5_hash": "fefa248622f1a0d01794a3f0a9a6a1d3"
   }
 ]

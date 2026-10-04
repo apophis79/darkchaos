@@ -26,7 +26,7 @@
     "sides": 16,
     "name": "zCol_Rubber_Peg002",
     "material": "zCol_RubberPegs",
-    "side_color": "#96009696",
+    "side_color": "#969696",
     "is_visible": false,
     "draw_textures_inside": false,
     "hit_event": true,
@@ -41,7 +41,6 @@
     "is_toy": false,
     "use_3d_mesh": false,
     "static_rendering": false,
-    "disable_lighting_top_old": null,
     "disable_lighting_top": 0.0,
     "disable_lighting_below": 1.0,
     "is_reflection_enabled": false,
@@ -57,11 +56,12 @@
     "add_blend": false,
     "use_depth_mask": true,
     "alpha": 100.0,
-    "color": "#ff00ffff",
+    "color": "#ffffff",
     "light_map": "",
     "reflection_probe": "",
     "reflection_strength": 1.0,
     "refraction_probe": "",
-    "refraction_thickness": 10.0
+    "refraction_thickness": 10.0,
+    "part_group_name": "Rubbers_and_Posts"
   }
 }

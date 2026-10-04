@@ -9,12 +9,12 @@
     "falloff_power": 2.0,
     "state_u32": 2,
     "state": 2.0,
-    "color": "#00000000",
-    "color2": "#00000000",
+    "color": "#000000",
+    "color2": "#000000",
     "is_timer_enabled": false,
     "timer_interval": 100,
     "blink_pattern": "tScoreSegs",
-    "off_image": "",
+    "image": "",
     "blink_interval": 125,
     "intensity": 300.0,
     "transmission_scale": 0.5,
@@ -35,6 +35,7 @@
     "shadows": "none",
     "fader": "none",
     "visible": true,
+    "part_group_name": "Segment_lights",
     "drag_points": [
       {
         "x": 786.8683,
@@ -45,8 +46,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -58,8 +57,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -71,8 +68,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -84,8 +79,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -97,8 +90,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       },
       {
@@ -110,8 +101,6 @@
         "has_auto_texture": true,
         "tex_coord": 0.0,
         "is_locked": false,
-        "editor_layer": 0,
-        "editor_layer_name": "",
         "editor_layer_visibility": true
       }
     ]

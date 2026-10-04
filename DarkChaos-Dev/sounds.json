@@ -6,7 +6,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Bounce_2",
@@ -15,7 +15,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Bounce_Soft_1",
@@ -24,7 +24,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Hard_1",
@@ -33,7 +33,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Hard_2",
@@ -42,7 +42,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Hard_Hit_1",
@@ -51,7 +51,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Hard_Hit_2",
@@ -60,7 +60,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Hard_Hit_3",
@@ -69,7 +69,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Medium_1",
@@ -78,7 +78,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Medium_2",
@@ -87,7 +87,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Medium_3",
@@ -96,7 +96,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_1",
@@ -105,7 +105,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_2",
@@ -114,7 +114,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_3",
@@ -123,7 +123,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_4",
@@ -132,7 +132,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_5",
@@ -141,7 +141,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_6",
@@ -150,7 +150,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Apron_Soft_7",
@@ -159,7 +159,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_L1",
@@ -168,7 +168,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_L2",
@@ -177,7 +177,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_L3",
@@ -186,7 +186,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_L4",
@@ -195,7 +195,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_R1",
@@ -204,7 +204,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_R2",
@@ -213,7 +213,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_R3",
@@ -222,7 +222,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Arch_R4",
@@ -231,7 +231,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_1",
@@ -240,7 +240,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_2",
@@ -249,7 +249,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_3",
@@ -258,7 +258,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_4",
@@ -267,7 +267,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_5",
@@ -276,7 +276,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_6",
@@ -285,7 +285,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Hard_7",
@@ -294,7 +294,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Soft_1",
@@ -303,7 +303,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Soft_2",
@@ -312,7 +312,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Soft_3",
@@ -321,7 +321,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Soft_4",
@@ -330,7 +330,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Bounce_Playfield_Soft_5",
@@ -339,7 +339,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_1",
@@ -348,7 +348,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_2",
@@ -357,7 +357,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_3",
@@ -366,7 +366,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_4",
@@ -375,7 +375,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_5",
@@ -384,7 +384,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_6",
@@ -393,7 +393,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Collide_7",
@@ -402,7 +402,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Drop_Playfield_1_Delayed",
@@ -411,7 +411,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Drop_Playfield_2_Delayed",
@@ -420,7 +420,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Drop_Playfield_3_Delayed",
@@ -429,7 +429,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Drop_Playfield_4_Delayed",
@@ -438,7 +438,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Ball_Drop_Playfield_5_Delayed",
@@ -447,7 +447,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease1",
@@ -456,7 +456,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease2",
@@ -465,7 +465,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease3",
@@ -474,7 +474,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease4",
@@ -483,7 +483,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease5",
@@ -492,7 +492,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease6",
@@ -501,7 +501,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRelease7",
@@ -510,7 +510,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Bottom_1",
@@ -519,7 +519,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Bottom_2",
@@ -528,7 +528,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Bottom_3",
@@ -537,7 +537,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Bottom_4",
@@ -546,7 +546,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Bottom_5",
@@ -555,7 +555,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Middle_1",
@@ -564,7 +564,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Middle_2",
@@ -573,7 +573,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Middle_3",
@@ -582,7 +582,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Middle_4",
@@ -591,7 +591,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Middle_5",
@@ -600,7 +600,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Top_1",
@@ -609,7 +609,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Top_2",
@@ -618,7 +618,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Top_3",
@@ -627,7 +627,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Top_4",
@@ -636,7 +636,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Bumpers_Top_5",
@@ -645,7 +645,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Coin_In_1",
@@ -654,7 +654,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Coin_In_2",
@@ -663,7 +663,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Coin_In_3",
@@ -672,7 +672,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_1",
@@ -681,7 +681,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_2",
@@ -690,7 +690,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_3",
@@ -699,7 +699,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_4",
@@ -708,7 +708,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_5",
@@ -717,7 +717,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_6",
@@ -726,7 +726,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_7",
@@ -735,7 +735,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_8",
@@ -744,7 +744,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_9",
@@ -753,7 +753,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_10",
@@ -762,7 +762,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drain_11",
@@ -771,7 +771,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Attack-L01",
@@ -780,7 +780,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Attack-R01",
@@ -789,7 +789,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L01",
@@ -798,7 +798,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L02",
@@ -807,7 +807,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L03",
@@ -816,7 +816,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L04",
@@ -825,7 +825,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L05",
@@ -834,7 +834,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L06",
@@ -843,7 +843,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L07",
@@ -852,7 +852,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L08",
@@ -861,7 +861,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L09",
@@ -870,7 +870,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L10",
@@ -879,7 +879,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_L11",
@@ -888,7 +888,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_1",
@@ -897,7 +897,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_2",
@@ -906,7 +906,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_3",
@@ -915,7 +915,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_4",
@@ -924,7 +924,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_5",
@@ -933,7 +933,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_6",
@@ -942,7 +942,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Left_Down_7",
@@ -951,7 +951,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R01",
@@ -960,7 +960,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R02",
@@ -969,7 +969,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R03",
@@ -978,7 +978,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R04",
@@ -987,7 +987,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R05",
@@ -996,7 +996,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R06",
@@ -1005,7 +1005,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R07",
@@ -1014,7 +1014,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R08",
@@ -1023,7 +1023,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R09",
@@ -1032,7 +1032,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R10",
@@ -1041,7 +1041,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_R11",
@@ -1050,7 +1050,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_ReFlip_L01",
@@ -1059,7 +1059,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_ReFlip_L02",
@@ -1068,7 +1068,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_ReFlip_L03",
@@ -1077,7 +1077,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_ReFlip_R01",
@@ -1086,7 +1086,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_ReFlip_R02",
@@ -1095,7 +1095,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_ReFlip_R03",
@@ -1104,7 +1104,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_1",
@@ -1113,7 +1113,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_2",
@@ -1122,7 +1122,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_3",
@@ -1131,7 +1131,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_4",
@@ -1140,7 +1140,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_5",
@@ -1149,7 +1149,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_6",
@@ -1158,7 +1158,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_7",
@@ -1167,7 +1167,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Right_Down_8",
@@ -1176,7 +1176,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_1",
@@ -1185,7 +1185,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_2",
@@ -1194,7 +1194,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_3",
@@ -1203,7 +1203,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_4",
@@ -1212,7 +1212,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_5",
@@ -1221,7 +1221,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_6",
@@ -1230,7 +1230,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Flipper_Rubber_7",
@@ -1239,7 +1239,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Gate_1",
@@ -1248,7 +1248,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Gate_2",
@@ -1257,7 +1257,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Gate_FastTrigger_1",
@@ -1266,7 +1266,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Gate_FastTrigger_2",
@@ -1275,7 +1275,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Knocker_1",
@@ -1284,7 +1284,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_1",
@@ -1293,7 +1293,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_2",
@@ -1302,7 +1302,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_3",
@@ -1311,7 +1311,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_4",
@@ -1320,7 +1320,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_5",
@@ -1329,7 +1329,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_6",
@@ -1338,7 +1338,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_7",
@@ -1347,7 +1347,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_8",
@@ -1356,7 +1356,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_9",
@@ -1365,7 +1365,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_10",
@@ -1374,7 +1374,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_11",
@@ -1383,7 +1383,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_12",
@@ -1392,7 +1392,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Metal_Touch_13",
@@ -1401,7 +1401,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Nudge_1",
@@ -1410,7 +1410,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Nudge_2",
@@ -1419,7 +1419,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Nudge_3",
@@ -1428,7 +1428,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Plunger_Pull_1",
@@ -1437,7 +1437,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Plunger_Release_Ball",
@@ -1446,7 +1446,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Plunger_Release_No_Ball",
@@ -1455,7 +1455,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rollover_1",
@@ -1464,7 +1464,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rollover_2",
@@ -1473,7 +1473,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rollover_3",
@@ -1482,7 +1482,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rollover_4",
@@ -1491,7 +1491,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_1",
@@ -1500,7 +1500,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_1_Hard",
@@ -1509,7 +1509,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_2",
@@ -1518,7 +1518,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_3",
@@ -1527,7 +1527,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_4",
@@ -1536,7 +1536,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_5",
@@ -1545,7 +1545,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_6",
@@ -1554,7 +1554,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_7",
@@ -1563,7 +1563,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_8",
@@ -1572,7 +1572,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_9",
@@ -1581,7 +1581,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_1",
@@ -1590,7 +1590,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_2",
@@ -1599,7 +1599,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_3",
@@ -1608,7 +1608,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_4",
@@ -1617,7 +1617,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_5",
@@ -1626,7 +1626,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_6",
@@ -1635,7 +1635,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_7",
@@ -1644,7 +1644,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_8",
@@ -1653,7 +1653,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Rubber_Strong_9",
@@ -1662,7 +1662,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Saucer_Empty",
@@ -1671,7 +1671,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Saucer_Enter_1",
@@ -1680,7 +1680,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Saucer_Enter_2",
@@ -1689,7 +1689,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Saucer_Kick",
@@ -1698,7 +1698,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L1",
@@ -1707,7 +1707,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L2",
@@ -1716,7 +1716,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L3",
@@ -1725,7 +1725,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L4",
@@ -1734,7 +1734,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L5",
@@ -1743,7 +1743,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L6",
@@ -1752,7 +1752,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L7",
@@ -1761,7 +1761,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L8",
@@ -1770,7 +1770,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L9",
@@ -1779,7 +1779,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_L10",
@@ -1788,7 +1788,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R1",
@@ -1797,7 +1797,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R2",
@@ -1806,7 +1806,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R3",
@@ -1815,7 +1815,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R4",
@@ -1824,7 +1824,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R5",
@@ -1833,7 +1833,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R6",
@@ -1842,7 +1842,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R7",
@@ -1851,7 +1851,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Sling_R8",
@@ -1860,7 +1860,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Start_Button",
@@ -1869,7 +1869,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_1",
@@ -1878,7 +1878,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_2",
@@ -1887,7 +1887,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_3",
@@ -1896,7 +1896,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_4",
@@ -1905,7 +1905,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_5",
@@ -1914,7 +1914,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_6",
@@ -1923,7 +1923,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_7",
@@ -1932,7 +1932,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_8",
@@ -1941,7 +1941,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Target_Hit_9",
@@ -1950,7 +1950,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_1",
@@ -1959,7 +1959,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_2",
@@ -1968,7 +1968,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_3",
@@ -1977,7 +1977,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_4",
@@ -1986,7 +1986,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_5",
@@ -1995,7 +1995,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_6",
@@ -2004,7 +2004,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_7",
@@ -2013,7 +2013,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_8",
@@ -2022,7 +2022,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Wall_Hit_9",
@@ -2031,7 +2031,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Spinner",
@@ -2040,7 +2040,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_DropTarget_Down",
@@ -2049,7 +2049,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_DropTarget_Up",
@@ -2058,7 +2058,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireRamp_Stop",
@@ -2067,7 +2067,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Down_1",
@@ -2076,7 +2076,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Down_2",
@@ -2085,7 +2085,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Down_3",
@@ -2094,7 +2094,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Down_4",
@@ -2103,7 +2103,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Down_5",
@@ -2112,7 +2112,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Down_6",
@@ -2121,7 +2121,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Reset_1",
@@ -2130,7 +2130,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Reset_2",
@@ -2139,7 +2139,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Reset_3",
@@ -2148,7 +2148,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Reset_4",
@@ -2157,7 +2157,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Reset_5",
@@ -2166,7 +2166,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Drop_Target_Reset_6",
@@ -2175,7 +2175,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Relay_Flash_Off",
@@ -2184,7 +2184,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Relay_Flash_On",
@@ -2193,7 +2193,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Relay_GI_Off",
@@ -2202,7 +2202,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Relay_GI_On",
@@ -2211,7 +2211,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRoll_0",
@@ -2220,7 +2220,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRoll_1",
@@ -2229,7 +2229,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRoll_2",
@@ -2238,7 +2238,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRoll_3",
@@ -2247,7 +2247,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRoll_4",
@@ -2256,7 +2256,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_BallRoll_5",
@@ -2265,7 +2265,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_RampLoop1",
@@ -2274,7 +2274,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_RampLoop2",
@@ -2283,7 +2283,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_RampLoop3",
@@ -2292,7 +2292,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_RampLoop4",
@@ -2301,7 +2301,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_RampLoop5",
@@ -2310,7 +2310,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireLoop1",
@@ -2319,7 +2319,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireLoop2",
@@ -2328,7 +2328,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireLoop3",
@@ -2337,7 +2337,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireLoop4",
@@ -2346,7 +2346,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireLoop5",
@@ -2355,7 +2355,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_Motor",
@@ -2364,7 +2364,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_ScoopHit1",
@@ -2373,7 +2373,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_ScoopHit2",
@@ -2382,7 +2382,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_RampLoop6",
@@ -2391,7 +2391,7 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   },
   {
     "name": "mfx_WireLoop6",
@@ -2400,6 +2400,6 @@
     "fade": 0,
     "volume": 0,
     "balance": 0,
-    "output_target": 0
+    "output_target": "table"
   }
 ]

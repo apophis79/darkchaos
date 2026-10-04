@@ -26,7 +26,7 @@
     "sides": 4,
     "name": "p_p2_seg103_",
     "material": "",
-    "side_color": "#96009696",
+    "side_color": "#969696",
     "is_visible": true,
     "draw_textures_inside": false,
     "hit_event": false,
@@ -41,7 +41,6 @@
     "is_toy": true,
     "use_3d_mesh": true,
     "static_rendering": false,
-    "disable_lighting_top_old": null,
     "disable_lighting_top": 1.0,
     "disable_lighting_below": 1.0,
     "is_reflection_enabled": false,
@@ -57,11 +56,12 @@
     "add_blend": true,
     "use_depth_mask": false,
     "alpha": 100.0,
-    "color": "#ff00ffff",
+    "color": "#ffffff",
     "light_map": "<None>",
     "reflection_probe": "",
     "reflection_strength": 1.0,
     "refraction_probe": "",
-    "refraction_thickness": 10.0
+    "refraction_thickness": 10.0,
+    "part_group_name": "Segment_prims_p2"
   }
 }

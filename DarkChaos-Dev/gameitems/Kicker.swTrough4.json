@@ -17,6 +17,7 @@
     "hit_height": 40.0,
     "orientation": 0.0,
     "fall_through": false,
-    "legacy_mode": true
+    "legacy_mode": true,
+    "part_group_name": "Main"
   }
 }
