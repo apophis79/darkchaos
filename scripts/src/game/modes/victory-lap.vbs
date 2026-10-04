@@ -46,6 +46,7 @@ Sub CreateVictoryLapMode
             .Add "ball_search_started", Array("release_moon_ball","end_victory_lap")
             'Handled mode ending
             .Add "timer_victory_countdown_complete", Array("end_victory_lap")
+            .Add "timer_victory_song_complete", Array("mus_victory_stopped","end_victory_lap")
         End With
 
         With .QueueRelayPlayer()
@@ -430,6 +431,16 @@ Sub CreateVictoryLapMode
             .EndValue = 500
             With .ControlEvents()
                 .EventName = "run_victory_lap"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("victory_song")
+            .TickInterval = 65200
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "play_mus_victory"
                 .Action = "restart"
             End With
         End With

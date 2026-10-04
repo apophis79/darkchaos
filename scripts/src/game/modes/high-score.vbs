@@ -24,6 +24,7 @@ Sub CreateHighScoreMode
             .Add "text_inputted.1{machine.high_score_initials_chars == 3}", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
             'timer ran out
             .Add "timer_high_score_timeout_complete", Array("text_input_high_score_complete:{text: machine.high_score_initials}")
+            .Add "timer_hs_song_complete", Array("mus_victory_stopped")
         End With
 
         With .SlidePlayer()
@@ -39,6 +40,16 @@ Sub CreateHighScoreMode
             .EndValue = 1
             With .ControlEvents()
                 .EventName = "text_inputted{machine.high_score_initials_chars < 3}"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("hs_song")
+            .TickInterval = 65200
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "mode_high_score_started"
                 .Action = "restart"
             End With
         End With
