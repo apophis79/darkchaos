@@ -471,9 +471,9 @@ Dim ShipDispY:ShipDispY = 0
 Dim Ship1DispY:Ship1DispY = 0
 
 
-Const ShipMaxMovement = 5
-Const ShipDecay = 0.90
-Const ShipAcc = 3000
+Const ShipMaxMovement = 2
+Const ShipDecay = 0.9
+Const ShipAcc = 5000
 
 Sub NudgeAnim() 'Call from FrameTimer
     Dim X, Y
