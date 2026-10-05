@@ -139,7 +139,7 @@ Sub InitPolarity()
 		x.AddPt "Polarity", 2, 0.16, - 5.5
 		x.AddPt "Polarity", 3, 0.20, - 0.75
 		x.AddPt "Polarity", 4, 0.25, - 1.25
-		x.AddPt "Polarity", 5, 0.3, - 1.75
+		x.AddPt "Polarity", 5, 0.3, - 3.5
 		x.AddPt "Polarity", 6, 0.4, - 3.5
 		x.AddPt "Polarity", 7, 0.5, - 5.25
 		x.AddPt "Polarity", 8, 0.7, - 4.0
@@ -153,17 +153,17 @@ Sub InitPolarity()
 		x.AddPt "Polarity", 16, 1.1, 0
 		x.AddPt "Polarity", 17, 1.3, 0
 
-		x.AddPt "Velocity", 0, 0, 1
-		x.AddPt "Velocity", 1, 0.23, 1
-		x.AddPt "Velocity", 2, 0.27, 1
-		x.AddPt "Velocity", 3, 0.3, 1
-		x.AddPt "Velocity", 4, 0.35, 1
+		x.AddPt "Velocity", 0, 0, 1.1
+		x.AddPt "Velocity", 1, 0.23, 1.1
+		x.AddPt "Velocity", 2, 0.27, 1.1
+		x.AddPt "Velocity", 3, 0.3, 1.1
+		x.AddPt "Velocity", 4, 0.35, 1.08
 		x.AddPt "Velocity", 5, 0.6, 1 '0.982
 		x.AddPt "Velocity", 6, 0.62, 1.0
-		x.AddPt "Velocity", 7, 0.702, 0.968
-		x.AddPt "Velocity", 8, 0.95,  0.968
-		x.AddPt "Velocity", 9, 1.03,  0.945
-		x.AddPt "Velocity", 10, 1.5,  0.945
+		x.AddPt "Velocity", 7, 0.702, 1
+		x.AddPt "Velocity", 8, 0.95,  0.98
+		x.AddPt "Velocity", 9, 1.03,  0.97
+		x.AddPt "Velocity", 10, 1.5,  0.97
 
 	Next
 	
