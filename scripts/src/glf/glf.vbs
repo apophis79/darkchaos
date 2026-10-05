@@ -1000,7 +1000,7 @@ Public Sub Glf_KeyDown(ByVal keycode)
 		Glf_CheckTilt
 	End If
     If keycode = CenterTiltKey Then 
-		Nudge 0, 3
+		Nudge 0, 2
 		Glf_CheckTilt
 	End If
 
