@@ -21,6 +21,7 @@ Sub CreateHealthMode
             .Add "mode_health_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_health")
             .Add "mode_health_started{current_player.ball_just_started==1}", Array("restart_health","reset_health_bump")
             .Add "mode_health_started{current_player.training_heal_achieved==1}", Array("heal_powerup") 'training boost
+            .Add "mode_health_started{current_player.training_heal_just_achieved==1}", Array("complete_full_health","restart_health","reset_health_bump")
             'handle health diverter
             .Add "left_orbit_hit{current_player.shot_health_diverter==1}", Array("raise_diverter")
             .Add "right_orbit_hit{current_player.shot_health_diverter==1}", Array("raise_diverter")
@@ -243,6 +244,10 @@ Sub CreateHealthMode
 				With .Variable("health_value")
                     .Action = "set"
 					.Int = 9  
+				End With
+                With .Variable("training_heal_just_achieved")
+                    .Action = "set"
+					.Int = 0  
 				End With
 			End With
             With .EventName("remove_health")

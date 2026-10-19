@@ -21,7 +21,7 @@ Sub CreateTrainingHealMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_heal_started", Array("init_training","play_lsling_training","play_rsling_training")
+            .Add "mode_training_heal_started", Array("init_training","init_training_shots","play_lsling_training","play_rsling_training")
             'handle health diverter
             .Add "left_orbit_hit", Array("raise_diverter")
             .Add "right_orbit_hit", Array("raise_diverter")
@@ -138,6 +138,7 @@ Sub CreateTrainingHealMode
                 '.RestartEvents = Array("init_training")
             End With
         Next
+   
 
         With .VariablePlayer()
             ' For x = 1 to 9
@@ -168,6 +169,10 @@ Sub CreateTrainingHealMode
 					.Int = BumperHitsPerRepairTrained
 				End With
 				With .Variable("training_heal_achieved")
+                    .Action = "set"
+					.Int = 1  
+				End With
+                With .Variable("training_heal_just_achieved")
                     .Action = "set"
 					.Int = 1  
 				End With
@@ -210,6 +215,18 @@ Sub CreateTrainingHealMode
                     .Add "lights", "GI"
                     .Add "color", HealthColor1
                     .Add "intensity", 100
+                End With
+            End With
+            With .EventName("init_training_shots")
+                .Key = "key_heal_shots"
+                .Show = "flash_color_with_fade" 
+                .Speed = 3
+                .Loops = -1
+                .Priority = 2000
+                With .Tokens()
+                    .Add "lights", "tHealth2"
+                    .Add "color", HealthColor1
+                    .Add "fade", 800
                 End With
             End With
             With .EventName("flash_gi")

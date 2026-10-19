@@ -457,6 +457,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "heal_value", BumperHitsPerRepair
     Glf_SetInitialPlayerVar "training_just_finished", 0
     Glf_SetInitialPlayerVar "training_heal_achieved", 0
+    Glf_SetInitialPlayerVar "training_heal_just_achieved", 0
     Glf_SetInitialPlayerVar "training_cluster_bomb_achieved", 0
     Glf_SetInitialPlayerVar "training_proton_cannon_achieved", 0
     Glf_SetInitialPlayerVar "training_moon_missile_achieved", 0
