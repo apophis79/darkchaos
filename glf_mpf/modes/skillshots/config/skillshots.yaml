@@ -27,15 +27,11 @@ event_player:
     - ss_trainer_ready
     - sss_mystery_ready
     - score_1000000
-  sss_achieved.1{current_player.num_skillshots==3}:
-    - activate_nuke
   ssss_achieved:
     - score_2000000
   sdsss_achieved:
     - score_3000000
-  voc_ss_stopped{current_player.num_skillshots==3}:
-    - activate_nuke
-  voc_sss_stopped{current_player.num_skillshots==3}:
+  timer_ss_voc_complete{current_player.num_skillshots==3}:
     - activate_nuke
   timer_skillshots_complete:
     - stop_skillshots
@@ -72,7 +68,7 @@ show_player:
       show_tokens: 
         color1: "000000"
         color2: "33dd33"
-        color3: "ffae00"
+        color3: "ff4c00"
         intensity: "100"
   ssss_achieved: 
     insert_swap3: 
@@ -138,6 +134,18 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
+  ss_voc:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: ss_achieved
+        action: restart
+      - event: sss_achieved
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 2000ms
 
 variable_player: 
   init_ss: 

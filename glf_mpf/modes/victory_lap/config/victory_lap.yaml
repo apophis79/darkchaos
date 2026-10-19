@@ -97,6 +97,9 @@ event_player:
     - end_victory_lap
   timer_victory_countdown_complete:
     - end_victory_lap
+  timer_victory_song_complete:
+    - mus_victory_stopped
+    - end_victory_lap
 
 
 multiballs: 
@@ -475,7 +478,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "LB1"
-        color: "ffae00"
+        color: "ff4c00"
   victory_bumper2_show_orange: 
     flash_color_fadeout: 
       key: key_v_bumper2_show_orange
@@ -483,7 +486,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "LB2"
-        color: "ffae00"
+        color: "ff4c00"
   victory_bumper3_show_orange: 
     flash_color_fadeout: 
       key: key_v_bumper3_show_orange
@@ -491,7 +494,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "LB3"
-        color: "ffae00"
+        color: "ff4c00"
   victory_bumper1_show_yellow: 
     flash_color_fadeout: 
       key: key_v_bumper1_show_yellow
@@ -665,25 +668,25 @@ show_player:
       key: key_v_firework1_show_orange
       loops: 0
       show_tokens: 
-        color: "ffae00"
+        color: "ff4c00"
   victory_firework2_show_orange: 
     meteor2_explodes: 
       key: key_v_firework2_show_orange
       loops: 0
       show_tokens: 
-        color: "ffae00"
+        color: "ff4c00"
   victory_firework3_show_orange: 
     meteor3_explodes: 
       key: key_v_firework3_show_orange
       loops: 0
       show_tokens: 
-        color: "ffae00"
+        color: "ff4c00"
   victory_firework4_show_orange: 
     meteor4_explodes: 
       key: key_v_firework4_show_orange
       loops: 0
       show_tokens: 
-        color: "ffae00"
+        color: "ff4c00"
   victory_firework1_show_yellow: 
     meteor1_explodes: 
       key: key_v_firework1_show_yellow
@@ -843,7 +846,7 @@ show_player:
       speed: 20
       show_tokens: 
         lights: "tFlasherU"
-        color: "ffae00"
+        color: "ff4c00"
   victory_flasher_show_3: 
     flash_color: 
       key: key_v_flasher_show_3
@@ -909,7 +912,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi02"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi03_show1: 
     flash_color_fadeout: 
       key: key_v_gi03_show1
@@ -981,7 +984,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi10"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi11_show1: 
     flash_color_fadeout: 
       key: key_v_gi11_show1
@@ -1053,7 +1056,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi18"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi19_show1: 
     flash_color_fadeout: 
       key: key_v_gi19_show1
@@ -1152,7 +1155,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi07"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi08_show2: 
     flash_color_fadeout: 
       key: key_v_gi08_show2
@@ -1224,7 +1227,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi15"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi16_show2: 
     flash_color_fadeout: 
       key: key_v_gi16_show2
@@ -1332,7 +1335,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi05"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi06_show3: 
     flash_color_fadeout: 
       key: key_v_gi06_show3
@@ -1404,7 +1407,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi13"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi14_show3: 
     flash_color_fadeout: 
       key: key_v_gi14_show3
@@ -1476,7 +1479,7 @@ show_player:
       speed: 5
       show_tokens: 
         lights: "gi21"
-        color: "ffae00"
+        color: "ff4c00"
   victory_gi22_show3: 
     flash_color_fadeout: 
       key: key_v_gi22_show3
@@ -1533,6 +1536,16 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 250ms
+  victory_song:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: play_mus_victory
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 65200ms
 
 variable_player: 
   mode_victory_lap_started: 

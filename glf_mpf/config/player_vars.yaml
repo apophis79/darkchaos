@@ -100,6 +100,9 @@ player_vars:
   combo_decay_ticks:
     initial_value: 4
     value_type: int
+  heal_value:
+    initial_value: 8
+    value_type: int
   training_just_finished:
     initial_value: 0
     value_type: int

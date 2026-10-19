@@ -18,6 +18,8 @@ event_player:
     - text_input_high_score_complete:{text: machine.high_score_initials}
   timer_high_score_timeout_complete:
     - text_input_high_score_complete:{text: machine.high_score_initials}
+  timer_hs_song_complete:
+    - mus_victory_stopped
 
 
 segment_display_player: 
@@ -532,6 +534,16 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 200ms
+  hs_song:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: mode_high_score_started
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 65200ms
   high_score_timeout:
     start_value: 60
     end_value: 0

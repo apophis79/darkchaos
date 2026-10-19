@@ -539,7 +539,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffae00"
+        color: "ff4c00"
   training_cancel_warning_stop: 
     flash_color: 
       action: stop
@@ -549,7 +549,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffae00"
+        color: "ff4c00"
 
 
 slide_player: 
@@ -593,6 +593,9 @@ variable_player:
       int: 1
 
   training_achieved: 
+    heal_value: 
+      action: set
+      int: 5
     training_heal_achieved: 
       action: set
       int: 1

@@ -27,9 +27,9 @@ event_player:
     - check_add_health_bump
   s_TopSlingshot_active:
     - check_add_health_bump
-  check_add_health_bump{current_player.health_bump_value<5}:
+  check_add_health_bump{current_player.health_bump_value < current_player.heal_value}:
     - add_health_bump
-  check_add_health_bump{current_player.health_bump_value>=5}:
+  check_add_health_bump{current_player.health_bump_value >= current_player.heal_value}:
     - check_add_health
     - reset_health_bump
   check_add_health{current_player.health_value>8}:
@@ -349,7 +349,7 @@ show_player:
       speed: 10
       show_tokens: 
         lights: "tBumper"
-        color: "ffedd2"
+        color: "ffdca3"
         intensity: "10"
   lsling_powerup_h: 
     lsling_rotate2_cw: 

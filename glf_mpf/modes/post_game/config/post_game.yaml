@@ -8,10 +8,10 @@ mode:
 event_player: 
   mode_post_game_started:
     - select_message_num
-    - meteor1_raise
-    - meteor2_raise
-    - meteor3_raise
-    - meteor4_raise
+    - meteor1_knockdown
+    - meteor2_knockdown
+    - meteor3_knockdown
+    - meteor4_knockdown
     - backglass_dark_on
     - backglass_chaos_on
   mode_post_game_started{machine.won_game == 0}:
@@ -497,12 +497,16 @@ event_player:
     - check_loser_message
     - check_winner_message6
     - meteor3_raise
-  timer_post_game_show_complete:
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 94}:
     - final_flash1
     - final_flash2
     - final_flash3
     - final_flash4
     - final_flash5
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 101 and machine.won_game == 0}:
+    - start_attract_mode
+  timer_post_game_show_tick{device.timers.post_game_show.ticks == 120 and machine.won_game == 1}:
+    - start_attract_mode
   check_loser_message{machine.message_num == 1 and machine.won_game == 0}:
     - display_loser_message1
   check_loser_message{machine.message_num == 2 and machine.won_game == 0}:
@@ -1077,7 +1081,7 @@ show_player:
       speed: 6
       show_tokens: 
         lights: "tTrain"
-        color: "ffae00"
+        color: "ff4c00"
   powerup_cluster: 
     flash_color_fadeout: 
       key: key_powerup_cluster
@@ -1149,7 +1153,7 @@ show_player:
       speed: 6
       show_tokens: 
         lights: "tCombos"
-        color: "ffffff"
+        color: "ffb46b"
   play_slide_left: 
     insert_gi_slide_left: 
       key: key_insert_gi_slide_left
@@ -1230,7 +1234,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "FL1"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flasher1_flash_white: 
     flash_color_fadeout: 
       key: key_flasher1_flash_white
@@ -1246,7 +1250,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "FL2"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flasher2_flash_white: 
     flash_color_fadeout: 
       key: key_flasher2_flash_white
@@ -1294,7 +1298,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "FL3"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flasher3_flash_green: 
     flash_color_fadeout: 
       key: key_flasher3_flash_green
@@ -1326,7 +1330,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi01"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi02: 
     flash_color_fadeout: 
       key: key_flash_gi02
@@ -1334,7 +1338,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi02"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi03: 
     flash_color_fadeout: 
       key: key_flash_gi03
@@ -1342,7 +1346,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi03"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi04: 
     flash_color_fadeout: 
       key: key_flash_gi04
@@ -1350,7 +1354,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi04"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi05: 
     flash_color_fadeout: 
       key: key_flash_gi05
@@ -1358,7 +1362,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi05"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi06: 
     flash_color_fadeout: 
       key: key_flash_gi06
@@ -1366,7 +1370,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi06"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi07: 
     flash_color_fadeout: 
       key: key_flash_gi07
@@ -1374,7 +1378,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi07"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi08: 
     flash_color_fadeout: 
       key: key_flash_gi08
@@ -1382,7 +1386,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi08"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi09: 
     flash_color_fadeout: 
       key: key_flash_gi09
@@ -1390,7 +1394,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi09"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi10: 
     flash_color_fadeout: 
       key: key_flash_gi10
@@ -1398,7 +1402,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi10"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi11: 
     flash_color_fadeout: 
       key: key_flash_gi11
@@ -1406,7 +1410,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi11"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi12: 
     flash_color_fadeout: 
       key: key_flash_gi12
@@ -1414,7 +1418,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi12"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi13: 
     flash_color_fadeout: 
       key: key_flash_gi13
@@ -1422,7 +1426,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi13"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi14: 
     flash_color_fadeout: 
       key: key_flash_gi14
@@ -1430,7 +1434,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi14"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi15: 
     flash_color_fadeout: 
       key: key_flash_gi15
@@ -1438,7 +1442,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi15"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi16: 
     flash_color_fadeout: 
       key: key_flash_gi16
@@ -1446,7 +1450,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi16"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi17: 
     flash_color_fadeout: 
       key: key_flash_gi17
@@ -1454,7 +1458,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi17"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi18: 
     flash_color_fadeout: 
       key: key_flash_gi18
@@ -1462,7 +1466,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi18"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi19: 
     flash_color_fadeout: 
       key: key_flash_gi19
@@ -1470,7 +1474,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi19"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi20: 
     flash_color_fadeout: 
       key: key_flash_gi20
@@ -1478,7 +1482,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi20"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi21: 
     flash_color_fadeout: 
       key: key_flash_gi21
@@ -1486,7 +1490,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi21"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_gi22: 
     flash_color_fadeout: 
       key: key_flash_gi22
@@ -1494,7 +1498,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "gi22"
-        color: "ffedd2"
+        color: "ffdca3"
   play_flash_giapron: 
     flash_color_fadeout: 
       key: key_flash_giapron
@@ -1502,7 +1506,7 @@ show_player:
       speed: 3
       show_tokens: 
         lights: "giapron"
-        color: "ffedd2"
+        color: "ffdca3"
   meteor1_flash_show: 
     flash_color_with_fade: 
       key: key_meteor1_flash
@@ -1714,7 +1718,7 @@ show_player:
       speed: 2
       show_tokens: 
         intensity: "100"
-        color: "ffae00"
+        color: "ff4c00"
   play_rsling_magenta: 
     rsling_rotate1_ccw: 
       key: key_rsling_magenta
@@ -1822,7 +1826,7 @@ sound_player:
 timers: 
   post_game_show:
     start_value: 0
-    end_value: 93
+    end_value: 125
     direction: up
     control_events: 
       - event: mode_post_game_started
