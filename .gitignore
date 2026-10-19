@@ -12,6 +12,7 @@ mpf080
 *.exe
 *.pck
 *.log
+*.info
 bcplog.txt
 log.txt
 scripts/dest
