@@ -25,6 +25,13 @@ Sub CreateMeteorWaveQualifyMode
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
 
+            .Add "timer_mwq_flippers_down_complete", Array("stop_mwq_timer")
+            .Add "restart_mwq_flippers_down_timer", Array("start_mwq_timer")
+
+            .Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", Array("restart_mwq_flippers_down_timer")
+            .Add "right_flipper_up_state", Array("stop_mwq_flippers_down_timer")
+            .Add "left_flipper_up_state", Array("stop_mwq_flippers_down_timer")
+
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold","start_mwq_timer") 'stop these early to prevent scoop issues
@@ -73,6 +80,7 @@ Sub CreateMeteorWaveQualifyMode
             End With
         End With
 
+
         With .Timers("meteor_countdown")
             .TickInterval = 1000
             .StartValue = "current_player.meteor_countdown_value"
@@ -92,6 +100,22 @@ Sub CreateMeteorWaveQualifyMode
                 .Action = "stop"
             End With
         End With
+
+        With .Timers("mwq_flippers_down")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 8
+            With .ControlEvents()
+                .EventName = "restart_mwq_flippers_down_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "stop_mwq_flippers_down_timer"
+                .Action = "stop"
+            End With
+        End With
+
+        
 
         With .VariablePlayer()
             With .EventName("reset_countdown_value")
@@ -171,25 +195,27 @@ Sub CreateMeteorWaveQualifyMode
                 End With
             End With
 
-            With .EventName("flipper_cradling")
-                .Key = "key_flipper_cradling"
-                .Show = "flash_color"
-                .Speed = 15
+            With .EventName("flash_mwq_display")
+                .Key = "key_flash_mwq_display"
+                .Show = "flash_color_with_fade"
+                .Speed = 8
                 .Priority = 5000
                 With .Tokens()
                     .Add "lights", "tInlaneGI"
                     .Add "color", GIColor3000k
+                    .Add "fade", 300
                 End With
             End With
-            With .EventName("flipper_cradle_release")
-                .Key = "key_flipper_cradling"
-                .Show = "flash_color"
-                .Speed = 15
+            With .EventName("remove_flash_mwq_display")
+                .Key = "key_flash_mwq_display"
+                .Show = "flash_color_with_fade"
+                .Speed = 8
                 .Priority = 5000
                 .Action = "stop"
                 With .Tokens()
                     .Add "lights", "tInlaneGI"
                     .Add "color", GIColor3000k
+                    .Add "fade", 300
                 End With
             End With
 
