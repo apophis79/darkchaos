@@ -873,7 +873,7 @@ lights:
     number: 124
     subtype: led
     type: rgb
-    tags: tInserts
+    tags: tInserts,tHealth2
     x: 0.7317996
     y: 4.745424E-02
   FL7a:
