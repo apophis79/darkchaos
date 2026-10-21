@@ -158,6 +158,24 @@ event_player:
     - meteor_wave_done_done
   timer_meteor_wave_nuked_complete:
     - meteor_wave_done_done
+  both_flippers_down_state:
+    - restart_mw_flippers_down_timer
+  right_flipper_up_state:
+    - stop_mw_flippers_down_timer
+  left_flipper_up_state:
+    - stop_mw_flippers_down_timer
+  timer_mw_flippers_down_complete:
+    - stop_meteor1_timer
+    - stop_meteor2_timer
+    - stop_meteor3_timer
+    - stop_meteor4_timer
+    - flash_mw_display
+  restart_mw_flippers_down_timer:
+    - start_meteor1_timer
+    - start_meteor2_timer
+    - start_meteor3_timer
+    - start_meteor4_timer
+    - remove_flash_mw_display
 
 
 light_player: 
@@ -263,6 +281,19 @@ segment_display_player:
     pf: 
       key: key_mw_pf2
       text: "{current_player.num_meteors_to_drop:0>2}"
+      flashing: off
+
+  flash_mw_display: 
+    pf: 
+      key: key_flash_mw_display
+      text: "{current_player.num_meteors_to_drop:0>2}"
+      priority: 100
+      flashing: all
+
+  remove_flash_mw_display: 
+    pf: 
+      key: key_flash_mw_display
+      action: remove
       flashing: off
 
   detonate_nuke: 
@@ -595,6 +626,25 @@ show_player:
       show_tokens: 
         lights: "tFL6"
         color: "ff0909"
+  flash_mw_display: 
+    flash_color_with_fade: 
+      key: key_flash_mwq_display
+      priority: 5000
+      speed: 8
+      show_tokens: 
+        lights: "tInlaneGI"
+        color: "ffedd2"
+        fade: "300"
+  remove_flash_mw_display: 
+    flash_color_with_fade: 
+      action: stop
+      key: key_flash_mwq_display
+      priority: 5000
+      speed: 8
+      show_tokens: 
+        lights: "tInlaneGI"
+        color: "ffedd2"
+        fade: "300"
 
 
 slide_player: 
@@ -872,6 +922,8 @@ timers:
         action: restart
       - event: stop_meteor1_timer
         action: stop
+      - event: start_meteor1_timer
+        action: start
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
@@ -904,6 +956,8 @@ timers:
         action: restart
       - event: stop_meteor2_timer
         action: stop
+      - event: start_meteor2_timer
+        action: start
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
@@ -936,6 +990,8 @@ timers:
         action: restart
       - event: stop_meteor3_timer
         action: stop
+      - event: start_meteor3_timer
+        action: start
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
@@ -968,6 +1024,8 @@ timers:
         action: restart
       - event: stop_meteor4_timer
         action: stop
+      - event: start_meteor4_timer
+        action: start
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
@@ -1018,6 +1076,18 @@ timers:
     control_events: 
       - event: raise_diverter
         action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  mw_flippers_down:
+    start_value: 0
+    end_value: 8
+    direction: up
+    control_events: 
+      - event: restart_mw_flippers_down_timer
+        action: restart
+      - event: stop_mw_flippers_down_timer
+        action: stop
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
@@ -1121,6 +1191,16 @@ variable_player:
 
   zero_num_meteors_to_drop: 
     num_meteors_to_drop: 
+      action: set
+      int: 0
+
+  timer_mw_flippers_down_complete: 
+    flipper_down_pause: 
+      action: set
+      int: 1
+
+  restart_mw_flippers_down_timer: 
+    flipper_down_pause: 
       action: set
       int: 0
 

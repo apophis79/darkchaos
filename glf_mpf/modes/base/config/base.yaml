@@ -1303,6 +1303,9 @@ variable_player:
     flippers_are_dead: 
       action: set_machine
       int: 0
+    flipper_down_pause: 
+      action: set
+      int: 0
 
   mode_base_stopping: 
     center_orbit_just_hit: 
