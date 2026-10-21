@@ -22,15 +22,15 @@ Sub CreateMeteorWaveQualifyMode
             .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
             .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
             
-            .Add "stop_mwq_timer", Array("flash_mwq_display")
-            .Add "start_mwq_timer", Array("remove_flash_mwq_display")
+            .Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", Array("restart_mwq_flippers_down_timer")
+            .Add "right_flipper_up_state", Array("stop_mwq_flippers_down_timer")
+            .Add "left_flipper_up_state", Array("stop_mwq_flippers_down_timer")
 
             .Add "timer_mwq_flippers_down_complete", Array("stop_mwq_timer")
             .Add "restart_mwq_flippers_down_timer", Array("start_mwq_timer")
 
-            .Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", Array("restart_mwq_flippers_down_timer")
-            .Add "right_flipper_up_state", Array("stop_mwq_flippers_down_timer")
-            .Add "left_flipper_up_state", Array("stop_mwq_flippers_down_timer")
+            .Add "stop_mwq_timer", Array("flash_mwq_display")
+            .Add "start_mwq_timer", Array("remove_flash_mwq_display")
 
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
@@ -104,7 +104,7 @@ Sub CreateMeteorWaveQualifyMode
         With .Timers("mwq_flippers_down")
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = 8
+            .EndValue = PauseWhenFlippersDownTicks
             With .ControlEvents()
                 .EventName = "restart_mwq_flippers_down_timer"
                 .Action = "restart"
@@ -136,6 +136,18 @@ Sub CreateMeteorWaveQualifyMode
 					.Int = 0
 				End With
 			End With
+            With .EventName("timer_mwq_flippers_down_complete")
+                With .Variable("flipper_down_pause")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("restart_mwq_flippers_down_timer")
+                With .Variable("flipper_down_pause")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
 		End With
 
         With .ShowPlayer()

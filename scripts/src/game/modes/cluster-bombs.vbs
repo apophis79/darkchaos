@@ -33,10 +33,10 @@ Sub CreateClusterBombMode
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges","play_cluster_alert")
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded","play_cluster_alert") 'check for wizard mode qualification
             'Fire bomb
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash") ',"backglass_clusters_off")
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.flipper_down_pause == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash") ',"backglass_clusters_off")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1 and current_player.flipper_down_pause == 0}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Panic penalty
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0}", Array("cluster_panic_penalty")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0 and current_player.flipper_down_pause == 0}", Array("cluster_panic_penalty")
             .Add "cluster_panic_penalty", Array("score_m100000")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")

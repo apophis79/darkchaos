@@ -98,6 +98,12 @@ Sub CreateMeteorWaveMode
             'stop wave
             .Add "timer_meteor_wave_finish_complete", Array("meteor_wave_done_done")
             .Add "timer_meteor_wave_nuked_complete", Array("meteor_wave_done_done")
+            'handle flipper down timer to pause other timers if flippers have been down a while
+            .Add "both_flippers_down_state", Array("restart_mw_flippers_down_timer")
+            .Add "right_flipper_up_state", Array("stop_mw_flippers_down_timer")
+            .Add "left_flipper_up_state", Array("stop_mw_flippers_down_timer")
+            .Add "timer_mw_flippers_down_complete", Array("stop_meteor1_timer","stop_meteor2_timer","stop_meteor3_timer","stop_meteor4_timer","flash_mw_display")
+            .Add "restart_mw_flippers_down_timer", Array("start_meteor1_timer","start_meteor2_timer","start_meteor3_timer","start_meteor4_timer","remove_flash_mw_display")
         End With
 
 
@@ -453,6 +459,10 @@ Sub CreateMeteorWaveMode
                     .EventName = "stop_meteor"&x&"_timer"
                     .Action = "stop"
                 End With
+                 With .ControlEvents()
+                    .EventName = "start_meteor"&x&"_timer"
+                    .Action = "start"
+                End With
             End With
 
             'Randomize the initialization time for each meteor
@@ -574,6 +584,20 @@ Sub CreateMeteorWaveMode
             With .ControlEvents()
                 .EventName = "raise_diverter"
                 .Action = "restart"
+            End With
+        End With
+
+        With .Timers("mw_flippers_down")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = PauseWhenFlippersDownTicks
+            With .ControlEvents()
+                .EventName = "restart_mw_flippers_down_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "stop_mw_flippers_down_timer"
+                .Action = "stop"
             End With
         End With
 
@@ -720,6 +744,29 @@ Sub CreateMeteorWaveMode
             '         .Add "intensity", 100
             '     End With
             ' End With
+            With .EventName("flash_mw_display")
+                .Key = "key_flash_mwq_display"
+                .Show = "flash_color_with_fade"
+                .Speed = 8
+                .Priority = 5000
+                With .Tokens()
+                    .Add "lights", "tInlaneGI"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 300
+                End With
+            End With
+            With .EventName("remove_flash_mw_display")
+                .Key = "key_flash_mwq_display"
+                .Show = "flash_color_with_fade"
+                .Speed = 8
+                .Priority = 5000
+                .Action = "stop"
+                With .Tokens()
+                    .Add "lights", "tInlaneGI"
+                    .Add "color", GIColor3000k
+                    .Add "fade", 300
+                End With
+            End With
         End With
 
         With .VariablePlayer()
@@ -801,6 +848,18 @@ Sub CreateMeteorWaveMode
                     .Int = 0
                 End With
             End With
+            With .EventName("timer_mw_flippers_down_complete")
+                With .Variable("flipper_down_pause")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("restart_mw_flippers_down_timer")
+                With .Variable("flipper_down_pause")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
 		End With
 
         With .LightPlayer()
@@ -831,6 +890,21 @@ Sub CreateMeteorWaveMode
                     .Text = "{current_player.num_meteors_to_drop:0>2}"
                 End With
             End With
+            With .EventName("flash_mw_display")
+                With .Display("pf")
+                    .Key = "key_flash_mw_display"
+                    .Text = "{current_player.num_meteors_to_drop:0>2}"
+                    .Flashing = "all"
+                    .Priority = 100
+                End With
+            End With
+            With .EventName("remove_flash_mw_display")
+                With .Display("pf")
+                    .Key = "key_flash_mw_display"
+                    .Action = "remove"
+                End With
+            End With
+
             With .EventName("detonate_nuke")
                 With .Display("pf")
                     .Key = "key_mw_pf3"
