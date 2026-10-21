@@ -18,7 +18,7 @@
       speed: 15
       show_tokens: 
         lights: "tLSling"
-        color: "ffdca3"
+        color: "ffedd2"
 
 - time: 0.3s
 

@@ -167,7 +167,7 @@ light_player:
 
   stop_meteor_wave: 
     GI: 
-      color: ffdca3
+      color: ffedd2
 
 
 random_event_player: 

@@ -8,7 +8,7 @@
       loops: 0
       show_tokens: 
         lights: "GI"
-        color: "ffdca3"
+        color: "ffedd2"
 
 - time: 0.02s
   shows:
@@ -18,7 +18,7 @@
       loops: 0
       show_tokens: 
         lights: "tInserts"
-        color: "ffdca3"
+        color: "ffedd2"
 
 - time: 0.03s
   shows:
@@ -28,7 +28,7 @@
       loops: 0
       show_tokens: 
         lights: "tBumper"
-        color: "ffdca3"
+        color: "ffedd2"
 
 - time: 0.1s
   shows:

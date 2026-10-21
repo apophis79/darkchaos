@@ -10,7 +10,7 @@
       show_tokens: 
         color1: "ffffff"
         color2: "ed1800"
-        color3: "edb600"
+        color3: "ffc400"
         intensity: "100"
 
 - time: 0.02s
@@ -40,7 +40,7 @@
       show_tokens: 
         color1: "000000"
         color2: "ed1800"
-        color3: "edb600"
+        color3: "ffc400"
         intensity: "100"
 
 - time: 1.71s
@@ -61,7 +61,7 @@
       loops: 0
       speed: 1.5
       show_tokens: 
-        color: "edb600"
+        color: "ffc400"
         intensity: "100"
 
 - time: 4.1s

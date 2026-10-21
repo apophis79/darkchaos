@@ -30,6 +30,16 @@ event_player:
     - flash_mwq_display
   start_mwq_timer:
     - remove_flash_mwq_display
+  timer_mwq_flippers_down_complete:
+    - stop_mwq_timer
+  restart_mwq_flippers_down_timer:
+    - start_mwq_timer
+  both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}:
+    - restart_mwq_flippers_down_timer
+  right_flipper_up_state:
+    - stop_mwq_flippers_down_timer
+  left_flipper_up_state:
+    - stop_mwq_flippers_down_timer
   timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}:
     - meteor_wave_alert_show
     - backglass_wave_flash
@@ -112,24 +122,26 @@ show_player:
       speed: 4.6
       show_tokens: 
         lights: "GI"
-        color: "ffdca3"
-  flipper_cradling: 
-    flash_color: 
-      key: key_flipper_cradling
+        color: "ffedd2"
+  flash_mwq_display: 
+    flash_color_with_fade: 
+      key: key_flash_mwq_display
       priority: 5000
-      speed: 15
+      speed: 8
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffdca3"
-  flipper_cradle_release: 
-    flash_color: 
+        color: "ffedd2"
+        fade: "300"
+  remove_flash_mwq_display: 
+    flash_color_with_fade: 
       action: stop
-      key: key_flipper_cradling
+      key: key_flash_mwq_display
       priority: 5000
-      speed: 15
+      speed: 8
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ffdca3"
+        color: "ffedd2"
+        fade: "300"
 
 
 sound_player: 
@@ -151,6 +163,18 @@ timers:
       - event: start_mwq_timer
         action: start
       - event: stop_mwq_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  mwq_flippers_down:
+    start_value: 0
+    end_value: 8
+    direction: up
+    control_events: 
+      - event: restart_mwq_flippers_down_timer
+        action: restart
+      - event: stop_mwq_flippers_down_timer
         action: stop
     restart_on_complete: False
     start_running: False

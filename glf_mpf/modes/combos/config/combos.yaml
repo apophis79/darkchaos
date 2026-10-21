@@ -135,7 +135,7 @@ shots:
     restart_events: combos1_unlit, reset_combos
     show_tokens: 
       lights: "LC1"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos1_lit
         state: 1
@@ -144,7 +144,7 @@ shots:
     restart_events: combos2_unlit, reset_combos
     show_tokens: 
       lights: "LC2"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos2_lit
         state: 1
@@ -153,7 +153,7 @@ shots:
     restart_events: combos3_unlit, reset_combos
     show_tokens: 
       lights: "LC3"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos3_lit
         state: 1
@@ -162,7 +162,7 @@ shots:
     restart_events: combos4_unlit, reset_combos
     show_tokens: 
       lights: "LC4"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos4_lit
         state: 1
@@ -171,7 +171,7 @@ shots:
     restart_events: combos5_unlit, reset_combos
     show_tokens: 
       lights: "LC5"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos5_lit
         state: 1
@@ -180,7 +180,7 @@ shots:
     restart_events: combos6_unlit, reset_combos
     show_tokens: 
       lights: "LC6"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos6_lit
         state: 1
@@ -189,7 +189,7 @@ shots:
     restart_events: combos7_unlit, reset_combos
     show_tokens: 
       lights: "LC7"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos7_lit
         state: 1
@@ -198,7 +198,7 @@ shots:
     restart_events: combos8_unlit, reset_combos
     show_tokens: 
       lights: "LC8"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: combos8_lit
         state: 1
@@ -211,7 +211,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LS1"
-        color: "ffb46b"
+        color: "ffffff"
   left_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo2
@@ -219,7 +219,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LS2"
-        color: "ffb46b"
+        color: "ffffff"
   left_ramp_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo3
@@ -227,7 +227,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LS3"
-        color: "ffb46b"
+        color: "ffffff"
   inner_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo4
@@ -235,7 +235,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LS4"
-        color: "ffb46b"
+        color: "ffffff"
   center_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo5
@@ -243,7 +243,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LPC45"
-        color: "ffb46b"
+        color: "ffffff"
   right_ramp_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo6
@@ -251,7 +251,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LS5"
-        color: "ffb46b"
+        color: "ffffff"
   right_orbit_hit{current_player.combos_value>0}: 
     flash_color: 
       key: key_combo7
@@ -259,7 +259,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LS6"
-        color: "ffb46b"
+        color: "ffffff"
   flash_combos: 
     flash_color: 
       key: key_combos_relaxed
@@ -267,7 +267,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tCombos"
-        color: "ffb46b"
+        color: "ffffff"
   combos1_lit: 
     flash_color: 
       key: key_combo1_charged
@@ -275,7 +275,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC1"
-        color: "ffb46b"
+        color: "ffffff"
   combos2_lit: 
     flash_color: 
       key: key_combo2_charged
@@ -283,7 +283,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC2"
-        color: "ffb46b"
+        color: "ffffff"
   combos3_lit: 
     flash_color: 
       key: key_combo3_charged
@@ -291,7 +291,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC3"
-        color: "ffb46b"
+        color: "ffffff"
   combos4_lit: 
     flash_color: 
       key: key_combo4_charged
@@ -299,7 +299,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC4"
-        color: "ffb46b"
+        color: "ffffff"
   combos5_lit: 
     flash_color: 
       key: key_combo5_charged
@@ -307,7 +307,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC5"
-        color: "ffb46b"
+        color: "ffffff"
   combos6_lit: 
     flash_color: 
       key: key_combo6_charged
@@ -315,7 +315,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC6"
-        color: "ffb46b"
+        color: "ffffff"
   combos7_lit: 
     flash_color: 
       key: key_combo7_charged
@@ -323,7 +323,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC7"
-        color: "ffb46b"
+        color: "ffffff"
   combos8_lit: 
     flash_color: 
       key: key_combo8_charged
@@ -331,7 +331,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "LC8"
-        color: "ffb46b"
+        color: "ffffff"
 
 
 sound_player: 

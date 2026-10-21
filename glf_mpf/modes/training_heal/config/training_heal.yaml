@@ -26,6 +26,7 @@ combo_switches:
 event_player: 
   mode_training_heal_started:
     - init_training
+    - init_training_shots
     - play_lsling_training
     - play_rsling_training
   left_orbit_hit:
@@ -254,6 +255,15 @@ show_player:
         lights: "GI"
         color: "00dd00"
         intensity: "100"
+  init_training_shots: 
+    flash_color_with_fade: 
+      key: key_heal_shots
+      priority: 2000
+      speed: 3
+      show_tokens: 
+        lights: "tHealth2"
+        color: "00dd00"
+        fade: "800"
   flash_gi: 
     flicker_color_on_intensity: 
       key: key_training_gi
@@ -539,7 +549,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ff4c00"
+        color: "ffae00"
   training_cancel_warning_stop: 
     flash_color: 
       action: stop
@@ -549,7 +559,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "tInlaneGI"
-        color: "ff4c00"
+        color: "ffae00"
 
 
 slide_player: 
@@ -597,6 +607,9 @@ variable_player:
       action: set
       int: 5
     training_heal_achieved: 
+      action: set
+      int: 1
+    training_heal_just_achieved: 
       action: set
       int: 1
     training_total_achieved: 

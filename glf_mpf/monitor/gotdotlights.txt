@@ -621,7 +621,7 @@ tags = ["tInserts"]
 [node name="LDP" type="Sprite2D" parent="lights"]
 position = Vector2(355.6546, 51.25058)
 script = ExtResource("3_qb2nn")
-tags = ["tInserts"]
+tags = ["tInserts", "tHealth2"]
 
 [node name="FL7a" type="Sprite2D" parent="lights"]
 position = Vector2(219.3, 166.26)

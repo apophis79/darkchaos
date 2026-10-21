@@ -109,6 +109,9 @@ player_vars:
   training_heal_achieved:
     initial_value: 0
     value_type: int
+  training_heal_just_achieved:
+    initial_value: 0
+    value_type: int
   training_cluster_bomb_achieved:
     initial_value: 0
     value_type: int

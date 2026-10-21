@@ -295,7 +295,7 @@ event_player:
 light_player: 
   mode_base_started: 
     GI: 
-      color: ffdca3
+      color: ffedd2
       fade: 200
 
   activate_final_wave_wizard: 
@@ -489,7 +489,7 @@ shots:
     restart_events: game_start, run_final_wave_wizard
     show_tokens: 
       lights: "LCWiz"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: activate_combo_command_wizard
         state: 1
@@ -500,7 +500,7 @@ shots:
     restart_events: game_start, run_final_wave_wizard
     show_tokens: 
       lights: "LLWiz"
-      color: "ffb46b"
+      color: "ffffff"
     control_events: 
       - events: prime_fully_loaded_wizard
         state: 1
@@ -673,7 +673,7 @@ show_player:
       speed: 15
       show_tokens: 
         lights: "gi22"
-        color: "ffdca3"
+        color: "ffedd2"
   play_lsling_base_show: 
     lsling_base_show: 
       key: key_lsling_base_show
@@ -691,7 +691,7 @@ show_player:
       show_tokens: 
         intensity1: "20"
         intensity2: "100"
-        color: "ffb46b"
+        color: "ffffff"
   stop_ccwiz_scoop_show: 
     combo_command_scoop: 
       action: stop
@@ -700,7 +700,7 @@ show_player:
       show_tokens: 
         intensity1: "20"
         intensity2: "100"
-        color: "ffb46b"
+        color: "ffffff"
   scoop_blast: 
     insert_gi_slide_diag: 
       key: key_scoop_fire_blast
@@ -766,7 +766,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: "gi04"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   pu_lsling2_show: 
     flash_color_with_fade: 
@@ -775,7 +775,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "gi03"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   pu_rsling1_show: 
     flash_color_with_fade: 
@@ -784,7 +784,7 @@ show_player:
       speed: 9
       show_tokens: 
         lights: "gi08"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   pu_rsling2_show: 
     flash_color_with_fade: 
@@ -793,7 +793,7 @@ show_player:
       speed: 4
       show_tokens: 
         lights: "gi07"
-        color: "ffdca3"
+        color: "ffedd2"
         fade: "800"
   timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 3}: 
     gi_cracked: 
@@ -808,7 +808,7 @@ show_player:
       speed: 20
       show_tokens: 
         lights: "tFlasherU"
-        color: "ffb46b"
+        color: "ffffff"
   activate_fully_loaded_wizard: 
     flash_color: 
       key: key_loaded_wiz_ready
@@ -1194,6 +1194,56 @@ sound_player:
       key: key_voc_extra_ball_acheived
       action: play
 
+
+state_machines: 
+  flipper_states:
+    starting_state: flippers_down
+    states: 
+      flippers_down: 
+        label: Flippers Down
+        events_when_started: both_flippers_down_state
+      right_flipper_up: 
+        label: Right Flipper Up
+        events_when_started: right_flipper_up_state
+      left_flipper_up: 
+        label: Left Flipper Up
+        events_when_started: left_flipper_up_state
+      flippers_up: 
+        label: Flippers Up
+        events_when_started: both_flippers_up_state
+    transitions: 
+      - source: flippers_down
+        target: right_flipper_up
+        events: 
+          - s_RightFlipperButton_active
+      - source: flippers_down
+        target: left_flipper_up
+        events: 
+          - s_LeftFlipperButton_active
+      - source: right_flipper_up
+        target: flippers_up
+        events: 
+          - s_LeftFlipperButton_active
+      - source: left_flipper_up
+        target: flippers_up
+        events: 
+          - s_RightFlipperButton_active
+      - source: flippers_up
+        target: right_flipper_up
+        events: 
+          - s_LeftFlipperButton_inactive
+      - source: flippers_up
+        target: left_flipper_up
+        events: 
+          - s_RightFlipperButton_inactive
+      - source: right_flipper_up
+        target: flippers_down
+        events: 
+          - s_RightFlipperButton_inactive
+      - source: left_flipper_up
+        target: flippers_down
+        events: 
+          - s_LeftFlipperButton_inactive
 
 timers: 
   delay_ball_release:
