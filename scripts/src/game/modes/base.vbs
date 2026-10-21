@@ -905,6 +905,10 @@ Sub CreateBaseMode()
                     .Action = "set_machine"
                     .Int = 0
                 End With
+                With .Variable("flipper_down_pause")
+                    .Action = "set"
+                    .Int = 0
+                End With
 			End With
             With .EventName("mode_base_stopping")
                 With .Variable("center_orbit_just_hit")
