@@ -96,7 +96,7 @@ lights:
     number: 13
     subtype: led
     type: rgb
-    tags: GI
+    tags: GI,tNukeShot
     x: 7.687823E-02
     y: 0.387269
   gi10:
@@ -110,7 +110,7 @@ lights:
     number: 15
     subtype: led
     type: rgb
-    tags: GI
+    tags: GI,tNukeShot
     x: 5.566535E-02
     y: 0.5736126
   gi08:
@@ -194,7 +194,7 @@ lights:
     number: 27
     subtype: led
     type: rgb
-    tags: tTrain,tInserts
+    tags: tTrain,tInserts,tNukeShot
     x: 0.1621514
     y: 0.5752184
   LS2:

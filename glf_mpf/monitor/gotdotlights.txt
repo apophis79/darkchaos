@@ -66,7 +66,7 @@ tags = ["GI"]
 [node name="gi11" type="Sprite2D" parent="lights"]
 position = Vector2(37.36282, 418.2505)
 script = ExtResource("3_qb2nn")
-tags = ["GI"]
+tags = ["GI", "tNukeShot"]
 
 [node name="gi10" type="Sprite2D" parent="lights"]
 position = Vector2(430.3456, 605.33)
@@ -76,7 +76,7 @@ tags = ["GI"]
 [node name="gi09" type="Sprite2D" parent="lights"]
 position = Vector2(27.05336, 619.5016)
 script = ExtResource("3_qb2nn")
-tags = ["GI"]
+tags = ["GI", "tNukeShot"]
 
 [node name="gi08" type="Sprite2D" parent="lights"]
 position = Vector2(350.7715, 777.7397)
@@ -136,7 +136,7 @@ tags = ["tTrain", "tInserts"]
 [node name="LS1" type="Sprite2D" parent="lights"]
 position = Vector2(78.80556, 621.2359)
 script = ExtResource("3_qb2nn")
-tags = ["tTrain", "tInserts"]
+tags = ["tTrain", "tInserts", "tNukeShot"]
 
 [node name="LS2" type="Sprite2D" parent="lights"]
 position = Vector2(98.35307, 445.1954)

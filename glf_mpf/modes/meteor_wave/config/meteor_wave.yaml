@@ -24,6 +24,8 @@ event_player:
     - stop_shields
   mode_meteor_wave_stopping:
     - drop_diverter
+  mode_meteor_wave_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}:
+    - start_nuke_ready_show
   mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}:
     - meteor_wave1_running
     - meteor_wave0_music_stop
@@ -641,6 +643,25 @@ show_player:
         lights: "tInlaneGI"
         color: "ffedd2"
         fade: "300"
+  start_nuke_ready_show: 
+    flash_color_with_fade: 
+      key: key_nuke_ready_show
+      priority: 5000
+      speed: 8
+      show_tokens: 
+        lights: "tNukeShot"
+        color: "ffae00"
+        fade: "500"
+  detonate_nuke: 
+    flash_color_with_fade: 
+      action: stop
+      key: key_nuke_ready_show
+      priority: 5000
+      speed: 8
+      show_tokens: 
+        lights: "tNukeShot"
+        color: "ffae00"
+        fade: "500"
 
 
 slide_player: 

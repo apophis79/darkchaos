@@ -16,9 +16,7 @@ event_player:
   mode_nuke_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}:
     - nuke_lsling_on
     - nuke_rsling_on
-  s_start_active:
-    - check_detonate_nuke
-  s_lockbar_key_active:
+  s_LeftBumper1_active{current_player.meteor_wave_running==1}:
     - check_detonate_nuke
   check_detonate_nuke{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}:
     - detonate_nuke
