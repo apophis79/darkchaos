@@ -26,6 +26,8 @@ Sub CreateMeteorWaveMode
             .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on") ',"backglass_ball_off")
             .Add "stop_some_modes_for_mw", Array("stop_skillshots","stop_combos","stop_ship_save","stop_timewarp","stop_shields") '"stop_extra_ball","stop_mystery","stop_training_qualify"
             .Add "mode_meteor_wave_stopping", Array("drop_diverter") '"backglass_dark_on","backglass_chaos_on")
+            'Show nuke shot if it available
+            .Add "mode_meteor_wave_started{current_player.nuke_acquired == 1 and current_player.nuke_used == 0}", Array("start_nuke_ready_show")
             'Start up in correct wave
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 0}", Array("meteor_wave1_running","meteor_wave0_music_stop")
             .Add "mode_meteor_wave_started{current_player.shot_meteor_wave1 == 2 and current_player.shot_meteor_wave2 == 0}", Array("meteor_wave2_running","meteor_wave1_music_stop")
@@ -763,6 +765,29 @@ Sub CreateMeteorWaveMode
                     .Add "lights", "tInlaneGI"
                     .Add "color", GIColor3000k
                     .Add "fade", 300
+                End With
+            End With
+            With .EventName("start_nuke_ready_show")
+                .Key = "key_nuke_ready_show"
+                .Show = "flash_color_with_fade"
+                .Speed = 8
+                .Priority = 5000
+                With .Tokens()
+                    .Add "lights", "tNukeShot"
+                    .Add "color", NukeColor
+                    .Add "fade", 500
+                End With
+            End With
+            With .EventName("detonate_nuke")
+                .Key = "key_nuke_ready_show"
+                .Show = "flash_color_with_fade"
+                .Speed = 8
+                .Priority = 5000
+                .Action = "stop"
+                With .Tokens()
+                    .Add "lights", "tNukeShot"
+                    .Add "color", NukeColor
+                    .Add "fade", 500
                 End With
             End With
         End With

@@ -13,7 +13,7 @@
     "color2": "#ffffff",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "tTrain,tInserts",
+    "blink_pattern": "tTrain,tInserts,tNukeShot",
     "image": "",
     "blink_interval": 300,
     "intensity": 2.0,

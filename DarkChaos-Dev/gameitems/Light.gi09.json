@@ -13,7 +13,7 @@
     "color2": "#ffa957",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "GI",
+    "blink_pattern": "GI,tNukeShot",
     "image": "",
     "blink_interval": 125,
     "intensity": 10.0,

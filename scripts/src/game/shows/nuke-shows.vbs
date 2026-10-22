@@ -38,7 +38,7 @@ With CreateGlfShow("nuke_explodes")
         .Priority = 10000
         With .Tokens()
             .Add "lights", "GI" 
-            .Add "color", GIColor3000k
+            .Add "color", NukeColor
         End With
     End With
   End With
@@ -51,7 +51,7 @@ With CreateGlfShow("nuke_explodes")
         .Priority = 9000
         With .Tokens()
             .Add "lights", "tInserts" 
-            .Add "color", GIColor3000k
+            .Add "color", NukeColor
         End With
     End With
   End With
@@ -64,7 +64,7 @@ With CreateGlfShow("nuke_explodes")
         .Priority = 9000
         With .Tokens()
             .Add "lights", "tBumper" 
-            .Add "color", GIColor3000k
+            .Add "color", NukeColor
         End With
     End With
   End With
