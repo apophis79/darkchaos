@@ -104,6 +104,7 @@ Sub CreateSounds()
     AddSoundEffect "sfx_final_wave_scoop", 10.316
     AddSoundEffect "sfx_LS_between_waves_updated", 4.519
     AddSoundEffect "sfx_LS_during_training", 3.030
+    AddSoundEffect "sfx_multiloop", 3.140
 
     'Add callout tracks here. Provied track name and duration (seconds)
     AddCallout "voc_AlienAlert", 6.000
@@ -158,8 +159,10 @@ Sub CreateSounds()
     AddCallout "voc_sdsss", 4.302
     AddCallout "voc_training_canceled", 4.415
     AddCallout "voc_final_wave_ready", 3.657
-    AddCallout "voc_nuke", 5.773
+    AddCallout "voc_nuke", 2.708
     AddCallout "voc_training_incomplete", 2.668
+    AddCallout "voc_warning_weapon_empty1", 3.065
+    AddCallout "voc_warning_weapon_empty2", 2.920
 
     'Add music tracks here. Provied track name and duration (seconds)
     '  looping

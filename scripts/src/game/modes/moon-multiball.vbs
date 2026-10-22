@@ -30,6 +30,15 @@ Sub CreateMoonMultiballMode
             .Add "launch_panic_penalty", Array("score_m100000")
         End With
 
+        With .RandomEventPlayer()
+            With .EventName("launch_panic_penalty")
+                .Add "play_panic_penalty_voc1", 1
+                .Add "play_panic_penalty_voc2", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
+        End With
+
         With .WidgetPlayer()
             With .EventName("start_moon_multiball")
                 .Widget = "moon_launch"

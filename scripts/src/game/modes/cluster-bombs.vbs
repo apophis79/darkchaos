@@ -56,6 +56,12 @@ Sub CreateClusterBombMode
                 .ForceAll = True
                 .ForceDifferent = True
             End With
+            With .EventName("cluster_panic_penalty")
+                .Add "play_panic_penalty_voc1", 1
+                .Add "play_panic_penalty_voc2", 1
+                .ForceAll = False
+                .ForceDifferent = False
+            End With
         End With
 
         With .VariablePlayer()

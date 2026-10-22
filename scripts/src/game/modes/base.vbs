@@ -1367,6 +1367,16 @@ Sub CreateBaseMode()
                 .Sound = "voc_extra_ball_acheived"
             End With
 
+            'panic warning
+            With .EventName("play_panic_penalty_voc1")
+                .Key = "key_sfx_error_voc1"
+                .Sound = "voc_warning_weapon_empty1"
+            End With
+            With .EventName("cluster_panic_penalty_voc2")
+                .Key = "key_sfx_error_voc2"
+                .Sound = "voc_warning_weapon_empty2"
+            End With
+
         End With
 
 
