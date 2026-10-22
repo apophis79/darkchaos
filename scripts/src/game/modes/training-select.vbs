@@ -72,7 +72,7 @@ Sub CreateTrainingSelectMode
 
         With .RandomEventPlayer()
             With .EventName("training_music_start")
-                .Add "training_music_1_start", 1
+                '.Add "training_music_1_start", 1
                 .Add "training_music_2_start", 1
                 .Add "training_music_3_start", 1
                 .Add "training_music_4_start", 1
