@@ -3834,12 +3834,12 @@ Function Glf_915(args)
 End Function
 Function Glf_916(args)
 	On Error Resume Next
-	    Glf_916 = GetPlayerState("shot_ss")=1
+	    Glf_916 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss")=0
 	If Err Then Glf_916 = False
 End Function
 Function Glf_917(args)
 	On Error Resume Next
-	    Glf_917 = GetPlayerState("shot_ss")=1
+	    Glf_917 = GetPlayerState("shot_ss")=1 and GetPlayerState("flag_ss")=0
 	If Err Then Glf_917 = False
 End Function
 Function Glf_918(args)
@@ -8642,8 +8642,8 @@ glf_funcRefMap.Add """LAUNCH""", "Glf_912"
 glf_funcRefMap.Add """LOCK""", "Glf_913"
 glf_funcRefMap.Add "mode_skillshots_started.1{current_player.shot_final_wave_wizard>0}", "Glf_914"
 glf_funcRefMap.Add "mode_skillshots_started{current_player.ball_just_started==1 and current_player.shot_meteor_wave9 < 2}", "Glf_915"
-glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_ss==1}", "Glf_916"
-glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1}", "Glf_917"
+glf_funcRefMap.Add "s_TargetMystery2_active{current_player.shot_ss==1 and current_player.flag_ss==0}", "Glf_916"
+glf_funcRefMap.Add "left_side_hit{current_player.shot_ss==1 and current_player.flag_ss==0}", "Glf_917"
 glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 1}", "Glf_918"
 glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_919"
 glf_funcRefMap.Add "timer_ss_voc_complete{current_player.num_skillshots==3}", "Glf_920"
