@@ -40,6 +40,7 @@ event_player:
     - disable_scoop_hold
   timer_training_select_tick{device.timers.training_select.ticks == 3}:
     - selection_hurry_up
+    - flash_ts_Scoop_inserts
   make_selection{device.state_machines.training_select.state=="heal"}:
     - start_training_heal
     - stopping_training_select
@@ -421,6 +422,14 @@ show_player:
       speed: 13
       show_tokens: 
         lights: "gi22"
+        color: "ffffff"
+  flash_ts_Scoop_inserts: 
+    flash_color: 
+      key: key_flash_ts_Scoop_gi
+      priority: 300
+      speed: 15
+      show_tokens: 
+        lights: "tScoop"
         color: "ffffff"
 
 
