@@ -43,8 +43,7 @@ Sub CreateTrainingSelectMode
             .Add "make_selection", Array("release_scoop_hold")  ',"enable_flippers"
             .Add "release_scoop_hold", Array("disable_scoop_hold")
             'hurry-up
-            .Add "timer_training_select_tick{device.timers.training_select.ticks == 3}", Array("selection_hurry_up")
-            '.Add "timer_training_select_tick{device.timers.training_select.ticks == 13}", Array("flash_ts_scoop_gi")
+            .Add "timer_training_select_tick{device.timers.training_select.ticks == 3}", Array("selection_hurry_up","flash_ts_scoop_inserts")
             'start requested training
             .Add "make_selection{device.state_machines.training_select.state==""heal""}", Array("start_training_heal","stopping_training_select")
             .Add "make_selection{device.state_machines.training_select.state==""cluster_bomb""}", Array("start_training_cluster_bomb","stopping_training_select")
@@ -168,6 +167,16 @@ Sub CreateTrainingSelectMode
                 .Action = "stop"
                 With .Tokens()
                     .Add "lights", "gi22"
+                    .Add "color", GIColorWhite
+                End With
+            End With
+            With .EventName("flash_ts_scoop_inserts")
+                .Key = "key_flash_ts_scoop_gi"
+                .Show = "flash_color"
+                .Speed = 15
+                .Priority = 300
+                With .Tokens()
+                    .Add "lights", "tScoop"
                     .Add "color", GIColorWhite
                 End With
             End With
