@@ -50,7 +50,7 @@ If for_real = true Then
     NukeColor = "ffae00"
 End If
 
-Const PauseWhenFlippersDownTicks = 8  'uses 1000 ms interval
+Const PauseWhenNoSwitchHitsTicks = 8  'uses 1000 ms interval
 
 Const SlingDomePowerUpBrightness = 100  '0 to 100
 
@@ -426,7 +426,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "flag_sss_mystery", 0
     Glf_SetInitialPlayerVar "num_skillshots", 0
     Glf_SetInitialPlayerVar "ball_cradled", 0
-    Glf_SetInitialPlayerVar "flipper_down_pause", 0
+    Glf_SetInitialPlayerVar "no_switches_hit_pause", 0
     Glf_SetInitialPlayerVar "ball_just_started", 1
     Glf_SetInitialPlayerVar "meteor_wave_running", 0
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks

@@ -99,11 +99,9 @@ Sub CreateMeteorWaveMode
             .Add "timer_meteor_wave_finish_complete", Array("meteor_wave_done_done")
             .Add "timer_meteor_wave_nuked_complete", Array("meteor_wave_done_done")
             'handle flipper down timer to pause other timers if flippers have been down a while
-            .Add "both_flippers_down_state", Array("restart_mw_flippers_down_timer")
-            .Add "right_flipper_up_state", Array("stop_mw_flippers_down_timer")
-            .Add "left_flipper_up_state", Array("stop_mw_flippers_down_timer")
-            .Add "timer_mw_flippers_down_complete", Array("stop_meteor1_timer","stop_meteor2_timer","stop_meteor3_timer","stop_meteor4_timer","flash_mw_display")
-            .Add "restart_mw_flippers_down_timer", Array("start_meteor1_timer","start_meteor2_timer","start_meteor3_timer","start_meteor4_timer","remove_flash_mw_display")
+            .Add "switches_hit", Array("restart_mw_no_switches_hit_timer")
+            .Add "timer_mw_no_switches_hit_complete", Array("stop_meteor1_timer","stop_meteor2_timer","stop_meteor3_timer","stop_meteor4_timer","flash_mw_display")
+            .Add "restart_mw_no_switches_hit_timer", Array("start_meteor1_timer","start_meteor2_timer","start_meteor3_timer","start_meteor4_timer","remove_flash_mw_display")
         End With
 
 
@@ -587,16 +585,16 @@ Sub CreateMeteorWaveMode
             End With
         End With
 
-        With .Timers("mw_flippers_down")
+        With .Timers("mw_no_switches_hit")
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = PauseWhenFlippersDownTicks
+            .EndValue = PauseWhenNoSwitchHitsTicks
             With .ControlEvents()
-                .EventName = "restart_mw_flippers_down_timer"
+                .EventName = "restart_mw_no_switches_hit_timer"
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "stop_mw_flippers_down_timer"
+                .EventName = "stop_mw_no_switches_hit_timer"
                 .Action = "stop"
             End With
         End With
@@ -848,14 +846,14 @@ Sub CreateMeteorWaveMode
                     .Int = 0
                 End With
             End With
-            With .EventName("timer_mw_flippers_down_complete")
-                With .Variable("flipper_down_pause")
+            With .EventName("timer_mw_no_switches_hit_complete")
+                With .Variable("no_switches_hit_pause")
                     .Action = "set"
                     .Int = 1
                 End With
             End With
-            With .EventName("restart_mw_flippers_down_timer")
-                With .Variable("flipper_down_pause")
+            With .EventName("restart_mw_no_switches_hit_timer")
+                With .Variable("no_switches_hit_pause")
                     .Action = "set"
                     .Int = 0
                 End With

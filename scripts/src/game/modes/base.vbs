@@ -121,9 +121,9 @@ Sub CreateBaseMode()
             .Add "completed_fully_loaded_wizard", Array("wizard_mode_ended","check_base_restart")
 
             'handle center orbit
-            .Add "s_CenterOrb1_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit")
-            .Add "s_CenterOrb2_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit")
-            .Add "s_CenterOrb3_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit")
+            .Add "s_CenterOrb1_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit","switches_hit")
+            .Add "s_CenterOrb2_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit","switches_hit")
+            .Add "s_CenterOrb3_active{current_player.center_orbit_just_hit == 0}", Array("center_orbit_hit","switches_hit")
     
             'handle some sound effects, music, and points
             ' .Add "center_orbit_left_hit", Array("play_sfx_Orb","score_2000")
@@ -131,19 +131,19 @@ Sub CreateBaseMode()
             .Add "ball_launch_hit", Array("play_sfx_ball_launch")
             .Add "center_orbit_hit", Array("play_sfx_Orb","score_2000")
             .Add "left_side_hit", Array("play_sfx_Orb","score_2000")
-            .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300")
-            .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300")
-            .Add "s_Bumper3_active", Array("play_sfx_bumper","score_1300")
-            .Add "s_TopSlingshot_active", Array("play_sfx_bumper","score_1300")
+            .Add "s_Bumper1_active", Array("play_sfx_bumper","score_1300","switches_hit")
+            .Add "s_Bumper2_active", Array("play_sfx_bumper","score_1300","switches_hit")
+            .Add "s_Bumper3_active", Array("play_sfx_bumper","score_1300","switches_hit")
+            .Add "s_TopSlingshot_active", Array("play_sfx_bumper","score_1300","switches_hit")
             .Add "s_Spinner_active", Array("score_930")
             .Add "meteor_wave_music_stop", Array("meteor_wave0_music_stop","meteor_wave1_music_stop","meteor_wave2_music_stop","meteor_wave3_music_stop","meteor_wave4_music_stop","meteor_wave5_music_stop","meteor_wave6_music_stop","meteor_wave7_music_stop","meteor_wave8_music_stop","meteor_wave9_music_stop")
 
             'handle some switches
-            .Add "s_TargetMystery5_active", Array("magnet_activated_flash","magnet_activated_gi")
-            .Add "s_TimewarpRamp_active", Array("left_ramp_hit")
+            .Add "s_TargetMystery5_active", Array("magnet_activated_flash","magnet_activated_gi","switches_hit")
+            .Add "s_TimewarpRamp_active", Array("left_ramp_hit","switches_hit")
             ' .Add "s_MoonRamp_active", Array("right_ramp_hit")
             .Add "balldevice_moon_lock_ball_entered", Array("right_ramp_hit")
-            .Add "s_LeftBumper1_active", Array("left_side_hit")
+            .Add "s_LeftBumper1_active", Array("left_side_hit","switches_hit")
 
             'knock'em all down
             .Add "knockdown_meteors", Array("meteor1_knockdown","meteor2_knockdown","meteor3_knockdown","meteor4_knockdown")
@@ -152,17 +152,54 @@ Sub CreateBaseMode()
             .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
             .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
             .Add "timer_delay_raise_lock_pin_complete", Array("raise_lock_pin") 
-            .Add "s_LockOut_active", Array("raise_lock_pin") 
+            .Add "s_LockOut_active", Array("raise_lock_pin","switches_hit") 
 
             'handle some shows
-            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_1000") 
-            .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000") 
+            .Add "s_LeftSlingshot_active", Array("play_lsling_base_show","score_1000","switches_hit") 
+            .Add "s_RightSlingshot_active", Array("play_rsling_base_show","score_1000","switches_hit") 
             .Add "slings_powerup_added", Array("pu_lsling1_show","pu_lsling2_show","pu_rsling1_show","pu_rsling2_show")
             .Add "balldevice_scoop_ball_eject_attempt", Array("scoop_blast")
 
             'handle ball stuck in plunger fail
             .Add "check_plunger{current_player.ball_just_started==0}", Array("restart_plunger_check")
             .Add "timer_plunger_check_complete", Array("plunger_eject")
+
+            'handle no swtiches hit (use swtich tags instead in real table yaml)
+            .Add "s_LeftOutlane_active", Array("switches_hit")
+            .Add "s_LeftInlane_active", Array("switches_hit")
+            .Add "s_RightInlane_active", Array("switches_hit")
+            .Add "s_RightOutlane_active", Array("switches_hit")
+            .Add "s_Plunger2_active", Array("switches_hit")
+            '.Add "s_LeftBumper1_active", Array("switches_hit")
+            .Add "s_LeftOrb1_active", Array("switches_hit")
+            .Add "s_LeftOrb2_active", Array("switches_hit")
+            .Add "s_InnerOrb1_active", Array("switches_hit")
+            .Add "s_InnerOrb2_active", Array("switches_hit")
+            '.Add "s_CenterOrb1_active", Array("switches_hit")
+            '.Add "s_CenterOrb2_active", Array("switches_hit")
+            '.Add "s_CenterOrb3_active", Array("switches_hit")
+            .Add "s_RightOrb1_active", Array("switches_hit")
+            .Add "s_RightOrb2_active", Array("switches_hit")
+            '.Add "s_Bumper1_active", Array("switches_hit")
+            '.Add "s_Bumper2_active", Array("switches_hit")
+            '.Add "s_Bumper3_active", Array("switches_hit")
+            '.Add "s_TopSlingshot_active", Array("switches_hit")
+            '.Add "s_LeftSlingshot_active", Array("switches_hit")
+            '.Add "s_RightSlingshot_active", Array("switches_hit")
+            .Add "s_TargetMystery1_active", Array("switches_hit")
+            .Add "s_TargetMystery2_active", Array("switches_hit")
+            .Add "s_TargetMystery3_active", Array("switches_hit")
+            .Add "s_TargetMystery4_active", Array("switches_hit")
+            '.Add "s_TargetMystery5_active", Array("switches_hit")
+            .Add "s_TargetShield1_active", Array("switches_hit")
+            .Add "s_TargetShield2_active", Array("switches_hit")
+            .Add "s_TargetShield3_active", Array("switches_hit")
+            .Add "s_DTMeteor1_active", Array("switches_hit")
+            .Add "s_DTMeteor2_active", Array("switches_hit")
+            .Add "s_DTMeteor3_active", Array("switches_hit")
+            .Add "s_DTMeteor4_active", Array("switches_hit")
+            '.Add "s_TimewarpRamp_active", Array("switches_hit")
+            '.Add "s_LockOut_active", Array("switches_hit")
 
         End With
 
@@ -905,7 +942,7 @@ Sub CreateBaseMode()
                     .Action = "set_machine"
                     .Int = 0
                 End With
-                With .Variable("flipper_down_pause")
+                With .Variable("no_switches_hit_pause")
                     .Action = "set"
                     .Int = 0
                 End With
@@ -1333,71 +1370,71 @@ Sub CreateBaseMode()
         End With
 
 
-        With .StateMachines("flipper_states")
-            '.Debug=True
-            .PersistState = False
-            .StartingState = "flippers_down"
+        ' With .StateMachines("flipper_states") 
+        '     '.Debug=True
+        '     .PersistState = False
+        '     .StartingState = "flippers_down"
             
-            'States
-            With .States("flippers_down")
-                .Label = "Flippers Down"
-                .EventsWhenStarted = Array("both_flippers_down_state")
-            End With
-            With .States("right_flipper_up")
-                .Label = "Right Flipper Up"
-                .EventsWhenStarted = Array("right_flipper_up_state")
-            End With
-            With .States("left_flipper_up")
-                .Label = "Left Flipper Up"
-                .EventsWhenStarted = Array("left_flipper_up_state")
-            End With
-            With .States("flippers_up")
-                .Label = "Flippers Up"
-                .EventsWhenStarted = Array("both_flippers_up_state")
-            End With
+        '     'States
+        '     With .States("flippers_down")
+        '         .Label = "Flippers Down"
+        '         .EventsWhenStarted = Array("both_flippers_down_state")
+        '     End With
+        '     With .States("right_flipper_up")
+        '         .Label = "Right Flipper Up"
+        '         .EventsWhenStarted = Array("right_flipper_up_state")
+        '     End With
+        '     With .States("left_flipper_up")
+        '         .Label = "Left Flipper Up"
+        '         .EventsWhenStarted = Array("left_flipper_up_state")
+        '     End With
+        '     With .States("flippers_up")
+        '         .Label = "Flippers Up"
+        '         .EventsWhenStarted = Array("both_flippers_up_state")
+        '     End With
 
-            'Transitions
-            With .Transitions()
-                .Source = Array("flippers_down")
-                .Target = "right_flipper_up"
-                .Events = Array("s_right_flipper_active")
-            End With
-            With .Transitions()
-                .Source = Array("flippers_down")
-                .Target = "left_flipper_up"
-                .Events = Array("s_left_flipper_active")
-            End With
-            With .Transitions()
-                .Source = Array("right_flipper_up")
-                .Target = "flippers_up"
-                .Events = Array("s_left_flipper_active")
-            End With
-            With .Transitions()
-                .Source = Array("left_flipper_up")
-                .Target = "flippers_up"
-                .Events = Array("s_right_flipper_active")
-            End With
-            With .Transitions()
-                .Source = Array("flippers_up")
-                .Target = "right_flipper_up"
-                .Events = Array("s_left_flipper_inactive")
-            End With
-            With .Transitions()
-                .Source = Array("flippers_up")
-                .Target = "left_flipper_up"
-                .Events = Array("s_right_flipper_inactive")
-            End With
-            With .Transitions()
-                .Source = Array("right_flipper_up")
-                .Target = "flippers_down"
-                .Events = Array("s_right_flipper_inactive")
-            End With
-             With .Transitions()
-                .Source = Array("left_flipper_up")
-                .Target = "flippers_down"
-                .Events = Array("s_left_flipper_inactive")
-            End With
-        End With
+        '     'Transitions
+        '     With .Transitions()
+        '         .Source = Array("flippers_down")
+        '         .Target = "right_flipper_up"
+        '         .Events = Array("s_right_flipper_active")
+        '     End With
+        '     With .Transitions()
+        '         .Source = Array("flippers_down")
+        '         .Target = "left_flipper_up"
+        '         .Events = Array("s_left_flipper_active")
+        '     End With
+        '     With .Transitions()
+        '         .Source = Array("right_flipper_up")
+        '         .Target = "flippers_up"
+        '         .Events = Array("s_left_flipper_active")
+        '     End With
+        '     With .Transitions()
+        '         .Source = Array("left_flipper_up")
+        '         .Target = "flippers_up"
+        '         .Events = Array("s_right_flipper_active")
+        '     End With
+        '     With .Transitions()
+        '         .Source = Array("flippers_up")
+        '         .Target = "right_flipper_up"
+        '         .Events = Array("s_left_flipper_inactive")
+        '     End With
+        '     With .Transitions()
+        '         .Source = Array("flippers_up")
+        '         .Target = "left_flipper_up"
+        '         .Events = Array("s_right_flipper_inactive")
+        '     End With
+        '     With .Transitions()
+        '         .Source = Array("right_flipper_up")
+        '         .Target = "flippers_down"
+        '         .Events = Array("s_right_flipper_inactive")
+        '     End With
+        '      With .Transitions()
+        '         .Source = Array("left_flipper_up")
+        '         .Target = "flippers_down"
+        '         .Events = Array("s_left_flipper_inactive")
+        '     End With
+        ' End With
 
     End With
 

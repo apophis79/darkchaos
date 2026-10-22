@@ -22,12 +22,10 @@ Sub CreateMeteorWaveQualifyMode
             .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
             .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
             
-            .Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", Array("restart_mwq_flippers_down_timer")
-            .Add "right_flipper_up_state", Array("stop_mwq_flippers_down_timer")
-            .Add "left_flipper_up_state", Array("stop_mwq_flippers_down_timer")
+            .Add "switches_hit{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
 
-            .Add "timer_mwq_flippers_down_complete", Array("stop_mwq_timer")
-            .Add "restart_mwq_flippers_down_timer", Array("start_mwq_timer")
+            .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer")
+            .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer")
 
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
@@ -101,16 +99,16 @@ Sub CreateMeteorWaveQualifyMode
             End With
         End With
 
-        With .Timers("mwq_flippers_down")
+        With .Timers("mwq_no_switches_hit")
             .TickInterval = 1000
             .StartValue = 0
-            .EndValue = PauseWhenFlippersDownTicks
+            .EndValue = PauseWhenNoSwitchHitsTicks
             With .ControlEvents()
-                .EventName = "restart_mwq_flippers_down_timer"
+                .EventName = "restart_mwq_no_switches_hit_timer"
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "stop_mwq_flippers_down_timer"
+                .EventName = "stop_mwq_no_switches_hit_timer"
                 .Action = "stop"
             End With
         End With
@@ -136,14 +134,14 @@ Sub CreateMeteorWaveQualifyMode
 					.Int = 0
 				End With
 			End With
-            With .EventName("timer_mwq_flippers_down_complete")
-                With .Variable("flipper_down_pause")
+            With .EventName("timer_mwq_no_switches_hit_complete")
+                With .Variable("no_switches_hit_pause")
                     .Action = "set"
                     .Int = 1
                 End With
             End With
-            With .EventName("restart_mwq_flippers_down_timer")
-                With .Variable("flipper_down_pause")
+            With .EventName("restart_mwq_no_switches_hit_timer")
+                With .Variable("no_switches_hit_pause")
                     .Action = "set"
                     .Int = 0
                 End With

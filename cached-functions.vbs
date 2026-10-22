@@ -3864,12 +3864,12 @@ Function Glf_921(args)
 End Function
 Function Glf_922(args)
 	On Error Resume Next
-	    Glf_922 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0 and GetPlayerState("flipper_down_pause")=0
+	    Glf_922 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0 and GetPlayerState("no_switches_hit_pause")=0
 	If Err Then Glf_922 = False
 End Function
 Function Glf_923(args)
 	On Error Resume Next
-	    Glf_923 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("flipper_down_pause")=0
+	    Glf_923 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("no_switches_hit_pause")=0
 	If Err Then Glf_923 = False
 End Function
 Function Glf_924(args)
@@ -4164,17 +4164,17 @@ Function Glf_983(args)
 End Function
 Function Glf_984(args)
 	On Error Resume Next
-	    Glf_984 = GetPlayerState("shot_cluster_bomb1") = 1 and GetPlayerState("shot_cluster_bomb2") = 0 and GetPlayerState("flipper_down_pause") = 0
+	    Glf_984 = GetPlayerState("shot_cluster_bomb1") = 1 and GetPlayerState("shot_cluster_bomb2") = 0 and GetPlayerState("no_switches_hit_pause") = 0
 	If Err Then Glf_984 = False
 End Function
 Function Glf_985(args)
 	On Error Resume Next
-	    Glf_985 = GetPlayerState("shot_cluster_bomb2") = 1 and GetPlayerState("flipper_down_pause") = 0
+	    Glf_985 = GetPlayerState("shot_cluster_bomb2") = 1 and GetPlayerState("no_switches_hit_pause") = 0
 	If Err Then Glf_985 = False
 End Function
 Function Glf_986(args)
 	On Error Resume Next
-	    Glf_986 = GetPlayerState("shot_cluster_bomb1") = 0 and GetPlayerState("flipper_down_pause") = 0
+	    Glf_986 = GetPlayerState("shot_cluster_bomb1") = 0 and GetPlayerState("no_switches_hit_pause") = 0
 	If Err Then Glf_986 = False
 End Function
 Function Glf_987(args)
@@ -4858,7 +4858,7 @@ Function Glf_1129(args)
 End Function
 Function Glf_1130(args)
 	On Error Resume Next
-	    Glf_1130 = GetPlayerState("warping") = 0 and GetPlayerState("ball_just_started") = 0
+	    Glf_1130 = GetPlayerState("warping") = 0
 	If Err Then Glf_1130 = False
 End Function
 Function Glf_1131(args)
@@ -8648,8 +8648,8 @@ glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.
 glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_919"
 glf_funcRefMap.Add "timer_ss_voc_complete{current_player.num_skillshots==3}", "Glf_920"
 glf_funcRefMap.Add "mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}", "Glf_921"
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0 and current_player.flipper_down_pause==0}", "Glf_922"
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0 and current_player.flipper_down_pause==0}", "Glf_923"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0 and current_player.no_switches_hit_pause==0}", "Glf_922"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0 and current_player.no_switches_hit_pause==0}", "Glf_923"
 glf_funcRefMap.Add "10000", "Glf_924"
 glf_funcRefMap.Add "current_player.moon_launch_locked_balls", "Glf_925"
 glf_funcRefMap.Add "start_moon_multiball.1{current_player.wizard_mode_running == 0}", "Glf_926"
@@ -8710,9 +8710,9 @@ glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge1 == 2 and 
 glf_funcRefMap.Add "left_orbit_hit{current_player.shot_cluster_charge2 == 2 and current_player.shot_cluster_charge3 == 1}", "Glf_981"
 glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", "Glf_982"
 glf_funcRefMap.Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", "Glf_983"
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.flipper_down_pause == 0}", "Glf_984"
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1 and current_player.flipper_down_pause == 0}", "Glf_985"
-glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0 and current_player.flipper_down_pause == 0}", "Glf_986"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.no_switches_hit_pause == 0}", "Glf_984"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1 and current_player.no_switches_hit_pause == 0}", "Glf_985"
+glf_funcRefMap.Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0 and current_player.no_switches_hit_pause == 0}", "Glf_986"
 glf_funcRefMap.Add "mode_training_qualify_started.1{current_player.shot_final_wave_wizard>0}", "Glf_987"
 glf_funcRefMap.Add "mode_training_qualify_started{current_player.num_training_shots_hit == current_player.num_training_shots}", "Glf_988"
 glf_funcRefMap.Add "mode_training_qualify_started{current_player.training_just_finished == 1}", "Glf_989"
@@ -8856,7 +8856,7 @@ glf_funcRefMap.Add "mode_meteor_wave_qualify_started{current_player.meteor_count
 glf_funcRefMap.Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", "Glf_1127"
 glf_funcRefMap.Add "init_mwq_timer{current_player.ball_just_started == 0}", "Glf_1128"
 glf_funcRefMap.Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", "Glf_1129"
-glf_funcRefMap.Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", "Glf_1130"
+glf_funcRefMap.Add "switches_hit{current_player.warping == 0}", "Glf_1130"
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", "Glf_1131"
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", "Glf_1132"
 glf_funcRefMap.Add "current_player.meteor_countdown_value", "Glf_1133"
