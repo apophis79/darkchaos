@@ -26,15 +26,11 @@ event_player:
     - stop_mwq_timer
   play_eb_show:
     - stop_mwq_timer
-  both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}:
-    - restart_mwq_flippers_down_timer
-  right_flipper_up_state:
-    - stop_mwq_flippers_down_timer
-  left_flipper_up_state:
-    - stop_mwq_flippers_down_timer
-  timer_mwq_flippers_down_complete:
+  switches_hit{current_player.warping == 0}:
+    - restart_mwq_no_switches_hit_timer
+  timer_mwq_no_switches_hit_complete:
     - stop_mwq_timer
-  restart_mwq_flippers_down_timer:
+  restart_mwq_no_switches_hit_timer:
     - start_mwq_timer
   stop_mwq_timer:
     - flash_mwq_display
@@ -167,14 +163,14 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
-  mwq_flippers_down:
+  mwq_no_switches_hit:
     start_value: 0
     end_value: 8
     direction: up
     control_events: 
-      - event: restart_mwq_flippers_down_timer
+      - event: restart_mwq_no_switches_hit_timer
         action: restart
-      - event: stop_mwq_flippers_down_timer
+      - event: stop_mwq_no_switches_hit_timer
         action: stop
     restart_on_complete: False
     start_running: False
@@ -196,13 +192,13 @@ variable_player:
       action: set
       int: 0
 
-  timer_mwq_flippers_down_complete: 
-    flipper_down_pause: 
+  timer_mwq_no_switches_hit_complete: 
+    no_switches_hit_pause: 
       action: set
       int: 1
 
-  restart_mwq_flippers_down_timer: 
-    flipper_down_pause: 
+  restart_mwq_no_switches_hit_timer: 
+    no_switches_hit_pause: 
       action: set
       int: 0
 

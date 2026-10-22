@@ -158,19 +158,15 @@ event_player:
     - meteor_wave_done_done
   timer_meteor_wave_nuked_complete:
     - meteor_wave_done_done
-  both_flippers_down_state:
-    - restart_mw_flippers_down_timer
-  right_flipper_up_state:
-    - stop_mw_flippers_down_timer
-  left_flipper_up_state:
-    - stop_mw_flippers_down_timer
-  timer_mw_flippers_down_complete:
+  switches_hit:
+    - restart_mw_no_switches_hit_timer
+  timer_mw_no_switches_hit_complete:
     - stop_meteor1_timer
     - stop_meteor2_timer
     - stop_meteor3_timer
     - stop_meteor4_timer
     - flash_mw_display
-  restart_mw_flippers_down_timer:
+  restart_mw_no_switches_hit_timer:
     - start_meteor1_timer
     - start_meteor2_timer
     - start_meteor3_timer
@@ -1079,14 +1075,14 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
-  mw_flippers_down:
+  mw_no_switches_hit:
     start_value: 0
     end_value: 8
     direction: up
     control_events: 
-      - event: restart_mw_flippers_down_timer
+      - event: restart_mw_no_switches_hit_timer
         action: restart
-      - event: stop_mw_flippers_down_timer
+      - event: stop_mw_no_switches_hit_timer
         action: stop
     restart_on_complete: False
     start_running: False
@@ -1194,13 +1190,13 @@ variable_player:
       action: set
       int: 0
 
-  timer_mw_flippers_down_complete: 
-    flipper_down_pause: 
+  timer_mw_no_switches_hit_complete: 
+    no_switches_hit_pause: 
       action: set
       int: 1
 
-  restart_mw_flippers_down_timer: 
-    flipper_down_pause: 
+  restart_mw_no_switches_hit_timer: 
+    no_switches_hit_pause: 
       action: set
       int: 0
 

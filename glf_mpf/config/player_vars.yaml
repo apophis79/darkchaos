@@ -22,7 +22,7 @@ player_vars:
   ball_cradled:
     initial_value: 0
     value_type: int
-  flipper_down_pause:
+  no_switches_hit_pause:
     initial_value: 0
     value_type: int
   ball_just_started:

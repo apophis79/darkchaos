@@ -214,10 +214,13 @@ event_player:
     - check_base_restart
   s_CenterOrb1_active{current_player.center_orbit_just_hit == 0}:
     - center_orbit_hit
+    - switches_hit
   s_CenterOrb2_active{current_player.center_orbit_just_hit == 0}:
     - center_orbit_hit
+    - switches_hit
   s_CenterOrb3_active{current_player.center_orbit_just_hit == 0}:
     - center_orbit_hit
+    - switches_hit
   ball_launch_hit:
     - play_sfx_ball_launch
   center_orbit_hit:
@@ -229,15 +232,19 @@ event_player:
   s_Bumper1_active:
     - play_sfx_bumper
     - score_1300
+    - switches_hit
   s_Bumper2_active:
     - play_sfx_bumper
     - score_1300
+    - switches_hit
   s_Bumper3_active:
     - play_sfx_bumper
     - score_1300
+    - switches_hit
   s_TopSlingshot_active:
     - play_sfx_bumper
     - score_1300
+    - switches_hit
   s_Spinner_active:
     - score_930
   meteor_wave_music_stop:
@@ -254,12 +261,15 @@ event_player:
   s_TargetMystery5_active:
     - magnet_activated_flash
     - magnet_activated_gi
+    - switches_hit
   s_TimewarpRamp_active:
     - left_ramp_hit
+    - switches_hit
   balldevice_moon_lock_ball_entered:
     - right_ramp_hit
   s_LeftBumper1_active:
     - left_side_hit
+    - switches_hit
   knockdown_meteors:
     - meteor1_knockdown
     - meteor2_knockdown
@@ -273,12 +283,15 @@ event_player:
     - raise_lock_pin
   s_LockOut_active:
     - raise_lock_pin
+    - switches_hit
   s_LeftSlingshot_active:
     - play_lsling_base_show
     - score_1000
+    - switches_hit
   s_RightSlingshot_active:
     - play_rsling_base_show
     - score_1000
+    - switches_hit
   slings_powerup_added:
     - pu_lsling1_show
     - pu_lsling2_show
@@ -290,6 +303,50 @@ event_player:
     - restart_plunger_check
   timer_plunger_check_complete:
     - plunger_eject
+  s_LeftOutlane_active:
+    - switches_hit
+  s_LeftInlane_active:
+    - switches_hit
+  s_RightInlane_active:
+    - switches_hit
+  s_RightOutlane_active:
+    - switches_hit
+  s_Plunger2_active:
+    - switches_hit
+  s_LeftOrb1_active:
+    - switches_hit
+  s_LeftOrb2_active:
+    - switches_hit
+  s_InnerOrb1_active:
+    - switches_hit
+  s_InnerOrb2_active:
+    - switches_hit
+  s_RightOrb1_active:
+    - switches_hit
+  s_RightOrb2_active:
+    - switches_hit
+  s_TargetMystery1_active:
+    - switches_hit
+  s_TargetMystery2_active:
+    - switches_hit
+  s_TargetMystery3_active:
+    - switches_hit
+  s_TargetMystery4_active:
+    - switches_hit
+  s_TargetShield1_active:
+    - switches_hit
+  s_TargetShield2_active:
+    - switches_hit
+  s_TargetShield3_active:
+    - switches_hit
+  s_DTMeteor1_active:
+    - switches_hit
+  s_DTMeteor2_active:
+    - switches_hit
+  s_DTMeteor3_active:
+    - switches_hit
+  s_DTMeteor4_active:
+    - switches_hit
 
 
 light_player: 
@@ -1195,56 +1252,6 @@ sound_player:
       action: play
 
 
-state_machines: 
-  flipper_states:
-    starting_state: flippers_down
-    states: 
-      flippers_down: 
-        label: Flippers Down
-        events_when_started: both_flippers_down_state
-      right_flipper_up: 
-        label: Right Flipper Up
-        events_when_started: right_flipper_up_state
-      left_flipper_up: 
-        label: Left Flipper Up
-        events_when_started: left_flipper_up_state
-      flippers_up: 
-        label: Flippers Up
-        events_when_started: both_flippers_up_state
-    transitions: 
-      - source: flippers_down
-        target: right_flipper_up
-        events: 
-          - s_RightFlipperButton_active
-      - source: flippers_down
-        target: left_flipper_up
-        events: 
-          - s_LeftFlipperButton_active
-      - source: right_flipper_up
-        target: flippers_up
-        events: 
-          - s_LeftFlipperButton_active
-      - source: left_flipper_up
-        target: flippers_up
-        events: 
-          - s_RightFlipperButton_active
-      - source: flippers_up
-        target: right_flipper_up
-        events: 
-          - s_LeftFlipperButton_inactive
-      - source: flippers_up
-        target: left_flipper_up
-        events: 
-          - s_RightFlipperButton_inactive
-      - source: right_flipper_up
-        target: flippers_down
-        events: 
-          - s_RightFlipperButton_inactive
-      - source: left_flipper_up
-        target: flippers_down
-        events: 
-          - s_LeftFlipperButton_inactive
-
 timers: 
   delay_ball_release:
     start_value: 0
@@ -1303,7 +1310,7 @@ variable_player:
     flippers_are_dead: 
       action: set_machine
       int: 0
-    flipper_down_pause: 
+    no_switches_hit_pause: 
       action: set
       int: 0
 
