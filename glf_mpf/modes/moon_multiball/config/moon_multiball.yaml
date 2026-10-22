@@ -34,6 +34,14 @@ multiballs:
     grace_period: 0
     ball_locks: moon_lock
 
+random_event_player: 
+  launch_panic_penalty: 
+    events:
+      play_panic_penalty_voc1: 1
+      play_panic_penalty_voc2: 1
+    scope: player
+
+
 show_player: 
   launch_panic_penalty: 
     flash_color: 

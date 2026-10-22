@@ -274,7 +274,6 @@ light_player:
 random_event_player: 
   training_music_start: 
     events:
-      training_music_1_start: 1
       training_music_2_start: 1
       training_music_3_start: 1
       training_music_4_start: 1

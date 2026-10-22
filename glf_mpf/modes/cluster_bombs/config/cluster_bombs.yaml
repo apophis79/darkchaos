@@ -84,6 +84,11 @@ random_event_player:
       play_sfx_LCC2: 1
       play_sfx_LCC3: 1
     scope: player
+  cluster_panic_penalty: 
+    events:
+      play_panic_penalty_voc1: 1
+      play_panic_penalty_voc2: 1
+    scope: player
 
 
 segment_display_player: 

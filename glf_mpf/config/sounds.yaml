@@ -829,6 +829,15 @@ sounds:
     duration: 3030
     loops: 0
 
+  sfx_multiloop:
+    file: sfx_multiloop
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3140
+    loops: 0
+
   voc_AlienAlert:
     file: voc_AlienAlert
     volume: 
@@ -1303,7 +1312,7 @@ sounds:
     bus: voc
     priority: 0
     max_queue_time: -1
-    duration: 5773
+    duration: 2708
     loops: 0
 
   voc_training_incomplete:
@@ -1313,6 +1322,24 @@ sounds:
     priority: 0
     max_queue_time: -1
     duration: 2668
+    loops: 0
+
+  voc_warning_weapon_empty1:
+    file: voc_warning_weapon_empty1
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 3065
+    loops: 0
+
+  voc_warning_weapon_empty2:
+    file: voc_warning_weapon_empty2
+    volume: 
+    bus: voc
+    priority: 0
+    max_queue_time: -1
+    duration: 2920
     loops: 0
 
   mus_wave0:

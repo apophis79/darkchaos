@@ -1250,6 +1250,14 @@ sound_player:
     voc_extra_ball_acheived: 
       key: key_voc_extra_ball_acheived
       action: play
+  play_panic_penalty_voc1: 
+    voc_warning_weapon_empty1: 
+      key: key_sfx_error_voc1
+      action: play
+  cluster_panic_penalty_voc2: 
+    voc_warning_weapon_empty2: 
+      key: key_sfx_error_voc2
+      action: play
 
 
 timers: 
