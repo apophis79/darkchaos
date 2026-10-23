@@ -51,6 +51,7 @@ If for_real = true Then
 End If
 
 Const PauseWhenNoSwitchHitsTicks = 8  'uses 1000 ms interval
+Const CoreTempHitInterval = 5000
 
 Const SlingDomePowerUpBrightness = 100  '0 to 100
 

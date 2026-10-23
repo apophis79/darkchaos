@@ -24,8 +24,11 @@ Sub CreateMeteorWaveQualifyMode
             
             .Add "switches_hit{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
 
-            .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer")
-            .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer")
+            .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer","check_core_temp")
+            .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer","stop_mwq_core_temp_timer")
+
+            .Add "check_core_temp{device.state_machines.flipper_states.state!=""flippers_down""}", Array("restart_mwq_core_temp_timer","play_core_temp_rising","score_m100000")
+            .Add "timer_mwq_core_temp_tick", Array("play_core_temp_rising","score_m100000") 
 
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
@@ -113,6 +116,19 @@ Sub CreateMeteorWaveQualifyMode
             End With
         End With
 
+        With .Timers("mwq_core_temp")
+            .TickInterval = CoreTempHitInterval
+            .StartValue = 0
+            .EndValue = 100
+            With .ControlEvents()
+                .EventName = "restart_mwq_core_temp_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "stop_mwq_core_temp_timer"
+                .Action = "stop"
+            End With
+        End With
         
 
         With .VariablePlayer()
@@ -226,6 +242,19 @@ Sub CreateMeteorWaveQualifyMode
                     .Add "lights", "tInlaneGI"
                     .Add "color", GIColor3000k
                     .Add "fade", 300
+                End With
+            End With
+
+            With .EventName("play_core_temp_rising")
+                .Key = "key_core_temp_rising"
+                .Show = "core_temp_rising_show"
+                .Speed = 1
+                .Loops = 0
+                .Priority = 2000
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", MeteorHotColor
+                    .Add "fade", 900
                 End With
             End With
 

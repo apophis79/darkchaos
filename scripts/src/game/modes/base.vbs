@@ -1372,7 +1372,7 @@ Sub CreateBaseMode()
                 .Key = "key_sfx_error_voc1"
                 .Sound = "voc_warning_weapon_empty1"
             End With
-            With .EventName("cluster_panic_penalty_voc2")
+            With .EventName("play_panic_penalty_voc2")
                 .Key = "key_sfx_error_voc2"
                 .Sound = "voc_warning_weapon_empty2"
             End With
@@ -1380,71 +1380,71 @@ Sub CreateBaseMode()
         End With
 
 
-        ' With .StateMachines("flipper_states") 
-        '     '.Debug=True
-        '     .PersistState = False
-        '     .StartingState = "flippers_down"
+        With .StateMachines("flipper_states") 
+            '.Debug=True
+            .PersistState = False
+            .StartingState = "flippers_down"
             
-        '     'States
-        '     With .States("flippers_down")
-        '         .Label = "Flippers Down"
-        '         .EventsWhenStarted = Array("both_flippers_down_state")
-        '     End With
-        '     With .States("right_flipper_up")
-        '         .Label = "Right Flipper Up"
-        '         .EventsWhenStarted = Array("right_flipper_up_state")
-        '     End With
-        '     With .States("left_flipper_up")
-        '         .Label = "Left Flipper Up"
-        '         .EventsWhenStarted = Array("left_flipper_up_state")
-        '     End With
-        '     With .States("flippers_up")
-        '         .Label = "Flippers Up"
-        '         .EventsWhenStarted = Array("both_flippers_up_state")
-        '     End With
+            'States
+            With .States("flippers_down")
+                .Label = "Flippers Down"
+                .EventsWhenStarted = Array("both_flippers_down_state")
+            End With
+            With .States("right_flipper_up")
+                .Label = "Right Flipper Up"
+                .EventsWhenStarted = Array("right_flipper_up_state")
+            End With
+            With .States("left_flipper_up")
+                .Label = "Left Flipper Up"
+                .EventsWhenStarted = Array("left_flipper_up_state")
+            End With
+            With .States("flippers_up")
+                .Label = "Flippers Up"
+                .EventsWhenStarted = Array("both_flippers_up_state")
+            End With
 
-        '     'Transitions
-        '     With .Transitions()
-        '         .Source = Array("flippers_down")
-        '         .Target = "right_flipper_up"
-        '         .Events = Array("s_right_flipper_active")
-        '     End With
-        '     With .Transitions()
-        '         .Source = Array("flippers_down")
-        '         .Target = "left_flipper_up"
-        '         .Events = Array("s_left_flipper_active")
-        '     End With
-        '     With .Transitions()
-        '         .Source = Array("right_flipper_up")
-        '         .Target = "flippers_up"
-        '         .Events = Array("s_left_flipper_active")
-        '     End With
-        '     With .Transitions()
-        '         .Source = Array("left_flipper_up")
-        '         .Target = "flippers_up"
-        '         .Events = Array("s_right_flipper_active")
-        '     End With
-        '     With .Transitions()
-        '         .Source = Array("flippers_up")
-        '         .Target = "right_flipper_up"
-        '         .Events = Array("s_left_flipper_inactive")
-        '     End With
-        '     With .Transitions()
-        '         .Source = Array("flippers_up")
-        '         .Target = "left_flipper_up"
-        '         .Events = Array("s_right_flipper_inactive")
-        '     End With
-        '     With .Transitions()
-        '         .Source = Array("right_flipper_up")
-        '         .Target = "flippers_down"
-        '         .Events = Array("s_right_flipper_inactive")
-        '     End With
-        '      With .Transitions()
-        '         .Source = Array("left_flipper_up")
-        '         .Target = "flippers_down"
-        '         .Events = Array("s_left_flipper_inactive")
-        '     End With
-        ' End With
+            'Transitions
+            With .Transitions()
+                .Source = Array("flippers_down")
+                .Target = "right_flipper_up"
+                .Events = Array("s_right_flipper_active")
+            End With
+            With .Transitions()
+                .Source = Array("flippers_down")
+                .Target = "left_flipper_up"
+                .Events = Array("s_left_flipper_active")
+            End With
+            With .Transitions()
+                .Source = Array("right_flipper_up")
+                .Target = "flippers_up"
+                .Events = Array("s_left_flipper_active")
+            End With
+            With .Transitions()
+                .Source = Array("left_flipper_up")
+                .Target = "flippers_up"
+                .Events = Array("s_right_flipper_active")
+            End With
+            With .Transitions()
+                .Source = Array("flippers_up")
+                .Target = "right_flipper_up"
+                .Events = Array("s_left_flipper_inactive")
+            End With
+            With .Transitions()
+                .Source = Array("flippers_up")
+                .Target = "left_flipper_up"
+                .Events = Array("s_right_flipper_inactive")
+            End With
+            With .Transitions()
+                .Source = Array("right_flipper_up")
+                .Target = "flippers_down"
+                .Events = Array("s_right_flipper_inactive")
+            End With
+             With .Transitions()
+                .Source = Array("left_flipper_up")
+                .Target = "flippers_down"
+                .Events = Array("s_left_flipper_inactive")
+            End With
+        End With
 
     End With
 

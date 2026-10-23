@@ -344,6 +344,127 @@ Sub CreateGeneralShows()
             .Lights = Array("(lights)|100|70369d|1000")
         End With
     End With
+
+
+    
+    With CreateGlfShow("core_temp_rising_show")
+        With .AddStep(Null, Null, 0.0)
+            .Lights = Array( _
+            "FL5a|(intensity)|(color)", _
+            "FL5b|(intensity)|(color)", _
+            "FL5c|(intensity)|(color)", _
+            "FL5d|(intensity)|(color)", _
+            "FL5e|(intensity)|(color)", _
+            "FL5f|(intensity)|(color)", _
+            "FL5g|(intensity)|(color)", _
+            "FL5h|(intensity)|(color)", _
+            "FL6a|(intensity)|(color)", _
+            "FL6b|(intensity)|(color)", _
+            "FL6c|(intensity)|(color)", _
+            "FL6d|(intensity)|(color)", _
+            "FL6e|(intensity)|(color)", _
+            "FL6f|(intensity)|(color)", _
+            "FL6g|(intensity)|(color)", _
+            "FL6h|(intensity)|(color)", _
+            "LSA|(intensity)|(color)", _
+            "gi01|(intensity)|(color)", _
+            "gi02|(intensity)|(color)", _
+            "gi03|(intensity)|(color)", _
+            "gi04|(intensity)|(color)", _
+            "gi05|(intensity)|(color)", _
+            "gi06|(intensity)|(color)", _
+            "gi07|(intensity)|(color)", _
+            "gi08|(intensity)|(color)", _
+            "LPR1|(intensity)|(color)", _
+            "LPR2|(intensity)|(color)", _
+            "LPR3|(intensity)|(color)", _
+            "LPR4|(intensity)|(color)", _
+            "LPR5|(intensity)|(color)", _
+            "LPR6|(intensity)|(color)", _
+            "LMR1|(intensity)|(color)", _
+            "LMR2|(intensity)|(color)", _
+            "LCR1|(intensity)|(color)", _
+            "LCR2|(intensity)|(color)", _
+            "LC1|(intensity)|(color)", _
+            "LC2|(intensity)|(color)", _
+            "LC3|(intensity)|(color)", _
+            "LC4|(intensity)|(color)", _
+            "LC5|(intensity)|(color)", _
+            "LC6|(intensity)|(color)", _
+            "LC7|(intensity)|(color)", _
+            "LC8|(intensity)|(color)", _
+            "LH9|(intensity)|(color)", _
+            "LH8|(intensity)|(color)", _
+            "LH7|(intensity)|(color)", _
+            "LH6|(intensity)|(color)", _
+            "LH5|(intensity)|(color)", _
+            "LH4|(intensity)|(color)", _
+            "LH3|(intensity)|(color)", _
+            "LH2|(intensity)|(color)", _
+            "LH1|(intensity)|(color)", _
+            "LSR|(intensity)|(color)", _
+            "LSL|(intensity)|(color)" _
+            )
+        End With
+        With .AddStep(Null, Null, 1)
+            .Lights = Array( _
+            "FL5a|(intensity)|000000|(fade)", _
+            "FL5b|(intensity)|000000|(fade)", _
+            "FL5c|(intensity)|000000|(fade)", _
+            "FL5d|(intensity)|000000|(fade)", _
+            "FL5e|(intensity)|000000|(fade)", _
+            "FL5f|(intensity)|000000|(fade)", _
+            "FL5g|(intensity)|000000|(fade)", _
+            "FL5h|(intensity)|000000|(fade)", _
+            "FL6a|(intensity)|000000|(fade)", _
+            "FL6b|(intensity)|000000|(fade)", _
+            "FL6c|(intensity)|000000|(fade)", _
+            "FL6d|(intensity)|000000|(fade)", _
+            "FL6e|(intensity)|000000|(fade)", _
+            "FL6f|(intensity)|000000|(fade)", _
+            "FL6g|(intensity)|000000|(fade)", _
+            "FL6h|(intensity)|000000|(fade)", _
+            "LSA|(intensity)|000000|(fade)", _
+            "gi01|(intensity)|000000|(fade)", _
+            "gi02|(intensity)|000000|(fade)", _
+            "gi03|(intensity)|000000|(fade)", _
+            "gi04|(intensity)|000000|(fade)", _
+            "gi05|(intensity)|000000|(fade)", _
+            "gi06|(intensity)|000000|(fade)", _
+            "gi07|(intensity)|000000|(fade)", _
+            "gi08|(intensity)|000000|(fade)", _
+            "LPR1|(intensity)|000000|(fade)", _
+            "LPR2|(intensity)|000000|(fade)", _
+            "LPR3|(intensity)|000000|(fade)", _
+            "LPR4|(intensity)|000000|(fade)", _
+            "LPR5|(intensity)|000000|(fade)", _
+            "LPR6|(intensity)|000000|(fade)", _
+            "LMR1|(intensity)|000000|(fade)", _
+            "LMR2|(intensity)|000000|(fade)", _
+            "LCR1|(intensity)|000000|(fade)", _
+            "LCR2|(intensity)|000000|(fade)", _
+            "LC1|(intensity)|000000|(fade)", _
+            "LC2|(intensity)|000000|(fade)", _
+            "LC3|(intensity)|000000|(fade)", _
+            "LC4|(intensity)|000000|(fade)", _
+            "LC5|(intensity)|000000|(fade)", _
+            "LC6|(intensity)|000000|(fade)", _
+            "LC7|(intensity)|000000|(fade)", _
+            "LC8|(intensity)|000000|(fade)", _
+            "LH9|(intensity)|000000|(fade)", _
+            "LH8|(intensity)|000000|(fade)", _
+            "LH7|(intensity)|000000|(fade)", _
+            "LH6|(intensity)|000000|(fade)", _
+            "LH5|(intensity)|000000|(fade)", _
+            "LH4|(intensity)|000000|(fade)", _
+            "LH3|(intensity)|000000|(fade)", _
+            "LH2|(intensity)|000000|(fade)", _
+            "LH1|(intensity)|000000|(fade)", _
+            "LSR|(intensity)|000000|(fade)", _
+            "LSL|(intensity)|000000|(fade)" _
+            )
+        End With
+    End With
     
 
 End Sub
