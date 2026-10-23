@@ -23,11 +23,12 @@ Sub CreateMeteorWaveQualifyMode
             .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
             
             .Add "switches_hit{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
+            .Add "both_flippers_down_state{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
 
             .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer","check_core_temp")
             .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer","stop_mwq_core_temp_timer")
 
-            .Add "check_core_temp{device.state_machines.flipper_states.state!=""flippers_down""}", Array("restart_mwq_core_temp_timer","play_core_temp_rising","score_m100000")
+            .Add "check_core_temp{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", Array("restart_mwq_core_temp_timer","play_core_temp_rising","score_m100000")
             .Add "timer_mwq_core_temp_tick", Array("play_core_temp_rising","score_m100000") 
 
             .Add "stop_mwq_timer", Array("flash_mwq_display")

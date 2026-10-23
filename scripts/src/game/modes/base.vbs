@@ -199,7 +199,9 @@ Sub CreateBaseMode()
             .Add "s_DTMeteor3_active", Array("switches_hit")
             .Add "s_DTMeteor4_active", Array("switches_hit")
             '.Add "s_TimewarpRamp_active", Array("switches_hit")
+            .Add "s_Lock3_active", Array("switches_hit")
             '.Add "s_LockOut_active", Array("switches_hit")
+            .Add "s_Scoop_active", Array("switches_hit")
 
         End With
 
