@@ -194,10 +194,6 @@ Sub CreateBaseMode()
             .Add "s_TargetShield1_active", Array("switches_hit")
             .Add "s_TargetShield2_active", Array("switches_hit")
             .Add "s_TargetShield3_active", Array("switches_hit")
-            .Add "s_DTMeteor1_active", Array("switches_hit")
-            .Add "s_DTMeteor2_active", Array("switches_hit")
-            .Add "s_DTMeteor3_active", Array("switches_hit")
-            .Add "s_DTMeteor4_active", Array("switches_hit")
             '.Add "s_TimewarpRamp_active", Array("switches_hit")
             .Add "s_Lock3_active", Array("switches_hit")
             '.Add "s_LockOut_active", Array("switches_hit")
@@ -863,6 +859,19 @@ Sub CreateBaseMode()
                 End With
             End With
 
+            With .EventName("play_exploit_show")
+                .Key = "key_exploit_show"
+                .Show = "exploit_show"
+                .Speed = 1
+                .Loops = 0
+                .Priority = 5000
+                With .Tokens()
+                    .Add "intensity", 100
+                    .Add "color", MeteorHotColor
+                    .Add "fade", 900
+                End With
+            End With
+
         End With
 
         With .DOFPlayer()
@@ -1377,6 +1386,12 @@ Sub CreateBaseMode()
             With .EventName("play_panic_penalty_voc2")
                 .Key = "key_sfx_error_voc2"
                 .Sound = "voc_warning_weapon_empty2"
+            End With
+
+            'exploit
+            With .EventName("play_exploit_sfx")
+                .Key = "key_play_exploit_show"
+                .Sound = "sfx_flipper_warning4"
             End With
 
         End With

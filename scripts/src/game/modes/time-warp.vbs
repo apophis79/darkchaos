@@ -25,7 +25,7 @@ Sub CreateTimewarpMode
             .Add "left_ramp_hit", Array("score_2000")
             .Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==1}", Array("light_timewarp1","ready_timewarp2","restart_tw_timer","score_10000")
             .Add "s_TimewarpRamp_active{current_player.warping==0 and current_player.shot_timewarp1==2 and current_player.shot_timewarp2==1}", Array("light_timewarp2","restart_tw_timer","score_20000")
-            .Add "timer_timewarp_complete", Array("start_mwq_timer")  'Timewarp done, so continue the meteor wave qualify countdown
+            .Add "timer_timewarp_complete", Array("start_mwq_timer","restart_mwq_no_switches_hit_timer")  'Timewarp done, so continue the meteor wave qualify countdown
         End With
 
 
