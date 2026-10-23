@@ -8882,7 +8882,7 @@ glf_funcRefMap.Add "init_mwq_timer{current_player.ball_just_started == 0}", "Glf
 glf_funcRefMap.Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", "Glf_1130"
 glf_funcRefMap.Add "switches_hit{current_player.warping == 0}", "Glf_1131"
 glf_funcRefMap.Add "both_flippers_down_state{current_player.warping == 0}", "Glf_1132"
-glf_funcRefMap.Add "check_core_temp{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", "Glf_1133"
+glf_funcRefMap.Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", "Glf_1133"
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", "Glf_1134"
 glf_funcRefMap.Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", "Glf_1135"
 glf_funcRefMap.Add "current_player.meteor_countdown_value", "Glf_1136"

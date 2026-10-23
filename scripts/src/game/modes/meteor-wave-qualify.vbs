@@ -25,11 +25,11 @@ Sub CreateMeteorWaveQualifyMode
             .Add "switches_hit{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
             .Add "both_flippers_down_state{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
 
-            .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer","check_core_temp")
-            .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer","stop_mwq_core_temp_timer")
+            .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer","check_exploit")
+            .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer","stop_mwq_exploit_timer")
 
-            .Add "check_core_temp{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", Array("restart_mwq_core_temp_timer","play_core_temp_rising","score_m100000")
-            .Add "timer_mwq_core_temp_tick", Array("play_core_temp_rising","score_m100000") 
+            .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", Array("restart_mwq_exploit_timer","play_exploit_show","score_m100000")
+            .Add "timer_mwq_exploit_tick", Array("play_exploit_show","score_m100000") 
 
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
@@ -68,6 +68,10 @@ Sub CreateMeteorWaveQualifyMode
             With .EventName("timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}")
                 .Key = "key_voc_wave_incoming"
                 .Sound = "voc_wave_incoming"
+            End With
+            With .EventName("play_exploit_show")
+                .Key = "key_play_exploit_show"
+                .Sound = "sfx_flipper_warning4"
             End With
         End With
 
@@ -117,16 +121,16 @@ Sub CreateMeteorWaveQualifyMode
             End With
         End With
 
-        With .Timers("mwq_core_temp")
+        With .Timers("mwq_exploit")
             .TickInterval = CoreTempHitInterval
             .StartValue = 0
             .EndValue = 100
             With .ControlEvents()
-                .EventName = "restart_mwq_core_temp_timer"
+                .EventName = "restart_mwq_exploit_timer"
                 .Action = "restart"
             End With
             With .ControlEvents()
-                .EventName = "stop_mwq_core_temp_timer"
+                .EventName = "stop_mwq_exploit_timer"
                 .Action = "stop"
             End With
         End With
@@ -246,9 +250,9 @@ Sub CreateMeteorWaveQualifyMode
                 End With
             End With
 
-            With .EventName("play_core_temp_rising")
-                .Key = "key_core_temp_rising"
-                .Show = "core_temp_rising_show"
+            With .EventName("play_exploit_show")
+                .Key = "key_exploit_show"
+                .Show = "exploit_show"
                 .Speed = 1
                 .Loops = 0
                 .Priority = 2000

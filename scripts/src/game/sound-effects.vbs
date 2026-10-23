@@ -105,6 +105,7 @@ Sub CreateSounds()
     AddSoundEffect "sfx_LS_between_waves_updated", 4.519
     AddSoundEffect "sfx_LS_during_training", 3.030
     AddSoundEffect "sfx_multiloop", 3.140
+    AddSoundEffect "sfx_flipper_warning4", 3.224
 
     'Add callout tracks here. Provied track name and duration (seconds)
     AddCallout "voc_AlienAlert", 6.000

@@ -347,7 +347,7 @@ Sub CreateGeneralShows()
 
 
     
-    With CreateGlfShow("core_temp_rising_show")
+    With CreateGlfShow("exploit_show")
         With .AddStep(Null, Null, 0.0)
             .Lights = Array( _
             "FL5a|(intensity)|(color)", _
