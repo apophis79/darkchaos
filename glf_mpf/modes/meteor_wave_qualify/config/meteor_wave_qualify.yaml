@@ -12,6 +12,7 @@ event_player:
     - reset_countdown_value
   mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}:
     - init_mwq_timer
+    - restart_mwq_no_switches_hit_timer
   reset_countdown_value:
     - init_mwq_timer
   init_mwq_timer:
@@ -28,10 +29,23 @@ event_player:
     - stop_mwq_timer
   switches_hit{current_player.warping == 0}:
     - restart_mwq_no_switches_hit_timer
+  both_flippers_down_state{current_player.warping == 0}:
+    - restart_mwq_no_switches_hit_timer
   timer_mwq_no_switches_hit_complete:
     - stop_mwq_timer
+    - check_exploit
   restart_mwq_no_switches_hit_timer:
     - start_mwq_timer
+    - stop_mwq_exploit_timer
+  check_exploit{device.state_machines.flipper_states.state!="flippers_down" and current_player.warping == 0}:
+    - restart_mwq_exploit_timer
+    - play_exploit_show
+    - play_exploit_sfx
+    - score_m100000
+  timer_mwq_exploit_tick:
+    - play_exploit_show
+    - play_exploit_sfx
+    - score_m100000
   stop_mwq_timer:
     - flash_mwq_display
   start_mwq_timer:
@@ -165,7 +179,7 @@ timers:
     tick_interval: 1000ms
   mwq_no_switches_hit:
     start_value: 0
-    end_value: 8
+    end_value: 7
     direction: up
     control_events: 
       - event: restart_mwq_no_switches_hit_timer
@@ -175,6 +189,18 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
+  mwq_exploit:
+    start_value: 0
+    end_value: 100
+    direction: up
+    control_events: 
+      - event: restart_mwq_exploit_timer
+        action: restart
+      - event: stop_mwq_exploit_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 6000ms
 
 variable_player: 
   reset_countdown_value: 

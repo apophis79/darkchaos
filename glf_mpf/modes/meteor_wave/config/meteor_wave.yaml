@@ -16,6 +16,7 @@ event_player:
     - backglass_dark_off
     - backglass_chaos_off
     - backglass_wave_on
+    - restart_mw_no_switches_hit_timer
   stop_some_modes_for_mw:
     - stop_skillshots
     - stop_combos
@@ -162,18 +163,31 @@ event_player:
     - meteor_wave_done_done
   switches_hit:
     - restart_mw_no_switches_hit_timer
+  both_flippers_down_state:
+    - restart_mw_no_switches_hit_timer
   timer_mw_no_switches_hit_complete:
     - stop_meteor1_timer
     - stop_meteor2_timer
     - stop_meteor3_timer
     - stop_meteor4_timer
     - flash_mw_display
+    - check_exploit
   restart_mw_no_switches_hit_timer:
     - start_meteor1_timer
     - start_meteor2_timer
     - start_meteor3_timer
     - start_meteor4_timer
     - remove_flash_mw_display
+    - stop_mw_exploit_timer
+  check_exploit{device.state_machines.flipper_states.state!="flippers_down"}:
+    - restart_mw_exploit_timer
+    - play_exploit_show
+    - play_exploit_sfx
+    - score_m100000
+  timer_mw_exploit_tick:
+    - play_exploit_show
+    - play_exploit_sfx
+    - score_m100000
 
 
 light_player: 
@@ -626,7 +640,7 @@ show_player:
         color: "ff0909"
   flash_mw_display: 
     flash_color_with_fade: 
-      key: key_flash_mwq_display
+      key: key_flash_mw_display
       priority: 5000
       speed: 8
       show_tokens: 
@@ -636,7 +650,7 @@ show_player:
   remove_flash_mw_display: 
     flash_color_with_fade: 
       action: stop
-      key: key_flash_mwq_display
+      key: key_flash_mw_display
       priority: 5000
       speed: 8
       show_tokens: 
@@ -1096,9 +1110,21 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
+  mw_exploit:
+    start_value: 0
+    end_value: 100
+    direction: up
+    control_events: 
+      - event: restart_mw_exploit_timer
+        action: restart
+      - event: stop_mw_exploit_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 6000ms
   mw_no_switches_hit:
     start_value: 0
-    end_value: 8
+    end_value: 7
     direction: up
     control_events: 
       - event: restart_mw_no_switches_hit_timer

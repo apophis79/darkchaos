@@ -838,6 +838,15 @@ sounds:
     duration: 3140
     loops: 0
 
+  sfx_flipper_warning4:
+    file: sfx_flipper_warning4
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3224
+    loops: 0
+
   voc_AlienAlert:
     file: voc_AlienAlert
     volume: 

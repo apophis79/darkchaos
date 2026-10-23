@@ -339,13 +339,9 @@ event_player:
     - switches_hit
   s_TargetShield3_active:
     - switches_hit
-  s_DTMeteor1_active:
+  s_Lock3_active:
     - switches_hit
-  s_DTMeteor2_active:
-    - switches_hit
-  s_DTMeteor3_active:
-    - switches_hit
-  s_DTMeteor4_active:
+  s_Scoop_active:
     - switches_hit
 
 
@@ -874,6 +870,15 @@ show_player:
       show_tokens: 
         lights: "tFlasherU"
         color: "00dddd"
+  play_exploit_show: 
+    exploit_show: 
+      key: key_exploit_show
+      priority: 5000
+      loops: 0
+      show_tokens: 
+        intensity: "100"
+        color: "ed1800"
+        fade: "900"
 
 
 slide_player: 
@@ -1254,11 +1259,65 @@ sound_player:
     voc_warning_weapon_empty1: 
       key: key_sfx_error_voc1
       action: play
-  cluster_panic_penalty_voc2: 
+  play_panic_penalty_voc2: 
     voc_warning_weapon_empty2: 
       key: key_sfx_error_voc2
       action: play
+  play_exploit_sfx: 
+    sfx_flipper_warning4: 
+      key: key_play_exploit_show
+      action: play
 
+
+state_machines: 
+  flipper_states:
+    starting_state: flippers_down
+    states: 
+      flippers_down: 
+        label: Flippers Down
+        events_when_started: both_flippers_down_state
+      right_flipper_up: 
+        label: Right Flipper Up
+        events_when_started: right_flipper_up_state
+      left_flipper_up: 
+        label: Left Flipper Up
+        events_when_started: left_flipper_up_state
+      flippers_up: 
+        label: Flippers Up
+        events_when_started: both_flippers_up_state
+    transitions: 
+      - source: flippers_down
+        target: right_flipper_up
+        events: 
+          - s_RightFlipperButton_active
+      - source: flippers_down
+        target: left_flipper_up
+        events: 
+          - s_LeftFlipperButton_active
+      - source: right_flipper_up
+        target: flippers_up
+        events: 
+          - s_LeftFlipperButton_active
+      - source: left_flipper_up
+        target: flippers_up
+        events: 
+          - s_RightFlipperButton_active
+      - source: flippers_up
+        target: right_flipper_up
+        events: 
+          - s_LeftFlipperButton_inactive
+      - source: flippers_up
+        target: left_flipper_up
+        events: 
+          - s_RightFlipperButton_inactive
+      - source: right_flipper_up
+        target: flippers_down
+        events: 
+          - s_RightFlipperButton_inactive
+      - source: left_flipper_up
+        target: flippers_down
+        events: 
+          - s_LeftFlipperButton_inactive
 
 timers: 
   delay_ball_release:

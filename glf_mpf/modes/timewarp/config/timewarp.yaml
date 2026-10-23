@@ -27,6 +27,7 @@ event_player:
     - score_20000
   timer_timewarp_complete:
     - start_mwq_timer
+    - restart_mwq_no_switches_hit_timer
 
 
 segment_display_player: 
