@@ -12,10 +12,10 @@ Sub CreateMeteorWaveQualifyMode
         With .EventPlayer()
             .Add "mode_meteor_wave_qualify_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_meteor_wave_qualify")
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
-            .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer","restart_mwq_no_switches_hit_timer")
+            .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer")
             .Add "reset_countdown_value", Array("init_mwq_timer")
             .Add "init_mwq_timer", Array("init_pf_display")
-            .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer")
+            .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer","restart_mwq_no_switches_hit_timer") 
             .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
             
             .Add "restart_tw_timer", Array("stop_mwq_timer")    'Timewarp started, so halt the countdown
