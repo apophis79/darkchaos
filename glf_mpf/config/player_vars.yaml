@@ -37,6 +37,12 @@ player_vars:
   meteor_mb_shootagain_time:
     initial_value: 6000
     value_type: int
+  super_pops_count:
+    initial_value: 100
+    value_type: int
+  super_spinner_count:
+    initial_value: 100
+    value_type: int
   num_training_shots:
     initial_value: 2
     value_type: int

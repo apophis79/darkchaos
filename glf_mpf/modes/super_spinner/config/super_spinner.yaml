@@ -65,6 +65,9 @@ variable_player:
     spin_multiplier: 
       action: set
       int: 69
+    super_spinner_count: 
+      action: set
+      int: 100
 
   mode_super_spinner_stopping: 
     spin_multiplier: 

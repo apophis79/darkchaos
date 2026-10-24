@@ -362,14 +362,6 @@ sound_player:
     voc_relaxed_combos: 
       key: key_voc_relaxed_combos
       action: play
-  mystery_super_spinner: 
-    voc_super_spinner: 
-      key: key_voc_super_spinner
-      action: play
-  mystery_super_pops: 
-    voc_super_pop_bumpers: 
-      key: key_voc_super_pop_bumpers
-      action: play
   mystery_full_protons: 
     voc_full_protons: 
       key: key_voc_full_protons

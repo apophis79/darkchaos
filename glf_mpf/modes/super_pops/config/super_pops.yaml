@@ -65,6 +65,9 @@ variable_player:
     pop_multiplier: 
       action: set
       int: 69
+    super_pops_count: 
+      action: set
+      int: 100
 
   mode_super_pops_stopping: 
     pop_multiplier: 

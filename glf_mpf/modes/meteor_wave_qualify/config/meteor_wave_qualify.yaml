@@ -12,15 +12,17 @@ event_player:
     - reset_countdown_value
   mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}:
     - init_mwq_timer
-    - restart_mwq_no_switches_hit_timer
   reset_countdown_value:
     - init_mwq_timer
   init_mwq_timer:
     - init_pf_display
   init_mwq_timer{current_player.ball_just_started == 0}:
     - start_mwq_timer
+    - restart_mwq_no_switches_hit_timer
   s_Plunger1_inactive{current_player.ball_just_started == 1}:
     - start_mwq_timer
+    - hide_super_spinner_count
+    - hide_super_pops_count
   restart_tw_timer:
     - stop_mwq_timer
   play_mystery_show:
@@ -69,6 +71,31 @@ event_player:
     - meteor_wave_alert_show2
     - meteor_wave_alert_show3
     - meteor_wave_alert_show4
+  s_Spinner_active{current_player.spin_multiplier == 1}:
+    - check_super_spinner
+    - restart_super_spinner_count_timer
+  check_super_spinner.1{current_player.super_spinner_count <= 0}:
+    - start_super_spinner
+  timer_super_spinner_count_complete:
+    - hide_super_spinner_count
+  s_Bumper1_active:
+    - pop_swtich_hit
+  s_Bumper2_active:
+    - pop_swtich_hit
+  s_Bumper3_active:
+    - pop_swtich_hit
+  s_TopSlingshot_active:
+    - pop_swtich_hit
+  pop_swtich_hit{current_player.pop_multiplier == 1}:
+    - check_super_pops
+    - restart_super_pops_count_timer
+  check_super_pops.1{current_player.super_pops_count <= 0}:
+    - start_super_pops
+  timer_super_pops_count_complete:
+    - hide_super_pops_count
+  mode_meteor_wave_qualify_stopping:
+    - hide_super_spinner_count
+    - hide_super_pops_count
 
 
 segment_display_player: 
@@ -201,6 +228,26 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 6000ms
+  super_spinner_count:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: restart_super_spinner_count_timer
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
+  super_pops_count:
+    start_value: 0
+    end_value: 2
+    direction: up
+    control_events: 
+      - event: restart_super_pops_count_timer
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 1000ms
 
 variable_player: 
   reset_countdown_value: 
@@ -227,6 +274,16 @@ variable_player:
     no_switches_hit_pause: 
       action: set
       int: 0
+
+  check_super_spinner.2: 
+    super_spinner_count: 
+      action: add
+      int: -1
+
+  check_super_pops.2: 
+    super_pops_count: 
+      action: add
+      int: -1
 
 
 
