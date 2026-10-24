@@ -188,6 +188,9 @@ Const BonusPerMoonMissile = 250000
 Const BonusPerProtonRound = 50000
 
 
+' Super pops and spinner setting
+Const SuperPopsCount = 100
+Const SuperSpinnerCount = 100
 
 Sub ConfigureGlfDevices
 
@@ -432,6 +435,8 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "meteor_wave_running", 0
     Glf_SetInitialPlayerVar "meteor_countdown_value", MeteorWaveDelayTicks
     Glf_SetInitialPlayerVar "meteor_mb_shootagain_time", MeteorMBShootAgainTime
+    Glf_SetInitialPlayerVar "super_pops_count", SuperPopsCount
+    Glf_SetInitialPlayerVar "super_spinner_count", SuperSpinnerCount
     Glf_SetInitialPlayerVar "num_training_shots", 2
     Glf_SetInitialPlayerVar "num_waves_completed", 0
     Glf_SetInitialPlayerVar "num_waves_completed_this_ball", 0
@@ -491,6 +496,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "nuke_just_used", 0
     Glf_SetInitialPlayerVar "center_orbit_just_hit", 0
     Glf_SetInitialPlayerVar "victory_lap_running", 0
+
     
 
     'Glf_SetInitialPlayerVar "debug_ball_devices_moon_lock_balls", 0

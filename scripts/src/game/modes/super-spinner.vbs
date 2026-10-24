@@ -85,6 +85,10 @@ Sub CreateSuperSpinnerMode
                     .Action = "set"
                     .Int = SuperSpinnerMultiplier
                 End With
+                With .Variable("super_spinner_count")
+                    .Action = "set"
+                    .Int = SuperSpinnerCount
+                End With
             End With
             With .EventName("mode_super_spinner_stopping") 
                 With .Variable("spin_multiplier")

@@ -85,6 +85,10 @@ Sub CreateSuperPopsMode
                     .Action = "set"
                     .Int = SuperPopsMultiplier
                 End With
+                With .Variable("super_pops_count")
+                    .Action = "set"
+                    .Int = SuperPopsCount
+                End With
             End With
             With .EventName("mode_super_pops_stopping") 
                 With .Variable("pop_multiplier")

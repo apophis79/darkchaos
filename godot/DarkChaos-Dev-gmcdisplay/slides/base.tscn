@@ -70,7 +70,6 @@ expand_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Player1SideGroup" type="Control" parent="." unique_id=1209593800]
-visible = false
 anchors_preset = 0
 offset_top = -30.0
 offset_right = 40.0
@@ -117,7 +116,6 @@ variable_name = "score"
 comma_separate = true
 
 [node name="Player2SideGroup" type="Control" parent="." unique_id=14233017]
-visible = false
 anchors_preset = 0
 offset_top = 120.0
 offset_right = 40.0
@@ -163,7 +161,6 @@ variable_name = "score"
 comma_separate = true
 
 [node name="Player3SideGroup" type="Control" parent="." unique_id=1810328012]
-visible = false
 anchors_preset = 0
 offset_top = 270.0
 offset_right = 40.0
@@ -209,7 +206,6 @@ variable_name = "score"
 comma_separate = true
 
 [node name="Player4SideGroup" type="Control" parent="." unique_id=84215437]
-visible = false
 anchors_preset = 0
 offset_top = 420.0
 offset_right = 40.0
@@ -253,6 +249,90 @@ script = ExtResource("2_06ewq")
 variable_type = 7
 variable_name = "score"
 comma_separate = true
+
+[node name="SuperSpinnerGroup" type="Control" parent="." unique_id=1583617399]
+anchors_preset = 0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = 10.0
+script = ExtResource("3_g8vm3")
+show_event = "check_super_spinner"
+hide_event = "hide_super_spinner_count"
+
+[node name="lblSuperSpinner" type="Label" parent="SuperSpinnerGroup" unique_id=2129231924]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 673.0
+offset_right = 1154.0
+offset_bottom = 725.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_6vrr4")
+theme_override_font_sizes/font_size = 37
+text = "SUPER SPINNER IN:"
+horizontal_alignment = 1
+
+[node name="SuperSpinnerCount" type="Label" parent="SuperSpinnerGroup" unique_id=295996713]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 671.0
+offset_right = 1336.0
+offset_bottom = 725.0
+theme = ExtResource("2_mixwp")
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "super_spinner_count"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"
+
+[node name="SuperPopsGroup" type="Control" parent="." unique_id=2066125906]
+anchors_preset = 0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = 10.0
+script = ExtResource("3_g8vm3")
+show_event = "check_super_pops"
+hide_event = "hide_super_pops_count"
+
+[node name="lblSuperPops" type="Label" parent="SuperPopsGroup" unique_id=274748687]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 734.0
+offset_right = 1168.0
+offset_bottom = 786.0
+size_flags_horizontal = 3
+theme = ExtResource("5_6vrr4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_6vrr4")
+theme_override_font_sizes/font_size = 37
+text = "SUPER POPS IN:"
+horizontal_alignment = 1
+
+[node name="SuperPopsCount" type="Label" parent="SuperPopsGroup" unique_id=293641230]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 730.0
+offset_right = 1336.0
+offset_bottom = 784.0
+theme = ExtResource("2_mixwp")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_06ewq")
+variable_name = "super_pops_count"
+metadata/_custom_type_script = "uid://bfvhmv2eirpua"
 
 [node name="lblProtons" type="Label" parent="." unique_id=345637435]
 layout_mode = 0

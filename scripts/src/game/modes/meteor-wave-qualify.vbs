@@ -16,7 +16,7 @@ Sub CreateMeteorWaveQualifyMode
             .Add "reset_countdown_value", Array("init_mwq_timer")
             .Add "init_mwq_timer", Array("init_pf_display")
             .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer","restart_mwq_no_switches_hit_timer") 
-            .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer") 
+            .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer","hide_super_spinner_count","hide_super_pops_count") 
             
             .Add "restart_tw_timer", Array("stop_mwq_timer")    'Timewarp started, so halt the countdown
             .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
@@ -40,6 +40,22 @@ Sub CreateMeteorWaveQualifyMode
             .Add "timer_meteor_countdown_complete", Array("start_meteor_wave")
 
             .Add "meteor_wave_alert_show", Array("meteor_wave_alert_show1","meteor_wave_alert_show2","meteor_wave_alert_show3","meteor_wave_alert_show4")
+
+            'handle super spinner
+            .Add "s_Spinner_active{current_player.spin_multiplier == 1}", Array("check_super_spinner","restart_super_spinner_count_timer")
+            .Add "check_super_spinner.1{current_player.super_spinner_count <= 0}", Array("start_super_spinner")
+            .Add "timer_super_spinner_count_complete", Array("hide_super_spinner_count")
+
+            'handle super pops
+            .Add "s_Bumper1_active", Array("pop_swtich_hit")
+            .Add "s_Bumper2_active", Array("pop_swtich_hit")
+            .Add "s_Bumper3_active", Array("pop_swtich_hit")
+            .Add "s_TopSlingshot_active", Array("pop_swtich_hit")
+            .Add "pop_swtich_hit{current_player.pop_multiplier == 1}", Array("check_super_pops","restart_super_pops_count_timer")
+            .Add "check_super_pops.1{current_player.super_pops_count <= 0}", Array("start_super_pops")
+            .Add "timer_super_pops_count_complete", Array("hide_super_pops_count")
+
+            .Add "mode_meteor_wave_qualify_stopping", Array("hide_super_spinner_count","hide_super_pops_count")
         End With
         
         With .SegmentDisplayPlayer()
@@ -130,6 +146,26 @@ Sub CreateMeteorWaveQualifyMode
                 .Action = "stop"
             End With
         End With
+
+        With .Timers("super_spinner_count")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 2
+            With .ControlEvents()
+                .EventName = "restart_super_spinner_count_timer"
+                .Action = "restart"
+            End With
+        End With
+
+        With .Timers("super_pops_count")
+            .TickInterval = 1000
+            .StartValue = 0
+            .EndValue = 2
+            With .ControlEvents()
+                .EventName = "restart_super_pops_count_timer"
+                .Action = "restart"
+            End With
+        End With
         
 
         With .VariablePlayer()
@@ -161,6 +197,18 @@ Sub CreateMeteorWaveQualifyMode
                 With .Variable("no_switches_hit_pause")
                     .Action = "set"
                     .Int = 0
+                End With
+            End With
+            With .EventName("check_super_spinner.2")
+                With .Variable("super_spinner_count")
+                    .Action = "add"
+                    .Int = -1
+                End With
+            End With
+            With .EventName("check_super_pops.2")
+                With .Variable("super_pops_count")
+                    .Action = "add"
+                    .Int = -1
                 End With
             End With
 		End With
