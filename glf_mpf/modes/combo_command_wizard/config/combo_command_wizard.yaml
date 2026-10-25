@@ -9,7 +9,7 @@ event_player:
   mode_combo_command_wizard_started:
     - meteor_wave_music_stop
     - ccwiz_music_start
-    - ccwiz_sjp1_show2
+    - ccwiz_sjp1_show2_a
   mode_combo_command_wizard_stopping:
     - ccwiz_music_stop
   timer_combo_command_message_complete:
@@ -63,7 +63,7 @@ event_player:
     - add_ccwiz_phase2_shot
     - play_sfx_super_jackpot
     - ccwiz_sjp1_show1
-    - ccwiz_sjp1_show2
+    - ccwiz_sjp1_show2_b
     - score_1000000
   left_side_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 2}:
     - ccwiz_add_ball
@@ -245,7 +245,7 @@ shot_groups:
 
 shots: 
   ccwiz_shoot_again:
-    profile: shoot_again
+    profile: miniwiz_shoot_again
     show_tokens: 
       color: "0500ee"
     reset_events: multiball_ccwiz_shoot_again_ended
@@ -326,6 +326,11 @@ shots:
         state: 2
 
 show_player: 
+  play_cc_eb_show: 
+    eb_show: 
+      key: key_cc_eb_show
+      priority: 10000
+      loops: 0
   s_Bumper1_active: 
     flash_color_with_fade: 
       key: key_bumper1_flash
@@ -577,9 +582,18 @@ show_player:
       show_tokens: 
         intensity: "100"
         color: "ffffff"
-  ccwiz_sjp1_show2: 
+  ccwiz_sjp1_show2_a: 
     flash_color: 
-      key: key_ccwiz_sjp1_show2
+      key: key_ccwiz_sjp1_show2_a
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: "tFlasher"
+        color: "ffffff"
+      events_when_completed: play_cc_eb_show,eb_achieved
+  ccwiz_sjp1_show2_b: 
+    flash_color: 
+      key: key_ccwiz_sjp1_show2_b
       loops: 4
       speed: 20
       show_tokens: 

@@ -9,7 +9,7 @@ event_player:
   mode_fully_loaded_wizard_started:
     - meteor_wave_music_stop
     - flwiz_music_start
-    - flwiz_sjp1_show2
+    - flwiz_sjp1_show2_a
   mode_fully_loaded_wizard_stopping:
     - flwiz_music_stop
   timer_fully_loaded_message_complete:
@@ -76,7 +76,7 @@ event_player:
     - add_flwiz_phase2_shot
     - play_sfx_super_jackpot
     - flwiz_sjp1_show1
-    - flwiz_sjp1_show2
+    - flwiz_sjp1_show2_b
     - score_1000000
   s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 and current_player.wizard_fully_loaded_phase == 2}:
     - flwiz_add_ball
@@ -288,7 +288,7 @@ shot_groups:
 
 shots: 
   flwiz_shoot_again:
-    profile: shoot_again
+    profile: miniwiz_shoot_again
     show_tokens: 
       color: "0500ee"
     reset_events: multiball_flwiz_shoot_again_ended
@@ -459,6 +459,11 @@ shots:
         state: 2
 
 show_player: 
+  play_fl_eb_show: 
+    eb_show: 
+      key: key_fl_eb_show
+      priority: 10000
+      loops: 0
   s_Bumper1_active: 
     flash_color_with_fade: 
       key: key_bumper1_flash
@@ -588,9 +593,18 @@ show_player:
       show_tokens: 
         intensity: "100"
         color: "ffffff"
-  flwiz_sjp1_show2: 
+  flwiz_sjp1_show2_a: 
     flash_color: 
-      key: key_flwiz_sjp1_show2
+      key: key_flwiz_sjp1_show2_a
+      loops: 4
+      speed: 20
+      show_tokens: 
+        lights: "tFlasher"
+        color: "ccbb00"
+      events_when_completed: play_fl_eb_show,eb_achieved
+  flwiz_sjp1_show2_b: 
+    flash_color: 
+      key: key_flwiz_sjp1_show2_b
       loops: 4
       speed: 20
       show_tokens: 
