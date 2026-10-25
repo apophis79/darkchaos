@@ -348,7 +348,7 @@ Sub CreateGeneralShows()
 
     
     With CreateGlfShow("exploit_show")
-        With .AddStep(Null, Null, 0.0)
+        With .AddStep(Null, Null, 0.1)
             .Lights = Array( _
             "FL5a|(intensity)|(color)", _
             "FL5b|(intensity)|(color)", _
