@@ -20,7 +20,7 @@ Sub CreateComboCommandWizardMode
         .StopEvents = Array("mode_base_stopping","completed_combo_command_wizard")
 
         With .EventPlayer()
-            .Add "mode_combo_command_wizard_started", Array("meteor_wave_music_stop","ccwiz_music_start","ccwiz_sjp1_show2")
+            .Add "mode_combo_command_wizard_started", Array("meteor_wave_music_stop","ccwiz_music_start","ccwiz_sjp1_show2_a")
             .Add "mode_combo_command_wizard_stopping", Array("ccwiz_music_stop") 
             'release the scoop ball to start the wizard mode
             .Add "timer_combo_command_message_complete", Array("release_scoop_hold","delayed_release_moon_ball") 
@@ -38,7 +38,7 @@ Sub CreateComboCommandWizardMode
             .Add "ccwiz_shots_on_complete{current_player.wizard_combo_command_phase == 1}", Array("activate_ccwiz_sjp","run_ccwiz_scoop_show")
             'Phase 1 Super JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.wizard_combo_command_phase == 1 and current_player.ccwiz_super_jp == 1}", Array("ccwiz_sjp_achieved","stop_ccwiz_scoop_show","restart_combos_command_shots")   'Start phase 2
-            .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot","play_sfx_super_jackpot","ccwiz_sjp1_show1","ccwiz_sjp1_show2","score_1000000")
+            .Add "ccwiz_sjp_achieved", Array("add_ccwiz_phase2_shot","play_sfx_super_jackpot","ccwiz_sjp1_show1","ccwiz_sjp1_show2_b","score_1000000")
             'Phase 2 shots
             .Add MainShotNames(0)&"_hit{current_player.shot_combo_command1 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show1","ccwiz_flash_phase2_show1","score_300000")
             .Add MainShotNames(1)&"_hit{current_player.shot_combo_command2 == 1 and current_player.wizard_combo_command_phase == 2}", Array("ccwiz_add_ball","add_ccwiz_phase2_shot","play_sfx_jackpot","ccwiz_shot_phase2_show8","ccwiz_flash_phase2_show8","score_300000")
@@ -106,7 +106,7 @@ Sub CreateComboCommandWizardMode
         End With
 
         With .Shots("ccwiz_shoot_again")
-            .Profile = "shoot_again"
+            .Profile = "miniwiz_shoot_again"
             With .Tokens()
                 .Add "color", ShipSaveColor
             End With
@@ -120,7 +120,7 @@ Sub CreateComboCommandWizardMode
             End With
             .ResetEvents = Array("multiball_ccwiz_shoot_again_ended")
         End With
-                
+
 
 
         With .Multiballs("ccwiz")
@@ -306,6 +306,15 @@ Sub CreateComboCommandWizardMode
 
 
         With .ShowPlayer()
+            'eb
+            With .EventName("play_cc_eb_show")
+                .Key = "key_cc_eb_show"
+                .Show = "eb_show"
+                .Speed = 1
+                .Loops = 0
+                .Priority = 10000
+            End With
+
             'bumpers
             For x = 1 to 4
                 With .EventName("s_Bumper"&x&"_active")
@@ -603,8 +612,19 @@ Sub CreateComboCommandWizardMode
                     .Add "color", CombosColor
                 End With
             End With
-            With .EventName("ccwiz_sjp1_show2")
-                .Key = "key_ccwiz_sjp1_show2"
+            With .EventName("ccwiz_sjp1_show2_a")
+                .Key = "key_ccwiz_sjp1_show2_a"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", CombosColor
+                End With
+                .EventsWhenCompleted = Array("play_cc_eb_show","eb_achieved")
+            End With
+            With .EventName("ccwiz_sjp1_show2_b")
+                .Key = "key_ccwiz_sjp1_show2_b"
                 .Show = "flash_color" 
                 .Speed = 20
                 .Loops = 4

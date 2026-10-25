@@ -27,7 +27,7 @@ Sub CreateFullyLoadedWizardMode
         .StopEvents = Array("mode_base_stopping","completed_fully_loaded_wizard")
 
         With .EventPlayer()
-            .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start","flwiz_sjp1_show2")
+            .Add "mode_fully_loaded_wizard_started", Array("meteor_wave_music_stop","flwiz_music_start","flwiz_sjp1_show2_a")
             .Add "mode_fully_loaded_wizard_stopping", Array("flwiz_music_stop")   
             'release the scoop ball to start the wizard mode
             .Add "timer_fully_loaded_message_complete", Array("release_scoop_hold","delayed_release_moon_ball")
@@ -45,7 +45,7 @@ Sub CreateFullyLoadedWizardMode
             .Add "flwiz_shots_on_complete{current_player.wizard_fully_loaded_phase == 1}", Array("activate_flwiz_sjp","run_flwiz_scoop_show") 
             'Phase 1 Super JP achieved
             .Add "balldevice_scoop_ball_entered{current_player.wizard_fully_loaded_phase == 1 and current_player.flwiz_super_jp == 1}", Array("flwiz_sjp_achieved","stop_flwiz_scoop_show","restart_fully_loaded_shots")   'Start phase 2
-            .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot","play_sfx_super_jackpot","flwiz_sjp1_show1","flwiz_sjp1_show2","score_1000000")
+            .Add "flwiz_sjp_achieved", Array("add_flwiz_phase2_shot","play_sfx_super_jackpot","flwiz_sjp1_show1","flwiz_sjp1_show2_b","score_1000000")
             'Phase 2 shots
             .Add "s_TargetMystery1_active{current_player.shot_flwiz_proton1 == 1 and current_player.wizard_fully_loaded_phase == 2}", Array("flwiz_add_ball","add_flwiz_phase2_shot","flwiz_phase2_proton1_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
             .Add "s_TargetMystery2_active{current_player.shot_flwiz_proton2 == 1 and current_player.wizard_fully_loaded_phase == 2}", Array("flwiz_add_ball","add_flwiz_phase2_shot","flwiz_phase2_proton2_hit","play_flwiz_proton_show","play_sfx_jackpot","score_300000")
@@ -138,7 +138,7 @@ Sub CreateFullyLoadedWizardMode
 
 
         With .Shots("flwiz_shoot_again")
-            .Profile = "shoot_again"
+            .Profile = "miniwiz_shoot_again"
             With .Tokens()
                 .Add "color", ShipSaveColor
             End With
@@ -492,6 +492,15 @@ Sub CreateFullyLoadedWizardMode
 
 
         With .ShowPlayer()
+            'eb
+            With .EventName("play_fl_eb_show")
+                .Key = "key_fl_eb_show"
+                .Show = "eb_show"
+                .Speed = 1
+                .Loops = 0
+                .Priority = 10000
+            End With
+
             'bumpers
             For x = 1 to 4
                 With .EventName("s_Bumper"&x&"_active")
@@ -569,8 +578,19 @@ Sub CreateFullyLoadedWizardMode
                     .Add "color", "ffffff"
                 End With
             End With
-            With .EventName("flwiz_sjp1_show2")
-                .Key = "key_flwiz_sjp1_show2"
+            With .EventName("flwiz_sjp1_show2_a")
+                .Key = "key_flwiz_sjp1_show2_a"
+                .Show = "flash_color" 
+                .Speed = 20
+                .Loops = 4
+                With .Tokens()
+                    .Add "lights", "tFlasher"
+                    .Add "color", MoonColor
+                End With
+                .EventsWhenCompleted = Array("play_fl_eb_show","eb_achieved")
+            End With
+            With .EventName("flwiz_sjp1_show2_b")
+                .Key = "key_flwiz_sjp1_show2_b"
                 .Show = "flash_color" 
                 .Speed = 20
                 .Loops = 4

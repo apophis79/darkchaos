@@ -1016,6 +1016,37 @@ Public Sub CreateSharedShotProfiles()
     End With
 
 
+    With GlfShotProfiles("miniwiz_shoot_again")
+      With .States("on")
+          .Show = "led_color"
+          .Key = "key_on_e2"
+          '.Priority = 5000
+          With .Tokens()
+              .Add "lights", "LSA"
+          End With
+      End With
+      With .States("flashing")
+          .Show = "flash_color_with_fade"
+          .Key = "key_flashing_e2"
+          .Speed = 2
+          .Priority = 5000
+          With .Tokens()
+              .Add "lights", "LSA"
+              .Add "fade", 500
+          End With
+      End With
+      With .States("hurry")
+          .Show = "flash_color"
+          .Key = "key_hurry_e2"
+          .Speed = 7
+          .Priority = 5000
+          With .Tokens()
+              .Add "lights", "LSA"
+          End With
+      End With
+    End With
+
+
     With GlfShotProfiles("health_shot_ready")
         With .States("unlit")
             .Key = "h_shot_not_ready"
