@@ -113,7 +113,7 @@ MoonQualifySwitches = Array("s_LeftOutlane","s_LeftInlane","s_RightInlane","s_Ri
 MoonQualifyLightNames = Array("LLO","LLI","LRI","LRO")
 
 ' Health settings
-Const BumperHitsPerRepair = 8
+Const BumperHitsPerRepair = 10
 Const BumperHitsPerRepairTrained = 5
 Const BumperHitsPerRepairTraining = 1
 
