@@ -27,17 +27,9 @@ Sub CreateMoonMultiballMode
             .Add "multiball_moon_started", Array("release_moon_ball")
             'Panic penalty
             .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", Array("launch_panic_penalty")
-            .Add "launch_panic_penalty", Array("score_m100000")
+            .Add "launch_panic_penalty", Array("score_m100000","play_sfx_panic_penalty")
         End With
 
-        With .RandomEventPlayer()
-            With .EventName("launch_panic_penalty")
-                .Add "play_panic_penalty_voc1", 1
-                .Add "play_panic_penalty_voc2", 1
-                .ForceAll = False
-                .ForceDifferent = False
-            End With
-        End With
 
         With .WidgetPlayer()
             With .EventName("start_moon_multiball")
@@ -104,10 +96,6 @@ Sub CreateMoonMultiballMode
             With .EventName("play_sfx_launch")
                 .Key = "key_sfx_launch"
                 .Sound = "sfx_launch"
-            End With
-            With .EventName("launch_panic_penalty")
-                .Key = "key_sfx_error_buzz"
-                .Sound = "sfx_error_buzz"
             End With
         End With
 

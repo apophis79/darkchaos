@@ -71,14 +71,15 @@ Sub CreateBasementMode()
             End With
             
             'panic warning
-            With .EventName("play_panic_penalty_voc1")
-                .Key = "key_sfx_error_voc1"
-                .Sound = "voc_warning_weapon_empty1"
+            With .EventName("play_sfx_panic_penalty")
+                .Key = "key_sfx_panic_penalty"
+                .Sound = "sfx_Penaltiy_weapon_empty"
             End With
-            With .EventName("play_panic_penalty_voc2")
-                .Key = "key_sfx_error_voc2"
-                .Sound = "voc_warning_weapon_empty2"
+            With .EventName("play_sfx_exploit_penalty")
+                .Key = "key_sfx_exploit_penalty"
+                .Sound = "sfx_Penalty_exploit_detected"
             End With
+
         End With
 
 

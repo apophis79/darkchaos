@@ -105,8 +105,8 @@ Sub CreateMeteorWaveMode
             .Add "both_flippers_down_state", Array("restart_mw_no_switches_hit_timer")
             .Add "timer_mw_no_switches_hit_complete", Array("stop_meteor1_timer","stop_meteor2_timer","stop_meteor3_timer","stop_meteor4_timer","flash_mw_display","check_exploit")
             .Add "restart_mw_no_switches_hit_timer", Array("start_meteor1_timer","start_meteor2_timer","start_meteor3_timer","start_meteor4_timer","remove_flash_mw_display","stop_mw_exploit_timer")
-            .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down""}", Array("restart_mw_exploit_timer","play_exploit_show","play_exploit_sfx","score_m100000")
-            .Add "timer_mw_exploit_tick", Array("play_exploit_show","play_exploit_sfx","score_m100000") 
+            .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down""}", Array("restart_mw_exploit_timer","play_exploit_show","play_sfx_exploit_penalty","score_m100000")
+            .Add "timer_mw_exploit_tick", Array("play_exploit_show","play_sfx_exploit_penalty","score_m100000") 
         End With
 
 

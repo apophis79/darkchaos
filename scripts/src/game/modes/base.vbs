@@ -1425,12 +1425,6 @@ Sub CreateBaseMode()
                 .Sound = "voc_extra_ball_acheived"
             End With
 
-            'exploit
-            With .EventName("play_exploit_sfx")
-                .Key = "key_play_exploit_show"
-                .Sound = "sfx_flipper_warning4"
-            End With
-
         End With
 
 

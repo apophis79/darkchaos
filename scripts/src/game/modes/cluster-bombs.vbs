@@ -37,7 +37,7 @@ Sub CreateClusterBombMode
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1 and current_player.no_switches_hit_pause == 0}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
             'Panic penalty
             .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0 and current_player.no_switches_hit_pause == 0}", Array("cluster_panic_penalty")
-            .Add "cluster_panic_penalty", Array("score_m100000")
+            .Add "cluster_panic_penalty", Array("score_m100000","play_sfx_panic_penalty")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
@@ -55,12 +55,6 @@ Sub CreateClusterBombMode
                 .Add "play_sfx_LCC3", 1
                 .ForceAll = True
                 .ForceDifferent = True
-            End With
-            With .EventName("cluster_panic_penalty")
-                .Add "play_panic_penalty_voc1", 1
-                .Add "play_panic_penalty_voc2", 1
-                .ForceAll = False
-                .ForceDifferent = False
             End With
         End With
 
@@ -138,10 +132,6 @@ Sub CreateClusterBombMode
                 .Sound = "voc_LCR2"
             End With
 
-            With .EventName("cluster_panic_penalty")
-                .Key = "key_sfx_error_buzz2"
-                .Sound = "sfx_error_buzz"
-            End With
         End With
 
 

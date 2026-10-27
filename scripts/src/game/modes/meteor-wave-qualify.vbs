@@ -28,8 +28,8 @@ Sub CreateMeteorWaveQualifyMode
             .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer","check_exploit")
             .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer","stop_mwq_exploit_timer")
 
-            .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", Array("restart_mwq_exploit_timer","play_exploit_show","play_exploit_sfx","score_m100000")
-            .Add "timer_mwq_exploit_tick", Array("play_exploit_show","play_exploit_sfx","score_m100000") 
+            .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", Array("restart_mwq_exploit_timer","play_exploit_show","play_sfx_exploit_penalty","score_m100000")
+            .Add "timer_mwq_exploit_tick", Array("play_exploit_show","play_sfx_exploit_penalty","score_m100000") 
 
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
