@@ -70,6 +70,15 @@ Sub CreateBasementMode()
                 .Sound = "sfx_tilt"
             End With
             
+            'panic warning
+            With .EventName("play_panic_penalty_voc1")
+                .Key = "key_sfx_error_voc1"
+                .Sound = "voc_warning_weapon_empty1"
+            End With
+            With .EventName("play_panic_penalty_voc2")
+                .Key = "key_sfx_error_voc2"
+                .Sound = "voc_warning_weapon_empty2"
+            End With
         End With
 
 

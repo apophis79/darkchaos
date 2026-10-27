@@ -693,52 +693,6 @@ Sub CreateMeteorWaveMode
                     .Add "fade", 300
                 End With
             End With
-            'Earth hit
-            With .EventName("earth_hit")
-                .Key = "key_earth_hit_mw"
-                .Priority = 15
-                .Show = "earth_hit"
-                .Speed = 1
-                .Loops = 0
-            End With
-            With .EventName("earth_bg")
-                .Key = "key_earth_bg"
-                .Priority = 15
-                .Show = "earth_hit_bg"
-                .Speed = 1
-                .Loops = 0
-            End With
-            With .EventName("earth_flash")
-                .Key = "key_earth_flash"
-                .Priority = 15
-                .Show = "flash_color"
-                .Speed = 15
-                .Loops = 2
-                With .Tokens()
-                    .Add "lights", "tFlasherU"
-                    .Add "color", EarthHitColor
-                End With
-            End With
-            With .EventName("mw_lsing_earth_hit")
-                .Key = "key_mw_lsing_earth_hit"
-                .Show = "flash_color"
-                .Speed = 13
-                .Loops = 5
-                With .Tokens()
-                    .Add "lights", "tFL5"
-                    .Add "color", EarthHitColor
-                End With
-            End With
-            With .EventName("mw_rsling_earth_hit")
-                .Key = "key_mw_rsling_earth_hit"
-                .Show = "flash_color"
-                .Speed = 13
-                .Loops = 5
-                With .Tokens()
-                    .Add "lights", "tFL6"
-                    .Add "color", EarthHitColor
-                End With
-            End With
             ' With .EventName("mw_lsing_earth_hit")
             '     .Key = "key_mw_lsing_earth_hit"
             '     .Show = "lsling_swap_2_2_b"

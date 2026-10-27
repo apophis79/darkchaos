@@ -872,6 +872,53 @@ Sub CreateBaseMode()
                 End With
             End With
 
+            'Earth hit
+            With .EventName("earth_hit")
+                .Key = "key_earth_hit_mw"
+                .Priority = 15
+                .Show = "earth_hit"
+                .Speed = 1
+                .Loops = 0
+            End With
+            With .EventName("earth_bg")
+                .Key = "key_earth_bg"
+                .Priority = 15
+                .Show = "earth_hit_bg"
+                .Speed = 1
+                .Loops = 0
+            End With
+            With .EventName("earth_flash")
+                .Key = "key_earth_flash"
+                .Priority = 15
+                .Show = "flash_color"
+                .Speed = 15
+                .Loops = 2
+                With .Tokens()
+                    .Add "lights", "tFlasherU"
+                    .Add "color", EarthHitColor
+                End With
+            End With
+            With .EventName("mw_lsing_earth_hit")
+                .Key = "key_mw_lsing_earth_hit"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFL5"
+                    .Add "color", EarthHitColor
+                End With
+            End With
+            With .EventName("mw_rsling_earth_hit")
+                .Key = "key_mw_rsling_earth_hit"
+                .Show = "flash_color"
+                .Speed = 13
+                .Loops = 5
+                With .Tokens()
+                    .Add "lights", "tFL6"
+                    .Add "color", EarthHitColor
+                End With
+            End With
+
         End With
 
         With .DOFPlayer()
@@ -1376,16 +1423,6 @@ Sub CreateBaseMode()
             With .EventName("eb_achieved")
                 .Key = "key_voc_extra_ball_acheived"
                 .Sound = "voc_extra_ball_acheived"
-            End With
-
-            'panic warning
-            With .EventName("play_panic_penalty_voc1")
-                .Key = "key_sfx_error_voc1"
-                .Sound = "voc_warning_weapon_empty1"
-            End With
-            With .EventName("play_panic_penalty_voc2")
-                .Key = "key_sfx_error_voc2"
-                .Sound = "voc_warning_weapon_empty2"
             End With
 
             'exploit
