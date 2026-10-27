@@ -3869,12 +3869,12 @@ Function Glf_922(args)
 End Function
 Function Glf_923(args)
 	On Error Resume Next
-	    Glf_923 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0 and GetPlayerState("no_switches_hit_pause")=0
+	    Glf_923 = GetPlayerState("moon_launch_locked_balls")>0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("wizard_mode_running")=0
 	If Err Then Glf_923 = False
 End Function
 Function Glf_924(args)
 	On Error Resume Next
-	    Glf_924 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0 and GetPlayerState("no_switches_hit_pause")=0
+	    Glf_924 = GetPlayerState("moon_launch_locked_balls")=0 and GetPlayerState("disable_moon_launch")=0
 	If Err Then Glf_924 = False
 End Function
 Function Glf_925(args)
@@ -8697,8 +8697,8 @@ glf_funcRefMap.Add "right_ramp_hit{current_player.shot_ss==1 and current_player.
 glf_funcRefMap.Add "left_ramp_hit{current_player.shot_ss==1 and current_player.flag_ss == 2}", "Glf_920"
 glf_funcRefMap.Add "timer_ss_voc_complete{current_player.num_skillshots==3}", "Glf_921"
 glf_funcRefMap.Add "mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}", "Glf_922"
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0 and current_player.no_switches_hit_pause==0}", "Glf_923"
-glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0 and current_player.no_switches_hit_pause==0}", "Glf_924"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", "Glf_923"
+glf_funcRefMap.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", "Glf_924"
 glf_funcRefMap.Add "10000", "Glf_925"
 glf_funcRefMap.Add "current_player.moon_launch_locked_balls", "Glf_926"
 glf_funcRefMap.Add "start_moon_multiball.1{current_player.wizard_mode_running == 0}", "Glf_927"
