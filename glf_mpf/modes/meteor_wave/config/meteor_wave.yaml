@@ -603,41 +603,6 @@ show_player:
         lights: "FL3"
         color: "00dddd"
         fade: "300"
-  earth_hit: 
-    earth_hit: 
-      key: key_earth_hit_mw
-      priority: 15
-      loops: 0
-  earth_bg: 
-    earth_hit_bg: 
-      key: key_earth_bg
-      priority: 15
-      loops: 0
-  earth_flash: 
-    flash_color: 
-      key: key_earth_flash
-      priority: 15
-      loops: 2
-      speed: 15
-      show_tokens: 
-        lights: "tFlasherU"
-        color: "ff0909"
-  mw_lsing_earth_hit: 
-    flash_color: 
-      key: key_mw_lsing_earth_hit
-      loops: 5
-      speed: 13
-      show_tokens: 
-        lights: "tFL5"
-        color: "ff0909"
-  mw_rsling_earth_hit: 
-    flash_color: 
-      key: key_mw_rsling_earth_hit
-      loops: 5
-      speed: 13
-      show_tokens: 
-        lights: "tFL6"
-        color: "ff0909"
   flash_mw_display: 
     flash_color_with_fade: 
       key: key_flash_mw_display

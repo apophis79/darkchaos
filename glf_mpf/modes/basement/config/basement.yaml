@@ -234,6 +234,14 @@ sound_player:
     sfx_tilt: 
       key: key_sfx_tilt
       action: play
+  play_panic_penalty_voc1: 
+    voc_warning_weapon_empty1: 
+      key: key_sfx_error_voc1
+      action: play
+  play_panic_penalty_voc2: 
+    voc_warning_weapon_empty2: 
+      key: key_sfx_error_voc2
+      action: play
 
 
 timers: 

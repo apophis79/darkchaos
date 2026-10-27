@@ -110,7 +110,7 @@ player_vars:
     initial_value: 4
     value_type: int
   heal_value:
-    initial_value: 8
+    initial_value: 10
     value_type: int
   training_just_finished:
     initial_value: 0

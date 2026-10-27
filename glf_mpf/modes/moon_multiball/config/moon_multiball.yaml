@@ -8,7 +8,7 @@ mode:
 event_player: 
   mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}:
     - stop_moon_multiball
-  s_RightMagnaButton_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0 and current_player.no_switches_hit_pause==0}:
+  s_RightMagnaButton_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}:
     - launch_moon_missiles
     - restart_moon_qualify_shots
   launch_moon_missiles:
@@ -18,7 +18,7 @@ event_player:
     - score_50000
   multiball_moon_started:
     - release_moon_ball
-  s_RightMagnaButton_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0 and current_player.no_switches_hit_pause==0}:
+  s_RightMagnaButton_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}:
     - launch_panic_penalty
   launch_panic_penalty:
     - score_m100000
