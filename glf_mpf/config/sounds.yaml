@@ -847,6 +847,24 @@ sounds:
     duration: 3224
     loops: 0
 
+  sfx_Penaltiy_weapon_empty:
+    file: sfx_Penaltiy_weapon_empty
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 2440
+    loops: 0
+
+  sfx_Penalty_exploit_detected:
+    file: sfx_Penalty_exploit_detected
+    volume: 
+    bus: sfx
+    priority: 0
+    max_queue_time: -1
+    duration: 3408
+    loops: 0
+
   voc_AlienAlert:
     file: voc_AlienAlert
     volume: 

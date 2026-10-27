@@ -50,6 +50,7 @@ event_player:
     - cluster_panic_penalty
   cluster_panic_penalty:
     - score_m100000
+    - play_sfx_panic_penalty
   mystery_added_cluster:
     - complete_cluster_charges
     - light_cluster_charge3
@@ -83,11 +84,6 @@ random_event_player:
       play_sfx_LCC1: 1
       play_sfx_LCC2: 1
       play_sfx_LCC3: 1
-    scope: player
-  cluster_panic_penalty: 
-    events:
-      play_panic_penalty_voc1: 1
-      play_panic_penalty_voc2: 1
     scope: player
 
 
@@ -255,10 +251,6 @@ sound_player:
   add_cluster_bomb2: 
     voc_LCR2: 
       key: key_voc_LCR2
-      action: play
-  cluster_panic_penalty: 
-    sfx_error_buzz: 
-      key: key_sfx_error_buzz2
       action: play
 
 

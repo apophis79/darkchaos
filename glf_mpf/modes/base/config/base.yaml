@@ -1290,10 +1290,6 @@ sound_player:
     voc_extra_ball_acheived: 
       key: key_voc_extra_ball_acheived
       action: play
-  play_exploit_sfx: 
-    sfx_flipper_warning4: 
-      key: key_play_exploit_show
-      action: play
 
 
 state_machines: 

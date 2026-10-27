@@ -42,11 +42,11 @@ event_player:
   check_exploit{device.state_machines.flipper_states.state!="flippers_down" and current_player.warping == 0}:
     - restart_mwq_exploit_timer
     - play_exploit_show
-    - play_exploit_sfx
+    - play_sfx_exploit_penalty
     - score_m100000
   timer_mwq_exploit_tick:
     - play_exploit_show
-    - play_exploit_sfx
+    - play_sfx_exploit_penalty
     - score_m100000
   stop_mwq_timer:
     - flash_mwq_display
