@@ -267,7 +267,7 @@ Sub CreateProtonCannonMode
                 With .Tokens()
                     .Add "lights", "FL4"
                     .Add "color", ProtonColor
-                    .Add "fade", 300
+                    .Add "fade", 50
                 End With
             End With
 

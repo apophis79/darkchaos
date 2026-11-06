@@ -13,7 +13,7 @@
     "color2": "#ffffff",
     "is_timer_enabled": false,
     "timer_interval": 100,
-    "blink_pattern": "fFlasher",
+    "blink_pattern": "fFlasher,tSuperSpin",
     "image": "",
     "blink_interval": 125,
     "intensity": 20.0,

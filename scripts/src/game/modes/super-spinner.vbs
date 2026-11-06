@@ -39,9 +39,9 @@ Sub CreateSuperSpinnerMode
             With .States("unlit")
                 .Show = "off"
                 .Key = "key_off_supspin"
-                .Priority = 500
+                .Priority = 300
                 With .Tokens()
-                    .Add "lights", "gi21"
+                    .Add "lights", "tSuperSpin"
                     .Add "color", ProtonColor
                 End With
             End With
@@ -49,9 +49,9 @@ Sub CreateSuperSpinnerMode
                 .Show = "flash_color_with_fade"
                 .Key = "key_flashing_supspin"
                 .Speed = 5
-                .Priority = 500
+                .Priority = 300
                 With .Tokens()
-                    .Add "lights", "gi21"
+                    .Add "lights", "tSuperSpin"
                     .Add "fade", 500
                     .Add "color", ProtonColor
                 End With
@@ -60,9 +60,9 @@ Sub CreateSuperSpinnerMode
                 .Show = "flash_color"
                 .Key = "key_hurry_supspin"
                 .Speed = 10
-                .Priority = 500
+                .Priority = 300
                 With .Tokens()
-                    .Add "lights", "gi21"
+                    .Add "lights", "tSuperSpin"
                     .Add "color", ProtonColor
                 End With
             End With
