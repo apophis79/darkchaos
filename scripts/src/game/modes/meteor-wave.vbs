@@ -786,6 +786,10 @@ Sub CreateMeteorWaveMode
                     .Action = "set"
                     .Int = "current_player.num_waves_completed + 1"
                 End With
+                With .Variable("meteor_countdown_value")
+                    .Action = "set"
+					.Int = MeteorWaveDelayTicks
+				End With
 			End With
             With .EventName("finish_meteor_wave") 
                 With .Variable("meteors_per_wave")
