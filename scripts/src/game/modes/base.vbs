@@ -149,8 +149,8 @@ Sub CreateBaseMode()
             .Add "knockdown_meteors", Array("meteor1_knockdown","meteor2_knockdown","meteor3_knockdown","meteor4_knockdown")
 
             'handle delayed moon ball release
-            .Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
-            .Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
+            '.Add "balldevice_moon_lock_ball_enter{current_player.shot_final_wave_wizard == 1}", Array("delayed_release_moon_ball")
+            '.Add "timer_delay_ball_release_complete", Array("release_moon_ball") 
             .Add "timer_delay_raise_lock_pin_complete", Array("raise_lock_pin") 
             .Add "s_LockOut_active", Array("raise_lock_pin","switches_hit") 
 

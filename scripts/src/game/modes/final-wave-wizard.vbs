@@ -167,8 +167,8 @@ Sub CreateFinalWaveWizardMode
             .Add "timer_final_wave_flicker_tick{device.timers.final_wave_flicker.ticks == 29}", Array("play_asteroid_flicker")
 
             'Handle moon ramp
-            .Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
-            .Add "ball_search_started", Array("release_moon_ball")
+            '.Add "balldevice_moon_lock_ball_enter", Array("delayed_release_moon_ball")
+            '.Add "ball_search_started", Array("release_moon_ball")
 
         End With
 
@@ -234,13 +234,13 @@ Sub CreateFinalWaveWizardMode
         With .Multiballs("fwwiz_2")
             .StartEvents = Array("fwwiz_add_ball")
             .DisableEvents = Array("asteroid_destroyed")
-            .AddABallEvents = Array("fwwiz_add_ball_2")
+            '.AddABallEvents = Array("fwwiz_add_ball_2")
             .BallCount = 1
             .BallCountType = "add"
             .ShootAgain = 0
             .HurryUp = 0
             .GracePeriod = 0
-            .BallLocks = Array("moon_lock")
+            '.BallLocks = Array("moon_lock")
         End With
 
 

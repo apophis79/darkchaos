@@ -110,6 +110,14 @@ Sub DropLockPin(enabled)
 	Next
 End Sub 
 
+Sub DropLockPinEjectCallback(ball)
+	If Not IsNull(ball) Then
+		DropLockPin True
+	Else		
+		DropLockPin False
+	End If
+End Sub
+
 
 
 '  Knocker

@@ -511,11 +511,35 @@ Sub ConfigureGlfDevices
     'NOTE: Plunger switch SHOULD be added to the glf_switches collection (along with all other rollover switches) 
     With CreateGlfBallDevice("plunger")
         .BallSwitches = Array("s_Plunger1")
-        .EjectTimeout = 10
+        .EjectTimeout = 1000
+        .EntranceCountDelay = 500
+        '.ExitCountDelay = 300
         .MechanicalEject = True
         .DefaultDevice = True
         .EjectAllEvents = Array("plunger_eject")
 		.EjectCallback = "PlungerEjectCallback"
+    End With
+
+    ' Scoop
+    'NOTE: Scoop switches SHOULD be added to the glf_switches collection. 
+    With CreateGlfBallDevice("scoop")
+        .BallSwitches = Array("s_Scoop")
+        .EjectTimeout = 2000
+        .MechanicalEject = True
+		.EjectCallback = "ScoopEjectCallback"
+    End With
+
+
+    ' Ball Devices
+    ' Moon Lock
+    With CreateGlfBallDevice("moon_lock")
+        .BallSwitches = Array("s_Lock1","s_Lock2","s_Lock3")
+        .EntranceCountDelay = 1000
+        .EjectEnableTime = 170
+        .EjectTimeout = 2000
+        .EjectTargets = Array("s_LockOut")
+        .EjectCallback = "DropLockPinEjectCallback"
+        .MechanicalEject = False
     End With
 
 
@@ -540,17 +564,6 @@ Sub ConfigureGlfDevices
         .ActionCallback = "RightFlipper1Action"
         .DisableEvents = Array("kill_flippers","mode_eob_bonus_started")
         .EnableEvents = Array(GLF_BALL_STARTED,"enable_flippers")
-    End With
-
-
-
-    ' Scoop
-    'NOTE: Scoop switches SHOULD be added to the glf_switches collection. 
-    With CreateGlfBallDevice("scoop")
-        .BallSwitches = Array("s_Scoop")
-        .EjectTimeout = 2000
-        .MechanicalEject = True
-		.EjectCallback = "ScoopEjectCallback"
     End With
 
 
@@ -710,13 +723,7 @@ Sub ConfigureGlfDevices
     End With
 
 
-    ' Ball Devices
-    ' Moon Lock
-    With CreateGlfBallDevice("moon_lock")
-        .BallSwitches = Array("s_Lock1","s_Lock2","s_Lock3")
-    End With
-
-
+    
     ' Diverters
     ' Lock pin
     With CreateGlfDiverter("lock_pin")

@@ -32,10 +32,10 @@ Sub CreateMoonMultiballQualifyMode
             '.Add "mode_moon_multiball_qualify_stopping", Array("backglass_moon_off")
             'Release a ball (Lower the diverter pin) if we are not 
             ' .Add "s_MoonRamp_active{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls==0}", Array("release_moon_ball")
-            .Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
-            .Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", Array("release_moon_ball")
+            '.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state!=""locking"" and device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls and device.ball_devices.moon_lock.balls > current_player.leftover_balls_in_lock}", Array("release_moon_ball")
+            '.Add "balldevice_moon_lock_ball_entered{device.state_machines.moon_mb.state==""in_progress""}", Array("release_moon_ball")
             'After a ball has been locked, if the number of balls in the lock is greater than the current players locked balls, release one
-            .Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", Array("release_moon_ball")
+            '.Add "multiball_lock_moon_launch_locked_ball{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", Array("release_moon_ball")
             'Light missiles
             .Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==1}", Array("light_missile1")
             .Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", Array("light_missile2","check_fully_loaded") 'check for wizard mode qualification
@@ -58,7 +58,7 @@ Sub CreateMoonMultiballQualifyMode
         With .MultiballLocks("moon_launch")
             '.Debug=True
             .EnableEvents = Array("enable_moon_mb_locking", "mode_moon_multiball_qualify_started.1{device.state_machines.moon_mb.state==""locking""}")
-            .DisableEvents = Array("restart_moon_qualify_shots")
+            .DisableEvents = Array("restart_moon_qualify_shots","disable_moon_mb_locking")
             .ResetEvents = Array("start_moon_multiball.2","restart_moon_missiles")
             .BallsToLock = 2
             .LockDevices = Array("moon_lock")
@@ -190,7 +190,7 @@ Sub CreateMoonMultiballQualifyMode
                 .Events = Array("qualify_lock_on_complete")
                 .State = 1
             End With
-            .RestartEvents = Array("restart_moon_qualify_shots")
+            .RestartEvents = Array("restart_moon_qualify_shots","restart_moon_lock_ready")
         End With
         
         With .ShotGroups("qualify_lock")
@@ -220,11 +220,11 @@ Sub CreateMoonMultiballQualifyMode
             End With
             With .States("in_progress")
                 .Label = "Multiball In Progress"
-                .EventsWhenStarted = Array("disable_moon_qualify_shots")
+                .EventsWhenStarted = Array("disable_moon_qualify_shots","disable_moon_mb_locking")
             End With
             With .States("locks_full")
                 .Label = "Multiball Lock Full"
-                .EventsWhenStarted = Array("disable_moon_qualify_shots")
+                .EventsWhenStarted = Array("disable_moon_qualify_shots","restart_moon_lock_ready")
             End With
 
             'Transitions
@@ -241,7 +241,12 @@ Sub CreateMoonMultiballQualifyMode
             With .Transitions()
                 .Source = Array("locking")
                 .Target = "qualify"
-                .Events = Array("multiball_lock_moon_launch_locked_ball")
+                .Events = Array("multiball_lock_moon_launch_locked_ball{total_balls_locked < 2}")
+            End With
+            With .Transitions()
+                .Source = Array("locking")
+                .Target = "locks_full"
+                .Events = Array("multiball_lock_moon_launch_full")
             End With
             With .Transitions()
                 .Source = Array("qualify")
@@ -327,13 +332,13 @@ Sub CreateMoonMultiballQualifyMode
         End With
 
         With .VariablePlayer()
-            .Debug=True
-            With .EventName("mode_moon_multiball_qualify_started.2")
-				With .Variable("leftover_balls_in_lock")
-                    .Action = "set"
-					.Int = "device.ball_devices.moon_lock.balls"
-				End With
-			End With    
+            ' .Debug=True
+            ' With .EventName("mode_moon_multiball_qualify_started.2")
+			' 	With .Variable("leftover_balls_in_lock")
+            '         .Action = "set"
+			' 		.Int = "device.ball_devices.moon_lock.balls"
+			' 	End With
+			' End With    
             With .EventName("restart_moon_missiles")
                 With .Variable("moon_launch_locked_balls")
                     .Action = "set"
