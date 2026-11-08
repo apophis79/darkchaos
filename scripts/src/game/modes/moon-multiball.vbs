@@ -15,16 +15,17 @@ Sub CreateMoonMultiballMode
 
     With CreateGlfMode("moon_multiball", 600)
         .StartEvents = Array("new_ball_started","mode_moon_multiball_qualify_started") '"stop_training",
-        .StopEvents = Array("stop_moon_multiball","mode_base_stopping","wizard_mode_ended")  '"start_training_select",
+        .StopEvents = Array("stop_moon_multiball_mode","mode_base_stopping","wizard_mode_ended")  '"start_training_select",
         '.Debug=True
 
         With .EventPlayer()
             '.Debug=True
-            .Add "mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_moon_multiball")
+            .Add "mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}", Array("stop_moon_multiball_mode")
             'Launch
-            .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", Array("launch_moon_missiles","restart_moon_qualify_shots") ',"backglass_moon_off")
-            .Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
-            .Add "multiball_moon_started", Array("release_moon_ball")
+            '.Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", Array("launch_moon_missiles","restart_moon_qualify_shots") ',"backglass_moon_off")
+            .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}", Array("start_moon_multiball","play_sfx_launch","score_50000")
+            '.Add "launch_moon_missiles", Array("start_moon_multiball","delayed_release_moon_ball","play_sfx_launch","score_50000")
+            '.Add "multiball_moon_started", Array("release_moon_ball")
             'Panic penalty
             .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", Array("launch_panic_penalty")
             .Add "launch_panic_penalty", Array("score_m100000","play_sfx_panic_penalty")
@@ -43,6 +44,7 @@ Sub CreateMoonMultiballMode
         With .Multiballs("moon")
             '.Debug=True
             .StartEvents = Array("start_moon_multiball.3")
+            .StopEvents = Array("stop_moon_multiball")
             .BallCount = "current_player.moon_launch_locked_balls"
             .BallCountType = "add"
             .ShootAgain = 0
@@ -122,10 +124,10 @@ Sub CreateMoonMultiballMode
 				End With
             End With
             With .EventName("start_moon_multiball.1")
-				With .Variable("leftover_balls_in_lock")
-                    .Action = "set"
-					.Int = 0
-				End With
+				' With .Variable("leftover_balls_in_lock")
+                '     .Action = "set"
+				' 	.Int = 0
+				' End With
                 With .Variable("disable_moon_launch")
                     .Action = "set"
 					.Int = 1

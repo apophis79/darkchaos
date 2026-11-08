@@ -29,7 +29,7 @@ Sub CreateMeteorMultiballMode
                 .Events = Array("multiball_meteor_hurry_up")
                 .State = 2
             End With
-            .ResetEvents = Array("multiball_meteor_shoot_again_ended")
+            .ResetEvents = Array("multiball_meteor_grace_period")
         End With
                     
 
@@ -39,7 +39,7 @@ Sub CreateMeteorMultiballMode
             .BallCountType = "total"
             .ShootAgain = "current_player.meteor_mb_shootagain_time"
             .HurryUp = 3000
-            .GracePeriod = 2000
+            .GracePeriod = 3000
         End With
 
         With .VariablePlayer()

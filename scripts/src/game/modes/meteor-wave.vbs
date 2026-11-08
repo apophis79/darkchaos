@@ -746,7 +746,7 @@ Sub CreateMeteorWaveMode
                 With .Tokens()
                     .Add "lights", "tNukeShot"
                     .Add "color", NukeColor
-                    .Add "fade", 500
+                    .Add "fade", 200
                 End With
             End With
             With .EventName("detonate_nuke")
@@ -758,7 +758,7 @@ Sub CreateMeteorWaveMode
                 With .Tokens()
                     .Add "lights", "tNukeShot"
                     .Add "color", NukeColor
-                    .Add "fade", 500
+                    .Add "fade", 200
                 End With
             End With
         End With
