@@ -264,7 +264,7 @@ show_player:
       show_tokens: 
         lights: "FL4"
         color: "00dddd"
-        fade: "300"
+        fade: "50"
   lsling_powerup_pc: 
     lsling_rotate2_cw: 
       key: key_lsling_powerup_pc

@@ -134,10 +134,6 @@ event_player:
     - ccwiz_bumpers_show1
   timer_ccwiz_bumper_lights_tick{current_player.wizard_combo_command_phase == 2}:
     - ccwiz_bumpers_show2
-  balldevice_moon_lock_ball_enter:
-    - delayed_release_moon_ball
-  ball_search_started:
-    - release_moon_ball
 
 
 extra_balls: 
@@ -161,7 +157,7 @@ multiballs:
     shoot_again: 0
     hurry_up_time: 0
     grace_period: 0
-    ball_locks: moon_lock
+    ball_locks: 
 
 random_event_player: 
   add_ccwiz_phase2_shot: 

@@ -26,7 +26,7 @@ tags = ["GI"]
 [node name="gi21" type="Sprite2D" parent="lights"]
 position = Vector2(78.70692, 148.6828)
 script = ExtResource("3_qb2nn")
-tags = ["GI"]
+tags = ["GI", "tSuperSpin"]
 
 [node name="gi19" type="Sprite2D" parent="lights"]
 position = Vector2(450.8037, 383.7252)
@@ -591,7 +591,7 @@ tags = ["tFlasher", "tEarth", "tFL6"]
 [node name="FL4" type="Sprite2D" parent="lights"]
 position = Vector2(218.28, 146.37)
 script = ExtResource("3_qb2nn")
-tags = ["fFlasher"]
+tags = ["fFlasher", "tSuperSpin"]
 
 [node name="FL5" type="Sprite2D" parent="lights"]
 position = Vector2(105.06, 803.2501)

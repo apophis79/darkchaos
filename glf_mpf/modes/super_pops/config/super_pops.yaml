@@ -3,7 +3,7 @@
 mode:
   start_events: start_super_pops, mystery_super_pops
   stop_events: mode_base_stopping, stop_super_pops, init_training
-  priority: 700
+  priority: 2700
 
 event_player: 
   timer_super_pops_complete:

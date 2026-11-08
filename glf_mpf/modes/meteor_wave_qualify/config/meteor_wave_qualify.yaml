@@ -31,7 +31,7 @@ event_player:
     - stop_mwq_timer
   switches_hit{current_player.warping == 0}:
     - restart_mwq_no_switches_hit_timer
-  both_flippers_down_state{current_player.warping == 0}:
+  both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}:
     - restart_mwq_no_switches_hit_timer
   timer_mwq_no_switches_hit_complete:
     - stop_mwq_timer

@@ -40,7 +40,7 @@ lights:
     number: 5
     subtype: led
     type: rgb
-    tags: GI
+    tags: GI,tSuperSpin
     x: 0.1619484
     y: 0.1376693
   gi19:
@@ -831,7 +831,7 @@ lights:
     number: 118
     subtype: led
     type: rgb
-    tags: fFlasher
+    tags: fFlasher,tSuperSpin
     x: 0.4491359
     y: 0.1355278
   FL5:

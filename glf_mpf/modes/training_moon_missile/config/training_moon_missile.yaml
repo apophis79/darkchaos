@@ -48,8 +48,6 @@ event_player:
     - play_sfx_LS_during_training
   timer_training_moon_missile_tick:
     - flicker_gi
-  balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}:
-    - delayed_release_moon_ball
 
 
 random_event_player: 

@@ -1157,6 +1157,9 @@ variable_player:
     num_wave_current: 
       action: set
       int: current_player.num_waves_completed + 1
+    meteor_countdown_value: 
+      action: set
+      int: 45
 
   finish_meteor_wave: 
     meteors_per_wave: 

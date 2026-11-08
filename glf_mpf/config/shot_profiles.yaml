@@ -350,7 +350,7 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         lights: "gi21"
+         lights: "tSuperSpin"
          color: "00dddd"
      - name: flashing
        show: flash_color_with_fade
@@ -358,7 +358,7 @@ shot_profiles:
        speed: 5
        sync_ms: 0
        show_tokens: 
-         lights: "gi21"
+         lights: "tSuperSpin"
          fade: "500"
          color: "00dddd"
      - name: hurry
@@ -367,7 +367,7 @@ shot_profiles:
        speed: 10
        sync_ms: 0
        show_tokens: 
-         lights: "gi21"
+         lights: "tSuperSpin"
          color: "00dddd"
   super_pops:
     advance_on_hit: True
