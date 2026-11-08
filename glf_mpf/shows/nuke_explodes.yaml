@@ -2,6 +2,19 @@
 
 - time: 0
   shows:
+    insert_swap3: 
+      key: key_nuke_insert_swap3
+      priority: 15000
+      loops: 3
+      speed: 1.5
+      show_tokens: 
+        color1: "ffae00"
+        color2: "ccbb00"
+        color3: "ffedd2"
+        intensity: "100"
+
+- time: 0.1s
+  shows:
     nuke_inserts_show: 
       key: key_nuke_gi1
       priority: 10000
@@ -10,7 +23,7 @@
         lights: "GI"
         color: "ffae00"
 
-- time: 0.02s
+- time: 0.12s
   shows:
     nuke_inserts_show: 
       key: key_nuke_gi2
@@ -20,7 +33,7 @@
         lights: "tInserts"
         color: "ffae00"
 
-- time: 0.03s
+- time: 0.13s
   shows:
     nuke_inserts_show: 
       key: key_nuke_gi3
@@ -30,7 +43,7 @@
         lights: "tBumper"
         color: "ffae00"
 
-- time: 0.1s
+- time: 0.2s
   shows:
     flash_color: 
       key: key_nuke_fired1
@@ -41,7 +54,7 @@
         lights: "tBlast"
         color: "ed1800"
 
-- time: 0.11s
+- time: 0.21s
   shows:
     flash_color: 
       key: key_nuke_fired2a

@@ -31,6 +31,21 @@ End With
 With CreateGlfShow("nuke_explodes")
 
   With .AddStep(0.0, Null, Null)
+    With .Shows("insert_swap3")
+        .Key = "key_nuke_insert_swap3"
+        .Speed = 1.5
+        .Loops = 3
+        .Priority = 15000
+        With .Tokens()
+            .Add "color1", NukeColor
+            .Add "color2", MoonColor
+            .Add "color3", GIColor3000k
+            .Add "intensity", 100
+        End With
+    End With
+  End With
+
+  With .AddStep(0.1, Null, Null)
     With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi1"
         .Speed = 1
@@ -43,7 +58,7 @@ With CreateGlfShow("nuke_explodes")
     End With
   End With
 
-  With .AddStep(0.02, Null, Null)
+  With .AddStep(0.12, Null, Null)
     With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi2"
         .Speed = 1
@@ -56,7 +71,7 @@ With CreateGlfShow("nuke_explodes")
     End With
   End With
 
-  With .AddStep(0.03, Null, Null)
+  With .AddStep(0.13, Null, Null)
     With .Shows("nuke_inserts_show")
         .Key = "key_nuke_gi3"
         .Speed = 1
@@ -69,7 +84,7 @@ With CreateGlfShow("nuke_explodes")
     End With
   End With
 
-  With .AddStep(0.1, Null, Null)
+  With .AddStep(0.2, Null, Null)
     With .Shows("flash_color")
         .Key = "key_nuke_fired1"
         .Speed = 20
@@ -82,7 +97,7 @@ With CreateGlfShow("nuke_explodes")
     End With
   End With
 
-  With .AddStep(0.11, Null, Null)
+  With .AddStep(0.21, Null, Null)
     With .Shows("flash_color")
         .Key = "key_nuke_fired2a"
         .Speed = 20
