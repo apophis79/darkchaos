@@ -60,7 +60,7 @@ multiball_locks:
   moon_launch:
     balls_to_lock: 2
     lock_devices: moon_lock
-    enable_events: enable_moon_mb_locking, mode_moon_multiball_qualify_started.1{device.state_machines.moon_mb.state=="locking"}
+    enable_events: enable_moon_mb_locking, mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state=="locking"}
     disable_events: restart_moon_qualify_shots, disable_moon_mb_locking
     reset_count_for_current_player_events: start_moon_multiball.2,restart_moon_missiles
     locked_ball_counting_strategy: virtual_only
@@ -243,7 +243,7 @@ state_machines:
     states: 
       qualify: 
         label: Qualify State
-        events_when_started: restart_moon_qualify_shots_proxy
+        events_when_started: restart_moon_qualify_shots
       locking: 
         label: Locking State
         events_when_started: enable_moon_mb_locking

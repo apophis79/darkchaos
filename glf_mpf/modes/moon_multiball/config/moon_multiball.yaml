@@ -1,8 +1,8 @@
 #config_version=6
 
 mode:
-  start_events: new_ball_started, mode_moon_multiball_qualify_started
-  stop_events: stop_moon_multiball_mode, mode_base_stopping, wizard_mode_ended
+  start_events: new_ball_started, mode_moon_multiball_qualify_started, wizard_mode_ended
+  stop_events: stop_moon_multiball_mode, mode_base_stopping, wizard_mode_started
   priority: 600
 
 event_player: 
