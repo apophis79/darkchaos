@@ -8669,7 +8669,7 @@ glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_l
 glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{current_player.moon_launch_locked_balls==2}", "Glf_905"
 glf_funcRefMap.Add "stop_meteor_wave{current_player.shot_moon_missile2 == 0}", "Glf_906"
 glf_funcRefMap.Add "restart_moon_qualify_shots_proxy{current_player.ball_just_started == 0}", "Glf_907"
-glf_funcRefMap.Add "mode_moon_multiball_qualify_started.1{device.state_machines.moon_mb.state==""locking""}", "Glf_908"
+glf_funcRefMap.Add "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}", "Glf_908"
 glf_funcRefMap.Add "multiball_lock_moon_launch_locked_ball{total_balls_locked < 2}", "Glf_909"
 glf_funcRefMap.Add """MOON""", "Glf_910"
 glf_funcRefMap.Add """LAUNCH""", "Glf_911"

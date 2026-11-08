@@ -59,7 +59,7 @@ Sub CreateMoonMultiballQualifyMode
         'Lock the balls
         With .MultiballLocks("moon_launch")
             '.Debug=True
-            .EnableEvents = Array("enable_moon_mb_locking", "mode_moon_multiball_qualify_started.1{device.state_machines.moon_mb.state==""locking""}")
+            .EnableEvents = Array("enable_moon_mb_locking", "mode_moon_multiball_qualify_started{device.state_machines.moon_mb.state==""locking""}")
             .DisableEvents = Array("restart_moon_qualify_shots","disable_moon_mb_locking")
             .ResetEvents = Array("start_moon_multiball.2","restart_moon_missiles")
             .BallsToLock = 2
@@ -214,8 +214,8 @@ Sub CreateMoonMultiballQualifyMode
             'States
             With .States("qualify")
                 .Label = "Qualify State"
-                '.EventsWhenStarted = Array("restart_moon_qualify_shots")
-                .EventsWhenStarted = Array("restart_moon_qualify_shots_proxy")
+                .EventsWhenStarted = Array("restart_moon_qualify_shots")
+                '.EventsWhenStarted = Array("restart_moon_qualify_shots_proxy")
             End With
             With .States("locking")
                 .Label = "Locking State"
