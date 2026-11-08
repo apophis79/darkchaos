@@ -2,22 +2,16 @@
 
 mode:
   start_events: new_ball_started, mode_moon_multiball_qualify_started
-  stop_events: stop_moon_multiball, mode_base_stopping, wizard_mode_ended
+  stop_events: stop_moon_multiball_mode, mode_base_stopping, wizard_mode_ended
   priority: 600
 
 event_player: 
   mode_moon_multiball_started.1{current_player.shot_final_wave_wizard>0}:
-    - stop_moon_multiball
+    - stop_moon_multiball_mode
   s_RightMagnaButton_active{current_player.moon_launch_locked_balls>0 and current_player.disable_moon_launch==0 and current_player.wizard_mode_running==0}:
-    - launch_moon_missiles
-    - restart_moon_qualify_shots
-  launch_moon_missiles:
     - start_moon_multiball
-    - delayed_release_moon_ball
     - play_sfx_launch
     - score_50000
-  multiball_moon_started:
-    - release_moon_ball
   s_RightMagnaButton_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}:
     - launch_panic_penalty
   launch_panic_penalty:
@@ -85,9 +79,6 @@ variable_player:
       int: 0
 
   start_moon_multiball.1: 
-    leftover_balls_in_lock: 
-      action: set
-      int: 0
     disable_moon_launch: 
       action: set
       int: 1

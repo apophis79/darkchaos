@@ -17,7 +17,7 @@ multiballs:
     ball_count_type: total
     shoot_again: current_player.meteor_mb_shootagain_time
     hurry_up_time: 3000
-    grace_period: 2000
+    grace_period: 3000
     ball_locks: 
 
 shots: 
@@ -25,7 +25,7 @@ shots:
     profile: shoot_again
     show_tokens: 
       color: "0500ee"
-    reset_events: multiball_meteor_shoot_again_ended
+    reset_events: multiball_meteor_grace_period
     control_events: 
       - events: mode_meteor_multiball_started
         state: 1

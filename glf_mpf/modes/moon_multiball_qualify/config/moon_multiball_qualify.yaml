@@ -8,8 +8,12 @@ mode:
 event_player: 
   mode_moon_multiball_qualify_started.3{current_player.shot_final_wave_wizard>0}:
     - stop_moon_multiball_qualify
+  mode_moon_multiball_qualify_started.1{current_player.shot_moon_missile2 == 0}:
+    - enable_moon_qualify_shots
   mode_moon_multiball_qualify_started.1{current_player.shot_moon_missile2 == 1}:
     - disable_moon_qualify_shots
+  mode_moon_multiball_qualify_started.1{current_player.shot_moon_missile2 == 2}:
+    - restart_moon_missiles
   mode_moon_multiball_qualify_started.2{current_player.training_moon_missile_used==1}:
     - restart_moon_missiles
     - restart_moon_qualify_shots
@@ -87,6 +91,7 @@ shot_groups:
   qualify_lock:
     shots: moon_lane1,moon_lane2,moon_lane3,moon_lane4
     restart_events: restart_moon_qualify_shots
+    reset_events: start_moon_multiball
     rotate_left_events: s_LeftFlipperButton_active
     rotate_right_events: s_RightFlipperButton_active
     enable_events: enable_moon_qualify_shots

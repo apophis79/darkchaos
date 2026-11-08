@@ -630,7 +630,7 @@ show_player:
       show_tokens: 
         lights: "tNukeShot"
         color: "ffae00"
-        fade: "500"
+        fade: "200"
   detonate_nuke: 
     flash_color_with_fade: 
       action: stop
@@ -640,7 +640,7 @@ show_player:
       show_tokens: 
         lights: "tNukeShot"
         color: "ffae00"
-        fade: "500"
+        fade: "200"
 
 
 slide_player: 
