@@ -1456,11 +1456,13 @@ Sub CreateBaseMode()
                 .Source = Array("flippers_down")
                 .Target = "right_flipper_up"
                 .Events = Array("s_right_flipper_active")
+                .EventsWhenTransitioning = Array("one_flipper_going_up")
             End With
             With .Transitions()
                 .Source = Array("flippers_down")
                 .Target = "left_flipper_up"
                 .Events = Array("s_left_flipper_active")
+                .EventsWhenTransitioning = Array("one_flipper_going_up")
             End With
             With .Transitions()
                 .Source = Array("right_flipper_up")

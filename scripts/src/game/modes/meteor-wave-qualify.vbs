@@ -14,16 +14,21 @@ Sub CreateMeteorWaveQualifyMode
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value == 0}", Array("reset_countdown_value")
             .Add "mode_meteor_wave_qualify_started{current_player.meteor_countdown_value > 0}", Array("init_mwq_timer")
             .Add "reset_countdown_value", Array("init_mwq_timer")
-            .Add "init_mwq_timer", Array("init_pf_display")
+            .Add "init_mwq_timer", Array("init_pf_display","clear_flag_flipper_check")
             .Add "init_mwq_timer{current_player.ball_just_started == 0}", Array("start_mwq_timer","restart_mwq_no_switches_hit_timer") 
             .Add "s_Plunger1_inactive{current_player.ball_just_started == 1}", Array("start_mwq_timer","hide_super_spinner_count","hide_super_pops_count") 
             
-            .Add "restart_tw_timer", Array("stop_mwq_timer")    'Timewarp started, so halt the countdown
+            'handle pausing timer when ball doing stuff in scoop
+            .Add "restart_tw_timer", Array("stop_mwq_timer","stop_mwq_no_switches_hit_timer")    'Timewarp started, so halt the countdown
             .Add "play_mystery_show", Array("stop_mwq_timer")   'Mystery show started, so halt the countdown
             .Add "play_eb_show", Array("stop_mwq_timer")        'EB show started, so halt the countdown
             
+            'pause countdown timer when there is a stuck ball. check for cradle exploit.
             .Add "switches_hit{current_player.warping == 0}", Array("restart_mwq_no_switches_hit_timer")
-            .Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", Array("restart_mwq_no_switches_hit_timer")
+            .Add "both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}", Array("restart_mwq_flipper_check_timer","set_flag_flipper_check")
+            .Add "one_flipper_going_up{current_player.warping == 0 and current_player.ball_just_started == 0 and current_player.flag_flipper_check == 1}", Array("stop_mwq_flipper_check_timer")
+            .Add "one_flipper_going_up{current_player.warping == 0 and current_player.ball_just_started == 0 and current_player.flag_flipper_check == 0}", Array("restart_mwq_no_switches_hit_timer","clear_flag_flipper_check")
+            .Add "timer_mwq_flipper_check_complete", Array("restart_mwq_no_switches_hit_timer","clear_flag_flipper_check")
 
             .Add "timer_mwq_no_switches_hit_complete", Array("stop_mwq_timer","check_exploit")
             .Add "restart_mwq_no_switches_hit_timer", Array("start_mwq_timer","stop_mwq_exploit_timer")
@@ -31,9 +36,11 @@ Sub CreateMeteorWaveQualifyMode
             .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down"" and current_player.warping == 0}", Array("restart_mwq_exploit_timer","play_exploit_show","play_sfx_exploit_penalty","score_m100000")
             .Add "timer_mwq_exploit_tick", Array("play_exploit_show","play_sfx_exploit_penalty","score_m100000") 
 
+            'flash display when countdown timer is paused
             .Add "stop_mwq_timer", Array("flash_mwq_display")
             .Add "start_mwq_timer", Array("remove_flash_mwq_display")
 
+            'handle meteor wave alert and start
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 4}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 2}", Array("meteor_wave_alert_show","backglass_wave_flash")
             .Add "timer_meteor_countdown_tick{device.timers.meteor_countdown.ticks == 1}", Array("stop_extra_ball","stop_mystery","stop_training_qualify","disable_scoop_hold","start_mwq_timer") 'stop these early to prevent scoop issues
@@ -134,7 +141,7 @@ Sub CreateMeteorWaveQualifyMode
         End With
 
         With .Timers("mwq_exploit")
-            .TickInterval = CoreTempHitInterval
+            .TickInterval = ExploitHitInterval
             .StartValue = 0
             .EndValue = 100
             With .ControlEvents()
@@ -146,6 +153,21 @@ Sub CreateMeteorWaveQualifyMode
                 .Action = "stop"
             End With
         End With
+
+        With .Timers("mwq_flipper_check")
+            .TickInterval = FlipperCheckInterval
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "restart_mwq_flipper_check_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "stop_mwq_flipper_check_timer"
+                .Action = "stop"
+            End With
+        End With
+        
 
         With .Timers("super_spinner_count")
             .TickInterval = 1000
@@ -209,6 +231,18 @@ Sub CreateMeteorWaveQualifyMode
                 With .Variable("super_pops_count")
                     .Action = "add"
                     .Int = -1
+                End With
+            End With
+            With .EventName("set_flag_flipper_check")
+                With .Variable("flag_flipper_check")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("clear_flag_flipper_check")
+                With .Variable("flag_flipper_check")
+                    .Action = "set"
+                    .Int = 0
                 End With
             End With
 		End With

@@ -51,7 +51,8 @@ If for_real = true Then
 End If
 
 Const PauseWhenNoSwitchHitsTicks = 7  'uses 1000 ms interval
-Const CoreTempHitInterval = 6000
+Const ExploitHitInterval = 6000
+Const FlipperCheckInterval = 150
 
 Const SlingDomePowerUpBrightness = 100  '0 to 100
 
@@ -427,6 +428,7 @@ Sub ConfigureGlfDevices
 
     ' Initial Vars
     Glf_SetInitialPlayerVar "flag_ss", 0
+    Glf_SetInitialPlayerVar "flag_flipper_check", 0
     Glf_SetInitialPlayerVar "flag_sss_mystery", 0
     Glf_SetInitialPlayerVar "num_skillshots", 0
     Glf_SetInitialPlayerVar "ball_cradled", 0

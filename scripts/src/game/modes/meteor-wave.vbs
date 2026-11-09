@@ -23,7 +23,7 @@ Sub CreateMeteorWaveMode
         With .EventPlayer()
             '.Debug = True
             'Initializations
-            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on","restart_mw_no_switches_hit_timer") ',"backglass_ball_off")
+            .Add "mode_meteor_wave_started", Array("start_meteor_multiball","init_meteor1","init_meteor2","init_meteor3","init_meteor4","stop_some_modes_for_mw","backglass_dark_off","backglass_chaos_off","backglass_wave_on","restart_mw_no_switches_hit_timer","clear_flag_flipper_check") ',"backglass_ball_off")
             .Add "stop_some_modes_for_mw", Array("stop_skillshots","stop_combos","stop_ship_save","stop_timewarp","stop_shields") '"stop_extra_ball","stop_mystery","stop_training_qualify"
             .Add "mode_meteor_wave_stopping", Array("drop_diverter") '"backglass_dark_on","backglass_chaos_on")
             'Show nuke shot if it available
@@ -102,7 +102,10 @@ Sub CreateMeteorWaveMode
             .Add "timer_meteor_wave_nuked_complete", Array("meteor_wave_done_done")
             'handle flipper down timer to pause other timers if flippers have been down a while
             .Add "switches_hit", Array("restart_mw_no_switches_hit_timer")
-            .Add "both_flippers_down_state", Array("restart_mw_no_switches_hit_timer")
+            .Add "both_flippers_down_state", Array("restart_mw_flipper_check_timer","set_flag_flipper_check")
+            .Add "one_flipper_going_up{current_player.flag_flipper_check == 1}", Array("stop_mw_flipper_check_timer")
+            .Add "one_flipper_going_up{current_player.flag_flipper_check == 0}", Array("restart_mw_no_switches_hit_timer","clear_flag_flipper_check")
+            .Add "timer_mw_flipper_check_complete", Array("restart_mw_no_switches_hit_timer","clear_flag_flipper_check")
             .Add "timer_mw_no_switches_hit_complete", Array("stop_meteor1_timer","stop_meteor2_timer","stop_meteor3_timer","stop_meteor4_timer","flash_mw_display","check_exploit")
             .Add "restart_mw_no_switches_hit_timer", Array("start_meteor1_timer","start_meteor2_timer","start_meteor3_timer","start_meteor4_timer","remove_flash_mw_display","stop_mw_exploit_timer")
             .Add "check_exploit{device.state_machines.flipper_states.state!=""flippers_down""}", Array("restart_mw_exploit_timer","play_exploit_show","play_sfx_exploit_penalty","score_m100000")
@@ -591,7 +594,7 @@ Sub CreateMeteorWaveMode
         End With
 
         With .Timers("mw_exploit")
-            .TickInterval = CoreTempHitInterval
+            .TickInterval = ExploitHitInterval
             .StartValue = 0
             .EndValue = 100
             With .ControlEvents()
@@ -617,6 +620,21 @@ Sub CreateMeteorWaveMode
                 .Action = "stop"
             End With
         End With
+
+        With .Timers("mw_flipper_check")
+            .TickInterval = FlipperCheckInterval
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "restart_mw_flipper_check_timer"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "stop_mw_flipper_check_timer"
+                .Action = "stop"
+            End With
+        End With
+        
 
         'Light shows
         With .ShowPlayer()
@@ -854,6 +872,18 @@ Sub CreateMeteorWaveMode
             End With
             With .EventName("restart_mw_no_switches_hit_timer")
                 With .Variable("no_switches_hit_pause")
+                    .Action = "set"
+                    .Int = 0
+                End With
+            End With
+            With .EventName("set_flag_flipper_check")
+                With .Variable("flag_flipper_check")
+                    .Action = "set"
+                    .Int = 1
+                End With
+            End With
+            With .EventName("clear_flag_flipper_check")
+                With .Variable("flag_flipper_check")
                     .Action = "set"
                     .Int = 0
                 End With
