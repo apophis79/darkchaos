@@ -17,6 +17,7 @@ event_player:
     - backglass_chaos_off
     - backglass_wave_on
     - restart_mw_no_switches_hit_timer
+    - clear_flag_flipper_check
   stop_some_modes_for_mw:
     - stop_skillshots
     - stop_combos
@@ -164,7 +165,16 @@ event_player:
   switches_hit:
     - restart_mw_no_switches_hit_timer
   both_flippers_down_state:
+    - restart_mw_flipper_check_timer
+    - set_flag_flipper_check
+  one_flipper_going_up{current_player.flag_flipper_check == 1}:
+    - stop_mw_flipper_check_timer
+  one_flipper_going_up{current_player.flag_flipper_check == 0}:
     - restart_mw_no_switches_hit_timer
+    - clear_flag_flipper_check
+  timer_mw_flipper_check_complete:
+    - restart_mw_no_switches_hit_timer
+    - clear_flag_flipper_check
   timer_mw_no_switches_hit_complete:
     - stop_meteor1_timer
     - stop_meteor2_timer
@@ -1099,6 +1109,18 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 1000ms
+  mw_flipper_check:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: restart_mw_flipper_check_timer
+        action: restart
+      - event: stop_mw_flipper_check_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 150ms
 
 variable_player: 
   meteor1_raise: 
@@ -1212,6 +1234,16 @@ variable_player:
 
   restart_mw_no_switches_hit_timer: 
     no_switches_hit_pause: 
+      action: set
+      int: 0
+
+  set_flag_flipper_check: 
+    flag_flipper_check: 
+      action: set
+      int: 1
+
+  clear_flag_flipper_check: 
+    flag_flipper_check: 
       action: set
       int: 0
 

@@ -13,6 +13,9 @@ player_vars:
   flag_ss:
     initial_value: 0
     value_type: int
+  flag_flipper_check:
+    initial_value: 0
+    value_type: int
   flag_sss_mystery:
     initial_value: 0
     value_type: int

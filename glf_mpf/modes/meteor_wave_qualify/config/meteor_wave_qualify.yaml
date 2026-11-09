@@ -16,6 +16,7 @@ event_player:
     - init_mwq_timer
   init_mwq_timer:
     - init_pf_display
+    - clear_flag_flipper_check
   init_mwq_timer{current_player.ball_just_started == 0}:
     - start_mwq_timer
     - restart_mwq_no_switches_hit_timer
@@ -25,6 +26,7 @@ event_player:
     - hide_super_pops_count
   restart_tw_timer:
     - stop_mwq_timer
+    - stop_mwq_no_switches_hit_timer
   play_mystery_show:
     - stop_mwq_timer
   play_eb_show:
@@ -32,7 +34,16 @@ event_player:
   switches_hit{current_player.warping == 0}:
     - restart_mwq_no_switches_hit_timer
   both_flippers_down_state{current_player.warping == 0 and current_player.ball_just_started == 0}:
+    - restart_mwq_flipper_check_timer
+    - set_flag_flipper_check
+  one_flipper_going_up{current_player.warping == 0 and current_player.ball_just_started == 0 and current_player.flag_flipper_check == 1}:
+    - stop_mwq_flipper_check_timer
+  one_flipper_going_up{current_player.warping == 0 and current_player.ball_just_started == 0 and current_player.flag_flipper_check == 0}:
     - restart_mwq_no_switches_hit_timer
+    - clear_flag_flipper_check
+  timer_mwq_flipper_check_complete:
+    - restart_mwq_no_switches_hit_timer
+    - clear_flag_flipper_check
   timer_mwq_no_switches_hit_complete:
     - stop_mwq_timer
     - check_exploit
@@ -228,6 +239,18 @@ timers:
     restart_on_complete: False
     start_running: False
     tick_interval: 6000ms
+  mwq_flipper_check:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: restart_mwq_flipper_check_timer
+        action: restart
+      - event: stop_mwq_flipper_check_timer
+        action: stop
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 150ms
   super_spinner_count:
     start_value: 0
     end_value: 2
@@ -284,6 +307,16 @@ variable_player:
     super_pops_count: 
       action: add
       int: -1
+
+  set_flag_flipper_check: 
+    flag_flipper_check: 
+      action: set
+      int: 1
+
+  clear_flag_flipper_check: 
+    flag_flipper_check: 
+      action: set
+      int: 0
 
 
 

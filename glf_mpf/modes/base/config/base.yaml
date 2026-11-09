@@ -1309,10 +1309,12 @@ state_machines:
         target: right_flipper_up
         events: 
           - s_RightFlipperButton_active
+        events_when_transitioning: one_flipper_going_up
       - source: flippers_down
         target: left_flipper_up
         events: 
           - s_LeftFlipperButton_active
+        events_when_transitioning: one_flipper_going_up
       - source: right_flipper_up
         target: flippers_up
         events: 
