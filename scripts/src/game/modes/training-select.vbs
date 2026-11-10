@@ -24,7 +24,7 @@ Sub CreateTrainingSelectMode
 
         With .EventPlayer()
             '.Debug = True
-            .Add "mode_training_select_started", Array("enable_scoop_hold","stop_training_qualify","show_training_completed_shots")
+            .Add "mode_training_select_started", Array("enable_scoop_hold","stop_training_qualify","show_training_completed_shots","set_disable_moon_launch")
             'initialize badges
             .Add "mode_training_select_started{current_player.training_heal_achieved==1}", Array("show_heal_completed")
             .Add "mode_training_select_started{current_player.training_cluster_bomb_achieved==1}", Array("show_cluster_bomb_completed")
@@ -51,8 +51,8 @@ Sub CreateTrainingSelectMode
             .Add "make_selection{device.state_machines.training_select.state==""moon_missile""}", Array("start_training_moon_missile","stopping_training_select")
             .Add "make_selection{device.state_machines.training_select.state==""ship_save""}", Array("start_training_ship_save","stopping_training_select")
             .Add "make_selection{device.state_machines.training_select.state==""shields""}", Array("start_training_shields","stopping_training_select")
-            .Add "make_selection{device.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training")
-            .Add "stopping_training_select", Array("training_music_start","meteor_wave_music_stop","stop_training_select")
+            .Add "make_selection{device.state_machines.training_select.state==""skip""}", Array("stop_training_select","stop_training","clear_disable_moon_launch")
+            .Add "stopping_training_select", Array("training_music_start","meteor_wave_music_stop","stop_training_select","clear_disable_moon_launch")
             'Handle moon ramp
             '.Add "balldevice_moon_lock_ball_enter{device.ball_devices.moon_lock.balls > current_player.moon_launch_locked_balls}", Array("delayed_release_moon_ball")
             'Handle skipping over completed trainings

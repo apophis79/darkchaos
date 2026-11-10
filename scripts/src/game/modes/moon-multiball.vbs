@@ -139,10 +139,16 @@ Sub CreateMoonMultiballMode
 					.Int = 1
 				End With
 			End With
-            With .EventName("mode_training_select_started")
+            With .EventName("set_disable_moon_launch")
 				With .Variable("disable_moon_launch")
                     .Action = "set"
 					.Int = 1
+				End With
+			End With
+            With .EventName("clear_disable_moon_launch")
+				With .Variable("disable_moon_launch")
+                    .Action = "set"
+					.Int = 0
 				End With
 			End With
             With .EventName("mode_moon_multiball_started")
