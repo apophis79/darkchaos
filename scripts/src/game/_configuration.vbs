@@ -449,6 +449,7 @@ Sub ConfigureGlfDevices
     Glf_SetInitialPlayerVar "num_clusters", 0
     Glf_SetInitialPlayerVar "meteors_per_wave", 7
     Glf_SetInitialPlayerVar "disable_moon_launch", 0
+    Glf_SetInitialPlayerVar "disable_cluster_bomb", 0
     ' Glf_SetInitialPlayerVar "s_Lock1_on", 0
     ' Glf_SetInitialPlayerVar "s_Lock2_on", 0
     ' Glf_SetInitialPlayerVar "s_Lock3_on", 0
