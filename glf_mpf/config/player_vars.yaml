@@ -76,6 +76,9 @@ player_vars:
   disable_moon_launch:
     initial_value: 0
     value_type: int
+  disable_cluster_bomb:
+    initial_value: 0
+    value_type: int
   warping:
     initial_value: 0
     value_type: int
