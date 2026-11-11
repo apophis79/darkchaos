@@ -1181,7 +1181,11 @@ Public Function Glf_RunHandlers(i)
 		If Not IsEmpty(wait_for) Then
 			Dim remaining_handlers_keys : remaining_handlers_keys = glf_dispatch_handlers_await.Keys
 			Dim remaining_handlers_items : remaining_handlers_items = glf_dispatch_handlers_await.Items
-			AddPinEventListener wait_for, key & "_wait_for", "ContinueDispatchQueuePinEvent", 1000, Array(remaining_handlers_keys, remaining_handlers_items, null, wait_for, key & "_wait_for")
+			' Each paused dispatch needs its own continuation. A retry may wait
+			' on the same event while a cancelled attempt is still registered.
+			Dim continuation_key : continuation_key = key & "_wait_for_" & glf_dispatch_queue_int
+			glf_dispatch_queue_int = glf_dispatch_queue_int + 1
+			AddPinEventListener wait_for, continuation_key, "ContinueDispatchQueuePinEvent", 1000, Array(remaining_handlers_keys, remaining_handlers_items, null, wait_for, continuation_key)
 			glf_dispatch_handlers_await.RemoveAll
 			Exit For
 		End If
@@ -13647,7 +13651,7 @@ Class GlfBallDevice
     Private m_eject_switch, m_incoming_balls, m_default_device, m_mechanical_eject
     Private m_auto_fire_on_unexpected_ball, m_exclude_from_ball_search, m_debug
     Private m_state, m_request, m_attempt, m_token, m_active_key, m_active_ball
-    Private m_left, m_confirmed, m_return_seen, m_mechanical_attempt
+    Private m_left, m_confirmed, m_return_seen, m_player_controlled_request
     Private m_count_token, m_recounting, m_stopped, m_coil_enabled, m_enable_token
 
     Public Default Function Init(name)
@@ -13689,7 +13693,7 @@ Class GlfBallDevice
         m_left = False
         m_confirmed = False
         m_return_seen = False
-        m_mechanical_attempt = False
+        m_player_controlled_request = False
         m_recounting = False
         m_stopped = False
         m_coil_enabled = False
@@ -14005,9 +14009,17 @@ Class GlfBallDevice
 
     Public Sub Eject()
         If m_stopped Or m_state = "eject_broken" Then Exit Sub
-        If m_state = "waiting_for_player" Then
-            ' Upgrade the existing returned mechanical ball to a powered eject.
-            m_mechanical_attempt = False
+        If m_player_controlled_request And m_request <> "" Then
+            ' An auto-launch request may arrive while a manual departure is
+            ' still settling. Upgrade that request, not a second/future ball.
+            m_player_controlled_request = False
+            m_attempt = 0
+            Log "Upgraded player launch to powered request, ball " & m_active_key
+            If m_state = "waiting_for_player" Then
+                m_state = "waiting_for_position"
+                SchedulePump 1
+            End If
+        ElseIf m_state = "waiting_for_player" Then
             m_state = "waiting_for_position"
             SchedulePump 1
         Else
@@ -14017,7 +14029,7 @@ Class GlfBallDevice
     Public Sub PlayerEject()
         ' A launch button pressed while empty must not arm a future ball.
         If Not HasBall Then Exit Sub
-        If m_state = "waiting_for_player" Then
+        If m_state = "waiting_for_player" Or m_player_controlled_request Then
             Eject
         ElseIf m_queue.Count = 0 Then
             Eject
@@ -14157,7 +14169,7 @@ Class GlfBallDevice
         m_queue(m_request) = Array(candidate, request_data(1))
         Set m_active_ball = m_present(candidate)
         m_token = m_token + 1
-        m_mechanical_attempt = False
+        m_player_controlled_request = False
         m_left = False
         m_confirmed = False
         m_return_seen = False
@@ -14205,16 +14217,19 @@ Class GlfBallDevice
     End Sub
     Private Sub BeginMechanical(ball)
         If m_request = "" Then
+            ' A switch departure can satisfy an existing powered request, but
+            ' must not change its retry policy into waiting for a player.
+            m_player_controlled_request = (m_queue.Count = 0)
             If m_queue.Count = 0 Then Enqueue BallKey(ball), 0
             Dim keys : keys = m_queue.Keys
             m_request = keys(0)
             m_attempt = 0
         End If
         m_token = m_token + 1
-        m_attempt = m_attempt + 1
+        ' A bounce before the first powered kick must not use up its retry limit.
+        If m_player_controlled_request Then m_attempt = m_attempt + 1
         m_active_key = BallKey(ball)
         Set m_active_ball = ball
-        m_mechanical_attempt = True
         m_left = False
         m_confirmed = False
         m_return_seen = False
@@ -14222,7 +14237,7 @@ Class GlfBallDevice
         RegisterConfirmListeners
         Schedule "departure_timeout", m_token, m_eject_timeout, "_departure"
         DispatchPinEvent m_name & "_ejecting_ball", Null
-        Log "Mechanical launch " & m_attempt & ", ball " & m_active_key
+        Log "Mechanical departure, ball " & m_active_key & ", player_controlled=" & m_player_controlled_request
     End Sub
     Private Sub RegisterConfirmListeners()
         Dim evt
@@ -14272,13 +14287,13 @@ Class GlfBallDevice
         If Not retry Then
             m_state = "eject_broken"
             DispatchPinEvent m_name & "_broken", Null
-        ElseIf m_mechanical_attempt Then
+        ElseIf m_player_controlled_request Or IsNull(m_eject_callback) Then
             m_state = "waiting_for_player"
         Else
             m_state = "retry_wait"
             Schedule "retry", m_token, m_retry_delay, "_retry"
         End If
-        Log "Eject failed: " & reason
+        Log "Eject failed: " & reason & ", next_state=" & m_state & ", player_controlled=" & m_player_controlled_request
     End Sub
     Private Sub FinishRequest()
         CancelAttempt
@@ -14289,7 +14304,7 @@ Class GlfBallDevice
         m_left = False
         m_confirmed = False
         m_return_seen = False
-        m_mechanical_attempt = False
+        m_player_controlled_request = False
         m_state = "idle"
         SchedulePump 1
     End Sub
@@ -14453,6 +14468,7 @@ Class GlfBallDevice
         m_active_key = ""
         Set m_active_ball = Nothing
         m_left = False
+        m_player_controlled_request = False
         m_state = "stopped"
     End Sub
     Public Sub Reset()
@@ -18099,7 +18115,10 @@ Function ContinueDispatchQueuePinEvent(args)
 
     'Inject handlers back into dispatch
     For i=0 to UBound(keys)
-        glf_dispatch_handlers_await.Add keys(i), items(i)
+        ' Several paused instances of one event may resume in the same frame.
+        ' Keep their handler keys distinct; their original event/kwargs remain
+        ' in items(i), including any device token used to reject stale attempts.
+        glf_dispatch_handlers_await.Add keys(i) & "_resume_" & ownProps(4), items(i)
     Next
     Exit Function
 
