@@ -33,11 +33,11 @@ Sub CreateClusterBombMode
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 0}", Array("add_cluster_bomb1","reset_cluster_charges","play_cluster_alert")
             .Add "light_cluster_charge3{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0}", Array("add_cluster_bomb2","check_fully_loaded","play_cluster_alert") 'check for wizard mode qualification
             'Fire bomb
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.no_switches_hit_pause == 0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash") ',"backglass_clusters_off")
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1 and current_player.no_switches_hit_pause == 0}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.no_switches_hit_pause == 0 and current_player.disable_cluster_bomb==0}", Array("fire_cluster_bomb1","cluster_bomb_fired","cluster_bomb_flash","set_disable_cluster_bomb") ',"backglass_clusters_off")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb2 == 1 and current_player.no_switches_hit_pause == 0 and current_player.disable_cluster_bomb==0}", Array("fire_cluster_bomb2","cluster_bomb_fired","cluster_bomb_flash","reset_cluster_charges","set_disable_cluster_bomb")
             'Panic penalty
-            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0 and current_player.no_switches_hit_pause == 0}", Array("cluster_panic_penalty")
-            .Add "cluster_panic_penalty", Array("score_m100000","play_sfx_panic_penalty")
+            .Add "s_left_magna_key_active{current_player.shot_cluster_bomb1 == 0 and current_player.no_switches_hit_pause == 0 and current_player.disable_cluster_bomb==0}", Array("cluster_panic_penalty")
+            .Add "cluster_panic_penalty", Array("score_m100000","play_sfx_panic_penalty","set_disable_cluster_bomb")
             'Handle mystery award
             .Add "mystery_added_cluster", Array("complete_cluster_charges","light_cluster_charge3","check_fully_loaded","slings_powerup_added","lsling_powerup_cb","rsling_powerup_cb")
             'Scoring
@@ -82,6 +82,44 @@ Sub CreateClusterBombMode
                     .Action = "set"
                     .Int = 0
                 End With
+            End With
+            With .EventName("set_disable_cluster_bomb")
+				With .Variable("disable_cluster_bomb")
+                    .Action = "set"
+					.Int = 1
+				End With
+			End With
+            With .EventName("clear_disable_cluster_bomb")
+				With .Variable("disable_cluster_bomb")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            With .EventName("timer_cluster_bomb_cooldown_complete")
+				With .Variable("disable_cluster_bomb")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+            With .EventName("mode_cluster_bombs_started")
+				With .Variable("disable_cluster_bomb")
+                    .Action = "set"
+					.Int = 0
+				End With
+			End With
+        End With
+
+        With .Timers("cluster_bomb_cooldown")
+            .TickInterval = 3000
+            .StartValue = 0
+            .EndValue = 1
+            With .ControlEvents()
+                .EventName = "cluster_panic_penalty"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "cluster_bomb_fired"
+                .Action = "restart"
             End With
         End With
 

@@ -9,11 +9,11 @@ ball_devices:
     eject_targets: balldevice_plunger
   balldevice_plunger:
     ball_switches: s_Plunger1
-    mechanical_eject: True
+    mechanical_eject: true
   balldevice_scoop:
     ball_switches: s_Scoop
-    mechanical_eject: True
+    mechanical_eject: true
   balldevice_moon_lock:
     ball_switches: s_Lock1,s_Lock2,s_Lock3
-    mechanical_eject: False
+    mechanical_eject: false
 

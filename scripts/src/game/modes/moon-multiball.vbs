@@ -28,7 +28,7 @@ Sub CreateMoonMultiballMode
             '.Add "multiball_moon_started", Array("release_moon_ball")
             'Panic penalty
             .Add "s_right_magna_key_active{current_player.moon_launch_locked_balls==0 and current_player.disable_moon_launch==0}", Array("launch_panic_penalty")
-            .Add "launch_panic_penalty", Array("score_m100000","play_sfx_panic_penalty")
+            .Add "launch_panic_penalty", Array("score_m100000","play_sfx_panic_penalty","set_disable_moon_launch")
         End With
 
 
@@ -66,11 +66,15 @@ Sub CreateMoonMultiballMode
         End With
 
         With .Timers("moon_launch_cooldown")
-            .TickInterval = 5000
+            .TickInterval = 3000
             .StartValue = 0
-            .EndValue = 2
+            .EndValue = 1
             With .ControlEvents()
                 .EventName = "start_moon_multiball"
+                .Action = "restart"
+            End With
+            With .ControlEvents()
+                .EventName = "launch_panic_penalty"
                 .Action = "restart"
             End With
         End With
@@ -139,10 +143,16 @@ Sub CreateMoonMultiballMode
 					.Int = 1
 				End With
 			End With
-            With .EventName("mode_training_select_started")
+            With .EventName("set_disable_moon_launch")
 				With .Variable("disable_moon_launch")
                     .Action = "set"
 					.Int = 1
+				End With
+			End With
+            With .EventName("clear_disable_moon_launch")
+				With .Variable("disable_moon_launch")
+                    .Action = "set"
+					.Int = 0
 				End With
 			End With
             With .EventName("mode_moon_multiball_started")

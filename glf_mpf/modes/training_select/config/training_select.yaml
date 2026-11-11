@@ -10,6 +10,7 @@ event_player:
     - enable_scoop_hold
     - stop_training_qualify
     - show_training_completed_shots
+    - set_disable_moon_launch
   mode_training_select_started{current_player.training_heal_achieved==1}:
     - show_heal_completed
   mode_training_select_started{current_player.training_cluster_bomb_achieved==1}:
@@ -62,10 +63,12 @@ event_player:
   make_selection{device.state_machines.training_select.state=="skip"}:
     - stop_training_select
     - stop_training
+    - clear_disable_moon_launch
   stopping_training_select:
     - training_music_start
     - meteor_wave_music_stop
     - stop_training_select
+    - clear_disable_moon_launch
   check_ts_heal{current_player.ts_last_move=="left" and current_player.training_heal_achieved==1}:
     - training_select_left
   check_ts_heal{current_player.ts_last_move=="right" and current_player.training_heal_achieved==1}:

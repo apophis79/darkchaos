@@ -37,20 +37,23 @@ event_player:
     - add_cluster_bomb2
     - check_fully_loaded
     - play_cluster_alert
-  s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.no_switches_hit_pause == 0}:
+  s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 1 and current_player.shot_cluster_bomb2 == 0 and current_player.no_switches_hit_pause == 0 and current_player.disable_cluster_bomb==0}:
     - fire_cluster_bomb1
     - cluster_bomb_fired
     - cluster_bomb_flash
-  s_LeftMagnaButton_active{current_player.shot_cluster_bomb2 == 1 and current_player.no_switches_hit_pause == 0}:
+    - set_disable_cluster_bomb
+  s_LeftMagnaButton_active{current_player.shot_cluster_bomb2 == 1 and current_player.no_switches_hit_pause == 0 and current_player.disable_cluster_bomb==0}:
     - fire_cluster_bomb2
     - cluster_bomb_fired
     - cluster_bomb_flash
     - reset_cluster_charges
-  s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 0 and current_player.no_switches_hit_pause == 0}:
+    - set_disable_cluster_bomb
+  s_LeftMagnaButton_active{current_player.shot_cluster_bomb1 == 0 and current_player.no_switches_hit_pause == 0 and current_player.disable_cluster_bomb==0}:
     - cluster_panic_penalty
   cluster_panic_penalty:
     - score_m100000
     - play_sfx_panic_penalty
+    - set_disable_cluster_bomb
   mystery_added_cluster:
     - complete_cluster_charges
     - light_cluster_charge3
@@ -254,6 +257,20 @@ sound_player:
       action: play
 
 
+timers: 
+  cluster_bomb_cooldown:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events: 
+      - event: cluster_panic_penalty
+        action: restart
+      - event: cluster_bomb_fired
+        action: restart
+    restart_on_complete: False
+    start_running: False
+    tick_interval: 3000ms
+
 variable_player: 
   add_cluster_bomb1: 
     num_clusters: 
@@ -272,6 +289,26 @@ variable_player:
 
   fire_cluster_bomb1: 
     num_clusters: 
+      action: set
+      int: 0
+
+  set_disable_cluster_bomb: 
+    disable_cluster_bomb: 
+      action: set
+      int: 1
+
+  clear_disable_cluster_bomb: 
+    disable_cluster_bomb: 
+      action: set
+      int: 0
+
+  timer_cluster_bomb_cooldown_complete: 
+    disable_cluster_bomb: 
+      action: set
+      int: 0
+
+  mode_cluster_bombs_started: 
+    disable_cluster_bomb: 
       action: set
       int: 0
 
