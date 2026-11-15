@@ -29,6 +29,7 @@
     "filter": "overlay",
     "filter_amount": 100,
     "light_map": "",
+    "state_src_link": "",
     "backglass": false,
     "part_group_name": "Title",
     "drag_points": [

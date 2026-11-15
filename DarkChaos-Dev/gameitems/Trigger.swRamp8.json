@@ -15,6 +15,7 @@
     "surface": "55h",
     "is_visible": false,
     "is_enabled": true,
+    "state_src_link": "",
     "hit_height": 50.0,
     "name": "swRamp8",
     "shape": "star",

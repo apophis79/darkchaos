@@ -58,6 +58,7 @@
     "alpha": 100.0,
     "color": "#ffffff",
     "light_map": "",
+    "state_src_link": "",
     "reflection_probe": "Playfield Reflections",
     "reflection_strength": 0.1,
     "refraction_probe": "",

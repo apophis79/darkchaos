@@ -16,6 +16,7 @@
     "blink_pattern": "tCluster,tClusterAll,tInserts",
     "image": "",
     "blink_interval": 300,
+    "state_src_link": "",
     "intensity": 2.0,
     "transmission_scale": 0.0,
     "surface": "",

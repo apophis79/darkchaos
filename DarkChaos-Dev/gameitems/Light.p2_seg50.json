@@ -16,6 +16,7 @@
     "blink_pattern": "tScoreSegs",
     "image": "",
     "blink_interval": 125,
+    "state_src_link": "",
     "intensity": 300.0,
     "transmission_scale": 0.5,
     "surface": "",

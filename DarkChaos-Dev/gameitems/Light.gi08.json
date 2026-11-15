@@ -16,6 +16,7 @@
     "blink_pattern": "GI,tRSling",
     "image": "",
     "blink_interval": 125,
+    "state_src_link": "",
     "intensity": 10.0,
     "transmission_scale": 0.0,
     "surface": "",
