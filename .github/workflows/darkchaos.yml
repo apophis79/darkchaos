@@ -116,7 +116,7 @@ jobs:
       - name: Download vpxtool
         run: |
           Invoke-WebRequest `
-            -Uri hhttps://github.com/francisdb/vpxtool/releases/download/v0.40.1/vpxtool-windows-x86_64-v0.40.1.zip `
+            -Uri https://github.com/francisdb/vpxtool/releases/download/v0.40.1/vpxtool-windows-x86_64-v0.40.1.zip `
             -OutFile vpxtool.zip
 
           Expand-Archive vpxtool.zip -DestinationPath .\vpxtool
