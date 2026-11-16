@@ -37,6 +37,13 @@ Sub Table1_Init
 	' Init VR things
 	InitVR
 
+	' Init Display
+	bcpDisplaySettings.Add "name", "DefaultDisplay"
+	bcpDisplaySettings.Add "width", 1920
+	bcpDisplaySettings.Add "height", 1080
+	bcpDisplaySettings.Add "id", 0
+	bcpDisplaySettings.Add "dmdstyle", False 'DMD Style = True, LCD = False
+
 End Sub
 
 

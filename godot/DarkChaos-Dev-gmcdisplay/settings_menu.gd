@@ -108,6 +108,10 @@ func load_window_settings(display: String, display_menu: PopupMenu):
 	window.size = wsize
 	window.position = wposition
 
+	# Always start minimized
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED, win_id)
+
+	
 func _on_self_item_pressed(id):
 
 	match id:
@@ -164,7 +168,10 @@ func _on_resolution_selected(id, display):
 		6:
 			size = Vector2i(3840, 2160)
 
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED, win_id)  # Ensure not fullscreen
+	var mode := DisplayServer.window_get_mode(win_id)
+	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN or mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED, win_id)
+
 	DisplayServer.window_set_size(size, win_id)  # Force the OS-level resize
 	save_window_settings()
 
