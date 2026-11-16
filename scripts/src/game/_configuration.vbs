@@ -193,6 +193,12 @@ Const BonusPerProtonRound = 50000
 Const SuperPopsCount = 100
 Const SuperSpinnerCount = 100
 
+bcpDisplaySettings.Add "name", "DefaultDisplay"
+bcpDisplaySettings.Add "width", 1920
+bcpDisplaySettings.Add "height", 1080
+bcpDisplaySettings.Add "id", 0
+bcpDisplaySettings.Add "dmdstyle", False 'DMD Style = True, LCD = False
+
 Sub ConfigureGlfDevices
 
     '*********** INITALIZE SHOWS ***********

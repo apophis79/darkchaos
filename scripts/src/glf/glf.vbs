@@ -80,6 +80,7 @@ Dim bcpExeName : bcpExeName = CGameName & "_gmc"
 Dim bcpLocalPathToGodot : bcpLocalPathToGodot = "C:\Godot\4.6.2\Godot_v4.6.2-stable_win64.exe"
 Dim bcpLocalPathToProject : bcpLocalPathToProject = "C:\Git\darkchaos\godot\DarkChaos-Dev-gmcdisplay"
 Dim bcpDebug : bcpDebug = False
+Dim bcpDisplaySettings : Set bcpDisplaySettings = CreateObject("Scripting.Dictionary")
 Dim glf_monitor_player_vars : glf_monitor_player_vars = false
 Dim glf_BIP : glf_BIP = 0
 Dim glf_FuncCount : glf_FuncCount = 0
@@ -114,6 +115,9 @@ Public Sub Glf_ConnectToBCPMediaController(args)
 	Else
 		Set bcpController = (new GlfVpxBcpController)(bcpPort, "")
 	End If
+    If bcpDisplaySettings.Count > 0 Then
+        bcpController.RegisterDisplay bcpDisplaySettings("name"), bcpDisplaySettings("width"), bcpDisplaySettings("height"), bcpDisplaySettings("id"), bcpDisplaySettings("dmdstyle")
+    End If
 End Sub
 
 Public Sub Glf_ConnectToDebugBCPMediaController(args)
@@ -3124,7 +3128,7 @@ Class GlfVpxBcpController
 		Else
 			m_bcpController.ConnectToBuild port, backboxCommand
         End If
-    
+
         m_connected = True
         useBcp = True    
         m_mode_list = ""
@@ -3155,6 +3159,12 @@ Class GlfVpxBcpController
         End If
 	End Sub
     
+    Public Sub RegisterDisplay(name, width, height, id, dmdstyle)
+        If m_connected Then
+            m_bcpController.RegisterDisplay name, width, height, id, dmdstyle
+        End If
+    End Sub
+
     Public Sub PlaySlide(slide, context, calling_context, action, expire, priorty, kwargs)
 		If m_connected Then
             Dim kwargsString : kwargsString = ""

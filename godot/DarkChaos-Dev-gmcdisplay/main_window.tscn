@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxomb1kyk6cw7"]
 
 [ext_resource type="Script" uid="uid://b7l2vx2o7yb2q" path="res://addons/mpf-gmc/classes/mpf_window.gd" id="1_ni31q"]
-[ext_resource type="Script" uid="uid://cnc7dblwai6nd" path="res://addons/mpf-gmc/classes/mpf_display.gd" id="2_ce758"]
+[ext_resource type="Script" uid="uid://d0084sbwuq70s" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_guodr"]
 [ext_resource type="PackedScene" uid="uid://chyyii4xjrs6" path="res://startup_splash.tscn" id="3_iwhwg"]
 [ext_resource type="Shader" uid="uid://2ol6tp0k5xjg" path="res://addons/mpf-gmc/resources/virtual_dmd.gdshader" id="4_g52yu"]
 [ext_resource type="Shader" uid="uid://jeotwb7jhaxr" path="res://addons/mpf-gmc/resources/pixelate.gdshader" id="5_wy3e2"]
@@ -50,7 +50,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_ce758")
+script = ExtResource("2_guodr")
+resolution = Vector2i(1920, 1080)
+use_gpu = 1
 is_default = true
 initial_slide = ExtResource("3_iwhwg")
 
