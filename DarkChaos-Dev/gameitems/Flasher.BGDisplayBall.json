@@ -29,6 +29,7 @@
     "filter": "none",
     "filter_amount": 100,
     "light_map": "",
+    "state_src_link": "",
     "backglass": false,
     "part_group_name": "VR_Backglass_Layer",
     "drag_points": [

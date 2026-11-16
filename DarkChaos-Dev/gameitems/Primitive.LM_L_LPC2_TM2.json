@@ -58,6 +58,7 @@
     "alpha": 100.0,
     "color": "#ffffff",
     "light_map": "LPC2",
+    "state_src_link": "",
     "reflection_probe": "",
     "reflection_strength": 0.3,
     "refraction_probe": "",

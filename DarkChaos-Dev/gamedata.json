@@ -62,6 +62,7 @@
   "bg_window_bottom_y_offset_full_single_screen": null,
   "bg_window_bottom_z_offset_full_single_screen": 138.95322,
   "override_physics": 0,
+  "physic_profile": 1,
   "override_physics_flipper": false,
   "gravity": 1.7629848,
   "friction": 0.25,
