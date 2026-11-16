@@ -22,7 +22,7 @@
     "glass_pad_bottom": 0.0,
     "glass_pad_left": 0.0,
     "glass_pad_right": 0.0,
-    "image_src_link": "",
+    "image_src_link": "ctrl://BCP/display?id=0",
     "display_texture": false,
     "depth_bias": 0.0,
     "image_alignment": "wrap",
