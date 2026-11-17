@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="DarkChaosGMCProject"
 run/main_scene="uid://bxomb1kyk6cw7"
 config/features=PackedStringArray("4.6", "Mobile")
+run/max_fps=30
 config/icon="res://icon.svg"
 
 [audio]
@@ -33,6 +34,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/always_on_top=true
 window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
